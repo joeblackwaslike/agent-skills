@@ -11,9 +11,10 @@ related:
   - /docs/cli/global-options
 summary: Learn how to manage telemetry collection.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/telemetry.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "6bc739e14ba308f07af7018c6e7b97188022254af3b271abc1b649f6b6f8086d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b845c182a0d58bbdcd0d1b2978abf4961b0a70e5f2cbf40f74fbc6e8a1f6d756"
 ---
 
 # vercel telemetry
@@ -29,10 +30,10 @@ The `vercel telemetry` command allows you to enable or disable telemetry collect
 - [Telemetry](https://vercel.com/docs/cli/about-telemetry) — Vercel CLI collects telemetry data about general usage.
 - [Telemetry](https://turborepo.dev/docs/telemetry) — Understand what anonymous telemetry data Turborepo collects and how to opt out.
 - [CLI Telemetry](https://eve.dev/docs/reference/telemetry) — Learn what eve CLI telemetry collects and how to control it.
-- [vercel inspect](https://vercel.com/docs/cli/inspect) — Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
-- [Global Vercel CLI Configuration](https://vercel.com/docs/project-configuration/global-configuration) — Learn how to configure Vercel CLI under your system user.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
+- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
 
 Full cross-link map for this page: [/docs/cli/telemetry.graph.md](/docs/cli/telemetry.graph.md)
 <!-- /docsgraph:related -->
@@ -120,6 +121,18 @@ Vercel CLI Telemetry **does not** collect any metrics which may contain sensitiv
 
 For more information about Vercel's privacy practices, please see our [**Privacy Notice**](https://vercel.com/legal/privacy-policy) and if you have any questions, feel free to reach out to <privacy@vercel.com>.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

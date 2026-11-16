@@ -12,9 +12,10 @@ related:
   - /docs/monorepos
 summary: The experimentalServices configuration model for deploying multiple backends and frontends in a single Vercel project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/services/experimental.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "9f3c17ac55c5faf7b533fd40c7e96badd5444617418030324f2da2886865b66b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a5014bf21db3ae855d538d69afb987525067d109a6275bd130ccda455e7e6d70"
 ---
 
 # Experimental Services
@@ -33,17 +34,17 @@ Services let you deploy multiple backends and frontends within a single Vercel p
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
-- [Vercel Services: Run full stack on Vercel](https://vercel.com/blog/vercel-services-run-full-stack-on-vercel)
 - [Run multiple frameworks in one project with Vercel Services](https://vercel.com/changelog/run-multiple-frameworks-in-one-project-with-vercel-services)
+- [Vercel Services: Run full stack on Vercel](https://vercel.com/blog/vercel-services-run-full-stack-on-vercel)
+- [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
 - [Full-stack previews on Vercel](https://vercel.com/kb/guide/full-stack-preview-deployments-on-vercel) — Learn how to use full-stack previews for your Vercel projects. Deploy Next.js, FastAPI, and a containerized Go service t
-- [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
 - [Choosing how to structure your application on Vercel](https://vercel.com/kb/guide/structure-your-application) — Compare three ways to structure an application on Vercel \\(a single framework, one project with Services, or separate pr
-- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
+- [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
 - [Services](https://vercel.com/docs/build-output-api/services) — Learn how a deployment with multiple services is structured in the Build Output API.
 - [Service configuration reference](https://vercel.com/docs/services/config-reference) — Options available for service configuration.
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart) — Learn how to get started with microfrontends on Vercel.
+- [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
 
 Full cross-link map for this page: [/docs/services/experimental.graph.md](/docs/services/experimental.graph.md)
 <!-- /docsgraph:related -->
@@ -155,6 +156,18 @@ Run all services together locally, without authenticating with the Vercel Cloud,
 vercel dev --local
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

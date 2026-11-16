@@ -13,9 +13,10 @@ related:
   - /docs/functions/usage-and-pricing
 summary: "Understand how Vercel Queues billing works, what's included, and which service limits apply."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/queues/pricing.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "03e29717aa0bbaec18e54dd7d01653c8f7e5052c4f5f3c18f322bafa6119041a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "50b8fca99c0007ae9effe64655cf2ead3e96dacfa71a562d20718298afe39661"
 ---
 
 # Pricing and Limits
@@ -32,10 +33,10 @@ Vercel Queues is billed per API operation. Every API call counts as at least one
 - [ Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel) — Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflo
 - [Process background jobs in Python with Vercel Queues](https://vercel.com/kb/guide/python-and-vercel-queues) — Move slow and failure-prone work out of your Python request handlers, with typed topics, consumer groups, and built-in r
 - [Services Pricing and Limits](https://vercel.com/docs/services/pricing) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
-- [API Reference](https://vercel.com/docs/queues/api) — HTTP API reference for Vercel Queues. Publish, consume, acknowledge, and manage messages.
-- [Vercel KMS Pricing and Limits](https://vercel.com/docs/kms/pricing) — How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
-- [Limits and Pricing for Vercel Flags](https://vercel.com/docs/flags/vercel-flags/limits-and-pricing) — Review Vercel Flags request pricing and limits for flags, segments, configuration size, and connected projects.
-- [Limits and Pricing for Monitoring](https://vercel.com/docs/query/monitoring/limits-and-pricing) — Learn about our limits and pricing when using Monitoring. Different limitations are applied depending on your plan.
+- [Portland, USA \\(pdx1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/pdx1) — Vercel pricing for the Portland, USA \\(pdx1\\) region.
+- [Montréal, Canada \\(yul1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/yul1) — Vercel pricing for the Montréal, Canada \\(yul1\\) region.
+- [Dublin, Ireland \\(dub1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dub1) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
+- [Cleveland, USA \\(cle1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cle1) — Vercel pricing for the Cleveland, USA \\(cle1\\) region.
 
 Full cross-link map for this page: [/docs/queues/pricing.graph.md](/docs/queues/pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -78,6 +79,18 @@ Functions invoked by Queues in push mode continue to be charged at the [existing
 | Retry behavior (first 32 attempts) | -            | -                      | Configured delay |
 | Retry behavior (after 32 attempts) | -            | -                      | Forced backoff   |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

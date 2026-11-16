@@ -15,9 +15,10 @@ related:
   - /docs/domains
 summary: Learn about the different roles available for team members on a Vercel account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/rbac/access-roles.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "5aac1d41439fcd343074c11c1e6adc3f14e13ae34e2cb9ae364e27c4f0914d99"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "90afc94af9e161d30bc845ba0ffbef9221bfa7af394025c317c1387b08f31a8e"
 ---
 
 # Access Roles
@@ -40,7 +41,7 @@ Vercel distinguishes between different roles to help manage team members' access
 - [Protect internal apps with Vercel Passport and your identity provider](https://vercel.com/kb/guide/vercel-passport) — Vercel Passport protects internal apps behind your own identity provider, such as Okta or Microsoft Entra ID. Learn how
 - [New project access controls for Enterprise customers](https://vercel.com/changelog/new-project-access-controls-for-enterprise-customers)
 - [Developer role now available for Pro teams](https://vercel.com/changelog/developer-role-now-available-for-pro-teams)
-- [Role-based Access Control now generally available on Enterprise Plans](https://vercel.com/changelog/role-based-access-control-now-generally-available-on-enterprise-plans)
+- [Expanded Role-Based Access Control (RBAC) for Enterprise teams](https://vercel.com/changelog/expanded-role-based-access-control-rbac-for-enterprise-teams)
 - [Access Groups](https://vercel.com/docs/rbac/access-groups) — Learn how to configure access groups for team members on a Vercel account.
 
 Full cross-link map for this page: [/docs/rbac/access-roles.graph.md](/docs/rbac/access-roles.graph.md)
@@ -348,6 +349,18 @@ Existing team roles can be combined with permission groups to create custom acce
 
 See [project level roles](/docs/rbac/access-roles/project-level-roles) and [team level roles](/docs/rbac/access-roles/team-level-roles) for a complete list of roles, their permissions, and how they can be combined.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

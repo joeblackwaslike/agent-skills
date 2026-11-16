@@ -12,9 +12,10 @@ related:
   []
 summary: Use search_repo with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/search_repo.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "62fe76762244d7b533dd922bc7e145e9539bd8839ad68e8636dedb326b08c684"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c8b23d7ab7ba1ba6c61bfe152f6146bd4caa86b69d896b2fbbea588b4510470b"
 ---
 
 # search_repo
@@ -29,9 +30,9 @@ List git repositories linked to namespace by provider.
 
 - [List git repositories linked to namespace by provider](https://vercel.com/docs/rest-api/integrations/list-git-repositories-linked-to-namespace-by-provider) — GET /v1/integrations/search-repo — Lists git repositories linked to a namespace \\`id\\` for a supported provider. A speci
 - [list_vercel_ci_invocations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/list_vercel_ci_invocations) — Use list_vercel_ci_invocations with Vercel MCP.
-- [artifact_query](https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching/artifact_query) — Use artifact_query with Vercel MCP.
+- [search_vercel_documentation](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation/search_vercel_documentation) — Use search_vercel_documentation with Vercel MCP.
+- [Enable or disable Vercel CI for a connected repository](https://vercel.com/docs/rest-api/vercel-ci/enable-or-disable-vercel-ci-for-a-connected-repository) — PATCH /v1/vercel-ci/repository-settings — Update Repository Settings
 - [List git namespaces by provider](https://vercel.com/docs/rest-api/integrations/list-git-namespaces-by-provider) — GET /v1/integrations/git-namespaces — Lists git namespaces for a supported provider. Supported providers are \\`github\\`,
-- [git_namespaces](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/git_namespaces) — Use git_namespaces with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/integrations/search_repo.graph.md](/docs/agent-resources/vercel-mcp/tools/integrations/search_repo.graph.md)
 <!-- /docsgraph:related -->
@@ -48,6 +49,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/integ
 | `teamId`         | string                   | No       | Team ID to use for this operation.                                                                                    |
 | `slug`           | string                   | No       | Team slug to use for this operation. Use instead of teamId.                                                           |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

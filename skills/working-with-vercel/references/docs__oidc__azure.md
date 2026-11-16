@@ -13,9 +13,10 @@ related:
   - /docs/functions/quickstart
 summary: "Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/oidc/azure.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "4229d32e40fd7495f320274e56e511dccddce492c5334af5731d0fa5d282aa92"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ce7227cc41552902256e2f65b9cadc12527b7d43ea68678523b65e718fc26b96"
 ---
 
 # Connect to Microsoft Azure
@@ -32,7 +33,6 @@ Connect your Vercel deployments to Microsoft Azure without storing long-lived cr
 
 - [Death to long-lived static credentials](https://vercel.com/blog/death-to-long-lived-static-credentials)
 - [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect)
-- [Using Vercel Passport with Microsoft Entra ID](https://vercel.com/kb/guide/vercel-passport-microsoft-entra-id) — Configure Microsoft Entra ID and Vercel Passport to protect a Next.js app, limit access to assigned users, and read veri
 - [Connect to Amazon Web Services \\(AWS\\)](https://vercel.com/docs/oidc/aws) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 - [Connect to your own API](https://vercel.com/docs/oidc/api) — Learn how to configure your own API to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\)
 - [Connect to Google Cloud Platform \\(GCP\\)](https://vercel.com/docs/oidc/gcp) — Learn how to configure your GCP project to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
@@ -351,6 +351,18 @@ Second, the `.default` scope built from your API's Application ID URI sets the `
 
 The credential caches the access token and refreshes it before expiry, so calling `getToken` on every request does not trigger a new token exchange each time.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

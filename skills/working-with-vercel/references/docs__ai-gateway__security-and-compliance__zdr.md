@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis
 summary: Learn about zero data retention policies and how to enforce ZDR on a per-request basis with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/zdr.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "bfd1b2ac3dee0c9bd4df08a2371123aa45f0ff06d4a81652f73bbeeada2ca926"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "07bcd537f25088948386fc6e63420e059bb92fe6c762b6e17b093a48791b7e5d"
 ---
 
 # AI Gateway Zero Data Retention (ZDR)
@@ -33,9 +34,9 @@ Zero data retention (ZDR) is available on AI Gateway for Pro and Enterprise team
 
 - [ Routing rules now available on AI Gateway](https://vercel.com/changelog/ai-gateway-routing-rules)
 - [Cat Jam is now available in stealth for free on AI Gateway](https://vercel.com/changelog/cat-jam-is-now-available-in-stealth-for-free-on-ai-gateway)
+- [Claude Fable 5.2 now available on AI Gateway](https://vercel.com/changelog/claude-fable-5-2-now-available-on-ai-gateway)
 - [Claude Haiku 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-haiku-5-5-now-available-on-ai-gateway)
 - [Claude Opus 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-5-now-available-on-ai-gateway)
-- [Claude Sonnet 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-sonnet-5-5-now-available-on-ai-gateway)
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [How to classify, route, and score with Jev and AI SDK](https://vercel.com/kb/guide/typesafe-jev-and-ai-sdk) — Use Jev from TypeSafe AI with AI SDK's experimental \\`evaluate\\` API to classify, route, score, and verify inside your a
 - [Vercel Ship 2026 recap](https://vercel.com/blog/vercel-ship-2026-recap)
@@ -66,7 +67,7 @@ ZDR is a superset of [disallowing prompt training](/docs/ai-gateway/security-and
 | Per-request zero data retention | No additional cost       |
 | Team-wide zero data retention   | $0.10 per 1,000 requests |
 
-Team-wide ZDR is only charged on successful responses that return usage data. Requests that fail or return errors are not charged.
+Team-wide ZDR is charged on each request AI Gateway bills. That includes a request billed without completing normally, such as a response the provider blocks on safety grounds and still charges for. Requests that fail and that AI Gateway doesn't bill are not charged.
 
 ## Availability
 
@@ -413,7 +414,7 @@ curl --fail-with-body https://ai-gateway.vercel.sh/v1/responses -H "Authorizatio
 
 ## BYOK
 
-When ZDR is enabled, either team-wide or per-request, AI Gateway skips your [BYOK](/docs/ai-gateway/authentication-and-byok/byok) keys by default. BYOK keys operate under your own agreements and permissions with providers, which can differ from the ZDR agreements Vercel has negotiated for AI Gateway system credentials.
+When ZDR is enabled, either team-wide or per-request, AI Gateway skips your [BYOK](/docs/ai-gateway/authentication-and-byok/byok) keys by default. BYOK keys operate under your own agreements and permissions with providers, which can differ from the ZDR agreements Vercel has negotiated for its own provider keys.
 
 If you have your own ZDR agreement with a provider, you can mark a BYOK key as ZDR-compliant. AI Gateway then includes that key in the ZDR routing set. This option applies to both team-wide and request-level ZDR.
 
@@ -434,7 +435,7 @@ To mark a BYOK key as ZDR:
 When ZDR is enabled, AI Gateway filters the routing set for each model to ZDR-compliant providers only:
 
 1. If you have BYOK keys for a ZDR-compliant provider that you marked as ZDR, AI Gateway tries those keys first.
-2. If those BYOK keys fail or are unavailable, AI Gateway falls back to AI Gateway system credentials for the ZDR-compliant providers in the routing set.
+2. If those BYOK keys fail or are unavailable, AI Gateway falls back to Vercel's provider keys for the ZDR-compliant providers in the routing set.
 3. If no ZDR-compliant providers are available for the model, the request fails with a `no_zdr_providers_available` error.
 
 ### Example
@@ -454,17 +455,17 @@ AI Gateway builds the ZDR routing set in two parts.
 - Filter to ZDR-marked keys: Anthropic
 - Filter to keys for providers serving `anthropic/claude-sonnet-5`: Anthropic
 
-**System credentials routing set:**
+**Routing set for Vercel's provider keys:**
 
-- System providers serving `anthropic/claude-sonnet-5`: Anthropic, Google Vertex, Amazon Bedrock
+- Providers that serve `anthropic/claude-sonnet-5` on Vercel's provider keys: Anthropic, Google Vertex, Amazon Bedrock
 - Filter to providers Vercel has ZDR agreements with: Anthropic, Google Vertex, Amazon Bedrock
 
 **Final routing order:**
 
 1. Anthropic BYOK (ZDR-marked) is tried first.
-2. If that fails, AI Gateway falls back to system credentials for Anthropic, Google Vertex, or Amazon Bedrock.
+2. If that fails, AI Gateway falls back to Vercel's provider keys for Anthropic, Google Vertex, or Amazon Bedrock.
 
-Your Google Vertex BYOK is filtered out because you didn't mark it as ZDR, but Google Vertex is still reachable through system credentials. Your OpenAI BYOK is filtered out because OpenAI doesn't serve `anthropic/claude-sonnet-5`.
+Your Google Vertex BYOK is filtered out because you didn't mark it as ZDR, but Google Vertex is still reachable through Vercel's provider keys. Your OpenAI BYOK is filtered out because OpenAI doesn't serve `anthropic/claude-sonnet-5`.
 
 ## Using both account and request-level ZDR
 
@@ -497,6 +498,8 @@ ZDR
 
 Policy
 
+Notes
+
 Alibaba Cloud
 
 ✓
@@ -504,6 +507,8 @@ Alibaba Cloud
 ✓
 
 Custom policy
+
+—
 
 Anthropic
 
@@ -515,6 +520,11 @@ Anthropic
 
 ZDR policy
 
+Claude Fable models are not ZDR. Anthropic retains prompts and outputs for 30 days.
+Excludes the code execution tool and programmatic tool calling. Container data is kept for up to 30 days.
+Excludes the MCP connector and Agent Skills.
+Excludes dynamic filtering for web search and web fetch.
+
 Azure
 
 ✓
@@ -523,6 +533,8 @@ Azure
 
 Data privacy
 
+—
+
 Baseten
 
 ✓
@@ -530,6 +542,8 @@ Baseten
 ✓
 
 Security
+
+—
 
 Bedrock
 
@@ -541,6 +555,8 @@ Bedrock
 
 Data protection
 
+—
+
 Claude Platform on AWS
 
 ✓
@@ -549,13 +565,18 @@ Claude Platform on AWS
 
 ZDR policy
 
+Excludes the code execution tool, programmatic tool calling, the MCP connector, and Agent Skills.
+Excludes dynamic filtering for web search and web fetch.
+
 DigitalOcean
 
 ✓
 
 ✓
 
-ZDR policy
+Data policy
+
+—
 
 Fireworks
 
@@ -564,6 +585,8 @@ Fireworks
 ✓
 
 Data handling
+
+—
 
 Google Vertex AI
 
@@ -575,6 +598,8 @@ Google Vertex AI
 
 ZDR policy
 
+—
+
 Groq
 
 ✓
@@ -582,6 +607,8 @@ Groq
 ✓
 
 ZDR policy
+
+—
 
 Meta
 
@@ -591,6 +618,9 @@ Meta
 
 ZDR policy
 
+Muse Spark contributor models are not ZDR.
+Meta may retain content where the law requires it or to address misuse.
+
 Mistral
 
 ✓
@@ -598,6 +628,8 @@ Mistral
 ✓
 
 Terms of service
+
+—
 
 Modal
 
@@ -607,6 +639,8 @@ Modal
 
 ZDR policy
 
+—
+
 Moonshot AI
 
 ✓
@@ -614,6 +648,8 @@ Moonshot AI
 ✓
 
 Custom policy
+
+—
 
 Morph
 
@@ -623,6 +659,8 @@ Morph
 
 ZDR policy
 
+—
+
 Nebius
 
 ✓
@@ -630,6 +668,8 @@ Nebius
 ✓
 
 Legal quick guide
+
+—
 
 OpenAI
 
@@ -639,6 +679,10 @@ OpenAI
 
 ZDR with safety retention
 
+Image, transcription, realtime, embedding, and speech models are not ZDR.
+OpenAI scans image and file inputs for CSAM and retains flagged images for manual review.
+Data sent to a remote MCP server follows that server's retention policy.
+
 Parasail
 
 ✓
@@ -646,6 +690,8 @@ Parasail
 ✓
 
 Terms of service
+
+—
 
 Particle.AI
 
@@ -655,6 +701,8 @@ Particle.AI
 
 ZDR policy
 
+—
+
 Relace
 
 ✓
@@ -662,6 +710,8 @@ Relace
 ✓
 
 ZDR policy
+
+—
 
 Runware
 
@@ -671,6 +721,8 @@ Runware
 
 ZDR policy
 
+—
+
 Together AI
 
 ✓
@@ -679,11 +731,15 @@ Together AI
 
 Terms of service
 
+—
+
 TypeSafe AI
 
 ✓
 
 ✓
+
+Legal policy
 
 Except as necessary to comply with its legal obligations, TypeSafe shall not retain (a) prompts that are Customer Data for any longer than is necessary to generate Output for Customer and (b) Output for any longer than necessary to enable TypeSafe to fulfil its obligations to Customer under the Agreement.
 
@@ -695,6 +751,8 @@ Wafer
 
 ZDR policy
 
+—
+
 xAI
 
 ✓
@@ -702,6 +760,8 @@ xAI
 ✓
 
 ZDR policy
+
+Grok Imagine video models are not ZDR.
 
 \* `anthropic/claude-fable-5` does not support ZDR on any provider, including Anthropic, Google Vertex, and Amazon Bedrock. Anthropic has determined this is required because some misuse patterns only become visible across cumulative requests. Prompts and completions are retained for 30 days and are not used to train Claude.
 
@@ -711,6 +771,18 @@ Vercel Token Pass models are served through the `token-pass` provider. Token Pas
 
 A [virtual model](/docs/ai-gateway/models-and-providers/virtual-models) can restrict its traffic to zero-data-retention providers. The setting only tightens: either side can turn it on, and neither side can turn it off.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

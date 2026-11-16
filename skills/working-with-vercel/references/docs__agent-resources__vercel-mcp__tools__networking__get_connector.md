@@ -12,9 +12,10 @@ related:
   []
 summary: Use get_connector with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/get_connector.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "89acff49bfe7736171ec93cfe464e60ceef230c4862b63e54a14073cc79048c3"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ead2c34fe4e1885504b46a696e72ecd7b00de26de0e11323589001f50f635d71"
 ---
 
 # get_connector
@@ -28,8 +29,8 @@ Get the connector by ID. Accepts a dashboard/team requester or a deployment's pr
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [get_connector_project_connection](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/get_connector_project_connection) — Use get_connector_project_connection with Vercel MCP.
-- [update_connector](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/update_connector) — Use update_connector with Vercel MCP.
 - [list_connectors](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/list_connectors) — Use list_connectors with Vercel MCP.
+- [update_connector](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/update_connector) — Use update_connector with Vercel MCP.
 - [list_connector_project_connections](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/list_connector_project_connections) — Use list_connector_project_connections with Vercel MCP.
 - [list_project_connector_connections](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/list_project_connector_connections) — Use list_project_connector_connections with Vercel MCP.
 
@@ -44,6 +45,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/netwo
 | `teamId`    | string | No       | Team ID to use for this operation.                                                              |
 | `slug`      | string | No       | Team slug to use for this operation. Use instead of teamId.                                     |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

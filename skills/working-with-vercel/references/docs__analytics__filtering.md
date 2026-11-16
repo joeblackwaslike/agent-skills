@@ -14,9 +14,10 @@ related:
   - /docs/flags
 summary: "Learn how filters allow you to explore insights about your website's visitors."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/analytics/filtering.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "4ab1f27dc39a8dc48ab9409cdfe57ce2c556c5cbdf72214ded69d28b7707a944"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "65ebe469c8f6ae7cf2237d0bf4cbd7211e1a24dd7d00b1170fa5039771924209"
 ---
 
 # Filtering Analytics
@@ -38,10 +39,10 @@ to use it to answer specific questions.
 - [Filter Analytics traffic data](https://vercel.com/changelog/filter-analytics-traffic-data)
 - [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available)
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
-- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
+- [get_web_analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/get_web_analytics) — Use get_web_analytics with Vercel MCP.
+- [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views) — GET /v1/query/web-analytics/visits/aggregate — Counts pageviews on a project, within the requested date range. Results a
 - [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
-- [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights) — Learn how to use Speed Insights to analyze your application's performance data.
 
 Full cross-link map for this page: [/docs/analytics/filtering.graph.md](/docs/analytics/filtering.graph.md)
 <!-- /docsgraph:related -->
@@ -128,6 +129,18 @@ To use it:
 
 Twitter search might not always be able to resolve to the original post of that link, and it may appear multiple times.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

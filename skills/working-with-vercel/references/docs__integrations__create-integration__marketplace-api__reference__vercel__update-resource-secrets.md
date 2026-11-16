@@ -3,7 +3,7 @@ title: update-resource-secrets
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/update-resource-secrets
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/update-resource-secrets"
-last_updated: 2026-11-09
+last_updated: 2026-11-16
 type: conceptual
 prerequisites:
   []
@@ -12,9 +12,10 @@ related:
   - /docs/integrations/create-integration/native-integration
 summary: Learn about update-resource-secrets on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/update-resource-secrets.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c788d8bc7770a4210b194b9fde11745c68a0d9e971b37e47eec0504b4ae5cadf"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "31f48e1b00aa315de415f7c09767334ab20672137892c30e46711a2f7353ca84"
 ---
 
 # Deprecated: true. Update Resource Secrets (Deprecated)
@@ -98,6 +99,18 @@ Success
 - [Marketplace API Reference](/docs/integrations/create-integration/marketplace-api/reference)
 - [Native Integration Concepts](/docs/integrations/create-integration/native-integration)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

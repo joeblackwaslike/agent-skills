@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis/openresponses
 summary: "Reference for AI Gateway REST endpoints: models, usage, generations, and reporting."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/rest-api.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "301b6f06fdb8de81ae2543695bcffc451f9bfd90bb70e58ded4658264ca0515d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "36ab300e787a4f1cc635ce44cefe620831cb7469a825c967be60478a5983f456"
 ---
 
 # AI Gateway REST API Reference
@@ -32,10 +33,10 @@ For sending inference requests, the [AI SDK](/docs/ai-gateway/sdks-and-apis/ai-s
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [AI Gateway production index](https://vercel.com/blog/ai-gateway-production-index)
-- [Open weight takes 71.5% of tokens and 23% of spend](https://vercel.com/blog/ai-gateway-production-index-october-2026)
+- [Decision models take 26% of requests; Anthropic now wins new teams 2:1](https://vercel.com/blog/ai-gateway-production-index-november-2026)
 - [DeepSeek enters the fight for token volume, Anthropic continues to dominate spend](https://vercel.com/blog/ai-gateway-production-index-june-2026)
 - [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit
-- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, caching, SDK and API compati
 - [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
 - [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
 - [AI Gateway Amazon Bedrock Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock) — Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
@@ -340,7 +341,7 @@ Some models have tiered pricing based on context size. When tiered pricing appli
 GET /v1/credits
 ```
 
-Returns the team's current AI Gateway Credits balance and lifetime spend.
+Returns the team's current AI Gateway Credits balance and lifetime spend. If the team has an active [Token Pass](/docs/ai-gateway/token-pass), it also returns the remaining pass credit and when it resets.
 
 For the AI SDK equivalent, see [Credit Usage](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway#credit-usage).
 
@@ -395,13 +396,20 @@ curl -X GET "https://ai-gateway.vercel.sh/v1/credits" \
 ```json filename="Response"
 {
   "balance": "95.50",
+  "token_pass": {
+    "remaining": "12.34",
+    "resets_at": "2026-12-01T00:00:00.000Z"
+  },
   "total_used": "4.50"
 }
 ```
 
 #### Response fields
 
-- `balance`: Remaining credit balance, in USD
+- `balance`: Remaining credit balance, in USD. It doesn't include Token Pass credit
+- `token_pass`: The team's Token Pass credit, or `null` if the team has no active Token Pass
+  - `remaining`: Remaining Token Pass credit, in USD. It's `"0"` when the pass credit is used up, and `null` if AI Gateway can't read the balance right now
+  - `resets_at`: When the Token Pass credit resets, as an ISO 8601 timestamp
 - `total_used`: Total credits used to date, in USD
 
 ### Look up a generation
@@ -606,6 +614,18 @@ Errors return a JSON body with an `error` field. Some endpoints additionally inc
 | `500`  | Internal server error.                                                                                   |
 | `503`  | A backing service is misconfigured or unavailable.                                                       |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

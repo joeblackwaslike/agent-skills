@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis/ai-sdk
 summary: Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "d049591cb8004dc89518dd2929b5c6a5894c1ed25da0dc4cd50d61ddc576be4e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5d0576f7053fcaceb80b19a6d2b2908f16b8cb8d6f18b870a9b25aef9a99d451"
 ---
 
 # AI Gateway Tool Use and Function Calling
@@ -31,12 +32,13 @@ Connect a model to functions in your application, such as a weather lookup or a 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [What is an LLM Tool?](https://vercel.com/kb/guide/what-is-an-llm-tool) — Learn what tools are, how tool calling works, and how you can use them to build agents.
 - [Ampersand from Humans& now available on AI Gateway](https://vercel.com/changelog/humans-and-ampersand-now-available-on-ai-gateway)
 - [Tencent Hy4 now available on AI Gateway](https://vercel.com/changelog/tencent-hy4-now-available-on-ai-gateway)
 - [Private enterprise agents on Vercel](https://vercel.com/kb/guide/private-enterprise-agents-vercel) — Design private enterprise agents that call internal APIs and databases with Vercel Functions, Secure Compute, AI Gateway
-- [What is an LLM Tool?](https://vercel.com/kb/guide/what-is-an-llm-tool) — Learn what tools are, how tool calling works, and how you can use them to build agents.
-- [Tools](https://ai-sdk.dev/docs/foundations/tools) — Learn about tools with the AI SDK.
-- [Run Python code securely with AI SDK and Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox) — Add an \\`executeCode\\` tool to your AI SDK agent with the \\`ai-sdk-tool-code-execution\\` package to run Python 3.13 insi
+- [OpenAI Responses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses) — Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported
+- [Call AI Gateway Chat Completions with REST](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api) — Use AI Gateway API directly without client libraries using curl and fetch.
+- [AI SDK](https://vercel.com/docs/ai-sdk) — Build TypeScript agents and AI applications with a unified API for models, tools, structured output, and streaming.
 
 Full cross-link map for this page: [/docs/ai-gateway/inputs-and-tools/tool-use.graph.md](/docs/ai-gateway/inputs-and-tools/tool-use.graph.md)
 <!-- /docsgraph:related -->
@@ -440,6 +442,18 @@ npx vercel@latest ai-gateway setup
 
 See [coding agents](/docs/ai-gateway/coding-agents) for supported clients and setup instructions.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

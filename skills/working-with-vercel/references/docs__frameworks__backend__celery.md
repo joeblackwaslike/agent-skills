@@ -12,13 +12,14 @@ related:
   - /docs/frameworks/backend/fastapi
   - /docs/frameworks/backend/flask
   - /docs/frameworks/full-stack/django
-  - /docs/caching/runtime-cache
+  - /docs/runtime-cache
   - /docs/cli/deploy
 summary: Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without a long-lived worker process.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/backend/celery.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "6aad6646200557c215448e964c73e76fbdb83f96b83f88a53a4178db15621f37"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7eafc35230667110eb494f426e5289cbf33de6e95890cea2989d4a6f9904893c"
 ---
 
 # Run background tasks with Celery on Vercel
@@ -41,6 +42,7 @@ Vercel Function, so you don't need to run a long-lived worker process.
 - [Migrate a Python API from Heroku to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-heroku-to-vercel) — Move a FastAPI, Flask, or Django API from Heroku to Vercel Functions. Replace your Procfile, worker dynos, Heroku Schedu
 - [Migrate a Python API from Railway to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-railway-to-vercel) — Move a FastAPI, Flask, or Django API from Railway to Vercel Functions. Replace railway.json start commands, volumes, Cel
 - [Migrate a Python API from Render to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-render-to-vercel) — Move a FastAPI, Flask, or Django API from Render to Vercel Functions. Translate render.yaml and replace persistent disks
+- [Vercel Daemons is now in public beta](https://vercel.com/changelog/vercel-daemons-is-now-in-public-beta)
 
 Full cross-link map for this page: [/docs/frameworks/backend/celery.graph.md](/docs/frameworks/backend/celery.graph.md)
 <!-- /docsgraph:related -->
@@ -87,7 +89,7 @@ def add(x: int, y: int) -> int:
 
 The `vercel://` broker sends Celery tasks to Vercel Queues, and
 `vercel-runtime-cache://` stores task results in [Runtime
-Cache](/docs/caching/runtime-cache). Vercel installs the Celery adapter during
+Cache](/docs/runtime-cache). Vercel installs the Celery adapter during
 the build and registers both, so you don't need to add `vercel-celery` to your
 dependencies or provision broker credentials.
 
@@ -279,7 +281,7 @@ def notify(self, user_id: str) -> None:
 ## Storing task results
 
 The adapter registers `vercel-runtime-cache://`, a Celery result backend that
-stores results in [Runtime Cache](/docs/caching/runtime-cache). Configure it
+stores results in [Runtime Cache](/docs/runtime-cache). Configure it
 through `result_backend_transport_options`:
 
 ```py filename="tasks.py"
@@ -392,6 +394,18 @@ For more about deploying Celery on Vercel, see:
 - [Vercel Functions documentation](/docs/functions)
 - [Python runtime documentation](/docs/functions/runtimes/python)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

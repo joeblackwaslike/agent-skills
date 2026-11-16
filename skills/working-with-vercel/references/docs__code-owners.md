@@ -12,9 +12,10 @@ related:
   - /docs/code-owners/code-approvers
 summary: Use Code Owners to define users or teams that are responsible for directories and files in your codebase
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/code-owners.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "0c212af3ec682eb850feed2807959e5376d70bd4032326354f1d3ab4f31ffdbe"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c8a129eb2f416f7e207e004cb91c7b631819a29ef208e6c0394f1d2badf74a42"
 ---
 
 # Code Owners
@@ -40,6 +41,18 @@ Code Approvers are a list of [GitHub usernames or teams](https://docs.github.com
 
 You can enable Code Approvers by adding a `.vercel.approvers` file to a directory in your codebase. To learn more about how the code approvers file works and the properties it takes, see the [Code Approvers](/docs/code-owners/code-approvers) reference.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

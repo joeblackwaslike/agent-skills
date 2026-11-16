@@ -12,9 +12,10 @@ related:
   - /docs/projects
 summary: Use list_projects with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/list_projects.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "de74d690341cda3c354a0437ee434b649b9c3e7a6746e499dce7d290fb801a4a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7868339c5cc77c0b19c5ae37ddeab6a7e18bd4f2a5c85e34d933caa17994598e"
 ---
 
 # list_projects
@@ -28,10 +29,10 @@ List [projects](/docs/projects) in your account or selected team. The tool also 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [list_access_group_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_group_projects) — Use list_access_group_projects with Vercel MCP.
-- [get_observability_configuration_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_observability_configuration_projects) — Use get_observability_configuration_projects with Vercel MCP.
 - [get_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project) — Use get_project with Vercel MCP.
 - [list_agent_run_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_run_projects) — Use list_agent_run_projects with Vercel MCP.
-- [list_project_connector_connections](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/list_project_connector_connections) — Use list_project_connector_connections with Vercel MCP.
+- [get_observability_configuration_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_observability_configuration_projects) — Use get_observability_configuration_projects with Vercel MCP.
+- [List projects of an access group](https://vercel.com/docs/rest-api/access-groups/list-projects-of-an-access-group) — GET /v1/access-groups/{idOrName}/projects — List projects of an access group
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/projects/list_projects.graph.md](/docs/agent-resources/vercel-mcp/tools/projects/list_projects.graph.md)
 <!-- /docsgraph:related -->
@@ -66,6 +67,18 @@ If your connection exposes the smaller workflow tool list, use these parameters 
 | --------- | ------ | -------- | ------- | --------------------------------------------------------- |
 | `teamId`  | string | Yes      | -       | The team ID or slug. Use the team that owns the resource. |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

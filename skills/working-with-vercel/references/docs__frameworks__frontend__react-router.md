@@ -3,22 +3,23 @@ title: React Router on Vercel
 product: vercel
 url: /docs/frameworks/frontend/react-router
 canonical_url: "https://vercel.com/docs/frameworks/frontend/react-router"
-last_updated: 2026-09-16
+last_updated: 2026-11-14
 type: conceptual
 prerequisites:
   - /docs/frameworks/frontend
   - /docs/frameworks
 related:
+  - /docs/deployments/deploy-without-logging-in
   - /docs/functions
   - /docs/fluid-compute
   - /docs/functions/streaming-functions
   - /docs/functions/streaming
-  - /docs/cdn
 summary: Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/frontend/react-router.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b473c63621f81c04a6cce0cf7ff219acbe80a59c83525e6057ba1c94f05e19ee"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "6b96f0be83d7332085205bd895e9313b93dcb60d5f4feff57e6cb1016d10ebaa"
 ---
 
 # React Router on Vercel
@@ -32,11 +33,9 @@ React Router is a multi-strategy router for React. When used [as a framework](ht
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to deploy a Shopify App to Vercel](https://vercel.com/kb/guide/deploy-shopify-app-to-vercel) — Deploy the official Shopify CLI React Router app template to Vercel with the @vercel/react-router preset and Postgres se
-- [Understanding React Server Components](https://vercel.com/blog/understanding-react-server-components)
 - [Support for React Router v7](https://vercel.com/changelog/support-for-react-router-v7)
-- [Common mistakes with the Next.js App Router and how to fix them](https://vercel.com/blog/common-mistakes-with-the-next-js-app-router-and-how-to-fix-them)
-- [10 Next.js tips you might not know](https://vercel.com/blog/10-next-js-tips-you-might-not-know)
 - [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
+- [How to ship a NestJS app on Vercel](https://vercel.com/kb/guide/ship-a-nestjs-app-on-vercel) — Deploy a NestJS app to Vercel with zero configuration. Learn how to ship from a template, the Nest CLI, or Git, and conf
 - [Remix on Vercel](https://vercel.com/docs/frameworks/full-stack/remix) — Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
 - [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability
 - [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
@@ -50,6 +49,16 @@ With Vercel, you can deploy React Router applications with server-rendering or s
 
 > **💡 Note:** It is **highly recommended** that your application uses the [Vercel
 > Preset](#vercel-react-router-preset) when deploying to Vercel.
+
+## Deploy without an account
+
+To deploy an existing React Router project without an account or login, run this command in the project root:
+
+```bash filename="terminal"
+vercel deploy --temporary
+```
+
+The CLI builds the project, deploys it to production, and prints a claim URL. Claim the project to keep it live. See [Deploying without logging in](/docs/deployments/deploy-without-logging-in).
 
 ## `@vercel/react-router`
 
@@ -488,6 +497,18 @@ Learn more about deploying React Router projects on Vercel with the following re
 
 - [Explore the React Router docs](https://reactrouter.com/home)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/cli/global-options
 summary: Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/build.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "772929ccf84c24cf99d1dacd854eef46eb49bb142024a37df8bb5b41c6ffc2b7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c0d2a488829b823f3561aa0c94e31f90c1f0c571e67d95892ddef60dbfdd26b0"
 ---
 
 # vercel build
@@ -33,10 +34,10 @@ Build artifacts are placed into the `.vercel/output` directory according to the
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
-- [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
-- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 - [Builds](https://vercel.com/docs/builds) — Understand how the build step works when creating a Vercel Deployment.
+- [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
+- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 
 Full cross-link map for this page: [/docs/cli/build.graph.md](/docs/cli/build.graph.md)
@@ -146,6 +147,18 @@ For more information on global options and their usage, refer to the [options se
 
 - [How can I use the Vercel CLI for custom workflows?](/kb/guide/using-vercel-cli-for-custom-workflows)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

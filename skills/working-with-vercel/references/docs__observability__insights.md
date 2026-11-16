@@ -15,9 +15,10 @@ related:
   - /docs/incremental-static-regeneration
 summary: List of available data sources that you can view and monitor with Observability on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/observability/insights.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "afb45e55fc1b67d4ec2a7cae83d2e1ed4fff961962ed3b72e599a4b6cc1c4279"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8179fed6959cabbb7f8042888ea5c9ddc71a344811f15ab28149b1df54a32b01"
 ---
 
 # Observability Insights
@@ -34,14 +35,12 @@ Vercel organizes Observability through sections that correspond to different fea
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
 - [Troubleshoot and optimize Function Invocations on Vercel](https://vercel.com/kb/guide/optimize-function-invocations) — Diagnose which routes drive Function Invocations and learn to optimize them. Separate necessary dynamic traffic from div
 - [Anyone can build agents, but it takes a platform to run them](https://vercel.com/blog/anyone-can-build-agents-but-it-takes-a-platform-to-run-them)
-- [Overview page in Observability](https://vercel.com/changelog/overview-page-in-observability)
 - [Vercel Observability is now generally available](https://vercel.com/changelog/vercel-observability-is-now-generally-available)
-- [How we made the Vercel Dashboard twice as fast](https://vercel.com/blog/how-we-made-the-vercel-dashboard-twice-as-fast)
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
-- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Observability](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability) — Vercel MCP tools for observability.
-- [Query](https://vercel.com/docs/query) — Query and visualize your Vercel usage, traffic, and more in observability.
+- [Runtime Logs](https://vercel.com/docs/logs/runtime) — Learn how to search, inspect, and share your runtime logs with the Logs tab.
+- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 
 Full cross-link map for this page: [/docs/observability/insights.graph.md](/docs/observability/insights.graph.md)
 <!-- /docsgraph:related -->
@@ -225,6 +224,18 @@ You can view queue metrics at the project level and drill down into individual q
 
 For more information, see [Queues Observability](/docs/queues/observability).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

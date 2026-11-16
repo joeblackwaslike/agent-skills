@@ -15,9 +15,10 @@ related:
   - /docs/rest-api
 summary: Learn how to create your own Checks with Vercel Integrations. You can build your own Integration to register any arbitrary Check for your deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/checks/creating-checks.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "136aa24c50d97ce4e2287de8d0b9c171e59e119bc23cc77b83dc51ee01b664b9"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5cc383cd9e1415aec1174c3dd1238c840036bb968ff3b0159044fff43a07b036"
 ---
 
 # Anatomy of the Checks API
@@ -30,12 +31,12 @@ Checks API extends the build and deploy process once your deployment is ready. E
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Checkly Integration and Checks API now generally available](https://vercel.com/changelog/checkly-integration-and-checks-api-now-generally-available)
+- [Checks API support added for Marketplace integration providers](https://vercel.com/changelog/checks-api-support-added-for-marketplace-integration-providers)
 - [Checks API Reference](https://vercel.com/docs/checks/checks-api) — The Vercel Checks API lets you create tests and assertions that run after each deployment has been built, and are powere
-- [Get a check run](https://vercel.com/docs/rest-api/checks-v2/get-a-check-run) — GET /v2/deployments/{deploymentId}/check-runs/{checkRunId} — Return a detailed response for a single check run.
+- [Get a check](https://vercel.com/docs/rest-api/checks-v2/get-a-check) — GET /v2/projects/{projectIdOrName}/checks/{checkId} — Return a detailed response for a single check.
 - [Create a check](https://vercel.com/docs/rest-api/checks-v2/create-a-check) — POST /v2/projects/{projectIdOrName}/checks — Creates a new check for a project.
 - [Create a check run](https://vercel.com/docs/rest-api/checks-v2/create-a-check-run) — POST /v2/deployments/{deploymentId}/check-runs — Creates a new check run for a deployment.
-- [Deployment Checks](https://vercel.com/docs/deployment-checks) — Set conditions that must be met before proceeding to the next phase of the deployment lifecycle.
+- [Get a check run](https://vercel.com/docs/rest-api/checks-v2/get-a-check-run) — GET /v2/deployments/{deploymentId}/check-runs/{checkRunId} — Return a detailed response for a single check run.
 
 Full cross-link map for this page: [/docs/checks/creating-checks.graph.md](/docs/checks/creating-checks.graph.md)
 <!-- /docsgraph:related -->
@@ -189,6 +190,18 @@ However, your deployment will fail if the `conclusion` updates to one of the fol
 | `succeeded` | No              |
 | `skipped`   | No              |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -12,9 +12,10 @@ related:
   - /docs/fluid-compute
 summary: Build fast, memory-safe serverless functions with Rust on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/runtimes/rust.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "caba1ea587685b129b2c46fd985760d80ba6b5499d623a15805b7af2d0dc0f96"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "cf2010664ec620350175f3d4db3396060689300448fcfca6fc732583937a12cd"
 ---
 
 # Using the Rust Runtime with Vercel functions
@@ -31,11 +32,12 @@ Use Rust to build high-performance, memory-safe serverless functions. The Rust r
 
 - [Rust runtime now in public beta for Vercel Functions](https://vercel.com/changelog/rust-runtime-now-in-public-beta-for-vercel-functions)
 - [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
-- [Deploy Rust on Vercel with Docker](https://vercel.com/kb/guide/deploy-rust-on-vercel-with-docker) — Build a Rust application with Axum and Docker, then deploy it to Vercel Functions. Learn how to configure environment va
 - [Vercel Functions are now faster—and powered by Rust](https://vercel.com/blog/vercel-functions-are-now-faster-and-powered-by-rust)
+- [Deploy Rust on Vercel with Docker](https://vercel.com/kb/guide/deploy-rust-on-vercel-with-docker) — Build a Rust application with Axum and Docker, then deploy it to Vercel Functions. Learn how to configure environment va
 - [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
-- [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
+- [Using the Ruby Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/ruby) — Learn how to use the Ruby runtime to compile Ruby Vercel Functions on Vercel.
 - [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify) — Deploy Fastify applications to Vercel with zero configuration.
+- [Backends on Vercel](https://vercel.com/docs/frameworks/backend) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
 
 Full cross-link map for this page: [/docs/functions/runtimes/rust.graph.md](/docs/functions/runtimes/rust.graph.md)
 <!-- /docsgraph:related -->
@@ -133,6 +135,18 @@ target/**
 
 ## Feature support
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

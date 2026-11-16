@@ -11,9 +11,10 @@ related:
   []
 summary: Prevent unsafe usage of document.write() in your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/no_document_write.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b6b6d472f9da275d1257421726e5867835eee6c7b4c24093c463ec0c52ab88c7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "cf700aa3087b628a87911fb5fab1275bfea6963d6b3ab1ac7f79fe33e0162c7d"
 ---
 
 # NO_DOCUMENT_WRITE
@@ -29,6 +30,18 @@ Furthermore, these APIs can also cause performance issues and trigger will clear
 Avoid usage of `document.write()` entirely in your application, and instead either use UI framework like React to handle writing to the document,
 or use safer DOM APIs, such as `document.createElement()` instead.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

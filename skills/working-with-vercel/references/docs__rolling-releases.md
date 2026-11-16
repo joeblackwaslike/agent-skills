@@ -15,9 +15,10 @@ related:
   - /docs/cli/promote
 summary: Learn how to use Rolling Releases for more cautious deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/rolling-releases.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9cb677b8df6ed3f16def1d8a7ecdd7dfab5eb519b149b36c1084402e71194938"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ecf07883f25f23864fcb62fb3ac5cf7001a2868e441ef3a7d086c0d2d748bdcc"
 ---
 
 # Rolling Releases
@@ -32,17 +33,17 @@ Rolling Releases allow you to roll out new deployments to a small fraction of yo
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to gradually roll out new versions of your backend](https://vercel.com/kb/guide/how-to-gradually-roll-out-new-versions-of-your-backend) — Incrementally release updates to your backend to minimize impact of mistakes.
 - [Rolling Releases are now generally available](https://vercel.com/changelog/rolling-releases-are-now-generally-available)
 - [Implementing Blue-Green Deployments on Vercel](https://vercel.com/kb/guide/blue_green_deployments_on_vercel) — This guide outlines how to implement blue-green deployments on Vercel, leveraging GitHub Actions for seamless and contro
 - [Connection Pooling with Vercel Functions](https://vercel.com/kb/guide/connection-pooling-with-functions) — Learn best practices for connecting to relational databases with Vercel Functions and Fluid compute
-- [How to gradually roll out new versions of your backend](https://vercel.com/kb/guide/how-to-gradually-roll-out-new-versions-of-your-backend) — Incrementally release updates to your backend to minimize impact of mistakes.
 - [Implementing Canary Deployments on Vercel](https://vercel.com/kb/guide/implementing_canary_deployments_on_vercel) — This guide explains how to set up canary deployments on Vercel, enabling developers to gradually roll out new versions t
 - [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
 - [Releasing safe and cost-efficient blue-green deployments](https://vercel.com/blog/releasing-safe-and-cost-efficient-blue-green-deployments)
 - [Scale to one: How Fluid solves cold starts](https://vercel.com/blog/scale-to-one-how-fluid-solves-cold-starts)
 - [The real serverless compute to database connection problem, solved](https://vercel.com/blog/the-real-serverless-compute-to-database-connection-problem-solved)
 - [Rolling Releases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases) — Vercel MCP tools for rolling releases.
-- [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [Rolling back a production deployment](https://vercel.com/docs/deployments/rollback-production-deployment) — Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
 - [Audit Logs](https://vercel.com/docs/audit-log) — Learn how to track and analyze your team members' activities.
 
 Full cross-link map for this page: [/docs/rolling-releases.graph.md](/docs/rolling-releases.graph.md)
@@ -275,6 +276,18 @@ For detailed API specifications, request/response schemas, and code examples:
 - [API reference](/docs/rest-api/rolling-release/get-rolling-release-billing-status)
 - [Examples using the SDK](/docs/rest-api/sdk/examples/rolling-releases)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

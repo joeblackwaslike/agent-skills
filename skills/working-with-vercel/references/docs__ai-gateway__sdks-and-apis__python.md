@@ -14,11 +14,12 @@ related:
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api
   - /docs/ai-gateway/sdks-and-apis/ai-sdk-python
   - /docs/ai-gateway/authentication-and-byok/api-keys
-summary: Use AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
+summary: Use AI Gateway from any Python application with the OpenAI or Anthropic SDKs, including streaming, tool calling, async, model fallbacks, cost...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/python.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f6fef6e98ed67809825100b609bb378ba7ea66a90b71215c4aa019f3770fa271"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5a50967d40533ac18a91934ad7a17ec7f11c099c84dfcae02f42cfc3ddc973fa"
 ---
 
 # Python with AI Gateway: OpenAI and Anthropic SDKs
@@ -35,14 +36,17 @@ which are covered below.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Build AI agents in Python with the AI SDK](https://vercel.com/kb/guide/python-and-ai-sdk) — Stream model responses, get typed output, and build tool-using agents in Python on Vercel.
-- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
-- [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
+- [Claude Fable 5.2 now available on AI Gateway](https://vercel.com/changelog/claude-fable-5-2-now-available-on-ai-gateway)
+- [Elorian AI's Glimpse now available on AI Gateway](https://vercel.com/changelog/elorian-ai-glimpse-now-available-on-ai-gateway)
+- [Muse Ember now available on AI Gateway](https://vercel.com/changelog/muse-ember-now-available-on-ai-gateway)
+- [Go with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/go) — Use AI Gateway from any Go application with the OpenAI or Anthropic Go SDKs, including model fallbacks, cost tracking, a
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
-- [Call AI Gateway Chat Completions with REST](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api) — Use AI Gateway API directly without client libraries using curl and fetch.
-- [OpenAI Chat Completions Requests with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions) — Create chat completions using the Chat Completions API with support for streaming, image attachments, and PDF documents
+- [AI Gateway Ecosystem and Integrations](https://vercel.com/docs/ai-gateway/ecosystem) — Connect frameworks, coding tools, and billing integrations to AI Gateway. Configure app attribution and explore integrat
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/python.graph.md](/docs/ai-gateway/sdks-and-apis/python.graph.md)
 <!-- /docsgraph:related -->
+
+Your Python application can run on any host or cloud and doesn't need to deploy to Vercel.
 
 > **💡 Note:** You can also use the [AI SDK for
 > Python](/docs/ai-gateway/sdks-and-apis/ai-sdk-python). It's currently in public beta.
@@ -137,12 +141,12 @@ print(response.output_text)
 
 ## Authentication
 
-All SDKs support the same authentication methods. Use an [API key](/docs/ai-gateway/authentication-and-byok/api-keys#create-a-key) for local development or [OIDC tokens](/docs/ai-gateway/authentication-and-byok/oidc) for Vercel deployments.
+All SDKs support the same authentication methods. Use an [API key](/docs/ai-gateway/authentication-and-byok/api-keys#create-a-key) in any environment, including production on other clouds. Applications deployed on Vercel can use [OIDC tokens](/docs/ai-gateway/authentication-and-byok/oidc) instead.
 
 ```python filename="auth.py"
 import os
 
-# Option 1: API key (recommended for local development)
+# Option 1: API key (works in any environment)
 api_key = os.getenv('AI_GATEWAY_API_KEY')
 
 # Option 2: OIDC token (automatic on Vercel deployments)
@@ -670,6 +674,43 @@ print(completion.choices[0].message.content)
 
 Each surface names and shapes this differently, and Anthropic models have their own constraints. See [Responses reasoning](/docs/ai-gateway/sdks-and-apis/responses/reasoning), [Chat Completions reasoning](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning), and [Anthropic extended thinking](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning).
 
+## Use fallbacks, cost tracking, and caching from Python
+
+Pass AI Gateway options in `extra_body`. This example tries a [fallback model](/docs/ai-gateway/models-and-providers/model-fallbacks) if the primary model fails, attributes the request to a user and a tag for [Custom Reporting](/docs/ai-gateway/observability-and-spend/custom-reporting), and turns on [automatic prompt caching](/docs/ai-gateway/models-and-providers/automatic-caching):
+
+```python filename="gateway_options.py"
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh/v1",
+)
+
+response = client.chat.completions.create(
+    model="anthropic/claude-sonnet-5",
+    messages=[{"role": "user", "content": "Explain model fallbacks in one sentence."}],
+    extra_body={
+        "providerOptions": {
+            "gateway": {
+                "models": ["openai/gpt-6-astra"],
+                "user": "user-123",
+                "tags": ["feature:summaries"],
+                "caching": "auto",
+            }
+        }
+    },
+)
+
+print(response.choices[0].message.content)
+```
+
+The Anthropic SDK accepts the same `extra_body` argument on `client.messages.create`.
+
+Each `user` value and tag counts as a Custom Reporting write. See [Custom Reporting pricing](/docs/ai-gateway/observability-and-spend/custom-reporting#pricing).
+
+The same `gateway` object accepts [provider ordering and filtering](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering), [`zeroDataRetention`](/docs/ai-gateway/security-and-compliance/zdr), and the other [provider options](/docs/ai-gateway/models-and-providers/provider-options). To cap spend, set a [budget](/docs/ai-gateway/observability-and-spend/budgets) on the API key. To use your own provider accounts, configure [BYOK](/docs/ai-gateway/authentication-and-byok/byok).
+
 ## Framework integrations
 
 Python frameworks with dedicated AI Gateway support:
@@ -691,6 +732,18 @@ For complete API documentation, see:
 - **[OpenAI Responses API](/docs/ai-gateway/sdks-and-apis/responses)**: Streaming, tool calling, structured output, and reasoning
 - **[Anthropic Messages API](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api)**: Streaming, tool calls, extended thinking, web search, and file attachments
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

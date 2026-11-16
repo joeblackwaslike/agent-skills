@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/models-and-providers/provider-filtering-and-ordering
 summary: Configure provider routing, ordering, and fallback behavior in Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-options.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "e2586d446b10bac5ac05fed3b34376839c9a26e2ad1539059a44a8d85e6416be"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "86e7ceef014478d298381b10fe5eb3ee9cd9d04ee46c23cea8ecd40005733972"
 ---
 
 # AI Gateway Provider Routing and Fallbacks
@@ -40,9 +41,9 @@ AI Gateway can route your AI model requests across multiple AI providers. Each p
 - [Kimi K3.1 Pro now has more ZDR providers on AI Gateway](https://vercel.com/changelog/kimi-k3-1-pro-now-has-more-zdr-providers-on-ai-gateway)
 - [MiniMax M3.1 Flash now available on AI Gateway for free](https://vercel.com/changelog/minimax-m3-1-flash-now-available-on-ai-gateway-for-free)
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
-- [Model fallbacks now available in Vercel AI Gateway](https://vercel.com/changelog/model-fallbacks-now-available-in-vercel-ai-gateway)
-- [Hermes with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/hermes) — Connect Hermes to AI Gateway with the Vercel CLI or manual provider configuration. Set your API key, discover models, an
-- [AI Gateway Custom Reporting API](https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting) — Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
+- [Vercel Open Source Program: Fall 2025 cohort](https://vercel.com/blog/vercel-open-source-program-fall-2025-cohort)
+- [DeepSeek V4.1 Flash 1017 Ultrafast now available on AI Gateway](https://vercel.com/changelog/deepseek-v4-1-flash-1017-ultrafast-now-available-on-ai-gateway)
+- [Groq, fal, and DeepInfra join the Vercel Marketplace ](https://vercel.com/changelog/groq-fal-and-deepinfra-join-the-vercel-marketplace)
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/provider-options.graph.md](/docs/ai-gateway/models-and-providers/provider-options.graph.md)
 <!-- /docsgraph:related -->
@@ -81,6 +82,20 @@ providerOptions: {
 ```
 
 For full details, examples, and provider metadata output, see [Provider Filtering, Ordering & Sorting](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering).
+
+## Provider headquarters
+
+Use `headquarters` to route only to providers whose parent company is headquartered in the countries you list, as ISO 3166-1 alpha-2 codes:
+
+```typescript
+providerOptions: {
+  gateway: {
+    headquarters: ['US', 'GB', 'DE', 'FR'],
+  },
+},
+```
+
+To exclude countries instead, prefix every code with `!`, as in `['!US']`. A list can't mix the two. Providers without a headquarters country on record are always excluded. See [Provider Headquarters](/docs/ai-gateway/security-and-compliance/provider-headquarters) for the full rules and how it combines with other options.
 
 ## Automatic caching
 
@@ -770,6 +785,12 @@ Morph
 
 morphllm.com
 
+nace-ai
+
+Nace AI
+
+nace.ai
+
 nebius
 
 Nebius
@@ -824,12 +845,6 @@ Perplexity
 
 perplexity.ai
 
-poolside
-
-Poolside
-
-poolside.ai
-
 prodia
 
 Prodia
@@ -862,7 +877,7 @@ relace.ai
 
 runinfra
 
-RunInfra
+RightNow AI
 
 runinfra.ai
 
@@ -1002,6 +1017,18 @@ Vercel Token Pass models are served through the `token-pass` provider. Token Pas
 
 A [virtual model](/docs/ai-gateway/models-and-providers/virtual-models) can pin provider options for all of its traffic. The virtual model's options for a provider merge with the request's, and the virtual model wins when both set the same key.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

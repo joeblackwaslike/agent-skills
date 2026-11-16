@@ -12,9 +12,10 @@ related:
   - /docs/vercel-toolbar
 summary: Integrate Vercel with Contentful to deploy your content.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/cms/contentful.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "329d225b2cb9445084e832f0eab79c9dd75c71e1b91b2a4010ff1c8e7b4d0ea4"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "fadf2677fc146b866dee3d4f73494c3d2bcf242e823c9b8d9514916966051710"
 ---
 
 # Vercel and Contentful Integration
@@ -27,17 +28,17 @@ sha256: "329d225b2cb9445084e832f0eab79c9dd75c71e1b91b2a4010ff1c8e7b4d0ea4"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Content Link can now be used with Contentful ](https://vercel.com/changelog/content-link-can-now-be-used-with-contentful)
 - [Integrating Next.js and Contentful for your Headless CMS](https://vercel.com/kb/guide/integrating-next-js-and-contentful-for-your-headless-cms) — Next.js with Contentful gives you the power to quickly build scalable dynamic static websites with improved search engin
 - [Integrate Vercel and Contentstack for your Headless CMS](https://vercel.com/kb/guide/integrate-vercel-and-contentstack) — Integrate Vercel with Contentstack, a headless CMS, to build and deploy dynamic, high-performance websites.
+- [Content Link can now be used with Contentful ](https://vercel.com/changelog/content-link-can-now-be-used-with-contentful)
 - [How to use Deploy Hooks with Vercel and a Headless CMS](https://vercel.com/kb/guide/set-up-and-use-deploy-hooks-with-vercel-and-headless-cms) — Create your own Deploy Hooks to trigger automatic deployments on Vercel when using a Headless CMS.
+- [Deploy a headless Shopify storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-shopify-storefront-with-vercel) — Deploy a headless Shopify storefront using the Next.js Commerce template on Vercel
 - [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify) — Migrate your website's configuration from Netlify to Vercel
-- [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
 - [Vercel and Sitecore XM Cloud Integration](https://vercel.com/docs/integrations/cms/sitecore) — Integrate Vercel with Sitecore XM Cloud to deploy your content.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [Vercel Sanity Integration](https://vercel.com/docs/integrations/cms/sanity) — Learn how to integrate Sanity with Vercel. Follow our tutorial to deploy the Sanity template or install the integration
-- [Getting Started with Chat SDK](https://vercel.com/docs/chat-sdk/quickstart) — Create a Slack bot with the Chat SDK CLI, connect it to Slack through Vercel Connect, and deploy it on Vercel.
-- [Platform Template](https://vercel.com/docs/platforms/examples/platform-template) — Build an AI app builder on Vercel with sandboxes, AI Gateway, deployments, and project transfers.
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
+- [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
 
 Full cross-link map for this page: [/docs/integrations/cms/contentful.graph.md](/docs/integrations/cms/contentful.graph.md)
 <!-- /docsgraph:related -->
@@ -230,6 +231,18 @@ During setup, connect a Slack app through Vercel Connect and configure a private
 
 See the [template repository](https://github.com/vercel-labs/eve-contentful-agent-template) for setup instructions and options for customizing writing guidelines and publication approval.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

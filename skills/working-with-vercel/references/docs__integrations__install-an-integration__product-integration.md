@@ -16,9 +16,10 @@ related:
   - /docs/rbac/access-roles
 summary: Learn how you can add a product to your Vercel project through a native integration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/install-an-integration/product-integration.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "997a0a979d70cf9c6c85c6a1669a189cef0eb408fb984731aa41f24ccdb3788e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3fdb89ef3bd0d7d53a44d3b149ad9dc67ccfa423e9869f9b8498298588946c96"
 ---
 
 # Add a Native Integration
@@ -48,8 +49,8 @@ You can install integrations and provision resources directly from the command l
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
 - [Create a Native Integration](https://vercel.com/docs/integrations/create-integration/marketplace-product) — Learn how to create a product for your Vercel native integration
 - [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
-- [Create an Integration](https://vercel.com/docs/integrations/create-integration) — Learn how to create and manage your own integration for internal or public use with Vercel.
 - [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference) — Learn how to manage project access and added products for your integrations.
+- [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
 
 Full cross-link map for this page: [/docs/integrations/install-an-integration/product-integration.graph.md](/docs/integrations/install-an-integration/product-integration.graph.md)
 <!-- /docsgraph:related -->
@@ -194,6 +195,18 @@ If available in the integration you want to install, [deployment integration act
   - Environment-specific resources strategy: For example, a company can use different storage instances for each environment to ensure data integrity.
 - Monitor Usage: Take advantage of per-product usage tracking to optimize costs and performance by using the **Usage** and **Invoices** section in the sidebars of the [product's settings page](/docs/integrations/install-an-integration/product-integration#manage-products). Learn more about [billing](/docs/integrations/create-integration/billing) for native integrations.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

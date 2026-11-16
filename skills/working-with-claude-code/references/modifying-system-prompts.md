@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/modifying-system-prompts.md"
-fetched_at: "2026-11-02T12:02:15.109Z"
-sha256: "cf93b231577e079271bf564ae84d5f25f3a11723c51b55b104bd283817042330"
+fetched_at: "2026-11-16T12:28:44.823Z"
+sha256: "7af272aea901296f247d1a456ca7b12fe51eabc8eb7cdc29b42edc9d81b9824d"
 ---
 
 > ## Documentation Index
@@ -502,7 +502,7 @@ The four customization methods differ in where they live, how they're shared, an
 | **Persistence** | Per-project file | Saved as files | Session only | Session only |
 | **Reusability** | Per-project | Across projects | Code duplication | Code duplication |
 | **Management** | On filesystem | CLI + files | In code | In code |
-| **Default tools** | Preserved | Preserved | Preserved | Lost (unless included) |
+| **Tool guidance** | Preserved | Preserved | Preserved | Lost (unless included) |
 | **Built-in safety** | Maintained | Maintained | Maintained | Must be added |
 | **Customization level** | Additions only | Additions; can omit coding instructions | Additions only | Complete control |
 | **Version control** | With project | Yes | With code | With code |

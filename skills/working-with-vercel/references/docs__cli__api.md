@@ -13,9 +13,10 @@ related:
   - /docs/cli/curl
 summary: Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/api.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "14ea98670f71ea2989930eb2f06d3edc5957e9f1b58d8d01a497abb7da0a4bc9"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d93a7e122e48339ed830132459d991e7a81c9ba7a3edb9ae7c6fb794f4db7a68"
 ---
 
 # vercel api
@@ -28,12 +29,11 @@ The `vercel api` command lets you make authenticated HTTP requests to the Vercel
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Introducing the vercel api CLI command](https://vercel.com/changelog/introducing-the-vercel-api-cli-command)
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel tokens](https://vercel.com/docs/cli/tokens) — Manage your personal Vercel authentication tokens from the CLI: list, create, and revoke access tokens for use with the
-- [vercel comments](https://vercel.com/docs/cli/comments) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
-- [vercel kms](https://vercel.com/docs/cli/kms) — Manage Vercel KMS issuers, rotate signing keys, and control which projects can sign tokens from the command line.
+- [vercel ci](https://vercel.com/docs/cli/ci) — Enable or disable Vercel CI for repositories, inspect runs, search logs, and rerun jobs from the command line.
+- [vercel docs](https://vercel.com/docs/cli/docs) — Search and read the Vercel docs from your terminal using the Vercel CLI.
+- [vercel templates](https://vercel.com/docs/cli/templates) — Search the template catalog, inspect deployment requirements, and deploy templates from the Vercel CLI.
 
 Full cross-link map for this page: [/docs/cli/api.graph.md](/docs/cli/api.graph.md)
 <!-- /docsgraph:related -->
@@ -340,6 +340,18 @@ For more information on global options and their usage, refer to the [options se
 - [vercel curl](/docs/cli/curl)
 - [Global Options](/docs/cli/global-options)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

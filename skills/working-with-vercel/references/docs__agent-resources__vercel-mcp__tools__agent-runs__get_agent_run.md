@@ -12,9 +12,10 @@ related:
   - /docs/agent-runs
 summary: Use get_agent_run with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/get_agent_run.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "0e107e2d89d8a793d186f2cc2f84dfb9a08e9193fe6e09ef9bf089b3f6e70c56"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c66b44ef0260b0343d08bcc3b8145e426e4123b9ef4522dda858799b7d5f43d0"
 ---
 
 # get_agent_run
@@ -29,9 +30,10 @@ Use this tool with agents built with [eve](/docs/agent-runs#inspect-runs-with-ve
 
 - [list_agent_runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_runs) — Use list_agent_runs with Vercel MCP.
 - [Agent Runs now available in the Vercel MCP and CLI](https://vercel.com/changelog/agent-runs-vercel-mcp-cli)
-- [list_agent_run_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_run_projects) — Use list_agent_run_projects with Vercel MCP.
 - [Agent Runs](https://eve.dev/docs/observability/agent-runs) — Inspect eve sessions in Vercel and configure the Agent Runs destination.
+- [list_agent_run_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_run_projects) — Use list_agent_run_projects with Vercel MCP.
 - [Agent Runs now show subagent activity on eve projects](https://vercel.com/changelog/agent-runs-now-show-subagent-activity-on-eve-projects)
+- [Trace and debug eve agent sessions with Vercel Observability](https://vercel.com/changelog/eve-agent-observability)
 - [vercel agent-runs](https://vercel.com/docs/cli/agent-runs) — Find projects with Agent Runs, list recent runs, and inspect run metadata and conversation traces from the command line.
 - [AgentEnv by Scale AI](https://vercel.com/docs/sandbox/ecosystem/agentenv) — Run evaluations with AgentEnv by Scale AI using separate Vercel sandboxes for the environment and agent.
 
@@ -52,6 +54,18 @@ Get detailed metadata for a single eve Agent Run, including events, workflow met
 
 **Sample prompt:** "Inspect Agent Run wrun\_123 for my project"
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

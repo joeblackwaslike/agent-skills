@@ -3,7 +3,7 @@ title: Limits and Pricing for Image Optimization
 product: vercel
 url: /docs/image-optimization/limits-and-pricing
 canonical_url: "https://vercel.com/docs/image-optimization/limits-and-pricing"
-last_updated: 2026-08-11
+last_updated: 2026-11-12
 type: reference
 prerequisites:
   - /docs/image-optimization
@@ -15,9 +15,10 @@ related:
   - /docs/cdn
 summary: This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can incur.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/image-optimization/limits-and-pricing.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b42230173756b1937f6c3f3edab88bc5402035b41f2595257a0f1cb727ca3303"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "67b6f175033bf4a06ff989ddcf8aa1f284e85d6c1a893f3ab56b55449483e360"
 ---
 
 # Limits and Pricing for Image Optimization
@@ -42,12 +43,12 @@ Image optimization pricing is dependent on your plan and on specific parameters 
 - [Faster transformations and reduced pricing for Image Optimization](https://vercel.com/changelog/faster-transformations-and-reduced-pricing-for-image-optimization)
 - [Increased Hobby usage limits for Image Optimization](https://vercel.com/changelog/increased-hobby-usage-limits-for-image-optimization)
 - [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
-- [Legacy Pricing for Image Optimization](https://vercel.com/docs/image-optimization/legacy-pricing) — This page outlines information on the pricing and limits for the source images-based legacy option.
 - [Changes to Vercel Image Optimization](https://vercel.com/changelog/changes-to-vercel-image-optimizations)
+- [Legacy Pricing for Image Optimization](https://vercel.com/docs/image-optimization/legacy-pricing) — This page outlines information on the pricing and limits for the source images-based legacy option.
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Vercel Blob Pricing](https://vercel.com/docs/vercel-blob/usage-and-pricing) — Learn about the pricing for Vercel Blob.
 - [Container Registry limits and pricing](https://vercel.com/docs/container-registry/limits-and-pricing) — Storage pricing, size limits, plan limits, and compatibility limits for Vercel Container Registry.
+- [Vercel Blob Pricing](https://vercel.com/docs/vercel-blob/usage-and-pricing) — Learn about the pricing for Vercel Blob.
 
 Full cross-link map for this page: [/docs/image-optimization/limits-and-pricing.graph.md](/docs/image-optimization/limits-and-pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -85,7 +86,7 @@ Additionally, charges apply for [Fast Data Transfer](/docs/manage-cdn-usage#fast
 
 ### Hobby
 
-Image Optimization is free for Hobby users within the [usage limits](/docs/limits/fair-use-guidelines#typical-monthly-usage-guidelines). As stated in the [Fair Usage Policy](/docs/limits/fair-use-guidelines#commercial-usage), Hobby teams are restricted to non-commercial personal use only.
+Image Optimization is free for Hobby users within the [usage limits](/docs/limits/fair-use-guidelines#typical-monthly-usage-guidelines).
 
 Vercel will send you emails as you are nearing your [usage](#pricing) limits, but you will also be advised of any alerts within the [dashboard](/dashboard).
 
@@ -114,6 +115,18 @@ For all the images that are [optimized by Vercel](/docs/image-optimization/manag
 
 See the [Fair Usage Policy](/docs/limits/fair-use-guidelines#typical-monthly-usage-guidelines) for typical monthly usage guidelines.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

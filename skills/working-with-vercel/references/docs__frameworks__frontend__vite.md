@@ -3,7 +3,7 @@ title: Vite on Vercel
 product: vercel
 url: /docs/frameworks/frontend/vite
 canonical_url: "https://vercel.com/docs/frameworks/frontend/vite"
-last_updated: 2026-08-26
+last_updated: 2026-11-14
 type: conceptual
 prerequisites:
   - /docs/frameworks/frontend
@@ -16,9 +16,10 @@ related:
   - /docs/cli
 summary: Deploy Vite projects to Vercel and configure environment variables, Vercel Functions, server-side rendering, and SPA rewrites.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/frontend/vite.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "65e83ccaea2c751575973054db00ac62e28076207eb0f6a01d2aed441cdeb9e3"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b6b3a41968e1bb2e0f9ceb13ede2210050c26ac84b1f074be4306db6f5c574ae"
 ---
 
 # Vite on Vercel
@@ -31,18 +32,16 @@ Vite is an opinionated build tool that aims to provide a faster and leaner devel
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Deploy a Bolt.new app with Vercel Drop](https://vercel.com/kb/guide/bolt-vercel-drop) — Export your Bolt.new project as a .zip and deploy it to Vercel with Vercel Drop. Vercel detects the framework and builds
-- [How to Deploy a Solid App with Vercel](https://vercel.com/kb/guide/deploying-solid-with-vercel) — Deploy Solid to Vercel with zero configuration. Covers SolidStart 1 and 2, static Solid apps, build settings, and custom
 - [What is the Nitro Vite plugin?](https://vercel.com/kb/guide/nitro-vite-plugin) — The Nitro Vite plugin \\(nitro/vite\\) adds SSR, API routes, and deploy-anywhere server builds to any Vite app. Learn what
 - [How to Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel) — Deploy a TanStack Start app to Vercel with the Nitro Vite plugin. Covers Git and CLI deployment, Fluid compute defaults,
-- [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
-- [What's new in Svelte 5](https://vercel.com/blog/whats-new-in-svelte-5)
-- [New features for SvelteKit: Optimize your application with ease](https://vercel.com/blog/feature-complete-sveltekit)
-- [Using SvelteKit 1.0 on Vercel](https://vercel.com/blog/using-sveltekit-1-0-on-vercel)
-- [Nitro on Vercel](https://vercel.com/docs/frameworks/backend/nitro) — Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurat
+- [How to Deploy a Solid App with Vercel](https://vercel.com/kb/guide/deploying-solid-with-vercel) — Deploy Solid to Vercel with zero configuration. Covers SolidStart 1 and 2, static Solid apps, build settings, and custom
+- [Deploy a Bolt.new app with Vercel Drop](https://vercel.com/kb/guide/bolt-vercel-drop) — Export your Bolt.new project as a .zip and deploy it to Vercel with Vercel Drop. Vercel detects the framework and builds
+- [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
 - [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
+- [Nitro on Vercel](https://vercel.com/docs/frameworks/backend/nitro) — Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurat
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
-- [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart) — Learn how to get started with microfrontends on Vercel.
+- [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/frameworks/frontend/vite.graph.md](/docs/frameworks/frontend/vite.graph.md)
 <!-- /docsgraph:related -->
@@ -61,6 +60,16 @@ To get started with Vite on Vercel:
 \- Or, choose a template from Vercel's marketplace:
 
 Vercel deployments can \[integrate with your git provider]\(/docs/git) to \[generate preview URLs]\(/docs/deployments/environments#preview-environment-pre-production) for each pull request you make to your Vite project.
+
+## Deploy without an account
+
+To deploy an existing Vite project without an account or login, run this command in the project root:
+
+```bash filename="terminal"
+vercel deploy --temporary
+```
+
+The CLI builds the project, deploys it to production, and prints a claim URL. Claim the project to keep it live. See [Deploying without logging in](/docs/deployments/deploy-without-logging-in).
 
 ## Environment Variables
 
@@ -168,6 +177,18 @@ Learn more about deploying Vite projects on Vercel with the following resources:
 
 - [Explore Vite's template repo](https://github.com/vitejs/vite/tree/main/packages/create-vite)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/workflows
 summary: Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/products.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "8e541d5c955187a8c8aa1088bc662fbf4f26f6544abb65f65a62cfce01e02c9a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7b6b57cf20f8c3e643e4490742ca5cb61be42ecdbd5b68e440981bdbddbbfa99"
 ---
 
 # Products
@@ -57,6 +58,19 @@ Browse every Vercel product. Build with AI, deploy and scale your apps, and oper
 - [BotID](/docs/botid): Invisible CAPTCHA
 - [Deployment Protection](/docs/deployment-protection): Guard deploys
 - [Compliance](/docs/security/compliance): SOC 2, HIPAA, ISO
+
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

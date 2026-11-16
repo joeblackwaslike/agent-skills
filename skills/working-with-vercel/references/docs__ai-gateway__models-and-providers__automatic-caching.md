@@ -1,5 +1,5 @@
 ---
-title: AI Gateway Automatic Prompt Caching
+title: "AI Gateway Caching: Prompt Caching and Response Caching"
 product: vercel
 url: /docs/ai-gateway/models-and-providers/automatic-caching
 canonical_url: "https://vercel.com/docs/ai-gateway/models-and-providers/automatic-caching"
@@ -14,16 +14,17 @@ related:
   - /docs/ai-gateway/models-and-providers/model-filtering
   - /docs/ai-gateway/sdks-and-apis
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced
-summary: Enable automatic prompt caching and session affinity with AI Gateway to reduce costs and latency.
+summary: Reduce cost and latency with AI Gateway caching. Enable automatic prompt caching across providers with one option, and cache full responses in your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/automatic-caching.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "4cea49158bd779f0786bcff9e3e4fd985ac72b2e6cba0e78dda13501ba4bdf5e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a3da6f89ce126b2a011bda92e21f238f2f007974393b650b6295de73573958da"
 ---
 
-# AI Gateway Automatic Prompt Caching
+# AI Gateway Caching: Prompt Caching and Response Caching
 
-Some providers like Anthropic and MiniMax require explicit cache control markers to enable prompt caching, while others like OpenAI, Google, and DeepSeek cache automatically (sometimes called "implicit caching"). Use `caching: 'auto'` to let AI Gateway handle this for you. It applies the appropriate caching strategy based on the provider.
+Use prompt caching with AI Gateway to lower the cost of requests that repeat part of an earlier prompt. To reuse a full response, cache it in your application.
 
 
 <!-- docsgraph:related -->
@@ -36,12 +37,19 @@ Some providers like Anthropic and MiniMax require explicit cache control markers
 - [GPT-6.1 Terra now available on AI Gateway](https://vercel.com/changelog/gpt-6-1-terra-now-available-on-ai-gateway)
 - [Cost-aware model routing with Vercel AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Send easy requests to a lower-cost model and escalate only the complex ones to a frontier model through AI Gateway, with
 - [Dynamic Prompt Caching](https://ai-sdk.dev/cookbook/node/dynamic-prompt-caching) — Learn how to reduce API costs by implementing dynamic prompt caching for Anthropic models using cache control directives
-- [Caching](https://ai-sdk.dev/docs/advanced/caching) — How to handle caching when working with the AI SDK
-- [Local Caching Middleware](https://ai-sdk.dev/cookbook/node/local-caching-middleware) — Learn how to create a caching middleware for local development.
-- [Runtime Cache](https://vercel.com/docs/caching/runtime-cache) — Vercel Runtime Cache is a specialized cache that stores responses from data fetches in Vercel functions
+- [Anthropic Messages API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api) — Use the Anthropic Messages API with AI Gateway. Configure authentication and send requests with streaming, tools, images
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/automatic-caching.graph.md](/docs/ai-gateway/models-and-providers/automatic-caching.graph.md)
 <!-- /docsgraph:related -->
+
+| Caching type     | What it does                                                                                                                                                                                                         | How to use it                                                                                                                                                             |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Prompt caching   | The provider stores a repeated prompt prefix, such as a system prompt, a document, or earlier conversation turns. Requests that reuse the prefix pay the provider's reduced cache-read rate for those input tokens, such as 0.1× the base input rate on Anthropic. Some providers charge more than the base input rate to write a cache entry. See [Cost tradeoff](#cost-tradeoff). | Set `caching: 'auto'`. AI Gateway applies the right strategy for each provider. See [How it works](#how-it-works).                                                         |
+| Response caching | Your application stores a full response and returns it for an identical request without calling the model.                                                                                                           | AI Gateway doesn't store prompts or responses, so the cache lives in your application. See [Cache responses in your application](#cache-responses-in-your-application). |
+
+Prompt caching applies when requests share a prefix, even when the rest of the prompt differs, as long as the prefix meets the provider's minimum length and the cache entry hasn't expired. That covers multi-turn chat, agents, and repeated questions about the same document. Response caching applies only when the entire request repeats.
+
+Some providers like Anthropic and MiniMax require explicit cache control markers to enable prompt caching, while others like OpenAI, Google, and DeepSeek cache automatically (sometimes called "implicit caching"). Use `caching: 'auto'` to let AI Gateway handle this for you. It applies the appropriate caching strategy based on the provider.
 
 To keep each conversation on the provider that already holds its cache, see [Session affinity](/docs/ai-gateway/models-and-providers/session-affinity).
 
@@ -581,6 +589,92 @@ For fine-grained control over what gets cached, you can manually add cache marke
 
 Pin `caching: 'auto'` on a [virtual model](/docs/ai-gateway/models-and-providers/virtual-models) to cache repeated prompt prefixes for its traffic, or set it to `@default` to drop the request's choice and apply the system default.
 
+## Cache responses in your application
+
+AI Gateway doesn't cache responses. AI Gateway [doesn't retain prompt or response content](/docs/ai-gateway/faq#does-vercel-train-on-my-prompts-or-store-my-data) after a request completes, so there's no stored response to return. To skip the model call when a request repeats, store the response in your application and key it on the model and the full request. A request served from your cache doesn't reach AI Gateway, so it uses no tokens and doesn't appear in [Logs](/docs/ai-gateway/observability-and-spend/logs).
+
+These examples keep responses in memory and send the same request twice. The second call returns the stored response, so both lines print the same text. In production, use a shared store such as Redis and set an expiry for how long a response stays valid.
+
+#### AI SDK
+
+```typescript filename="response-cache.ts"
+import {
+  gateway,
+  generateText,
+  wrapLanguageModel,
+  type LanguageModelMiddleware,
+} from 'ai';
+
+const cache = new Map<string, unknown>();
+
+const cacheMiddleware: LanguageModelMiddleware = {
+  specificationVersion: 'v4',
+  wrapGenerate: async ({ doGenerate, params, model }) => {
+    const key = JSON.stringify({ modelId: model.modelId, params });
+    if (!cache.has(key)) cache.set(key, await doGenerate());
+    return cache.get(key) as Awaited<ReturnType<typeof doGenerate>>;
+  },
+};
+
+const model = wrapLanguageModel({
+  model: gateway('anthropic/claude-sonnet-5'),
+  middleware: cacheMiddleware,
+});
+
+const prompt = 'Describe a red bicycle in one sentence.';
+const first = await generateText({ model, prompt });
+const second = await generateText({ model, prompt });
+
+console.log(first.text);
+console.log(second.text);
+```
+
+This middleware caches `generateText` calls. To cache streamed responses too, add `wrapStream` as shown in the [AI SDK caching guide](https://ai-sdk.dev/docs/advanced/caching).
+
+#### Python
+
+```python filename="response_cache.py"
+import hashlib
+import json
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=os.environ["AI_GATEWAY_API_KEY"],
+    base_url="https://ai-gateway.vercel.sh/v1",
+)
+cache = {}
+
+
+def cached_completion(**request):
+    key = hashlib.sha256(json.dumps(request, sort_keys=True).encode()).hexdigest()
+    if key not in cache:
+        response = client.chat.completions.create(**request)
+        cache[key] = response.choices[0].message.content
+    return cache[key]
+
+
+request = {
+    "model": "anthropic/claude-sonnet-5",
+    "messages": [{"role": "user", "content": "Describe a red bicycle in one sentence."}],
+}
+
+print(cached_completion(**request))
+print(cached_completion(**request))
+```
+
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

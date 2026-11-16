@@ -15,9 +15,10 @@ related:
   - /docs/cli/global-options
 summary: "Manage Global Config stores from the Vercel CLI: list, create, inspect, update, delete, and manage items, read tokens, and backups."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/global-config.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ad66c2014606d4934dc1142940a866c791fc84625e54a9ea767c39f9f55ad9e2"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "984f13f5f9a16778da5adb2e8a4195341765a1646ee6a45378081357e0918395"
 ---
 
 # vercel global-config
@@ -32,9 +33,9 @@ The `vercel global-config` command manages [Global Config](/docs/global-config) 
 
 - [Using Global Config](https://vercel.com/docs/global-config/using-global-config) — Learn how to use Global Configs in your projects.
 - [Managing Global Configs with Vercel REST API](https://vercel.com/docs/global-config/vercel-api) — Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Config
-- [vercel storage](https://vercel.com/docs/cli/storage) — List, create, inspect, and delete storage resources, and manage their project connections with the Vercel CLI.
-- [vercel blob](https://vercel.com/docs/cli/blob) — Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
 - [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config) — POST /v1/global-config — Creates a Global Config.
+- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
+- [Get Global Config backup](https://vercel.com/docs/rest-api/global-config/get-global-config-backup) — GET /v1/global-config/{edgeConfigId}/backups/{edgeConfigBackupVersionId} — Retrieves a specific version of a Global Conf
 
 Full cross-link map for this page: [/docs/cli/global-config.graph.md](/docs/cli/global-config.graph.md)
 <!-- /docsgraph:related -->
@@ -318,6 +319,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

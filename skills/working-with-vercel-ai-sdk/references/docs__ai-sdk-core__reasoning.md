@@ -4,8 +4,8 @@ description: Learn how to control reasoning across providers with the top-level 
 url: "https://ai-sdk.dev/docs/ai-sdk-core/reasoning"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/reasoning.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "02b5adef9cca0e0d45988cb49d9e745680ef7163e95fafcb8ddcb539ddc98c26"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "3714c897f3bc4d941392ccb765d79c3b0b0693753505cdc132cfa725ee36901d"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -45,7 +45,7 @@ The `reasoning` parameter works the same way with `streamText`:
 import { streamText } from 'ai';
 
 const result = streamText({
-  model: 'google/gemini-3.8-flash',
+  model: 'google/gemini-4-hydrogen',
   reasoning: 'high',
   prompt: 'Explain the Riemann hypothesis in simple terms.',
 });
@@ -158,7 +158,7 @@ If you need to enforce an exact token budget (e.g. exactly 12000 tokens), keep u
 
 ```ts
 const { text } = await generateText({
-  model: google('gemini-3.8-flash'),
+  model: google('gemini-4-hydrogen'),
   providerOptions: {
     google: {
       thinkingConfig: { thinkingLevel: 'high', includeThoughts: true },
@@ -172,7 +172,7 @@ const { text } = await generateText({
 
 ```ts
 const { text } = await generateText({
-  model: google('gemini-3.8-flash'),
+  model: google('gemini-4-hydrogen'),
   reasoning: 'high',
   providerOptions: {
     google: { thinkingConfig: { includeThoughts: true } },

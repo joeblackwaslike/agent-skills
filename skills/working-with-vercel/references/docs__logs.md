@@ -15,9 +15,10 @@ related:
   - /docs/audit-log
 summary: Use logs to find information on deployment builds, function executions, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/logs.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "4f39d6f53489a58567d889843da818d80f5ab6954337eeb5d9fafecc2c24a319"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e982cdf6d448b070214ab7c8827960850e8f003aa1984c10445b0218cbfdf512"
 ---
 
 # Logs
@@ -37,13 +38,11 @@ When you deploy your website to Vercel, the platform generates build logs that s
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Enhanced Logs to search, inspect, and share runtime logs](https://vercel.com/changelog/enhanced-logs-ui-to-search-inspect-and-share-application-logs)
-- [Refined Logging](https://vercel.com/blog/refined-logging)
-- [Log Drains](https://vercel.com/blog/log-drains)
 - [Vercel Function Logs](https://vercel.com/docs/functions/logs) — Use runtime logs to debug and monitor your Vercel Functions.
 - [Get logs for a deployment](https://vercel.com/docs/rest-api/logs/get-logs-for-a-deployment) — GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs — Returns a stream of logs for a given deployment.
-- [Drain Audit Logs to Datadog](https://vercel.com/docs/drains/audit-logs-to-datadog) — Learn how to forward Vercel Audit Log Drain events to Datadog using the Datadog Logs API.
-- [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
+- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
 - [get_runtime_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_logs) — Use get_runtime_logs with Vercel MCP.
+- [Retrieves a list of Integration log drains \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/retrieves-a-list-of-integration-log-drains-deprecated) — GET /v2/integrations/log-drains — Retrieves a list of all Integration log drains that are defined for the authenticated
 
 Full cross-link map for this page: [/docs/logs.graph.md](/docs/logs.graph.md)
 <!-- /docsgraph:related -->
@@ -94,6 +93,18 @@ Log Drains allow you to export your log data, making it easier to debug and anal
 
 Learn more about [Log Drains](/docs/drains).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

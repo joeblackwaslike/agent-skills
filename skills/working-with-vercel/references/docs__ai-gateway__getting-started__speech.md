@@ -15,9 +15,10 @@ related:
   - /docs/ai-gateway/getting-started/realtime
 summary: Generate speech and transcribe it using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/getting-started/speech.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c6b5379f1e470f0f7fe10295949606f7e93bbf19ed7599c89d10831df3dbd1ed"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0f7ad7e1769f59c260aa6d6dd91dd49fb18e03d9b2a6b02ff3e454dd80b9d0e0"
 ---
 
 # AI Gateway Speech Quickstart: Transcription and TTS
@@ -106,6 +107,18 @@ node index.mts
 - Transcribe recorded or streaming audio with the [Speech to Text guide](/docs/ai-gateway/modalities/speech-to-text)
 - Build live, two-way voice conversations with the [Realtime quickstart](/docs/ai-gateway/getting-started/realtime)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

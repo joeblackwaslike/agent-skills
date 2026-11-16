@@ -12,9 +12,10 @@ related:
   []
 summary: Use get_domain_availability with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_availability.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "55ad083b3dbf03fcb5fa5d89017cdc31faf577b9684e9c1e0a7f99662e42ba02"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "840d5b72b24be418133297ba64c10c2e4ab042387eb5490467d822ace4013663"
 ---
 
 # get_domain_availability
@@ -27,11 +28,11 @@ Check whether a domain is available to register.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [get_bulk_availability](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_bulk_availability) — Use get_bulk_availability with Vercel MCP.
 - [check_domain_availability_and_price](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/check_domain_availability_and_price) — Use check_domain_availability_and_price with Vercel MCP.
+- [get_bulk_availability](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_bulk_availability) — Use get_bulk_availability with Vercel MCP.
+- [Get availability for a domain](https://vercel.com/docs/rest-api/domains-registrar/get-availability-for-a-domain) — GET /v1/registrar/domains/{domain}/availability — Get availability for a specific domain. If the domain is available, it
 - [get_domain_contact_verification](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_contact_verification) — Use get_domain_contact_verification with Vercel MCP.
 - [get_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain) — Use get_domain with Vercel MCP.
-- [Get availability for a domain](https://vercel.com/docs/rest-api/domains-registrar/get-availability-for-a-domain) — GET /v1/registrar/domains/{domain}/availability — Get availability for a specific domain. If the domain is available, it
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/get_domain_availability.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/get_domain_availability.graph.md)
 <!-- /docsgraph:related -->
@@ -41,6 +42,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domai
 | `domain`  | string | Yes      | A valid domain name                |
 | `teamId`  | string | No       | Team ID to use for this operation. |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

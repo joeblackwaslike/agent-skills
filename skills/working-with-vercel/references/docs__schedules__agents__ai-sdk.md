@@ -9,13 +9,17 @@ prerequisites:
   - /docs/schedules/agents
   - /docs/schedules
 related:
+  - /docs/schedules/agents/libfx
+  - /docs/schedules/agents/pi
+  - /docs/schedules/sdk
+  - /docs/queues/concepts
   - /docs/schedules/multi-tenant
-  - /docs/ai-gateway
 summary: Give an AI SDK agent a tool that creates schedules, and run each scheduled task as a new agent turn.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/schedules/agents/ai-sdk.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f947f348cde9442ecdb260df6ebde4329aa2cb2fd02b7c4f55d42a9a7c220621"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2e3f168fb4cecd03e6d3a55fc85f0b5a4bc6a6d320adafb50c5fd1a50257006e"
 ---
 
 # Scheduling Work with the AI SDK
@@ -29,13 +33,11 @@ With the [AI SDK](https://ai-sdk.dev), add a tool that creates a schedule, and r
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing Vercel Schedules](https://vercel.com/blog/introducing-vercel-schedules)
-- [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
 - [Vercel Schedules is now in public beta](https://vercel.com/changelog/vercel-schedules-is-now-in-public-beta)
-- [Build an AI Chat Agent with Weather API Tool Calling](https://vercel.com/kb/guide/build-ai-agent-weather-api) — Build an intelligent conversational agent that fetches real-time weather data using the AI SDK, tool calling, and a back
-- [Scheduling Work with Pi](https://vercel.com/docs/schedules/agents/pi) — Give a Pi agent on durable-harness a tool that creates schedules, and send each run back into the session that created i
-- [Scheduling Work with libfx](https://vercel.com/docs/schedules/agents/libfx) — Give an fx agent a tool that creates schedules, and send each run back into the session that created it.
 - [Scheduling Work with eve](https://vercel.com/docs/schedules/agents/eve) — Let an eve agent create recurring and one-time schedules for its users with defineDynamicSchedules.
-- [Vercel Schedules: JS SDK Reference](https://vercel.com/docs/schedules/sdk) — Reference for @vercel/schedules: create, list, update, enable, disable, invoke, and delete schedules, and handle schedul
+- [AI SDK](https://vercel.com/docs/ai-sdk) — Build TypeScript agents and AI applications with a unified API for models, tools, structured output, and streaming.
+- [Chat SDK with AI Gateway](https://vercel.com/docs/chat-sdk/integrations/ai-gateway) — Stream AI Gateway model responses into Chat SDK conversations with AI SDK and message history.
+- [Managing Schedules](https://vercel.com/docs/schedules/manage) — View, enable, disable, and run schedules across environments, and check their execution history from the dashboard, CLI,
 - [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
 
 Full cross-link map for this page: [/docs/schedules/agents/ai-sdk.graph.md](/docs/schedules/agents/ai-sdk.graph.md)
@@ -131,11 +133,45 @@ export const POST = handleCallback<TaskMessage>(async ({ executionId, namespace,
 }
 ```
 
+## Frequently asked questions
+
+### Does a scheduled AI SDK task have access to the chat history?
+
+No. The consumer calls `generateText` with only the prompt stored in the schedule's payload, so the scheduled turn starts without the earlier messages. Have the model write the prompt as a complete instruction that includes every detail the task needs. To give the turn more context, store a conversation ID in the payload and load that conversation's messages in the consumer before you call `generateText`. To send the prompt into the session that created the schedule instead, use a durable harness such as [libfx](/docs/schedules/agents/libfx) or [Pi](/docs/schedules/agents/pi).
+
+### How does the model turn "tomorrow at 9" into a schedule?
+
+The chat route's system prompt gives the model the user's time zone and the current time, so the model can work out the date. The tool takes a one-time task as a local date and time in `YYYY-MM-DDTHH:mm` format, and passes the user's time zone to `Schedules.create()` as `timezone`. Vercel evaluates the time in that time zone, so the value can't include `Z` or a UTC offset. A time in the past fails with `single_at_in_past`. Return the error's message to the model so it can correct the call.
+
+### How do I let users list or cancel the tasks an agent scheduled?
+
+Add tools that call `Schedules.list()` and `Schedules.delete()` with the user's ID as the `namespace`. Bind those tools to the signed-in user the same way as the scheduling tool, so the model can only reach that user's schedules. `Schedules.list()` returns 20 schedules per page by default and up to 100, with a `cursor` for the next page. `Schedules.delete()` takes the schedule's `name` and stops its future runs. See the [JS SDK reference](/docs/schedules/sdk).
+
+### How do I stop a scheduled AI SDK task from sending its result twice?
+
+Use the message's `executionId` as an idempotency key. [Vercel Queues](/docs/queues/concepts#at-least-once-delivery) delivers each message at least once, so the same scheduled run can reach your consumer more than once. The `executionId` is the same for every delivery of a run. Record it when you deliver a result, and skip a run whose `executionId` you've already recorded. Naming each schedule after the `toolCallId` protects the other step: if the same tool call runs again, `Schedules.create()` fails with `schedule_already_exists` instead of creating a second schedule.
+
+### What happens when a scheduled AI SDK task fails?
+
+Vercel Queues retries it. When the consumer throws, for example because the model call fails, `handleCallback` doesn't acknowledge the message, and the queue delivers it again after `retryAfterSeconds`, which defaults to 60 seconds. Retries continue until the consumer succeeds or the message expires. Each retry calls the model again, so set `maxDeliveries` on the queue trigger in `vercel.json` to limit the number of deliveries. See [Retries](/docs/queues/concepts#retries).
+
 ## Related
 
 - [Multi-tenant schedules](/docs/schedules/multi-tenant)
 - [AI Gateway](/docs/ai-gateway)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

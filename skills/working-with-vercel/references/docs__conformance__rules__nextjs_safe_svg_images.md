@@ -11,9 +11,10 @@ related:
   []
 summary: Prevent dangerouslyAllowSVG without Content Security Policy in Next.js applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/nextjs_safe_svg_images.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "732fe07f9a668d2d7daf5f86c8f787a6245e4e529a3fe1e99626b5644654d25d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e90443b00e48268f610513d5d703e8fdaefd18e8375bf005c0a831b4c17e4002"
 ---
 
 # NEXTJS_SAFE_SVG_IMAGES
@@ -42,6 +43,18 @@ In addition, it is strongly recommended to also set `contentDispositionType` to
 force the browser to download the image, as well as `contentSecurityPolicy` to
 prevent scripts embedded in the image from executing.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

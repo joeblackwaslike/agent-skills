@@ -14,9 +14,10 @@ related:
   - /docs/ai-gateway/observability-and-spend/budgets
 summary: Connect Kimi CLI to AI Gateway with the Vercel CLI or a TOML provider and model shortlist.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/kimi.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "0fbac6187edd0d4149d3374e747e68fc05763a7b2c64699c9206774ff48eaaa4"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3252844203b24d9262c8a230f0e658f527e7028779998bc7272d92abd9ce9e44"
 ---
 
 # Kimi CLI with AI Gateway
@@ -33,7 +34,7 @@ sha256: "0fbac6187edd0d4149d3374e747e68fc05763a7b2c64699c9206774ff48eaaa4"
 - [Kimi K3.1 Pro now has more ZDR providers on AI Gateway](https://vercel.com/changelog/kimi-k3-1-pro-now-has-more-zdr-providers-on-ai-gateway)
 - [Kimi K3 and Kimi K3 Fast with ZDR and US-based providers now on AI Gateway](https://vercel.com/changelog/kimi-k3-and-kimi-k3-fast-on-ai-gateway)
 - [Kimi K3 is now available on AI Gateway](https://vercel.com/changelog/kimi-k3-is-now-available-on-ai-gateway)
-- [Kimi K2.6 on AI Gateway](https://vercel.com/changelog/kimi-k2.6-on-ai-gateway)
+- [Moonshot AI's Kimi K2 model is now supported in Vercel AI Gateway](https://vercel.com/changelog/moonshot-ai-kimi-k2-model-is-now-supported-in-vercel-ai-gateway)
 - [Kilo Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/kilo-code) — Connect Kilo Code to AI Gateway with the Vercel CLI or an OpenAI-compatible provider configuration. Set your API key and
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/kimi.graph.md](/docs/ai-gateway/coding-agents/kimi.graph.md)
@@ -111,6 +112,18 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 - Browse the [models catalog](/ai-gateway/models) for available models
 - Configure [spend limits](/docs/ai-gateway/observability-and-spend/budgets) on your API key
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

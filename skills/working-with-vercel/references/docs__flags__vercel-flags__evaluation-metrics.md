@@ -15,9 +15,10 @@ related:
   - /docs/flags/observability/web-analytics
 summary: Track Vercel Flags evaluations and see which variant each evaluation returns.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/vercel-flags/evaluation-metrics.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "9d7bdf164736d57c249f63bad8c0cca59161a6a2212b76061ef7475bc706f55e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0b3c19f328a7614ae3464a8e9942cba4067b63699d90ce17c600b61cc63e7959"
 ---
 
 # Flag Evaluation Metrics
@@ -88,6 +89,18 @@ Clients that report evaluations also report their SDK version. The warning clear
 - [Manage SDK keys](/docs/flags/vercel-flags/dashboard/sdk-keys)
 - [Integrate flags with Web Analytics](/docs/flags/observability/web-analytics)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

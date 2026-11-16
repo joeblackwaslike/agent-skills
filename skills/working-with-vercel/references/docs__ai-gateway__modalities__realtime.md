@@ -15,9 +15,10 @@ related:
   - /docs/ai-gateway/modalities/text-to-speech
 summary: Build low-latency, speech-to-speech voice agents with the AI SDK through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/modalities/realtime.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "803c1ad73df71ad5cc140bbb8b1264c04ebb2d0e8040aa667c089d52a52e15d0"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "39cee1bd06cabd9d7cdb7df228cd6157ae8ed7e02c7a4f416b86b1ed1b81ad2c"
 ---
 
 # Realtime Voice with AI Gateway
@@ -35,9 +36,9 @@ Build voice agents that listen and respond in real time. With the AI SDK, you st
 - [Grok Voice Think Fast 2.0 now available on AI Gateway](https://vercel.com/changelog/grok-voice-think-fast-2-0-now-available-on-ai-gateway)
 - [WebSocket support is now generally available](https://vercel.com/changelog/websocket-support-is-now-generally-available)
 - [ElevenLabs on AI Gateway](https://vercel.com/blog/elevenlabs-on-ai-gateway)
-- [Realtime](https://ai-sdk.dev/docs/ai-sdk-core/realtime) — Learn how to build realtime voice conversations with the AI SDK.
-- [GPT-Live 1 now available on AI Gateway](https://vercel.com/changelog/gpt-live-1-now-available-on-ai-gateway)
 - [xAI Grok audio models now available on Vercel AI Gateway](https://vercel.com/changelog/xai-grok-audio-models-now-available-on-vercel-ai-gateway)
+- [GPT-Live 1 now available on AI Gateway](https://vercel.com/changelog/gpt-live-1-now-available-on-ai-gateway)
+- [Realtime](https://ai-sdk.dev/docs/ai-sdk-core/realtime) — Learn how to build realtime voice conversations with the AI SDK.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/realtime.graph.md](/docs/ai-gateway/modalities/realtime.graph.md)
 <!-- /docsgraph:related -->
@@ -180,6 +181,18 @@ Teams also have a limit on concurrent realtime sessions. Additional connection a
 - Image input is not supported in realtime sessions.
 - Reconnecting does not resume a previous session. Start a new session and replay any context you need.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

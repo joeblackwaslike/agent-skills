@@ -15,9 +15,10 @@ related:
   - /docs/kms/concepts/authentication
 summary: Manage Vercel KMS issuers, rotate signing keys, and control which projects can sign tokens from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/kms.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "cb11033f8f3c2a05bf651e33aa4cb91c26ed17ebb831e7ff7839939e563348e5"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1925d1926bdf9d9b76a6caf3d6a8c6341261eaed579bdcbe92bccf0bdffbd12d"
 ---
 
 # vercel kms
@@ -30,11 +31,11 @@ The `vercel kms` command manages [Vercel Key Management Service (KMS)](/docs/kms
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel tokens](https://vercel.com/docs/cli/tokens) — Manage your personal Vercel authentication tokens from the CLI: list, create, and revoke access tokens for use with the
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, delete, and manage items, read tokens, a
-- [vercel rolling-release](https://vercel.com/docs/cli/rolling-release) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
-- [vercel domains](https://vercel.com/docs/cli/domains) — Learn how to buy, transfer, and manage your domains using the vercel domains CLI command.
+- [vercel tokens](https://vercel.com/docs/cli/tokens) — Manage your personal Vercel authentication tokens from the CLI: list, create, and revoke access tokens for use with the
+- [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys — Create a new signing key for a KMS issuer. Depending on the activation mode, the
+- [Create an issuer](https://vercel.com/docs/rest-api/kms/create-an-issuer) — POST /v1/kms/issuers — Create a new KMS issuer for the authenticated team, or for the team or organization identified by
+- [Revoke a signing key](https://vercel.com/docs/rest-api/kms/revoke-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/revoke — Immediately revoke a signing key that is already scheduled for rev
 
 Full cross-link map for this page: [/docs/cli/kms.graph.md](/docs/cli/kms.graph.md)
 <!-- /docsgraph:related -->
@@ -224,6 +225,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

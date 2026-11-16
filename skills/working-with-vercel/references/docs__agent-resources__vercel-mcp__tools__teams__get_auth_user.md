@@ -12,9 +12,10 @@ related:
   []
 summary: Use get_auth_user with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/get_auth_user.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d927af1878794b0d743c9621ae3d5ddd0e62896ce02e8e8242c230bde24562c0"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1d498dd92c087dc187ff84a57dedba3f80955004f11ade6972ca7b975ad3cde9"
 ---
 
 # get_auth_user
@@ -30,8 +31,8 @@ Get the User.
 - [get_team](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/get_team) — Use get_team with Vercel MCP.
 - [get_access_to_vercel_url](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_access_to_vercel_url) — Use get_access_to_vercel_url with Vercel MCP.
 - [Get the User](https://vercel.com/docs/rest-api/user/get-the-user) — GET /v2/user — Retrieves information related to the currently authenticated User.
-- [web_fetch_vercel_url](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/web_fetch_vercel_url) — Use web_fetch_vercel_url with Vercel MCP.
-- [get_domain_contact_verification](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_contact_verification) — Use get_domain_contact_verification with Vercel MCP.
+- [Get Auth Token Metadata](https://vercel.com/docs/rest-api/authentication/get-auth-token-metadata) — GET /v5/user/tokens/{tokenId} — Retrieve metadata about an authentication token belonging to the currently authenticated
+- [use_vercel_cli](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation/use_vercel_cli) — Use use_vercel_cli with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/teams/get_auth_user.graph.md](/docs/agent-resources/vercel-mcp/tools/teams/get_auth_user.graph.md)
 <!-- /docsgraph:related -->
@@ -40,6 +41,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/teams
 
 This tool takes no parameters.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

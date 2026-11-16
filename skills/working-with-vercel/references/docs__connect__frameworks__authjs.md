@@ -13,12 +13,13 @@ related:
   - /docs/connect/concepts/project-links
   - /docs/passport
   - /docs/connect/concepts/tokens
-  - /docs/connect/concepts/authentication
+  - /docs/connect/frameworks/ai-sdk-and-mcp
 summary: Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/connect/frameworks/authjs.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "9d11bbadc6ed6a2c7150458bc576b2e3a08783fa4caadeea4b5e5c50b0e194a9"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b3418924c2e4464f347accf0944997a162222945c9b0715c9e407c8e1bda2360"
 ---
 
 # Auth.js with Vercel Connect
@@ -37,13 +38,11 @@ and maps the Connect user profile into an Auth.js user.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
-- [Using Vercel Passport with Microsoft Entra ID](https://vercel.com/kb/guide/vercel-passport-microsoft-entra-id) — Configure Microsoft Entra ID and Vercel Passport to protect a Next.js app, limit access to assigned users, and read veri
-- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
 - [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
-- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
+- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
 - [Better Auth with Vercel Connect](https://vercel.com/docs/connect/frameworks/better-auth) — Use Vercel Connect as a generic OAuth provider for Better Auth in a Next.js application.
-- [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
+- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
 
 Full cross-link map for this page: [/docs/connect/frameworks/authjs.graph.md](/docs/connect/frameworks/authjs.graph.md)
 <!-- /docsgraph:related -->
@@ -332,6 +331,28 @@ Passport does not create an Auth.js session inside your application. It
 protects the deployment at the Vercel layer. Use Auth.js when your application
 needs its own sign-in flow, session callbacks, and user records.
 
+## Frequently asked questions
+
+### Does the Auth.js adapter give me a token for the provider's API?
+
+No. The adapter signs a user into your application and creates an Auth.js session. Don't use the Auth.js session token as a provider API token. When your server needs to call the provider, request a narrowly scoped token with `getToken()` from `@vercel/connect`, using the signed-in user's ID as the subject. An AI agent in your app can use the same subject for MCP tools through [`connectAuthProvider`](/docs/connect/frameworks/ai-sdk-and-mcp). See [Choose the correct integration](#choose-the-correct-integration).
+
+### Which callback URL do I register with the upstream provider?
+
+For a custom OAuth connector, register `https://connect.vercel.com/callback`. Managed connectors handle this provider callback for you. Don't register your Auth.js callback, such as `/api/auth/callback/linear`, with the provider. The provider redirects to Vercel Connect, and Vercel Connect redirects to your Auth.js callback.
+
+### Do I need a client secret or PKCE configuration for Auth.js?
+
+No. The adapter configures the OAuth client without a static client secret and uses the authorization code flow with Proof Key for Code Exchange (PKCE). Auth.js creates the PKCE values and keeps the verifier in its secure cookie. For each token exchange, the adapter sends the connector identifier and a fresh Vercel OIDC token through HTTP Basic authentication. You still set `AUTH_SECRET` for Auth.js. See [Understand PKCE and refresh access](#understand-pkce-and-refresh-access).
+
+### Does passing `scopes` replace the default scopes?
+
+Yes. Without `scopes`, the adapter requests `openid`, `profile`, and `email`. A custom `scopes` list replaces those three, so include every OpenID Connect and provider scope your application needs. The adapter then adds `offline_access` once so Vercel Connect can mint refresh tokens. See [Request custom scopes](#request-custom-scopes).
+
+### Should I use Auth.js or Vercel Passport?
+
+Use Auth.js when your application needs its own sign-in flow, session callbacks, and user records. Use [Vercel Passport](/docs/passport) to require identity before a visitor can reach a deployment. Passport enforces protection at the Vercel layer before your route runs, and it doesn't create an Auth.js session inside your application.
+
 ## Next steps
 
 - [Vercel Connect authentication](/docs/connect/concepts/authentication)
@@ -339,6 +360,18 @@ needs its own sign-in flow, session callbacks, and user records.
 - [Vercel Connect SDK reference](/docs/connect/ts-sdk-reference)
 - [Vercel Passport overview](/docs/passport)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

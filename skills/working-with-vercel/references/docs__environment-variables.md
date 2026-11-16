@@ -15,9 +15,10 @@ related:
   - /docs/builds/configure-a-build
 summary: Learn more about environment variables on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/environment-variables.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f6c031eaa32563c9f4dc82f8b42fb8b2f793f26e2e29b61e7c76ef11abcd94fc"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7f7bf62477f4626ebc543da645bb15a20770ea7f5e04d8242debd6bc8aaed7a4"
 ---
 
 # Environment variables
@@ -30,6 +31,7 @@ Environment variables are key-value pairs configured outside your source code so
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Environment Variables UI](https://vercel.com/blog/environment-variables-ui)
 - [Using environment variables](https://turborepo.dev/docs/crafting-your-repository/using-environment-variables) — Account for environment variables in task hashing, configure environment modes, and handle .env files.
 - [Deployments](https://v0.app/docs/deployments) — Preview and publish v0 projects on Vercel, then manage domains, visibility, and production updates.
 - [External APIs](https://v0.app/docs/external-apis) — Build full-stack applications by calling external APIs with environment variables.
@@ -41,7 +43,6 @@ Environment variables are key-value pairs configured outside your source code so
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [Deploy a Bolt.new app with Vercel Drop](https://vercel.com/kb/guide/bolt-vercel-drop) — Export your Bolt.new project as a .zip and deploy it to Vercel with Vercel Drop. Vercel detects the framework and builds
-- [Build a daily digest bot with Chat SDK and Workflow SDK](https://vercel.com/kb/guide/daily-digest-bot-with-chat-sdk-and-workflow-sdk) — Build a daily digest bot that posts a daily digest of GitHub stats to Slack. Learn how to use Vercel Connect to set up S
 
 Full cross-link map for this page: [/docs/environment-variables.graph.md](/docs/environment-variables.graph.md)
 <!-- /docsgraph:related -->
@@ -159,6 +160,18 @@ If a variable doesn't have the value you expect, find your symptom in the follow
 | A Turborepo build uses values from another environment | Turborepo leaves environment variables out of its cache key unless `turbo.json` lists them, so it can reuse a build made with different values. | List the variables in `env` for each task or in `globalEnv` in `turbo.json`. |
 | System environment variables are empty in local development | Deployment-specific [system environment variables](/docs/environment-variables/system-environment-variables), such as `VERCEL_GIT_REPO_OWNER`, are set only when Vercel builds a deployment. | Set the values you need in `.env.local` for local development. |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

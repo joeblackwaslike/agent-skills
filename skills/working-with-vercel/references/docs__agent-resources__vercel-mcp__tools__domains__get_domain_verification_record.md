@@ -12,9 +12,10 @@ related:
   []
 summary: Use get_domain_verification_record with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_verification_record.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "78153eed7fc2ce2c1a13434b54c42407e028cd962ca06fa7cbbdd3a730071ec0"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1f9c3d209143f3e42915706156642c7b983aeebd3cf9b7d095ec6e0f726f8c17"
 ---
 
 # get_domain_verification_record
@@ -30,8 +31,8 @@ Get the TXT verification record needed to claim ownership of a domain for the au
 - [Get Domain Verification Record](https://vercel.com/docs/rest-api/domains/get-domain-verification-record) — GET /v9/domains/{domain}/verification — Get the TXT verification record needed to claim ownership of a domain for the au
 - [get_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain) — Use get_domain with Vercel MCP.
 - [get_domain_contact_verification](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_contact_verification) — Use get_domain_contact_verification with Vercel MCP.
-- [create_record](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/create_record) — Use create_record with Vercel MCP.
 - [get_domains_records_by_record_id](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domains_records_by_record_id) — Use get_domains_records_by_record_id with Vercel MCP.
+- [create_record](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/create_record) — Use create_record with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/get_domain_verification_record.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/get_domain_verification_record.graph.md)
 <!-- /docsgraph:related -->
@@ -44,6 +45,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domai
 | `teamId`  | string | No       | Team ID to use for this operation.                          |
 | `slug`    | string | No       | Team slug to use for this operation. Use instead of teamId. |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -8,21 +8,22 @@ type: reference
 prerequisites:
   - /docs/sandbox
 related:
+  - /docs/sandbox/python-sdk-reference
   - /docs/sandbox/concepts/persistent-sandboxes
   - /docs/sandbox/concepts/tags
   - /docs/sandbox/concepts/regions
   - /docs/sandbox/concepts/secure-compute
-  - /docs/sandbox/pricing
 summary: A comprehensive reference for the Vercel Sandbox JavaScript SDK, which lets you run code in a secure, isolated environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/sdk-reference.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "6949305033fffc2cb01d88c5c3412cb5b4cde35c2f9793a62a4d808bf07e7275"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9bc824f8ca4ccd3d0580ca787b8cc804f95bc974f879174f8f1f42ac67614fc0"
 ---
 
 # JS SDK Reference
 
-Use the Vercel Sandbox JavaScript SDK to create isolated Linux microVMs on demand. Run untrusted code, test full Linux workflows, and manage files, ports, snapshots, drives, sessions, and network policy from Node.js applications.
+Use the Vercel Sandbox JavaScript SDK to create and manage isolated Linux microVMs, run commands, work with files and drives, and preserve environments between sessions.
 
 
 <!-- docsgraph:related -->
@@ -45,6 +46,8 @@ Use the Vercel Sandbox JavaScript SDK to create isolated Linux microVMs on deman
 
 Full cross-link map for this page: [/docs/sandbox/sdk-reference.graph.md](/docs/sandbox/sdk-reference.graph.md)
 <!-- /docsgraph:related -->
+
+For Python, see the [Python SDK Reference](/docs/sandbox/python-sdk-reference).
 
 ## Prerequisites
 
@@ -212,7 +215,9 @@ console.log(sandbox.image);
 
 #### `region`
 
-The [region](/docs/sandbox/concepts/regions) where the sandbox runs. Set with the `region` parameter of [`Sandbox.create()`](#sandbox.create). When no region was passed, this is the project's default sandbox region, or `iad1` if the project doesn't set one.
+The sandbox's configured main [region](/docs/sandbox/concepts/regions). Set it with the `region` parameter of [`Sandbox.create()`](#sandbox.create). The SDK omits `region` when you don't pass it; it doesn't read `VERCEL_REGION`. The API then uses the project's default sandbox region, or `iad1` if the project doesn't set one. [Drive mounts](/docs/sandbox/concepts/regions#regions-and-drives) have different placement requirements, and [forks](#sandbox.fork) inherit the source's region.
+
+After failover, the running session's region can differ from this configured region. Read [`sandbox.currentSession().region`](#sandbox.currentsession) for the session's actual location.
 
 **Returns:** `string`.
 
@@ -409,6 +414,7 @@ Sandboxes are persistent by default: when the sandbox stops, the filesystem is a
 | `source`             | `git`                        | No       | Clone a Git repository. <br /> `url`: string <br /> `username`: string <br /> `password`: string <br /> `depth`?: number <br /> `revision`?: string                                                                 |
 | `source`             | `tarball`                    | No       | Mount a tarball. <br /> `url`: string                                                                                                                                                                               |
 | `source`             | `snapshot`                   | No       | Create from a snapshot. <br /> `snapshotId`: string                                                                                                                                                                 |
+| `credentials`        | `object`                     | No       | Vercel managed [credentials](/docs/sandbox/credentials) the sandbox can use. <br /> `npm`?: `true` |
 | `resources.vcpus`    | `number`                     | No       | Number of vCPUs (2048 MB RAM per vCPU). Defaults to 2.                                                                                                                                                              |
 | `runtime`            | `string`                     | No       | Deprecated: use [`image`](#image) for image-based sandboxes. Runtime image such as `"node26"`, `"node24"`, `"node22"`, or `"python3.13"`.                                                                           |
 | `image`              | `string`                     | No       | VCR image reference, either a [Vercel Managed Image](/docs/sandbox/concepts/images#vercel-managed-images) or [custom image](/docs/sandbox/concepts/images#custom-images). Defaults to `"vercel/sandbox/universal"`. |
@@ -500,9 +506,11 @@ Both callbacks start the server in detached mode, while installation runs only o
 
 #### `Sandbox.fork()`
 
-`Sandbox.fork()` creates a new sandbox seeded from the current snapshot of an existing one. The new sandbox inherits the source's config, including its environment variables. Any field you pass in overrides the copied value. If the source has no current snapshot, the fork falls back to a fresh create with the source's `image` plus the copied config.
+`Sandbox.fork()` creates a new sandbox from an existing sandbox's current saved snapshot. The fork doesn't capture unsaved changes from a running session. If the source has no current snapshot, the fork starts from its base environment and copied configuration.
 
-Pass `env` to override the copied environment variables. `image` is not accepted as an override. When the source has a snapshot, the image is inherited from it; otherwise it is copied from the source sandbox.
+The fork inherits the source's configuration, including environment variables, except for drive mounts. Pass `mounts` explicitly to attach drives. Any field you supply overrides the corresponding inherited value, including `image`.
+
+Omitting `env` or passing `undefined` inherits the source's environment. An explicit `env` map replaces the entire inherited environment without merging keys. Pass `env: {}` to clear it. An explicit `tags` map also replaces all inherited tags.
 
 The fork runs in the source sandbox's [region](/docs/sandbox/concepts/regions) unless you pass `region`. The fork also inherits the source's failover regions; pass `failoverRegions` to replace them. If the source has a snapshot, that snapshot must be available in the target region.
 
@@ -513,20 +521,41 @@ The fork also inherits the source sandbox's [Secure Compute network](/docs/sandb
 | Parameter       | Type                           | Required | Details                                                                                                 |
 | --------------- | ------------------------------ | -------- | ------------------------------------------------------------------------------------------------------- |
 | `sourceSandbox` | `string`                       | Yes      | Name of the sandbox to fork from.                                                                       |
-| ...             | *most `Sandbox.create` params* | No       | Any field set here overrides the value copied from the source. `source` and `image` are not accepted. |
+| ...             | *most `Sandbox.create` params* | No       | Any field set here overrides the value copied from the source. `source` is not accepted. `image` is supported. Mounts must be supplied explicitly. |
 
-```ts
-// Inherit every supported field from the source
-const fork = await Sandbox.fork({ sourceSandbox: 'prod-agent' });
+**index.ts**
 
-// Override specific fields; the rest are copied from the source
-const customized = await Sandbox.fork({
+```ts filename="index.ts"
+import { Sandbox } from '@vercel/sandbox';
+
+const inherited = await Sandbox.fork({ sourceSandbox: 'prod-agent' });
+const replaced = await Sandbox.fork({
   sourceSandbox: 'prod-agent',
-  name: 'forked-prod-agent',
-  resources: { vcpus: 4 },
-  env: { OPENAI_API_KEY: process.env.OPENAI_API_KEY! },
+  env: { MODE: 'test' },
+});
+const cleared = await Sandbox.fork({
+  sourceSandbox: 'prod-agent',
+  env: {},
 });
 ```
+
+**index.js**
+
+```js filename="index.js"
+import { Sandbox } from '@vercel/sandbox';
+
+const inherited = await Sandbox.fork({ sourceSandbox: 'prod-agent' });
+const replaced = await Sandbox.fork({
+  sourceSandbox: 'prod-agent',
+  env: { MODE: 'test' },
+});
+const cleared = await Sandbox.fork({
+  sourceSandbox: 'prod-agent',
+  env: {},
+});
+```
+
+`inherited` keeps the source's environment map, `replaced` replaces that map with `MODE=test`, and `cleared` clears it. Call `delete()` on each fork when you finish using it.
 
 ### Sandbox class instance methods
 
@@ -706,7 +735,7 @@ await sandbox.writeFiles([
 
 #### `sandbox.domain()`
 
-`sandbox.domain()` resolves a publicly accessible URL for a port you exposed during creation. It throws if the port is not registered to a route, so include the port in the `ports` array when creating the sandbox and cache the returned URL so you can share it quickly with collaborators.
+`sandbox.domain()` resolves a publicly accessible URL for a port you exposed during creation. It throws if the port is not registered to a route, so include the port in the `ports` array when creating the sandbox and cache the returned URL so you can share it quickly with collaborators. For a complete example, see [Expose a port](/docs/sandbox/working-with-sandbox#expose-a-port).
 
 ```ts
 const previewUrl = sandbox.domain(3000);
@@ -1245,6 +1274,7 @@ Read-only accessors on a `Session` instance returned by `sandbox.currentSession(
 | Accessor                 | Returns                                                       | Description                                   |
 | ------------------------ | ------------------------------------------------------------- | --------------------------------------------- |
 | `sessionId`              | `string`                                                      | Unique identifier of the session.             |
+| `region`                 | `string`                                                      | Actual region of this session, including after failover. |
 | `status`                 | `"pending" \| "running" \| "stopping" \| "stopped" \| "failed" \| "aborted" \| "snapshotting"` | Cached lifecycle state. Repeated reads don't poll the API. |
 | `createdAt`              | `Date`                                                        | When the session started.                     |
 | `activeCpuUsageMs`       | `number \| undefined`                                          | CPU used during the session, in milliseconds. Available once the session is stopped. |
@@ -2117,6 +2147,40 @@ for await (const drive of result) {
 const allDrives = await result.toArray();
 ```
 
+#### `Drive.get()`
+
+Use `Drive.get()` to retrieve an existing drive by its project-local name without creating it. If the drive doesn't exist, the request fails with a 404 error. Use [`Drive.getOrCreate()`](#drive.getorcreate) when you want to create a missing drive.
+
+**Returns:** `Promise<Drive>` containing the existing drive's metadata and methods.
+
+| Parameter | Type          | Required | Details                                  |
+| --------- | ------------- | -------- | ---------------------------------------- |
+| `name`    | `string`      | Yes      | Project-local name of the drive.          |
+| `signal`  | `AbortSignal` | No       | Cancel the request if necessary.          |
+| `token`   | `string`      | No       | Access token for explicit authentication. |
+| `teamId`  | `string`      | No       | Team ID for explicit authentication.      |
+| `projectId` | `string`    | No       | Project ID for explicit authentication.   |
+
+`Drive.get()` uses the SDK's [default authentication](#authentication) when you omit credentials. For explicit access-token authentication, supply `token`, `teamId`, and `projectId` together.
+
+**index.ts**
+
+```ts filename="index.ts"
+import { Drive } from '@vercel/sandbox';
+
+const drive = await Drive.get({ name: 'workspace-cache' });
+console.log(drive.name, drive.region);
+```
+
+**index.js**
+
+```js filename="index.js"
+import { Drive } from '@vercel/sandbox';
+
+const drive = await Drive.get({ name: 'workspace-cache' });
+console.log(drive.name, drive.region);
+```
+
 #### `Drive.getOrCreate()`
 
 Use `Drive.getOrCreate()` to retrieve an existing drive by name or create it if it doesn't exist. Create the drive before mounting it into a sandbox.
@@ -2127,10 +2191,12 @@ Use `Drive.getOrCreate()` to retrieve an existing drive by name or create it if 
 | --------- | ------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `name`    | `string`      | Yes      | Drive name. Must be unique within the project.                                                                                                             |
 | `region`  | `string`      | No       | [Region](/docs/sandbox/concepts/regions#regions-and-drives) where the drive is created and stores its data. Defaults to `iad1`.                            |
-| `maxSize` | `number`      | No       | Maximum drive size in bytes. Defaults to 1 TiB when omitted. The default maximum quota is 16 TiB. |
+| `maxSize` | `number`      | No       | Maximum drive size in bytes. Defaults to 1 GiB on Hobby and 1 TiB on other plans when omitted. The default maximum quota is 16 TiB. See [Resource limits](/docs/sandbox/pricing#resource-limits). |
 | `signal`  | `AbortSignal` | No       | Cancel the request if necessary.                                                                                                                           |
 
 A drive's region can't change after creation. Calling `Drive.getOrCreate()` with a `region` or `maxSize` that doesn't match the existing drive fails with a `conflict` error.
+
+The SDK omits `region` when you don't supply it, even when `VERCEL_REGION` is set. The API defaults new drives to `iad1`; the project's sandbox region doesn't apply.
 
 ```ts filename="index.ts"
 import { Drive } from '@vercel/sandbox';
@@ -2164,7 +2230,7 @@ await Sandbox.create({
 
 #### `drive.fork()`
 
-Call `drive.fork()` to create a new drive from an existing drive's data. The fork belongs to the same project and inherits the source drive's region and maximum size. You can mount and update the fork independently of the source drive.
+Call `drive.fork()` to create a new drive from an existing drive's committed data. The fork doesn't continuously receive subsequent writes to the source. The fork belongs to the same project and inherits the source drive's region and maximum size. You can mount and update the fork independently of the source drive.
 
 > **💡 Note:** A drive must be mounted read-write and written to at least once before you can create a fork from it. Creating a fork of a drive that has never been written to fails with a `drive_not_initialized` error.
 
@@ -2256,6 +2322,18 @@ To learn more on each method, see [Authentication](/docs/sandbox/concepts/authen
 > workloads, pass `persistent: false` to opt out. See
 > [Persistence](/docs/sandbox/concepts/persistent-sandboxes).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -13,9 +13,10 @@ related:
   - /docs/rest-api/errors
 summary: This error signifies that a specified resource could not be located.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/resource_not_found.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "fa1c15336c726e757bddeec0671825de4441045e29bd9fcfaf5006a293979721"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4e3a10dbfc3dcb293bda99abee8b4fe54d5d4743a02490dfeb3abff521337b70"
 ---
 
 # RESOURCE_NOT_FOUND
@@ -38,6 +39,18 @@ To troubleshoot this error, follow these steps:
 
 Additionally, the error can also occur in the context of the [Vercel REST API](/docs/rest-api), where the API returns the [`not_found` error code](/docs/rest-api/errors#resource-not-found) with the HTTP status `404`. In this case, the error message will contain the details of the resource that could not be found.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

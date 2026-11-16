@@ -16,9 +16,10 @@ related:
   - /docs/integrations/create-integration/marketplace-flows
 summary: "As an integration provider, understanding how your service interacts with Vercel's platform will help you create and optimize your integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/native-integration.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "68490b0adb13fda7f87e04576e64079125333b9dd86e84a9c74bb9fb90a77e65"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8ae116ef3a78622aa86f4bdd8303d02c9064b0e00eae842c7d1494299c2d0376"
 ---
 
 # Native integration concepts
@@ -35,7 +36,7 @@ Native integrations allow a two-way connection between Vercel and third-party pr
 - [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
 - [Marketplace Partner API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner) — Learn how to implement Partner API endpoints for your Vercel integration
 - [Marketplace Vercel API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel) — Learn how to call Vercel API endpoints to interact with Vercel resources
-- [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
+- [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference) — Learn how to manage project access and added products for your integrations.
 
 Full cross-link map for this page: [/docs/integrations/create-integration/native-integration.graph.md](/docs/integrations/create-integration/native-integration.graph.md)
 <!-- /docsgraph:related -->
@@ -217,6 +218,18 @@ To successfully implement your native integration, you'll need to handle several
 - [Experimentation integrations flows](/docs/integrations/create-integration/marketplace-flows#flows-for-the-experimentation-category)
 - [Flows for resource handling with claim deployments](/docs/integrations/create-integration/marketplace-flows#resources-with-claim-deployments)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

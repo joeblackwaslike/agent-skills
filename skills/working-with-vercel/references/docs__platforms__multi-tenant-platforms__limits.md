@@ -16,9 +16,10 @@ related:
   - /docs/deployments/generated-urls
 summary: Understand the limits and features available for Vercel for Platforms.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/limits.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "3610b9d0447f61541f0325ac3a6f3017fa3adbd95b8dc1418b38854b6d3cd288"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "745b597ae856608dffb64d70f88bbe6b5b972769e7a7e35d5d36958f4e97f60a"
 ---
 
 # Multi-tenant Limits
@@ -33,8 +34,8 @@ This page provides an overview of the limits and feature availability for Vercel
 
 - [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 - [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
-- [Multi-Tenant Platform Concepts](https://vercel.com/docs/platforms/multi-tenant-platforms/concepts) — Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
 - [Multi-Project Platforms Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
+- [Multi-Tenant Platform Concepts](https://vercel.com/docs/platforms/multi-tenant-platforms/concepts) — Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
 - [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart) — Build a multi-tenant Next.js app on your computer, then add wildcard and custom domains on Vercel.
 
 Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/limits.graph.md](/docs/platforms/multi-tenant-platforms/limits.graph.md)
@@ -101,6 +102,18 @@ After configuring domains or nameservers, DNS typically takes 24-48 hours to pro
 
 Each DNS label has a [63-character limit](/docs/deployments/generated-urls#truncation). For preview URLs with long branch names and tenant subdomains, keep branch names concise to avoid resolution issues.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

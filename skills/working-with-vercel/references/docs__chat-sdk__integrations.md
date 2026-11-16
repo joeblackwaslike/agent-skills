@@ -15,9 +15,10 @@ related:
   - /docs/chat-sdk/integrations/passport
 summary: Extend a Chat SDK bot with AI Gateway, Vercel Connect, Vercel Passport, Vercel Sandbox, Vercel Workflows, and Vercel Daemons.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/chat-sdk/integrations.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "85233d23b42094536ce9d6100e66d3c43be0cb98862369d7061a72a097d3f2a7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5c7361ae3c694f1eea9c1c2424454d1ef969c32eafb06741a8e5e21b668c0d46"
 ---
 
 # Chat SDK Integrations
@@ -31,11 +32,12 @@ Extend your [Chat SDK](/docs/chat-sdk) bot with model responses, managed credent
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Complete Guide to Chat SDK](https://vercel.com/kb/guide/the-complete-guide-to-chat-sdk) — Chat SDK is a TypeScript library for building chat bots that work across Slack, Teams, Discord, Linear, and more from a
-- [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
 - [Create a Discord support bot with Nuxt and Redis](https://vercel.com/kb/guide/create-a-discord-support-bot-with-nuxt-and-redis) — This guide walks through building a Discord support bot with Nuxt, covering project setup, Discord app configuration, Ga
-- [Triage form submissions with Chat SDK](https://vercel.com/kb/guide/triage-form-submissions-with-chat-sdk) — Build a Slack bot that triages form submissions with interactive cards. Forward, edit, or mark as spam without leaving S
+- [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
 - [Chat SDK brings agents to your users](https://vercel.com/blog/chat-sdk-brings-agents-to-your-users)
-- [Chat SDK with Next.js](https://vercel.com/docs/chat-sdk/frameworks/nextjs) — Add a Chat SDK bot to Next.js, receive Slack events through Vercel Connect, and deploy on Vercel.
+- [Triage form submissions with Chat SDK](https://vercel.com/kb/guide/triage-form-submissions-with-chat-sdk) — Build a Slack bot that triages form submissions with interactive cards. Forward, edit, or mark as spam without leaving S
+- [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
+- [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
 
 Full cross-link map for this page: [/docs/chat-sdk/integrations.graph.md](/docs/chat-sdk/integrations.graph.md)
 <!-- /docsgraph:related -->
@@ -51,6 +53,8 @@ Full cross-link map for this page: [/docs/chat-sdk/integrations.graph.md](/docs/
 | [Vercel Workflows](/docs/chat-sdk/integrations/workflows) | Pause durable tasks until someone makes a decision. | Approve or deny an announcement from a Slack card. |
 | [Vercel Daemons](/docs/chat-sdk/integrations/daemons) | Continuously process queued chat jobs. | Process a request in a worker and reply to its Slack thread. |
 
+To reply with tables, charts, and buttons that the model composes, see [Stream generative UI with json-render](/docs/chat-sdk/integrations/ai-gateway#stream-generative-ui-with-json-render).
+
 ## Combine integrations in one bot
 
 Each integration has a separate role. Connect delivers a Slack event to your bot. AI Gateway serves the model that decides how to respond. The model can use a Bash tool backed by Sandbox to inspect a file, and Vercel Workflows can wait for approval before publishing a result.
@@ -63,6 +67,18 @@ Keep a persistent [state adapter](/docs/chat-sdk/adapters#state-adapters) for su
 - [Use an eve agent with Chat SDK](/docs/chat-sdk/eve)
 - [Explore Chat SDK AI utilities](https://chat-sdk.dev/docs/ai)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -16,9 +16,10 @@ related:
   - /docs/cli
 summary: Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access the toolbar.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "954909a4bdc94b05b8b762b2378b5e10f4182754fb79130a7cf372c296840a5c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1936e1e099b8155737f2e4ae413497aaebfebf4d335731537b854f06c8c5c8a8"
 ---
 
 # Add the Vercel Toolbar to your production environment
@@ -32,16 +33,14 @@ As a [team owner](/docs/rbac/access-roles#owner-role) or [member](/docs/rbac/acc
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production)
-- [Use the Vercel Toolbar in Production with the Chrome Extension or the toolbar menu](https://vercel.com/changelog/use-the-vercel-toolbar-in-production)
 - [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar)
+- [Use the Vercel Toolbar in Production with the Chrome Extension or the toolbar menu](https://vercel.com/changelog/use-the-vercel-toolbar-in-production)
 - [Easier toolbar setup for SvelteKit and other Vite-based frameworks](https://vercel.com/changelog/easier-toolbar-setup-for-sveltekit-and-other-vite-based-frameworks)
-- [The Vercel Toolbar is now more compact and dynamic](https://vercel.com/changelog/the-vercel-toolbar-is-now-more-compact-and-dynamic)
-- [Improvements to Vercel Toolbar: Shrinking when inactive, removal of avatars, and more](https://vercel.com/changelog/improvements-to-vercel-toolbar)
+- [Add the Vercel Toolbar to your local environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost) — Learn how to use the Vercel Toolbar in your local environment.
 - [Enabling and Disabling Comments](https://vercel.com/docs/comments/how-comments-work) — Learn when and where Comments are available, and how to enable and disable Comments at the account, project, and session
 - [Toolbar](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar) — Vercel MCP tools for toolbar.
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
-- [Comments Overview](https://vercel.com/docs/comments) — Comments allow teams and invited participants to give direct feedback on preview deployments. Learn more about Comments
-- [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/vercel-toolbar/in-production-and-localhost/add-to-production.graph.md](/docs/vercel-toolbar/in-production-and-localhost/add-to-production.graph.md)
 <!-- /docsgraph:related -->
@@ -340,6 +339,18 @@ Provided [the Vercel toolbar is enabled](/docs/vercel-toolbar/managing-toolbar#e
 3. Scroll down to **Enable Vercel Toolbar in Production** and select it.
 4. Choose the domain you want to enable the toolbar on.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

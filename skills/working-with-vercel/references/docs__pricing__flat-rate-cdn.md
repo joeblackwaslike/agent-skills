@@ -14,9 +14,10 @@ related:
   - /docs/pricing
 summary: Flat Rate CDN gives you fixed monthly CDN pricing and protection against usage spikes across capacity tiers.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/pricing/flat-rate-cdn.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ef6e7a964b2d9af4adc05d926f453a2476594bef07a7b4dc70a3a794f9f258e9"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a60e57425ba9b6b09eb3cd416408d5f094ed91033f69bdbb446cffa43c326062"
 ---
 
 # Flat Rate CDN
@@ -34,12 +35,11 @@ Flat Rate CDN gives you fixed monthly CDN pricing and protection against usage s
 - [Introducing Flat Rate CDN](https://vercel.com/blog/introducing-flat-rate-cdn)
 - [Flat Rate CDN is now GA for Pro teams](https://vercel.com/changelog/flat-rate-cdn-is-now-ga-for-pro-teams)
 - [Flat Rate CDN in Limited Beta](https://vercel.com/changelog/flat-rate-cdn-in-limited-beta)
-- [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
 - [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 - [How Vercel CDN Works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
-- [Networking](https://vercel.com/docs/networking) — Connect your Vercel projects to backend services with static IPs and secure networking options.
 - [Cleveland, USA \\(cle1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cle1) — Vercel pricing for the Cleveland, USA \\(cle1\\) region.
+- [Cape Town, South Africa \\(cpt1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cpt1) — Vercel pricing for the Cape Town, South Africa \\(cpt1\\) region.
 
 Full cross-link map for this page: [/docs/pricing/flat-rate-cdn.graph.md](/docs/pricing/flat-rate-cdn.graph.md)
 <!-- /docsgraph:related -->
@@ -50,7 +50,7 @@ On this page, you'll learn how [Flat Rate CDN handles usage](#how-vercel-handles
 
 ## How Vercel handles usage
 
-If your total usage for a billing cycle exceeds your monthly capacity, Vercel moves you to a [higher tier](#flat-rate-cdn-tiers) at the start of the next cycle. A one-day spike doesn't trigger an upgrade. Vercel will transition you to [on-demand pricing](/docs/cdn#on-demand-cdn) if you exceed the highest tier.
+If your total usage for a billing cycle exceeds your monthly capacity, Vercel moves you to a [higher tier](#flat-rate-cdn-tiers) at the start of the next cycle. Occasional spikes don't trigger an upgrade. If your usage outgrows the highest tier while you're on Flat Rate CDN, Vercel transitions you to [on-demand pricing](/docs/cdn#on-demand-cdn) for all usage starting at the beginning of the next billing cycle.
 
 Vercel provides visibility into your CDN usage in the [billing usage dashboard](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fusage\&title=Go+to+Usage) or with [`vercel billing usage`](/docs/cli/usage), which can break usage down by day. This gives you time to understand your usage and take action before any changes occur.
 
@@ -80,6 +80,9 @@ See [CDN pricing and usage](/docs/manage-cdn-usage) for how these resources are 
 ## Using Flat Rate CDN
 
 ### Enable and configure Flat Rate CDN
+
+> **💡 Note:** You can't enable Flat Rate CDN if your team's usage already exceeds the
+> [highest tier](#flat-rate-cdn-tiers).
 
 To enable Flat Rate CDN:
 
@@ -143,6 +146,18 @@ If your usage patterns fall within any of the above categories, as determined by
 - [Vercel CDN overview](/docs/cdn)
 - [CDN requests](/docs/manage-cdn-usage#cdn-requests)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

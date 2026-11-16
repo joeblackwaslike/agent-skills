@@ -15,9 +15,10 @@ related:
   - /docs/connect/frameworks/better-auth
 summary: Use Vercel Connect with AI SDK, TanStack AI, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/connect/frameworks.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "3ead7a10dbf0e0b11d1bdf33ce1e49505fcf485db735eba084690720978645b4"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "20ebdd8d87bcd9698bca804fd70b574cce57460c0c3cdee98db8b6284c20cea5"
 ---
 
 # Frameworks and Adapters for Vercel Connect
@@ -34,14 +35,12 @@ the task your application needs to perform.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Connect now supports TanStack AI](https://vercel.com/changelog/vercel-connect-tanstack-ai)
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
+- [Vercel Connect now supports TanStack AI](https://vercel.com/changelog/vercel-connect-tanstack-ai)
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
-- [Vercel Connect Concepts](https://vercel.com/docs/connect/concepts) — Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and a
-- [Authentication in Vercel Connect](https://vercel.com/docs/connect/concepts/authentication) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
-- [Connectors in Vercel Connect](https://vercel.com/docs/connect/concepts/connectors) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
+- [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/chat-sdk/integrations/connect) — Use Vercel Connect for Chat SDK platform credentials, verified webhooks, and separate per-user tool access.
-- [AI Gateway Framework Integrations](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations) — Connect Flue, LangChain, LiteLLM, LlamaIndex, Mastra, Pydantic AI, TanStack AI, and other frameworks to Vercel AI Gatewa
 
 Full cross-link map for this page: [/docs/connect/frameworks.graph.md](/docs/connect/frameworks.graph.md)
 <!-- /docsgraph:related -->
@@ -92,6 +91,40 @@ Vercel provides `VERCEL_OIDC_TOKEN` automatically after deployment. Your
 connector must also have a [project link](/docs/connect/concepts/project-links)
 for each environment that requests credentials.
 
+## Frequently asked questions
+
+### Which frameworks and libraries work with Vercel Connect?
+
+Vercel Connect has adapters for AI SDK, Model Context Protocol (MCP) clients, TanStack AI, eve, Chat SDK, Better Auth, and Auth.js. Each adapter is an entry point of the `@vercel/connect` package, such as `@vercel/connect/chat` or `@vercel/connect/authjs`. For code that doesn't use one of these frameworks, call `getToken()` from the root `@vercel/connect` package, or use the Python SDK, `vercel-connect`. See the [TypeScript SDK Reference](/docs/connect/ts-sdk-reference) and [Python SDK Reference](/docs/connect/python-sdk-reference).
+
+### Do I need to install a separate package for each adapter?
+
+No. Install `@vercel/connect` once and import the entry point that matches your framework. The package declares frameworks such as `ai`, `better-auth`, and `eve` as optional peer dependencies, so installing it doesn't add frameworks you don't use. Install the framework packages your application already needs alongside it.
+
+### Should I use Better Auth, Auth.js, or `getToken()`?
+
+Choose based on whether you need to sign users in or call a provider's API. The [Better Auth](/docs/connect/frameworks/better-auth) and [Auth.js](/docs/connect/frameworks/authjs) adapters sign a person into your application through a connector and create an application session. They don't return a token for the provider's API. To call a provider API as your app or on behalf of a user, request a short-lived token with `getToken()`, or use the AI SDK, MCP, TanStack AI, eve, or Chat SDK adapters, which request tokens for you. To require sign-in before a visitor reaches a deployment, use [Vercel Passport](/docs/passport).
+
+### Can one OIDC token authenticate both AI Gateway and Vercel Connect?
+
+Yes. On Vercel, your project's OIDC token authenticates AI SDK requests to [AI Gateway](/docs/ai-gateway) and token requests to Vercel Connect, so an agent can call models and third-party services without stored API keys. Locally, `vercel env pull` writes one development token that both read. AI Gateway uses the token to authorize model requests. Vercel Connect checks it against the connector's [project links](/docs/connect/concepts/project-links) before it issues a provider token. See [AI Gateway OIDC authentication](/docs/ai-gateway/authentication-and-byok/oidc).
+
+### Can I use Vercel Connect outside a Vercel deployment?
+
+Yes. In external CI/CD or on other hosting, `VERCEL_OIDC_TOKEN` isn't available, so pass a Vercel access token to the SDK with the `vercelToken` option. The token's project must be linked to the connector. An access token can request only an app subject or its own user. To request tokens on behalf of other users, run the code on Vercel, where the OIDC token represents the project. See [Access token authentication](/docs/connect/concepts/authentication#access-token).
+
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

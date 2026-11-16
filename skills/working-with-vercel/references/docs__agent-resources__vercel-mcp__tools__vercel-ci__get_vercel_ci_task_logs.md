@@ -12,9 +12,10 @@ related:
   []
 summary: Use get_vercel_ci_task_logs with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/get_vercel_ci_task_logs.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "81fca3525eb81efdaaa3dc58b2c897c3f4bac58a1db8b7cd76f0ea39ecc37219"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "6b4a8ee565e05a8543db161d023c065d76d104737ea08a909c5586bddfbd03d8"
 ---
 
 # get_vercel_ci_task_logs
@@ -29,8 +30,8 @@ Returns log lines for the tasks of an invocation attempt in a single request, gr
 
 - [get_vercel_ci_task_run_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/get_vercel_ci_task_run_logs) — Use get_vercel_ci_task_run_logs with Vercel MCP.
 - [get_vercel_ci_invocation_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/get_vercel_ci_invocation_logs) — Use get_vercel_ci_invocation_logs with Vercel MCP.
-- [get_vercel_ci_job_run_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/get_vercel_ci_job_run_logs) — Use get_vercel_ci_job_run_logs with Vercel MCP.
 - [list_vercel_ci_task_runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/list_vercel_ci_task_runs) — Use list_vercel_ci_task_runs with Vercel MCP.
+- [get_vercel_ci_job_run_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/get_vercel_ci_job_run_logs) — Use get_vercel_ci_job_run_logs with Vercel MCP.
 - [Get log lines for the tasks of an invocation attempt](https://vercel.com/docs/rest-api/vercel-ci/get-log-lines-for-the-tasks-of-an-invocation-attempt) — GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/task-logs — Returns log lines for the tasks of an invoca
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/vercel-ci/get_vercel_ci_task_logs.graph.md](/docs/agent-resources/vercel-mcp/tools/vercel-ci/get_vercel_ci_task_logs.graph.md)
@@ -49,6 +50,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/verce
 | `teamId`       | string           | No       | Team ID to use for this operation.                                                                                                                            |
 | `slug`         | string           | No       | Team slug to use for this operation. Use instead of teamId.                                                                                                   |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

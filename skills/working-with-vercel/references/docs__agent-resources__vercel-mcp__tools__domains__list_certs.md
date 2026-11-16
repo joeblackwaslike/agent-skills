@@ -12,9 +12,10 @@ related:
   []
 summary: Use list_certs with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/list_certs.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "6de464630147d37599f522ec6cae9f68bec889ef819f77c28694ae9e4123a7b4"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f6a40ec231c2b24e8dda1534f84baef168fabd0dbe60ea96f1adf81f653e24db"
 ---
 
 # list_certs
@@ -30,7 +31,7 @@ Get certs.
 - [Get certs](https://vercel.com/docs/rest-api/certs/get-certs) — GET /v8/certs — Get certs
 - [vercel certs](https://vercel.com/docs/cli/certs) — Learn how to manage certificates for your domains using the vercel certs CLI command.
 - [Get cert by id](https://vercel.com/docs/rest-api/certs/get-cert-by-id) — GET /v8/certs/{id} — Get cert by id
-- [get_cert_by_id](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_cert_by_id) — Use get_cert_by_id with Vercel MCP.
+- [Remove cert](https://vercel.com/docs/rest-api/certs/remove-cert) — DELETE /v8/certs/{id} — Remove cert
 - [issue_cert](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/issue_cert) — Use issue_cert with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/list_certs.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/list_certs.graph.md)
@@ -43,6 +44,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domai
 | `teamId`  | string | No       | Team ID to use for this operation.                          |
 | `slug`    | string | No       | Team slug to use for this operation. Use instead of teamId. |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -11,9 +11,10 @@ related:
   - /docs/conformance/custom-rules/forbidden-properties
 summary: Learn how to set custom rules to disallow code and code patterns through string and regular expression matches.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/custom-rules/forbidden-code.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "97dd964c23a606f6442b20dc1c2861f36e1c31df454e24816556b3686bd4bb85"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c6ae2598fe6193d4dadff23d4d7eb0d1383a94370c8d6f930989b336fb129d29"
 ---
 
 # forbidden-code
@@ -160,6 +161,18 @@ and without workspace restrictions.
 
 ;
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

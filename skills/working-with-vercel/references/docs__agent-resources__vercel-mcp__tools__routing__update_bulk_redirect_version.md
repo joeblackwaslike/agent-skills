@@ -12,9 +12,10 @@ related:
   []
 summary: Use update_bulk_redirect_version with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/update_bulk_redirect_version.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "ebe781009fdd0e7312e41b929ba0b37fe201f0c6088626080d6be8e56dc0d9d7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1f30a0fe5a5a491f991d0fbbe83a26854cde95fb880e85c75381ebbd75a911e1"
 ---
 
 # update_bulk_redirect_version
@@ -28,10 +29,10 @@ Promote a staging version to production or restore a previous production version
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [list_bulk_redirect_versions](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_bulk_redirect_versions) — Use list_bulk_redirect_versions with Vercel MCP.
-- [update_route_versions](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/update_route_versions) — Use update_route_versions with Vercel MCP.
 - [list_bulk_redirects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_bulk_redirects) — Use list_bulk_redirects with Vercel MCP.
-- [restore_redirects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/restore_redirects) — Use restore_redirects with Vercel MCP.
+- [update_route_versions](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/update_route_versions) — Use update_route_versions with Vercel MCP.
 - [Promote a staging version to production or restore a previous production version.](https://vercel.com/docs/rest-api/bulk-redirects/promote-a-staging-version-to-production-or-restore-a-previous-production-version) — POST /v1/bulk-redirects/versions — Update a version by promoting staging to production or restoring a previous productio
+- [restore_redirects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/restore_redirects) — Use restore_redirects with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routing/update_bulk_redirect_version.graph.md](/docs/agent-resources/vercel-mcp/tools/routing/update_bulk_redirect_version.graph.md)
 <!-- /docsgraph:related -->
@@ -45,6 +46,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routi
 | `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody` | object | No       | Request body for this tool.                                 |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/project-configuration/vercel-json
 summary: Reference for writing Routing Middleware in Python with the vercel-proxy package, including setup, routes, requests, and responses.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/routing-middleware/python-reference.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "6d744749470cb44f805317f09de3db6509217845327fb15ab066bac594d7767c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f91cf72646f88ab34efa9d0aba86edb75f000665426b39c7009a7fd07f600d81"
 ---
 
 # Routing Middleware: Python Reference
@@ -31,13 +32,11 @@ Use the [`vercel-proxy`](https://pypi.org/project/vercel-proxy/) package to writ
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Routing Middleware now supports Python](https://vercel.com/changelog/routing-middleware-now-supports-python)
-- [Python projects now support routing rules](https://vercel.com/changelog/python-projects-now-support-routing-rules)
-- [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing)
 - [Routing](https://vercel.com/docs/routing) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
-- [Services routing](https://vercel.com/docs/services/routing) — Learn how Vercel routes public requests to services and how each service handles its own routes.
-- [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
 - [Add a routing rule](https://vercel.com/docs/rest-api/project-routes/add-a-routing-rule) — POST /v1/projects/{projectId}/routes — Add a single routing rule to a project at a specified position. Defaults to the e
-- [Project-Level Routing Rules](https://vercel.com/docs/routing/project-routing-rules) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
+- [Get project routing rules](https://vercel.com/docs/rest-api/project-routes/get-project-routing-rules) — GET /v1/projects/{projectId}/routes — Get the routing rules for a project. Supports searching by name/ID/pattern, filter
+- [Edit a routing rule](https://vercel.com/docs/rest-api/project-routes/edit-a-routing-rule) — PATCH /v1/projects/{projectId}/routes/{routeId} — Replace a routing rule identified by its ID, or restore it from the cu
+- [Rewrites on Vercel](https://vercel.com/docs/routing/rewrites) — Learn how to use rewrites to send users to different URLs without modifying the visible URL.
 
 Full cross-link map for this page: [/docs/routing-middleware/python-reference.graph.md](/docs/routing-middleware/python-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -286,6 +285,18 @@ Set duration, memory, and other options with the [`functions`](/docs/project-con
 - [Python runtime](/docs/functions/runtimes/python)
 - [`vercel-proxy` on PyPI](https://pypi.org/project/vercel-proxy/)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

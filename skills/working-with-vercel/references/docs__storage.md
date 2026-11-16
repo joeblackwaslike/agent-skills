@@ -12,12 +12,13 @@ related:
   - /docs/vercel-blob/usage-and-pricing
   - /docs/global-config
   - /docs/global-config/global-config-limits
-  - /docs/marketplace-storage
+  - /docs/runtime-cache
 summary: Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/storage.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "61962e67ecbc284cf2e0e140c251374e6945ae0d623b882c853779d100070796"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e56993bb81f1496f9255cd3aaf6eb094befb2ff64ccca4f908e551338f4edb53"
 ---
 
 # Vercel Storage overview
@@ -32,17 +33,17 @@ Upload generated files with Vercel Blob, read low-latency configuration with Glo
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
 - [Improved performance for Vercel Postgres from Edge Functions](https://vercel.com/changelog/improved-performance-for-vercel-postgres-from-edge-functions)
 - [Improvements and fixes](https://vercel.com/changelog/improvements-and-fixes)
 - [Metrics for outgoing requests](https://vercel.com/changelog/metrics-for-outgoing-requests)
 - [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
 - [ Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel) — Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflo
-- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
 - [How to build scalable AI applications](https://vercel.com/blog/how-to-build-scalable-ai-applications)
 - [Introducing storage on Vercel](https://vercel.com/blog/vercel-storage)
-- [Introducing the Vercel Marketplace](https://vercel.com/blog/introducing-the-vercel-marketplace)
 - [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [How can I use AWS S3 with Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-s3-with-vercel) — Example how to use AWS S3 library on Vercel
+- [Introducing the Vercel Marketplace](https://vercel.com/blog/introducing-the-vercel-marketplace)
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
 
 Full cross-link map for this page: [/docs/storage.graph.md](/docs/storage.graph.md)
@@ -76,6 +77,7 @@ The right storage solution depends on your needs for latency, durability, and co
 | --------------------------------- | ---------- | ------------ | ------------------------------------------- | --------------------------------------------------------- | ---------------------- |
 | [Blob](/docs/vercel-blob) | Fast       | Milliseconds | Large, content-addressable files ("blobs")  | [Learn more](/docs/vercel-blob/usage-and-pricing) | Hobby, Pro             |
 | [Global Config](/docs/global-config)  | Ultra-fast | Seconds      | Runtime configuration (e.g., feature flags) | [Learn more](/docs/global-config/global-config-limits)        | Hobby, Pro, Enterprise |
+| [Runtime Cache](/docs/runtime-cache) | In-region | In-region | Ephemeral cache for storing and retrieving data across your functions | [Learn more](/docs/runtime-cache#limits-and-usage) | Hobby, Pro, Enterprise |
 | [Marketplace storage](/docs/marketplace-storage) | Provider-dependent | Provider-dependent | Relational, key-value, NoSQL, and vector data | Provider-specific | Provider-specific |
 
 See [best practices](#best-practices) for optimizing your storage usage.
@@ -115,6 +117,22 @@ You should use Global Config if you need to:
 - [Overview](/docs/global-config)
 - [Quickstart](/docs/global-config/get-started)
 - [Limits & Pricing](/docs/global-config/global-config-limits)
+
+## Cache data close to your functions with Runtime Cache
+
+> Runtime Cache is available on all plans
+
+Runtime Cache is a regional, ephemeral cache you can use for storing and retrieving data across Vercel Functions, Routing middleware, and build execution within a Vercel region. You control invalidation with TTLs and tags.
+
+You should use Runtime Cache if you need to:
+
+- **Reduce duplicate work**: For example, cache responses from slow or rate-limited upstream APIs.
+- **Cache data close to where your code runs**: For example, cache database query results your functions read often.
+
+### Explore Runtime Cache
+
+- [Overview](/docs/runtime-cache)
+- [Limits and usage](/docs/runtime-cache#limits-and-usage)
 
 ## Provision databases through Vercel Marketplace
 
@@ -195,6 +213,18 @@ You can transfer [Marketplace](/docs/marketplace-storage) resources between team
 
 **Native Integrations**: Add a Marketplace integration to your project. [Learn more →](/docs/integrations/install-an-integration/product-integration)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

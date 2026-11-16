@@ -12,9 +12,10 @@ related:
   - /docs/cli
 summary: Learn how to integrate Formspree with Vercel. Follow our tutorial to set up Formspree and manage form submissions on your static website without...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/cms/formspree.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "1ec9bbba90303a0ca7ce134e51f4a12e891fa89254bb8eaa7883291291062975"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "17890879c0a338b63b5f953a928ad902f6df747160a87e9ec658a23dec5e99b5"
 ---
 
 # Vercel Formspree Integration
@@ -29,10 +30,10 @@ Formspree is a form backend platform that handles form submissions on static web
 
 - [Deploying React Forms Using Formspree with Vercel](https://vercel.com/kb/guide/deploying-react-forms-using-formspree-with-vercel) — Create and deploy a React form with the help of Formspree and Vercel.
 - [Vercel Agility CMS Integration](https://vercel.com/docs/integrations/cms/agility-cms) — Learn how to integrate Agility CMS with Vercel. Follow our tutorial to deploy the Agility CMS template or install the in
-- [Vercel ButterCMS Integration](https://vercel.com/docs/integrations/cms/butter-cms) — Learn how to integrate ButterCMS with Vercel. Follow our tutorial to set up the ButterCMS template on Vercel and manage
-- [Vercel Makeswift Integration](https://vercel.com/docs/integrations/cms/makeswift) — Learn how to integrate Makeswift with Vercel. Makeswift is a no-code website builder designed for creating and managing
 - [Vercel DatoCMS Integration](https://vercel.com/docs/integrations/cms/dato-cms) — Learn how to integrate DatoCMS with Vercel. Follow our step-by-step tutorial to set up and manage your digital content s
-- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
+- [Vercel Makeswift Integration](https://vercel.com/docs/integrations/cms/makeswift) — Learn how to integrate Makeswift with Vercel. Makeswift is a no-code website builder designed for creating and managing
+- [Vercel ButterCMS Integration](https://vercel.com/docs/integrations/cms/butter-cms) — Learn how to integrate ButterCMS with Vercel. Follow our tutorial to set up the ButterCMS template on Vercel and manage
+- [Vercel Commerce and Payments Integrations](https://vercel.com/docs/integrations/ecommerce) — Learn how to integrate Vercel with payment processors and ecommerce platforms, including Stripe, Shopify, BigCommerce, a
 
 Full cross-link map for this page: [/docs/integrations/cms/formspree.graph.md](/docs/integrations/cms/formspree.graph.md)
 <!-- /docsgraph:related -->
@@ -72,6 +73,18 @@ To get started with Formspree on Vercel, follow the steps below to install the i
 
 See your installed CMSs documentation for next steps on how to use the integration.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

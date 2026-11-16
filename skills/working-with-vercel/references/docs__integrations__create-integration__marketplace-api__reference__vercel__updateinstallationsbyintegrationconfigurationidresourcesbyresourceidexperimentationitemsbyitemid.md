@@ -3,7 +3,7 @@ title: updateinstallationsbyintegrationconfigurationidresourcesbyresourceidexper
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/updateinstallationsbyintegrationconfigurationidresourcesbyresourceidexperimentationitemsbyitemid
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/updateinstallationsbyintegrationconfigurationidresourcesbyresourceidexperimentationitemsbyitemid"
-last_updated: 2026-11-09
+last_updated: 2026-11-16
 type: conceptual
 prerequisites:
   []
@@ -12,9 +12,10 @@ related:
   - /docs/integrations/create-integration/native-integration
 summary: Learn about updateinstallationsbyintegrationconfigurationidresourcesbyresourceidexperimentationitemsbyitemid on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/updateinstallationsbyintegrationconfigurationidresourcesbyresourceidexperimentationitemsbyitemid.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "0b23553229cf768e8c52edb595747aafaf5d1af0f11da0c70fc553460f6c8b50"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b9714d56cd97f90cce5013739fc8acbc759e4c85aa1d9915575b092cfa5917d9"
 ---
 
 # Patch an existing experimentation item
@@ -89,6 +90,18 @@ Success
 - [Marketplace API Reference](/docs/integrations/create-integration/marketplace-api/reference)
 - [Native Integration Concepts](/docs/integrations/create-integration/native-integration)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

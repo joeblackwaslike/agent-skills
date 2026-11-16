@@ -1,7 +1,7 @@
 ---
 source: "https://opencode.ai/docs/agents/"
-fetched_at: "2026-11-09T12:39:24.590Z"
-sha256: "eba03e9a24b01458218efea6a7a352076ebd1b8fb6a6f8807b484daf289e55eb"
+fetched_at: "2026-11-16T12:32:19.624Z"
+sha256: "51dd27e610b4155b9c6a5bdca11e6e7e481e36e87dccfa05f0714f5d598ae3fe"
 ---
 
 # Agents
@@ -119,7 +119,10 @@ Set `mode` according to where the agent should run:
 | `subagent` | Runs only in a child session through the `subagent` tool. |
 | `all` | Runs either as a primary agent or a subagent. |
 
-Subagents run with fresh context in foreground or background child sessions. The parent agent's `subagent` permissions control which agents it may launch; the child uses its own configured permissions.
+Subagents run with fresh context in their own child sessions. They always run in
+the background: the parent receives a report when a child goes idle, and again
+after each later round of work. The parent agent's `subagent` permissions control
+which agents it may launch; the child uses its own configured permissions.
 
 ```jsonc
 {

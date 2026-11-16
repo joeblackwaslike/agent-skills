@@ -13,9 +13,10 @@ related:
   - /docs/projects
 summary: Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can link to multiple projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/environment-variables/shared-environment-variables.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f4505d7d2959199383da9eae4a50fbe79cb2fc404331eb735d640b7c462aa28f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7a5be3a1e8274e9b735181ef1f5ac3eb31c3db649cea619fc1efe9a377c09ba7"
 ---
 
 # Shared environment variables
@@ -31,14 +32,14 @@ sha256: "f4505d7d2959199383da9eae4a50fbe79cb2fc404331eb735d640b7c462aa28f"
 - [Private Dependencies](https://v0.app/docs/private-dependencies) — Install private npm packages in v0 by configuring NPM_TOKEN or NPM_RC as environment variables.
 - [v0 now reads npm credentials from shared environment variables](https://vercel.com/changelog/v0-now-reads-npm-credentials-from-shared-environment-variables)
 - [Vercel Agent now installs private packages from npm and custom registries](https://vercel.com/changelog/vercel-agent-now-installs-private-packages-from-npm-and-custom-registries)
+- [Vercel Sandbox now supports managed npm credentials](https://vercel.com/changelog/vercel-sandbox-now-supports-managed-npm-credentials)
 - [Migrate a Python API from Render to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-render-to-vercel) — Move a FastAPI, Flask, or Django API from Render to Vercel Functions. Translate render.yaml and replace persistent disks
 - [Share environment variables across your Team and Projects](https://vercel.com/changelog/share-environment-variables-across-your-team-and-projects)
-- [Environment Variables UI](https://vercel.com/blog/environment-variables-ui)
-- [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables) — Learn how to create and manage environment variables for Vercel.
 - [Environment Variables](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables) — Vercel MCP tools for environment variables.
+- [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables) — Learn how to create and manage environment variables for Vercel.
+- [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
 - [Config and Secret environment variables](https://vercel.com/docs/environment-variables/sensitive-environment-variables) — Choose Config or Secret environment variables based on whether their values should remain readable after saving.
 - [Create one or more shared environment variables](https://vercel.com/docs/rest-api/environment/create-one-or-more-shared-environment-variables) — POST /v1/env — Creates shared environment variable\\(s\\) for a team.
-- [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
 
 Full cross-link map for this page: [/docs/environment-variables/shared-environment-variables.graph.md](/docs/environment-variables/shared-environment-variables.graph.md)
 <!-- /docsgraph:related -->
@@ -136,6 +137,18 @@ There are two ways to remove a Shared Environment Variable from a project:
 
 [Branch-specific variables](/docs/environment-variables#preview-environment-variables) are not currently supported with Shared Environment Variables
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

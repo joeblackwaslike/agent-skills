@@ -12,9 +12,10 @@ related:
   - /docs/domains/working-with-domains/view-and-search-domains
 summary: The DNS server was unable to fulfill the DNS request due to an internal issue or misconfiguration. This is a DNS error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/dns_hostname_server_error.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "30f30254f3782f7436f6568847617be58585a8b84bcacf6f1c80b734be32149a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "febba58a3339e86bbd43a5dfcbeabed22865d225a668796b42807fc03287eeeb"
 ---
 
 # DNS_HOSTNAME_SERVER_ERROR
@@ -34,6 +35,18 @@ To troubleshoot this error, follow these steps:
 3. **Check DNS server logs:** Review the logs of the DNS server for any warnings or errors that might indicate what's causing the issue
 4. **Verify domain registration:** Ensure that the domain has been [registered](/docs/domains/working-with-domains/view-and-search-domains) and is currently active
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

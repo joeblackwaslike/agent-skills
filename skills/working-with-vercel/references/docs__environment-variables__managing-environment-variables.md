@@ -13,9 +13,10 @@ related:
   - /docs/deployments/managing-deployments
 summary: Learn how to create and manage environment variables for Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/environment-variables/managing-environment-variables.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "aaa712b66531ce074905aed6762276f2ebbfa5aaaaa989c55c6e310afca0552c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "dfba22c4c5091bb519a8cc800c1e6d6c15e464b13b49c13b199253850521a74b"
 ---
 
 # Managing environment variables
@@ -33,11 +34,10 @@ Environment variables are key-value pairs configured outside your source code so
 - [Migrate from Google Cloud Run to Vercel](https://vercel.com/kb/guide/migrate-cloud-run-to-vercel) — Move a Cloud Run service or worker to Vercel. Compare runtimes, preserve Google Cloud access, and plan jobs, validation,
 - [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
 - [Environment Variables UI](https://vercel.com/blog/environment-variables-ui)
-- [System Environment Variables are now available by default](https://vercel.com/changelog/system-environment-variables-are-now-available-by-default)
-- [Config and Secret environment variables](https://vercel.com/docs/environment-variables/sensitive-environment-variables) — Choose Config or Secret environment variables based on whether their values should remain readable after saving.
+- [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
 - [Environment Variables](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables) — Vercel MCP tools for environment variables.
-- [Edit an environment variable](https://vercel.com/docs/rest-api/projects/edit-an-environment-variable) — PATCH /v9/projects/{idOrName}/env/{id} — Edit a specific environment variable for a given project by passing the environ
-- [Rotating environment variables](https://vercel.com/docs/environment-variables/rotating-secrets) — Safely rotate API keys, tokens, and other secrets in your Vercel environment variables.
+- [Config and Secret environment variables](https://vercel.com/docs/environment-variables/sensitive-environment-variables) — Choose Config or Secret environment variables based on whether their values should remain readable after saving.
+- [Vercel CI Environment Variables](https://vercel.com/docs/ci/environment-variables) — Manage environment variables and secrets for Vercel CI runs.
 - [vercel env](https://vercel.com/docs/cli/env) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
 
 Full cross-link map for this page: [/docs/environment-variables/managing-environment-variables.graph.md](/docs/environment-variables/managing-environment-variables.graph.md)
@@ -141,6 +141,18 @@ To find and view all environment variables.
 
 ![An example of an Environment Variable with the search and filter inputs above.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/projects/environment-variables/variable-example-light.png)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

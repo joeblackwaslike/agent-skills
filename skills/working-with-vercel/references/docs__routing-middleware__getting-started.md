@@ -15,9 +15,10 @@ related:
   - /docs/functions/functions-api-reference/vercel-functions-package
 summary: Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed and personalization to your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/routing-middleware/getting-started.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ccaeb2a4db5fbbb8bd367a0da418bf89bd3b2b08e8fb3b7c16082f64c9c21b60"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "70b6fa32d7f13d62b8e7c6a17856033d6e9cd88d48fb8d57e34dee6214247bb6"
 ---
 
 # Getting Started with Routing Middleware
@@ -32,15 +33,13 @@ Routing Middleware lets you to run code before your pages load, giving you contr
 
 - [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
 - [Vercel Edge Middleware: Dynamic at the speed of static (historical)](https://vercel.com/blog/vercel-edge-middleware-dynamic-at-the-speed-of-static)
-- [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing)
-- [Routing Middleware now supports Python](https://vercel.com/changelog/routing-middleware-now-supports-python)
 - [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
-- [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
+- [Filtering query parameters](https://vercel.com/kb/guide/filter-query-parameters) — Learn how to filter query parameters in your Middleware.
 - [Routing](https://vercel.com/docs/routing) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
+- [Add a routing rule](https://vercel.com/docs/rest-api/project-routes/add-a-routing-rule) — POST /v1/projects/{projectId}/routes — Add a single routing rule to a project at a specified position. Defaults to the e
 - [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
-- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
-- [Microfrontends Routing](https://vercel.com/docs/microfrontends/routing) — Configure which microfrontend handles each path and understand how Vercel selects deployments.
-- [Project-Level Routing Rules](https://vercel.com/docs/routing/project-routing-rules) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
+- [Edit a routing rule](https://vercel.com/docs/rest-api/project-routes/edit-a-routing-rule) — PATCH /v1/projects/{projectId}/routes/{routeId} — Replace a routing rule identified by its ID, or restore it from the cu
+- [Get project routing rules](https://vercel.com/docs/rest-api/project-routes/get-project-routing-rules) — GET /v1/projects/{projectId}/routes — Get the routing rules for a project. Supports searching by name/ID/pattern, filter
 
 Full cross-link map for this page: [/docs/routing-middleware/getting-started.graph.md](/docs/routing-middleware/getting-started.graph.md)
 <!-- /docsgraph:related -->
@@ -302,6 +301,18 @@ Vercel adds [geolocation headers](/docs/routing-middleware#geolocation-headers),
 - [Routing Middleware JS reference](/docs/routing-middleware/js-reference)
 - [Routing Middleware Python reference](/docs/routing-middleware/python-reference)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

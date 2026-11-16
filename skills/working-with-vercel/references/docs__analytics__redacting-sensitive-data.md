@@ -11,9 +11,10 @@ related:
   - /docs/analytics/package
 summary: Learn how to redact sensitive data from your Web Analytics events.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/analytics/redacting-sensitive-data.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "83daa90f1fe176a8e1768ac021cc0050aed3dc6c82cc439092e6c822aa1fbacc"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ed4b8ab0e98cdccf6d82e5a9ffb6cabfeff08b79e335e459ffaa738753478a5e"
 ---
 
 # Redacting Sensitive Data from Web Analytics Events
@@ -26,14 +27,11 @@ Sometimes, URLs and query parameters may contain sensitive data. This could be a
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How we made the Vercel Dashboard twice as fast](https://vercel.com/blog/how-we-made-the-vercel-dashboard-twice-as-fast)
-- [Track server-side custom events with Vercel Web Analytics](https://vercel.com/changelog/track-server-side-custom-events-with-vercel-web-analytics)
-- [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available)
-- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
 - [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
 - [Tracking custom events](https://vercel.com/docs/analytics/custom-events) — Learn how to send custom analytics events from your application.
-- [Get Started with BotID](https://vercel.com/docs/botid/get-started) — Step-by-step guide to setting up BotID protection in your Vercel project
 - [Add the Vercel Toolbar to your local environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost) — Learn how to use the Vercel Toolbar in your local environment.
+- [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
+- [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
 
 Full cross-link map for this page: [/docs/analytics/redacting-sensitive-data.graph.md](/docs/analytics/redacting-sensitive-data.graph.md)
 <!-- /docsgraph:related -->
@@ -810,6 +808,18 @@ inject({
 </script>
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

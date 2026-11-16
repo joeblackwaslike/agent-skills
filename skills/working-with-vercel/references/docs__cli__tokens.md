@@ -3,18 +3,21 @@ title: vercel tokens
 product: vercel
 url: /docs/cli/tokens
 canonical_url: "https://vercel.com/docs/cli/tokens"
-last_updated: 2026-07-15
+last_updated: 2026-11-14
 type: reference
 prerequisites:
   - /docs/cli
 related:
+  - /docs/cli/deploy
+  - /docs/deployments/deploy-without-logging-in
   - /docs/accounts/access-tokens
   - /docs/cli/global-options
 summary: "Manage your personal Vercel authentication tokens from the CLI: list, create, and revoke access tokens for use with the Vercel API and Vercel CLI."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/tokens.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "bcbfdc52357a80288bd1fcd7835f60050900eb65b4c16bfc374332278af0ef4e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2a26a4b99413b9c6c00930f9dd4fe1864fa3c92cc2ec9024b4cecf7e852006ea"
 ---
 
 # vercel tokens
@@ -29,13 +32,15 @@ The `vercel tokens` command manages your personal authentication tokens. Tokens 
 
 - [Why is Vercel CLI asking me to log in? ](https://vercel.com/kb/guide/why-is-vercel-cli-asking-me-to-log-in) — Information on why you may be getting prompted to log in to Vercel CLI.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel kms](https://vercel.com/docs/cli/kms) — Manage Vercel KMS issuers, rotate signing keys, and control which projects can sign tokens from the command line.
 - [List Auth Tokens](https://vercel.com/docs/rest-api/authentication/list-auth-tokens) — GET /v6/user/tokens — Retrieve a list of the current User's authentication tokens.
-- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, delete, and manage items, read tokens, a
+- [vercel kms](https://vercel.com/docs/cli/kms) — Manage Vercel KMS issuers, rotate signing keys, and control which projects can sign tokens from the command line.
+- [Create an Auth Token](https://vercel.com/docs/rest-api/authentication/create-an-auth-token) — POST /v3/user/tokens — Creates and returns a new authentication token for the currently authenticated User. The \\`bearer
+- [Tokens](https://vercel.com/docs/sign-in-with-vercel/tokens) — Learn how to Sign in with Vercel
 
 Full cross-link map for this page: [/docs/cli/tokens.graph.md](/docs/cli/tokens.graph.md)
 <!-- /docsgraph:related -->
+
+To deploy without a token or account, run [`vercel deploy --temporary`](/docs/cli/deploy#temporary). See [Deploying without logging in](/docs/deployments/deploy-without-logging-in).
 
 > **💡 Note:** Treat tokens as secrets. The CLI shows the plaintext value of a newly created
 > token only once. Store it in a secret manager or environment variable; never
@@ -195,6 +200,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

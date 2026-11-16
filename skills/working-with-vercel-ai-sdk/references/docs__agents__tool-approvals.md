@@ -4,8 +4,8 @@ description: Add manual and automatic approval flows to ToolLoopAgent tools.
 url: "https://ai-sdk.dev/docs/agents/tool-approvals"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/agents/tool-approvals.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "248f2be743967a629f1de8e47b6600e2acdaa6026771bb849102125056e33904"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "b171dac5e892bdbc1e306d866f043131b27bba99a8b73864d071dbc70468860a"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -348,7 +348,7 @@ and sent to the client.
 
 - Use `toolApproval` with `ToolLoopAgent`, `generateText`, and `streamText`.
 - Author approval rules as code with [Policy-Based Tool Approvals](/docs/agents/policy-tool-approvals) (`@ai-sdk/policy-opa`).
-- Use `needsApproval` only with [`WorkflowAgent`](/docs/agents/workflow-agent), where approvals suspend and resume durable workflow execution.
+- [`WorkflowAgent`](/docs/agents/workflow-agent) supports `toolApproval` and `needsApproval`. Approvals suspend and resume durable workflow execution.
 - Subagent tools cannot use `toolApproval`; see [Subagents](/docs/agents/subagents#no-tool-approvals-in-subagents).
 - Chat SDK's `createChatTools` marks its write tools and `getUser` as needing approval. A `toolApproval` rule overrides those defaults; see [Chat Platforms](/docs/agents/chat-platforms#give-the-agent-chat-tools).
 

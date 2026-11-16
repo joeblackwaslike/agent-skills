@@ -11,13 +11,14 @@ related:
   - /docs/schedules/configuration
   - /docs/queues
   - /docs/cron-jobs
+  - /docs/schedules/workflows
   - /docs/schedules/sdk
-  - /docs/cli/schedules
 summary: Run code on a recurring cron schedule or once at a specific time, and create schedules at runtime for each of your users.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/schedules.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "8edec620135bee2eb8c2644741bdf5171a4509cc50409662e8a41f96ad00c04f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a567222c245f21b891d5ad626cc42d048e296e0bb338da4f09d991ab1d5f6a74"
 ---
 
 # Schedules
@@ -32,8 +33,10 @@ With Vercel Schedules, you can run code on a recurring [cron](/docs/schedules/co
 
 - [Introducing Vercel Schedules](https://vercel.com/blog/introducing-vercel-schedules)
 - [Vercel Schedules is now in public beta](https://vercel.com/changelog/vercel-schedules-is-now-in-public-beta)
+- [Schedules](https://eve.dev/docs/schedules) — Run an agent on a cron cadence, either a fire-and-forget prompt or a handler that hands work off to a channel.
 - [Vercel CLI Overview](https://vercel.com/docs/cli) — Learn how to use the Vercel command-line interface \\(CLI\\) to manage and configure your Vercel Projects from the command
 - [Poll Mode](https://vercel.com/docs/queues/poll-mode) — Consume messages from Vercel Queues by polling on your own schedule, from any environment.
+- [Vercel Workflows](https://vercel.com/docs/workflows) — Build agents and applications that retry failed steps, wait for external events, and resume across crashes and deploymen
 
 Full cross-link map for this page: [/docs/schedules.graph.md](/docs/schedules.graph.md)
 <!-- /docsgraph:related -->
@@ -48,6 +51,7 @@ Schedules are useful when you need to:
 - **Send reports and digests**: Email a daily summary at 09:00 in each customer's timezone.
 - **Run a task once, later**: Send a reminder, expire a trial, or publish a post at a specific date and time.
 - **Let users choose when work runs**: Create, update, and delete schedules from your app as users change their settings.
+- **Run long or multi-step jobs durably**: [Start a Vercel Workflow](/docs/schedules/workflows) from a schedule, so the job retries failed steps and survives crashes and deployments.
 
 ## Static and dynamic schedules
 
@@ -121,6 +125,8 @@ The skill is also included in the [Vercel Plugin](/docs/agent-resources/vercel-p
 
 **Managing schedules**: Enable, disable, run, and monitor schedules. [Learn more →](/docs/schedules/manage)
 
+**Starting workflows**: Start a durable workflow each time a schedule fires. [Learn more →](/docs/schedules/workflows)
+
 **Multi-tenant schedules**: Give each customer their own schedules with namespaces. [Learn more →](/docs/schedules/multi-tenant)
 
 **Configuration reference**: Look up every static schedule property and cron syntax. [Learn more →](/docs/schedules/configuration)
@@ -135,6 +141,18 @@ The skill is also included in the [Vercel Plugin](/docs/agent-resources/vercel-p
 
 **Cron Jobs (legacy)**: Reference for Cron Jobs, which will be migrated to Schedules. [Learn more →](/docs/schedules/cron-jobs)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

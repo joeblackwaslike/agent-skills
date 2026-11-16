@@ -13,9 +13,10 @@ related:
   - /docs/ai-gateway/modalities/video-generation
 summary: Extend existing videos from their last frame with Grok Imagine Video through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/video-extension.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "97e8ad9a34f0fcdf5d7568b91a8583666475926a21029cae4e1f2b01a897d630"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "91371f51bb404275af1069cf668597351845e9a2bfb8511f42590310134cee5a"
 ---
 
 # AI Gateway Video Extension
@@ -30,8 +31,8 @@ Continue an existing video from its last frame. Describe what happens next and t
 
 - [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway)
 - [Grok Imagine Video 1.5 Lite on AI Gateway](https://vercel.com/changelog/grok-imagine-video-1-5-lite-on-ai-gateway)
-- [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation)
 - [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
+- [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation)
 - [Grok Imagine Video 1.5 on AI Gateway](https://vercel.com/changelog/grok-imagine-video-1-5-on-ai-gateway)
 - [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 - [Veo video models on AI Gateway](https://vercel.com/changelog/veo-video-models-on-ai-gateway)
@@ -163,6 +164,18 @@ The start request AI Gateway persists is capped at 300 KiB, so pass your source 
 
 ***
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

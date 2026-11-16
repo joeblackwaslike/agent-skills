@@ -14,9 +14,10 @@ related:
   - /docs/deployment-protection/methods-to-protect-deployments/vercel-authentication
 summary: Vercel MCP tools for deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c2b82f094bd8d9fb8a3d625eeb21e2e9480ca319608a7b4809e678180c004675"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "976143e6a7c1d6f9bbaff42fb351e188cd76217d26e1b04780074587109f6de3"
 ---
 
 # Deployments
@@ -30,10 +31,10 @@ Create and inspect deployments for your projects, including their files and buil
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [List Deployment Files](https://vercel.com/docs/rest-api/deployments/list-deployment-files) — GET /v6/deployments/{id}/files — Allows to retrieve the file structure of the source code of a deployment by supplying t
-- [Get deployment events](https://vercel.com/docs/rest-api/deployments/get-deployment-events) — GET /v3/deployments/{idOrUrl}/events — Get the build logs of a deployment by deployment ID and build ID. It can work as
-- [List deployments](https://vercel.com/docs/rest-api/deployments/list-deployments) — GET /v7/deployments — List deployments under the authenticated user or team. If a deployment hasn't finished uploading \\
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
+- [Get deployment events](https://vercel.com/docs/rest-api/deployments/get-deployment-events) — GET /v3/deployments/{idOrUrl}/events — Get the build logs of a deployment by deployment ID and build ID. It can work as
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [Get logs for a deployment](https://vercel.com/docs/rest-api/logs/get-logs-for-a-deployment) — GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs — Returns a stream of logs for a given deployment.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments.graph.md)
 <!-- /docsgraph:related -->
@@ -311,6 +312,18 @@ Fetch content directly from a Vercel deployment URL (with [authentication](/docs
 
 **Sample prompt:** "Make sure the content from my-app.vercel.app/api/status looks right"
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

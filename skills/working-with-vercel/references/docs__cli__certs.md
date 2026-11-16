@@ -12,9 +12,10 @@ related:
   - /docs/cli/global-options
 summary: Learn how to manage certificates for your domains using the vercel certs CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/certs.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "29ad7b4330faea39a681f7c674a24c695e6c6c7f9b2365fe12f94a71a471d174"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2ef6accc7a3c6fdb05b28abf221e5bb9f5e0e7de3928173e6fc2d4a94d1f9360"
 ---
 
 # vercel certs
@@ -31,7 +32,7 @@ The `vercel certs` command is used to manage certificates for domains, providing
 - [Get certs](https://vercel.com/docs/rest-api/certs/get-certs) — GET /v8/certs — Get certs
 - [Issue a new cert](https://vercel.com/docs/rest-api/certs/issue-a-new-cert) — POST /v8/certs — Issue a new cert
 - [Working with SSL Certificates](https://vercel.com/docs/domains/working-with-ssl) — Learn how Vercel uses SSL certification to keep your site secure.
-- [vercel dns](https://vercel.com/docs/cli/dns) — Learn how to manage your DNS records for your domains using the vercel dns CLI command.
+- [Get cert by id](https://vercel.com/docs/rest-api/certs/get-cert-by-id) — GET /v8/certs/{id} — Get cert by id
 
 Full cross-link map for this page: [/docs/cli/certs.graph.md](/docs/cli/certs.graph.md)
 <!-- /docsgraph:related -->
@@ -124,6 +125,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

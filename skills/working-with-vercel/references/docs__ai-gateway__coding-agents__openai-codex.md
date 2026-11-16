@@ -16,9 +16,10 @@ related:
   - /docs/agent-harnesses/codex
 summary: Connect OpenAI Codex to AI Gateway with one CLI command, or configure it manually.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/openai-codex.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ed757ed7243664046320c3169f3839898612258d0c043f5b284fdc49d699b715"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b44b7f0bcc01c837ba87ef109781ca7f1c0cdeab71a771ba55d7ae625a365fb7"
 ---
 
 # OpenAI Codex with AI Gateway
@@ -34,10 +35,9 @@ sha256: "ed757ed7243664046320c3169f3839898612258d0c043f5b284fdc49d699b715"
 - [GPT 6 Astra now available on Vercel AI Gateway](https://vercel.com/changelog/gpt-6-astra-now-available-on-vercel-ai-gateway)
 - [Introducing Virtual Models on AI Gateway](https://vercel.com/blog/ai-gateway-virtual-models)
 - [GPT 5.2 Codex now available on Vercel AI Gateway](https://vercel.com/changelog/gpt-5-2-codex-now-available-on-vercel-ai-gateway)
+- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
 - [GPT 5.1 Codex Max now available on Vercel AI Gateway](https://vercel.com/changelog/gpt-5-1-codex-max-now-available-on-vercel-ai-gateway)
 - [GPT 5.1 Codex models now available in Vercel AI Gateway](https://vercel.com/changelog/gpt-5-1-codex-models-now-available-in-vercel-ai-gateway)
-- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
-- [Codex CLI](https://ai-sdk.dev/providers/community-providers/codex-cli) — Learn how to use the Codex CLI provider to access OpenAI GPT-5 models through the Codex CLI.
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 
@@ -232,6 +232,18 @@ Use it everywhere on this page. It serves `/codex/v1/models` in the proprietary 
 
 `wire_api` must be `responses`. Codex removed Chat Completions support, and the gateway serves the Responses API at `/v1/responses`.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

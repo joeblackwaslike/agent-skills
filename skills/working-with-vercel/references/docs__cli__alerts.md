@@ -14,9 +14,10 @@ related:
   - /docs/cli/global-options
 summary: List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/alerts.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "2691eeae318c39c15416a177fbf80a142a5ef61337c49590f0014a3e71aeb5eb"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "bc928299813317f8d28a29c30371056b8bee7b497eca37bec3166ce531daf2c5"
 ---
 
 # vercel alerts
@@ -30,10 +31,10 @@ The `vercel alerts` command lists recent [alerts](/docs/alerts) for the linked p
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Pull anomaly alert details using the Vercel CLI](https://vercel.com/changelog/pull-anomaly-alert-details-using-the-vercel-cli)
-- [vercel activity](https://vercel.com/docs/cli/activity) — View activity events for your Vercel project or team, filtered by type, date range, and project.
-- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
-- [vercel security](https://vercel.com/docs/cli/security) — Inspect the security posture of your Vercel team from the terminal: run every security check, list findings, and triage
 - [Configure alerts](https://vercel.com/docs/alerts/configure-alerts) — Configure alert rules and notification destinations for Vercel Observability alerts.
+- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
+- [vercel activity](https://vercel.com/docs/cli/activity) — View activity events for your Vercel project or team, filtered by type, date range, and project.
+- [vercel security](https://vercel.com/docs/cli/security) — Inspect the security posture of your Vercel team from the terminal: run every security check, list findings, and triage
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 
 Full cross-link map for this page: [/docs/cli/alerts.graph.md](/docs/cli/alerts.graph.md)
@@ -262,6 +263,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

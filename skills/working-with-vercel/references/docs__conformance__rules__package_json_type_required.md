@@ -14,9 +14,10 @@ related:
   - /docs/conformance/rules/PACKAGE_JSON_SIDE_EFFECTS_REQUIRED
 summary: Requires that every package.json file has the type field set to encourage using ES Modules since commonjs is the default.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/package_json_type_required.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "4077187cb573715ba2ba87d3f51cbed03a2d58758918cc8a11df33af69b3bb78"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1039e7e60ac530583b0069f32e108381efed1d27d4423cb147e4817c02c8e014"
 ---
 
 # PACKAGE_JSON_TYPE_REQUIRED
@@ -45,6 +46,18 @@ See the [Node.js docs](https://nodejs.org/api/packages.html#type) for more infor
 The `type` field should be set to `module` when possible, although there are still situations
 where `commonjs` has to be used.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

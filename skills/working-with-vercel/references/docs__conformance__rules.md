@@ -15,9 +15,10 @@ related:
   - /docs/conformance/rules/NEXTJS_MISSING_REACT_STRICT_MODE
 summary: Learn how Conformance improves collaboration, productivity, and software quality at scale.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "2c00f751de5d42dbd014b771bf32c18fffebaae3735b9643a86f56a705b67386"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "583205a82204fc2fe2a00cbc20702ddb1e6c826043e6b19c9304251daf4fdc45"
 ---
 
 # Conformance Rules
@@ -146,6 +147,18 @@ or code health.
 | [WORKSPACE\_MISSING\_CONFORMANCE\_SCRIPT](/docs/conformance/rules/WORKSPACE_MISSING_CONFORMANCE_SCRIPT)         | All packages must define a `conformance` script that invokes the CLI binary.                                                                                   |
 | [WORKSPACE\_MISSING\_PACKAGE\_JSON](/docs/conformance/rules/WORKSPACE_MISSING_PACKAGE_JSON)                     | All directories that match a workspace glob must include a `package.json` file.                                                                                |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/git/vercel-for-azure-pipelines
 summary: Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production branch.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/git.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "a2438f1a57c178d3985b44c5f32a9ec819bab54973d821a7280ce2a95708b100"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "fdd12681cfefa93aea44a4b5fd6402670a3be5eebe19746c4f0077bdb985d3e1"
 ---
 
 # Deploying Git Repositories with Vercel
@@ -30,6 +31,7 @@ Vercel allows for **automatic deployments on every branch push** and merges onto
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
 - [Git repositories can now be searched for and imported easily](https://vercel.com/changelog/git-repositories-can-now-be-searched-for-and-imported-easily)
 - [Projects can now be renamed](https://vercel.com/changelog/projects-can-now-be-renamed)
 - [Repository checkout and Git LFS downloads are now faster](https://vercel.com/changelog/repository-checkout-and-git-lfs-downloads-are-now-faster)
@@ -37,11 +39,10 @@ Vercel allows for **automatic deployments on every branch push** and merges onto
 - [Build commission-free iOS checkouts with Vercel and Paddle](https://vercel.com/kb/guide/build-commission-free-ios-checkouts-with-vercel-and-paddle) — A new ruling allows iOS apps to use external checkouts. Learn how to deploy a secure, high-performance external checkout
 - [Can I use Vercel to deploy to a private cloud?](https://vercel.com/kb/guide/can-i-use-vercel-to-deploy-to-a-private-cloud) — Learn about if it's possible to deploy to a private cloud with Vercel.
 - [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
-- [How to deploy a Python backend with Vercel Services ](https://vercel.com/kb/guide/python-backend-on-vercel) — Deploy a Python backend with a Next.js frontend on Vercel. Learn how to configure both apps with Vercel Services, use a
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure)
 - [September 2020](https://vercel.com/blog/changelog-september-2020)
-- [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues)
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
 
 Full cross-link map for this page: [/docs/git.graph.md](/docs/git.graph.md)
 <!-- /docsgraph:related -->
@@ -236,6 +237,18 @@ Alternatively, teams on the Pro plan can use [custom environments](/docs/deploym
 
 [Custom environments](/docs/deployments/environments#custom-environments) allow you to create and define a pre-production environment. As part of creating a custom environment, you can match specific branches or branch names, including `main`, to automatically deploy to that environment. You can also attach a domain to the environment.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

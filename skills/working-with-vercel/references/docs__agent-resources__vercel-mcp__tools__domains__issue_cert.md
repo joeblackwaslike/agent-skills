@@ -12,9 +12,10 @@ related:
   []
 summary: Use issue_cert with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/issue_cert.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "89e1bf2e69dbd1c3ba62efc30c3c11b8dd2ad8076799c1d117818d4221cd1bfe"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b2c38167f44bc594bc451e5234802b20d1c3baa5b6b046fe30dd73c140180ba4"
 ---
 
 # issue_cert
@@ -28,10 +29,10 @@ Issue a new cert.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Issue a new cert](https://vercel.com/docs/rest-api/certs/issue-a-new-cert) — POST /v8/certs — Issue a new cert
-- [get_cert_by_id](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_cert_by_id) — Use get_cert_by_id with Vercel MCP.
-- [list_certs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/list_certs) — Use list_certs with Vercel MCP.
 - [Get cert by id](https://vercel.com/docs/rest-api/certs/get-cert-by-id) — GET /v8/certs/{id} — Get cert by id
-- [Upload a cert](https://vercel.com/docs/rest-api/certs/upload-a-cert) — PUT /v8/certs — Upload a cert
+- [list_certs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/list_certs) — Use list_certs with Vercel MCP.
+- [get_cert_by_id](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_cert_by_id) — Use get_cert_by_id with Vercel MCP.
+- [Remove cert](https://vercel.com/docs/rest-api/certs/remove-cert) — DELETE /v8/certs/{id} — Remove cert
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/issue_cert.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/issue_cert.graph.md)
 <!-- /docsgraph:related -->
@@ -44,6 +45,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domai
 | `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody` | object | No       | Request body for this tool.                                 |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/environment-variables
 summary: Nx is an extensible build system with support for monorepos, integrations, and Remote Caching on Vercel. Learn how to deploy Nx to Vercel with this...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/monorepos/nx.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "dea1c1b5b7992f6bea4d9fbe57046f72fef8e8f26cb005cb8aed07f3ad9d80ec"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "79b4e4523c6291168ecc4fabf7d395668cea346469552e1df049a4f62259ebdb"
 ---
 
 # Deploying Nx to Vercel
@@ -31,17 +32,15 @@ Nx is an extensible build system with support for monorepos, integrations, and R
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Missing routes-manifest.json file or No Output Directory when using Turborepo or NX](https://vercel.com/kb/guide/missing-routes-manifest-or-output-turborepo-nx) — How to solve the error \\`The file "/vercel/path0/apps/web/.next/routes-manifest.json" couldn't be found\\` or \\`No Output
-- [Import Turborepo, Nx, and Rush monorepos with zero configuration](https://vercel.com/changelog/import-turborepo-nx-and-rush-monorepos-with-zero-configuration)
-- [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel) — Deploy your Turborepo on Vercel and run tasks with Vercel CI using zero-config Remote Caching.
-- [Improved support for Nuxt on Vercel](https://vercel.com/blog/nuxt-on-vercel)
-- [s1ngularity: supply chain attack in Nx packages](https://vercel.com/changelog/s1ngularity-supply-chain-attack-in-nx-packages)
 - [Vercel Remote Cache is now free](https://vercel.com/changelog/free-vercel-remote-cache)
-- [How can I share my Vercel cache across deployments?](https://vercel.com/kb/guide/share-vercel-cache-across-deployments-nextjs) — Learn how to reuse cached responses across deployments with the Next.js App Router and the Vercel Data Cache.
+- [Import Turborepo, Nx, and Rush monorepos with zero configuration](https://vercel.com/changelog/import-turborepo-nx-and-rush-monorepos-with-zero-configuration)
+- [s1ngularity: supply chain attack in Nx packages](https://vercel.com/changelog/s1ngularity-supply-chain-attack-in-nx-packages)
+- [Improved support for Nuxt on Vercel](https://vercel.com/blog/nuxt-on-vercel)
 - [Monorepos FAQ](https://vercel.com/docs/monorepos/monorepo-faq) — Learn the answer to common questions about deploying monorepos on Vercel.
-- [Nitro on Vercel](https://vercel.com/docs/frameworks/backend/nitro) — Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurat
 - [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
+- [Nitro on Vercel](https://vercel.com/docs/frameworks/backend/nitro) — Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurat
+- [Builds](https://vercel.com/docs/builds) — Understand how the build step works when creating a Vercel Deployment.
 - [NestJS on Vercel](https://vercel.com/docs/frameworks/backend/nestjs) — Deploy NestJS applications to Vercel with zero configuration.
-- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
 
 Full cross-link map for this page: [/docs/monorepos/nx.graph.md](/docs/monorepos/nx.graph.md)
 <!-- /docsgraph:related -->
@@ -168,6 +167,18 @@ For remote caching on Nx 20+, consider the following options:
 - **[Turborepo](/docs/monorepos/turborepo)**: Vercel's build system with built-in remote caching support. If you're evaluating build tools, Turborepo offers the most seamless experience on Vercel.
 - **[Self-hosted remote cache](https://nx.dev/docs/guides/tasks--caching/self-hosted-caching#self-hosted-cache)**: Build a custom cache server using the Nx OpenAPI specification (Nx 20.8+)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -13,9 +13,10 @@ related:
   - /docs/accounts/team-members-and-roles
 summary: The requested resource was not found. This is a deployment error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/not_found.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "fd0b417a221e5e853c5d5e7820e7b579f7e595697d407f3549606d6d40f038c6"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0a543e4b78e765cc40a94ebd32d0a2fe5ddf8458151ad78d679e45200a97c8cd"
 ---
 
 # NOT_FOUND
@@ -35,6 +36,18 @@ To troubleshoot this error, follow these steps:
 3. **Review deployment logs:** If the deployment exists, review the [deployment logs](/docs/deployments/logs) to identify any issues that might have caused the deployment to be unavailable
 4. **Verify permissions:** Ensure you have the necessary [permissions](/docs/accounts/team-members-and-roles) to access the deployment
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

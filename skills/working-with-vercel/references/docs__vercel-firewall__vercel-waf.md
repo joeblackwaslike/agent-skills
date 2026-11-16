@@ -15,9 +15,10 @@ related:
   - /docs/vercel-firewall/vercel-waf/ip-blocking
 summary: Learn how to secure your website with the Vercel Web Application Firewall (WAF)
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "30faed00848fa3641ca72504c780c7be5b3029a34f5bb008f3dff7e3278bf2ae"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "101cadbb120b3341820830352c026802ed90b89cbe80bfba44553ad1cb6f4760"
 ---
 
 # Vercel WAF
@@ -34,18 +35,18 @@ The Vercel WAF, part of the [Firewall](/docs/vercel-firewall), provides security
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf) — Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in secur
+- [Vercel WAF upgrade brings persistent actions, rate limiting, and API control](https://vercel.com/blog/vercel-waf-upgrade-brings-persistent-actions-rate-limiting-and-api-control)
 - [Manage Vercel Firewall in the CLI](https://vercel.com/changelog/manage-vercel-firewall-in-the-cli)
 - [Microfrontends Routing is now free for Firewall-mitigated traffic](https://vercel.com/changelog/microfrontends-routing-is-now-free-for-firewall-mitigated-traffic)
 - [Vercel WAF for Blob is now generally available](https://vercel.com/changelog/vercel-waf-for-blob-is-now-generally-available)
 - [Web Application Firewall control now available with vercel.json](https://vercel.com/changelog/web-application-firewall-control-now-available-with-vercel-json)
 - [Add rate limiting with Vercel](https://vercel.com/kb/guide/add-rate-limiting-vercel) — Learn how to implement rate limiting with Vercel.
 - [Using Cloudflare and other reverse proxies with Vercel](https://vercel.com/kb/guide/can-i-use-a-proxy-on-top-of-my-vercel-deployment) — General information about using an external proxy to serve a Vercel Deployment.
-- [How to block bots from OpenAI GPTBot](https://vercel.com/kb/guide/how-to-block-bots-openai-gptbot) — Learn how to use the Vercel WAF to block, rate limit, or challenge traffic from OpenAI GPTBot.
 - [How to conduct PCI scans on Vercel: A complete guide to IP safelisting](https://vercel.com/kb/guide/how-to-conduct-pci-scans-on-vercel-guide) — Scan and verify your Vercel deployments for secure, PCI-compliant payment processing.
 - [How to effectively load test your application on Vercel](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
 - [Backends on Vercel: Python, containers, and Daemons](https://vercel.com/blog/backends-on-vercel-python-containers-and-daemons)
-- [Block, rate limit, and challenge traffic with the Vercel Firewall](https://vercel.com/changelog/block-rate-limit-and-challenge-traffic-with-the-vercel-firewall)
-- [Vercel CDN overview](https://vercel.com/docs/cdn) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
+- [Create Vercel Firewall rules with natural language](https://vercel.com/changelog/create-vercel-waf-custom-rules-using-natural-language)
 
 Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf.graph.md](/docs/vercel-firewall/vercel-waf.graph.md)
 <!-- /docsgraph:related -->
@@ -97,6 +98,20 @@ These standard plan limits apply per project, except for account-level IP blocki
 - [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall): Learn how to build a honeypot with Vercel Web Application Firewall (WAF) that catches bots ignoring your robots.txt. Capture offending IPs and block them automatically with Vercel WAF Custom Rules and Persistent Actions.
 - [Vercel BotID vs Cloudflare Turnstile](https://vercel.com/kb/guide/vercel-botid-vs-cloudflare-turnstile): Compare Vercel BotID and Cloudflare Turnstile for bot protection, including detection model, hosting requirements, checkBotId() vs Siteverify, framework support, and pricing.
 - [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid): Gate every request to your AI endpoints with Vercel BotID and checkBotId() so inference runs only for verified callers. Covers setup, Deep Analysis, and verified bots.
+- [Vercel WAF vs Cloudflare WAF](https://vercel.com/kb/guide/vercel-waf-vs-cloudflare-waf): A detailed guide to Vercel WAF vs Cloudflare WAF: framework-aware rules, sub-300ms propagation, BotID bot detection, OWASP paranoia levels, leaked credential lookup, and when to choose each product for your web application.
+
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

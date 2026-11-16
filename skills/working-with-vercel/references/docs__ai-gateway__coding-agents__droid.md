@@ -15,9 +15,10 @@ related:
   - /docs/ai-gateway/observability-and-spend/budgets
 summary: Connect Factory Droid to AI Gateway with the Vercel CLI or bring-your-own-key custom model entries.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/droid.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "6435d8e6cda268496f2981925d6072515a95114388dd6cfc01f103dfa82a72ed"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4a95274780c0ee4dadb8bae7cf14cd63270381d61ad7362d00acd72a55c1bf19"
 ---
 
 # Factory Droid with AI Gateway
@@ -30,11 +31,11 @@ sha256: "6435d8e6cda268496f2981925d6072515a95114388dd6cfc01f103dfa82a72ed"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
-- [ForgeCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/forge) — Connect ForgeCode to AI Gateway with the Vercel CLI or custom provider and credential files.
 - [Aider with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/aider) — Connect Aider to AI Gateway with the Vercel CLI or an OpenAI-compatible base URL, API key, and model metadata.
-- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
+- [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
+- [ForgeCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/forge) — Connect ForgeCode to AI Gateway with the Vercel CLI or custom provider and credential files.
+- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/droid.graph.md](/docs/ai-gateway/coding-agents/droid.graph.md)
 <!-- /docsgraph:related -->
@@ -111,6 +112,18 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 - Configure [spend limits](/docs/ai-gateway/observability-and-spend/budgets) on your API key
 - Read the [Factory documentation](https://docs.factory.ai) for Droid options
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

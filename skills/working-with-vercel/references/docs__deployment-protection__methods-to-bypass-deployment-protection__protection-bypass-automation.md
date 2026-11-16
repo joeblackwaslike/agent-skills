@@ -16,9 +16,10 @@ related:
   - /docs/vercel-firewall/ddos-mitigation
 summary: Learn how to bypass Vercel Deployment Protection for automated tooling (e.g. E2E testing).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "6cb3dbf485cbd48dc328225ba3566c5bce1ff0ccd69945046c03149696c6ad49"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "004b218d525aeb44e71da9d08492c6500995c7b9822150efbdd8a15db6b632bc"
 ---
 
 # Protection Bypass for Automation
@@ -188,6 +189,18 @@ https://your-app.vercel.app/api/stripe-webhook?x-vercel-protection-bypass=your-g
 https://your-app.vercel.app/api/github-webhook?x-vercel-protection-bypass=your-generated-secret
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

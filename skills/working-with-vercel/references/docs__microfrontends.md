@@ -15,9 +15,10 @@ related:
   - /docs/vercel-toolbar/in-production-and-localhost
 summary: Learn how to use microfrontends on Vercel to split apart large applications, improve developer experience and make incremental migrations easier.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/microfrontends.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f3c10a6fc5858f22307744c20da1ffb30301264675b08d4fce74283580e198ed"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "6459cc3659f1c7461df0be5deb7f679aa74a5a320bde36db60a1db9d74d404a5"
 ---
 
 # Microfrontends
@@ -30,10 +31,10 @@ Microfrontends allow you to split a single application into smaller, independent
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Microfrontends now generally available](https://vercel.com/changelog/microfrontends-now-generally-available)
-- [Microfrontends](https://turborepo.dev/docs/guides/microfrontends) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
-- [Microfrontends routing now applies to vc alias and branch domains](https://vercel.com/changelog/microfrontends-routing-now-applies-to-vc-alias-and-branch-domains)
 - [Microfrontends support is now in Public Beta](https://vercel.com/changelog/microfrontends-support-is-now-in-public-beta)
+- [Microfrontends](https://turborepo.dev/docs/guides/microfrontends) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
+- [Microfrontends now generally available](https://vercel.com/changelog/microfrontends-now-generally-available)
+- [Microfrontends routing now applies to vc alias and branch domains](https://vercel.com/changelog/microfrontends-routing-now-applies-to-vc-alias-and-branch-domains)
 - [Preview links between microfrontends projects now serve all paths](https://vercel.com/changelog/preview-links-between-microfrontends-projects-now-serve-all-paths)
 - [Vercel Microfrontends checks for missing configuration](https://vercel.com/changelog/vercel-microfrontends-checks-for-missing-configuration)
 - [Build with an Express starter template](https://vercel.com/kb/guide/build-with-a-express-starter-template) — Deploy an Express app to Vercel from a template. Browse Express starters from Vercel and the community, then run them lo
@@ -112,6 +113,18 @@ Microfrontends usage can be viewed in the **Vercel Delivery Network** section of
 - [Incremental migrations with microfrontends](/kb/guide/incremental-migrations-with-microfrontends)
 - [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

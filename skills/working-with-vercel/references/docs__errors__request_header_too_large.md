@@ -11,9 +11,10 @@ related:
   []
 summary: Request header size exceeds the permissible limit.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/request_header_too_large.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "31fa38864cb563cd6dfbe220fba63431aa6b2b6fae6e229e25e6b2f77511da22"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9b68de36ee6278dbece5b40775e9f900ac99704884d6b1927a258b5e33e1f0d3"
 ---
 
 # REQUEST_HEADER_TOO_LARGE
@@ -29,6 +30,18 @@ To troubleshoot this error, follow these steps:
 1. **Limit header size:** Ensure that the size of each request header does not exceed 32 KB
 2. **Review cookies:** A request carries all of its cookies in one `Cookie` header, so keep the combined size of your cookies within the 32 KB limit
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

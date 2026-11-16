@@ -3,22 +3,23 @@ title: Astro on Vercel
 product: vercel
 url: /docs/frameworks/frontend/astro
 canonical_url: "https://vercel.com/docs/frameworks/frontend/astro"
-last_updated: 2026-08-26
+last_updated: 2026-11-14
 type: conceptual
 prerequisites:
   - /docs/frameworks/frontend
   - /docs/frameworks
 related:
   - /docs/cli
+  - /docs/deployments/deploy-without-logging-in
   - /docs/functions/limitations
   - /docs/analytics
   - /docs/analytics/quickstart
-  - /docs/build-output-api/configuration
 summary: Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Middleware.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/frontend/astro.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "fd47ed602f7cccc54ed92ec7e271996da63251c8eb5e91546cdb3f65da8e4223"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0c5358ef20b2bb6b9d96a47a0d3d5a5728ed014ff55ec9642980156e668c0163"
 ---
 
 # Astro on Vercel
@@ -34,15 +35,14 @@ Astro is an all-in-one web framework that enables you to build performant static
 - [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
 - [Migrate an Astro app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-an-astro-app-from-webflow-cloud-to-vercel) — Move your Astro app from Webflow Cloud to Vercel: swap the @astrojs/cloudflare adapter for @astrojs/vercel, drop the bas
 - [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
-- [Vercel Edge Middleware: Dynamic at the speed of static (historical)](https://vercel.com/blog/vercel-edge-middleware-dynamic-at-the-speed-of-static)
 - [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions) — Learn how to import files inside Serverless Functions on Vercel.
 - [How to ship a NestJS app on Vercel](https://vercel.com/kb/guide/ship-a-nestjs-app-on-vercel) — Deploy a NestJS app to Vercel with zero configuration. Learn how to ship from a template, the Nest CLI, or Git, and conf
-- [Astro projects can now be deployed with zero configuration](https://vercel.com/changelog/astro-projects-can-now-be-deployed-with-zero-configuration)
+- [Vercel Edge Middleware: Dynamic at the speed of static (historical)](https://vercel.com/blog/vercel-edge-middleware-dynamic-at-the-speed-of-static)
 - [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
 - [Nuxt on Vercel](https://vercel.com/docs/frameworks/full-stack/nuxt) — Deploy Nuxt applications to Vercel and configure rendering, functions, middleware, routing, image optimization, and cach
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
-- [Remix on Vercel](https://vercel.com/docs/frameworks/full-stack/remix) — Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
+- [Vite + Nitro on Vercel](https://vercel.com/docs/frameworks/full-stack/vite-with-nitro) — Add a backend to any Vite app with Nitro and deploy to Vercel with zero configuration.
 
 Full cross-link map for this page: [/docs/frameworks/frontend/astro.graph.md](/docs/frameworks/frontend/astro.graph.md)
 <!-- /docsgraph:related -->
@@ -59,6 +59,16 @@ To get started with Astro on Vercel:
 \- Or, choose a template from Vercel's marketplace:
 
 Vercel deployments can \[integrate with your git provider]\(/docs/git) to \[generate preview URLs]\(/docs/deployments/environments#preview-environment-pre-production) for each pull request you make to your Astro project.
+
+## Deploy without an account
+
+To deploy an existing Astro project without an account or login, run this command in the project root:
+
+```bash filename="terminal"
+vercel deploy --temporary
+```
+
+The CLI builds the project, deploys it to production, and prints a claim URL. Claim the project to keep it live. See [Deploying without logging in](/docs/deployments/deploy-without-logging-in).
 
 ## Using Vercel's features with Astro
 
@@ -209,7 +219,7 @@ To deploy a server-rendered Astro app, or a static Astro site with Vercel featur
 The following configuration options enable Vercel's features for Astro deployments.
 
 | Option                                                                                                                         | type                 | Rendering          | Purpose                                                                                                                                                                                                     |
-| ------------------------------------------------------------------------------------------------------------------------------ | -------------------- | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ------------------------------------------------------------------------------------------------------------------------------ | -------------------- | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [`maxDuration`](/docs/functions/limitations#max-duration)                                                                         | `number`             | Serverless         | Extends or limits the maximum duration (in seconds) that Vercel functions can run before timing out.                                                                                                        |
 | [`webAnalytics`](/docs/analytics)                                                                                              | `{enabled: boolean}` | Static, Serverless | Enables Vercel's [Web Analytics](/docs/analytics). See [the quickstart](/docs/analytics/quickstart) to set up analytics on your account.                                                                    |
 | [`imageService`](https://docs.astro.build/en/guides/integrations-guide/vercel/#imageservice)                                   | `boolean`            | Static, Serverless | For astro versions `3` and up. Enables an automatically [configured service](https://docs.astro.build/en/reference/image-service-reference/#what-is-an-image-service) to optimize your images.              |
@@ -698,7 +708,7 @@ To enable Speed Insights with Astro, see [the Speed Insights quickstart](/docs/s
 
 **To summarize, using Speed Insights with Astro on Vercel:**
 
-- Enables you to track traffic performance metrics, such as [First Contentful Paint](/docs/speed-insights/metrics#first-contentful-paint-fcp), or [First Input Delay](/docs/speed-insights/metrics#first-input-delay-fid)
+- Enables you to track traffic performance metrics, such as [First Contentful Paint](/docs/speed-insights/metrics#first-contentful-paint-fcp), or [Interaction to Next Paint](/docs/speed-insights/metrics#interaction-to-next-paint-inp)
 - Enables you to view performance metrics by page name and URL for more granular analysis
 - Shows you [a score for your app's performance](/docs/speed-insights/metrics#how-the-scores-are-determined) on each recorded metric, which you can use to track improvements or regressions
 
@@ -716,6 +726,18 @@ Learn more about deploying Astro projects on Vercel with the following resources
 - [Vercel Function docs](/docs/functions)
 - [Astro docs](https://docs.astro.build/en/guides/integrations-guide/vercel)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

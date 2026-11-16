@@ -15,9 +15,10 @@ related:
   - /docs/incremental-static-regeneration
 summary: "Learn how Vercel's CDN shields your origin during traffic surges for uncached routes."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/incremental-static-regeneration/request-collapsing.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "756561afc7e676af87b51fff957ab653eaaed894654a0c00908b43fde9548265"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a9bb0978fae79e7e53ae0c2cf4ea5cd469132b9f6a18d606d7f964e289a86d5a"
 ---
 
 # Request Collapsing
@@ -37,11 +38,11 @@ Vercel uses **request collapsing** to protect uncached routes during high traffi
 - [Request collapsing for ISR cache misses](https://vercel.com/changelog/request-collapsing-for-isr-cache-misses)
 - [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
 - [Life of a Vercel request: Navigating the Edge Network](https://vercel.com/blog/life-of-a-vercel-request-navigating-the-edge-network)
-- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
+- [Control CDN caching for shared and personalized pages on Vercel](https://vercel.com/kb/guide/cdn-cache-personalized-pages) — Control CDN caching for shared and personalized Next.js pages. Set cache headers, separate per-user content, and verify
 - [Caching](https://vercel.com/docs/caching) — Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 - [Vercel fundamental concepts](https://vercel.com/docs/fundamentals) — Learn about the core concepts of Vercel
-- [Partial Prerendering \\(PPR\\)](https://vercel.com/docs/partial-prerendering) — Partial Prerendering serves a cached static shell instantly, then renders and streams the dynamic parts of a page per re
+- [CDN security](https://vercel.com/docs/cdn-security) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
 
 Full cross-link map for this page: [/docs/incremental-static-regeneration/request-collapsing.graph.md](/docs/incremental-static-regeneration/request-collapsing.graph.md)
 <!-- /docsgraph:related -->
@@ -69,6 +70,18 @@ Request collapsing is supported for:
 - [Incremental Static Regeneration (ISR)](/docs/incremental-static-regeneration)
 - [Image Optimization](/docs/image-optimization)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

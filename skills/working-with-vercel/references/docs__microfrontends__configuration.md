@@ -13,9 +13,10 @@ related:
   - /docs/environment-variables/managing-environment-variables
 summary: Configure your microfrontends.json.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/microfrontends/configuration.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "38fdc82cf9120e0740fd30cf646f86d59f688e43927f84a7941bb4560774c26e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "003055e9e78d7ce84ecdcd5d223c339e01926a5d64360693f1211f6c276c3613"
 ---
 
 # Microfrontends Configuration
@@ -30,8 +31,8 @@ The `microfrontends.json` file is used to configure your microfrontends. If this
 
 - [Microfrontends](https://turborepo.dev/docs/guides/microfrontends) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
 - [Managing microfrontends](https://vercel.com/docs/microfrontends/managing-microfrontends) — Learn how to manage your microfrontends on Vercel.
-- [Microfrontends Routing](https://vercel.com/docs/microfrontends/routing) — Configure which microfrontend handles each path and understand how Vercel selects deployments.
 - [Testing & troubleshooting microfrontends](https://vercel.com/docs/microfrontends/troubleshooting) — Learn about testing, common issues, and how to troubleshoot microfrontends on Vercel.
+- [Microfrontends Routing](https://vercel.com/docs/microfrontends/routing) — Configure which microfrontend handles each path and understand how Vercel selects deployments.
 - [vercel microfrontends](https://vercel.com/docs/cli/microfrontends) — Manage microfrontends groups from the CLI. Learn how to create groups, inspect group metadata, add and remove projects,
 - [Microfrontends local development](https://vercel.com/docs/microfrontends/local-development) — Learn how to run and test your microfrontends locally.
 
@@ -174,6 +175,18 @@ If you're using Turborepo, define the environment variable **outside** of the Tu
 VC_MICROFRONTENDS_CONFIG_FILE_NAME="microfrontends-dev.json" turbo dev
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

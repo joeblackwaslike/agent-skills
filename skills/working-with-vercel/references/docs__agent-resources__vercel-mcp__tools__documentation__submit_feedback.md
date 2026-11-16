@@ -12,9 +12,10 @@ related:
   - /docs/cli/feedback
 summary: Send feedback about Vercel or its MCP tools.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation/submit_feedback.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c163111ca3daf09913ce507607c6e493ea850e4097082447698bbb538a53d257"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5bfc97078f2f85ca40d526d30d1ab40cefe43945a75144376594e2eaef120c78"
 ---
 
 # submit_feedback
@@ -80,6 +81,18 @@ If the error says the feedback service is unavailable and nothing was submitted,
 
 If a request times out or returns an uncertain outcome, it may already have reached Vercel. The error won't offer a CLI fallback. Submitting again, including through `vercel feedback`, can create a duplicate. Decide whether to send another copy. If you reach a rate limit, wait before trying again.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

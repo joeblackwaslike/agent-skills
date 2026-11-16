@@ -15,9 +15,10 @@ related:
   - /docs/project-configuration/vercel-json
 summary: Discover the package managers supported by Vercel for dependency management. Learn how Vercel detects and uses npm, Yarn, pnpm, and Bun for optimal...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/package-managers.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "abd4d2b738ed123ad013da5a412c90a55608c53ad4d702d446c8c5bf54bf0401"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b7831fc852e0eb56cbc8c631e41506e12d6af56be3173bd63370543fe3936180"
 ---
 
 # Package Managers
@@ -35,13 +36,11 @@ Vercel will automatically detect the package manager used in your project and in
 - [Does Vercel Support Yarn? \\(Versions 2, 3, and 4\\)](https://vercel.com/kb/guide/does-vercel-support-yarn-4) — Vercel supports Yarn 1, 2, 3, and 4. Learn which version your build uses by default, and how to pin Yarn 4 with Corepack
 - [Projects using pnpm can now be deployed with zero configuration](https://vercel.com/changelog/projects-using-pnpm-can-now-be-deployed-with-zero-configuration)
 - [How do I use private dependencies with Vercel?](https://vercel.com/kb/guide/using-private-dependencies-with-vercel) — Information on how to use private dependencies with a Vercel deployment.
-- [Version 7 of npm is now supported](https://vercel.com/changelog/version-7-of-npm-is-now-supported)
-- [Customizing the Install Command while creating Projects](https://vercel.com/changelog/customizing-the-install-command-while-creating-projects)
-- [Automatic pnpm v8 support](https://vercel.com/changelog/automatic-pnpm-v8-support)
-- [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
-- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
+- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 
 Full cross-link map for this page: [/docs/package-managers.graph.md](/docs/package-managers.graph.md)
 <!-- /docsgraph:related -->
@@ -119,6 +118,18 @@ To specify a package manager for a deployment, use the [`installCommand`](/docs/
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/drains/audit-logs-to-splunk
 summary: Learn about Audit Log Drains - data formats, fields, and team activity events.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/drains/reference/audit-logs.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "4e35b00c7ac23eb41c0fec709705faeab1a475602d120463de6a536152e1e2a1"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1b7a341ae5d7daed638fff0d7e49ba07ede37bc08e8cd8dca2d28c9a8a2e085b"
 ---
 
 # Audit Log Drains Reference
@@ -35,12 +36,11 @@ Audit Log Drains forward team activity events to external endpoints for storage,
 - [Audit Log Drains now support Datadog, Splunk, and Panther](https://vercel.com/changelog/audit-log-drains-now-support-datadog-splunk-and-panther)
 - [Expanded Audit Log coverage, now delivered through Vercel Drains](https://vercel.com/changelog/expanded-audit-log-coverage-now-delivered-through-vercel-drains)
 - [Introducing Vercel Security Review](https://vercel.com/blog/vercel-security-review)
-- [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains)
 - [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics) — Learn about Web Analytics Drains - data formats and custom events configuration.
+- [Creates a new Integration Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-new-integration-log-drain-deprecated) — POST /v2/integrations/log-drains — Creates an Integration log drain. This endpoint must be called with an OAuth2 client
+- [vercel drains](https://vercel.com/docs/cli/drains) — List, inspect, create, update, pause, resume, and delete Vercel Drains from your terminal.
+- [Creates a Configurable Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-configurable-log-drain-deprecated) — POST /v1/log-drains — Creates a configurable log drain. This endpoint must be called with a team AccessToken \\(integrati
 - [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
-- [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
-- [AI Gateway Budgets and Spend Limits](https://vercel.com/docs/ai-gateway/observability-and-spend/budgets) — Cap AI Gateway spend for your team, a project, an individual API key, or a team member with budgets, refresh periods, sp
-- [vercel buy](https://vercel.com/docs/cli/buy) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
 
 Full cross-link map for this page: [/docs/drains/reference/audit-logs.graph.md](/docs/drains/reference/audit-logs.graph.md)
 <!-- /docsgraph:related -->
@@ -192,6 +192,18 @@ For more information on Audit Log Drains and how to use them, check out the foll
 - [Audit Logs](/docs/audit-log)
 - [Migrating from Custom SIEM Log Streaming](/docs/audit-log/migrating-to-drains)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

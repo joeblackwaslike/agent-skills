@@ -15,14 +15,17 @@ related:
   - /docs/functions
 summary: Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no matter what tooling you use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/frontend.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b62dc36494ca501b0da4132a0269985e6b06b6f091bdc4908d3fcb885dbc5075"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "6fedfc0c705540d4b1c5bb97ef88ada0f7b0c4f6f84480a86b3de2966d319332"
 ---
 
 # Frontends on Vercel
 
-The following frontend frameworks are supported with zero-configuration.
+## Deploy your frontend framework
+
+Deploy Vite, Astro, React Router, and other frontend frameworks without configuring a build. Some frameworks have an adapter or preset that enables more Vercel features.
 
 
 <!-- docsgraph:related -->
@@ -30,18 +33,57 @@ The following frontend frameworks are supported with zero-configuration.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Announcing the Build Output API](https://vercel.com/blog/build-output-api)
+- [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
 - [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
 - [Full-stack frameworks on Vercel](https://vercel.com/docs/frameworks/full-stack) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
-- [Announcing the Build Output API](https://vercel.com/blog/build-output-api)
-- [New features for SvelteKit: Optimize your application with ease](https://vercel.com/blog/feature-complete-sveltekit)
-- [Life of a Vercel request: What happens when a user presses enter](https://vercel.com/blog/life-of-a-vercel-request-what-happens-when-a-user-presses-enter)
-- [The foundations of the Frontend Cloud](https://vercel.com/blog/the-foundations-of-the-frontend-cloud)
-- [What's new in Svelte 5](https://vercel.com/blog/whats-new-in-svelte-5)
-- [Run multiple frameworks in one project with Vercel Services](https://vercel.com/changelog/run-multiple-frameworks-in-one-project-with-vercel-services)
-- [Remix on Vercel](https://vercel.com/docs/frameworks/full-stack/remix) — Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
+- [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
+- [Backends on Vercel](https://vercel.com/docs/frameworks/backend) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
+- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 
 Full cross-link map for this page: [/docs/frameworks/frontend.graph.md](/docs/frameworks/frontend.graph.md)
 <!-- /docsgraph:related -->
+
+#### Vite
+
+```typescript filename="vite.config.ts"
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+// Vercel detects Vite and needs no adapter or plugin.
+// It runs `vite build` and serves the `dist/` directory.
+export default defineConfig({
+  plugins: [react()],
+});
+```
+
+#### Astro
+
+```typescript filename="astro.config.ts"
+import { defineConfig } from 'astro/config';
+import vercel from '@astrojs/vercel';
+
+export default defineConfig({
+  // Server-render pages on demand with Vercel Functions.
+  output: 'server',
+  adapter: vercel({ webAnalytics: { enabled: true } }),
+});
+```
+
+#### React Router
+
+```typescript filename="react-router.config.ts"
+import { vercelPreset } from '@vercel/react-router/vite';
+import type { Config } from '@react-router/dev/config';
+
+export default {
+  ssr: true,
+  // The preset enables per-route function settings.
+  presets: [vercelPreset()],
+} satisfies Config;
+```
+
+The following frontend frameworks are supported with zero-configuration.
 
 - **Angular**: Angular is a TypeScript-based cross-platform framework from Google.
   - [Deploy](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/angular) | [View Demo](https://angular-template.vercel.app)
@@ -156,7 +198,7 @@ We're committed to having support for all Vercel features across frameworks, and
 | [Streaming SSR](/docs/functions/streaming-functions) | ✓ | ✓ | ✗ | ✓ | ✓ | ✓ | N/A | N/A |
 | [Incremental Static Regeneration](/docs/incremental-static-regeneration) | ✓ | ✓ | ✓ | ✗ | ✓ | ✗ | N/A | N/A |
 | [Image Optimization](/docs/image-optimization) | ✓ | ✓ | ✓ | N/A | ✓ | ✗ | N/A | N/A |
-| [Runtime Cache](/docs/caching/runtime-cache) | ✓ | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| [Runtime Cache](/docs/runtime-cache) | ✓ | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
 | [Native OG Image Generation](/docs/og-image-generation) | ✓ | N/A | ✓ | N/A | N/A | N/A | N/A | N/A |
 | [Multi-runtime support (different routes)](/docs/functions/runtimes) | ✓ | ✓ | ✓ | N/A | ✗ | ✓ | N/A | N/A |
 | [Multi-runtime support (entire app)](/docs/functions/runtimes) | ✓ | ✓ | ✓ | N/A | ✓ | ✓ | N/A | N/A |
@@ -164,6 +206,18 @@ We're committed to having support for all Vercel features across frameworks, and
 | [Skew Protection](/docs/skew-protection) | ✓ | ✓ | ✓ | N/A | ✓ | ✗ | N/A | N/A |
 | [Framework Routing Middleware](/docs/routing-middleware) | ✓ | N/A | ✗ | ✓ | ✓ | ✗ | N/A | N/A |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -12,9 +12,10 @@ related:
   - /docs/flags/vercel-flags/project-connections
 summary: "Open the dashboard to disconnect a project's flags."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/get_flags_project_disconnection_link.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "cc2034e793ff32e037d5a8fe3818a347759e524a274a77e9031b5fd0ca11c91a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8e39d57e6ae2bebe8a2f1214589107df5d9f289bc7f73a22ed54527f787c5134"
 ---
 
 # get_flags_project_disconnection_link
@@ -45,6 +46,18 @@ You need permission to manage connections on the source to complete this action.
 | `consumerProjectId` | string | Yes      | The connected consumer project id |
 | `teamId`            | string | Yes      | Team ID.                          |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

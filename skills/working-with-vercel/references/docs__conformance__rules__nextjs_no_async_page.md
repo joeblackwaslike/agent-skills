@@ -11,9 +11,10 @@ related:
   - /docs/conformance/customize
 summary: Ensures that the exported Next.js page component and its transitive dependencies are not asynchronous, as that blocks the rendering of the page.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/nextjs_no_async_page.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "7d396b8a19c3c71c329f505eb2f067d8a9713626a69265fdb51d93850142c85a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "6fef77d54a7c4f294469f33187fe9f137437954406d3234e3613de510f3717d8"
 ---
 
 # NEXTJS_NO_ASYNC_PAGE
@@ -87,6 +88,18 @@ export default async function Page() {
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/sandbox
 summary: Deploy an fx agent with libfx so its sessions survive crashes, function timeouts, and redeploys on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-harnesses/fx.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f00d6835ba8e838d09fb88d622cc0cbe22f997e5a6fa6ea262cb278e002fd6fe"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "87d6db2e9e4b6a6b50b4a60b54a6caa32b6e7010d8e8eaa5e32357ec6e0b8851"
 ---
 
 # Running fx Durably on Vercel
@@ -32,11 +33,12 @@ sha256: "f00d6835ba8e838d09fb88d622cc0cbe22f997e5a6fa6ea262cb278e002fd6fe"
 
 - [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
 - [Choosing between eve, AI SDK agents, and \\`WorkflowAgent\\`](https://vercel.com/kb/guide/eve-vs-ai-sdk-agents-vs-workflowagent) — Compare eve, \\`ToolLoopAgent\\`, and \\`WorkflowAgent\\` by durability, approvals, channels, and setup to choose an agent f
+- [fx](https://ai-sdk.dev/providers/ai-sdk-harnesses/fx) — Learn how to use the fx harness adapter.
 - [Running OpenCode Durably on Vercel](https://vercel.com/docs/agent-harnesses/opencode) — Run OpenCode v2 inside a Vercel Function with its session in a durable log, so a crashed turn resumes in a new function.
-- [Running Claude Code Durably on Vercel](https://vercel.com/docs/agent-harnesses/claude-code) — Run Claude Code in a Vercel Sandbox, driven by a Vercel Function, with its session in a durable log, so a crashed turn r
 - [Running Codex Durably on Vercel](https://vercel.com/docs/agent-harnesses/codex) — Run Codex in a Vercel Sandbox, driven by a Vercel Function, with its session in a durable log, so a crashed turn resumes
 - [Scheduling Work with libfx](https://vercel.com/docs/schedules/agents/libfx) — Give an fx agent a tool that creates schedules, and send each run back into the session that created it.
-- [eve on Vercel](https://vercel.com/docs/frameworks/agents/eve) — Create and deploy an eve agent on Vercel with AI Gateway model access, durable sessions, and authenticated requests.
+- [Agent Harnesses You Can Run Durably on Vercel](https://vercel.com/docs/agent-harnesses/harnesses) — Guides for running Pi, fx, OpenCode, eve, Claude Code, and Codex durably on Vercel, so a crash or a timeout resumes the
+- [Running eve Agents Durably on Vercel](https://vercel.com/docs/agent-harnesses/eve) — eve agents are durable out of the box on Vercel, with no extra configuration.
 
 Full cross-link map for this page: [/docs/agent-harnesses/fx.graph.md](/docs/agent-harnesses/fx.graph.md)
 <!-- /docsgraph:related -->
@@ -74,7 +76,7 @@ Full cross-link map for this page: [/docs/agent-harnesses/fx.graph.md](/docs/age
     },
   ];
 
-  export const agent = createFxAgent({ model: 'anthropic/claude-sonnet-5.5', tools });
+  export const agent = createFxAgent({ model: 'anthropic/claude-fable-5.2', tools });
   ```
 
 - ### Add the chat route
@@ -248,7 +250,7 @@ An app can make several agents, each with its own chat route. Give each one a `n
 import { createFxAgent } from 'libfx';
 import { tools } from './tools'; // your tools, each with idempotent set
 
-export const support = createFxAgent({ name: 'support', model: 'anthropic/claude-sonnet-5.5', tools });
+export const support = createFxAgent({ name: 'support', model: 'anthropic/claude-fable-5.2', tools });
 export const coding = createFxAgent({ name: 'coding', model: 'anthropic/claude-opus-5.5', tools });
 ```
 
@@ -281,7 +283,7 @@ import { virtual } from 'durable-harness';
 import { fxTools } from 'durable-harness/fx';
 import { tools } from './tools'; // your tools, each with idempotent set
 
-export const agent = createFxAgent({ model: 'anthropic/claude-sonnet-5.5', tools: [...fxTools(virtual()), ...tools] });
+export const agent = createFxAgent({ model: 'anthropic/claude-fable-5.2', tools: [...fxTools(virtual()), ...tools] });
 ```
 
 The tools run on a virtual workspace at `/workspace` in your function, where `shell` is [just-bash](https://www.npmjs.com/package/just-bash), whose commands can't reach the function's files, processes, or environment. Each call that changes files records the change in the session's log, so the files follow the session to any function, and a call that a crash interrupts runs again without changing anything twice.
@@ -298,7 +300,7 @@ import { sandbox } from 'durable-harness';
 import { fxTools } from 'durable-harness/fx';
 import { tools } from './tools'; // your tools, each with idempotent set
 
-export const agent = createFxAgent({ model: 'anthropic/claude-sonnet-5.5', tools: [...fxTools(sandbox()), ...tools] });
+export const agent = createFxAgent({ model: 'anthropic/claude-fable-5.2', tools: [...fxTools(sandbox()), ...tools] });
 ```
 
 The tools run in the session's own [Vercel Sandbox](/docs/sandbox), with its files on a [Drive](/docs/sandbox/concepts/drives) at `/workspace` that lasts across turns. The agent stays in your function, and the Sandbox starts at the first tool call. What a call wrote stays on the Drive even if a crash interrupts it, so libfx never runs an interrupted call again, and tells the model it may have partly run. On your machine, run `vercel link` and `vercel env pull` first: the Sandbox starts on Vercel, under the linked project.
@@ -328,7 +330,7 @@ const sessions = createWorld({ connectionString: process.env.WORKFLOW_POSTGRES_U
 await sessions.start();
 
 export const agent = createFxAgent({
-  model: 'anthropic/claude-sonnet-5.5',
+  model: 'anthropic/claude-fable-5.2',
   tools,
   durability: world(sessions, { queueDurable: true }),
 });
@@ -346,11 +348,45 @@ To see each session in Agent Runs, pass `hooks: agentRunsHooks()` from `durable-
 - Renaming an agent, or naming one that had no `name`, leaves its sessions with no agent to run them. A function that gets a turn for an agent it doesn't create refuses it, and the queue delivers it again.
 - On your machine or on the Postgres World, a server that's killed or restarted mid-turn leaves the turn open until the session's next message, or until you call `session.resume()`. The next message's response streams only its own turn: read the resumed one with `GET` from your last cursor.
 
+## Frequently asked questions
+
+### What is libfx?
+
+libfx is the JavaScript package for [fx](https://github.com/vercel-labs/fx), an agent harness with its kernel written in Zig. It's durable by default: it saves each step of a turn as it runs, and the same code runs on your machine and on Vercel. `libfx` includes its native addon and Vercel's World, so `npm i libfx` is the only install you need to get started.
+
+### Do I need `durable-harness` to run an fx agent on Vercel?
+
+No. libfx keeps fx sessions durable by itself, with a chat route you write and a queue route that mounts `agent.wakeHandler()`. Add `durable-harness` when you want `withDurableHarness` to write the queue route on Next.js, `fxTools()` to give the agent fx's file and shell tools on a virtual workspace or a [Vercel Sandbox](/docs/sandbox), or `agentRunsHooks()` to see sessions in [Agent Runs](/docs/agent-harnesses/observability).
+
+### What does `idempotent` mean on an fx tool?
+
+It tells libfx whether a tool is safe to run again after a crash. libfx starts an `idempotent: true` tool without waiting for the log, and runs it again if a crash interrupts it. Before an `idempotent: false` tool runs, libfx waits until the log records the call, so it never runs twice, and an interrupted call returns an error that tells the model it may have partly run. Pass the tool's `executionId` to the system it calls as an idempotency key.
+
+### How long can an fx agent's turn run on Vercel?
+
+A turn isn't limited to one function. Shortly before a function's deadline, libfx saves the turn and continues it in a new invocation, and [Vercel Queues](/docs/queues) redelivers it after a crash. A single model request or tool call still can't run longer than the [maximum duration](/docs/functions/limitations#max-duration) of the function running it, whether that's the chat route or the queue route. See [Limitations](#limitations).
+
+### Can an fx agent run commands in a Vercel Sandbox?
+
+Yes. Add `fxTools(sandbox())` from `durable-harness/fx` to the agent's tools, and install `@vercel/sandbox`. fx's `shell`, file, and search tools then run in the session's own Sandbox, with files on a [Drive](/docs/sandbox/concepts/drives) at `/workspace` that lasts across turns, while the agent stays in your function. Because the chat route is your own, check who's calling, and cap Sandbox time with `sandbox({ budget: { vmSeconds } })`. A Sandbox runs for at most 4 hours a session by default.
+
 ## More resources
 
 - [`libfx` README](https://www.npmjs.com/package/libfx)
 - [fx](https://github.com/vercel-labs/fx)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

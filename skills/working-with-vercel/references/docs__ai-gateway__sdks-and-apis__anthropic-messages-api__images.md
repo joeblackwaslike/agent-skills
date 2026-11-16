@@ -12,9 +12,10 @@ related:
   []
 summary: Send images and PDF documents as part of your Anthropic API message requests through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/images.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "808377bf11f1248240f90b6049bdce2a13334e4f56f1f3b370520946c2caf53e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2506bfffbd379b1fe57fe5d9fe50ad8e5fbec56d78ae5f02f82e579418472f8b"
 ---
 
 # Anthropic Messages Images and PDFs with AI Gateway
@@ -28,10 +29,10 @@ Send images and PDF documents as part of your message request.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Anthropic Messages Requests with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages) — Create messages using the Anthropic Messages API format with support for streaming through AI Gateway.
-- [Anthropic Messages Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming) — Stream Anthropic Messages API responses token by token as they are generated through AI Gateway.
-- [OpenResponses Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/images) — Send images and PDF documents for analysis using the OpenResponses API through AI Gateway.
-- [OpenAI Chat Completions Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/images) — Send images and PDF documents to a model using the OpenAI Chat Completions API through AI Gateway.
 - [Anthropic Messages Tool Calling with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling) — Use function calling with the Anthropic Messages API to allow models to call tools and functions through AI Gateway.
+- [OpenResponses Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/images) — Send images and PDF documents for analysis using the OpenResponses API through AI Gateway.
+- [Anthropic Messages Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming) — Stream Anthropic Messages API responses token by token as they are generated through AI Gateway.
+- [OpenAI Chat Completions Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/images) — Send images and PDF documents to a model using the OpenAI Chat Completions API through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/images.graph.md](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/images.graph.md)
 <!-- /docsgraph:related -->
@@ -200,6 +201,18 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/messages" \
 - **Images**: `image/jpeg`, `image/png`, `image/gif`, `image/webp`
 - **Documents**: `application/pdf`
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

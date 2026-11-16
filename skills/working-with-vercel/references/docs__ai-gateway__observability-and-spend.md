@@ -15,9 +15,10 @@ related:
   - /docs/ai-gateway/observability-and-spend/budgets
 summary: Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry trace drains.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "1daed762866d53f44c227e5951f1b40cea0c30e37fd3d4c58c141262c7b27718"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7fd67454dbb6c9c3f290bee75a8d812934b8309f8244bd8e606e5bade2910b71"
 ---
 
 # AI Gateway Observability and Spend
@@ -34,10 +35,10 @@ AI Gateway logs every request and gives you the tools to understand and control 
 - [Pixel Canary is now available in stealth for free on AI Gateway](https://vercel.com/changelog/pixel-canary-is-now-available-in-stealth-for-free-on-ai-gateway)
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
 - [AI Gateway now supports team and project spend budgets](https://vercel.com/changelog/ai-gateway-spend-budgets-and-alerts)
-- [Unified reporting for all AI Gateway usage](https://vercel.com/blog/unified-reporting-for-your-ai-spend)
-- [AI Gateway logs now have a dedicated page](https://vercel.com/changelog/ai-gateway-logs)
+- [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, caching, SDK and API compati
+- [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [AI Gateway Ecosystem and Integrations](https://vercel.com/docs/ai-gateway/ecosystem) — Connect frameworks, coding tools, and billing integrations to AI Gateway. Configure app attribution and explore integrat
-- [vercel ai-gateway](https://vercel.com/docs/cli/ai-gateway) — Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, virtual models, models, leaderboards,
 
 Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend.graph.md](/docs/ai-gateway/observability-and-spend.graph.md)
 <!-- /docsgraph:related -->
@@ -94,6 +95,18 @@ Give your team, a single project, or an individual API key a budget to cap how m
 - [Look up a generation](/docs/ai-gateway/observability-and-spend/usage) by ID, or check your credit balance
 - [Set a budget](/docs/ai-gateway/observability-and-spend/budgets) to cap spending
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

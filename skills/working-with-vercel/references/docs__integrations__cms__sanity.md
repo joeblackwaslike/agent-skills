@@ -12,11 +12,14 @@ related:
   - /docs/cli
   - /docs/vercel-toolbar
   - /docs/connect
+  - /docs/frameworks/agents/eve
+  - /docs/ai-sdk
 summary: Learn how to integrate Sanity with Vercel. Follow our tutorial to deploy the Sanity template or install the integration for real-time collaboration...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/cms/sanity.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b95587d581702f1ace333a40b10a5692420949f7230033153cac63d701c2e3f6"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "35193c9fd9df6772cdf18da0912d8c2bd41978f2e65b126d6cca3ed047ea6fb5"
 ---
 
 # Vercel Sanity Integration
@@ -31,14 +34,15 @@ Sanity is a headless content management system that provides real-time collabora
 
 - [Sanity is now available on the Vercel Marketplace](https://vercel.com/changelog/sanity-vercel-marketplace)
 - [Vercel + Sanity: Innovating on a faster, more collaborative Web](https://vercel.com/blog/vercel-sanity-innovating-on-a-faster-collaborative-web)
-- [Visual Editing: Click-to-edit content for headless CMSes](https://vercel.com/blog/visual-editing)
 - [Draft documentation fixes from reader feedback with Sanity and eve](https://vercel.com/kb/guide/sanity-eve-agent) — Build an autonomous agent that drafts fixes in Sanity, stages them for human review, and calls the model through AI Gate
+- [Visual Editing: Click-to-edit content for headless CMSes](https://vercel.com/blog/visual-editing)
 - [Enhanced content management for your headless CMS](https://vercel.com/blog/enhanced-content-management-for-headless-cmses)
+- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Vercel and Contentful Integration](https://vercel.com/docs/integrations/cms/contentful) — Integrate Vercel with Contentful to deploy your content.
 - [Vercel Agility CMS Integration](https://vercel.com/docs/integrations/cms/agility-cms) — Learn how to integrate Agility CMS with Vercel. Follow our tutorial to deploy the Agility CMS template or install the in
-- [Vercel DatoCMS Integration](https://vercel.com/docs/integrations/cms/dato-cms) — Learn how to integrate DatoCMS with Vercel. Follow our step-by-step tutorial to set up and manage your digital content s
-- [Vercel ButterCMS Integration](https://vercel.com/docs/integrations/cms/butter-cms) — Learn how to integrate ButterCMS with Vercel. Follow our tutorial to set up the ButterCMS template on Vercel and manage
+- [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [Vercel DatoCMS Integration](https://vercel.com/docs/integrations/cms/dato-cms) — Learn how to integrate DatoCMS with Vercel. Follow our step-by-step tutorial to set up and manage your digital content s
 
 Full cross-link map for this page: [/docs/integrations/cms/sanity.graph.md](/docs/integrations/cms/sanity.graph.md)
 <!-- /docsgraph:related -->
@@ -100,6 +104,22 @@ Each user signs in to Sanity through [Vercel Connect](/docs/connect), so request
 
 The deployment flow sets up the connectors and a Vercel Blob store for files and attachments. After deployment, mention the copilot in Slack to start a conversation. See the [template repository](https://github.com/vercel-labs/sanity-copilot-eve-template) for setup instructions and options for customizing the agent's behavior and approval rules.
 
+## Build agents with Sanity Context
+
+Sanity Context is a hosted, read-only MCP server that gives AI agents access to content in Sanity datasets, on websites, and in files. It doesn't need the integration on this page. To connect an [eve](/docs/frameworks/agents/eve) agent or an [AI SDK](/docs/ai-sdk) application to it, see [Build agents with Sanity Context](/docs/integrations/sanity-context).
+
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

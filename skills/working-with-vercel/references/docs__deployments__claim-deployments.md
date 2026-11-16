@@ -15,9 +15,10 @@ related:
   - /docs/integrations/create-integration/marketplace-flows
 summary: Learn how to take ownership of deployments on Vercel with the Claim Deployments feature.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployments/claim-deployments.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "968117d5281c425a20466ab3c8a7da13159c9ffa534a591eab2c3c9818c0a77b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "91c582a44aae947d08365a464ec1c08b1a98306f014c940cef444db6580bfb36"
 ---
 
 # Claim Deployments
@@ -32,12 +33,11 @@ The Claim Deployments feature enables users to take control of deployments by tr
 
 - [Claim Deployments now available for fast and secure deployment transfers](https://vercel.com/changelog/claim-deployments)
 - [Claimed deployments now include third-party resources](https://vercel.com/changelog/claimed-deployments-now-include-third-party-resources)
-- [September 2020](https://vercel.com/blog/changelog-september-2020)
-- [Deploying to Vercel Without Logging In](https://vercel.com/docs/deployments/deploy-without-logging-in) — Deploy to Vercel without an account using Vercel Drop or the CLI, then claim the project to keep it.
 - [Claim Deployment](https://vercel.com/docs/platforms/platform-elements/blocks/claim-deployment) — A component for users to claim ownership of Vercel deployments created on their behalf.
+- [Deploying to Vercel Without Logging In](https://vercel.com/docs/deployments/deploy-without-logging-in) — Deploy to Vercel without an account using Vercel Drop or the CLI, then claim the project to keep it.
 - [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
+- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
 
 Full cross-link map for this page: [/docs/deployments/claim-deployments.graph.md](/docs/deployments/claim-deployments.graph.md)
 <!-- /docsgraph:related -->
@@ -116,6 +116,18 @@ When reorganizing teams, you can easily transfer ownership of projects to anothe
 
 Freelancers or employees can move deployments from their personal accounts to a company’s Vercel account by generating and sharing a claim URL.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

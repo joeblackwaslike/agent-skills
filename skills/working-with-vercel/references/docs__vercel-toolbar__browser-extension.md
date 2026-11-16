@@ -11,9 +11,10 @@ related:
   - /docs/vercel-toolbar/managing-toolbar
 summary: The browser extensions enable you to use the toolbar in production environments, take screenshots and attach them to comments, and set personal...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-toolbar/browser-extension.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "2bad77618f74bedfaa206f6aedb537dd2120e965ba17e270e383387e67bca5b3"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "12e789a003e611692f0eb0676136d8d6ef2062639922f39c6137c660d50c8a2e"
 ---
 
 # Toolbar Browser Extensions
@@ -35,7 +36,6 @@ The browser extension is supported in Chrome, Firefox, Opera, Microsoft Edge, in
 - [The Vercel Toolbar is now more compact and dynamic](https://vercel.com/changelog/the-vercel-toolbar-is-now-more-compact-and-dynamic)
 - [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar)
 - [Toolbar](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar) — Vercel MCP tools for toolbar.
-- [Accessibility Audit Tool](https://vercel.com/docs/vercel-toolbar/accessibility-audit-tool) — Learn how to use the Accessibility Audit Tool to automatically check the Web Content Accessibility Guidelines 2.0 level
 
 Full cross-link map for this page: [/docs/vercel-toolbar/browser-extension.graph.md](/docs/vercel-toolbar/browser-extension.graph.md)
 <!-- /docsgraph:related -->
@@ -72,6 +72,18 @@ The extension enables you to leave comments with screenshots attached by clickin
 2. Click, drag, and release to select the area of the page you'd like to screenshot.
 3. Compose your comment and click the send icon.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

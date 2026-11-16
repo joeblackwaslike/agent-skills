@@ -11,9 +11,10 @@ related:
   []
 summary: The unit identifier of the Range header in the request is not supported. This is a request error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/range_unit_not_supported.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "0dcee62d3f1a9725fec8f439a990fec7c1a65d169e3cc837bd45089fd4c83602"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e73ac38052d65a439ac49c2c550a6fbeada8f53eb7295274dc9261a51a35d880"
 ---
 
 # RANGE_UNIT_NOT_SUPPORTED
@@ -33,6 +34,18 @@ To troubleshoot this error, follow these steps:
 3. **Check configuration:** If the `Range` header values are being set automatically by some part of your system, check the configuration to ensure a supported unit identifier is being used
 4. **Debugging:** If the error persists, log the `Range` header values in your server logs to debug and understand what values are being sent in requests
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

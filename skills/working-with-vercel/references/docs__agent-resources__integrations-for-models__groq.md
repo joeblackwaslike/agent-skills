@@ -15,9 +15,10 @@ related:
   - /docs/cli/install
 summary: Learn how to add the Groq native integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/groq.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b721633bcf9d9eb8cf9fcca6b3b0f95f804e7f3e432e4db8bd33ca8fb648655a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d81d85bf2f97526fab509b5d6fb5ace236a28ba21a6b1f6daeece7938a280820"
 ---
 
 # Vercel Groq Integration
@@ -33,11 +34,11 @@ applications requiring low latency.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model) — Learn how to add a new AI model to your Vercel projects
+- [Adding a Provider](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider) — Learn how to add a new AI provider to your Vercel projects.
 - [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra) — Learn how to add the Deep Infra native integration with Vercel.
 - [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai) — Learn how to add the xAI native integration with Vercel.
-- [Adding a Provider](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider) — Learn how to add a new AI provider to your Vercel projects.
 - [Vercel ElevenLabs Integration](https://vercel.com/docs/agent-resources/integrations-for-models/elevenlabs) — Learn how to add the ElevenLabs connectable account integration with Vercel.
-- [Vercel fal Integration](https://vercel.com/docs/agent-resources/integrations-for-models/fal) — Learn how to add the fal native integration with Vercel.
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/groq.graph.md](/docs/agent-resources/integrations-for-models/groq.graph.md)
 <!-- /docsgraph:related -->
@@ -114,6 +115,18 @@ To follow this guide, you'll need the following:
 
 ## More resources
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

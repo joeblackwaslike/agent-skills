@@ -13,9 +13,10 @@ related:
   - /docs/cli/global-options
 summary: View and filter runtime logs or CDN request records for your Vercel project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/logs.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "625412bbb4a48f0fe94d906b17909b4fb02c7a531cb7ce00af320082eda0f314"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e783841a0b94f3b1bfe2efae88d873f80321663a9afbb64c8b8c11781924ff4e"
 ---
 
 # vercel logs
@@ -30,11 +31,11 @@ The `vercel logs` command shows runtime logs for your project. Use `vercel logs 
 
 - [Improvements to command line logs](https://vercel.com/changelog/improvements-to-command-line-logs)
 - [vercel logs CLI command now optimized for agents with historical log querying](https://vercel.com/changelog/vercel-logs-cli-command-now-optimized-for-agents-with-historical-log)
-- [vercel activity](https://vercel.com/docs/cli/activity) — View activity events for your Vercel project or team, filtered by type, date range, and project.
-- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel agent-runs](https://vercel.com/docs/cli/agent-runs) — Find projects with Agent Runs, list recent runs, and inspect run metadata and conversation traces from the command line.
-- [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
+- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel docs](https://vercel.com/docs/cli/docs) — Search and read the Vercel docs from your terminal using the Vercel CLI.
+- [vercel activity](https://vercel.com/docs/cli/activity) — View activity events for your Vercel project or team, filtered by type, date range, and project.
+- [vercel ci](https://vercel.com/docs/cli/ci) — Enable or disable Vercel CI for repositories, inspect runs, search logs, and rerun jobs from the command line.
 
 Full cross-link map for this page: [/docs/cli/logs.graph.md](/docs/cli/logs.graph.md)
 <!-- /docsgraph:related -->
@@ -228,6 +229,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

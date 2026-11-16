@@ -16,9 +16,10 @@ related:
   - /docs/observability/runtime-logs
 summary: Add a Chat SDK bot to Nitro, receive Slack events through Vercel Connect, and deploy on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/chat-sdk/frameworks/nitro.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "425a6ed0ba7e7969d2ae3e4aa2f380dcf942cfa331c7dbc6b6ff9c969e369a0e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "338b1c2575e1b2e790c6e8552fe9e1cec0490d97e100dc234643578ae0b2cea7"
 ---
 
 # Chat SDK with Nitro
@@ -31,13 +32,12 @@ Use a Nitro route to receive Slack events and process them with Chat SDK. This g
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to ship a Nitro app on Vercel](https://vercel.com/kb/guide/ship-a-nitro-app-on-vercel) — Deploy a Nitro app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
+- [Build with a Nitro starter template](https://vercel.com/kb/guide/build-with-a-nitro-starter-template) — Deploy a Nitro app to Vercel from a starter template. Compare the Nitro Starter, route rules, cached HTTP handler, plugi
 - [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
 - [Create a Discord support bot with Nuxt and Redis](https://vercel.com/kb/guide/create-a-discord-support-bot-with-nuxt-and-redis) — This guide walks through building a Discord support bot with Nuxt, covering project setup, Discord app configuration, Ga
-- [Build with a Nitro starter template](https://vercel.com/kb/guide/build-with-a-nitro-starter-template) — Deploy a Nitro app to Vercel from a starter template. Compare the Nitro Starter, route rules, cached HTTP handler, plugi
-- [How to ship a Nitro app on Vercel](https://vercel.com/kb/guide/ship-a-nitro-app-on-vercel) — Deploy a Nitro app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
+- [What is the Nitro Vite plugin?](https://vercel.com/kb/guide/nitro-vite-plugin) — The Nitro Vite plugin \\(nitro/vite\\) adds SSR, API routes, and deploy-anywhere server builds to any Vite app. Learn what
 - [Chat SDK with Next.js](https://vercel.com/docs/chat-sdk/frameworks/nextjs) — Add a Chat SDK bot to Next.js, receive Slack events through Vercel Connect, and deploy on Vercel.
-- [Getting Started with Chat SDK](https://vercel.com/docs/chat-sdk/quickstart) — Create a Slack bot with the Chat SDK CLI, connect it to Slack through Vercel Connect, and deploy it on Vercel.
-- [Chat SDK with Vercel Daemons](https://vercel.com/docs/chat-sdk/integrations/daemons) — Process Chat SDK jobs with Vercel Queues and Daemons, using Vercel Connect for Slack credentials and event delivery.
 
 Full cross-link map for this page: [/docs/chat-sdk/frameworks/nitro.graph.md](/docs/chat-sdk/frameworks/nitro.graph.md)
 <!-- /docsgraph:related -->
@@ -230,6 +230,18 @@ The `.post` suffix limits the route to `POST` requests, which is how platforms d
 - [Nitro on Vercel](/docs/frameworks/backend/nitro)
 - [Add more platform adapters](/docs/chat-sdk/adapters)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/analytics/using-web-analytics
 summary: "With Web Analytics, you can get detailed insights into your website's visitors with new metrics like top pages, top referrers, and demographics."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/analytics.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "d58be29bf9481242845234e5480082d3e360624ad6d72555ce6eca7d89fea6de"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b579b2c568e6f70cd24bf15577a2dd2aca2920bfa8dbc61a328b04827176ef67"
 ---
 
 # Vercel Web Analytics
@@ -109,6 +110,18 @@ You can export up to 250 entries from the panel as a CSV file. See [Exporting da
 
 Web Analytics doesn't count traffic that comes from automated processes or accounts. Vercel determines this by inspecting the [User Agent](https://developer.mozilla.org/docs/Web/HTTP/Headers/User-Agent) header for incoming requests.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

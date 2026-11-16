@@ -15,9 +15,10 @@ related:
   - /docs/connect/frameworks/ai-sdk-and-mcp
 summary: Build TypeScript agents and AI applications with a unified API for models, tools, structured output, and streaming.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-sdk.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "d0390e51e2c62e6adb67f9a18d53fbd1962389409d1640968752c1ed1120b14f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9c530c58affe3f74dffa456f46ac5a19287bd76a6ed97e3530c9f82ca5280867"
 ---
 
 # AI SDK
@@ -33,17 +34,17 @@ Build TypeScript agents and AI applications with one API for models, tools, stru
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing Vercel AI SDK 3.2](https://vercel.com/blog/introducing-vercel-ai-sdk-3-2)
-- [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app) — Learn the key AI concepts and tools for building and scaling AI apps.
-- [AI SDK 4.0](https://vercel.com/blog/ai-sdk-4-0)
-- [Vercel AI SDK 3.1: ModelFusion joins the team](https://vercel.com/blog/vercel-ai-sdk-3-1-modelfusion-joins-the-team)
 - [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
+- [AI SDK 4.0](https://vercel.com/blog/ai-sdk-4-0)
+- [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
+- [Introducing the Vercel AI SDK](https://vercel.com/blog/introducing-the-vercel-ai-sdk)
 - [Vercel Ship AI 2025 recap](https://vercel.com/blog/ship-ai-2025-recap)
+- [Run Python code securely with AI SDK and Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox) — Add an \\`executeCode\\` tool to your AI SDK agent with the \\`ai-sdk-tool-code-execution\\` package to run Python 3.13 insi
 - [Add skills to your AI SDK agents](https://vercel.com/kb/guide/ai-sdk-skill-uploads) — Use uploadSkill and provider references in the AI SDK to bundle a SKILL.md and supporting files, then attach the skill t
 - [An Introduction to Evals](https://vercel.com/kb/guide/an-introduction-to-evals) — Evaluations test model and agent outputs to ensure they meet the standards and requirements you specify.
-- [Build your own Slackbot with Vercel Connect](https://vercel.com/kb/guide/build-a-slack-bot-with-vercel-connect) — Learn how to build your very own Slackbot with Chat SDK and AI SDK. Vercel Connect supplies runtime Slack tokens and for
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure)
 - [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
-- [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
+- [Vercel Sanity Integration](https://vercel.com/docs/integrations/cms/sanity) — Learn how to integrate Sanity with Vercel. Follow our tutorial to deploy the Sanity template or install the integration
 
 Full cross-link map for this page: [/docs/ai-sdk.graph.md](/docs/ai-sdk.graph.md)
 <!-- /docsgraph:related -->
@@ -189,6 +190,28 @@ const { text } = await generateText({
 });
 ```
 
+You can also pass tools that a library provides. For example, the
+`@github-tools/sdk` package from [GitHub Tools](https://github-tools.com/integrations/ai-sdk)
+returns AI SDK tools for repositories, issues, and pull requests. A preset
+selects the tools for one job, and the tools read their token from
+`GITHUB_TOKEN`:
+
+```ts
+import { createGithubTools } from '@github-tools/sdk';
+import { generateText, stepCountIs } from 'ai';
+
+const { text } = await generateText({
+  model: 'openai/gpt-6-astra',
+  prompt: 'Summarize the last five merged pull requests on vercel/ai.',
+  tools: createGithubTools({ preset: 'repo-explorer' }),
+  stopWhen: stepCountIs(10),
+});
+```
+
+Presets that include write tools, such as `issue-triage`, request approval
+before a write runs. Your application answers those requests through the AI
+SDK's [tool approval flow](https://ai-sdk.dev/docs/ai-sdk-core/tools-and-tool-calling#tool-execution-approval).
+
 ## Getting started with the AI SDK
 
 The AI SDK is available as a package. To install it, run the following command:
@@ -233,6 +256,12 @@ Use `ToolLoopAgent` for a model-and-tool loop in your app, `WorkflowAgent` for d
 
 Use [Chat SDK](/docs/chat-sdk) to handle messages and interactions in platforms such as Slack, and AI SDK to generate responses and call tools. Start with the [Chat SDK quickstart](/docs/chat-sdk/quickstart), then follow [Chat SDK with AI Gateway](/docs/chat-sdk/integrations/ai-gateway) to stream model responses using conversation history.
 
+## Stream generative UI
+
+Generative UI lets a model respond with interface elements instead of text alone. In a web app, AI SDK UI connects tool results to React components. See [Generative User Interfaces](https://ai-sdk.dev/docs/ai-sdk-ui/generative-user-interfaces).
+
+To let the model compose the interface, use [json-render](https://json-render.dev). You define a catalog of components and pass `catalog.prompt()` to `streamText` as the model's instructions. The model then streams a JSON spec built from those components. In a web app, [render the spec with your React components](https://json-render.dev/docs/ai-sdk). For Slack, Microsoft Teams, and other chat platforms, `@json-render/chat` converts the spec into a card with tables, charts, and buttons, and [Chat SDK](/docs/chat-sdk) posts the card in each platform's native format. Follow [Stream generative UI with json-render](/docs/chat-sdk/integrations/ai-gateway#stream-generative-ui-with-json-render) to build the chat version.
+
 ## Use Vercel Connect with AI SDK
 
 Vercel Connect supplies short-lived OAuth tokens to MCP clients built with AI
@@ -243,6 +272,15 @@ requests credentials and supports user consent flows.
 Follow the [AI SDK and MCP tutorial](/docs/connect/frameworks/ai-sdk-and-mcp) to
 configure Vercel Connect, make MCP tools available to an AI SDK application,
 and handle tool approval.
+
+For GitHub, you can use AI SDK tools without an MCP server. `connectGithubTools`
+from [GitHub Tools](https://github-tools.com/auth#vercel-connect) requests a
+short-lived token from a GitHub connector inside each tool call, with scopes
+that match the preset you select.
+
+## Answer from your content with Sanity Context
+
+Connect an AI SDK application to [Sanity Context](/docs/integrations/sanity-context) with `createMCPClient` so the model can read your Sanity datasets, and Knowledge Bases built from datasets, websites, and files, through a read-only MCP endpoint. The Sanity Context page shows how to load the endpoint's initial context into your instructions and handle token errors.
 
 ## Use Jev with AI SDK
 
@@ -269,6 +307,32 @@ Use the [AI SDK software factory guide](/docs/agent-resources/software-factory/a
 
 Capture token usage, tool calls, estimated cost, and request context with evlog. Follow [Capture AI SDK token usage, tool calls, and cost with evlog](/kb/guide/ai-sdk-and-evlog) to investigate expensive or failed requests alongside your existing OpenTelemetry traces.
 
+## Frequently asked questions
+
+### What is the AI SDK?
+
+The AI SDK is a free, open-source TypeScript library from Vercel for building AI applications and agents. It gives you one API to generate text and structured data, call tools, and stream responses across model providers. AI SDK UI adds chat interface helpers for React, Vue, Svelte, and Angular, such as the `useChat` hook in React. Install the `ai` package from npm. The source is in the [vercel/ai](https://github.com/vercel/ai) repository under the Apache 2.0 license. The library has no fee. You pay for model usage through [AI Gateway](/docs/ai-gateway/pricing) or your provider, and for the compute your app runs on.
+
+### Can I use the AI SDK without Vercel or AI Gateway?
+
+Yes. The AI SDK is a library, so it runs in your Node.js app on Vercel or any other host. When you pass a model string such as `'anthropic/claude-sonnet-5'`, the AI SDK sends the request through AI Gateway. AI Gateway authenticates with the `AI_GATEWAY_API_KEY` environment variable or, on Vercel deployments, an OIDC token. To call a provider directly, install its provider package, such as `@ai-sdk/openai` or `@ai-sdk/anthropic`, and pass its model instead of a string. See [AI SDK providers](https://ai-sdk.dev/docs/foundations/providers-and-models) for the full list and [AI SDK with AI Gateway](/docs/ai-gateway/sdks-and-apis/ai-sdk#authentication) for authentication.
+
+### Which version of the AI SDK should I use?
+
+Use AI SDK 7, the latest major version of the `ai` package. It requires Node.js 22 or later and supports ESM only, so replace `require()` calls with `import`. AI Gateway supports AI SDK 6 and 7. AI SDK 5 is deprecated, and AI Gateway stops accepting AI SDK 5 requests on January 8, 2027. AI SDK 7 renames several options, such as `system` to `instructions` and `stepCountIs` to `isStepCount`. Run `npx @ai-sdk/codemod v7` to apply many of these changes automatically, then follow the [AI SDK 7 migration guide](https://ai-sdk.dev/docs/migration-guides/migration-guide-7-0).
+
+### Should I build my agent with the AI SDK or eve?
+
+Use the AI SDK's `ToolLoopAgent` for an agent that runs inside your app and finishes within one request. Use [eve](/docs/frameworks/agents/eve) when you want durable sessions, approvals, a sandbox, schedules, and channels such as Slack and GitHub built in. eve is an open-source agent framework built on the AI SDK. You define an agent as Markdown and TypeScript files in an `agent/` directory, and eve accepts AI Gateway model strings or any AI SDK `LanguageModel`. See [Choosing between eve, AI SDK agents, and `WorkflowAgent`](/kb/guide/eve-vs-ai-sdk-agents-vs-workflowagent) to compare them.
+
+### Can I build durable agents with the AI SDK?
+
+Yes. Use `WorkflowAgent` from `@ai-sdk/workflow`, which runs the same agent loop as `ToolLoopAgent` inside a [Vercel Workflow](/docs/workflows). Each model call runs as a durable step. Mark a tool's `execute` function with `'use step'`, and its calls also get checkpoints and automatic retries. If the process crashes or times out, the run resumes from the last completed step instead of starting over. Tools with `needsApproval` pause the run until someone approves or denies them, even hours later. `WorkflowAgent` requires Workflow 5.1 or later, and its `stream()` method has no default step limit, so set `stopWhen` to cap model calls. See the [`WorkflowAgent` guide](https://ai-sdk.dev/docs/agents/workflow-agent). [eve](/docs/frameworks/agents/eve) sessions are durable by default, with no workflow code to write.
+
+### How do I add an AI SDK agent to Slack, Microsoft Teams, or Discord?
+
+Use [Chat SDK](/docs/chat-sdk), an open-source TypeScript library from Vercel for building bots that run on many chat platforms from one codebase. Platform adapters handle each platform's webhooks and message formatting. Pass your agent's stream to `thread.post()`, and Chat SDK posts the reply into the thread. To reach more platforms, register more adapters in the same `Chat` instance and keep the same handlers. Start with the [Chat SDK quickstart](/docs/chat-sdk/quickstart). If you build with eve, use the [eve Chat SDK channel](/docs/chat-sdk/eve) to connect any Chat SDK adapter to your agent.
+
 ## More resources
 
 **AI SDK documentation**: Read the official AI SDK reference and guides. [Learn more →](https://ai-sdk.dev/docs)
@@ -279,6 +343,18 @@ Capture token usage, tool calls, estimated cost, and request context with evlog.
 
 **AI SDK templates**: Start from a production-ready Vercel template. [Learn more →](https://vercel.com/templates?type=ai)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

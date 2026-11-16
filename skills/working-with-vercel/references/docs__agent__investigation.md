@@ -12,9 +12,10 @@ related:
   - /docs/agent/pricing
 summary: Let AI investigate your error alerts to help you debug faster
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent/investigation.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "7c724551d2ae92140c452260a67785a4bc89249f21e107759362908e7438af22"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3da8919d05fd3dd65fc2d7c743deb05173497ee4cfe5aac60a8438c96a8fac3c"
 ---
 
 # Investigation
@@ -29,18 +30,18 @@ When you get an anomaly alert, Vercel Agent can investigate your logs and metric
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Agent can now run AI investigations](https://vercel.com/blog/vercel-agent-can-now-run-ai-investigations)
 - [Anomaly alerts are now generally available](https://vercel.com/changelog/anomaly-alerts-ga)
 - [Vercel Agent investigations now available in Slack](https://vercel.com/changelog/vercel-agent-investigations-now-available-in-slack)
 - [Vercel Agent Investigations now in Public Beta](https://vercel.com/changelog/vercel-agent-investigations-now-in-public-beta)
 - [Vercel Agent investigations now included in Observability Plus](https://vercel.com/changelog/vercel-agent-investigations-now-included-in-observability-plus)
 - [Monitor uptime for AI-native apps with Vercel Alerts](https://vercel.com/kb/guide/monitor-uptime-for-ai-native-apps-with-vercel-alerts) — Learn how to use Vercel Anomaly Alerts as an early-warning system for AI-powered apps, helping you catch 5xx spikes and
-- [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
-- [Vercel Agent can now validate alerts before paging](https://vercel.com/changelog/vercel-agent-can-now-validate-alerts-before-paging-you)
+- [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, container image functions, security defaults,
+- [Pull anomaly alert details using the Vercel CLI](https://vercel.com/changelog/pull-anomaly-alert-details-using-the-vercel-cli)
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
-- [Installation](https://vercel.com/docs/agent/installation) — Let AI automatically install Web Analytics and Speed Insights in your app
 
 Full cross-link map for this page: [/docs/agent/investigation.graph.md](/docs/agent/investigation.graph.md)
 <!-- /docsgraph:related -->
@@ -109,6 +110,18 @@ To disable Vercel Agent Investigation:
 
 Once disabled, Vercel Agent Investigation won't run automatically on any new alerts. You can re-enable Vercel Agent Investigation at any time from the same menu or [run an investigation manually](#run-an-investigation-manually) from the alert details page.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

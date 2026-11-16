@@ -3,22 +3,23 @@ title: Create React App on Vercel
 product: vercel
 url: /docs/frameworks/frontend/create-react-app
 canonical_url: "https://vercel.com/docs/frameworks/frontend/create-react-app"
-last_updated: 2026-08-26
+last_updated: 2026-11-14
 type: conceptual
 prerequisites:
   - /docs/frameworks/frontend
   - /docs/frameworks
 related:
   - /docs/cli
+  - /docs/deployments/deploy-without-logging-in
   - /docs/caching/cdn-cache
   - /docs/deployments/environments
   - /docs/cli/deploy
-  - /docs/comments/how-comments-work
 summary: Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/frontend/create-react-app.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "0d6bf1311bc292d2c72e74d084efdf0ec6b3c2c117375b01a1f2fe973822d9ad"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "eee2aa301f5de06eff204283af4ec3514613283dfeceaab3015c905bb0124d9e"
 ---
 
 # Create React App on Vercel
@@ -31,15 +32,13 @@ Create React App (CRA) is a development environment for building single-page app
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Building secure and performant web applications on Vercel](https://vercel.com/blog/building-secure-and-performant-web-applications-on-vercel)
-- [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
 - [Deploy a headless BigCommerce storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-bigcommerce-storefront-with-vercel) — Deploy a headless BigCommerce storefront using Catalyst and Next.js on Vercel
-- [Iterating from design to deploy: the shape of future builders](https://vercel.com/blog/iterating-from-design-to-deploy)
+- [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Vite on Vercel](https://vercel.com/docs/frameworks/frontend/vite) — Deploy Vite projects to Vercel and configure environment variables, Vercel Functions, server-side rendering, and SPA rew
-- [Remix on Vercel](https://vercel.com/docs/frameworks/full-stack/remix) — Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
-- [Nitro on Vercel](https://vercel.com/docs/frameworks/backend/nitro) — Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurat
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
+- [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
 
 Full cross-link map for this page: [/docs/frameworks/frontend/create-react-app.graph.md](/docs/frameworks/frontend/create-react-app.graph.md)
 <!-- /docsgraph:related -->
@@ -54,6 +53,16 @@ To get started with CRA on Vercel:
 \- Or, choose a template from Vercel's marketplace:
 
 Vercel deployments can \[integrate with your git provider]\(/docs/git) to \[generate preview URLs]\(/docs/deployments/environments#preview-environment-pre-production) for each pull request you make to your CRA project.
+
+## Deploy without an account
+
+To deploy an existing Create React App project without an account or login, run this command in the project root:
+
+```bash filename="terminal"
+vercel deploy --temporary
+```
+
+The CLI builds the project, deploys it to production, and prints a claim URL. Claim the project to keep it live. See [Deploying without logging in](/docs/deployments/deploy-without-logging-in).
 
 ## Static file caching
 
@@ -131,7 +140,7 @@ On Vercel, you can track your app's Core Web Vitals in your project's dashboard 
 
 **To summarize, using Speed Insights with CRA on Vercel:**
 
-- Enables you to track traffic performance metrics, such as [First Contentful Paint](/docs/speed-insights/metrics#first-contentful-paint-fcp), or [First Input Delay](/docs/speed-insights/metrics#first-input-delay-fid)
+- Enables you to track traffic performance metrics, such as [First Contentful Paint](/docs/speed-insights/metrics#first-contentful-paint-fcp), or [Interaction to Next Paint](/docs/speed-insights/metrics#interaction-to-next-paint-inp)
 - Enables you to view performance analytics by page name and URL for more granular analysis
 - Shows you [a score for your app's performance](/docs/speed-insights/metrics#how-the-scores-are-determined) on each recorded metric, which you can use to track improvements or regressions
 
@@ -172,6 +181,18 @@ Learn more about deploying CRA projects on Vercel with the following resources:
 - [React with Formspree](/kb/guide/deploying-react-forms-using-formspree-with-vercel)
 - [React Turborepo template](/templates/react/turborepo-design-system)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

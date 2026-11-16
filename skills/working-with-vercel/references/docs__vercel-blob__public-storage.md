@@ -15,9 +15,10 @@ related:
   - /docs/vercel-blob/server-upload
 summary: Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-blob/public-storage.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "749e0dbb3c00f0c701055aa77cff2c4937a158c997cac416fc40e0e253f8d0cd"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "069021e8e17e7198303502903f31019fbc65956debf29594a520e5dce3da8d50"
 ---
 
 # Public Storage
@@ -38,12 +39,12 @@ Public Blob stores make files accessible to anyone with the URL. Use public stor
 - [Vercel Blob is now generally available: Cost-efficient, durable storage](https://vercel.com/blog/vercel-blob-now-generally-available)
 - [Store and serve files from Python with Vercel Blob](https://vercel.com/kb/guide/python-and-vercel-blob) — Upload, list, stream, and protect files from a Python app with Vercel Blob, including private per-user storage in FastAP
 - [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
-- [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
+- [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
 - [Private storage for Vercel Blob, now available in public beta](https://vercel.com/changelog/private-storage-for-vercel-blob-now-available-in-public-beta)
 - [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [Vercel Blob is now generally available](https://vercel.com/changelog/vercel-blob-is-now-generally-available)
-- [Vercel Private Blob is now generally available](https://vercel.com/changelog/vercel-private-blob-is-now-generally-available)
 - [Vercel Storage overview](https://vercel.com/docs/storage) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
+- [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store) — POST /storage/stores/blob — Create a Blob store
 
 Full cross-link map for this page: [/docs/vercel-blob/public-storage.graph.md](/docs/vercel-blob/public-storage.graph.md)
 <!-- /docsgraph:related -->
@@ -283,6 +284,18 @@ Upload charges depend on your implementation method:
 
 See [pricing documentation](/docs/vercel-blob/usage-and-pricing) for full details.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

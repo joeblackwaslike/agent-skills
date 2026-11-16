@@ -4,8 +4,8 @@ description: API Reference for generateText.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-text"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-text.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "b915adde8d0c7bc7d4cb6486caf6c3304907f522a18fe50d1969dc55fe4b01b9"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "a6141c76aacffebd55ed65c02e962e37173d12c65132ceaee1f4d6fbfdc15445"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -173,7 +173,7 @@ import { generateText } from "ai"
 - `toolsContext` (`InferToolSetContext<TOOLS>`): Per-tool context map keyed by tool name. Required when at least one tool defines \`contextSchema\`; not accepted when no tools need context.
 - `experimental_sandbox?` (`Experimental_SandboxSession`): Experimental sandbox environment that is passed through to \`prepareStep\`, tool description functions, and tool execution. Tools can access it from their description function options and execution options.
 - `experimental_steering?` (`Experimental_Steering`): Experimental steering object created with \`experimental\_createSteering()\`. Messages sent with \`steering.steer()\` are added as user messages at the next step boundary, after the current step and its tool calls are done. Messages sent with \`steering.queue()\` wait until the model finishes its current task and are added one per task. A waiting message keeps the loop going for another step unless a stop condition is met. \`steer()\` and \`queue()\` resolve with \`\{ type: 'delivered', id, message, stepNumber }\` or \`\{ type: 'not-delivered', id, message, reason }\`. See \[Steering]\(/docs/agents/loop-control#steering).
-- `experimental_download?` (`(requestedDownloads: Array<{ url: URL; isUrlSupportedByModel: boolean }>) => Promise<Array<null | { data: Uint8Array; mediaType?: string }>>`): Custom download function to control how URLs are fetched when they appear in prompts. By default, files are downloaded if the model does not support the URL for the given media type. Experimental feature. Return null to pass the URL directly to the model (when supported), or return downloaded content with data and media type.
+- `experimental_download?` (`(requestedDownloads: Array<{ url: URL; isUrlSupportedByModel: boolean; abortSignal?: AbortSignal }>) => Promise<Array<null | { data: Uint8Array; mediaType?: string }>>`): Custom download function to control how URLs are fetched when they appear in prompts. By default, files are downloaded if the model does not support the URL for the given media type. Use \`createDownload(\{ fetch, maxBytes })\` from \`ai\` to keep the default behavior with a custom fetch transport (e.g. \`guarded-fetch\` on Node.js) or size limit. Experimental feature. Return null to pass the URL directly to the model (when supported), or return downloaded content with data and media type.
 - `include?` (`{ requestBody?: boolean; requestMessages?: boolean; responseBody?: boolean }`): Controls inclusion of request bodies, request messages, and response bodies in step results. By default, request bodies, request messages, and response bodies are excluded to reduce memory usage. Set requestBody, requestMessages, and/or responseBody to true when you need access to the data.
   - `Object`
     - `requestBody?` (`boolean`): Whether to include the request body in step results. The request body can be large when sending images or files. Default: false.

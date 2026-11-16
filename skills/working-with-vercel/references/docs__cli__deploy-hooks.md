@@ -12,9 +12,10 @@ related:
   - /docs/cli/global-options
 summary: "Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and delete deploy hook URLs that trigger new deployments when called."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/deploy-hooks.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "74c7701572b85d018813061c172e9daf79455480eab7f2ca4d796a3a851656f7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3bc9af763908871e2161588e1f46f4b1dbd41d7c8f76bcbab3a2946832e9afd7"
 ---
 
 # vercel deploy-hooks
@@ -30,10 +31,10 @@ The `vercel deploy-hooks` command manages [Deploy Hooks](/docs/deploy-hooks). A 
 - [Introducing Deploy Hooks](https://vercel.com/blog/introducing-deploy-hooks)
 - [How to use Deploy Hooks with Vercel and a Headless CMS](https://vercel.com/kb/guide/set-up-and-use-deploy-hooks-with-vercel-and-headless-cms) — Create your own Deploy Hooks to trigger automatic deployments on Vercel when using a Headless CMS.
 - [vercel webhooks](https://vercel.com/docs/cli/webhooks) — Learn how to manage webhooks for your Vercel account using the vercel webhooks CLI command.
-- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 
 Full cross-link map for this page: [/docs/cli/deploy-hooks.graph.md](/docs/cli/deploy-hooks.graph.md)
 <!-- /docsgraph:related -->
@@ -163,6 +164,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/cli/curl
 summary: Find, fix, and verify production 500 errors using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/observability/debug-production-errors.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "a71b008838afa79628a80088ec347bd5b4ce4ac98bd73497b3d1742a7558cf11"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2fec08d65ec8204e9ebb21aaf7ddf2da1aa5cc7a0ca2aba45919466e9ddbaf7c"
 ---
 
 # Debugging production 500 errors
@@ -31,13 +32,11 @@ Use this guide to debug production 500 errors. You'll identify the problem, trac
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to determine which Vercel Deployment introduced an issue?](https://vercel.com/kb/guide/how-to-determine-which-vercel-deployment-introduced-an-issue) — Process to quickly determine when a deployment issue was introduced using the Vercel CLI
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
-- [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
 - [Rolling back a production deployment](https://vercel.com/docs/deployments/rollback-production-deployment) — Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
 - [Debugging slow Vercel Functions](https://vercel.com/docs/functions/debug-slow-functions) — Diagnose and fix slow Vercel Functions using CLI tools, logs, and timing analysis.
-- [Performing a rolling release deployment](https://vercel.com/docs/rolling-releases/rolling-release-deployment) — Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [Diagnosing and fixing cache issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
+- [Performing a rolling release deployment](https://vercel.com/docs/rolling-releases/rolling-release-deployment) — Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
+- [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 
 Full cross-link map for this page: [/docs/observability/debug-production-errors.graph.md](/docs/observability/debug-production-errors.graph.md)
 <!-- /docsgraph:related -->
@@ -276,6 +275,18 @@ vercel rollback status
 - [vercel rollback](/docs/cli/rollback)
 - [Observability](/docs/observability)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

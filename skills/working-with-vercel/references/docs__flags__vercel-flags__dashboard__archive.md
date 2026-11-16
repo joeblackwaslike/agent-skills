@@ -13,9 +13,10 @@ related:
   - /docs/flags/vercel-flags/dashboard
 summary: Archive unused feature flags and restore them when needed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/archive.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "6a77fe8bf23089c6868047b2db3675f9641bf6a86833aff3ec641ae9dba7fc5e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9c2c191545cccb328dedf1944b1ab8a1b727cbeab862a6c4d36063206466e40b"
 ---
 
 # Archive
@@ -30,8 +31,7 @@ The Archive is where you find feature flags that are no longer active. Archiving
 
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
 - [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta)
-- [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga)
-- [Introducing feature flag management from the Vercel Toolbar](https://vercel.com/blog/toolbar-feature-flags)
+- [Inspect feature flag history with Vercel CLI](https://vercel.com/changelog/inspect-feature-flag-history-with-vercel-cli)
 - [Cleaning up after a full rollout](https://vercel.com/docs/flags/vercel-flags/cli/clean-up-after-rollout) — Audit active flags, remove a fully rolled-out flag from your codebase, and archive it using the Vercel CLI.
 - [Delete a flag](https://vercel.com/docs/rest-api/feature-flags/delete-a-flag) — DELETE /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} — Permanently delete a feature flag from the pr
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
@@ -108,6 +108,18 @@ The flag returns to your active flags list with all its previous configuration i
 - [Configure feature flags](/docs/flags/vercel-flags/dashboard/feature-flag)
 - [Manage flags in the dashboard](/docs/flags/vercel-flags/dashboard)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/mvdan/sh/master/README.md"
-fetched_at: "2026-11-09T12:33:49.565Z"
-sha256: "7eae98ae5e5745c6d326357d260df09f3ccfdcaf65aaf449c1f819dd9c800a7c"
+fetched_at: "2026-11-16T12:28:22.643Z"
+sha256: "6002bd5a443ae239dd1a5c873dc4e31a44a151e51d0067eef1ad1f1e45c78cb1"
 ---
 
 # sh
@@ -73,6 +73,9 @@ $ echo '${array[weird!key]}' | shfmt
 $ echo '${array[dash-string]}' | shfmt
 ${array[dash - string]}
 ```
+
+  This does not apply to Zsh, which only decides at run time whether a
+  subscript is a key or arithmetic, so the parser keeps subscripts as written.
 
 * `$((` and `((` ambiguity is not supported. Backtracking would complicate the
   parser and make streaming support via `io.Reader` impossible. The POSIX spec

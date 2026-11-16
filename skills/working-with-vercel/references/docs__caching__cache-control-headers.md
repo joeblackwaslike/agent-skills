@@ -14,9 +14,10 @@ related:
   - /docs/functions
 summary: Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior of your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/caching/cache-control-headers.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b12f69cf63f7f732b8c0f36e206f642bde972606e435c04361af45793399840e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b30db27fe13961c16ac79d3fe9cf92799f72169462b97196326b7ca4bcf3078d"
 ---
 
 # Cache-Control headers
@@ -29,17 +30,18 @@ You can control how Vercel's CDN caches your Function responses by setting a [Ca
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel CDN now respects Cache-Control headers from external origins by default](https://vercel.com/changelog/vercels-cdn-now-respects-cache-control-headers-from-external-origins-by-default)
 - [Control CDN caching for shared and personalized pages on Vercel](https://vercel.com/kb/guide/cdn-cache-personalized-pages) — Control CDN caching for shared and personalized Next.js pages. Set cache headers, separate per-user content, and verify
+- [Vercel CDN now respects Cache-Control headers from external origins by default](https://vercel.com/changelog/vercels-cdn-now-respects-cache-control-headers-from-external-origins-by-default)
 - [ Sitemap lastmod should track content, not deployments](https://vercel.com/kb/guide/correct-lastmod-nextjs-sitemap) — Set accurate sitemap lastmod dates in Next.js using stored content timestamps, targeted revalidation, and checks that di
+- [How can I share my Vercel cache across deployments?](https://vercel.com/kb/guide/share-vercel-cache-across-deployments-nextjs) — Learn how to reuse cached responses across deployments with the Next.js App Router and the Vercel Data Cache.
+- [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
 - [Proxied responses now cacheable via CDN-Cache-Control headers](https://vercel.com/changelog/proxied-responses-now-cacheable-via-cdn-cache-control-headers)
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
-- [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache)
 - [Response headers](https://vercel.com/docs/headers/response-headers) — Learn about the response headers sent to each Vercel deployment and how to use them to process responses before sending
 - [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
 - [Purging Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache/purge) — Learn how to invalidate and delete cached content on Vercel's CDN, including cache keys and manual purging options.
-- [System Headers](https://vercel.com/docs/headers) — This reference covers the list of request, response, cache-control, and custom response headers included with deployment
-- [@vercel/functions API Reference \\(Node.js\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package) — Learn about available APIs when working with Vercel Functions.
+- [Incremental Static Regeneration \\(ISR\\)](https://vercel.com/docs/incremental-static-regeneration) — ISR serves cached static pages while regenerating content in the background. Vercel\\\\
+- [Using the Node.js Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/node-js) — Learn how to use the Node.js runtime to create Vercel Functions in JavaScript or TypeScript.
 
 Full cross-link map for this page: [/docs/caching/cache-control-headers.graph.md](/docs/caching/cache-control-headers.graph.md)
 <!-- /docsgraph:related -->
@@ -388,6 +390,18 @@ For the function example, request `/api/about` instead.
 > **💡 Note:** Response headers `x-matched-path`, `server`, and `content-length` are reserved
 > and cannot be modified.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

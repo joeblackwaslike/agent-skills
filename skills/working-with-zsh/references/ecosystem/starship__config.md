@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/starship/starship/main/docs/config/README.md"
-fetched_at: "2026-11-02T12:15:28.816Z"
-sha256: "048b09ce91931c56e3ec657b3c5e0c0e8c56a656ccd13573edeb51973d2c65d9"
+fetched_at: "2026-11-16T12:43:25.539Z"
+sha256: "b8a2e7a1f10bf2ea256d9831e54ea0cc15bcd973f4a71cbbee6932cc90df64cd"
 ---
 
 # Configuration
@@ -389,7 +389,7 @@ If the option `force_display` is set to `true`, all available information will b
 
 When using [aws-vault](https://github.com/99designs/aws-vault) the profile
 is read from the `AWS_VAULT` env var and the credentials expiration date
-is read from the `AWS_SESSION_EXPIRATION` env var.
+is read from the `AWS_CREDENTIAL_EXPIRATION` or `AWS_SESSION_EXPIRATION` env var.
 
 When using [awsu](https://github.com/kreuzwerker/awsu) the profile
 is read from the `AWSU_PROFILE` env var.
@@ -541,6 +541,7 @@ The module is only visible when the device's battery is below 10%.
 | `discharging_symbol` | `'󰂃 '`                            | The symbol shown when the battery is discharging.   |
 | `unknown_symbol`     | `'󰂑 '`                            | The symbol shown when the battery state is unknown. |
 | `empty_symbol`       | `'󰂎 '`                            | The symbol shown when the battery state is empty.   |
+| `paused_symbol`      | `'󱞜 '`                            | The symbol shown when charging is paused.           |
 | `format`             | `'[$symbol$percentage]($style) '` | The format for the module.                          |
 | `display`            | [link](#battery-display)          | Display threshold and style for the module.         |
 | `disabled`           | `false`                           | Disables the `battery` module.                      |
@@ -2209,6 +2210,7 @@ By default the module will be shown if any of the following conditions are met:
 | `symbol`            | `'⭐ '`                              | A format string representing the symbol of Gleam.                         |
 | `detect_extensions` | `['gleam']`                          | Which extensions should trigger this module.                              |
 | `detect_files`      | `['gleam.toml']`                     | Which filenames should trigger this module.                               |
+| `detect_folders`    | `[]`                                 | Which folders should trigger this module.                                 |
 | `style`             | `'bold #FFAFF3'`                     | The style for the module.                                                 |
 | `disabled`          | `false`                              | Disables the `gleam` module.                                              |
 
@@ -4783,7 +4785,7 @@ The module will be shown if any of the following conditions are met:
 | `format`            | `'via [$symbol($version)]($style)'` | The format for the module.                                                |
 | `version_format`    | `'v${major}.${minor}.${patch}'`     | The version format. Available vars are `raw`, `major`, `minor`, & `patch` |
 | `symbol`            | `'S '`                              | A format string representing the symbol of Solidity                       |
-| `compiler           | ['solc']                            | The default compiler for Solidity.                                        |
+| `compiler`          | `['solc']`                          | The default compiler for Solidity.                                        |
 | `detect_extensions` | `['sol']`                           | Which extensions should trigger this module.                              |
 | `detect_files`      | `[]`                                | Which filenames should trigger this module.                               |
 | `detect_folders`    | `[]`                                | Which folders should trigger this module.                                 |

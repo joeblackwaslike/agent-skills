@@ -12,9 +12,10 @@ related:
   []
 summary: Use list_connector_project_connections with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/list_connector_project_connections.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a082df025f553b406d53f1e23bc49aeace1a5c9a5cde9733d1ebb60fd63e9419"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "49538b0f8df11cf92f5e985228add3ef5834334b2529aed015546db4f322112f"
 ---
 
 # list_connector_project_connections
@@ -46,6 +47,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/netwo
 | `teamId`    | string  | No       | Team ID to use for this operation.                                                              |
 | `slug`      | string  | No       | Team slug to use for this operation. Use instead of teamId.                                     |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

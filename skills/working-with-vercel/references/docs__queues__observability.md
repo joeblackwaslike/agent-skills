@@ -14,9 +14,10 @@ related:
   - /docs/alerts/configure-alerts
 summary: Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/queues/observability.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c3d4c99f56d92ada9430a35052317e29bace2345d15984c336670a3c9781b6b4"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "817542c8d3675bee2105cdd05e3cfb979f0ffe45a67493673146d19090aada52"
 ---
 
 # Queues Observability
@@ -31,11 +32,12 @@ The **Queues** observability tab provides visibility into your queue operations,
 
 - [Process background jobs in Python with Vercel Queues](https://vercel.com/kb/guide/python-and-vercel-queues) — Move slow and failure-prone work out of your Python request handlers, with typed topics, consumer groups, and built-in r
 - [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta)
+- [Vercel Queues is now in Limited Beta](https://vercel.com/changelog/vercel-queues-is-now-in-limited-beta)
 - [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
-- [Pricing and Limits](https://vercel.com/docs/queues/pricing) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
 - [API Reference](https://vercel.com/docs/queues/api) — HTTP API reference for Vercel Queues. Publish, consume, acknowledge, and manage messages.
 - [Build Queues](https://vercel.com/docs/builds/build-queues) — Understand how concurrency and same branch build queues manage multiple simultaneous deployments.
+- [Observability](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability) — Vercel MCP tools for observability.
 
 Full cross-link map for this page: [/docs/queues/observability.graph.md](/docs/queues/observability.graph.md)
 <!-- /docsgraph:related -->
@@ -118,6 +120,18 @@ For projects with [Observability Plus](/docs/observability/observability-plus) e
 
 When the alert fires, open the queue's **Consumers** table to find the consumer group, then check [function duration grouped by deployment](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fquery%3Fmetric%3DserverlessFunctionInvocation.functionDurationGbhr%26aggregation%3Dsum%26by%3DdeploymentId\&title=Function+duration+by+deployment) on the **Query** tab to see which deployment the retries are running on and what they cost. See [Cost of failed deliveries](/docs/queues/concepts#cost-of-failed-deliveries) for what to do next.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

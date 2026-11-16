@@ -4,8 +4,8 @@ description: Learn how to use the Cursor harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/cursor"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/cursor.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "673202cee7dbbbfa9557a7a26cbaf48c9ad04746f9d7d64e74bed63a2b1b0dd9"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "d086c71832f98cc371cd5637ff0b94bbe2931099ff6b5dd08fce5e02b1e79310"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -115,10 +115,9 @@ Settings:
   2 seconds. These retries use exponential backoff and are separate from
   `startupTimeoutMs`. They cannot recover when the sandbox, bridge process, or
   bridge endpoint is permanently unavailable.
-- `mintBridgeToken`: synchronous function that receives the sandbox id and
-  returns the ACP bridge authentication token. By default, the adapter generates
-  a random 32-byte token. Custom implementations must return a suitably secret
-  token.
+- `mintBridgeToken`: deprecated and ignored. Passing it logs a warning. The
+  adapter generates a key pair for each bridge, passes only the public key into
+  the sandbox, and keeps the private key in host-side resume state.
 
 The adapter fixes the install command and ACP launch command. These
 implementation details cannot be overridden through `createCursor()`.

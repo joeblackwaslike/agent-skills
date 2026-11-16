@@ -13,9 +13,10 @@ related:
   - /docs/agent-resources/vercel-mcp/tools/billing/buy_domain
 summary: Use buy_single_domain with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/buy_single_domain.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "280d997b8a708b6712ac8b10e81f9414fd420d2c58c7e270e8d2014f83b275e6"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3e8553b3416659261c90f7947ead5b6a0a92a77de187d49004b35dce327caf55"
 ---
 
 # buy_single_domain
@@ -36,7 +37,18 @@ To register a domain, use [`get_purchase_quote`](/docs/agent-resources/vercel-mc
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/buy_single_domain.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/buy_single_domain.graph.md)
 <!-- /docsgraph:related -->
 
+## Search the docs from your terminal
 
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

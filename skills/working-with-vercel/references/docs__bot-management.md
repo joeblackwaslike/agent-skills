@@ -15,9 +15,10 @@ related:
   - /docs/observability
 summary: Learn how to manage bot traffic to your site.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/bot-management.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "197ddd2ccea0a40f53aa6694b99fb998bfe8214b0aab5c241226f44b969c79ff"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "74af747cf1d6a1d17ecf63b7799fd13078ebd517bad8c34e9a15a5fb8fd03640"
 ---
 
 # Bot Management
@@ -638,6 +639,14 @@ falbot
 webhook
 
 fal.ai's webhook service that delivers asynchronous notifications for AI model processing and generation tasks.
+
+View
+
+feedonomics
+
+ecommerce
+
+Used by Feedonomics to crawl eCommerce sites.
 
 View
 
@@ -1609,6 +1618,18 @@ YandexBot is a web crawler operated by Yandex, a major Russian search engine.
 
 View
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

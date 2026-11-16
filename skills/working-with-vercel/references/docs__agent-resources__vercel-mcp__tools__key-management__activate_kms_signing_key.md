@@ -12,9 +12,10 @@ related:
   []
 summary: Use activate_kms_signing_key with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/activate_kms_signing_key.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "fa2fed1958dba2b618ec910594656063da6b029ff7f6801cb5edab0edaf68bbf"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9604b0325e227d6914daeb6c031c287271b7d499754eb19cb33c40c077e08e82"
 ---
 
 # activate_kms_signing_key
@@ -28,9 +29,9 @@ Activate a signing key.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [create_kms_signing_key](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/create_kms_signing_key) — Use create_kms_signing_key with Vercel MCP.
+- [Activate a signing key](https://vercel.com/docs/rest-api/kms/activate-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/activate — Activate a pending signing key so the issuer starts signing with
 - [revoke_kms_signing_key](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/revoke_kms_signing_key) — Use revoke_kms_signing_key with Vercel MCP.
 - [create_kms_issuer](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/create_kms_issuer) — Use create_kms_issuer with Vercel MCP.
-- [Activate a signing key](https://vercel.com/docs/rest-api/kms/activate-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/activate — Activate a pending signing key so the issuer starts signing with
 - [create_kms_issuer_policy](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/create_kms_issuer_policy) — Use create_kms_issuer_policy with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/key-management/activate_kms_signing_key.graph.md](/docs/agent-resources/vercel-mcp/tools/key-management/activate_kms_signing_key.graph.md)
@@ -46,6 +47,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/key-m
 | `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody` | object | No       | Request body for this tool.                                 |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

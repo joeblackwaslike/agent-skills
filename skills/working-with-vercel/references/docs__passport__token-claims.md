@@ -11,9 +11,10 @@ related:
   - /docs/passport/verify-identity
 summary: Review the standard, deployment, and visitor identity claims in a Passport token.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/passport/token-claims.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "741067c9985a80a7196cc3e62e25c92eeb372819eea6bb979f823688b0e0a676"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e77bb108e012b06c1c33b73f067827b6173e165bee915126526e9ac827733414"
 ---
 
 # Passport token claims
@@ -33,8 +34,8 @@ Passport issues a signed JSON Web Token (JWT) after a visitor authenticates. The
 - [Personalize and lock down a Nuxt app with Vercel Passport](https://vercel.com/kb/guide/vercel-passport-nuxt) — Use \\`getIdentity\\(\\)\\` to read a visitor’s verified Vercel Passport identity in Nuxt server routes, then personalize pa
 - [Build user-aware TanStack Start apps with Vercel Passport](https://vercel.com/kb/guide/vercel-passport-tanstack-start) — Use \\`getIdentity\\(\\)\\` to read a visitor’s verified Vercel Passport identity in TanStack Start server functions, then p
 - [Vercel Passport is now in Public Beta](https://vercel.com/changelog/vercel-passport-is-now-in-public-beta)
-- [OIDC Federation Reference](https://vercel.com/docs/oidc/reference) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 - [Set up Passport with an identity provider](https://vercel.com/docs/passport/set-up-identity-provider) — Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.
+- [OIDC Federation Reference](https://vercel.com/docs/oidc/reference) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 - [Tokens](https://vercel.com/docs/sign-in-with-vercel/tokens) — Learn how to Sign in with Vercel
 - [Vercel KMS Claims](https://vercel.com/docs/kms/concepts/claims) — How a KMS grant sets KMS-owned token claims the caller cannot override, and how an issuer claims schema validates every
 - [Chat SDK with Vercel Passport](https://vercel.com/docs/chat-sdk/integrations/passport) — Use a verified Vercel Passport identity to store and retrieve per-user conversation history in a Chat SDK bot.
@@ -94,6 +95,18 @@ Do not use `email`, `name`, `sid`, or `external_sub` alone as a global identifie
 
 Reading or decoding a JWT does not verify it. Before trusting these claims, verify the signature, issuer, audience, validity period, `typ`, project, and environment. See [Verify forwarded Passport tokens](/docs/passport/verify-identity).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

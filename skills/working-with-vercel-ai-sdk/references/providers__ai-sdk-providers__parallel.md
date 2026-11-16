@@ -4,8 +4,8 @@ description: Learn how to use Parallel Decisions with the AI SDK.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/parallel"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/parallel.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "1e557bc22d951c92283fd9aabec9a5883fb91dede30d1309ab9b5c3fecd167d7"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "aa4e1514678e7fd7aa8c817b1daa28b85598ef0e5afd8d6e80f7ef8e1e6bc17a"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -96,6 +96,18 @@ to make decisions. Parallel refusal answers are preserved by the model adapter;
 
 The provider supports synchronous decision calls. It does not implement language
 generation or streaming.
+
+### Decision Model Capabilities
+
+| Model  | Boolean | Choice | Score | Box | Image Input | Reasoning | Max Output Tokens |
+| ------ | ------- | ------ | ----- | --- | ----------- | --------- | ----------------- |
+| `fast` | ✓       | ✓      | ✓     | ✗   | ✗           | ✗         | ✗                 |
+
+### Provider Option Catalog
+
+| Operation | Option            | Description                                               |
+| --------- | ----------------- | --------------------------------------------------------- |
+| decision  | `includeExcerpts` | Include evidence excerpts in citations. Defaults to true. |
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/limits
 summary: Vercel provides support for monorepos. Learn how to deploy a monorepo here.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/monorepos.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "9c42c02adbc97d7e965ae896ce2fe1179157d6043dd653708c645bfb1229b01c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3027d7ffadf1c670787bbbe4fe610c31e2b26a710ecdbf1efee428a0ee9f75b6"
 ---
 
 # Using Monorepos
@@ -30,6 +31,7 @@ Monorepos allow you to manage multiple projects in a single directory. They are 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Deploying a Monorepo Using Yarn Workspaces to Vercel](https://vercel.com/kb/guide/deploying-yarn-monorepos-to-vercel) — In this guide, you will deploy a monorepo that includes two frontend applications and one shared library with Yarn works
 - [Automatically skip unnecessary deployments in monorepos](https://vercel.com/changelog/automatically-skip-unnecessary-deployments-in-monorepos)
 - [Lockfile-aware deployment skipping for monorepos](https://vercel.com/changelog/lockfile-aware-deployment-skipping-for-monorepos)
 - [New monorepo projects now skip builds with unchanged code by default](https://vercel.com/changelog/new-monorepo-projects-now-skip-builds-with-unchanged-code-by-default)
@@ -39,7 +41,6 @@ Monorepos allow you to manage multiple projects in a single directory. They are 
 - [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions) — Learn how to import files inside Serverless Functions on Vercel.
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
 - [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
-- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
 - [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues)
 - [How to scale a large codebase](https://vercel.com/blog/how-to-scale-a-large-codebase)
 
@@ -127,7 +128,7 @@ To disable this behavior, [visit the project's Root Directory settings](https://
 
 ### Ignoring the build step
 
-If your project does not fit the [requirements for built-in skipping](#requirements), you can use the [Ignored Build Step](/docs/project-configuration/project-settings#ignored-build-step) project setting. Canceled builds initiated using the Ignored Build Step count towards your deployment and concurrent build limits and so [skipping unaffected projects](#skipping-unaffected-projects) may be a better option for monorepos with many projects.
+If your project does not fit the [requirements for built-in skipping](#requirements), you can use the [Ignored Build Step](/docs/project-configuration/project-settings#ignored-build-step) project setting. Canceled builds initiated using the Ignored Build Step count towards your deployment and concurrent build limits and so [skipping unaffected projects](#skipping-unaffected-projects) may be a better option for monorepos with many projects. For more ways to avoid unnecessary builds, see [How to reduce build costs on Vercel](/kb/guide/how-reduce-build-costs).
 
 For example, Turborepos might [use `turbo query` in the Ignored Build Step](/docs/monorepos/turborepo#custom-ignored-build-step) to opt into more precise deployment selection in monorepos with multiple languages, or other complexities.
 
@@ -248,6 +249,18 @@ changes that span both projects.
   const projects: VercelRelatedProject[] = relatedProjects();
   ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

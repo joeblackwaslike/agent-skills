@@ -15,9 +15,10 @@ related:
   - /docs/drains/audit-logs-to-splunk
 summary: Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event schema.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/audit-log/migrating-to-drains.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a3f2ccf131162d3596cc09fe60a650d919b12b484d0170ecab93f03edb6cd33b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e58cbe3a98a70dc97d48f2a96122110e6385514244e49f809d46c98d25df6db0"
 ---
 
 # Migrating from Custom SIEM Log Streaming to Audit Log Drains
@@ -35,9 +36,8 @@ Vercel is replacing Custom SIEM Log Streaming with [Audit Log Drains](/docs/drai
 - [Audit Log Drains now support Datadog, Splunk, and Panther](https://vercel.com/changelog/audit-log-drains-now-support-datadog-splunk-and-panther)
 - [Expanded Audit Log coverage, now delivered through Vercel Drains](https://vercel.com/changelog/expanded-audit-log-coverage-now-delivered-through-vercel-drains)
 - [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains)
-- [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics) — Learn about Web Analytics Drains - data formats and custom events configuration.
-- [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
 - [Creates a new Integration Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-new-integration-log-drain-deprecated) — POST /v2/integrations/log-drains — Creates an Integration log drain. This endpoint must be called with an OAuth2 client
+- [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics) — Learn about Web Analytics Drains - data formats and custom events configuration.
 - [Creates a Configurable Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-configurable-log-drain-deprecated) — POST /v1/log-drains — Creates a configurable log drain. This endpoint must be called with a team AccessToken \\(integrati
 
 Full cross-link map for this page: [/docs/audit-log/migrating-to-drains.graph.md](/docs/audit-log/migrating-to-drains.graph.md)
@@ -129,6 +129,18 @@ A migrated event looks like this:
 - [Drain Audit Logs to Panther](/docs/drains/audit-logs-to-panther)
 - [Audit Logs](/docs/audit-log)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

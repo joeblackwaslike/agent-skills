@@ -14,9 +14,10 @@ related:
   - /docs/ai-gateway/observability-and-spend/budgets
 summary: Connect OpenHands to AI Gateway with the Vercel CLI or an OpenAI-compatible LLM configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/openhands.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "07a39aae2ba7ebcb2748f13e50b364c18bc2cbedb8dfa2d29f7bca1ffe7b6d08"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e21f37c87e695e09ffeb45e4c19e5c1f62986a450b424b73fcee78165a4b9250"
 ---
 
 # OpenHands with AI Gateway
@@ -32,7 +33,7 @@ sha256: "07a39aae2ba7ebcb2748f13e50b364c18bc2cbedb8dfa2d29f7bca1ffe7b6d08"
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 - [OpenClaw with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openclaw) — Connect OpenClaw to AI Gateway with the Vercel CLI or manual provider configuration. Use gateway models across coding ag
 - [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
-- [GitHub Copilot CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/copilot) — Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and
+- [Aider with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/aider) — Connect Aider to AI Gateway with the Vercel CLI or an OpenAI-compatible base URL, API key, and model metadata.
 - [Continue CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/continue) — Connect Continue CLI to AI Gateway with the Vercel CLI or a YAML model configuration that reads your API key from the en
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/openhands.graph.md](/docs/ai-gateway/coding-agents/openhands.graph.md)
@@ -112,6 +113,18 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 - Configure [spend limits](/docs/ai-gateway/observability-and-spend/budgets) on your API key
 - Read the [OpenHands documentation](https://docs.all-hands.dev) for headless runs and configuration
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

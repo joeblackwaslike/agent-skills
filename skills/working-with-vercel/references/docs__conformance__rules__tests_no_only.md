@@ -11,9 +11,10 @@ related:
   []
 summary: Requires that focused tests (i.e. it.only()) are unfocused.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/tests_no_only.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "bcc8ffb69d63b06b17c78f8527f0c928f68ec640656c1228fd5cace4b2d2a766"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a663dbbebc7d6c0b0338cbc9c910c9e1ab952eac11e2ffcecc8b56a0cf59e851"
 ---
 
 # TESTS_NO_ONLY
@@ -77,6 +78,18 @@ The default configuration is:
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

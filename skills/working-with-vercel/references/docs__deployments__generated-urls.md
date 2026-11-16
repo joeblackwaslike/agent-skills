@@ -15,9 +15,10 @@ related:
   - /docs/domains/working-with-domains/add-a-domain
 summary: When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that particular deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployments/generated-urls.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "55ce555d4b5ce1be3e7713ba5d5ef0bec15b633a1f922837086c501fd7fbf27f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8674cc32a43853df41a726d0b50da7109b3318f2130b976790a373191dd016c1"
 ---
 
 # Accessing Deployments through Generated URLs
@@ -35,10 +36,10 @@ When you create a new [deployment](/docs/deployments) in either a preview or pro
 - [Troubleshooting Cross-Origin Errors \\(net::ERR_BLOCKED_BY_ORB\\) with Deployment Protection](https://vercel.com/kb/guide/troubleshooting-cross-origin-errors-neterr-blocked-by-orb-with-deployment-protection) — Learn to resolve \\`net::ERR_BLOCKED_BY_ORB\\` errors on protected Vercel deployments. This guide explains how cross-origi
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure)
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
-- [Deploying Git Repositories with Vercel](https://vercel.com/docs/git) — Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [Deploying Git Repositories with Vercel](https://vercel.com/docs/git) — Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production
 - [System environment variables](https://vercel.com/docs/environment-variables/system-environment-variables) — System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the
+- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 
 Full cross-link map for this page: [/docs/deployments/generated-urls.graph.md](/docs/deployments/generated-urls.graph.md)
 <!-- /docsgraph:related -->
@@ -135,6 +136,18 @@ Preview Deployment Suffixes allow you to customize the URL of a [preview deploym
 
 To learn more, see the [Preview Deployment Suffix](/docs/deployments/preview-deployment-suffix) documentation.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

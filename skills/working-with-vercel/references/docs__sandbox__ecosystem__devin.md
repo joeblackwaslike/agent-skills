@@ -15,9 +15,10 @@ related:
   - /docs/sandbox/concepts/images
 summary: Run Devin Outposts sessions in isolated Vercel Sandbox microVMs, with the control plane deployed on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/ecosystem/devin.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "fd2fef8d85b4e65783dc893a832e2e61cfcec83cb63097c5e6397c88c6922c92"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "109566e1d01667f36ae90747ff2fffd5cb5ecd2280fa2c1a6c0c9475b95d5591"
 ---
 
 # Devin
@@ -36,12 +37,12 @@ online, so you can start sessions from any device, including a phone.
 
 - [Vercel Sandbox now supports Devin Outposts](https://vercel.com/changelog/vercel-sandbox-now-supports-devin-outposts)
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
-- [Vercel Sandbox](https://eve.dev/docs/sandbox/vercel) — Create persistent sandboxes on Vercel, from a prepared snapshot when the environment has build-time setup.
+- [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart) — Learn how to run your first code in a Vercel Sandbox.
 - [Paseo](https://vercel.com/docs/sandbox/ecosystem/paseo) — Run Codex, Claude Code, OpenCode, and Pi in persistent Vercel Sandbox microVMs from Paseo, and reach the same session fr
-- [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
+- [OpenAI SDK](https://vercel.com/docs/sandbox/ecosystem/openai-sdk) — Use OpenAI function calling with AI Gateway to execute model-generated code in an isolated Vercel Sandbox.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/devin.graph.md](/docs/sandbox/ecosystem/devin.graph.md)
 <!-- /docsgraph:related -->
@@ -114,6 +115,18 @@ For local development mode and the full variable reference, see the
 [devin-outpost-vercel repository](https://github.com/vercel-labs/devin-outpost-vercel)
 and the [Devin Outposts on Vercel Sandbox guide](/kb/guide/devin-outposts-vercel-sandbox).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

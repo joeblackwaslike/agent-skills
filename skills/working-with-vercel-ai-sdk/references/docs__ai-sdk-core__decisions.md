@@ -4,8 +4,8 @@ description: Decide answers to Choice, Score, and Boolean questions against shar
 url: "https://ai-sdk.dev/docs/ai-sdk-core/decisions"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/decisions.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "341b728538224dee32b7ecc1f0cd0885e549195a8ea062fc3e702f5c3a5a6ba8"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "e851f9dffec7a257790e5613ad18e226914d031c6bc3e4e9490e14389f956610"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -56,6 +56,7 @@ Combine text, structured data, and images in one state:
 ```ts
 import { openai } from '@ai-sdk/openai';
 import { experimental_decide } from 'ai';
+import { readFile } from 'node:fs/promises';
 
 const result = await experimental_decide({
   model: openai.decisionModel('gpt-6-luna'),
@@ -65,7 +66,7 @@ const result = await experimental_decide({
     {
       type: 'file',
       mediaType: 'image/png',
-      data: new URL('https://example.com/package.png'),
+      data: await readFile('package.png'),
     },
   ],
   questions: {
@@ -83,8 +84,14 @@ from `ai`. A part has one of these shapes:
 - `TextPart`: `{ type: 'text', text: string }`.
 - `FilePart`: `{ type: 'file', mediaType: string, data: ... }`, using the SDK's
   file conventions. For images, use bytes, a base64 string, or a URL. Tagged file
-  data is also supported. URLs are downloaded before the model call.
+  data is also supported. Remote URLs require `experimental_download` and are
+  downloaded before the model call. Without that hook they throw `DownloadError`.
 - JSON: `{ type: 'json', value: JSONValue }`.
+
+For untrusted file URLs, use `experimental_download: createDownload({ fetch })`
+with a transport that validates DNS at connection time, such as `guarded-fetch`
+on Node.js. The model's `fetch` does not cover core state downloads. See
+[Secure URL Fetching](/docs/advanced/secure-url-fetching#core-file-downloads).
 
 Language-model decision adapters accept image files only. The underlying model
 must support the file data form. Gateway forwards image files to the routed
@@ -106,25 +113,27 @@ Use a provider's `decisionModel` factory:
 | Perplexity  | `perplexity.decisionModel('pplx-decider-latest')`      |
 | OpenAI      | `openai.decisionModel('gpt-6-luna')`                   |
 | Anthropic   | `anthropic.decisionModel('claude-haiku-4-5-20251001')` |
-| Google      | `google.decisionModel('gemini-3.5-flash-lite')`        |
+| Google      | `google.decisionModel('gemini-decision-1')`            |
+| HeyGen      | `heygen.decisionModel('heygen-decision-1')`            |
 
 TypeSafe AI's [Jev](https://vercel.com/i/what-is-jev), OpenAI's
-[Decisions API](https://developers.openai.com/api/docs/guides/decisions), and
-[Perplexity's decision models](/providers/ai-sdk-providers/perplexity#decision-models)
+[Decisions API](https://developers.openai.com/api/docs/guides/decisions),
+[Perplexity's decision models](/providers/ai-sdk-providers/perplexity#decision-models),
+and [Google's Decisions API](/providers/ai-sdk-providers/google#decision-models)
 supply native Choice, Score, and Boolean decisions. Answers are keyed by question
 ID, and Choice and Score answers include native probability distributions.
 
-Anthropic and Google adapt structured language-model output for all three types,
-evaluating all questions in one prompt. Their Boolean answers contain prompted
+Anthropic adapts structured language-model output for all three types,
+evaluating all questions in one prompt. Its Boolean answers contain prompted
 estimates of P(true), and Choice and Score answers omit probability distributions.
 Select a model that supports the provider's structured-output API and judge quality
 against your own labeled examples before choosing a model for a task.
 
-The Anthropic and Google language-model adapters request `reasoning: 'none'` by
-default. Each provider maps this setting to its model's reasoning controls. Pass
-supported reasoning settings through `providerOptions` to override this default.
-OpenAI decision models use the Decisions endpoint and do not accept Responses
-API reasoning options.
+The Anthropic language-model adapter requests `reasoning: 'none'` by default.
+Pass supported reasoning settings through `providerOptions` to override this default.
+OpenAI and Google decision models use native Decisions endpoints and do not accept
+language-model reasoning options. Google's endpoint requires Decisions EAP access
+and the `gemini-decision-1` model on `v1beta`.
 
 ## Model aliases and registries
 
@@ -290,6 +299,12 @@ structured descriptions preserved.
 Perplexity exposes Choice/Score confidence at
 `result.providerMetadata?.perplexity?.confidence` and Score legends at
 `result.providerMetadata?.perplexity?.legend`, also keyed by question ID.
+Google exposes confidence for all three question types at
+`result.providerMetadata?.google?.confidence` and Score legends at
+`result.providerMetadata?.google?.legend`, also keyed by question ID.
+HeyGen exposes Choice/Score confidence at
+`result.providerMetadata?.heygen?.confidence` and Score legends at
+`result.providerMetadata?.heygen?.legend`, also keyed by question ID.
 
 Check for optional distributions before using them. For example, an application
 can route only when a provider supplies a sufficiently high selected-option

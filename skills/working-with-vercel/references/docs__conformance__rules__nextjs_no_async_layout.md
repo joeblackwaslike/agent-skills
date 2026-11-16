@@ -11,9 +11,10 @@ related:
   - /docs/conformance/customize
 summary: Ensures that the exported Next.js `layout` component and its transitive dependencies are not asynchronous, as that can block the rendering of the...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/nextjs_no_async_layout.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "64835dc2acd21ba8ddc7d959622065073c820547b3e3c796fca93907da78c2dc"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d2eba9aae4686e7628fcaaa51d467895aac2a4b0eb0f8c881d4c37995f2ed3b4"
 ---
 
 # NEXTJS_NO_ASYNC_LAYOUT
@@ -89,6 +90,18 @@ export default async function RootLayout() {
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

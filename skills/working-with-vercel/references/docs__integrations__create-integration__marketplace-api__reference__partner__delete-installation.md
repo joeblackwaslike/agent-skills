@@ -3,7 +3,7 @@ title: delete-installation
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/delete-installation
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/delete-installation"
-last_updated: 2026-11-09
+last_updated: 2026-11-16
 type: conceptual
 prerequisites:
   []
@@ -12,9 +12,10 @@ related:
   - /docs/integrations/create-integration/native-integration
 summary: Learn about delete-installation on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/delete-installation.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "7d511715ea426c16c2d51873cd450098debcbadfdcf2dcb104b8baa53705ea4e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "cdbfc5af5ba7bdbdc426b949795bf4114a7529024736cab1ef19f134816a6a4e"
 ---
 
 # Delete Installation
@@ -263,6 +264,18 @@ Operation failed because of a conflict with the current state of the resource
 - [Marketplace API Reference](/docs/integrations/create-integration/marketplace-api/reference)
 - [Native Integration Concepts](/docs/integrations/create-integration/native-integration)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

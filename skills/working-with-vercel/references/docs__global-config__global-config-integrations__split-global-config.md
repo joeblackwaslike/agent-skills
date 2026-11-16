@@ -16,9 +16,10 @@ related:
   - /docs/global-config/global-config-dashboard
 summary: "Learn how to use Global Config with Vercel's Split integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/global-config/global-config-integrations/split-global-config.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "2e0a4892d081549a13a5dad95d84435e63d0df4fe24a74110ca5538cd6267b82"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0cb673d2fac4dcd049831309e051820c87b7c3e115d5ae93bdd556113a425f87"
 ---
 
 # Using Global Config with Split
@@ -34,12 +35,11 @@ This guide will help you get started with using Vercel's Split integration with 
 - [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
 - [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
 - [How to use Next.js as a backend for your frontend](https://nextjs.org/docs/app/guides/backend-for-frontend) — Learn how to use Next.js as a backend framework
-- [route.js](https://nextjs.org/docs/app/api-reference/file-conventions/route) — API reference for the route.js special file.
 - [How to build zero-CLS A/B tests with Next.js and Vercel Edge Config](https://vercel.com/blog/zero-cls-experiments-nextjs-edge-config)
-- [TanStack Start](https://ai-sdk.dev/docs/getting-started/tanstack-start) — Learn how to build your first agent with the AI SDK and TanStack Start.
-- [Client Uploads with Vercel Blob](https://vercel.com/docs/vercel-blob/client-upload) — Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
-- [Advanced Web Analytics Config with @vercel/analytics](https://vercel.com/docs/analytics/package) — With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
+- [Build a Claude Managed Agent with Vercel Sandbox](https://vercel.com/kb/guide/run-claude-managed-agent-tools-with-vercel-sandbox) — Build a Claude Managed Agent with Vercel Sandbox: each session runs in a fresh microVM with credential brokering and a w
 - [OG Image Generation Examples](https://vercel.com/docs/og-image-generation/examples) — Learn how to use the @vercel/og library with examples.
+- [Client Uploads with Vercel Blob](https://vercel.com/docs/vercel-blob/client-upload) — Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
+- [Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache) — Learn how Vercel's CDN cache stores your content across a global network to reduce latency and origin load.
 
 Full cross-link map for this page: [/docs/global-config/global-config-integrations/split-global-config.graph.md](/docs/global-config/global-config-integrations/split-global-config.graph.md)
 <!-- /docsgraph:related -->
@@ -592,6 +592,18 @@ Now that you have set up the Split Global Config integration, you can explore th
 - [Use the dashboard](/docs/global-config/global-config-dashboard)
 - [Global Config limits](/docs/global-config/global-config-limits)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

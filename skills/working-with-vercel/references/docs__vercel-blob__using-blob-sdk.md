@@ -15,9 +15,10 @@ related:
   - /docs/vercel-blob/vercel-signed-urls
 summary: Reference for the Vercel Blob JavaScript SDK, @vercel/blob, which lets you access your blob store from your apps.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-blob/using-blob-sdk.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "065a8c89e8e90c05eb60162bf14c79b0952172ea5ebca4c27ea4ddbc413413c3"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1d1cdf5f3aec7b9a235f31574e5435905b5bb5aa5ceeb33b38c92a2f192eaea2"
 ---
 
 # JS SDK Reference
@@ -327,6 +328,7 @@ It accepts the following parameters:
 | `addRandomSuffix`    | No       | A boolean specifying whether to add a random suffix to the `pathname`. It defaults to `false`. **We recommend using this option** to ensure there are no conflicts in your blob filenames.                                                                                                    |
 | `allowOverwrite`     | No       | A boolean to allow overwriting blobs. By default an error will be thrown if you try to overwrite a blob by using the same `pathname` for multiple blobs.                                                                                                                                      |
 | `cacheControlMaxAge` | No       | A number in seconds to configure how long Blobs are cached. Defaults to one month. Cannot be set to a value lower than 1 minute. See the [caching](/docs/vercel-blob#caching) documentation for more details.                                                                        |
+| `ttlDays`            | No       | A number of days, from 1 to 730, after which the blob is deleted automatically. Counted from the upload and applied at UTC midnight, so the blob lives at least this many days. Not set by default. See [Expire blobs automatically](#expire-blobs-automatically). |
 | `contentType`        | No       | A string indicating the [media type](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Type). By default, it's extracted from the pathname's extension.                                                                                                                             |
 | `token`              | No       | A static read-write token. Defaults to `process.env.BLOB_READ_WRITE_TOKEN`. Its default value is not used when OIDC credentials are present, but an explicitly passed token always takes priority. You can also pass a client token created with `generateClientTokenFromReadWriteToken`. See [Authentication](#authentication). |
 | `oidcToken`          | No       | A Vercel OIDC token, used in place of `process.env.VERCEL_OIDC_TOKEN`. Pair with `storeId` (or `BLOB_STORE_ID`). Useful when your framework does not load `.env.local` into `process.env` automatically. An explicitly passed token is not refreshed automatically. See [Authentication](#authentication). |
@@ -416,6 +418,7 @@ It accepts the following parameters:
 | `addRandomSuffix`    | No       | A boolean specifying whether to add a random suffix to the `pathname`. It defaults to `false`. **We recommend using this option** to ensure there are no conflicts in your blob filenames.                                                                                                    |
 | `allowOverwrite`     | No       | A boolean to allow overwriting blobs. By default an error will be thrown if you try to overwrite a blob by using the same `pathname` for multiple blobs.                                                                                                                                      |
 | `cacheControlMaxAge` | No       | A number in seconds to configure how long Blobs are cached. Defaults to one month. Cannot be set to a value lower than 1 minute. See the [caching](/docs/vercel-blob#caching) documentation for more details.                                                                                 |
+| `ttlDays`            | No       | A number of days, from 1 to 730, after which the blob is deleted automatically. Counted from the upload and applied at UTC midnight, so the blob lives at least this many days. Not set by default. See [Expire blobs automatically](#expire-blobs-automatically). |
 | `ifMatch`            | No       | An ETag value. The operation only succeeds if the blob's current ETag matches this value. Use this for [conditional writes](/docs/vercel-blob#conditional-writes) to prevent overwriting changes made by others. Throws `BlobPreconditionFailedError` if the ETag doesn't match.              |
 | `oidcToken`          | No       | A Vercel OIDC token, used in place of `process.env.VERCEL_OIDC_TOKEN`. Pair with `storeId` (or `BLOB_STORE_ID`). Useful when your framework does not load `.env.local` into `process.env` automatically. An explicitly passed token is not refreshed automatically. See [Authentication](#authentication). |
 | `storeId`            | No       | The Blob store id, used with OIDC. Defaults to `process.env.BLOB_STORE_ID`. The SDK accepts either `store_<id>` or `<id>` form. See [Authentication](#authentication). |
@@ -853,6 +856,7 @@ It accepts the following parameters:
   downloadUrl: string;
   cacheControl: string;
   etag: string;
+  expiresAt?: Date; // only for blobs with a TTL
 }
 ```
 
@@ -1091,7 +1095,7 @@ export async function PUT(request) {
 
 The `copy` method copies an existing blob object to a new path inside the blob store.
 
-The `contentType` and `cacheControlMaxAge` will not be copied from the source blob. If the values should be carried over to the copy, they need to be defined again in the options object.
+The `contentType`, `cacheControlMaxAge`, and `ttlDays` will not be copied from the source blob. If the values should be carried over to the copy, they need to be defined again in the options object.
 
 Like `put()`, `addRandomSuffix` is false by default. This means no automatic random id suffix is added to your blob url, unless you pass `addRandomSuffix: true`.
 
@@ -1115,6 +1119,7 @@ It accepts the following parameters:
 | `addRandomSuffix`    | No       | A boolean specifying whether to add a random suffix to the pathname. It defaults to `false`. |
 | `allowOverwrite`     | No       | A boolean to allow overwriting blobs. By default an error will be thrown if you try to overwrite a blob by using the same `pathname` for multiple blobs.                                                                                                                                                     |
 | `cacheControlMaxAge` | No       | A number in seconds to configure the edge and browser cache. Defaults to one month. See the [caching](/docs/vercel-blob#caching) documentation for more details.                                                                                                                                    |
+| `ttlDays`            | No       | A number of days, from 1 to 730, after which the new blob is deleted automatically. The TTL of the source blob is never carried over. See [Expire blobs automatically](#expire-blobs-automatically). |
 | `ifMatch`            | No       | An ETag value. The copy only succeeds if the source blob's current ETag matches this value. Use this for [conditional writes](/docs/vercel-blob#conditional-writes) to prevent copying a blob that has been modified since you last read it. Throws `BlobPreconditionFailedError` if the ETag doesn't match. |
 | `abortSignal`        | No       | An [AbortSignal](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal) to cancel the operation                                                                                                                                                                                                       |
 
@@ -1160,7 +1165,7 @@ const blob = await rename('user-uploads/avatar-old.png', 'user-uploads/avatar.pn
 
 The `rename` method moves an existing blob object to a new path inside the blob store. It copies the blob to the new path, then deletes the source blob. The source blob is only deleted after the copy succeeds. If the copy fails, the rename aborts and the source blob is untouched.
 
-Like `copy()`, the `contentType` and `cacheControlMaxAge` will not be carried over from the source blob. If the values should be kept on the renamed blob, they need to be defined again in the options object.
+Like `copy()`, the `contentType`, `cacheControlMaxAge`, and `ttlDays` will not be carried over from the source blob. If the values should be kept on the renamed blob, they need to be defined again in the options object.
 
 By default, `rename()` throws an error if a blob already exists at `toPathname`. Pass `allowOverwrite: true` to replace it, or `addRandomSuffix: true` to generate a unique pathname instead.
 
@@ -1188,6 +1193,7 @@ It accepts the following parameters:
 | `addRandomSuffix`    | No       | A boolean specifying whether to add a random suffix to the pathname. It defaults to `false`. |
 | `allowOverwrite`     | No       | A boolean to allow overwriting blobs. By default an error will be thrown if a blob already exists at `toPathname`.                                                                                                                                                                                                |
 | `cacheControlMaxAge` | No       | A number in seconds to configure the edge and browser cache. Defaults to one month. See the [caching](/docs/vercel-blob#caching) documentation for more details.                                                                                                                                         |
+| `ttlDays`            | No       | A number of days, from 1 to 730, after which the new blob is deleted automatically. The TTL of the source blob is never carried over. See [Expire blobs automatically](#expire-blobs-automatically). |
 | `ifMatch`            | No       | An ETag value. The rename only succeeds if the source blob's current ETag matches this value. Use this for [conditional writes](/docs/vercel-blob#conditional-writes) to prevent renaming a blob that has been modified since you last read it. Throws `BlobPreconditionFailedError` if the ETag doesn't match. |
 | `abortSignal`        | No       | An [AbortSignal](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal) to cancel the operation                                                                                                                                                                                                            |
 
@@ -1214,6 +1220,69 @@ An example blob is:
   "url": "https://ce0rcu23vrrdzqap.public.blob.vercel-storage.com/profilesv1/user-12345-renamed.txt",
   "downloadUrl": "https://ce0rcu23vrrdzqap.public.blob.vercel-storage.com/profilesv1/user-12345-renamed.txt?download=1",
   "etag": "\"a1b2c3d4e5f6\""
+}
+```
+
+## Expire blobs automatically
+
+Pass `ttlDays` when you write a blob to delete it automatically after that many days. It works with `put()`, `putImage()`, `copy()`, `rename()`, `createMultipartUpload()`, `createMultipartUploader()`, [client upload tokens](/docs/vercel-blob/client-upload), and [presigned URLs](/docs/vercel-blob/vercel-signed-urls). Use `setTtl()` to change or remove the TTL of a blob that already exists.
+
+```ts
+import { put, setTtl, head } from '@vercel/blob';
+
+// Delete this export 7 days after it was uploaded
+const blob = await put('exports/report.csv', csv, {
+  access: 'private',
+  ttlDays: 7,
+});
+
+// Keep it for 30 days instead, still counted from the upload
+await setTtl(blob.url, { ttlDays: 30 });
+
+// Keep it indefinitely
+await setTtl(blob.url, { ttlDays: null });
+
+// Check when a blob will be deleted
+const { expiresAt } = await head(blob.url);
+```
+
+How TTLs behave:
+
+- `ttlDays` accepts whole numbers from 1 to 730.
+- The TTL is counted from the moment the blob was uploaded, not from when you set it. Expirations are applied once a day at UTC midnight, so a blob lives at least `ttlDays` full days.
+- `head()` returns the deletion date as `expiresAt`. Write methods don't return it. A blob whose `expiresAt` is in the past is pending deletion and is usually gone within a day; the dashboard labels it **Pending Deletion**.
+- Overwriting a blob without `ttlDays` removes its TTL. `copy()` and `rename()` never carry the TTL over from the source blob; pass `ttlDays` again if the new blob should expire.
+- Blobs deleted by their TTL are not restorable, the same as `del()`.
+- Setting a TTL adds one [Advanced Operation](/docs/vercel-blob/usage-and-pricing#usage) per started 60 days of TTL on top of the write itself: 1 to 60 days is one extra operation, 61 to 120 days is two, and 730 days is 13. `setTtl()` is billed the same TTL charge and nothing else; clearing a TTL is free.
+
+### `setTtl()`
+
+The `setTtl` method changes or removes the TTL of an existing blob without rewriting it.
+
+```js
+setTtl(urlOrPathname, options);
+```
+
+It accepts the following parameters:
+
+- `urlOrPathname`: (Required) A string specifying the URL or pathname of the blob object to update.
+- `options`: (Required) A `JSON` object with the following required and optional parameters:
+
+| Parameter     | Required | Values                                                                                                                                                                                                 |
+| ------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ttlDays`     | Yes      | A number of days, from 1 to 730, after which the blob is deleted automatically, counted from its upload. Pass `null` to remove the TTL and keep the blob indefinitely.                                 |
+| `token`       | No       | A static read-write token. Defaults to `process.env.BLOB_READ_WRITE_TOKEN`. Its default value is not used when OIDC credentials are present, but an explicitly passed token always takes priority. See [Authentication](#authentication). |
+| `oidcToken`   | No       | A Vercel OIDC token, used in place of `process.env.VERCEL_OIDC_TOKEN`. Pair with `storeId` (or `BLOB_STORE_ID`). Useful when your framework does not load `.env.local` into `process.env` automatically. An explicitly passed token is not refreshed automatically. See [Authentication](#authentication). |
+| `storeId`     | No       | The Blob store id, used with OIDC. Defaults to `process.env.BLOB_STORE_ID`. The SDK accepts either `store_<id>` or `<id>` form. See [Authentication](#authentication). |
+| `abortSignal` | No       | An [AbortSignal](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal) to cancel the operation |
+
+`setTtl()` returns a `JSON` object with the blob's URL and its new TTL, or throws a `BlobNotFoundError` if the blob does not exist:
+
+```ts
+{
+  url: string;
+  pathname: string;
+  ttlDays: number | null;
 }
 ```
 
@@ -1257,6 +1326,7 @@ const multipartUpload = await createMultipartUpload(pathname, options);
 | `storeId`            | No       | The Blob store id, used with OIDC. Defaults to `process.env.BLOB_STORE_ID`. The SDK accepts either `store_<id>` or `<id>` form. See [Authentication](#authentication). |
 | `addRandomSuffix`    | No       | A boolean specifying whether to add a random suffix to the pathname. It defaults to `false`.                                                                                                                                                                                                   |
 | `cacheControlMaxAge` | No       | A number in seconds to configure the edge and browser cache. Defaults to one month. See the [caching](/docs/vercel-blob#caching) documentation for more details.                                                                                                                     |
+| `ttlDays`            | No       | A number of days, from 1 to 730, after which the completed blob is deleted automatically. Pass it here; it is not read by the other multipart methods. See [Expire blobs automatically](#expire-blobs-automatically). |
 | `abortSignal`        | No       | An [AbortSignal](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal) to cancel the operation                                                                                                                                                                                        |
 
 `createMultipartUpload()` returns a `JSON` object with the following data for the created upload:
@@ -1369,6 +1439,7 @@ const uploader = await createMultipartUploader(pathname, options);
 | `storeId`            | No       | The Blob store id, used with OIDC. Defaults to `process.env.BLOB_STORE_ID`. The SDK accepts either `store_<id>` or `<id>` form. See [Authentication](#authentication). |
 | `addRandomSuffix`    | No       | A boolean specifying whether to add a random suffix to the pathname. It defaults to `false`.                                                                                                                                                                                                   |
 | `cacheControlMaxAge` | No       | A number in seconds to configure the edge and browser cache. Defaults to one month. See the [caching](/docs/vercel-blob#caching) documentation for more details.                                                                                                                     |
+| `ttlDays`            | No       | A number of days, from 1 to 730, after which the completed blob is deleted automatically. Pass it here; it is not read by the other multipart methods. See [Expire blobs automatically](#expire-blobs-automatically). |
 | `abortSignal`        | No       | An [AbortSignal](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal) to cancel the operation                                                                                                                                                                                        |
 | `allowOverwrite`     | No       | A boolean to allow overwriting blobs. By default an error will be thrown if you try to overwrite a blob by using the same `pathname` for multiple blobs.                                                                                                                                      |
 
@@ -1687,6 +1758,18 @@ try {
 
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

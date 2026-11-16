@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/subagents.md"
-fetched_at: "2026-10-26T09:47:04.845Z"
-sha256: "9db0458e43e56fd472b94af95e6eb9c1b00052a250eb91bc540da930b77cc4cd"
+fetched_at: "2026-11-16T12:28:44.823Z"
+sha256: "a2c67cc70281062702242e440ab42892ddbe95ecb0147c36bc0b1955705d0b4f"
 ---
 
 > ## Documentation Index
@@ -152,7 +152,7 @@ Focus on:
 | `prompt` | `string` | Yes | The agent's system prompt defining its role and behavior |
 | `tools` | `string[]` | No | Array of allowed tool names. If omitted, inherits every [tool available to subagents](https://code.claude.com/docs/en/sub-agents.md#available-tools) |
 | `disallowedTools` | `string[]` | No | Array of tool names to remove from the agent's tool set. MCP server-level patterns are also accepted: `mcp__server` or `mcp__server__*` removes every tool from that server, and `mcp__*` removes every MCP tool from any server |
-| `model` | `string` | No | Model override for this agent. Accepts an alias such as `'fable'`, `'opus'`, `'sonnet'`, `'haiku'`, `'inherit'`, or a full model ID. `'inherit'` uses the main model. When you omit it, Claude Code picks the model in the [subagent model order](https://code.claude.com/docs/en/sub-agents.md#choose-a-model) |
+| `model` | `string` | No | Model override for this agent. Accepts an alias such as `'fable'`, `'opus'`, `'sonnet'`, `'haiku'`, `'inherit'`, or a full model ID. `'inherit'` uses the model of the agent that spawned this one. When you omit `model`, Claude Code picks the model in the [subagent model order](https://code.claude.com/docs/en/sub-agents.md#choose-a-model) |
 | `skills` | `string[]` | No | List of skill names to preload into the agent's context at startup. At most the [first 32 distinct names](https://code.claude.com/docs/en/sub-agents.md#preload-skills-into-subagents) in the list are preloaded. Unlisted skills remain invocable through the Skill tool |
 | `memory` | `'user' \| 'project' \| 'local'` | No | Memory source for this agent |
 | `mcpServers` | `(string \| object)[]` | No | MCP servers available to this agent, by name or inline config |

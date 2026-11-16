@@ -13,9 +13,10 @@ related:
   - /docs/flags/observability
 summary: API reference for the Flags SDK for Next.js and SvelteKit.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/flags-sdk-reference.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "4123a18f107a4dbe4574c2261c1b31b996e48745acc0960f4dd3904ddf2786dd"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ee34787229ffa23da27bc86dd8803f55d3be2999e4344831d66722703414ab05"
 ---
 
 # Flags SDK Reference
@@ -28,13 +29,12 @@ The Flags SDK is a free, open-source library that gives you the tools you need t
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit) — Using the Flags SDK in SvelteKit
-- [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga)
-- [Cost-aware model routing with Vercel AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Send easy requests to a lower-cost model and escalate only the complex ones to a frontier model through AI Gateway, with
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
 - [npm i flags](https://vercel.com/changelog/npm-i-flags)
 - [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
-- [Flags SDK 3.0](https://vercel.com/changelog/flags-sdk-3-0)
+- [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta)
+- [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga)
+- [Cost-aware model routing with Vercel AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Send easy requests to a lower-cost model and escalate only the complex ones to a frontier model through AI Gateway, with
 - [Using the Flags SDK with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
 - [Flags Explorer](https://vercel.com/docs/flags/flags-explorer) — View and override your application's feature flags from the Vercel Toolbar
 - [Marketplace](https://vercel.com/docs/flags/marketplace) — Connect your preferred feature flag provider through the Vercel Marketplace for a unified flags experience.
@@ -228,6 +228,18 @@ For the full API documentation, including all functions, types, and advanced pat
 - [Set up Flags Explorer](/docs/flags/flags-explorer/getting-started)
 - [Integrate with observability](/docs/flags/observability)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

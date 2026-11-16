@@ -12,9 +12,10 @@ related:
   []
 summary: Use get_runtime_errors with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_errors.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "56b44acaa80e1860047e398f3719f2bb782f9def1f6b1cd5864535c4594d6309"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b5447d0d029ade608c7e1e92019f375c33e08f0fb521a8cad8eff610d1b48114"
 ---
 
 # get_runtime_errors
@@ -29,9 +30,9 @@ Get grouped runtime error clusters for a project. Each cluster includes the erro
 
 - [get_runtime_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_logs) — Use get_runtime_logs with Vercel MCP.
 - [list_agent_runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_runs) — Use list_agent_runs with Vercel MCP.
-- [list_agent_run_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_run_projects) — Use list_agent_run_projects with Vercel MCP.
+- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
+- [Error Codes](https://vercel.com/docs/errors) — Use this guide to find specific solutions and insights for common Vercel errors.
 - [Agent Runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs) — Vercel MCP tools for agent runs.
-- [aggregate_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/aggregate_events) — Use aggregate_events with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_errors.graph.md](/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_errors.graph.md)
 <!-- /docsgraph:related -->
@@ -46,6 +47,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/obser
 
 **Sample prompt:** "Why is my production app throwing errors?"
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

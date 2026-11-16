@@ -14,9 +14,10 @@ related:
   - /docs/cli/global-options
 summary: Learn how to redeploy your project using the vercel redeploy CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/redeploy.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "0fea5c4b5cb985bfea6bc15cf0a33a74dd93e479e19f9bf2ad448a134d78e96a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ae96cf3d5653f9a322b1078cab8970b5c5eff46332e78a375da94f13769b1c26"
 ---
 
 # vercel redeploy
@@ -30,9 +31,9 @@ The `vercel redeploy` command is used to rebuild and [redeploy an existing deplo
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
-- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel remove](https://vercel.com/docs/cli/remove) — Learn how to remove a deployment using the vercel remove CLI command.
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [vercel deploy-hooks](https://vercel.com/docs/cli/deploy-hooks) — Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and delete deploy hook URLs that trigger
 
 Full cross-link map for this page: [/docs/cli/redeploy.graph.md](/docs/cli/redeploy.graph.md)
@@ -126,6 +127,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

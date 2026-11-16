@@ -6,8 +6,8 @@ docs_index: /llms.txt
 tags:
   - node
 source: "https://ai-sdk.dev/cookbook/node/intercept-fetch-requests.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "2784f9a0b4bc990ce1c53dc4369cc4cfa0174748acce96d1fa9b40d539eb65f8"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "e8d4b5e4c335cc110a1ebfcdda81b373a2478edc4ae4e8ec1f9a2ac703c57307"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -24,6 +24,13 @@ Use cases for intercepting requests include:
 - Modifying request bodies
 - Caching responses
 - Using a custom HTTP client
+
+## Preserving URL download protection
+
+A fetch wrapper that logs requests, adds authentication, or retries failures
+does not provide SSRF protection. If the wrapped fetch is used to download
+untrusted URLs on Node.js, wrap a `guarded-fetch` transport instead of the
+global fetch, and preserve the request's abort signal and redirect mode. See [Secure URL Fetching](/docs/advanced/secure-url-fetching).
 
 ## Example
 

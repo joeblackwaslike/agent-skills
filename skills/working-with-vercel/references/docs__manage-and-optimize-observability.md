@@ -15,9 +15,10 @@ related:
   - /docs/analytics/package
 summary: Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize your usage of Web Analytics...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/manage-and-optimize-observability.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "18d0e739bad7c82196f7645d33af70b84b2e1f1f62f7928a5c8f71dc866ee7fb"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "cd75819f4ff29cf5a864816f778a927fa31f7d81c905e9be4cc9eff8850936e9"
 ---
 
 # Manage and optimize usage for Observability
@@ -30,12 +31,11 @@ The Observability section covers usage for Observability, Monitoring, Web Analyt
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Visualize Team Usage With Sophisticated Usage Dashboard](https://vercel.com/blog/sophisticated-usage-dashboard)
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
-- [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
-- [Limits and Pricing for Monitoring](https://vercel.com/docs/query/monitoring/limits-and-pricing) — Learn about our limits and pricing when using Monitoring. Different limitations are applied depending on your plan.
+- [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
+- [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 
 Full cross-link map for this page: [/docs/manage-and-optimize-observability.graph.md](/docs/manage-and-optimize-observability.graph.md)
 <!-- /docsgraph:related -->
@@ -117,6 +117,18 @@ To reduce Observability Plus costs, you can [exclude specific projects](/docs/ob
 
 You can manage project inclusions from your team's **Billing** settings or from a project's **Observability** dashboard. See [Managing projects](/docs/observability/observability-plus#managing-projects) for details.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

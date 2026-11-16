@@ -15,9 +15,10 @@ related:
   - /docs/ai-gateway/observability-and-spend/budgets
 summary: Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/deepagents.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "186a82027a7eb3f87bfc66ad0b76dd961db0b60b115be7ec672fcc0d9d1aef84"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ee455095fc2ffc2f017ad78c0d078164616e6f2a4b498c0a94e770fc39a77904"
 ---
 
 # Deep Agents CLI with AI Gateway
@@ -30,12 +31,12 @@ sha256: "186a82027a7eb3f87bfc66ad0b76dd961db0b60b115be7ec672fcc0d9d1aef84"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
+- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
 - [Continue CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/continue) — Connect Continue CLI to AI Gateway with the Vercel CLI or a YAML model configuration that reads your API key from the en
 - [DeepSeek Harness with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepseek) — Connect DeepSeek Harness to AI Gateway with the Vercel CLI or a YAML provider and model shortlist.
 - [GitHub Copilot CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/copilot) — Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and
-- [OpenClaw with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openclaw) — Connect OpenClaw to AI Gateway with the Vercel CLI or manual provider configuration. Use gateway models across coding ag
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/deepagents.graph.md](/docs/ai-gateway/coding-agents/deepagents.graph.md)
 <!-- /docsgraph:related -->
@@ -109,6 +110,18 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 - Configure [spend limits](/docs/ai-gateway/observability-and-spend/budgets) on your API key
 - Read the [deepagents documentation](https://github.com/langchain-ai/deepagents) for subagents and tools
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/frameworks/full-stack/sveltekit
 summary: Learn how to get started with microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/microfrontends/quickstart.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "a9fea558d341b7ddbbca5a61a6615c7f76802a652535c4888604d40b9103c3a7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1d4190f9dc17ec465bbdc730fdc8383c37d8f545320dd9c77167dabdb9dc71ad"
 ---
 
 # Getting started with microfrontends
@@ -34,9 +35,10 @@ This quickstart guide will help you set up microfrontends on Vercel. Microfronte
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
 - [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends) — Learn how to migrate legacy applications using microfrontends
 - [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends)
-- [Microfrontends](https://turborepo.dev/docs/guides/microfrontends) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
-- [Microfrontends now generally available](https://vercel.com/changelog/microfrontends-now-generally-available)
+- [vercel microfrontends](https://vercel.com/docs/cli/microfrontends) — Manage microfrontends groups from the CLI. Learn how to create groups, inspect group metadata, add and remove projects,
+- [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
 - [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
+- [Create a microfrontends group with applications](https://vercel.com/docs/rest-api/microfrontends/create-a-microfrontends-group-with-applications) — POST /v1/microfrontends/group — Creates a microfrontends group and attaches multiple projects in a single request.
 - [Microfrontends](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends) — Vercel MCP tools for microfrontends.
 
 Full cross-link map for this page: [/docs/microfrontends/quickstart.graph.md](/docs/microfrontends/quickstart.graph.md)
@@ -366,6 +368,18 @@ Before diving into implementation, it's helpful to understand these core concept
 
 Microfrontends changes how paths are routed to your projects. If you encounter any issues, look at the [Testing & Troubleshooting](/docs/microfrontends/troubleshooting) documentation or [learn how to debug routing on Vercel](/kb/guide/debug-routing-on-vercel).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

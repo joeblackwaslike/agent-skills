@@ -15,9 +15,10 @@ related:
   - /docs/networking/bring-your-own-cloud/connect-aws-account
 summary: Bring Your Own Cloud (BYOC) lets you run Vercel Functions behind your project in your own AWS account while Vercel routes requests and serves your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/networking/bring-your-own-cloud.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "6059f5b9607956f25d51bfd6bd7f9f1580915442442006dbfe059e02ab76e06d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c3f48f0bd21137e9b227da30611114002a5d59980e5f7e44ee95da886714b208"
 ---
 
 # Bring Your Own Cloud
@@ -34,12 +35,12 @@ Bring Your Own Cloud (BYOC) lets you run the [Vercel Functions](/docs/functions)
 
 - [Bring Your Own Cloud on AWS is now generally available](https://vercel.com/changelog/bring-your-own-cloud-on-aws-is-now-generally-available)
 - [The Complete Guide to Bring Your Own Cloud](https://vercel.com/kb/guide/byoc) — Use Bring Your Own Cloud \\(BYOC\\) to run Vercel Functions as AWS Lambda functions in your own AWS account, from setup to
-- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
 - [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
-- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis) — Learn how to build and scale performant APIs on Vercel.
-- [Does Vercel have a SOC 2 Type 2 attestation?](https://vercel.com/kb/guide/is-vercel-soc-2-compliant) — Vercel holds a SOC 2 Type 2 attestation for Security, Confidentiality, and Availability. See what the report covers, how
-- [Vercel for Enterprise](https://vercel.com/blog/vercel-for-enterprise)
-- [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
+- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
+- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
+- [Integrating Vercel and Kubernetes](https://vercel.com/docs/integrations/external-platforms/kubernetes) — Deploy your frontend on Vercel alongside your existing Kubernetes infrastructure.
+- [Security & Compliance Measures](https://vercel.com/docs/security/compliance) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [Connect to Amazon Web Services \\(AWS\\)](https://vercel.com/docs/oidc/aws) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 - [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 
 Full cross-link map for this page: [/docs/networking/bring-your-own-cloud.graph.md](/docs/networking/bring-your-own-cloud.graph.md)
@@ -177,6 +178,18 @@ To build your own provisioning tool, see the [BYOC provisioning reference](/docs
 - [Vercel Functions](/docs/functions)
 - [Enterprise plan](/docs/plans/enterprise)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

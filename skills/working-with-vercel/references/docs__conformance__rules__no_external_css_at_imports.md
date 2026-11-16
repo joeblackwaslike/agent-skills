@@ -11,9 +11,10 @@ related:
   []
 summary: Disallows @import at-rules that import from URLs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/no_external_css_at_imports.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9ac3fbdac2292213df4b76a883a095b122975507998bbbb2bd163e2080e5c8e4"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "bc4a6501677914a76776daf21719e3944564d502efc55d3c6c0827b690ce8473"
 ---
 
 # NO_EXTERNAL_CSS_AT_IMPORTS
@@ -73,6 +74,18 @@ export default function RootLayout({ children }: RootLayoutProps) {
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

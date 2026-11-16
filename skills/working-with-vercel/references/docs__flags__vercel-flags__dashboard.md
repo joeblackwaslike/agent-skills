@@ -16,9 +16,10 @@ related:
   - /docs/flags/vercel-flags/project-connections
 summary: Learn how to manage your feature flags using the Vercel Dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "6737c1e53d328dbf6ada2c4bf124e6cd3740881f07c358c3e5d26d8733a91721"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "761f1c7afa3607776cd5f1364144bd7c9c006476b0285b767f514859f11b1bb4"
 ---
 
 # Managing flags in the dashboard
@@ -31,12 +32,10 @@ The **Flags** section in your Vercel dashboard sidebar is the central place to m
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
+- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
 - [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta)
-- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
-- [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
 - [Using the Flags SDK with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
 - [Flags Explorer](https://vercel.com/docs/flags/flags-explorer) — View and override your application's feature flags from the Vercel Toolbar
 
@@ -124,6 +123,18 @@ For more information on archiving flags, see [Archive](/docs/flags/vercel-flags/
 - [Set up Flags Explorer](/docs/flags/flags-explorer/getting-started)
 - [Enable observability](/docs/flags/observability)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

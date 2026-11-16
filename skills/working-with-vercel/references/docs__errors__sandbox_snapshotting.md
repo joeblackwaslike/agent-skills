@@ -12,9 +12,10 @@ related:
   - /docs/sandbox/sdk-reference
 summary: The Sandbox is creating a snapshot and is no longer accepting commands. This is a transient state.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/sandbox_snapshotting.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "d4061f2781c88e58650caa0a5eb798c46edead007dd0f091230e46a2d9aabb58"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8dbee05ccc7ca67ce19f4e745e5e27a6a13a0efa8ba1ac0fc433998218161c15"
 ---
 
 # SANDBOX_SNAPSHOTTING
@@ -33,6 +34,18 @@ To troubleshoot this error, follow these steps:
 2. **Check whether your code is racing `snapshot()`:** If one path calls `sandbox.snapshot()` while another path is still issuing commands, the second path can see `SANDBOX_SNAPSHOTTING`. Coordinate the two paths so `snapshot()` finishes before submitting more commands. The [`status`](/docs/sandbox/sdk-reference#status) accessor reads cached metadata and doesn't prevent lifecycle races.
 3. **Inspect the Sandbox history:** Navigate to the [Sandboxes dashboard](/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fsandboxes\&title=Go+to+Sandboxes), select the Sandbox, and check the history section to see what triggered the snapshot.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

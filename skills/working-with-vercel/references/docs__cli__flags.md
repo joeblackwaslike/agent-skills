@@ -15,9 +15,10 @@ related:
   - /docs/flags/vercel-flags/dashboard/segments
 summary: Learn how to manage feature flags for your Vercel project using the vercel flags CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/flags.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "9ba1bddb4641c1a4de98872e4059afc93c414a9a37749b49e869e045acc66c3d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "57ff629585ebaae73034e7cae60cf0fca815009a452f45bcced542750f48656a"
 ---
 
 # vercel flags
@@ -36,10 +37,11 @@ The `vercel flags` command manages [Vercel Flags](/docs/flags/vercel-flags) for 
 - [Manage Vercel Flags targeting rules from the CLI](https://vercel.com/changelog/manage-vercel-flags-targeting-rules-from-the-cli)
 - [Vercel Flags are now optimized for agents](https://vercel.com/changelog/vercel-flags-are-now-optimized-for-agents)
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
-- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
+- [vercel metrics](https://vercel.com/docs/cli/metrics) — Discover and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
+- [Create a flag](https://vercel.com/docs/rest-api/feature-flags/create-a-flag) — PUT /v1/projects/{projectIdOrName}/feature-flags/flags — Create a new feature flag for a project. The flag must have a u
 - [List flag versions](https://vercel.com/docs/rest-api/feature-flags/list-flag-versions) — GET /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug}/versions — Lists flag versions for a given flag.
-- [Rolling out a new feature](https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature) — Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI
 - [Update a flag](https://vercel.com/docs/rest-api/feature-flags/update-a-flag) — PATCH /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} — Update an existing feature flag. This endpoint
+- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
 
 Full cross-link map for this page: [/docs/cli/flags.graph.md](/docs/cli/flags.graph.md)
 <!-- /docsgraph:related -->
@@ -1807,6 +1809,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

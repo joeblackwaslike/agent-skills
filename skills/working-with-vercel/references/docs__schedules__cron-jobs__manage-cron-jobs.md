@@ -16,9 +16,10 @@ related:
   - /docs/deployments/managing-deployments
 summary: Learn how to manage Cron Jobs effectively in Vercel. Explore cron job duration, error handling, deployments, concurrency control, local execution,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/schedules/cron-jobs/manage-cron-jobs.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "edba59323ed992e73f2d18ce34714f26d7b1d1e65bd80b512474b556f50f1792"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8382fd631cc65b91e6840b595d820d769697cc21d8e6ca1099f99187b3a91585"
 ---
 
 # Managing Cron Jobs
@@ -33,12 +34,13 @@ Cron Jobs are a legacy feature and will be migrated to
 
 - [Introducing Vercel Cron Jobs](https://vercel.com/blog/cron-jobs)
 - [Vercel Cron Jobs are now generally available](https://vercel.com/changelog/vercel-cron-jobs-are-now-generally-available)
-- [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
+- [Cron jobs now support 100 per project on every plan](https://vercel.com/changelog/cron-jobs-now-support-100-per-project-on-every-plan)
 - [ Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel) — Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflo
-- [Migrating from Cron Jobs to Schedules](https://vercel.com/docs/schedules/migrate-from-cron-jobs) — Move Cron Jobs in vercel.json to Schedules without changing your route code, then optionally make the route private.
+- [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
+- [Migrate from Google Cloud Run to Vercel](https://vercel.com/kb/guide/migrate-cloud-run-to-vercel) — Move a Cloud Run service or worker to Vercel. Compare runtimes, preserve Google Cloud access, and plan jobs, validation,
 - [vercel crons](https://vercel.com/docs/cli/crons) — Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand.
-- [Handling Scheduled Runs](https://vercel.com/docs/schedules/handle-runs) — Write the private function, route, or queue consumer that a schedule runs, and make it safe to run more than once.
 - [Rolling Releases](https://vercel.com/docs/rolling-releases) — Learn how to use Rolling Releases for more cautious deployments.
+- [Handling Scheduled Runs](https://vercel.com/docs/schedules/handle-runs) — Write the private function, route, or queue consumer that a schedule runs, and make it safe to run more than once.
 - [Limits](https://vercel.com/docs/limits) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 
 Full cross-link map for this page: [/docs/schedules/cron-jobs/manage-cron-jobs.graph.md](/docs/schedules/cron-jobs/manage-cron-jobs.graph.md)
@@ -479,6 +481,18 @@ A valid build registers each job in `.vercel/output/config.json`:
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

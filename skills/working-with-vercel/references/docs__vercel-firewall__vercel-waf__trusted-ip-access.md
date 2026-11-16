@@ -12,9 +12,10 @@ related:
   []
 summary: Learn how to use Vercel Firewall to allow requests from trusted IP addresses and deny requests from other networks.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/trusted-ip-access.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "8ef05e3ac0ee7ab9ec09b22aa918466ceda71e296954d68573002065af9e7804"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e828d1e36b1829e0164bc6b1f5aaadb18f680cab536a31a96af19b8dff76242b"
 ---
 
 # Restrict access to trusted IP addresses
@@ -108,6 +109,18 @@ Test from both an allowed network and a network outside your allowed IP addresse
 4. Change the Firewall action to **Deny** and apply the configuration.
 5. Repeat the allowed and unlisted IP tests. Firewall Deny returns `403 Forbidden` for an unlisted IP.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/code-owners/getting-started
 summary: Learn how to set up Conformance for your codebase.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/getting-started.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "aae7b3eb00b2641e4d0836e7a377a60fa1dac74a4eed66620378457b48780a06"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "062c58cf29b729a3f5482af0c6894f8097fda29c2837d908b5e985a2b4885528"
 ---
 
 # Getting Started with Conformance
@@ -134,6 +135,18 @@ This section guides you through setting up Conformance for your repository.
 - [Code Owners](/docs/code-owners)
 - [Conformance](/docs/conformance)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

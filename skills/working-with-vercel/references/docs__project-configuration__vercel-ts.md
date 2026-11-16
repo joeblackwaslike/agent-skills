@@ -15,9 +15,10 @@ related:
   - /docs/functions/runtimes/node-js/node-js-versions
 summary: Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/project-configuration/vercel-ts.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "35d693ed6ea1443d9718c1e608b6c95039820b8407ac52dc2d7407aaff6fc4b1"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ea33dcf763984bc161d2548e91ae35aa692d5d25ed2ab5c1973b279d1fc0f47b"
 ---
 
 # Programmatic Configuration with vercel.ts
@@ -37,8 +38,8 @@ The `vercel.ts` file lets you configure and override the default behavior of Ver
 - [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
 - [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 - [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
-- [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
 - [Cache-Control headers](https://vercel.com/docs/caching/cache-control-headers) — Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior
+- [@vercel/functions API Reference \\(Node.js\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package) — Learn about available APIs when working with Vercel Functions.
 - [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
 
 Full cross-link map for this page: [/docs/project-configuration/vercel-ts.graph.md](/docs/project-configuration/vercel-ts.graph.md)
@@ -1218,6 +1219,18 @@ This is not recommended because it could lead to search engines indexing two dif
 
 For details on legacy properties, see the [legacy section of the static configuration reference](/docs/project-configuration/vercel-json#legacy).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

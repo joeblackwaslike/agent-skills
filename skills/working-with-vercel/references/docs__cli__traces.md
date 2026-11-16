@@ -14,9 +14,10 @@ related:
   - /docs/tracing/session-tracing
 summary: Search spans across a team, inspect a trace by trace ID or request ID, capture session traces, or manage project trace sampling rules from the...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/traces.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "de3f841a7055dbd9d7044ba345158a1112202118e395882159fda28515b722a1"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "26af28b3504896dd67e37c2de5146634d1245709c51df8e41c65abfc302a64d3"
 ---
 
 # vercel traces
@@ -31,12 +32,14 @@ The `vercel traces` command lets you search spans across a team, inspect a trace
 
 - [Agent Runs](https://eve.dev/docs/observability/agent-runs) — Inspect eve sessions in Vercel and configure the Agent Runs destination.
 - [Search trace spans from the Vercel CLI](https://vercel.com/changelog/search-trace-spans-from-the-vercel-cli)
+- [Daemons can now send traces to Vercel Tracing](https://vercel.com/changelog/vercel-daemons-can-now-send-traces-to-vercel-tracing)
 - [Vercel Tracing is now generally available](https://vercel.com/changelog/vercel-tracing-is-now-generally-available)
 - [Trace and debug eve agent runs](https://vercel.com/kb/guide/trace-and-debug-eve-agent-runs) — Inspect eve traces in Vercel Agent Runs, control captured content, export OpenTelemetry spans, and test fixes with regre
-- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
-- [vercel agent-runs](https://vercel.com/docs/cli/agent-runs) — Find projects with Agent Runs, list recent runs, and inspect run metadata and conversation traces from the command line.
+- [Always-on tracing for production and preview traffic](https://vercel.com/changelog/always-on-tracing-for-production-and-preview-traffic)
 - [vercel project](https://vercel.com/docs/cli/project) — Perform the following commands from the terminal for your Vercel Projects: list, create, inspect, update settings, renam
 - [vercel firewall](https://vercel.com/docs/cli/firewall) — Learn how to explore firewall traffic and manage your project's custom firewall rules, managed bot rules, IP blocks, sys
+- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
+- [vercel connect](https://vercel.com/docs/cli/connect) — Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
 - [vercel routes](https://vercel.com/docs/cli/routes) — Learn how to manage project-level routing rules using the vercel routes CLI command.
 
 Full cross-link map for this page: [/docs/cli/traces.graph.md](/docs/cli/traces.graph.md)
@@ -526,6 +529,18 @@ For more information on global options and their usage, refer to the [options se
 - [Configuring Tracing](/docs/tracing/configure-tracing)
 - [Session tracing](/docs/tracing/session-tracing)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

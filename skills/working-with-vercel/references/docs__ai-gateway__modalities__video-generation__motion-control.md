@@ -13,9 +13,10 @@ related:
   - /docs/ai-gateway/modalities/video-generation
 summary: Transfer motion from a reference video to a character image using KlingAI through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/motion-control.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ca0f0fbc1d65a45fa36fcc553852f37b087c90a84547bf58bbf6644ac0fab8f1"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "da4edea44785c369edaf1250dd46af2a9e895dbb19adc71452146e6a2bbd9921"
 ---
 
 # AI Gateway Motion Control Video Generation
@@ -32,10 +33,9 @@ Transfer motion from a reference video to a character in an image. The model ana
 - [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
 - [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation)
 - [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
-- [Kling AI](https://ai-sdk.dev/providers/ai-sdk-providers/klingai) — Learn how to use Kling AI with AI Gateway and the direct provider.
 - [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway)
-- [Veo video models on AI Gateway](https://vercel.com/changelog/veo-video-models-on-ai-gateway)
 - [Wan models on AI Gateway](https://vercel.com/changelog/wan-models-on-ai-gateway)
+- [Veo video models on AI Gateway](https://vercel.com/changelog/veo-video-models-on-ai-gateway)
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/motion-control.graph.md](/docs/ai-gateway/modalities/video-generation/motion-control.graph.md)
 <!-- /docsgraph:related -->
@@ -199,6 +199,18 @@ The start request AI Gateway persists is capped at 300 KiB, so pass your charact
 
 ***
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

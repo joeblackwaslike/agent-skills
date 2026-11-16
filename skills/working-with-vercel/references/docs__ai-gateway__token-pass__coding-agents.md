@@ -15,55 +15,68 @@ related:
   - /docs/ai-gateway/token-pass/models-and-routing
 summary: Set up fx, Claude Code, Codex, Cline, and OpenCode to use Token Pass, and use Token Pass in agents you build yourself.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/token-pass/coding-agents.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5641043d10cbf332b01ab36a01840364659d9ac779e05a9e99ccdd580480d548"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "41bf007701b5fd492e5d7578c306dff7d59de014bbb9e082a611f860e15f6642"
 ---
 
 # Using Token Pass with Coding and Personal Agents
 
-Token Pass works in any agent that connects to AI Gateway with an API key. For each agent, you connect it with your Token Pass API key and then select a featured model. This page covers the agent-specific settings that decide whether a request succeeds on Token Pass.
+Token Pass works in any agent that connects to AI Gateway. For each agent, you sign in with your Vercel account where the agent supports it, such as fx, or connect it with an AI Gateway API key, and then select a featured model. This page covers the agent-specific settings that decide whether a request draws from Token Pass credit.
 
 ## Before you start
 
 Make sure that:
 
 - Your team has an active Token Pass. See [Getting started](/docs/ai-gateway/token-pass/getting-started).
-- `AI_GATEWAY_API_KEY` holds your Token Pass API key.
+- To authenticate with an API key, `AI_GATEWAY_API_KEY` holds an AI Gateway API key (any type).
 
 Use one of the featured model IDs:
 
 | Model               | Model ID                       |
 | ------------------- | ------------------------------ |
 | Kimi K3             | `moonshotai/kimi-k3`           |
+| Kimi K3.1 Pro       | `moonshotai/kimi-k3.1-pro`     |
 | GLM 5.3             | `zai/glm-5.3`                  |
+| GLM 5.3 Flash       | `zai/glm-5.3-flash`            |
 | DeepSeek V4.1 Flash | `deepseek/deepseek-v4.1-flash` |
 
-A Token Pass API key only works with featured models. These agent settings send requests elsewhere, so those requests fail with a `403`:
+Token Pass credit only covers featured models. These agent settings send requests somewhere Token Pass doesn't cover, so those requests bill your AI Gateway credits instead of Token Pass credit (and fail with a `403` if you use a Token Pass-scoped key):
 
 - **Fast mode.** Fast variants aren't featured models.
-- **Background models.** Some agents send side requests, such as titles, summaries, and subagents, to a different model. Point them at a featured model too.
-- **Provider order.** If your agent's config routes a featured model to a provider other than `token-pass`, put `token-pass` first or remove the setting.
+- **Background models.** Some agents send side requests, such as titles, summaries, and subagents, to a different model. Point them at a featured model too, or those requests bill AI Gateway credits.
+- **Provider order.** If your agent's config routes a featured model to a provider other than `token-pass`, put `token-pass` first or remove the setting. Otherwise the request bills AI Gateway credits.
 
-Token Pass only works with an API key. Signing in to an agent with your Vercel account doesn't use Token Pass.
+Token Pass credit applies whichever credential you use. An AI Gateway API key, a deployment's OIDC token, and signing in with your Vercel account all draw from Token Pass credit for featured models.
 
 To configure every installed agent at once, run:
 
 ```bash filename="terminal"
-npx vercel@latest ai-gateway setup --key "$AI_GATEWAY_API_KEY"
+npx vercel@latest ai-gateway setup
 ```
+
+This creates a standard AI Gateway API key. To reuse a specific existing key instead, add `--key "$AI_GATEWAY_API_KEY"`.
 
 ## fx
 
-Connect fx:
+Sign in with your Vercel account:
 
 ```bash filename="terminal"
-npx vercel@latest ai-gateway setup --agent fx --key "$AI_GATEWAY_API_KEY"
+fx login vercel
+```
+
+You don't need to create or manage an API key. Featured-model requests draw from your team's Token Pass credit automatically, and when that credit runs out they fall back to your team's AI Gateway credits. Sign in with a Vercel account on the team that has Token Pass.
+
+To use an API key instead, connect fx with the setup command:
+
+```bash filename="terminal"
+npx vercel@latest ai-gateway setup --agent fx
 ```
 
 This exports `AI_GATEWAY_API_KEY` from your shell startup file and pins fx's `credential_source` to that key. Open a new terminal so the key loads.
 
-In fx, run `/model` and choose `zai/glm-5.3`, `moonshotai/kimi-k3`, or `deepseek/deepseek-v4.1-flash`. When you pick Kimi K3, fx preselects **Fast** in the speed step. Choose standard speed instead. If Fast is already on, run `/fast` to turn it off.
+In fx, run `/model` and choose `zai/glm-5.3`, `zai/glm-5.3-flash`, `moonshotai/kimi-k3`, `moonshotai/kimi-k3.1-pro`, or `deepseek/deepseek-v4.1-flash`. When you pick Kimi K3, fx preselects **Fast** in the speed step. Choose standard speed instead. If Fast is already on, run `/fast` to turn it off.
 
 To start fx on a featured model without changing your saved default:
 
@@ -79,16 +92,16 @@ fx ask --json --model zai/glm-5.3 "Reply with one short sentence."
 
 `resolved_provider` should be `token-pass`.
 
-> **💡 Note:** Don't use `fx login vercel` for Token Pass, because Token Pass only works with
-> an API key. If you set `provider_order` in `.fx.json` or
-> `~/.fx/settings.json`, put `token-pass` first or remove it.
+> **💡 Note:** If you set `provider_order` in `.fx.json` or `~/.fx/settings.json`, put
+> `token-pass` first or remove it. Otherwise, featured-model requests bill AI
+> Gateway credits.
 
 ## Claude Code
 
 Connect Claude Code:
 
 ```bash filename="terminal"
-npx vercel@latest ai-gateway setup --agent claude-code --key "$AI_GATEWAY_API_KEY"
+npx vercel@latest ai-gateway setup --agent claude-code
 ```
 
 This points Claude Code at `https://ai-gateway.vercel.sh/claude-code` and turns on gateway model discovery, so featured models appear in `/model`.
@@ -99,7 +112,7 @@ Start Claude Code on a featured model:
 claude --model zai/glm-5.3
 ```
 
-Claude Code also sends requests, such as background tasks and subagents, to separate model slots. By default those slots use Claude models, which a Token Pass API key can't use. To keep every request working, point the slots at a featured model in `~/.claude/settings.json`:
+Claude Code also sends requests, such as background tasks and subagents, to separate model slots. By default those slots use Claude models, which Token Pass credit doesn't cover, so they bill your AI Gateway credits. To keep every request on Token Pass credit, point the slots at a featured model in `~/.claude/settings.json`:
 
 ```json filename="~/.claude/settings.json"
 {
@@ -120,7 +133,7 @@ Merge these keys into the `env` block the setup command wrote. Don't replace the
 Connect Codex:
 
 ```bash filename="terminal"
-npx vercel@latest ai-gateway setup --agent codex --key "$AI_GATEWAY_API_KEY"
+npx vercel@latest ai-gateway setup --agent codex
 ```
 
 Start Codex on a featured model:
@@ -147,25 +160,25 @@ Then run `codex --profile token-pass`. You can also switch models in a session w
 To connect the Cline CLI and set a featured model, run:
 
 ```bash filename="terminal"
-npx vercel@latest ai-gateway setup --agent cline --key "$AI_GATEWAY_API_KEY"
+npx vercel@latest ai-gateway setup --agent cline
 cline auth -p vercel-ai-gateway -m zai/glm-5.3
 ```
 
 To set up the Cline VS Code extension, open Cline's settings and follow these steps:
 
 1. Set **API Provider** to **Vercel AI Gateway**.
-2. Paste your Token Pass API key.
-3. Set the model to `zai/glm-5.3`, `moonshotai/kimi-k3`, or `deepseek/deepseek-v4.1-flash`.
+2. Paste your AI Gateway API key.
+3. Set the model to `zai/glm-5.3`, `zai/glm-5.3-flash`, `moonshotai/kimi-k3`, `moonshotai/kimi-k3.1-pro`, or `deepseek/deepseek-v4.1-flash`.
 
 ## OpenCode
 
 Connect OpenCode:
 
 ```bash filename="terminal"
-npx vercel@latest ai-gateway setup --agent opencode --key "$AI_GATEWAY_API_KEY"
+npx vercel@latest ai-gateway setup --agent opencode
 ```
 
-In OpenCode, run `/models` and choose GLM 5.3, Kimi K3, or DeepSeek V4.1 Flash under Vercel AI Gateway. To make one the default, set `model` in `opencode.json`:
+In OpenCode, run `/models` and choose GLM 5.3, GLM 5.3 Flash, Kimi K3, Kimi K3.1 Pro, or DeepSeek V4.1 Flash under Vercel AI Gateway. To make one the default, set `model` in `opencode.json`:
 
 ```json filename="opencode.json"
 {
@@ -178,11 +191,11 @@ If `opencode.json` sets `options.order` for a featured model, put `token-pass` f
 
 ## Other agents
 
-Any agent in [Coding Agents](/docs/ai-gateway/coding-agents) can use Token Pass. Connect it with `npx vercel@latest ai-gateway setup --agent <name> --key "$AI_GATEWAY_API_KEY"`, then select a featured model ID. The rules in [Before you start](#before-you-start) apply to every agent.
+Any agent in [Coding Agents](/docs/ai-gateway/coding-agents) can use Token Pass. Connect it with `npx vercel@latest ai-gateway setup --agent <name>`, then select a featured model ID. The rules in [Before you start](#before-you-start) apply to every agent.
 
 ## Personal agents
 
-You can also use Token Pass in agents you build and run yourself, such as an Eve agent or an AI SDK app on your laptop or deployed to Vercel. Authenticate with your Token Pass API key and use a featured model ID:
+You can also use Token Pass in agents you build and run yourself, such as an Eve agent or an AI SDK app on your laptop or deployed to Vercel. Authenticate with an AI Gateway API key or, in a Vercel deployment, the deployment's OIDC token, then use a featured model ID:
 
 ```ts filename="agent.ts"
 import { generateText } from 'ai';
@@ -193,11 +206,11 @@ const { text } = await generateText({
 });
 ```
 
-The AI SDK reads `AI_GATEWAY_API_KEY` from the environment. On Vercel, add your Token Pass API key as an [environment variable](/docs/environment-variables) on your project. A deployment's OIDC token can't spend Token Pass, so the key has to be set explicitly.
+The AI SDK reads `AI_GATEWAY_API_KEY` from the environment. On Vercel, add an AI Gateway API key as an [environment variable](/docs/environment-variables) on your project, or rely on the deployment's OIDC token. Both draw from Token Pass credit for featured models.
 
-When your credit runs out, requests with the Token Pass API key fail with a `403` error until your next billing period. AI Gateway doesn't switch to paid usage for you. If a deployed agent has to keep running, catch the error and retry with a regular AI Gateway API key.
+When your Token Pass credit runs out, a standard AI Gateway API key or an OIDC token falls back automatically to your team's AI Gateway credits at the serving provider's rates. No catch-and-retry code is needed. Keep enough AI Gateway credits on the team for the fallback to succeed.
 
-This example stores the Token Pass API key in `TOKEN_PASS_API_KEY` and the regular key in `AI_GATEWAY_API_KEY`:
+The manual failover pattern below is only needed if you deliberately use a Token Pass-scoped key, which has no fallback and returns a `403` once credit runs out. This example stores the Token Pass-scoped key in `TOKEN_PASS_API_KEY` and a standard key in `AI_GATEWAY_API_KEY`:
 
 ```ts filename="agent.ts"
 import { createGateway } from '@ai-sdk/gateway';
@@ -210,8 +223,8 @@ export async function run(prompt: string) {
   try {
     return await generateText({ model: tokenPass('zai/glm-5.3'), prompt });
   } catch {
-    // The Token Pass request failed, for example because credit ran out.
-    // Retry on another provider, billed to AI Gateway credits.
+    // The Token Pass-scoped request failed, for example because credit ran out.
+    // Retry with a standard key, billed to AI Gateway credits.
     return await generateText({
       model: gateway('zai/glm-5.3'),
       prompt,
@@ -223,6 +236,18 @@ export async function run(prompt: string) {
 
 See [When credit runs out](/docs/ai-gateway/token-pass/models-and-routing#when-credit-runs-out) for the error details.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

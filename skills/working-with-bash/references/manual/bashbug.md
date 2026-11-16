@@ -1,56 +1,57 @@
 ---
 source: "man bashbug @ bash 5.3.9"
-fetched_at: "2026-06-16T09:46:54.480Z"
-sha256: "d18bc3d46ef175c49cfb11905b5c0b5d0da4512b8725fc37f61a960e2a744421"
+fetched_at: "2026-11-16T12:28:22.643Z"
+sha256: "7576f0ca7201289eec4bd9f20e53ddccb2abf3cb04fc0e7c6e233a56cafd6c7b"
 ---
 
-BASHBUG(1)                  General Commands Manual                  BASHBUG(1)
+BASHBUG(1)                          bashbug                          BASHBUG(1)
 
 NAME
-     bashbug - report a bug in bash
+       bashbug - report a bug in bash
 
 SYNOPSIS
-     bashbug [--version] [--help] [email-address]
+
+       bashbug [--help] [--version] [bug-report-email-addresses]
 
 DESCRIPTION
-     bashbug  is  a  shell script to help the user compose and mail bug reports
-     concerning bash in a standard format.  bashbug invokes the  editor  speci-
-     fied by the environment variable EDITOR on a temporary copy of the bug re-
-     port format outline. The user must fill in the appropriate fields and exit
-     the  editor.  bashbug then mails the completed report to bug-bash@gnu.org,
-     or email-address.  If the report cannot be mailed, it is saved in the file
-     dead.bashbug in the invoking user's home directory.
+       bashbug is a utility for reporting bugs in Bash to the maintainers.
 
-     The bug report format outline consists of  several  sections.   The  first
-     section provides information about the machine, operating system, the bash
-     version,  and  the  compilation environment.  The second section should be
-     filled in with a description of the bug.  The third section  should  be  a
-     description  of  how to reproduce the bug.  The optional fourth section is
-     for a proposed fix.  Fixes are encouraged.
+       bashbug will start up your preferred editor with a preformatted bug
+       report template for you to fill in. Save the file and quit the editor
+       once you have completed the missing fields.  bashbug will notify you of
+       any problems with the report and ask for confirmation before sending it.
+       By default the bug report is mailed to both the GNU developers and the
+       Debian Bash maintainers. The recipients can be changed by giving a comma
+       separated list of bug-report-email-addresses.
+
+       If you invoke bashbug by accident, just quit your editor. You will
+       always be asked for confirmation before a bug report is sent.
+
+OPTIONS
+       --help
+              Show a brief usage message and exit.
+
+       --version
+              Show the version of bashbug and exit.
+
+       bug-report-email-addresses
+              Comma separated list of recipients´ email addresses. By default
+              the report is mailed to both the GNU developers and the Debian
+              Bash maintainers.
 
 ENVIRONMENT
-     bashbug will utilize the following environment variables if they exist:
+       DEFEDITOR
+              Editor to use for editing the bug report.
 
-     EDITOR
-            Specifies the preferred editor. If EDITOR is not set,  bashbug  at-
-            tempts  to locate a number of alternative editors, including emacs.
-            If bashbug cannot locate any of the  alternative  editors,  it  at-
-            tempts to execute vi.
-
-     HOME   Directory  in  which  the  failed  bug  report is saved if the mail
-            fails.
-
-     TMPDIR
-            Directory in which to create temporary files and directories.
+       EDITOR
+              Editor to use for editing the bug report (overridden by
+              DEFEDITOR).
 
 SEE ALSO
-     bash(1)
+       bash(1), reportbug(1), update-alternatives(8) for preferred editor.
 
-AUTHORS
-     Brian Fox, Free Software Foundation
-     bfox@gnu.org
+AUTHOR
+       This manual page was written by Christer Andersson <klamm@comhem.se> for
+       the Debian project (but may be used by others).
 
-     Chet Ramey, Case Western Reserve University
-     chet@po.cwru.edu
-
-GNU Bash 5.1                     2020 August 1                       BASHBUG(1)
+GNU Bash 3.1                    11 December 2007                     BASHBUG(1)

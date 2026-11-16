@@ -16,9 +16,10 @@ related:
   - /docs/integrations/create-integration/submit-integration
 summary: Review this checklist before submitting your native or connectable account integration for approval on the Vercel Marketplace.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/approval-checklist.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a5f73d3e9d30f09b07101861cef69fd092cd0a79ae31d84ea298f61fbda45876"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0002724416bfa90c39cfc59caf1cafb9c36022fd7d6a27e0d5ad5b78de0cbe89"
 ---
 
 # Integration Approval Checklist
@@ -31,11 +32,11 @@ Before submitting your integration for review, work through the checklist that m
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
-- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
 - [Marketplace Partner API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner) — Learn how to implement Partner API endpoints for your Vercel integration
-- [Upgrade an Integration](https://vercel.com/docs/integrations/create-integration/upgrade-integration) — Lean more about when you may need to upgrade your Integration.
 - [Marketplace Vercel API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel) — Learn how to call Vercel API endpoints to interact with Vercel resources
+- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
+- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
+- [Upgrade an Integration](https://vercel.com/docs/integrations/create-integration/upgrade-integration) — Lean more about when you may need to upgrade your Integration.
 
 Full cross-link map for this page: [/docs/integrations/create-integration/approval-checklist.graph.md](/docs/integrations/create-integration/approval-checklist.graph.md)
 <!-- /docsgraph:related -->
@@ -169,6 +170,18 @@ After a user installs your integration through the Marketplace, they should see 
 - Is there a Configuration URL for the integration? Users should be able to modify linked projects by selecting projects in a similar way as during installation.
 - Are the environment variables set correctly with the right target?
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

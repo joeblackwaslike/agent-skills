@@ -13,9 +13,10 @@ related:
   - /docs/instant-rollback
 summary: Failed to fetch the internal deployment. This is a deployment error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/internal_deployment_fetch_failed.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "d960fc54cd86035145e11a2d68a5213d7d1111d3a4c0d008fddd59486f621428"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e6472c477931027c37b16d3419a9a5b6a9b751f47c0c146e2b43d4216ab42c7a"
 ---
 
 # INTERNAL_DEPLOYMENT_FETCH_FAILED
@@ -34,6 +35,18 @@ To troubleshoot this error, follow these steps:
 2. **Inspect deployment logs:** Review the [deployment logs](/docs/deployments/logs) to identify any specific errors or issues that might have occurred during the fetching process
 3. **Review deployment history**: Check the deployment history to see if the deployment was deleted or [rolled back](/docs/instant-rollback)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

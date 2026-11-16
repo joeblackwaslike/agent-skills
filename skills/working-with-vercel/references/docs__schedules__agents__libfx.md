@@ -10,12 +10,16 @@ prerequisites:
   - /docs/schedules
 related:
   - /docs/agent-harnesses/fx
+  - /docs/queues/concepts
+  - /docs/schedules/multi-tenant
+  - /docs/schedules/local-development
   - /docs/schedules/handle-runs
 summary: Give an fx agent a tool that creates schedules, and send each run back into the session that created it.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/schedules/agents/libfx.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "1eb1d74193f8ddc38dd703d20c4e6b6ed53dc7b67f3dda336d59e0ae08785c18"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "135341e58b7a326eb8fe5b5110dee8719bf0b426f9f103501dc79f4872161151"
 ---
 
 # Scheduling Work with libfx
@@ -29,11 +33,10 @@ An [fx agent](/docs/agent-harnesses/fx) keeps each session in a durable log, so 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing Vercel Schedules](https://vercel.com/blog/introducing-vercel-schedules)
-- [Schedules](https://eve.dev/docs/schedules) — Run an agent on a cron cadence, either a fire-and-forget prompt or a handler that hands work off to a channel.
 - [Vercel Schedules is now in public beta](https://vercel.com/changelog/vercel-schedules-is-now-in-public-beta)
-- [Dynamic Scheduling](https://eve.dev/docs/patterns/dynamic-scheduling) — Compose one minute-level eve schedule, proactive channel handoff, and CRUD tools into application-managed schedules.
-- [Scheduling Work with Pi](https://vercel.com/docs/schedules/agents/pi) — Give a Pi agent on durable-harness a tool that creates schedules, and send each run back into the session that created i
+- [Schedules](https://eve.dev/docs/schedules) — Run an agent on a cron cadence, either a fire-and-forget prompt or a handler that hands work off to a channel.
 - [Scheduling Work with the AI SDK](https://vercel.com/docs/schedules/agents/ai-sdk) — Give an AI SDK agent a tool that creates schedules, and run each scheduled task as a new agent turn.
+- [Scheduling Work with Pi](https://vercel.com/docs/schedules/agents/pi) — Give a Pi agent on durable-harness a tool that creates schedules, and send each run back into the session that created i
 - [Scheduling Work with eve](https://vercel.com/docs/schedules/agents/eve) — Let an eve agent create recurring and one-time schedules for its users with defineDynamicSchedules.
 - [Vercel Schedules: JS SDK Reference](https://vercel.com/docs/schedules/sdk) — Reference for @vercel/schedules: create, list, update, enable, disable, invoke, and delete schedules, and handle schedul
 - [Schedules Concepts](https://vercel.com/docs/schedules/concepts) — Learn how Vercel Schedules handles environments, deployments, jitter, one-time schedules, late runs, and duplicate deliv
@@ -135,11 +138,45 @@ Subscribe the consumer to the topic, next to libfx's own queue route:
 
 The scheduled turn is part of the session, so it appears when the user reads the conversation from `session.stream()`.
 
+## Frequently asked questions
+
+### Why does the fx scheduling tool set `idempotent: true`?
+
+libfx refuses a tool that doesn't say whether it's safe to run twice. With `idempotent: true`, libfx runs a tool call again if a crash interrupts it, and the call's `executionId` stays the same when it runs again. The tool uses `executionId` in the schedule's name, so the second `Schedules.create()` call fails with `schedule_already_exists` instead of creating another schedule, and the tool treats that error as success. With `idempotent: false`, libfx doesn't run the interrupted call again and tells the model that the call may have partly run.
+
+### How do I stop a redelivered message from running a scheduled fx task twice?
+
+Build the prompt's `messageId` from the run's `executionId`. [Vercel Queues](/docs/queues/concepts#at-least-once-delivery) delivers each message at least once, and the `executionId` is the same for every delivery of a scheduled run. When libfx receives a prompt with a `messageId` that it has already accepted, it runs nothing new. The repeated prompt follows the original turn, and its result has `repeated: true`.
+
+### How does a user see the result of a scheduled fx task?
+
+The scheduled turn is part of the fx session, so its events appear in the session's stream. A client that reads the conversation with `session.stream()` receives the turn. Each line from `session.stream()` carries a `cursor`, and the client passes the last one back to resume after it. A user who isn't connected sees the scheduled turn the next time they open the conversation. To alert the user sooner, send a notification from the consumer after `turn.result` resolves.
+
+### How does a scheduled fx turn know which user it's for?
+
+The scheduling tool reads `userId` and `timezone` from the `context` that you pass to `agent.session()`, and stores them in the schedule's payload with the session ID. When the schedule fires, the consumer opens the session with the same `context`, so every tool call in the scheduled turn receives that user and time zone. The tool also takes the schedule's namespace from `context`, not from the model's input, which keeps each user's schedules in their own [namespace](/docs/schedules/multi-tenant).
+
+### How do I test a scheduled fx task on my machine?
+
+Run `vercel dev`. It starts a local Schedules service and configures `@vercel/schedules` to use it, so the tool's `Schedules.create()` call creates a local schedule and never touches production. `vercel dev` delivers each run to your local queue consumer in the same message format as production. To run a schedule without waiting for its time, run `vercel schedules invoke <name> --namespace <user-id> --local` in a second terminal. Local schedules exist only for the current `vercel dev` session. See [Testing schedules locally](/docs/schedules/local-development).
+
 ## Related
 
 - [Running fx durably on Vercel](/docs/agent-harnesses/fx)
 - [Handling scheduled runs](/docs/schedules/handle-runs#queue-targets)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

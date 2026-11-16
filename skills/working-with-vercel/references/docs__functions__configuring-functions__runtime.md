@@ -14,9 +14,10 @@ related:
   - /docs/functions/runtimes/python/api-directory
 summary: Learn how to configure the runtime for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/configuring-functions/runtime.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "850e9354ea7833969b6f2d150b2bd7ea3b124eaceb3820d9661532661d3a638a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d203d910e326114778929282cde238b3f0edde9162b1183c5922ee1ef2cafc6b"
 ---
 
 # Configuring the Runtime for Vercel Functions
@@ -29,11 +30,11 @@ The runtime of your function determines the environment in which your function w
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Using the Ruby Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/ruby) — Learn how to use the Ruby runtime to compile Ruby Vercel Functions on Vercel.
 - [Using the Go Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/go) — Learn how to use the Go runtime to run Go APIs on Vercel.
+- [Using the Ruby Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/ruby) — Learn how to use the Ruby runtime to compile Ruby Vercel Functions on Vercel.
 - [Runtimes](https://vercel.com/docs/functions/runtimes) — Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes suppo
-- [Using the Rust Runtime with Vercel functions](https://vercel.com/docs/functions/runtimes/rust) — Build fast, memory-safe serverless functions with Rust on Vercel.
 - [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
+- [Using the Rust Runtime with Vercel functions](https://vercel.com/docs/functions/runtimes/rust) — Build fast, memory-safe serverless functions with Rust on Vercel.
 
 Full cross-link map for this page: [/docs/functions/configuring-functions/runtime.graph.md](/docs/functions/configuring-functions/runtime.graph.md)
 <!-- /docsgraph:related -->
@@ -191,6 +192,18 @@ You can configure other runtimes by using the `functions` property in your `verc
 
 In this case, the function at `api/test.php` would use the custom runtime specified.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

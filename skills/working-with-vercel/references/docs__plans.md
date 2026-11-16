@@ -3,7 +3,7 @@ title: Account Plans on Vercel
 product: vercel
 url: /docs/plans
 canonical_url: "https://vercel.com/docs/plans"
-last_updated: 2026-09-18
+last_updated: 2026-11-12
 type: reference
 prerequisites:
   []
@@ -15,9 +15,10 @@ related:
   - /docs/routing-middleware
 summary: Learn about the different plans available on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/plans.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b015d5b8379537a36e0a64dbf6b6082fff7734a7c01e0ed4f27f5fc1069ddc23"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c746971cccdc70eb542d5882721f1c059a7bf7927e87725edab0bccae7a00420"
 ---
 
 # Account Plans on Vercel
@@ -37,20 +38,20 @@ Vercel offers multiple account plans: Hobby, Pro, and Enterprise.
 - [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
 - [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
 - [A more flexible Pro plan for modern teams](https://vercel.com/blog/new-pro-pricing-plan)
-- [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing)
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 - [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
+- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 - [Usage & Pricing for Deployment Protection](https://vercel.com/docs/deployment-protection/usage-and-pricing) — Compare Deployment Protection feature availability and pricing across Hobby, Pro, and Enterprise plans.
+- [Observability Plus](https://vercel.com/docs/observability/observability-plus) — Learn about using Observability Plus and its limits.
 
 Full cross-link map for this page: [/docs/plans.graph.md](/docs/plans.graph.md)
 <!-- /docsgraph:related -->
 
-Each plan is designed to meet the needs of different types of users, from personal projects to large enterprises. The Hobby plan is free and includes base features, while Pro and Enterprise plans offer enhanced features, team collaboration, and flexible resource management.
+Each plan is designed to meet the needs of different types of users, from your first deployment to large enterprises. The Hobby plan is free and includes base features, while Pro and Enterprise plans offer enhanced features, team collaboration, and flexible resource management.
 
 ## Hobby
 
-The Hobby plan is designed for personal projects and developers. It includes CLI and personal [Git integrations](/docs/git), built-in CI/CD, [automatic HTTPS/SSL](/docs/cdn-security/encryption), and [previews deployments](/docs/deployments/environments#preview-environment-pre-production) for every Git push.
+The Hobby plan is free. It includes CLI and personal [Git integrations](/docs/git), built-in CI/CD, [automatic HTTPS/SSL](/docs/cdn-security/encryption), and [previews deployments](/docs/deployments/environments#preview-environment-pre-production) for every Git push.
 
 It also provides base resources for [Vercel Functions](/docs/functions), [Middleware](/docs/routing-middleware), and [Image Optimization](/docs/image-optimization), along with 100 GB of Fast Data Transfer and 1 hour of [runtime logs](/docs/logs/runtime).
 
@@ -97,6 +98,18 @@ One of the benefits to always being on, is that you don't have to worry about do
 
 See [Manage & optimize usage](/docs/pricing/manage-and-optimize-usage) for more information on how to optimize your usage.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

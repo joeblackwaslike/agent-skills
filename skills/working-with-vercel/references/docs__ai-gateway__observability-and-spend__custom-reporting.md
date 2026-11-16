@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/models-and-providers/virtual-models
 summary: Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "91ddaf1301aaa3dd0dfcd151c0e3404c06690a9ca64494e6340487af2741bfbc"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d3e2ce2ff2a4a85627f20490f958dcd12d285fd6f4dec09ad1f71df7f9467232"
 ---
 
 # AI Gateway Custom Reporting API
@@ -38,11 +39,11 @@ The Custom Reporting API gives you detailed visibility into your AI Gateway usag
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [Unified reporting for all AI Gateway usage](https://vercel.com/blog/unified-reporting-for-your-ai-spend)
 - [Custom reporting now available on AI Gateway](https://vercel.com/changelog/custom-reporting-ai-gateway)
-- [Open weight takes 71.5% of tokens and 23% of spend](https://vercel.com/blog/ai-gateway-production-index-october-2026)
-- [DeepSeek enters the fight for token volume, Anthropic continues to dominate spend](https://vercel.com/blog/ai-gateway-production-index-june-2026)
+- [Query Reference](https://vercel.com/docs/query/reference) — Use this reference to find the event types, metrics, aggregations, dimensions, and operators available in Query.
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
-- [AI Gateway Request Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
+- [vercel metrics](https://vercel.com/docs/cli/metrics) — Discover and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
 - [Monitoring Reference](https://vercel.com/docs/query/monitoring/monitoring-reference) — This reference covers the clauses, fields, and variables used to create a Monitoring query.
+- [AI Gateway Request Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
 
 Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/custom-reporting.graph.md](/docs/ai-gateway/observability-and-spend/custom-reporting.graph.md)
 <!-- /docsgraph:related -->
@@ -53,7 +54,7 @@ Use it to:
 - **Monitor per-user usage**: Identify which users are driving the most spend and token consumption
 - **Analyze by tags**: Tag requests by feature, environment, or team to attribute costs and track usage across your organization
 - **Compare providers**: Understand cost and usage differences between providers serving the same models
-- **Audit BYOK vs system credentials**: Break down usage by credential type to see the impact of bring-your-own-key requests
+- **Audit BYOK vs Vercel's provider keys**: Break down usage by credential type to see the impact of bring-your-own-key requests
 
 > **💡 Note:** The API is currently scoped to your entire account, so the API key you use
 > will return usage data for everything on the account.
@@ -903,6 +904,18 @@ curl "https://ai-gateway.vercel.sh/v1/report?start_date=2026-01-01&end_date=2026
 
 Attach observability tags to a [virtual model](/docs/ai-gateway/models-and-providers/virtual-models) to label all of its traffic. The virtual model's tags replace any tags the request sends, so every request through it records the same tags. When the virtual model sets no tags, the request keeps its own.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

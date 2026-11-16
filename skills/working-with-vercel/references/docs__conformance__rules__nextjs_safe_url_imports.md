@@ -11,9 +11,10 @@ related:
   - /docs/conformance/customize
 summary: Prevent unsafe URL Imports from being added to Next.js applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/nextjs_safe_url_imports.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b6faaefea7ad7cd19e819cc2332215eee20cc52e5a99aed610d252d8ea746f86"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "cc97efc93d21f20f2f90c3ee7cbeaf322f19e7c99bc6c9907df1c62dc7f343cc"
 ---
 
 # NEXTJS_SAFE_URL_IMPORTS
@@ -52,6 +53,18 @@ If this URL is deemed safe for general use, it can be added to the list of appro
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

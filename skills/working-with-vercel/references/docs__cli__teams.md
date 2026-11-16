@@ -13,9 +13,10 @@ related:
   - /docs/cli/global-options
 summary: Learn how to list, create, switch, invite, and manage your teams with the vercel teams CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/teams.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "9dd9f83484ecee3f5cf138cafd5828db9e8a0676aac76327f2085d182e31443f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d41036c8dac582df95cbc31dc144bcb881b7d1e3dd85624e22f1360defa2f86f"
 ---
 
 # vercel teams
@@ -29,10 +30,10 @@ The `vercel teams` command manages [Teams](/docs/accounts#creating-a-team): list
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [vercel organizations](https://vercel.com/docs/cli/organizations) — Create and manage organizations and their child teams with the vercel organizations CLI command.
-- [vercel switch](https://vercel.com/docs/cli/switch) — Learn how to switch between different team scopes using the vercel switch CLI command.
 - [List team members](https://vercel.com/docs/rest-api/teams/list-team-members) — GET /v3/teams/{teamId}/members — Get a paginated list of team members for the provided team.
 - [List Organization Teams](https://vercel.com/docs/rest-api/organizations/list-organization-teams) — GET /v1/organizations/{organizationId}/teams — List up to 100 teams in an organization, each enriched with the team's sl
-- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [Join a team](https://vercel.com/docs/rest-api/teams/join-a-team) — POST /v1/teams/{teamId}/members/teams/join — Join a team with a provided invite code or team ID.
+- [Teams and Users](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams) — Vercel MCP tools for teams and users.
 
 Full cross-link map for this page: [/docs/cli/teams.graph.md](/docs/cli/teams.graph.md)
 <!-- /docsgraph:related -->
@@ -259,6 +260,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

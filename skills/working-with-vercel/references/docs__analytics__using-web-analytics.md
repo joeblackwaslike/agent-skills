@@ -12,11 +12,13 @@ related:
   - /docs/analytics/accessing-metrics-with-vercel-cli
   - /docs/analytics/filtering
   - /docs/analytics/limits-and-pricing
+  - /docs/deployments/environments
 summary: "Learn how to use Vercel's Web Analytics to understand how visitors are using your website."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/analytics/using-web-analytics.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "16b44d3f8b53c6b66b8d7aff39fbe43e1f3b9e8f950f35588ce6b1d1bd440328"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4feb02a197e7e84c62c405394493a8e85690c0a99406c5b88b7faa4c3e9360cd"
 ---
 
 # Using Web Analytics
@@ -38,13 +40,12 @@ To access Web Analytics:
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available)
-- [Query Web Analytics from the Vercel CLI](https://vercel.com/changelog/query-web-analytics-from-the-vercel-cli)
 - [Web Analytics is now generally available](https://vercel.com/changelog/web-analytics-is-now-generally-available)
 - [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
+- [get_web_analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/get_web_analytics) — Use get_web_analytics with Vercel MCP.
 - [Vercel Web Analytics Troubleshooting](https://vercel.com/docs/analytics/troubleshooting) — Learn how to troubleshoot common issues with Vercel Web Analytics.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
-- [get_web_analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/get_web_analytics) — Use get_web_analytics with Vercel MCP.
-- [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights) — Learn how to use Speed Insights to analyze your application's performance data.
+- [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
 
 Full cross-link map for this page: [/docs/analytics/using-web-analytics.graph.md](/docs/analytics/using-web-analytics.graph.md)
 <!-- /docsgraph:related -->
@@ -77,7 +78,10 @@ Full cross-link map for this page: [/docs/analytics/using-web-analytics.graph.md
 ## Viewing environment-specific data
 
 1. Select a project from your [dashboard](/dashboard) and open [**Analytics**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fanalytics\&title=Go+to+Analytics) in the sidebar.
-2. Select the environments dropdown in the top-right of the page to choose **Production**, **Preview**, or **All Environments**. Production is selected by default.
+2. Select the environments dropdown in the top-right of the page to choose **Production**, **Preview**, **All Environments**, or any of your project's [custom environments](/docs/deployments/environments#custom-environments), such as `staging`. Production is selected by default.
+
+Custom environments are available on the Pro and Enterprise plans. Data that
+arrives without an environment is attributed to **Production**.
 
 ## Exporting data as CSV
 
@@ -95,6 +99,18 @@ The export will include up to 250 entries from the panel, not just the top entri
 2. Remove the `@vercel/analytics` package from your codebase and dependencies to prevent your app from sending analytics events to Vercel.
 3. Click on the ellipsis on the top-right of the **Web Analytics** page and select **Disable Web Analytics**.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

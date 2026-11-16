@@ -12,9 +12,10 @@ related:
   - /docs/deployments
 summary: Use list_deployments with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployments.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "765159dacf0c24fd1038a89850f54b4981cf2f1898f5cb76a574849fc7f47b97"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5244a01b61471a2a4b7cb62b456a65167e08e740a3d5c8d8db3a054b90542f40"
 ---
 
 # list_deployments
@@ -31,7 +32,7 @@ List [deployments](/docs/deployments), optionally filtered by project.
 - [open_deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/open_deployments) — Use open_deployments with Vercel MCP.
 - [list_deployment_files](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_files) — Use list_deployment_files with Vercel MCP.
 - [get_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment) — Use get_deployment with Vercel MCP.
-- [List deployments](https://vercel.com/docs/rest-api/deployments/list-deployments) — GET /v7/deployments — List deployments under the authenticated user or team. If a deployment hasn't finished uploading \\
+- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/list_deployments.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/list_deployments.graph.md)
 <!-- /docsgraph:related -->
@@ -68,6 +69,18 @@ If your connection exposes the smaller workflow tool list, use these parameters 
 | `since`     | number | No       | -       | Get deployments created after this timestamp.             |
 | `until`     | number | No       | -       | Get deployments created before this timestamp.            |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

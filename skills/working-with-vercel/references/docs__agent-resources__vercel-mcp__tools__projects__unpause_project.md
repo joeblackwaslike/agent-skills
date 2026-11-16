@@ -12,9 +12,10 @@ related:
   []
 summary: Use unpause_project with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/unpause_project.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "8aa7f95217bfac12f613864d941e0db73754dc0efb06029cf2039ee9461b2f32"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "60346bac538902113b8eea70b0511a4edbc11e54633ef81d01d039981432390b"
 ---
 
 # unpause_project
@@ -31,7 +32,7 @@ Unpause a project.
 - [Unpause a project](https://vercel.com/docs/rest-api/projects/unpause-a-project) — POST /v1/projects/{projectId}/unpause — Unpause a project by passing its project \\`id\\` in the URL. If the project does
 - [Pause a project](https://vercel.com/docs/rest-api/projects/pause-a-project) — POST /v1/projects/{projectId}/pause — Pause a project by passing its project \\`id\\` in the URL. If the project does not
 - [create_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project) — Use create_project with Vercel MCP.
-- [update_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/update_project) — Use update_project with Vercel MCP.
+- [Managing projects](https://vercel.com/docs/projects/managing-projects) — Learn how to manage your projects through the Vercel Dashboard.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/projects/unpause_project.graph.md](/docs/agent-resources/vercel-mcp/tools/projects/unpause_project.graph.md)
 <!-- /docsgraph:related -->
@@ -54,6 +55,18 @@ If your connection exposes the smaller workflow tool list, use these parameters 
 | `projectId` | string | Yes      | -       | The project ID or slug. Find the project ID in `.vercel/project.json` or use `list_projects`. |
 | `teamId`    | string | Yes      | -       | The team ID or slug. Use the team that owns the resource.                                     |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

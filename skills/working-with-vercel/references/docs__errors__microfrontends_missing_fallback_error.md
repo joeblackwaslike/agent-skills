@@ -12,9 +12,10 @@ related:
   - /docs/microfrontends/managing-microfrontends
 summary: The microfrontend request did not have a fallback for the environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/microfrontends_missing_fallback_error.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "0eeed400257986390f84c677c2a696cb6064183293d0e679fcf687bf65db4e90"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7f08fd32be2b029f277638e55c0a0f755b1ba71d0c77466a38ec8111c20e7ec2"
 ---
 
 # MICROFRONTENDS_MISSING_FALLBACK_ERROR
@@ -31,6 +32,18 @@ In non-Production environments, the fallback is configured in the [Fallback Envi
 
 If the issue persists after checking that every project has a deployment in the configured Fallback Environment setting, please contact Vercel support to reach out to the team.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

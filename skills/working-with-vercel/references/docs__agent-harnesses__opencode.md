@@ -15,9 +15,10 @@ related:
   - /docs/agent-harnesses/tools
 summary: Run OpenCode v2 inside a Vercel Function with its session in a durable log, so a crashed turn resumes in a new function.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-harnesses/opencode.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "2d0811bb18a2d851fe7f1466e93e0fd8712064294c4924076c0cbc5d14c8d1b0"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "74c377b41475e188e179f30f29276ee12002dd1b96ab0bc42aa9539ca93ca63a"
 ---
 
 # Running OpenCode Durably on Vercel
@@ -31,14 +32,15 @@ sha256: "2d0811bb18a2d851fe7f1466e93e0fd8712064294c4924076c0cbc5d14c8d1b0"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
+- [Workflow SDK 5: built for production](https://vercel.com/blog/workflow-sdk-5)
 - [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
 - [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
-- [Running Claude Code Durably on Vercel](https://vercel.com/docs/agent-harnesses/claude-code) — Run Claude Code in a Vercel Sandbox, driven by a Vercel Function, with its session in a durable log, so a crashed turn r
 - [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
 - [Running Codex Durably on Vercel](https://vercel.com/docs/agent-harnesses/codex) — Run Codex in a Vercel Sandbox, driven by a Vercel Function, with its session in a durable log, so a crashed turn resumes
-- [Running fx Durably on Vercel](https://vercel.com/docs/agent-harnesses/fx) — Deploy an fx agent with libfx so its sessions survive crashes, function timeouts, and redeploys on Vercel.
 - [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
+- [Running fx Durably on Vercel](https://vercel.com/docs/agent-harnesses/fx) — Deploy an fx agent with libfx so its sessions survive crashes, function timeouts, and redeploys on Vercel.
 - [Agent Harnesses You Can Run Durably on Vercel](https://vercel.com/docs/agent-harnesses/harnesses) — Guides for running Pi, fx, OpenCode, eve, Claude Code, and Codex durably on Vercel, so a crash or a timeout resumes the
+- [Running eve Agents Durably on Vercel](https://vercel.com/docs/agent-harnesses/eve) — eve agents are durable out of the box on Vercel, with no extra configuration.
 
 Full cross-link map for this page: [/docs/agent-harnesses/opencode.graph.md](/docs/agent-harnesses/opencode.graph.md)
 <!-- /docsgraph:related -->
@@ -267,11 +269,45 @@ For the tables, the server, and recovery at startup, see [Self-hosting durable a
 - OpenCode needs `effect` 4.0.0-rc.112, so an app that already depends on another version of `effect` can't use it yet.
 - With other versions of OpenCode's packages or `effect`, a turn fails with a message that names the versions to install. The session is kept, and the next message works once they're installed.
 
+## Frequently asked questions
+
+### Can OpenCode run in a Vercel Function?
+
+Yes. OpenCode v2 runs inside the function that runs the turn, and `durable-harness` mirrors every event of the session into a durable log, so any function can rebuild the session and continue it after a crash. OpenCode's own tools never run on the function's disk or in its processes: they run on a virtual workspace or in a [Vercel Sandbox](/docs/sandbox). See [Security](/docs/agent-harnesses/security#why-claude-code-and-codex-run-only-in-a-sandbox) for why OpenCode can share a function and Claude Code and Codex can't.
+
+### Which models can a durable OpenCode agent use?
+
+Models in the model catalog of the OpenCode version that `durable-harness` pins, which is 2.0.22 today. Model calls go through [AI Gateway](/docs/ai-gateway), and on Vercel they authenticate with the deployment's [OIDC token](/docs/oidc). Because OpenCode's model calls run in your function, a Sandbox's `sessionUsd` cap doesn't count them, so limit model spend with an [AI Gateway budget](/docs/ai-gateway/observability-and-spend/budgets). A project budget counts the project's OIDC requests and API keys scoped to the project. With an unscoped `AI_GATEWAY_API_KEY`, use an API key or team budget instead.
+
+### Where do OpenCode's shell and file tools run?
+
+On the `workspace` you pass. With `virtual()`, OpenCode's shell, read, write, edit, patch, glob, and grep run on a virtual workspace in your function, and file changes commit to the session's log. With `sandbox()`, they run in the session's own Vercel Sandbox, with files on a [Drive](/docs/sandbox/concepts/drives) at `/workspace`. Without a workspace, OpenCode has only the tools you pass in `tools`. To allow only some built-in tools, pass `builtins`, as in `builtins: ['read', 'grep']`.
+
+### What happens to an OpenCode tool call that a crash interrupts?
+
+It depends on the tool's replay rule. For a `'safe'` tool, OpenCode tells the model the call is safe to repeat. For a `'never'` tool, the model is told the call may or may not have happened. OpenCode defaults to `durability: 'strict'`, which waits for the log to record every call before it runs. Pass `durability: 'on'` to let replay-safe calls start without waiting. See [Tools, files, and documents](/docs/agent-harnesses/tools#what-happens-to-a-tool-call-after-a-crash).
+
+### Why does my OpenCode turn fail with a version error?
+
+`durable-harness` supports one OpenCode version at a time and checks the installed versions before each turn. Install the exact versions it pins, with no `^` in `package.json`, and don't install `effect` yourself: OpenCode needs `effect` 4.0.0-rc.112, so an app that depends on another version of `effect` can't use it yet. The error names the versions to install, and the session is kept, so the next message works once they're installed.
+
 ## More resources
 
 - [`durable-harness` on GitHub](https://github.com/vercel-labs/durable-harness)
 - [OpenCode](https://opencode.ai)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

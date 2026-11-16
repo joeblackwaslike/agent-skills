@@ -15,14 +15,33 @@ related:
   - /docs/ci/environment-variables
 summary: Configure Vercel CI to run Turborepo tasks with custom CPU allocations and environment variables.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ci.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "aa9aaef5bf28b6b39aeb322e24413fa28196fc643cbe478c717a825ed8a159fc"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b0acc7dcc59bad1f957eb07096e5bcc83a657a1d4e2e8d24ba8a2dce9abd05ad"
 ---
 
 # Vercel CI
 
 Vercel CI intelligently schedules your tasks so that you do as little work as possible every time you or your agent pushes code.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Introducing Vercel CI](https://vercel.com/blog/introducing-vercel-ci)
+- [Vercel CI is now in beta](https://vercel.com/changelog/vercel-ci-is-now-in-beta)
+- [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel) — Deploy your Turborepo on Vercel and run tasks with Vercel CI using zero-config Remote Caching.
+- [Vercel CI no longer requires a linked Vercel project](https://vercel.com/changelog/vercel-ci-no-longer-requires-a-linked-vercel-project)
+- [Faster iteration with Turborepo and Vercel Remote Cache](https://vercel.com/blog/vercel-remote-cache-turbo)
+- [Use Remote Caching from External CI/CD](https://vercel.com/docs/monorepos/remote-caching/external-ci-cd) — Authenticate the Turborepo CLI to Vercel Remote Cache from your CI/CD provider using OpenID Connect \\(OIDC\\) or a Person
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [Enable or disable Vercel CI for a connected repository](https://vercel.com/docs/rest-api/vercel-ci/enable-or-disable-vercel-ci-for-a-connected-repository) — PATCH /v1/vercel-ci/repository-settings — Update Repository Settings
+
+Full cross-link map for this page: [/docs/ci.graph.md](/docs/ci.graph.md)
+<!-- /docsgraph:related -->
 
 - Your [Turborepo Task Graph](https://turborepo.dev/docs/core-concepts/package-and-task-graph#task-graph) is used to find the minimal set of tasks to run. If a task isn't affected by your code changes or has already been cached, it will be restored from cache or skipped.
 - Vercel CI runs every independent task in the Task Graph in parallel. You don't configure concurrency, so it stays correct as your codebase changes.
@@ -121,6 +140,18 @@ You can use [branch protection rules](https://docs.github.com/en/repositories/co
 - [Guides](/docs/ci/guides): Follow complete examples, like running end-to-end tests and commenting on pull requests.
 - [Pricing](/docs/ci/pricing): Understand how Vercel CI usage is billed.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -12,9 +12,10 @@ related:
   - /docs/deployments/logs
 summary: The router cannot match the route to any of the known patterns. This is a routing error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/router_cannot_match.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "6738e872a1c2293ab1eadaa4167e9bed799dc1b07b1acffbbb22456fc2032dab"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "fdff10ea8bf4b8f88b14c69e77fedcb1255ce525944176c6f14fc1adefbf4383"
 ---
 
 # ROUTER_CANNOT_MATCH
@@ -34,6 +35,18 @@ To troubleshoot this error, follow these steps:
 3. **Check for typos:** Look for any typos or misconfigurations in the routing setup that might be causing the mismatch
 4. **Review application logs:** Inspect the [application logs](/docs/deployments/logs) for any warnings or errors related to routing
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -12,9 +12,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis
 summary: Send AI Gateway token usage to Stripe Billing Meters with an existing configured meter or private-preview access to meter dimensions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/ecosystem/stripe-billing.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "9b5089cab0f1bc31c10b7eca7cbc28af68300d31c7ad4f3d1c0aac926ddffc08"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "be7ac6e112d6f2be2816a4c57f97f029030ae2561890bc2e8144cf54a8345f0d"
 ---
 
 # Stripe Usage-Based Billing with AI Gateway
@@ -28,13 +29,13 @@ Send AI Gateway token usage to an existing [Stripe Billing Meters integration](h
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [From idea to secure checkout in minutes with Stripe](https://vercel.com/blog/from-idea-to-secure-checkout-in-minutes-with-stripe)
-- [Unified reporting for all AI Gateway usage](https://vercel.com/blog/unified-reporting-for-your-ai-spend)
-- [Introducing the AI Gateway](https://vercel.com/blog/ai-gateway)
+- [How to deploy a Next.js online store with Stripe](https://vercel.com/kb/guide/how-to-deploy-a-next-js-online-store-with-stripe) — Learn how to build and deploy a Next.js e-commerce store with Stripe payments on Vercel. This step-by-step guide covers
+- [Access billing usage and cost data via API](https://vercel.com/changelog/access-billing-usage-cost-data-api)
 - [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
-- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
 - [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, caching, SDK and API compati
 - [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
-- [Manage Billing and Refunds for Integrations](https://vercel.com/docs/integrations/create-integration/billing) — Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
+- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/stripe-billing.graph.md](/docs/ai-gateway/ecosystem/stripe-billing.graph.md)
 <!-- /docsgraph:related -->
@@ -398,6 +399,18 @@ AI Gateway handles Stripe meter events with the following guarantees:
 - **Conditional**: AI Gateway only emits events on successful responses and when token counts are greater than zero
 - **Observable**: AI Gateway logs failed meter events for troubleshooting
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

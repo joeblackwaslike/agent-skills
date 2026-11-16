@@ -3,7 +3,7 @@ title: post-v1-installations-resources-experimentation-items
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/post-v1-installations-resources-experimentation-items
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/post-v1-installations-resources-experimentation-items"
-last_updated: 2026-11-09
+last_updated: 2026-11-16
 type: conceptual
 prerequisites:
   []
@@ -12,9 +12,10 @@ related:
   - /docs/integrations/create-integration/native-integration
 summary: Learn about post-v1-installations-resources-experimentation-items on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/post-v1-installations-resources-experimentation-items.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "4d359de0ff14cc63b4912903f11e8a44fca0a6c22c44e44c1ef7222b37aae720"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c7ed87ed8d64f32955f94f0ad0f078909f56bc475b5a71fd7c3d4f9ebb1862f3"
 ---
 
 # Create one or multiple experimentation items
@@ -91,6 +92,18 @@ Success
 - [Marketplace API Reference](/docs/integrations/create-integration/marketplace-api/reference)
 - [Native Integration Concepts](/docs/integrations/create-integration/native-integration)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

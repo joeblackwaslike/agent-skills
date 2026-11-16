@@ -13,9 +13,10 @@ related:
   - /docs/ai-gateway/models-and-providers/model-fallbacks
 summary: Keep AI Gateway conversations on the provider that holds their prompt cache, using session IDs, fingerprinting, and pin lifetimes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/session-affinity.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "deba84c29fa8ac4e0559279023b79a880836e5375f6f7a60a702df9d72ebb2ab"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b8ff64c4188cf2b1bfaf3d9b88758a1a14bbf0a2ef1f35dcf31648cab671bf03"
 ---
 
 # AI Gateway Session Affinity
@@ -57,13 +58,13 @@ If the pinned provider fails, AI Gateway tries the next provider as usual. A req
 
 Session affinity runs after AI Gateway applies your filters, so it only reorders providers you already allow.
 
-| Setting                                         | Behavior with session affinity                                                                                                             |
-| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `only` and compliance settings, such as zero data retention | Filters apply first. AI Gateway ignores a pinned provider that the filters removed.                                                        |
-| `order`                                         | The pinned provider goes first, ahead of your order. Set `sessionAffinity: false` to keep your order exactly.                              |
-| `sort`                                          | The pinned provider goes ahead of the sort winner. A warm cache usually lowers latency and cost, which is what sorting aims for.           |
-| Provider health                                 | AI Gateway never promotes a provider that it treats as down.                                                                               |
-| BYOK credentials                                | A pin reorders only within its own group. It never moves a system credential ahead of your BYOK credentials, or the reverse.               |
+| Setting                                                     | Behavior with session affinity                                                                                                   |
+| ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `only` and compliance settings, such as zero data retention | Filters apply first. AI Gateway ignores a pinned provider that the filters removed.                                              |
+| `order`                                                     | The pinned provider goes first, ahead of your order. Set `sessionAffinity: false` to keep your order exactly.                    |
+| `sort`                                                      | The pinned provider goes ahead of the sort winner. A warm cache usually lowers latency and cost, which is what sorting aims for. |
+| Provider health                                             | AI Gateway never promotes a provider that it treats as down.                                                                     |
+| BYOK credentials                                            | A pin reorders only within its own group. It never moves a Vercel provider key ahead of your BYOK credentials, or the reverse.   |
 
 ## Identify a session
 
@@ -314,6 +315,18 @@ AI Gateway reports the session it used in `providerMetadata.gateway.routing` in 
 
 `finalProvider` names the provider that served the request. To check that a session stays on one provider, compare `finalProvider` across responses that share a `clientSessionId`.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

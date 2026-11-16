@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/cross-session-messaging.md"
-fetched_at: "2026-11-02T12:02:15.109Z"
-sha256: "331034bbc03022b04f8c8af308ad080f85654778a2adc4b2ab6e31b62aa1e0e7"
+fetched_at: "2026-11-16T12:28:44.823Z"
+sha256: "449c43d3de1524093684183663fa789093fcaf4c6e90a130542aede51feb349a"
 ---
 
 > ## Documentation Index
@@ -62,7 +62,7 @@ For what the message Claude writes looks like when it arrives, including an exam
 
 ### Message delivery
 
-The receiving Claude reads the message between tool calls during an active turn, so a running tool is never interrupted. When the receiving session is idle, Claude Code starts a new turn with the message.
+The receiving Claude reads the message between tool calls during an active turn. When the receiving session is idle, Claude Code starts a new turn with the message.
 
 A message from another session arrives as plain text. If it mentions a file or an [MCP resource](https://code.claude.com/docs/en/mcp.md#use-mcp-resources) with `@`, Claude sees the mention as written and Claude Code attaches nothing, whether the message starts a new turn or arrives during one. Claude can still open a mentioned path on the receiving machine with its own tools, subject to that session's permissions.
 

@@ -15,9 +15,10 @@ related:
   - /docs/audit-log/migrating-to-drains
 summary: "Learn how to track and analyze your team members' activities."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/audit-log.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "1f34e1f799b283142f18fec78a2ff5971c009e30ece1a94a4b751bd8f699954f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c4c444bb638761cbd8869d155b402d2b9e1de1afd7e8dda8261c1378bf547771"
 ---
 
 # Audit Logs
@@ -363,6 +364,18 @@ Refers to findings recorded by [Security Review](/docs/agent/security-review). T
 | ------------------------------------------- | --------------------------------------------------------- |
 | **`vercel-agent-security-finding-created`** | Indicates that a security review recorded a new finding    |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

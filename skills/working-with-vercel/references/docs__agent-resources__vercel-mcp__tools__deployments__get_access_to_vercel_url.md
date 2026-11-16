@@ -12,9 +12,10 @@ related:
   - /docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links
 summary: Use get_access_to_vercel_url with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_access_to_vercel_url.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "4a95ee0743caa0e541b2308a71d0a362da0cd5ebd6bf2658dee9a867ecbacbd7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1861e912388b6c0d3bc5e933e603daf26c4208db214f78829ffe5abdf769b063"
 ---
 
 # get_access_to_vercel_url
@@ -29,9 +30,9 @@ Create a temporary [shareable link](/docs/deployment-protection/methods-to-bypas
 
 - [web_fetch_vercel_url](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/web_fetch_vercel_url) — Use web_fetch_vercel_url with Vercel MCP.
 - [get_deployment_file_contents](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_file_contents) — Use get_deployment_file_contents with Vercel MCP.
-- [get_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment) — Use get_deployment with Vercel MCP.
 - [get_project_deployment_protection](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project_deployment_protection) — Use get_project_deployment_protection with Vercel MCP.
-- [patch_url_protection_bypass](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/patch_url_protection_bypass) — Use patch_url_protection_bypass with Vercel MCP.
+- [Get Deployment File Contents](https://vercel.com/docs/rest-api/deployments/get-deployment-file-contents) — GET /v8/deployments/{id}/files/{fileId} — Allows to retrieve the content of a file by supplying the file identifier and
+- [get_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment) — Use get_deployment with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/get_access_to_vercel_url.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/get_access_to_vercel_url.graph.md)
 <!-- /docsgraph:related -->
@@ -43,6 +44,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deplo
 
 **Sample prompt:** "myapp.vercel.app is protected by auth. Please create a shareable link for it"
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -16,9 +16,10 @@ related:
   - /docs/deployment-protection
 summary: Connect TanStack AI to a Model Context Protocol server on Vercel and call its tools with models served through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/mcp/integrations/tanstack-ai.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "3da5f2e50e8e6be2d95800afc3809820be5ef63fb61d68603ac7ba798563e1dd"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2760b9ad5c71cc9bb33100df9b1abba828897a9f514c67bf4e81ec6173c8fbd3"
 ---
 
 # TanStack AI with MCP
@@ -32,10 +33,11 @@ Give [TanStack AI](https://tanstack.com/ai) access to tools from a [Model Contex
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Connect now supports TanStack AI](https://vercel.com/changelog/vercel-connect-tanstack-ai)
-- [MCP server support on Vercel](https://vercel.com/changelog/mcp-server-support-on-vercel)
-- [Introducing Vercel MCP: Connect Vercel to your AI tools](https://vercel.com/blog/introducing-vercel-mcp-connect-vercel-to-your-ai-tools)
-- [Using xmcp with Next.js](https://vercel.com/kb/guide/using-xmcp-with-nextjs) — Add an MCP server to an existing Next.js app with xmcp. Create typed tools, add authentication, and deploy to Vercel as
+- [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
 - [Add MCP Apps to your AI SDK application](https://vercel.com/kb/guide/ai-sdk-mcp-apps) — Build an MCP Apps host with the AI SDK using @ai-sdk/mcp and @ai-sdk/react to filter model-visible tools, read ui:// res
+- [Introducing Vercel MCP: Connect Vercel to your AI tools](https://vercel.com/blog/introducing-vercel-mcp-connect-vercel-to-your-ai-tools)
+- [MCP server support on Vercel](https://vercel.com/changelog/mcp-server-support-on-vercel)
+- [Using xmcp with Next.js](https://vercel.com/kb/guide/using-xmcp-with-nextjs) — Add an MCP server to an existing Next.js app with xmcp. Create typed tools, add authentication, and deploy to Vercel as
 - [Build an MCP Server with Weather tools using Express and Vercel](https://vercel.com/kb/guide/mcp-server-with-weather-tool-express) — Make your Express weather API accessible to AI assistants through the Model Context Protocol.
 - [AI SDK with MCP](https://vercel.com/docs/mcp/integrations/ai-sdk) — Connect the AI SDK to an MCP server on Vercel, discover its tools, and call them with models served through AI Gateway.
 - [Use Vercel](https://vercel.com/docs/agent-resources/vercel-mcp) — Vercel MCP has tools available for searching docs, managing teams, projects, and deployments, and querying Web Analytics
@@ -182,12 +184,46 @@ Catch consent challenges with `getConsentChallenge` at the route boundary before
 
 Follow the [TanStack AI with Vercel Connect guide](/docs/connect/frameworks/tanstack-ai) for a streaming route example, browser consent handling, and HTTP and SSE transport options.
 
+## Frequently asked questions
+
+### Do I need to close the MCP client in TanStack AI?
+
+Not with the default setting. With `connection: 'close'`, `chat()` closes each client when the run succeeds, fails, or aborts. On a busy route, create the clients once at module level and pass `connection: 'keep-alive'` so later requests reuse the same connections. `chat()` never closes keep-alive clients, so your code owns them. With [Fluid compute](/docs/fluid-compute), Vercel reuses function instances across invocations, so one module-level client can serve several requests.
+
+### Can TanStack AI use tools from several MCP servers in one chat?
+
+Yes. Pass any mix of clients and `createMCPClients` pools in `mcp.clients`. A pool adds each server's config key as a prefix to its tool names, such as `github_` and `linear_`, so names from different servers don't collide. If two sources expose the same tool name without a prefix, the run fails with `MCPDuplicateToolNameError`, so set `prefix` on one of the clients. By default, a discovery failure on any server fails the run. To skip that server and continue, handle the error in `onDiscoveryError`.
+
+### How do I limit which MCP tools the model can call?
+
+Set `toolFilter` on the client. Pass a function such as `(tool) => tool.annotations?.readOnlyHint === true`, or a list of tool names. A list is strict, so discovery fails if the server has no tool with a listed name. Set `needsApproval` to pause for a person before matching tools run, such as every tool that isn't read-only. Annotations come from the server, so trust them only as far as you trust the server. See [Limit which tools the model gets](https://tanstack.com/ai/latest/docs/tools/mcp-managed#limit-which-tools-the-model-gets).
+
+### How do I reduce prompt size when an MCP server has many tools?
+
+Pass `lazyTools: true` in the `mcp` option of `chat()`. TanStack AI registers every tool but sends a tool's schema only when the model asks for it, so prompts for servers with dozens of tools stay smaller. Smaller prompts use fewer input tokens on each AI Gateway request. To remove tools entirely, combine this with `toolFilter`. See [Lazy tool discovery](https://tanstack.com/ai/latest/docs/tools/mcp-managed#lazy-tool-discovery).
+
+### How does TanStack AI authenticate model requests to AI Gateway?
+
+`vercelGatewayText` reads `AI_GATEWAY_API_KEY`. When that variable is absent, it uses `VERCEL_OIDC_TOKEN`. For local development, you can run `vercel link` and `vercel env pull` to write a development OIDC token to `.env.local` instead of creating an API key. To use another model, change the model ID passed to `vercelGatewayText`, such as `anthropic/claude-opus-5`. Your MCP token authenticates tool requests separately. To give the agent an isolated place to run code, see [TanStack AI and Vercel Sandbox](/docs/sandbox/ecosystem/tanstack-ai).
+
 ## Next steps
 
 - Use [TanStack AI with AI Gateway](/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai) to configure model routing and authentication.
 - Follow [TanStack's managed MCP guide](https://tanstack.com/ai/latest/docs/tools/mcp-managed) for server routes, multiple clients, and lazy tool discovery.
 - Run coding agents with [TanStack AI and Vercel Sandbox](/docs/sandbox/ecosystem/tanstack-ai).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

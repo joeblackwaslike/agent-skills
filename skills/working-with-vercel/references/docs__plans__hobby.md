@@ -3,7 +3,7 @@ title: Vercel Hobby Plan
 product: vercel
 url: /docs/plans/hobby
 canonical_url: "https://vercel.com/docs/plans/hobby"
-last_updated: 2026-09-14
+last_updated: 2026-11-12
 type: reference
 prerequisites:
   - /docs/plans
@@ -15,14 +15,15 @@ related:
   - /docs/image-optimization/limits-and-pricing
 summary: Learn about the Hobby plan and how it compares to the Pro plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/plans/hobby.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "1ea676a53eedabc051d1258d180d0f3369dc93a18ec00bd91b14e707d3e0a02e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "77c5c712d6bbaecdaf82c01d6042ef1c78be3d8a67fadad33e7f5863fdaef1fb"
 ---
 
 # Vercel Hobby Plan
 
-The Hobby plan is **free** and aimed at developers with personal projects, and small-scale applications. It offers a generous set of features for individual users on a **per month** basis:
+The Hobby plan is **free** and includes a generous set of features on a **per month** basis:
 
 
 <!-- docsgraph:related -->
@@ -31,16 +32,15 @@ The Hobby plan is **free** and aimed at developers with personal projects, and s
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Agent Runs](https://eve.dev/docs/observability/agent-runs) — Inspect eve sessions in Vercel and configure the Agent Runs destination.
+- [Deploy a Shopify storefront with an AI assistant](https://vercel.com/kb/guide/deploy-shopify-ai-storefront) — Deploy an eve shopping agent with Vercel Shop to find Shopify products, manage carts, and answer store questions.
 - [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
 - [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
 - [A more flexible Pro plan for modern teams](https://vercel.com/blog/new-pro-pricing-plan)
-- [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing)
-- [Included Pro usage is now credit-based](https://vercel.com/changelog/included-pro-usage-is-now-credit-based)
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 - [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
-- [Observability Plus](https://vercel.com/docs/observability/observability-plus) — Learn about using Observability Plus and its limits.
+- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 
 Full cross-link map for this page: [/docs/plans/hobby.graph.md](/docs/plans/hobby.graph.md)
 <!-- /docsgraph:related -->
@@ -76,8 +76,6 @@ Some usage limits have shorter pause periods:
 - [Web Analytics](/docs/analytics/limits-and-pricing#hobby): collection pauses
   after the grace period and can resume after 7 days
 
-As stated in the [fair use guidelines](/docs/limits/fair-use-guidelines#commercial-usage), the Hobby plan restricts users to non-commercial, personal use only.
-
 When your personal account gets converted to a Hobby team, your usage and activity log will be reset. To learn more about this change, read the [changelog](/changelog/2024-01-account-changes).
 
 ## Comparing Hobby and Pro plans
@@ -90,7 +88,7 @@ The Pro plan offers more resources and advanced features compared to the Hobby p
 | Vercel Function maximum duration | 300s (5 minutes) | 300s (default) - [configurable up to 800s](/docs/functions/configuring-functions/duration); [extended max duration up to 1800s](/docs/functions/configuring-functions/duration#extended-max-duration-beta) (30 minutes, beta) |
 | Build vCPUs | 2 | 4, up to [30](/docs/builds/managing-builds#build-machine-types) |
 | Build memory (GB) | 8 | 8GB, up to [60GB](/docs/builds/managing-builds#build-machine-types) |
-| Build disk size | 32 GB | 32 GB, up to [64 GB](/docs/builds/managing-builds#build-machine-types) |
+| Build disk size | 64 GB | 64 GB ([all build machine types](/docs/builds/managing-builds#build-machine-types)) |
 | Team collaboration features | - | Yes |
 | Domains per project | 50 | Unlimited |
 | Deployments per day | 100 | 6,000 |
@@ -128,6 +126,18 @@ To upgrade from a Hobby plan:
 
 If you would like to end your paid plan, you can [downgrade to Hobby](/docs/plans/pro-plan#downgrading-to-hobby).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -12,9 +12,10 @@ related:
   []
 summary: Use edit_route with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/edit_route.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "db52a5b37bf51a9334dbaaec88e9b459fa8702eaee6af7c5ec51fb2cf96f833e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "402feba8f1d8419e86acf61b42683c96c02777fb77424d914e8e38f53f2abb6f"
 ---
 
 # edit_route
@@ -30,7 +31,7 @@ Edit a routing rule.
 - [add_route](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/add_route) — Use add_route with Vercel MCP.
 - [generate_route](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/generate_route) — Use generate_route with Vercel MCP.
 - [update_route_versions](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/update_route_versions) — Use update_route_versions with Vercel MCP.
-- [stage_routes](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/stage_routes) — Use stage_routes with Vercel MCP.
+- [list_project_routes](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_project_routes) — Use list_project_routes with Vercel MCP.
 - [Edit a routing rule](https://vercel.com/docs/rest-api/project-routes/edit-a-routing-rule) — PATCH /v1/projects/{projectId}/routes/{routeId} — Replace a routing rule identified by its ID, or restore it from the cu
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routing/edit_route.graph.md](/docs/agent-resources/vercel-mcp/tools/routing/edit_route.graph.md)
@@ -46,6 +47,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routi
 | `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody` | object | Yes      | Request body for this tool.                                 |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

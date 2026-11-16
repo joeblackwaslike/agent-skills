@@ -14,9 +14,10 @@ related:
   - /docs/ai-gateway/pricing
 summary: Start a realtime speech session using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/getting-started/realtime.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "33dc62275c93cb49d83dbc1faec7a29fe04d1dcb4c4282cabdea69c223129a6d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4c8f318cab19f24f98e12757ec4b4266022e21b668ec4135e86294d45b949b44"
 ---
 
 # AI Gateway Realtime Quickstart
@@ -34,8 +35,8 @@ Start a realtime speech session through AI Gateway.
 - [xAI Grok audio models now available on Vercel AI Gateway](https://vercel.com/changelog/xai-grok-audio-models-now-available-on-vercel-ai-gateway)
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway)
 - [GPT-Live 1 now available on AI Gateway](https://vercel.com/changelog/gpt-live-1-now-available-on-ai-gateway)
+- [ElevenLabs on AI Gateway](https://vercel.com/blog/elevenlabs-on-ai-gateway)
 - [Realtime](https://ai-sdk.dev/docs/ai-sdk-core/realtime) — Learn how to build realtime voice conversations with the AI SDK.
-- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 
 Full cross-link map for this page: [/docs/ai-gateway/getting-started/realtime.graph.md](/docs/ai-gateway/getting-started/realtime.graph.md)
 <!-- /docsgraph:related -->
@@ -130,6 +131,18 @@ node realtime.mts
 - Configure [sessions and limits](/docs/ai-gateway/modalities/realtime#session-config)
 - Browse [realtime models](/ai-gateway/models)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/caching/cdn-cache
 summary: Use runtime logs to debug and monitor your Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/logs.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "758af173900d20411f3bdd71ec7602998499ee0db17a0e6764397c40940f91f6"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "47611dd3e68bb0b239ddc35389ae05a8783c74e8e07d6fc3ba1ab3e0ecae6421"
 ---
 
 # Vercel Function Logs
@@ -30,14 +31,12 @@ Vercel Functions allow you to debug and monitor your functions using runtime log
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [Troubleshooting Inconsistent Logs in Vercel Functions](https://vercel.com/kb/guide/troubleshooting-inconsistent-logs-in-vercel-functions) — Learn how to troubleshoot and resolve logs that appear mixed in Vercel Functions. This guide explains why logs from diff
-- [Function streaming to be framework-agnostic on Vercel](https://vercel.com/blog/vercel-functions-streaming-to-be-framework-agnostic)
-- [Enhanced Logs to search, inspect, and share runtime logs](https://vercel.com/changelog/enhanced-logs-ui-to-search-inspect-and-share-application-logs)
+- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [Logs](https://vercel.com/docs/logs) — Use logs to find information on deployment builds, function executions, and more.
-- [Accessing Build Logs](https://vercel.com/docs/deployments/logs) — Learn how to use Vercel's build logs to monitor the progress of building or running your deployment, and check for possi
 - [get_runtime_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_logs) — Use get_runtime_logs with Vercel MCP.
-- [Get logs for a deployment](https://vercel.com/docs/rest-api/logs/get-logs-for-a-deployment) — GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs — Returns a stream of logs for a given deployment.
+- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
+- [Debugging slow Vercel Functions](https://vercel.com/docs/functions/debug-slow-functions) — Diagnose and fix slow Vercel Functions using CLI tools, logs, and timing analysis.
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 
 Full cross-link map for this page: [/docs/functions/logs.graph.md](/docs/functions/logs.graph.md)
@@ -80,6 +79,18 @@ In Next.js projects, logged functions include API Routes (those defined in `page
 
 Pages that use SSR, such as those that call `getServerSideProps` or export [`revalidate`](https://nextjs.org/docs/app/guides/incremental-static-regeneration), will also be available both in the filter dropdown and the real time logs.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

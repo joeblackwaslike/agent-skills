@@ -16,9 +16,10 @@ related:
   - /docs/sandbox/sdk-reference
 summary: Give a LangChain agent a tool that executes model-generated code in an isolated Vercel Sandbox, with models served by AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/ecosystem/langchain.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "109b037e60dfd673810c803f18b8206fddaf531c1f29b54891890a0eac1b294c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "eb6d270a4142e5439c09eb4e842626a53ad53aeed6cda5e1a23553f73189443e"
 ---
 
 # LangChain
@@ -35,49 +36,61 @@ through [AI Gateway](/docs/ai-gateway).
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Run Python code securely with AI SDK and Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox) — Add an \\`executeCode\\` tool to your AI SDK agent with the \\`ai-sdk-tool-code-execution\\` package to run Python 3.13 insi
-- [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
 - [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
-- [Safely running AI generated code in your Next.js application](https://vercel.com/kb/guide/running-ai-generated-code-sandbox) — How to execute untrusted, AI‑generated code from a Next.js app using Vercel Sandbox, an isolated, ephemeral environment.
+- [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
-- [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available)
-- [LangChain with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langchain) — Learn how to integrate Vercel AI Gateway with LangChain to access multiple AI models through a unified interface.
+- [Safely running AI generated code in your Next.js application](https://vercel.com/kb/guide/running-ai-generated-code-sandbox) — How to execute untrusted, AI‑generated code from a Next.js app using Vercel Sandbox, an isolated, ephemeral environment.
+- [Anthropic SDK](https://vercel.com/docs/sandbox/ecosystem/anthropic-sdk) — Use Anthropic tool use with AI Gateway to execute model-generated code in an isolated Vercel Sandbox.
+- [Security for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/security) — What a durable agent harness may run in your Vercel Function, where the commands and files a model picks run instead, an
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/langchain.graph.md](/docs/sandbox/ecosystem/langchain.graph.md)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** You need a [Vercel account](https://vercel.com/signup), [Vercel
-> CLI](/docs/cli), Node.js 22 or later, and an [AI Gateway API
+> CLI](/docs/cli), Node.js 22 or later or Python 3.11 or later, and an [AI Gateway API
 > key](/docs/ai-gateway/authentication-and-byok/authentication).
 
 ## Getting started
 
 - ### Create a new project
   Create a new directory for your project and initialize it:
-  ```bash filename="terminal"
+
+  **terminal**
+  ```bash filename="terminal" framework=node
   mkdir langchain-sandbox
   cd langchain-sandbox
   npm init -y
+  ```
+  **terminal**
+  ```bash filename="terminal" framework=py
+  mkdir langchain-sandbox
+  cd langchain-sandbox
+  uv init
   ```
 
 - ### Install dependencies
   Install LangChain, the Anthropic and OpenAI provider packages, and the
   Sandbox SDK:
 
-  **pnpm**
-  ```bash
-  pnpm i langchain @langchain/core @langchain/anthropic @langchain/openai @vercel/sandbox zod
+  **terminal**
+  ```bash filename="terminal" framework=node package-manager="npm"
+  npm install langchain @langchain/core @langchain/anthropic @langchain/openai @vercel/sandbox zod
   ```
-  **yarn**
-  ```bash
+  **terminal**
+  ```bash filename="terminal" framework=node package-manager="yarn"
   yarn add langchain @langchain/core @langchain/anthropic @langchain/openai @vercel/sandbox zod
   ```
-  **npm**
-  ```bash
-  npm i langchain @langchain/core @langchain/anthropic @langchain/openai @vercel/sandbox zod
+  **terminal**
+  ```bash filename="terminal" framework=node package-manager="pnpm"
+  pnpm add langchain @langchain/core @langchain/anthropic @langchain/openai @vercel/sandbox zod
   ```
-  **bun**
-  ```bash
+  **terminal**
+  ```bash filename="terminal" framework=node package-manager="bun"
   bun add langchain @langchain/core @langchain/anthropic @langchain/openai @vercel/sandbox zod
+  ```
+  **terminal**
+  ```bash filename="terminal" framework=py
+  uv add langchain langchain-anthropic langchain-openai vercel-sandbox
   ```
 
 - ### Configure authentication
@@ -96,8 +109,10 @@ Full cross-link map for this page: [/docs/sandbox/ecosystem/langchain.graph.md](
   > [Authentication](/docs/sandbox/sdk-reference#authentication) in the SDK reference.
 
 - ### Create your agent
-  Create a new file called `index.ts` with the following code:
-  ```typescript filename="index.ts"
+  Create your agent file with the following code:
+
+  **index.ts**
+  ```ts filename="index.ts"
   import * as z from 'zod';
   import { createAgent, tool } from 'langchain';
   import { ChatAnthropic } from '@langchain/anthropic';
@@ -146,20 +161,77 @@ Full cross-link map for this page: [/docs/sandbox/ecosystem/langchain.graph.md](
     await sandbox.stop();
   }
   ```
-  The `timeout` value bounds each sandbox session to five minutes. Model calls run outside the VM, and a later `sandbox.runCommand()` can resume a new session after the previous one times out. The session timeout doesn't bound the overall agent loop.
+  **main.py**
+  ```py filename="main.py"
+  import asyncio
+  import os
+  from datetime import timedelta
 
-  Use an application deadline and cancellation strategy to bound the full loop, including model requests and tool submissions. A command's `timeoutMs` (or Python `kill_after`) bounds that command separately. The `finally` block stops the current session when the loop finishes or throws; coordinate cancellation with in-flight tool calls before cleanup so they don't resume another session.
+  from langchain.agents import create_agent
+  from langchain.tools import tool
+  from langchain_anthropic import ChatAnthropic
+  from vercel import sandbox
+
+
+  async def main() -> None:
+      box = await sandbox.create_sandbox(execution_time_limit=timedelta(minutes=5))
+
+      try:
+
+          @tool
+          async def run_code(code: str) -> str:
+              """Run Python code in an isolated Vercel Sandbox and return its output."""
+              result = await box.run_command(
+                  "python", ["-c", code], capture_output=True
+              )
+              if result.returncode == 0:
+                  return result.stdout.decode()
+              return f"Command failed: {result.stderr.decode()}"
+
+          model = ChatAnthropic(
+              model="anthropic/claude-opus-5",
+              api_key=os.environ["AI_GATEWAY_API_KEY"],
+              base_url="https://ai-gateway.vercel.sh",
+          )
+
+          agent = create_agent(model, tools=[run_code])
+
+          result = await agent.ainvoke(
+              {
+                  "messages": [
+                      {
+                          "role": "user",
+                          "content": (
+                              "Compute the SHA-256 hex digest of the exact string "
+                              "'vercel sandbox' with Python, then report the digest."
+                          ),
+                      },
+                  ],
+              }
+          )
+
+          print(result["messages"][-1].content)
+      finally:
+          await box.stop()
+
+
+  asyncio.run(main())
+  ```
+  The sandbox's timeout bounds each session to five minutes. Model calls run outside the VM, and a later command can resume a new session after the previous one times out. The session timeout doesn't bound the overall agent loop.
+
+  Use an application deadline and cancellation strategy to bound the full loop, including model requests and tool submissions. A time limit on a command bounds that command separately. The `finally` block stops the current session when the loop finishes or throws; coordinate cancellation with in-flight tool calls before cleanup so they don't resume another session.
 
   The following code:
   - Creates a sandbox that the agent reuses across tool calls
-  - Defines a `run_code` tool that executes code with
-    [`sandbox.runCommand()`](/docs/sandbox/sdk-reference#sandboxruncommand)
+  - Defines a `run_code` tool that executes code in the sandbox
   - Points the Anthropic chat model at AI Gateway, authenticated with your
     Vercel credentials
-  - Passes the tool to `createAgent`, which runs the tool-calling loop
-  The example uses an Anthropic model. To use an OpenAI model instead, import
-  `ChatOpenAI` from `@langchain/openai` and point it at the same gateway:
-  ```typescript filename="index.ts"
+  - Passes the tool to the agent, which runs the tool-calling loop
+  The example uses an Anthropic model. To use an OpenAI model instead, create
+  an OpenAI chat model and point it at the same gateway:
+
+  **index.ts**
+  ```ts filename="index.ts"
   import { ChatOpenAI } from '@langchain/openai';
 
   const model = new ChatOpenAI({
@@ -168,17 +240,47 @@ Full cross-link map for this page: [/docs/sandbox/ecosystem/langchain.graph.md](
     configuration: { baseURL: 'https://ai-gateway.vercel.sh/v1' },
   });
   ```
+  **main.py**
+  ```py filename="main.py"
+  import os
+
+  from langchain_openai import ChatOpenAI
+
+  model = ChatOpenAI(
+      model="openai/gpt-5.6-sol",
+      api_key=os.environ.get("AI_GATEWAY_API_KEY") or os.environ["VERCEL_OIDC_TOKEN"],
+      base_url="https://ai-gateway.vercel.sh/v1",
+  )
+  ```
   Any [AI Gateway model](/docs/ai-gateway/models-and-providers) works the same
   way.
 
 - ### Run the agent
   Run your agent with the environment variables from `.env.local`:
-  ```bash filename="terminal"
+
+  **terminal**
+  ```bash filename="terminal" framework=node
   npx tsx --env-file=.env.local index.ts
   ```
-  The agent writes Node.js code, executes it in the sandbox, and reports the
+  **terminal**
+  ```bash filename="terminal" framework=py
+  uv run --env-file .env.local main.py
+  ```
+  The agent writes the code, executes it in the sandbox, and reports the
   digest.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

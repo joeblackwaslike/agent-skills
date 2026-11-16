@@ -14,9 +14,10 @@ related:
   - /docs/frameworks/agents/eve
 summary: Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/workflows/concepts.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b70ba5d9d9ee4681d2b5e020bbcc9ac2db4a70a2803f879a73ff13a233bc7f03"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c0ac7df4c4038401cd1375204d3bf055d4d923d369f1bc55104555efc4bd4086"
 ---
 
 # Workflow Concepts
@@ -30,17 +31,16 @@ You write async/await code as usual, and the framework handles queues, retry log
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to migrate from Cloudflare Workflows to Vercel Workflows](https://vercel.com/kb/guide/migrate-cloudflare-workflows-to-vercel-workflows) — Migrate from Cloudflare Workflows to Vercel Workflows by mapping WorkflowEntrypoint, step.do, and waitForEvent to workfl
 - [Running background workers on Vercel](https://vercel.com/kb/guide/background-workers-on-vercel) — Run background jobs on Vercel with waitUntil, Cron Jobs, Queues, Workflows, Daemons, or Sandbox. Compare the options and
 - [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
 - [How to run a multi-step research agent on Vercel](https://vercel.com/kb/guide/how-to-run-a-multi-step-research-agent-on-vercel) — An end-to-end architecture for production research agents on Vercel using Sandbox, Workflows, and AI Gateway with isolat
-- [How to migrate from Cloudflare Workflows to Vercel Workflows](https://vercel.com/kb/guide/migrate-cloudflare-workflows-to-vercel-workflows) — Migrate from Cloudflare Workflows to Vercel Workflows by mapping WorkflowEntrypoint, step.do, and waitForEvent to workfl
 - [Run a research workspace on Vercel](https://vercel.com/kb/guide/run-research-workspace-vercel) — Plan a durable research workspace on Vercel's Agentic Infrastructure with Workflows, internal API tools, Vercel Sandbox
 - [Python](https://workflow-sdk.dev/docs/getting-started/python) — Set up the Workflow Python SDK in your Python application.
-- [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution)
 - [Built-in durability: Introducing Workflow Development Kit](https://vercel.com/blog/introducing-workflow)
 - [The best workflow engine is a programming language](https://vercel.com/blog/the-best-workflow-engine-is-a-programming-language)
-- [Next.js](https://workflow-sdk.dev/docs/getting-started/next) — Set up Workflow SDK in a Next.js app.
-- [Workflow SDK adds idempotent starts](https://vercel.com/changelog/atomic-start-hooks-in-the-workflow-sdk)
+- [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution)
+- [Chat SDK with Vercel Workflows](https://vercel.com/docs/chat-sdk/integrations/workflows) — Use Vercel Workflows to pause Chat SDK tasks for human approval, resume after a decision, and inspect runs in the Vercel
 - [CLI Workflows](https://vercel.com/docs/agent-resources/workflows) — End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sess
 
 Full cross-link map for this page: [/docs/workflows/concepts.graph.md](/docs/workflows/concepts.graph.md)
@@ -243,6 +243,18 @@ Each run stays on the deployment that created it, so a new deployment doesn't ch
 
 Create a hook or webhook in the workflow and await it. The workflow suspends until your app calls `resumeHook()` with the hook's token, or an HTTP request reaches the webhook's URL. A token routes the payload to the right run but doesn't authenticate the sender, so authorize the reviewer before you resume the run. For approvals in Slack and other chat platforms, use [`requestApproval`](https://chat-sdk.dev/docs/approvals) from [Chat SDK](/docs/chat-sdk). It posts the approval card, creates the webhook, and verifies each click for you. In [eve](/docs/frameworks/agents/eve), add `approval: always()` to a tool definition, and the agent's session waits for a decision before the tool runs.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

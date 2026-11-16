@@ -15,9 +15,10 @@ related:
   - /docs/functions/configuring-functions/memory
 summary: "Perform the following commands from the terminal for your Vercel Projects: list, create, inspect, update settings, rename, delete, and configure..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/project.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "0fe669f655394cdad19977e5ab3ed3cbedafa05359300d5b777f657d839f7143"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ef897f87aefc7dc218d536385a0c6508321727ed86432cd10feddc1d1c408dd3"
 ---
 
 # vercel project
@@ -36,8 +37,8 @@ The `vercel project` command manages your Vercel Projects from the terminal: lis
 - [How do I change the name of my Vercel Project?](https://vercel.com/kb/guide/how-do-i-change-the-name-of-my-vercel-project) — Change your Vercel project name in the dashboard, CLI, or REST API, then update the environment variables, callbacks, an
 - [Audit Logs](https://vercel.com/docs/audit-log) — Learn how to track and analyze your team members' activities.
 - [vercel security](https://vercel.com/docs/cli/security) — Inspect the security posture of your Vercel team from the terminal: run every security check, list findings, and triage
+- [Managing projects](https://vercel.com/docs/projects/managing-projects) — Learn how to manage your projects through the Vercel Dashboard.
 - [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
-- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel curl](https://vercel.com/docs/cli/curl) — Learn how to make HTTP requests to your Vercel deployments with automatic deployment protection bypass using the vercel
 
 Full cross-link map for this page: [/docs/cli/project.graph.md](/docs/cli/project.graph.md)
@@ -642,6 +643,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

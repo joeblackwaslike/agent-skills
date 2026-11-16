@@ -15,9 +15,10 @@ related:
   - /docs/ai-gateway/observability-and-spend/budgets
 summary: Connect Zed to AI Gateway with the Vercel CLI or its built-in Vercel AI Gateway provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/zed.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "4c45653432404d6dfe3813e6c2a4a2982dade864b46d5a30cc86c130209bb54c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e73e78e7504af0cf8b6b37f2374da2d66c2df930e17e7e31b49b8825d9f2b0d1"
 ---
 
 # Zed with AI Gateway
@@ -30,11 +31,10 @@ sha256: "4c45653432404d6dfe3813e6c2a4a2982dade864b46d5a30cc86c130209bb54c"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
-- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
+- [Aider with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/aider) — Connect Aider to AI Gateway with the Vercel CLI or an OpenAI-compatible base URL, API key, and model metadata.
 - [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/zed.graph.md](/docs/ai-gateway/coding-agents/zed.graph.md)
@@ -119,6 +119,18 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 - Configure [spend limits](/docs/ai-gateway/observability-and-spend/budgets) on your API key
 - Read the [Zed documentation](https://zed.dev/docs/ai/llm-providers) for agent panel options
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

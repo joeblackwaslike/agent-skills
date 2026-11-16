@@ -15,9 +15,10 @@ related:
   - /docs/sandbox/python-sdk-reference
 summary: You can attach a Vercel Sandbox to a Secure Compute network to send its public-internet traffic through static IPs and reach your own VPC over VPC...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/concepts/secure-compute.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "90669436190f8888fc707aef66fc86dbef1c21f03a5c8c1dfecdf86f2baca392"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "77c93980a23329dd771b4b55054232406575e0af635a09d1332cb144f3b93b8e"
 ---
 
 # Using Secure Compute with Sandbox
@@ -33,11 +34,10 @@ Attaching a Vercel Sandbox to a [Secure Compute](/docs/networking/secure-compute
 - [Vercel Sandbox now supports Secure Compute](https://vercel.com/changelog/vercel-sandbox-now-supports-secure-compute)
 - [Private enterprise agents on Vercel](https://vercel.com/kb/guide/private-enterprise-agents-vercel) — Design private enterprise agents that call internal APIs and databases with Vercel Functions, Secure Compute, AI Gateway
 - [A sandbox without a network boundary is only half a sandbox](https://vercel.com/blog/a-sandbox-without-a-network-boundary-is-only-half-a-sandbox)
-- [Advanced egress firewall filtering for Vercel Sandbox](https://vercel.com/changelog/advanced-egress-firewall-filtering-for-vercel-sandbox)
-- [Vercel Sandbox vs CodeSandbox](https://vercel.com/kb/guide/vercel-sandbox-vs-codesandbox) — A detailed guide to Vercel Sandbox vs CodeSandbox: compute isolation, credential brokering, Active CPU billing, Docker s
+- [Sandbox security model](https://vercel.com/docs/sandbox/concepts/security) — Understand the Vercel Sandbox security model: microVM isolation, hardware side channels, resource limits, network access
 - [Running commands in a Vercel Sandbox](https://vercel.com/docs/sandbox/run-commands-in-sandbox) — Create isolated sandbox environments to run builds, tests, and commands safely.
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
-- [Networking](https://vercel.com/docs/networking) — Connect your Vercel projects to backend services with static IPs and secure networking options.
+- [Delete a sandbox](https://vercel.com/docs/rest-api/sandboxes/delete-a-sandbox) — DELETE /v2/sandboxes/{name} — Deletes a sandbox by name. If sandboxes are currently running, they will be stopped first.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/secure-compute.graph.md](/docs/sandbox/concepts/secure-compute.graph.md)
 <!-- /docsgraph:related -->
@@ -91,7 +91,7 @@ async def main() -> None:
         capture_output=True,
     )
 
-    print(result.stdout.strip())  # One of the network's static IPs
+    print(result.stdout.decode().strip())  # One of the network's static IPs
 
 
 asyncio.run(main())
@@ -110,9 +110,9 @@ The printed address is one of the network's two static IPs, listed in the networ
 
 ## Attach or change the network for an existing sandbox
 
-You can also attach an existing sandbox to a network, or switch it to another network, with `update`. Unlike setting `networkId` at creation, the change takes effect on the sandbox's next session: a running session keeps its existing network until it stops. Update the network, then stop the sandbox to apply it.
+You can also attach an existing sandbox to a network, or switch it to another network, by updating it. Unlike setting the network at creation, the change takes effect on the sandbox's next session: a running session keeps its existing network until it stops. Update the network, then stop the sandbox to apply it.
 
-On a persistent sandbox (the default), the next SDK call auto-resumes the sandbox into a new session. Therefore, you don't need to start it explicitly. The `runCommand` or `run_command` call below resumes the sandbox on the new network and prints its network static IP:
+On a persistent sandbox (the default), the next SDK call auto-resumes the sandbox into a new session. Therefore, you don't need to start it explicitly. The command below resumes the sandbox on the new network and prints its network static IP:
 
 **index.ts**
 
@@ -152,7 +152,7 @@ async def main() -> None:
         capture_output=True,
     )
 
-    print(result.stdout.strip())  # Now one of the new network's static IPs
+    print(result.stdout.decode().strip())  # Now one of the new network's static IPs
 
 
 asyncio.run(main())
@@ -168,7 +168,7 @@ sandbox exec my-sandbox -- curl -s https://checkip.amazonaws.com/
 
 ## Detach a sandbox from a Secure Compute network
 
-When you no longer need the network, detach the sandbox by clearing its network assignment (`null` in TypeScript, `None` in Python, `none` in the CLI). Detaching works like attaching: the change takes effect on the next session, so stop the sandbox, then resume it.
+When you no longer need the network, detach the sandbox by clearing its network assignment. Detaching works like attaching: the change takes effect on the next session, so stop the sandbox, then resume it.
 
 **index.ts**
 
@@ -208,7 +208,7 @@ async def main() -> None:
         capture_output=True,
     )
 
-    print(result.stdout.strip())  # A Vercel infrastructure IP, not a network static IP
+    print(result.stdout.decode().strip())  # A Vercel infrastructure IP, not a network static IP
 
 
 asyncio.run(main())
@@ -232,6 +232,18 @@ Traffic sent over VPC peering with your AWS environment does not incur data tran
 
 See [Secure Compute pricing](/docs/networking/secure-compute#pricing) for current rates and usage monitoring.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

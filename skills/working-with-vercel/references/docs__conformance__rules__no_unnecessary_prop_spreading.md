@@ -11,9 +11,10 @@ related:
   []
 summary: Disallows the usage of object spreading in a JSX component.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/no_unnecessary_prop_spreading.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "4bfbed70a70060ec205dfd3b1a81ee0e9578a41932006bf0cd41e52f6b427bf2"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d9f43486fdbcfdcb102c66ea3018bbb03d213b8b70b884a9fbaeec3e83e47b9d"
 ---
 
 # NO_UNNECESSARY_PROP_SPREADING
@@ -58,6 +59,18 @@ export default HomePage;
 
 In the example above, [TypeScript](https://www.typescriptlang.org/) will be able to type-check all props.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -12,9 +12,10 @@ related:
   []
 summary: Use check_domain_availability_and_price with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/check_domain_availability_and_price.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f37d4d5de1ece0497682c054f99a20363887ac47fc7ace13ea4e2a7da76032b2"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "427f5b4461188fb041f5143bdfa548942fbf8dbc31a0c146715d83a95e3f661b"
 ---
 
 # check_domain_availability_and_price
@@ -42,6 +43,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domai
 | --------- | ---------------- | -------- | ------- | ----------------------------------------------------------------------------------- |
 | `names`   | Array\<string> | Yes      | -       | Array of domain names to check availability for (e.g., \["example.com", "test.org"]) |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

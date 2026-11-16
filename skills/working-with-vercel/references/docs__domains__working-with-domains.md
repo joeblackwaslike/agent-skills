@@ -15,9 +15,10 @@ related:
   - /docs/rbac/access-roles
 summary: Learn how domains work and the options Vercel provides for managing them.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains/working-with-domains.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "cbfab7117bf975b3450a08eb74f89b447b1452481247fdf284b5db19d3781382"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "22b8d8fa7b2ca2962b292a7f7a2236a4eda5c24872ed71a65b8372b2c9d659bf"
 ---
 
 # Working with domains
@@ -34,8 +35,8 @@ You can [buy a domain through Vercel](#buying-a-domain-through-vercel) by going 
 - [Vercel MCP now supports purchases](https://vercel.com/changelog/vercel-mcp-now-supports-purchases)
 - [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
-- [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 - [Domains and DNS](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains) — Vercel MCP tools for domains and dns.
+- [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 - [Programmatic Domain Management](https://vercel.com/docs/domains/registrar-api) — Programmatically search, price, purchase, renew, and manage domains with Vercel's domains registrar API endpoints.
 
 Full cross-link map for this page: [/docs/domains/working-with-domains.graph.md](/docs/domains/working-with-domains.graph.md)
@@ -125,6 +126,18 @@ Because many domain providers do not offer a mail service, several third-party s
 - [Learn how to troubleshoot your domain on Vercel](/docs/domains/troubleshooting)
 - [What is a Domain Name?](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_domain_name)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

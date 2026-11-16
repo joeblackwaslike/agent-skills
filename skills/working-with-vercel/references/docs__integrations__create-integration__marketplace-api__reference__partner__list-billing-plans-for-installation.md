@@ -3,7 +3,7 @@ title: list-billing-plans-for-installation
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/list-billing-plans-for-installation
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/list-billing-plans-for-installation"
-last_updated: 2026-11-09
+last_updated: 2026-11-16
 type: conceptual
 prerequisites:
   []
@@ -13,9 +13,10 @@ related:
   - /docs/integrations/create-integration/native-integration
 summary: Learn about list-billing-plans-for-installation on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/list-billing-plans-for-installation.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "8f9b92c66d16ca096adf45739dc90aed9266e9380c67a3e92715fcc0b8290341"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "91f9a15cb6018246bcee73938729fe1ad3ff1463a8aebd0069245ffb184b0031"
 ---
 
 # List Billing Plans For Installation
@@ -192,6 +193,18 @@ Operation failed because of a conflict with the current state of the resource
 - [Marketplace API Reference](/docs/integrations/create-integration/marketplace-api/reference)
 - [Native Integration Concepts](/docs/integrations/create-integration/native-integration)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

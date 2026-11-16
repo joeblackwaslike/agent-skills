@@ -14,9 +14,10 @@ related:
   - /docs/deploy-hooks
 summary: Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/project-configuration/git-settings.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "11a1050518159d459dc9042046cab9e9dbc530325e5c9a2c3df83992acdd9960"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "bf466c9a47b53461d6815863d70457bf761acecd1c805323bb091d8e75edbbf4"
 ---
 
 # Git settings
@@ -35,8 +36,8 @@ Once you have [connected a Git repository](/docs/git#deploying-a-git-repository)
 - [Repository checkout and Git LFS downloads are now faster](https://vercel.com/changelog/repository-checkout-and-git-lfs-downloads-are-now-faster)
 - [New Git Integration Settings](https://vercel.com/blog/new-git-integration-settings)
 - [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
-- [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
 - [vercel git](https://vercel.com/docs/cli/git) — Learn how to manage your Git provider connections using the vercel git CLI command.
+- [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Vercel Support Code Visibility, Git Fork Protection, and
 - [vercel deploy-hooks](https://vercel.com/docs/cli/deploy-hooks) — Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and delete deploy hook URLs that trigger
 
@@ -79,6 +80,18 @@ To enable verified commits:
 
 When enabled, Vercel will only create deployments for commits that have been verified by GitHub. For all other commits, the deployment will be automatically canceled.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

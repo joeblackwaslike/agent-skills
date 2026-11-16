@@ -15,9 +15,10 @@ related:
   - /docs/functions/limitations
 summary: Understand how Vercel Workflows billing works and the limits that apply to runs, streams, and platform resources.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/workflows/pricing.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "febee42b263083fdab82e7fb6ee517d550dbafa9efcd88f75dc00c57ae5e6bc3"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f6aeda0874cd179c861160ad499638c6081e5c200c994f4c7fb183750db85c0d"
 ---
 
 # Workflow Pricing and Limits
@@ -39,9 +40,9 @@ Vercel bills Workflows usage across three resources:
 - [max-events-exceeded](https://workflow-sdk.dev/docs/errors/max-events-exceeded) — Run long-running workflows on the QuickJS VM with snapshotting, which is exempt from the default event limit, or split t
 - [Errors & Retrying](https://workflow-sdk.dev/docs/foundations/errors-and-retries) — Control how steps handle failures and customize retry behavior.
 - [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution)
-- [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
-- [Worlds](https://workflow-sdk.dev/docs/configuration/worlds) — Select and configure Local, Postgres, Vercel, or custom Worlds.
-- [Limits](https://vercel.com/docs/limits) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
+- [Workflow Concepts](https://vercel.com/docs/workflows/concepts) — Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
+- [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Vercel Functions](https://vercel.com/docs/functions) — Build API routes, webhooks, and agent request handlers with Vercel Functions, then test and debug them with Vercel CLI.
 
 Full cross-link map for this page: [/docs/workflows/pricing.graph.md](/docs/workflows/pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -74,6 +75,8 @@ As an example, a normal step function execution produces three events: `step_cre
 ## Storage retention
 
 Vercel bills Workflow Data Retained for the retention period of each run, which depends on your team plan. For retention periods, how long Vercel keeps run data, run metadata retention, and how to delete run data sooner, see [Data Retention](/docs/workflows/retention).
+
+Vercel bills a run's full retention period when the run finishes. If you later [delete the run's data](/docs/workflows/retention#delete-the-data-of-finished-runs) from the dashboard, Vercel doesn't refund or prorate the Workflow Data Retained already billed for it. To avoid billing Workflow Data Retained for a run, start it with [auto-delete](/docs/workflows/retention#auto-delete-for-new-runs).
 
 ## Workflow run limits
 
@@ -166,6 +169,18 @@ On the default Node.js runtime, a run that reaches 25,000 events fails with the 
 
 Vercel bills the resources your agent or bot uses, not eve or Chat SDK themselves. Every [eve](/docs/frameworks/agents/eve) session on Vercel runs as a workflow, so its checkpoints and waits count toward Workflow Events and Workflow Data Written, alongside Vercel Functions, AI Gateway, Vercel Sandbox, and any other resources it uses. See [eve pricing and limits](/docs/frameworks/agents/eve#pricing-and-limits). A [Chat SDK](/docs/chat-sdk) bot incurs Workflows charges only for the workflows you start from it, such as an [approval flow](/docs/chat-sdk/integrations/workflows). Its webhook handlers run as regular Vercel Functions.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

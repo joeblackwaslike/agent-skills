@@ -15,9 +15,10 @@ related:
   - /docs/plans/enterprise
 summary: Learn about common reasons for deployment issues related to team member requirements and how to resolve them.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployments/troubleshoot-project-collaboration.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "14693f96b55ac66a5cc3cce434ee9c969814a3047b49168a70a6b944880f3108"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "479027c53997fa4ca964d71770a3d66a9aaf76436d78cc4e5decb207ba3af3e4"
 ---
 
 # Troubleshoot project collaboration
@@ -33,11 +34,10 @@ This guide will help you troubleshoot deployment failures related to project col
 - [Auto-add Git committers now available for Enterprise teams](https://vercel.com/changelog/auto-add-git-committers-now-available-for-enterprise-teams)
 - [Auto-add Git committers to your team](https://vercel.com/changelog/auto-add-git-committers-to-your-team)
 - [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
-- [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
-- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 - [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
+- [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
+- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 - [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
-- [Git settings](https://vercel.com/docs/project-configuration/git-settings) — Use the project settings to manage the Git connection, enable Git LFS, and create deploy hooks.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/deployments/troubleshoot-project-collaboration.graph.md](/docs/deployments/troubleshoot-project-collaboration.graph.md)
@@ -121,6 +121,18 @@ To add secondary email addresses to your Vercel account:
 2. Add any email addresses you use for git commits
 3. Verify each email address
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

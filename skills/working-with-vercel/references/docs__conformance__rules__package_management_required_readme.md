@@ -11,9 +11,10 @@ related:
   []
 summary: Every workspace is required to have a README.md file in the root of the workspace.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/package_management_required_readme.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "beba4361493c1355a73fbe3f951aeeb4abd913ed36f734cbe212aba903323c30"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "17866b62d93b9d0936a39e99f9f17b85028fcecab2331cd5e424fef96ac3b2f6"
 ---
 
 # PACKAGE_MANAGEMENT_REQUIRED_README
@@ -31,6 +32,18 @@ Add a `README.md` file in the workspace directory. This file can contain a
 description of the package, and any instructions for developers or users to
 build or use the package.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

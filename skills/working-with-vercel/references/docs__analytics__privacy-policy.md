@@ -14,9 +14,10 @@ related:
   - /docs/analytics/package
 summary: Learn how Vercel supports privacy and data compliance standards with Vercel Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/analytics/privacy-policy.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "5949bc132eca63fd048e3b2c15a23b890041baed707e78e1ff5496bf807365c8"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "bb949c0079af758d56550c834695b85eb76cc91fd892c08a634a2b743384b5b5"
 ---
 
 # Privacy and Compliance
@@ -30,13 +31,13 @@ Vercel takes a privacy-focused approach to our products and strives to enable ou
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available)
-- [Vercel acquires Splitbee to expand first-party analytics](https://vercel.com/blog/vercel-acquires-splitbee)
 - [Web Analytics is now generally available](https://vercel.com/changelog/web-analytics-is-now-generally-available)
+- [Vercel acquires Splitbee to expand first-party analytics](https://vercel.com/blog/vercel-acquires-splitbee)
 - [Vercel Speed Insights Privacy & Compliance](https://vercel.com/docs/speed-insights/privacy-policy) — Learn how Vercel follows the latest privacy and data compliance standards with its Speed Insights feature.
-- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
 - [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
-- [Filtering Analytics](https://vercel.com/docs/analytics/filtering) — Learn how filters allow you to explore insights about your website's visitors.
+- [Vercel Web Analytics Troubleshooting](https://vercel.com/docs/analytics/troubleshooting) — Learn how to troubleshoot common issues with Vercel Web Analytics.
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
+- [Filtering Analytics](https://vercel.com/docs/analytics/filtering) — Learn how filters allow you to explore insights about your website's visitors.
 
 Full cross-link map for this page: [/docs/analytics/privacy-policy.graph.md](/docs/analytics/privacy-policy.graph.md)
 <!-- /docsgraph:related -->
@@ -92,6 +93,18 @@ The Resilient Intake does not depend on a single predictable URL path for data c
 
 > **💡 Note:** Resilient Intake requires version 2 of the `@vercel/analytics` [package](/docs/analytics/package#what's-new-in-version-2.x).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

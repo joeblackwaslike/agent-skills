@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/observability-and-spend/logs
 summary: Discover model reasoning capabilities and configure effort across AI SDK, Chat Completions, Messages, and Responses with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "651abce9c27dc632aafaa95725ba71289fe6fc5f75e4b793d20ee128a5bcce4a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "79a79472a9ad3b19dec4b420f6b478fbb1a75f6f3eebc27b255a0d3aec9f0c67"
 ---
 
 # AI Gateway Reasoning
@@ -35,8 +36,8 @@ Control how much a model reasons before answering. Use the [model catalog](https
 - [GPT-6.1 Terra now available on AI Gateway](https://vercel.com/changelog/gpt-6-1-terra-now-available-on-ai-gateway)
 - [Tencent Hy4 now available on AI Gateway](https://vercel.com/changelog/tencent-hy4-now-available-on-ai-gateway)
 - [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai) — Learn how to use OpenAI with AI Gateway and the direct provider.
-- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options) — Learn how to use provider-specific options to control reasoning, caching, and other advanced features.
 - [Azure OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/azure) — Learn how to use Azure OpenAI with AI Gateway and the direct provider.
+- [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options) — Learn how to use provider-specific options to control reasoning, caching, and other advanced features.
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
 
@@ -798,6 +799,18 @@ For the full reasoning parameter reference for each API format, see:
 - [Anthropic Messages API extended thinking](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning) for `thinking` and `output_config.effort`
 - [Responses API reasoning](/docs/ai-gateway/sdks-and-apis/responses/reasoning) for the `reasoning` object (`effort`, plus `summary` on supported models)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

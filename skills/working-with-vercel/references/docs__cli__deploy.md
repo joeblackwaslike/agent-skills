@@ -3,21 +3,22 @@ title: vercel deploy
 product: vercel
 url: /docs/cli/deploy
 canonical_url: "https://vercel.com/docs/cli/deploy"
-last_updated: 2026-09-18
+last_updated: 2026-11-14
 type: reference
 prerequisites:
   - /docs/cli
 related:
+  - /docs/deployments/deploy-without-logging-in
   - /docs/cli/global-options
   - /docs/cli/build
   - /docs/build-output-api
   - /docs/cli/redeploy
-  - /docs/environment-variables/system-environment-variables
 summary: Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/deploy.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "72ae9facfacd6975a81522cbeec290b70c637fb0316ba21a640376699e3d13a1"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0300a085b7f5477bd2cdd4257e228e9a24a6555c75ef93c29fad86d74f4b07d2"
 ---
 
 # vercel deploy
@@ -45,6 +46,18 @@ The `vercel deploy` command deploys Vercel projects, executable from the project
 
 Full cross-link map for this page: [/docs/cli/deploy.graph.md](/docs/cli/deploy.graph.md)
 <!-- /docsgraph:related -->
+
+## Deploy without an account
+
+If you don't have a Vercel account yet, or the CLI isn't logged in, use `vercel deploy --temporary`. You don't need to sign up, log in, or create a token first. Run it in your project root:
+
+```bash filename="terminal"
+vercel deploy --temporary
+```
+
+The CLI builds your project, deploys it to production, and prints a live URL and a claim URL. Open the claim URL to create an account or log in and keep the project. Unclaimed deployments expire.
+
+Use this option for your first deploy, for a quick share, or when an AI agent deploys on your behalf. It doesn't work in CI or in a directory that's already linked to a Vercel project. For all details, see [`--temporary`](#temporary) and [Deploying without logging in](/docs/deployments/deploy-without-logging-in).
 
 ## Usage
 
@@ -434,6 +447,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

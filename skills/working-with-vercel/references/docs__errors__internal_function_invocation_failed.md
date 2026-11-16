@@ -11,9 +11,10 @@ related:
   - /docs/deployments/build-features
 summary: "The internal invocation of a function failed. This is Vercel's error."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/internal_function_invocation_failed.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f32214bafc81a498ad26dd0c89c61b185de86915f48ee004a58967d8b53e7f97"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4e270905cb1dbe8122c5bcd36909b5dde7903b92bf7f01500430078ef9194b83"
 ---
 
 # INTERNAL_FUNCTION_INVOCATION_FAILED
@@ -33,6 +34,18 @@ To troubleshoot this error, follow these steps:
 3. **Verify function configuration:** Double-check the function configuration to ensure that it's set up correctly, including any environment variables or other settings
 4. **Check external dependencies:** If the function relies on external services or APIs, ensure they are responding in a timely manner
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

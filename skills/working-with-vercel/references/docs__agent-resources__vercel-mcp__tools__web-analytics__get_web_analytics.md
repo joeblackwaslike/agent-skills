@@ -12,9 +12,10 @@ related:
   []
 summary: Use get_web_analytics with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/get_web_analytics.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "1db646d73043e16ff851b41808ecefaddfebc66ac91857ee103f7e506f76fc2b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5444af576280a1eec6530b25da834a7cb089a43aaf4060028ec2a32dd1313de5"
 ---
 
 # get_web_analytics
@@ -27,11 +28,11 @@ Query Web Analytics for a Vercel project. Count mode returns total visitors and 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [aggregate_pageviews](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/aggregate_pageviews) — Use aggregate_pageviews with Vercel MCP.
-- [aggregate_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/aggregate_events) — Use aggregate_events with Vercel MCP.
-- [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
-- [count_pageviews](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/count_pageviews) — Use count_pageviews with Vercel MCP.
+- [aggregate_pageviews](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/aggregate_pageviews) — Use aggregate_pageviews with Vercel MCP.
+- [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
+- [aggregate_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/aggregate_events) — Use aggregate_events with Vercel MCP.
+- [Counts page views](https://vercel.com/docs/rest-api/web-analytics/counts-page-views) — GET /v1/query/web-analytics/visits/count — Counts the number of page views on a project \\(production only\\), since Web A
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/web-analytics/get_web_analytics.graph.md](/docs/agent-resources/vercel-mcp/tools/web-analytics/get_web_analytics.graph.md)
 <!-- /docsgraph:related -->
@@ -50,6 +51,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/web-a
 | `filter`    | string           | No       | -       | OData filter expression, for example requestPath eq '/pricing' and country eq 'US', eventName eq 'signup', or eventData/plan eq 'pro'.                                                                                                                                              |
 | `limit`     | integer          | No       | -       | Maximum distinct results in aggregate mode. Remaining values are grouped into Others. Defaults to 10. Minimum: 1. Maximum: 100.                                                                                                                                                     |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

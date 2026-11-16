@@ -12,9 +12,10 @@ related:
   []
 summary: Use get_rolling_release with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/get_rolling_release.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b9ccdfe464528b9a4b29b01092b8289b631fd024845ece2503ba93097a26537f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9105c49f1f7987602b46799fdb8d4761ec7716b98dbf54a092fe1249acc1e9fb"
 ---
 
 # get_rolling_release
@@ -31,7 +32,7 @@ Get the active rolling release information for a project.
 - [get_rolling_release_billing_status](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/get_rolling_release_billing_status) — Use get_rolling_release_billing_status with Vercel MCP.
 - [complete_rolling_release](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/complete_rolling_release) — Use complete_rolling_release with Vercel MCP.
 - [start_rolling_release](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/start_rolling_release) — Use start_rolling_release with Vercel MCP.
-- [Get the active rolling release information for a project](https://vercel.com/docs/rest-api/rolling-release/get-the-active-rolling-release-information-for-a-project) — GET /v1/projects/{idOrName}/rolling-release — Return the Rolling Release for a project, regardless of whether the rollou
+- [update_rolling_release_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/update_rolling_release_config) — Use update_rolling_release_config with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/rolling-releases/get_rolling_release.graph.md](/docs/agent-resources/vercel-mcp/tools/rolling-releases/get_rolling_release.graph.md)
 <!-- /docsgraph:related -->
@@ -45,6 +46,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/rolli
 | `teamId`   | string | No       | Team ID to use for this operation.                                                     |
 | `slug`     | string | No       | Team slug to use for this operation. Use instead of teamId.                            |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/connect/concepts/triggers
 summary: How Vercel Connect is billed for token requests and triggers across plans and how to stop being billed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/connect/pricing.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c47319f8eee299402cc36f111aa2848fa876a95c2c23dce0d1566fdfc9e2b6ac"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f7242b33e08e6d58c8b9b206c0a871e8e1c1aab60bb98e170bc77d2e3d5af425"
 ---
 
 # Vercel Connect Pricing
@@ -31,13 +32,14 @@ Vercel Connect is billed by token requests and triggers.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
+- [Build a Shopify agent with AI SDK and Vercel Connect](https://vercel.com/kb/guide/shopify-agent-ai-sdk-vercel-connect) — Build a Shopify agent with AI SDK and Vercel Connect to search products, check orders, and request approval before chang
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
 - [Optimizing Vercel Connect Usage](https://vercel.com/docs/connect/optimizing-usage) — Reduce billed token requests and triggers by using the SDK cache effectively, tuning refresh behavior, and pruning trigg
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Observability](https://vercel.com/docs/connect/observability) — Monitor token requests, authorizations, revocations, and trigger deliveries for your connectors.
+- [Vercel CI Pricing](https://vercel.com/docs/ci/pricing) — Understand how Vercel CI usage is billed.
 - [Vercel Agent Pricing](https://vercel.com/docs/agent/pricing) — Understand Vercel Agent pricing and how to track costs
-- [Vercel KMS Pricing and Limits](https://vercel.com/docs/kms/pricing) — How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
-- [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
 
 Full cross-link map for this page: [/docs/connect/pricing.graph.md](/docs/connect/pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -85,6 +87,18 @@ To stop being billed for Vercel Connect:
 
 For platform limits and API rate limits, see [Limits](/docs/connect/limits).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

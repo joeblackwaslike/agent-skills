@@ -13,9 +13,10 @@ related:
   - /docs/speed-insights/metrics
 summary: Use the Vercel CLI to query Speed Insights metrics from your terminal.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f2a615b5573b3b696cb1fc5a09feb01aecf3fdf9630192c7845bbea39693f1b0"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "46f871dc432efeb98b9345a3b9d5ca693a925df4e33fe43cfe536bafc5a7972b"
 ---
 
 # Accessing Metrics with Vercel CLI
@@ -29,7 +30,7 @@ Use `vercel metrics` to query Speed Insights data from your terminal. You can re
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Query Speed Insights from the Vercel CLI](https://vercel.com/changelog/query-speed-insights-from-the-vercel-cli)
-- [How Core Web Vitals affect SEO](https://vercel.com/blog/how-core-web-vitals-affect-seo)
+- [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights) — Learn how to use Speed Insights to analyze your application's performance data.
 - [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
@@ -146,6 +147,18 @@ vercel metrics vercel.speed_insights.lcp_ms --all --aggregation p75 --group-by p
 
 For all options, see the [`vercel metrics` reference](/docs/cli/metrics). For what each dashboard metric measures, see [Speed Insights Metrics](/docs/speed-insights/metrics).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

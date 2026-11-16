@@ -14,9 +14,10 @@ related:
   - /docs/environment-variables/system-environment-variables
 summary: Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-blob/client-upload.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "7849235a5c5e197e20a66c1818b2397da290948373d96b98d97abf5251513ab6"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0995b89c40bdefac5e7beca1815bdbf8040666ea409c2bd252081cd14b07f39b"
 ---
 
 # Client Uploads with Vercel Blob
@@ -42,7 +43,8 @@ In this guide, you'll learn how to do the following:
 - [Private Storage](https://vercel.com/docs/vercel-blob/private-storage) — Learn how to use private Vercel Blob storage to serve files with authentication
 - [OG Image Generation Examples](https://vercel.com/docs/og-image-generation/examples) — Learn how to use the @vercel/og library with examples.
 - [Using Global Config with Split](https://vercel.com/docs/global-config/global-config-integrations/split-global-config) — Learn how to use Global Config with Vercel's Split integration.
-- [Background Workers on Vercel](https://vercel.com/docs/background-workers) — Run background jobs on Vercel, from continuous workers with Daemons to queued tasks, scheduled jobs, and durable workflo
+- [Start a blob upload](https://vercel.com/docs/rest-api/vcr/start-a-blob-upload) — POST /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/ — POST /v2/:teamSlug/:projectSlug/:repositoryName/blob
+- [Complete a blob upload](https://vercel.com/docs/rest-api/vcr/complete-a-blob-upload) — PUT /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} — PUT /v2/:teamSlug/:projectSlug/:repositoryName/
 
 Full cross-link map for this page: [/docs/vercel-blob/client-upload.graph.md](/docs/vercel-blob/client-upload.graph.md)
 <!-- /docsgraph:related -->
@@ -726,6 +728,18 @@ VERCEL_BLOB_CALLBACK_URL=https://abc123.ngrok-free.app
 
 - Learn how to [use the methods](/docs/vercel-blob/using-blob-sdk) available with the `@vercel/blob` package
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -14,9 +14,10 @@ related:
   - /docs/ai-gateway/observability-and-spend/budgets
 summary: Connect Junie CLI to AI Gateway with the Vercel CLI or custom model profiles.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/junie.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ba18d48239d07ca0a22845bc70b738d2bceb03849313865904c71fdd9a74aab0"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4876b46b475eaca441f12b0aa4497b81c2216660dc314d2fc98915cd08f7cefe"
 ---
 
 # Junie CLI with AI Gateway
@@ -31,9 +32,9 @@ sha256: "ba18d48239d07ca0a22845bc70b738d2bceb03849313865904c71fdd9a74aab0"
 
 - [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
 - [Continue CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/continue) — Connect Continue CLI to AI Gateway with the Vercel CLI or a YAML model configuration that reads your API key from the en
-- [GitHub Copilot CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/copilot) — Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and
 - [Aider with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/aider) — Connect Aider to AI Gateway with the Vercel CLI or an OpenAI-compatible base URL, API key, and model metadata.
-- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
+- [GitHub Copilot CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/copilot) — Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/junie.graph.md](/docs/ai-gateway/coding-agents/junie.graph.md)
 <!-- /docsgraph:related -->
@@ -104,6 +105,18 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 - Browse the [models catalog](/ai-gateway/models) for available models
 - Configure [spend limits](/docs/ai-gateway/observability-and-spend/budgets) on your API key
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -3,21 +3,22 @@ title: Getting started with Vercel
 product: vercel
 url: /docs/getting-started-with-vercel
 canonical_url: "https://vercel.com/docs/getting-started-with-vercel"
-last_updated: 2026-08-11
+last_updated: 2026-11-14
 type: how-to
 prerequisites:
   []
 related:
+  - /docs/deployments/deploy-without-logging-in
   - /docs/cli
   - /docs/agent-resources/vercel-plugin
   - /docs/agent-resources/skills
   - /docs/agent-resources/vercel-mcp
-  - /docs/cli/install
 summary: Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/getting-started-with-vercel.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "a45a7b490f12497a8db4df9ac8c96fb500e005753af9b70822e69923d3e8926d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d5f9b88cf4dab49c5003263ea3eb8b7272b456971fdd8ec0bbc948041f7beef6"
 ---
 
 # Getting started with Vercel
@@ -31,16 +32,15 @@ Install the Vercel CLI and deploy your app. If you use an AI coding agent, add a
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
-- [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
 - [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
 - [How can I use CircleCI with Vercel?](https://vercel.com/kb/guide/how-can-i-use-circleci-with-vercel) — Learn how to use CircleCI to deploy to Vercel with custom CI/CD.
+- [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
 - [How can I use the Vercel CLI for custom workflows?](https://vercel.com/kb/guide/using-vercel-cli-for-custom-workflows) — You can use the Vercel CLI to deploy any application, including custom git providers and restricted source code.
-- [Introducing the Vercel plugin for coding agents](https://vercel.com/changelog/introducing-vercel-plugin-for-coding-agents)
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code, Codex, and OpenCode, and co
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
-- [Working with domains](https://vercel.com/docs/domains/working-with-domains) — Learn how domains work and the options Vercel provides for managing them.
-- [Incremental Migration to Vercel](https://vercel.com/docs/incremental-migration) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
+- [Deploying with BYOC Using the Vercel CLI](https://vercel.com/docs/networking/bring-your-own-cloud/deploy-with-cli) — Build a project, provision its functions in your AWS account, and complete a Bring Your Own Cloud \\(BYOC\\) deployment wi
+- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 
 Full cross-link map for this page: [/docs/getting-started-with-vercel.graph.md](/docs/getting-started-with-vercel.graph.md)
 <!-- /docsgraph:related -->
@@ -53,7 +53,7 @@ Help me get set up with Vercel. Based on my project, do the following: 1. Instal
 
 ## Prerequisites
 
-- A [Vercel account](/signup)
+- A [Vercel account](/signup). Your first deploy doesn't need one: see [Deploying without logging in](/docs/deployments/deploy-without-logging-in).
 - [Node.js 20+](https://nodejs.org/)
 
 ## Install the Vercel CLI
@@ -83,6 +83,8 @@ Every Vercel workflow starts with the CLI. Install it whether or not you use an 
   vercel login
   ```
   Follow the prompts to authenticate with your Vercel account.
+
+  To deploy before you create an account, skip this step and run `vercel deploy --temporary` in the next step. The CLI prints a claim URL that you use to keep the project.
 
 - ### Deploy your project
   Navigate to your project directory and run:
@@ -177,6 +179,18 @@ You can also deploy without the CLI. Go to the [New Project](/new) page, connect
 - [Agent resources](/docs/agent-resources) – Documentation access, skills, and CLI workflows for AI agents
 - [Build with prompts](/kb/prompts): Build an app, extend an agent, or improve your project with a coding agent
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

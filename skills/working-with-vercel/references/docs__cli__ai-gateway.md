@@ -15,9 +15,10 @@ related:
   - /docs/ai-gateway/models-and-providers
 summary: "Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, virtual models, models, leaderboards, and coding agent setup."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/ai-gateway.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "1cc30219fcc0aa93848ac944bbfeb054893a17d0b006ed8b7d7bf034a79da408"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d152a2a091b31d1719a6a2f4d290c7e154b4b7772e80572cc87a25a7d6084084"
 ---
 
 # vercel ai-gateway
@@ -36,8 +37,9 @@ The `vercel ai-gateway` command manages [AI Gateway](/docs/ai-gateway) resources
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
 - [Virtual models now available on AI Gateway](https://vercel.com/changelog/virtual-models-now-available-on-ai-gateway)
 - [Introducing Virtual Models on AI Gateway](https://vercel.com/blog/ai-gateway-virtual-models)
-- [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
+- [Amp with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/amp) — Connect Amp to AI Gateway through Amp's Model Routing settings. Add an AI Gateway API key, choose models for Amp's modes
 - [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
+- [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis) — Connect to AI Gateway with the AI SDK, Python, Go, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Co
 - [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code, Codex, and OpenCode, and co
 - [vercel token-pass](https://vercel.com/docs/cli/token-pass) — Configure supported coding agents to use Vercel Token Pass through AI Gateway from your terminal.
 
@@ -584,7 +586,7 @@ Switching providers hides the sessions that were recorded under the old one. Whe
 
 | Agent | What gets copied |
 | --- | --- |
-| Claude Code | Claude Desktop session records, copied into the gateway (`Claude-3p`) identity with each `model` rewritten to its gateway ID. The gateway identity only exists after Claude Desktop's first gateway launch, so re-run setup once you've switched providers in **Developer** -> **Configure Third-Party Inference** |
+| Claude Code | Claude Desktop session records, copied into the gateway (`Claude-3p`) identity with each `model` rewritten to its gateway ID. The command doesn't switch Claude Desktop to AI Gateway, and the gateway identity only exists after Claude Desktop's first gateway launch. [Switch the desktop app manually](/docs/ai-gateway/coding-agents/claude-code#with-the-claude-desktop-app), then re-run setup |
 | Codex | Codex Desktop rollout files under `sessions` and `archived_sessions`, copied with a deterministic new session ID and `model_provider` set to `vercel` |
 
 Copies are atomic, use mode `0600`, and never clobber an existing destination. Re-running is safe because the command skips sessions that were already copied. If a copy fails, the command leaves your agent configuration untouched and exits `1` so you can retry.
@@ -697,6 +699,7 @@ If at least one agent config can be written, the run exits `0` and lists the res
 
 - Open a new terminal after connecting so the shell exports load. Codex always reads `AI_GATEWAY_API_KEY` from your environment; in Keychain mode, every agent except Pi, Cline, ForgeCode, Kimi CLI, OpenHands, and ZCode reads its key from the shell.
 - Restart Claude Code so it picks up the new settings, and restart the OpenClaw gateway process so it loads the new provider.
+- The command doesn't configure the Claude Desktop app, which keeps its provider in its own settings. [Switch it manually](/docs/ai-gateway/coding-agents/claude-code#with-the-claude-desktop-app). Codex Desktop needs no extra step because it reads the same `~/.codex/config.toml` as the Codex CLI.
 - The command follows the [CLI exit-code contract](/docs/cli/global-options#exit-codes): `0` for success, a no-op, or help; `1` for an operational failure; and `2` for a usage error. One exception: in human-readable output, an invalid option value, such as an unsupported `--apply` mode, exits `1`.
 
 > **⚠️ Warning:** Your API key is sensitive. Human-readable output only shows it masked (for
@@ -999,6 +1002,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

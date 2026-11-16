@@ -12,9 +12,10 @@ related:
   []
 summary: Use get_project_domain with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project_domain.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "964721ce09eacd5a0e3742b860aa69fe57910e9d787c6f48ea89d1fde65baada"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8c335a78fa9e7be9de92f9ddaf499a30d704bcf24323dd3adf24e569cda2b65d"
 ---
 
 # get_project_domain
@@ -29,9 +30,9 @@ Get project domain by project id/name and domain name.
 
 - [get_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain) — Use get_domain with Vercel MCP.
 - [add_project_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/add_project_domain) — Use add_project_domain with Vercel MCP.
+- [get_domain_project_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_project_domains) — Use get_domain_project_domains with Vercel MCP.
 - [get_domain_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_config) — Use get_domain_config with Vercel MCP.
 - [verify_project_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/verify_project_domain) — Use verify_project_domain with Vercel MCP.
-- [get_domain_project_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_project_domains) — Use get_domain_project_domains with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/projects/get_project_domain.graph.md](/docs/agent-resources/vercel-mcp/tools/projects/get_project_domain.graph.md)
 <!-- /docsgraph:related -->
@@ -45,6 +46,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/proje
 | `teamId`   | string | No       | Team ID to use for this operation.                          |
 | `slug`     | string | No       | Team slug to use for this operation. Use instead of teamId. |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: "Language Model Tool API"
 source: "https://code.visualstudio.com/api/extension-guides/tools"
-fetched_at: "2026-11-09T12:33:26.963Z"
-sha256: "323c20a4c0aa6bd930deb90379884df9cd2fce5e961f6d870c8071849b733369"
+fetched_at: "2026-11-16T12:28:04.438Z"
+sha256: "d2d4ec3547bd8b05f197f8ffc34f36824457eceeaa929c5e89f3d206eb627696"
 ---
 
 # Language Model Tool API
@@ -120,7 +120,7 @@ The unique name of the tool, used to reference the tool in the extension impleme
 The user-friendly name of the tool, used for displaying in the UI.
 
 - 
-If the tool can be used with [agents](https://code.visualstudio.com/docs/agents/overview#_built-in-agents) or referenced in a chat prompt with `#`, add the following properties:
+If the tool can be used with [agents](https://code.visualstudio.com/docs/agents/overview) or referenced in a chat prompt with `#`, add the following properties:
 
 Users can enable or disable the tool in the Chat view, similar to how this is done for [Model Context Protocol (MCP) tools](https://code.visualstudio.com/docs/agent-customization/mcp-servers).
 
@@ -128,7 +128,7 @@ Property
 Description
 
 `canBeReferencedInPrompt`
-Set to `true` if the tool can be used with [agents](https://code.visualstudio.com/docs/agents/overview#_built-in-agents) or referenced in chat.
+Set to `true` if the tool can be used with [agents](https://code.visualstudio.com/docs/agents/overview) or referenced in chat.
 
 `toolReferenceName`
 The name for users to reference the tool in a chat prompt via `#`.
@@ -380,4 +380,4 @@ Get more best practices for creating tools in the [OpenAI documentation](https:/
 - [Use MCP tools in agent mode](https://code.visualstudio.com/docs/agent-customization/mcp-servers)
 
  
- 11/4/2026
+ 11/11/2026

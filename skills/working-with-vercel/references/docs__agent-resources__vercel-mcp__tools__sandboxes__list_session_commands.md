@@ -12,9 +12,10 @@ related:
   []
 summary: Use list_session_commands with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/list_session_commands.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "14727b8675fbd715033e7bec988a5ec8a086904d6ac09af625204c7a27bf8058"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f3cb4cace6fece9232856d3233e02ff33ad9faec53d8b37511ff744d5a0e0a30"
 ---
 
 # list_session_commands
@@ -27,10 +28,10 @@ List commands.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [get_session_command_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/get_session_command_logs) — Use get_session_command_logs with Vercel MCP.
 - [get_session_command](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/get_session_command) — Use get_session_command with Vercel MCP.
-- [get_session](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/get_session) — Use get_session with Vercel MCP.
+- [get_session_command_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/get_session_command_logs) — Use get_session_command_logs with Vercel MCP.
 - [list_sessions](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/list_sessions) — Use list_sessions with Vercel MCP.
+- [get_session](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/get_session) — Use get_session with Vercel MCP.
 - [run_session_command](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/run_session_command) — Use run_session_command with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandboxes/list_session_commands.graph.md](/docs/agent-resources/vercel-mcp/tools/sandboxes/list_session_commands.graph.md)
@@ -44,6 +45,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandb
 | `teamId`    | string | No       | Team ID to use for this operation.                          |
 | `slug`      | string | No       | Team slug to use for this operation. Use instead of teamId. |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

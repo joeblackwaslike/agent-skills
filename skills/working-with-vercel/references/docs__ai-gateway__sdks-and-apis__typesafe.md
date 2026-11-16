@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/models-and-providers
 summary: Point an existing TypeSafe client at AI Gateway by changing its base URL to route System One decision requests through it.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/typesafe.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "1b2f3ce3e4dd8c36ee49e88f56f434cc8af0641a0b483727f85c711aec8941e2"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "91a7280785011b56cfbbe35a26a26cfe1283ed2ec27b63f8820467822d2678c6"
 ---
 
 # TypeSafe API with AI Gateway
@@ -37,7 +38,6 @@ Keep using the [TypeSafe SDK](https://docs.typesafe.ai/introduction) and route r
 - [Microsoft Decision-1 now available on AI Gateway](https://vercel.com/changelog/microsoft-decision-1-now-available-on-ai-gateway)
 - [Perplexity's Decider V1.2 models now available on AI Gateway](https://vercel.com/changelog/perplexity-decider-v1-2-models-now-available-on-ai-gateway)
 - [Moderate product reviews with Jev, TanStack AI, and AI Gateway](https://vercel.com/kb/guide/moderate-product-reviews-jev-tanstack-ai) — Moderate product reviews for an e-commerce storefront with Jev from TypeSafe AI and TanStack AI's \\`decide\\(\\)\\` functio
-- [Decisions](https://ai-sdk.dev/docs/ai-sdk-core/decisions) — Decide answers to Choice, Score, and Boolean questions against shared state.
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/typesafe.graph.md](/docs/ai-gateway/sdks-and-apis/typesafe.graph.md)
@@ -287,6 +287,18 @@ Errors such as insufficient credits, an unknown model, or a model provider failu
 - Learn how to [automatically approve tool calls in eve with Jev](/kb/guide/auto-approve-tool-calls-eve-jev)
 - [Models and providers](/docs/ai-gateway/models-and-providers) for the full catalog
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

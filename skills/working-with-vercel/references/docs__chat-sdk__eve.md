@@ -15,9 +15,10 @@ related:
   - /docs/logs/runtime
 summary: Send Chat SDK messages to an eve agent with a channel, persistent state, and Vercel Connect.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/chat-sdk/eve.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "fbdf1fcd5c33eca578d2972a086224800c142a11ff2c3c9d9e593d5cf40e8407"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "75fc9890a803b8d28fe94dee8a9a2446c12dc29f1cd05bbb4f85bd0274183743"
 ---
 
 # Using eve with Chat SDK
@@ -33,9 +34,11 @@ Use [eve's Chat SDK channel](https://eve.dev/docs/channels/chat-sdk) to send pla
 - [Using Chat SDK and eve together](https://vercel.com/kb/guide/chat-sdk-and-eve) — Understand how eve and Chat SDK divide responsibilities, when to use eve's first-class channels versus the Chat SDK chan
 - [Give your eve agent an email inbox with Resend](https://vercel.com/kb/guide/eve-agent-with-resend) — Connect an eve agent to email using the Chat SDK channel and the Resend adapter. Handle inbound email, threaded replies,
 - [Use any Chat SDK adapter with eve](https://vercel.com/changelog/eve-chat-sdk-channel)
-- [Chat SDK Reference](https://eve.dev/docs/channels/chat-sdk/reference) — Chat SDK channel options, webhook routes, send and respond, steering, delivery, human-in-the-loop, sign-ins, proactive s
 - [eve adds new Slack event hooks and session controls](https://vercel.com/changelog/eve-adds-new-slack-event-hooks-and-session-controls)
 - [Next.js](https://eve.dev/docs/guides/frontend/nextjs) — Add an eve chat to a Next.js app, from setup and authentication to saved conversations and deployment.
+- [Chat SDK Reference](https://eve.dev/docs/channels/chat-sdk/reference) — Chat SDK channel options, webhook routes, send and respond, steering, delivery, human-in-the-loop, sign-ins, proactive s
+- [Build your first Slack agent with eve](https://vercel.com/kb/guide/eve-slack-agent-starter) — Deploy the eve Slack agent template: a starter Slack bot built on the eve framework with an example tool and skill.
+- [AI SDK](https://vercel.com/docs/ai-sdk) — Build TypeScript agents and AI applications with a unified API for models, tools, structured output, and streaming.
 - [Chat SDK Integrations](https://vercel.com/docs/chat-sdk/integrations) — Extend a Chat SDK bot with AI Gateway, Vercel Connect, Vercel Passport, Vercel Sandbox, Vercel Workflows, and Vercel Dae
 
 Full cross-link map for this page: [/docs/chat-sdk/eve.graph.md](/docs/chat-sdk/eve.graph.md)
@@ -204,6 +207,10 @@ Swap the Slack adapter for another [platform adapter](/docs/chat-sdk/adapters#pl
 
 The channel streams replies by default. For email and other destinations that can't edit sent messages, set `streaming: false` in `chatSdkChannel` so the reply is posted when the turn completes. See the [eve channel reference](https://eve.dev/docs/channels/chat-sdk) for route overrides, attachments, and human input handling.
 
+## Prepare your agent for launch
+
+Before you invite people to use the agent, work through the [agent checklist](/docs/agent-checklist?framework=eve). Its eve items include webhook verification for chat channels, approval policies for tools that send, delete, publish, or spend, and session usage limits.
+
 ## Frequently asked questions
 
 ### Should I use eve's Chat SDK channel or its built-in Slack channel?
@@ -232,6 +239,18 @@ When the agent needs approval for a tool or asks a question, the channel posts a
 - [Configure Connect credentials and triggers](/docs/connect/frameworks/chat-sdk)
 - [Explore eve channels](https://eve.dev/docs/channels/overview)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

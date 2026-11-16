@@ -12,9 +12,10 @@ related:
   - /docs/security/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation
 summary: "Vercel couldn't complete OpenID Connect discovery for the token issuer configured as a Trusted Source."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/trusted_sources_oidc_discovery_failed.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a17a80e549a40ce1b6f9d52c952191fa5f78fdaeed3b29383cd5fa552b3d6a3b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "6f2f29d8c220116ab8d451162d7674cc38a271d6c27fc393989ebdb51306d0fd"
 ---
 
 # TRUSTED_SOURCES_OIDC_DISCOVERY_FAILED
@@ -40,6 +41,18 @@ If the issuer is intentionally private or unreachable from the public internet, 
 
 For more details on configuring custom issuers, see the [Trusted Sources documentation](/docs/security/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/code-security/how-tos/find-and-fix-code-vulnerabilities/configure-code-scanning/configuring-advanced-setup-for-code-scanning.md"
-fetched_at: "2026-08-17T04:47:04.101Z"
-sha256: "028d7ca4451a15b8127ef64283d1902a18433f8f8136f7593a360efb65bdd9b4"
+fetched_at: "2026-11-16T12:31:54.241Z"
+sha256: "e682bb7cdf4109b83bed05687bedbf0b7128769c54c5f4c386ffc3d9e9b3f4c0"
 ---
 
 {% data reusables.code-scanning.enterprise-enable-code-scanning-actions %}
@@ -62,6 +62,12 @@ The `on:pull_request` and `on:push` triggers for code scanning are each useful f
 For information on bulk enablement, see [AUTOTITLE](/code-security/how-tos/secure-at-scale/configure-organization-security/configure-specific-tools/configuring-advanced-setup-for-code-scanning-with-codeql-at-scale).
 
 {% ifversion fpt or ghec %}
+
+### Keeping the {% data variables.product.prodname_codeql %} action up to date
+
+We recommend referencing the {% data variables.product.prodname_codeql %} action using a major version tag (for example, `v4`) in your workflow file. This ensures your workflow automatically picks up the latest release within that major version, including bug fixes, new features, and updated {% data variables.product.prodname_codeql_cli %} versions.
+
+Some {% data variables.product.prodname_codeql %} action features are enabled by server-side flags that may be removed over time, which can cause old versions to lose functionality. If you pin to a specific commit SHA or patch version tag, keep it updated, for example with {% data variables.product.prodname_dependabot %}. See [AUTOTITLE](/code-security/how-tos/secure-your-supply-chain/secure-your-dependencies/auto-update-actions).
 
 ## Configuring {% data variables.product.prodname_code_scanning %} using third-party actions
 

@@ -15,9 +15,10 @@ related:
   - /docs/functions/runtimes/python
 summary: Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes supported by Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/runtimes.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "fafa66e0a5b8dfb60e45f0dda9aee1d73295c0712a0a47195d35e292eec6868e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5cb732444f9701b862525af79587d5af5f8868710bcf17f5739bc7e3b157807e"
 ---
 
 # Runtimes
@@ -39,9 +40,9 @@ Vercel supports multiple runtimes for your functions. Each runtime has its own s
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
 - [Billions of dollars, billions of requests: Black Friday-Cyber Monday 2024](https://vercel.com/blog/black-friday-cyber-monday-2024-recap)
-- [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
-- [Build image overview](https://vercel.com/docs/builds/build-image) — Learn about the container image used for Vercel builds.
+- [Backends on Vercel](https://vercel.com/docs/frameworks/backend) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
 - [Fluid compute](https://vercel.com/docs/fluid-compute) — Learn about fluid compute, an execution model for Vercel Functions that provides a more flexible and efficient way to ru
+- [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 
 Full cross-link map for this page: [/docs/functions/runtimes.graph.md](/docs/functions/runtimes.graph.md)
 <!-- /docsgraph:related -->
@@ -153,6 +154,18 @@ A [Global Config](/docs/global-config) is a global data store that enables exper
 
 Vercel supports [Tracing](/docs/tracing) that allows you to send OpenTelemetry traces from your Vercel Functions to any application performance monitoring (APM) vendors.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

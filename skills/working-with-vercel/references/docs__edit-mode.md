@@ -12,9 +12,10 @@ related:
   - /docs/integrations/cms
 summary: "Discover how Vercel's Edit Mode enhances content management for headless CMSs, enabling real-time editing, and seamless collaboration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/edit-mode.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "788587770c1f69b0e610c99e8dbd2da8aff2fb4c9bd2473e1e5ee01748a197a6"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "db631befa5267f0eaf688762eda9c79599a9f1e1d75862e9bb6a9f9b332f007d"
 ---
 
 # Edit Mode
@@ -34,13 +35,13 @@ Content editing in CMSs usually occurs separately from the website's layout and 
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, container image functions, security defaults,
 - [Vercel vs Railway](https://vercel.com/kb/guide/vercel-vs-railway) — A detailed guide to Vercel vs Railway: serverless vs always-on containers, container images from a Dockerfile, framework
-- [Visual Editing: Click-to-edit content for headless CMSes](https://vercel.com/blog/visual-editing)
 - [Enhanced content management for your headless CMS](https://vercel.com/blog/enhanced-content-management-for-headless-cmses)
+- [Visual Editing: Click-to-edit content for headless CMSes](https://vercel.com/blog/visual-editing)
 - [Content Link can now be used with Contentful ](https://vercel.com/changelog/content-link-can-now-be-used-with-contentful)
 - [Visual Editing can now be used with DatoCMS](https://vercel.com/changelog/visual-editing-can-now-be-used-with-datocms)
-- [Visual Editing can now be used with Builder.io ](https://vercel.com/changelog/visual-editing-can-now-be-used-with-builder-io)
 - [Visual Editing can now be used with TinaCMS](https://vercel.com/changelog/visual-editing-can-now-be-used-with-tinacms)
-- [Vercel + Sanity: Innovating on a faster, more collaborative Web](https://vercel.com/blog/vercel-sanity-innovating-on-a-faster-collaborative-web)
+- [Visual Editing can now be used with Builder.io ](https://vercel.com/changelog/visual-editing-can-now-be-used-with-builder-io)
+- [Vercel DatoCMS Integration](https://vercel.com/docs/integrations/cms/dato-cms) — Learn how to integrate DatoCMS with Vercel. Follow our step-by-step tutorial to set up and manage your digital content s
 
 Full cross-link map for this page: [/docs/edit-mode.graph.md](/docs/edit-mode.graph.md)
 <!-- /docsgraph:related -->
@@ -78,6 +79,18 @@ The following CMS integrations support Content Link:
 
 See the [CMS integration documentation](/docs/integrations/cms) for information on how to use Content Link with your chosen CMS.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

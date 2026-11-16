@@ -12,9 +12,10 @@ related:
   []
 summary: Use list_team_flag_settings with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_team_flag_settings.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "7fbc3b64935de85547b44a0eb234c114d9e6b81437ee5c8212da78769b66e71f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "82d0fd81dfd98c3b2a445b9d3cfb044b5f9ff25fefc40e4f936368cfd786d49a"
 ---
 
 # list_team_flag_settings
@@ -45,6 +46,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/featu
 | `teamId`  | string  | Yes      | Team ID to use for this operation.                                             |
 | `slug`    | string  | No       | Team slug to use for this operation. Use instead of teamId.                    |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

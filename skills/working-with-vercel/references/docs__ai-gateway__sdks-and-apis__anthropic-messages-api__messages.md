@@ -12,9 +12,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming
 summary: Create messages using the Anthropic Messages API format with support for streaming through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "0453540f48d8ff050a51c3526293d16f00ce9fa58c5c80e4caa0161fe0e6827b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8147963484970a1159b502cb999614ff5004ae5d17743b285fc186a0c815e176"
 ---
 
 # Anthropic Messages Requests with AI Gateway
@@ -31,7 +32,7 @@ Create messages using the Anthropic Messages API format.
 - [Anthropic Messages Tool Calling with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling) — Use function calling with the Anthropic Messages API to allow models to call tools and functions through AI Gateway.
 - [Anthropic Messages Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced) — Advanced Anthropic API features including web search, provider timeouts, and automatic caching through AI Gateway.
 - [OpenAI Responses Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/streaming) — Stream tokens as they are generated with the OpenAI Responses API through AI Gateway.
-- [OpenResponses Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/streaming) — Stream responses token by token using the OpenResponses API through AI Gateway.
+- [Go with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/go) — Use AI Gateway from any Go application with the OpenAI or Anthropic Go SDKs, including model fallbacks, cost tracking, a
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages.graph.md](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages.graph.md)
 <!-- /docsgraph:related -->
@@ -154,6 +155,18 @@ Response format
 
 Set `stream: true` to receive tokens as they are generated. See [Streaming](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming) for the full example and the list of server-sent event types.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

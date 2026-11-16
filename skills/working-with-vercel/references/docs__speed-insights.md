@@ -15,9 +15,10 @@ related:
   - /docs/speed-insights/limits-and-pricing
 summary: "This page lists out and explains all the performance metrics provided by Vercel's Speed Insights feature."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/speed-insights.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "0fbd8723b933d3d0e8ced6db5d0212023837a22ae31c26c16ec99605f950ebb5"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "65ef2ea3dfd230e14b1eee6d9f9dabfbaabf65651c9104b64183c8eaf44918d8"
 ---
 
 # Speed Insights Overview
@@ -59,9 +60,11 @@ See [limits and pricing](/docs/speed-insights/limits-and-pricing) for more infor
 To learn more, see the [dashboard view](/docs/speed-insights#dashboard-view) and [metrics](/docs/speed-insights/metrics), or follow the [quickstart](/docs/speed-insights/quickstart).
 
 > **💡 Note:** Vercel tracks Speed Insights events on all deployed
-> [preview](/docs/deployments/environments#preview-environment-pre-production)
-> and [production](/docs/deployments/environments#production-environment)
-> environments.
+> [production](/docs/deployments/environments#production-environment),
+> [preview](/docs/deployments/environments#preview-environment-pre-production),
+> and [custom](/docs/deployments/environments#custom-environments)
+> environments. Data that arrives without an environment is attributed to
+> production.
 
 ## Dashboard view
 
@@ -72,7 +75,7 @@ You can access the dashboard by selecting your project in the Vercel [dashboard]
 The Speed Insights dashboard displays data that you can sort and inspect based on a variety of parameters:
 
 - **Device type**: Toggle between mobile and desktop.
-- **Environment**: Filter by preview, production, or all environments.
+- **Environment**: Filter by production, preview, or all environments. The dropdown also lists your project's [custom environments](/docs/deployments/environments#custom-environments), available on Pro and Enterprise plans.
 - **Time range**: Select the timeframe dropdown in the top-right of the page to choose a predefined timeframe. Alternatively, select the Calendar icon to specify a custom timeframe. The [available durations vary](/docs/speed-insights/limits-and-pricing), depending on the account type and Speed Insights version.
 - [**Performance metric**](/docs/speed-insights/metrics): Switch between parameters that include Real Experience Score (RES), First Contentful Paint (FCP) and Largest Contentful Paint (LCP), and use the views to view more information. Individual Core Web Vitals require [Speed Insights Plus](/docs/speed-insights/limits-and-pricing).
 - **Performance metric views**: When you select a performance metric, the dashboard displays three views:
@@ -90,6 +93,18 @@ map view indicate the P75 score.
 
 - [How Core Web Vitals affect SEO: Understand your application's Google page experience ranking and Lighthouse scores](https://www.youtube.com/watch?v=qIyEwOEKnE0)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -3,7 +3,7 @@ title: request-secrets-rotation
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/request-secrets-rotation
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/request-secrets-rotation"
-last_updated: 2026-11-09
+last_updated: 2026-11-16
 type: conceptual
 prerequisites:
   []
@@ -13,9 +13,10 @@ related:
   - /docs/integrations/create-integration/native-integration
 summary: Learn about request-secrets-rotation on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/request-secrets-rotation.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "48f369d725863b3cb301b1af79cc68cd3d6053703c27df0891dd6e4251a81464"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ca1cac9672f0ef10f11f60b8f036ceeec227eb9de21f06651370ef84ef2b337b"
 ---
 
 # Request Secrets Rotation
@@ -287,6 +288,18 @@ Operation failed because of a conflict with the current state of the resource
 - [Marketplace API Reference](/docs/integrations/create-integration/marketplace-api/reference)
 - [Native Integration Concepts](/docs/integrations/create-integration/native-integration)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

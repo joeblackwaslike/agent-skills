@@ -14,9 +14,10 @@ related:
   - /docs/platforms/multi-tenant-platforms/configuring-domains
 summary: A complete domain management interface with DNS verification and real-time status tracking.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/custom-domain.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f1cd7374744786545be0a81f7d3403c0307f1f2321d3aed8ba4de872f217777b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3aaf8b1150055d6b1addd13de506d5d6b58ef74563d028e701826739caedcff7"
 ---
 
 # Custom Domain
@@ -194,6 +195,18 @@ export default async function DomainsPage() {
 - [Add Custom Domain action](/docs/platforms/platform-elements/actions/add-custom-domain)
 - [Configuring domains for multi-tenant platforms](/docs/platforms/multi-tenant-platforms/configuring-domains)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

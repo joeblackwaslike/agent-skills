@@ -12,11 +12,13 @@ related:
   - /docs/ai-gateway/authentication-and-byok/api-keys
   - /docs/agent-harnesses/security
   - /docs/agent-harnesses/claude-code
+  - /docs/sandbox
 summary: Keep durable agent harness sessions in another World, such as Postgres, and run Pi, Claude Code, Codex, OpenCode, and fx on your own servers.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-harnesses/self-hosting.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "d104874f17c24ddeaf0c10ad971ca1dd040365cb466f5651628adf148eb185d4"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c8690849e5d674aee55f855122a7d00efb7fb3d192c747676a5eefef5446de00"
 ---
 
 # Self-Hosting Durable Agent Harnesses
@@ -30,15 +32,14 @@ A durable harness keeps its sessions behind a World, the storage and queue inter
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
+- [Workflow SDK 5: built for production](https://vercel.com/blog/workflow-sdk-5)
 - [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
-- [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution)
 - [Built-in durability: Introducing Workflow Development Kit](https://vercel.com/blog/introducing-workflow)
-- [Workflow Worlds](https://eve.dev/docs/guides/deployment/workflow-worlds) — Choose and configure the Workflow world that stores and resumes eve sessions on a self-hosted deployment.
-- [Running fx Durably on Vercel](https://vercel.com/docs/agent-harnesses/fx) — Deploy an fx agent with libfx so its sessions survive crashes, function timeouts, and redeploys on Vercel.
 - [Running Codex Durably on Vercel](https://vercel.com/docs/agent-harnesses/codex) — Run Codex in a Vercel Sandbox, driven by a Vercel Function, with its session in a durable log, so a crashed turn resumes
 - [Running OpenCode Durably on Vercel](https://vercel.com/docs/agent-harnesses/opencode) — Run OpenCode v2 inside a Vercel Function with its session in a durable log, so a crashed turn resumes in a new function.
+- [Running fx Durably on Vercel](https://vercel.com/docs/agent-harnesses/fx) — Deploy an fx agent with libfx so its sessions survive crashes, function timeouts, and redeploys on Vercel.
 - [Tools, Files, and Documents in Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/tools) — What tools do when a durable agent harness resumes after a crash, where its files live, and how to keep typed state with
-- [Agent Harnesses You Can Run Durably on Vercel](https://vercel.com/docs/agent-harnesses/harnesses) — Guides for running Pi, fx, OpenCode, eve, Claude Code, and Codex durably on Vercel, so a crash or a timeout resumes the
+- [Running eve Agents Durably on Vercel](https://vercel.com/docs/agent-harnesses/eve) — eve agents are durable out of the box on Vercel, with no extra configuration.
 
 Full cross-link map for this page: [/docs/agent-harnesses/self-hosting.graph.md](/docs/agent-harnesses/self-hosting.graph.md)
 <!-- /docsgraph:related -->
@@ -148,7 +149,7 @@ import { recoverSessions, registerQueue } from 'durable-harness';
 import { pi } from 'durable-harness/pi';
 
 export const world = createWorld({ connectionString: process.env.WORKFLOW_POSTGRES_URL! });
-export const agent = pi({ model: 'anthropic/claude-sonnet-5.5', world });
+export const agent = pi({ model: 'anthropic/claude-fable-5.2', world });
 
 registerQueue(world); // before start: deliver durable-harness's queue to this process
 await world.start();
@@ -215,7 +216,7 @@ const sessions = createWorld({ connectionString: process.env.WORKFLOW_POSTGRES_U
 await sessions.start();
 
 export const agent = createFxAgent({
-  model: 'anthropic/claude-sonnet-5.5',
+  model: 'anthropic/claude-fable-5.2',
   tools,
   durability: world(sessions, { queueDurable: true }),
 });
@@ -233,6 +234,28 @@ eve selects its World in `agent.ts`. See [Self-host eve](https://eve.dev/docs/gu
 - The Postgres World is a reference implementation. It doesn't authenticate its routes or encrypt its data, and it isn't tuned for scale. Read [its documentation](https://workflow-sdk.dev/worlds/postgres) before you run it in production.
 - The Postgres World runs its queue worker in a long-lived process, so it doesn't run in Vercel Functions. On Vercel, use Vercel's World.
 
+## Frequently asked questions
+
+### Can I run durable agent harnesses without deploying to Vercel?
+
+Yes. Choose another World, such as the [Postgres World](https://workflow-sdk.dev/worlds/postgres), and run Pi, OpenCode, Claude Code, Codex, or fx on your own servers. Model calls outside Vercel authenticate with an [AI Gateway API key](/docs/ai-gateway/authentication-and-byok/api-keys). Claude Code and Codex still run in a [Vercel Sandbox](/docs/sandbox), so give `sandbox()` a Vercel access token and the team and project its Sandboxes belong to. The token stays on your server.
+
+### Where does `durable-harness` store sessions by default?
+
+It chooses the World the way the Workflow SDK does. On Vercel, sessions live in [Vercel Workflows](/docs/workflows) storage through `@workflow/world-vercel`. Anywhere else, they live in files in `WORKFLOW_LOCAL_DATA_DIR`, by default `.workflow-data`. Set `WORKFLOW_TARGET_WORLD` to choose a World yourself, such as `@workflow/world-postgres`. libfx chooses its own World and doesn't read `WORKFLOW_TARGET_WORLD`. See [How the World is chosen](#how-the-world-is-chosen).
+
+### Is the Postgres World ready for production?
+
+Read its documentation first. The Postgres World is a reference implementation: it doesn't authenticate its routes or encrypt its data, and it isn't tuned for scale. If you run it, restrict the queue route at your network edge, such as a reverse proxy or firewall, and give each app its own database and worker, because a server that starts resumes every open session it finds. See [Limitations](#limitations).
+
+### Can I run more than one server on the same database?
+
+Yes. Each server consumes the queue, and the World lets one server at a time drive a session. When a second server starts driving a session, the World refuses the first server's next write, so the first one stops. A process that makes no agents, such as a separate queue worker, calls `forwardQueue(world)` to send `durable-harness`'s queue to your app's queue route. See [Run more than one server](#run-more-than-one-server).
+
+### Can I use the Postgres World in Vercel Functions?
+
+No. The Postgres World runs its queue worker in a long-lived process, so it doesn't run in Vercel Functions. On Vercel, use Vercel's World, which keeps sessions in Vercel Workflows storage and delivers turns with [Vercel Queues](/docs/queues), with no database to manage. Use the Postgres World on servers you run yourself.
+
 ## More resources
 
 - [Workflow SDK Worlds](https://workflow-sdk.dev/worlds)
@@ -240,6 +263,18 @@ eve selects its World in `agent.ts`. See [Self-host eve](https://eve.dev/docs/gu
 - [`durable-harness` on GitHub](https://github.com/vercel-labs/durable-harness)
 - [`libfx` on npm](https://www.npmjs.com/package/libfx)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

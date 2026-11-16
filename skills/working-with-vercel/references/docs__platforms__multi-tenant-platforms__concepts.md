@@ -13,9 +13,10 @@ related:
   - /docs/domains/working-with-domains/add-a-domain
 summary: Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/concepts.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "34da5b2ea30460b22f0e3987686d9b1ab65f470b574b5fce250cdf5f0c6cec0f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a7e3b5b1bbefdb7ecd841800a1e78c43fd45126fdf0fe7269ea26e06b34aea68"
 ---
 
 # Multi-Tenant Platform Concepts
@@ -32,11 +33,10 @@ A tenant represents a customer, workspace, or organization within your multi-ten
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit)
 - [Multi-Tenant Template](https://vercel.com/docs/platforms/examples/multi-tenant-template) — Build SaaS applications that serve multiple domains from a single Next.js codebase.
 - [Proxy and Routing](https://vercel.com/docs/platforms/multi-tenant-platforms/proxy-and-routing) — Resolve tenants and route requests by subdomain, custom domain, or path using Next.js Proxy on Vercel.
-- [Multi-Project Platforms Concepts](https://vercel.com/docs/platforms/multi-project-platforms/concepts) — Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
 - [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
+- [Multi-Project Platforms Concepts](https://vercel.com/docs/platforms/multi-project-platforms/concepts) — Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
 - [Multi-Project Platforms Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
 
 Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/concepts.graph.md](/docs/platforms/multi-tenant-platforms/concepts.graph.md)
@@ -249,6 +249,18 @@ const tenantId = headersList.get('x-tenant-id');
 const tenantId = request.headers.get('x-tenant-id');
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

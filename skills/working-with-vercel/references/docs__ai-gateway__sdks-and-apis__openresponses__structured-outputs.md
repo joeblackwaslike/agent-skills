@@ -15,9 +15,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis/openresponses/advanced
 summary: Request schema-constrained JSON with OpenResponses through AI Gateway, and handle provider support and response validation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/structured-outputs.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "6303fc451f88bb263a1dd4ad8fd72bfdb8fe634373619f4994a95847a6a1b9f5"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "742b7be5c81aaac2c33e439acf8625142f4d4be2e042fa58057fadcfd32efd14"
 ---
 
 # OpenResponses Structured Outputs with AI Gateway
@@ -208,6 +209,18 @@ Set `additionalProperties` to `false` and list every property in `required` for 
 - [Tool calling](/docs/ai-gateway/sdks-and-apis/openresponses/tool-calling) - Let the model call your functions
 - [Advanced](/docs/ai-gateway/sdks-and-apis/openresponses/advanced) - Configure fallbacks and provider-specific settings
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

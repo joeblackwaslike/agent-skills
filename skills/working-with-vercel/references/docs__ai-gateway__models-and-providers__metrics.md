@@ -13,9 +13,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis/rest-api
 summary: Understand how AI Gateway measures throughput and latency per provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/metrics.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "d3f78b5b3936baf2ca095931f03638f1f1fd293342a286c039fd9baf44a35d17"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e6689e0008ff032e01ae4eae9a1bf923f2c4adfab93cba50ccf2e0de192f319a"
 ---
 
 # AI Gateway Provider Latency and Throughput Metrics
@@ -29,11 +30,11 @@ AI Gateway tracks **throughput** and **latency** for each model and provider, me
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Live model performance metrics accessible via AI Gateway](https://vercel.com/changelog/live-model-performance-metrics-accessible-via-ai-gateway)
-- [Open weight takes 71.5% of tokens and 23% of spend](https://vercel.com/blog/ai-gateway-production-index-october-2026)
-- [AI Gateway production index](https://vercel.com/blog/ai-gateway-production-index)
-- [Access and share AI Gateway leaderboard data](https://vercel.com/changelog/open-data-and-shareable-charts-for-ai-gateway-leaderboards)
 - [Sort providers by cost, latency, or throughput on AI Gateway](https://vercel.com/changelog/sort-providers-by-cost-latency-or-throughput-on-ai-gateway)
-- [Open-weight models surge to 29% of volume, price per token flattens](https://vercel.com/blog/ai-gateway-production-index-july-2026)
+- [Access and share AI Gateway leaderboard data](https://vercel.com/changelog/open-data-and-shareable-charts-for-ai-gateway-leaderboards)
+- [AI Gateway production index](https://vercel.com/blog/ai-gateway-production-index)
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, caching, SDK and API compati
+- [AI Gateway Leaderboards](https://vercel.com/docs/ai-gateway/leaderboards) — See which AI models, labs, apps, and providers are most used on AI Gateway, share a chart as an image, and download the
 - [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/metrics.graph.md](/docs/ai-gateway/models-and-providers/metrics.graph.md)
@@ -108,6 +109,18 @@ Throughput and latency are measured from requests that run directly through AI G
 
 These numbers reflect what AI Gateway observes when serving live traffic. They may differ from what providers report directly due to factors specific to AI Gateway, like account tiering, regions, or routing decisions.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

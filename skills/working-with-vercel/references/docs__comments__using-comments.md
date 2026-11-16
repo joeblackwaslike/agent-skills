@@ -12,9 +12,10 @@ related:
   - /docs/vercel-toolbar/in-production-and-localhost/add-to-production
 summary: This guide will help you get started with using Comments with your Vercel Preview Deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/comments/using-comments.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "4491da6a1f5b8d8f465dfdee30883ab2ba118f3f526dddcb1c1e76316bee9190"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "06b485726cc9c0c90b44125e42086d736cd797636c8b46361173cdbb31b94c7a"
 ---
 
 # Using Comments with Preview Deployments
@@ -35,10 +36,9 @@ You must be logged in to create a comment. You can press `c` to enable the comme
 - [Using Vercel comments to improve the Next.js 13 documentation](https://vercel.com/blog/using-vercel-comments-to-improve-the-next-js-13-documentation)
 - [Commenting on Previews is now in Public Beta](https://vercel.com/changelog/commenting-on-previews-is-now-in-public-beta)
 - [Comments on Preview Deployments are now generally available](https://vercel.com/changelog/comments-on-preview-deployments-are-now-generally-available)
-- [Emoji reactions now available in Preview Deployment comments ](https://vercel.com/changelog/emoji-reactions-now-available-in-preview-deployment-comments)
-- [Comments now available in Vercel's Slack integration](https://vercel.com/changelog/comments-now-available-in-vercels-slack-integration)
 - [Vercel Toolbar](https://vercel.com/docs/vercel-toolbar) — Learn how to use the Vercel Toolbar to leave feedback, navigate through important dashboard pages, share deployments, us
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Interaction Timing Tool](https://vercel.com/docs/vercel-toolbar/interaction-timing-tool) — The interaction timing tool allows you to inspect in detail each interaction's latency and get notified for interactions
 - [Layout Shift Tool](https://vercel.com/docs/vercel-toolbar/layout-shift-tool) — The layout shift tool gives you insight into any elements that may cause layout shifts on the page.
 
@@ -117,6 +117,18 @@ You can copy a link to a comment in two ways:
 - Select a comment in the **Inbox**. When you do, the URL will update with an anchor to the selected comment
 - Select the ellipses (three dots) icon to the right of the commenter's name, then select the **Copy Link** option in the menu that pops up
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

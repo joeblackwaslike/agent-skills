@@ -14,9 +14,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis/openresponses
 summary: Control how much a model thinks before answering with the OpenAI Responses API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/reasoning.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "30c11fd9c9d6d43ed526aeadbf2b2e0e06f421c5277cb714de9ed1619eefa490"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d82acee3b10c44d9fa02cb44accbe015be864b7252b16bf30aa52dac821d195f"
 ---
 
 # OpenAI Responses Reasoning with AI Gateway
@@ -105,6 +106,18 @@ OpenAI models can use [native Responses routing](/docs/ai-gateway/sdks-and-apis/
 
 To inspect reasoning, check returned usage and reasoning items where available. A successful answer or an echoed `reasoning.effort` value alone doesn't prove the provider applied that exact level.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

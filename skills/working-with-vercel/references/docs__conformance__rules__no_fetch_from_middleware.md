@@ -11,9 +11,10 @@ related:
   []
 summary: Requires that any fetch call that is depended on transitively by Next.js middleware be reviewed and approved before use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/no_fetch_from_middleware.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "411159f5e2902c546d351ca2c5885db112c85bed8d1b48bf6c8930338b2bfe68"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "39285d66eaa82b68515ed965da87e457271116190972f9c1f0c754769e4f66ec"
 ---
 
 # NO_FETCH_FROM_MIDDLEWARE
@@ -64,6 +65,18 @@ being called is globally distributed, then this asynchronous call may be okay.
 If not, then the code should try to remove the `fetch` statement to avoid
 making a request that would add latency to middleware.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

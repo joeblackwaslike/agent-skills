@@ -11,9 +11,10 @@ related:
   []
 summary: The end value of the Range header in the request is invalid. This is a request error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/range_end_not_valid.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "7fec472890dd78e538849a20218f78768748a5d7715ba189639ff85f6e28f31b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2ce1aa5e8c6a270b3206d224d29939a2c118ad412a7fca23ad6b2e449c7a30bb"
 ---
 
 # RANGE_END_NOT_VALID
@@ -34,6 +35,18 @@ To troubleshoot this error, follow these steps:
 4. **Check configuration:** If the `Range` header values are being set automatically by some part of your system, check the configuration to ensure it's being set correctly
 5. **Debugging:** If the error persists, log the `Range` header values in your server logs to debug and understand what values are being sent in requests
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

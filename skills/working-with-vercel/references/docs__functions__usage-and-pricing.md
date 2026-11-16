@@ -9,11 +9,16 @@ prerequisites:
   - /docs/functions
 related:
   - /docs/fluid-compute
+  - /docs/plans/hobby
+  - /docs/deployments
+  - /docs/plans/pro-plan
+  - /docs/plans/pro-plan/trials
 summary: Learn about usage and pricing for fluid compute on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/usage-and-pricing.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "48892aa0e994bd90a48152422047dc9e60cabd2f79d87151bf4846d04452c0fa"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c8cf427c002c8cc6e5cb64efc78e37042b861d1ca450bf271fa2e3bd44efcc55"
 ---
 
 # Fluid compute pricing
@@ -129,6 +134,43 @@ Suppose you deploy a function with 4 GB of memory in the São Paulo, Brazil regi
 - Memory: (4 GB × 10 seconds / 3600) × $0.0183 = $0.0002033
 - Total: $0.0002456 + $0.0002033 = $0.0004489 for each invocation.
 
+## What happens when a Hobby team exceeds its fluid compute allowance
+
+Exceeding the usage limits of your plan is one cause of a paused deployment. A paused production deployment stops serving traffic, and visitors see a `503 DEPLOYMENT_PAUSED` error. For the other causes and how to resolve each one, see [Why has my account or deployment been paused?](/kb/guide/why-is-my-account-deployment-blocked).
+
+In most cases, a Hobby team that exceeds its usage limits must wait until 30 days have passed before it can use fluid compute again, as described in [Hobby billing cycle](/docs/plans/hobby#hobby-billing-cycle). A paused Hobby team doesn't resume on its own when that period ends.
+
+When your [Hobby team](/docs/plans/hobby) is set to **paused**, it remains in this state indefinitely unless you take action. This means **all** new and existing [deployments](/docs/deployments) will be paused.
+
+> **💡 Note:** If you have reached this state, your application is likely a good candidate
+> for a [Pro account](/docs/plans/pro-plan).
+
+To unpause your account, you have two main options:
+
+- **Contact Support**: You can reach out to our [support team](/help) to discuss the reason for the pause and potential resolutions
+- **Transfer to a Pro team**:
+  If your Hobby team is paused, you won't have the option to initiate a [Pro trial](/docs/plans/pro-plan/trials). Instead, you can set up a Pro team:
+  1. [Create a Pro team account](/docs/accounts#creating-a-team)
+  2. Add a valid credit card to this account. Open **Settings** in the sidebar, then select [**Billing**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbilling\&title=Go+to+Billing) and **Payment Method**
+
+Once set up, a transfer modal will appear, prompting you to [transfer your previous Hobby projects](/docs/projects/transferring-projects) to this new team. After transferring, you can continue with your projects as usual.
+
+Pro doesn't include allowances for Active CPU, Provisioned Memory, or Invocations. Vercel bills them on demand, and your monthly Pro usage credit can offset those charges. To upgrade before your team is paused, see [Upgrading to Pro](/docs/plans/hobby#upgrading-to-pro).
+
+To check which allowance your team exceeded, compare Active CPU, Provisioned Memory, and Invocations on the [Usage page or with `vercel billing usage`](/docs/pricing/manage-and-optimize-usage#viewing-usage). To find the routes that drive Active CPU, see [Troubleshoot and optimize Active CPU usage on Fluid compute](/kb/guide/optimize-active-cpu-on-fluid-compute).
+
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

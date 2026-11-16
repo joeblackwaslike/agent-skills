@@ -16,9 +16,10 @@ related:
   - /docs/sandbox/pricing
 summary: Vercel pricing for the Cleveland, USA (cle1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/pricing/regional-pricing/cle1.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d0e6da362b041b805d3ecf7ac77e96e07a26b1e33c09787e767d1b53d6fb793b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "86bddfcdec5b15d51022345b4f08f19267a900179341ac401dae1099e38a4e8e"
 ---
 
 # Cleveland, USA (cle1) pricing
@@ -55,8 +56,8 @@ The **On-demand (Billing Cycle)** column shows the rate for each resource in thi
 | [CDN Requests](/docs/manage-cdn-usage#cdn-requests) | $2.00 per 1,000,000 Requests |
 | [ISR Writes](/docs/incremental-static-regeneration/limits-and-pricing#isr-writes-chart) | $4.00 per 1,000,000 Write Units |
 | [ISR Reads](/docs/incremental-static-regeneration/limits-and-pricing#isr-reads-chart) | $0.40 per 1,000,000 Read Units |
-| [Runtime Cache Writes](/docs/caching/runtime-cache#pricing) | $4.00 per 1,000,000 Write Units |
-| [Runtime Cache Reads](/docs/caching/runtime-cache#pricing) | $0.40 per 1,000,000 Read Units |
+| [Runtime Cache Writes](/docs/runtime-cache#pricing) | $4.00 per 1,000,000 Write Units |
+| [Runtime Cache Reads](/docs/runtime-cache#pricing) | $0.40 per 1,000,000 Read Units |
 | [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer) | $0.06 per 1 GB |
 | [Queue API Operations](/docs/queues/pricing) | $0.7488 per 1,000,000 Operations |
 | [CDN Requests - Additional CPU Duration](/docs/manage-cdn-usage#cdn-request-cpu-duration) | $0.30 per 1 Hour |
@@ -78,6 +79,18 @@ The **On-demand (Billing Cycle)** column shows the rate for each resource in thi
 
 Learn more about the different regions available on Vercel in the [regions](/docs/regions) documentation. See the [pricing](/docs/pricing#managed-infrastructure) documentation for more information on Managed Infrastructure.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

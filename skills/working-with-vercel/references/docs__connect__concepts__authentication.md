@@ -16,9 +16,10 @@ related:
   - /docs/environment-variables/system-environment-variables
 summary: "Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and Vercel Connect calling the..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/connect/concepts/authentication.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "1b6ce3b3904d1dab99518d2708e2e780952447570ab55b02628d26c8993830b9"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9ffdf8b60d0dc749347f45b23044754ea64e32ebd84e8f8a5e9335a005e6ca70"
 ---
 
 # Authentication in Vercel Connect
@@ -31,15 +32,11 @@ Vercel Connect sits between your code and a provider. Each token request has two
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
-- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
-- [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect)
-- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
 - [Quickstart](https://vercel.com/docs/connect/quickstart) — Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
-- [Connectors in Vercel Connect](https://vercel.com/docs/connect/concepts/connectors) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
 - [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
-- [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
-- [Chat SDK with Vercel Daemons](https://vercel.com/docs/chat-sdk/integrations/daemons) — Process Chat SDK jobs with Vercel Queues and Daemons, using Vercel Connect for Slack credentials and event delivery.
+- [Connectors in Vercel Connect](https://vercel.com/docs/connect/concepts/connectors) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
+- [Get a Connect token](https://vercel.com/docs/rest-api/connect/get-a-connect-token) — POST /v1/connect/token/{connector} — Get an access token for a connector identified by the path parameter and scoped to
+- [Better Auth with Vercel Connect](https://vercel.com/docs/connect/frameworks/better-auth) — Use Vercel Connect as a generic OAuth provider for Better Auth in a Next.js application.
 
 Full cross-link map for this page: [/docs/connect/concepts/authentication.graph.md](/docs/connect/concepts/authentication.graph.md)
 <!-- /docsgraph:related -->
@@ -174,6 +171,18 @@ The Python SDK raises `ConnectorInstallationRequiredError`, `UserAuthorizationRe
 - [TypeScript SDK Reference](/docs/connect/ts-sdk-reference): `ConnectOptions.vercelToken` and the error classes thrown on auth failures.
 - [Python SDK Reference](/docs/connect/python-sdk-reference): `ConnectOptions.vercel_token` and the exceptions raised on auth failures.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

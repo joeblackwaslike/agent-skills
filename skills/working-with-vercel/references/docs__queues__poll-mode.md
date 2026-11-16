@@ -15,9 +15,10 @@ related:
   - /docs/queues/python-sdk
 summary: Consume messages from Vercel Queues by polling on your own schedule, from any environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/queues/poll-mode.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "2f3476210168ab1dd26e78e877b9d105cba29519dda9725a44f6e8bc9c18144d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0cff74b98e706afad8a280166b05c27acea2f89ab46fb17e144cf3f2a97ceadb"
 ---
 
 # Poll Mode
@@ -36,11 +37,12 @@ In poll mode, your application polls for messages from a queue on its own schedu
 - [Migrate from Google Cloud Run to Vercel](https://vercel.com/kb/guide/migrate-cloud-run-to-vercel) — Move a Cloud Run service or worker to Vercel. Compare runtimes, preserve Google Cloud access, and plan jobs, validation,
 - [Migrate Railway workers to Vercel Daemons](https://vercel.com/kb/guide/migrate-railway-workers-to-vercel-daemons) — Move Railway workers to Vercel Daemons with Docker configuration, broker migration, shutdown testing, a gradual queue ha
 - [Process background jobs in Python with Vercel Queues](https://vercel.com/kb/guide/python-and-vercel-queues) — Move slow and failure-prone work out of your Python request handlers, with typed topics, consumer groups, and built-in r
-- [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta)
 - [Vercel Queues is now in Limited Beta](https://vercel.com/changelog/vercel-queues-is-now-in-limited-beta)
+- [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta)
+- [Vercel Python Queues SDK is now available in beta](https://vercel.com/changelog/vercel-python-queues-sdk-is-now-available-in-beta)
 - [Queues Observability](https://vercel.com/docs/queues/observability) — Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.
-- [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
 - [Chat SDK with Vercel Daemons](https://vercel.com/docs/chat-sdk/integrations/daemons) — Process Chat SDK jobs with Vercel Queues and Daemons, using Vercel Connect for Slack credentials and event delivery.
+- [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
 
 Full cross-link map for this page: [/docs/queues/poll-mode.graph.md](/docs/queues/poll-mode.graph.md)
 <!-- /docsgraph:related -->
@@ -244,6 +246,18 @@ Consumer groups are not scoped to a [service](/docs/services). A group is identi
 
 When consumers in different services poll the same topic, scope their consumer group names manually to prevent collisions across services.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

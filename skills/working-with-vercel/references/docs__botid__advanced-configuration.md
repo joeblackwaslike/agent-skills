@@ -11,9 +11,10 @@ related:
   []
 summary: Fine-grained control over BotID detection levels and backend domain configuration
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/botid/advanced-configuration.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "5bdb2c6757b082efeaa34e91153821e4ac4156992890d1945ecf73ed296e518e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "6df85b2d31c7fb05e5b149a503af6760e0ed372920d7d7780f435be3dfb1bff1"
 ---
 
 # Advanced BotID Configuration
@@ -30,11 +31,13 @@ When you need fine-grained control over BotID's detection levels, you can specif
 
 - [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\\(\\) so inference runs only for verified callers
 - [Deploying and testing BotID](https://vercel.com/kb/guide/deploying-and-testing-botid) — This guide gives an overview on Vercel BotID and how to deploy and test it in production
-- [Vercel BotID now leverages Vercel's verified bot directory](https://vercel.com/changelog/vercel-botid-now-leverages-vercels-verified-bot-directory)
-- [How to use Vercel’s Bot Management features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
-- [​Introducing BotID, invisible bot filtering for critical routes](https://vercel.com/blog/introducing-botid)
 - [Vercel BotID is now generally available](https://vercel.com/changelog/vercel-botid-is-now-generally-available)
+- [​Introducing BotID, invisible bot filtering for critical routes](https://vercel.com/blog/introducing-botid)
+- [Vercel BotID now leverages Vercel's verified bot directory](https://vercel.com/changelog/vercel-botid-now-leverages-vercels-verified-bot-directory)
 - [Vercel BotID now  available for all frameworks](https://vercel.com/changelog/botid-now-available-for-all-frameworks)
+- [How to use Vercel’s Bot Management features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
+- [Free Vercel BotID Deep Analysis through January 15](https://vercel.com/changelog/free-botid-deep-analysis)
+- [Vercel's bot verification now supports Web Bot Auth](https://vercel.com/changelog/vercels-bot-verification-now-supports-web-bot-auth)
 
 Full cross-link map for this page: [/docs/botid/advanced-configuration.graph.md](/docs/botid/advanced-configuration.graph.md)
 <!-- /docsgraph:related -->
@@ -167,6 +170,18 @@ export default async function handler(
 > **💡 Note:** Pages Router requires explicit headers in development. In production, headers
 > are extracted automatically.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

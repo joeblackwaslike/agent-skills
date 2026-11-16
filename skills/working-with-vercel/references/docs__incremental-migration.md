@@ -15,9 +15,10 @@ related:
   - /docs/routing-middleware
 summary: Learn how to migrate your app or website to Vercel with minimal risk and high impact.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/incremental-migration.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "e64d3ef45d4a1e56ba53c870b9fe3af980cac73b4a9e002a2bbddcaa3b38f2b9"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8a937225cf992301ac5abb521b9bc541cb54b3fb65dea49c37d8bb9b6d4660d2"
 ---
 
 # Incremental Migration to Vercel
@@ -31,17 +32,16 @@ When migrating to Vercel you should use an incremental migration strategy. This 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Why all application migrations should be incremental ](https://vercel.com/blog/incremental-migrations)
-- [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
-- [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
 - [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends) — Learn how to migrate legacy applications using microfrontends
-- [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
+- [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
 - [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify) — Migrate your website's configuration from Netlify to Vercel
-- [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing)
+- [Migrate from Fly.io to Vercel](https://vercel.com/kb/guide/migrate-fly-io-to-vercel) — Move an app from Fly.io to Vercel. Map configuration, choose Functions or Daemons, plan persistent storage, and verify t
+- [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
 - [Headless Salesforce: An incremental migration from monolith to composable](https://vercel.com/blog/salesforce-incremental-migration)
+- [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing)
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
-- [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends)
-- [Redirects](https://vercel.com/docs/routing/redirects) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
 - [Integrating Vercel and Kubernetes](https://vercel.com/docs/integrations/external-platforms/kubernetes) — Deploy your frontend on Vercel alongside your existing Kubernetes infrastructure.
+- [Redirects](https://vercel.com/docs/routing/redirects) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
 
 Full cross-link map for this page: [/docs/incremental-migration.graph.md](/docs/incremental-migration.graph.md)
 <!-- /docsgraph:related -->
@@ -326,6 +326,18 @@ Prevent the loss of indexed pages, links, and duplicate content when creating re
 - Account for existing redirects and rewrites on your legacy server, ensuring they are thoroughly tested during migration
 - Maintain the same routes for migrated feature(s) on Vercel
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

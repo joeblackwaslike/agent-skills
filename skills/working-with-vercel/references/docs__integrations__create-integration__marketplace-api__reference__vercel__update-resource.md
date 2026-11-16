@@ -3,7 +3,7 @@ title: update-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/update-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/update-resource"
-last_updated: 2026-11-09
+last_updated: 2026-11-16
 type: conceptual
 prerequisites:
   []
@@ -12,9 +12,10 @@ related:
   - /docs/integrations/create-integration/native-integration
 summary: Learn about update-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/update-resource.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "7688baaeff94afed85299a78f71b446c8025b2652feae685e91ac69f3b4cdcc2"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9b3226bb01636e373c31d1e15ed7e9cab6c90acc86069f59835d9718a59dcca6"
 ---
 
 # Update Resource
@@ -136,6 +137,18 @@ Success
 - [Marketplace API Reference](/docs/integrations/create-integration/marketplace-api/reference)
 - [Native Integration Concepts](/docs/integrations/create-integration/native-integration)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

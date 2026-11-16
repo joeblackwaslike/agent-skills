@@ -13,9 +13,10 @@ related:
   - /docs/conformance
 summary: "Learn how to set up Vercel's private registry for use locally, in Vercel, and in your CI."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/private-registry.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "828e6e28444090e9a046c9e36054173c9a50a216d45ac82af447b650d2897e15"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "31a2e003c52628cdd9a826b64e6c3150763ff5a745806dbb96b757c9d065b630"
 ---
 
 # Working with Vercel
@@ -285,6 +286,18 @@ jobs:
 
 By default, GitHub workflows are not required. To require the workflow in your repository, [create a branch protection rule on GitHub](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/managing-a-branch-protection-rule#creating-a-branch-protection-rule) to **Require status checks to pass before merging**.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

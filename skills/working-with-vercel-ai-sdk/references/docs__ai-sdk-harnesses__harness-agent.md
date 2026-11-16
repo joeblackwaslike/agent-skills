@@ -4,8 +4,8 @@ description: Create and run AI SDK HarnessAgent sessions.
 url: "https://ai-sdk.dev/docs/ai-sdk-harnesses/harness-agent"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/harness-agent.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "962502796e69979c2d54c77cd50eb38e7ab83f65ef02a87cce0d02498a18f5cb"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "5a36a05301208d4ea8545cfa1fd8bbf4a8ca5336f957ae2e42adf18e2fc9a93b"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -464,6 +464,10 @@ unfinished turn, call `continueStream()` or `continueGenerate()` before sending 
 new prompt. The Vercel resume function reattaches whether the sandbox is still
 running after `detach()` or stopped with a restorable snapshot. After
 `sandboxSession.destroy()` deletes it, that ID cannot be resumed.
+
+Treat resume state as a secret. For sandbox bridge adapters, it contains the
+private key that authorizes reconnecting to the running bridge. Store it on the
+server like a credential, and never send it to the browser or another client.
 
 ## Continue a Suspended Turn
 

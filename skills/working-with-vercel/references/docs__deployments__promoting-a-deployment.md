@@ -14,9 +14,10 @@ related:
   - /docs/cli/deploying-from-cli
 summary: Learn how to promote deployments to production on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployments/promoting-a-deployment.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "0daf81720d170437a19b1d8d9b7abf9825392980f7140e8db10e57ce430485ac"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "65be7a307e28a750e9333bd267bf45a9180023f9fe887ae420670b3a8ad133ee"
 ---
 
 # Promoting Deployments
@@ -34,12 +35,11 @@ By default, when you merge to or make commits to your production branch (often `
 - [How can I use the Vercel CLI for custom workflows?](https://vercel.com/kb/guide/using-vercel-cli-for-custom-workflows) — You can use the Vercel CLI to deploy any application, including custom git providers and restricted source code.
 - [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
 - [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues)
-- [New deployment promotion event](https://vercel.com/changelog/new-webhook-for-promotion-events)
 - [Promoting a preview deployment to production](https://vercel.com/docs/deployments/promote-preview-to-production) — Test a preview deployment and promote it to production using the CLI.
 - [vercel promote](https://vercel.com/docs/cli/promote) — Learn how to promote an existing deployment using the vercel promote CLI command.
-- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Rolling back a production deployment](https://vercel.com/docs/deployments/rollback-production-deployment) — Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
-- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Performing a rolling release deployment](https://vercel.com/docs/rolling-releases/rolling-release-deployment) — Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
 
 Full cross-link map for this page: [/docs/deployments/promoting-a-deployment.graph.md](/docs/deployments/promoting-a-deployment.graph.md)
 <!-- /docsgraph:related -->
@@ -108,6 +108,18 @@ Your production deployments could be in one of three states:
 
 Promoting or rolling back reassigns your production domains in a background job, and only one such job runs per project at a time. A new promotion supersedes one that is still in progress, a new rollback is rejected until the current job finishes, and a job that has not finished within 3 minutes is treated as stale. For details and how to check for an in-progress job through the API, see [Rollbacks and promotions run one at a time](/docs/instant-rollback#rollbacks-and-promotions-run-one-at-a-time).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

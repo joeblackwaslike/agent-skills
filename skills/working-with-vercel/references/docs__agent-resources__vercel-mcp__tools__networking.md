@@ -12,9 +12,10 @@ related:
   []
 summary: Vercel MCP tools for networking.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f49e93986fc2b88a6de771a0b4e4acca2d9854ff3fbcdabfe2d63d981f5bff1b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8834b7c0c7e200ce91d76e280db44c10f220998e5eb2dd95e28ccea3db162a85"
 ---
 
 # Networking
@@ -28,10 +29,10 @@ List and inspect connectors for your team. Read or update connector settings and
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [List connectors for a project](https://vercel.com/docs/rest-api/connect/list-connectors-for-a-project) — GET /v2/connect/projects/{projectId}/connectors — List the connectors connected to a project and the environments where
-- [Get a connector project connection](https://vercel.com/docs/rest-api/connect/get-a-connector-project-connection) — GET /v1/connect/connectors/{connector}/projects/{projectId} — Get the configuration that connects a connector to a proje
 - [List projects for a connector](https://vercel.com/docs/rest-api/connect/list-projects-for-a-connector) — GET /v2/connect/connectors/{connector}/projects — List the projects connected to a connector and the environments where
-- [Connectors in Vercel Connect](https://vercel.com/docs/connect/concepts/connectors) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
+- [Get a connector project connection](https://vercel.com/docs/rest-api/connect/get-a-connector-project-connection) — GET /v1/connect/connectors/{connector}/projects/{projectId} — Get the configuration that connects a connector to a proje
 - [Create or update a connector project connection](https://vercel.com/docs/rest-api/connect/create-or-update-a-connector-project-connection) — POST /v1/connect/connectors/{connector}/projects/{projectId} — Connect a connector to a project, or replace the environm
+- [Disconnect a connector from a project](https://vercel.com/docs/rest-api/connect/disconnect-a-connector-from-a-project) — DELETE /v1/connect/connectors/{connector}/projects/{projectId} — Disconnect a connector from a project.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/networking.graph.md](/docs/agent-resources/vercel-mcp/tools/networking.graph.md)
 <!-- /docsgraph:related -->
@@ -134,6 +135,18 @@ Connect a connector to a project, or replace the environments on an existing pro
 | `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId.                                     |
 | `requestBody` | object | Yes      | Environments enabled for a connector project connection.                                        |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

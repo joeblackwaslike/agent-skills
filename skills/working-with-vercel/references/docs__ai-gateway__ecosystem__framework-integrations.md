@@ -16,9 +16,10 @@ related:
   - /docs/ai-sdk
 summary: Connect Flue, LangChain, LiteLLM, LlamaIndex, Mastra, Pydantic AI, TanStack AI, and other frameworks to Vercel AI Gateway with native adapters, the...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "53cf148ee246d5a2f2b016fbcbee3b649db1e80b3f32d483d7fdad92781323e3"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e4b93992e8102206b52e0d4106f5e527423f834670efe3774da3c706f6c98808"
 ---
 
 # AI Gateway Framework Integrations
@@ -34,10 +35,10 @@ using the Gateway's features like [cost tracking](/docs/ai-gateway/observability
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Build with AI on Vercel](https://vercel.com/docs/agent-resources/integrations-for-models) — Integrate powerful AI services and models seamlessly into your Vercel projects.
-- [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
 - [Vercel & OpenAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/openai) — Integrate your Vercel project with OpenAI's powerful suite of models.
+- [Vercel Integrations](https://vercel.com/docs/integrations) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
+- [Go with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/go) — Use AI Gateway from any Go application with the OpenAI or Anthropic Go SDKs, including model fallbacks, cost tracking, a
 - [Frameworks and Adapters for Vercel Connect](https://vercel.com/docs/connect/frameworks) — Use Vercel Connect with AI SDK, TanStack AI, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.
-- [Chat SDK Integrations](https://vercel.com/docs/chat-sdk/integrations) — Extend a Chat SDK bot with AI Gateway, Vercel Connect, Vercel Passport, Vercel Sandbox, Vercel Workflows, and Vercel Dae
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integrations.graph.md](/docs/ai-gateway/ecosystem/framework-integrations.graph.md)
 <!-- /docsgraph:related -->
@@ -65,6 +66,18 @@ The following below list is a non-exhaustive list of frameworks that currently s
 - [WordPress](/docs/ai-gateway/ecosystem/framework-integrations/wordpress)
 - [Xcode](/docs/ai-gateway/ecosystem/framework-integrations/xcode)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -13,9 +13,10 @@ related:
   - /docs/ai-gateway/authentication-and-byok
 summary: Learn how to integrate Vercel AI Gateway with LangChain to access multiple AI models through a unified interface.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langchain.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "acb99089301cd8bd1365652b0040cec3e95cb89ef72fa407e7dfcbff0235ebf3"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "28aa5a2cdce77b024cda33f87a1fd2e6cf49c795e1b34280ab5f15797fc48f98"
 ---
 
 # LangChain with AI Gateway
@@ -31,12 +32,11 @@ with LangChain to access various AI models and providers.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Deploying Chained OpenAI LLM Calls to Vercel with the Inngest SDK](https://vercel.com/kb/guide/chained-openai-llm-calls-vercel-inngest) — Discover how to deploy chained OpenAI LLMs \\(GPT-4\\) to Vercel using Inngest SDK for improved conversational AI, multi-t
 - [LangChain](https://vercel.com/docs/sandbox/ecosystem/langchain) — Give a LangChain agent a tool that executes model-generated code in an isolated Vercel Sandbox, with models served by AI
 - [Langfuse with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langfuse) — Trace and monitor AI Gateway requests with Langfuse. Configure an OpenAI client and wrap it with observeOpenAI to log mo
-- [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
 - [LiteLLM with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/litellm) — Learn how to integrate Vercel AI Gateway with LiteLLM to access multiple AI models through a unified interface.
-- [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
+- [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integrations/langchain.graph.md](/docs/ai-gateway/ecosystem/framework-integrations/langchain.graph.md)
 <!-- /docsgraph:related -->
@@ -141,6 +141,18 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
   ```
   You should see a response from the AI model in your console.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -12,9 +12,10 @@ related:
   []
 summary: Vercel MCP tools for caching.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "05c737ee0eb602ec0715e97edab45b47f08f4d357fcbf1cbed499bd1e41c0b23"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "bdb759de6bb721b2a91bad50b262312c94f1723345426c9bd4cb6e21cbcac0da"
 ---
 
 # Caching
@@ -27,11 +28,11 @@ Manage cached build artifacts and check Remote Caching status for your account o
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Upload a cache artifact](https://vercel.com/docs/rest-api/artifacts/upload-a-cache-artifact) — PUT /v8/artifacts/{hash} — Uploads a cache artifact identified by the \\`hash\\` specified on the path. The cache artifact
 - [Download a cache artifact](https://vercel.com/docs/rest-api/artifacts/download-a-cache-artifact) — GET /v8/artifacts/{hash} — Downloads a cache artifact indentified by its \\`hash\\` specified on the request path. The art
 - [Check if a cache artifact exists](https://vercel.com/docs/rest-api/artifacts/check-if-a-cache-artifact-exists) — HEAD /v8/artifacts/{hash} — Check that a cache artifact with the given \\`hash\\` exists. This request returns response he
-- [Record an artifacts cache usage event](https://vercel.com/docs/rest-api/artifacts/record-an-artifacts-cache-usage-event) — POST /v8/artifacts/events — Records an artifacts cache usage event. The body of this request is an array of cache usage
-- [Remote Caching](https://vercel.com/docs/monorepos/remote-caching) — Vercel Remote Cache allows you to share build outputs and artifacts across distributed teams.
+- [Upload a cache artifact](https://vercel.com/docs/rest-api/artifacts/upload-a-cache-artifact) — PUT /v8/artifacts/{hash} — Uploads a cache artifact identified by the \\`hash\\` specified on the path. The cache artifact
+- [Delete all cache artifacts](https://vercel.com/docs/rest-api/artifacts/delete-all-cache-artifacts) — DELETE /v8/artifacts — Deletes all cache artifacts stored for the authenticated team or user, clearing the Remote Cache.
+- [Get status of Remote Caching for this principal](https://vercel.com/docs/rest-api/artifacts/get-status-of-remote-caching-for-this-principal) — GET /v8/artifacts/status — Check the status of Remote Caching for this principal. Returns a JSON-encoded status indicati
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/caching.graph.md](/docs/agent-resources/vercel-mcp/tools/caching.graph.md)
 <!-- /docsgraph:related -->
@@ -119,6 +120,18 @@ Upload a cache artifact.
 | `slug`                       | string  | No       | Team slug to use for this operation. Use instead of teamId.                                                                                |
 | `requestBody`                | string  | Yes      | Provide this binary value as a base64 string.                                                                                              |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

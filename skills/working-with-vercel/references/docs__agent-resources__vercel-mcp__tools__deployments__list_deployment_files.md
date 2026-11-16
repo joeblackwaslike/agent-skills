@@ -12,9 +12,10 @@ related:
   []
 summary: Use list_deployment_files with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_files.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b97d4b421ffdfbe4b34075d921186260ba4bd4ad1a27e2c2d50bf182c17e401b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5074662f9a2a43e74dd0d19e565ebd6288b7be917835ef1411f1f48ecdc8960b"
 ---
 
 # list_deployment_files
@@ -28,9 +29,9 @@ List Deployment Files.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [List Deployment Files](https://vercel.com/docs/rest-api/deployments/list-deployment-files) — GET /v6/deployments/{id}/files — Allows to retrieve the file structure of the source code of a deployment by supplying t
-- [list_deployment_aliases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_deployment_aliases) — Use list_deployment_aliases with Vercel MCP.
 - [get_deployment_file_contents](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_file_contents) — Use get_deployment_file_contents with Vercel MCP.
-- [get_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment) — Use get_deployment with Vercel MCP.
+- [list_deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployments) — Use list_deployments with Vercel MCP.
+- [list_deployment_aliases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_deployment_aliases) — Use list_deployment_aliases with Vercel MCP.
 - [list_deployment_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_events) — Use list_deployment_events with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_files.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_files.graph.md)
@@ -44,6 +45,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deplo
 | `teamId`  | string | No       | Team ID to use for this operation.                          |
 | `slug`    | string | No       | Team slug to use for this operation. Use instead of teamId. |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

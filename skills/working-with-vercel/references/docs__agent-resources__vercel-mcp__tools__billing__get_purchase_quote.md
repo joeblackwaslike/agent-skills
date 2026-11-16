@@ -13,9 +13,10 @@ related:
   - /docs/agent-resources/vercel-mcp/tools/billing/get_domain_order
 summary: Use get_purchase_quote with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing/get_purchase_quote.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5f722b7802ac0cb5d344fe6cd63f1cc196e00e144f0f3ba3ebd500ad9481672c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "54cb29b4573546d460034f183a1d3d87c7bb259295ffa1e7204f7a5e222c6e23"
 ---
 
 # get_purchase_quote
@@ -31,8 +32,8 @@ Get a read-only domain registration quote for the selected team. Checks availabi
 - [get_domain_price](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_price) — Use get_domain_price with Vercel MCP.
 - [buy_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/buy_domains) — Use buy_domains with Vercel MCP.
 - [buy_single_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/buy_single_domain) — Use buy_single_domain with Vercel MCP.
-- [get_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain) — Use get_domain with Vercel MCP.
 - [Domains and DNS](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains) — Vercel MCP tools for domains and dns.
+- [vercel buy](https://vercel.com/docs/cli/buy) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/billing/get_purchase_quote.graph.md](/docs/agent-resources/vercel-mcp/tools/billing/get_purchase_quote.graph.md)
 <!-- /docsgraph:related -->
@@ -56,6 +57,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/billi
 
 This workflow quotes and purchases domains only. MCP does not quote or purchase credits, subscriptions, or add-ons.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

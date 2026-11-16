@@ -15,9 +15,10 @@ related:
   - /docs/cli/deploy
 summary: Learn how to apply custom domain aliases to your Vercel deployments using the vercel alias CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/alias.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "eefd2483b4b337909d056069333ddbaa3681ce50bcf922f884a0ca931e975835"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "991596a7f7ebac1dc89809d7d707068ff838156bac3140b49ea9c4f0f8ce0c64"
 ---
 
 # vercel alias
@@ -32,10 +33,10 @@ The `vercel alias` command allows you to apply [custom domains](/docs/domains/wo
 
 - [Microfrontends routing now applies to vc alias and branch domains](https://vercel.com/changelog/microfrontends-routing-now-applies-to-vc-alias-and-branch-domains)
 - [Assign an Alias](https://vercel.com/docs/rest-api/aliases/assign-an-alias) — POST /v2/deployments/{id}/aliases — Creates a new alias for the deployment resolved from the given deployment or alias I
-- [Deploying & Redirecting Domains](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting) — Learn how to deploy your domains and set up domain redirects with this guide.
-- [List Deployment Aliases](https://vercel.com/docs/rest-api/aliases/list-deployment-aliases) — GET /v2/deployments/{id}/aliases — Retrieves all Aliases for the Deployment with the given ID. The authenticated user or
 - [Get an Alias](https://vercel.com/docs/rest-api/aliases/get-an-alias) — GET /v4/aliases/{idOrAlias} — Retrieves an Alias for the given host name or alias ID.
+- [List Deployment Aliases](https://vercel.com/docs/rest-api/aliases/list-deployment-aliases) — GET /v2/deployments/{id}/aliases — Retrieves all Aliases for the Deployment with the given ID. The authenticated user or
 - [List aliases](https://vercel.com/docs/rest-api/aliases/list-aliases) — GET /v4/aliases — Retrieves a list of aliases for the authenticated User or Team. When \\`domain\\` is provided, only alia
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 
 Full cross-link map for this page: [/docs/cli/alias.graph.md](/docs/cli/alias.graph.md)
 <!-- /docsgraph:related -->
@@ -162,6 +163,18 @@ Review the confirmation prompt. Removing an alias stops that hostname from servi
 
 If a custom domain belongs to an account you can't access, follow [claiming domain ownership](/docs/domains/working-with-domains/claim-domain-ownership). You can't claim another team's `vercel.app` alias through DNS verification. Choose another alias or [contact support](/help) if a conflict persists after removal or account deletion.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -12,9 +12,10 @@ related:
   - /docs/environment-variables
 summary: Learn how to use Redis stores through the Vercel Marketplace.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/redis.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "365b751a80bcc383f999371fb701a83d8f44b3c74261e0ae39a4df12f7e0c449"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3414873c09c741f9cc040deb09965fbdcc782feede56fa3840e4eff3bcdb7969"
 ---
 
 # Redis on Vercel
@@ -34,6 +35,18 @@ Vercel enables you to use Redis by integrating with external database providers.
 - Provision and configure a Redis database with minimal setup.
 - Have credentials and [environment variables](/docs/environment-variables) injected into your Vercel project.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

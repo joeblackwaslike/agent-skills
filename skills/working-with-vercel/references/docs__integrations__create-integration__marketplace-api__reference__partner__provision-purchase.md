@@ -3,7 +3,7 @@ title: provision-purchase
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/provision-purchase
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/provision-purchase"
-last_updated: 2026-11-09
+last_updated: 2026-11-16
 type: conceptual
 prerequisites:
   []
@@ -13,9 +13,10 @@ related:
   - /docs/integrations/create-integration/native-integration
 summary: Learn about provision-purchase on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/provision-purchase.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "d81caa58b5c1edb737640ef4767fa27594e51589accec4a49d760d2a077f3f46"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "084158add35864c3f14aedf90fa6c701dc426809a5660b08ed4fa870694b131e"
 ---
 
 # Provision Purchase
@@ -312,6 +313,18 @@ Operation is well-formed, but cannot be executed due to semantic errors
 - [Marketplace API Reference](/docs/integrations/create-integration/marketplace-api/reference)
 - [Native Integration Concepts](/docs/integrations/create-integration/native-integration)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

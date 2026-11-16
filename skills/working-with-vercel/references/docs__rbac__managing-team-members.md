@@ -13,9 +13,10 @@ related:
   - /docs/plans/pro-plan/trials
 summary: Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control (RBAC).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/rbac/managing-team-members.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "5f1bebdb44c63c5fa8903a5616287e852d265ea5ebd5a819dbdf3518452fafa3"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "237391ae90a6a6ad4f8c10c36f009e6f1e242a66421a575f5e6f464048d74717"
 ---
 
 # Managing Team Members
@@ -29,10 +30,10 @@ As the team owner, you have the ability to manage your team's composition and th
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Set per-user budgets on AI Gateway](https://vercel.com/changelog/set-per-user-budgets-on-ai-gateway)
-- [Team Level Roles](https://vercel.com/docs/rbac/access-roles/team-level-roles) — Learn about the different team level roles and the permissions they provide.
 - [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
 - [Access Groups](https://vercel.com/docs/rbac/access-groups) — Learn how to configure access groups for team members on a Vercel account.
-- [Directory Sync \\(SCIM\\)](https://vercel.com/docs/directory-sync) — Learn how to configure Directory Sync for your Vercel Team.
+- [Team Level Roles](https://vercel.com/docs/rbac/access-roles/team-level-roles) — Learn about the different team level roles and the permissions they provide.
+- [Extended permissions](https://vercel.com/docs/rbac/access-roles/extended-permissions) — Learn about extended permissions in Vercel's RBAC system. Understand how to combine roles and permissions for precise ac
 - [Project Level Roles](https://vercel.com/docs/rbac/access-roles/project-level-roles) — Learn about the project level roles and their permissions.
 
 Full cross-link map for this page: [/docs/rbac/managing-team-members.graph.md](/docs/rbac/managing-team-members.graph.md)
@@ -119,6 +120,18 @@ Team owners can delete members from a team. You can also remove yourself from a 
 
 Vercel is also [SCIM](# "System for Cross-domain Identity Management") compliant. This means that if you are using SAML SSO, de-provisioning from the third-party provider will also remove the member from Vercel.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

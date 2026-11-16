@@ -15,9 +15,10 @@ related:
   - /docs/query
 summary: "Learn how Vercel's Skew Protection ensures that the client and server stay in sync for any particular deployment."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/skew-protection.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "7bf90862ab7737efeb0ae7ff6dd2073c904aa1a19a809e25df907dd9684c01a8"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "cb07e0e45a262e59926dc34448cd63e582aa4bb4a7fd4857e1ecfabe0725acfc"
 ---
 
 # Skew Protection
@@ -64,9 +65,16 @@ When Skew Protection is enabled with a [supported framework](#supported-framewor
 - **Client-side navigations**: Route transition data fetches and Server Actions
 - **Prefetches**: Route and data prefetch requests triggered by the framework
 
-The framework attaches the deployment ID as a `?dpl=` query parameter or `x-deployment-id` header, ensuring these requests resolve to the same deployment that served the initial page. The framework doesn't automatically pin custom `fetch()` calls you make from client components. To pin those, pass the deployment ID yourself using the methods described in [supported frameworks](#supported-frameworks).
+Vercel routes these requests to the deployment that served the initial page. How the deployment ID travels depends on the framework:
 
-Frameworks that use a `__vdpl` cookie instead, such as [React Router](#skew-protection-with-react-router), also pin custom `fetch()` calls, because your browser sends the cookie with every request to the same domain.
+| Framework | How the deployment ID travels | What Vercel pins |
+| --- | --- | --- |
+| Next.js, Astro | The framework adds a `?dpl=` query parameter or an `x-deployment-id` header to the requests that it makes from the browser | Framework-managed requests |
+| SvelteKit, Nuxt, Qwik, React Router | Your browser sends a `__vdpl` cookie with every request to the same domain | Framework-managed requests and your custom `fetch()` calls |
+
+With Next.js and Astro, every other request carries no deployment ID, so the latest deployment serves it. See [Pinning requests without a deployment ID](#pinning-requests-without-a-deployment-id).
+
+All tabs of a browser share one `__vdpl` cookie. When another tab loads a page on a newer deployment, requests that rely on the cookie route to that deployment in every tab.
 
 ### Document navigations
 
@@ -74,7 +82,7 @@ Frameworks that use a `__vdpl` cookie instead, such as [React Router](#skew-prot
 
 For most applications, this is the ideal behavior. Users get the latest version on their next full-page navigation while their current page stays stable.
 
-However, some applications have long-running sessions that must stay on one deployment. See [Extending Skew Protection for long-lived sessions](#extending-skew-protection-for-long-lived-sessions) for how to pin every request from an open page.
+However, some applications have long-running sessions that must stay on one deployment. See [Pinning requests without a deployment ID](#pinning-requests-without-a-deployment-id) for how to pin every request from an open page.
 
 ## Enable Skew Protection
 
@@ -253,7 +261,7 @@ and then appending the value of `VERCEL_DEPLOYMENT_ID` to each request using **o
       req.headers['sec-fetch-dest'] === 'document'
     ) {
       res.setHeader('Set-Cookie', [
-        `__vdpl=${process.env.VERCEL_DEPLOYMENT_ID}; HttpOnly`,
+        `__vdpl=${process.env.VERCEL_DEPLOYMENT_ID}; Path=/; SameSite=Strict; Secure; HttpOnly`,
       ]);
     }
     res.end('<h1>Hello World</h1>');
@@ -330,17 +338,20 @@ If you are using [React Router as a framework](/docs/frameworks/frontend/react-r
 
 Each time Vercel serves a page, it sets a `__vdpl` cookie with the ID of the deployment that served the page. Your browser sends the cookie with every later request to the same domain, so assets, data requests, and your custom `fetch()` calls all resolve to that deployment. As with other frameworks, a [full-page navigation](#document-navigations) loads the latest deployment.
 
-## Extending Skew Protection for long-lived sessions
+## Pinning requests without a deployment ID
 
-The default Skew Protection behavior works well for most applications. However, some applications have long-running client sessions that must stay on one deployment. For these, you can use the `__vdpl` cookie to pin every request the page makes to a specific deployment. This includes client-side navigations and your custom `fetch()` calls.
+Frameworks that use the `__vdpl` cookie pin every request the page makes. Next.js and Astro add the deployment ID only to the requests that the framework makes from the browser. The latest deployment serves the others:
 
-When Vercel receives a request with the `__vdpl` cookie set, it routes that request to the deployment ID stored in the cookie. The requests of an open page then stay on that deployment after a new deployment goes live. A [full-page navigation](#document-navigations), such as a hard refresh, is the exception: it loads the latest deployment even with the cookie set.
+- **Custom `fetch()` calls**: Requests that your own client code sends
+- **Server-side requests to your own domain**: For example, when a Next.js Server Action calls `redirect()`, Next.js fetches the destination page on the server
 
-Common use cases include:
+After a new deployment, these requests reach a newer version than the open page. In the redirect example, the browser receives a page from the newer deployment. Next.js 16.2 and later then load the destination with a full-page navigation on the latest deployment. Earlier versions render the newer deployment's page inside the open page, which can fail when the two versions differ.
 
-- **Live assessments and exams**: Test-taking platforms where a reload could cause lost progress or disqualification
-- **Real-time audio or video**: Voice AI, telehealth, or streaming applications where a reload breaks the active connection
-- **Multi-step workflows**: Long checkout flows, form wizards, or document editors with unsaved state
+For most applications, this is acceptable. Some sessions must stay on one deployment, such as a live exam, a call, or a multi-step checkout. For these, set the `__vdpl` cookie. It covers every request from the page, including the Server Action redirect.
+
+When Vercel receives a request with the `__vdpl` cookie set, it routes that request to the deployment ID stored in the cookie. Your browser sends the cookie with every request to the same domain, and Next.js forwards it when a Server Action redirects. The requests of an open page then stay on that deployment after a new deployment goes live. A [full-page navigation](#document-navigations), such as a hard refresh, is the exception: it loads the latest deployment even with the cookie set.
+
+To pin a single custom `fetch()` call without the cookie, add the deployment ID to that request yourself, in one of the formats listed in [Supported frameworks](#supported-frameworks).
 
 ### Setting the cookie in Routing Middleware
 
@@ -436,6 +447,18 @@ Deployments that have been deleted either manually or automatically using a [ret
 - [Version Skew Protection blog](/blog/version-skew-protection)
 - [Version Skew](https://www.industrialempathy.com/posts/version-skew/)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

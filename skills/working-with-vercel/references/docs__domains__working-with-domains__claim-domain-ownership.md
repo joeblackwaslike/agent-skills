@@ -10,11 +10,16 @@ prerequisites:
   - /docs/domains
 related:
   - /docs/domains/working-with-domains/transfer-your-domain
+  - /docs/domains/managing-nameservers
+  - /docs/domains/managing-dns-records
+  - /docs/domains/working-with-domains/add-a-domain
+  - /docs/domains/working-with-ssl
 summary: Learn how to claim ownership of a domain that is registered with another Vercel account by verifying DNS ownership.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains/working-with-domains/claim-domain-ownership.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "cc3afc2db2f167c4423698b2a7d68ebb2fc14e68a620ef1232e4231f048876dd"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "587cf16dad8d18883126873e04155e42d08d28dace7604e7f2dfe863c0393303"
 ---
 
 # Claiming Domain Ownership
@@ -29,9 +34,9 @@ If a domain is registered with another Vercel account and you need to take owner
 
 - [Claim Domain Ownership](https://vercel.com/docs/rest-api/domains/claim-domain-ownership) — POST /v9/domains/{domain}/claim — Claim ownership of a domain for the authenticated team by verifying a TXT record. The
 - [Get Domain Verification Record](https://vercel.com/docs/rest-api/domains/get-domain-verification-record) — GET /v9/domains/{domain}/verification — Get the TXT verification record needed to claim ownership of a domain for the au
-- [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 - [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
 - [get_domain_verification_record](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_verification_record) — Use get_domain_verification_record with Vercel MCP.
+- [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
 
 Full cross-link map for this page: [/docs/domains/working-with-domains/claim-domain-ownership.graph.md](/docs/domains/working-with-domains/claim-domain-ownership.graph.md)
 <!-- /docsgraph:related -->
@@ -55,6 +60,14 @@ Use this flow when:
 You must control the root domain's DNS to add the verification TXT record. If someone else controls it, ask that owner to add the record.
 
 If you bought the domain through Vercel, it uses Vercel's nameservers, and you can't access the owning account, you can't add the TXT record needed to claim it. Use [Account Recovery](/accountrecovery) to regain access first.
+
+## Third-party registrar with an inaccessible Vercel account
+
+If the domain is registered with a third-party registrar and uses Vercel's nameservers under an account you can't access, you can't add the TXT record through Vercel DNS either. Instead, change the domain's nameservers from your registrar's dashboard to a DNS provider you control. [Managing Nameservers](/docs/domains/managing-nameservers) covers this change, which can take up to 48 hours to propagate.
+
+Vercel DNS records only apply while a domain uses Vercel's nameservers, so the records in the other account's Vercel DNS stop applying once the nameservers change. For details, see [Managing DNS Records](/docs/domains/managing-dns-records). Before you change the nameservers, add the records you still need at the new DNS provider. These include the `A` or `CNAME` records your project needs, listed in [Adding & Configuring a Custom Domain](/docs/domains/working-with-domains/add-a-domain), and any custom records such as mail records. Then add the `_vercel` TXT record at the new provider and follow the steps in [Claim a domain](#claim-a-domain).
+
+Vercel issues wildcard certificates with the DNS-01 challenge. If your project uses a wildcard domain, delegate certificate validation to Vercel at the new DNS provider, as described in [Working with SSL Certificates](/docs/domains/working-with-ssl).
 
 ## When verification is required again
 
@@ -111,6 +124,18 @@ You can verify your TXT record has propagated using a DNS lookup tool or by runn
 dig TXT _vercel.example.com
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

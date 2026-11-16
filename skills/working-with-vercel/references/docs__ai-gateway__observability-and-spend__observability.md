@@ -12,9 +12,10 @@ related:
   - /docs/ai-gateway/observability-and-spend/logs
 summary: Monitor AI Gateway requests in the Vercel dashboard. Inspect token usage, latency, spend, and logs at team, project, and API key scopes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/observability.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "a311a1d88bbd52dc039204e7311ca1e5fe979630a1160e5e5463adb90a68e244"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d7253824baa74683b4f9cc76fd6961531b02c438defaab305474fc4501f22048"
 ---
 
 # AI Gateway Observability
@@ -31,13 +32,13 @@ The AI Gateway logs spend, model usage, and observability metrics related to you
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [Cost-aware model routing with Vercel AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Send easy requests to a lower-cost model and escalate only the complex ones to a frontier model through AI Gateway, with
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway)
-- [AI Gateway logs now have a dedicated page](https://vercel.com/changelog/ai-gateway-logs)
 - [AI Gateway now supports team and project spend budgets](https://vercel.com/changelog/ai-gateway-spend-budgets-and-alerts)
-- [Chatbox with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/chatbox) — Connect Chatbox to AI Gateway. Configure your API key, endpoint, and models to use multiple AI providers and monitor cha
-- [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
+- [AI Gateway logs now have a dedicated page](https://vercel.com/changelog/ai-gateway-logs)
 - [Aider with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/aider) — Connect Aider to AI Gateway with the Vercel CLI or an OpenAI-compatible base URL, API key, and model metadata.
+- [Agent Checklist for Launch](https://vercel.com/docs/agent-checklist) — Prepare an eve, Mastra, or Flue agent for launch on Vercel. Check who can call the agent, what its tools can change, how
 - [AI Gateway Framework Integrations](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations) — Connect Flue, LangChain, LiteLLM, LlamaIndex, Mastra, Pydantic AI, TanStack AI, and other frameworks to Vercel AI Gatewa
 - [Flue with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/flue) — Route Flue agent requests through Vercel AI Gateway with the built-in provider, using an API key or Vercel OIDC authenti
+- [Flue with Vercel](https://vercel.com/docs/frameworks/agents/flue) — Create a Flue agent that uses Vercel AI Gateway for model requests, then add Vercel Sandbox for isolated code execution.
 
 Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/observability.graph.md](/docs/ai-gateway/observability-and-spend/observability.graph.md)
 <!-- /docsgraph:related -->
@@ -107,6 +108,18 @@ To view metrics for a specific project, you can access the project scope in two 
 
 Once in project scope, you'll see the same metrics filtered to show only the activity for that specific project.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

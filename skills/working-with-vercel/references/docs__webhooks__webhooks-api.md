@@ -15,9 +15,10 @@ related:
   - /docs/cli/promote
 summary: Vercel Integrations allow you to subscribe to certain trigger-based events through webhooks. Learn about the supported webhook events and how to use...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/webhooks/webhooks-api.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "5475ea458eddfab416eed3b3ec151ce33334d4a648ff9199d5811314594d404d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f93beb32bd1c34b5c4d8286d0f93e83664ce5d7baae3c3582e2ce89341e4ab67"
 ---
 
 # Webhooks API Reference
@@ -33,11 +34,12 @@ Vercel Integrations allow you to subscribe to certain trigger-based events throu
 - [New webhook events for domain management](https://vercel.com/changelog/new-webhook-events-for-domain-management)
 - [Subscribe to webhook events for Vercel Flags](https://vercel.com/changelog/subscribe-to-webhook-events-for-vercel-flags)
 - [The Complete Guide to Bring Your Own Cloud](https://vercel.com/kb/guide/byoc) — Use Bring Your Own Cloud \\(BYOC\\) to run Vercel Functions as AWS Lambda functions in your own AWS account, from setup to
-- [Deployment integration actions](https://vercel.com/docs/integrations/create-integration/deployment-integration-action) — These actions allow integration providers to set up automated tasks with Vercel deployments.
+- [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
 - [Audit Logs](https://vercel.com/docs/audit-log) — Learn how to track and analyze your team members' activities.
-- [Get deployment events](https://vercel.com/docs/rest-api/deployments/get-deployment-events) — GET /v3/deployments/{idOrUrl}/events — Get the build logs of a deployment by deployment ID and build ID. It can work as
+- [Deployment integration actions](https://vercel.com/docs/integrations/create-integration/deployment-integration-action) — These actions allow integration providers to set up automated tasks with Vercel deployments.
 - [Performing an Instant Rollback on a Deployment](https://vercel.com/docs/instant-rollback) — Learn how to perform an Instant Rollback on your production deployments and quickly roll back to a previously deployed p
-- [List deployments](https://vercel.com/docs/rest-api/deployments/list-deployments) — GET /v7/deployments — List deployments under the authenticated user or team. If a deployment hasn't finished uploading \\
+- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
+- [Rolling Releases](https://vercel.com/docs/rolling-releases) — Learn how to use Rolling Releases for more cautious deployments.
 
 Full cross-link map for this page: [/docs/webhooks/webhooks-api.graph.md](/docs/webhooks/webhooks-api.graph.md)
 <!-- /docsgraph:related -->
@@ -1518,6 +1520,18 @@ This request has a timeout of 30 seconds. That means if a `2XX` HTTP response is
 
 If your HTTP endpoint does not respond with a `2XX` HTTP status code, we attempt to deliver the webhook event up to 24 hours with an exponential backoff. Events that could not be delivered within 24 hours will not be retried and will be discarded.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

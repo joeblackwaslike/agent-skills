@@ -15,9 +15,10 @@ related:
   - /docs/cli/deploy
 summary: Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/rolling-releases/rolling-release-deployment.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "a7b5b4d6b0c57e6a4c7925e62e1c7fd7e7af4e05f5e8c3d6f9c413717acb189a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4e47916eb90329a7cc26613128e6968ef1bce9e0c44c35628d0061aedbdd16e4"
 ---
 
 # Performing a rolling release deployment
@@ -34,8 +35,8 @@ Use this guide to gradually roll out a new production deployment using rolling r
 - [Rolling Releases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases) — Vercel MCP tools for rolling releases.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
-- [Promoting a preview deployment to production](https://vercel.com/docs/deployments/promote-preview-to-production) — Test a preview deployment and promote it to production using the CLI.
-- [Performing an Instant Rollback on a Deployment](https://vercel.com/docs/instant-rollback) — Learn how to perform an Instant Rollback on your production deployments and quickly roll back to a previously deployed p
+- [Complete the rolling release for the project](https://vercel.com/docs/rest-api/rolling-release/complete-the-rolling-release-for-the-project) — POST /v1/projects/{idOrName}/rolling-release/complete — Force-complete a Rolling Release. The canary deployment will beg
+- [Start a rolling release for the project](https://vercel.com/docs/rest-api/rolling-release/start-a-rolling-release-for-the-project) — POST /v1/projects/{idOrName}/rolling-release/start — Start a rolling release for a deployment. If a rolling release is a
 
 Full cross-link map for this page: [/docs/rolling-releases/rolling-release-deployment.graph.md](/docs/rolling-releases/rolling-release-deployment.graph.md)
 <!-- /docsgraph:related -->
@@ -179,6 +180,18 @@ vercel logs --environment production --query 'level:error' --since 30m
 - [Rolling releases overview](/docs/rolling-releases)
 - [Rolling back a production deployment](/docs/deployments/rollback-production-deployment)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -12,9 +12,10 @@ related:
   []
 summary: Use upload_file with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/upload_file.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5c83dbcf104fddb44269fd477428986a1cfcd16b7d0993c9fd1a509b00c7a0ed"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0f991260b373a6177290f633f91970b5177e51078a6e982d47127143d7e51675"
 ---
 
 # upload_file
@@ -28,8 +29,8 @@ Upload Deployment Files.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Upload Deployment Files](https://vercel.com/docs/rest-api/deployments/upload-deployment-files) — POST /v2/files — Before you create a deployment you need to upload the required files for that deployment. To do it, you
-- [upload_artifact](https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching/upload_artifact) — Use upload_artifact with Vercel MCP.
 - [Get Deployment File Contents](https://vercel.com/docs/rest-api/deployments/get-deployment-file-contents) — GET /v8/deployments/{id}/files/{fileId} — Allows to retrieve the content of a file by supplying the file identifier and
+- [upload_artifact](https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching/upload_artifact) — Use upload_artifact with Vercel MCP.
 - [get_deployment_file_contents](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_file_contents) — Use get_deployment_file_contents with Vercel MCP.
 - [Upload a blob chunk](https://vercel.com/docs/rest-api/vcr/upload-a-blob-chunk) — PATCH /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} — PATCH /v2/:teamSlug/:projectSlug/:repositoryN
 
@@ -48,6 +49,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deplo
 | `slug`          | string | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody`   | string | No       | Provide this binary value as a base64 string.               |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

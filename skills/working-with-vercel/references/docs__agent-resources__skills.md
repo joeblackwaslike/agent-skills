@@ -13,9 +13,10 @@ related:
   - /docs/sandbox/quickstart
 summary: Install skills to enhance AI coding agents with specialized capabilities for React, Next.js, deployment, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/skills.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "daafb8bcf42d75075e94ee85e9b0ed52458c902b2e00d32d9539bdf761f5bc04"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "88591e91354b753f411bb64690f9c3189617e18618a04852d7acb3180a8338ef"
 ---
 
 # Agent Skills
@@ -34,12 +35,12 @@ An agent skill is a packaged capability that extends an AI agent with a specific
 - [Introducing skills, the open agent skills ecosystem](https://vercel.com/changelog/introducing-skills-the-open-agent-skills-ecosystem)
 - [Skills Night: 69,000+ ways agents are getting smarter](https://vercel.com/blog/skills-night-69000-ways-agents-are-getting-smarter)
 - [Skills v1.1.1: Interactive discovery, open source release, and agent support](https://vercel.com/changelog/skills-v1-1-1-interactive-discovery-open-source-release-and-agent-support)
+- [The skills.sh API is now available](https://vercel.com/changelog/the-skills-sh-api-is-now-available)
+- [The skills CLI now supports Notion hosted skills](https://vercel.com/changelog/skills-cli-notion-skills)
+- [Use skills in your AI SDK agents via bash-tool](https://vercel.com/changelog/use-skills-in-your-ai-sdk-agents-via-bash-tool)
 - [Building Slack agents can be easy](https://vercel.com/blog/building-slack-agents-can-be-easy)
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code, Codex, and OpenCode, and co
-- [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
-- [Schedules](https://vercel.com/docs/schedules) — Run code on a recurring cron schedule or once at a specific time, and create schedules at runtime for each of your users
-- [Getting Started with Schedules](https://vercel.com/docs/schedules/quickstart) — Run a private Vercel Function every hour with a static schedule in vercel.json, test it locally, and deploy it.
 
 Full cross-link map for this page: [/docs/agent-resources/skills.graph.md](/docs/agent-resources/skills.graph.md)
 <!-- /docsgraph:related -->
@@ -228,6 +229,18 @@ Continue with these guides:
 - [Choosing between TanStack Intent and skills](/kb/guide/tanstack-intent-vs-skills)
 - [TanStack Intent consumer quickstart](https://tanstack.com/intent/latest/docs/getting-started/quick-start-consumers)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

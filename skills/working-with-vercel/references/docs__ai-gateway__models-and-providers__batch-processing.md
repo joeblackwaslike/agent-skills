@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages
 summary: Process large volumes of text generation requests asynchronously through AI Gateway at discounted batch prices, using the AI SDK, the OpenAI Batch...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/batch-processing.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "3c0cc543d3c008bdc18e5d62113607265ca875900b825c3498cb8bcd8d1627a9"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1f99998cfb49eda8f3de0f989c2f9cac195c37d403d543c44a9ae581f61a6b2e"
 ---
 
 # AI Gateway Batch Processing
@@ -824,6 +825,24 @@ Request-scoped keys, such as `providerOptions.gateway.byok` in the AI SDK, don't
 
 For [zero data retention](/docs/ai-gateway/security-and-compliance/zdr), send synchronous requests. Providers store batch inputs and results for the lifetime of the batch, so AI Gateway rejects batches at submission when they set `zeroDataRetention: true` or come from a team that enforces ZDR.
 
+## Provider headquarters
+
+With the AI SDK `startBatch` and the Anthropic Message Batches API, you can set a [provider headquarters](/docs/ai-gateway/security-and-compliance/provider-headquarters) list for one batch: put `headquarters` in the batch-level `providerOptions.gateway`. Requests inside a batch can't set it. Chat Completions and Responses batches use the OpenAI Batch API and can't set a list. If no provider for the model is based in an allowed country, the request that starts the batch fails with a `400` error and nothing is sent to a provider.
+
+Batches also follow your team's provider headquarters list, and a batch list can only narrow it. Chat Completions and Responses batches follow the team list only. If the team list excludes OpenAI, the file upload or the request that starts the batch fails with a `400` error. If the team list later excludes the batch's provider, retrieving the batch or its files also fails with a `400` error.
+
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

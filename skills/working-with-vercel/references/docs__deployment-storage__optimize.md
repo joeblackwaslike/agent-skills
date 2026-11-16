@@ -15,9 +15,10 @@ related:
   - /docs/vercel-blob
 summary: Set retention periods, review remaining usage, and reduce deployment output size.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployment-storage/optimize.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "3f7a92fa59ae051430812f1c7a79255e9ce14427cd667fe39bd82120a521e1a5"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b391e36a4370b9f9f3878bb01fe4d263a1d1304b4f47843f71ec7c4d6d7cbca1"
 ---
 
 # Optimize Deployment Storage
@@ -36,12 +37,11 @@ Start with deployment retention. It controls how long Vercel keeps deployment ou
 - [New Pro teams now default to 30-day deployment retention](https://vercel.com/changelog/new-pro-teams-now-default-to-30-day-deployment-retention)
 - [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
 - [Updated defaults for deployment retention](https://vercel.com/changelog/updated-defaults-for-deployment-retention)
-- [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
-- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
 - [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 - [Debugging slow Vercel Functions](https://vercel.com/docs/functions/debug-slow-functions) — Diagnose and fix slow Vercel Functions using CLI tools, logs, and timing analysis.
+- [Vercel Storage overview](https://vercel.com/docs/storage) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
 
 Full cross-link map for this page: [/docs/deployment-storage/optimize.graph.md](/docs/deployment-storage/optimize.graph.md)
 <!-- /docsgraph:related -->
@@ -167,6 +167,18 @@ Retention changes affect stored history over time. Output changes affect new dep
 
 For product details, see [Deployment Storage](/docs/deployment-storage).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

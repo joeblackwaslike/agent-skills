@@ -3,9 +3,13 @@ title: Generating Structured Data
 description: Learn how to generate structured data with the AI SDK.
 url: "https://ai-sdk.dev/docs/ai-sdk-core/generating-structured-data"
 docs_index: /llms.txt
+keywords:
+  - structured output
+  - structured outputs
+  - structured data
 source: "https://ai-sdk.dev/docs/ai-sdk-core/generating-structured-data.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "3e9fa8961144318701ecfbf73b15e0247aa6f91c01580d99774802ef4de9ac11"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "72681031b23c72426d1c63fa5ed14ce3dc9ab23d2cba085424411548f76a77c9"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).

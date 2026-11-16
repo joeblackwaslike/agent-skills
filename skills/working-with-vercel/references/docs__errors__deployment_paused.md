@@ -13,9 +13,10 @@ related:
   - /docs/limits/fair-use-guidelines
 summary: The deployment was paused. This is a deployment error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/deployment_paused.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "80dad70b833ccec7d0d65caf655b659eb84f40a6072e26c117de4191101be1db"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b176d9539fa8cdb4eb61b256abd086a8ac5144040b32c3c71bcd2a86329eb5db"
 ---
 
 # DEPLOYMENT_PAUSED
@@ -37,6 +38,18 @@ To troubleshoot this error, follow these steps:
 5. **Check for terms of service violations**: If the pause is due to a breach of the [terms of service](/legal/terms) or [fair use guidelines](/docs/limits/fair-use-guidelines), review the specific usage limits and policies in the Vercel dashboard to understand the reasons for the pause
 6. **Check for platform outages:** Sometimes, platform-wide outages or issues can cause deployments to be blocked. Check the [status page](https://www.vercel-status.com/) for any ongoing incidents
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

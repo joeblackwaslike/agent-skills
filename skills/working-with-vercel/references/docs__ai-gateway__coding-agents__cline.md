@@ -13,9 +13,10 @@ related:
   - /docs/ai-gateway/observability-and-spend/observability
 summary: Connect Cline to AI Gateway through the Vercel CLI or VS Code settings. Configure model access and monitor usage and spending in one dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/cline.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "e97f82e0be45b748711c324f244e9875297c110bdd928a79543f2903e1e317fe"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "43d588d52d04dc38e767cd8512113787df83c913f980835183cd0fee8d350c3d"
 ---
 
 # Cline with AI Gateway
@@ -33,7 +34,7 @@ sha256: "e97f82e0be45b748711c324f244e9875297c110bdd928a79543f2903e1e317fe"
 - [Continue CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/continue) — Connect Continue CLI to AI Gateway with the Vercel CLI or a YAML model configuration that reads your API key from the en
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 - [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
-- [Blackbox AI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/blackbox) — Configure the Blackbox AI CLI to use AI Gateway for code generation and debugging. Set your API key and model and monito
+- [GitHub Copilot CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/copilot) — Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/cline.graph.md](/docs/ai-gateway/coding-agents/cline.graph.md)
 <!-- /docsgraph:related -->
@@ -96,6 +97,18 @@ Common issues and solutions:
 - **404 Model Not Found**: Copy the exact model ID from the models catalog
 - **Slow first token**: Check dashboard average TTFT and consider streaming-optimized models
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

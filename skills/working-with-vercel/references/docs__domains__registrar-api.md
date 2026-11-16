@@ -15,9 +15,10 @@ related:
   - /docs/rest-api/domains-registrar/get-availability-for-a-domain
 summary: "Programmatically search, price, purchase, renew, and manage domains with Vercel's domains registrar API endpoints."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains/registrar-api.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "3c6c471acba5f16689e57cef7ba9b716f65c2b46bc6fdd9c16d7e08255e38ef1"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "775a29124d38fc41d3815d87f9a73433fd2d0e5dbb175c3163eee24d2e352b03"
 ---
 
 # Programmatic Domain Management
@@ -33,8 +34,6 @@ The domains registrar API enables you to programmatically manage your domain lif
 - [New Domains Registrar API for domain search, pricing, purchase, and management](https://vercel.com/changelog/new-domains-registrar-api-for-domain-search-pricing-purchase-and-management)
 - [Get price data for multiple domains](https://vercel.com/docs/rest-api/domains-registrar/get-price-data-for-multiple-domains) — POST /v1/registrar/domains/price — Get price data for multiple domains in a single request.
 - [List all the domains](https://vercel.com/docs/rest-api/domains/list-all-the-domains) — GET /v5/domains — Retrieves a list of domains registered for the authenticated user or team. By default it returns the l
-- [Get contact verification status for a domain](https://vercel.com/docs/rest-api/domains-registrar/get-contact-verification-status-for-a-domain) — GET /v1/registrar/domains/{domain}/contact-verification — Get the registrant contact verification status for a domain. U
-- [Working with domains](https://vercel.com/docs/domains/working-with-domains) — Learn how domains work and the options Vercel provides for managing them.
 
 Full cross-link map for this page: [/docs/domains/registrar-api.graph.md](/docs/domains/registrar-api.graph.md)
 <!-- /docsgraph:related -->
@@ -122,6 +121,18 @@ The following legacy domains API operations were deprecated and have since been 
 
 If you are currently using the Vercel CLI for domain purchases, pricing, or availability, upgrade to CLI version `48.2.8` or later.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

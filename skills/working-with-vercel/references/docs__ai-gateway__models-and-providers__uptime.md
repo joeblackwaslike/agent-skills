@@ -13,9 +13,10 @@ related:
   - /docs/ai-gateway/models-and-providers/provider-filtering-and-ordering
 summary: See how uptime and status track AI Gateway provider health and end-to-end request success.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/uptime.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "d8333c584faa6b36df00e9a5f19b8b25a755f6a8ab555ef64f64ba345d99d0bc"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "74b184b48952f5826900e34f360da833e5853003856c8b79dd7c8748888acb2b"
 ---
 
 # AI Gateway Uptime and Provider Status
@@ -28,13 +29,11 @@ When a provider has an outage, AI Gateway falls back to a healthy provider so yo
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [AI Gateway production index](https://vercel.com/blog/ai-gateway-production-index)
-- [Access and share AI Gateway leaderboard data](https://vercel.com/changelog/open-data-and-shareable-charts-for-ai-gateway-leaderboards)
-- [Live model performance metrics accessible via AI Gateway](https://vercel.com/changelog/live-model-performance-metrics-accessible-via-ai-gateway)
 - [AI Gateway Provider Latency and Throughput Metrics](https://vercel.com/docs/ai-gateway/models-and-providers/metrics) — Understand how AI Gateway measures throughput and latency per provider.
-- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, caching, SDK and API compati
+- [AI Gateway Provider Timeouts](https://vercel.com/docs/ai-gateway/models-and-providers/provider-timeouts) — Configure AI Gateway timeouts for BYOK providers. Fail over to the next provider when a request takes too long to start
 - [AI Gateway Leaderboards](https://vercel.com/docs/ai-gateway/leaderboards) — See which AI models, labs, apps, and providers are most used on AI Gateway, share a chart as an image, and download the
-- [AI Gateway Request Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
+- [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/uptime.graph.md](/docs/ai-gateway/models-and-providers/uptime.graph.md)
 <!-- /docsgraph:related -->
@@ -172,6 +171,18 @@ AI Gateway reports two uptime metrics, which differ in what they count as succes
 
 A request that fails on its first provider but succeeds on a fallback counts as a success for AI Gateway uptime. This is why AI Gateway uptime can be higher than any individual provider's uptime, since fallback logic can recover from single-provider failures.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

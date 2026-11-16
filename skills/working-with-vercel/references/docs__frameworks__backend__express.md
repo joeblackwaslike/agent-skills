@@ -3,7 +3,7 @@ title: Express on Vercel
 product: vercel
 url: /docs/frameworks/backend/express
 canonical_url: "https://vercel.com/docs/frameworks/backend/express"
-last_updated: 2026-08-10
+last_updated: 2026-11-14
 type: how-to
 prerequisites:
   - /docs/frameworks/backend
@@ -16,9 +16,10 @@ related:
   - /docs/networking/secure-compute
 summary: Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/backend/express.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "536cc0daa68470d665f59358c07629493057ceb5ad7f4360b899426519a07314"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "63e19d089a9b7e1de0f0b9146fa5af0b01e9a7f21df36f429343c3d16fd79732"
 ---
 
 # Express on Vercel
@@ -36,10 +37,11 @@ Express is a fast, unopinionated, minimalist web framework for Node.js. You can 
 - [Migrate from Railway to Vercel](https://vercel.com/kb/guide/migrate-railway-to-vercel) — Migrate an app from Railway to Vercel. Choose a deployment path, configure services, plan for stored data, and test befo
 - [Build a Weather API on Vercel: Express, FastAPI, and Nitro](https://vercel.com/kb/guide/weather-api-with-fastapi) — Build a weather API on Vercel with FastAPI, Express, or Nitro. Compare the three runtimes, add caching and Observability
 - [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
-- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
 - [How to ship an Elysia app on Vercel](https://vercel.com/kb/guide/ship-a-elysia-app-on-vercel) — Deploy a Elysia app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and co
+- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
 - [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify) — Deploy Fastify applications to Vercel with zero configuration.
 - [NestJS on Vercel](https://vercel.com/docs/frameworks/backend/nestjs) — Deploy NestJS applications to Vercel with zero configuration.
+- [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
 
 Full cross-link map for this page: [/docs/frameworks/backend/express.graph.md](/docs/frameworks/backend/express.graph.md)
 <!-- /docsgraph:related -->
@@ -167,6 +169,16 @@ vc deploy
 
 > **💡 Note:** Minimum CLI version required: 47.0.5
 
+## Deploy without an account
+
+To deploy your Express app without an account or login, run this command in the project root:
+
+```bash filename="terminal"
+vercel deploy --temporary
+```
+
+The CLI builds the project, deploys it to production, and prints a claim URL. Claim the project to keep it live. See [Deploying without logging in](/docs/deployments/deploy-without-logging-in).
+
 ## Serving static assets
 
 To serve static assets, place them in the `public/**` directory. They will be served as a part of our [CDN](/docs/cdn) using default [headers](/docs/headers) unless otherwise specified in `vercel.json`.
@@ -213,6 +225,18 @@ Learn more about deploying Express projects on Vercel with the following resourc
 - [Backend templates on Vercel](https://vercel.com/templates?type=backend)
 - [Express middleware guide](https://expressjs.com/en/guide/using-middleware.html)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

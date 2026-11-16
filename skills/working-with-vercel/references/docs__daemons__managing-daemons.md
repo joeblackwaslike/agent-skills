@@ -12,12 +12,13 @@ related:
   - /docs/deployments/promoting-a-deployment
   - /docs/instant-rollback
   - /docs/rolling-releases
-  - /docs/daemons/config-reference
+  - /docs/rest-api/daemons
 summary: Deploy, scale, stop, and monitor Vercel Daemons with vercel.json and the dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/daemons/managing-daemons.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "6686a1bd3b8451af206eac84b373bb71acdb7becef53d7f7bc37efa07961cdb9"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a4d836f6ad4148f7084397827df56b237c8c4af152e81578708503a16ed2568d"
 ---
 
 # Managing Daemons
@@ -37,8 +38,8 @@ You declare daemons with the `daemons` key in `vercel.json`. Changes to daemon c
 - [vercel daemons](https://vercel.com/docs/cli/daemons) — List and inspect production daemons, override regional instance counts, and inspect or restart individual instances with
 - [Daemons](https://vercel.com/docs/build-output-api/daemons) — Learn how Vercel Daemons are represented in the Build Output API.
 - [Get project daemons](https://vercel.com/docs/rest-api/daemons/get-project-daemons) — GET /v1/projects/{idOrName}/daemons — List the daemons of a project.
-- [Override a project daemon's instance counts](https://vercel.com/docs/rest-api/daemons/override-a-project-daemon-s-instance-counts) — PUT /v1/projects/{idOrName}/daemons/{daemonName}/instances — Override the instance counts of a daemon in the given regio
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
+- [Override a project daemon's instance counts](https://vercel.com/docs/rest-api/daemons/override-a-project-daemon-s-instance-counts) — PUT /v1/projects/{idOrName}/daemons/{daemonName}/instances — Override the instance counts of a daemon in the given regio
 
 Full cross-link map for this page: [/docs/daemons/managing-daemons.graph.md](/docs/daemons/managing-daemons.graph.md)
 <!-- /docsgraph:related -->
@@ -56,7 +57,7 @@ For a short time during a rollout, both versions of a daemon run at once: the ol
 
 ## Scaling a daemon
 
-Each daemon runs a fixed number of instances in each region. Vercel doesn't currently autoscale daemons. You can set the counts in `vercel.json`, or override them from the dashboard or the Vercel CLI.
+Each daemon runs a fixed number of instances in each region. Vercel doesn't currently autoscale daemons. You can set the counts in `vercel.json`, or override them from the dashboard, the Vercel CLI, or the [REST API](/docs/rest-api/daemons).
 
 ### Scaling with `vercel.json`
 
@@ -153,6 +154,18 @@ To see a daemon's instances and their logs, open **Daemons** in your project's d
 
 The daemon's page in the dashboard charts CPU usage, memory usage, running instances, and data transfer for the time range you select. The charts are available on every plan; [Observability Plus](/docs/observability/observability-plus) extends how far back you can look.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

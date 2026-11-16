@@ -15,9 +15,10 @@ related:
   - /docs/cli/env
 summary: Choose Config or Secret environment variables based on whether their values should remain readable after saving.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/environment-variables/sensitive-environment-variables.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "e284c7ba49c82b82deb51e91972af1153fce6810281f0692facdbeb726f1c4c2"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "926ad474dcc6e34394c4fd34c92d3ec754a2bf28c60534dce6e6d6b04d76dad5"
 ---
 
 # Config and Secret environment variables
@@ -31,6 +32,7 @@ When you add or edit [environment variables](/docs/environment-variables "Enviro
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Environment variables now use Config and Secret types](https://vercel.com/changelog/environment-variables-now-use-config-and-secret-types)
+- [Legacy environment variable secrets are being sunset](https://vercel.com/changelog/legacy-environment-variable-secrets-are-being-sunset)
 - [Vercel Integration](https://v0.app/docs/vercel-integration) — How v0 and Vercel work in tandem.
 - [Build logs now redact Sensitive Environment Variable values](https://vercel.com/changelog/build-logs-now-redact-sensitive-environment-variable-values)
 - [Secure Marketplace credentials with Production-only access](https://vercel.com/changelog/secure-marketplace-credentials-with-production-only-access)
@@ -39,9 +41,8 @@ When you add or edit [environment variables](/docs/environment-variables "Enviro
 - [Rotating Secrets for Vercel Marketplace Integrations](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-supabase-integration) — Rotate the Supabase service role key, JWT secret, and database password from your Vercel integration, then apply the new
 - [Migrate from Google Cloud Run to Vercel](https://vercel.com/kb/guide/migrate-cloud-run-to-vercel) — Move a Cloud Run service or worker to Vercel. Compare runtimes, preserve Google Cloud access, and plan jobs, validation,
 - [Migrate from Render to Vercel](https://vercel.com/kb/guide/migrate-render-to-vercel) — Migrate from Render to Vercel: map web services, cron jobs, and containers to their equivalents, and handle what doesn't
-- [Legacy environment variable secrets are being sunset](https://vercel.com/changelog/legacy-environment-variable-secrets-are-being-sunset)
 - [Sensitive environment variables are now available](https://vercel.com/changelog/sensitive-environment-variables-are-now-available)
-- [Environment Variables UI](https://vercel.com/blog/environment-variables-ui)
+- [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
 
 Full cross-link map for this page: [/docs/environment-variables/sensitive-environment-variables.graph.md](/docs/environment-variables/sensitive-environment-variables.graph.md)
 <!-- /docsgraph:related -->
@@ -169,6 +170,18 @@ Environment variables created by [integrations](/docs/integrations) can't be cha
 3. Reconnect the resource to each project. Deselect **Development** in the connection environments, then enable **Sensitive** in the advanced options. Integration connections that include Development cannot enable Sensitive.
 4. Redeploy your projects to use the new values.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

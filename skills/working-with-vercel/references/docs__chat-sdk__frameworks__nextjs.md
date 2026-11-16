@@ -16,9 +16,10 @@ related:
   - /docs/observability/runtime-logs
 summary: Add a Chat SDK bot to Next.js, receive Slack events through Vercel Connect, and deploy on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/chat-sdk/frameworks/nextjs.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "e9a532b7abf8f5b38f3f4665f4af9a7f2c0bf577e9659c4a1351ebfd5c1ab985"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c6a8c9fa6866a5729f13dc2b4952255a80847c5b91ad0e0623979f34b56dcbd7"
 ---
 
 # Chat SDK with Next.js
@@ -35,9 +36,8 @@ Use an App Router Route Handler to receive Slack events and `after` to process t
 - [Create a Discord support bot with Nuxt and Redis](https://vercel.com/kb/guide/create-a-discord-support-bot-with-nuxt-and-redis) — This guide walks through building a Discord support bot with Nuxt, covering project setup, Discord app configuration, Ga
 - [The Complete Guide to Chat SDK](https://vercel.com/kb/guide/the-complete-guide-to-chat-sdk) — Chat SDK is a TypeScript library for building chat bots that work across Slack, Teams, Discord, Linear, and more from a
 - [Triage form submissions with Chat SDK](https://vercel.com/kb/guide/triage-form-submissions-with-chat-sdk) — Build a Slack bot that triages form submissions with interactive cards. Forward, edit, or mark as spam without leaving S
-- [Chat SDK with TanStack Start](https://vercel.com/docs/chat-sdk/frameworks/tanstack-start) — Add a Chat SDK bot to TanStack Start, receive Slack events through Vercel Connect, and deploy on Vercel.
+- [Ship a GitHub code review bot with Hono and Redis](https://vercel.com/kb/guide/ship-a-github-code-review-bot-with-hono-and-redis) — This guide walks through building a GitHub bot that reviews pull requests on demand. When a user @mentions the bot on a
 - [Chat SDK with Nuxt](https://vercel.com/docs/chat-sdk/frameworks/nuxt) — Add a Chat SDK bot to Nuxt, receive Slack events through Vercel Connect, and deploy on Vercel.
-- [Chat SDK with Vercel Daemons](https://vercel.com/docs/chat-sdk/integrations/daemons) — Process Chat SDK jobs with Vercel Queues and Daemons, using Vercel Connect for Slack credentials and event delivery.
 - [Chat SDK with AI Gateway](https://vercel.com/docs/chat-sdk/integrations/ai-gateway) — Stream AI Gateway model responses into Chat SDK conversations with AI SDK and message history.
 
 Full cross-link map for this page: [/docs/chat-sdk/frameworks/nextjs.graph.md](/docs/chat-sdk/frameworks/nextjs.graph.md)
@@ -411,6 +411,18 @@ No. The Web Adapter never reads earlier turns from the request body. It stores i
 - [Chat SDK quickstart](/docs/chat-sdk/quickstart)
 - [Add more platform adapters](/docs/chat-sdk/adapters)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

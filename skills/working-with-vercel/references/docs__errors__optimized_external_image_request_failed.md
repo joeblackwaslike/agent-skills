@@ -11,9 +11,10 @@ related:
   []
 summary: The request for an optimized external image failed. This is a server error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/optimized_external_image_request_failed.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "595e77b92e6d863ca101053cbc848e6bfb170761b2c9730d248a68a3939e711c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "432e40cf0e14e0f17684f42d9d65f35e97151e36f2653a49b0b8dc1717902b8c"
 ---
 
 # OPTIMIZED_EXTERNAL_IMAGE_REQUEST_FAILED
@@ -31,6 +32,18 @@ To troubleshoot this error, follow these steps:
 1. **Verify external URL:** Ensure that the external image URL is correct and accessible
 2. **Check query parameters:** Ensure that any query parameters are valid
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

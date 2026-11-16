@@ -15,9 +15,10 @@ related:
   - /docs/ai-gateway/authentication-and-byok/byok
 summary: Authenticate AI Gateway requests with API keys or OIDC tokens, and configure bring your own key (BYOK) credentials for model providers.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "9866b546e11fa9575f711c7a39e427db151d22283d628d4d9f813eebbd00741c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9f681d3af4946f6e4966819b8dffda44f58349929d82c4c611c634b053dac83a"
 ---
 
 # AI Gateway Authentication and BYOK
@@ -303,7 +304,7 @@ BYOK lets you use your own provider credentials. This is useful when you:
 - **Have existing agreements**: Use enterprise pricing or credits from providers
 - **Need zero markup**: BYOK requests have no additional fee
 - **Require private access**: Access provider features that need your own credentials
-- **Want automatic fallback**: If your credentials fail, requests can retry with system credentials
+- **Want automatic fallback**: If your credentials fail, requests can retry with Vercel's provider keys
 
 BYOK credentials are configured at the team level and work across all projects. See the [BYOK documentation](/docs/ai-gateway/authentication-and-byok/byok) for setup instructions.
 
@@ -313,6 +314,18 @@ BYOK credentials are configured at the team level and work across all projects. 
 - [Set up OIDC](/docs/ai-gateway/authentication-and-byok/oidc) for zero-configuration authentication on Vercel
 - [Set up BYOK](/docs/ai-gateway/authentication-and-byok/byok) to use your provider credentials
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

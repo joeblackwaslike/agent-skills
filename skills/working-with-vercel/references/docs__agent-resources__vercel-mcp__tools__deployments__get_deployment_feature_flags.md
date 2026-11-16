@@ -12,9 +12,10 @@ related:
   []
 summary: Use get_deployment_feature_flags with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_feature_flags.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "7384d676e881174c257c7ea05fa010ffabc2dc294563fdec814fcddd6e08d672"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "206151e14f14ef45868c1bdc26b4e8d7a84b5491a2b3876dbcdc6408311bdd50"
 ---
 
 # get_deployment_feature_flags
@@ -31,7 +32,7 @@ Retrieve the feature flags of a deployment.
 - [get_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment) — Use get_deployment with Vercel MCP.
 - [list_deployment_files](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_files) — Use list_deployment_files with Vercel MCP.
 - [get_deployment_file_contents](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_file_contents) — Use get_deployment_file_contents with Vercel MCP.
-- [get_flag_settings](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/get_flag_settings) — Use get_flag_settings with Vercel MCP.
+- [Get Deployment File Contents](https://vercel.com/docs/rest-api/deployments/get-deployment-file-contents) — GET /v8/deployments/{id}/files/{fileId} — Allows to retrieve the content of a file by supplying the file identifier and
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_feature_flags.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_feature_flags.graph.md)
 <!-- /docsgraph:related -->
@@ -44,6 +45,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deplo
 | `teamId`       | string | No       | Team ID to use for this operation.                          |
 | `slug`         | string | No       | Team slug to use for this operation. Use instead of teamId. |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

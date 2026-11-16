@@ -12,11 +12,13 @@ related:
   - /docs/networking/secure-compute
   - /docs/projects
   - /docs/routing-middleware
+  - /docs/pricing/regional-pricing
 summary: Connect Vercel deployments to AWS-hosted backends through AWS PrivateLink endpoint services without using the public internet.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/networking/privatelink.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "570126e024701db5c463755809ddc520f03b8bd16bb3a1f3f8f0ef3796567955"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1fe354317d8008b92773f39e69dfe36108618f21ac8a69460ac7bc376d2035a4"
 ---
 
 # AWS PrivateLink
@@ -36,7 +38,7 @@ With PrivateLink, you can connect your Vercel deployments to AWS-hosted backend 
 - [Connecting an AWS Account for BYOC](https://vercel.com/docs/networking/bring-your-own-cloud/connect-aws-account) — Connect an AWS account to your Vercel team so Bring Your Own Cloud \\(BYOC\\) can invoke Lambda functions in your account.
 - [Using Vercel with Microsoft Azure](https://vercel.com/docs/integrations/external-platforms/azure) — Run your frontend on Vercel alongside backends hosted in Microsoft Azure, with private network connectivity, keyless aut
 - [Connect to Amazon Web Services \\(AWS\\)](https://vercel.com/docs/oidc/aws) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
-- [Reverse Proxy Servers and Vercel](https://vercel.com/docs/security/reverse-proxy) — Learn why reverse proxy servers are not recommended with Vercel's firewall.
+- [vercel link](https://vercel.com/docs/cli/link) — Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
 - [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 
 Full cross-link map for this page: [/docs/networking/privatelink.graph.md](/docs/networking/privatelink.graph.md)
@@ -79,7 +81,7 @@ Follow these steps to create your first PrivateLink connection.
 
 Before you start, confirm you have:
 
-- A [Vercel project](/docs/projects) on a team with **Advanced Networking** enabled
+- A [Vercel project](/docs/projects) with **Advanced Networking** enabled. PrivateLink is only usable on projects with [Static IPs](/docs/networking/static-ips) enabled, so the Advanced Networking monthly charge applies (see [Pricing](#pricing))
 - An AWS PrivateLink endpoint service you can connect to, either one that accepts all principals or one where an IAM role ARN can be added to the allowlist
 - The **service name** (for example `com.amazonaws.vpce.<region>.vpce-svc-…`) and **AWS Region** from the provider
 
@@ -120,6 +122,16 @@ Assigning a PrivateLink connection to a project applies to all environments in t
 - The endpoint service must be available in at least two Availability Zones that overlap with Vercel's network in that region. If there isn't enough overlap, provisioning fails. Ask your provider to expose the service in additional zones.
 - Pick regions close to your provider to reduce latency.
 
+## Pricing
+
+PrivateLink is part of Advanced Networking and is only usable on projects with [Static IPs](/docs/networking/static-ips) enabled. A project using PrivateLink is billed:
+
+- **Advanced Networking**: $100/month per project. This monthly charge covers Static IPs and includes your first PrivateLink connection
+- **Additional PrivateLink connections**: $30 per month each
+- **Data transfer**: Traffic that routes through a PrivateLink endpoint is billed as PrivateLink data transfer at $0.04 per GB. Traffic that egresses through your static IPs instead is billed as [Private Data Transfer](/docs/pricing/regional-pricing) at regional rates. Each request takes one path, so it's billed at one rate, never both
+
+PrivateLink connection and data transfer usage is tracked per connection on your team's **Usage** tab.
+
 ## Limitations
 
 - **Isolation**: Each connection is dedicated to your team, but the underlying VPC is shared with other customers. For full isolation, use Secure Compute.
@@ -127,6 +139,18 @@ Assigning a PrivateLink connection to a project applies to all environments in t
 - **Project-level configuration**: You cannot limit a connection to a single deployment environment inside a project.
 - **Endpoint types**: Only interface endpoints are supported.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

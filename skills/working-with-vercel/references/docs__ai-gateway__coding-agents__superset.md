@@ -13,9 +13,10 @@ related:
   - /docs/ai-gateway/observability-and-spend/observability
 summary: Configure Superset to use AI Gateway with terminal-based coding agents. Set provider credentials and route model requests through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/superset.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "6e6f5fb26ce51d000390377a694b141ab69e4281f85dffbf38cf540bad5a6615"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f0475ee3aa1c0fbb0946170934b088561529a70fa3618daa98c1d60b76c992a1"
 ---
 
 # Superset with AI Gateway
@@ -28,12 +29,12 @@ sha256: "6e6f5fb26ce51d000390377a694b141ab69e4281f85dffbf38cf540bad5a6615"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
-- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
+- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
+- [Go with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/go) — Use AI Gateway from any Go application with the OpenAI or Anthropic Go SDKs, including model fallbacks, cost tracking, a
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/superset.graph.md](/docs/ai-gateway/coding-agents/superset.graph.md)
 <!-- /docsgraph:related -->
@@ -108,6 +109,18 @@ Once configured, view your usage in the [**AI Gateway**](https://vercel.com/d?to
 
 See the [observability documentation](/docs/ai-gateway/observability-and-spend/observability) for more details.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

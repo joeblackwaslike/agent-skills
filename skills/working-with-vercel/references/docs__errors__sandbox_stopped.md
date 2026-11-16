@@ -12,9 +12,10 @@ related:
   - /docs/sandbox/sdk-reference
 summary: The Sandbox was stopped and is no longer reachable. This is a platform error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/sandbox_stopped.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "cb2295873b010592123615b16c8de1e1821903006f5cb46e398d4db6a2482b21"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c041b10e4322628658a8801b9d029b1dc4a1676b3218a3b3ba83d335226b35fb"
 ---
 
 # SANDBOX_STOPPED
@@ -33,6 +34,18 @@ To troubleshoot this error, follow these steps:
 2. **Verify the Sandbox status:** Navigate to the [Sandboxes dashboard](/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fsandboxes\&title=Go+to+Sandboxes), select the one you are accessing, and check the history section to learn why it was stopped.
 3. **Increase the timeout:** By default, Sandboxes have a session timeout of 5 minutes. You can extend it by passing the `timeout` property to [`Sandbox.create()`](/docs/sandbox/sdk-reference#sandbox.create).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -14,9 +14,10 @@ related:
   - /docs/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources
 summary: Reference for the turbo.json tags and vercel.json keys that configure Vercel CI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ci/configuration.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "8ec6ee72bd1912f80dc95b7d33c39c657dbb10d2fedb941b1eb7577cdb53b8b1"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "93316263ec7d836b130a64a3ea08952583e2286977e78293ef6784bf60b84697"
 ---
 
 # Vercel CI Configuration Reference
@@ -24,6 +25,22 @@ sha256: "8ec6ee72bd1912f80dc95b7d33c39c657dbb10d2fedb941b1eb7577cdb53b8b1"
 ## Creating task dependencies
 
 Tasks that are tagged to run in CI will have their dependencies run in CI, too.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel) — Deploy your Turborepo on Vercel and run tasks with Vercel CI using zero-config Remote Caching.
+- [Deploying Turborepo to Vercel](https://vercel.com/docs/monorepos/turborepo) — Learn about Turborepo, a build system for monorepos that allows you to have faster incremental builds, content-aware has
+- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
+- [Builds](https://vercel.com/docs/builds) — Understand how the build step works when creating a Vercel Deployment.
+- [Use Remote Caching from External CI/CD](https://vercel.com/docs/monorepos/remote-caching/external-ci-cd) — Authenticate the Turborepo CLI to Vercel Remote Cache from your CI/CD provider using OpenID Connect \\(OIDC\\) or a Person
+- [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+
+Full cross-link map for this page: [/docs/ci/configuration.graph.md](/docs/ci/configuration.graph.md)
+<!-- /docsgraph:related -->
 
 ```json filename="turbo.json" {8}
 {
@@ -282,6 +299,18 @@ To send the token to production deployments of other projects on your team, add 
 
 Add `ci:oidc:none` to a task to turn OIDC off for that task. A task's `ci:oidc` tags take precedence over the `ci:oidc` tags in its package's top-level `tags`.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

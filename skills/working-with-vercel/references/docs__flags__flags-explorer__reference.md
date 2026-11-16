@@ -15,9 +15,10 @@ related:
   - /docs/environment-variables/system-environment-variables
 summary: In-depth reference for configuring the Flags Explorer
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/flags-explorer/reference.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "9907593d0e33201886c9717bf7395561e5d76597f9213a819bff9d2ab15f2165"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "991e4453d1ec6317a731972df89ba01921d6ef8791e22f02af157dde1078d2e2"
 ---
 
 # Reference
@@ -32,12 +33,12 @@ The Flags Explorer has five main concepts: the [Discovery Endpoint](/docs/flags/
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit) — Using the Flags SDK in SvelteKit
 - [Flags as code in Next.js](https://vercel.com/blog/flags-as-code-in-next-js)
-- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
-- [flags/next](https://flags-sdk.dev/docs/api-reference/frameworks/next) — APIs for working with feature flags in Next.js.
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/next) — Learn how to start using the Flags SDK in your Next.js project.
-- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [flags/next](https://flags-sdk.dev/docs/api-reference/frameworks/next) — APIs for working with feature flags in Next.js.
+- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
 
 Full cross-link map for this page: [/docs/flags/flags-explorer/reference.graph.md](/docs/flags/flags-explorer/reference.graph.md)
 <!-- /docsgraph:related -->
@@ -701,6 +702,18 @@ For more information, see the following sections:
 - [Embedding definitions through script tags](/docs/flags/flags-explorer/reference#embedding-definitions-through-script-tags)
 - [Embedding values through script tags](/docs/flags/flags-explorer/reference#embedding-values-through-script-tags)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

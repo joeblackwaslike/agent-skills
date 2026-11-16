@@ -11,9 +11,10 @@ related:
   []
 summary: Requires that a workspace package that uses TypeScript files has configured TypeScript correctly for that workspace.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/typescript_configuration.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "29168956c59f36f0f7ba3ae55606d36cb9e98d5bdf8b14a0478d9b9724dd3903"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9040f95b094f6681312781c4575e60ffd0b43395b2d3bb4a07c7500c1240b532"
 ---
 
 # TYPESCRIPT_CONFIGURATION
@@ -110,6 +111,18 @@ The dependency on the repository's shared TypeScript must also exist:
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -4,8 +4,8 @@ description: Learn how to use the Grok Build harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/grok-build"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/grok-build.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "d12c32c0216bb580b9ac2385428dfb3b76125227aee559a3d7b7b89d83a64123"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "639159f571636fd3cf9270fcdbff8a4a9daa4954f61b23889fa73d59cbfef08f"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -126,10 +126,9 @@ Settings:
   2 seconds. These retries use exponential backoff and are separate from
   `startupTimeoutMs`. They cannot recover when the sandbox, bridge process, or
   bridge endpoint is permanently unavailable.
-- `mintBridgeToken`: synchronous function that receives the sandbox id and
-  returns the ACP bridge authentication token. By default, the adapter generates
-  a random 32-byte token. Custom implementations must return a suitably secret
-  token.
+- `mintBridgeToken`: deprecated and ignored. Passing it logs a warning. The
+  adapter generates a key pair for each bridge, passes only the public key into
+  the sandbox, and keeps the private key in host-side resume state.
 
 The adapter pins the Grok Build CLI and ACP launch command. These implementation
 details cannot be overridden through `createGrokBuild()`.

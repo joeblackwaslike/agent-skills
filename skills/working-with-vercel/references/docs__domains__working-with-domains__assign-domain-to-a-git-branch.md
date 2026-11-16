@@ -14,9 +14,10 @@ related:
   - /docs/rest-api/reference/endpoints/projects/update-a-project-domain
 summary: Learn how to assign a domain to a different Git branch with this guide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains/working-with-domains/assign-domain-to-a-git-branch.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "aaca87a87728763c0ba9c2c83f68ef47794ee4c989283f2cf50acf59b9ec9ac8"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "087891e2b11c2722da63602162f282e18d9e4cbfbeee5944d93642f0eef824b2"
 ---
 
 # Assigning a domain to a Git branch
@@ -35,7 +36,7 @@ Every commit pushed to the [Production Branch](/docs/git#production-branch) of y
 - [Assigning a custom domain to an environment](https://vercel.com/docs/domains/working-with-domains/add-a-domain-to-environment) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 - [Deploying & Redirecting Domains](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting) — Learn how to deploy your domains and set up domain redirects with this guide.
 - [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
-- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
 
 Full cross-link map for this page: [/docs/domains/working-with-domains/assign-domain-to-a-git-branch.graph.md](/docs/domains/working-with-domains/assign-domain-to-a-git-branch.graph.md)
@@ -58,6 +59,18 @@ Pro and Enterprise teams can also set branch tracking for their [custom environm
 > domain"](/docs/rest-api/reference/endpoints/projects/update-a-project-domain)
 > PATCH endpoint.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

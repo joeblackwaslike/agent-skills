@@ -15,9 +15,10 @@ related:
   - /docs/schedules/configuration
 summary: Run a private Vercel Function every hour with a static schedule in vercel.json, test it locally, and deploy it.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/schedules/quickstart.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "83a9b4ad587fd4d6a68ddacf04733ced0bb887e851f6d51eacedb2da21a3d795"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ad7f3baebb6e19afbd5fd957428a6893a2bc94c182dc307383d43eaae72cc66e"
 ---
 
 # Getting Started with Schedules
@@ -34,9 +35,9 @@ In this guide, you'll create a function that cleans up expired records every hou
 - [Introducing Vercel Schedules](https://vercel.com/blog/introducing-vercel-schedules)
 - [Managing Schedules](https://vercel.com/docs/schedules/manage) — View, enable, disable, and run schedules across environments, and check their execution history from the dashboard, CLI,
 - [Migrating from Cron Jobs to Schedules](https://vercel.com/docs/schedules/migrate-from-cron-jobs) — Move Cron Jobs in vercel.json to Schedules without changing your route code, then optionally make the route private.
-- [Getting started with cron jobs](https://vercel.com/docs/schedules/cron-jobs/quickstart) — Learn how to schedule cron jobs to run at specific times or intervals.
-- [Creating Schedules for Each Customer](https://vercel.com/docs/schedules/multi-tenant) — Use schedule namespaces to give each customer in a multi-tenant app their own recurring and one-time schedules.
 - [vercel schedules](https://vercel.com/docs/cli/schedules) — Inspect and manage schedules in production, a custom environment, a Preview branch, CLI deployments by a user, or a loca
+- [Vercel Schedules: API Reference](https://vercel.com/docs/schedules/http-api) — Reference for the Vercel Schedules HTTP API: authenticate, choose an environment, and create, list, update, enable, disa
+- [Creating Schedules for Each Customer](https://vercel.com/docs/schedules/multi-tenant) — Use schedule namespaces to give each customer in a multi-tenant app their own recurring and one-time schedules.
 
 Full cross-link map for this page: [/docs/schedules/quickstart.graph.md](/docs/schedules/quickstart.graph.md)
 <!-- /docsgraph:related -->
@@ -144,6 +145,18 @@ npx skills add vercel/vercel-plugin --skill vercel-schedules
 - [JS SDK Reference](/docs/schedules/sdk): Create schedules at runtime, including one-time schedules.
 - [Concepts](/docs/schedules/concepts): Learn how environments, jitter, and late runs work.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

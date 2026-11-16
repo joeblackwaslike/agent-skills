@@ -11,9 +11,10 @@ related:
   - /docs/sandbox
 summary: The Sandbox is not listening on the requested port. This is an application error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/sandbox_not_listening.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "64ee31c39c15db3bcd47e2ee0172e0b53a513cef01dfd9ab498f3b252d7deeea"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "27ededca2ff2493e49738f19d0fadf18ee3fa39fcbdc6beddf53c6dcd1d3d000"
 ---
 
 # SANDBOX_NOT_LISTENING
@@ -31,6 +32,18 @@ To troubleshoot this error, follow these steps:
 1. **Verify the configured port:** Make sure that the `ports` field used in `Sandbox.create` matches the port your application is listening on. Follow the [documentation](/docs/sandbox) to learn more
 2. **Check the Sandbox history:** Navigate to the [Sandboxes dashboard](/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fsandboxes\&title=Go+to+Sandboxes), select the one you are accessing, and check the history section to see which commands were run and if any errors occurred
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

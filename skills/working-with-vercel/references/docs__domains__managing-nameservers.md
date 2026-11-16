@@ -12,9 +12,10 @@ related:
   - /docs/domains/working-with-domains/transfer-your-domain
 summary: Learn how to add custom nameservers and restore original nameservers for your domains on Vercel with this guide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains/managing-nameservers.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "71b08729e477dffe143202d1fa0fc43e59bd7e0285507d9a100c0e3acad71598"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "6c3944952b7bde0731b78d6aa72339d917a9729207475c0f6576b92e6bae5eb6"
 ---
 
 # Managing Nameservers
@@ -28,8 +29,8 @@ sha256: "71b08729e477dffe143202d1fa0fc43e59bd7e0285507d9a100c0e3acad71598"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Easily manage custom nameservers for domains](https://vercel.com/changelog/easily-manage-custom-nameservers-for-domains)
-- [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 - [Update nameservers for a domain](https://vercel.com/docs/rest-api/domains-registrar/update-nameservers-for-a-domain) — PATCH /v1/registrar/domains/{domain}/nameservers — Update the nameservers for a domain. Pass an empty array to use Verce
+- [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 - [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 - [Working with DNS](https://vercel.com/docs/domains/working-with-dns) — Learn how DNS works to properly configure your domain.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
@@ -86,6 +87,18 @@ Vercel will present a message when you have successfully submitted the nameserve
 
 ![Restoring original nameservers by clicking the Restore button.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/projects/custom-domains/restore-original-nameservers.png)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

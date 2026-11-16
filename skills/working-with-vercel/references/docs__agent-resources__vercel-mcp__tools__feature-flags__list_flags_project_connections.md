@@ -12,9 +12,10 @@ related:
   []
 summary: List the projects that share flags with a project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flags_project_connections.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f575b9aad8efde8a9bc3c49ae3370b6dba99a9f5f7a70979313f94eeb0d2ba2a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e73248d8e9c8b84265b3f31a2939684da0473c69e37e950943a2fea4fe6199ae"
 ---
 
 # list_flags_project_connections
@@ -46,6 +47,18 @@ The response contains a `data` array with the source and consumer project IDs, a
 | `teamId`          | string | No       | Team ID.                                                                                                              |
 | `slug`            | string | No       | Team slug.                                                                                                            |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

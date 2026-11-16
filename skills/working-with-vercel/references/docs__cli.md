@@ -3,7 +3,7 @@ title: Vercel CLI Overview
 product: vercel
 url: /docs/cli
 canonical_url: "https://vercel.com/docs/cli"
-last_updated: 2026-10-07
+last_updated: 2026-11-14
 type: reference
 prerequisites:
   []
@@ -15,9 +15,10 @@ related:
   - /docs/rest-api
 summary: Learn how to use the Vercel command-line interface (CLI) to manage and configure your Vercel Projects from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "5cc0dcf56f8f9548db24c1d70a74552edd60c67198b3f5eec10724a9e6e46a67"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "cdf7e2454138233cc3d473efc573f59b3bee2b1b35b9889dd5f3e3ac97a5b178"
 ---
 
 # Vercel CLI Overview
@@ -216,9 +217,10 @@ vercel api /v9/projects -X POST -F name=my-project
 
 ### billing
 
-View usage and costs, contract commitments, your [Spend Management](/docs/spend-management) budget, and invoices for your team.
+View your plan and balance due, usage and costs, contract commitments, [Spend Management](/docs/spend-management) budgets, and invoices for your team.
 
 ```bash
+vercel billing overview
 vercel billing usage
 vercel billing contract
 vercel billing budgets set --amount 200 --pause --webhook https://example.com/spend
@@ -405,6 +407,8 @@ vercel deploy
 vercel deploy --prod
 ```
 
+To deploy without an account or login, run `vercel deploy --temporary`. See [Deploying without logging in](/docs/deployments/deploy-without-logging-in).
+
 [Learn more about the deploy command](/docs/cli/deploy)
 
 ### deploy-hooks
@@ -441,6 +445,17 @@ vercel dns remove [record-id]
 ```
 
 [Learn more about the dns command](/docs/cli/dns)
+
+### docs
+
+Search the Vercel docs and read docs pages as Markdown.
+
+```bash
+vercel docs search "rewrites"
+vercel docs inspect functions
+```
+
+[Learn more about the docs command](/docs/cli/docs)
 
 ### doctor
 
@@ -674,6 +689,18 @@ vercel integration resource claim [resource-name]
 ```
 
 [Learn more about the integration command](/docs/cli/integration)
+
+### kb
+
+Browse, search, and read Vercel Knowledge Base guides as Markdown.
+
+```bash
+vercel kb
+vercel kb search "rewrites"
+vercel kb inspect ai-sdk-and-evlog
+```
+
+[Learn more about the kb command](/docs/cli/kb)
 
 ### kms
 
@@ -976,6 +1003,7 @@ Set up coding agents for Vercel: install the Vercel plugin for Claude Code, Code
 ```bash
 vercel setup
 vercel setup gateway
+vercel setup skills
 vercel setup --dry-run
 ```
 
@@ -1060,6 +1088,18 @@ vercel token-pass setup --agent opencode --scope my-team --yes
 ```
 
 [Learn more about the token-pass command](/docs/cli/token-pass)
+
+### templates
+
+Search the template catalog, inspect a template's deployment requirements, and deploy it to a new GitHub repository.
+
+```bash
+vercel templates search "AI agent" --framework next.js
+vercel templates inspect eve-memory-agent
+vercel templates deploy eve-memory-agent --repo acme/my-eve-agent
+```
+
+[Learn more about the templates command](/docs/cli/templates)
 
 ### tokens
 
@@ -1147,6 +1187,20 @@ vercel whoami
 - [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect): Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from your agents and services with short-lived, scoped tokens instead of long-lived secrets.
 - [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments): Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with Active CPU pricing and automatic scaling.
 - [Build a fullstack app with Next.js 16 and Prisma Postgres](https://vercel.com/kb/guide/nextjs-prisma-postgres): Create a fullstack blog with the Next.js App Router, Prisma, Sign in with Vercel, Prisma Postgres from the Vercel Marketplace, and deploy it to Vercel.
+- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations): Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel CLI integration commands.
+
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

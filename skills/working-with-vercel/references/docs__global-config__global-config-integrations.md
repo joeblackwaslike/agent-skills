@@ -15,9 +15,10 @@ related:
   - /docs/global-config/get-started
 summary: Learn how to use Global Config with popular A/B testing and feature flag service integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/global-config/global-config-integrations.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "1d57d28d0d884c7d6583a5476e07227f10448585c0cd9d07628760f965dba239"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "94605ea285a26c521eea9353419ab1695ac76cfa880136a6d70704b75e6e0d73"
 ---
 
 # Using Global Config with an integration
@@ -32,12 +33,11 @@ Vercel has partnered with A/B testing and feature flag services such as LaunchDa
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Global Config](https://flags-sdk.dev/docs/providers/global-config)
 - [Using Global Config](https://vercel.com/docs/global-config/using-global-config) — Learn how to use Global Configs in your projects.
-- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
+- [Get the data of a user-provided Global Config](https://vercel.com/docs/rest-api/marketplace/get-the-data-of-a-user-provided-global-config) — HEAD /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config — When the user
 - [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs) — GET /v1/global-config — Returns all Global Configs.
 - [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config) — POST /v1/global-config — Creates a Global Config.
-- [Get the data of a user-provided Global Config](https://vercel.com/docs/rest-api/marketplace/get-the-data-of-a-user-provided-global-config) — HEAD /v1/installations/{integrationConfigurationId}/resources/{resourceId}/experimentation/global-config — When the user
+- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
 
 Full cross-link map for this page: [/docs/global-config/global-config-integrations.graph.md](/docs/global-config/global-config-integrations.graph.md)
 <!-- /docsgraph:related -->
@@ -59,6 +59,18 @@ You can get started with any of these Global Config integrations by following th
 - [Manage with the API](/docs/global-config/vercel-api)
 - [Global Config Limits](/docs/global-config/global-config-limits)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

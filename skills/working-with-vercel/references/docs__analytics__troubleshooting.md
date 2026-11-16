@@ -12,9 +12,10 @@ related:
   - /docs/security/reverse-proxy
 summary: Learn how to troubleshoot common issues with Vercel Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/analytics/troubleshooting.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "8ea89b56c27e95513bb989c818b5cd63d3a5dc3a5c4c5b21a829f1c3215da183"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4230682493cf920a97dbfd1aca413537a6e77b827f704fab770d4df777a40052"
 ---
 
 # Vercel Web Analytics Troubleshooting
@@ -32,10 +33,10 @@ sha256: "8ea89b56c27e95513bb989c818b5cd63d3a5dc3a5c4c5b21a829f1c3215da183"
 - [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available)
 - [Query Web Analytics from the Vercel CLI](https://vercel.com/changelog/query-web-analytics-from-the-vercel-cli)
 - [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
-- [Troubleshooting Vercel Speed Insights](https://vercel.com/docs/speed-insights/troubleshooting) — Learn about common issues and how to troubleshoot Vercel Speed Insights.
-- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
 - [Privacy and Compliance](https://vercel.com/docs/analytics/privacy-policy) — Learn how Vercel supports privacy and data compliance standards with Vercel Web Analytics.
+- [Troubleshooting Vercel Speed Insights](https://vercel.com/docs/speed-insights/troubleshooting) — Learn about common issues and how to troubleshoot Vercel Speed Insights.
 - [Filtering Analytics](https://vercel.com/docs/analytics/filtering) — Learn how filters allow you to explore insights about your website's visitors.
+- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 
 Full cross-link map for this page: [/docs/analytics/troubleshooting.graph.md](/docs/analytics/troubleshooting.graph.md)
 <!-- /docsgraph:related -->
@@ -71,6 +72,18 @@ import { Analytics } from '@vercel/analytics/next'; // Next.js import
 import { Analytics } from '@vercel/analytics/react'; // Generic React import
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

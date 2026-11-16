@@ -15,9 +15,10 @@ related:
   - /docs/deployment-protection/protected-source-maps
 summary: "Learn how to control access to your Vercel project's preview and production URLs with Deployment Protection. Configure protection methods and scope..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployment-protection.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "72854940b055fe7d2c01d9685804c6ff623e3bdee73bdcf4c79974223cdcb999"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ec6d873ebf82885ad6cbaf0c1207240761f0458f158ef63a25c16eed5a934599"
 ---
 
 # Deployment Protection on Vercel
@@ -30,10 +31,11 @@ Deployment Protection lets you control who can access your preview and productio
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Protect production deployments for free on every plan](https://vercel.com/changelog/protect-production-deployments-for-free-on-every-plan)
-- [Choose between Vercel Passport and other Deployment Protection methods](https://vercel.com/kb/guide/vercel-passport-vs-deployment-protection) — Compare Vercel Passport with Vercel Authentication, Password Protection, and Trusted IPs to choose the right Deployment
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments) — Protect who can see your deployments.
+- [Choose between Vercel Passport and other Deployment Protection methods](https://vercel.com/kb/guide/vercel-passport-vs-deployment-protection) — Compare Vercel Passport with Vercel Authentication, Password Protection, and Trusted IPs to choose the right Deployment
+- [Protect production deployments for free on every plan](https://vercel.com/changelog/protect-production-deployments-for-free-on-every-plan)
 - [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments)
+- [Recall.ai](https://eve.dev/docs/channels/recall) — Put your agent in Zoom, Google Meet, and Microsoft Teams meetings through Recall.ai meeting bots.
 - [Connections](https://eve.dev/docs/connections) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
 - [Remote Agents](https://eve.dev/docs/guides/remote-agents) — Call another eve deployment as a subagent with defineRemoteAgent: the same tool call as a local subagent, with outbound
 - [More Secure Deployment Protection](https://vercel.com/changelog/more-secure-deployment-protection)
@@ -41,7 +43,6 @@ Deployment Protection lets you control who can access your preview and productio
 - [Set team-wide defaults for Deployment Protection](https://vercel.com/changelog/set-team-wide-defaults-for-deployment-protection)
 - [Use native curl syntax with Vercel CLI](https://vercel.com/changelog/use-native-curl-syntax-with-vercel-cli)
 - [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
-- [The Complete Guide to Bring Your Own Cloud](https://vercel.com/kb/guide/byoc) — Use Bring Your Own Cloud \\(BYOC\\) to run Vercel Functions as AWS Lambda functions in your own AWS account, from setup to
 
 Full cross-link map for this page: [/docs/deployment-protection.graph.md](/docs/deployment-protection.graph.md)
 <!-- /docsgraph:related -->
@@ -199,6 +200,18 @@ See [Usage & Pricing for Deployment Protection](/docs/deployment-protection/usag
 - [Usage & Pricing](/docs/deployment-protection/usage-and-pricing): Compare feature availability and pricing by plan
 - [Vercel plans](/docs/plans): Compare plan features and pricing
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

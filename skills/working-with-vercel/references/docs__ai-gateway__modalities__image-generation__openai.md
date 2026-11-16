@@ -12,9 +12,10 @@ related:
   []
 summary: Generate and edit images using AI models through Vercel AI Gateway with the Chat Completions API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/modalities/image-generation/openai.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "316a89d64fc9712ff91ef6ffbf5bb19651ded6cd587c45a929acc3adb5565029"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8b5bc6915f1df89ba2949091a50d18fbce3949d7a32556d3ce654fc2177be8a9"
 ---
 
 # AI Gateway Image Generation via Chat Completions
@@ -28,12 +29,12 @@ page](/ai-gateway/models?type=image), including multimodal LLMs and image-only m
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Image-only models available in Vercel AI Gateway](https://vercel.com/changelog/image-only-models-available-in-vercel-ai-gateway)
 - [MAI-Image-2.6 and MAI-Image-2.6-Flash now available on AI Gateway](https://vercel.com/changelog/mai-image-2-6-and-mai-image-2-6-flash-now-available-on-ai-gateway)
+- [Image-only models available in Vercel AI Gateway](https://vercel.com/changelog/image-only-models-available-in-vercel-ai-gateway)
 - [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
-- [AI Gateway Image Generation with AI SDK](https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk) — Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
 - [GPT Image 2.5 Flare and Sunburst now available on AI Gateway](https://vercel.com/changelog/gpt-image-2-5-flare-and-sunburst-now-available-on-ai-gateway)
-- [AI Gateway Chat Completions Image Generation Reference](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation) — Generate images using AI models that support multimodal output through the Chat Completions API through AI Gateway.
+- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
+- [AI Gateway Image Generation with AI SDK](https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk) — Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/image-generation/openai.graph.md](/docs/ai-gateway/modalities/image-generation/openai.graph.md)
 <!-- /docsgraph:related -->
@@ -731,6 +732,18 @@ async function main() {
 main().catch(console.error);
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/cli/login
 summary: Deploy to Vercel without an account using Vercel Drop or the CLI, then claim the project to keep it.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployments/deploy-without-logging-in.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "583d29f0ada4811a2d197b51888dd511cff11b0a545165ed6d9e497e01d8e18c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3cc8a78047efcc94c1aea3beaa7472837845710bce868a46c6c2bbb9f04e5b59"
 ---
 
 # Deploying to Vercel Without Logging In
@@ -35,12 +36,11 @@ You can deploy to Vercel without an account and get a live URL in one step. Both
 - [Deploy with Vercel Drop without an account](https://vercel.com/changelog/deploy-with-vercel-drop-without-an-account)
 - [Vercel Drop vs Netlify Drop](https://vercel.com/kb/guide/vercel-drop-vs-netlify-drop) — Compare Vercel Drop and Netlify Drop for drag-and-drop deployment: framework builds, static sites, updates, size limits,
 - [Vercel Drop vs Cloudflare Direct Upload](https://vercel.com/kb/guide/vercel-drop-vs-cloudflare-direct-upload) — Compare Vercel Drop and Cloudflare Direct Upload: framework builds, browser vs CLI workflows, file limits, Git integrati
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
-- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
+- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [Operating BYOC Deployments](https://vercel.com/docs/networking/bring-your-own-cloud/operations) — Retry failed Bring Your Own Cloud \\(BYOC\\) deployments, clean up AWS resources, monitor logs, and rotate credentials.
 
 Full cross-link map for this page: [/docs/deployments/deploy-without-logging-in.graph.md](/docs/deployments/deploy-without-logging-in.graph.md)
 <!-- /docsgraph:related -->
@@ -113,6 +113,18 @@ After claiming, log in to keep deploying the project. For CLI workflows, run [`v
 - [`vercel login`](/docs/cli/login) to authenticate the CLI after claiming
 - [Deployments](/docs/deployments) to understand how deployments work on Vercel
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

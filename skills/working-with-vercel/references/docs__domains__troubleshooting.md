@@ -15,9 +15,10 @@ related:
   - /docs/plans/pro-plan
 summary: Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains/troubleshooting.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "3b22238fa5fde3f6cf9a90015e9dbf1408ad8261ca485042a25b760df3cdc000"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "69d0554ba69f544a2196a50c44d35e981a48f60254a0ab550d4652417916b3d5"
 ---
 
 # Troubleshooting domains
@@ -32,11 +33,12 @@ There are many common reasons why your domain configuration may not be working. 
 
 - [Using Cloudflare and other reverse proxies with Vercel](https://vercel.com/kb/guide/can-i-use-a-proxy-on-top-of-my-vercel-deployment) — General information about using an external proxy to serve a Vercel Deployment.
 - [How to resolve IP blocking issues ](https://vercel.com/kb/guide/how-to-resolve-ip-blocking-issues) — Learn to troubleshoot IP blocking issues for both shared and personal networks.
+- [How to fix a domain suspended by serverHold or clientHold](https://vercel.com/kb/guide/how-to-fix-a-domain-suspended-by-serverhold-or-clienthold) — What serverHold and clientHold mean, why they happen, and how to resolve them.
 - [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
-- [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
 - [Claiming Domain Ownership](https://vercel.com/docs/domains/working-with-domains/claim-domain-ownership) — Learn how to claim ownership of a domain that is registered with another Vercel account by verifying DNS ownership.
-- [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
+- [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
 - [Domains and DNS](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains) — Vercel MCP tools for domains and dns.
+- [Add a domain to a project](https://vercel.com/docs/rest-api/projects/add-a-domain-to-a-project) — POST /v10/projects/{idOrName}/domains — Add a domain to the project by passing its domain name and by specifying the pro
 
 Full cross-link map for this page: [/docs/domains/troubleshooting.graph.md](/docs/domains/troubleshooting.graph.md)
 <!-- /docsgraph:related -->
@@ -272,6 +274,18 @@ If a previous provider left records at the challenge name, check whether they re
 
 The [/.well-known](# "The /.well-known directory") path is reserved and cannot be redirected or rewritten. Only Enterprise teams can configure custom SSL. [Contact sales](/contact/sales) to learn more.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

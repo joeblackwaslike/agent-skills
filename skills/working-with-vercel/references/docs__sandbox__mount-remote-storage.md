@@ -15,9 +15,10 @@ related:
   - /docs/oidc/aws
 summary: Mount an external object store such as Amazon S3 into a Vercel Sandbox with a FUSE driver, so code reads and writes remote files through the local...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/mount-remote-storage.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "a10988acbc80e3cf5d316fe8cde230712f09cc97ea7dca1e11e267de4b72d58e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "68c7d51affa3e689101bb4dbb16663cd960c37fa2006c760cdca7512bd94328a"
 ---
 
 # Mount remote storage
@@ -32,11 +33,11 @@ Mount an external object store such as Amazon S3 into a sandbox and work with re
 
 - [Vercel Sandbox now supports FUSE-based filesystems](https://vercel.com/changelog/vercel-sandbox-now-supports-fuse-based-filesystems)
 - [Vercel Sandbox](https://eve.dev/docs/sandbox/vercel) — Create persistent sandboxes on Vercel, from a prepared snapshot when the environment has build-time setup.
-- [Drives for Vercel Sandbox are now in public beta](https://vercel.com/changelog/drives-for-vercel-sandbox-are-now-in-public-beta)
-- [Box Mount now runs in Vercel Sandbox](https://vercel.com/changelog/box-mount-now-runs-in-vercel-sandbox)
-- [How Vercel Drives work and how to use them](https://vercel.com/kb/guide/vercel-drives) — Learn how Vercel Drives give Vercel Sandbox persistent, shareable storage, and how to create, mount, snapshot, fork, lis
-- [A sandbox without a network boundary is only half a sandbox](https://vercel.com/blog/a-sandbox-without-a-network-boundary-is-only-half-a-sandbox)
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
+- [Running commands in a Vercel Sandbox](https://vercel.com/docs/sandbox/run-commands-in-sandbox) — Create isolated sandbox environments to run builds, tests, and commands safely.
+- [Sandbox security model](https://vercel.com/docs/sandbox/concepts/security) — Understand the Vercel Sandbox security model: microVM isolation, hardware side channels, resource limits, network access
+- [Sandbox Regions](https://vercel.com/docs/sandbox/concepts/regions) — Choose the regions where Vercel Sandbox runs your sandboxes, set a project default, and configure failover regions.
+- [Using Secure Compute with Sandbox](https://vercel.com/docs/sandbox/concepts/secure-compute) — You can attach a Vercel Sandbox to a Secure Compute network to send its public-internet traffic through static IPs and r
 
 Full cross-link map for this page: [/docs/sandbox/mount-remote-storage.graph.md](/docs/sandbox/mount-remote-storage.graph.md)
 <!-- /docsgraph:related -->
@@ -172,7 +173,7 @@ async def main() -> None:
         result = await box.run_command(
             "ls", ["-la", mount_dir], capture_output=True, check=True
         )
-        print(result.stdout)
+        print(result.stdout.decode())
 
 
 asyncio.run(main())
@@ -279,6 +280,8 @@ export {
 
 Create the sandbox, install Mountpoint while the network is still open, then lock the network policy so S3 traffic flows through your proxy before mounting:
 
+**index.ts**
+
 ```ts filename="index.ts"
 import { Sandbox } from '@vercel/sandbox';
 
@@ -358,6 +361,86 @@ try {
 }
 ```
 
+**main.py**
+
+```py filename="main.py"
+import asyncio
+import os
+
+from vercel import sandbox
+from vercel.sandbox import NetworkPolicy, NetworkPolicyRule
+
+
+async def main() -> None:
+    async with sandbox.create_sandbox() as box:
+        # Refresh the package index. The sandbox starts without one.
+        await box.run_command("apt-get", ["update"], sudo=True, check=True)
+
+        # apt-get cannot install from a URL, so download the package first.
+        await box.run_command(
+            "curl",
+            [
+                "-sL",
+                "-o",
+                "/tmp/mount-s3.deb",
+                "https://s3.amazonaws.com/mountpoint-s3-release/latest/x86_64/mount-s3.deb",
+            ],
+            check=True,
+        )
+
+        # Install Mountpoint for Amazon S3. It pulls in its own FUSE dependency.
+        await box.run_command(
+            "apt-get",
+            ["install", "-y", "/tmp/mount-s3.deb"],
+            sudo=True,
+            check=True,
+        )
+
+        mount_dir = "/mnt/s3"
+        await box.run_command("mkdir", ["-p", mount_dir], sudo=True, check=True)
+
+        # Route all S3 traffic through the signing proxy. No other egress is
+        # allowed. Add "*": () to keep general Internet access for other domains.
+        await box.update(
+            network_policy=NetworkPolicy.custom(
+                allow={
+                    "s3.amazonaws.com": [
+                        NetworkPolicyRule(
+                            forward_url="https://my-project.vercel.app/api/s3-proxy"
+                        )
+                    ]
+                }
+            )
+        )
+
+        # Mount without credentials. --no-sign-request skips signing in the
+        # sandbox, and --force-path-style keeps the request host on
+        # s3.amazonaws.com so it matches the domain rule above.
+        await box.run_command(
+            "mount-s3",
+            [
+                os.environ["S3_BUCKET_NAME"],
+                mount_dir,
+                "--allow-other",
+                "--no-sign-request",
+                "--force-path-style",
+                "--endpoint-url",
+                "https://s3.amazonaws.com",
+            ],
+            sudo=True,
+            check=True,
+        )
+
+        # List the files in your bucket to confirm the mount.
+        result = await box.run_command(
+            "ls", ["-la", mount_dir], capture_output=True, check=True
+        )
+        print(result.stdout.decode())
+
+
+asyncio.run(main())
+```
+
 The sandbox never receives AWS credentials, and every request to the bucket passes through your function. Since the proxy example forwards each request unchanged, add your own authorization checks in the handler before signing. For example, restrict each sandbox to its own key prefix.
 
 ## Mount other providers
@@ -368,6 +451,18 @@ Some providers sync content into the sandbox instead of serving it through a
 FUSE driver. For Box content, see
 [Box Mount](/docs/sandbox/ecosystem/box-mount).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

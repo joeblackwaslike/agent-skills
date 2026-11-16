@@ -15,9 +15,10 @@ related:
   - /docs/security/enterprise-managed-users
 summary: Learn how organizations let you group multiple Vercel teams under a single entity with consolidated billing and central management.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/organizations.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "237bb4df40792cc85eb8c9d29020ad79f1f6dbdcc445dbe2db63afe00fb8d550"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "87b37bf532d6100b2282d78f6be3bccd574d8403875b59efca3b89055cfd5daf"
 ---
 
 # Organizations
@@ -30,12 +31,11 @@ An organization groups multiple Vercel [teams](/docs/accounts) under a single en
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Organizations](https://v0.app/docs/api/v2/guides/organizations) — Learn how to use the v0 API with Vercel Organizations to offer v0-style chat experiences to your customers.
 - [Create or Add Team to Organization](https://vercel.com/docs/rest-api/organizations/create-or-add-team-to-organization) — POST /v1/organizations/{organizationId}/teams — Create a new team under an organization, or add an existing team. \\`mode
 - [List Organization Teams](https://vercel.com/docs/rest-api/organizations/list-organization-teams) — GET /v1/organizations/{organizationId}/teams — List up to 100 teams in an organization, each enriched with the team's sl
 - [List Organizations](https://vercel.com/docs/rest-api/organizations/list-organizations) — GET /v1/organizations — List the organizations where the authenticated user holds the OrgAdmin or OrgViewer permission o
 - [Create an Organization](https://vercel.com/docs/rest-api/organizations/create-an-organization) — POST /v1/organizations — Create a new Organization. This endpoint is in private beta. Contact your Vercel account team f
-- [Delete Team from Organization](https://vercel.com/docs/rest-api/organizations/delete-team-from-organization) — DELETE /v1/organizations/{organizationId}/teams/{targetTeamId} — Delete a team from an organization. This endpoint is in
+- [Get an Organization](https://vercel.com/docs/rest-api/organizations/get-an-organization) — GET /v1/organizations/{organizationId} — Get a single organization by ID or slug. This endpoint is in private beta. Cont
 
 Full cross-link map for this page: [/docs/organizations.graph.md](/docs/organizations.graph.md)
 <!-- /docsgraph:related -->
@@ -360,6 +360,18 @@ Organizations are in private beta, and some capabilities aren't available yet:
 - [Roles and access control](/docs/rbac)
 - [Release phases](/docs/release-phases)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

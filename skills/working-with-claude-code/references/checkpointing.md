@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/checkpointing.md"
-fetched_at: "2026-10-26T09:47:04.845Z"
-sha256: "e12d88404a36511c0fac5e9aaf1def707e4465b559aacbe258f854749dcffc32"
+fetched_at: "2026-11-16T12:28:44.823Z"
+sha256: "f0f66aca749347801ad55fec8ee669c162152458eaf1e5f11f56dfe05d21d0e6"
 ---
 
 > ## Documentation Index
@@ -12,7 +12,7 @@ sha256: "e12d88404a36511c0fac5e9aaf1def707e4465b559aacbe258f854749dcffc32"
 
 > Track, rewind, and summarize Claude's edits and conversation to manage session state.
 
-Claude Code automatically tracks Claude's file edits as you work, allowing you to quickly undo changes and rewind to previous states if anything gets off track.
+Claude Code automatically tracks Claude's file edits as you work. To undo edits, run `/rewind` or its alias `/undo` in your session to open the [rewind menu](#rewind-and-summarize).
 
 ## How checkpoints work
 

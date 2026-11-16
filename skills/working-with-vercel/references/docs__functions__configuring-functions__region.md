@@ -16,9 +16,10 @@ related:
   - /docs/cli/deploy
 summary: Learn how to configure regions for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/configuring-functions/region.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "18a74f5e9673b7f9483bc7be32795a14bb1677f86a7348b870449f80cf4636eb"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a4e8a95b6aefd858d6393b5560f7b9cb6a702eca85713f1947fba6cfcef4b583"
 ---
 
 # Configuring regions for Vercel Functions
@@ -179,6 +180,18 @@ You can view your default and failover regions through the [deployment summary](
 
 Region failover is supported with Secure Compute. See [Region Failover](/docs/networking/secure-compute#region-failover) to learn more.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

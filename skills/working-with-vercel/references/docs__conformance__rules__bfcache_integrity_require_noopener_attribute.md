@@ -11,9 +11,10 @@ related:
   - /docs/conformance/rules/BFCACHE_INTEGRITY_NO_UNLOAD_LISTENERS
 summary: "Requires that links opened with window.open use the noopener attribute to eliminate a source of eviction from the browser's Back-Forward Cache."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/bfcache_integrity_require_noopener_attribute.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9a569443d3c63bb9c5f42448851df68e35344839344ff881403ec5dd0ef0ca37"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e9cb3ef5fd993be64cee71cfa36b091e1fafbbfb162f7e5c62d6e10cd10065b2"
 ---
 
 # BFCACHE_INTEGRITY_REQUIRE_NOOPENER_ATTRIBUTE
@@ -56,6 +57,18 @@ window.open('https://example.com', '_blank', 'noopener');
 window.open('https://example.com', '_top', 'noreferrer');
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

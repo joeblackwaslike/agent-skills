@@ -14,9 +14,10 @@ related:
   - /docs/routing-middleware
 summary: Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/routing/project-routing-rules.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "0c53f5bf4cf36f1fdd62eb8e8f3cb90b19c6ac9c620bb101fb9bcb7ec4844d41"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "709ce90b416bb0e8676d971bd94a1466479e1fb83eba3d6762d8aea4e13e1412"
 ---
 
 # Project-Level Routing Rules
@@ -33,10 +34,10 @@ Project-level routing rules let you add redirects, rewrites, response headers, a
 - [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
 - [Vercel's CDN now supports updating routing rules without a new deployment](https://vercel.com/changelog/vercels-cdn-now-supports-updating-routing-rules-without-a-new-deployment)
 - [Stage routing rules](https://vercel.com/docs/rest-api/project-routes/stage-routing-rules) — PUT /v1/projects/{projectId}/routes — Stage routing rules for a project. Set \\`overwrite\\` to true to replace all existi
-- [Add a routing rule](https://vercel.com/docs/rest-api/project-routes/add-a-routing-rule) — POST /v1/projects/{projectId}/routes — Add a single routing rule to a project at a specified position. Defaults to the e
-- [Edit a routing rule](https://vercel.com/docs/rest-api/project-routes/edit-a-routing-rule) — PATCH /v1/projects/{projectId}/routes/{routeId} — Replace a routing rule identified by its ID, or restore it from the cu
 - [vercel routes](https://vercel.com/docs/cli/routes) — Learn how to manage project-level routing rules using the vercel routes CLI command.
 - [Delete routing rules](https://vercel.com/docs/rest-api/project-routes/delete-routing-rules) — DELETE /v1/projects/{projectId}/routes — Delete one or more routing rules from a project by ID. Stages a new version wit
+- [Edit a routing rule](https://vercel.com/docs/rest-api/project-routes/edit-a-routing-rule) — PATCH /v1/projects/{projectId}/routes/{routeId} — Replace a routing rule identified by its ID, or restore it from the cu
+- [Add a routing rule](https://vercel.com/docs/rest-api/project-routes/add-a-routing-rule) — POST /v1/projects/{projectId}/routes — Add a single routing rule to a project at a specified position. Defaults to the e
 
 Full cross-link map for this page: [/docs/routing/project-routing-rules.graph.md](/docs/routing/project-routing-rules.graph.md)
 <!-- /docsgraph:related -->
@@ -152,6 +153,18 @@ Project-level routing rules support the same core actions as `vercel.json` route
 
 A few other `vercel.json` fields are also deployment-only: `locale` for i18n routing, and the internal fields `handle`, `check`, `continue`, and `mitigate`.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

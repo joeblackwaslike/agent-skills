@@ -15,9 +15,10 @@ related:
   - /docs/git/vercel-for-gitlab
 summary: Learn how to manage your Vercel account and team members.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/accounts.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "3b49102a3cd9a8025ac4359cd306749fc7cb5f4ef8f4f5a01643ad5a5d66c6db"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "19fd1325d39459acf6d2558d7fe27d7f30f15d6870d36f93382728537de9552c"
 ---
 
 # Account Management
@@ -37,11 +38,11 @@ When you first sign up for Vercel, you'll create an account. This account is use
 - [Tag-based cache invalidation now available for all responses](https://vercel.com/changelog/tag-based-cache-invalidation-now-available-for-all-responses)
 - [Firewall Terraform Configuration](https://vercel.com/kb/guide/firewall-terraform-configuration) — Learn how to create scalable firewall configurations with Terraform
 - [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
-- [Teams](https://v0.app/docs/teams) — Collaborate with your team on projects with shared resources.
-- [Troubleshoot project collaboration](https://vercel.com/docs/deployments/troubleshoot-project-collaboration) — Learn about common reasons for deployment issues related to team member requirements and how to resolve them.
 - [Transition your Hobby team after EMU enrollment](https://vercel.com/docs/security/enterprise-managed-users-account-update) — Explains the account update screen EMU members see at SSO sign-in and how to complete it.
-- [Organizations](https://vercel.com/docs/organizations) — Learn how organizations let you group multiple Vercel teams under a single entity with consolidated billing and central
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
+- [Troubleshoot project collaboration](https://vercel.com/docs/deployments/troubleshoot-project-collaboration) — Learn about common reasons for deployment issues related to team member requirements and how to resolve them.
+- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
 
 Full cross-link map for this page: [/docs/accounts.graph.md](/docs/accounts.graph.md)
 <!-- /docsgraph:related -->
@@ -357,6 +358,29 @@ To remove an email address select the **Delete** button in the dot menu.
 
 If you wish to remove your primary email address, you will need to set a new primary email address first.
 
+## Recovering access when you can't use your login email
+
+If you can't reach the email address you log in with but another login method still works, such as a connected Git provider, a [passkey](/docs/accounts#login-with-passkeys), or another verified email address, log in with that method and update your emails:
+
+1. [Add a new email address](/docs/accounts#adding-a-new-email-address) and follow the verification link that Vercel sends to it. If your account already has three email addresses, [remove one](/docs/accounts#removing-an-email-address) first.
+2. [Set the new email address as your primary email address](/docs/accounts#changing-your-primary-email-address).
+
+If you can't log in with any login method, use the [Account Recovery](/accountrecovery) form to request access to your account.
+
+If you're an [Enterprise Managed User](/docs/security/enterprise-managed-users), you log in through your organization's SAML SSO provider, so contact your team administrator to recover access.
+
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

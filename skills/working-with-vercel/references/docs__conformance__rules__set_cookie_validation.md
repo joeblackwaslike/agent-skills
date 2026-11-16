@@ -11,9 +11,10 @@ related:
   []
 summary: Prevents usage of cookies that do not conform to the allowed cookie policy.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/set_cookie_validation.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c014f8bcfd202f633315ba2993030a05a82a9b64ca73def5344bb01bf9146b4d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a803fb5fcbbc7d4d7916b4bde4dad76ebc6b3f553ebce2e878413813dc693b34"
 ---
 
 # SET_COOKIE_VALIDATION
@@ -36,6 +37,18 @@ file as follows:
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

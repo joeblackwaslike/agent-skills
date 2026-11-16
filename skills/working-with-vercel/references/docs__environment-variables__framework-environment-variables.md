@@ -12,9 +12,10 @@ related:
   - /docs/environment-variables
 summary: "Framework environment variables are automatically populated by the Vercel, based on your project's framework."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/environment-variables/framework-environment-variables.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "eb4d43b3daefe367b643da009a937d4d383565b29723716ace9846c6eab007e4"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "6d97e0387ab1231f1cd70c6c4a6bad389401d636c5fbaa1fa2158e62766bd747"
 ---
 
 # Framework environment variables
@@ -28,10 +29,10 @@ Frameworks typically use a prefix to expose environment variables to the browser
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Environment Variables](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables) — Vercel MCP tools for environment variables.
-- [System environment variables](https://vercel.com/docs/environment-variables/system-environment-variables) — System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [Environment Variables UI](https://vercel.com/blog/environment-variables-ui)
-- [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
+- [Environments Variables per Git branch](https://vercel.com/changelog/environments-variables-per-git-branch)
+- [System environment variables](https://vercel.com/docs/environment-variables/system-environment-variables) — System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the
 - [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
 - [vercel env](https://vercel.com/docs/cli/env) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
 - [Get a deployment by ID or URL](https://vercel.com/docs/rest-api/deployments/get-a-deployment-by-id-or-url) — GET /v13/deployments/{idOrUrl} — Retrieves information for a deployment either by supplying its ID \\(\\`id\\` property\\) o
@@ -2845,6 +2846,18 @@ The pull request id the deployment was triggered by. If a deployment is created 
 SANITY_STUDIO_VERCEL_GIT_PULL_REQUEST_ID=23
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

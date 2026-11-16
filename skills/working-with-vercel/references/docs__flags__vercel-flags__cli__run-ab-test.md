@@ -13,9 +13,10 @@ related:
   - /docs/flags/flags-explorer
 summary: Set up an A/B test with a feature flag, track results through Web Analytics, and clean up afterward using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/vercel-flags/cli/run-ab-test.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "797d4c6926b251f4590c5c1060fae7c9a552f6e12302f505a8932cee596cfd2f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9d8d1ba936f38b4865387e8776aab45b18bc99d073b8519e4bb9429d5e6554ac"
 ---
 
 # Running an A/B test
@@ -31,9 +32,12 @@ This workflow sets up a multi-variant layout experiment, tracks results through 
 - [A/B testing on ecommerce storefronts without hurting Core Web Vitals](https://vercel.com/kb/guide/ecommerce-ab-testing-core-web-vitals) — Client-side A/B tools can worsen LCP and CLS on the pages you're testing. Run ecommerce A/B tests at the edge with Routi
 - [How Splits Work in Vercel Flags](https://vercel.com/kb/guide/how-splits-work-in-vercel-flags) — Use weighted splits in Vercel Flags to deterministically bucket users into variants by percentage for gradual rollouts a
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
-- [A/B Testing on Vercel](https://vercel.com/kb/guide/ab-testing-on-vercel) — Learn best practices for A/B testing on Vercel
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [A/B Testing on Vercel](https://vercel.com/kb/guide/ab-testing-on-vercel) — Learn best practices for A/B testing on Vercel
+- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
+- [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Rolling out a new feature](https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature) — Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI
+- [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
 - [Using the Flags SDK with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/cli/run-ab-test.graph.md](/docs/flags/vercel-flags/cli/run-ab-test.graph.md)
@@ -155,6 +159,18 @@ When you've picked a winner, clean up:
 vercel flags archive new-pricing-layout --yes
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

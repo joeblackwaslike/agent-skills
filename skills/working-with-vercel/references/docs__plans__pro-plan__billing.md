@@ -16,9 +16,10 @@ related:
   - /docs/notifications
 summary: This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/plans/pro-plan/billing.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c8c6d5284f9886f3217ddc88bc3b1a43d667a55b3807f155bdeb3d76326a38d5"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "762ab5115e1e7cab0f73cf4a5e944e8cf76cad3c3b0d9570f2e9edc056a96530"
 ---
 
 # Billing FAQ for Pro Plan
@@ -34,7 +35,7 @@ The Vercel Pro plan is designed for professional developers, freelancers, and bu
 - [A more flexible Pro plan for modern teams](https://vercel.com/blog/new-pro-pricing-plan)
 - [Billing FAQ for Enterprise Plan](https://vercel.com/docs/plans/enterprise/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
 - [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby) — Learn about the Hobby plan and how it compares to the Pro plan.
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [vercel billing](https://vercel.com/docs/cli/billing) — Learn how to view your billing overview, usage, contracts, budgets, and invoices for your Vercel team using the vercel b
 - [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
 - [Understanding Vercel](https://vercel.com/docs/plans/pro-plan/trials) — Learn all about Vercel's Pro Plan free trial, including features, usage limits, and options post-trial. Learn how to man
 
@@ -218,6 +219,18 @@ The monthly credit gives teams flexibility to allocate usage based on their actu
 - View and comment on deployments
 - Access analytics and project insights
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

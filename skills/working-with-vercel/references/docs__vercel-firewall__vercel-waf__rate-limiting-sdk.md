@@ -14,9 +14,10 @@ related:
   - /docs/vercel-firewall/vercel-waf/rate-limiting
 summary: Learn how to configure a custom rule with rate limit in your code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting-sdk.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c3024c7ed29386ee8daf1c14f725042ea79488b6922faecc8d2161a090a65834"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "fc49a6567c2076969415c2f93837e85bf57e78d583ae4d63bf8b2ad611a4f530"
 ---
 
 # Rate Limiting SDK
@@ -33,12 +34,14 @@ You can configure a custom rule with rate limit in your code by using the [`@ver
 - [Build an AI Chat Agent with Weather API Tool Calling](https://vercel.com/kb/guide/build-ai-agent-weather-api) — Build an intelligent conversational agent that fetches real-time weather data using the AI SDK, tool calling, and a back
 - [Deploying and testing BotID](https://vercel.com/kb/guide/deploying-and-testing-botid) — This guide gives an overview on Vercel BotID and how to deploy and test it in production
 - [How to send emails from an application on Vercel](https://vercel.com/kb/guide/sending-emails-from-an-application-on-vercel) — Send email from Vercel Functions over an HTTP API instead of SMTP. Match the right Next.js pattern to your trigger and f
-- [Rate limiting now available on Hobby, with higher included usage on Pro](https://vercel.com/changelog/rate-limiting-now-available-on-hobby-with-higher-included-usage-on-pro)
-- [Vercel WAF rate limiting now generally available](https://vercel.com/changelog/vercel-waf-rate-limiting-now-generally-available)
 - [Create Vercel Firewall rules with natural language](https://vercel.com/changelog/create-vercel-waf-custom-rules-using-natural-language)
-- [Vercel WAF upgrade brings persistent actions, rate limiting, and API control](https://vercel.com/blog/vercel-waf-upgrade-brings-persistent-actions-rate-limiting-and-api-control)
+- [Securing your AI applications with Rate Limiting](https://vercel.com/kb/guide/securing-ai-app-rate-limiting) — Learn how to secure your AI applications with rate limiting using Vercel WAF and Vercel AI SDK
+- [Vercel WAF rate limiting now generally available](https://vercel.com/changelog/vercel-waf-rate-limiting-now-generally-available)
+- [Rate limiting now available on Hobby, with higher included usage on Pro](https://vercel.com/changelog/rate-limiting-now-available-on-hobby-with-higher-included-usage-on-pro)
 - [Block, rate limit, and challenge traffic with the Vercel Firewall](https://vercel.com/changelog/block-rate-limit-and-challenge-traffic-with-the-vercel-firewall)
-- [AI Gateway Rate Limits](https://vercel.com/docs/ai-gateway/rate-limits) — Learn how AI Gateway rate limits work on the free and paid tiers, what the 429 response looks like, and how to retry a r
+- [Update Firewall Configuration](https://vercel.com/docs/rest-api/security/update-firewall-configuration) — PATCH /v1/security/firewall/config — Process updates to modify the existing firewall config for a project
+- [Update conditional firewall bypass](https://vercel.com/docs/rest-api/security/update-conditional-firewall-bypass) — PUT /v1/security/firewall/bypass/rules — Update a conditional firewall bypass rule for a project domain. Replaces condit
+- [Create conditional firewall bypass](https://vercel.com/docs/rest-api/security/create-conditional-firewall-bypass) — POST /v1/security/firewall/bypass/rules — Create a conditional firewall bypass rule for a project domain.
 
 Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/rate-limiting-sdk.graph.md](/docs/vercel-firewall/vercel-waf/rate-limiting-sdk.graph.md)
 <!-- /docsgraph:related -->
@@ -246,6 +249,18 @@ export async function POST(request) {
 
 - [WAF Rate Limiting](/docs/vercel-firewall/vercel-waf/rate-limiting): Counting algorithms, limits, and pricing
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

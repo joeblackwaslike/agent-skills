@@ -11,9 +11,10 @@ related:
   - /docs/security/reverse-proxy
 summary: Learn about common issues and how to troubleshoot Vercel Speed Insights.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/speed-insights/troubleshooting.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "40047997eb1c210b83dba97d0e2b6a3fe1618ebde3675e83c60fb95864517f6d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "eba230b9eed00846f287bd0ba97e207ddefebad7d048a6d90110eea36efdbb11"
 ---
 
 # Troubleshooting Vercel Speed Insights
@@ -31,13 +32,12 @@ If you are experiencing a situation where data is not visible in the Speed Insig
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Query Speed Insights from the Vercel CLI](https://vercel.com/changelog/query-speed-insights-from-the-vercel-cli)
-- [Investigate latency issues and slowness on Vercel](https://vercel.com/kb/guide/investigate-latency-issues-and-slowness) — Learn how to use Observability to investigate latency issues and slowness on Vercel.
 - [Speed Insights now has a free tier](https://vercel.com/changelog/speed-insights-free-tier)
-- [Vercel Speed Insights Privacy & Compliance](https://vercel.com/docs/speed-insights/privacy-policy) — Learn how Vercel follows the latest privacy and data compliance standards with its Speed Insights feature.
 - [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights) — Learn how to use Speed Insights to analyze your application's performance data.
+- [Vercel Speed Insights Privacy & Compliance](https://vercel.com/docs/speed-insights/privacy-policy) — Learn how Vercel follows the latest privacy and data compliance standards with its Speed Insights feature.
+- [Speed Insights Configuration with @vercel/speed-insights](https://vercel.com/docs/speed-insights/package) — Learn how to configure your application to capture and send web performance metrics to Vercel using the @vercel/speed-in
 - [Vercel Web Analytics Troubleshooting](https://vercel.com/docs/analytics/troubleshooting) — Learn how to troubleshoot common issues with Vercel Web Analytics.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
-- [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
 
 Full cross-link map for this page: [/docs/speed-insights/troubleshooting.graph.md](/docs/speed-insights/troubleshooting.graph.md)
 <!-- /docsgraph:related -->
@@ -57,6 +57,18 @@ We do not recommend placing a reverse proxy in front of Vercel. A proxy can affe
 
 Point your domain directly to Vercel. If you must use a proxy, review the [reverse proxy guidance](/docs/security/reverse-proxy) for supported options and requirements. Make sure your proxy forwards all pages you want to track, plus requests to `/_vercel/speed-insights/*` and `/<unique-path>/*`, to your Vercel deployment.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

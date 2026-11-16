@@ -12,9 +12,10 @@ related:
   - /docs/sandbox/sdk-reference
 summary: The Sandbox cannot resume because the snapshot it references no longer exists.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/snapshot_not_found.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "3b4f9666e86e593008b85b153e4eec7c71a4afabedc89f57ceaa43a0fb692fa2"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2ace04665f51e53b36a804cfca46e194ba4219fd9fc4dca43ef64f756e3a3622"
 ---
 
 # SNAPSHOT_NOT_FOUND
@@ -34,6 +35,18 @@ To troubleshoot this error, follow these steps:
 3. **Check the current snapshot:** Before you recreate the Sandbox, look up its current snapshot (`sandbox.currentSnapshotId`) with `sandbox snapshots get <snapshot-id>` or `Snapshot.get({ snapshotId })`. A `deleted` status confirms that the snapshot expired or was deleted.
 4. **Inspect the Sandbox dashboard:** Navigate to the [Sandboxes dashboard](/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fsandboxes\&title=Go+to+Sandboxes) and review the Sandbox's snapshot history.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

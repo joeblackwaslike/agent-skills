@@ -12,9 +12,10 @@ related:
   - /docs/environment-variables
 summary: Learn how to use Postgres databases through the Vercel Marketplace.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/postgres.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "0d80e3ca5d50530eaff268da84949669380c5b27d8218a35bf6adcb4aebe64a6"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7667d7c06c700858cd24af5b53e4ad24224ee0efabc2d4276c87ae27b0e6a2e9"
 ---
 
 # Postgres on Vercel
@@ -34,6 +35,18 @@ Vercel enables you to use Postgres by integrating with external database provide
 - Provision and configure a Postgres database with minimal setup.
 - Have credentials and [environment variables](/docs/environment-variables) injected into your Vercel project.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

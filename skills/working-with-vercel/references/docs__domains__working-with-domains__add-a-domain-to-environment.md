@@ -13,9 +13,10 @@ related:
   - /docs/domains/working-with-domains/add-a-domain
 summary: Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains/working-with-domains/add-a-domain-to-environment.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "299962141bc6a27441dd4f26dcdadee7627336e671a0987b8909a8f427971bff"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9faaaa73fbda90f5f36e805008ee5ef9b800f13a4ea1bb7a873734b3733082ec"
 ---
 
 # Assigning a custom domain to an environment
@@ -27,9 +28,9 @@ sha256: "299962141bc6a27441dd4f26dcdadee7627336e671a0987b8909a8f427971bff"
 - [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
 - [Assigning a domain to a Git branch](https://vercel.com/docs/domains/working-with-domains/assign-domain-to-a-git-branch) — Learn how to assign a domain to a different Git branch with this guide.
-- [Deploying & Redirecting Domains](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting) — Learn how to deploy your domains and set up domain redirects with this guide.
 - [Add Custom Domain](https://vercel.com/docs/platforms/platform-elements/actions/add-custom-domain) — Server action for programmatically adding custom domains to Vercel projects.
-- [Managing Nameservers](https://vercel.com/docs/domains/managing-nameservers) — Learn how to add custom nameservers and restore original nameservers for your domains on Vercel with this guide.
+- [Deploying & Redirecting Domains](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting) — Learn how to deploy your domains and set up domain redirects with this guide.
+- [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 
 Full cross-link map for this page: [/docs/domains/working-with-domains/add-a-domain-to-environment.graph.md](/docs/domains/working-with-domains/add-a-domain-to-environment.graph.md)
 <!-- /docsgraph:related -->
@@ -43,6 +44,18 @@ Full cross-link map for this page: [/docs/domains/working-with-domains/add-a-dom
 - If you're using an [**Apex domain**](/docs/domains/working-with-domains/add-a-domain#apex-domains) (e.g. example.com), you will need to configure it with an **A** record.
 - If you're using a [**Subdomain**](/docs/domains/working-with-domains/add-a-domain#subdomains) (e.g. docs.example.com), you will need to configure it with a **CNAME** record.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

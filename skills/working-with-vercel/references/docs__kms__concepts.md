@@ -15,9 +15,10 @@ related:
   - /docs/kms/concepts/connect-grants
 summary: Understand how Vercel KMS rotates signing keys and how it authorizes signing, management, and verification.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/kms/concepts.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "3a650f4f014e301253420ffb0b56405a8924d226212d5bb59d7fa3a2d24594ff"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c34e77c273c43dcafb12d9982c91d965eadd7e79facd0d5f45af3d5307896ee9"
 ---
 
 # Vercel KMS Concepts
@@ -31,11 +32,11 @@ These pages explain the parts of Vercel KMS you configure once and rely on over 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Sign JWTs from your Functions without managing private keys](https://vercel.com/changelog/sign-jwts-from-your-functions-without-managing-private-keys)
-- [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management) — Vercel MCP tools for key management.
+- [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys — Create a new signing key for a KMS issuer. Depending on the activation mode, the
+- [vercel kms](https://vercel.com/docs/cli/kms) — Manage Vercel KMS issuers, rotate signing keys, and control which projects can sign tokens from the command line.
 - [Vercel Connect Concepts](https://vercel.com/docs/connect/concepts) — Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and a
+- [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management) — Vercel MCP tools for key management.
 - [Vercel fundamental concepts](https://vercel.com/docs/fundamentals) — Learn about the core concepts of Vercel
-- [Vercel KMS SDK Reference](https://vercel.com/docs/kms/ts-sdk-reference) — API reference for @vercel/kms, including signJWT, signMessage, region resolution, and signing the KMS API directly witho
-- [Vercel KMS Pricing and Limits](https://vercel.com/docs/kms/pricing) — How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
 
 Full cross-link map for this page: [/docs/kms/concepts.graph.md](/docs/kms/concepts.graph.md)
 <!-- /docsgraph:related -->
@@ -46,6 +47,18 @@ Full cross-link map for this page: [/docs/kms/concepts.graph.md](/docs/kms/conce
 - **[Connect grants](/docs/kms/concepts/connect-grants)**: How a Connect grant lets Vercel Connect provision and sign with an issuer on behalf of your team.
 - **[Claims](/docs/kms/concepts/claims)**: How a grant sets KMS-owned token claims the caller cannot override, and how an issuer claims schema validates every token it signs.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

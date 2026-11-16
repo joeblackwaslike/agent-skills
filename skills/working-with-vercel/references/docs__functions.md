@@ -15,9 +15,10 @@ related:
   - /docs/background-workers
 summary: Build API routes, webhooks, and agent request handlers with Vercel Functions, then test and debug them with Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "e564e4747b416fe879e8b67ed9851b36d629b27ff77613626c5e5c09901b78dd"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2910f5b951607ea635cfe9391d3c2a9812be371e016a4393ab976ab1e68ef2e4"
 ---
 
 # Vercel Functions
@@ -32,18 +33,18 @@ Build API routes, webhooks, and agent request handlers that scale with traffic. 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Evolving Vercel Functions](https://vercel.com/blog/evolving-vercel-functions)
-- [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
 - [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
-- [Vercel Edge Functions are now generally available](https://vercel.com/blog/edge-functions-generally-available)
+- [Evolving Vercel Functions](https://vercel.com/blog/evolving-vercel-functions)
 - [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis) — Learn how to build and scale performant APIs on Vercel.
+- [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
+- [How can I improve function cold start performance on Vercel?](https://vercel.com/kb/guide/improve-function-cold-start-performance-on-vercel) — Learn how to confirm whether cold starts cause function latency on Vercel, and how Fluid compute reduces how often they
+- [How do I bypass the 4.5MB body size limit of Vercel Serverless Functions?](https://vercel.com/kb/guide/how-to-bypass-vercel-body-size-limit-serverless-functions) — Learn how to deal with the body size limit of Serverless Functions on Vercel.
 - [30-day runtime log retention, now available in Observability Plus](https://vercel.com/changelog/30-day-runtime-log-retention-now-available-in-observability-plus)
 - [Advanced Remix integration with streaming SSR and multi-runtime support](https://vercel.com/changelog/advanced-remix-integration-with-streaming-ssr-and-multi-runtime-support)
 - [Agents can now access runtime logs with Vercel's MCP server](https://vercel.com/changelog/agents-can-now-access-runtime-logs-with-vercels-mcp-server)
 - [Bring your Dockerfile to Vercel Functions](https://vercel.com/changelog/bring-your-dockerfile-to-vercel-functions)
 - [Edge Config is now generally available ](https://vercel.com/changelog/edge-config-is-now-generally-available)
 - [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
-- [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 
 Full cross-link map for this page: [/docs/functions.graph.md](/docs/functions.graph.md)
 <!-- /docsgraph:related -->
@@ -247,6 +248,20 @@ If your project is not using fluid compute, see the [legacy pricing documentatio
 - [Optimize Runtime Cache on Vercel](https://vercel.com/kb/guide/optimize-runtime-cache-reads-on-vercel): Diagnose rising Runtime Cache usage, trace reads to tags and code paths, and reduce avoidable reads while checking write cost and origin traffic.
 - [How to choose between Functions, containers, and Daemons on Vercel](https://vercel.com/kb/guide/vercel-functions-containers-daemons): Choose Vercel Functions for HTTP requests, container images for custom runtimes, and Daemons for continuous background workers.
 - [Migrate a Python API from Railway to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-railway-to-vercel): Move a FastAPI, Flask, or Django API from Railway to Vercel Functions. Replace railway.json start commands, volumes, Celery workers, and cron services.
+- [Migrate a Python API from Render to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-render-to-vercel): Move a FastAPI, Flask, or Django API from Render to Vercel Functions. Translate render.yaml and replace persistent disks, background workers, and cron jobs.
+
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

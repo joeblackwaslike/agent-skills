@@ -11,14 +11,35 @@ related:
   - /docs/ci/configuration
 summary: Learn about the container images Vercel CI uses to run your tasks, and how to choose one.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ci/image.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b1b35de14fbec26c8d557a8093a46596641291c029b9ed64676c351b7c282f77"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7b28476f64ebf5aea05b94443ad391bd145c18e7816d51453f4f49a32a9bc668"
 ---
 
 # Images
 
 Vercel CI runs each task in a Linux container. You can choose between two images:
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Migrate from GitHub Actions to Vercel CI](https://vercel.com/kb/guide/github-actions-to-vercel-ci) — Move Turborepo tasks from GitHub Actions workflows to Vercel CI, migrate secrets to CI environment variables, and switch
+- [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
+- [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
+- [Deploy Rust on Vercel with Docker](https://vercel.com/kb/guide/deploy-rust-on-vercel-with-docker) — Build a Rust application with Axum and Docker, then deploy it to Vercel Functions. Learn how to configure environment va
+- [How to migrate from GHCR to Vercel Container Registry](https://vercel.com/kb/guide/migrate-ghcr-to-vcr) — Migrate container images from GitHub Container Registry \\(GHCR\\) to Vercel Container Registry \\(VCR\\), including authent
+- [Vercel Container Registry](https://vercel.com/docs/container-registry) — Store and manage Docker container images on Vercel. Build and push images with the Vercel CLI, then run them on Vercel F
+- [Build image overview](https://vercel.com/docs/builds/build-image) — Learn about the container image used for Vercel builds.
+- [Running End-to-End Tests in Vercel CI](https://vercel.com/docs/ci/guides/end-to-end-tests) — Run Playwright tests against the Vercel deployment of every commit with Vercel CI.
+- [vercel ci](https://vercel.com/docs/cli/ci) — Enable or disable Vercel CI for repositories, inspect runs, search logs, and rerun jobs from the command line.
+- [Vercel CI Guides](https://vercel.com/docs/ci/guides) — Follow complete examples of common Vercel CI workflows, from end-to-end tests to pull request comments.
+
+Full cross-link map for this page: [/docs/ci/image.graph.md](/docs/ci/image.graph.md)
+<!-- /docsgraph:related -->
 
 | Image        | Base image                                                                | Tag                 |
 | ------------ | ------------------------------------------------------------------------- | ------------------- |
@@ -128,6 +149,18 @@ To change the image for one task in one package, add the tag to that task in the
 
 Vercel CI installs your repository's dependencies with the Amazon Linux image, whatever `ci:os` tags your tasks use. To change the resources for this step, see [Bootstrapping resources](/docs/ci/configuration#bootstrapping-resources).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

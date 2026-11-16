@@ -11,9 +11,10 @@ related:
   - /docs/conformance/customize
 summary: Requires using next/font to load local fonts and fonts from supported CDNs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/nextjs_use_next_font.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "fdd605032514098203c8e9949b320238dfc9be16d5467f8b8e51b61380d66c59"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2fa4adc74303cc93971e3816a69483f1625d681ab77e2fbebf9a569eb7837462"
 ---
 
 # NEXTJS_USE_NEXT_FONT
@@ -71,6 +72,18 @@ function App() {
 Replace any `@font-face` at-rules and `link` elements that are caught by this
 rule with [`next/font`](https://nextjs.org/docs/api-reference/next/font).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

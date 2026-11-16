@@ -12,9 +12,10 @@ related:
   []
 summary: Use get_custom_environment with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables/get_custom_environment.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9cd3a3671f4de86122d8224288e8add7ff76b65c033ce9dabab5901c79571f68"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "36f4969a1b7711d04ad10af3df075e524f9400bd8cffce32af6dfde418a2ebb7"
 ---
 
 # get_custom_environment
@@ -30,8 +31,8 @@ Retrieve a custom environment.
 - [list_project_custom_environments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables/list_project_custom_environments) — Use list_project_custom_environments with Vercel MCP.
 - [get_project_env](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables/get_project_env) — Use get_project_env with Vercel MCP.
 - [filter_project_envs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables/filter_project_envs) — Use filter_project_envs with Vercel MCP.
-- [edit_project_env](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables/edit_project_env) — Use edit_project_env with Vercel MCP.
-- [create_project_env](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables/create_project_env) — Use create_project_env with Vercel MCP.
+- [Retrieve a custom environment](https://vercel.com/docs/rest-api/environment/retrieve-a-custom-environment) — GET /v9/projects/{idOrName}/custom-environments/{environmentSlugOrId} — Retrieve a custom environment for the project. M
+- [Retrieve custom environments](https://vercel.com/docs/rest-api/environment/retrieve-custom-environments) — GET /v9/projects/{idOrName}/custom-environments — Retrieve custom environments for the project. Must not be named 'Produ
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/environment-variables/get_custom_environment.graph.md](/docs/agent-resources/vercel-mcp/tools/environment-variables/get_custom_environment.graph.md)
 <!-- /docsgraph:related -->
@@ -45,6 +46,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/envir
 | `teamId`              | string | No       | Team ID to use for this operation.                          |
 | `slug`                | string | No       | Team slug to use for this operation. Use instead of teamId. |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

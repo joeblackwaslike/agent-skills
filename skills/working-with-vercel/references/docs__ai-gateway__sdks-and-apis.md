@@ -13,11 +13,12 @@ related:
   - /docs/ai-gateway/models-and-providers/provider-filtering-and-ordering
   - /docs/ai-gateway/models-and-providers/model-fallbacks
   - /docs/ai-gateway/observability-and-spend/observability
-summary: Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere Rerank APIs.
+summary: Connect to AI Gateway with the AI SDK, Python, Go, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere Rerank APIs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f53df9e54f7454745760784229b50212438a3b257b2454daeb6825571e70bb5d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a15be17823ebe0a97b573d3d02480f96a289d9cb3eba0f6e9f88e11d24cafbfc"
 ---
 
 # AI Gateway SDKs and APIs
@@ -33,9 +34,10 @@ Use AI Gateway with the AI SDK, the AI SDK for Python beta, or compatible OpenAI
 - [Claude Haiku 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-haiku-5-5-now-available-on-ai-gateway)
 - [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway)
 - [AI SDK 4.2](https://vercel.com/blog/ai-sdk-4-2)
-- [AI Gateway supports OpenAI's Responses API](https://vercel.com/changelog/ai-gateway-supports-openais-responses-api)
+- [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai) — Learn how to use OpenAI with AI Gateway and the direct provider.
+- [Vercel AI SDK vs TanStack AI](https://vercel.com/kb/guide/vercel-ai-sdk-vs-tanstack-ai) — Compare the Vercel AI SDK and TanStack AI for building AI-powered TypeScript applications and agents. Learn how AI SDK a
+- [AI SDK 4.0](https://vercel.com/blog/ai-sdk-4-0)
 - [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
-- [AI Gateway Video Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/video-input) — Analyze video clips with AI Gateway using AI SDK 7, Python, Chat Completions, and Responses / OpenResponses.
 - [AI Gateway Custom Reporting API](https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting) — Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis.graph.md](/docs/ai-gateway/sdks-and-apis.graph.md)
@@ -355,6 +357,7 @@ The CLI setup commands complement the API examples. Each coding agent chooses it
 
 - **New project?** Use [AI SDK](/docs/ai-gateway/sdks-and-apis/ai-sdk). It handles provider differences for you and supports streaming, structured outputs, tool calling, and reasoning across all providers.
 - **Writing Python?** Use the [AI SDK for Python](/docs/ai-gateway/sdks-and-apis/ai-sdk-python) (public beta), or point the official [OpenAI and Anthropic Python SDKs](/docs/ai-gateway/sdks-and-apis/python) at AI Gateway.
+- **Writing Go?** Point the official [OpenAI and Anthropic Go SDKs](/docs/ai-gateway/sdks-and-apis/go) at AI Gateway.
 - **Using the OpenAI SDK?** The [OpenAI Responses API](/docs/ai-gateway/sdks-and-apis/responses) and [Chat Completions API](/docs/ai-gateway/sdks-and-apis/openai-chat-completions) both work by changing your base URL.
 - **Using Claude Code or the Anthropic SDK?** Use the [Anthropic Messages API](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api) for native feature support.
 - **Want a provider-agnostic REST API?** Use [OpenResponses](/docs/ai-gateway/sdks-and-apis/openresponses).
@@ -365,6 +368,18 @@ The CLI setup commands complement the API examples. Each coding agent chooses it
 - [Browse available models](/docs/ai-gateway/models-and-providers) to find the right model for your use case
 - [Set up observability](/docs/ai-gateway/observability-and-spend/observability) to monitor usage and debug requests
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

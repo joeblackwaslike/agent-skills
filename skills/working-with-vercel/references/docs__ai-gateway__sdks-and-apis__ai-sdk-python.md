@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/models-and-providers/reasoning
 summary: Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "91482af945ee78f023f4ef818d9f70782499df1734a2612791d1e1d9148ef92c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "fd4ff7c9230effb23dbfbd2813b2a74e7904ddcd33a6634e643473cd1d878bf5"
 ---
 
 # AI SDK for Python with AI Gateway
@@ -32,14 +33,11 @@ It uses AI Gateway to route requests by default.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Introducing Vercel AI SDK 3.2](https://vercel.com/blog/introducing-vercel-ai-sdk-3-2)
-- [Introducing the AI Gateway](https://vercel.com/blog/ai-gateway)
-- [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app) — Learn the key AI concepts and tools for building and scaling AI apps.
 - [AI SDK](https://vercel.com/docs/ai-sdk) — Build TypeScript agents and AI applications with a unified API for models, tools, structured output, and streaming.
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 - [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
-- [Chat SDK with AI Gateway](https://vercel.com/docs/chat-sdk/integrations/ai-gateway) — Stream AI Gateway model responses into Chat SDK conversations with AI SDK and message history.
-- [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
+- [Go with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/go) — Use AI Gateway from any Go application with the OpenAI or Anthropic Go SDKs, including model fallbacks, cost tracking, a
+- [AI Gateway Vision and Image Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/vision) — Analyze images with AI Gateway using AI SDK 7, the Python beta, Chat Completions, Messages, and Responses APIs.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/ai-sdk-python.graph.md](/docs/ai-gateway/sdks-and-apis/ai-sdk-python.graph.md)
 <!-- /docsgraph:related -->
@@ -216,6 +214,18 @@ See [Authentication](/docs/ai-gateway/authentication-and-byok) for more details.
 - Learn about [model routing and fallbacks](/docs/ai-gateway/models-and-providers/provider-options)
 - Building with TypeScript? See the [AI SDK](/docs/ai-gateway/sdks-and-apis/ai-sdk) page
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

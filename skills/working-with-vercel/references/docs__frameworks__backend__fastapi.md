@@ -3,7 +3,7 @@ title: Deploy a FastAPI app on Vercel
 product: vercel
 url: /docs/frameworks/backend/fastapi
 canonical_url: "https://vercel.com/docs/frameworks/backend/fastapi"
-last_updated: 2026-08-27
+last_updated: 2026-11-14
 type: how-to
 prerequisites:
   - /docs/frameworks/backend
@@ -13,12 +13,13 @@ related:
   - /docs/functions/runtimes/python/python-version
   - /docs/functions/runtimes/python
   - /docs/cli/deploy
-  - /docs/services
+  - /docs/deployments/deploy-without-logging-in
 summary: Deploy a FastAPI app on Vercel. Learn how the Python runtime, ASGI, static assets, and Vercel Functions work together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/backend/fastapi.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "7299f9cfb4f869e83add55d229e2b532c90e9981576f5f83a075f7ab24c60993"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ddb04c719c5c45f87b999a357201c9fb521e2941fd10112ae182ee594b32241f"
 ---
 
 # Deploy a FastAPI app on Vercel
@@ -35,14 +36,13 @@ your repository.
 
 - [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
 - [How to ship a Flask app on Vercel](https://vercel.com/kb/guide/ship-a-flask-app-on-vercel) — Deploy a Flask app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
+- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
+- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
 - [FastAPI frontends and static files served from the CDN](https://vercel.com/changelog/fastapi-frontends-and-static-files-served-from-the-cdn)
 - [FastAPI Lifespan Events are now supported on Vercel](https://vercel.com/changelog/fastapi-lifespan-events-are-now-supported-on-vercel)
 - [Vercel now supports Build Commands for FastAPI and Flask](https://vercel.com/changelog/vercel-now-supports-build-commands-for-fastapi-and-flask)
 - [Zero-configuration FastAPI backends](https://vercel.com/changelog/zero-config-fastapi-backends)
 - [Build an agentic app in FastAPI with OpenAI Agents API and Vercel Sandbox](https://vercel.com/kb/guide/fastapi-openai-agents-api-vercel-sandbox) — Learn how to build a repository Q&A app using FastAPI, OpenAI Agents API, and Vercel Sandbox, with isolated code inspect
-- [Migrate from Google Cloud Run to Vercel](https://vercel.com/kb/guide/migrate-cloud-run-to-vercel) — Move a Cloud Run service or worker to Vercel. Compare runtimes, preserve Google Cloud access, and plan jobs, validation,
-- [Build a Weather API on Vercel: Express, FastAPI, and Nitro](https://vercel.com/kb/guide/weather-api-with-fastapi) — Build a weather API on Vercel with FastAPI, Express, or Nitro. Compare the three runtimes, add caching and Observability
-- [Deploy a Flask app on Vercel](https://vercel.com/docs/frameworks/backend/flask) — Deploy a Flask app on Vercel. Learn how the Python runtime, WSGI, static assets, and Vercel Functions work together.
 - [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify) — Deploy Fastify applications to Vercel with zero configuration.
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 
@@ -145,6 +145,16 @@ vc deploy
 ```
 
 > **💡 Note:** Minimum CLI version required: 48.1.8
+
+## Deploy without an account
+
+To deploy your FastAPI app without an account or login, run this command in the project root:
+
+```bash filename="terminal"
+vercel deploy --temporary
+```
+
+The CLI builds the project, deploys it to production, and prints a claim URL. Claim the project to keep it live. See [Deploying without logging in](/docs/deployments/deploy-without-logging-in).
 
 ## Deploy with a frontend
 
@@ -397,6 +407,18 @@ For more about deploying FastAPI on Vercel, see:
 - [Vercel Functions documentation](/docs/functions)
 - [Backend templates on Vercel](https://vercel.com/templates?type=backend)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

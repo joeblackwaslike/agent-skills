@@ -11,9 +11,10 @@ related:
   - /docs/cli/global-options
 summary: Learn how to perform a binary search on your deployments to help surface issues using the vercel bisect CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/bisect.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "e16bee5a7eeacd868ab0b76c4679e58a293864b92677d58b85755e2a5b16632c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7a63f2dc67d629d37cd4d6eb32a28dbed5c62eea31d690d2a8989c19ad33aa33"
 ---
 
 # vercel bisect
@@ -28,9 +29,9 @@ The `vercel bisect` command can be used to perform a [binary search](https://wik
 
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel inspect](https://vercel.com/docs/cli/inspect) — Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
+- [Rolling back a production deployment](https://vercel.com/docs/deployments/rollback-production-deployment) — Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [vercel curl](https://vercel.com/docs/cli/curl) — Learn how to make HTTP requests to your Vercel deployments with automatic deployment protection bypass using the vercel
-- [vercel rolling-release](https://vercel.com/docs/cli/rolling-release) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
+- [vercel ci](https://vercel.com/docs/cli/ci) — Enable or disable Vercel CI for repositories, inspect runs, search logs, and rerun jobs from the command line.
 
 Full cross-link map for this page: [/docs/cli/bisect.graph.md](/docs/cli/bisect.graph.md)
 <!-- /docsgraph:related -->
@@ -133,6 +134,18 @@ For more information on global options and their usage, refer to the [options se
 
 - [How to determine which Vercel Deployment introduced an issue?](/kb/guide/how-to-determine-which-vercel-deployment-introduced-an-issue)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

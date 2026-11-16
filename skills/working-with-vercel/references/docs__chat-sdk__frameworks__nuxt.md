@@ -16,9 +16,10 @@ related:
   - /docs/observability/runtime-logs
 summary: Add a Chat SDK bot to Nuxt, receive Slack events through Vercel Connect, and deploy on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/chat-sdk/frameworks/nuxt.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "a0d8d9b01ca5429abb22a04ea5c41c17229151e684fd98a9b7cad24d8e87d5a2"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "254dea4e0b7769fc5e4e7361bb0b0ff5b38ea7ca6155e5b47cef16e7cb82e5fc"
 ---
 
 # Chat SDK with Nuxt
@@ -35,8 +36,8 @@ Use a Nuxt server API route to receive Slack events and pass them to Chat SDK. T
 - [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
 - [Triage form submissions with Chat SDK](https://vercel.com/kb/guide/triage-form-submissions-with-chat-sdk) — Build a Slack bot that triages form submissions with interactive cards. Forward, edit, or mark as spam without leaving S
 - [The Complete Guide to Chat SDK](https://vercel.com/kb/guide/the-complete-guide-to-chat-sdk) — Chat SDK is a TypeScript library for building chat bots that work across Slack, Teams, Discord, Linear, and more from a
+- [Ship a GitHub code review bot with Hono and Redis](https://vercel.com/kb/guide/ship-a-github-code-review-bot-with-hono-and-redis) — This guide walks through building a GitHub bot that reviews pull requests on demand. When a user @mentions the bot on a
 - [Chat SDK with Next.js](https://vercel.com/docs/chat-sdk/frameworks/nextjs) — Add a Chat SDK bot to Next.js, receive Slack events through Vercel Connect, and deploy on Vercel.
-- [Chat SDK with TanStack Start](https://vercel.com/docs/chat-sdk/frameworks/tanstack-start) — Add a Chat SDK bot to TanStack Start, receive Slack events through Vercel Connect, and deploy on Vercel.
 
 Full cross-link map for this page: [/docs/chat-sdk/frameworks/nuxt.graph.md](/docs/chat-sdk/frameworks/nuxt.graph.md)
 <!-- /docsgraph:related -->
@@ -368,6 +369,18 @@ Add the Web Adapter with `protocol: 'ai-sdk'`, expose `bot.webhooks.web` at `ser
 - [Chat SDK Knowledge Agent template](/templates/nuxt/chat-sdk-knowledge-agent)
 - [Add more platform adapters](/docs/chat-sdk/adapters)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

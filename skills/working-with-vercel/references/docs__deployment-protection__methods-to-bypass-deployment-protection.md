@@ -15,9 +15,10 @@ related:
   - /docs/deployment-protection/methods-to-protect-deployments/vercel-authentication
 summary: Learn how to bypass Deployment Protection for specific domains, or for all deployments in a project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "5e28aa34dc38e616e513233f0f3ea5f9ef29f1ea9fac468d88618b4b618dd63e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f838bf52bf07f6d5d84035be8085b2ad48208948a9015544d90181bd85e6a82d"
 ---
 
 # Bypass Deployment Protection for testing, sharing, and automation
@@ -30,12 +31,13 @@ Deployment Protection secures your deployments, but sometimes you need to grant 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Choose between Vercel Passport and other Deployment Protection methods](https://vercel.com/kb/guide/vercel-passport-vs-deployment-protection) — Compare Vercel Passport with Vercel Authentication, Password Protection, and Trusted IPs to choose the right Deployment
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments) — Protect who can see your deployments.
-- [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments)
+- [Choose between Vercel Passport and other Deployment Protection methods](https://vercel.com/kb/guide/vercel-passport-vs-deployment-protection) — Compare Vercel Passport with Vercel Authentication, Password Protection, and Trusted IPs to choose the right Deployment
 - [Trusted Sources for Deployment Protection](https://vercel.com/changelog/trusted-sources-for-deployment-protection)
-- [Protect production deployments for free on every plan](https://vercel.com/changelog/protect-production-deployments-for-free-on-every-plan)
+- [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments)
 - [Automated & Agent Access](https://vercel.com/docs/deployment-protection/automated-agent-access) — Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Prote
+- [Usage & Pricing for Deployment Protection](https://vercel.com/docs/deployment-protection/usage-and-pricing) — Compare Deployment Protection feature availability and pricing across Hobby, Pro, and Enterprise plans.
+- [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Vercel Support Code Visibility, Git Fork Protection, and
 
 Full cross-link map for this page: [/docs/deployment-protection/methods-to-bypass-deployment-protection.graph.md](/docs/deployment-protection/methods-to-bypass-deployment-protection.graph.md)
 <!-- /docsgraph:related -->
@@ -113,6 +115,18 @@ Learn more about [Shareable Links](/docs/deployment-protection/methods-to-bypass
 - [Understanding Deployment Protection by environment](/docs/deployment-protection#choose-which-urls-to-protect)
 - [Methods to protect deployments](/docs/deployment-protection/methods-to-protect-deployments)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

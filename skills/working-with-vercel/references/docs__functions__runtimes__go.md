@@ -15,9 +15,10 @@ related:
   - /docs/environment-variables
 summary: Learn how to use the Go runtime to run Go APIs on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/runtimes/go.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "945e316d63b214e5856938721a6fe6ecc0c1620ab1e9c6f044a850817407c61a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "82bdddc4ccfbfa5205f3397321dca7dbb6a45bf342666856d0d3d600343af0d6"
 ---
 
 # Using the Go Runtime with Vercel Functions
@@ -36,12 +37,11 @@ Preset works with standard `net/http` servers and frameworks such as `chi` or
 
 - [Deploy Go apps on Vercel using Docker](https://vercel.com/kb/guide/deploy-go-using-docker-vercel) — Deploy an existing Dockerized Go app to Vercel using Memos as a real-world example, with Neon Postgres for durable data.
 - [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
-- [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
 - [Configuring the Runtime for Vercel Functions](https://vercel.com/docs/functions/configuring-functions/runtime) — Learn how to configure the runtime for Vercel Functions.
 - [Using the Rust Runtime with Vercel functions](https://vercel.com/docs/functions/runtimes/rust) — Build fast, memory-safe serverless functions with Rust on Vercel.
+- [Using the Python Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/python) — Learn how to use the Python runtime to run Python applications on Vercel.
 - [Using the Ruby Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/ruby) — Learn how to use the Ruby runtime to compile Ruby Vercel Functions on Vercel.
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
-- [Frameworks on Vercel](https://vercel.com/docs/frameworks) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
 
 Full cross-link map for this page: [/docs/functions/runtimes/go.graph.md](/docs/functions/runtimes/go.graph.md)
 <!-- /docsgraph:related -->
@@ -193,6 +193,18 @@ and self-hosted Git servers.
 With GitHub, you need to [create a personal token](https://github.com/settings/tokens)
 with permission to access your private repository.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

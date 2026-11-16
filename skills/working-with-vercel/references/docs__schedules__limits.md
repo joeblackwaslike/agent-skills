@@ -15,9 +15,10 @@ related:
   - /docs/queues/pricing
 summary: Limits for Vercel Schedules, including schedules per team, run frequency, jitter, Hobby usage, and API requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/schedules/limits.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b3ae36d00751338d8896596f8a0adad25f7714e77ddfb7fe2d6d7b6ffebe97ff"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ddba0967e8bd59a48199b00e8a1f0210e825bbd1978dc855bbc868d7b22a833d"
 ---
 
 # Schedules Limits
@@ -30,12 +31,13 @@ Schedules are in beta, and these limits may change before general availability.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Schedules](https://eve.dev/docs/schedules) — Run an agent on a cron cadence, either a fire-and-forget prompt or a handler that hands work off to a channel.
 - [Vercel Schedules is now in public beta](https://vercel.com/changelog/vercel-schedules-is-now-in-public-beta)
 - [Vercel Schedules: API Reference](https://vercel.com/docs/schedules/http-api) — Reference for the Vercel Schedules HTTP API: authenticate, choose an environment, and create, list, update, enable, disa
 - [Vercel Schedules: JS SDK Reference](https://vercel.com/docs/schedules/sdk) — Reference for @vercel/schedules: create, list, update, enable, disable, invoke, and delete schedules, and handle schedul
 - [vercel schedules](https://vercel.com/docs/cli/schedules) — Inspect and manage schedules in production, a custom environment, a Preview branch, CLI deployments by a user, or a loca
-- [Usage & Pricing for Cron Jobs](https://vercel.com/docs/schedules/cron-jobs/usage-and-pricing) — Learn about cron jobs usage and pricing details.
 - [Testing Schedules Locally](https://vercel.com/docs/schedules/local-development) — Run static and dynamic schedules on your machine with vercel dev, trigger runs on demand, and learn what differs from pr
+- [Handling Scheduled Runs](https://vercel.com/docs/schedules/handle-runs) — Write the private function, route, or queue consumer that a schedule runs, and make it safe to run more than once.
 
 Full cross-link map for this page: [/docs/schedules/limits.graph.md](/docs/schedules/limits.graph.md)
 <!-- /docsgraph:related -->
@@ -115,6 +117,18 @@ A schedule's runs use the resources of its target. Function and path targets cre
 - [Concepts](/docs/schedules/concepts)
 - [Configuration reference](/docs/schedules/configuration)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

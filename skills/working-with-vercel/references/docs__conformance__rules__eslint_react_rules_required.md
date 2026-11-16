@@ -11,9 +11,10 @@ related:
   []
 summary: Requires that a workspace package is configured with required React plugins and rules
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/eslint_react_rules_required.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "4ef3a7c5045589fd02b92b1bdc72af19cdf1ec2341c6d2dcab7980305eebee32"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b8d404704cb390cb5a69c845be2005161214101476cdd5067f73cfaabbd8b6c3"
 ---
 
 # ESLINT_REACT_RULES_REQUIRED
@@ -83,6 +84,18 @@ module.exports = {
 You should also add `"eslint-config-custom": "workspace:*"` to your
 `devDependencies`.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

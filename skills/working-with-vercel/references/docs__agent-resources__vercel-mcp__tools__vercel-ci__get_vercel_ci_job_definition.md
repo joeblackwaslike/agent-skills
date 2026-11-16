@@ -12,9 +12,10 @@ related:
   []
 summary: Use get_vercel_ci_job_definition with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/get_vercel_ci_job_definition.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "1a41e0e255d2d748893c092bf2b40468adf5c6f33f4cd3f9d6ea10995a3d228c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ca15e8ed631319c69ed2ec34c65ff494746483369fd24fdacb9d4a32a3d81815"
 ---
 
 # get_vercel_ci_job_definition
@@ -46,6 +47,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/verce
 | `teamId`          | string | No       | Team ID to use for this operation.                          |
 | `slug`            | string | No       | Team slug to use for this operation. Use instead of teamId. |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

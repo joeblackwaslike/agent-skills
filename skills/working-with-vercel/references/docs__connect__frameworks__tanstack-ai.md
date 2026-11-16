@@ -16,9 +16,10 @@ related:
   - /docs/connect/concepts/tokens
 summary: Connect a TanStack AI app to OAuth-protected MCP servers with Vercel Connect, handle user consent, and manage MCP clients.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/connect/frameworks/tanstack-ai.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "7684da206da3d0498d7e46622737fddff48fa7ac23345e2ae7b8aa524b7bbc5e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f9adfc0b8b2d80a4b56379c1bcf9d61940c411c4186e8687e9d4bfe225346b25"
 ---
 
 # TanStack AI with Vercel Connect
@@ -36,9 +37,9 @@ Connect a TanStack AI chat route to Linear's Model Context Protocol (MCP) server
 - [Vercel Connect now supports TanStack AI](https://vercel.com/changelog/vercel-connect-tanstack-ai)
 - [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
 - [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
-- [Add MCP Apps to your AI SDK application](https://vercel.com/kb/guide/ai-sdk-mcp-apps) — Build an MCP Apps host with the AI SDK using @ai-sdk/mcp and @ai-sdk/react to filter model-visible tools, read ui:// res
 - [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
-- [Chat SDK with Vercel Connect](https://vercel.com/docs/chat-sdk/integrations/connect) — Use Vercel Connect for Chat SDK platform credentials, verified webhooks, and separate per-user tool access.
+- [AI SDK with MCP](https://vercel.com/docs/mcp/integrations/ai-sdk) — Connect the AI SDK to an MCP server on Vercel, discover its tools, and call them with models served through AI Gateway.
+- [Chat SDK with AI Gateway](https://vercel.com/docs/chat-sdk/integrations/ai-gateway) — Stream AI Gateway model responses into Chat SDK conversations with AI SDK and message history.
 
 Full cross-link map for this page: [/docs/connect/frameworks/tanstack-ai.graph.md](/docs/connect/frameworks/tanstack-ai.graph.md)
 <!-- /docsgraph:related -->
@@ -284,6 +285,28 @@ Connect's [Chat SDK helpers](/docs/connect/frameworks/chat-sdk), such as `connec
 
 See [Chat SDK's TanStack AI integration](https://chat-sdk.dev/docs/ai/tanstack-ai) for history conversion and chat tools, or [Chat SDK with TanStack Start](/docs/chat-sdk/frameworks/tanstack-start#add-browser-chat-with-the-web-adapter) for browser chat with the Web Adapter. The Web Adapter streams text responses but doesn't forward tool calls to the client. Implement TanStack AI's approval and resume flow separately when tools require approval.
 
+## Frequently asked questions
+
+### Why doesn't `instanceof ConsentRequiredError` catch the consent error?
+
+TanStack AI wraps connection failures in `MCPConnectionError`, so the consent error sits in the outer error's `cause` chain. Pass the caught error to `getConsentChallenge(error)` from `@vercel/connect/tanstack-ai`. It searches the chain and returns the consent challenge, including its `url`, when one exists. See [Handle consent before streaming](#handle-consent-before-streaming).
+
+### Why does `connectMCPTransport` ask for consent before the chat stream starts?
+
+For Streamable HTTP, `connectMCPTransport` uses eager consent, so a missing grant throws during `createMCPClient()` at your route boundary. Without it, the error could surface later inside a tool call, where the chat loop reports it to the model as a tool error instead of sending the user to a consent page. SSE transports keep the MCP OAuth flow, because eager consent can make an EventSource reconnect repeatedly. See [Choose an MCP transport](#choose-an-mcp-transport).
+
+### Can I use an AI Gateway API key instead of the OIDC token?
+
+Yes, for model requests. If you set `AI_GATEWAY_API_KEY`, the TanStack AI Gateway adapter uses that key instead of `VERCEL_OIDC_TOKEN`. Vercel Connect still authenticates with the OIDC token, or with a Vercel access token passed as `vercelToken`, so keep the project linked and the connector attached to each environment. See [TanStack AI with AI Gateway](/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai).
+
+### Can I share one MCP client pool across users?
+
+No. Create MCP clients and pools inside each request when you use per-user subjects. A shared pool keeps the subject it was created with, so requests from different users could act through the same provider account. Keep the default `connection: 'close'` lifecycle for per-request clients. See [Connect multiple MCP servers](#connect-multiple-mcp-servers).
+
+### How do I give code in Vercel Sandbox access to a Connect-backed API without exposing the token?
+
+Request the token in your server code with `getToken()`, then inject it with [credentials brokering](/docs/sandbox/concepts/firewall#credentials-brokering) instead of passing it into the sandbox. A `networkPolicy` transform rule adds the `Authorization` header to the sandbox's outbound requests for the provider's domain, so code running in the sandbox can call the API without reading the token. Provider tokens expire, so update the policy with `sandbox.update()` after you request a new one. See [TanStack AI with Vercel Sandbox](/docs/sandbox/ecosystem/tanstack-ai) to run coding agents in sandboxes.
+
 ## Next steps
 
 - [TanStack AI with MCP](/docs/mcp/integrations/tanstack-ai): Call tools from an MCP server hosted on Vercel.
@@ -293,6 +316,18 @@ See [Chat SDK's TanStack AI integration](https://chat-sdk.dev/docs/ai/tanstack-a
 - [Tokens](/docs/connect/concepts/tokens): Choose subjects, scopes, and installations.
 - [TypeScript SDK Reference](/docs/connect/ts-sdk-reference): Review Connect token and authorization APIs.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

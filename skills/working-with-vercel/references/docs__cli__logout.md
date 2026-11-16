@@ -11,9 +11,10 @@ related:
   - /docs/cli/global-options
 summary: Learn how to logout from your Vercel account using the vercel logout CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/logout.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "3d34ac5da97697866166ab1e5aaad9338e5fa5e2a17e377571911cb0dcdd51d0"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "40f25d449be874cef9e7bf94558a80d3ec542a43d142493c5bd5ade26cd16131"
 ---
 
 # vercel logout
@@ -27,10 +28,10 @@ The `vercel logout` command allows you to logout of your Vercel account through 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [vercel login](https://vercel.com/docs/cli/login) — Learn how to login into your Vercel account using the vercel login CLI command.
-- [vercel signup](https://vercel.com/docs/cli/signup) — Learn how to create a new Vercel account using the vercel signup CLI command.
 - [vercel whoami](https://vercel.com/docs/cli/whoami) — Learn how to display the username of the currently logged in user with the vercel whoami CLI command.
+- [vercel signup](https://vercel.com/docs/cli/signup) — Learn how to create a new Vercel account using the vercel signup CLI command.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
+- [vercel inspect](https://vercel.com/docs/cli/inspect) — Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
 
 Full cross-link map for this page: [/docs/cli/logout.graph.md](/docs/cli/logout.graph.md)
 <!-- /docsgraph:related -->
@@ -61,6 +62,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

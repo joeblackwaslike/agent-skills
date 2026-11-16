@@ -3,9 +3,13 @@ title: Google
 description: Learn how to use Google models through AI Gateway or the direct Google provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/google"
 docs_index: /llms.txt
+keywords:
+  - gemini
+  - gemini flash
+  - gemini pro
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/google.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "6a51d431d8af1581cafca4f1d768ff6c5de6dab8e6473a298a05913f1e3a9512"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "3b5163aa5a8efa1f5a5f99cdd04524edeed1c8783533739f900121619db26bd5"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -237,13 +241,14 @@ The following optional provider options are available for Google models:
 - **responseModalities** *string\[]*
   The modalities to use for the response. Valid values are `TEXT`, `IMAGE`, and `AUDIO`, but support is model-dependent. When not defined or empty, the model defaults to returning only text.
 
-- **thinkingConfig** *\{ thinkingLevel?: 'minimal' | 'low' | 'medium' | 'high'; thinkingBudget?: number; includeThoughts?: boolean }*
+- **thinkingConfig** *\{ thinkingLevel?: 'minimal' | 'low' | 'medium' | 'high' | 'xhigh'; thinkingBudget?: number; includeThoughts?: boolean }*
 
   Optional. Configuration for the model's thinking process. Only supported by specific [Google models](https://ai.google.dev/gemini-api/docs/thinking).
 
-  - **thinkingLevel** *'minimal' | 'low' | 'medium' | 'high'*
+  - **thinkingLevel** *'minimal' | 'low' | 'medium' | 'high' | 'xhigh'*
 
     Optional. Controls the thinking depth for Gemini 3 and later models. Gemini 3.1 Pro supports 'low', 'medium', and 'high', Gemini 3 Pro supports 'low' and 'high', while Gemini 3 Flash supports all four levels: 'minimal', 'low', 'medium', and 'high'.
+    Gemini 4 Hydrogen supports 'low', 'medium', 'high', and 'xhigh'. The 'xhigh' level is only supported by Hydrogen.
 
   - **thinkingBudget** *number*
 
@@ -359,6 +364,14 @@ console.log(text);
 
 console.log(reasoning); // Reasoning summary
 ```
+
+For `gemini-4-hydrogen` (including `gemini-4-hydrogen-eap`), use
+`reasoning: 'xhigh'` or `thinkingConfig: { thinkingLevel: 'xhigh' }` for maximum
+reasoning depth. Hydrogen defaults to `high` when the thinking level is unset.
+Following the November 11, 2026 update, `xhigh` matches the previous `high`,
+`high` matches the previous `medium`, and `medium` sits between `low` and the
+new `high`. The `low` level is unchanged. Re-run prompts tuned before that
+update to check their reasoning quality.
 
 #### Gemini 2.5 Models
 
@@ -679,7 +692,7 @@ const ai = new GoogleGenAI({
   apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY,
 });
 
-const model = 'gemini-3.8-flash';
+const model = 'gemini-4-hydrogen';
 
 // Create a cache with the content you want to reuse
 const cache = await ai.caches.create({
@@ -1279,6 +1292,8 @@ will still validate the response against the schema in `Output.object`.
 | ------------------------------------- | ----------- | ----------------- | ---------- | -------------- | ------------- | ----------- |
 | `gemini-nano-banana-2.1`              | ✓           | ✗                 | ✗          | ✗              | ✓             | ✗           |
 | `gemini-4-argon`                      | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
+| `gemini-4-carbon`                     | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
+| `gemini-4-hydrogen`                   | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
 | `gemini-3.8-flash`                    | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
 | `gemini-3.7-flash`                    | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
 | `gemini-3.6-flash`                    | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
@@ -1560,6 +1575,30 @@ Use `google(...)` for the standard `:generateContent` /
 Interactions endpoint. Pick one per model instance — they target different
 request bodies and SSE event vocabularies.
 
+### Reasoning
+
+Use the top-level `reasoning` option with `generateText` or `streamText` to
+control thinking depth on Interactions models that support thinking levels:
+
+```ts
+import { google } from '@ai-sdk/google';
+import { generateText } from 'ai';
+
+const { text } = await generateText({
+  model: google.interactions('gemini-4-hydrogen'),
+  reasoning: 'xhigh',
+  prompt: 'What is AGI?',
+});
+```
+
+The provider maps `reasoning` to `generation_config.thinking_level` using the
+model's supported levels. `xhigh` is supported only by Gemini 4 Hydrogen.
+Unsupported levels fall back to a supported level with a compatibility warning;
+`none` maps to the lowest supported level. Models without thinking-level
+support and agent calls emit a warning and omit the setting. Omitting `reasoning`
+or setting it to `'provider-default'` preserves the API default.
+An explicit `providerOptions.google.thinkingLevel` takes precedence.
+
 ### Provider Options
 
 The Interactions model reads its options from the shared
@@ -1620,10 +1659,13 @@ The following optional provider options are available:
   Per-agent configuration. Currently supports `{ type: 'dynamic' }` and
   `{ type: 'deep-research', thinkingSummaries?, visualization?, collaborativePlanning? }`.
 
-- **thinkingLevel** *'minimal' | 'low' | 'medium' | 'high'*
+- **thinkingLevel** *'minimal' | 'low' | 'medium' | 'high' | 'xhigh'*
 
   Controls reasoning depth for thinking-enabled models. Mapped onto the
   Interactions request's `thinking_level`.
+  Overrides the top-level `reasoning` option when set.
+  The `xhigh` level is only supported by Gemini 4 Hydrogen and requests its
+  maximum reasoning depth.
 
 - **thinkingSummaries** *'auto' | 'none'*
 
@@ -2627,20 +2669,24 @@ to `result.warnings`.
 ## Decision Models
 
 Create an experimental decision model with `google.decisionModel(modelId)`.
-It uses Gemini structured output for Choice, Score, and Boolean questions. Choose a model
-that supports structured output, such as `gemini-4-argon`.
+It calls the Gemini Decisions API directly for Choice, Score, and Boolean questions.
+The endpoint requires `v1beta` and is not available on Vertex AI.
 
 ```ts
 import { google } from '@ai-sdk/google';
 import { experimental_decide } from 'ai';
 
 const { answers } = await experimental_decide({
-  model: google.decisionModel('gemini-4-argon'),
+  model: google.decisionModel('gemini-decision-1'),
   state: 'I was charged twice.',
   questions: {
     requestsRefund: {
       type: 'boolean',
       instructions: 'Is the customer requesting money back?',
+      criteria: {
+        true: 'The customer wants a charge refunded.',
+        false: 'The customer only wants information.',
+      },
     },
     department: {
       type: 'choice',
@@ -2648,32 +2694,72 @@ const { answers } = await experimental_decide({
       criteria: { billing: 'Charges and refunds', support: 'Other requests' },
     },
   },
-  providerOptions: {
-    google: { thinkingConfig: { thinkingLevel: 'low' } },
+});
+```
+
+Choice and Score answers include native probability distributions. Scores are
+probability-weighted positions on the zero-based ordered rubric. Boolean questions
+map to Google's `noul` type, and answers expose its calibrated P(true) as
+`probability`. During EAP, that probability is between `0.01` and `0.99`.
+Apply thresholds in application code, for example
+`answers.requestsRefund.probability >= 0.5`.
+
+Confidence values are available at `result.providerMetadata.google.confidence`,
+keyed by question ID. Score legends are at `result.providerMetadata.google.legend`.
+Token usage includes input tokens and zero output tokens; modality details are
+preserved in `result.providerMetadata.google.usage`. A safety-blocked request
+produces refusals, which `experimental_decide` surfaces as
+`Experimental_DecisionRefusalError`.
+
+State can contain text, JSON, images, audio, video, and PDFs. Structured state,
+instructions, and criteria descriptions are serialized as text. Every question
+requires instructions. Choice questions require 2–255 options; Score questions
+require 2–255 non-empty level descriptions. Question IDs must contain 1–64 ASCII
+letters, digits, underscores, or hyphens. Choice option IDs must contain 1–128
+characters without leading or trailing whitespace. Google sorts Choice IDs
+alphabetically and breaks exact probability ties in that order.
+
+The factory respects `createGoogle` settings, including API keys, base URLs,
+headers, and custom fetch implementations. Generation options such as
+`maxOutputTokens`, `reasoning`, and `providerOptions.google.thinkingConfig` are
+unsupported and produce warnings. Decisions do not use structured output or
+fall back to `generateContent`. The deprecated `evaluationModel` factory and
+`doEvaluate` method remain aliases for the native implementation.
+
+Decision models can also be accessed through `customProvider` aliases or
+`createProviderRegistry().decisionModel('provider:model')`. Direct string IDs
+use Gateway by default, or an explicitly configured default provider with a
+`decisionModel` method. See
+[model aliases and registries](/docs/ai-sdk-core/decisions#model-aliases-and-registries).
+
+## Extraction Models
+
+Create an experimental extraction model with `google.extractionModel(modelId)`.
+It wraps a Google language model and uses the Gemini API's structured output to
+extract typed fields in one call.
+
+```ts
+import { google } from '@ai-sdk/google';
+import { experimental_extract } from 'ai';
+
+const { answers } = await experimental_extract({
+  model: google.extractionModel('gemini-4-hydrogen'),
+  referenceDate: '2026-11-11',
+  state: 'Invoice INV-2041. Total due $1,250.00 by March 3.',
+  fields: {
+    invoiceNumber: { type: 'text', instructions: 'The invoice number' },
+    total: { type: 'number', instructions: 'Total due', decimals: 2 },
+    dueDate: { type: 'date', instructions: 'Payment due date' },
   },
 });
 ```
 
-The factory respects `createGoogle` settings and forwards `providerOptions.google`,
-including thinking configuration. Thinking controls depend on the selected model;
-use options supported by that model. The existing Gemini implementation sends the
-answer schema as `generationConfig.responseJsonSchema`.
-
-Choice labels are returned exactly, and Scores are finite fractional positions
-within the ordered rubric. The adapter validates complete answers after parsing
-and rejects safety-blocked, truncated, or invalid output. It preserves usage
-(including reasoning tokens), warnings, response data, and provider metadata.
-
-Choice and Score answers do not include probability distributions. Boolean
-answers contain prompted estimates of P(true), validated to be finite and in
-`[0, 1]`. These estimates are not guaranteed to be calibrated. Apply thresholds
-in application code, for example `answers.requestsRefund.probability >= 0.5`. See [Decisions](/docs/ai-sdk-core/decisions).
-
-Decision models can also be accessed through `customProvider` aliases or
-`createProviderRegistry().decisionModel('provider:model')`. Direct string IDs
-use Gateway by default, or an explicitly configured default provider with an
-`decisionModel` method. See
-[model aliases and registries](/docs/ai-sdk-core/decisions#model-aliases-and-registries).
+The adapter supports every field type and returns `null` when the state has no
+value for a field. It does not return `pNull`, `confidence`, `guess`, or
+`source`, since a prompted model cannot give calibrated estimates or exact
+offsets. Image and PDF files are passed to the language model, which must
+support them. The adapter requests `reasoning: 'none'` by default and forwards
+`providerOptions.google`. See [Extractions](/docs/ai-sdk-core/extractions).
 
 ---
 

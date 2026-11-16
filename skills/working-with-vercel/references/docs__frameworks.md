@@ -15,14 +15,17 @@ related:
   - /docs/deployments/environments
 summary: Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter what tool you use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c3721d0b3e3fbde3c7dec85d98c9fb9ae78dfa88c684f76653310b9e7cb49c94"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "65016a85b3b12c27bc68b848c5fcff278a10a6c68b1ab6f8a718c6a9bcbcba93"
 ---
 
 # Frameworks on Vercel
 
-Vercel has first-class support for [a wide range of the most popular frameworks](/docs/frameworks/more-frameworks). You can build and deploy using frontend, backend, and full-stack frameworks ranging from SvelteKit to Nitro, often without any upfront configuration.
+## Deploy your framework on Vercel
+
+Build with Next.js, SvelteKit, Nuxt, Hono, FastAPI, or another supported framework. Vercel detects your framework and configures the build for you, often with no setup.
 
 
 <!-- docsgraph:related -->
@@ -30,21 +33,85 @@ Vercel has first-class support for [a wide range of the most popular frameworks]
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Announcing the Build Output API](https://vercel.com/blog/build-output-api)
 - [Metrics for outgoing requests](https://vercel.com/changelog/metrics-for-outgoing-requests)
 - [Skew Protection is now generally available](https://vercel.com/changelog/skew-protection-is-now-generally-available)
 - [Building an AI chat app with RAG and source citations on Vercel](https://vercel.com/kb/guide/building-ai-chat-app-with-rag-and-citations-on-vercel) — A production stack for AI chat with retrieval, reranking, source citations, and background ingestion on Vercel using Nex
 - [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
 - [Deploy Rust on Vercel with Docker](https://vercel.com/kb/guide/deploy-rust-on-vercel-with-docker) — Build a Rust application with Axum and Docker, then deploy it to Vercel Functions. Learn how to configure environment va
-- [Deploy ASP.NET Core on Vercel with Docker](https://vercel.com/kb/guide/dot-net-asp-net-on-vercel-with-docker) — Build a .NET application with Docker and deploy it to Vercel Functions. Learn how to configure environment variables, in
 - [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
+- [Production architecture for a RAG chatbot on Vercel](https://vercel.com/kb/guide/rag-chatbot-production-architecture-on-vercel) — Architect a production RAG chatbot on Vercel Functions with Fluid compute, AI Gateway, and a region-pinned vector store.
 - [Expanding the experimentation ecosystem with Edge Config and LaunchDarkly](https://vercel.com/blog/edge-config-and-launch-darkly)
 - [Framework-defined infrastructure](https://vercel.com/blog/framework-defined-infrastructure)
 - [Protecting your app (and wallet) against malicious traffic](https://vercel.com/blog/protecting-your-app-and-wallet-against-malicious-traffic)
 - [The developer experience of the Frontend Cloud](https://vercel.com/blog/the-developer-experience-of-the-frontend-cloud)
-- [The foundations of the Frontend Cloud](https://vercel.com/blog/the-foundations-of-the-frontend-cloud)
 
 Full cross-link map for this page: [/docs/frameworks.graph.md](/docs/frameworks.graph.md)
 <!-- /docsgraph:related -->
+
+#### Next.js
+
+```typescript filename="app/api/hello/route.ts"
+import { NextResponse } from 'next/server';
+
+// Next.js serves this file at /api/hello.
+export async function GET() {
+  const message = 'Hello from Next.js!';
+  return NextResponse.json({ message });
+}
+```
+
+#### SvelteKit
+
+```typescript filename="src/routes/api/hello/+server.ts"
+import { json } from '@sveltejs/kit';
+
+// SvelteKit serves this file at /api/hello.
+export function GET() {
+  const message = 'Hello from SvelteKit!';
+  return json({ message });
+}
+```
+
+#### Nuxt
+
+```typescript filename="server/api/hello.ts"
+// Nuxt auto-imports defineEventHandler.
+
+// Nuxt serves this file at /api/hello.
+export default defineEventHandler(() => {
+  const message = 'Hello from Nuxt!';
+  return { message };
+});
+```
+
+#### Hono
+
+```typescript filename="src/index.ts"
+import { Hono } from 'hono';
+
+const app = new Hono();
+const message = 'Hello from Hono!';
+app.get('/api/hello', (c) => c.json({ message }));
+
+export default app;
+```
+
+#### FastAPI
+
+```py filename="main.py"
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/api/hello")
+def hello():
+    return {"message": "Hello from FastAPI!"}
+```
+
+Each example serves the same `/api/hello` endpoint using the framework's own conventions. The files contain no Vercel-specific code. Vercel detects the framework when you deploy and configures the build for it.
+
+Vercel has first-class support for [a wide range of the most popular frameworks](/docs/frameworks/more-frameworks). You can build and deploy using frontend, backend, and full-stack frameworks ranging from SvelteKit to Nitro, often without any upfront configuration.
 
 For AI applications, explore [agent frameworks](/docs/frameworks/agents) to build agents with eve, Mastra, Flue, and Vercel. Each guide covers the framework’s setup, hosting requirements, and Vercel integrations.
 
@@ -79,7 +146,7 @@ The following table shows which features are supported by each framework on Verc
 | [Streaming SSR](/docs/functions/streaming-functions) | ✓ | ✓ | ✗ | ✓ | ✓ | ✓ | N/A | N/A |
 | [Incremental Static Regeneration](/docs/incremental-static-regeneration) | ✓ | ✓ | ✓ | ✗ | ✓ | ✗ | N/A | N/A |
 | [Image Optimization](/docs/image-optimization) | ✓ | ✓ | ✓ | N/A | ✓ | ✗ | N/A | N/A |
-| [Runtime Cache](/docs/caching/runtime-cache) | ✓ | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| [Runtime Cache](/docs/runtime-cache) | ✓ | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
 | [Native OG Image Generation](/docs/og-image-generation) | ✓ | N/A | ✓ | N/A | N/A | N/A | N/A | N/A |
 | [Multi-runtime support (different routes)](/docs/functions/runtimes) | ✓ | ✓ | ✓ | N/A | ✗ | ✓ | N/A | N/A |
 | [Multi-runtime support (entire app)](/docs/functions/runtimes) | ✓ | ✓ | ✓ | N/A | ✓ | ✓ | N/A | N/A |
@@ -102,6 +169,18 @@ Learn more about deploying your preferred framework on Vercel with the following
 - [Explore our template marketplace](/templates)
 - [Learn about our deployment features](/docs/deployments)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -11,9 +11,10 @@ related:
   - /docs/cli/global-options
 summary: Generate an AGENTS.md file with Vercel deployment best practices using the vercel agent CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/agent.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "248729022706db457b19065db33664d29b48d7a29580ae937abf5c9282af9058"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2e25ab84005b62f558570610f77a2939354460463cf3d86a2cfe52849459935b"
 ---
 
 # vercel agent
@@ -26,15 +27,17 @@ The `vercel agent` command writes a section related to Vercel deployment best pr
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
-- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
 - [Vercel Agent code reviews now follow your code guidelines](https://vercel.com/changelog/vercel-agent-code-reviews-now-follow-your-code-guidelines)
 - [Introducing the Vercel plugin for coding agents](https://vercel.com/changelog/introducing-vercel-plugin-for-coding-agents)
+- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
+- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
+- [Agent Runs now available in the Vercel MCP and CLI](https://vercel.com/changelog/agent-runs-vercel-mcp-cli)
+- [Vercel CLI for Marketplace integrations optimized for agents](https://vercel.com/changelog/vercel-cli-for-marketplace-integrations-optimized-for-agents)
 - [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code, Codex, and OpenCode, and co
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [vercel agent-runs](https://vercel.com/docs/cli/agent-runs) — Find projects with Agent Runs, list recent runs, and inspect run metadata and conversation traces from the command line.
-- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Markdown and Agent Discovery](https://vercel.com/docs/agent-resources/markdown-access) — Learn how Vercel serves documentation to AI agents as Markdown and helps them discover related pages through content neg
 
 Full cross-link map for this page: [/docs/cli/agent.graph.md](/docs/cli/agent.graph.md)
 <!-- /docsgraph:related -->
@@ -108,6 +111,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

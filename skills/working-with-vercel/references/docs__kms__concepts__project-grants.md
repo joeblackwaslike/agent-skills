@@ -16,9 +16,10 @@ related:
   - /docs/kms/concepts/authentication
 summary: How a project grant authorizes a Vercel deployment to sign with a KMS issuer using its OIDC token, scoped to a team, project, and environments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/kms/concepts/project-grants.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "72bd4d8531bdac228f4d9fcdc8599061a3080757283741ecbfa7572d5f6ac657"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "23e85d1e913899db657b1a304fa56a4f17a3115f4bda0cd6636be1d75ae2904b"
 ---
 
 # Vercel KMS Project Grants
@@ -75,6 +76,18 @@ Create a separate issuer, each with its own project grant, for every project and
 - [Authentication](/docs/kms/concepts/authentication)
 - [OIDC federation](/docs/oidc)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

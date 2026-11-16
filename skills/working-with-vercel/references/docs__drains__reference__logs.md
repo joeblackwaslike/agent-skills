@@ -15,9 +15,10 @@ related:
   - /docs/routing/rewrites
 summary: Learn about Log Drains - data formats, sources, environments, and security configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/drains/reference/logs.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "0980245425242e907f38f7124368cf0fe7180d87457c5a27e26b7ad22612f491"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "6360f062b02875fe248bddd22a699b466f73ad4e67e9c9aeec3fe1e9bf247de5"
 ---
 
 # Log Drains Reference
@@ -31,11 +32,10 @@ Log Drains forward logs from your deployments to external endpoints for storage 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
-- [Log drains now support log source selection](https://vercel.com/changelog/log-drains-now-support-log-source-selection)
-- [Log Drains are now generally available](https://vercel.com/changelog/log-drains-are-now-generally-available)
-- [Log Drains](https://vercel.com/blog/log-drains)
 - [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains)
 - [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
+- [Audit Log Drains now support Datadog, Splunk, and Panther](https://vercel.com/changelog/audit-log-drains-now-support-datadog-splunk-and-panther)
+- [Log Drains](https://vercel.com/blog/log-drains)
 - [Audit Log Drains Reference](https://vercel.com/docs/drains/reference/audit-logs) — Learn about Audit Log Drains - data formats, fields, and team activity events.
 - [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
 - [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics) — Learn about Web Analytics Drains - data formats and custom events configuration.
@@ -211,6 +211,18 @@ For more information on Log Drains and how to use them, check out the following 
 - [Drains overview](/docs/drains)
 - [Configure Drains](/docs/drains/using-drains)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

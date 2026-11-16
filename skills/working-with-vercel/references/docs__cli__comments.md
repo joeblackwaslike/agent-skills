@@ -15,9 +15,10 @@ related:
   - /docs/cli/global-options
 summary: Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/comments.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "317599fd2708a5253c672f6663cc5e5483305c52627d47db22a2af786284ef18"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "df588c2c9d2f7ed890de8c4a9b50e269aa66f6e5cc1b8957de6b5ffc1411468e"
 ---
 
 # vercel comments
@@ -33,11 +34,11 @@ The `vercel comments` command lets you review and manage existing [Vercel Toolba
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Manage Vercel Toolbar comments from the CLI](https://vercel.com/changelog/manage-vercel-toolbar-comments-from-the-cli)
-- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [Integrations for Comments](https://vercel.com/docs/comments/integrations) — Learn how Comments integrates with Git providers like GitHub, GitLab, and Bitbucket, as well as the Vercel app for Slack
+- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel ci](https://vercel.com/docs/cli/ci) — Enable or disable Vercel CI for repositories, inspect runs, search logs, and rerun jobs from the command line.
 - [vercel changelog](https://vercel.com/docs/cli/changelog) — Read recent Vercel product updates and search the changelog from your terminal using the Vercel CLI.
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
-- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 
 Full cross-link map for this page: [/docs/cli/comments.graph.md](/docs/cli/comments.graph.md)
 <!-- /docsgraph:related -->
@@ -232,6 +233,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

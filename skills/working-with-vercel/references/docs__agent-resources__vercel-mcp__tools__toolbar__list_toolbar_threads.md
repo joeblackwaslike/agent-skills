@@ -12,9 +12,10 @@ related:
   - /docs/vercel-toolbar
 summary: Use list_toolbar_threads with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/list_toolbar_threads.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f89af5662f9419ae16ef66b4f4991bf19a6a0f7f7de56483bf4d565299e1a803"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d3e928c54a04ce82fc1c6da55934fdcafbfdcf75cddcdc1d469ac936d370ef86"
 ---
 
 # list_toolbar_threads
@@ -28,8 +29,8 @@ List [Vercel Toolbar](/docs/vercel-toolbar) comment threads for a team. Returns 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [get_toolbar_thread](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/get_toolbar_thread) — Use get_toolbar_thread with Vercel MCP.
-- [change_toolbar_thread_resolve_status](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/change_toolbar_thread_resolve_status) — Use change_toolbar_thread_resolve_status with Vercel MCP.
 - [reply_to_toolbar_thread](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/reply_to_toolbar_thread) — Use reply_to_toolbar_thread with Vercel MCP.
+- [change_toolbar_thread_resolve_status](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/change_toolbar_thread_resolve_status) — Use change_toolbar_thread_resolve_status with Vercel MCP.
 - [Managing the visibility of the Vercel Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
 - [vercel comments](https://vercel.com/docs/cli/comments) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
 
@@ -49,6 +50,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/toolb
 
 **Sample prompt:** "Show me unresolved toolbar comments on my blog project"
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

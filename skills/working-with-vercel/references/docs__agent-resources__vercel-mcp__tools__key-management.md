@@ -12,9 +12,10 @@ related:
   []
 summary: Vercel MCP tools for key management.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f116cc4f5403606ee2f8b3e50440d4098f16c9a86a8348c69e0ced9fd4c16d7b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "23e78dcd8d4bcef54dadf36ca4839b5b08a9b0312c8a3ae773e44d453b4ec041"
 ---
 
 # Key Management
@@ -30,8 +31,8 @@ Create and list issuers with server-generated signing keys. Manage issuer polici
 - [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys — Create a new signing key for a KMS issuer. Depending on the activation mode, the
 - [Key Management Service \\(KMS\\)](https://vercel.com/docs/kms) — Sign JWTs and messages with Vercel-managed signing keys. Learn about issuers, keys, and policies, and how to sign from V
 - [Create an issuer policy](https://vercel.com/docs/rest-api/kms/create-an-issuer-policy) — POST /v1/kms/issuers/{issuerId}/policies — Attach a policy to a KMS issuer that grants a project's deployments permissio
-- [Create an issuer](https://vercel.com/docs/rest-api/kms/create-an-issuer) — POST /v1/kms/issuers — Create a new KMS issuer for the authenticated team, or for the team or organization identified by
 - [Activate a signing key](https://vercel.com/docs/rest-api/kms/activate-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/activate — Activate a pending signing key so the issuer starts signing with
+- [Revoke a signing key](https://vercel.com/docs/rest-api/kms/revoke-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/revoke — Immediately revoke a signing key that is already scheduled for rev
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/key-management.graph.md](/docs/agent-resources/vercel-mcp/tools/key-management.graph.md)
 <!-- /docsgraph:related -->
@@ -159,6 +160,18 @@ Update an issuer policy.
 | `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody` | object | No       | Request body for this tool.                                 |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

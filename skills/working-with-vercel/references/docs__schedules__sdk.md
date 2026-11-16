@@ -15,9 +15,10 @@ related:
   - /docs/schedules/local-development
 summary: "Reference for @vercel/schedules: create, list, update, enable, disable, invoke, and delete schedules, and handle scheduled runs."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/schedules/sdk.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "8647b9463f2866b370e08c069041d120adf2162eac484a097e4d3a8b7da2736e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7ec0b690896e5de767b7e8c80b8f614b943264b67fa3b570f9f897b1871e2e3e"
 ---
 
 # Vercel Schedules: JS SDK Reference
@@ -30,12 +31,13 @@ Use the [`@vercel/schedules`](https://www.npmjs.com/package/@vercel/schedules) p
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Introducing Vercel Schedules](https://vercel.com/blog/introducing-vercel-schedules)
 - [Vercel Schedules is now in public beta](https://vercel.com/changelog/vercel-schedules-is-now-in-public-beta)
-- [Schedules](https://eve.dev/docs/schedules) — Run an agent on a cron cadence, either a fire-and-forget prompt or a handler that hands work off to a channel.
+- [Introducing Vercel Schedules](https://vercel.com/blog/introducing-vercel-schedules)
 - [Getting Started with Schedules](https://vercel.com/docs/schedules/quickstart) — Run a private Vercel Function every hour with a static schedule in vercel.json, test it locally, and deploy it.
-- [Migrating from Cron Jobs to Schedules](https://vercel.com/docs/schedules/migrate-from-cron-jobs) — Move Cron Jobs in vercel.json to Schedules without changing your route code, then optionally make the route private.
 - [Scheduling Work for Agents](https://vercel.com/docs/schedules/agents) — Give an agent a tool that creates dynamic schedules, so it can do work for a user later or on a recurring basis.
+- [Migrating from Cron Jobs to Schedules](https://vercel.com/docs/schedules/migrate-from-cron-jobs) — Move Cron Jobs in vercel.json to Schedules without changing your route code, then optionally make the route private.
+- [Scheduling Work with the AI SDK](https://vercel.com/docs/schedules/agents/ai-sdk) — Give an AI SDK agent a tool that creates schedules, and run each scheduled task as a new agent turn.
+- [Starting Workflows from Schedules](https://vercel.com/docs/schedules/workflows) — Start a durable Vercel Workflow each time a schedule fires, so long or multi-step scheduled jobs retry failed steps and
 
 Full cross-link map for this page: [/docs/schedules/sdk.graph.md](/docs/schedules/sdk.graph.md)
 <!-- /docsgraph:related -->
@@ -432,6 +434,18 @@ export const POST = handleCallback<ScheduleQueueMessage<{ reportType: string }>>
 - [Multi-tenant schedules](/docs/schedules/multi-tenant)
 - [`vercel schedules` reference](/docs/cli/schedules)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -14,9 +14,10 @@ related:
   - /docs/vercel-toolbar/layout-shift-tool
 summary: Learn how to use the Accessibility Audit Tool to automatically check the Web Content Accessibility Guidelines 2.0 level A and AA rules.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-toolbar/accessibility-audit-tool.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "254a7de9d79ada896fdd2a9b0378f9e8f55c9bead84e6583210e322589579364"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "929e696a2828f17d854d2d585ff1fe22e1fe6888be669d813647e8bd269b184d"
 ---
 
 # Accessibility Audit Tool
@@ -33,11 +34,11 @@ The accessibility audit tool automatically checks the [Web Content Accessibility
 
 - [Uncover accessibility issues on your deployments from the Vercel Toolbar](https://vercel.com/changelog/accessibility-tool)
 - [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar)
-- [Toolbar](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar) — Vercel MCP tools for toolbar.
 - [Managing the visibility of the Vercel Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
+- [Toolbar](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar) — Vercel MCP tools for toolbar.
 - [Add the Vercel Toolbar to your production environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production) — Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access t
-- [Managing with the Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar) — Learn how to use the Vercel Toolbar to make it easier to manage microfrontends.
-- [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
+- [Attestations and Compliance Report](https://vercel.com/docs/security/attestations-and-compliance-report) — Learn how to preview and download Vercel compliance documents from the dashboard.
+- [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 
 Full cross-link map for this page: [/docs/vercel-toolbar/accessibility-audit-tool.graph.md](/docs/vercel-toolbar/accessibility-audit-tool.graph.md)
 <!-- /docsgraph:related -->
@@ -72,6 +73,18 @@ By default the accessibility audit tool will log issues on page load. To test ep
 - [Interaction Timing Tool](/docs/vercel-toolbar/interaction-timing-tool)
 - [Layout Shift Tool](/docs/vercel-toolbar/layout-shift-tool)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

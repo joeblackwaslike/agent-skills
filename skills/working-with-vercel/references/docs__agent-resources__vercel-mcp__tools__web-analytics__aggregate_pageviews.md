@@ -12,9 +12,10 @@ related:
   - /docs/analytics
 summary: Use aggregate_pageviews with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/aggregate_pageviews.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "cdf37a6a9c3c1b4d2ac106e50f679f4000caeb1d6274658dd8d01b660c3fb4c4"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f07cf1430ed9b812ccac8814a1dde13433a88aaf7a68e79acb267687c37b2beb"
 ---
 
 # aggregate_pageviews
@@ -27,11 +28,11 @@ Aggregates page views.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [count_pageviews](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/count_pageviews) — Use count_pageviews with Vercel MCP.
 - [aggregate_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/aggregate_events) — Use aggregate_events with Vercel MCP.
-- [get_web_analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/get_web_analytics) — Use get_web_analytics with Vercel MCP.
+- [count_pageviews](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/count_pageviews) — Use count_pageviews with Vercel MCP.
 - [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views) — GET /v1/query/web-analytics/visits/aggregate — Counts pageviews on a project, within the requested date range. Results a
-- [count_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/count_events) — Use count_events with Vercel MCP.
+- [get_web_analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/get_web_analytics) — Use get_web_analytics with Vercel MCP.
+- [Counts page views](https://vercel.com/docs/rest-api/web-analytics/counts-page-views) — GET /v1/query/web-analytics/visits/count — Counts the number of page views on a project \\(production only\\), since Web A
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/web-analytics/aggregate_pageviews.graph.md](/docs/agent-resources/vercel-mcp/tools/web-analytics/aggregate_pageviews.graph.md)
 <!-- /docsgraph:related -->
@@ -51,6 +52,18 @@ Enable [Web Analytics](/docs/analytics) for your project before querying its dat
 | `teamId`    | string                               | No       | Team ID to use for this operation.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | `slug`      | string                               | No       | Team slug to use for this operation. Use instead of teamId.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

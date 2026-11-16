@@ -12,9 +12,10 @@ related:
   []
 summary: Use kill_session_command with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/kill_session_command.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "0aff79aa32b203607d0112a8dc1fb231b29e7ff7898589b6a5e9ac9d3792f983"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1d252e4d3660d3602bb1a4c5a5eeeed0222e63a07f9bee71bdd62898dbc87ff9"
 ---
 
 # kill_session_command
@@ -46,6 +47,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandb
 | `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId.  |
 | `requestBody` | object | No       | Request body for this tool.                                  |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

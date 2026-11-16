@@ -11,9 +11,10 @@ related:
   []
 summary: This error indicates a missing response from the cache during a deployment or build process.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/internal_missing_response_from_cache.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b2c0244eab32c6194197cec8e0418a7f6cd88c074014a42a131c169885dc488f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "aea9d8cd978a04f65229cd8faa20195076cc1b5dd31adb2f75a7bfee4ce0ea19"
 ---
 
 # INTERNAL_MISSING_RESPONSE_FROM_CACHE
@@ -30,6 +31,18 @@ To troubleshoot this error, follow these steps:
 
 1. **Contact support:** If the error persists, [contact support](/help#issues) for further assistance
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

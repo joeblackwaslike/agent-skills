@@ -14,9 +14,10 @@ related:
   - /docs/queues/api
 summary: Publish and consume messages with the Vercel Queues SDK for JavaScript and TypeScript.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/queues/sdk.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "04ca88ef289332af6f3e93fd89dadd6ffaa82c34a726504683e64c952e853095"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1319ccd18fcef7ecfdf211b0edb641a22b47045d0ae9caa11b49e6fb528c9d2e"
 ---
 
 # Vercel Queues: JS SDK Reference
@@ -30,14 +31,15 @@ The `@vercel/queue` SDK lets JavaScript and TypeScript apps publish and consume 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Use Vercel Daemons with eve agents](https://vercel.com/kb/guide/vercel-daemons-eve-agents) — Connect eve agents to Vercel Daemons to process queued jobs, offload heavy work, and react to events. Includes code, aut
-- [Vercel Python Queues SDK is now available in beta](https://vercel.com/changelog/vercel-python-queues-sdk-is-now-available-in-beta)
 - [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta)
+- [Vercel Python Queues SDK is now available in beta](https://vercel.com/changelog/vercel-python-queues-sdk-is-now-available-in-beta)
 - [Vercel Queues is now in Limited Beta](https://vercel.com/changelog/vercel-queues-is-now-in-limited-beta)
-- [Process background jobs in Python with Vercel Queues](https://vercel.com/kb/guide/python-and-vercel-queues) — Move slow and failure-prone work out of your Python request handlers, with typed topics, consumer groups, and built-in r
 - [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
+- [Quickstart](https://vercel.com/docs/queues/quickstart) — Set up Vercel Queues with the SDK.
 - [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
-- [Vercel Schedules: JS SDK Reference](https://vercel.com/docs/schedules/sdk) — Reference for @vercel/schedules: create, list, update, enable, disable, invoke, and delete schedules, and handle schedul
 - [Queues Observability](https://vercel.com/docs/queues/observability) — Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.
+- [Vercel Schedules: JS SDK Reference](https://vercel.com/docs/schedules/sdk) — Reference for @vercel/schedules: create, list, update, enable, disable, invoke, and delete schedules, and handle schedul
+- [Handling Scheduled Runs](https://vercel.com/docs/schedules/handle-runs) — Write the private function, route, or queue consumer that a schedule runs, and make it safe to run more than once.
 
 Full cross-link map for this page: [/docs/queues/sdk.graph.md](/docs/queues/sdk.graph.md)
 <!-- /docsgraph:related -->
@@ -424,6 +426,18 @@ const streamQueue = new QueueClient({
 - [API reference](/docs/queues/api)
 - [Poll mode](/docs/queues/poll-mode)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

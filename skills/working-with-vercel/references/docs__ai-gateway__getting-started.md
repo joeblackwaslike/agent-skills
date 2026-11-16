@@ -15,9 +15,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis
 summary: Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScript, or Python.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/getting-started.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c920c99d75d6cffa003a2f08cef8615d0071f30c5b141243f5be3df79f99fda3"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c8a8fe21e03b103a216fa5a648a9ff908c7c792ba0bbc0be89a583dfc3961d20"
 ---
 
 # Getting Started with AI Gateway
@@ -31,14 +32,15 @@ Use AI Gateway from any environment to call models, connect coding agents, and i
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
+- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba) — Learn how to use Alibaba with AI Gateway and the direct provider.
 - [Amazon Bedrock](https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock) — Learn how to use Amazon Bedrock with AI Gateway and the direct provider.
 - [Anthropic](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic) — Learn how to use Anthropic with AI Gateway and the direct provider.
 - [Claude Platform on AWS](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws) — Learn how to use Claude Platform on AWS with AI Gateway and the direct provider.
-- [AssemblyAI](https://ai-sdk.dev/providers/ai-sdk-providers/assemblyai) — Learn how to set up the AssemblyAI provider and check AI Gateway availability.
-- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
+- [Azure OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/azure) — Learn how to use Azure OpenAI with AI Gateway and the direct provider.
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
-- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
+- [AI Gateway Ecosystem and Integrations](https://vercel.com/docs/ai-gateway/ecosystem) — Connect frameworks, coding tools, and billing integrations to AI Gateway. Configure app attribution and explore integrat
+- [AI Gateway OIDC Authentication](https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc) — Authenticate AI Gateway requests from Vercel deployments with OIDC tokens. Configure the AI SDK or send bearer tokens di
 - [CLI Workflows](https://vercel.com/docs/agent-resources/workflows) — End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sess
 
 Full cross-link map for this page: [/docs/ai-gateway/getting-started.graph.md](/docs/ai-gateway/getting-started.graph.md)
@@ -203,6 +205,18 @@ Use a [supported SDK or API](/docs/ai-gateway/sdks-and-apis) to connect an exist
 - Configure [provider routing](/docs/ai-gateway/models-and-providers/provider-options) and [model fallbacks](/docs/ai-gateway/models-and-providers/model-fallbacks)
 - [Build an agent application](https://ai-sdk.dev/docs/agents/building-agents)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_run_projects
 summary: Inspect eve agent sessions, configure trace sampling, and control the content Agent Runs receives.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-runs.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "dff1b1553b32d2b7c10685f0e7acca715d2608f91be46b7b778d3213d56761f9"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a38fde5466a7805ec52c8779d05c2eb0b1360e31514bafbaee253f16a64f6104"
 ---
 
 # Agent Runs
@@ -32,13 +33,13 @@ Vercel dashboard. It appears automatically for eve projects, with no instrumenta
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Agent Runs](https://eve.dev/docs/observability/agent-runs) — Inspect eve sessions in Vercel and configure the Agent Runs destination.
-- [Trace and debug eve agent sessions with Vercel Observability](https://vercel.com/changelog/eve-agent-observability)
 - [Agent Runs now available in the Vercel MCP and CLI](https://vercel.com/changelog/agent-runs-vercel-mcp-cli)
+- [Trace and debug eve agent sessions with Vercel Observability](https://vercel.com/changelog/eve-agent-observability)
 - [Agent Runs now show subagent activity on eve projects](https://vercel.com/changelog/agent-runs-now-show-subagent-activity-on-eve-projects)
-- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
-- [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
 - [Agent Runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs) — Vercel MCP tools for agent runs.
-- [eve on Vercel](https://vercel.com/docs/frameworks/agents/eve) — Create and deploy an eve agent on Vercel with AI Gateway model access, durable sessions, and authenticated requests.
+- [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
+- [Agent Checklist for Launch](https://vercel.com/docs/agent-checklist) — Prepare an eve, Mastra, or Flue agent for launch on Vercel. Check who can call the agent, what its tools can change, how
+- [Running eve Agents Durably on Vercel](https://vercel.com/docs/agent-harnesses/eve) — eve agents are durable out of the box on Vercel, with no extra configuration.
 - [Build a Software Factory with eve](https://vercel.com/docs/agent-resources/software-factory/eve) — Customize an eve software factory on Vercel with GitHub access, sandbox execution, and reviewed draft pull requests.
 
 Full cross-link map for this page: [/docs/agent-runs.graph.md](/docs/agent-runs.graph.md)
@@ -162,6 +163,18 @@ For an end-to-end investigation, follow [Trace and debug eve agent runs](/kb/gui
 - [Concepts](https://eve.dev/docs/concepts/execution-model-and-durability): learn how eve's runtime pieces fit together.
 - [Vercel Observability](/docs/observability): inspect traces alongside logs and metrics.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

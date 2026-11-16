@@ -13,9 +13,10 @@ related:
   - /docs/cli/integration
 summary: Learn how to secure native integration resources by choosing where they can connect and using Production-only mode to protect credentials.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/install-an-integration/secure-your-resource.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "afc99aee29f1a361686d76fc7c67f579784d925239b070d213c675e4c8853003"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "fa18a4bb601040684528283482b98d1f40b4397365fa30f3fa1a8d3ed3aa7dde"
 ---
 
 # Secure Your Resource
@@ -32,9 +33,9 @@ Secure a native integration resource by controlling where projects can connect t
 - [Rotating Secrets for Vercel Marketplace Integrations](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-supabase-integration) — Rotate the Supabase service role key, JWT secret, and database password from your Vercel integration, then apply the new
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Vercel Support Code Visibility, Git Fork Protection, and
 - [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
-- [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference) — Learn how to manage project access and added products for your integrations.
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
-- [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
+- [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference) — Learn how to manage project access and added products for your integrations.
+- [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
 
 Full cross-link map for this page: [/docs/integrations/install-an-integration/secure-your-resource.graph.md](/docs/integrations/install-an-integration/secure-your-resource.graph.md)
 <!-- /docsgraph:related -->
@@ -94,6 +95,18 @@ If save is blocked:
 - Review the listed non-production connections before retrying
 - Reopen the resource page and verify your latest Allowed Environments setting
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

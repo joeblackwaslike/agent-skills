@@ -15,9 +15,10 @@ related:
   - /docs/daemons
 summary: Limits on the configuration, size, and capabilities of Vercel Daemons during the beta.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/daemons/limits.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f3943c01527023cf2857e292f9b3b5e2960957be8387ff600a783ac5ee4a947e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f150254bd99b0a4d8b89d4f1cc5ab1f0b883435594434814d31b1fce96654147"
 ---
 
 # Daemons Limits
@@ -36,11 +37,11 @@ The following limits apply to Vercel Daemons during the beta. Vercel may raise l
 - [Migrate from Google Cloud Run to Vercel](https://vercel.com/kb/guide/migrate-cloud-run-to-vercel) — Move a Cloud Run service or worker to Vercel. Compare runtimes, preserve Google Cloud access, and plan jobs, validation,
 - [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel) — Migrate Next.js apps and HTTP containers from AWS to Vercel. Configure AWS access, assess background workers, and plan t
 - [Vercel Daemons is now in public beta](https://vercel.com/changelog/vercel-daemons-is-now-in-public-beta)
-- [Daemons](https://vercel.com/docs/build-output-api/daemons) — Learn how Vercel Daemons are represented in the Build Output API.
 - [vercel daemons](https://vercel.com/docs/cli/daemons) — List and inspect production daemons, override regional instance counts, and inspect or restart individual instances with
+- [Get project daemons](https://vercel.com/docs/rest-api/daemons/get-project-daemons) — GET /v1/projects/{idOrName}/daemons — List the daemons of a project.
+- [Daemons](https://vercel.com/docs/build-output-api/daemons) — Learn how Vercel Daemons are represented in the Build Output API.
 - [Schedules Limits](https://vercel.com/docs/schedules/limits) — Limits for Vercel Schedules, including schedules per team, run frequency, jitter, Hobby usage, and API requests.
 - [Multi-tenant Limits](https://vercel.com/docs/platforms/multi-tenant-platforms/limits) — Understand the limits and features available for Vercel for Platforms.
-- [Vercel Functions Limits](https://vercel.com/docs/functions/limitations) — Learn about the limits and restrictions of using Vercel Functions.
 
 Full cross-link map for this page: [/docs/daemons/limits.graph.md](/docs/daemons/limits.graph.md)
 <!-- /docsgraph:related -->
@@ -104,6 +105,18 @@ Daemons don't support the following features during the beta:
 | Service bindings and rewrites   | Daemons can't be the target of a [service binding](/docs/services/bindings) or a rewrite.                                                                  |
 | Builds without a Dockerfile     | Add a `Dockerfile` or `Containerfile` to the daemon's `root`.                                                                                              |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

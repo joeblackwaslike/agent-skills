@@ -14,9 +14,10 @@ related:
   - /docs/drains/reference/logs
 summary: Learn how to secure your Drains endpoints with authentication and signature verification.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/drains/security.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "847e351112500674881b6114dc9094391734b971de2e1c163bedcb149fffc118"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "eeaa1dde6506112bd40685d9cc4ae2bba76a87511bfce8b0626cc78698c6dbb2"
 ---
 
 # Drains Security
@@ -30,11 +31,11 @@ All Drains support transport-level encryption using HTTPS protocol.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains)
-- [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
 - [Retrieve a list of all Drains](https://vercel.com/docs/rest-api/drains/retrieve-a-list-of-all-drains) — GET /v1/drains — Allows to retrieve the list of Drains of the authenticated team.
 - [Find a Drain by id](https://vercel.com/docs/rest-api/drains/find-a-drain-by-id) — GET /v1/drains/{id} — Get the information for a specific Drain by passing the drain id in the URL.
+- [Creates a new Integration Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-new-integration-log-drain-deprecated) — POST /v2/integrations/log-drains — Creates an Integration log drain. This endpoint must be called with an OAuth2 client
 - [Validate Drain delivery configuration](https://vercel.com/docs/rest-api/drains/validate-drain-delivery-configuration) — POST /v1/drains/test — Validate the delivery configuration of a Drain using sample events.
-- [Drain Audit Logs to S3](https://vercel.com/docs/drains/audit-logs-to-s3) — Learn how to configure AWS IAM and Amazon S3 so Vercel can write Audit Log Drain events to your S3 bucket.
+- [vercel drains](https://vercel.com/docs/cli/drains) — List, inspect, create, update, pause, resume, and delete Vercel Drains from your terminal.
 
 Full cross-link map for this page: [/docs/drains/security.graph.md](/docs/drains/security.graph.md)
 <!-- /docsgraph:related -->
@@ -305,6 +306,18 @@ For more information on Drains security and how to use them, check out the follo
 - [Configure Drains](/docs/drains/using-drains)
 - [Log Drains reference](/docs/drains/reference/logs)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

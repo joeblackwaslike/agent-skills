@@ -15,9 +15,10 @@ related:
   - /docs/functions/functions-api-reference/vercel-functions-package
 summary: Learn how compute works on Vercel with Fluid compute, and how it compares to traditional server and serverless models.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/fundamentals/what-is-compute.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ef19bc32dd2b1c5ce7635fda7c8a29e42ded3da7fd3275fb545e64196cbab5a0"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c18c56e9eedb360e37ca4bc65cc295423135e732221ea1753ba0cc947edc04fa"
 ---
 
 # What is Compute?
@@ -32,13 +33,13 @@ Compute is the work a server performs to respond to a request, such as rendering
 
 - [Introducing Fluid compute](https://vercel.com/blog/introducing-fluid-compute)
 - [How Fluid compute works on Vercel](https://vercel.com/blog/how-fluid-compute-works-on-vercel)
+- [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
 - [Fluid: How we built serverless servers](https://vercel.com/blog/fluid-how-we-built-serverless-servers)
 - [Fluid compute: Evolving serverless for AI workloads](https://vercel.com/blog/fluid-compute-evolving-serverless-for-ai-workloads)
-- [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
-- [How Fluid compute pricing compares to EC2, Fargate, and EKS](https://vercel.com/kb/guide/fluid-compute-vs-cloud-cost) — Compare Fluid compute with Active CPU pricing to Amazon EC2, AWS Fargate, and Amazon EKS on cost per active vCPU-hour, a
+- [How can I improve function cold start performance on Vercel?](https://vercel.com/kb/guide/improve-function-cold-start-performance-on-vercel) — Learn how to confirm whether cold starts cause function latency on Vercel, and how Fluid compute reduces how often they
 - [Vercel Functions can now run on Fluid compute](https://vercel.com/changelog/vercel-functions-can-now-run-on-fluid-compute)
+- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis) — Learn how to build and scale performant APIs on Vercel.
 - [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
-- [Scale to one: How Fluid solves cold starts](https://vercel.com/blog/scale-to-one-how-fluid-solves-cold-starts)
 - [Vercel Functions](https://vercel.com/docs/functions) — Build API routes, webhooks, and agent request handlers with Vercel Functions, then test and debug them with Vercel CLI.
 - [Backends on Vercel](https://vercel.com/docs/frameworks/backend) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
 - [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
@@ -182,6 +183,18 @@ Traditional serverless platforms share three structural drawbacks:
 
 Fluid compute addresses each of these drawbacks with [optimized concurrency](#optimized-concurrency), [automatic failover](#automatic-failover), and [background processing](#background-processing).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

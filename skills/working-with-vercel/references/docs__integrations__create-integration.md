@@ -15,9 +15,10 @@ related:
   - /docs/integrations/create-integration/marketplace-flows
 summary: Learn how to create and manage your own integration for internal or public use with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ab6ef0d0c1f6911485e7154077f348e7e17e56e4b2c17076cdc7b481e66886ec"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0ec4c7d4596b44b1afeb56e99fbfc54d9ef5de4b96d83d057baa43baa3ffeef3"
 ---
 
 # Create an Integration
@@ -35,7 +36,7 @@ Learn the process of creating and managing integrations on Vercel, helping you e
 - [Install an Integration](https://vercel.com/docs/integrations/install-an-integration) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
 - [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference) — Learn how to manage project access and added products for your integrations.
 - [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
-- [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
+- [Transferring an Integration](https://vercel.com/docs/integrations/install-an-integration/transferring-an-integration) — Move your installation of a Native Integration from one Vercel team to another, including its resources and prepayment b
 
 Full cross-link map for this page: [/docs/integrations/create-integration.graph.md](/docs/integrations/create-integration.graph.md)
 <!-- /docsgraph:related -->
@@ -73,29 +74,29 @@ The **Create Integration** form must be completed in full before you can submit 
 
 | Field                                                                                                                                              | Description                                                                                                                              | Required                                                      |
 | :------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------ |
-| [Name](/docs/integrations/create-integration/submit-integration#integration-name)                                                                  | The name of your integration.                                                                                                            |     |
-| [URL Slug](/docs/integrations/create-integration/submit-integration#url-slug)                                                                      | The URL slug for your integration.                                                                                                       |     |
-| [Developer](/docs/integrations/create-integration/submit-integration#developer)                                                                    | The owner of the Integration, generally a legal name.                                                                                    |     |
-| [Contact Email](/docs/integrations/create-integration/submit-integration#email)                                                                    | The contact email for the owner of the integration. This will **not** be publicly listed.                                                |     |
-| [Support Contact Email](/docs/integrations/create-integration/submit-integration#email)                                                            | The support email for the integration. This **will** be publicly listed.                                                                 |     |
-| [Short Description](/docs/integrations/create-integration/submit-integration#short-description)                                                    | A short description of your integration.                                                                                                 |     |
-| [Logo](/docs/integrations/create-integration/submit-integration#logo)                                                                              | The logo for your integration.                                                                                                           |     |
-| [Category](/docs/integrations/create-integration/submit-integration#category)                                                                      | The category for your integration.                                                                                                       |     |
-| [Website](/docs/integrations/create-integration/submit-integration#urls)                                                                           | The website for your integration.                                                                                                        |     |
-| [Documentation URL](/docs/integrations/create-integration/submit-integration#urls)                                                                 | The documentation URL for your integration.                                                                                              |     |
-| [EULA URL](/docs/integrations/create-integration/submit-integration#urls)                                                                          | The URL to your End User License Agreement (EULA) for your integration.                                                                  |     |
-| [Privacy Policy URL](/docs/integrations/create-integration/submit-integration#urls)                                                                | The URL to your Privacy Policy for your integration.                                                                                     |     |
-| [Overview](/docs/integrations/create-integration/submit-integration#overview)                                                                      | A detailed overview of your integration.                                                                                                 |     |
-| [Additional Information](/docs/integrations/create-integration/submit-integration#additional-information)                                          | Additional information about configuring your integration.                                                                               |  |
-| [Feature Media](/docs/integrations/create-integration/submit-integration#feature-media)                                                            | Images featured on your integration details page. You can upload 1 to 8 images with an aspect ratio of 16:9. |     |
-| [Redirect URL](/docs/integrations/create-integration/submit-integration#redirect-url)                                                              | The URL the user sees during installation.                                                                                               |     |
-| [API Scopes](/docs/integrations/create-integration/submit-integration#api-scopes)                                                                  | The API scopes for your integration.                                                                                                     |  |
-| [Webhook URL](/docs/integrations/create-integration/submit-integration#webhook-url)                                                                | The URL to receive webhooks from Vercel.                                                                                                 |  |
-| [Configuration URL](/docs/integrations/create-integration/submit-integration#configuration-url)                                                    | The URL to configure your integration.                                                                                                   |  |
-| [Base URL](/docs/integrations/create-integration/submit-integration#base-url) (Native integration)                                                 | The URL that points to your integration server                                                                                           |  |
-| [Redirect Login URL](/docs/integrations/create-integration/submit-integration#redirect-login-url) (Native integration)                             | The URL where the integration users are redirected to when they open your product's dashboard                                            |  |
-| [Installation-level Billing Plans](/docs/integrations/create-integration/submit-integration#installation-level-billing-plans) (Native integration) | Enable the ability to select billing plans when installing the integration                                                               |  |
-| [Integrations Agreement](/docs/integrations/create-integration/submit-integration#integrations-agreement)                                          | Which partner terms apply before publish [depends on native versus connectable account integrations](/docs/integrations/create-integration/submit-integration#integrations-agreement).       |     |
+| [Name](/docs/integrations/create-integration/submit-integration#integration-name)                                                                  | The name of your integration.                                                                                                            | Yes    |
+| [URL Slug](/docs/integrations/create-integration/submit-integration#url-slug)                                                                      | The URL slug for your integration.                                                                                                       | Yes    |
+| [Developer](/docs/integrations/create-integration/submit-integration#developer)                                                                    | The owner of the Integration, generally a legal name.                                                                                    | Yes    |
+| [Contact Email](/docs/integrations/create-integration/submit-integration#email)                                                                    | The contact email for the owner of the integration. This will **not** be publicly listed.                                                | Yes    |
+| [Support Contact Email](/docs/integrations/create-integration/submit-integration#email)                                                            | The support email for the integration. This **will** be publicly listed.                                                                 | Yes    |
+| [Short Description](/docs/integrations/create-integration/submit-integration#short-description)                                                    | A short description of your integration.                                                                                                 | Yes    |
+| [Logo](/docs/integrations/create-integration/submit-integration#logo)                                                                              | The logo for your integration.                                                                                                           | Yes    |
+| [Category](/docs/integrations/create-integration/submit-integration#category)                                                                      | The category for your integration.                                                                                                       | Yes    |
+| [Website](/docs/integrations/create-integration/submit-integration#urls)                                                                           | The website for your integration.                                                                                                        | Yes    |
+| [Documentation URL](/docs/integrations/create-integration/submit-integration#urls)                                                                 | The documentation URL for your integration.                                                                                              | Yes    |
+| [EULA URL](/docs/integrations/create-integration/submit-integration#urls)                                                                          | The URL to your End User License Agreement (EULA) for your integration.                                                                  | Yes    |
+| [Privacy Policy URL](/docs/integrations/create-integration/submit-integration#urls)                                                                | The URL to your Privacy Policy for your integration.                                                                                     | Yes    |
+| [Overview](/docs/integrations/create-integration/submit-integration#overview)                                                                      | A detailed overview of your integration.                                                                                                 | Yes    |
+| [Additional Information](/docs/integrations/create-integration/submit-integration#additional-information)                                          | Additional information about configuring your integration.                                                                               | No |
+| [Feature Media](/docs/integrations/create-integration/submit-integration#feature-media)                                                            | Images featured on your integration details page. You can upload 1 to 8 images with an aspect ratio of 16:9. | Yes    |
+| [Redirect URL](/docs/integrations/create-integration/submit-integration#redirect-url)                                                              | The URL the user sees during installation.                                                                                               | Yes    |
+| [API Scopes](/docs/integrations/create-integration/submit-integration#api-scopes)                                                                  | The API scopes for your integration.                                                                                                     | No |
+| [Webhook URL](/docs/integrations/create-integration/submit-integration#webhook-url)                                                                | The URL to receive webhooks from Vercel.                                                                                                 | No |
+| [Configuration URL](/docs/integrations/create-integration/submit-integration#configuration-url)                                                    | The URL to configure your integration.                                                                                                   | No |
+| [Base URL](/docs/integrations/create-integration/submit-integration#base-url) (Native integration)                                                 | The URL that points to your integration server                                                                                           | No |
+| [Redirect Login URL](/docs/integrations/create-integration/submit-integration#redirect-login-url) (Native integration)                             | The URL where the integration users are redirected to when they open your product's dashboard                                            | No |
+| [Installation-level Billing Plans](/docs/integrations/create-integration/submit-integration#installation-level-billing-plans) (Native integration) | Enable the ability to select billing plans when installing the integration                                                               | No |
+| [Integrations Agreement](/docs/integrations/create-integration/submit-integration#integrations-agreement)                                          | Which partner terms apply before publish [depends on native versus connectable account integrations](/docs/integrations/create-integration/submit-integration#integrations-agreement).       | Yes    |
 
 ### Create Product form details
 
@@ -103,19 +104,19 @@ The **Create Product** form must be completed in full for at least one product b
 
 | Field                                                                                                                               | Description                                                                | Required                                                      |
 | :---------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------- | :------------------------------------------------------------ |
-| [Name](/docs/integrations/create-integration/submit-integration#product-name)                                                       | The name of your product.                                                  |     |
-| [URL Slug](/docs/integrations/create-integration/submit-integration#product-url-slug)                                               | The URL slug for your product.                                             |     |
-| [Short Description](/docs/integrations/create-integration/submit-integration#product-short-description)                             | A short description of your product.                                       |     |
-| [Short Billing Plans Description](/docs/integrations/create-integration/submit-integration#product-short-billing-plans-description) | A short description of your billing plan.                                  |  |
-| [Metadata Schema](/docs/integrations/create-integration/submit-integration#product-metadata-schema)                                 | The metadata your product will receive when a store is created or updated. |     |
-| [Logo](/docs/integrations/create-integration/submit-integration#product-logo)                                                       | The logo for your product.                                                 |  |
-| [Tags](/docs/integrations/create-integration/submit-integration#product-tags)                                                       | Tags for the integrations marketplace categories.                          |     |
-| [Guides](/docs/integrations/create-integration/submit-integration#product-guides)                                                   | Getting started guides for specific frameworks.                            |     |
-| [Resource Links](/docs/integrations/create-integration/submit-integration#product-resource-links)                                   | Resource links such as documentation.                                      |  |
-| [Snippets](/docs/integrations/create-integration/submit-integration#product-snippets)                                               | Add up to 8 code snippets to help users get started with your product.     |  |
-| [Global Config Support](/docs/integrations/create-integration/submit-integration#global-config-support)                                 | Enable/Disable Experimentation Global Config Sync                            |  |
-| [Log Drain Settings](/docs/integrations/create-integration/submit-integration#log-drain-settings)                                   | Configure a Log Drain                                                      |  |
-| [Checks API](/docs/integrations/create-integration/submit-integration#checks-api)                                                   | Enable/Disable Checks API                                                  |  |
+| [Name](/docs/integrations/create-integration/submit-integration#product-name)                                                       | The name of your product.                                                  | Yes    |
+| [URL Slug](/docs/integrations/create-integration/submit-integration#product-url-slug)                                               | The URL slug for your product.                                             | Yes    |
+| [Short Description](/docs/integrations/create-integration/submit-integration#product-short-description)                             | A short description of your product.                                       | Yes    |
+| [Short Billing Plans Description](/docs/integrations/create-integration/submit-integration#product-short-billing-plans-description) | A short description of your billing plan.                                  | No |
+| [Metadata Schema](/docs/integrations/create-integration/submit-integration#product-metadata-schema)                                 | The metadata your product will receive when a store is created or updated. | Yes    |
+| [Logo](/docs/integrations/create-integration/submit-integration#product-logo)                                                       | The logo for your product.                                                 | No |
+| [Tags](/docs/integrations/create-integration/submit-integration#product-tags)                                                       | Tags for the integrations marketplace categories.                          | Yes    |
+| [Guides](/docs/integrations/create-integration/submit-integration#product-guides)                                                   | Getting started guides for specific frameworks.                            | Yes    |
+| [Resource Links](/docs/integrations/create-integration/submit-integration#product-resource-links)                                   | Resource links such as documentation.                                      | No |
+| [Snippets](/docs/integrations/create-integration/submit-integration#product-snippets)                                               | Add up to 8 code snippets to help users get started with your product.     | No |
+| [Global Config Support](/docs/integrations/create-integration/submit-integration#global-config-support)                                 | Enable/Disable Experimentation Global Config Sync                            | No |
+| [Log Drain Settings](/docs/integrations/create-integration/submit-integration#log-drain-settings)                                   | Configure a Log Drain                                                      | No |
+| [Checks API](/docs/integrations/create-integration/submit-integration#checks-api)                                                   | Enable/Disable Checks API                                                  | No |
 
 ## After integration creation
 
@@ -193,6 +194,18 @@ Vercel complies with applicable laws and regulations, including sanctions admini
 
 Vercel does not perform OFAC checks on behalf of its customers or their end users. As an integration provider, you are solely responsible for ensuring your own compliance with applicable sanctions, export controls, and other relevant laws.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

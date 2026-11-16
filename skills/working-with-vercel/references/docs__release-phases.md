@@ -11,9 +11,10 @@ related:
   - /docs/release-phases/public-beta-agreement
 summary: Learn about the different phases of the Vercel Product release cycle and the requirements that a Product must meet before being assigned to a...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/release-phases.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "e4ebc864aa7f388967c2d7e6b9f4c4b292ddf44cdcae46e5b0960a2b87936285"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7b581183428c05a3f1cbe5103316d004ebb60875510a0d431175de35d0f3abb4"
 ---
 
 # Release Phases for Vercel
@@ -94,6 +95,18 @@ Deprecated states are accompanied by documentation instructing existing users of
 
 The ultimate state after Deprecation is Sunset. Sunset implies that there should be no customers using the Product and any artifacts within, but not limited to, code, documentation, and marketing have been removed.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

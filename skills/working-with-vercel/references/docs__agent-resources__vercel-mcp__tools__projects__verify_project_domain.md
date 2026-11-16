@@ -12,9 +12,10 @@ related:
   []
 summary: Use verify_project_domain with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/verify_project_domain.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "3d0070de70e22b2c532dbc799228bb8acd3e60bf30a9dd6b2fbd793c39dd1ad3"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "52f9842038f8de660e87f778bf98b25c0d608f8b6a6205027c841219e523e54c"
 ---
 
 # verify_project_domain
@@ -28,10 +29,10 @@ Attempts to verify a project domain with `verified = false` by checking the corr
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Verify project domain](https://vercel.com/docs/rest-api/projects/verify-project-domain) — POST /v9/projects/{idOrName}/domains/{domain}/verify — Attempts to verify a project domain with \\`verified = false\\` by
-- [add_project_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/add_project_domain) — Use add_project_domain with Vercel MCP.
 - [get_project_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project_domain) — Use get_project_domain with Vercel MCP.
+- [add_project_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/add_project_domain) — Use add_project_domain with Vercel MCP.
 - [get_domain_contact_verification](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_contact_verification) — Use get_domain_contact_verification with Vercel MCP.
-- [get_domain_verification_record](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_verification_record) — Use get_domain_verification_record with Vercel MCP.
+- [list_project_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/list_project_domains) — Use list_project_domains with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/projects/verify_project_domain.graph.md](/docs/agent-resources/vercel-mcp/tools/projects/verify_project_domain.graph.md)
 <!-- /docsgraph:related -->
@@ -46,6 +47,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/proje
 | `slug`        | string  | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody` | unknown | No       | Request body for this tool.                                 |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

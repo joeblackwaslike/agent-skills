@@ -13,9 +13,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis/responses/reasoning
 summary: Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "bbdb271065c011de7e0a2ddbeb6965d44ec9a591b61af9033d582eca6814e033"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "76a312d3cb08d4b9e2f603119df2889a492ab51aac747af5b99114f22f71bc11"
 ---
 
 # AI Gateway OpenAI Reasoning
@@ -28,7 +29,6 @@ OpenAI reasoning models can think through problems before responding. You can co
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Reasoning](https://ai-sdk.dev/docs/ai-sdk-core/reasoning) — Learn how to control reasoning across providers with the top-level reasoning parameter.
 - [OpenResponses Reasoning with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning) — Control how much a reasoning model thinks before answering with the OpenResponses API through AI Gateway.
 - [OpenAI Chat Completions Reasoning with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning) — Control how much a model thinks before answering with the OpenAI Chat Completions API through AI Gateway.
 - [AI Gateway Amazon Bedrock Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock) — Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
@@ -254,6 +254,18 @@ Provider-specific options take precedence over the shorthand. Don't infer suppor
 
 For more details, see the [OpenAI reasoning docs](https://developers.openai.com/api/docs/guides/reasoning/).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

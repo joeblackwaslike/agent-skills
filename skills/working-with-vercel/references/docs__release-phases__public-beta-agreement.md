@@ -11,9 +11,10 @@ related:
   []
 summary: The following is the Public Beta Agreement for Vercel products in the Public Beta release phase, including any services or functionality that may be...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/release-phases/public-beta-agreement.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "69c4b51488550d0ae5a93b97bdae8fd7fccccb89849d35dc19fecc7ce3aa8f46"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b495812842db015603a797ab9f5dbfd18aed4c90d8f2e6a58e91c6869e487506"
 ---
 
 # Public Beta Agreement
@@ -120,6 +121,18 @@ The parties agree that the United Nations Convention on Contracts for the Intern
 
 This Agreement may not be assigned, sublicensed or otherwise transferred by either party without the other party's prior written consent except that either party may assign this Agreement without the other party's consent to any entity that acquires all or substantially all of such party's business or assets, whether by merger, sale of assets, or otherwise, provided that such entity assumes and agrees in writing to be bound by all of such party's obligations under this Agreement. This Agreement constitutes the parties' entire understanding regarding the Product, and supersedes any and all other prior or contemporaneous agreements, whether written or oral. Except as expressly set forth herein, all other terms and conditions of the Terms shall remain in full force and effect with respect to your access and use of Vercel's services, including the Product. If any terms of this Agreement conflict with the Terms, the conflicting terms in this Agreement shall control with respect to the Product.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

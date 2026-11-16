@@ -15,9 +15,10 @@ related:
   - /docs/git
 summary: Learn how to manage your projects through the Vercel Dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/projects/managing-projects.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ac31a698cd43da41b7a5d450e2cd0410cecf3c057666cbe3d506017b3e2f2c46"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "985e6a28587550a8ab788a2160add3a216150a1e23ec329777187af529fe6a0b"
 ---
 
 # Managing projects
@@ -33,12 +34,11 @@ You can manage your project on Vercel in your project's dashboard. To learn more
 - [How do I change the name of my Vercel Project?](https://vercel.com/kb/guide/how-do-i-change-the-name-of-my-vercel-project) — Change your Vercel project name in the dashboard, CLI, or REST API, then update the environment variables, callbacks, an
 - [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\\(\\) so inference runs only for verified callers
 - [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
-- [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
-- [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
-- [Projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects) — Vercel MCP tools for projects.
 - [Multi-Project Platforms Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
-- [Delete a Project](https://vercel.com/docs/rest-api/projects/delete-a-project) — DELETE /v9/projects/{idOrName} — Delete a specific project by passing either the project \\`id\\` or \\`name\\` in the URL.
+- [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Delete a Project](https://vercel.com/docs/rest-api/projects/delete-a-project) — DELETE /v9/projects/{idOrName} — Delete a specific project by passing either the project \\`id\\` or \\`name\\` in the URL.
+- [Add a domain to a project](https://vercel.com/docs/rest-api/projects/add-a-domain-to-a-project) — POST /v10/projects/{idOrName}/domains — Add a domain to the project by passing its domain name and by specifying the pro
 
 Full cross-link map for this page: [/docs/projects/managing-projects.graph.md](/docs/projects/managing-projects.graph.md)
 <!-- /docsgraph:related -->
@@ -134,13 +134,13 @@ run();
 
 You can choose to temporarily pause a project to ensure that you do not incur usage from [metered resources](/docs/pricing#managed-infrastructure-billable-resources) on your production deployment.
 
-### Pausing a project when you reach your spend amount
+### Pausing a project when spend reaches a budget
 
-To automatically pause your projects when you reach your spend amount:
+To automatically pause projects when you reach a [Spend Management](/docs/spend-management) budget:
 
 1. On the Vercel [dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Dashboard), ensure you have selected the correct team from the team switcher.
-2. Open **Settings** in the sidebar.
-3. In the **Spend Management** section, select the **Pause all production deployments** option. Then follow the steps to confirm the action.
+2. Open **Settings** in the sidebar, then select **Billing** and **Spend Management**.
+3. Add or edit a team budget to pause every project on the team, or a project budget to pause one project. Turn on the pause option, then follow the steps to confirm the action.
 
 To learn more, see the [Spend Management documentation](/docs/spend-management#pausing-projects).
 
@@ -206,6 +206,18 @@ To delete a project:
 
 4. In the **Delete Project** dialog, confirm that you'd like to delete the project by entering the project name and prompt. Then, click the **Continue** button.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

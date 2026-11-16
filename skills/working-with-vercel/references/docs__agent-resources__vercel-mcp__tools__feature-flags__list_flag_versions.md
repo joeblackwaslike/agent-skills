@@ -12,9 +12,10 @@ related:
   []
 summary: Use list_flag_versions with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flag_versions.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "aef9cd7b7099ed8dda8ad7bd45862ccdb395c982afbf37afadcb0f054ab0d75a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4d44a407c0942bb8d5a8ae573d953aee06d8ee04a47b92401cd7a7bbb13f2f1b"
 ---
 
 # list_flag_versions
@@ -31,7 +32,7 @@ Lists flag versions for a given flag.
 - [list_flags](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flags) — Use list_flags with Vercel MCP.
 - [get_flag](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/get_flag) — Use get_flag with Vercel MCP.
 - [List flag versions](https://vercel.com/docs/rest-api/feature-flags/list-flag-versions) — GET /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug}/versions — Lists flag versions for a given flag.
-- [list_team_flag_settings](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_team_flag_settings) — Use list_team_flag_settings with Vercel MCP.
+- [list_flags_v2](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flags_v2) — Use list_flags_v2 with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flag_versions.graph.md](/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flag_versions.graph.md)
 <!-- /docsgraph:related -->
@@ -49,6 +50,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/featu
 | `teamId`          | string  | No       | Team ID to use for this operation.                          |
 | `slug`            | string  | No       | Team slug to use for this operation. Use instead of teamId. |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

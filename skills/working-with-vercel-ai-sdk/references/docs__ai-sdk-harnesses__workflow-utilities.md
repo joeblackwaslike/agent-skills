@@ -4,8 +4,8 @@ description: Run HarnessAgent turns as durable Workflow DevKit workflows.
 url: "https://ai-sdk.dev/docs/ai-sdk-harnesses/workflow-utilities"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/workflow-utilities.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "781dd20b6e827d3e6d276f63b32d1fd0abda99f9e44af41d3a0f96cdd9aa0022"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "3568086bc1c2623ff6d7b07122b1c0c74d0f0e9e0adb31fd49593052372c0ff5"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -340,6 +340,11 @@ Workflow automatically persists the `HarnessWorkflowState` returned by each
 step, including `continueFrom`, for the duration of the current workflow run.
 To continue the native harness session across separate user-turn workflow runs,
 persist the opaque `resumeFrom` state by `sessionId`.
+
+For sandbox bridge adapters, `resumeFrom` and `continueFrom` contain the private
+key that authorizes reconnecting to the running bridge. Workflow stores this key
+with the step state, so treat your Workflow storage and any resume storage as
+sensitive.
 
 The storage implementation is the same for semantic agent steps and time
 slices. This example uses Workflow steps because filesystem access must stay out

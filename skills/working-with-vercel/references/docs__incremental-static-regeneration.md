@@ -15,9 +15,10 @@ related:
   - /docs/frameworks/full-stack/nuxt
 summary: ISR serves cached static pages while regenerating content in the background. Vercel\
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/incremental-static-regeneration.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "56d10f97ecfb290769b4958f921aaee76d0c48351df7aeadfac631c0916c4420"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "394d7ddcff113f1d81b5b6449ad960c6938b61815dbe15fafa707b954ae9a168"
 ---
 
 # Incremental Static Regeneration (ISR)
@@ -88,7 +89,7 @@ ISR works with your framework's existing APIs. Your framework code defines how e
 | **Gatsby**                 | Use DSG (Deferred Static Generation)      | [Gatsby on Vercel](/docs/frameworks/frontend/gatsby#incremental-static-regeneration)              |
 | **Build Output API**       | Define Prerender Functions                | [Prerender Functions](/docs/build-output-api/primitives#prerender-configuration-file) |
 
-To cache data inside your functions separately from the page response, see [Runtime Cache](/docs/caching/runtime-cache).
+To cache data inside your functions separately from the page response, see [Runtime Cache](/docs/runtime-cache).
 
 ## How ISR works
 
@@ -199,7 +200,7 @@ Vercel can cache requests proxied to external origins via [rewrites](/docs/routi
 
 ### Data caching inside functions
 
-In addition to response caching, [Runtime Cache](/docs/caching/runtime-cache) caches data inside your functions: individual fetch results, database queries, or computed values. It works alongside any of the approaches above.
+In addition to response caching, [Runtime Cache](/docs/runtime-cache) caches data inside your functions: individual fetch results, database queries, or computed values. It works alongside any of the approaches above.
 
 ## Pricing and limits
 
@@ -227,9 +228,21 @@ Tag-based revalidation, including `revalidateTag` and `revalidatePath` in the Ne
 - [Getting started with ISR](/docs/incremental-static-regeneration/quickstart)
 - [ISR usage and pricing](/docs/incremental-static-regeneration/limits-and-pricing)
 - [Monitor ISR on Vercel](/docs/query/monitoring)
-- [Runtime Cache](/docs/caching/runtime-cache)
+- [Runtime Cache](/docs/runtime-cache)
 - [CDN cache](/docs/caching/cdn-cache)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

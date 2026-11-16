@@ -11,9 +11,10 @@ related:
   []
 summary: Warns when CORS header (or header-like) configuration is detected, requiring that configuration to be allowlisted.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/no_cors_headers.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "bb43be77e29b06226126a95174eb1758d8211e791e52e38441052da0f299d6f8"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e2e4316ac7c201b2408ce017d958eae61dc1cda727d7b336d2c2facaadb6623f"
 ---
 
 # NO_CORS_HEADERS
@@ -83,6 +84,18 @@ will match any string that looks like a possible CORS header. We've tried to
 mitigate the risk of false-positives, but if they occur they will need to be
 added to the allowlists.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

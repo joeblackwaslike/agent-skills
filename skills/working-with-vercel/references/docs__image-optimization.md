@@ -15,9 +15,10 @@ related:
   - /docs/deployments/managing-deployments
 summary: Transform and optimize images to improve page load performance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/image-optimization.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "7183dbd8fae30a2a86685f3242ccebd3b62281cd0be6432087b9ad73b5922e15"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "bed00b7fe12c36407000a362bcbbc36471b34ef8edb6ab3f0e824a530375166c"
 ---
 
 # Image Optimization with Vercel
@@ -262,6 +263,18 @@ For more information on what to do next, we recommend the following articles:
 - [Pricing](/docs/image-optimization/limits-and-pricing)
 - If you are building a custom web framework, you can also use the [Build Output API](/docs/build-output-api/configuration#images) to implement Image Optimization. To learn how to do this, see the [Build your own web framework](/blog/build-your-own-web-framework#automatic-image-optimization) blog post.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

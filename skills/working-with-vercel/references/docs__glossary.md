@@ -3,7 +3,7 @@ title: Glossary
 product: vercel
 url: /docs/glossary
 canonical_url: "https://vercel.com/docs/glossary"
-last_updated: 2026-11-03
+last_updated: 2026-11-12
 type: reference
 prerequisites:
   []
@@ -15,9 +15,10 @@ related:
   - /docs/ai-sdk
 summary: "Learn about the terms and concepts used in Vercel's products and documentation."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/glossary.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "600edfb3e2d611e37db32d70c8bedeaa9be56109f8020bdd5851a9a9a5bf9934"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8390309d59a4096a03b99a73bd58470dff8ad0f4135d03a38dea9cbc7a07a374"
 ---
 
 # Glossary
@@ -37,11 +38,11 @@ A full glossary of terms used in Vercel's products and documentation.
 - [Recursive `turbo` invocations](https://turborepo.dev/docs/messages/recursive-turbo-invocations) — How to fix infinite loops caused by package.json scripts that recursively invoke `turbo`.
 - [s1ngularity: supply chain attack in Nx packages](https://vercel.com/changelog/s1ngularity-supply-chain-attack-in-nx-packages)
 - [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
+- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis) — Learn how to build and scale performant APIs on Vercel.
+- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
 - [Life of a Vercel request: What happens when a user presses enter](https://vercel.com/blog/life-of-a-vercel-request-what-happens-when-a-user-presses-enter)
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
-- [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
-- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis) — Learn how to build and scale performant APIs on Vercel.
-- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
+- [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 
 Full cross-link map for this page: [/docs/glossary.graph.md](/docs/glossary.graph.md)
 <!-- /docsgraph:related -->
@@ -116,7 +117,7 @@ The process Vercel runs on every deployment that compiles, bundles, and optimize
 
 ### Build Cache
 
-A cache that stores build artifacts and dependencies to speed up subsequent deployments. The [maximum size](/docs/limits#build-cache-maximum-size) depends on the build machine type. The cache is retained for one month.
+A cache that stores build artifacts and dependencies to speed up subsequent deployments. The [maximum size](/docs/limits#build-cache-maximum-size) is the same for every build machine type. The cache is retained for one month.
 
 ### Build Command
 
@@ -208,7 +209,7 @@ A beta feature that runs long-running container processes, such as queue consume
 
 ### Data Cache
 
-A beta cache for the Next.js App Router that stores responses from data fetches, allowing for granular segment-level caching rather than per-route caching. When you adopt Cache Components, use `use cache: remote` to store cached data in [Runtime Cache](#runtime-cache) instead. See [Data Cache](/docs/caching/runtime-cache/data-cache).
+A beta cache for the Next.js App Router that stores responses from data fetches, allowing for granular segment-level caching rather than per-route caching. When you adopt Cache Components, use `use cache: remote` to store cached data in [Runtime Cache](#runtime-cache) instead. See [Data Cache](/docs/runtime-cache/data-cache).
 
 ### DDoS (Distributed Denial of Service)
 
@@ -484,7 +485,7 @@ A deployment protection method that restricts access using a password. Pro teams
 
 ### Plans
 
-Vercel's account tiers: Hobby (free, for personal projects), Pro (credit-based, with team collaboration), and Enterprise (custom limits, SSO, and SLAs). See [Plans](/docs/plans) for what each one includes.
+Vercel's account tiers: Hobby (free), Pro (credit-based, with team collaboration), and Enterprise (custom limits, SSO, and SLAs). See [Plans](/docs/plans) for what each one includes.
 
 ### Points of Presence (PoPs)
 
@@ -600,7 +601,7 @@ The execution environment for your functions. Vercel Functions support Node.js, 
 
 ### Runtime Cache
 
-A regional, ephemeral cache for storing and retrieving data across Vercel Functions, Routing Middleware, and builds within a Vercel region, with invalidation through TTLs and tags. See [Runtime Cache](/docs/caching/runtime-cache).
+A regional, ephemeral cache for storing and retrieving data across Vercel Functions, Routing Middleware, and builds within a Vercel region, with invalidation through TTLs and tags. See [Runtime Cache](/docs/runtime-cache).
 
 ### Runtime Logs
 
@@ -762,6 +763,18 @@ See [Vercel Workflows](#vercel-workflows).
 
 In JavaScript, an entity in a repository that can be either a single package or a collection of packages, often at the repository root.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

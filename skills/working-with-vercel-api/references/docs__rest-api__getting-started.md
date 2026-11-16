@@ -15,9 +15,10 @@ related:
   - /docs/limits
 summary: Create a scoped Vercel access token, make a read-only REST API request, and call the same operation with the Vercel SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/rest-api/getting-started.md"
-fetched_at: "2026-11-09T12:41:17.654Z"
-sha256: "91efb63eb5c07ae5316189b05b35a7849736bcc856a546e83ab4688f64d4fb9e"
+fetched_at: "2026-11-16T12:35:06.708Z"
+sha256: "0d11acd9d4d290267a0ea478acccc6cafbec0f2d366185c1f9fa85ba03ae5cdd"
 ---
 
 # Make Your First Vercel API Request
@@ -33,8 +34,8 @@ Use a Vercel access token to call the Vercel REST API with `curl`, then make the
 - [List projects of an access group](https://vercel.com/docs/rest-api/access-groups/list-projects-of-an-access-group) — GET /v1/access-groups/{idOrName}/projects — List projects of an access group
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [Create an access group project](https://vercel.com/docs/rest-api/access-groups/create-an-access-group-project) — POST /v1/access-groups/{accessGroupIdOrName}/projects — Allows creation of an access group project
-- [List project members](https://vercel.com/docs/rest-api/projectmembers/list-project-members) — GET /v1/projects/{idOrName}/members — Lists all members of a project.
 - [Get a project domain](https://vercel.com/docs/rest-api/projects/get-a-project-domain) — GET /v9/projects/{idOrName}/domains/{domain} — Get project domain by project id/name and domain name.
+- [Create an SDK key](https://vercel.com/docs/rest-api/feature-flags/create-an-sdk-key) — PUT /v1/projects/{projectIdOrName}/feature-flags/sdk-keys — Creates an SDK key.
 
 Full cross-link map for this page: [/docs/rest-api/getting-started.graph.md](/docs/rest-api/getting-started.graph.md)
 <!-- /docsgraph:related -->
@@ -182,6 +183,18 @@ You authenticated with a Bearer token, called the read-only `GET /v10/projects` 
 - [Browse the Vercel SDK reference](/docs/rest-api/sdk)
 - [Open the machine-readable OpenAPI description](https://vercel.com/openapi.json)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

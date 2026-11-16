@@ -15,9 +15,10 @@ related:
   - /docs/connect/concepts/tokens
 summary: Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/connect/quickstart.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "9aea3fa2c9de23168d73ab8feda14d504b749c8bb3b805923d52b1ceeda5024e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "6adcd0055462eaa35d756cf3dab2c9a0694b775ab199bebd6bde223dc8947a9c"
 ---
 
 # Quickstart
@@ -40,7 +41,6 @@ This guide shows you how to create your first connector in Vercel Connect and re
 - [Build a GitHub agent with Vercel Connect](https://vercel.com/kb/guide/github-agent-vercel-connect) — Build a GitHub agent that helps your team work through issues and PRs. Chat SDK handles the interactivity and AI SDK run
 - [How to build a Slack bot that manages files in Vercel Blob](https://vercel.com/kb/guide/slack-bot-vercel-blob) — Build a Slack bot using Chat SDK, AI SDK, and Files SDK that can list, read, upload, and delete files in Vercel Blob thr
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
-- [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
 - [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 
 Full cross-link map for this page: [/docs/connect/quickstart.graph.md](/docs/connect/quickstart.graph.md)
@@ -282,6 +282,18 @@ Full cross-link map for this page: [/docs/connect/quickstart.graph.md](/docs/con
 - [Pricing](/docs/connect/pricing): Token-request pricing.
 - [Limits](/docs/connect/limits): Platform limits and rate limits.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

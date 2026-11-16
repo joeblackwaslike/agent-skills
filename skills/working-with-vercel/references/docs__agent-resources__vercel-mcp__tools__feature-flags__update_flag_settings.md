@@ -12,9 +12,10 @@ related:
   []
 summary: Use update_flag_settings with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/update_flag_settings.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "447e1414e45d60f614f19e7d306743b32581500d9cb549caeaedb70c776b8dd4"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9af411cbdd0e36245f58e4fd89cc387db49ba88f46e26696be84963374539ca1"
 ---
 
 # update_flag_settings
@@ -30,8 +31,8 @@ Update project flag settings.
 - [update_flag](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/update_flag) — Use update_flag with Vercel MCP.
 - [get_flag_settings](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/get_flag_settings) — Use get_flag_settings with Vercel MCP.
 - [update_flag_segment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/update_flag_segment) — Use update_flag_segment with Vercel MCP.
+- [list_team_flag_settings](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_team_flag_settings) — Use list_team_flag_settings with Vercel MCP.
 - [create_flag](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/create_flag) — Use create_flag with Vercel MCP.
-- [update_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/update_project) — Use update_project with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/feature-flags/update_flag_settings.graph.md](/docs/agent-resources/vercel-mcp/tools/feature-flags/update_flag_settings.graph.md)
 <!-- /docsgraph:related -->
@@ -45,6 +46,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/featu
 | `slug`            | string | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody`     | object | No       | Request body for this tool.                                 |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

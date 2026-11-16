@@ -15,9 +15,10 @@ related:
   - /docs/manage-cdn-usage
 summary: "Get notified when something's wrong with your Vercel projects. Set up alerts through Slack, webhooks, or email so you can fix issues quickly."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/alerts.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c68e1a85b097337b589fc45ec954c070002b398aea813d47daafeb0fc009b8d4"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9024fc46ba7db02fd7b52dff5041368ea25af56d3a0ff38cb6e0c5caf8a5b0b9"
 ---
 
 # Alerts
@@ -32,6 +33,7 @@ Alerts let you know when something's wrong with your Vercel projects, like a spi
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Monitor uptime for AI-native apps with Vercel Alerts](https://vercel.com/kb/guide/monitor-uptime-for-ai-native-apps-with-vercel-alerts) — Learn how to use Vercel Anomaly Alerts as an early-warning system for AI-powered apps, helping you catch 5xx spikes and
 - [Anomaly alert configuration now available](https://vercel.com/changelog/anomaly-alert-configuration-now-available)
 - [Anomaly alerts are now generally available](https://vercel.com/changelog/anomaly-alerts-ga)
 - [Anomaly alerts now available via email](https://vercel.com/changelog/anomaly-alerts-now-available-via-email)
@@ -39,11 +41,10 @@ Alerts let you know when something's wrong with your Vercel projects, like a spi
 - [Anomaly alerts now in public beta](https://vercel.com/changelog/anomaly-alerts-now-in-public-beta)
 - [Detect memory and OOM failures in Vercel Functions](https://vercel.com/kb/guide/detect-memory-and-oom-failures-in-serverless-functions) — Fix out-of-memory \\(OOM\\) errors and memory limit exceeded crashes in Vercel serverless functions. Debug 5xx errors, mon
 - [Vercel Agent can now run AI investigations](https://vercel.com/blog/vercel-agent-can-now-run-ai-investigations)
-- [Monitor uptime for AI-native apps with Vercel Alerts](https://vercel.com/kb/guide/monitor-uptime-for-ai-native-apps-with-vercel-alerts) — Learn how to use Vercel Anomaly Alerts as an early-warning system for AI-powered apps, helping you catch 5xx spikes and
 - [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
+- [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
 - [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
-- [Webhooks API Reference](https://vercel.com/docs/webhooks/webhooks-api) — Vercel Integrations allow you to subscribe to certain trigger-based events through webhooks. Learn about the supported w
 
 Full cross-link map for this page: [/docs/alerts.graph.md](/docs/alerts.graph.md)
 <!-- /docsgraph:related -->
@@ -117,6 +118,18 @@ Vercel compares each completed five-minute interval with the route's trailing 24
 
 Actual results depend on baseline traffic, error rate, variance, and statistical confidence checks. Error counts alone do not guarantee an alert. The following interval does not need to contain another unusual spike, and alerts based on two intervals reflect data from both.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

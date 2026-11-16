@@ -15,9 +15,10 @@ related:
   - /docs/checks/checks-api
 summary: Vercel automatically keeps an eye on various aspects of your web application using the Checks API. Learn how to use Checks in your Vercel workflow...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/checks.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "3c080c7b3a750b8110cdf0a3138bc6e082e88bb18f70da65a784157bfcb84774"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "67eac3c1528de9084f4ffec207e922022f75930ddb7a108bd1df090326dac609"
 ---
 
 # Working with Checks
@@ -33,10 +34,10 @@ Checks are tests and assertions created and run after every successful deploymen
 - [Checks API support added for Marketplace integration providers](https://vercel.com/changelog/checks-api-support-added-for-marketplace-integration-providers)
 - [Checkly Integration and Checks API now generally available](https://vercel.com/changelog/checkly-integration-and-checks-api-now-generally-available)
 - [Deployment Checks](https://vercel.com/docs/deployment-checks) — Set conditions that must be met before proceeding to the next phase of the deployment lifecycle.
-- [Create a check](https://vercel.com/docs/rest-api/checks-v2/create-a-check) — POST /v2/projects/{projectIdOrName}/checks — Creates a new check for a project.
+- [Checks](https://vercel.com/docs/agent-resources/vercel-mcp/tools/checks) — Vercel MCP tools for checks.
 - [Get a check](https://vercel.com/docs/rest-api/checks-v2/get-a-check) — GET /v2/projects/{projectIdOrName}/checks/{checkId} — Return a detailed response for a single check.
+- [Create a check](https://vercel.com/docs/rest-api/checks-v2/create-a-check) — POST /v2/projects/{projectIdOrName}/checks — Creates a new check for a project.
 - [List all checks for a project](https://vercel.com/docs/rest-api/checks-v2/list-all-checks-for-a-project) — GET /v2/projects/{projectIdOrName}/checks — List all checks for a project, optionally filtered by target.
-- [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
 
 Full cross-link map for this page: [/docs/checks.graph.md](/docs/checks.graph.md)
 <!-- /docsgraph:related -->
@@ -83,6 +84,18 @@ Once you have [created your integration](/docs/integrations/create-integration/m
 - Provide relevant information about the outcome of the test on the Vercel dashboard
 - Document how to go beyond the default behavior to build custom tests for advanced users
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

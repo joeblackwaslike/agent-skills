@@ -15,9 +15,10 @@ related:
   - /docs/functions/runtimes/node-js
 summary: Learn about the limits and restrictions of using Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/limitations.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b57aa1769e849cbfec7ea4f635b595b0ccf34baa370d13fd9b6c14e40ec63b83"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "974d0b3d8ab17fec3d669bbe924fa2490177aa08b7b0bdbc8def7ccdbc6abd4d"
 ---
 
 # Vercel Functions Limits
@@ -256,6 +257,18 @@ If you have [fluid compute](/docs/fluid-compute) enabled, the following environm
 - `_HANDLER`
 - `_LAMBDA_TELEMETRY_LOG_FD`
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

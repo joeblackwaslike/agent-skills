@@ -15,9 +15,10 @@ related:
   - /docs/speed-insights/limits-and-pricing
 summary: "Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help you get started with using..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/speed-insights/quickstart.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "751f1bb56a5be276bd412a7c3874a096d995b092a2ccf9d9e719ac571b72dd52"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ffcbe623e2a6a0f85df9b5bffaf2ec384ee617580225555117283dad098a1330"
 ---
 
 # Getting started with Speed Insights
@@ -36,12 +37,12 @@ This guide will help you get started with using Vercel Speed Insights on your pr
 - [Speed Insights now has a free tier](https://vercel.com/changelog/speed-insights-free-tier)
 - [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
 - [How to Optimize Next.js + Sitecore JSS](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-jss) — This guide covers performance and usage considerations when building and deploying your Next.js and Sitecore JSS applica
-- [How Core Web Vitals affect SEO](https://vercel.com/blog/how-core-web-vitals-affect-seo)
 - [How we made the Vercel Dashboard twice as fast](https://vercel.com/blog/how-we-made-the-vercel-dashboard-twice-as-fast)
-- [Improved Speed Insights experience](https://vercel.com/changelog/improved-speed-insights-experience)
+- [How Core Web Vitals affect SEO](https://vercel.com/blog/how-core-web-vitals-affect-seo)
 - [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
-- [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
+- [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability
+- [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
 
 Full cross-link map for this page: [/docs/speed-insights/quickstart.graph.md](/docs/speed-insights/quickstart.graph.md)
 <!-- /docsgraph:related -->
@@ -529,6 +530,18 @@ Now that you have Vercel Speed Insights set up, you can explore the following to
 - [Explore pricing](/docs/speed-insights/limits-and-pricing)
 - [Troubleshooting](/docs/speed-insights/troubleshooting)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

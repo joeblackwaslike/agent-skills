@@ -4,8 +4,8 @@ description: Learn about the providers and models available in the AI SDK.
 url: "https://ai-sdk.dev/docs/foundations/providers-and-models"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/foundations/providers-and-models.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "99d58a879eb67e9702a4a6893af8a423c50c4ec63ad27b35bbb5c856de143ef0"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "bde312c1f93dff3bf12d25773e8ecd28072d2640df5d1118ab839e157b0f8993"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -168,6 +168,7 @@ Here are the capabilities of popular models:
 | [Anthropic](/providers/ai-sdk-providers/anthropic) | `claude-sonnet-5-5`                         | ✓           | ✓                 | ✓          | ✓              |
 | [Anthropic](/providers/ai-sdk-providers/anthropic) | `claude-sonnet-5`                           | ✓           | ✓                 | ✓          | ✓              |
 | [Anthropic](/providers/ai-sdk-providers/anthropic) | `claude-haiku-5-5`                          | ✓           | ✓                 | ✓          | ✓              |
+| [Anthropic](/providers/ai-sdk-providers/anthropic) | `claude-fable-5-2`                          | ✓           | ✓                 | ✓          | ✓              |
 | [Anthropic](/providers/ai-sdk-providers/anthropic) | `claude-fable-5-1`                          | ✓           | ✓                 | ✓          | ✓              |
 | [Anthropic](/providers/ai-sdk-providers/anthropic) | `claude-fable-5`                            | ✓           | ✓                 | ✓          | ✓              |
 | [Anthropic](/providers/ai-sdk-providers/anthropic) | `claude-opus-4-8`                           | ✓           | ✓                 | ✓          | ✓              |
@@ -182,6 +183,8 @@ Here are the capabilities of popular models:
 | [Anthropic](/providers/ai-sdk-providers/anthropic) | `claude-sonnet-4-0`                         | ✓           | ✓                 | ✓          | ✓              |
 | [Google](/providers/ai-sdk-providers/google)       | `gemini-nano-banana-2.1`                    | ✓           | ✗                 | ✗          | ✗              |
 | [Google](/providers/ai-sdk-providers/google)       | `gemini-4-argon`                            | ✓           | ✓                 | ✓          | ✓              |
+| [Google](/providers/ai-sdk-providers/google)       | `gemini-4-carbon`                           | ✓           | ✓                 | ✓          | ✓              |
+| [Google](/providers/ai-sdk-providers/google)       | `gemini-4-hydrogen`                         | ✓           | ✓                 | ✓          | ✓              |
 | [Google](/providers/ai-sdk-providers/google)       | `gemini-3.8-flash`                          | ✓           | ✓                 | ✓          | ✓              |
 | [Google](/providers/ai-sdk-providers/google)       | `gemini-3.7-flash`                          | ✓           | ✓                 | ✓          | ✓              |
 | [Google](/providers/ai-sdk-providers/google)       | `gemini-3.6-flash`                          | ✓           | ✓                 | ✓          | ✓              |

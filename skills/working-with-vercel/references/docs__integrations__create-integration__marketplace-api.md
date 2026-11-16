@@ -16,9 +16,10 @@ related:
   - /docs/integrations/create-integration/marketplace-api/reference/vercel/exchange-sso-token
 summary: Learn how to authenticate and use the Integrations REST API to build your integration server.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b654d55ad7fb89b719ab406382ee25d0bb7112d642c34eb2c6cc3f67210399c1"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0e4b1bb07a772c18bd5680a30abf85ab50664a5ad4f41a6df532ea6bcea993e9"
 ---
 
 # Using the Integrations REST API
@@ -32,11 +33,11 @@ Learn how to authenticate and use the Integrations REST API to build your native
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Native Marketplace integrations now support custom environments](https://vercel.com/changelog/custom-environments-support-for-marketplace-integrations)
-- [Update Installation](https://vercel.com/docs/rest-api/marketplace/update-installation) — PATCH /v1/installations/{integrationConfigurationId} — This endpoint updates an integration installation.
 - [Finalize Installation](https://vercel.com/docs/rest-api/marketplace/finalize-installation) — POST /v1/installations/{integrationConfigurationId}/billing/finalize — This endpoint allows the partner to mark an insta
+- [Update Installation](https://vercel.com/docs/rest-api/marketplace/update-installation) — PATCH /v1/installations/{integrationConfigurationId} — This endpoint updates an integration installation.
 - [Revoke Installation Credential](https://vercel.com/docs/rest-api/marketplace/revoke-installation-credential) — POST /v1/installations/{integrationConfigurationId}/credentials/revoke — Retires a superseded installation credential, s
-- [Update Resource](https://vercel.com/docs/rest-api/marketplace/update-resource) — PATCH /v1/installations/{integrationConfigurationId}/resources/{resourceId} — This endpoint updates an existing resource
 - [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
+- [Rotate Installation Credential](https://vercel.com/docs/rest-api/marketplace/rotate-installation-credential) — POST /v1/installations/{integrationConfigurationId}/credentials/rotate — Issues a replacement access token for an instal
 
 Full cross-link map for this page: [/docs/integrations/create-integration/marketplace-api.graph.md](/docs/integrations/create-integration/marketplace-api.graph.md)
 <!-- /docsgraph:related -->
@@ -807,6 +808,18 @@ async function handleInvoiceRefunded(webhook: WebhookPayload) {
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

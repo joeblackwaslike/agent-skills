@@ -13,9 +13,10 @@ related:
   - /docs/incremental-static-regeneration/limits-and-pricing
 summary: Learn how to set up Incremental Static Regeneration (ISR) with time-based and on-demand revalidation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/incremental-static-regeneration/quickstart.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "6a7eb63bec0931019bb36a3c5c1efceb5829e74c4e2469ba34d592390af20d64"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a311c040f9019624a9c87cad9142573ecda02f14adbce4b899b80c23b9829872"
 ---
 
 # Getting started with ISR
@@ -30,14 +31,14 @@ This guide helps you set up Incremental Static Regeneration (ISR) with your Verc
 
 - [ISR: A flexible way to cache dynamic content](https://vercel.com/blog/isr-a-flexible-way-to-cache-dynamic-content)
 - [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
+- [How to move from time-based to on-demand revalidation](https://vercel.com/kb/guide/how-to-move-to-on-demand-revalidation) — Replace fixed revalidation timers with scoped updates triggered by changes to content, product data, or other applicatio
+- [How HashiCorp developers iterate faster with Incremental Static Regeneration](https://vercel.com/blog/how-hashicorp-developers-iterate-faster-with-isr)
+- [ISR on Vercel is now faster and more cost-efficient](https://vercel.com/blog/isr-on-vercel-is-now-faster-and-more-cost-efficient)
 - [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
 - [Updating large-scale site navigation with minimal revalidation](https://vercel.com/kb/guide/update-mega-nav-min-reval) — When working with a large number of pages that share a common multi-level navigation, making a navigation update require
-- [ISR on Vercel is now faster and more cost-efficient](https://vercel.com/blog/isr-on-vercel-is-now-faster-and-more-cost-efficient)
-- [How HashiCorp developers iterate faster with Incremental Static Regeneration](https://vercel.com/blog/how-hashicorp-developers-iterate-faster-with-isr)
-- [How to move from time-based to on-demand revalidation](https://vercel.com/kb/guide/how-to-move-to-on-demand-revalidation) — Replace fixed revalidation timers with scoped updates triggered by changes to content, product data, or other applicatio
 - [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache)
-- [Incremental Static Regeneration (ISR) is now faster and more cost-efficient](https://vercel.com/changelog/incremental-static-regeneration-is-now-faster-and-cheaper)
 - [Partial Prerendering \\(PPR\\)](https://vercel.com/docs/partial-prerendering) — Partial Prerendering serves a cached static shell instantly, then renders and streams the dynamic parts of a page per re
+- [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
 - [Vercel CDN overview](https://vercel.com/docs/cdn) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
 - [Vercel Function Logs](https://vercel.com/docs/functions/logs) — Use runtime logs to debug and monitor your Vercel Functions.
 
@@ -677,6 +678,18 @@ The **ISR** section provides graphs to help you understand cache behavior and sp
 - [ISR usage and pricing](/docs/incremental-static-regeneration/limits-and-pricing): Understand costs and optimization strategies
 - [Monitor ISR](#observability): Track ISR reads, writes, and revalidations in your dashboard
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

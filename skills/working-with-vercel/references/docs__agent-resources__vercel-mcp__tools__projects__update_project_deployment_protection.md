@@ -12,9 +12,10 @@ related:
   []
 summary: Use update_project_deployment_protection with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/update_project_deployment_protection.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9c80979f2dad470f9e059fc5e8e60484f48474036d413cb0f1699be218a8ad0a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "af8fd757f710e2a57f1a8425a3d4d178ab526ff1b732cbf80206ec1e8cedcae7"
 ---
 
 # update_project_deployment_protection
@@ -47,6 +48,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/proje
 | `ssoProtection`      | object | No       | -       | Enable or disable Vercel Authentication. Omit to preserve the current setting.                |
 | `trustedIps`         | object | No       | -       | Enable or disable Trusted IPs. Omit to preserve the current setting.                          |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

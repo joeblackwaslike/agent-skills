@@ -13,9 +13,10 @@ related:
   - /docs/functions/streaming-functions
 summary: The Edge Function invocation timed out unexpectedly.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/internal_edge_function_invocation_timeout.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "8543cd13fe05483d84b5ed2fe6cd7181cfb214d5f7ded588b0f66aad39e665be"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c5088730efe99d50f1d7bd3aade8e29513cf451b5fb0f60b226438c02d055b83"
 ---
 
 # INTERNAL_EDGE_FUNCTION_INVOCATION_TIMEOUT
@@ -37,6 +38,18 @@ To troubleshoot this error, follow these steps:
 5. **Consider streaming data**: If the function is processing large amounts of data, consider using a [streaming approach](/docs/functions/streaming-functions) to avoid timeouts
 6. **Implement error handling:** Add error handling in the function to manage timeouts and other exceptions effectively
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

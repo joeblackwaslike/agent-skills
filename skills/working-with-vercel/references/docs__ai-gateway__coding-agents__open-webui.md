@@ -12,9 +12,10 @@ related:
   - /docs/ai-gateway/observability-and-spend/observability
 summary: Connect Open WebUI to AI Gateway. Configure your API key, endpoint, and models to use multiple AI providers and monitor chat spending in one place.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/open-webui.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "afe3938232cfd7690e2d4aa4c940f28dbf6a35b65cc638863ec0822f23c95405"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "699baf509db28d5e15ff3d9d5c500323dfa38bfc37525efa6d4094c5cb73f3db"
 ---
 
 # Open WebUI with AI Gateway
@@ -29,9 +30,9 @@ sha256: "afe3938232cfd7690e2d4aa4c940f28dbf6a35b65cc638863ec0822f23c95405"
 
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 - [OpenAI Chat Completions API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions) — Use OpenAI SDKs with the AI Gateway Chat Completions API. Configure the base URL and authentication for chat, streaming,
-- [Chatbox with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/chatbox) — Connect Chatbox to AI Gateway. Configure your API key, endpoint, and models to use multiple AI providers and monitor cha
-- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
-- [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
+- [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
+- [Go with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/go) — Use AI Gateway from any Go application with the OpenAI or Anthropic Go SDKs, including model fallbacks, cost tracking, a
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, caching, SDK and API compati
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/open-webui.graph.md](/docs/ai-gateway/coding-agents/open-webui.graph.md)
 <!-- /docsgraph:related -->
@@ -369,6 +370,18 @@ Full cross-link map for this page: [/docs/ai-gateway/coding-agents/open-webui.gr
 
 View your usage, spend, and request activity in the [**AI Gateway**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) section in the Vercel dashboard sidebar. See the [observability documentation](/docs/ai-gateway/observability-and-spend/observability) for more details.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

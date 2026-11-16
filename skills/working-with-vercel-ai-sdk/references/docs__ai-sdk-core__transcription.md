@@ -3,9 +3,12 @@ title: Transcription
 description: Learn how to transcribe audio with the AI SDK.
 url: "https://ai-sdk.dev/docs/ai-sdk-core/transcription"
 docs_index: /llms.txt
+keywords:
+  - speech to text
+  - audio transcription
 source: "https://ai-sdk.dev/docs/ai-sdk-core/transcription.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "48760f9c03382d54ab84bb88d5bc1e7970d68d772f72deccc8c013fc921e0d22"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "8b48ab15349b05ee7c7633054e34313f916dc393216129a17e3c18744007a74a"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -292,6 +295,13 @@ try {
   }
 }
 ```
+
+### DNS protection for audio downloads
+
+The audio download uses the `download` option, not the provider's `fetch`. For
+untrusted audio URLs on Node.js, pass a `guarded-fetch` transport via
+`download: createDownload({ fetch })`. See [Secure URL
+Fetching](/docs/advanced/secure-url-fetching#core-file-downloads).
 
 ### Abort Signals and Timeouts
 

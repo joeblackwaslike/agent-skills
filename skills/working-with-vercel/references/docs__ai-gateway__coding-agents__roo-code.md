@@ -12,9 +12,10 @@ related:
   - /docs/ai-gateway/observability-and-spend/observability
 summary: Connect the Roo Code VS Code extension to AI Gateway. Configure your API key and models to access multiple providers and monitor spending.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/roo-code.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "2b3eda92b46badf33598293eea3f86b54402cdf8775d670c59c1767f22350c52"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "da5ad858d03d94700a5b2569014e207c6009051d95abb2eeb56045debe08da05"
 ---
 
 # Roo Code with AI Gateway
@@ -30,8 +31,8 @@ sha256: "2b3eda92b46badf33598293eea3f86b54402cdf8775d670c59c1767f22350c52"
 - [Command Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/command-code) — Connect Command Code to AI Gateway with your own API key and a custom base URL. Configure models, switch between them, a
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
-- [Blackbox AI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/blackbox) — Configure the Blackbox AI CLI to use AI Gateway for code generation and debugging. Set your API key and model and monito
 - [Kilo Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/kilo-code) — Connect Kilo Code to AI Gateway with the Vercel CLI or an OpenAI-compatible provider configuration. Set your API key and
+- [Blackbox AI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/blackbox) — Configure the Blackbox AI CLI to use AI Gateway for code generation and debugging. Set your API key and model and monito
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/roo-code.graph.md](/docs/ai-gateway/coding-agents/roo-code.graph.md)
 <!-- /docsgraph:related -->
@@ -62,6 +63,18 @@ Full cross-link map for this page: [/docs/ai-gateway/coding-agents/roo-code.grap
 
 View your usage, spend, and request activity in the [**AI Gateway**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) section in the Vercel dashboard sidebar. See the [observability documentation](/docs/ai-gateway/observability-and-spend/observability) for more details.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

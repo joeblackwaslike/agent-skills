@@ -12,9 +12,10 @@ related:
   - /docs/storage/vercel-blob
 summary: The payload sent to the function is too large. This is a function error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/function_payload_too_large.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "2d77703de2733adcbb8979b11ff829b2402eed4299ff8df2184a8bd45e0a04aa"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d5426ce54cbece93aa8871bf28dd000445e1dbda78ad6465b4b212dd0faf7039"
 ---
 
 # FUNCTION_PAYLOAD_TOO_LARGE
@@ -35,6 +36,18 @@ To troubleshoot this error, follow these steps:
 4. **Split into multiple requests:** If the payload data is too large to be sent in a single request, consider splitting the data into smaller chunks and sending multiple requests
 5. **Use external storage:** If the data is very large, consider using external storage solutions to handle the data instead of sending it directly in the request
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

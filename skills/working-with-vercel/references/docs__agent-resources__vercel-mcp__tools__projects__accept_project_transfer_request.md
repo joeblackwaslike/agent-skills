@@ -12,9 +12,10 @@ related:
   []
 summary: Use accept_project_transfer_request with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/accept_project_transfer_request.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f18f62e56f9fc7db9d6effa4bbc9426f8962a6ecda86ddf2aece8d03f5de6f0a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "119cf609787bbce6f16017d02bb5fd31c8474cf2a439cb69605ab56eee23327f"
 ---
 
 # accept_project_transfer_request
@@ -45,6 +46,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/proje
 | `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody` | object | No       | Request body for this tool.                                 |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

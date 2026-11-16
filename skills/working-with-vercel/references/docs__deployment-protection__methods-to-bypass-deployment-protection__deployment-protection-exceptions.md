@@ -15,9 +15,10 @@ related:
   - /docs/deployment-protection
 summary: Disable Deployment Protection for a list of preview domains.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "19cc732d3b8cf8cf08721d8b99dba77b990cd16a0f9a99015e9ce5d4a51ff950"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "fd16635620668eaf88d636f9fca0f4de0973c5f8d4aecbe19ec9895d61acd0b7"
 ---
 
 # Deployment Protection Exceptions
@@ -37,11 +38,10 @@ Deployment Protection Exceptions let you disable Deployment Protection (includin
 - [Protect production deployments for free on every plan](https://vercel.com/changelog/protect-production-deployments-for-free-on-every-plan)
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments) — Protect who can see your deployments.
 - [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments)
-- [Protected Preview Deployments available on all plans](https://vercel.com/changelog/protected-preview-deployments-available-on-all-plans)
 - [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
 - [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
-- [Preview Deployment Suffix](https://vercel.com/docs/deployments/preview-deployment-suffix) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Vercel Support Code Visibility, Git Fork Protection, and
+- [Preview Deployment Suffix](https://vercel.com/docs/deployments/preview-deployment-suffix) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
 - [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby) — Learn about the Hobby plan and how it compares to the Pro plan.
 
 Full cross-link map for this page: [/docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions.graph.md](/docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions.graph.md)
@@ -113,6 +113,18 @@ You can view and manage all the existing Deployment Protection Exceptions for yo
 
 ![Dashboard > Settings > Deployment Protection > Access](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/preview-deployments/deployment-protection-exceptions-list.png)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

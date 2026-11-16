@@ -3,7 +3,7 @@ title: submit-invoice
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/submit-invoice
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/submit-invoice"
-last_updated: 2026-11-09
+last_updated: 2026-11-16
 type: conceptual
 prerequisites:
   []
@@ -12,9 +12,10 @@ related:
   - /docs/integrations/create-integration/native-integration
 summary: Learn about submit-invoice on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/submit-invoice.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f3e313dcbd72b30f8f97f96aac1f3f16eca39a9225c4027165069400c9b6d9f7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a4ce52a8c1fa28937bc6c937fd9dcca0104a68e73eb9aa3fe5b24264a5783fc7"
 ---
 
 # Submit Invoice
@@ -128,6 +129,18 @@ Success
 - [Marketplace API Reference](/docs/integrations/create-integration/marketplace-api/reference)
 - [Native Integration Concepts](/docs/integrations/create-integration/native-integration)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

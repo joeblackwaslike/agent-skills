@@ -15,9 +15,10 @@ related:
   - /docs/deployment-protection
 summary: Learn how to deploy Model Context Protocol (MCP) servers on Vercel with OAuth authentication and efficient scaling.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "a72e97200b2dd560cb6c24b68853034606e7e64da5ae51bfc3dedc244efb413f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "63bafd7ab7f8feb68b47edb73574146764b9c3d46f7f5275bd537eb53d25253e"
 ---
 
 # Deploy MCP servers to Vercel
@@ -30,16 +31,17 @@ Deploy your Model Context Protocol (MCP) servers on Vercel to [take advantage of
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Introducing Vercel MCP: Connect Vercel to your AI tools](https://vercel.com/blog/introducing-vercel-mcp-connect-vercel-to-your-ai-tools)
-- [Model Context Protocol (MCP) explained: An FAQ](https://vercel.com/blog/model-context-protocol-mcp-explained)
-- [Building efficient MCP servers](https://vercel.com/blog/building-efficient-mcp-servers)
 - [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
-- [Build an MCP Server with Weather tools using Express and Vercel](https://vercel.com/kb/guide/mcp-server-with-weather-tool-express) — Make your Express weather API accessible to AI assistants through the Model Context Protocol.
+- [Introducing Vercel MCP: Connect Vercel to your AI tools](https://vercel.com/blog/introducing-vercel-mcp-connect-vercel-to-your-ai-tools)
 - [Using xmcp with Next.js](https://vercel.com/kb/guide/using-xmcp-with-nextjs) — Add an MCP server to an existing Next.js app with xmcp. Create typed tools, add authentication, and deploy to Vercel as
+- [Building efficient MCP servers](https://vercel.com/blog/building-efficient-mcp-servers)
+- [Build an MCP Server with Weather tools using Express and Vercel](https://vercel.com/kb/guide/mcp-server-with-weather-tool-express) — Make your Express weather API accessible to AI assistants through the Model Context Protocol.
+- [Model Context Protocol (MCP) explained: An FAQ](https://vercel.com/blog/model-context-protocol-mcp-explained)
 - [How to create a contentful asset on Vercel](https://vercel.com/kb/guide/how-to-create-a-contentful-asset-on-vercel) — This is my wonderful
+- [How to build an MCP server with Nuxt](https://vercel.com/kb/guide/how-to-build-an-mcp-server-with-nuxt) — Add an MCP server to your Nuxt app with the Nuxt MCP Toolkit. Create tools, resources, and prompt templates that AI assi
 - [OAuth support added to MCP Adapter](https://vercel.com/changelog/oauth-support-added-to-mcp-adapter)
 - [Use Vercel](https://vercel.com/docs/agent-resources/vercel-mcp) — Vercel MCP has tools available for searching docs, managing teams, projects, and deployments, and querying Web Analytics
-- [MCP Integrations](https://vercel.com/docs/mcp/integrations) — Connect AI SDK, TanStack AI, and eve applications to MCP servers to discover and call tools.
+- [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
 
 Full cross-link map for this page: [/docs/mcp/deploy-mcp-servers-to-vercel.graph.md](/docs/mcp/deploy-mcp-servers-to-vercel.graph.md)
 <!-- /docsgraph:related -->
@@ -381,6 +383,32 @@ To view the full list of values available to be returned in the OAuth Protected 
 
 MCP clients that are compliant with the latest version of the MCP spec can now securely connect and invoke tools defined in your MCP server, when provided with a valid OAuth token.
 
+## Frequently asked questions
+
+### How long can an MCP tool call run on Vercel?
+
+Each request to your MCP route runs in a [Vercel Function](/docs/functions), so the function's maximum duration limits each tool call. With [Fluid compute](/docs/fluid-compute), the default is 300 seconds on every plan. Hobby allows up to 300 seconds. Pro and Enterprise allow up to 800 seconds, or 1,800 seconds with the [extended max duration beta](/docs/functions/configuring-functions/duration#extended-max-duration-beta). To raise the limit, export `maxDuration` from `app/api/mcp/route.ts`. For longer jobs, have the tool start a [Vercel Workflow](/docs/workflows) and return the run ID, then add a second tool that reports the run's status.
+
+### How does Vercel bill an MCP server?
+
+Your MCP route uses standard [Vercel Functions pricing](/docs/functions/usage-and-pricing). MCP traffic tends to arrive in short bursts separated by long idle periods. With [Fluid compute](/docs/fluid-compute), one function instance can handle several requests at once. Active CPU billing pauses while your code waits on I/O, such as a model response or a database query, and provisioned memory is billed while the instance runs. If your tools call models through [AI Gateway](/docs/ai-gateway/pricing), you pay the provider's list price for tokens, with no AI Gateway markup.
+
+### Can I use mcp-handler with frameworks other than Next.js?
+
+Yes. `createMcpHandler` returns a Web-standard handler that accepts a `Request` and returns a `Response`, so it doesn't depend on Next.js or Vercel. You can mount it in a Nuxt or Nitro server handler with `fromWebHandler` from `h3`, in a SvelteKit server route, or in a Hono route by passing `c.req.raw`. Frameworks built on Node.js `IncomingMessage` and `ServerResponse`, such as Express, need an adapter that creates a Web `Request`. The `/api/mcp` path is a convention. `mcp-handler` doesn't read the request path, so you can mount it at any route and give clients that route's full URL.
+
+### Can an MCP tool run untrusted or model-generated code?
+
+Yes, if you run that code in [Vercel Sandbox](/docs/sandbox) instead of your function. Each sandbox is a Firecracker microVM with its own filesystem and network, and the default image includes Node.js and Python. A tool can create a sandbox with `@vercel/sandbox`, run a command, and return a short summary to the model instead of the raw output. On Vercel, the Sandbox SDK authenticates with your project's OIDC token, so you don't add another credential. A sandbox times out after 5 minutes by default, and you can extend it to 45 minutes on Hobby or 24 hours on Pro and Enterprise. For a complete example, [build a data analysis MCP server with Sandbox](/kb/guide/large-scale-data-analysis-vercel-sandbox-mcp) that runs DuckDB SQL and Python against large datasets.
+
+### How do I protect an MCP server on Vercel from unauthorized use?
+
+Combine authorization with Vercel's network controls:
+
+- Wrap your handler with `withMcpAuth` and `required: true`, as shown in [Enabling authorization](#enabling-authorization). Requests without a valid token receive `401`, and tokens without a required scope receive `403`.
+- Add a [WAF rate limiting rule](/docs/vercel-firewall/vercel-waf/rate-limiting) for your MCP path, or call `checkRateLimit` from `@vercel/firewall` in the route with the [rate limiting SDK](/docs/vercel-firewall/vercel-waf/rate-limiting-sdk).
+- Keep [Deployment Protection](/docs/deployment-protection) on preview deployments. To test a protected preview from an MCP client, send your project's [automation bypass secret](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation) in the `x-vercel-protection-bypass` header.
+
 ## More resources
 
 Learn how to deploy MCP servers on Vercel, connect to them using the AI SDK, and explore curated lists of public MCP servers.
@@ -394,6 +422,18 @@ Learn how to deploy MCP servers on Vercel, connect to them using the AI SDK, and
 - [Explore the list from MCP servers repository](https://github.com/modelcontextprotocol/servers)
 - [Explore the list from awesome MCP servers](https://github.com/punkpeye/awesome-mcp-servers)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

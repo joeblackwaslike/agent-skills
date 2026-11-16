@@ -15,9 +15,10 @@ related:
   - /docs/functions/configuring-functions/region
 summary: Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data, and inspect schemas from the...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/marketplace-storage.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "e8301d21999362f0f0dcd5a1c5facba2bca76c036c7a0875871a4c6a5f1c6136"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8e32b91bab33044b4147f3f4337996848ae514ad73d200998d56dcd32fa33aa2"
 ---
 
 # Storage on Vercel Marketplace
@@ -32,6 +33,7 @@ The [Vercel Marketplace](https://vercel.com/marketplace?category=storage) provid
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Introducing the Vercel Marketplace](https://vercel.com/blog/introducing-the-vercel-marketplace)
 - [Native Marketplace integrations now support custom environments](https://vercel.com/changelog/custom-environments-support-for-marketplace-integrations)
 - [Vercel Marketplace database browser now supports Redis](https://vercel.com/changelog/vercel-marketplace-database-browser-now-supports-redis)
 - [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
@@ -39,11 +41,10 @@ The [Vercel Marketplace](https://vercel.com/marketplace?category=storage) provid
 - [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
 - [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
-- [Introducing the Vercel Marketplace](https://vercel.com/blog/introducing-the-vercel-marketplace)
-- [Introducing storage on Vercel](https://vercel.com/blog/vercel-storage)
-- [Supercharge your Vercel Projects with Integrations](https://vercel.com/blog/integrations-marketplace)
 - [Integrated billing for Supabase, Redis, and EdgeDB](https://vercel.com/changelog/integrated-billing-for-supabase-redis-and-edgedb)
+- [Introducing storage on Vercel](https://vercel.com/blog/vercel-storage)
 - [Query and manage Marketplace databases from the dashboard](https://vercel.com/changelog/query-and-manage-marketplace-databases-from-the-dashboard)
+- [Vercel Storage overview](https://vercel.com/docs/storage) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
 
 Full cross-link map for this page: [/docs/marketplace-storage.graph.md](/docs/marketplace-storage.graph.md)
 <!-- /docsgraph:related -->
@@ -233,7 +234,7 @@ Consider these factors when selecting a storage provider:
 - **Locate data close to your Functions:** Deploy databases in [regions](/docs/functions/configuring-functions/region) near your Functions to minimize latency.
 - **Use connection pooling:** In serverless environments, use [connection pooling](/kb/guide/connection-pooling-with-functions) (e.g., built-in pooling or PgBouncer) to manage database connections efficiently.
 - **Implement caching strategies:**
-  - [Data Cache](/docs/caching/runtime-cache/data-cache) to cache fetch responses and reduce load
+  - [Data Cache](/docs/runtime-cache/data-cache) to cache fetch responses and reduce load
   - [Global Config](/docs/global-config) for low-latency reads of config data
   - Redis for frequently accessed, periodically changing data
   - CDN caching with [cache headers](/docs/caching/cdn-cache) for static content
@@ -248,6 +249,18 @@ Consider these factors when selecting a storage provider:
 - [Environment Variables](/docs/environment-variables)
 - [Functions Regions](/docs/functions/configuring-functions/region)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/functions/usage-and-pricing
 summary: Serve WebSocket connections in Vercel Functions for realtime features like chat, collaboration, and AI streaming.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/websockets.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "e0e3295d095d3a24a4dde4f908ba1eccd42a5e27c87c708fb406841b345a4fd4"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "70b8250eeba020c0af3ed986c2f374531c1c75c261d386680250d823887aedac"
 ---
 
 # WebSockets
@@ -42,6 +43,7 @@ Vercel Functions can serve WebSocket connections, keeping a bidirectional connec
 - [Publish and subscribe to realtime data on Vercel](https://vercel.com/kb/guide/publish-and-subscribe-to-realtime-data-on-vercel) — Learn how to publish and subscribe to realtime data on Vercel with WebSockets, SSE, Redis, and Queues, and when a manage
 - [Build Figma-style multiplayer cursors with WebSockets on Vercel](https://vercel.com/kb/guide/real-time-board-nextjs-fastapi) — Learn how to build Figma-style multiplayer cursors with Next.js and FastAPI, kept consistent across multiple Vercel Func
 - [Backends on Vercel](https://vercel.com/docs/frameworks/backend) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
+- [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 
 Full cross-link map for this page: [/docs/functions/websockets.graph.md](/docs/functions/websockets.graph.md)
@@ -386,6 +388,18 @@ WebSockets require [Fluid compute](/docs/fluid-compute) to be enabled. This is t
 - [Streaming with Vercel Functions](/docs/functions/streaming-functions)
 - [`@vercel/functions` API Reference](/docs/functions/functions-api-reference/vercel-functions-package)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

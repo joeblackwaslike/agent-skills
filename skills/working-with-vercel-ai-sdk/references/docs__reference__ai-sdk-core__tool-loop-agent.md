@@ -4,8 +4,8 @@ description: API Reference for the ToolLoopAgent class.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/tool-loop-agent"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/tool-loop-agent.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "4757233381443394de768e58180dd2e3c848cd1610069c9f75194e124e5530d6"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "509a3ae1d38b7dc192c3c22e79edd82c4f9be3f9473dbdaa22fac985a59016fe"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -142,7 +142,7 @@ import { ToolLoopAgent } from "ai"
   - `TelemetryOptions`
     - `includeRuntimeContext?` (`{ [KEY in keyof CONTEXT]?: boolean }`): Top-level runtime context properties that should be included in telemetry. Runtime context properties are excluded unless they are explicitly set to \`true\`. Lifecycle callbacks and returned results still receive the full \`runtimeContext\`.
     - `includeToolsContext?` (`{ [TOOL_NAME in keyof InferToolSetContext<TOOLS>]?: { [KEY in keyof InferToolSetContext<TOOLS>[TOOL_NAME]]?: boolean } }`): Top-level tool context properties that should be included in telemetry, configured per tool. Tool context properties are excluded unless they are explicitly set to \`true\`. Lifecycle callbacks and returned results still receive the full \`toolsContext\`.
-- `experimental_download?` (`DownloadFunction | undefined`): Experimental: Custom download function for fetching files/URLs for tool or model use. By default, files are downloaded if the model does not support the URL for a given media type.
+- `experimental_download?` (`DownloadFunction | undefined`): Experimental: Custom download function for fetching files/URLs for tool or model use. By default, files are downloaded if the model does not support the URL for a given media type. Use \`createDownload(\{ fetch, maxBytes })\` from \`ai\` to keep the default behavior with a custom fetch transport or size limit. For untrusted URLs, see \[Secure URL Fetching]\(/docs/advanced/secure-url-fetching#core-file-downloads).
 - `maxOutputTokens?` (`number`): Maximum number of tokens the model is allowed to generate.
 - `temperature?` (`number`): Sampling temperature, controls randomness. Passed through to the model.
 - `topP?` (`number`): Top-p (nucleus) sampling parameter. Passed through to the model.

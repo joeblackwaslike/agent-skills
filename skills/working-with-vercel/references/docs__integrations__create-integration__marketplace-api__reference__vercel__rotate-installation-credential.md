@@ -3,7 +3,7 @@ title: rotate-installation-credential
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/rotate-installation-credential
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/rotate-installation-credential"
-last_updated: 2026-11-09
+last_updated: 2026-11-16
 type: conceptual
 prerequisites:
   []
@@ -12,9 +12,10 @@ related:
   - /docs/integrations/create-integration/native-integration
 summary: Learn about rotate-installation-credential on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/rotate-installation-credential.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "687d4e65db6881bd4f96357a4b8643be04008400afb086fb4f10713b2f3a5c5e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4a365cd88f157d43c98ad77b8b93d1f77cd3eeb89de366aacb3105c205d149e3"
 ---
 
 # Rotate Installation Credential
@@ -96,6 +97,18 @@ Success
 - [Marketplace API Reference](/docs/integrations/create-integration/marketplace-api/reference)
 - [Native Integration Concepts](/docs/integrations/create-integration/native-integration)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

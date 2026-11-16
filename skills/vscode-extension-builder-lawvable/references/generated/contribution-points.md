@@ -1,8 +1,8 @@
 ---
 title: "Contribution Points"
 source: "https://code.visualstudio.com/api/references/contribution-points"
-fetched_at: "2026-11-09T12:33:26.963Z"
-sha256: "6fbe6231a52f43dc7e396e0a5418074c6ab2de8e1fcd729fc7cd0d12cf227deb"
+fetched_at: "2026-11-16T12:28:04.438Z"
+sha256: "7fadaa0c194b7bd96b94177b84865f459e1cc77871e9979104400efc4e6687a7"
 ---
 
 # Contribution Points
@@ -86,6 +86,10 @@ Copy as Markdown
 - [languageModelTools](https://code.visualstudio.com/api/references/contribution-points#contributes.languageModelTools)
 
 - [menus](https://code.visualstudio.com/api/references/contribution-points#contributes.menus)
+
+- [notebookRenderer](https://code.visualstudio.com/api/references/contribution-points#contributes.notebookRenderer)
+
+- [notebooks](https://code.visualstudio.com/api/references/contribution-points#contributes.notebooks)
 
 - [problemMatchers](https://code.visualstudio.com/api/references/contribution-points#contributes.problemMatchers)
 
@@ -1015,7 +1019,7 @@ See the [Syntax Highlight Guide](https://code.visualstudio.com/api/language-exte
 
 ## contributes.icons
 
-Contribute a new icon by ID, along with a default icon. The icon ID can then be used by the extension (or any other extensions that depend on the extension) anywhere a `ThemeIcon` can be used `new ThemeIcon("iconId")`, in [Markdown strings](https://code.visualstudio.com/api/references/icons-in-labels#icon-in-labels) (`$(iconId)`), and as icons in certain contribution points.
+Contribute a new icon by ID, along with a default icon. The icon ID can then be used by the extension (or any other extensions that depend on the extension) anywhere a `ThemeIcon` can be used `new ThemeIcon("iconId")`, in [Markdown strings](https://code.visualstudio.com/api/references/icons-in-labels#icons-in-labels) (`$(iconId)`), and as icons in certain contribution points.
 
 
 ```
@@ -1126,13 +1130,13 @@ The main effects of `contributes.languages` are:
 
 - Define a `languageId` that can be reused in other parts of VS Code API, such as `vscode.TextDocument.languageId` and the `onLanguage` Activation Events.
 
-You can contribute a human-readable using the `aliases` field. The first item in the list will be used as the human-readable label.
+You can contribute a human-readable label using the `aliases` field. The first item in the list will be used as the human-readable label.
 
 - Associate file name extensions (`extensions`), file names (`filenames`), file name [glob patterns](https://code.visualstudio.com/docs/editor/glob-patterns) (`filenamePatterns`), files that begin with a specific line (such as hashbang) (`firstLine`), and `mimetypes` to that `languageId`.
 
 - Contribute a set of [Declarative Language Features](https://code.visualstudio.com/api/language-extensions/overview#declarative-language-features) for the contributed language. Learn more about the configurable editing features in the [Language Configuration Guide](https://code.visualstudio.com/api/language-extensions/language-configuration-guide).
 
-- Contribute an icon which can be used as in file icon themes if theme does not contain an icon for the language
+- Contribute an icon which can be used in file icon themes if the active theme does not contain an icon for the language. Learn more in [Language default icons](https://code.visualstudio.com/api/extension-guides/file-icon-theme#language-default-icons).
 
 ### language example
 
@@ -1641,6 +1645,87 @@ The order inside a group depends on the title or an order-attribute. The group-l
 }
 ```
 
+
+## contributes.notebookRenderer
+
+Contribute an output renderer for notebooks. Notebook renderers are responsible for taking cell output data with specific MIME types and displaying rich visual representations in notebook cells (ranging from plain text and images to interactive web components).
+
+Here is a basic `notebookRenderer` contribution:
+
+
+```
+{
+  "contributes": {
+    "notebookRenderer": [
+      {
+        "id": "my-notebook-renderer",
+        "displayName": "My Custom Output Renderer",
+        "entrypoint": "./out/renderer.js",
+        "mimeTypes": ["application/vnd.my-custom-format+json", "text/x-custom-data"]
+      }
+    ]
+  }
+}
+```
+
+`notebookRenderer` is an array, so your extension can contribute multiple output renderers.
+
+- `id` - Unique identifier for the notebook renderer.
+
+- `displayName` - Human-readable name of the renderer, displayed in VS Code's UI (such as output format pickers).
+
+- `entrypoint` - Path to the script loaded in the webview to render output. Can be:
+
+A string path relative to the extension root (for example, `"./out/renderer.js"`).
+
+- An object specifying `path` and `extends` to augment an existing renderer (for example, `{"extends": "vscode.markdown-it-renderer", "path": "./out/customMarkdown.js"}`).
+
+- `mimeTypes` - Array of MIME types that the renderer handles. Output with matching MIME types will be routed to this renderer.
+
+- `requiresMessaging` - (optional) Defines if communication with the extension host via `createRendererMessaging` is required. Possible values are `"always"`, `"optional"`, and `"never"` (default).
+
+You can learn more in the [Notebooks](https://code.visualstudio.com/api/extension-guides/notebook#notebook-renderer) extension guide.
+
+## contributes.notebooks
+
+The `notebooks` contribution point is how your extension tells VS Code about the notebook document providers it supports. VS Code uses this to determine which notebook type to associate with matching files and how to identify your notebook in the UI.
+
+Here is a basic `notebooks` contribution:
+
+
+```
+{
+  "contributes": {
+    "notebooks": [
+      {
+        "type": "my-custom-notebook",
+        "displayName": "My Custom Notebook",
+        "selector": [
+          {
+            "filenamePattern": "*.customnb"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+`notebooks` is an array, so your extension can contribute multiple notebook types.
+
+- `type` - Unique identifier for the notebook type. This is used in code when registering your notebook serializer with `vscode.workspace.registerNotebookSerializer` and controllers with `vscode.notebooks.createNotebookController`.
+
+- `displayName` - Human-readable name of the notebook type displayed in VS Code's UI.
+
+- `selector` - Specifies which files the notebook is enabled for. An array of objects containing:
+
+`filenamePattern` - A glob pattern matching file names or extensions (for example, `"*.customnb"` or `"**/notebooks/*.json"`).
+
+- `excludeFileNamePattern` - (optional) A glob pattern specifying files to exclude from matching this notebook type.
+
+- `priority` - (optional, deprecated) Controls if the notebook editor is enabled automatically when opening a matching file. Possible values are `"default"` (attempt to use by default) and `"option"` (not default, but selectable by the user). Can be overridden by the user with the `workbench.editorAssociations` setting.
+
+You can learn more in the [Notebooks](https://code.visualstudio.com/api/extension-guides/notebook) extension guide.
 
 ## contributes.problemMatchers
 
@@ -2242,4 +2327,4 @@ Available completion events include:
 Once a step has been checked off, it will remain checked off until the user explicitly unchecks the step or resets their progress (via the **Getting Started: Reset Progress** command).
 
  
- 11/4/2026
+ 11/11/2026

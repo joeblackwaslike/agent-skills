@@ -3,22 +3,23 @@ title: Nuxt on Vercel
 product: vercel
 url: /docs/frameworks/full-stack/nuxt
 canonical_url: "https://vercel.com/docs/frameworks/full-stack/nuxt"
-last_updated: 2026-08-26
+last_updated: 2026-11-14
 type: conceptual
 prerequisites:
   - /docs/frameworks/full-stack
   - /docs/frameworks
 related:
   - /docs/cli
+  - /docs/deployments/deploy-without-logging-in
   - /docs/functions
   - /docs/frameworks/agents/eve
   - /docs/services
-  - /docs/passport
 summary: Deploy Nuxt applications to Vercel and configure rendering, functions, middleware, routing, image optimization, and caching.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/full-stack/nuxt.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "6d264485eed443e70862405466178564e2518e9cffb8a89a4ec8f224535aa076"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5246c32fedfaf2577fd0420d201054f5051c0565f02e24d7bc34b5c2fe47db55"
 ---
 
 # Nuxt on Vercel
@@ -35,14 +36,14 @@ Nuxt is an open-source framework that streamlines the process of creating modern
 - [How to build an MCP server with Nuxt](https://vercel.com/kb/guide/how-to-build-an-mcp-server-with-nuxt) — Add an MCP server to your Nuxt app with the Nuxt MCP Toolkit. Create tools, resources, and prompt templates that AI assi
 - [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
 - [Improved support for Nuxt on Vercel](https://vercel.com/blog/nuxt-on-vercel)
-- [Rendering strategies for retail: ISR vs SSR vs static](https://vercel.com/kb/guide/ssr-vs-ssg-vs-isr-vs-csr-for-ecommerce) — Choose between SSR, SSG, ISR, and CSR for each ecommerce surface. Compare rendering modes on freshness, personalization,
+- [Vercel Integration Guide for SAP Composable Storefront](https://vercel.com/kb/guide/integration-guide-for-sap-composable-storefront) — Integrate Vercel and SAP Composable Storefront with advanced rendering methods by leveraging the Vercel Build Output API
+- [Caching](https://nextjs.org/docs/app/getting-started/caching) — Learn how to cache data and UI in Next.js
 - [ISR: A flexible way to cache dynamic content](https://vercel.com/blog/isr-a-flexible-way-to-cache-dynamic-content)
-- [How to optimize Next.js and Sitecore Content SDK apps](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-content-sdk) — Learn how to choose a rendering strategy, configure proxy middleware, and optimize costs for Next.js and Sitecore Conten
-- [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
 - [Vite + Nitro on Vercel](https://vercel.com/docs/frameworks/full-stack/vite-with-nitro) — Add a backend to any Vite app with Nitro and deploy to Vercel with zero configuration.
+- [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
 - [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
-- [Partial Prerendering \\(PPR\\)](https://vercel.com/docs/partial-prerendering) — Partial Prerendering serves a cached static shell instantly, then renders and streams the dynamic parts of a page per re
+- [Chat SDK with Nuxt](https://vercel.com/docs/chat-sdk/frameworks/nuxt) — Add a Chat SDK bot to Nuxt, receive Slack events through Vercel Connect, and deploy on Vercel.
 
 Full cross-link map for this page: [/docs/frameworks/full-stack/nuxt.graph.md](/docs/frameworks/full-stack/nuxt.graph.md)
 <!-- /docsgraph:related -->
@@ -73,6 +74,16 @@ The following table outlines the differences between `nuxt build` and `nuxt gene
 | [Supports ISR](#incremental-static-regeneration-isr) | Yes                                        | No              |
 
 In general, `nuxt build` is likely best for most use cases. Consider using `nuxt generate` to build [fully static sites](#static-rendering).
+
+## Deploy without an account
+
+To deploy an existing Nuxt project without an account or login, run this command in the project root:
+
+```bash filename="terminal"
+vercel deploy --temporary
+```
+
+The CLI builds the project, deploys it to production, and prints a claim URL. Claim the project to keep it live. See [Deploying without logging in](/docs/deployments/deploy-without-logging-in).
 
 ## Editing your Nuxt config
 
@@ -692,6 +703,18 @@ Learn more about deploying Nuxt projects on Vercel with the following resources:
 - [Build Imgur-style image hosting with Nuxt and Vercel Blob](/kb/guide/vercel-blob-nuxt-imgur-clone)
 - [Build an integrations hub with Nuxt and Vercel Connect](/kb/guide/nuxt-and-vercel-connect)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

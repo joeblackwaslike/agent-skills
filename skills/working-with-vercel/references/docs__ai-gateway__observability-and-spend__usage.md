@@ -15,9 +15,10 @@ related:
   - /docs/ai-gateway/observability-and-spend/trace-drains
 summary: Look up an AI Gateway generation by ID to inspect its provider, latency, token usage, cost, and finish reason, or check your credit balance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/usage.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "21d33fa9c295d93357e80d6a1004b89ce54f4550cc92f77fcd56fab145640ddf"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2e3397646bcd642585ec9971b5d7df6970d3837c1331627ef1fd80906e48d8db"
 ---
 
 # AI Gateway Generation Lookup and Usage API
@@ -30,13 +31,12 @@ AI Gateway records every generation it serves. Look up a generation by ID to ins
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [AI Gateway logs now have a dedicated page](https://vercel.com/changelog/ai-gateway-logs)
-- [Unified reporting for all AI Gateway usage](https://vercel.com/blog/unified-reporting-for-your-ai-spend)
-- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, m
+- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, caching, SDK and API compati
 - [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit
 - [AI Gateway Observability](https://vercel.com/docs/ai-gateway/observability-and-spend/observability) — Monitor AI Gateway requests in the Vercel dashboard. Inspect token usage, latency, spend, and logs at team, project, and
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
-- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
+- [Go with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/go) — Use AI Gateway from any Go application with the OpenAI or Anthropic Go SDKs, including model fallbacks, cost tracking, a
 
 Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/usage.graph.md](/docs/ai-gateway/observability-and-spend/usage.graph.md)
 <!-- /docsgraph:related -->
@@ -132,6 +132,18 @@ Usage events are ingested asynchronously, so the lookup retries HTTP `404` respo
 
 The AI SDK maps the common generation fields to camelCase. Use the [REST response](/docs/ai-gateway/sdks-and-apis/rest-api#look-up-a-generation) when you need its additional cost breakdown, including `market_cost`, `surcharge_cost`, and `gateway_cost`.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

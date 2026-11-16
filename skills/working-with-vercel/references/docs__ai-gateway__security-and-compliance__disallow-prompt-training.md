@@ -15,9 +15,10 @@ related:
   - /docs/ai-gateway/models-and-providers/virtual-models
 summary: Learn how to prevent AI providers from using your prompts and responses for model training through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/disallow-prompt-training.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "a24014b0d44b2406904eb95c62187a5f6489cff28ff57eebcde112cd78ae9c95"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "59545111ae3106434ff665e138ed27cdf4a75c3dcb9c82e512be922d86e10a5e"
 ---
 
 # AI Gateway Disallow Prompt Training
@@ -30,10 +31,11 @@ No training on prompt data is available to all AI Gateway users at no extra char
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
+- [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway)
 - [Ember-1 from Fireworks now available on AI Gateway](https://vercel.com/changelog/ember-1-from-fireworks-now-available-on-ai-gateway)
 - [TypeSafe AI's Jev now available on AI Gateway](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway)
 - [TypeSafe AI's Jev 1.14 is now available on AI Gateway](https://vercel.com/changelog/typesafe-ais-jev-1-14-is-now-available-on-ai-gateway)
-- [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
 - [Moderate product reviews with Jev, TanStack AI, and AI Gateway](https://vercel.com/kb/guide/moderate-product-reviews-jev-tanstack-ai) — Moderate product reviews for an e-commerce storefront with Jev from TypeSafe AI and TanStack AI's \\`decide\\(\\)\\` functio
 - [How to classify, route, and score with Jev and AI SDK](https://vercel.com/kb/guide/typesafe-jev-and-ai-sdk) — Use Jev from TypeSafe AI with AI SDK's experimental \\`evaluate\\` API to classify, route, score, and verify inside your a
 - [Team-wide Zero Data Retention and prompt training controls now on AI Gateway](https://vercel.com/changelog/zero-data-retention-no-prompt-training-on-ai-gateway)
@@ -53,7 +55,7 @@ Disallow prompt training is a subset of [Zero Data Retention (ZDR)](/docs/ai-gat
 > Key)](/docs/ai-gateway/authentication-and-byok/byok) requests. When you use BYOK, this filter is not
 > enforced since the request uses your own API key, your
 > configuration, and agreement with the provider. However, if AI Gateway falls
-> back to AI Gateway system credentials, the disallow prompt training
+> back to Vercel's provider keys, the disallow prompt training
 > filter is honored on the failover request.
 
 ## Vercel
@@ -105,7 +107,7 @@ If no compliant providers are available for the requested model, the request fai
 
 This filter also applies to any fallback providers.
 
-This enforcement does not apply to [BYOK](/docs/ai-gateway/authentication-and-byok/byok) requests since those use your own API key, configuration, and agreement with the provider. If AI Gateway falls back to AI Gateway system credentials, it honors the disallow prompt training filter on the failover request.
+This enforcement does not apply to [BYOK](/docs/ai-gateway/authentication-and-byok/byok) requests since those use your own API key, configuration, and agreement with the provider. If AI Gateway falls back to Vercel's provider keys, it honors the disallow prompt training filter on the failover request.
 
 These examples use AI SDK 7 and the AI SDK for Python beta. Set `AI_GATEWAY_API_KEY` before running them. See [API format differences](/docs/ai-gateway/sdks-and-apis#api-format-differences) for setup, request fields, and response handling.
 
@@ -605,7 +607,7 @@ TypeSafe AI
 
 ✓
 
-Data policy
+Data handling
 
 Voyage AI by MongoDB
 
@@ -631,6 +633,18 @@ Vercel Token Pass models are served through the `token-pass` provider. Token Pas
 
 A [virtual model](/docs/ai-gateway/models-and-providers/virtual-models) can restrict its traffic to providers that don't train on request data. The setting only tightens: either side can turn it on, and neither side can turn it off.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

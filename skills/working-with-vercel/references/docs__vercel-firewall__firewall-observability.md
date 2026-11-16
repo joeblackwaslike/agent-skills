@@ -15,9 +15,10 @@ related:
   - /docs/comments/integrations
 summary: Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-firewall/firewall-observability.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "fcfefb6cd5a2e7eca56da58204f788f1ba842d03d0e33e96997ba50fc99e106d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "171d2be5cfd874ac3f07959d2317d76d5f76b4ccf226cbfbdf6515d1f7e87bff"
 ---
 
 # Firewall Observability
@@ -35,13 +36,13 @@ The project **Firewall** page of your Vercel dashboard provides a consolidated v
 - [Security through design: Creating the improved Firewall experience](https://vercel.com/blog/security-through-design-creating-the-improved-firewall-experience)
 - [Improved traffic visibility on Firewall overview page](https://vercel.com/changelog/improved-traffic-visibility-on-firewall-overview-page)
 - [Preventing infrastructure abuse with Vercel Firewall](https://vercel.com/blog/preventing-infrastructure-abuse-with-vercel-firewall)
-- [Introducing Vercel Firewall DDoS mitigation notifications](https://vercel.com/changelog/introducing-vercel-firewall-notifications)
 - [Improved analytics experience now available on the Vercel Firewall](https://vercel.com/changelog/improved-analytics-experience-now-available-on-the-vercel-firewall)
-- [Preview your site's Firewall status and Web Analytics from the Project Overview](https://vercel.com/changelog/preview-firewall-status-and-web-analytics-from-project-overview)
-- [Vercel security roundup: improved bot defenses, DoS mitigations, and insights](https://vercel.com/blog/vercel-security-roundup-improved-bot-defenses-dos-mitigations-and-insights)
 - [Block, rate limit, and challenge traffic with the Vercel Firewall](https://vercel.com/changelog/block-rate-limit-and-challenge-traffic-with-the-vercel-firewall)
-- [Vercel WAF upgrade brings persistent actions, rate limiting, and API control](https://vercel.com/blog/vercel-waf-upgrade-brings-persistent-actions-rate-limiting-and-api-control)
-- [Vercel security roundup: Faster defenses and better visibility for your apps](https://vercel.com/blog/vercel-security-roundup-faster-defenses-and-better-visibility-for-your-apps)
+- [Introducing Vercel Firewall DDoS mitigation notifications](https://vercel.com/changelog/introducing-vercel-firewall-notifications)
+- [Vercel WAF](https://vercel.com/docs/vercel-firewall/vercel-waf) — Learn how to secure your website with the Vercel Web Application Firewall \\(WAF\\)
+- [Firewall and Security](https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall) — Vercel MCP tools for firewall and security.
+- [Read Firewall Actions Summary by Project](https://vercel.com/docs/rest-api/security/read-firewall-actions-summary-by-project) — GET /v1/security/firewall/events/summary — Aggregate counts over the firewall actions matched by the same filters as \\`G
+- [Read Firewall Actions by Project](https://vercel.com/docs/rest-api/security/read-firewall-actions-by-project) — GET /v1/security/firewall/events — Retrieve firewall actions for a project Rule names are resolved against the project's
 
 Full cross-link map for this page: [/docs/vercel-firewall/firewall-observability.graph.md](/docs/vercel-firewall/firewall-observability.graph.md)
 <!-- /docsgraph:related -->
@@ -107,6 +108,18 @@ To receive notifications from these alerts, you can use one of the following met
      - Use the command `/vercel subscribe {team_id} firewall_attack`
   3. Review the [command reference](/docs/comments/integrations#vercel-app-for-slack-command-reference) for additional options.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

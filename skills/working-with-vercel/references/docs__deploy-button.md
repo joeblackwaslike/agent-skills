@@ -11,9 +11,10 @@ related:
   []
 summary: Deploy public Git projects with the Deploy Button, and set up new projects with Vercel and GitHub, GitLab, or Bitbucket
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deploy-button.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "57ab02bf89ad99e799470f3335898920c3307563b60eccfa18c854881ce92a6f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a64b1855307b48d92ce160baafa08b24b9d5865a367f0b114450331026516fb0"
 ---
 
 # Working with the Deploy Button
@@ -28,6 +29,18 @@ The Vercel Project creation flow allows users to deploy a Git repository, create
 
 With the Vercel Project creation flow, you can add various URL query parameters to control the experience a user will have, depending on the requirements of your project.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

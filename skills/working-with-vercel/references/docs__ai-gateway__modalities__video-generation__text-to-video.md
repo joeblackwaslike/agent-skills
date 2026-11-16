@@ -12,9 +12,10 @@ related:
   - /docs/ai-gateway/modalities/video-generation
 summary: Generate videos from text prompts using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/text-to-video.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b593be73fb5a6aa995b11482c8b51969d890669989fe5e0cc2763248e558055d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "517fdd9c6d51f57a427e78efead74de353a71486b55174a6c783fd85f66b9ea4"
 ---
 
 # AI Gateway Text-to-Video Generation
@@ -28,14 +29,14 @@ Generate videos from text prompts. Describe what you want to see and the model c
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance) — Learn how to use ByteDance with AI Gateway and the direct provider.
+- [Tencent Cloud](https://ai-sdk.dev/providers/ai-sdk-providers/tencent) — Learn how to use Tencent Cloud TokenHub and VOD models with the AI SDK.
 - [Kling AI](https://ai-sdk.dev/providers/ai-sdk-providers/klingai) — Learn how to use Kling AI with AI Gateway and the direct provider.
 - [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba) — Learn how to use Alibaba with AI Gateway and the direct provider.
-- [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
 - [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation) — Learn how to generate videos with the AI SDK.
+- [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
 - [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway)
 - [Seedance 2.0 Video Generation on AI Gateway](https://vercel.com/changelog/seedance-2.0-video-now-available-on-ai-gateway)
 - [Wan models on AI Gateway](https://vercel.com/changelog/wan-models-on-ai-gateway)
-- [Grok Imagine Video 1.5 Lite on AI Gateway](https://vercel.com/changelog/grok-imagine-video-1-5-lite-on-ai-gateway)
 - [Kling video models on AI Gateway](https://vercel.com/changelog/kling-video-models-on-ai-gateway)
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/text-to-video.graph.md](/docs/ai-gateway/modalities/video-generation/text-to-video.graph.md)
@@ -428,6 +429,18 @@ const result = await generateVideo({
 
 ***
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

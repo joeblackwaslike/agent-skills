@@ -15,9 +15,10 @@ related:
   - /docs/drains/reference/logs
 summary: Learn how to configure drains to forward observability data to custom HTTP endpoints, dedicated Audit Log destinations, and integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/drains/using-drains.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "10aac2686e6544b70cc24eff17c5239d56297fa3637f125fa170cfb3af4ac1b5"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e52ad13bc64e8296a68661d91746042c0a4d35229a7040d3f128006af0aa0e7d"
 ---
 
 # Using Drains
@@ -34,12 +35,11 @@ You can add drains to your project by following the configuration steps below. W
 
 - [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains)
 - [Correlate logs and traces with OpenTelemetry in Vercel Log Drains](https://vercel.com/changelog/correlate-logs-and-traces-with-opentelemetry-in-vercel-log-drains)
-- [Audit Log Drains now support Datadog, Splunk, and Panther](https://vercel.com/changelog/audit-log-drains-now-support-datadog-splunk-and-panther)
+- [vercel drains](https://vercel.com/docs/cli/drains) — List, inspect, create, update, pause, resume, and delete Vercel Drains from your terminal.
 - [Migrating from Custom SIEM Log Streaming to Audit Log Drains](https://vercel.com/docs/audit-log/migrating-to-drains) — Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event
 - [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
-- [vercel drains](https://vercel.com/docs/cli/drains) — List, inspect, create, update, pause, resume, and delete Vercel Drains from your terminal.
+- [Creates a new Integration Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-new-integration-log-drain-deprecated) — POST /v2/integrations/log-drains — Creates an Integration log drain. This endpoint must be called with an OAuth2 client
 - [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
-- [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby) — Learn about the Hobby plan and how it compares to the Pro plan.
 
 Full cross-link map for this page: [/docs/drains/using-drains.graph.md](/docs/drains/using-drains.graph.md)
 <!-- /docsgraph:related -->
@@ -91,6 +91,8 @@ Teams on [Pro](/docs/plans/pro-plan) and [Enterprise](/docs/plans/enterprise) pl
 
   This is the URL of the endpoint we will send your data to. The request will be sent over HTTPS using the POST method. Make sure your endpoint responds with a 200 OK status code.
 
+  If your endpoint runs on Vercel, each delivery request creates a log. Vercel doesn't send these logs to any Drain whose endpoint uses the same hostname, which prevents an endless delivery loop.
+
   **Payload Size**
 
   Vercel batches drained data into payloads of up to 1 MB.
@@ -120,7 +122,7 @@ Teams on [Pro](/docs/plans/pro-plan) and [Enterprise](/docs/plans/enterprise) pl
   #### S3 bucket
   Configure an S3 bucket destination to write Audit Log data directly to Amazon S3. S3 bucket destinations are available only for Audit Log Drains.
 
-  Before creating the drain, configure AWS IAM permissions and collect the S3 bucket path, encoding, role ARN, region, and any server-side encryption or Object ACL values required by your bucket. See [Drain Audit Logs to S3](/docs/drains/audit-logs-to-s3) for the full AWS setup.
+  Before creating the drain, configure AWS IAM permissions and collect the S3 bucket path, encoding, role ARN, region, and any server-side encryption, KMS key ARN, or Object ACL values your bucket requires. See [Drain Audit Logs to S3](/docs/drains/audit-logs-to-s3) for the full AWS setup.
   #### Splunk
   Configure a Splunk destination to forward Audit Log data to your Splunk HTTP Event Collector (HEC). Splunk destinations are available only for Audit Log Drains.
 
@@ -213,6 +215,18 @@ For more information on Drains and how to use them, check out the following reso
 - [Analytics reference](/docs/drains/reference/analytics)
 - [Audit Log Drains reference](/docs/drains/reference/audit-logs)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

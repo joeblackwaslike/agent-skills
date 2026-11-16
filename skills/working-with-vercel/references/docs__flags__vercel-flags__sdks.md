@@ -15,9 +15,10 @@ related:
   - /docs/flags/vercel-flags/dashboard/sdk-keys
 summary: Learn how to integrate Vercel Flags into your application using the Flags SDK, OpenFeature, or the core library.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/vercel-flags/sdks.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c21a55e0ea28575599dfeb4093ba47408a28d35799f5ddb206d77a63cfac83dd"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e199dd3b046eba6ca3a0ca19a2adbf1db8972effd500a586dcf7d975b899ae3b"
 ---
 
 # SDKs
@@ -30,11 +31,11 @@ There are multiple ways to use Vercel Flags, depending on your framework and how
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
-- [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
+- [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
+- [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference) — API reference for the Flags SDK for Next.js and SvelteKit.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/sdks.graph.md](/docs/flags/vercel-flags/sdks.graph.md)
@@ -94,6 +95,18 @@ Set the separate `FLAGS_SECRET` environment variable when you use Flags Explorer
 - [Learn about OpenFeature integration](/docs/flags/vercel-flags/sdks/openfeature)
 - [Use the core library directly](/docs/flags/vercel-flags/sdks/core)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

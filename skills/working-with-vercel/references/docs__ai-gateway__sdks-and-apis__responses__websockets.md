@@ -14,9 +14,10 @@ related:
   - /docs/ai-gateway/models-and-providers/service-tiers
 summary: Keep a persistent connection open across turns with the OpenAI Responses API over WebSocket through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/websockets.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "2c41629680a000ea6d8733f8fe0c6e699d7c32a8c233fd93b1ab73d84eecd238"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "97e462403e7c91d5abe1bca73a444f844416ac17d299f88bd8823be01ab443ba"
 ---
 
 # OpenAI Responses API WebSocket Mode with AI Gateway
@@ -180,6 +181,18 @@ Errors arrive as `error` frames with the same shape as HTTP error responses (`st
 
 For request parameters, tool calling, structured output, and reasoning configuration, the frames accept the same fields as the HTTP [Responses API](/docs/ai-gateway/sdks-and-apis/responses). WebSocket mode uses the same API fields over a different transport.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

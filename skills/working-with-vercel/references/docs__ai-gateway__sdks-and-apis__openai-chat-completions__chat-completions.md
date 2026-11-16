@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs
 summary: Create chat completions using the Chat Completions API with support for streaming, image attachments, and PDF documents through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "daa2ae42b5222f9815bc6b2afbf41c1d37874507d12c4514aa82366d43bea9c7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "6664c3b4de13d6684ea0113a74b40e4929e0da7413205908f7b0a23b6be0b00b"
 ---
 
 # OpenAI Chat Completions Requests with AI Gateway
@@ -33,9 +34,9 @@ Create chat completions using various AI models available through the AI Gateway
 
 - [OpenAI Chat Completions Tool Calling with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/tool-calling) — Use function calling with the Chat Completions API to enable models to call tools and functions through AI Gateway.
 - [AI Gateway Chat Completions Image Generation Reference](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation) — Generate images using AI models that support multimodal output through the Chat Completions API through AI Gateway.
-- [Python with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/python) — Use AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
 - [OpenAI Responses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses) — Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported
 - [Call AI Gateway Chat Completions with REST](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api) — Use AI Gateway API directly without client libraries using curl and fetch.
+- [Go with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/go) — Use AI Gateway from any Go application with the OpenAI or Anthropic Go SDKs, including model fallbacks, cost tracking, a
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions.graph.md](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions.graph.md)
 <!-- /docsgraph:related -->
@@ -239,6 +240,18 @@ Messages support different content types:
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

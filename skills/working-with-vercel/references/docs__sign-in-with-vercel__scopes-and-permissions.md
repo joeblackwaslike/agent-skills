@@ -11,9 +11,10 @@ related:
   - /docs/sign-in-with-vercel/tokens
 summary: Learn how to manage scopes and permissions for Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "3b4d15362a478449b00819b558b7d087cc019e6ae413771b89ba26baedf1a565"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "aa944b4815dff251fe62d149595116940fc8a17f99cb6e17c985f6b7236ad6fe"
 ---
 
 # Scopes and Permissions
@@ -27,11 +28,11 @@ Scopes define what data is included in the [ID Token](/docs/sign-in-with-vercel/
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Sign in with Vercel now generally available](https://vercel.com/changelog/sign-in-with-vercel)
-- [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference) — Learn how to manage project access and added products for your integrations.
 - [Extended permissions](https://vercel.com/docs/rbac/access-roles/extended-permissions) — Learn about extended permissions in Vercel's RBAC system. Understand how to combine roles and permissions for precise ac
+- [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference) — Learn how to manage project access and added products for your integrations.
 - [Access tokens](https://vercel.com/docs/accounts/access-tokens) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
 - [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
-- [Access Groups](https://vercel.com/docs/rbac/access-groups) — Learn how to configure access groups for team members on a Vercel account.
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/scopes-and-permissions.graph.md](/docs/sign-in-with-vercel/scopes-and-permissions.graph.md)
 <!-- /docsgraph:related -->
@@ -84,6 +85,8 @@ The following permissions are available:
 | Automations | Read Only, Read and Write | Read and manage automations. |
 | Billing | Read Only, Read and Write | Read billing information and make purchases. |
 | Blob | Read and Write | Manage Blob storage. |
+| Connect Tokens | Read and Write | Retrieve provider application tokens, including secrets, and initiate installations with Vercel Connect. |
+| Connect User Tokens | Read and Write | Retrieve any user’s provider tokens and initiate user authorization with Vercel Connect. |
 | Connectors | Read Only, Read and Write | Create, configure, connect, and remove Vercel Connect connectors. |
 | Container Registry | Read Only, Read and Write | Read and manage container registry images and tags. |
 | Domains | Read Only, Read and Write | Read and make changes to domains. |
@@ -122,6 +125,18 @@ The following permissions are available:
 | Speed Insights | Read Only, Manage | Enable or disable Speed Insights. |
 | Web Analytics | Read Only, Manage | Enable or disable Web Analytics. |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

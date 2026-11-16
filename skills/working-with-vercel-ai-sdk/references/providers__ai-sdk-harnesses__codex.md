@@ -4,8 +4,8 @@ description: Learn how to use the Codex harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/codex"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/codex.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "ab9dfaa2bd1546152f10519f09576540ae8ea3f2e32fd3db3f79351cc4701d7c"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "94f92e3336cfec82692d320a460a0d8d66fca502fee572a4d6f7783a1d03c07d"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -125,10 +125,9 @@ Settings:
   2 seconds. These retries use exponential backoff and are separate from
   `startupTimeoutMs`. They cannot recover when the sandbox, bridge process, or
   bridge endpoint is permanently unavailable.
-- `mintBridgeToken`: synchronous function that receives the sandbox id and
-  returns the bridge authentication token. By default, the adapter generates a
-  random 32-byte token. Custom implementations must return a suitably secret
-  token.
+- `mintBridgeToken`: deprecated and ignored. Passing it logs a warning. The
+  adapter generates a key pair for each bridge, passes only the public key into
+  the sandbox, and keeps the private key in host-side resume state.
 
 ## Built-in Tool Filtering
 

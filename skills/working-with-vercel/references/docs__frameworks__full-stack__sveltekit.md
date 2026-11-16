@@ -3,7 +3,7 @@ title: SvelteKit on Vercel
 product: vercel
 url: /docs/frameworks/full-stack/sveltekit
 canonical_url: "https://vercel.com/docs/frameworks/full-stack/sveltekit"
-last_updated: 2026-08-26
+last_updated: 2026-11-14
 type: conceptual
 prerequisites:
   - /docs/frameworks/full-stack
@@ -12,13 +12,14 @@ related:
   - /docs/deployments/environments
   - /docs/functions
   - /docs/cli
+  - /docs/deployments/deploy-without-logging-in
   - /docs/fundamentals/what-is-compute
-  - /docs/functions/limitations
 summary: Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Middleware.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/full-stack/sveltekit.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "78f8af8fc11880ac8941ce0b57c30e570bd9cccbb82c2932e0c3c2ad41c7f492"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "49555e0952f02e56ad2dc003e5b86f3b54289e9d8f525a5c336708617b8749a2"
 ---
 
 # SvelteKit on Vercel
@@ -33,15 +34,16 @@ SvelteKit is a frontend framework that enables you to build Svelte applications 
 
 - [New features for SvelteKit: Optimize your application with ease](https://vercel.com/blog/feature-complete-sveltekit)
 - [How to optimize Next.js and Sitecore Content SDK apps](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-content-sdk) — Learn how to choose a rendering strategy, configure proxy middleware, and optimize costs for Next.js and Sitecore Conten
-- [Using SvelteKit 1.0 on Vercel](https://vercel.com/blog/using-sveltekit-1-0-on-vercel)
 - [What's new in Svelte 5](https://vercel.com/blog/whats-new-in-svelte-5)
-- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
+- [Using SvelteKit 1.0 on Vercel](https://vercel.com/blog/using-sveltekit-1-0-on-vercel)
 - [How to reduce ISR Writes by shrinking cached output](https://vercel.com/kb/guide/how-to-reduce-isr-writes) — Reduce ISR Write units by finding large changed routes and removing unnecessary data from their cached output.
+- [ISR: A flexible way to cache dynamic content](https://vercel.com/blog/isr-a-flexible-way-to-cache-dynamic-content)
+- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
 - [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
 - [Vite + Nitro on Vercel](https://vercel.com/docs/frameworks/full-stack/vite-with-nitro) — Add a backend to any Vite app with Nitro and deploy to Vercel with zero configuration.
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
-- [Remix on Vercel](https://vercel.com/docs/frameworks/full-stack/remix) — Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
 - [Vite on Vercel](https://vercel.com/docs/frameworks/frontend/vite) — Deploy Vite projects to Vercel and configure environment variables, Vercel Functions, server-side rendering, and SPA rew
+- [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
 
 Full cross-link map for this page: [/docs/frameworks/full-stack/sveltekit.graph.md](/docs/frameworks/full-stack/sveltekit.graph.md)
 <!-- /docsgraph:related -->
@@ -58,6 +60,16 @@ To get started with SvelteKit on Vercel:
 \- Or, choose a template from Vercel's marketplace:
 
 Vercel deployments can \[integrate with your git provider]\(/docs/git) to \[generate preview URLs]\(/docs/deployments/environments#preview-environment-pre-production) for each pull request you make to your SvelteKit project.
+
+## Deploy without an account
+
+To deploy an existing SvelteKit project without an account or login, run this command in the project root:
+
+```bash filename="terminal"
+vercel deploy --temporary
+```
+
+The CLI builds the project, deploys it to production, and prints a claim URL. Claim the project to keep it live. See [Deploying without logging in](/docs/deployments/deploy-without-logging-in).
 
 ## Use Vercel features with Svelte
 
@@ -609,7 +621,7 @@ You can see data about your project's [Core Web Vitals](/docs/speed-insights/met
 
 **To summarize, using Speed Insights with SvelteKit on Vercel:**
 
-- Enables you to track traffic performance metrics, such as [First Contentful Paint](/docs/speed-insights/metrics#first-contentful-paint-fcp), or [First Input Delay](/docs/speed-insights/metrics#first-input-delay-fid)
+- Enables you to track traffic performance metrics, such as [First Contentful Paint](/docs/speed-insights/metrics#first-contentful-paint-fcp), or [Interaction to Next Paint](/docs/speed-insights/metrics#interaction-to-next-paint-inp)
 - Enables you to view performance metrics by page name and URL for more
   granular analysis
 - Shows you [a score for your app's performance](/docs/speed-insights/metrics#how-the-scores-are-determined) on each recorded metric, which you can use to track improvements or regressions
@@ -706,6 +718,18 @@ Learn more about deploying SvelteKit projects on Vercel with the following resou
 - [Learn about the Build Output API](/docs/build-output-api)
 - [SvelteKit's official docs](https://kit.svelte.dev/docs/adapter-vercel)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

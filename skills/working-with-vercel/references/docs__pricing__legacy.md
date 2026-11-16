@@ -14,9 +14,10 @@ related:
   - /docs/functions
 summary: Learn about legacy usage metrics, including Bandwidth, Requests, Vercel Function Invocations, and Vercel Function Execution.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/pricing/legacy.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "7ece837fc9a5f019a699dbbcf285b303ff829f165c07071cc237819641fe489d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "294ea2a8d05b7b2707888c2ee4f253f95eceaa62239072f7ec3568c7bcfe18ad"
 ---
 
 # Legacy Metrics
@@ -33,13 +34,11 @@ This chart includes traffic for both [preview](/docs/deployments/environments#pr
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Metrics for outgoing requests](https://vercel.com/changelog/metrics-for-outgoing-requests)
-- [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing)
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing) — Learn about legacy usage and pricing for Vercel Functions.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
-- [CDN pricing and usage](https://vercel.com/docs/manage-cdn-usage) — Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transf
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
+- [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 
 Full cross-link map for this page: [/docs/pricing/legacy.graph.md](/docs/pricing/legacy.graph.md)
 <!-- /docsgraph:related -->
@@ -85,6 +84,18 @@ Vercel Function Execution can be filtered by:
 - **Ratio**: The ratio of execution time that is **Completed**, **Errored**, or **Timed out**
 - **Projects**: The projects that the execution time is spent on
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

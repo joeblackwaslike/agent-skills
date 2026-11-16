@@ -3,7 +3,7 @@ title: Hono on Vercel
 product: vercel
 url: /docs/frameworks/backend/hono
 canonical_url: "https://vercel.com/docs/frameworks/backend/hono"
-last_updated: 2026-08-10
+last_updated: 2026-11-14
 type: how-to
 prerequisites:
   - /docs/frameworks/backend
@@ -12,13 +12,14 @@ related:
   - /docs/git
   - /docs/deployments/environments
   - /docs/cli/init
+  - /docs/deployments/deploy-without-logging-in
   - /docs/services
-  - /docs/services/routing
 summary: Deploy Hono applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/backend/hono.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b1fa4f9bff552afaff3125535dedcfb596e80b5ce10c4030a2241fcd115166cd"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3cb0a2552807e391580163b8b50621770171ab347a3dea39118edaaf22ddf406"
 ---
 
 # Hono on Vercel
@@ -39,10 +40,10 @@ Hono is a fast and lightweight web application framework built on Web Standards.
 - [How to ship an H3 app on Vercel](https://vercel.com/kb/guide/ship-a-h3-app-on-vercel) — Deploy an H3 app to Vercel with zero configuration. Learn to configure streaming, middleware, cron jobs, the Bun runtime
 - [How to ship a Koa app on Vercel](https://vercel.com/kb/guide/ship-a-koa-app-on-vercel) — Deploy a Koa app to Vercel with zero configuration. Learn how to ship from the Vercel CLI or Git, and configure response
 - [Chat SDK with Hono](https://vercel.com/docs/chat-sdk/frameworks/hono) — Add a Chat SDK bot to Hono, receive Slack events through Vercel Connect, and deploy on Vercel.
+- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
+- [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
 - [Express on Vercel](https://vercel.com/docs/frameworks/backend/express) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
 - [Koa on Vercel](https://vercel.com/docs/frameworks/backend/koa) — Deploy Koa applications to Vercel with zero configuration.
-- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
-- [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify) — Deploy Fastify applications to Vercel with zero configuration.
 
 Full cross-link map for this page: [/docs/frameworks/backend/hono.graph.md](/docs/frameworks/backend/hono.graph.md)
 <!-- /docsgraph:related -->
@@ -93,6 +94,16 @@ vc dev
 ```
 
 This ensures that the application will use the default export to run the same as when deployed to Vercel. The application will be available on your `localhost`.
+
+## Deploy without an account
+
+To deploy your Hono app without an account or login, run this command in the project root:
+
+```bash filename="terminal"
+vercel deploy --temporary
+```
+
+The CLI builds the project, deploys it to production, and prints a claim URL. Claim the project to keep it live. See [Deploying without logging in](/docs/deployments/deploy-without-logging-in).
 
 ## Deploy with a frontend
 
@@ -168,6 +179,18 @@ Learn more about deploying Hono projects on Vercel with the following resources:
 - [How to ship a Hono app on Vercel](/kb/guide/ship-a-hono-app-on-vercel)
 - [Backend templates on Vercel](https://vercel.com/templates?type=backend)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

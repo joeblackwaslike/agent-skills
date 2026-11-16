@@ -16,9 +16,10 @@ related:
   - /docs/sandbox/concepts/tags
 summary: Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot management.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/concepts/persistent-sandboxes.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "27ecb4539d3edcfd5c7cee9136d34d2468f89986a7f5bc18e53975e4d3105da5"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e0f66fb06f5167470da5a4e831ebbca1dcb1c9f43b7635ddc8a2fd3bf44022d2"
 ---
 
 # Persistence
@@ -112,8 +113,8 @@ Every sandbox has a **name** that is unique within your project. The name is the
 
 You can set a default expiration for the automatic snapshots, plus a retention policy that keeps only the N most recent snapshots:
 
-- **`snapshotExpiration`**: Default TTL for any snapshot of this sandbox, measured from the snapshot's last use. The timer resets each time the snapshot is used. Defaults to 30 days (`2,592,000,000` ms). Use `0` (or `"none"` in the CLI) to keep snapshots indefinitely.
-- **`keepLastSnapshots`**: Keep only the N (1–10) most recent snapshots, optionally with a different expiration and an option to delete evicted snapshots immediately.
+- **Snapshot expiration**: Default TTL for any snapshot of this sandbox, measured from the snapshot's last use. The timer resets each time the snapshot is used. Defaults to 30 days. Use `0` to keep snapshots indefinitely.
+- **Snapshot retention**: Keep only the N (1–10) most recent snapshots, optionally with a different expiration and an option to delete evicted snapshots immediately.
 
 **index.ts**
 
@@ -154,7 +155,7 @@ async def main() -> None:
 asyncio.run(main())
 ```
 
-`keepLastSnapshots: { count: 1 }` is the recommended setting when you only care about the latest snapshot. It keeps snapshot storage flat.
+A retention count of one is the recommended setting when you only care about the latest snapshot. It keeps snapshot storage flat.
 
 ### Sandbox retention
 
@@ -178,7 +179,7 @@ Two methods do **not** auto-resume:
 
 ## Create a persistent sandbox
 
-Call `Sandbox.create()` with a `name` to create a persistent sandbox. Persistence is on by default, so you only need to set `name`; the snippet below also sets a 7-day snapshot expiration:
+Create a sandbox with a `name` to get a persistent sandbox you can return to. Persistence is on by default, so you only need to set `name`; the snippet below also sets a 7-day snapshot expiration:
 
 **index.ts**
 
@@ -209,6 +210,10 @@ async def main() -> None:
         name="my-sandbox",
         snapshot_expiration=timedelta(days=7),
     )
+    await box.fs.write_text(
+        "pyproject.toml",
+        '[project]\nname = "app"\nversion = "0.1.0"\nrequires-python = ">=3.11"\ndependencies = ["httpx"]\n',
+    )
     await box.run_command("uv", ["sync"], check=True)
     await box.stop()
 
@@ -218,9 +223,9 @@ asyncio.run(main())
 
 ## Get or create (idempotent)
 
-`Sandbox.getOrCreate` is the recommended pattern for long-lived sandboxes. It retrieves the sandbox without resuming it by default (`resume: false`), or creates it if it doesn't exist.
+Get-or-create is the recommended pattern for long-lived sandboxes. It retrieves the sandbox by name, or creates it if it doesn't exist.
 
-Creation parameters (such as `keepLastSnapshots` or `snapshotExpiration`) apply only when `getOrCreate` creates the sandbox. If a sandbox with the same `name` already exists, `getOrCreate` returns it with its existing configuration and ignores the creation parameters you pass. To change the configuration of an existing sandbox, use [`sandbox.update`](#update-sandbox-configuration).
+Creation parameters, such as snapshot expiration and retention, apply only when the call creates the sandbox. If a sandbox with the same `name` already exists, the call returns it with its existing configuration and ignores the creation parameters you pass. To change the configuration of an existing sandbox, [update it](#update-sandbox-configuration).
 
 **index.ts**
 
@@ -249,8 +254,14 @@ from vercel import sandbox
 
 
 async def main() -> None:
+    # Resumes an existing sandbox during the lookup.
+    # Pass resume=False to retrieve it without resuming.
     box, created = await sandbox.get_or_create_sandbox(name="my-sandbox")
     if created:
+        await box.fs.write_text(
+            "pyproject.toml",
+            '[project]\nname = "app"\nversion = "0.1.0"\nrequires-python = ">=3.11"\ndependencies = ["httpx"]\n',
+        )
         await box.run_command("uv", ["sync"], check=True)
 
 
@@ -331,7 +342,7 @@ from vercel.sandbox import NetworkPolicy, SandboxResources, SnapshotRetention
 async def main() -> None:
     box = await sandbox.get_sandbox(name="my-sandbox")
     await box.update(
-        resources=SandboxResources(vcpus=4),
+        resources=SandboxResources(vcpus=4, memory=8192),
         execution_time_limit=timedelta(minutes=30),
         persistent=True,
         snapshot_expiration=timedelta(days=14),
@@ -348,12 +359,15 @@ asyncio.run(main())
 
 ## Delete a sandbox
 
-Deleting a sandbox permanently removes the sandbox and all of its sessions. By default, its [snapshots](/docs/sandbox/concepts/snapshots) survive the deletion, because several sandboxes can start from the same snapshot. They stay available until they expire or you delete them, and they keep incurring [storage charges](/docs/sandbox/pricing#snapshot-storage) in the meantime. To also delete the snapshots that no other sandbox uses, pass `deleteOrphanSnapshots: true` to `sandbox.delete()`.
+Deleting a sandbox permanently removes the sandbox and all of its sessions. By default, its [snapshots](/docs/sandbox/concepts/snapshots) survive the deletion, because several sandboxes can start from the same snapshot. They stay available until they expire or you delete them, and they keep incurring [storage charges](/docs/sandbox/pricing#snapshot-storage) in the meantime. You can also delete the snapshots that no other sandbox uses in the same call.
 
 **index.ts**
 
 ```ts filename="index.ts"
 await sandbox.delete();
+
+// Or also delete the snapshots that no other sandbox uses
+// await sandbox.delete({ deleteOrphanSnapshots: true });
 ```
 
 **main.py**
@@ -367,6 +381,9 @@ from vercel import sandbox
 async def main() -> None:
     box = await sandbox.get_sandbox(name="my-sandbox")
     await box.destroy()
+
+    # Or also delete the snapshots that no other sandbox uses
+    # await box.destroy(delete_orphan_snapshots=True)
 
 
 asyncio.run(main())
@@ -530,6 +547,18 @@ From the dashboard you can stop the current session or permanently remove the sa
 - [CLI Reference](/docs/sandbox/cli-reference): Command reference for the CLI.
 - [Authentication](/docs/sandbox/concepts/authentication): Configure SDK authentication.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

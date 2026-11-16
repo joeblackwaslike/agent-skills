@@ -12,9 +12,10 @@ related:
   []
 summary: Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "9c2e66d2669704d17656237b36be1c34a973a7bfc377c8ee85f511b3ac270ff8"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4a1843ac5974429344719af6ab1dbca5b31ef371eed6b79e598355e503a985eb"
 ---
 
 # AI Gateway Image Generation with AI SDK
@@ -32,9 +33,9 @@ page](/ai-gateway/models?type=image), including multimodal LLMs and image-only m
 - [MAI-Image-2.6 and MAI-Image-2.6-Flash now available on AI Gateway](https://vercel.com/changelog/mai-image-2-6-and-mai-image-2-6-flash-now-available-on-ai-gateway)
 - [Nano Banana 2.1 now available on AI Gateway](https://vercel.com/changelog/nano-banana-2-1-now-available-on-ai-gateway)
 - [Image-only models available in Vercel AI Gateway](https://vercel.com/changelog/image-only-models-available-in-vercel-ai-gateway)
-- [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
 - [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
-- [GPT Image 2 on AI Gateway](https://vercel.com/changelog/gpt-image-2-on-ai-gateway)
+- [AI Gateway Image Generation via Chat Completions](https://vercel.com/docs/ai-gateway/modalities/image-generation/openai) — Generate and edit images using AI models through Vercel AI Gateway with the Chat Completions API.
+- [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/image-generation/ai-sdk.graph.md](/docs/ai-gateway/modalities/image-generation/ai-sdk.graph.md)
 <!-- /docsgraph:related -->
@@ -484,6 +485,18 @@ for (const [index, image] of result.images.entries()) {
 
 For more information on generating images with the AI SDK, see the [AI SDK documentation](https://ai-sdk.dev/docs/ai-sdk-core/image-generation).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

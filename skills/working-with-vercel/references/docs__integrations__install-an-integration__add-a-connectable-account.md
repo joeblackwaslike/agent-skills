@@ -12,9 +12,10 @@ related:
   - /docs/integrations/install-an-integration/manage-integrations-reference
 summary: Learn how to connect Vercel to your third-party account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/install-an-integration/add-a-connectable-account.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "6f0a60a0070ac317ff471892b6d446b6a64aed0218fce4b03ee37e563e14b6e5"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ad50926c4c08fd93c1a9f8e7a9bf9dcb67ea726e31cba6a6b1feb278648f0c0a"
 ---
 
 # Add a Connectable Account
@@ -38,10 +39,10 @@ Once installed, you can manage the following aspect of the integration:
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
-- [Connectors in Vercel Connect](https://vercel.com/docs/connect/concepts/connectors) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
-- [Vercel Connect Concepts](https://vercel.com/docs/connect/concepts) — Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and a
-- [Adding a Provider](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider) — Learn how to add a new AI provider to your Vercel projects.
 - [Get Account Information](https://vercel.com/docs/rest-api/marketplace/get-account-information) — GET /v1/installations/{integrationConfigurationId}/account — Fetches the best account or user’s contact info
+- [Connectors in Vercel Connect](https://vercel.com/docs/connect/concepts/connectors) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
+- [Adding a Provider](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider) — Learn how to add a new AI provider to your Vercel projects.
+- [Vercel Connect Concepts](https://vercel.com/docs/connect/concepts) — Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and a
 
 Full cross-link map for this page: [/docs/integrations/install-an-integration/add-a-connectable-account.graph.md](/docs/integrations/install-an-integration/add-a-connectable-account.graph.md)
 <!-- /docsgraph:related -->
@@ -66,6 +67,18 @@ To uninstall an integration:
 2. Next to the integration, select the **Manage** button
 3. On the integrations page, select **Settings**, then select **Uninstall Integration** and follow the steps to uninstall.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

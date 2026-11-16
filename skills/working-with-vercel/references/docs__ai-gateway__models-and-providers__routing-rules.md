@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway
 summary: Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "d4677070ef42b20c9e8b3fc147d85d79bdca5eb317f5ee1663a1b2eae68826a4"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "030428194df5b99b83b1f82113854c5c4e3b2fb03adbecf8bdfced978cf5c975"
 ---
 
 # AI Gateway Routing Rules
@@ -33,13 +34,13 @@ Routing rules let you control how AI Gateway handles your team's requests at the
 
 - [ Routing rules now available on AI Gateway](https://vercel.com/changelog/ai-gateway-routing-rules)
 - [Cat Jam is now available in stealth for free on AI Gateway](https://vercel.com/changelog/cat-jam-is-now-available-in-stealth-for-free-on-ai-gateway)
+- [Claude Fable 5.2 now available on AI Gateway](https://vercel.com/changelog/claude-fable-5-2-now-available-on-ai-gateway)
 - [DeepSeek V4.1 Flash 1017 now available on AI Gateway](https://vercel.com/changelog/deepseek-v4-1-flash-1017-now-available-on-ai-gateway)
 - [DeepSeek V4.1 Flash 1017 Ultrafast now available on AI Gateway](https://vercel.com/changelog/deepseek-v4-1-flash-1017-ultrafast-now-available-on-ai-gateway)
-- [DeepSeek V4.1 Flash now available on AI Gateway](https://vercel.com/changelog/deepseek-v4-1-flash-now-available-on-ai-gateway)
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
 - [Create rule](https://vercel.com/docs/rest-api/ai-gateway/create-rule) — POST /ai-gateway/rules — Create a routing rule
-- [List rules](https://vercel.com/docs/rest-api/ai-gateway/list-rules) — GET /ai-gateway/rules — List the authenticated team's routing rules, oldest first. Without \\`limit\\` or \\`cursor\\`, retu
 - [Update rule](https://vercel.com/docs/rest-api/ai-gateway/update-rule) — PATCH /ai-gateway/rules — Update a routing rule \\(enabled, action, or description\\)
+- [List rules](https://vercel.com/docs/rest-api/ai-gateway/list-rules) — GET /ai-gateway/rules — List the authenticated team's routing rules, oldest first. Without \\`limit\\` or \\`cursor\\`, retu
 - [Project-Level Routing Rules](https://vercel.com/docs/routing/project-routing-rules) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
 - [Delete rule](https://vercel.com/docs/rest-api/ai-gateway/delete-rule) — DELETE /ai-gateway/rules — Delete a routing rule \\(soft delete\\)
 
@@ -163,6 +164,18 @@ Routing rules are managed per team, so your access depends on your role in the t
 - [AI Gateway overview](/docs/ai-gateway)
 - [Provider allowlist](/docs/ai-gateway/security-and-compliance/provider-allowlist)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

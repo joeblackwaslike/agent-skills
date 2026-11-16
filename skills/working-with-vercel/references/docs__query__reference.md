@@ -15,9 +15,10 @@ related:
   - /docs/vercel-firewall/vercel-waf
 summary: Use this reference to find the event types, metrics, aggregations, dimensions, and operators available in Query.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/query/reference.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c5546c364196d2b511b7a7be3ac0bcc587ad1108f4ec22a061794c0017ee307b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "35c8f1d502e96d6ab5013a9fc74a868cfd88a5b94c0a4885da00b7d17a15b33b"
 ---
 
 # Query Reference
@@ -36,8 +37,8 @@ In Query, you first select an event type, then a metric from that event type. Fo
 - [Monitoring Reference](https://vercel.com/docs/query/monitoring/monitoring-reference) — This reference covers the clauses, fields, and variables used to create a Monitoring query.
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Aggregates custom events](https://vercel.com/docs/rest-api/web-analytics/aggregates-custom-events) — GET /v1/query/web-analytics/events/aggregate — Counts custom events on a project, within the requested date range. Resul
-- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
-- [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views) — GET /v1/query/web-analytics/visits/aggregate — Counts pageviews on a project, within the requested date range. Results a
+- [AI Gateway Custom Reporting API](https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting) — Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
+- [Counts custom events](https://vercel.com/docs/rest-api/web-analytics/counts-custom-events) — GET /v1/query/web-analytics/events/count — Counts the number of custom events on a project \\(production only\\), since We
 
 Full cross-link map for this page: [/docs/query/reference.graph.md](/docs/query/reference.graph.md)
 <!-- /docsgraph:related -->
@@ -174,6 +175,18 @@ The available fields depend on the selected event type. The following fields are
 | `Sandbox Name`      | Group by the sandbox name                                                                                                                                                                                                                                                        |
 | `Sandbox Session ID` | Group by the sandbox session ID                                                                                                                                                                                                                                                  |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

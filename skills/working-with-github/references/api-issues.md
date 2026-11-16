@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/issues/issues"
-fetched_at: "2026-11-02T12:05:56.062Z"
-sha256: "e76d026ebd9558928d5a094b7e89b231687bd9e7c45094cd2c6ab142135d0f2d"
+fetched_at: "2026-11-16T12:31:54.241Z"
+sha256: "264618e6413d3b0966f80724198f5cec11ab656b34b8d6e31eee0c399f598a52"
 ---
 
 # REST API endpoints for issues
@@ -570,10 +570,10 @@ application/vnd.github.full+json: Returns raw, text, and HTML representations. R
 - **`issue_field_values`** (string)
   A comma-separated list of issue field filters in field_slug:value format.
   Only issues matching all specified field values are returned.
-  Requires issue fields to be enabled for the repository. Issue fields are
-  not available for user-owned repositories, and field availability for
-  organization-owned public repositories depends on the organization's
-  visibility settings. For example, priority:Urgent,severity:High filters
+  Requires issue fields to be enabled for the repository. Supports both
+  user-owned and organization-owned repositories. Field availability depends
+  on the owner's issue field visibility settings and the caller's access.
+  For example, priority:Urgent,severity:High filters
   issues where the priority field is Urgent AND the severity field is
   High.
 
@@ -676,7 +676,7 @@ application/vnd.github.full+json: Returns raw, text, and HTML representations. R
   Logins for Users to assign to this issue. NOTE: Only users with push access can set assignees for new issues. Assignees are silently dropped otherwise.
 
 - **`issue_field_values`** (array of objects)
-  An array of issue field values to set on this issue. Each field value must include the field ID and the value to set. Issue fields are only available for organization-owned repositories with the feature enabled. Field values are silently dropped otherwise.
+  An array of issue field values to set on this issue. Each field value must include the field ID and the value to set. Issue fields must be enabled for the repository owner. Field values are silently dropped otherwise.
   - **`field_id`** (integer) (required)
     The ID of the issue field to set
   - **`value`** (string or number or array) (required)

@@ -13,9 +13,10 @@ related:
   - /docs/vercel-blob/python-sdk-reference
 summary: Examples on how to use Vercel Blob in your applications
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-blob/examples.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "896dcbeea9ac9261cb697325992c3ccba1222ed34a208430e02798a5dd9e48e0"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "dd7e16a7ce4372b81a9cff1a4d08ed3efe68c367dd8035ab21260eb5f720baa3"
 ---
 
 # Vercel Blob examples
@@ -36,13 +37,12 @@ Vercel Blob supports [range requests](https://developer.mozilla.org/docs/Web/HTT
 
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
 - [Vercel Blob is now generally available: Cost-efficient, durable storage](https://vercel.com/blog/vercel-blob-now-generally-available)
-- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [Introducing Vercel Blob](https://vercel.com/changelog/vercel-blob)
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
 - [Server Uploads with Vercel Blob](https://vercel.com/docs/vercel-blob/server-upload) — Learn how to upload files to Vercel Blob from server routes and Server Actions
-- [Cancel a blob upload](https://vercel.com/docs/rest-api/vcr/cancel-a-blob-upload) — DELETE /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} — DELETE /v2/:teamSlug/:projectSlug/:repositor
+- [Vercel Blob Pricing](https://vercel.com/docs/vercel-blob/usage-and-pricing) — Learn about the pricing for Vercel Blob.
 - [Delete a blob](https://vercel.com/docs/rest-api/vcr/delete-a-blob) — DELETE /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/{digest} — DELETE /v2/:teamSlug/:projectSlug/:repositoryName/
-- [Vercel Storage overview](https://vercel.com/docs/storage) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
+- [Cancel a blob upload](https://vercel.com/docs/rest-api/vcr/cancel-a-blob-upload) — DELETE /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} — DELETE /v2/:teamSlug/:projectSlug/:repositor
 
 Full cross-link map for this page: [/docs/vercel-blob/examples.graph.md](/docs/vercel-blob/examples.graph.md)
 <!-- /docsgraph:related -->
@@ -324,6 +324,18 @@ This script optimizes the process by streaming the content directly from Vercel 
 
 You can split your backup process into smaller chunks if you're hitting an execution limit. In this case you would save the `cursor` to a database and resume the backup process from where it left off.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

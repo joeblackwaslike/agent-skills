@@ -12,9 +12,10 @@ related:
   - /docs/flags/flags-sdk-reference
 summary: Track feature flag evaluations and analyze their impact with Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/observability.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "454343ccb53671008894b07db96784d283d83b1c49b5680b23ce0473730d1102"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "91f8c454417eaa5e59e4a2cf6d06d8a07d6d4e9fdbf027577228e686db1e57b3"
 ---
 
 # Observability
@@ -28,10 +29,10 @@ Feature flags play a crucial role in the software development lifecycle, enablin
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Observe your feature flags with the Vercel DX platform](https://vercel.com/changelog/observe-your-feature-flags-with-the-vercel-dx-platform)
-- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
+- [Evaluation metrics for Vercel Flags](https://vercel.com/changelog/evaluation-metrics-for-vercel-flags)
 - [Vercel Flags](https://vercel.com/docs/flags/vercel-flags) — Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directl
-- [Managing flags in the dashboard](https://vercel.com/docs/flags/vercel-flags/dashboard) — Learn how to manage your feature flags using the Vercel Dashboard.
 - [Flag Evaluation Metrics](https://vercel.com/docs/flags/vercel-flags/evaluation-metrics) — Track Vercel Flags evaluations and see which variant each evaluation returns.
+- [Managing flags in the dashboard](https://vercel.com/docs/flags/vercel-flags/dashboard) — Learn how to manage your feature flags using the Vercel Dashboard.
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 
@@ -68,6 +69,18 @@ If you're using the Flags SDK, flag reporting happens automatically, with no man
 - [Integrate flags with Web Analytics](/docs/flags/observability/web-analytics)
 - [Learn about the Flags SDK](/docs/flags/flags-sdk-reference)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

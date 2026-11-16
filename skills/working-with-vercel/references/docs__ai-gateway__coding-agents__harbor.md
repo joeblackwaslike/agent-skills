@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/coding-agents/fx
 summary: Evaluate coding-agent harnesses with Harbor and AI Gateway. Choose a harness, configure its connection, and pass separate credentials to verifiers.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/harbor.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "2ea00dae41470fc3127280e672314e26e613bd5e2bda5f2eeb61da989c722aab"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d1722381dfbf45f98da1ef18b3f7e33ce7d86f8fb92f21845e945f6d95a643ce"
 ---
 
 # Harbor with AI Gateway
@@ -36,7 +37,8 @@ sha256: "2ea00dae41470fc3127280e672314e26e613bd5e2bda5f2eeb61da989c722aab"
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
 - [Harbor and Terminal-Bench](https://vercel.com/docs/sandbox/ecosystem/harbor) — Run Terminal-Bench and any other Harbor Hub dataset on Vercel Sandbox, with each trial in its own isolated Firecracker m
 - [Hermes with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/hermes) — Connect Hermes to AI Gateway with the Vercel CLI or manual provider configuration. Set your API key, discover models, an
-- [DeepSeek Harness with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepseek) — Connect DeepSeek Harness to AI Gateway with the Vercel CLI or a YAML provider and model shortlist.
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
+- [Security for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/security) — What a durable agent harness may run in your Vercel Function, where the commands and files a model picks run instead, an
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/harbor.graph.md](/docs/ai-gateway/coding-agents/harbor.graph.md)
 <!-- /docsgraph:related -->
@@ -209,6 +211,18 @@ Use the variable names and model configuration that the task's verifier expects.
 - Configure [spend limits](/docs/ai-gateway/observability-and-spend/budgets) on your API key
 - Explore [Harbor's source](https://github.com/harbor-framework/harbor) for provider and agent adapter configuration
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

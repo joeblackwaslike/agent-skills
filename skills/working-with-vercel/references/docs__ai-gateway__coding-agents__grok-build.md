@@ -13,9 +13,10 @@ related:
   - /docs/ai-gateway/authentication-and-byok
 summary: Connect Grok Build to AI Gateway with environment variables. Populate the model picker from the model catalog and monitor requests and spending.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/grok-build.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "eded964ccc7babbd0a27b1f971ff51616de52a09dfbe308fc4822b8835c1cd5a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4b38bd57e551369a5d172361063daded64d5420e3e848a8e44277608eeae4743"
 ---
 
 # Grok Build with AI Gateway
@@ -29,9 +30,9 @@ sha256: "eded964ccc7babbd0a27b1f971ff51616de52a09dfbe308fc4822b8835c1cd5a"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Grok Build 0.1 now available on Vercel AI Gateway](https://vercel.com/changelog/grok-build-0-1-now-available-on-vercel-ai-gateway)
-- [Grok 4.7 now available on AI Gateway, fx, and eve](https://vercel.com/changelog/grok-4-7-now-available-and-40-off-on-ai-gateway-fx-eve)
 - [Grok 4.6 now available on AI Gateway](https://vercel.com/changelog/grok-4-6-now-available-on-ai-gateway)
 - [Grok 4.5 now available on AI Gateway](https://vercel.com/changelog/grok-4-5-now-available-on-ai-gateway)
+- [Grok 4.7 now available on AI Gateway, fx, and eve](https://vercel.com/changelog/grok-4-7-now-available-and-40-off-on-ai-gateway-fx-eve)
 - [Grok 4.3 on AI Gateway](https://vercel.com/changelog/grok-4-3-on-ai-gateway)
 - [GitHub Copilot CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/copilot) — Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and
 - [Vercel Groq Integration](https://vercel.com/docs/agent-resources/integrations-for-models/groq) — Learn how to add the Groq native integration with Vercel.
@@ -121,6 +122,18 @@ Grok Build's web search tool requires a separate model configured to use the Ope
   ```
   Reload your shell and restart Grok Build for the change to take effect.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

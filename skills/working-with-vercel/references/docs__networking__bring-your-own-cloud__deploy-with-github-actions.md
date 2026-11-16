@@ -16,9 +16,10 @@ related:
   - /docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation
 summary: Keep the Vercel Git integration and use GitHub Actions to build, provision, and complete Bring Your Own Cloud (BYOC) deployments on every push.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/networking/bring-your-own-cloud/deploy-with-github-actions.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ef7184beec66884c06240b2dad809ee9d855dc231db7d276a8e04eca31e570f6"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7d2bc83ad73ba284a50add0855173e8011ec14ad71c0e251e6b2119e8f897721"
 ---
 
 # Deploying with BYOC from GitHub Actions
@@ -34,12 +35,13 @@ Keep the [Vercel Git integration](/docs/git) for a [Bring Your Own Cloud (BYOC)]
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Complete Guide to Bring Your Own Cloud](https://vercel.com/kb/guide/byoc) — Use Bring Your Own Cloud \\(BYOC\\) to run Vercel Functions as AWS Lambda functions in your own AWS account, from setup to
+- [Can I use GitHub Enterprise Server with Vercel?](https://vercel.com/kb/guide/can-i-use-github-enterprise-server-with-vercel) — You can use GitHub Enterprise Server and GitHub Actions to deploy your application to Vercel.
 - [Block Vercel deployment promotions with GitHub Actions](https://vercel.com/changelog/block-vercel-deployment-promotions-with-github-actions)
 - [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
 - [How can I use the Vercel CLI for custom workflows?](https://vercel.com/kb/guide/using-vercel-cli-for-custom-workflows) — You can use the Vercel CLI to deploy any application, including custom git providers and restricted source code.
-- [Implementing Blue-Green Deployments on Vercel](https://vercel.com/kb/guide/blue_green_deployments_on_vercel) — This guide outlines how to implement blue-green deployments on Vercel, leveraging GitHub Actions for seamless and contro
-- [Can I use GitHub Enterprise Server with Vercel?](https://vercel.com/kb/guide/can-i-use-github-enterprise-server-with-vercel) — You can use GitHub Enterprise Server and GitHub Actions to deploy your application to Vercel.
+- [How can I run end-to-end tests after my Vercel Preview Deployment?](https://vercel.com/kb/guide/how-can-i-run-end-to-end-tests-after-my-vercel-preview-deployment) — Learn how to use the Vercel CLI in combination with your CI/CD provider to run end-to-end tests for every code change.
 - [Connecting an AWS Account for BYOC](https://vercel.com/docs/networking/bring-your-own-cloud/connect-aws-account) — Connect an AWS account to your Vercel team so Bring Your Own Cloud \\(BYOC\\) can invoke Lambda functions in your account.
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 
 Full cross-link map for this page: [/docs/networking/bring-your-own-cloud/deploy-with-github-actions.graph.md](/docs/networking/bring-your-own-cloud/deploy-with-github-actions.graph.md)
 <!-- /docsgraph:related -->
@@ -135,6 +137,18 @@ The 15-minute provisioning window starts when Vercel creates the deployment, so 
 - [Operate BYOC deployments](/docs/networking/bring-your-own-cloud/operations), including retries, cleanup, and credential rotation
 - [Review the BYOC provisioning reference](/docs/networking/bring-your-own-cloud/provisioning-reference)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

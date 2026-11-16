@@ -11,9 +11,10 @@ related:
   - /docs/conformance/rules
 summary: Learn how to manage and configure your Conformance rules.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/customize.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "03d03fb68e57ad1c3e7de3dc950d804aa59c3997246703f1cd6be27cda3398d0"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "6b1e1629fd6fd1044cc77fc2f8f9609c3b6b302d464f332f8fd0e1886f81ec80"
 ---
 
 # Customizing Conformance
@@ -209,6 +210,18 @@ field:
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

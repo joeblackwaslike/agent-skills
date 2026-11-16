@@ -15,9 +15,10 @@ related:
   - /docs/security/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources
 summary: Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent credentials.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/oidc.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "84da708b91e34b0748c5325b091998287428f97a657020f4de0ec4f72546acc3"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "066e83f7fdc968056f5465d893b48a3afe78ddf7ca013fc6118f96e0c0071612"
 ---
 
 # OpenID Connect (OIDC) Federation
@@ -132,6 +133,18 @@ Review libraries to help you connect to your backend with OIDC.
 
 Understand the structure of an OIDC token.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

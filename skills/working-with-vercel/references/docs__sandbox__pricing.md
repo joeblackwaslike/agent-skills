@@ -15,9 +15,10 @@ related:
   - /docs/spend-management
 summary: "Understand how Vercel Sandbox billing works, what's included in each plan, and the quotas that apply."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/pricing.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "13d0f169eda82a94ed751731c9b91965a5b8b8d6c03e81d92077c94fd71cfeb0"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d3925c58806c9e5f4d9bc7af3f96b5a5cfd14b04e6ff99b182278d91903de243"
 ---
 
 # Vercel Sandbox pricing and quotas
@@ -40,8 +41,8 @@ Vercel Sandbox usage is metered across several dimensions. This page explains ho
 - [Run a research workspace on Vercel](https://vercel.com/kb/guide/run-research-workspace-vercel) — Plan a durable research workspace on Vercel's Agentic Infrastructure with Workflows, internal API tools, Vercel Sandbox
 - [Run Terminal-Bench and any Harbor benchmark on Vercel Sandbox](https://vercel.com/kb/guide/run-terminal-bench-harbor-benchmarks-vercel-sandbox) — Run Terminal-Bench, SWE-bench, and any Harbor benchmark on Vercel Sandbox. Each trial executes in an isolated Firecracke
 - [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
-- [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
+- [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 
 Full cross-link map for this page: [/docs/sandbox/pricing.graph.md](/docs/sandbox/pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -242,6 +243,18 @@ To optimize your Sandbox costs:
 
 For more details on sandbox lifecycle management, see [Working with Sandbox](/docs/sandbox/working-with-sandbox).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

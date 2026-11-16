@@ -15,9 +15,10 @@ related:
   - /docs/incremental-static-regeneration/quickstart
 summary: Learn about ISR costs, usage metrics, and strategies to optimize your ISR reads and writes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/incremental-static-regeneration/limits-and-pricing.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "8194bef730d080dd628597d7106ec0918ce0efd6e532ff220c381334a4fe2505"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b38834ada2f1df12ac20b09c4ceb379f44258af4205969be91f8a516f9ddce40"
 ---
 
 # ISR Usage and Pricing
@@ -38,10 +39,10 @@ This page covers ISR costs, usage metrics, and optimization strategies. To decid
 - [ISR: A flexible way to cache dynamic content](https://vercel.com/blog/isr-a-flexible-way-to-cache-dynamic-content)
 - [Write utilization now available in ISR Observability](https://vercel.com/changelog/write-utilization-now-available-in-isr-observability)
 - [Incremental Static Regeneration (ISR) is now faster and more cost-efficient](https://vercel.com/changelog/incremental-static-regeneration-is-now-faster-and-cheaper)
-- [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing)
 - [Calculating usage of resources](https://vercel.com/docs/pricing/how-does-vercel-calculate-usage-of-resources) — Understand how Vercel measures and calculates your resource usage based on a typical user journey.
+- [Stockholm, Sweden \\(arn1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/arn1) — Vercel pricing for the Stockholm, Sweden \\(arn1\\) region.
+- [Seoul, South Korea \\(icn1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/icn1) — Vercel pricing for the Seoul, South Korea \\(icn1\\) region.
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Limits and Pricing for Image Optimization](https://vercel.com/docs/image-optimization/limits-and-pricing) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
 
 Full cross-link map for this page: [/docs/incremental-static-regeneration/limits-and-pricing.graph.md](/docs/incremental-static-regeneration/limits-and-pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -129,6 +130,18 @@ When viewing your ISR writes chart, you can group by sum of units to see a total
 - **Projects**: To see the number of write units for each project
 - **Region**: To see the number of write units for each region
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

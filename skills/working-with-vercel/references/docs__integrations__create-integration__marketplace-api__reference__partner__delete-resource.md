@@ -3,7 +3,7 @@ title: delete-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/delete-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/delete-resource"
-last_updated: 2026-11-09
+last_updated: 2026-11-16
 type: conceptual
 prerequisites:
   []
@@ -12,9 +12,10 @@ related:
   - /docs/integrations/create-integration/native-integration
 summary: Learn about delete-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/delete-resource.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "4301dd3c724e31ca0395dfb725ecaa05bef986e710fd5c7d8313246defe9ecb4"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ac4be6c0da232def17a3fb07f6400232418e33d02f33fb45cdc60c0ea2c1188c"
 ---
 
 # Delete Resource
@@ -246,6 +247,18 @@ Operation failed because of a conflict with the current state of the resource
 - [Marketplace API Reference](/docs/integrations/create-integration/marketplace-api/reference)
 - [Native Integration Concepts](/docs/integrations/create-integration/native-integration)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

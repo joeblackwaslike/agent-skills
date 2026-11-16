@@ -15,16 +15,17 @@ related:
   - /docs/connect/concepts/authentication
 summary: Give your agents and services secure, short-lived access to third-party APIs like Slack, GitHub, Microsoft, and Snowflake, without storing provider...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/connect.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "4e547080e54e39936ce1741857df420f9f54387751dfff59484227613af3c18d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "73bac155dbe24bb4d6b76e14df34f7e8377bff5f38b15c87018d25cc60dc6fc2"
 ---
 
 # Vercel Connect
 
-> Vercel Connect is available on all plans and is subject to the [Vercel Connect terms](/legal/service-terms#connect)
+## Connect agents to third-party APIs
 
-With [Vercel Connect](/connect), your deployed apps can talk to other services. First, you set up a connection **once** to Slack, GitHub, Microsoft, Snowflake, Salesforce, or any OAuth or API-key service at the team level. Then, any project you allow can use this connection. Your code asks Connect for access at the moment it needs it, so no provider API key ever lives in your environment variables.
+Give your agents and services short-lived access to Slack, GitHub, Microsoft, Snowflake, and other OAuth or API-key services, without storing provider secrets in your environment variables.
 
 
 <!-- docsgraph:related -->
@@ -32,10 +33,11 @@ With [Vercel Connect](/connect), your deployed apps can talk to other services. 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
+- [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
 - [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect)
 - [Vercel Connect: Secure access to external services for your agents](https://vercel.com/changelog/vercel-connect-secure-access-to-external-services-for-your-agents)
+- [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
 - [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
 - [Telegram](https://eve.dev/docs/channels/telegram) — Reach your agent from a Telegram bot in private chats, groups, and forum topics.
 - [Telegram Reference](https://eve.dev/docs/channels/telegram/reference) — Telegram channel options, credentials, dispatch rules, delivery, human-in-the-loop, proactive sessions, and attachments.
@@ -43,12 +45,73 @@ With [Vercel Connect](/connect), your deployed apps can talk to other services. 
 - [Control who can manage connectors in Vercel Connect](https://vercel.com/changelog/control-who-can-manage-connectors-in-vercel-connect)
 - [Discover 1000+ services on Vercel Connect from the CLI](https://vercel.com/changelog/discover-1000-services-on-vercel-connect-from-the-cli)
 - [Vercel Connect adds managed Stripe API keys](https://vercel.com/changelog/vercel-connect-adds-managed-stripe-api-keys)
-- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 
 Full cross-link map for this page: [/docs/connect.graph.md](/docs/connect.graph.md)
 <!-- /docsgraph:related -->
 
-To create your first connector and request a token, follow the [Quickstart](/docs/connect/quickstart). For the conceptual model, see the [Concepts](/docs/connect/concepts) overview, starting with [Connectors](/docs/connect/concepts/connectors), [Tokens](/docs/connect/concepts/tokens), and [Authentication](/docs/connect/concepts/authentication).
+#### Request a token
+
+```ts filename="app/lib/post-to-slack.ts"
+import { getToken } from '@vercel/connect';
+
+const token = await getToken('slack/acme-slack', {
+  subject: { type: 'app' },
+  scopes: ['chat:write'],
+});
+
+await fetch('https://slack.com/api/chat.postMessage', {
+  method: 'POST',
+  headers: {
+    Authorization: `Bearer ${token}`,
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({ channel: 'C123', text: 'hello' }),
+});
+```
+
+#### Act as a user
+
+```ts filename="app/lib/linear-token.ts"
+import {
+  getToken,
+  startAuthorization,
+  UserAuthorizationRequiredError,
+  type ConnectTokenParams,
+} from '@vercel/connect';
+
+const connector = 'mcp.linear.app/linear';
+
+export async function getLinearToken(userId: string) {
+  const params: ConnectTokenParams = {
+    subject: { type: 'user', id: userId },
+    scopes: ['read'],
+  };
+
+  try {
+    return { token: await getToken(connector, params) };
+  } catch (error) {
+    if (error instanceof UserAuthorizationRequiredError) {
+      // Send the user to this URL to authorize access.
+      const { url } = await startAuthorization(connector, params);
+      return { consentUrl: url };
+    }
+    throw error;
+  }
+}
+```
+
+#### Create a connector
+
+```bash filename="terminal"
+vercel connect create slack --name acme-slack
+vercel connect attach slack/acme-slack
+```
+
+> Vercel Connect is available on all plans and is subject to the [Vercel Connect terms](/legal/service-terms#connect)
+
+With [Vercel Connect](/connect), your deployed apps can talk to other services. First, you set up a connection **once** to Slack, GitHub, Microsoft, Snowflake, Salesforce, or any OAuth or API-key service at the team level. Then, any project you allow can use this connection. Your code asks Connect for access at the moment it needs it, so no provider API key ever lives in your environment variables.
+
+The examples above use a Slack connector with the UID `slack/acme-slack` and a Linear connector with the UID `mcp.linear.app/linear`. Replace them with the UIDs of your own connectors. To create your first connector and request a token, follow the [Quickstart](/docs/connect/quickstart). For the conceptual model, see the [Concepts](/docs/connect/concepts) overview, starting with [Connectors](/docs/connect/concepts/connectors), [Tokens](/docs/connect/concepts/tokens), and [Authentication](/docs/connect/concepts/authentication).
 
 ## What you can build
 
@@ -114,8 +177,6 @@ For the full picture, including how token requests are authorized against projec
 Use the [`@vercel/connect` framework adapters](/docs/connect/frameworks) to add
 Connect authentication to AI SDK, TanStack AI, and MCP clients, eve connections, Chat SDK
 adapters, Better Auth, and Auth.js.
-
-## Reference
 
 ## Watch what your connectors are doing
 
@@ -195,9 +256,23 @@ securely access third-party services and APIs:
 
 ## Related guides
 
+- [Build a Shopify agent with AI SDK and Vercel Connect](https://vercel.com/kb/guide/shopify-agent-ai-sdk-vercel-connect): Build a Shopify agent with AI SDK and Vercel Connect to search products, check orders, and request approval before changing your catalog.
 - [Call third-party APIs from Python with Vercel Connect](https://vercel.com/kb/guide/python-and-vercel-connect): Call Slack and Linear APIs from Python with Vercel Connect. Request app and user tokens, handle consent, and verify provider events in FastAPI.
 - [Give your software factory a browser](https://vercel.com/kb/guide/software-factory-browser): Add a KERNEL cloud browser to the eve software factory template so Foreman can reproduce flow bugs, sign in through managed auth, and verify fixes on preview deployments in attended sessions.
 - [Manage Vercel projects with a software factory](https://vercel.com/kb/guide/software-factory-vercel-mcp): Add Vercel's hosted MCP to the eve software factory template so Foreman can read build logs, runtime errors, and deployment history for the app your target repository deploys, brokered at app scope through Vercel Connect.
+
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

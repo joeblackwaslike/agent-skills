@@ -11,9 +11,10 @@ related:
   []
 summary: Requires any use of getInitialProps in Next.js pages be reviewed and approved, and encourages using getServerSideProps or getStaticProps instead.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/nextjs_no_get_initial_props.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d686854139639871b574ab1374af284d316de6d27a7f20115da8e535a2b37a08"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "57d52f79ff89dc361bdc52b763dd49b9a1994e546e585c11c3d1334e78bcb99b"
 ---
 
 # NEXTJS_NO_GET_INITIAL_PROPS
@@ -94,6 +95,18 @@ export getServerSideProps: GetServerSideProps = async () => {
 export default Home;
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

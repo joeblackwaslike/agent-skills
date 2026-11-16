@@ -11,9 +11,10 @@ related:
   - /docs/cli/global-options
 summary: Upgrade the Vercel CLI to the latest version and manage automatic updates with the vercel upgrade CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/upgrade.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "08c69c2fdf99f91d962826ab6394338e80740d6127de72b12c6618ac0930a9b7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d6051688021d52c57b91610dd40c0615484b28754aaebe2fe8a1b5f4e8812269"
 ---
 
 # vercel upgrade
@@ -27,10 +28,10 @@ The `vercel upgrade` command upgrades the Vercel CLI on your machine to the late
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [vercel changelog](https://vercel.com/docs/cli/changelog) — Read recent Vercel product updates and search the changelog from your terminal using the Vercel CLI.
-- [vercel rolling-release](https://vercel.com/docs/cli/rolling-release) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
+- [vercel ci](https://vercel.com/docs/cli/ci) — Enable or disable Vercel CI for repositories, inspect runs, search logs, and rerun jobs from the command line.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel rolling-release](https://vercel.com/docs/cli/rolling-release) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel doctor](https://vercel.com/docs/cli/doctor) — Learn how to check your Vercel CLI setup and fix problems with the vercel doctor CLI command.
 
 Full cross-link map for this page: [/docs/cli/upgrade.graph.md](/docs/cli/upgrade.graph.md)
 <!-- /docsgraph:related -->
@@ -195,6 +196,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -9,13 +9,16 @@ prerequisites:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
   - /docs/ai-gateway/sdks-and-apis
 related:
+  - /docs/ai-gateway/observability-and-spend/usage
+  - /docs/ai-gateway/security-and-compliance
   - /docs/ai-gateway/modalities/image-generation/openai
   - /docs/ai-gateway/modalities/image-generation
 summary: Generate images using AI models that support multimodal output through the Chat Completions API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b383851bbf5577ea8167702a2d972e90caa708eb2609ba24231263d31fa68b03"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e7a8f281d345ef7a2818a464dedb3ff77391343e5e3f17e95b42a313b0519ef2"
 ---
 
 # AI Gateway Chat Completions Image Generation Reference
@@ -29,11 +32,11 @@ Generate images using AI models that support multimodal output through the Chat 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Nano Banana 2.1 now available on AI Gateway](https://vercel.com/changelog/nano-banana-2-1-now-available-on-ai-gateway)
-- [Image-only models available in Vercel AI Gateway](https://vercel.com/changelog/image-only-models-available-in-vercel-ai-gateway)
 - [OpenAI Chat Completions Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/images) — Send images and PDF documents to a model using the OpenAI Chat Completions API through AI Gateway.
 - [OpenAI Chat Completions Requests with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/chat-completions) — Create chat completions using the Chat Completions API with support for streaming, image attachments, and PDF documents
-- [AI Gateway Image Generation](https://vercel.com/docs/ai-gateway/modalities/image-generation) — Generate and edit images using AI models through Vercel AI Gateway with support for multiple providers and modalities.
 - [AI Gateway Vision and Image Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/vision) — Analyze images with AI Gateway using AI SDK 7, the Python beta, Chat Completions, Messages, and Responses APIs.
+- [AI Gateway Image Generation with AI SDK](https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk) — Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
+- [AI Gateway Model Modalities](https://vercel.com/docs/ai-gateway/modalities) — The inputs and outputs AI Gateway models work with: text, image, and video generation, speech to text, text to speech, r
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation.graph.md](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation.graph.md)
 <!-- /docsgraph:related -->
@@ -189,6 +192,16 @@ When image generation is enabled, the response separates text content from gener
   - `type`: Always `"image_url"`
   - `image_url.url`: Base64-encoded data URI of the generated image
 
+#### Response with no images
+
+A successful response from a multimodal model can contain text in `content` and no `images` array. Multimodal models such as Google's Gemini image models choose which modality to respond in based on your prompt and request configuration, so a request that sets `modalities: ['text', 'image']` can still return a text-only reply.
+
+When `images` is missing or empty, read `message.content` for the model's text reply. The example requests on this page print `message.content` first and guard against a missing array with `message.images ?? []` in TypeScript and `hasattr(message, 'images')` in Python.
+
+To inspect a past request, use the response `id` as its generation ID. [Generation lookup](/docs/ai-gateway/observability-and-spend/usage) with `GET /v1/generation` returns the provider, latency, token usage, cost, and finish reason for that generation.
+
+AI Gateway permanently deletes prompts and responses after requests complete, so you can't retrieve the text of a past response from AI Gateway. For details, see [Zero data retention](/docs/ai-gateway/security-and-compliance#zero-data-retention).
+
 ### Streaming responses
 
 For streaming requests, images are delivered in delta chunks:
@@ -322,6 +335,18 @@ To edit an existing image with these models, use the `/v1/images/edits` endpoint
 > are returned as base64-encoded data URIs. For more detail, see the [Image
 > Generation documentation](/docs/ai-gateway/modalities/image-generation).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

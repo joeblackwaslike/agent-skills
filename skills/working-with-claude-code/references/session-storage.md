@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/session-storage.md"
-fetched_at: "2026-11-02T12:02:15.109Z"
-sha256: "40c3c9815aa79fafa44dfaedd928fa3603c316c1af1003870969f1221a3a3606"
+fetched_at: "2026-11-16T12:28:44.823Z"
+sha256: "32dffd9a6c9b1e44cf78555a3eeb093eee4f94197d568fa86951cbb0ea80d5cd"
 ---
 
 > ## Documentation Index
@@ -304,9 +304,9 @@ When the store has nothing for the session, the SDK runs under your real config 
 
 ### Mirror writes are best-effort
 
-If `append()` rejects, the SDK retries the batch up to two more times with a short backoff, for at most three attempts in total. A call that times out isn't retried, since the original call may still land. If the batch still fails, the SDK logs the error, emits a `{ type: "system", subtype: "mirror_error" }` message into the iterator, drops the batch, and continues the query. Because a retried batch can re-deliver entries that already landed, deduplicate by `entry.uuid` in your `append()` implementation.
+If `append()` rejects, the SDK retries the batch up to two more times with a short backoff, for at most three attempts in total. A call that times out isn't retried, since the original call may still land. Because a retried batch can re-deliver entries that already landed, deduplicate by `entry.uuid` in your `append()` implementation, and keep every entry that has no `uuid`.
 
-A store outage doesn't interrupt the agent, since the subprocess writes locally first. Monitor for `mirror_error` if you need to detect store data loss. On a run [resumed from the store](#resume-from-the-store), a dropped batch has no surviving copy once the run ends.
+If the batch still fails, the SDK logs the error, emits a `{ type: "system", subtype: "mirror_error" }` message into the iterator, drops the batch, and continues the query. A store outage doesn't interrupt the agent, since the subprocess writes locally first. Monitor for `mirror_error` to detect store data loss. On a run [resumed from the store](#resume-from-the-store), a dropped batch has no surviving copy once the run ends.
 
 ### `getSessionMessages` returns the post-compaction chain
 

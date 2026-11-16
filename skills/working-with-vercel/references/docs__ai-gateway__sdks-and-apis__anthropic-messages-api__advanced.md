@@ -14,9 +14,10 @@ related:
   - /docs/ai-gateway/models-and-providers/automatic-caching
 summary: Advanced Anthropic API features including web search, provider timeouts, and automatic caching through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "09a2af0a3b2b96c8885bca4b62a7db834eb151f118e9c3e18430b6c918e5fe8c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8570eba489a648357b95fdfe47c87918b47750eefe57e0e49d18cc3fa0a28cfd"
 ---
 
 # Anthropic Messages Configuration with AI Gateway
@@ -30,11 +31,12 @@ Give Claude access to the web, bound how long a provider may take, and cache pro
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Claude Opus 4.5 now available in Vercel AI Gateway](https://vercel.com/changelog/claude-opus-4-5-now-available-in-vercel-ai-gateway)
+- [Claude Haiku 4.5 now available in Vercel AI Gateway](https://vercel.com/changelog/claude-haiku-4-5-now-available-in-vercel-ai-gateway)
 - [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
-- [Anthropic Messages Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming) — Stream Anthropic Messages API responses token by token as they are generated through AI Gateway.
-- [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
-- [Anthropic Messages Requests with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages) — Create messages using the Anthropic Messages API format with support for streaming through AI Gateway.
 - [Anthropic Messages Tool Calling with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/tool-calling) — Use function calling with the Anthropic Messages API to allow models to call tools and functions through AI Gateway.
+- [Go with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/go) — Use AI Gateway from any Go application with the OpenAI or Anthropic Go SDKs, including model fallbacks, cost tracking, a
+- [Anthropic Messages Requests with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/messages) — Create messages using the Anthropic Messages API format with support for streaming through AI Gateway.
+- [Claude Code and Claude Agent SDK with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/claude-code) — Connect Claude Code to AI Gateway with one CLI command, or configure it manually.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced.graph.md](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced.graph.md)
 <!-- /docsgraph:related -->
@@ -166,6 +168,18 @@ Use `caching: 'auto'` in `providerOptions.gateway` to let AI Gateway automatical
 
 For full details, supported providers, and examples, see [Automatic Caching](/docs/ai-gateway/models-and-providers/automatic-caching).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

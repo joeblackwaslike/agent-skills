@@ -4,8 +4,8 @@ description: Learn how to use AI SDK providers.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "6371df00093097d56886b7b7fcb723b1afbf560df14b1698e705568d1b95dc6b"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "e31aff71dd88cd23963c0ba296866436012060a19ff95559fa57620438dc54dd"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -52,6 +52,7 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-sonnet-5-5`                                 | ✓           | ✓                 | ✓          | ✓              |
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-sonnet-5`                                   | ✓           | ✓                 | ✓          | ✓              |
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-haiku-5-5`                                  | ✓           | ✓                 | ✓          | ✓              |
+| [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-fable-5-2`                                  | ✓           | ✓                 | ✓          | ✓              |
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-fable-5-1`                                  | ✓           | ✓                 | ✓          | ✓              |
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-fable-5`                                    | ✓           | ✓                 | ✓          | ✓              |
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-opus-4-8`                                   | ✓           | ✓                 | ✓          | ✓              |
@@ -63,11 +64,13 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-haiku-4-5`                                  | ✓           | ✓                 | ✓          | ✓              |
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-opus-4-1`                                   | ✓           | ✓                 | ✓          | ✓              |
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-sonnet-4-0`                                 | ✓           | ✓                 | ✓          | ✓              |
+| [Google](/providers/ai-sdk-providers/google)               | `gemini-4-hydrogen`                                 | ✓           | ✓                 | ✓          | ✓              |
 | [Google](/providers/ai-sdk-providers/google)               | `gemini-3.8-flash`                                  | ✓           | ✓                 | ✓          | ✓              |
 | [Google](/providers/ai-sdk-providers/google)               | `gemini-3.1-pro-preview`                            | ✓           | ✓                 | ✓          | ✓              |
 | [Google](/providers/ai-sdk-providers/google)               | `gemini-3-pro-preview`                              | ✓           | ✓                 | ✓          | ✓              |
 | [Google](/providers/ai-sdk-providers/google)               | `gemini-2.5-pro`                                    | ✓           | ✓                 | ✓          | ✓              |
 | [Google](/providers/ai-sdk-providers/google)               | `gemini-2.5-flash`                                  | ✓           | ✓                 | ✓          | ✓              |
+| [Google Vertex](/providers/ai-sdk-providers/google-vertex) | `gemini-4-hydrogen`                                 | ✓           | ✓                 | ✓          | ✓              |
 | [Google Vertex](/providers/ai-sdk-providers/google-vertex) | `gemini-3.8-flash`                                  | ✓           | ✓                 | ✓          | ✓              |
 | [Google Vertex](/providers/ai-sdk-providers/google-vertex) | `gemini-3.1-pro-preview`                            | ✓           | ✓                 | ✓          | ✓              |
 | [Google Vertex](/providers/ai-sdk-providers/google-vertex) | `gemini-3-pro-preview`                              | ✓           | ✓                 | ✓          | ✓              |

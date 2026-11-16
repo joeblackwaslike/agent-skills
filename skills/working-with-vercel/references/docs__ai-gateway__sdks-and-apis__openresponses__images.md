@@ -14,9 +14,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis/openresponses/tool-calling
 summary: Send images and PDF documents for analysis using the OpenResponses API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/images.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "2625a6b8ac24ba755a12fbc93de5c54a194008396c42a90d6583b5dac98e80fd"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "eca555d6498083d6379134d2745713bae1fe415aac97fbef28226407bdaad73d"
 ---
 
 # OpenResponses Images and PDFs with AI Gateway
@@ -31,8 +32,8 @@ The [OpenResponses API](/docs/ai-gateway/sdks-and-apis/openresponses) accepts im
 
 - [OpenAI Responses Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
 - [AI Gateway Vision and Image Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/vision) — Analyze images with AI Gateway using AI SDK 7, the Python beta, Chat Completions, Messages, and Responses APIs.
-- [OpenAI Chat Completions Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/images) — Send images and PDF documents to a model using the OpenAI Chat Completions API through AI Gateway.
 - [AI Gateway File and PDF Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/file-input) — Send PDFs and documents to AI Gateway models with examples for each supported SDK and API format.
+- [OpenAI Chat Completions Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/images) — Send images and PDF documents to a model using the OpenAI Chat Completions API through AI Gateway.
 - [OpenAI Responses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses) — Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openresponses/images.graph.md](/docs/ai-gateway/sdks-and-apis/openresponses/images.graph.md)
@@ -280,6 +281,18 @@ curl https://ai-gateway.vercel.sh/v1/responses \
 - [Text generation](/docs/ai-gateway/sdks-and-apis/openresponses/text-generation) - Request and response shapes for text
 - [Tool calling](/docs/ai-gateway/sdks-and-apis/openresponses/tool-calling) - Let the model call your functions
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

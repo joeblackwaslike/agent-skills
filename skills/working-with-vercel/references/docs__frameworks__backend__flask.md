@@ -3,7 +3,7 @@ title: Deploy a Flask app on Vercel
 product: vercel
 url: /docs/frameworks/backend/flask
 canonical_url: "https://vercel.com/docs/frameworks/backend/flask"
-last_updated: 2026-08-12
+last_updated: 2026-11-14
 type: how-to
 prerequisites:
   - /docs/frameworks/backend
@@ -13,12 +13,13 @@ related:
   - /docs/functions/runtimes/python/python-version
   - /docs/functions/runtimes/python
   - /docs/cli/deploy
-  - /docs/cdn
+  - /docs/deployments/deploy-without-logging-in
 summary: Deploy a Flask app on Vercel. Learn how the Python runtime, WSGI, static assets, and Vercel Functions work together.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/backend/flask.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a762aedc18b2c608804fc0ff8ad85ac7a430495990d33159377fe96e2b2d2515"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ea45ed80d348fb34d2d45e61497b682f74be2add24dacb4327d0f1d800f9a5b9"
 ---
 
 # Deploy a Flask app on Vercel
@@ -33,12 +34,12 @@ your repository.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
 - [Zero-configuration Flask backends](https://vercel.com/changelog/zero-configuration-flask-backends)
 - [Migrate from Railway to Vercel](https://vercel.com/kb/guide/migrate-railway-to-vercel) — Migrate an app from Railway to Vercel. Choose a deployment path, configure services, plan for stored data, and test befo
-- [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
 - [Build with a FastAPI starter template](https://vercel.com/kb/guide/build-with-a-fastapi-starter-template) — Browse FastAPI starter templates for Vercel and deploy one in a few steps. Compare minimal, AI, agent, and full-stack Fa
 - [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
-- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
+- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
 - [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify) — Deploy Fastify applications to Vercel with zero configuration.
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Routing Middleware: Python Reference](https://vercel.com/docs/routing-middleware/python-reference) — Reference for writing Routing Middleware in Python with the vercel-proxy package, including setup, routes, requests, and
@@ -143,6 +144,16 @@ vc deploy
 
 > **💡 Note:** Minimum CLI version required: 48.2.10
 
+## Deploy without an account
+
+To deploy your Flask app without an account or login, run this command in the project root:
+
+```bash filename="terminal"
+vercel deploy --temporary
+```
+
+The CLI builds the project, deploys it to production, and prints a claim URL. Claim the project to keep it live. See [Deploying without logging in](/docs/deployments/deploy-without-logging-in).
+
 ## Serving static assets
 
 To serve static assets, place them in the `public/**` directory. Vercel serves
@@ -223,6 +234,18 @@ For more about deploying Flask on Vercel, see:
 - [Vercel Functions documentation](/docs/functions)
 - [Backend templates on Vercel](https://vercel.com/templates?type=backend)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

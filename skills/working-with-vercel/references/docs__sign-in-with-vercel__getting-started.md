@@ -15,9 +15,10 @@ related:
   - /docs/cli/env
 summary: Learn how to get started with Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sign-in-with-vercel/getting-started.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "2fccd0656982a1124bbe88fa5262c407188bf349a37906a0e562a23e3b4d2c3a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0fa779d7079f6653fcc318e61cd834ff9a43bff2ccfdac89879b1fb38c811e9a"
 ---
 
 # Getting started with Sign in with Vercel
@@ -34,13 +35,11 @@ This guide uses Next.js App Router. You'll create a Sign in with Vercel button t
 - [Build a Claude Managed Agent with Vercel Workflow](https://vercel.com/kb/guide/claude-managed-agent-vercel) — Learn how to build a Claude Managed Agent on Vercel with auth, credential vaults, durable polling, and a chat UI.
 - [Build a fullstack app with Next.js 16 and Prisma Postgres](https://vercel.com/kb/guide/nextjs-prisma-postgres) — Create a fullstack blog with the Next.js App Router, Prisma, Sign in with Vercel, Prisma Postgres from the Vercel Market
 - [Encrypting parameters](https://vercel.com/kb/guide/encrypting-parameters) — Learn how to encrypt parameters so that only certain values can be passed to generate your image.
-- [How to implement authentication in Next.js](https://nextjs.org/docs/app/guides/authentication) — Learn how to implement authentication in your Next.js application.
-- [Build user-aware TanStack Start apps with Vercel Passport](https://vercel.com/kb/guide/vercel-passport-tanstack-start) — Use \\`getIdentity\\(\\)\\` to read a visitor’s verified Vercel Passport identity in TanStack Start server functions, then p
-- [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
+- [Verify Visitors on Page Load](https://vercel.com/docs/botid/verify-on-page-load) — Run BotID on page load and reuse the result with a short-lived, server-signed verification cookie.
+- [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 - [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
-- [Get Started with BotID](https://vercel.com/docs/botid/get-started) — Step-by-step guide to setting up BotID protection in your Vercel project
+- [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
 - [Create an Auth Token](https://vercel.com/docs/rest-api/authentication/create-an-auth-token) — POST /v3/user/tokens — Creates and returns a new authentication token for the currently authenticated User. The \\`bearer
-- [CLI Workflows](https://vercel.com/docs/agent-resources/workflows) — End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sess
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/getting-started.graph.md](/docs/sign-in-with-vercel/getting-started.graph.md)
 <!-- /docsgraph:related -->
@@ -705,6 +704,18 @@ Add Sign in with Vercel to this Next.js App Router project. First, make sure the
 - [Scopes and permissions](/docs/sign-in-with-vercel/scopes-and-permissions)
 - [Consent page customization](/docs/sign-in-with-vercel/consent-page)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/frameworks/backend/fastapi
 summary: Deploy multiple backends and frontends within a single Vercel project using services.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/services.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "76190c4ac8959e0af29e66c258c76a64d15ca126cfa7477de529a4bb2d9812a7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f9e5f651a070f9beee0dd7e51595fadf7d976f6b5db38a06ac04c817c4bab43a"
 ---
 
 # Services
@@ -34,17 +35,17 @@ replacing the need to split monorepos into separate Vercel projects.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Services: Run full stack on Vercel](https://vercel.com/blog/vercel-services-run-full-stack-on-vercel)
+- [Run multiple frameworks in one project with Vercel Services](https://vercel.com/changelog/run-multiple-frameworks-in-one-project-with-vercel-services)
+- [Full-stack previews on Vercel](https://vercel.com/kb/guide/full-stack-preview-deployments-on-vercel) — Learn how to use full-stack previews for your Vercel projects. Deploy Next.js, FastAPI, and a containerized Go service t
+- [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
 - [Nuxt](https://eve.dev/docs/guides/frontend/nuxt) — Run an eve agent and a Nuxt app as one project with the eve/nuxt module.
 - [SvelteKit](https://eve.dev/docs/guides/frontend/sveltekit) — Run an eve agent and a SvelteKit app as one project with the eveSvelteKit Vite plugin.
 - [TanStack Start](https://eve.dev/docs/guides/frontend/tanstack) — Run an eve agent and a TanStack Start app as one project with the eveTanStack Vite plugin.
 - [Vite](https://eve.dev/docs/guides/frontend/vite) — Run eve agents alongside any Vite app with the eveVite plugin.
 - [Projects can now be configured with vercel.toml](https://vercel.com/changelog/projects-can-now-be-configured-with-vercel-toml)
 - [Python on Vercel is now generally available](https://vercel.com/changelog/python-on-vercel-is-now-generally-available)
-- [Run multiple frameworks in one project with Vercel Services](https://vercel.com/changelog/run-multiple-frameworks-in-one-project-with-vercel-services)
 - [Vercel Daemons can now call services with bindings](https://vercel.com/changelog/vercel-daemons-can-now-call-services-with-bindings)
 - [Build Claude Managed Agents with Vercel Services](https://vercel.com/kb/guide/claude-managed-agents-vercel-services) — Deploy Claude Managed Agents with Vercel Services to run a streaming research analyst in a browser chat, using Anthropic
-- [Deploy Go apps on Vercel using Docker](https://vercel.com/kb/guide/deploy-go-using-docker-vercel) — Deploy an existing Dockerized Go app to Vercel using Memos as a real-world example, with Neon Postgres for durable data.
-- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
 
 Full cross-link map for this page: [/docs/services.graph.md](/docs/services.graph.md)
 <!-- /docsgraph:related -->
@@ -197,6 +198,18 @@ In both cases, generated binding environment variables are injected automaticall
 - [Experimental Services](/docs/services/experimental): The earlier `experimentalServices` configuration model.
 - [Services guides](/kb/vercel-services): Guides and examples for deploying with Vercel Services.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

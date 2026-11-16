@@ -16,9 +16,10 @@ related:
   - /docs/flags
 summary: Learn how information flows between the integration user, Vercel, and the integration provider for Vercel native integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-flows.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "3e05b7612ab04af4ded2b8aa47c1d3ae0a15112e443f63ccc13eae00f4b518f6"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "43f4bf9a0ac48c979cb6be4b9198ef4dbdadb713d78337d21adf254ee6fdf332"
 ---
 
 # Native Integration Flows
@@ -31,12 +32,13 @@ As a Vercel integration provider, when you [create a native product integration]
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
 - [How to Integrate Optimizely Feature Experimentation with Next.js and Vercel](https://vercel.com/kb/guide/how-to-integrate-optimizely-feature-experimentation-next-vercel) — This guide covers setting up feature flags, implementing A/B tests, and optimizing performance using React Server Compon
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
-- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
 - [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
+- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
+- [Marketplace](https://vercel.com/docs/flags/marketplace) — Connect your preferred feature flag provider through the Vercel Marketplace for a unified flags experience.
 - [Upgrade an Integration](https://vercel.com/docs/integrations/create-integration/upgrade-integration) — Lean more about when you may need to upgrade your Integration.
-- [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
 
 Full cross-link map for this page: [/docs/integrations/create-integration/marketplace-flows.graph.md](/docs/integrations/create-integration/marketplace-flows.graph.md)
 <!-- /docsgraph:related -->
@@ -508,6 +510,18 @@ If transfers fail, check these common issues:
 - **Billing plan conflicts**: If the transfer requires a billing plan change, ensure the target team can accept it.
 - **Resource ownership**: Verify that resources belong to the source installation before transferring.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -16,9 +16,10 @@ related:
   - /docs/rest-api/deployments/update-deployment-integration-action
 summary: These actions allow integration providers to set up automated tasks with Vercel deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/deployment-integration-action.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "9e44bc0b8d1e038ba1f26723d8b7c9044ddec9646da5a5bb2636a791261d8f61"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "db1eb686ff11b24b85b697057d930ba7940dc6acf80f7b5e4dd5d04539102fb9"
 ---
 
 # Deployment integration actions
@@ -32,10 +33,9 @@ With deployment integration actions, integration providers can enable [integrati
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Deployment integration actions for Marketplace integrations](https://vercel.com/changelog/deployment-integration-actions-for-marketplace-integrations)
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
+- [Deployment Checks](https://vercel.com/docs/deployment-checks) — Set conditions that must be met before proceeding to the next phase of the deployment lifecycle.
 - [Actions](https://vercel.com/docs/platforms/platform-elements/actions) — Server actions you can install to run common platform tasks against the Vercel API.
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
-- [Deployment Checks](https://vercel.com/docs/deployment-checks) — Set conditions that must be met before proceeding to the next phase of the deployment lifecycle.
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 - [Deploy Files](https://vercel.com/docs/platforms/platform-elements/actions/deploy-files) — Server action for programmatically deploying files to Vercel on behalf of platform users.
 
@@ -144,6 +144,18 @@ As an integration provider, to allow your integration users to add deployment ac
 
   Use the `deployment.integration.action.cleanup` webhook to clean up any persistent state linked to the deployment. It's triggered when a deployment is removed from the system.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

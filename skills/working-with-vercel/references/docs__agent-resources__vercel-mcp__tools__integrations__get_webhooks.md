@@ -12,9 +12,10 @@ related:
   []
 summary: Use get_webhooks with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/get_webhooks.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "db63213c669df06e24a4e9ee49cd808c4d2c09c3edc874d181e606e9e780e884"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "48fb5836b97575e8b591550b2378a102c7be485c23303b4cef0ada8736db346c"
 ---
 
 # get_webhooks
@@ -27,6 +28,7 @@ Get a list of webhooks
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Webhooks are now generally available](https://vercel.com/changelog/webhooks-are-now-generally-available)
 - [Get a list of webhooks](https://vercel.com/docs/rest-api/webhooks/get-a-list-of-webhooks) — GET /v1/webhooks — Get a list of webhooks
 - [Get a webhook](https://vercel.com/docs/rest-api/webhooks/get-a-webhook) — GET /v1/webhooks/{id} — Get a webhook
 - [Setting Up Webhooks](https://vercel.com/docs/webhooks) — Learn how to set up webhooks and use them with Vercel Integrations.
@@ -44,6 +46,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/integ
 | `teamId`    | string | No       | Team ID to use for this operation.                          |
 | `slug`      | string | No       | Team slug to use for this operation. Use instead of teamId. |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

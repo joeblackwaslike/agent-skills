@@ -3,7 +3,7 @@ title: Elysia on Vercel
 product: vercel
 url: /docs/frameworks/backend/elysia
 canonical_url: "https://vercel.com/docs/frameworks/backend/elysia"
-last_updated: 2026-08-20
+last_updated: 2026-11-14
 type: how-to
 prerequisites:
   - /docs/frameworks/backend
@@ -16,9 +16,10 @@ related:
   - /docs/networking/secure-compute
 summary: Build fast TypeScript backends with Elysia and deploy to Vercel. Learn the project structure, plugins, middleware, and how to run locally and in...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/backend/elysia.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "38afc2bf3faf6eaa4aeaa609d3732e5d4c54f8cfa6459f630a82a292d43f6452"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a3d6a682431516a974689701d5f4e25838ad176bb289639eebb6081176132b5a"
 ---
 
 # Elysia on Vercel
@@ -32,15 +33,15 @@ Elysia is an ergonomic web framework for building backend servers with Bun. Desi
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Elysia can now be automatically deployed on Vercel](https://vercel.com/changelog/support-for-elysia)
-- [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
 - [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
+- [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
 - [How to ship an H3 app on Vercel](https://vercel.com/kb/guide/ship-a-h3-app-on-vercel) — Deploy an H3 app to Vercel with zero configuration. Learn to configure streaming, middleware, cron jobs, the Bun runtime
-- [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify) — Migrate your website's configuration from Netlify to Vercel
-- [Build with an Express starter template](https://vercel.com/kb/guide/build-with-a-express-starter-template) — Deploy an Express app to Vercel from a template. Browse Express starters from Vercel and the community, then run them lo
-- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
+- [How to ship a Hono app on Vercel](https://vercel.com/kb/guide/ship-a-hono-app-on-vercel) — Deploy a Hono app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and conf
 - [Express on Vercel](https://vercel.com/docs/frameworks/backend/express) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
-- [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify) — Deploy Fastify applications to Vercel with zero configuration.
 - [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
+- [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
+- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
+- [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 
 Full cross-link map for this page: [/docs/frameworks/backend/elysia.graph.md](/docs/frameworks/backend/elysia.graph.md)
 <!-- /docsgraph:related -->
@@ -121,6 +122,16 @@ export default app;
 ### Using a port listener
 
 Running your application using `app.listen` is currently not supported. For now, prefer `export default app`.
+
+## Deploy without an account
+
+To deploy your Elysia app without an account or login, run this command in the project root:
+
+```bash filename="terminal"
+vercel deploy --temporary
+```
+
+The CLI builds the project, deploys it to production, and prints a claim URL. Claim the project to keep it live. See [Deploying without logging in](/docs/deployments/deploy-without-logging-in).
 
 ## Local development
 
@@ -211,6 +222,18 @@ Use [Runtime Logs](/docs/functions/logs) to inspect application output and error
 - [How to ship an Elysia app on Vercel](/kb/guide/ship-a-elysia-app-on-vercel)
 - [Backend templates on Vercel](https://vercel.com/templates?type=backend)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

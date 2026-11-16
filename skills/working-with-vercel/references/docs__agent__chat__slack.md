@@ -16,9 +16,10 @@ related:
   - /docs/agent/chat/permissions
 summary: Use Vercel Agent in Slack by mentioning @Vercel in a supported channel or thread
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent/chat/slack.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "2b7eeba6bdeb11c0c038c0a70bbee38a80c56d982f25ab5dfc24a85a6515796f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "de0b2705a46caae23e2b558c4a12c743375acf382ee2f5b134d5fa698e7d6a19"
 ---
 
 # Slack
@@ -176,6 +177,18 @@ Use either `@Vercel signout` or `@Vercel logout` to revoke your Vercel authoriza
 - [Dashboard chat](/docs/agent/chat/dashboard) runs the same Vercel Agent in the Vercel dashboard, with the full authorization model.
 - [Repository permissions for Vercel for GitHub](/docs/git/vercel-for-github#repository-permissions) covers the GitHub permissions behind attributed write operations.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

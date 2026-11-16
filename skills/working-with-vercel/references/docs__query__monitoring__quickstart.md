@@ -16,9 +16,10 @@ related:
   - /docs/query/monitoring
 summary: "In this quickstart guide, you'll discover how to create and execute a query to visualize the most popular posts on your website."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/query/monitoring/quickstart.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b0f438e804d2af5df270baff58b378bf03b56d9bea5a5a067af47dde3a439a13"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2e6fbeeee5230cce5d7b20f33beae25a1707e7cda08912c4f65e9013722584ed"
 ---
 
 # Monitoring Quickstart
@@ -32,15 +33,14 @@ Monitoring is now
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing Vercel Monitoring](https://vercel.com/blog/introducing-monitoring)
-- [Monitoring is now available to view traffic and performance data for improved observability ](https://vercel.com/changelog/monitoring-is-now-available-to-view-traffic-and-performance-data-for)
-- [Create custom monitors in Vercel Observability](https://vercel.com/changelog/create-custom-monitors-in-vercel-observability)
 - [Run and share custom queries in Observability Plus](https://vercel.com/changelog/run-and-share-custom-queries-in-observability-plus)
-- [Observability Plus replacing legacy Monitoring](https://vercel.com/changelog/observability-plus-replacing-legacy-monitoring)
+- [Create custom monitors in Vercel Observability](https://vercel.com/changelog/create-custom-monitors-in-vercel-observability)
+- [Monitoring is now available to view traffic and performance data for improved observability ](https://vercel.com/changelog/monitoring-is-now-available-to-view-traffic-and-performance-data-for)
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
-- [Limits and Pricing for Monitoring](https://vercel.com/docs/query/monitoring/limits-and-pricing) — Learn about our limits and pricing when using Monitoring. Different limitations are applied depending on your plan.
+- [Observability](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability) — Vercel MCP tools for observability.
 
 Full cross-link map for this page: [/docs/query/monitoring/quickstart.graph.md](/docs/query/monitoring/quickstart.graph.md)
 <!-- /docsgraph:related -->
@@ -104,6 +104,18 @@ In the following guide you will learn how to view the most requested posts on yo
 - ### Save and Run Query
   Save your query and click the **Run Query** button to generate the final results. The Monitoring chart will display a comprehensive view of the top 5 most requested posts on your website.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

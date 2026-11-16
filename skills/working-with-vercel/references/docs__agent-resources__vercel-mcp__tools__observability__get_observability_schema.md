@@ -12,9 +12,10 @@ related:
   []
 summary: Use get_observability_schema with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_observability_schema.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "de530c09382352c9c3c3a7d08244106bd74cbe348d73f22bf563286dc454b601"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1c831e4e94df4f7a10d030c646a9e5d2e8cd1a2a535713c88138595b51437e3e"
 ---
 
 # get_observability_schema
@@ -31,7 +32,7 @@ Get the observability query schema.
 - [create_observability_query](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/create_observability_query) — Use create_observability_query with Vercel MCP.
 - [Get Global Config schema](https://vercel.com/docs/rest-api/global-config/get-global-config-schema) — GET /v1/global-config/{edgeConfigId}/schema — Returns the schema of a Global Config.
 - [Get contact info schema](https://vercel.com/docs/rest-api/domains-registrar/get-contact-info-schema) — GET /v1/registrar/domains/{domain}/contact-info/schema — Some TLDs require additional contact information. Use this endp
-- [get_auth_user](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/get_auth_user) — Use get_auth_user with Vercel MCP.
+- [search_vercel_documentation](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation/search_vercel_documentation) — Use search_vercel_documentation with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/observability/get_observability_schema.graph.md](/docs/agent-resources/vercel-mcp/tools/observability/get_observability_schema.graph.md)
 <!-- /docsgraph:related -->
@@ -40,6 +41,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/obser
 
 This tool takes no parameters.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

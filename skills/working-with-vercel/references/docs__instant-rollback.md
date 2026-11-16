@@ -15,9 +15,10 @@ related:
   - /docs/rbac/access-roles/extended-permissions
 summary: Learn how to perform an Instant Rollback on your production deployments and quickly roll back to a previously deployed production deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/instant-rollback.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "cb1105bf383bb6771ec74e8f42fdea889f5618d1286de6952b79f20566eeaee8"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8faece0392b8b5ded4193d44f026870e1380c164b07682deeec47dbdd5f28288"
 ---
 
 # Performing an Instant Rollback on a Deployment
@@ -157,6 +158,18 @@ To check for an in-progress job through the API, request the project with `rollb
 
 To compare the manual promotion options, see [Manually promoting to Production](/docs/deployments/promoting-a-deployment).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

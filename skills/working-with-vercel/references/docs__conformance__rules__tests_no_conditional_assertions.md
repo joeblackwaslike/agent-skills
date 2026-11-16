@@ -12,9 +12,10 @@ related:
   - /docs/conformance/customize
 summary: Requires that assertions are not conditional, or that expect.assertions is used.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/tests_no_conditional_assertions.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9f2b4379ae537f3132106bb7e3fc028b5c729e42931708c2586b6e699bcf3954"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "323cc1986ead8b90c16d179d8c6d70b16289e2b7ea1be5a5b4a5e817313bb728"
 ---
 
 # TESTS_NO_CONDITIONAL_ASSERTIONS
@@ -109,6 +110,18 @@ The default configuration is:
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

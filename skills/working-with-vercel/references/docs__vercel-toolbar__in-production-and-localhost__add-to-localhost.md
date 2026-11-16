@@ -15,9 +15,10 @@ related:
   - /docs/accounts
 summary: Learn how to use the Vercel Toolbar in your local environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b2ac0ab761748cfca3e574cdfeff9662e15ea23cd4ecade029c5d8b49c2249e2"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "cf85a0df4aec58f6585b81aca5b2cc2cff92db04174db24cbebd8c80b92db148"
 ---
 
 # Add the Vercel Toolbar to your local environment
@@ -31,12 +32,11 @@ To enable the toolbar in your local environment, add it to your project using th
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Easier toolbar setup for SvelteKit and other Vite-based frameworks](https://vercel.com/changelog/easier-toolbar-setup-for-sveltekit-and-other-vite-based-frameworks)
-- [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production)
 - [Add the Vercel Toolbar to your production environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production) — Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access t
-- [Toolbar](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar) — Vercel MCP tools for toolbar.
 - [Managing the visibility of the Vercel Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
-- [Managing with the Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar) — Learn how to use the Vercel Toolbar to make it easier to manage microfrontends.
+- [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
 - [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart) — Learn how to get started with microfrontends on Vercel.
+- [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
 
 Full cross-link map for this page: [/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost.graph.md](/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost.graph.md)
 <!-- /docsgraph:related -->
@@ -283,6 +283,18 @@ Full cross-link map for this page: [/docs/vercel-toolbar/in-production-and-local
   ```
   You do not need to configure anything else.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

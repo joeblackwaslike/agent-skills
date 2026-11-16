@@ -12,9 +12,10 @@ related:
   []
 summary: Use ui_get_build_log_excerpt with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/ui_get_build_log_excerpt.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "21a7eaf502dbac4b634523c6c3eda22cec8fb7468ccab7d1d987c1199eed8dee"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "93a2c66c368e5db045a403481160b16d84b98a17ddb6a5778952688fbb8df1c8"
 ---
 
 # ui_get_build_log_excerpt
@@ -30,8 +31,8 @@ The deployments card uses this app-only tool to read its latest build-log lines.
 - [get_deployment_build_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_build_logs) — Use get_deployment_build_logs with Vercel MCP.
 - [list_deployment_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_events) — Use list_deployment_events with Vercel MCP.
 - [Accessing Build Logs](https://vercel.com/docs/deployments/logs) — Learn how to use Vercel's build logs to monitor the progress of building or running your deployment, and check for possi
-- [list_deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployments) — Use list_deployments with Vercel MCP.
-- [get_runtime_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_logs) — Use get_runtime_logs with Vercel MCP.
+- [open_deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/open_deployments) — Use open_deployments with Vercel MCP.
+- [Get logs for a deployment](https://vercel.com/docs/rest-api/logs/get-logs-for-a-deployment) — GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs — Returns a stream of logs for a given deployment.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/ui_get_build_log_excerpt.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/ui_get_build_log_excerpt.graph.md)
 <!-- /docsgraph:related -->
@@ -47,6 +48,18 @@ This tool appears with the deployments card. Its response includes log entries a
 | `limit`   | integer | No       | How many of the most recent log lines to return. Defaults to 120. Minimum: 1. Maximum: 1000.                                |
 | `since`   | number  | No       | Only events after this timestamp (ms), oldest first, so a live view can fetch just what is new. Pass the previous latestAt. |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

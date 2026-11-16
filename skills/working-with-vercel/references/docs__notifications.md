@@ -15,9 +15,10 @@ related:
   - /docs/pricing/manage-and-optimize-usage
 summary: Learn how to use Notifications to view and manage important alerts about your deployments, domains, integrations, account, and usage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/notifications.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "7165d99e5c8fde36bc7d82dccdb6a7234b10f7e54d9ed7175c894816a908c858"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0280a8fd6477698ce43d62795f33fbe100c40c60c0e58ec26674befa243f87fc"
 ---
 
 # Notifications
@@ -33,16 +34,16 @@ Vercel sends configurable notifications to you through the [dashboard](https://v
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Push notifications support on desktop and mobile](https://vercel.com/changelog/push-notifications-support-on-desktop-and-mobile)
+- [Building a powerful notification system for Vercel with Knock](https://vercel.com/blog/building-a-powerful-notification-system-for-vercel-with-knock-app)
 - [Get notified on build failures and more with new notification controls](https://vercel.com/changelog/new-notification-controls-available-in-public-beta)
 - [Usage notification settings is now generally available](https://vercel.com/changelog/usage-notification-settings-is-now-generally-available)
-- [Building a powerful notification system for Vercel with Knock](https://vercel.com/blog/building-a-powerful-notification-system-for-vercel-with-knock-app)
-- [Improved web notifications are now generally available](https://vercel.com/changelog/improved-web-notifications-now-generally-available)
 - [Introducing Spend Management](https://vercel.com/blog/introducing-spend-management-realtime-usage-alerts-sms-notifications)
-- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
+- [Monitor uptime for AI-native apps with Vercel Alerts](https://vercel.com/kb/guide/monitor-uptime-for-ai-native-apps-with-vercel-alerts) — Learn how to use Vercel Anomaly Alerts as an early-warning system for AI-powered apps, helping you catch 5xx spikes and
 - [Configure alerts](https://vercel.com/docs/alerts/configure-alerts) — Configure alert rules and notification destinations for Vercel Observability alerts.
-- [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
+- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 - [Audit Logs](https://vercel.com/docs/audit-log) — Learn how to track and analyze your team members' activities.
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
+- [Pricing for Web Analytics](https://vercel.com/docs/analytics/limits-and-pricing) — Learn about pricing for Vercel Web Analytics.
 
 Full cross-link map for this page: [/docs/notifications.graph.md](/docs/notifications.graph.md)
 <!-- /docsgraph:related -->
@@ -118,8 +119,8 @@ It is *not* possible to disable all notifications for alerts that are critical t
 | Notification group   | Type of notification                                             | Explanation                                                                                                                                                                                                                                                                                            | [Critical notification?](#critical-notifications)                |
 | -------------------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------- |
 | **Account**          |                                                                  |                                                                                                                                                                                                                                                                                                        |                                                                  |
-|                      | Team members added automatically                                 | Team owners will be notified when a new committer is automatically added to their team through auto approval.                                                                                                                                                                                          |  |
-|                      | Team join requests                                               | Team owners will be notified when a new committer is pending review because manual approval is enabled. They can follow a link from the notification to approve or decline the membership request.                                                                                                     |  |
+|                      | Team members added automatically                                 | Team owners will be notified when a new committer is automatically added to their team through auto approval.                                                                                                                                                                                          | Yes |
+|                      | Team join requests                                               | Team owners will be notified when a new committer is pending review because manual approval is enabled. They can follow a link from the notification to approve or decline the membership request.                                                                                                     | Yes |
 | **Alerts**           |                                                                  |                                                                                                                                                                                                                                                                                                        |                                                                  |
 |                      | Usage Anomalies                                                  | Triggered when the usage of your project exceeds a certain threshold                                                                                                                                                                                                                                   |                                                                  |
 |                      | Error Anomalies                                                  | Triggered when a high rate of failed function invocations (those with a status code of 5xx) in your project exceeds a certain threshold                                                                                                                                                                |                                                                  |
@@ -137,11 +138,11 @@ It is *not* possible to disable all notifications for alerts that are critical t
 |                      | Transfers - Domain transfers initiated, cancelled, and completed | Team owners will be notified about any information regarding any [domain transfers](/docs/domains/working-with-domains/transfer-your-domain) in or out of your team.                                                                                                                                   |                                                                  |
 |                      | Transfers - Domain transfers pending approval                    | Team owners will be notified when a domain is being [transferred into Vercel](/docs/domains/working-with-domains/transfer-your-domain#transfer-a-domain-to-vercel), but the approval is required from the original registrar.                                                                          |                                                                  |
 | **Integrations**     |                                                                  |                                                                                                                                                                                                                                                                                                        |                                                                  |
-|                      | Integration configuration disabled                               | Everyone will be notified about integration updates such as a [disabled Integration](/docs/integrations/install-an-integration/manage-integrations-reference#disabled-integrations).                                                                                                                   |  |
-|                      | Integration scope changed                                        | Team owners will be notified if any of the Integrations used on their team have updated their [scope](/docs/integrations/create-integration/vercel-api-integrations#scopes).                                                                                                                                                  |  |
+|                      | Integration configuration disabled                               | Everyone will be notified about integration updates such as a [disabled Integration](/docs/integrations/install-an-integration/manage-integrations-reference#disabled-integrations).                                                                                                                   | Yes |
+|                      | Integration scope changed                                        | Team owners will be notified if any of the Integrations used on their team have updated their [scope](/docs/integrations/create-integration/vercel-api-integrations#scopes).                                                                                                                                                  | Yes |
 | **Usage**            |                                                                  |                                                                                                                                                                                                                                                                                                        |                                                                  |
-|                      | Usage increased                                                  | Team owners will be notified about all [usage alerts](/docs/limits) regarding billing, and other usage warnings.                                                                                                                                                                                       |  |
-|                      | Usage limit reached                                              | Users will be notified when they reach the limits outlined in the [Fair Usage Policy](/docs/limits/fair-use-guidelines).                                                                                                                                                                               |  |
+|                      | Usage increased                                                  | Team owners will be notified about all [usage alerts](/docs/limits) regarding billing, and other usage warnings.                                                                                                                                                                                       | Yes |
+|                      | Usage limit reached                                              | Users will be notified when they reach the limits outlined in the [Fair Usage Policy](/docs/limits/fair-use-guidelines).                                                                                                                                                                               | Yes |
 | **Non-configurable** |                                                                  |                                                                                                                                                                                                                                                                                                        |                                                                  |
 |                      | Email changed confirmation                                       | You will be notified when you have successfully updated the email connected to your Hobby team                                                                                                                                                                                                         |                                                                  |
 |                      | Email changed verification                                       | You will be notified when you have updated the email connected to your Hobby team. You will need to verify this email to confirm.                                                                                                                                                                      |                                                                  |
@@ -152,6 +153,18 @@ It is *not* possible to disable all notifications for alerts that are critical t
 | **Global Config**      | Size Limit Alerts                                                | Members will be notified when Global Config size exceeds its limits for the current plan                                                                                                                                                                                                                 |                                                                  |
 |                      | Schema Validation Errors                                         | Members will be notified (at most once per hour) if API updates are rejected by [schema protection](/docs/global-config/global-config-dashboard#schema-validation)                                                                                                                                         |                                                                  |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

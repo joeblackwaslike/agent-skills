@@ -16,9 +16,10 @@ related:
   - /docs/routing/redirects/configuration-redirects
 summary: Learn how to import thousands of simple redirects from CSV, JSON, or JSONL files.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/routing/redirects/bulk-redirects.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "27fe8bba0f949c5d1c7028836167a4eea3335c7557659e0056487f0ac937aca5"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "82b4c6606e552d1464a434c8738b78ea731b8b1ab82bf31f6b4f7ce873c1d087"
 ---
 
 # Bulk Redirects
@@ -40,7 +41,7 @@ With bulk redirects, you can handle thousands of simple path-to-path or path-to-
 - [Managing redirects at scale](https://vercel.com/docs/routing/redirects/manage-redirects-at-scale) — Add, bulk upload, version, and roll back project-level redirects using the CLI.
 - [Gets project-level redirects.](https://vercel.com/docs/rest-api/bulk-redirects/gets-project-level-redirects) — GET /v1/bulk-redirects — Get the version history for a project's bulk redirects
 - [Edit a project-level redirect.](https://vercel.com/docs/rest-api/bulk-redirects/edit-a-project-level-redirect) — PATCH /v1/bulk-redirects — Edits a single redirect identified by its source path. Stages a new change with the modified
-- [list_bulk_redirects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_bulk_redirects) — Use list_bulk_redirects with Vercel MCP.
+- [vercel redirects](https://vercel.com/docs/cli/redirects) — Learn how to manage project-level redirects using the vercel redirects CLI command.
 - [Stages new redirects for a project.](https://vercel.com/docs/rest-api/bulk-redirects/stages-new-redirects-for-a-project) — PUT /v1/bulk-redirects — Stages new redirects for a project and returns the new version.
 
 Full cross-link map for this page: [/docs/routing/redirects/bulk-redirects.graph.md](/docs/routing/redirects/bulk-redirects.graph.md)
@@ -168,6 +169,18 @@ Each project includes bulk redirect capacity based on your plan, shown in the ta
 - Bulk redirects do not support wildcard or header matching
 - A maximum of 1,000,000 bulk redirects can be configured per project.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

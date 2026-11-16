@@ -11,9 +11,10 @@ related:
   - /docs/functions/limitations
 summary: The function returned a response that is too large. This is a function error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/function_response_payload_too_large.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "96de2bc606b06d2535c6d38adfce45e6225d1089b09efd75e528f9d7633df5d5"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9062c2b383282e04c569d64f60b699bf9e41b3150b170fe812a499ae9b9839aa"
 ---
 
 # FUNCTION_RESPONSE_PAYLOAD_TOO_LARGE
@@ -31,6 +32,18 @@ To troubleshoot this error, follow these steps:
 1. **Review response payload size:** Check the size of the response payload being returned by the function to ensure it's within the allowed limits, and does not exceed the [limit of 4.5 MB](/docs/functions/limitations#request-body-size)
 2. **Reduce response payload size:** If possible, reduce the size of the response payload being returned by the function
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

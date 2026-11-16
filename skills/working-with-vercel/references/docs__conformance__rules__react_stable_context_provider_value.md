@@ -11,9 +11,10 @@ related:
   []
 summary: Prevent non-stable values from being used in React Context providers that could cause unnecessary re-renders.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/react_stable_context_provider_value.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "6b4af6655318a89b58751439a97f23a2ad456da13102ede63f20dd436df5ef97"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1a85f76e3fe785d18f1d2d2aa6e7ba87fd6af4b6148558d3da76c23138d4f204"
 ---
 
 # REACT_STABLE_CONTEXT_PROVIDER_VALUE
@@ -47,6 +48,18 @@ One way to fix this issue may be to wrap the value in a `useMemo()`. If the valu
 then `useCallback()` can be used as well. See the above examples for a reference on how you might
 fix this by wrapping with `useMemo`.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

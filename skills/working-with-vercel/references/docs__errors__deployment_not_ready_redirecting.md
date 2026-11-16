@@ -12,9 +12,10 @@ related:
   - /docs/deployments/logs
 summary: The deployment is not ready and is redirecting to another location. This is a deployment error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/deployment_not_ready_redirecting.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c23ef35a35d8f9c9d29a9d29da2e14ded710d773847c391bfd7d311f6461f155"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f26c80ce1fcd5235c545c0b1e8e489438fa26f229686a25b8ff159d04f5caa14"
 ---
 
 # DEPLOYMENT_NOT_READY_REDIRECTING
@@ -34,6 +35,18 @@ To troubleshoot this error, follow these steps:
 3. **Verify Configuration:** Check the configuration settings to ensure they are correct and that there are no misconfigurations
 4. **Wait and refresh**: If you encounter this error, wait for a few seconds and then refresh the page. In some cases, the deployment may still be in progress, and refreshing the page after a short interval can resolve the issue
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

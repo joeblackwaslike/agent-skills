@@ -12,9 +12,10 @@ related:
   - /docs/security/encryption
 summary: Error in establishing a connection with an external target.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/router_external_target_handshake_error.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9de078cfe59006b66fb38b560a16d0ac45e3f97373de0953c78b8c09c4789329"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a189d19bc178c3c8965a4df94b94ea0eb87e184e279f1b9f7b06c6d7c03558df"
 ---
 
 # ROUTER_EXTERNAL_TARGET_HANDSHAKE_ERROR
@@ -36,6 +37,18 @@ To troubleshoot this error, follow these steps:
 2. **Investigate connectivity issues:** Look into potential connectivity problems between your application and the external target
 3. **Monitor response times:** Check if your application or the external target is experiencing unusual delays that might be contributing to the timeout
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/integrations/create-integration/billing
 summary: Learn how to manage project access and added products for your integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "e6e13da978c1305a517c3c8ef40d7a936fd90dce1481d2bc143b1de6b3390030"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ace0e783da3c29293edcfebc871b3629b2c790d4979d1dbb0ef2fe3852a83941"
 ---
 
 # Permissions and Access
@@ -36,7 +37,7 @@ To view an integration's permissions:
 - [Scopes and Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions) — Learn how to manage scopes and permissions for Sign in with Vercel
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
 - [Extended permissions](https://vercel.com/docs/rbac/access-roles/extended-permissions) — Learn about extended permissions in Vercel's RBAC system. Understand how to combine roles and permissions for precise ac
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
 
 Full cross-link map for this page: [/docs/integrations/install-an-integration/manage-integrations-reference.graph.md](/docs/integrations/install-an-integration/manage-integrations-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -105,6 +106,18 @@ If you are an integrator, see the [disabled integration configurations](/docs/in
 
 Only users with **Owner** or **Billing** roles can view invoices for native integrations. See [Billing](/docs/integrations/create-integration/billing) for more details on invoice lifecycle, pricing, and refunds.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

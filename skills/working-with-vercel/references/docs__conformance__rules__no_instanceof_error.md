@@ -11,9 +11,10 @@ related:
   - /docs/conformance/customize
 summary: Disallows using `error instanceof Error` comparisons due to risk of false negatives.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/no_instanceof_error.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "27db3374b6c8851eb6ba15cf3429c4424a00d89588154569b27d837fd5772284"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d16a1a55d348a57cc98613b547ba213cd6e5ee1ec276eed1cd8f696c36f89c31"
 ---
 
 # NO_INSTANCEOF_ERROR
@@ -109,6 +110,18 @@ function isError(error) {
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

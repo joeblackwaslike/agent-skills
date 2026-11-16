@@ -12,9 +12,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis/openresponses
 summary: Stream responses token by token using the OpenResponses API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/streaming.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b4a4dc036c6b335364dd58b1e8ce9ee7ee6adc384fcdb2e5c48a5f5dc452bc74"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "78fd293364763259911aed20a774b65eefe976f302127ba0b1c25e3dfeacbfcd"
 ---
 
 # OpenResponses Streaming with AI Gateway
@@ -31,8 +32,8 @@ The [OpenResponses API](/docs/ai-gateway/sdks-and-apis/openresponses) supports s
 - [OpenResponses API now supported on Vercel AI Gateway](https://vercel.com/changelog/openresponses-api-now-supported-on-vercel-ai-gateway)
 - [OpenAI Chat Completions Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/streaming) — Stream OpenAI Chat Completions responses token by token as they are generated through AI Gateway.
 - [OpenAI Responses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses) — Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported
-- [Anthropic Messages Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming) — Stream Anthropic Messages API responses token by token as they are generated through AI Gateway.
 - [OpenResponses Text Generation with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/text-generation) — Generate text responses using the OpenResponses API through AI Gateway.
+- [Anthropic Messages Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/streaming) — Stream Anthropic Messages API responses token by token as they are generated through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openresponses/streaming.graph.md](/docs/ai-gateway/sdks-and-apis/openresponses/streaming.graph.md)
 <!-- /docsgraph:related -->
@@ -144,6 +145,18 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
 - `response.output_text.done` - Text generation complete
 - `response.completed` - Full response complete with usage stats
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -3,9 +3,12 @@ title: Speech
 description: Learn how to generate speech from text with the AI SDK.
 url: "https://ai-sdk.dev/docs/ai-sdk-core/speech"
 docs_index: /llms.txt
+keywords:
+  - text to speech
+  - speech generation
 source: "https://ai-sdk.dev/docs/ai-sdk-core/speech.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "0963d138229862a6c5945c1fc5c05287b5d379fdd32159f09878fe63c5e9cae0"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "8999378f429a69ea94ebc1e0e0cb0c2e8e399a6ffec43999c2877cfce76234d9"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).

@@ -15,9 +15,10 @@ related:
   - /docs/passport/verify-identity
 summary: Read and verify Vercel Passport identities in Python with asynchronous and synchronous helpers, typed identity models, and local development fixtures.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/passport/python-sdk-reference.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "bddb04711d6a2f1ad55fcc861622202623bf6a4c463305e1deec8c71ddc53dd3"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "915e8b30fc4a500a9751ca57fb00519c1d4f72a63042f97b22e8c58b3092331e"
 ---
 
 # Python SDK Reference
@@ -32,13 +33,12 @@ sha256: "bddb04711d6a2f1ad55fcc861622202623bf6a4c463305e1deec8c71ddc53dd3"
 
 - [Vercel Passport is now generally available](https://vercel.com/changelog/vercel-passport-generally-available)
 - [Protect internal apps with Vercel Passport and your identity provider](https://vercel.com/kb/guide/vercel-passport) — Vercel Passport protects internal apps behind your own identity provider, such as Okta or Microsoft Entra ID. Learn how
-- [Identify users and control access in Next.js with Vercel Passport](https://vercel.com/kb/guide/vercel-passport-nextjs) — Use \\`getIdentity\\(\\)\\` to read a visitor’s verified Vercel Passport identity in Next.js, then personalize pages, restri
-- [Use Vercel Passport with Node.js and Python backends](https://vercel.com/kb/guide/vercel-passport-backend-frameworks) — Secure internal apps and verify a visitor's identity with Vercel Passport in your backend, with examples for Express, Ho
-- [Using Vercel Passport with Microsoft Entra ID](https://vercel.com/kb/guide/vercel-passport-microsoft-entra-id) — Configure Microsoft Entra ID and Vercel Passport to protect a Next.js app, limit access to assigned users, and read veri
 - [Vercel Passport is now in Public Beta](https://vercel.com/changelog/vercel-passport-is-now-in-public-beta)
+- [Authentication in Vercel Connect](https://vercel.com/docs/connect/concepts/authentication) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
 - [Set up Passport with an identity provider](https://vercel.com/docs/passport/set-up-identity-provider) — Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.
-- [Chat SDK with Vercel Passport](https://vercel.com/docs/chat-sdk/integrations/passport) — Use a verified Vercel Passport identity to store and retrieve per-user conversation history in a Chat SDK bot.
 - [OIDC Federation Reference](https://vercel.com/docs/oidc/reference) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
+- [Chat SDK with Vercel Passport](https://vercel.com/docs/chat-sdk/integrations/passport) — Use a verified Vercel Passport identity to store and retrieve per-user conversation history in a Chat SDK bot.
+- [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 
 Full cross-link map for this page: [/docs/passport/python-sdk-reference.graph.md](/docs/passport/python-sdk-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -335,6 +335,18 @@ Catch `PassportIdentityError` to handle both identity and verification failures.
 - [Forward Passport identity](/docs/passport/forward-identity)
 - [Passport token claims](/docs/passport/token-claims)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

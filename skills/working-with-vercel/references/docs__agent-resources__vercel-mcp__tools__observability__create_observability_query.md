@@ -12,9 +12,10 @@ related:
   []
 summary: Use create_observability_query with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/create_observability_query.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d218d3d7f60b80ad3fbea69013a4c4d877c497cb10cc663cecdbbd48b1ce90e1"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ae5a070ace888ca791215f86e4bd577ddcf828ee2201a5766db0d8e37cbf1e11"
 ---
 
 # create_observability_query
@@ -29,9 +30,9 @@ Query observability data.
 
 - [artifact_query](https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching/artifact_query) — Use artifact_query with Vercel MCP.
 - [get_observability_schema](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_observability_schema) — Use get_observability_schema with Vercel MCP.
-- [create_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project) — Use create_project with Vercel MCP.
 - [Query](https://vercel.com/docs/query) — Query and visualize your Vercel usage, traffic, and more in observability.
-- [get_bulk_availability](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_bulk_availability) — Use get_bulk_availability with Vercel MCP.
+- [create_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project) — Use create_project with Vercel MCP.
+- [search_repo](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/search_repo) — Use search_repo with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/observability/create_observability_query.graph.md](/docs/agent-resources/vercel-mcp/tools/observability/create_observability_query.graph.md)
 <!-- /docsgraph:related -->
@@ -43,6 +44,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/obser
 | `teamId`      | string | No       | Team ID to use for this operation. |
 | `requestBody` | object | Yes      | Request body for this tool.        |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

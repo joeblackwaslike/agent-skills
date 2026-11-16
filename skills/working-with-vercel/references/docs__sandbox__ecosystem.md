@@ -15,9 +15,10 @@ related:
   - /docs/sandbox/ecosystem/hermes
 summary: Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/ecosystem.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "254cec6521925d3d39a0b691e5bbcc9479bca8c71a31c2d62627ce2c11f5ec9c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e030bba481661be773760f1d3772d33c84329f87f45d218729f5bd76998a6db5"
 ---
 
 # Ecosystem
@@ -33,15 +34,13 @@ agent you build. Choose an [agent](#agents), a
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Run Paseo agents on Vercel Sandbox](https://vercel.com/changelog/run-paseo-agents-on-vercel-sandbox)
-- [Run Scale AI’s AgentEnv evals on Vercel Sandbox](https://vercel.com/changelog/run-scale-ais-agentenv-evals-on-vercel-sandbox)
 - [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
 - [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available)
+- [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
 - [How to run Herdr coding agents in isolated Vercel Sandboxes](https://vercel.com/kb/guide/run-herdr-coding-agents-isolated-vercel-sandboxes) — Install the vercel.sandbox plugin for Herdr, approve an upload manifest, run each AI coding agent in its own isolated Ve
-- [Give every agent in Herdr its own Vercel Sandbox](https://vercel.com/changelog/give-every-agent-in-herdr-its-own-vercel-sandbox)
-- [The Agent Stack](https://vercel.com/blog/agent-stack)
-- [How to give agents persistent storage with Vercel Drives](https://vercel.com/kb/guide/persistent-storage-with-vercel-drives) — Give AI SDK and TanStack AI agents persistent storage with Vercel Drives so they can save and reuse research notes acros
+- [Run Paseo agents on Vercel Sandbox](https://vercel.com/changelog/run-paseo-agents-on-vercel-sandbox)
+- [Run Scale AI’s AgentEnv evals on Vercel Sandbox](https://vercel.com/changelog/run-scale-ais-agentenv-evals-on-vercel-sandbox)
 - [Agent Frameworks on Vercel](https://vercel.com/docs/frameworks/agents) — Build AI agents with eve, Mastra, Flue, and Vercel. Learn how each framework connects to Vercel compute, models, and sto
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem.graph.md](/docs/sandbox/ecosystem.graph.md)
@@ -130,12 +129,14 @@ Build a [v0-style app builder](/kb/guide/v0-clone-openai-agents-vercel-sandbox)
 that turns a prompt into a Next.js app with a live preview. Users can refine
 the app through follow-up messages.
 
-OpenAI Agents API manages the agent session, while Vercel Sandbox provides
-an isolated workspace to edit files and run the app. These integrations use
-the provider's API credentials.
+The provider manages the agent session, while Vercel Sandbox provides an
+isolated workspace to edit files and run commands. These integrations use the
+provider's API credentials, and each sends its tool calls to a sandbox you
+connect.
 
 | Integration                                                    | Type             | Use case                                                            |
 | -------------------------------------------------------------- | ---------------- | ------------------------------------------------------------------- |
+| [Gemini API Managed Agents](/docs/sandbox/ecosystem/gemini-api) | Hosted agent API | Google-managed agents with file and shell tools in a Sandbox microVM |
 | [OpenAI Agents API](/docs/sandbox/ecosystem/openai-agents-api) | Hosted agent API | OpenAI-managed sessions with Sandbox execution and persistent files |
 
 ## Content and storage
@@ -149,6 +150,18 @@ sandbox. The provider's permissions control what the agent can access.
 | ---------------------------------------------- | ---------------- | ----------------------------------------------------- |
 | [Box Mount](/docs/sandbox/ecosystem/box-mount) | Content platform | Agents reading and writing Box content as local files |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

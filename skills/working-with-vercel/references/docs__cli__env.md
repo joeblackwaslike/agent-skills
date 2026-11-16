@@ -15,9 +15,10 @@ related:
   - /docs/environment-variables/sensitive-environment-variables
 summary: Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/env.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ad102d9ec8b52140aad7c34e12243425f89d4d8c85bfabeeb07142d40f1629d1"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "aa6bddaf7eb3c6b2c8df002cfc7b671f57ae3ed52b6078eae6e9889e0ac51353"
 ---
 
 # vercel env
@@ -34,12 +35,11 @@ The `vercel env` command is used to manage [Environment Variables](/docs/environ
 - [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
 - [How do I use private dependencies with Vercel?](https://vercel.com/kb/guide/using-private-dependencies-with-vercel) — Information on how to use private dependencies with a Vercel deployment.
 - [Environment Variables UI](https://vercel.com/blog/environment-variables-ui)
-- [Environment variables now use Config and Secret types](https://vercel.com/changelog/environment-variables-now-use-config-and-secret-types)
 - [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
 - [vercel pull](https://vercel.com/docs/cli/pull) — Learn how to update your local project with remote environment variables using the vercel pull CLI command.
-- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel environments](https://vercel.com/docs/cli/target) — Work with custom environments using the --environment option in Vercel CLI.
-- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, delete, and manage items, read tokens, a
+- [System environment variables](https://vercel.com/docs/environment-variables/system-environment-variables) — System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the
+- [Edit an environment variable](https://vercel.com/docs/rest-api/projects/edit-an-environment-variable) — PATCH /v9/projects/{idOrName}/env/{id} — Edit a specific environment variable for a given project by passing the environ
 
 Full cross-link map for this page: [/docs/cli/env.graph.md](/docs/cli/env.graph.md)
 <!-- /docsgraph:related -->
@@ -103,7 +103,7 @@ Variable from a Vercel Project.*
 
 ## Extended Usage
 
-The `--environment` and `--git-branch` options of `vercel env add`, `list`, `remove`, and `update` need Vercel CLI 64.7.0 or later.
+The `--environment` and `--git-branch` options of `vercel env add`, `list`, `remove`, and `update` need Vercel CLI 64.6.0 or later.
 
 ```bash filename="terminal"
 vercel env list --environment [environment]
@@ -387,6 +387,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

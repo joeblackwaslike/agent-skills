@@ -12,9 +12,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis
 summary: Learn how to send a unique safety identifier per end user through AI Gateway so provider-side abuse action isolates individual users instead of your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/safety-identifiers.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "3cb849ec86b04f22fe40b1b2c3563a666c6db28e2866fde469d39455dac12f13"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c7101288557c6b56fa7f59ca267d99043557f5ec4388d0b2ef6cfbb80f787e1d"
 ---
 
 # AI Gateway Safety Identifiers
@@ -28,10 +29,10 @@ A safety identifier tells providers like OpenAI, Anthropic, and Meta which of yo
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [AI Gateway App Attribution](https://vercel.com/docs/ai-gateway/ecosystem/app-attribution) — Attribute your requests so Vercel can identify and feature your app on AI Gateway pages.
-- [OpenAI-Compatible Decisions API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-decisions) — Ask predicate, choice, and score questions with the OpenAI-compatible /decisions endpoint through Vercel AI Gateway, usi
-- [AI Gateway Session Affinity](https://vercel.com/docs/ai-gateway/models-and-providers/session-affinity) — Keep AI Gateway conversations on the provider that holds their prompt cache, using session IDs, fingerprinting, and pin
-- [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
-- [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
+- [AI Gateway Embeddings](https://vercel.com/docs/ai-gateway/modalities/embeddings) — Generate vector embeddings for semantic search, similarity matching, and retrieval-augmented generation \\(RAG\\) through
+- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
+- [OpenAI Responses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses) — Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported
+- [Go with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/go) — Use AI Gateway from any Go application with the OpenAI or Anthropic Go SDKs, including model fallbacks, cost tracking, a
 
 Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/safety-identifiers.graph.md](/docs/ai-gateway/security-and-compliance/safety-identifiers.graph.md)
 <!-- /docsgraph:related -->
@@ -372,6 +373,18 @@ The `providerOptions.gateway.safetyIdentifier` option applies when you have not 
 
 On the Chat Completions API, `providerOptions.gateway.safetyIdentifier` takes precedence over the top-level `safety_identifier` field. Both take precedence over the legacy `user` field, which also maps to a safety identifier for backwards compatibility.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

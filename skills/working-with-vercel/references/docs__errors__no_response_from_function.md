@@ -12,9 +12,10 @@ related:
   - /docs/drains
 summary: The application did not respond correctly, this is likely due to an exception being thrown from the function handler.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/no_response_from_function.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "ff5c1620b2b1d589cf483fcf269cc52896b80055b577ea02e0b317eb0ee724a8"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "722d238ca91afe5c7cf3a96c544b2d6115951e31d83ac29fe5c96e1de02372bc"
 ---
 
 # NO_RESPONSE_FROM_FUNCTION
@@ -42,6 +43,18 @@ To troubleshoot this error, follow these steps:
 4. **Use Log Drains**: Create a [Log Drain](/docs/drains) if you do not have one yet, to persist errors from Vercel functions
 5. **Check external dependencies:** If the function relies on external services or APIs, ensure they are responding in a timely manner
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -11,9 +11,10 @@ related:
   []
 summary: Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/passport/set-up-identity-provider.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "40b4fc3547e1d20f1bb1e474e6220014fa6ed26e9929d93a321d8429434935bc"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ff14e80d45127747016b2ef1906a7bea24a751993dabee8c53814e3b0b38672a"
 ---
 
 # Set up Passport with an identity provider
@@ -38,7 +39,7 @@ This guide covers the common Passport setup flow for OpenID Connect providers, i
 - [Identify users and control access in Next.js with Vercel Passport](https://vercel.com/kb/guide/vercel-passport-nextjs) — Use \\`getIdentity\\(\\)\\` to read a visitor’s verified Vercel Passport identity in Next.js, then personalize pages, restri
 - [Vercel Passport is now in Public Beta](https://vercel.com/changelog/vercel-passport-is-now-in-public-beta)
 - [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
-- [SAML Single Sign-On](https://vercel.com/docs/saml) — Learn how to configure SAML SSO for your organization on Vercel.
+- [OpenID Connect \\(OIDC\\) Federation](https://vercel.com/docs/oidc) — Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent creden
 - [Chat SDK with Vercel Passport](https://vercel.com/docs/chat-sdk/integrations/passport) — Use a verified Vercel Passport identity to store and retrieve per-user conversation history in a Chat SDK bot.
 - [eve on Vercel](https://vercel.com/docs/frameworks/agents/eve) — Create and deploy an eve agent on Vercel with AI Gateway model access, durable sessions, and authenticated requests.
 
@@ -191,6 +192,18 @@ Check the following settings in your identity provider:
 - The scopes include `openid`.
 - The issuer, authorization endpoint, token endpoint, and JWKS URI all belong to the same authorization server.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

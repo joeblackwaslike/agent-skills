@@ -12,9 +12,10 @@ related:
   []
 summary: Vercel MCP tools for firewall and security.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "91b0ee0ad1b59372c3c6e1d3d396c45c537174646a3bda949ac7c7d403cee568"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "359ea9674612fd19da7ed59ea0c2e041e646a76059d4f416f7a0536bda5f482a"
 ---
 
 # Firewall and Security
@@ -29,10 +30,10 @@ Inspect your firewall configuration and active attack data to understand how Ver
 
 - [Manage Vercel Firewall in the CLI](https://vercel.com/changelog/manage-vercel-firewall-in-the-cli)
 - [Vercel Firewall](https://vercel.com/docs/vercel-firewall) — Learn how Vercel Firewall helps protect your applications and websites from malicious attacks and unauthorized access.
-- [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 - [Update Firewall Configuration](https://vercel.com/docs/rest-api/security/update-firewall-configuration) — PATCH /v1/security/firewall/config — Process updates to modify the existing firewall config for a project
-- [Using the REST API with the Firewall](https://vercel.com/docs/vercel-firewall/firewall-api) — Learn how to interact with the security endpoints of the Vercel REST API programmatically.
+- [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 - [Read Firewall Actions Summary by Project](https://vercel.com/docs/rest-api/security/read-firewall-actions-summary-by-project) — GET /v1/security/firewall/events/summary — Aggregate counts over the firewall actions matched by the same filters as \\`G
+- [Read Firewall Actions by Project](https://vercel.com/docs/rest-api/security/read-firewall-actions-by-project) — GET /v1/security/firewall/events — Retrieve firewall actions for a project Rule names are resolved against the project's
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/firewall.graph.md](/docs/agent-resources/vercel-mcp/tools/firewall.graph.md)
 <!-- /docsgraph:related -->
@@ -118,6 +119,18 @@ Update Firewall Configuration.
 | `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody` | object | Yes      | Request body for this tool.                                 |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

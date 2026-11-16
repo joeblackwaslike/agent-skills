@@ -15,9 +15,10 @@ related:
   - /docs/frameworks/more-frameworks
 summary: Learn about Turborepo, a build system for monorepos that allows you to have faster incremental builds, content-aware hashing, and Remote Caching.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/monorepos/turborepo.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "7959c534e59aaa9352d038bad55b3bb46b82bfa4098f894d8998c6269763f7e8"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8a4fa844e2888ecb2618436d81180a8e1bb72ee472c9b4e9fe8fce0dece534c9"
 ---
 
 # Deploying Turborepo to Vercel
@@ -37,11 +38,11 @@ Turborepo is a high-performance build system for JavaScript and TypeScript codeb
 - [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel) — Deploy your Turborepo on Vercel and run tasks with Vercel CI using zero-config Remote Caching.
 - [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
 - [Technical audits: Finding the bottlenecks that cost performance, money, and velocity](https://vercel.com/kb/guide/technical-audits) — How Vercel's Forward Deployed Engineering team runs code review, web performance, and usage audits, the recurring patter
-- [Caching](https://turborepo.dev/docs/crafting-your-repository/caching) — Configure task caching to avoid repeating work, using fingerprinting for inputs and restoring outputs from cache.
 - [Monorepos are changing how teams build software](https://vercel.com/blog/monorepos)
+- [Turborepo Run Summary is now available](https://vercel.com/changelog/turborepo-run-summary-is-now-available)
 - [Visualize time saved using Turborepo with Remote Caching](https://vercel.com/changelog/visualize-time-saved-using-turborepo-with-remote-caching)
 - [Turborepo Open-Source CLI and Remote Caching on Vercel](https://vercel.com/changelog/turborepo-open-source-cli-and-remote-caching-on-vercel)
-- [Turborepo Run Summary is now available](https://vercel.com/changelog/turborepo-run-summary-is-now-available)
+- [Use Remote Caching from External CI/CD](https://vercel.com/docs/monorepos/remote-caching/external-ci-cd) — Authenticate the Turborepo CLI to Vercel Remote Cache from your CI/CD provider using OpenID Connect \\(OIDC\\) or a Person
 
 Full cross-link map for this page: [/docs/monorepos/turborepo.graph.md](/docs/monorepos/turborepo.graph.md)
 <!-- /docsgraph:related -->
@@ -286,6 +287,18 @@ Building a Next.js application that is using [Skew Protection](/docs/skew-protec
 
 If you are using a version of Turborepo below 2.4.1, you may encounter issues with Skew Protection related to missing assets in production. We strongly recommend upgrading to Turborepo 2.4.1+ to restore desired behavior.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -10,38 +10,39 @@ prerequisites:
 related:
   - /docs/ai-gateway
   - /docs/ai-gateway/pricing
+  - /docs/ai-gateway/authentication-and-byok/api-keys
   - /docs/ai-gateway/token-pass/models-and-routing
   - /docs/ai-gateway/security-and-compliance/zdr
-  - /docs/ai-gateway/security-and-compliance/disallow-prompt-training
-summary: Get $80 of monthly credit for featured open-weight models for $30 per month, and use it in the coding agent or app of your choice through AI Gateway.
+summary: Get $150 of monthly credit for featured open-weight models for $30 per month, and use it in the coding agent or app of your choice through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/token-pass.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a515fd9298e13dfec487a63f3c205d9a266321609d376292f166282aa9e123cf"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7d98a1339ae4a4c6a23bf106d5d46dd2b3afdc9aa9d193d0769cb470a6d86a79"
 ---
 
 # Token Pass
 
 > Token Pass is available on Pro plans
 
-Token Pass is a monthly token subscription from Vercel. For $30 per team each month, you get $80 of credit for featured open-weight models, served by a featured Token Pass Provider through [AI Gateway](/docs/ai-gateway). You can use it in any coding agent or app that connects to AI Gateway. Token Pass includes **zero data retention (ZDR)**, so AI Gateway and the featured provider don't retain your prompts or outputs.
+Token Pass is a monthly token subscription from Vercel. For $30 per team each month, you get $150 of credit for featured open-weight models, served by a featured Token Pass Provider through [AI Gateway](/docs/ai-gateway). You can use it in any coding agent or app that connects to AI Gateway. Token Pass includes **zero data retention (ZDR)**, so AI Gateway and the featured provider don't retain your prompts or outputs.
 
 > **💡 Note:** Token Pass is in Early Access. Vercel may change the featured models and the
 > providers that serve them. This page lists the current set.
 
 ## At a glance
 
-| Item                 | Details                                                                           |
-| -------------------- | --------------------------------------------------------------------------------- |
-| Price                | $30 per team per month, added to your Pro subscription                            |
-| Credit               | $80 per billing period                                                            |
-| Featured models      | Kimi K3 (`moonshotai/kimi-k3`), GLM 5.3 (`zai/glm-5.3`), and DeepSeek V4.1 Flash (`deepseek/deepseek-v4.1-flash`) |
-| Provider             | Vercel Token Pass (`token-pass`), currently served by Wafer                       |
-| API key              | A Token Pass API key, which only works with featured models                       |
-| Data handling        | Zero data retention. Prompts aren't used for training                             |
-| Credit expiry        | End of each billing period. Unused credit doesn't roll over                       |
-| When credit runs out | Token Pass requests fail until your next billing period. You aren't charged extra |
-| Eligibility          | Pro teams                                                                         |
+| Item                 | Details                                                                                                                                                                       |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Price                | $30 per team per month, added to your Pro subscription                                                                                                                        |
+| Credit               | $150 per billing period                                                                                                                                                       |
+| Featured models      | Kimi K3 (`moonshotai/kimi-k3`), Kimi K3.1 Pro (`moonshotai/kimi-k3.1-pro`), GLM 5.3 (`zai/glm-5.3`), GLM 5.3 Flash (`zai/glm-5.3-flash`), and DeepSeek V4.1 Flash (`deepseek/deepseek-v4.1-flash`)                        |
+| Provider             | Vercel Token Pass (`token-pass`), currently served by Wafer                                                                                                                   |
+| Authentication       | Any AI Gateway credential works, including a standard API key, an OIDC token, and signing in with your Vercel account. A Token Pass-scoped key is optional and only works with featured models |
+| Data handling        | Zero data retention. Prompts aren't used for training                                                                                                                         |
+| Credit expiry        | End of each billing period. Unused credit doesn't roll over                                                                                                                   |
+| When credit runs out | Standard API keys and OIDC tokens fall back to your AI Gateway credits. Token Pass-scoped keys fail until your next billing period                                            |
+| Eligibility          | Pro teams                                                                                                                                                                     |
 
 ## Who can subscribe
 
@@ -59,11 +60,13 @@ Early Access has a limited number of spots. When it's full, the Token Pass tab s
 ## How it works
 
 1. **Subscribe** from the Token Pass tab. Your first charge and credit cover the rest of your current billing period.
-2. **Create a Token Pass API key** and connect your agent with it.
-3. **Pick a featured model.** AI Gateway sends the request to the Token Pass provider and deducts the cost from your Token Pass credit.
-4. **Credit resets** to $80 at the start of each billing period.
+2. **Connect your agent** with any AI Gateway credential. An existing API key, an OIDC token, or signing in with your Vercel account all work.
+3. **Pick a featured model.** While your team has Token Pass credit remaining, AI Gateway sends the request to the Token Pass provider and draws down your Token Pass credit automatically, whatever credential you use.
+4. **Credit resets** to $150 at the start of each billing period.
 
-Token Pass credit only pays for featured models served by the Token Pass provider. For other models, use a regular AI Gateway API key, which bills your [AI Gateway credits](/docs/ai-gateway/pricing).
+Token Pass credit only pays for featured models served by the Token Pass provider. The same standard key covers both featured and other models. Other models bill your [AI Gateway credits](/docs/ai-gateway/pricing) as usual.
+
+To create a key that only spends Token Pass credit, turn on **Restrict to Token Pass only** under **Advanced Configuration** when you [create an API key](/docs/ai-gateway/authentication-and-byok/api-keys#create-a-key). See [Models and routing](/docs/ai-gateway/token-pass/models-and-routing) for how standard keys and Token Pass keys route.
 
 ## Featured models and providers
 
@@ -72,7 +75,9 @@ Token Pass credit covers these models:
 | Model               | Model ID                       |
 | ------------------- | ------------------------------ |
 | Kimi K3             | `moonshotai/kimi-k3`           |
+| Kimi K3.1 Pro       | `moonshotai/kimi-k3.1-pro`     |
 | GLM 5.3             | `zai/glm-5.3`                  |
+| GLM 5.3 Flash       | `zai/glm-5.3-flash`            |
 | DeepSeek V4.1 Flash | `deepseek/deepseek-v4.1-flash` |
 
 > **💡 Note:** `deepseek/deepseek-v4.1-flash` routes to DeepSeek's latest V4.1 Flash
@@ -85,25 +90,27 @@ See [Models and routing](/docs/ai-gateway/token-pass/models-and-routing) for wha
 
 ### List price
 
-AI Gateway deducts each Token Pass request from your credit at the model's list price, the model provider's own API rate. Your $80 of monthly credit covers usage at these rates, in USD per 1 million tokens:
+AI Gateway deducts each Token Pass request from your credit at the model's list price, the model provider's own API rate. Your $150 of monthly credit covers usage at these rates, in USD per 1 million tokens:
 
 | Model               | Input | Cached input | Output |
 | ------------------- | ----- | ------------ | ------ |
 | Kimi K3             | $3.00 | $0.30        | $15.00 |
+| Kimi K3.1 Pro       | $2.00 | $0.20        | $10.00 |
 | GLM 5.3             | $1.40 | $0.26        | $4.40  |
+| GLM 5.3 Flash       | $0.15 | $0.03        | $0.50  |
 | DeepSeek V4.1 Flash | $0.15 | $0.003       | $0.60  |
 
 ## Data handling
 
 Token Pass requests have [zero data retention](/docs/ai-gateway/security-and-compliance/zdr) (ZDR), and your prompts aren't used to train models. If you turn on team-wide ZDR or [disallow prompt training](/docs/ai-gateway/security-and-compliance/disallow-prompt-training), requests still reach Token Pass.
 
-If you turn on team-wide ZDR, its $0.10 per 1,000 requests fee applies to Token Pass requests too.
+Team-wide ZDR's $0.10 per 1,000 requests fee doesn't apply to featured-model requests while your team's Token Pass is active with credit remaining. Once the credit runs out, and for non-featured models, the fee applies as usual. Fallback requests follow your team's ZDR setting, so with team-wide ZDR enabled they route only to ZDR providers.
 
 ## Next steps
 
-- [Getting started](/docs/ai-gateway/token-pass/getting-started): subscribe, create a key, and send a first request
+- [Getting started](/docs/ai-gateway/token-pass/getting-started): subscribe and send a first request with your existing AI Gateway credential
 - [Coding and personal agents](/docs/ai-gateway/token-pass/coding-agents): set up fx, Claude Code, Codex, Cline, or OpenCode
-- [Models and routing](/docs/ai-gateway/token-pass/models-and-routing): API keys, routing, errors, and team settings
+- [Models and routing](/docs/ai-gateway/token-pass/models-and-routing): routing, errors, optional Token Pass-scoped keys, and team settings
 - [Credits and billing](/docs/ai-gateway/token-pass/billing): proration, resets, cancelling, and downgrades
 
 ## FAQ
@@ -114,27 +121,25 @@ Yes. Token Pass requests run through AI Gateway, so you can use the coding agent
 
 ### Which coding agents does it work with?
 
-Any agent that connects to AI Gateway with an API key. [Coding and personal agents](/docs/ai-gateway/token-pass/coding-agents) has setup steps for fx, Claude Code, Codex, Cline, and OpenCode.
+Any agent that connects to AI Gateway. [Coding and personal agents](/docs/ai-gateway/token-pass/coding-agents) has setup steps for fx, Claude Code, Codex, Cline, and OpenCode.
 
 ### What happens when I use all my credits?
 
-Once you use up your Token Pass credit, requests with your Token Pass API key fail until your next billing period.
+It depends on the credential. With a standard AI Gateway API key or an OIDC token, requests fall back to your AI Gateway credits automatically at the serving provider's rates once Token Pass credit runs out. No manual key switching is needed, but your team needs enough AI Gateway credits for those requests to succeed. With a Token Pass-scoped API key, requests fail until your next billing period, with no fallback, so you're never charged beyond the pass.
 
-To continue with paid usage, switch your coding agent or application to a regular AI Gateway API key and remove any routing options that select the `token-pass` provider. These requests use your AI Gateway credit balance at the selected provider's rates, so you need enough AI Gateway credits to keep making requests. See [Switch to regular AI Gateway usage](/docs/ai-gateway/token-pass/models-and-routing#switch-to-regular-ai-gateway-usage) for the steps.
-
-For automatic failover, your application has to catch the failed Token Pass request and retry it with a regular AI Gateway API key. Setting a provider order alone doesn't switch API keys.
+See [Models and routing](/docs/ai-gateway/token-pass/models-and-routing) for details on credentials, fallback, and routing.
 
 ### Do unused credits roll over?
 
-No. Credit expires at the end of each billing period, and a new $80 arrives when the next one starts.
+No. Credit expires at the end of each billing period, and a new $150 arrives when the next one starts.
 
 ### Is Token Pass per user or per team?
 
-Per team. Everyone on the team shares the same $80.
+Per team. Everyone on the team shares the same $150.
 
 ### Can I use Token Pass in apps I deploy?
 
-Yes, with a Token Pass API key stored as an environment variable. A deployment's OIDC token can't spend Token Pass. Token Pass doesn't fall back to paid usage, so when the credit runs out, requests fail until the next billing period. For production traffic that has to stay up, use a regular AI Gateway API key.
+Yes, with a standard AI Gateway API key or the deployment's OIDC token. While your team has Token Pass credit, featured-model requests draw down that credit. When the credit runs out, those requests fall back to your AI Gateway credits at the serving provider's rates, so production traffic keeps running as long as your team has AI Gateway credits.
 
 ### Is my data retained or used for training?
 
@@ -157,6 +162,18 @@ These Token Pass Terms supplement the [AI Product Terms](/legal/ai-product-terms
 3. Vercel may end Token Pass at any time, for any reason, with a pro-rata refund of that month's fee.
 4. Vercel may cancel Token Pass and remove unused credits, without a refund, if it reasonably believes Token Pass is being misused, including through multiple accounts, or that the [Acceptable Use Policy](/legal/acceptable-use-policy) has been violated.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

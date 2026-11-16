@@ -13,9 +13,10 @@ related:
   - /docs/vercel-blob
 summary: Create blob stores, upload files, list contents, and manage storage using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-blob/manage-blob-storage.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "28de166bd5843acd405f4bd482c2f7c037dc6da120b943e70968d0e4dcf3663f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c0821a1f67cfb3be558dd6e24e8a25e367a5b436bad12be87440eeddebc18dc1"
 ---
 
 # Managing Vercel Blob storage from the CLI
@@ -29,10 +30,9 @@ Use this guide to manage Vercel Blob storage from the CLI. You'll create a store
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
-- [Vercel Blob CLI is now available](https://vercel.com/changelog/vercel-blob-cli-is-now-available)
 - [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
-- [Vercel Blob is now generally available: Cost-efficient, durable storage](https://vercel.com/blog/vercel-blob-now-generally-available)
+- [Vercel Blob CLI is now available](https://vercel.com/changelog/vercel-blob-cli-is-now-available)
 - [vercel storage](https://vercel.com/docs/cli/storage) — List, create, inspect, and delete storage resources, and manage their project connections with the Vercel CLI.
 - [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store) — POST /storage/stores/blob — Create a Blob store
 - [Delete a Blob store](https://vercel.com/docs/rest-api/storage/delete-a-blob-store) — DELETE /storage/stores/blob/{id} — Delete a Blob store
@@ -179,6 +179,18 @@ vercel blob delete-store <store-id>
 - [vercel blob](/docs/cli/blob)
 - [Vercel Blob overview](/docs/vercel-blob)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

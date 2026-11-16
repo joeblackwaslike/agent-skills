@@ -13,9 +13,10 @@ related:
   - /docs/deployment-protection/usage-and-pricing
 summary: Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS mitigation, SOC 2 compliance and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/security/access-control.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "1912cc42872df6f5121e1d5beae37909e7d3bc30b5fdf6aa9f6c8d2c13e31e67"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e1e44125acaae88c668983ed8f41612b4f2aaf677857cd98522ad1c1eb7b33cd"
 ---
 
 # Access Control
@@ -29,14 +30,13 @@ You can protect preview and production deployments with [Vercel Authentication](
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments) — Protect who can see your deployments.
-- [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments)
 - [Protect production deployments for free on every plan](https://vercel.com/changelog/protect-production-deployments-for-free-on-every-plan)
-- [Password Protection is now available per project on Pro](https://vercel.com/changelog/password-protection-now-costs-20-per-project-per-month-on-pro)
+- [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments)
 - [Deployment Protection on Vercel](https://vercel.com/docs/deployment-protection) — Learn how to control access to your Vercel project's preview and production URLs with Deployment Protection. Configure p
 - [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Vercel Support Code Visibility, Git Fork Protection, and
-- [Role-based access control \\(RBAC\\)](https://vercel.com/docs/rbac) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 - [Access Groups](https://vercel.com/docs/rbac/access-groups) — Learn how to configure access groups for team members on a Vercel account.
+- [get_project_deployment_protection](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project_deployment_protection) — Use get_project_deployment_protection with Vercel MCP.
 
 Full cross-link map for this page: [/docs/security/access-control.graph.md](/docs/security/access-control.graph.md)
 <!-- /docsgraph:related -->
@@ -53,6 +53,18 @@ You can enable Password protection and Vercel Authentication at the same time. W
 
 [Read more about Vercel Authentication](/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

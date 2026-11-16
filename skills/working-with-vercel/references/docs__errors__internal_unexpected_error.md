@@ -11,9 +11,10 @@ related:
   []
 summary: An unexpected internal error occurred. This is a general internal error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/internal_unexpected_error.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "7f12a45c54029fef429259e0c2c0074c394e084b74b78d394e115f3decc76f53"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b1b1614d11308c48bfefc96b2bb3dae7b7e58cb6b057d99d2d519e0702da1855"
 ---
 
 # INTERNAL_UNEXPECTED_ERROR
@@ -30,6 +31,18 @@ To troubleshoot this error, follow these steps:
 
 1. **Contact support:** Since this error is general and could be due to a variety of reasons, [contact support](/help#issues) for further assistance, supplying your deployment ID
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

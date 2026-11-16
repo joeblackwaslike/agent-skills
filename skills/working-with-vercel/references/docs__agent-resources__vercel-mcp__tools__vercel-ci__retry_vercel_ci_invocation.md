@@ -12,9 +12,10 @@ related:
   []
 summary: Use retry_vercel_ci_invocation with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/retry_vercel_ci_invocation.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "7fc0f1a8da7b8175b161a71dab13ecf7e87b310da57d06a486a82f25485f255f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e096eb885a1da3c0c4cf6601ececce15131ca199ddbcfea2569d0e619d9d1358"
 ---
 
 # retry_vercel_ci_invocation
@@ -48,6 +49,18 @@ Retry support depends on the invocation source and terminal state. Native-check 
 | `slug`         | string  | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody`  | unknown | No       | Request body for this tool.                                 |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

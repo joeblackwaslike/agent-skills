@@ -12,9 +12,10 @@ related:
   - /docs/cli/metrics
 summary: Learn how to emit application-specific metrics from Vercel Functions and analyze them in Observability.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/observability/custom-metrics.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "9f40e029f038f35497c2efa11640e06017279b6b52e3732cfb77db0a2279c9d5"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1e44cde4ef2f728e45f952b8905da2bef5a434c122dc99bd5605ec00956d96f1"
 ---
 
 # Emit Custom Metrics from Vercel Functions
@@ -29,11 +30,9 @@ Custom metrics let you record application-specific numeric values from your Verc
 
 - [Custom metrics are now supported in Vercel Observability](https://vercel.com/changelog/custom-metrics-are-now-supported-in-vercel-observability)
 - [Query observability metrics using the Vercel CLI](https://vercel.com/changelog/vercel-metrics-in-cli)
-- [Metrics for outgoing requests](https://vercel.com/changelog/metrics-for-outgoing-requests)
-- [Understand the Cost Impact of Function Invocations](https://vercel.com/kb/guide/understand-cost-impact-of-function-invocations) — Learn how to use Observability to understand function invocations and their cost impact.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
-- [Legacy Metrics](https://vercel.com/docs/pricing/legacy) — Learn about legacy usage metrics, including Bandwidth, Requests, Vercel Function Invocations, and Vercel Function Execut
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
+- [Legacy Metrics](https://vercel.com/docs/pricing/legacy) — Learn about legacy usage metrics, including Bandwidth, Requests, Vercel Function Invocations, and Vercel Function Execut
 - [Query](https://vercel.com/docs/query) — Query and visualize your Vercel usage, traffic, and more in observability.
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 
@@ -143,6 +142,18 @@ Each custom metric data point counts as one Observability event. Vercel charges 
 
 For example, emitting one custom metric during each of 1 million function invocations records 1 million Observability events. To stop collecting custom metrics, remove the `metric()` calls from your application.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

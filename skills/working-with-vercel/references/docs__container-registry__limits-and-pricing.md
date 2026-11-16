@@ -12,9 +12,10 @@ related:
   - /docs/sandbox/concepts/images
 summary: Storage pricing, size limits, plan limits, and compatibility limits for Vercel Container Registry.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/container-registry/limits-and-pricing.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "014e06e8a2674d331b905ee438583e531adea74513a7bbbc723f5405836205d9"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "33653e0c736c36cfa49c469bd9b43e71c69f97eec6f1c7948e4c3d23fa4bdc5c"
 ---
 
 # Container Registry limits and pricing
@@ -34,14 +35,13 @@ sha256: "014e06e8a2674d331b905ee438583e531adea74513a7bbbc723f5405836205d9"
 - [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel) — Migrate Next.js apps and HTTP containers from AWS to Vercel. Configure AWS access, assess background workers, and plan t
 - [How to migrate from GHCR to Vercel Container Registry](https://vercel.com/kb/guide/migrate-ghcr-to-vcr) — Migrate container images from GitHub Container Registry \\(GHCR\\) to Vercel Container Registry \\(VCR\\), including authent
 - [Run Terminal-Bench and any Harbor benchmark on Vercel Sandbox](https://vercel.com/kb/guide/run-terminal-bench-harbor-benchmarks-vercel-sandbox) — Run Terminal-Bench, SWE-bench, and any Harbor benchmark on Vercel Sandbox. Each trial executes in an isolated Firecracke
-- [Vercel Container Registry now supports 2 GB compressed image layers](https://vercel.com/changelog/vercel-container-registry-now-supports-2-gb-compressed-image-layers-new)
-- [Introducing VCR: Vercel Container Registry](https://vercel.com/changelog/introducing-vcr-vercel-container-registry)
+- [Vercel Container Registry now supports 2 GB compressed image layers](https://vercel.com/changelog/vercel-container-registry-now-supports-2-gb-compressed-image-layers)
 - [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
-- [Manage Vercel Container Registry with Vercel CLI](https://vercel.com/changelog/manage-vercel-container-registry-with-vercel-cli)
+- [Introducing VCR: Vercel Container Registry](https://vercel.com/changelog/introducing-vcr-vercel-container-registry)
 - [Limits and Pricing for Image Optimization](https://vercel.com/docs/image-optimization/limits-and-pricing) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
 - [vercel vcr](https://vercel.com/docs/cli/vcr) — Manage Vercel Container Registry from the Vercel CLI: build and push images, manage repositories, tags, and images, and
 - [Limits and Pricing for Vercel Flags](https://vercel.com/docs/flags/vercel-flags/limits-and-pricing) — Review Vercel Flags request pricing and limits for flags, segments, configuration size, and connected projects.
-- [Vercel Blob Pricing](https://vercel.com/docs/vercel-blob/usage-and-pricing) — Learn about the pricing for Vercel Blob.
+- [Pricing and Limits](https://vercel.com/docs/queues/pricing) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
 - [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 
 Full cross-link map for this page: [/docs/container-registry/limits-and-pricing.graph.md](/docs/container-registry/limits-and-pricing.graph.md)
@@ -89,6 +89,18 @@ Image layers must use gzip or zstd compression. Uncompressed OCI layers are not 
 
 Single-platform image manifests must include `os` and `architecture` in the image config.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

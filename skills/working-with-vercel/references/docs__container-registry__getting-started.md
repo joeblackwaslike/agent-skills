@@ -15,9 +15,10 @@ related:
   - /docs/container-registry/cli-reference
 summary: Authenticate your container tool with Vercel Container Registry, then push and pull your first image with the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/container-registry/getting-started.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "23907bd58a8844bbb84e6453335c0e2fcf81e7fc088f66d85f758f9250b25c9f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9861db11f8cfdf7b2ffa939a26f495001ed4fde44c80277c3cf28ab0485f0981"
 ---
 
 # Getting Started
@@ -36,10 +37,9 @@ Push your first image to Vercel Container Registry (VCR) with the Vercel CLI, th
 - [Introducing VCR: Vercel Container Registry](https://vercel.com/changelog/introducing-vcr-vercel-container-registry)
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
 - [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
-- [Run any Dockerfile on Vercel](https://vercel.com/blog/dockerfile-on-vercel)
 - [vercel vcr](https://vercel.com/docs/cli/vcr) — Manage Vercel Container Registry from the Vercel CLI: build and push images, manage repositories, tags, and images, and
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [Build image overview](https://vercel.com/docs/builds/build-image) — Learn about the container image used for Vercel builds.
+- [Push an image manifest](https://vercel.com/docs/rest-api/vcr/push-an-image-manifest) — PUT /v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference} — PUT /v2/:teamSlug/:projectSlug/:repositoryName
 
 Full cross-link map for this page: [/docs/container-registry/getting-started.graph.md](/docs/container-registry/getting-started.graph.md)
 <!-- /docsgraph:related -->
@@ -83,6 +83,18 @@ Full cross-link map for this page: [/docs/container-registry/getting-started.gra
 - [Use the image with Vercel Functions](/docs/functions/container-images#usage)
 - [Manage repositories with the Vercel CLI](/docs/container-registry/cli-reference)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

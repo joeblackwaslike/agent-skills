@@ -1,7 +1,7 @@
 ---
 source: "https://opencode.ai/docs/models/"
-fetched_at: "2026-11-09T12:39:24.590Z"
-sha256: "93be4d19f97a6b06f3d5bafe66e78bd93d80f3250a036184814ec4617ca50052"
+fetched_at: "2026-11-16T12:32:19.624Z"
+sha256: "533ec23167b445fec082f5e24d7621d9977d01f0eabc35dc37868797c642bd17"
 ---
 
 # Models
@@ -216,6 +216,7 @@ Use `modelID` to give an API model a friendlier catalog ID:
           "name": "Coding default",
           "capabilities": {
             "tools": true,
+            "freeform": ["text", "lark"],
             "input": ["text", "image"],
             "output": ["text"],
           },
@@ -233,9 +234,11 @@ Use `modelID` to give an API model a friendlier catalog ID:
 Here, `openai/coding-default` is the selectable reference and `gpt-6.1-sol` is sent to the provider. For a model that is not
 already in the catalog, OpenCode assumes:
 
-- Tool support, text and image input, and text output.
+- JSON tool support, text and image input, and text output. No freeform tool input unless `capabilities.freeform` lists the format.
 - A 200,000-token context limit and 32,000-token output limit.
 - An unspecified input limit.
+
+OpenCode recognizes `text`, `regex`, and `lark`. Other format names from models.dev are ignored without dropping the model or its tools. If a proxy in front of a catalog model rejects freeform tools, set `capabilities.freeform` to `[]` on that model.
 
 These are fallback assumptions, not detected capabilities. Set accurate `capabilities` and `limit` values when known;
 explicit values replace the fallbacks. Add `disabled: true` to hide a model from the available catalog:
@@ -311,6 +314,39 @@ OpenCode then marks the last tool definition, the system prompt, and the latest 
 for Alibaba Model Studio models, which accept the same markers but ignore them on tool definitions. Set
 `compatibility.cacheFormat` on the provider instead when every model it serves accepts the same format. See
 [Compatibility](#compatibility) for the other fields.
+
+### Cache lifetime
+
+OpenCode doesn't send a cache lifetime by default, so each provider uses its own default, such as five minutes on
+Anthropic. Set `settings.cache.ttl` on a provider or model to request a different one. A model setting overrides the
+provider setting.
+
+```jsonc title="opencode.jsonc"
+{
+  "providers": {
+    "anthropic": {
+      "settings": { "cache": { "ttl": "1h" } },
+      "models": {
+        "claude-haiku-5-5": { "settings": { "cache": { "ttl": "5m" } } },
+      },
+    },
+  },
+}
+```
+
+`ttl` takes a number and a unit: `ms`, `s`, `m`, `h` or `d`, such as `"5m"`, `"1h"` or `"24h"`. OpenCode sends it as
+given, so use a value the provider accepts:
+
+| API | Where the lifetime goes |
+| --- | --- |
+| Anthropic Messages | `cache_control.ttl` on each cache marker. Anthropic accepts `"5m"` and `"1h"`. |
+| Bedrock Converse | `ttl` on each `cachePoint`. Older Claude models that only cache for five minutes ignore `"1h"`. |
+| OpenAI Chat and Responses | `"24h"` goes to `prompt_cache_retention`; other values go to `prompt_cache_options.ttl`. |
+
+Providers that cache automatically without markers, such as Gemini, ignore it. A longer lifetime usually costs more to
+write: Anthropic charges 2× the input price for a one-hour cache write and 1.25× for a five-minute one.
+
+[Warming](/warming) can use the lifetime to time its requests with `interval: "auto"`.
 
 ## Compatibility
 

@@ -3,7 +3,7 @@ title: get-installation
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/get-installation
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/get-installation"
-last_updated: 2026-11-09
+last_updated: 2026-11-16
 type: conceptual
 prerequisites:
   []
@@ -13,9 +13,10 @@ related:
   - /docs/integrations/create-integration/native-integration
 summary: Learn about get-installation on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/get-installation.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "37ef0818438b6b921544c52c67b83329345a6ea95a9b996f25cbe2bdab90ecee"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "14d8a2b125d7f21f8c8453775a085850dd082fec8ce4f127580749823b4109c7"
 ---
 
 # Get Installation
@@ -179,6 +180,18 @@ Operation failed because the authentication is not allowed to perform this opera
 - [Marketplace API Reference](/docs/integrations/create-integration/marketplace-api/reference)
 - [Native Integration Concepts](/docs/integrations/create-integration/native-integration)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

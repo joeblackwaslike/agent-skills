@@ -16,9 +16,10 @@ related:
   - /docs/deployments/environments
 summary: Learn how to schedule cron jobs to run at specific times or intervals.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/schedules/cron-jobs/quickstart.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "2f8530eb6e3c067647cb106a29213ac7db24e862431012650814f09ec4739cbd"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "58f4a5e9917548c91ad05ba54fe9b573e4f888941abc9d71b353813dc807844e"
 ---
 
 # Getting started with cron jobs
@@ -32,15 +33,15 @@ Cron Jobs are a legacy feature and will be migrated to
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing Vercel Cron Jobs](https://vercel.com/blog/cron-jobs)
+- [Cron jobs now support 100 per project on every plan](https://vercel.com/changelog/cron-jobs-now-support-100-per-project-on-every-plan)
 - [Vercel Cron Jobs are now generally available](https://vercel.com/changelog/vercel-cron-jobs-are-now-generally-available)
 - [Run scheduled jobs with Vercel Cron Jobs and Vercel Functions](https://vercel.com/changelog/run-scheduled-jobs-with-vercel-cron-jobs-and-vercel-functions)
 - [Introducing Vercel Schedules](https://vercel.com/blog/introducing-vercel-schedules)
-- [Run cron jobs from deployment summary](https://vercel.com/changelog/run-cron-jobs-from-deployment-summary)
 - [vercel crons](https://vercel.com/docs/cli/crons) — Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand.
 - [Getting Started with Schedules](https://vercel.com/docs/schedules/quickstart) — Run a private Vercel Function every hour with a static schedule in vercel.json, test it locally, and deploy it.
 - [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart) — Build your first Vercel Function in a few steps.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Schedules Configuration Reference](https://vercel.com/docs/schedules/configuration) — Reference for static schedules in vercel.json and the Build Output API, including targets, function identifiers, cron sy
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 
 Full cross-link map for this page: [/docs/schedules/cron-jobs/quickstart.graph.md](/docs/schedules/cron-jobs/quickstart.graph.md)
 <!-- /docsgraph:related -->
@@ -136,6 +137,18 @@ Now that you have created a cron job, you can learn more about how to manage and
 - [Learn about managing cron jobs](/docs/cron-jobs/manage-cron-jobs)
 - [Explore usage and pricing](/docs/cron-jobs/usage-and-pricing)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

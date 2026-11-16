@@ -12,9 +12,10 @@ related:
   - /docs/caching/cache-status
 summary: "Understand the PPR state that describes how a Partial Prerendering page was served: as a static shell, a partial resume, or fully dynamic."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/partial-prerendering/ppr-state.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9f236af2bb3df62f33e5e7ea3af1b9937fd21d7cdab5ae11023635d8b0478ec4"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a88afd079b5a01c039a19257f15209a2bf3f8a7f852acc8a36f69982d81afe33"
 ---
 
 # Partial Prerendering State
@@ -171,6 +172,18 @@ With an empty shell, there is nothing for the CDN to serve ahead of the render, 
 
 ![A Dynamic request, rendered entirely by your function.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/partial-prerendering/ppr-state/ppr-state-dynamic-light-v2.png?lightbox)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -11,9 +11,10 @@ related:
   - /docs/conformance/custom-rules/forbidden-dependencies
 summary: Learn how to set custom rules to disallow one or more files from importing one or more predefined modules
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/custom-rules/forbidden-imports.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "13c76eea2588d90ffab836323ec80c11dffe1854236855f59efbc2d3d0f2fc99"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9f329efd6ecb2c92cab168a19593828ac83aea256777d3dd189db730faa975f6"
 ---
 
 # forbidden-imports
@@ -133,6 +134,18 @@ which is optional.
 
 ;
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

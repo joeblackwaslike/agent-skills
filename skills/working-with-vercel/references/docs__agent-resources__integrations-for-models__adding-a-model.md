@@ -16,9 +16,10 @@ related:
   - /docs/agent-resources/integrations-for-models/perplexity
 summary: Learn how to add a new AI model to your Vercel projects
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "6cd62bb411dc5631911d2a60c6793e7a23f99e393ad2be68072271f8d1baf2de"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8d6cb0adb7ff6a0ab3c1ca69038883b85711458f8dca336a8ccd7119550d2c3b"
 ---
 
 # Adding a Model
@@ -36,9 +37,9 @@ If you have integrations installed, scroll to the bottom to access the models ex
 - [AI Integrations and playground in the Vercel Dashboard](https://vercel.com/changelog/ai-integration-and-playground-in-the-vercel-dashboard)
 - [Adding a Provider](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider) — Learn how to add a new AI provider to your Vercel projects.
 - [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
-- [Build with AI agents on Vercel](https://vercel.com/docs/agent-resources/integrations-for-agents) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
-- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
+- [Vercel AI Gateway: Models, Routing, and Observability](https://vercel.com/docs/ai-gateway) — A hosted AI gateway for any cloud or language. Centralize credentials, request logs, cost tracking, budgets, prompt cach
 - [Vercel Integrations](https://vercel.com/docs/integrations) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
+- [Build with AI agents on Vercel](https://vercel.com/docs/agent-resources/integrations-for-agents) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/adding-a-model.graph.md](/docs/agent-resources/integrations-for-models/adding-a-model.graph.md)
 <!-- /docsgraph:related -->
@@ -96,6 +97,18 @@ Once you have decided on the model you want to add to your project:
 
 **OpenAI** (Guide): Connect powerful AI models like GPT-4 [Learn more →](/docs/agent-resources/integrations-for-models/openai)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

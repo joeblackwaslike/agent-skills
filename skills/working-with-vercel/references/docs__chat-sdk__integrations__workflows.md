@@ -14,9 +14,10 @@ related:
   - /docs/workflows/pricing
 summary: Use Vercel Workflows to pause Chat SDK tasks for human approval, resume after a decision, and inspect runs in the Vercel dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/chat-sdk/integrations/workflows.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "423b531a66e3fa8ef0d8999b956bd5582227886df997a37d4d0e67cb5c2095f6"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2253156a964349c3be72b6cc3a793b863d985e2556e32d9e26f26f9426eb72db"
 ---
 
 # Chat SDK with Vercel Workflows
@@ -33,11 +34,13 @@ Use [Vercel Workflows](/docs/workflows) to pause a task from a chat message unti
 - [Chat SDK now supports callback URLs on buttons and modals](https://vercel.com/changelog/chat-sdk-now-supports-callback-urls-on-buttons-and-modals)
 - [Triage form submissions with Chat SDK](https://vercel.com/kb/guide/triage-form-submissions-with-chat-sdk) — Build a Slack bot that triages form submissions with interactive cards. Forward, edit, or mark as spam without leaving S
 - [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
-- [Run and track deploys from Slack](https://vercel.com/kb/guide/run-and-track-deploys-from-slack) — Build a Slack deploy bot with Chat SDK and Vercel Workflows. Dispatch GitHub Actions from a slash command, gate producti
+- [What is WorkflowAgent?](https://vercel.com/kb/guide/what-is-workflowagent) — Build durable AI agents with WorkflowAgent: tool calls that retry as workflow steps, suspend for human approval, and res
+- [How to migrate from Cloudflare Workflows to Vercel Workflows](https://vercel.com/kb/guide/migrate-cloudflare-workflows-to-vercel-workflows) — Migrate from Cloudflare Workflows to Vercel Workflows by mapping WorkflowEntrypoint, step.do, and waitForEvent to workfl
 - [Create a Discord support bot with Nuxt and Redis](https://vercel.com/kb/guide/create-a-discord-support-bot-with-nuxt-and-redis) — This guide walks through building a Discord support bot with Nuxt, covering project setup, Discord app configuration, Ga
-- [Ship a GitHub code review bot with Hono and Redis](https://vercel.com/kb/guide/ship-a-github-code-review-bot-with-hono-and-redis) — This guide walks through building a GitHub bot that reviews pull requests on demand. When a user @mentions the bot on a
+- [Workflow Concepts](https://vercel.com/docs/workflows/concepts) — Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
 - [Chat SDK with Next.js](https://vercel.com/docs/chat-sdk/frameworks/nextjs) — Add a Chat SDK bot to Next.js, receive Slack events through Vercel Connect, and deploy on Vercel.
 - [Chat SDK with Vercel Daemons](https://vercel.com/docs/chat-sdk/integrations/daemons) — Process Chat SDK jobs with Vercel Queues and Daemons, using Vercel Connect for Slack credentials and event delivery.
+- [Chat SDK with AI Gateway](https://vercel.com/docs/chat-sdk/integrations/ai-gateway) — Stream AI Gateway model responses into Chat SDK conversations with AI SDK and message history.
 - [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
 
 Full cross-link map for this page: [/docs/chat-sdk/integrations/workflows.graph.md](/docs/chat-sdk/integrations/workflows.graph.md)
@@ -456,7 +459,20 @@ Yes. Chat SDK's [`requestApproval` helper](https://chat-sdk.dev/docs/approvals) 
 - [Read the Chat SDK approval API](https://chat-sdk.dev/docs/approvals)
 - [Build multi-stage human approval flows](/kb/guide/human-in-the-loop-with-chat-sdk-and-workflow-sdk)
 - [Learn about workflow steps](https://workflow-sdk.dev/docs/foundations/workflows-and-steps)
+- [Build a pull request review bot with Chat SDK, Workflow SDK, and GitHub Tools](https://github-tools.com/guides/review-pull-requests)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

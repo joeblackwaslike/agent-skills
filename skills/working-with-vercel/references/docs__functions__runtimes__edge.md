@@ -15,9 +15,10 @@ related:
   - /docs/functions/concurrency-scaling
 summary: Learn about the Edge runtime, an environment in which Vercel Functions can run.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/runtimes/edge.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c4981be4dd997bb5825126005f19da89911ddfa9e68107535b80fe22abb6ad08"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f122356facb163f67cec4584d1d33dcf40f7dcfc7ee28b62503a303be6137d10"
 ---
 
 # Edge Runtime
@@ -354,6 +355,18 @@ Therefore, your code will always be able to use them with their expected behavio
 process.env.hasOwnProperty('MY_VALUE');
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

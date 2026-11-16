@@ -12,9 +12,10 @@ related:
   - /docs/functions/quickstart
 summary: "Learn how to configure your AWS account to trust Vercel's OpenID Connect (OIDC) Identity Provider (IdP)."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/oidc/aws.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "16248e837647c8cb0ad39263a7d2c5d8d1d0859f0090c3d47eed1c0363c5a9aa"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7be19135f2a7d67985a39964252be8f93ac34d44559df8d1380b7f2e1a5c69c8"
 ---
 
 # Connect to Amazon Web Services (AWS)
@@ -31,16 +32,15 @@ To understand how AWS supports OIDC, and for a detailed user guide on creating a
 
 - [How to choose the right Vercel networking option](https://vercel.com/kb/guide/how-to-choose-the-right-vercel-networking-option) — Decide whether your project needs a networking option at all, then choose between Static IPs, AWS PrivateLink, Secure Co
 - [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel) — Migrate Next.js apps and HTTP containers from AWS to Vercel. Configure AWS access, assess background workers, and plan t
-- [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect)
 - [Connect Next.js to Amazon Aurora PostgreSQL using Vercel Marketplace](https://vercel.com/kb/guide/connect-next-js-to-amazon-aurora-postgresql-using-vercel-marketplace) — Learn how to connect your Next.js application to Amazon Aurora PostgreSQL securely using the Vercel Marketplace AWS inte
-- [AWS databases are now live on the Vercel Marketplace and v0](https://vercel.com/blog/aws-databases-are-now-live-on-the-vercel-marketplace-and-v0)
+- [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect)
 - [How can I use AWS SDK Environment Variables on Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-sdk-environment-variables-on-vercel) — How to use AWS SDK Environment Variables on Vercel
-- [How can I use AWS S3 with Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-s3-with-vercel) — Example how to use AWS S3 library on Vercel
+- [OpenID Connect (OIDC) Federation now generally available](https://vercel.com/changelog/openid-connect-federation-now-generally-available)
 - [OIDC Federation Reference](https://vercel.com/docs/oidc/reference) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 - [AI Gateway OIDC Authentication](https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc) — Authenticate AI Gateway requests from Vercel deployments with OIDC tokens. Configure the AI SDK or send bearer tokens di
 - [Connecting an AWS Account for BYOC](https://vercel.com/docs/networking/bring-your-own-cloud/connect-aws-account) — Connect an AWS account to your Vercel team so Bring Your Own Cloud \\(BYOC\\) can invoke Lambda functions in your account.
-- [Functions API Reference](https://vercel.com/docs/functions/functions-api-reference) — Learn about available APIs when working with Vercel Functions.
-- [Reserved environment variables](https://vercel.com/docs/environment-variables/reserved-environment-variables) — Reserved environment variables are reserved by Vercel Vercel Function runtimes.
+- [Deploying with BYOC Using the Vercel CLI](https://vercel.com/docs/networking/bring-your-own-cloud/deploy-with-cli) — Build a project, provision its functions in your AWS account, and complete a Bring Your Own Cloud \\(BYOC\\) deployment wi
+- [Bring Your Own Cloud](https://vercel.com/docs/networking/bring-your-own-cloud) — Bring Your Own Cloud \\(BYOC\\) lets you run Vercel Functions behind your project in your own AWS account while Vercel rou
 
 Full cross-link map for this page: [/docs/oidc/aws.graph.md](/docs/oidc/aws.graph.md)
 <!-- /docsgraph:related -->
@@ -294,6 +294,18 @@ export async function GET() {
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -3,22 +3,23 @@ title: Next.js on Vercel
 product: vercel
 url: /docs/frameworks/full-stack/nextjs
 canonical_url: "https://vercel.com/docs/frameworks/full-stack/nextjs"
-last_updated: 2026-09-08
+last_updated: 2026-11-14
 type: conceptual
 prerequisites:
   - /docs/frameworks/full-stack
   - /docs/frameworks
 related:
   - /docs/cli
+  - /docs/deployments/deploy-without-logging-in
   - /docs/incremental-static-regeneration
   - /docs/cdn
   - /docs/functions
-  - /docs/caching/cdn-cache
 summary: Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/full-stack/nextjs.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "1e00472052e67f2fcf1ad85de107418182e0759efa3bb344ac94cacb50e7f095"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b206d9bec6ca7a8eea70503230e4ea0c2b7384f54de981a19c138cccf94242ed"
 ---
 
 # Next.js on Vercel
@@ -38,11 +39,11 @@ sha256: "1e00472052e67f2fcf1ad85de107418182e0759efa3bb344ac94cacb50e7f095"
 - [Making your catalog discoverable to AI agents](https://vercel.com/kb/guide/agentic-commerce-readiness) — Agentic commerce readiness starts with the initial HTML response. Server-render your product catalog, ship JSON-LD, and
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [What are the best practices for hosting videos on Vercel?](https://vercel.com/kb/guide/best-practices-for-hosting-videos-on-vercel-nextjs-mp4-gif) — Learn the ideal solutions for using video files like .mp4 and .gif on Vercel to prevent excess bandwidth consumption.
-- [Introducing OG Image Generation: Fast, dynamic social card images at the Edge](https://vercel.com/blog/introducing-vercel-og-image-generation-fast-dynamic-social-card-images)
 - [Fetching Data](https://nextjs.org/docs/app/getting-started/fetching-data) — Learn how to fetch data and stream content that depends on data.
+- [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image) — API Reference for the Open Graph Image and Twitter Image file conventions.
+- [Introducing OG Image Generation: Fast, dynamic social card images at the Edge](https://vercel.com/blog/introducing-vercel-og-image-generation-fast-dynamic-social-card-images)
 - [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
-- [Getting started with Image Optimization](https://vercel.com/docs/image-optimization/quickstart) — Learn how you can leverage Vercel Image Optimization in your projects.
-- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
+- [Advanced Web Analytics Config with @vercel/analytics](https://vercel.com/docs/analytics/package) — With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
 
 Full cross-link map for this page: [/docs/frameworks/full-stack/nextjs.graph.md](/docs/frameworks/full-stack/nextjs.graph.md)
 <!-- /docsgraph:related -->
@@ -59,6 +60,16 @@ To get started with Next.js on Vercel:
 \- Or, choose a template from Vercel's marketplace:
 
 Vercel deployments can \[integrate with your git provider]\(/docs/git) to \[generate preview URLs]\(/docs/deployments/environments#preview-environment-pre-production) for each pull request you make to your Next.js project.
+
+## Deploy without an account
+
+To deploy an existing Next.js project without an account or login, run this command in the project root:
+
+```bash filename="terminal"
+vercel deploy --temporary
+```
+
+The CLI builds the project, deploys it to production, and prints a claim URL. Claim the project to keep it live. See [Deploying without logging in](/docs/deployments/deploy-without-logging-in).
 
 ## Incremental Static Regeneration
 
@@ -943,9 +954,6 @@ export function reportWebVitals(metric) {
     case 'CLS':
       // handle CLS results
       break;
-    case 'FID':
-      // handle FID results
-      break;
     case 'TTFB':
       // handle TTFB results
       break;
@@ -976,9 +984,6 @@ export function reportWebVitals(metric) {
     case 'CLS':
       // handle CLS results
       break;
-    case 'FID':
-      // handle FID results
-      break;
     case 'TTFB':
       // handle TTFB results
       break;
@@ -1001,7 +1006,7 @@ Next.js uses [Google's `web-vitals` library](https://github.com/GoogleChrome/web
 
 **To summarize, tracking Web Vitals with Next.js on Vercel:**
 
-- Enables you to track traffic performance metrics, such as [First Contentful Paint](/docs/speed-insights/metrics#first-contentful-paint-fcp), or [First Input Delay](/docs/speed-insights/metrics#first-input-delay-fid)
+- Enables you to track traffic performance metrics, such as [First Contentful Paint](/docs/speed-insights/metrics#first-contentful-paint-fcp), or [Interaction to Next Paint](/docs/speed-insights/metrics#interaction-to-next-paint-inp)
 - Enables you to view performance analytics by page name and URL for more granular analysis
 - Shows you [a score for your app's performance](/docs/speed-insights/metrics#how-the-scores-are-determined) on each recorded metric, which you can use to track improvements or regressions
 
@@ -1038,6 +1043,18 @@ Learn more about deploying Next.js projects on Vercel with the following resourc
 - [Learn about combining static and dynamic rendering on the same page in Next.js 14](https://www.youtube.com/watch?v=wv7w_Zx-FMU)
 - [Learn about suspense boundaries and streaming when loading your UI](https://nextjs.org/docs/app/api-reference/file-conventions/loading)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

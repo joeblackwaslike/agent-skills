@@ -13,9 +13,10 @@ related:
   - /docs/rbac/access-roles
 summary: Learn how to customize the Vercel WAF to restrict access to certain IP addresses.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/ip-blocking.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "aa42213ef5b2132175b9d6c0d1c19ed3862c2b10b6fe6a1fc4b54486bd178fb8"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "057563ecd0a3fdcd5daa79cb4960c59035411da00760090ebf7249b691118b95"
 ---
 
 # WAF IP Blocking
@@ -32,11 +33,11 @@ You can create custom rules to block a specific IP address or multiple IP addres
 - [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
 - [How to resolve IP blocking issues ](https://vercel.com/kb/guide/how-to-resolve-ip-blocking-issues) — Learn to troubleshoot IP blocking issues for both shared and personal networks.
 - [Security through design: Creating the improved Firewall experience](https://vercel.com/blog/security-through-design-creating-the-improved-firewall-experience)
+- [How to block bots from OpenAI GPTBot](https://vercel.com/kb/guide/how-to-block-bots-openai-gptbot) — Learn how to use the Vercel WAF to block, rate limit, or challenge traffic from OpenAI GPTBot.
 - [Custom firewall rules for IP blocking](https://vercel.com/changelog/custom-firewall-rules-for-ip-blocking)
-- [Restrict access with IP blocking by CIDR range](https://vercel.com/changelog/restrict-access-with-ip-blocking-by-cidr-range)
-- [Block, rate limit, and challenge traffic with the Vercel Firewall](https://vercel.com/changelog/block-rate-limit-and-challenge-traffic-with-the-vercel-firewall)
+- [Create Vercel Firewall rules with natural language](https://vercel.com/changelog/create-vercel-waf-custom-rules-using-natural-language)
 - [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf) — Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in secur
-- [Using the REST API with the Firewall](https://vercel.com/docs/vercel-firewall/firewall-api) — Learn how to interact with the security endpoints of the Vercel REST API programmatically.
+- [Add rate limiting with Vercel](https://vercel.com/kb/guide/add-rate-limiting-vercel) — Learn how to implement rate limiting with Vercel.
 - [Restrict deployment access by IP address](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/trusted-ips) — Trusted IPs let you restrict access to your deployments to a list of allowed IP addresses.
 - [Vercel Enterprise Plan](https://vercel.com/docs/plans/enterprise) — Learn about the Enterprise plan for Vercel, including features, pricing, and more.
 - [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby) — Learn about the Hobby plan and how it compares to the Pro plan.
@@ -100,6 +101,18 @@ To block an IP address, you can create an IP Blocking rule in your dashboard:
 
 - [Geolocation region block](/kb/guide/suspicious-traffic-in-specific-countries)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

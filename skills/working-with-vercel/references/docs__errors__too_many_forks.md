@@ -14,9 +14,10 @@ related:
   - /docs/deployments/logs
 summary: An error occurred in the application when matching too many conditional routes. You cannot have more than 5 \
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/too_many_forks.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "791b35aeb42644ce43a91ad4e54284394fb8a487941cd8b15d074a6a7863d0bf"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9dbcaf95383feca06e1587696a68b1882aa55a58c8550b937a5bf45aa4c6a1f3"
 ---
 
 # TOO_MANY_FORKS
@@ -37,6 +38,18 @@ To troubleshoot this error, follow these steps:
 2. **Check for recursive logic**: Ensure there isn't any recursive logic in the routing configuration that could lead to excessive forking
 3. **Handle unhandled exceptions**: Check the [application logs](/docs/deployments/logs) for any unhandled exceptions that may be causing the error
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

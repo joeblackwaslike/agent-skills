@@ -13,9 +13,10 @@ related:
   - /docs/cli/global-options
 summary: Discover and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/metrics.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "d6b82d92d9d1a94a10fb8e602755b3bec04e9aad0c360be8fed8856abf616a4c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "20d951fc406fe22d8d21768f54a818be50575e0a72e6f222c04127a4e305cd2a"
 ---
 
 # vercel metrics
@@ -33,8 +34,8 @@ The `vercel metrics` command, also available as `vc metrics`, lets you discover 
 - [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
-- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
 - [Query Reference](https://vercel.com/docs/query/reference) — Use this reference to find the event types, metrics, aggregations, dimensions, and operators available in Query.
+- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
 - [vercel billing usage](https://vercel.com/docs/cli/usage) — Learn how to view billing usage and costs, for your Vercel account using the vercel billing usage CLI command.
 
 Full cross-link map for this page: [/docs/cli/metrics.graph.md](/docs/cli/metrics.graph.md)
@@ -590,6 +591,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

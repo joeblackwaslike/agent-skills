@@ -15,9 +15,10 @@ related:
   - /docs/drains/audit-logs-to-panther
 summary: Drains collect logs, traces, speed insights, and analytics from your applications. Forward observability data to custom endpoints or popular services.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/drains.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "8cc71cabfbf5dd9f300d691476de53be19f15aae869d502aff918bcb1756f74d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "bfcb063f62f8e891d39e0aeabf8b0af70a301d2d47899b2656d671c442487ced"
 ---
 
 # Working with Drains
@@ -153,6 +154,18 @@ For more information on Drains, check out the following resources:
 - [Audit Log Drains reference](/docs/drains/reference/audit-logs)
 - [Drains REST API endpoints](/docs/rest-api/drains/retrieve-a-list-of-all-drains)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

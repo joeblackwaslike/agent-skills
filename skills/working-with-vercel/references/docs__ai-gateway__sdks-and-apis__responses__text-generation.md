@@ -12,9 +12,10 @@ related:
   []
 summary: Generate text responses with the OpenAI Responses API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/text-generation.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "9e0ed2cf8172ccac75d0c08227caaf27a2358d05d75f7045ee31698819b6e18b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b9787b5468869d72f70e8f154fe7c3becef95a56f21265d00eb53eeef58b305a"
 ---
 
 # OpenAI Responses Text Generation with AI Gateway
@@ -32,8 +33,7 @@ Set your SDK's base URL to AI Gateway and use your API key for authentication:
 - [OpenResponses Text Generation with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/text-generation) — Generate text responses using the OpenResponses API through AI Gateway.
 - [OpenResponses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses) — Use the OpenResponses API specification with AI Gateway for a unified, provider-agnostic interface.
 - [OpenAI Responses Streaming with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/streaming) — Stream tokens as they are generated with the OpenAI Responses API through AI Gateway.
-- [AI Gateway Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text) — Generate and stream text responses using AI Gateway.
-- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
+- [OpenAI Responses Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/responses/text-generation.graph.md](/docs/ai-gateway/sdks-and-apis/responses/text-generation.graph.md)
 <!-- /docsgraph:related -->
@@ -87,6 +87,18 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
   }'
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

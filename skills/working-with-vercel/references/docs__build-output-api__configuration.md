@@ -15,9 +15,10 @@ related:
   - /docs/build-output-api/primitives
 summary: Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/build-output-api/configuration.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "969a56eff59759ebc1883ce6554c910904ea2693bdbcd2a8dc0ed082b50ef134"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e8ef52f6d2ccabca6201b70395463ec5a7507664777dda15450004731f2cc43b"
 ---
 
 # Build Output Configuration
@@ -34,14 +35,14 @@ sha256: "969a56eff59759ebc1883ce6554c910904ea2693bdbcd2a8dc0ed082b50ef134"
 - [Next.js 16.3 support on Vercel](https://vercel.com/blog/vercel-supports-next-js-16-3)
 - [Image Component](https://nextjs.org/docs/app/api-reference/components/image) — Optimize Images in your Next.js Application using the built-in `next/image` Component.
 - [Image](https://nextjs.org/docs/pages/api-reference/components/image) — Optimize Images in your Next.js Application using the built-in `next/image` Component.
-- [Image (Legacy)](https://nextjs.org/docs/pages/api-reference/components/image-legacy) — Backwards compatible Image Optimization with the Legacy Image component.
+- [Images on the web](https://vercel.com/blog/images-on-the-web)
 - [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image) — API Reference for the Open Graph Image and Twitter Image file conventions.
 - [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
-- [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
 - [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
+- [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
 - [Open Graph \\(OG\\) Image Generation](https://vercel.com/docs/og-image-generation) — Learn how to optimize social media image generation through the Open Graph Protocol and @vercel/og library.
-- [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
+- [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
 
 Full cross-link map for this page: [/docs/build-output-api/configuration.graph.md](/docs/build-output-api/configuration.graph.md)
 <!-- /docsgraph:related -->
@@ -740,6 +741,18 @@ type DaemonsConfig = Record<string, Record<string, never>>;
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -11,9 +11,10 @@ related:
   []
 summary: Learn how to use Integrations with the Vercel Deploy Button.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deploy-button/integrations.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "6be28eb89616e6eb135ba634d7a586d12a3132ca80875db7465662d523d68efc"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7f615d0e6065e96f8a913e5805c3b4e911c3bf2750d171a1788242e9f934f35c"
 ---
 
 # Using Integrations with the Deploy Button
@@ -52,6 +53,18 @@ The example below shows how to use the `skippable-integrations` parameter in a D
 https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fhello-world&integration-ids=oac_1mkAfc68cuDV4suZRlgkn3Re&skippable-integrations=1
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

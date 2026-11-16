@@ -15,9 +15,10 @@ related:
   - /docs/sign-in-with-vercel/authorization-server-api
 summary: Learn how to Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sign-in-with-vercel.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ba27624c62a0ad34bd3506e52f13e0011d42d87bb39b6a8048db249ed6a9c128"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "11167ffe2d8f41ffb1b80a4d67cc9c70357a893f26127a49036c10c68d6283a4"
 ---
 
 # Sign in with Vercel
@@ -34,12 +35,11 @@ Sign in with Vercel lets people use their Vercel account to log in to your appli
 - [Build a fullstack app with Next.js 16 and Prisma Postgres](https://vercel.com/kb/guide/nextjs-prisma-postgres) — Create a fullstack blog with the Next.js App Router, Prisma, Sign in with Vercel, Prisma Postgres from the Vercel Market
 - [How we run Vercel's CDN in front of Discourse](https://vercel.com/blog/how-we-run-vercels-cdn-in-front-of-discourse)
 - [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
-- [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect)
+- [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
+- [Access tokens](https://vercel.com/docs/accounts/access-tokens) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
 - [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
-- [SAML Single Sign-On](https://vercel.com/docs/saml) — Learn how to configure SAML SSO for your organization on Vercel.
-- [Two-factor Authentication](https://vercel.com/docs/two-factor-authentication) — Set up two-factor authentication with an authenticator app, save recovery codes, and add a passkey.
-- [Authentication](https://vercel.com/docs/rest-api/authentication) — Endpoints in the authentication group of the Vercel REST API Reference.
 - [vercel signup](https://vercel.com/docs/cli/signup) — Learn how to create a new Vercel account using the vercel signup CLI command.
+- [SAML Single Sign-On](https://vercel.com/docs/saml) — Learn how to configure SAML SSO for your organization on Vercel.
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel.graph.md](/docs/sign-in-with-vercel.graph.md)
 <!-- /docsgraph:related -->
@@ -104,6 +104,18 @@ Learn more about the consent page in the [consent page](/docs/sign-in-with-verce
 - [Consent page](/docs/sign-in-with-vercel/consent-page)
 - [Troubleshooting](/docs/sign-in-with-vercel/troubleshooting)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

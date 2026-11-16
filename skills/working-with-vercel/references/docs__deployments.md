@@ -15,9 +15,10 @@ related:
   - /docs/git/vercel-for-gitlab
 summary: Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployments.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "cbb11e70741c4587b8dd2ea24970e7567ebb49f07dca6dd3cff6e07fd9e7a463"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7645760317d180ffaf833dd8e6a1cf026d9c8a217b4e75680a63dd29bb10103c"
 ---
 
 # Deploying to Vercel
@@ -39,11 +40,11 @@ Create preview and production deployments from Git, Vercel CLI, or the REST API.
 - [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure)
 - [Introducing the new Vercel Agent](https://vercel.com/blog/vercel-agent)
-- [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues)
-- [September 2020](https://vercel.com/blog/changelog-september-2020)
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
-- [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
+- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
+- [Audit Logs](https://vercel.com/docs/audit-log) — Learn how to track and analyze your team members' activities.
 
 Full cross-link map for this page: [/docs/deployments.graph.md](/docs/deployments.graph.md)
 <!-- /docsgraph:related -->
@@ -243,6 +244,18 @@ For step-by-step workflows using the Vercel CLI to manage deployments, see:
 
 **Deploy from the CLI**: Deploy a project end-to-end using Vercel CLI. [Learn more →](/docs/projects/deploy-from-cli)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

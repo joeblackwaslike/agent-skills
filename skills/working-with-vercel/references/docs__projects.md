@@ -15,9 +15,10 @@ related:
   - /docs/frameworks/full-stack/nextjs
 summary: A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/projects.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "bc6398ea92bdcc5166348e16e8d7ec8c3fced69a899599786e932f1609152424"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "00154abb87931bfdbe536bd534c439d85015e3f956cff0085a0e4d84e4b801c6"
 ---
 
 # Projects overview
@@ -30,18 +31,15 @@ Everything you deploy on Vercel lives in a project: a frontend, backend APIs, ba
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
 - [Tag-based cache invalidation now available for all responses](https://vercel.com/changelog/tag-based-cache-invalidation-now-available-for-all-responses)
 - [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
-- [How to fix “unable to find your GitHub repository” on Vercel](https://vercel.com/kb/guide/unable-to-find-github-repository) — Learn how to check GitHub permissions to ensure your Vercel account has sufficient access to import your repository.
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
-- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
-- [July 2020](https://vercel.com/blog/changelog-july-2020)
-- [June 2020](https://vercel.com/blog/changelog-june-2020)
-- [Multi-Project Platforms Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
 - [Multi-Project Platforms Concepts](https://vercel.com/docs/platforms/multi-project-platforms/concepts) — Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [Multi-Project Platforms Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
+- [Project Configuration](https://vercel.com/docs/project-configuration) — Learn how to configure your Vercel projects using vercel.json, vercel.toml, vercel.ts, or the dashboard to control build
 - [Builds](https://vercel.com/docs/builds) — Understand how the build step works when creating a Vercel Deployment.
-- [Multi-Project Platforms Quickstart](https://vercel.com/docs/platforms/multi-project-platforms/quickstart) — Programmatically host code for user-generated or AI-generated applications on Vercel.
+- [Integrating Vercel and Kubernetes](https://vercel.com/docs/integrations/external-platforms/kubernetes) — Deploy your frontend on Vercel alongside your existing Kubernetes infrastructure.
 
 Full cross-link map for this page: [/docs/projects.graph.md](/docs/projects.graph.md)
 <!-- /docsgraph:related -->
@@ -131,6 +129,18 @@ For instructions on creating, pausing, resuming, and deleting projects, see [Man
 
 To learn more about limits on the number of projects you can have, see [Limits](/docs/limits#general-limits).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

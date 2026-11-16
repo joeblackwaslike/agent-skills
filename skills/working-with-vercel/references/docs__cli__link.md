@@ -13,9 +13,10 @@ related:
   - /docs/cli/global-options
 summary: Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/link.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "de260640934ce4b7808f6cd78205f82113c7ebbb7ed8b55c289c81895b5be1b0"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2c279efae578c6f1c5215c19f2a54e6f9d43f2c845fa280a9d3543efd1e0136d"
 ---
 
 # vercel link
@@ -34,10 +35,10 @@ The `vercel link` command links your local directory to a [Vercel Project](/docs
 - [Migrate from Google Cloud Run to Vercel](https://vercel.com/kb/guide/migrate-cloud-run-to-vercel) — Move a Cloud Run service or worker to Vercel. Compare runtimes, preserve Google Cloud access, and plan jobs, validation,
 - [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel) — Migrate Next.js apps and HTTP containers from AWS to Vercel. Configure AWS access, assess background workers, and plan t
 - [Linking Projects with Vercel CLI](https://vercel.com/docs/cli/project-linking) — Learn how to link existing Vercel Projects with Vercel CLI.
-- [vercel open](https://vercel.com/docs/cli/open) — Learn how to open your current project in the Vercel Dashboard using the vercel open CLI command.
-- [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
-- [vercel git](https://vercel.com/docs/cli/git) — Learn how to manage your Git provider connections using the vercel git CLI command.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel open](https://vercel.com/docs/cli/open) — Learn how to open your current project in the Vercel Dashboard using the vercel open CLI command.
+- [vercel ci](https://vercel.com/docs/cli/ci) — Enable or disable Vercel CI for repositories, inspect runs, search logs, and rerun jobs from the command line.
+- [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
 
 Full cross-link map for this page: [/docs/cli/link.graph.md](/docs/cli/link.graph.md)
 <!-- /docsgraph:related -->
@@ -148,6 +149,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -11,9 +11,10 @@ related:
   []
 summary: Requires that a workspace package is configured with required Next.js plugins and rules
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/eslint_next_rules_required.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "fa38bd0a455bbed95de78b1e71941972ab1e797ba7d55d5b14302f9f1be38074"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a4a6b660504be6337e4ad1fe71c73647c68951a31aef903050301aa08d0f9a12"
 ---
 
 # ESLINT_NEXT_RULES_REQUIRED
@@ -80,6 +81,18 @@ module.exports = {
 You should also add `"eslint-config-custom": "workspace:*"` to your
 `devDependencies`.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

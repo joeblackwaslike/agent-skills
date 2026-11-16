@@ -12,11 +12,13 @@ related:
   - /docs/ai-gateway/security-and-compliance/disallow-prompt-training
   - /docs/ai-gateway/security-and-compliance/provider-allowlist
   - /docs/ai-gateway/security-and-compliance/model-allowlist
+  - /docs/ai-gateway/security-and-compliance/provider-headquarters
 summary: "AI Gateway data privacy and governance controls: zero data retention, prompt training policies, and provider allowlists."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "324303a904bc46afca0dda6d17ca41a67d03f8daf223c06b6dff5aa86a0d9e17"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "dd5d78d7cfec402e01ab9cd4cde8e909b9bda2a1fbfaf1cb9297c96943286594"
 ---
 
 # AI Gateway Security and Compliance
@@ -29,13 +31,12 @@ AI Gateway gives you controls over where your data goes and what providers can d
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
 - [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway)
+- [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
 - [Team-wide Zero Data Retention and prompt training controls now on AI Gateway](https://vercel.com/changelog/zero-data-retention-no-prompt-training-on-ai-gateway)
 - [Team-wide provider allowlist on AI Gateway](https://vercel.com/changelog/team-wide-provider-allowlist-on-ai-gateway)
-- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
-- [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, caching, SDK and API compati
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 
 Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance.graph.md](/docs/ai-gateway/security-and-compliance.graph.md)
@@ -47,6 +48,7 @@ Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance.gra
 - **Block training on prompts**: Prevent providers from using your prompts for model training with [Disallow Prompt Training](/docs/ai-gateway/security-and-compliance/disallow-prompt-training)
 - **Restrict providers**: Limit which AI providers can serve requests across your team with the [Provider Allowlist](/docs/ai-gateway/security-and-compliance/provider-allowlist)
 - **Restrict models**: Control which AI models your team can use with the [Model Allowlist](/docs/ai-gateway/security-and-compliance/model-allowlist)
+- **Choose provider countries**: Route only to providers whose parent company is headquartered in countries you choose with [Provider Headquarters](/docs/ai-gateway/security-and-compliance/provider-headquarters)
 
 ## Features overview
 
@@ -86,6 +88,18 @@ See the [Provider Allowlist docs](/docs/ai-gateway/security-and-compliance/provi
 - [Disallow prompt training](/docs/ai-gateway/security-and-compliance/disallow-prompt-training) for your data
 - [Restrict providers](/docs/ai-gateway/security-and-compliance/provider-allowlist) for compliance
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -16,14 +16,33 @@ related:
   - /docs/ci/guides/github-comments
 summary: Start a Postgres container next to your tests in Vercel CI with Turborepo\
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ci/guides/integration-tests.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "79fd3b3a606e85ffd036c74dd052e09b9ac9e2329839ee44e3d984e767c901e4"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "339a5bf6d93b9c84049ca3a24f44e3abfe86ba437f9554d249cf64dc7693fbf7"
 ---
 
 # Running Integration Tests with a Database in Vercel CI
 
 In this tutorial, you'll run integration tests against a real Postgres database in Vercel CI. You'll use Turborepo's [`with` key](https://turborepo.dev/docs/reference/configuration#with) to start the database next to your tests, so both run in the same compute instance and Turborepo stops the database when your tests finish.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel) — Deploy your Turborepo on Vercel and run tasks with Vercel CI using zero-config Remote Caching.
+- [Introducing Vercel CI](https://vercel.com/blog/introducing-vercel-ci)
+- [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
+- [Deploy Go apps on Vercel using Docker](https://vercel.com/kb/guide/deploy-go-using-docker-vercel) — Deploy an existing Dockerized Go app to Vercel using Memos as a real-world example, with Neon Postgres for durable data.
+- [Vercel CI Configuration Reference](https://vercel.com/docs/ci/configuration) — Reference for the turbo.json tags and vercel.json keys that configure Vercel CI.
+- [Use Remote Caching from External CI/CD](https://vercel.com/docs/monorepos/remote-caching/external-ci-cd) — Authenticate the Turborepo CLI to Vercel Remote Cache from your CI/CD provider using OpenID Connect \\(OIDC\\) or a Person
+- [Vercel Container Registry](https://vercel.com/docs/container-registry) — Store and manage Docker container images on Vercel. Build and push images with the Vercel CLI, then run them on Vercel F
+- [vercel ci](https://vercel.com/docs/cli/ci) — Enable or disable Vercel CI for repositories, inspect runs, search logs, and rerun jobs from the command line.
+
+Full cross-link map for this page: [/docs/ci/guides/integration-tests.graph.md](/docs/ci/guides/integration-tests.graph.md)
+<!-- /docsgraph:related -->
 
 You'll configure:
 
@@ -146,6 +165,18 @@ You'll configure:
 - [Post results to your pull requests](/docs/ci/guides/github-comments)
 - [Learn how Vercel CI bills for CPU time](/docs/ci/pricing)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

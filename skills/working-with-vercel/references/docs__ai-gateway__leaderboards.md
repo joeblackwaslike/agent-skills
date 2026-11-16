@@ -11,9 +11,10 @@ related:
   - /docs/ai-gateway/ecosystem/app-attribution
 summary: See which AI models, labs, apps, and providers are most used on AI Gateway, share a chart as an image, and download the underlying data.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/leaderboards.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "85784bc17a362836b31accba8a4edd6af10e5942aef62141404118d8c611aac9"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e2779c7f96421dbc2a0d828693a88c3e8b1d54aed8a7e8fbf77736b922ac3aca"
 ---
 
 # AI Gateway Leaderboards
@@ -28,14 +29,13 @@ The [AI Gateway leaderboards](/ai-gateway/leaderboards) show which models, labs,
 
 - [Access and share AI Gateway leaderboard data](https://vercel.com/changelog/open-data-and-shareable-charts-for-ai-gateway-leaderboards)
 - [AI Gateway production index](https://vercel.com/blog/ai-gateway-production-index)
-- [Open weight takes 71.5% of tokens and 23% of spend](https://vercel.com/blog/ai-gateway-production-index-october-2026)
 - [Open-weight models surge to 29% of volume, price per token flattens](https://vercel.com/blog/ai-gateway-production-index-july-2026)
-- [DeepSeek enters the fight for token volume, Anthropic continues to dominate spend](https://vercel.com/blog/ai-gateway-production-index-june-2026)
-- [Open-weight models take 56% of token volume, Astra doubles Fable 5.1 spend](https://vercel.com/blog/ai-gateway-production-index-september-2026)
 - [Live model performance metrics accessible via AI Gateway](https://vercel.com/changelog/live-model-performance-metrics-accessible-via-ai-gateway)
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, caching, SDK and API compati
+- [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
 - [AI Gateway Request Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
-- [Coding Agents and Chat Platforms with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents) — Connect coding agents and chat platforms to AI Gateway. Configure Claude Code, Codex, Chatbox, Open WebUI, and more.
-- [vercel ai-gateway](https://vercel.com/docs/cli/ai-gateway) — Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, virtual models, models, leaderboards,
+- [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
+- [AI Gateway Ecosystem and Integrations](https://vercel.com/docs/ai-gateway/ecosystem) — Connect frameworks, coding tools, and billing integrations to AI Gateway. Configure app attribution and explore integrat
 
 Full cross-link map for this page: [/docs/ai-gateway/leaderboards.graph.md](/docs/ai-gateway/leaderboards.graph.md)
 <!-- /docsgraph:related -->
@@ -150,6 +150,18 @@ Field values:
 
 The `csv` format returns the same columns as a `text/csv` attachment, with a final row carrying the CC BY 4.0 attribution notice.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

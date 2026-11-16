@@ -4,8 +4,8 @@ description: Learn how to use the Cline harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/cline"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/cline.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "d2b997ee8ef49c2a845f34d527fde081adf77fe2ce8c7c3218212fee17bf3781"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "dbfcdea44ae7e4e9a8ae2d42ad3d7afca59f26cb091b576534363ba27d5210e3"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -191,6 +191,17 @@ directory, and relative file paths resolve against it.
 Cline supports built-in tool approval requests when `permissionMode` is
 `allow-reads` or `allow-edits`, native built-in tool filtering via
 `activeTools`/`inactiveTools`, and host-executed AI SDK tool approvals.
+
+Under `allow-edits`, `write` and `edit` calls that touch `.agents/skills`,
+`.cline`, or `.clinerules` in the session workdir still require host approval.
+These paths hold rules, configuration, and skills that can change the agent's
+behavior in later sessions. A path matches when it is a protected path, lies
+inside one, or is a parent of one. Symlinks are resolved in both directions:
+writes through an alias that points into a protected path match, as do writes
+to targets of symlinks inside protected directories. While a protected path
+exists, writes to hard-linked files also require approval. The check runs one
+extra sandbox command per write. Paths that cannot be resolved require
+approval.
 
 ## Skills
 

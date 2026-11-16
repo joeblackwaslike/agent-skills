@@ -12,9 +12,10 @@ related:
   []
 summary: Use list_team_members with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_team_members.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "10e85a66368ee2d73df2fb09891e71ac7d2130a5944b11131c019a3790e13df3"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "39ea61ebc22764509013204ec3acc940afed1201cc562a1e59266df71756cad4"
 ---
 
 # list_team_members
@@ -27,11 +28,11 @@ List team members.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [list_access_group_members](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_group_members) — Use list_access_group_members with Vercel MCP.
 - [list_teams](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_teams) — Use list_teams with Vercel MCP.
+- [list_access_group_members](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_group_members) — Use list_access_group_members with Vercel MCP.
 - [List team members](https://vercel.com/docs/rest-api/teams/list-team-members) — GET /v3/teams/{teamId}/members — Get a paginated list of team members for the provided team.
+- [List project members](https://vercel.com/docs/rest-api/projectmembers/list-project-members) — GET /v1/projects/{idOrName}/members — Lists all members of a project.
 - [list_user_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_user_events) — Use list_user_events with Vercel MCP.
-- [list_access_groups](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_groups) — Use list_access_groups with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/teams/list_team_members.graph.md](/docs/agent-resources/vercel-mcp/tools/teams/list_team_members.graph.md)
 <!-- /docsgraph:related -->
@@ -50,6 +51,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/teams
 | `teamId`                      | string | Yes      | Team ID to use for this operation.                                                                                                                                                   |
 | `slug`                        | string | No       | Team slug to use for this operation. Use instead of teamId.                                                                                                                          |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

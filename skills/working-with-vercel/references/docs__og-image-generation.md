@@ -15,9 +15,10 @@ related:
   - /docs/og-image-generation/og-image-api
 summary: Learn how to optimize social media image generation through the Open Graph Protocol and @vercel/og library.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/og-image-generation.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "56e77350c05c27f53af7152b973035986c28631f8eae88d9f7d636ea7588add5"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "804a8dc078bcf9f0667019028ecdf5d87500ae1e41cc9c6fe3c0648fdbf78556"
 ---
 
 # Open Graph (OG) Image Generation
@@ -31,17 +32,17 @@ To assist with generating dynamic [Open Graph (OG)](https://ogp.me/ "Open Graph 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [OG Image Generation: The Complete Customization Guide](https://vercel.com/kb/guide/using-custom-font) — Learn how to use custom fonts in your Vercel OG image, plus emoji, external images, non-Latin text, dynamic titles, and
+- [Encrypting parameters](https://vercel.com/kb/guide/encrypting-parameters) — Learn how to encrypt parameters so that only certain values can be passed to generate your image.
 - [ImageResponse](https://nextjs.org/docs/app/api-reference/functions/image-response) — API Reference for the ImageResponse constructor.
 - [Metadata and OG images](https://nextjs.org/docs/app/getting-started/metadata-and-og-images) — Learn how to add metadata to your pages and create dynamic OG images.
-- [Encrypting parameters](https://vercel.com/kb/guide/encrypting-parameters) — Learn how to encrypt parameters so that only certain values can be passed to generate your image.
 - [Vercel Edge Functions are now generally available](https://vercel.com/blog/edge-functions-generally-available)
 - [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit)
-- [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image) — API Reference for the Open Graph Image and Twitter Image file conventions.
 - [Images on the web](https://vercel.com/blog/images-on-the-web)
 - [Building a fast, animated image gallery with Next.js](https://vercel.com/blog/building-a-fast-animated-image-gallery-with-next-js)
+- [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image) — API Reference for the Open Graph Image and Twitter Image file conventions.
+- [Inspect and validate Open Graph metadata for enhanced link sharing](https://vercel.com/changelog/open-graph-link-sharing-inspector)
 - [Getting started with Image Optimization](https://vercel.com/docs/image-optimization/quickstart) — Learn how you can leverage Vercel Image Optimization in your projects.
-- [AI Gateway Image Generation via Chat Completions](https://vercel.com/docs/ai-gateway/modalities/image-generation/openai) — Generate and edit images using AI models through Vercel AI Gateway with the Chat Completions API.
-- [Frameworks on Vercel](https://vercel.com/docs/frameworks) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
+- [AI Gateway Image Generation with AI SDK](https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk) — Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
 
 Full cross-link map for this page: [/docs/og-image-generation.graph.md](/docs/og-image-generation.graph.md)
 <!-- /docsgraph:related -->
@@ -436,6 +437,18 @@ In the examples below, we explore using parameters and including other types of 
 - Only flexbox (`display: flex`) and a subset of CSS properties are supported. Advanced layouts (`display: grid`) will not work. See [Satori](https://github.com/vercel/satori)'s documentation for more details on supported CSS properties
 - Maximum bundle size of 500KB. The bundle size includes your JSX, CSS, fonts, images, and any other assets. If you exceed the limit, consider reducing the size of any assets or fetching at runtime
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

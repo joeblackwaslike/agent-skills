@@ -15,9 +15,10 @@ related:
   - /docs/vercel-toolbar/layout-shift-tool
 summary: Learn how to use the Vercel Toolbar to leave feedback, navigate through important dashboard pages, share deployments, use Draft Mode for previewing...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-toolbar.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "d00438667147db489859fe7dd02319334001d0dfa19fbc86929c3b510b45cc2e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5146514b3ba38b0b420c8725861a88ee0a58b5e69669970f7ae390d258d52d3f"
 ---
 
 # Vercel Toolbar
@@ -33,6 +34,7 @@ The Vercel Toolbar is a tool that assists in the iteration and development proce
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar)
+- [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production)
 - [Flags Explorer is now generally available](https://vercel.com/changelog/flags-explorer-is-now-generally-available)
 - [Manage Vercel Toolbar comments from the CLI](https://vercel.com/changelog/manage-vercel-toolbar-comments-from-the-cli)
 - [Updates to Vercel Toolbar shortcuts](https://vercel.com/changelog/updates-to-vercel-toolbar-shortcuts)
@@ -42,7 +44,6 @@ The Vercel Toolbar is a tool that assists in the iteration and development proce
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, container image functions, security defaults,
 - [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
-- [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production)
 - [Improvements to Vercel Toolbar: Shrinking when inactive, removal of avatars, and more](https://vercel.com/changelog/improvements-to-vercel-toolbar)
 
 Full cross-link map for this page: [/docs/vercel-toolbar.graph.md](/docs/vercel-toolbar.graph.md)
@@ -144,6 +145,18 @@ When logged into the Vercel Toolbar, you'll find a **Preferences** button in the
 - [Draft Mode](/docs/draft-mode)
 - [Edit Mode](/docs/edit-mode)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

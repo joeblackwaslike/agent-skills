@@ -15,9 +15,10 @@ related:
   - /docs/plans/pro-plan/trials
 summary: Learn about the Vercel Pro plan with credit-based billing, one free first-year domain, free viewer seats, and self-serve enterprise features for...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/plans/pro-plan.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "1d8290223cbde1442e8d4a2ddb7ab29722b36a3232bb89744a20ca4b2567592d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "38a3818a10cd85a4924e3e310f0672d67b92cf50bbcd12edacb8e41cab964c85"
 ---
 
 # Vercel Pro Plan
@@ -30,6 +31,7 @@ The Vercel Pro plan is designed for professional developers, freelancers, and bu
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [A more flexible Pro plan for modern teams](https://vercel.com/blog/new-pro-pricing-plan)
 - [Free domain with Pro offer now includes .app and .dev](https://vercel.com/changelog/app-and-dev-domains-included-with-free-domain-for-pro)
 - [Free domain for one year, now for all Pro teams](https://vercel.com/changelog/free-domain-for-one-year-now-for-all-pro-teams)
 - [Free domain now included with new Pro subscriptions](https://vercel.com/changelog/free-domain-now-included-with-new-pro-subscriptions)
@@ -38,10 +40,9 @@ The Vercel Pro plan is designed for professional developers, freelancers, and bu
 - [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
 - [Use Vercel Daemons with eve agents](https://vercel.com/kb/guide/vercel-daemons-eve-agents) — Connect eve agents to Vercel Daemons to process queued jobs, offload heavy work, and react to events. Includes code, aut
 - [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
-- [A more flexible Pro plan for modern teams](https://vercel.com/blog/new-pro-pricing-plan)
-- [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing)
 - [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby) — Learn about the Hobby plan and how it compares to the Pro plan.
 - [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
+- [Vercel Enterprise Plan](https://vercel.com/docs/plans/enterprise) — Learn about the Enterprise plan for Vercel, including features, pricing, and more.
 
 Full cross-link map for this page: [/docs/plans/pro-plan.graph.md](/docs/plans/pro-plan.graph.md)
 <!-- /docsgraph:related -->
@@ -163,6 +164,18 @@ Due to restrictions in the downgrade flow, Pro teams will need to [manually tran
 
 **Interested in the Enterprise plan?**
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

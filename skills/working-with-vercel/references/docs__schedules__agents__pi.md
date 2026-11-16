@@ -10,12 +10,15 @@ prerequisites:
   - /docs/schedules
 related:
   - /docs/agent-harnesses/pi
+  - /docs/agent-harnesses/tools
+  - /docs/functions/limitations
   - /docs/schedules/handle-runs
 summary: Give a Pi agent on durable-harness a tool that creates schedules, and send each run back into the session that created it.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/schedules/agents/pi.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c8d4e87199e3f959e98ea8fee7d256fb6beb0ae78fa3c1317b67808892b65357"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "6d4ecf1a83c56f2606042593a533ff9531780792e16adc3f52fef5891817fd87"
 ---
 
 # Scheduling Work with Pi
@@ -29,13 +32,13 @@ sha256: "c8d4e87199e3f959e98ea8fee7d256fb6beb0ae78fa3c1317b67808892b65357"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing Vercel Schedules](https://vercel.com/blog/introducing-vercel-schedules)
-- [Schedules](https://eve.dev/docs/schedules) — Run an agent on a cron cadence, either a fire-and-forget prompt or a handler that hands work off to a channel.
+- [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
 - [Vercel Schedules is now in public beta](https://vercel.com/changelog/vercel-schedules-is-now-in-public-beta)
 - [Scheduling Work with the AI SDK](https://vercel.com/docs/schedules/agents/ai-sdk) — Give an AI SDK agent a tool that creates schedules, and run each scheduled task as a new agent turn.
 - [Scheduling Work with libfx](https://vercel.com/docs/schedules/agents/libfx) — Give an fx agent a tool that creates schedules, and send each run back into the session that created it.
-- [Scheduling Work with eve](https://vercel.com/docs/schedules/agents/eve) — Let an eve agent create recurring and one-time schedules for its users with defineDynamicSchedules.
-- [Tools, Files, and Documents in Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/tools) — What tools do when a durable agent harness resumes after a crash, where its files live, and how to keep typed state with
+- [Running Agent Harnesses Durably on Vercel](https://vercel.com/docs/agent-harnesses) — Run Pi, fx, OpenCode, eve, Claude Code, and Codex on Vercel so a crash, a function timeout, or a redeploy resumes the ag
 - [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
+- [Security for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/security) — What a durable agent harness may run in your Vercel Function, where the commands and files a model picks run instead, an
 
 Full cross-link map for this page: [/docs/schedules/agents/pi.graph.md](/docs/schedules/agents/pi.graph.md)
 <!-- /docsgraph:related -->
@@ -121,11 +124,45 @@ export const POST = handleCallback<TaskMessage>(async ({ executionId, payload })
 
 The scheduled turn is part of the session, so it streams to anyone following the session, and shows up in its history.
 
+## Frequently asked questions
+
+### Why does the Pi scheduling tool use `replay: 'never'`?
+
+`replay` tells `durable-harness` what to do with a tool call that a crash interrupts. The harness runs a `'safe'` tool again. It doesn't run a `'never'` tool again, so an interrupted `Schedules.create()` call can't create a second schedule. Instead, the harness tells the model that the call may or may not have run, and the model can check before it tries again. Before a `'never'` call starts, the harness waits until the session's log records it. See [What happens to a tool call after a crash](/docs/agent-harnesses/tools#what-happens-to-a-tool-call-after-a-crash).
+
+### Why does the Pi agent set `durability: 'strict'`?
+
+The consumer passes an `identity` to `agent.sessions.send()`, and `identity` only works on a session with `durability: 'strict'`. `durable-harness/pi` defaults to `durability: 'on'`, where writes to the session's log trail the agent. With `'strict'`, every write is durable before the agent goes on, and a message is in the log before `send` returns. The tradeoff is that each step waits for the log.
+
+### What happens when Vercel Queues redelivers a scheduled message to a Pi session?
+
+The redelivered message doesn't start a second turn. The consumer builds the submission's `identity` from the run's `executionId`, which is the same for every delivery of a scheduled run. When `agent.sessions.send()` receives an `identity` that the session has already seen with the same text, it returns the original submission's ID. If the same `identity` arrives with different text, `send` throws `SubmissionConflict`.
+
+### How does the Pi scheduling tool know which user and session it's running for?
+
+`durable-harness` passes both to the tool in `io.ctx`. Record the user's ID and time zone as `config` when you call `agent.sessions.start()`, and the tool reads them from `io.ctx.config`. The session ID is `io.ctx.runId`, which the tool stores in the schedule's payload. Your code sets `config`, so the model can't change the namespace that the tool creates a schedule in. The harness records `config` with the session, so don't put secrets in it.
+
+### Does the queue consumer run the scheduled Pi turn itself?
+
+No. `agent.sessions.send()` writes the prompt to the session's log and returns, and the session's own queue route runs the turn. The consumer only needs to run long enough to submit the prompt. The scheduled turn is as durable as any other turn in the session. If the function running the turn crashes or reaches its [maximum duration](/docs/functions/limitations#max-duration), another function continues the turn from the log.
+
 ## Related
 
 - [Running Pi durably on Vercel](/docs/agent-harnesses/pi)
 - [Handling scheduled runs](/docs/schedules/handle-runs#queue-targets)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

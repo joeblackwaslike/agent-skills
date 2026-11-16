@@ -16,9 +16,10 @@ related:
   - /docs/frameworks/backend/flask
 summary: Deploy Dramatiq workers on Vercel. Learn how Dramatiq actors use Vercel Queues and Vercel Functions to process background tasks.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/backend/dramatiq.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "7949984ceabcd0e8094419388c5337cd0585c2cf698ca19e80e01faf48248eaa"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "fc956cab5a56f60aed252bd6fa0c5ced6293fdd9a9eefba79b56a18369ba50e5"
 ---
 
 # Deploy Dramatiq workers on Vercel
@@ -41,6 +42,7 @@ them in the background.
 - [Migrate a Python API from Railway to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-railway-to-vercel) — Move a FastAPI, Flask, or Django API from Railway to Vercel Functions. Replace railway.json start commands, volumes, Cel
 - [Migrate a Python API from Render to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-render-to-vercel) — Move a FastAPI, Flask, or Django API from Render to Vercel Functions. Translate render.yaml and replace persistent disks
 - [Run background tasks with Celery on Vercel](https://vercel.com/changelog/run-background-tasks-with-celery-on-vercel)
+- [Vercel Daemons is now in public beta](https://vercel.com/changelog/vercel-daemons-is-now-in-public-beta)
 
 Full cross-link map for this page: [/docs/frameworks/backend/dramatiq.graph.md](/docs/frameworks/backend/dramatiq.graph.md)
 <!-- /docsgraph:related -->
@@ -285,7 +287,7 @@ values = list(result_group.get_results(block=True, timeout=30_000))
 ```
 
 `VercelRuntimeCacheBackend` accepts `namespace`, `name`, and `tags` to control
-where results are stored. [Runtime Cache](/docs/caching/runtime-cache) is
+where results are stored. [Runtime Cache](/docs/runtime-cache) is
 ephemeral and regional, so treat results as short-lived. Store anything you
 need to keep in a database.
 
@@ -345,6 +347,18 @@ For more about deploying Dramatiq on Vercel, see:
 - [Queues Python SDK reference](/docs/queues/python-sdk)
 - [Python runtime documentation](/docs/functions/runtimes/python)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

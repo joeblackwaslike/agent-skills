@@ -3,7 +3,7 @@ title: Marketplace Vercel API Reference
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel"
-last_updated: 2026-11-09
+last_updated: 2026-11-16
 type: reference
 prerequisites:
   []
@@ -15,9 +15,10 @@ related:
   - /docs/integrations/create-integration/marketplace-api/reference/vercel/revoke-installation-credential
 summary: Learn how to call Vercel API endpoints to interact with Vercel resources
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "741df41fd36a85be99980fd1e06b6fc7714609890b0557f7c0f5a0f6a682e981"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7a1bb8863a9227f025bf0a42fbd1c378b2a5dc92070cb50dbcb551e4402b3eed"
 ---
 
 # Vercel API Reference
@@ -72,6 +73,18 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 - [Native Integration Flows](/docs/integrations/marketplace-flows)
 - [Partner API Reference](/docs/integrations/create-integration/marketplace-api/reference/partner)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

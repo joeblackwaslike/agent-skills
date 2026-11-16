@@ -15,9 +15,10 @@ related:
   - /docs/errors/function_throttled
 summary: Learn how Vercel automatically scales your functions to handle traffic surges.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/concurrency-scaling.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "bcb5bc3123b08b223cbb794f3134e0d540e3829dfcc6c84e5f768533ddccb442"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "14d56205a99daeebb7b7d2b895f93e5729db9d9e120c70e8dc27e0f9155dd7bc"
 ---
 
 # Concurrency scaling
@@ -34,14 +35,14 @@ Vercel automatically scales your functions to handle traffic surges, ensuring op
 - [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
 - [How can I improve function cold start performance on Vercel?](https://vercel.com/kb/guide/improve-function-cold-start-performance-on-vercel) — Learn how to confirm whether cold starts cause function latency on Vercel, and how Fluid compute reduces how often they
 - [Scale to one: How Fluid solves cold starts](https://vercel.com/blog/scale-to-one-how-fluid-solves-cold-starts)
-- [Vercel Functions now scale 12x faster for high-volume requests](https://vercel.com/changelog/vercel-functions-now-scale-12x-faster-for-high-volume-requests)
 - [What should I do if I receive a 503 error on Vercel?](https://vercel.com/kb/guide/what-should-i-do-if-i-receive-a-503-error-on-vercel) — Learn about when Serverless Functions return a 503 status code and what can be done about them.
+- [Vercel Functions now scale 12x faster for high-volume requests](https://vercel.com/changelog/vercel-functions-now-scale-12x-faster-for-high-volume-requests)
 - [What is Vercel's policy regarding load testing deployments?](https://vercel.com/kb/guide/what-s-vercel-s-policy-regarding-load-testing-deployments) — Learn about Vercel's policies regarding load tests.
+- [In-function concurrency now in public beta](https://vercel.com/changelog/in-function-concurrency-now-in-public-beta)
 - [Schedules Limits](https://vercel.com/docs/schedules/limits) — Limits for Vercel Schedules, including schedules per team, run frequency, jitter, Hobby usage, and API requests.
 - [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
-- [Pricing and Limits](https://vercel.com/docs/queues/pricing) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
 - [Vercel Enterprise Plan](https://vercel.com/docs/plans/enterprise) — Learn about the Enterprise plan for Vercel, including features, pricing, and more.
-- [Multi-tenant Limits](https://vercel.com/docs/platforms/multi-tenant-platforms/limits) — Understand the limits and features available for Vercel for Platforms.
+- [Daemons Limits](https://vercel.com/docs/daemons/limits) — Limits on the configuration, size, and capabilities of Vercel Daemons during the beta.
 
 Full cross-link map for this page: [/docs/functions/concurrency-scaling.graph.md](/docs/functions/concurrency-scaling.graph.md)
 <!-- /docsgraph:related -->
@@ -68,6 +69,18 @@ You can monitor burst concurrency events using [Log Drains](/docs/drains), or [R
 
 If you exceed the limit, a [`503 FUNCTION_THROTTLED`](/docs/errors/function_throttled) error will trigger.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

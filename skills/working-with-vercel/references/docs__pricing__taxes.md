@@ -11,9 +11,10 @@ related:
   []
 summary: This page covers frequently asked questions around taxes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/pricing/taxes.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "1df35f9e0e18852b959845d0170a37e375186ee0e76661998e91ab17df1c67b3"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "acd364650028fde3858027621eec7ab93929b015fd69d8dda36706cc1dbb30b4"
 ---
 
 # Taxes
@@ -29,12 +30,11 @@ All prices shown are in USD and exclude value-added tax (VAT), goods and service
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
-- [Advanced Invoice Settings](https://vercel.com/blog/advanced-invoice-settings)
-- [Manage Billing and Refunds for Integrations](https://vercel.com/docs/integrations/create-integration/billing) — Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
-- [Services Pricing and Limits](https://vercel.com/docs/services/pricing) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
-- [Billing FAQ for Enterprise Plan](https://vercel.com/docs/plans/enterprise/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
 - [Regional Pricing](https://vercel.com/docs/pricing/regional-pricing) — Vercel pricing for Managed Infrastructure resources in different regions.
-- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
+- [Services Pricing and Limits](https://vercel.com/docs/services/pricing) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
+- [Portland, USA \\(pdx1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/pdx1) — Vercel pricing for the Portland, USA \\(pdx1\\) region.
+- [Dublin, Ireland \\(dub1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dub1) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
+- [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
 
 Full cross-link map for this page: [/docs/pricing/taxes.graph.md](/docs/pricing/taxes.graph.md)
 <!-- /docsgraph:related -->
@@ -104,6 +104,18 @@ You can refer to our [terms of service](/legal/terms#payments) on collecting sal
 
 For questions about tax collection or US sales-tax exemptions, contact <tax@vercel.com>. For VAT ID issues, [check your billing settings](#what-if-my-organization-is-vat-registered). You do not need to email your VAT registration information to the tax team for verification.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

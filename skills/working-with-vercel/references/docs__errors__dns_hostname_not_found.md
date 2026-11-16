@@ -13,9 +13,10 @@ related:
   - /docs/deployments/logs
 summary: The domain does not exist, resulting in an NXDOMAIN error during DNS resolution. This is a DNS error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/dns_hostname_not_found.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "637833885ca9abb82684bf04f7ab31f53c416d9a6a26f8c0fdc849a72b4474e7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "20c05ca7030115b3b87652292b35bdd7c606d4508c050352bbea52875016dbf6"
 ---
 
 # DNS_HOSTNAME_NOT_FOUND
@@ -35,6 +36,18 @@ To troubleshoot this error, follow these steps:
 3. **Check the rewrite destination:** Ensure that the destination hostname of the external rewrite is spelled correctly
 4. **Review application logs:** Inspect the [application logs](/docs/deployments/logs) for any warnings or errors related to DNS or the attempted connections
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

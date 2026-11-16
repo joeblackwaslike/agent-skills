@@ -16,9 +16,10 @@ related:
   - /docs/flags/vercel-flags/sdks/core
 summary: Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/vercel-flags/quickstart.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "d0be9766c78222e0eb69444f580eea67332b8f51fc90b93552f602673ad335a5"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "13ea1692ace73bdb487ec69048784b0671a0bb73123b74b7e0870f9ad7db0d72"
 ---
 
 # Getting Started with Vercel Flags
@@ -34,8 +35,8 @@ This guide walks you through creating a feature flag in the Vercel Dashboard and
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta)
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
-- [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
 - [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference) — API reference for the Flags SDK for Next.js and SvelteKit.
 
@@ -350,6 +351,18 @@ Your flag is working. Here's what to explore next:
 - **[Observability](/docs/flags/observability)**: Track flag evaluations in Runtime Logs and Web Analytics.
 - **[Managing flags](/docs/flags/vercel-flags/dashboard)**: Configure rules, environments, and flag lifecycles in the dashboard.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -13,9 +13,10 @@ related:
   - /docs/cli/global-options
 summary: Manage microfrontends groups from the CLI. Learn how to create groups, inspect group metadata, add and remove projects, and pull configuration for...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/microfrontends.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "29259b9c474dde50d69048a07b2a58b4bbb4d1d66bbc467141fa6114d7057180"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2f301b0a2013d0c023449d0e7a6071eae17abed9820f691d3277ca5f418cc6ea"
 ---
 
 # vercel microfrontends
@@ -29,14 +30,16 @@ The `vercel microfrontends` command provides utilities for managing Vercel Micro
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Manage Vercel Microfrontends with AI Agents and the CLI](https://vercel.com/changelog/manage-vercel-microfrontends-with-ai-agents-and-the-cli)
-- [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart) — Learn how to get started with microfrontends on Vercel.
-- [Microfrontends](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends) — Vercel MCP tools for microfrontends.
-- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [Managing microfrontends](https://vercel.com/docs/microfrontends/managing-microfrontends) — Learn how to manage your microfrontends on Vercel.
+- [Create a microfrontends group with applications](https://vercel.com/docs/rest-api/microfrontends/create-a-microfrontends-group-with-applications) — POST /v1/microfrontends/group — Creates a microfrontends group and attaches multiple projects in a single request.
+- [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart) — Learn how to get started with microfrontends on Vercel.
 - [Microfrontends Configuration](https://vercel.com/docs/microfrontends/configuration) — Configure your microfrontends.json.
+- [Microfrontends](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends) — Vercel MCP tools for microfrontends.
 
 Full cross-link map for this page: [/docs/cli/microfrontends.graph.md](/docs/cli/microfrontends.graph.md)
 <!-- /docsgraph:related -->
+
+The `vercel mf` alias is deprecated since Vercel CLI 65.2.0. It still works, but prints a deprecation warning that names `vercel microfrontends`.
 
 > **💡 Note:** To learn more about the architecture and config format, see
 > [Microfrontends on Vercel](/docs/microfrontends).
@@ -184,7 +187,7 @@ vercel microfrontends inspect-group [options]
 ### Options
 
 | Option               | Description                                                                                                      |
-| -------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | `--group`            | Name, slug, or ID of the microfrontends group to inspect                                                         |
 | `--config-file-name` | Custom microfrontends config file path/name relative to the default app root (must end with `.json` or `.jsonc`) |
 | `--json`             | Output the group and project metadata as JSON                                                                    |
@@ -259,6 +262,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

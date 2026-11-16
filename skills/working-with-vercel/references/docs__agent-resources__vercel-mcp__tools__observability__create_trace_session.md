@@ -12,9 +12,10 @@ related:
   []
 summary: Use create_trace_session with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/create_trace_session.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "1fc3a5bb30afd50a3fc1b8c8097ce495cdef7e9e921e38c6220d6492fb155cc5"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f3b4fcfcbc07fe7d0821f3be6b110f8967869b60e6fe3bd455c8df1db21bb8b8"
 ---
 
 # create_trace_session
@@ -28,10 +29,10 @@ Mints a short-lived HS256 JWT scoped to a deployment hostname. The Vercel CLI pr
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Create a trace session token for a deployment](https://vercel.com/docs/rest-api/projects/create-a-trace-session-token-for-a-deployment) — POST /v1/projects/traces/session — Mints a short-lived HS256 JWT scoped to a deployment hostname. The Vercel CLI present
-- [create_session_directory](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/create_session_directory) — Use create_session_directory with Vercel MCP.
+- [Session Tracing](https://vercel.com/docs/tracing/session-tracing) — Learn how to trace your sessions to understand performance and infrastructure details.
 - [get_session](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/get_session) — Use get_session with Vercel MCP.
+- [create_session_directory](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/create_session_directory) — Use create_session_directory with Vercel MCP.
 - [create_sandboxes_sessions_by_session_id_snapshot_v2](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/create_sandboxes_sessions_by_session_id_snapshot_v2) — Use create_sandboxes_sessions_by_session_id_snapshot_v2 with Vercel MCP.
-- [create_sandboxes_sessions_by_session_id_snapshot_v3](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/create_sandboxes_sessions_by_session_id_snapshot_v3) — Use create_sandboxes_sessions_by_session_id_snapshot_v3 with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/observability/create_trace_session.graph.md](/docs/agent-resources/vercel-mcp/tools/observability/create_trace_session.graph.md)
 <!-- /docsgraph:related -->
@@ -44,6 +45,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/obser
 | `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody` | object | No       | Request body for this tool.                                 |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

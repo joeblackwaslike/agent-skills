@@ -13,9 +13,10 @@ related:
   - /docs/rest-api
 summary: Remove a domain from a Vercel project, or delete it from your account and all associated projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains/working-with-domains/remove-a-domain.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "967743f9cef50358864e26f2f2e8e8de184cc5ceec2432b02dcc2fbc00a5e775"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "80b14113d15598b5b6970ce1e1776bfde0d0b94d4455af53ebf18fb0d0755e63"
 ---
 
 # Removing a Domain from a Project or Account
@@ -30,9 +31,9 @@ To remove a domain from one Vercel project, delete it from the project's **Domai
 
 - [Remove a domain from a project](https://vercel.com/docs/rest-api/projects/remove-a-domain-from-a-project) — DELETE /v9/projects/{idOrName}/domains/{domain} — Remove a domain from a project by passing the domain name and by speci
 - [Remove a domain by name](https://vercel.com/docs/rest-api/domains/remove-a-domain-by-name) — DELETE /v6/domains/{domain} — Delete a previously registered domain name from Vercel. Deleting a domain will automatical
-- [Add a domain to a project](https://vercel.com/docs/rest-api/projects/add-a-domain-to-a-project) — POST /v10/projects/{idOrName}/domains — Add a domain to the project by passing its domain name and by specifying the pro
 - [Viewing & Searching Domains](https://vercel.com/docs/domains/working-with-domains/view-and-search-domains) — Learn how to view and search all registered domains that are assigned to Vercel Projects through the Vercel dashboard.
-- [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
+- [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
+- [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
 
 Full cross-link map for this page: [/docs/domains/working-with-domains/remove-a-domain.graph.md](/docs/domains/working-with-domains/remove-a-domain.graph.md)
 <!-- /docsgraph:related -->
@@ -67,6 +68,18 @@ curl --request DELETE \
   --header "Authorization: Bearer $VERCEL_TOKEN"
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

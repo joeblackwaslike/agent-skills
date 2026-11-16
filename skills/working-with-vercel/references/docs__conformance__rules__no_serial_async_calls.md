@@ -11,9 +11,10 @@ related:
   []
 summary: Prevent blocking serial async await calls in your applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/no_serial_async_calls.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "acfcf8a2d2ae6a35369d98ea569c7333d582359f843c86491d5f94735b9fec16"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "27dfc734cea76334a0546ac3141f5b0bbcd470bb9d7bfe1196049996d2b9470f"
 ---
 
 # NO_SERIAL_ASYNC_CALLS
@@ -85,6 +86,18 @@ export async function getStaticProps() {
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

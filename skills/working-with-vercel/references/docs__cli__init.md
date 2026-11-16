@@ -12,9 +12,10 @@ related:
   - /docs/cli/global-options
 summary: Learn how to initialize Vercel supported framework examples locally using the vercel init CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/init.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "4e16557a21bf630b0694bf480edb394514c352c7c9467c6524df219df635f9f2"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "14a1a5d6ded1e41ecfefb6b3d234e6a4a8c0d370365716f899c8382ff7ac5686"
 ---
 
 # vercel init
@@ -33,10 +34,10 @@ The `vercel init` command is used to initialize [Vercel supported framework](/do
 - [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
 - [How to ship a Flask app on Vercel](https://vercel.com/kb/guide/ship-a-flask-app-on-vercel) — Deploy a Flask app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
 - [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
+- [vercel install](https://vercel.com/docs/cli/install) — Learn how to install marketplace native integrations and provision resources with the vercel install CLI command.
 - [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code, Codex, and OpenCode, and co
 - [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
-- [vercel install](https://vercel.com/docs/cli/install) — Learn how to install marketplace native integrations and provision resources with the vercel install CLI command.
-- [vercel link](https://vercel.com/docs/cli/link) — Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
+- [vercel ci](https://vercel.com/docs/cli/ci) — Enable or disable Vercel CI for repositories, inspect runs, search logs, and rerun jobs from the command line.
 
 Full cross-link map for this page: [/docs/cli/init.graph.md](/docs/cli/init.graph.md)
 <!-- /docsgraph:related -->
@@ -107,6 +108,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -13,9 +13,10 @@ related:
   - /docs/ai-gateway/observability-and-spend/budgets
 summary: Connect Cursor to AI Gateway with its OpenAI base URL override. Configure the Cursor compatibility endpoint, API key, and model IDs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/cursor.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "7be085df743e3ccc7271ed4cc8fd8bfcc17f74ef851116c7cf3013190cc951cd"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "48b19e59c2057231abe4c06fe347f21e484ee4e177058c39a5294bff85a4a936"
 ---
 
 # Cursor with AI Gateway
@@ -29,10 +30,10 @@ sha256: "7be085df743e3ccc7271ed4cc8fd8bfcc17f74ef851116c7cf3013190cc951cd"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Cursor is now available in the AI SDK harness layer](https://vercel.com/changelog/cursor-ai-sdk-harness-adapter)
-- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
-- [Cursor now supported on Vercel MCP](https://vercel.com/changelog/cursor-now-supported-on-vercel-mcp)
-- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
+- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
+- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
+- [Aider with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/aider) — Connect Aider to AI Gateway with the Vercel CLI or an OpenAI-compatible base URL, API key, and model metadata.
 - [OpenClaw with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openclaw) — Connect OpenClaw to AI Gateway with the Vercel CLI or manual provider configuration. Use gateway models across coding ag
 - [Cursor Cloud Agents](https://vercel.com/docs/sandbox/ecosystem/cursor) — Run Cursor Cloud Agents on Vercel Sandbox by backing a Cursor Self-Hosted Machines Team Pool with one isolated microVM p
 
@@ -91,6 +92,18 @@ Cursor's bring-your-own-key support has constraints that come from Cursor itself
 - Configure [spend limits](/docs/ai-gateway/observability-and-spend/budgets) on your API key
 - Connect your terminal agents with the [Vercel CLI](/docs/cli/ai-gateway#setup)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

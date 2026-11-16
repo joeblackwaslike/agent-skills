@@ -3,24 +3,26 @@ title: vercel billing budgets
 product: vercel
 url: /docs/cli/budgets
 canonical_url: "https://vercel.com/docs/cli/budgets"
-last_updated: 2026-11-03
+last_updated: 2026-11-09
 type: reference
 prerequisites:
   - /docs/cli
 related:
   - /docs/spend-management
+  - /docs/rbac/access-roles
   - /docs/cli/alerts
   - /docs/cli/global-options
-summary: "View and manage your team's on-demand spend budget from the Vercel CLI."
+summary: View and manage Spend Management budgets for your team, projects, products, and organization from the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/budgets.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "4e821cf244da5c5306158325c3634072e800025f9d0fb1a3c623ca76328e9d02"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "69150f36a9f28dd38c34fc2701812ff2758bbbb5840963a7c2955829514a3113"
 ---
 
 # vercel billing budgets
 
-Use the `vercel billing budgets` command to view and manage your team's on-demand spend budget from the terminal. The budget you set here is the same [On-Demand Budget](/docs/spend-management) shown in your team's billing settings in the dashboard, so changes made from the CLI apply everywhere.
+Use the `vercel billing budgets` command to view and manage your [Spend Management](/docs/spend-management) budgets from the terminal. These are the same budgets shown in your billing settings in the dashboard, so changes made from the CLI apply everywhere.
 
 
 <!-- docsgraph:related -->
@@ -29,146 +31,158 @@ Use the `vercel billing budgets` command to view and manage your team's on-deman
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel CLI adds Spend Management](https://vercel.com/changelog/vercel-cli-adds-spend-management)
-- [vercel billing](https://vercel.com/docs/cli/billing) — Learn how to view usage, contracts, budgets, and invoices for your Vercel team using the vercel billing CLI command.
+- [AI Gateway now supports team and project spend budgets](https://vercel.com/changelog/ai-gateway-spend-budgets-and-alerts)
+- [Set per-user budgets on AI Gateway](https://vercel.com/changelog/set-per-user-budgets-on-ai-gateway)
+- [vercel billing](https://vercel.com/docs/cli/billing) — Learn how to view your billing overview, usage, contracts, budgets, and invoices for your Vercel team using the vercel b
 - [vercel billing usage](https://vercel.com/docs/cli/usage) — Learn how to view billing usage and costs, for your Vercel account using the vercel billing usage CLI command.
+- [List AI Gateway budgets](https://vercel.com/docs/rest-api/ai-gateway/list-ai-gateway-budgets) — GET /ai-gateway/budgets/list — List the team's AI Gateway budgets \\(team/project/user scopes, plus default-covered api-k
 - [vercel organizations](https://vercel.com/docs/cli/organizations) — Create and manage organizations and their child teams with the vercel organizations CLI command.
 - [vercel buy](https://vercel.com/docs/cli/buy) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
-- [vercel domains](https://vercel.com/docs/cli/domains) — Learn how to buy, transfer, and manage your domains using the vercel domains CLI command.
 
 Full cross-link map for this page: [/docs/cli/budgets.graph.md](/docs/cli/budgets.graph.md)
 <!-- /docsgraph:related -->
 
-Because the command reads and writes the budget programmatically, your agents and scripts can manage spend alongside human operators. Every subcommand supports `--json`, which prints the result as JSON.
+Because the command reads and writes budgets programmatically, your agents and scripts can manage spend alongside human operators. Every subcommand supports `--json`, which prints the result as JSON.
 
-`vercel billing budgets` requires the Owner or Billing role on the team. [Spend Management](/docs/spend-management) is available at no additional cost to teams on the Pro plan and to Enterprise teams on the Flexible Commitment plan.
+Team members can view budgets, spend, and alerts. Changing a budget requires the [Owner](/docs/rbac/access-roles#owner-role) or [Billing](/docs/rbac/access-roles#billing-role) role. The organization budget also needs an organization role: Admin or Viewer to view it, and Admin to change it. [Spend Management](/docs/spend-management) is available at no additional cost to teams on the Pro plan and to Enterprise teams on the Flexible Commitment plan.
+
+## Choosing a budget
+
+A budget can cover your whole team, one project, one product, or your whole organization. Pick one with an option:
+
+| Option                           | Budget                                               |
+| -------------------------------- | ---------------------------------------------------- |
+| None                             | The team's budget                                    |
+| `--project <name or ID>`, `-p`   | A project's budget                                   |
+| `--product <name or ID>`         | A product's budget, such as `"Fast Data Transfer"`   |
+| `--organization <slug or ID>`    | The organization's budget, from any team             |
+
+`list` and `alerts` show every budget by default, and these options narrow them to one. They also take `--type` to filter by budget scope, for example `--type project,product`. `set` and `remove` act on the team's budget unless you pass an option. The global `--scope` option is different: it selects which team the CLI acts on.
 
 ## vercel billing budgets list
 
-Use `vercel billing budgets list` to list the budgets on your team. Running `vercel billing budgets` with no subcommand runs the same listing.
+Use `vercel billing budgets list` to list your budgets. Running `vercel billing budgets` with no subcommand runs the same listing.
 
 ```bash filename="terminal"
 $ vercel billing budgets list
-> Budgets
-  scope    amount    status    pause    webhook
-  team       $200    active    yes      https://example.com/spend
+> 3 budgets on team my-team
+  type       name                 amount    status    pause    webhook
+  project    my-app                 $100    active    yes      —
+  product    Fast Data Transfer      $50    active    no       —
+  team       my-team                $200    active    yes      https://example.com/spend
 ```
 
-*Listing the team's budgets*
+*Listing the team's budgets of every scope*
 
-The `scope` column shows what the budget applies to. Budgets apply to your team, which is separate from the global `--scope` option that selects the team the CLI acts on.
+To list the organization budget, use `--organization`.
 
 ## vercel billing budgets inspect
 
-Use `vercel billing budgets inspect` to see your current spend for the billing cycle against the configured budget. When no budget is set, the command reports your spend and shows how to create one.
+Use `vercel billing budgets inspect` to see this billing cycle's spend against a budget, along with its most recent alerts. Without an option, it shows the team's budget.
 
 ```bash filename="terminal"
 $ vercel billing budgets inspect
-> No budget set on team my-team. Current spend is $63.33. Create one with `vercel --scope my-team billing budgets set --amount <dollars>`.
+> Budget on team my-team
+  type    name       amount     spent    used    status    pause    webhook
+  team    my-team      $200    $63.33     32%    active    yes      https://example.com/spend
 ```
 
-*Viewing current spend when no budget is set*
+*Viewing spend against the team's budget*
 
-Once a budget is set, the command shows the current spend and the percent of the budget used alongside the budget's configuration.
+When no budget is set, the command reports your current spend and shows how to create one:
 
 ```bash filename="terminal"
-$ vercel billing budgets inspect
-  scope    amount    spent     used    status    pause    webhook
-  team       $200    $63.33     32%    active    yes      https://example.com/spend
+$ vercel billing budgets inspect --project my-app
+> No budget set on project my-app. Current spend is $41.20. Create one with `vercel --scope my-team billing budgets set --project my-app --amount <dollars>`.
 ```
 
-*Output when a budget is active*
+*Viewing a project's spend before it has a budget*
 
-When the budget has alert history, `vercel billing budgets inspect` also prints the three most recent alerts under a Recent alerts heading.
+The CLI doesn't show spend for the organization budget yet. You can see it in the dashboard.
 
 ## vercel billing budgets set
 
-Use `vercel billing budgets set` to create or update your team's budget. The `--amount` option sets the budget per billing cycle in whole dollars, with a minimum of 1. You must provide it when creating a budget. If you set an amount partway through a cycle, it accounts for your current spend.
-
-For an existing budget, you can update pause or webhook settings without passing `--amount`. Omitted settings keep their existing values.
+Use `vercel billing budgets set` to create or update a budget. The `--amount` option sets the budget per billing cycle in whole dollars, and you must provide it when creating a budget. A new budget notifies you at 50%, 75%, and 100%. For an existing budget, you can change pause or webhook settings without passing `--amount`; settings you leave out keep their current values.
 
 ```bash filename="terminal"
 $ vercel billing budgets set --amount 200 --pause --webhook https://example.com/spend
-
 > Pause all projects on team my-team at 100% ($200). Production deployments become unavailable.
-> Success! Budget updated on team my-team.
-  scope    amount    status    pause    webhook
-  team       $200    active    yes      https://example.com/spend
+> Success! Budget created on team my-team.
+  type    name       amount    status    pause    webhook
+  team    my-team      $200    active    yes      https://example.com/spend
 > Webhook secret: <WEBHOOK_SECRET>
 > Store it now — it cannot be retrieved later.
 ```
 
-*Creating a budget that pauses projects and calls a webhook*
+*Creating a team budget that pauses projects and calls a webhook*
 
 When `set` adds a webhook, it prints the webhook's secret once. Store it then, because it can't be retrieved later.
 
-To turn off automatic pausing without changing the budget amount:
+Use the same options to set other budgets:
 
 ```bash filename="terminal"
-vercel billing budgets set --no-pause
+vercel billing budgets set --project my-app --amount 100 --pause
+vercel billing budgets set --product "Fast Data Transfer" --amount 50
+vercel billing budgets set --organization my-org --amount 10000
 ```
 
-*Updating pause settings on an existing budget*
+*Setting a project, product, and organization budget*
 
 ### Options
 
-| Option                      | Required     | Description                                                                                                                                                                                                         |
-| --------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--amount`                  | For creation | The budget in whole dollars, set per billing cycle. Minimum 1. Omit it to keep the existing amount when updating pause or webhook settings.                                                                         |
-| `--pause`, `--no-pause`     | No           | Pass `--pause` to pause the production deployments of all projects on the team when the budget is reached. Pass `--no-pause` to turn automatic pausing off.                                                         |
-| `--webhook`, `--no-webhook` | No           | Pass `--webhook <url>` to send an HTTPS POST to that URL at spend thresholds. Pass `--no-webhook` to remove the existing budget webhook. See [configuring a webhook](/docs/spend-management#configuring-a-webhook). |
+| Option                      | Required     | Description                                                                                                                                                                                          |
+| --------------------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--amount`                  | For creation | The budget in whole dollars, per billing cycle. Omit it to keep the existing amount.                                                                                                                 |
+| `--pause`, `--no-pause`     | No           | Pass `--pause` to pause production deployments when the budget is reached: every project for a team budget, or that project for a project budget. Pass `--no-pause` to turn pausing off.            |
+| `--webhook`, `--no-webhook` | No           | Pass `--webhook <url>` to send an HTTPS POST to that URL at spend thresholds. Pass `--no-webhook` to remove it. See [configuring a webhook](/docs/spend-management#configuring-a-webhook).            |
 
-Pass at least one setting to `set`. You can't combine `--pause` with `--no-pause`, or `--webhook` with `--no-webhook`.
+Product and organization budgets can't pause deployments. They send notifications and call the webhook.
 
 Vercel checks spend every few minutes, so the configured actions can trigger several minutes after your spend crosses the budget.
 
-> **💡 Note:** Pausing stops the production deployments of every project on the team from
+> **💡 Note:** Pausing stops the production deployments of the affected projects from
 > serving traffic. Each project stays paused until you resume it manually.
 
 ## vercel billing budgets remove
 
-Use `vercel billing budgets remove` to delete the team's budget. Pass `--yes` to skip the confirmation prompt, which is useful in scripts and automation.
+Use `vercel billing budgets remove` to delete a budget. Without an option, it removes the team's budget. Pass `--yes` to skip the confirmation prompt, which is required in scripts and automation.
 
 ```bash filename="terminal"
-$ vercel billing budgets remove --yes
-> Success! Removed the $200 budget on team my-team.
+$ vercel billing budgets remove --project my-app --yes
+> Success! Removed the $100 budget on project my-app.
 ```
 
-*Removing the budget without a confirmation prompt*
+*Removing a project budget without a confirmation prompt*
 
-### Options
-
-| Option  | Required | Description                        |
-| ------- | -------- | ---------------------------------- |
-| `--yes` | No       | Skip the confirmation prompt.      |
+A removed budget's alerts stay in `vercel billing budgets alerts`.
 
 ## vercel billing budgets alerts
 
-Use `vercel billing budgets alerts` to list your team's budget alert history, newest first. Before this subcommand, you only heard about each alert as it fired through notifications, emails, and webhooks. Now you can review every alert the budget has triggered in one place.
+Use `vercel billing budgets alerts` to list your budget alert history, newest first. It shows alerts for every budget unless you pass `--type` or one of the budget options above, and it includes alerts from earlier budgets on the same team, project, product, or organization.
 
 ```bash filename="terminal"
 $ vercel billing budgets alerts
 > 3 budget alerts on team my-team
-  date                    budget    threshold      spent    budget amount    actions configured
-  2026-09-21 14:33 UTC    team            50%    $313.33             $600    notify
-  2026-09-19 23:12 UTC    team           100%    $313.33             $250    notify, pause
-  2026-09-19 02:35 UTC    team            75%    $230.00             $300    notify
+  date                    type       name                 threshold      spent    budget amount    actions configured
+  2026-11-02 14:33 UTC    project    my-app                     75%     $75.10             $100    notify
+  2026-10-28 09:12 UTC    product    Fast Data Transfer         50%     $25.40              $50    notify
+  2026-10-21 18:05 UTC    team       my-team                   100%    $200.00             $200    notify, webhook, pause
 ```
 
 *Listing budget alert history, newest first*
 
-Each row shows the alert date in UTC, the budget scope, the threshold crossed, the spend and budget amount at that time, and the actions configured for that threshold. The actions configured column reports what the threshold was set to do, such as notify, webhook, or pause, not whether each action ran. Every threshold prints as a plain percent, including thresholds above 100%.
+Each row shows when the alert fired (in UTC), which budget it was for, the threshold crossed, the spend and budget amount at that time, and the actions configured for that threshold. The actions column reports what the threshold was set to do, not whether each action ran.
 
 Budget alerts are distinct from observability alerts. For those, see [`vercel alerts`](/docs/cli/alerts).
 
 ### Options
 
-| Option     | Required | Description                                                                                                                             |
-| ---------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| `--since`  | No       | Shorthand `-s`. Only show alerts on or after this time. Accepts an ISO 8601 timestamp or a relative time like `1d`, `7d`, `30d`. Must be earlier than `--until`. |
-| `--until`  | No       | Shorthand `-u`. Only show alerts on or before this time. Accepts an ISO 8601 timestamp or a relative time like `1d`, `7d`, `30d`. Must be later than `--since`.  |
-| `--limit`  | No       | The number of alerts to return, between 1 and 100.                                                                                      |
-| `--next`   | No       | Show the next page of results. Pass the cursor from the previous page.                                                                  |
-| `--json`   | No       | Print the alerts with the team and the next-page cursor as JSON.                                                                        |
+| Option    | Required | Description                                                                                                                                  |
+| --------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--since` | No       | Shorthand `-s`. Only show alerts on or after this time. Accepts an ISO 8601 timestamp or a relative time like `1d`, `7d`, `30d`.             |
+| `--until` | No       | Shorthand `-u`. Only show alerts on or before this time. Accepts an ISO 8601 timestamp or a relative time like `1d`, `7d`, `30d`.            |
+| `--limit` | No       | The number of alerts to return, between 1 and 100.                                                                                           |
+| `--next`  | No       | Show the next page of results. Pass the cursor from the previous page; it keeps the same filters.                                            |
 
 ## Related resources
 
@@ -192,6 +206,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

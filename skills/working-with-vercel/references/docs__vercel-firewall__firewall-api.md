@@ -15,9 +15,10 @@ related:
   - /docs/rest-api/security/update-attack-challenge-mode
 summary: Learn how to interact with the security endpoints of the Vercel REST API programmatically.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-firewall/firewall-api.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c1e7e4ed90c5459c088856d5df4f1d999c0b6521dbf263e2b2f28b4136d2d62e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f42466f21e8bd5e3304cac70d0b90a8293d3369e43353a89b1232322b714cd2e"
 ---
 
 # Using the REST API with the Firewall
@@ -31,12 +32,11 @@ The security section of the [Vercel REST API](/docs/rest-api) allows you to prog
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [REST API for the Vercel Firewall](https://vercel.com/changelog/rest-api-for-the-vercel-firewall)
-- [Vercel WAF upgrade brings persistent actions, rate limiting, and API control](https://vercel.com/blog/vercel-waf-upgrade-brings-persistent-actions-rate-limiting-and-api-control)
 - [WAF Examples](https://vercel.com/docs/vercel-firewall/vercel-waf/examples) — Learn how to use Vercel WAF to protect your site in specific situations.
 - [Firewall and Security](https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall) — Vercel MCP tools for firewall and security.
+- [Vercel WAF](https://vercel.com/docs/vercel-firewall/vercel-waf) — Learn how to secure your website with the Vercel Web Application Firewall \\(WAF\\)
 - [Get conditional firewall bypasses](https://vercel.com/docs/rest-api/security/get-conditional-firewall-bypasses) — GET /v1/security/firewall/bypass/rules — Retrieve conditional firewall bypass rules for a project.
 - [Create conditional firewall bypass](https://vercel.com/docs/rest-api/security/create-conditional-firewall-bypass) — POST /v1/security/firewall/bypass/rules — Create a conditional firewall bypass rule for a project domain.
-- [Delete conditional firewall bypass](https://vercel.com/docs/rest-api/security/delete-conditional-firewall-bypass) — DELETE /v1/security/firewall/bypass/rules — Delete a conditional firewall bypass rule from a project domain.
 
 Full cross-link map for this page: [/docs/vercel-firewall/firewall-api.graph.md](/docs/vercel-firewall/firewall-api.graph.md)
 <!-- /docsgraph:related -->
@@ -63,6 +63,18 @@ Learn how to use some of these endpoints with specific examples for the Vercel W
 - [Deny traffic from a set of IP addresses](/kb/guide/deny-traffic-from-a-set-of-ip-addresses)
 - [Vercel Firewall Terraform configuration](/kb/guide/firewall-terraform-configuration)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

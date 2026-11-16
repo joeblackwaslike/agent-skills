@@ -16,9 +16,10 @@ related:
   - /docs/vercel-firewall/firewall-concepts
 summary: Learn how to add and manage custom rules to configure the Vercel Web Application Firewall (WAF).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/custom-rules.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "d35b10401c18ac9f3f2d3e2a758def8a41c905de800a2460cc6f752cc1f74857"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "86b2477894e0a642ad6ee7950e5c1e66278b555818b53cbfb6393463eb171d87"
 ---
 
 # WAF Custom Rules
@@ -31,13 +32,13 @@ You can [configure](#custom-rule-configuration) specific rules to log, deny, cha
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Protect Sensitive Routes with Vercel WAF: Challenge and Deny Rule Recipes](https://vercel.com/kb/guide/suspicious-traffic-in-specific-countries) — Use Vercel WAF custom rules to block or challenge unwanted traffic by country, ASN, IP address, user agent, path, or coo
 - [Create custom WAF rules directly from the Vercel Firewall tab](https://vercel.com/changelog/create-custom-waf-rules-directly-from-the-vercel-firewall-tab)
 - [Create Vercel Firewall rules with natural language](https://vercel.com/changelog/create-vercel-waf-custom-rules-using-natural-language)
 - [Manage Vercel Firewall in the CLI](https://vercel.com/changelog/manage-vercel-firewall-in-the-cli)
 - [Microfrontends Routing is now free for Firewall-mitigated traffic](https://vercel.com/changelog/microfrontends-routing-is-now-free-for-firewall-mitigated-traffic)
 - [New firewall challenge metrics now available](https://vercel.com/changelog/new-firewall-challenge-metrics-now-available)
 - [Making your catalog discoverable to AI agents](https://vercel.com/kb/guide/agentic-commerce-readiness) — Agentic commerce readiness starts with the initial HTML response. Server-render your product catalog, ship JSON-LD, and
+- [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
 - [How to conduct PCI scans on Vercel: A complete guide to IP safelisting](https://vercel.com/kb/guide/how-to-conduct-pci-scans-on-vercel-guide) — Scan and verify your Vercel deployments for secure, PCI-compliant payment processing.
 - [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
 - [How to resolve IP blocking issues ](https://vercel.com/kb/guide/how-to-resolve-ip-blocking-issues) — Learn to troubleshoot IP blocking issues for both shared and personal networks.
@@ -77,6 +78,8 @@ When a rule denies or challenges the traffic to your site and the client has not
 After a **Log** rule runs, the rule execution continues. If no other rule matches and acts on the request, the **Log** rule that is last matched is reported.
 
 When you apply a [rate limiting](/docs/vercel-firewall/vercel-waf/rate-limiting) rule, include a follow-up action that logs, denies, challenges, or returns a 429 response.
+
+Custom rules can also match the requests Vercel sends to invoke your [Cron Jobs](/docs/cron-jobs). When a deny or challenge rule matches a cron request, the rule blocks the job before it reaches your function. To keep a cron job running, exclude its path from rules that deny or challenge traffic, for example with a **Request Path** condition that uses the **Does not start with** [operator](/docs/vercel-firewall/vercel-waf/rule-configuration#operators). For other reasons a cron job might not run, see [Troubleshooting cron jobs](/docs/cron-jobs/manage-cron-jobs#troubleshooting-cron-jobs).
 
 ## Persistent actions
 
@@ -232,6 +235,18 @@ In this example:
 
 For complete documentation on route configuration options, including `has`, `missing`, and other conditional matching properties, see the [routes documentation](/docs/project-configuration/vercel-json#routes).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

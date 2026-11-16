@@ -15,9 +15,10 @@ related:
   - /docs/caching/cdn-cache
 summary: Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transfer, and CDN Requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/manage-cdn-usage.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "96a37a5ff49384d1189e17aca09b29c465fb2581e09a03cae49fc5d4f787842e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "29e065bc53da9ac3825bf03435acb4e3fca241076803322751a622bacbb159b9"
 ---
 
 # CDN pricing and usage
@@ -39,9 +40,9 @@ CDN pricing covers three resources:
 - [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [Introducing Flat Rate CDN](https://vercel.com/blog/introducing-flat-rate-cdn)
 - [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
-- [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing)
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [How Vercel CDN Works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
+- [Calculating usage of resources](https://vercel.com/docs/pricing/how-does-vercel-calculate-usage-of-resources) — Understand how Vercel measures and calculates your resource usage based on a typical user journey.
 
 Full cross-link map for this page: [/docs/manage-cdn-usage.graph.md](/docs/manage-cdn-usage.graph.md)
 <!-- /docsgraph:related -->
@@ -197,6 +198,18 @@ To investigate further:
 
 You enable it from your team's **Billing** page. For the steps, see [Enable and configure Flat Rate CDN](/docs/pricing/flat-rate-cdn#enable-and-configure-flat-rate-cdn).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

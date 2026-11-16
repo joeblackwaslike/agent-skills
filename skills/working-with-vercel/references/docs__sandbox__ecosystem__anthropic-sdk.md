@@ -16,9 +16,10 @@ related:
   - /docs/sandbox/sdk-reference
 summary: Use Anthropic tool use with AI Gateway to execute model-generated code in an isolated Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/ecosystem/anthropic-sdk.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "bcc554e1c6d76ecb5e4ebe4b4c4a4cefa742bf9da032314223dfb3fea6c71a93"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "cc74b764f844e4d6b0f41317a2d69bfb401737131f63a76c4058b470ff63b825"
 ---
 
 # Anthropic SDK
@@ -40,44 +41,57 @@ credentials covers both the model and the sandbox.
 - [Run Python code securely with AI SDK and Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox) — Add an \\`executeCode\\` tool to your AI SDK agent with the \\`ai-sdk-tool-code-execution\\` package to run Python 3.13 insi
 - [Safely running AI generated code in your Next.js application](https://vercel.com/kb/guide/running-ai-generated-code-sandbox) — How to execute untrusted, AI‑generated code from a Next.js app using Vercel Sandbox, an isolated, ephemeral environment.
 - [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
-- [Run untrusted code with Vercel Sandbox](https://vercel.com/changelog/run-untrusted-code-with-vercel-sandbox)
-- [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
 - [OpenAI SDK](https://vercel.com/docs/sandbox/ecosystem/openai-sdk) — Use OpenAI function calling with AI Gateway to execute model-generated code in an isolated Vercel Sandbox.
+- [LangChain](https://vercel.com/docs/sandbox/ecosystem/langchain) — Give a LangChain agent a tool that executes model-generated code in an isolated Vercel Sandbox, with models served by AI
+- [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
+- [Chat SDK with Vercel Sandbox](https://vercel.com/docs/chat-sdk/integrations/sandbox) — Build a Chat SDK agent that analyzes CSV attachments with the AI SDK Bash tool in Vercel Sandbox.
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/anthropic-sdk.graph.md](/docs/sandbox/ecosystem/anthropic-sdk.graph.md)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** You need a [Vercel account](https://vercel.com/signup), [Vercel
-> CLI](/docs/cli), and Node.js 22 or later.
+> CLI](/docs/cli), and Node.js 22 or later or Python 3.11 or later.
 
 ## Getting started
 
 - ### Create a new project
   Create a new directory for your project and initialize it:
-  ```bash filename="terminal"
+
+  **terminal**
+  ```bash filename="terminal" framework=node
   mkdir anthropic-sandbox
   cd anthropic-sandbox
   npm init -y
+  ```
+  **terminal**
+  ```bash filename="terminal" framework=py
+  mkdir anthropic-sandbox
+  cd anthropic-sandbox
+  uv init
   ```
 
 - ### Install dependencies
   Install the Anthropic SDK and the Sandbox SDK:
 
-  **pnpm**
-  ```bash
-  pnpm i @anthropic-ai/sdk @vercel/sandbox
+  **terminal**
+  ```bash filename="terminal" framework=node package-manager="npm"
+  npm install @anthropic-ai/sdk @vercel/sandbox
   ```
-  **yarn**
-  ```bash
+  **terminal**
+  ```bash filename="terminal" framework=node package-manager="yarn"
   yarn add @anthropic-ai/sdk @vercel/sandbox
   ```
-  **npm**
-  ```bash
-  npm i @anthropic-ai/sdk @vercel/sandbox
+  **terminal**
+  ```bash filename="terminal" framework=node package-manager="pnpm"
+  pnpm add @anthropic-ai/sdk @vercel/sandbox
   ```
-  **bun**
-  ```bash
+  **terminal**
+  ```bash filename="terminal" framework=node package-manager="bun"
   bun add @anthropic-ai/sdk @vercel/sandbox
+  ```
+  **terminal**
+  ```bash filename="terminal" framework=py
+  uv add anthropic vercel-sandbox
   ```
 
 - ### Configure authentication
@@ -95,8 +109,10 @@ Full cross-link map for this page: [/docs/sandbox/ecosystem/anthropic-sdk.graph.
   > [Authentication](/docs/sandbox/sdk-reference#authentication) in the SDK reference.
 
 - ### Create your application
-  Create a new file called `index.ts` with the following code:
-  ```typescript filename="index.ts"
+  Create your application file with the following code:
+
+  **index.ts**
+  ```ts filename="index.ts"
   import Anthropic from '@anthropic-ai/sdk';
   import { Sandbox } from '@vercel/sandbox';
 
@@ -174,28 +190,142 @@ Full cross-link map for this page: [/docs/sandbox/ecosystem/anthropic-sdk.graph.
     await sandbox.stop();
   }
   ```
-  The `timeout` value bounds each sandbox session to five minutes. Model calls run outside the VM, and a later `sandbox.runCommand()` can resume a new session after the previous one times out. The session timeout doesn't bound the overall agent loop.
+  **main.py**
+  ```py filename="main.py"
+  import asyncio
+  import os
+  from datetime import timedelta
+  from typing import cast
 
-  Use an application deadline and cancellation strategy to bound the full loop, including model requests and tool submissions. A command's `timeoutMs` (or Python `kill_after`) bounds that command separately. The `finally` block stops the current session when the loop finishes or throws; coordinate cancellation with in-flight tool calls before cleanup so they don't resume another session.
+  from anthropic import AsyncAnthropic
+  from anthropic.types import MessageParam, ToolParam, ToolResultBlockParam
+  from vercel import sandbox
+
+  MODEL = "anthropic/claude-opus-5"
+
+  gateway_api_key = os.environ.get("AI_GATEWAY_API_KEY")
+  client = AsyncAnthropic(
+      api_key=gateway_api_key,
+      auth_token=None if gateway_api_key else os.environ["VERCEL_OIDC_TOKEN"],
+      base_url="https://ai-gateway.vercel.sh",
+  )
+
+  tools: list[ToolParam] = [
+      {
+          "name": "run_code",
+          "description": (
+              "Run Python code in an isolated Vercel Sandbox and return its output."
+          ),
+          "input_schema": {
+              "type": "object",
+              "properties": {
+                  "code": {"type": "string", "description": "Python code to execute"},
+              },
+              "required": ["code"],
+          },
+      },
+  ]
+
+
+  async def main() -> None:
+      box = await sandbox.create_sandbox(execution_time_limit=timedelta(minutes=5))
+
+      try:
+          messages: list[MessageParam] = [
+              {
+                  "role": "user",
+                  "content": (
+                      "Compute the SHA-256 hex digest of the exact string "
+                      "'vercel sandbox' with Python, then report the digest."
+                  ),
+              },
+          ]
+
+          response = await client.messages.create(
+              model=MODEL,
+              max_tokens=16000,
+              tools=tools,
+              messages=messages,
+          )
+
+          while response.stop_reason == "tool_use":
+              messages.append({"role": "assistant", "content": response.content})
+              tool_results: list[ToolResultBlockParam] = []
+              for block in response.content:
+                  if block.type != "tool_use":
+                      continue
+                  code = cast(dict[str, str], block.input)["code"]
+                  result = await box.run_command(
+                      "python", ["-c", code], capture_output=True
+                  )
+                  output = (
+                      result.stdout.decode()
+                      if result.returncode == 0
+                      else f"Command failed: {result.stderr.decode()}"
+                  )
+                  tool_results.append(
+                      {
+                          "type": "tool_result",
+                          "tool_use_id": block.id,
+                          "content": output,
+                      }
+                  )
+              messages.append({"role": "user", "content": tool_results})
+              response = await client.messages.create(
+                  model=MODEL,
+                  max_tokens=16000,
+                  tools=tools,
+                  messages=messages,
+              )
+
+          for block in response.content:
+              if block.type == "text":
+                  print(block.text)
+      finally:
+          await box.stop()
+
+
+  asyncio.run(main())
+  ```
+  The sandbox's timeout bounds each session to five minutes. Model calls run outside the VM, and a later command can resume a new session after the previous one times out. The session timeout doesn't bound the overall agent loop.
+
+  Use an application deadline and cancellation strategy to bound the full loop, including model requests and tool submissions. A time limit on a command bounds that command separately. The `finally` block stops the current session when the loop finishes or throws; coordinate cancellation with in-flight tool calls before cleanup so they don't resume another session.
 
   The following code:
   - Points the Anthropic SDK at AI Gateway, authenticated with your Vercel
     credentials
   - Creates a sandbox that is reused across tool calls
   - Declares a `run_code` tool the model can call
-  - Executes each tool call with
-    [`sandbox.runCommand()`](/docs/sandbox/sdk-reference#sandboxruncommand)
-    and returns the output as a `tool_result` block
+  - Executes each tool call in the sandbox and returns the output as a
+    `tool_result` block
   - Loops while `stop_reason` is `tool_use`, then prints the final answer
 
 - ### Run the application
   Run your application with the environment variables from `.env.local`:
-  ```bash filename="terminal"
+
+  **terminal**
+  ```bash filename="terminal" framework=node
   npx tsx --env-file=.env.local index.ts
   ```
-  Claude writes Node.js code, the sandbox executes it, and the final response
+  **terminal**
+  ```bash filename="terminal" framework=py
+  uv run --env-file .env.local main.py
+  ```
+  Claude writes the code, the sandbox executes it, and the final response
   reports the digest.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

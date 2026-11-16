@@ -13,9 +13,10 @@ related:
   - /docs/image-optimization/managing-image-optimization-costs
 summary: Learn how you can leverage Vercel Image Optimization in your projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/image-optimization/quickstart.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "9ea643f2abbf676471fbdb4e4614e439e47d2795fe6e1bab1da8747fef377e2d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7429e5a50e4fb8ebb1b892d7ec26cb7867d1ec3ebfbecba664f98ac3a5ffe59e"
 ---
 
 # Getting started with Image Optimization
@@ -28,17 +29,17 @@ This guide will help you get started with using Vercel Image Optimization in you
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to Optimize Next.js + Sitecore JSS](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-jss) — This guide covers performance and usage considerations when building and deploying your Next.js and Sitecore JSS applica
+- [OG Image Generation: The Complete Customization Guide](https://vercel.com/kb/guide/using-custom-font) — Learn how to use custom fonts in your Vercel OG image, plus emoji, external images, non-Latin text, dynamic titles, and
+- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
+- [What are the best practices for hosting videos on Vercel?](https://vercel.com/kb/guide/best-practices-for-hosting-videos-on-vercel-nextjs-mp4-gif) — Learn the ideal solutions for using video files like .mp4 and .gif on Vercel to prevent excess bandwidth consumption.
+- [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
 - [Building a fast, animated image gallery with Next.js](https://vercel.com/blog/building-a-fast-animated-image-gallery-with-next-js)
 - [Images on the web](https://vercel.com/blog/images-on-the-web)
-- [Using the latest Next.js 12.3 features on Vercel](https://vercel.com/blog/using-the-latest-next-js-12-3-features-on-vercel)
-- [OG Image Generation: The Complete Customization Guide](https://vercel.com/kb/guide/using-custom-font) — Learn how to use custom fonts in your Vercel OG image, plus emoji, external images, non-Latin text, dynamic titles, and
-- [How to Optimize Next.js + Sitecore JSS](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-jss) — This guide covers performance and usage considerations when building and deploying your Next.js and Sitecore JSS applica
-- [The Next.js SEO Playbook: Ranking higher with Next.js on Vercel](https://vercel.com/blog/nextjs-seo-playbook)
-- [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
-- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
-- [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
 - [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
 - [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
+- [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
+- [Add the Vercel Toolbar to your local environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost) — Learn how to use the Vercel Toolbar in your local environment.
 - [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
 
 Full cross-link map for this page: [/docs/image-optimization/quickstart.graph.md](/docs/image-optimization/quickstart.graph.md)
@@ -492,6 +493,18 @@ Now that you've set up Vercel Image Optimization, you can explore the following:
 - [Explore limits and pricing](/docs/image-optimization/limits-and-pricing)
 - [Managing costs](/docs/image-optimization/managing-image-optimization-costs)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

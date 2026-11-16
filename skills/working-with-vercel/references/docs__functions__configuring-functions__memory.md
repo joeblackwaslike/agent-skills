@@ -14,9 +14,10 @@ related:
   - /docs/functions/usage-and-pricing
 summary: Learn how to set the memory / CPU of a Vercel Function.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/configuring-functions/memory.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c660b00a87772e466220e5912ee29d39a46978fe4108e6315952f64bbf39a5d5"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "38f48af0ed2b332103b84968fd931303ad7774b653d5aad3c4617f5e6f88088e"
 ---
 
 # Configuring Memory and CPU for Vercel Functions
@@ -37,10 +38,10 @@ The memory configuration of a function determines how much memory and CPU a func
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
 - [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
 - [Higher defaults and limits for Vercel Functions running Fluid compute](https://vercel.com/changelog/higher-defaults-and-limits-for-vercel-functions-running-fluid-compute)
-- [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Managing Builds](https://vercel.com/docs/builds/managing-builds) — Vercel allows you to increase the speed of your builds when needed in specific situations and workflows.
 - [vercel project](https://vercel.com/docs/cli/project) — Perform the following commands from the terminal for your Vercel Projects: list, create, inspect, update settings, renam
 - [Production checklist for launch](https://vercel.com/docs/production-checklist) — Ensure your application is ready for launch with this comprehensive production checklist by the Vercel engineering team.
+- [Static Configuration with vercel.json](https://vercel.com/docs/project-configuration/vercel-json) — Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project.
+- [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 
 Full cross-link map for this page: [/docs/functions/configuring-functions/memory.graph.md](/docs/functions/configuring-functions/memory.graph.md)
 <!-- /docsgraph:related -->
@@ -117,6 +118,18 @@ Memory / CPU size affects two current fluid compute pricing dimensions:
 
 Vercel bills Invocations separately per incoming request. To learn more, see [Vercel Functions pricing](/docs/functions/usage-and-pricing).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

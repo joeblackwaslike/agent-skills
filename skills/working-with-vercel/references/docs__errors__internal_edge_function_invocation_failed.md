@@ -11,9 +11,10 @@ related:
   []
 summary: The request for a Edge Function was not completed successfully due to an internal error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/internal_edge_function_invocation_failed.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5f440e6abda6f14f789b1431b8623508ce7a453de700cfeb0ed84e67a06f89c7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e0d002c8ba8afb9a9ec713d4d32e7eb77a6350b2b247d81293a841dff887386c"
 ---
 
 # INTERNAL_EDGE_FUNCTION_INVOCATION_FAILED
@@ -28,6 +29,18 @@ The `INTERNAL_EDGE_FUNCTION_INVOCATION_FAILED` error occurs when there is an iss
 
 While this error can be caused by a variety of issues, it's transient and retrying the request will succeed. If the error persists, [**contact support**](/help) along with the request ID on the error page.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

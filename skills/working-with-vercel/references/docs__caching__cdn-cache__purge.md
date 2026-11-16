@@ -16,9 +16,10 @@ related:
   - /docs/functions
 summary: "Learn how to invalidate and delete cached content on Vercel's CDN, including cache keys and manual purging options."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/caching/cdn-cache/purge.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "07419e8d767a7b3060fca08d88ec8c437d604dbfc4edf292e8d5e6ce0ddcc0fe"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "bde863cc5d2ce31315b0167f49bb1595e5d41f4247b8e90ffa5f1289fa7aed1b"
 ---
 
 # Purging Vercel CDN Cache
@@ -35,18 +36,18 @@ Learn how to [invalidate and delete](/docs/caching/cdn-cache/purge#programmatica
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
 - [Vercel CDN now respects Cache-Control headers from external origins by default](https://vercel.com/changelog/vercels-cdn-now-respects-cache-control-headers-from-external-origins-by-default)
 - [Using Cloudflare and other reverse proxies with Vercel](https://vercel.com/kb/guide/can-i-use-a-proxy-on-top-of-my-vercel-deployment) — General information about using an external proxy to serve a Vercel Deployment.
 - [Control CDN caching for shared and personalized pages on Vercel](https://vercel.com/kb/guide/cdn-cache-personalized-pages) — Control CDN caching for shared and personalized Next.js pages. Set cache headers, separate per-user content, and verify
 - [How to add per-request CSP nonces to CDN-cached HTML on Vercel](https://vercel.com/kb/guide/csp-nonces-with-cdn-cache) — Use Routing Middleware and a self-fetch to add a fresh CSP nonce to cached HTML without rendering the page again on ever
 - [A/B testing on ecommerce storefronts without hurting Core Web Vitals](https://vercel.com/kb/guide/ecommerce-ab-testing-core-web-vitals) — Client-side A/B tools can worsen LCP and CLS on the pages you're testing. Run ecommerce A/B tests at the edge with Routi
-- [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
-- [Invalidate the CDN cache by tag](https://vercel.com/changelog/invalidate-the-cdn-cache-by-tag)
 - [Tag-based cache invalidation now available for all responses](https://vercel.com/changelog/tag-based-cache-invalidation-now-available-for-all-responses)
-- [You can now invalidate the CDN cache by providing a source image](https://vercel.com/changelog/you-can-now-invalidate-the-cdn-cache-by-providing-a-source-image)
-- [Diagnosing and fixing cache issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
+- [Invalidate the CDN cache by tag](https://vercel.com/changelog/invalidate-the-cdn-cache-by-tag)
 - [Cache-Control headers](https://vercel.com/docs/caching/cache-control-headers) — Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior
+- [Diagnosing and fixing cache issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
 - [Vercel CDN overview](https://vercel.com/docs/cdn) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
+- [Dangerously delete by tag](https://vercel.com/docs/rest-api/edge-cache/dangerously-delete-by-tag) — POST /v1/edge-cache/dangerously-delete-by-tags — Marks a cache tag as deleted, causing cache entries associated with tha
 
 Full cross-link map for this page: [/docs/caching/cdn-cache/purge.graph.md](/docs/caching/cdn-cache/purge.graph.md)
 <!-- /docsgraph:related -->
@@ -126,7 +127,7 @@ Functions using [ISR](/docs/incremental-static-regeneration) don't have access t
 
 If you're using Next.js, you can add cache tags by calling [cacheTag](https://nextjs.org/docs/app/api-reference/functions/cacheTag) from `next/cache` inside a `"use cache"` function instead.
 
-On Next.js 16 and above with [Cache Components](https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheComponents) enabled (`cacheComponents: true`), [`use cache: remote`](https://nextjs.org/docs/app/api-reference/directives/use-cache-remote) stores a function's return value in [Runtime Cache](/docs/caching/runtime-cache) and accepts `cacheTag()`, so you can purge it by tag. It saves repeated origin work inside the function rather than caching the HTTP response at the CDN, so it complements the headers above instead of replacing them. On Next.js 15 and below, use [Data Cache](/docs/caching/runtime-cache/data-cache) instead.
+On Next.js 16 and above with [Cache Components](https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheComponents) enabled (`cacheComponents: true`), [`use cache: remote`](https://nextjs.org/docs/app/api-reference/directives/use-cache-remote) stores a function's return value in [Runtime Cache](/docs/runtime-cache) and accepts `cacheTag()`, so you can purge it by tag. It saves repeated origin work inside the function rather than caching the HTTP response at the CDN, so it complements the headers above instead of replacing them. On Next.js 15 and below, use [Data Cache](/docs/runtime-cache/data-cache) instead.
 
 #### Cache tag case sensitivity
 
@@ -217,6 +218,18 @@ The limit counts calls, not tags. An API that accepts several tags in one call, 
 
 Purges made with the [Vercel CLI](/docs/cli/cache), the [REST API](/docs/rest-api/edge-cache/invalidate-by-tag), or the dashboard are rate limited separately under the [REST API rate limits](/docs/limits#rate-limits).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

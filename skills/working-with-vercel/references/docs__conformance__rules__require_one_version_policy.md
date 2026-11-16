@@ -11,9 +11,10 @@ related:
   - /docs/conformance/customize
 summary: Requires all dependencies in a monorepo to have the same version policy.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/require_one_version_policy.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "8f7a2ee93da5d20739c0cf10c4cc470df12334d78d1813d306bb39b27567c0d8"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "09a09614a99d8f9eb2a0507f9367bca0aeb847e24a70b6431f7d8e3c00e1cc77"
 ---
 
 # REQUIRE_ONE_VERSION_POLICY
@@ -45,6 +46,18 @@ migrating a monorepo to having the same version policy. In which case, it's acce
 this rule on specific parts of the codebase using by [customizing Conformance](/docs/conformance/customize)
 until all packages have been successfully migrated.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

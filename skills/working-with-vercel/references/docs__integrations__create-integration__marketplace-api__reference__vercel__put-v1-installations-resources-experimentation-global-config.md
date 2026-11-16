@@ -3,7 +3,7 @@ title: put-v1-installations-resources-experimentation-global-config
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/put-v1-installations-resources-experimentation-global-config
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/put-v1-installations-resources-experimentation-global-config"
-last_updated: 2026-11-09
+last_updated: 2026-11-16
 type: conceptual
 prerequisites:
   []
@@ -12,9 +12,10 @@ related:
   - /docs/integrations/create-integration/native-integration
 summary: Learn about put-v1-installations-resources-experimentation-global-config on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/put-v1-installations-resources-experimentation-global-config.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c26bde278271b3bad1754e739d98be275ef6e9dc626729c050b9dae5bd687f72"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "08b6498778b787ed36dc7d096f15172c359bf4d2bf8ef2aaa052d8171cd8d0b0"
 ---
 
 # Push data into a user-provided Global Config
@@ -100,6 +101,18 @@ Success
 - [Marketplace API Reference](/docs/integrations/create-integration/marketplace-api/reference)
 - [Native Integration Concepts](/docs/integrations/create-integration/native-integration)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -13,9 +13,10 @@ related:
   - /docs/kms/concepts/authentication
 summary: API reference for @vercel/kms, including signJWT, signMessage, region resolution, and signing the KMS API directly without the SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/kms/ts-sdk-reference.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "4e42c3a5f4836baf605d6c1a13cb27bb127d7eb059fae95771bec2cd875fad80"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c488493fc857979624e0ee6857bb05d2dd7cdec5652ee354b59d870378466d65"
 ---
 
 # Vercel KMS SDK Reference
@@ -32,7 +33,7 @@ The `@vercel/kms` package wraps the KMS signing API and fetches the function's [
 - [Sign a message](https://vercel.com/docs/rest-api/kms/sign-a-message) — POST /v1/kms/issuers/{issuerId}/sign/message — Sign a raw message with a KMS issuer's active signing key. Authenticate t
 - [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
 - [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys — Create a new signing key for a KMS issuer. Depending on the activation mode, the
-- [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management) — Vercel MCP tools for key management.
+- [Revoke a signing key](https://vercel.com/docs/rest-api/kms/revoke-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/revoke — Immediately revoke a signing key that is already scheduled for rev
 - [Create an issuer](https://vercel.com/docs/rest-api/kms/create-an-issuer) — POST /v1/kms/issuers — Create a new KMS issuer for the authenticated team, or for the team or organization identified by
 
 Full cross-link map for this page: [/docs/kms/ts-sdk-reference.graph.md](/docs/kms/ts-sdk-reference.graph.md)
@@ -187,6 +188,18 @@ curl -X POST \
 - [Authentication](/docs/kms/concepts/authentication)
 - [`@vercel/kms` on npm](https://www.npmjs.com/package/@vercel/kms)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

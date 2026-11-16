@@ -11,9 +11,10 @@ related:
   - /docs/conformance/rules/BFCACHE_INTEGRITY_REQUIRE_NOOPENER_ATTRIBUTE
 summary: "Disallows the use of the unload and beforeunload events to eliminate a source of eviction from the browser's Back-Forward Cache."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/bfcache_integrity_no_unload_listeners.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d8d27a97463499dff7bd6d55f0eb56f79361b493d7d1ba27dbfa27827de6f00f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1d2178aee1b02a5d03da2b75f00871478155fa139cf82b953b7c7366f70aa010"
 ---
 
 # BFCACHE_INTEGRITY_NO_UNLOAD_LISTENERS
@@ -95,6 +96,18 @@ export function handleUserNavigatingAway() {
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

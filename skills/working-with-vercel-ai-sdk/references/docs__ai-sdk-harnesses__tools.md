@@ -4,8 +4,8 @@ description: Use tools with AI SDK harnesses.
 url: "https://ai-sdk.dev/docs/ai-sdk-harnesses/tools"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/tools.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "3e08fdec6080bdc43f077890ad656bfe0b9b0363b066f42e353b8a90fa8f64e4"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "e731d9762d0887481dcdb724f138e75ebe77f343e1e9a221b97895b2b5552610"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -135,6 +135,9 @@ const session = await agent.createSession({
 Missing or invalid context fails validation before the host tool executes. The
 validation error returned to the harness runtime is intentionally generic so
 host-only context values and schema details are not disclosed to the model.
+Stream parts and UI messages carry an error with the same generic message. The
+detailed validation error is only passed to host callbacks such as
+`onToolExecutionEnd`.
 
 ## Client-Side Tools
 

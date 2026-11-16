@@ -14,9 +14,10 @@ related:
   - /docs/deployments/build-features
 summary: The request for a Vercel Function reached the timeout threshold. This is an application error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/function_invocation_timeout.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "40f9dc02d2116069711d5373222351aa9bd6a1ec9be7f745bff390e0bb8fc48e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "fea97efb7bd1498d8eb079fbfec9ae166b978f2466e3b79e52ecd10b815a6886"
 ---
 
 # FUNCTION_INVOCATION_TIMEOUT
@@ -43,6 +44,18 @@ https://my-deployment-my-username.vercel.app/_logs
 
 For more information on Vercel Functions timeouts, see [What can I do about Vercel Functions timing out?](/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

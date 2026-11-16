@@ -11,9 +11,10 @@ related:
   []
 summary: Too many ranges have been specified in the Range header of the request. This is a request error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/too_many_ranges.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5862a12bb055de30f217983234f52ed7492c8b79e9df60b5fea72e5bd00fcb94"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9ba9b9dc5bd1d62b4ec9d6f92eb295c17c0bdffddde17df2b2cc8c06abbad2e5"
 ---
 
 # TOO_MANY_RANGES
@@ -35,6 +36,18 @@ To troubleshoot this error, follow these steps:
 3. **Verify server capabilities:** Check the documentation for the server or service you are interacting with to determine the maximum number of supported ranges
 4. **Debugging:** If the error persists, log the `Range` header values in your server logs to debug and understand what values are being sent in requests
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

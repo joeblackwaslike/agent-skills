@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps.md"
-fetched_at: "2026-07-20T06:45:20.604Z"
-sha256: "50fd24b0d9527845d1797bad6acf4e4c9e85d8d0ec217baad026efacd7e208b2"
+fetched_at: "2026-11-16T12:27:48.282Z"
+sha256: "fed38c96c5d579ef9ffed541c48c536aea7c98d54d58cc766fd4692671713f66"
 ---
 
 ## About webhooks and {% data variables.product.prodname_github_apps %}
@@ -24,7 +24,7 @@ When you activate webhooks for your {% data variables.product.prodname_github_ap
 
 ### Choosing a webhook URL for development and testing
 
-While you develop and test your app, you can use a webhook payload delivery service like [Smee](https://smee.io/) to capture and forward webhook payloads to your local development environment. Never use Smee for an application in production, because Smee channels are not authenticated or secure. Alternatively, you can use a tool like [ngrok](https://ngrok.com/docs/getting-started/), [localtunnel](https://localtunnel.github.io/www/), or the [Hookdeck Console](https://console.hookdeck.com?provider=github) that exposes your local machine to the internet to receive the payloads.
+While you develop and test your app, you can use a webhook payload delivery service like [Smee](https://smee.io/) to capture and forward webhook payloads to your local development environment. Never use Smee for an application in production. {% data reusables.webhooks.smee-security-caveat-and-alternatives %}
 
 #### Creating a webhook URL with Smee
 
@@ -38,7 +38,7 @@ You can use Smee to create a unique domain where {% data variables.product.prodn
 
 For an application in production that receives a low volume of webhook traffic, you can host it on any dynamic application server. The server-side code for handling the webhook can receive the event, deserialize its JSON payload, and decide what action to take, such as storing the data in a database or calling the {% data variables.product.prodname_dotcom %} API.
 
-To handle a higher volume of webhook traffic for a large app in production, consider using asynchronous webhook handling on a dedicated server. You can achieve this by employing a queue, where the webhook handler pushes data to the queue, and separate processes perform subsequent actions based on the events. Additionally, you can use cloud functions such as [Azure Functions](https://azure.microsoft.com/en-us/products/functions/), [AWS Lambda](https://aws.amazon.com/lambda/), or [Hookdeck](https://hookdeck.com) to help scale the app for handling large volumes of webhook events.
+To handle a higher volume of webhook traffic for a large app in production, consider using asynchronous webhook handling on a dedicated server. You can achieve this by employing a queue, where the webhook handler pushes data to the queue, and separate processes perform subsequent actions based on the events. Additionally, you can use cloud functions such as [Azure Functions](https://azure.microsoft.com/en-us/products/functions/), [AWS Lambda](https://aws.amazon.com/lambda/), or a webhook queuing service like [Hookdeck Event Gateway](https://hookdeck.com/event-gateway), to help scale the app for handling large volumes of webhook events.
 
 ## Securing your webhooks with a webhook secret
 

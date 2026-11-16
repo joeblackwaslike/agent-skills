@@ -13,9 +13,10 @@ related:
   - /docs/queues/poll-mode
 summary: HTTP API reference for Vercel Queues. Publish, consume, acknowledge, and manage messages.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/queues/api.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "5342a6dc154869fd2237c1f0380bb9acb5ae21f27096f63e51a3136947ba81ea"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b8c5f86a0aaf1e830e3119a8a536a512269e94262ecd57d83c30a6abb14bdfa4"
 ---
 
 # API Reference
@@ -29,10 +30,10 @@ The Vercel Queues API is a REST API for publishing, consuming, and managing mess
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Queues: JS SDK Reference](https://vercel.com/docs/queues/sdk) — Publish and consume messages with the Vercel Queues SDK for JavaScript and TypeScript.
-- [Pricing and Limits](https://vercel.com/docs/queues/pricing) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
 - [Quickstart](https://vercel.com/docs/queues/quickstart) — Set up Vercel Queues with the SDK.
-- [Vercel Schedules: API Reference](https://vercel.com/docs/schedules/http-api) — Reference for the Vercel Schedules HTTP API: authenticate, choose an environment, and create, list, update, enable, disa
 - [Queues Observability](https://vercel.com/docs/queues/observability) — Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.
+- [Pricing and Limits](https://vercel.com/docs/queues/pricing) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
+- [Create an issuer](https://vercel.com/docs/rest-api/kms/create-an-issuer) — POST /v1/kms/issuers — Create a new KMS issuer for the authenticated team, or for the team or organization identified by
 
 Full cross-link map for this page: [/docs/queues/api.graph.md](/docs/queues/api.graph.md)
 <!-- /docsgraph:related -->
@@ -322,6 +323,18 @@ The `receiptHandle` must be URL-encoded in the path.
 | Visibility timeout      | Zero seconds | 60 minutes             | 60 seconds   |
 | Messages per receive    | 1            | 10                     | 1            |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -13,9 +13,10 @@ related:
   - /docs/drains
 summary: Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/drains/reference/traces.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "3e6e518e9b00e2fa29ec4ebdc7412e27659752ecdb42469366db4b13061d931e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a1579371e1233b3df81b807b0b39494ee014ce84648f60d2d807250f43dc0736"
 ---
 
 # Trace Drains Reference
@@ -30,13 +31,11 @@ Trace Drains forward distributed tracing data from your deployments to external 
 
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains)
-- [Introducing Trace Drains on the Vercel Marketplace](https://vercel.com/changelog/introducing-trace-drains-on-the-vercel-marketplace)
-- [Export AI Gateway traces with Vercel Drains](https://vercel.com/changelog/export-ai-gateway-traces-with-vercel-drains)
 - [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
 - [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics) — Learn about Web Analytics Drains - data formats and custom events configuration.
-- [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
+- [vercel drains](https://vercel.com/docs/cli/drains) — List, inspect, create, update, pause, resume, and delete Vercel Drains from your terminal.
 - [Speed Insights Drains Reference](https://vercel.com/docs/drains/reference/speed-insights) — Learn about Speed Insights Drains - data formats and performance metrics configuration.
-- [Drain Audit Logs to Datadog](https://vercel.com/docs/drains/audit-logs-to-datadog) — Learn how to forward Vercel Audit Log Drain events to Datadog using the Datadog Logs API.
+- [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
 
 Full cross-link map for this page: [/docs/drains/reference/traces.graph.md](/docs/drains/reference/traces.graph.md)
 <!-- /docsgraph:related -->
@@ -52,10 +51,13 @@ Vercel sends traces to endpoints over HTTPS following the [OTLP/HTTP](https://op
 
 Trace Drains follow the [OpenTelemetry traces specification](https://opentelemetry.io/docs/concepts/signals/traces/). Vercel automatically adds these specific resource attributes to all traces:
 
-| Name                  | Type   | Description                          | Example                                            |
-| --------------------- | ------ | ------------------------------------ | -------------------------------------------------- |
-| `vercel.projectId`    | string | Identifier for the Vercel project    | `"Qmc52npNy86S8VV4Mt8a8dP1LEkRNbgosW3pBCQytkcgf2"` |
-| `vercel.deploymentId` | string | Identifier for the Vercel deployment | `"dpl_2YZzo1cJAjijSf1hwDFK5ayu2Pid"`               |
+| Name                   | Type   | Description                          | Example                 |
+| ---------------------- | ------ | ------------------------------------ | ----------------------- |
+| `vercel.owner_id`      | string | Identifier for the Vercel team       | `"team_a1b2c3d4e5f6g7"` |
+| `vercel.project_id`    | string | Identifier for the Vercel project    | `"prj_a1b2c3d4e5f6g7"`  |
+| `vercel.deployment_id` | string | Identifier for the Vercel deployment | `"dpl_a1b2c3d4e5f6g7"`  |
+
+> **💡 Note:** Trace Drains also send these values under the deprecated camelCase keys `vercel.ownerId`, `vercel.projectId`, and `vercel.deploymentId`. The next major version of the Trace Drains schema removes them. Read the snake\_case keys instead.
 
 ## Format
 
@@ -107,6 +109,18 @@ For more information on Trace Drains and how to use them, check out the followin
 - [Configure Drains](/docs/drains/using-drains)
 - [OpenTelemetry traces specification](https://opentelemetry.io/docs/concepts/signals/traces/)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

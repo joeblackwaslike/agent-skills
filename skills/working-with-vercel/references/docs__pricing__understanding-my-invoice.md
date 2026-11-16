@@ -11,12 +11,14 @@ related:
   - /docs/pricing
   - /docs/plans/pro-plan
   - /docs/plans/enterprise
-  - /docs/pricing/manage-and-optimize-usage
+  - /docs/cli/billing
+  - /docs/rest-api/billing/list-focus-billing-charges
 summary: Learn how Vercel invoices are structured for Pro and Enterprise plans, including plan charges, credits, and usage-based resources.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/pricing/understanding-my-invoice.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "5b147a82784b62130539f566754f49b482274699a1323186d0d1944c8b962245"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a7b2f81cc9d636c65e8d774f5ab23581a94ff4eaa376e0ab762b04c339e2dd17"
 ---
 
 # Billing & Invoices
@@ -32,13 +34,12 @@ You can view your current invoice from the **Settings** section in your dashboar
 - [Threshold billing is now enabled for Pro teams](https://vercel.com/changelog/threshold-billing-is-now-enabled-for-pro-teams)
 - [Updates to Legal Terms](https://vercel.com/changelog/updates-to-legal-terms-june-2026)
 - [Advanced Invoice Settings](https://vercel.com/blog/advanced-invoice-settings)
-- [Invoices are now available on a dedicated page](https://vercel.com/changelog/invoices-are-now-available-on-a-dedicated-page)
-- [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing)
+- [Access billing usage and cost data via API](https://vercel.com/changelog/access-billing-usage-cost-data-api)
 - [Billing FAQ for Enterprise Plan](https://vercel.com/docs/plans/enterprise/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
 - [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 - [Manage Billing and Refunds for Integrations](https://vercel.com/docs/integrations/create-integration/billing) — Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
 - [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
-- [vercel billing](https://vercel.com/docs/cli/billing) — Learn how to view usage, contracts, budgets, and invoices for your Vercel team using the vercel billing CLI command.
+- [Submit Invoice](https://vercel.com/docs/rest-api/marketplace/submit-invoice) — POST /v1/installations/{integrationConfigurationId}/billing/invoices — This endpoint allows the partner to submit an inv
 
 Full cross-link map for this page: [/docs/pricing/understanding-my-invoice.graph.md](/docs/pricing/understanding-my-invoice.graph.md)
 <!-- /docsgraph:related -->
@@ -150,6 +151,17 @@ You can download any partial invoice as a PDF from the row's `…` menu, the sam
 
 If you believe a partial invoice was issued in error, or you have questions about a specific charge, [contact support](/help) with the invoice number and the affected team.
 
+## Retrieve invoice data from the CLI or REST API
+
+You can get your team's invoices from the terminal with the [`vercel billing invoices`](/docs/cli/billing#vercel-billing-invoices) CLI commands, and its billing charges from the REST API. Every `vercel billing invoices` subcommand supports `--json` output:
+
+- `vercel billing invoices list`: Lists your team's invoices with each invoice's number, status, total, and invoice ID. By default, it shows open, paid, and uncollectible invoices. Use `--status` to show other statuses.
+- `vercel billing invoices inspect <INVOICE_ID>`: Shows an invoice's status, dates, subtotal, total, and line items, including the period each line item covers.
+- `vercel billing invoices download <INVOICE_ID>`: Saves an invoice as a PDF.
+- `vercel billing invoices upcoming`: Shows an estimate of your team's next invoice. It requires Vercel CLI 65.10.0 or later, a team with an active paid subscription, and access to the team's invoices. Amounts can change until the end of the billing period. Upcoming invoice estimates have no invoice ID or PDF, so you can't pass them to `inspect` or `download`.
+
+For charge data instead of invoices, use the [List FOCUS billing charges](/docs/rest-api/billing/list-focus-billing-charges) endpoint, `GET /v1/billing/charges`. It returns your team's billing charges in FOCUS v1.3 newline-delimited JSON (JSONL) format for the date range you set with the `from` and `to` query parameters. `from` is inclusive, `to` is exclusive, and both are ISO 8601 date-times in UTC.
+
 ## More resources
 
 For more information on Vercel's pricing, and guidance on optimizing consumption, see the following resources:
@@ -157,6 +169,18 @@ For more information on Vercel's pricing, and guidance on optimizing consumption
 - [Vercel Pricing](/docs/pricing)
 - [Manage and optimize usage](/docs/pricing/manage-and-optimize-usage)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

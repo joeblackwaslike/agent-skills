@@ -11,9 +11,10 @@ related:
   - /docs/sandbox/quickstart
 summary: Install the Vercel plugin to give supported AI coding tools Vercel context, skills, specialist agents, slash commands, and lightweight session-start...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-plugin.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "af99c2d655e914f67974868eb60fd8f92bc575de8fa3ed7aec657a0a5c0a6126"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "82587e931a842634e1ff9a66444274c3c4a56d072496f352cf10446b2e64be28"
 ---
 
 # Vercel Plugin for AI Coding Agents
@@ -36,8 +37,8 @@ The Vercel plugin gives [supported AI coding tools](#supported-tools) Vercel-spe
 - [Build a daily digest bot with Chat SDK and Workflow SDK](https://vercel.com/kb/guide/daily-digest-bot-with-chat-sdk-and-workflow-sdk) — Build a daily digest bot that posts a daily digest of GitHub stats to Slack. Learn how to use Vercel Connect to set up S
 - [Run recurring security reviews with deepsec on Vercel](https://vercel.com/kb/guide/deepsec-reviews-on-vercel) — Learn how to run periodic security scans on your code with deepsec. Set up deepsec to review GitHub repositories and del
 - [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
-- [Building Slack agents can be easy](https://vercel.com/blog/building-slack-agents-can-be-easy)
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [Agent Skills](https://vercel.com/docs/agent-resources/skills) — Install skills to enhance AI coding agents with specialized capabilities for React, Next.js, deployment, and more.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-plugin.graph.md](/docs/agent-resources/vercel-plugin.graph.md)
 <!-- /docsgraph:related -->
@@ -253,6 +254,18 @@ If a skill gives incorrect advice or injection does not fire when expected, file
 - What the plugin injected, or did not inject. Enable debug logs with `VERCEL_PLUGIN_LOG_LEVEL=debug`
 - What was wrong about it
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

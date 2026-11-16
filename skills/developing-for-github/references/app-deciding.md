@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/apps/creating-github-apps/about-creating-github-apps/deciding-when-to-build-a-github-app.md"
-fetched_at: "2026-07-27T07:30:54.769Z"
-sha256: "2fddf825c87500099374791d2416dcc21fa388cc511414b2596ef0988ff71ab7"
+fetched_at: "2026-11-16T12:27:48.282Z"
+sha256: "424ba000545f6c4fa7bcdf54fea7caa09c3a8de5243064d28db4e676a045cc9b"
 ---
 
 ## Using a {% data variables.product.prodname_github_app %} instead of an {% data variables.product.prodname_oauth_app %}
@@ -48,7 +48,7 @@ In general, {% data variables.product.prodname_github_apps %} and {% data variab
 
 * The REST API to manage check runs and check suites is only available to {% data variables.product.prodname_github_apps %}.
 * {% ifversion enterprise-installed-apps %}Not every enterprise-level API supports {% data variables.product.prodname_github_apps %} at this time. New permissions are being added to support more APIs. Check [AUTOTITLE](/enterprise-cloud@latest/rest/authentication/permissions-required-for-github-apps) to review the list of supported enterprise permissions and APIs.{% else %}Enterprise-level resources such as the enterprise object itself are not available to {% data variables.product.prodname_github_apps %}. This means that {% data variables.product.prodname_github_apps %} cannot call endpoints like `GET /enterprise/settings/license`. However, enterprise-owned organization and repository resources are available.{% endif %}
-* Some requests may return incomplete data depending on the permissions and repository access that was granted to an {% data variables.product.prodname_github_app %}. For example, if your app makes a request to get all repositories that a user can access, the response will only include the repositories that the app was also granted access to.
+* Some requests may return incomplete data depending on the permissions and repository access that was granted to a {% data variables.product.prodname_github_app %}. For example, if your app makes a request to get all repositories that a user can access, the response will only include the repositories that the app was also granted access to.
 
 For more information about the REST API endpoints that are available to {% data variables.product.prodname_github_apps %}, see [AUTOTITLE](/rest/authentication/endpoints-available-for-github-app-installation-access-tokens).
 

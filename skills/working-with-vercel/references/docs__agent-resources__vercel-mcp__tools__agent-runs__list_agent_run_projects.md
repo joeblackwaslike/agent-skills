@@ -12,9 +12,10 @@ related:
   - /docs/agent-runs
 summary: Use list_agent_run_projects with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_run_projects.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b0b4b6cfcc1e5f7433d5f319dfac40553a0f5f76e2e9eb16f6c998d376095663"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5d601a7f356c447d7fc6691a760b813223cce83d255631772abb0f7c270d5b59"
 ---
 
 # list_agent_run_projects
@@ -28,8 +29,8 @@ Use this tool with agents built with [eve](/docs/agent-runs#inspect-runs-with-ve
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [list_agent_runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_runs) — Use list_agent_runs with Vercel MCP.
-- [get_agent_run](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/get_agent_run) — Use get_agent_run with Vercel MCP.
 - [Agent Runs now available in the Vercel MCP and CLI](https://vercel.com/changelog/agent-runs-vercel-mcp-cli)
+- [get_agent_run](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/get_agent_run) — Use get_agent_run with Vercel MCP.
 - [vercel agent-runs](https://vercel.com/docs/cli/agent-runs) — Find projects with Agent Runs, list recent runs, and inspect run metadata and conversation traces from the command line.
 - [list_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/list_projects) — Use list_projects with Vercel MCP.
 - [get_observability_configuration_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_observability_configuration_projects) — Use get_observability_configuration_projects with Vercel MCP.
@@ -49,6 +50,18 @@ List projects in a Vercel team that have Agent Runs observability data for eve a
 
 **Sample prompt:** "Which projects in my team have Agent Runs in the last 24 hours?"
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

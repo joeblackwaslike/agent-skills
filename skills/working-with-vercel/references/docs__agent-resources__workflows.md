@@ -3,7 +3,7 @@ title: CLI Workflows
 product: vercel
 url: /docs/agent-resources/workflows
 canonical_url: "https://vercel.com/docs/agent-resources/workflows"
-last_updated: 2026-08-11
+last_updated: 2026-11-14
 type: conceptual
 prerequisites:
   - /docs/agent-resources
@@ -15,9 +15,10 @@ related:
   - /docs/projects/deploy-from-cli
 summary: End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sessions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/workflows.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "5fe7a8c823fc84f6a9b977b1be57b916f9cb12c6c9662c081213de8c4fc93a34"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e9339162d21ea7cadc2ffd661d6cdbf6b8b404942df412595ec364d56398ed52"
 ---
 
 # CLI Workflows
@@ -32,13 +33,12 @@ These workflows show how to compose multiple Vercel CLI commands into complete w
 
 - [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
 - [How can I use the Vercel CLI for custom workflows?](https://vercel.com/kb/guide/using-vercel-cli-for-custom-workflows) — You can use the Vercel CLI to deploy any application, including custom git providers and restricted source code.
-- [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution)
 - [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
 - [How to migrate from Cloudflare Workflows to Vercel Workflows](https://vercel.com/kb/guide/migrate-cloudflare-workflows-to-vercel-workflows) — Migrate from Cloudflare Workflows to Vercel Workflows by mapping WorkflowEntrypoint, step.do, and waitForEvent to workfl
 - [How to migrate from DurableAgent to WorkflowAgent](https://vercel.com/kb/guide/durableagent-to-workflowagent) — Switch your app from \\`DurableAgent\\` \\(@workflow/ai\\) to \\`WorkflowAgent\\` \\(@ai-sdk/workflow\\) by updating imports, st
-- [Python](https://workflow-sdk.dev/docs/getting-started/python) — Set up the Workflow Python SDK in your Python application.
-- [Workflow Concepts](https://vercel.com/docs/workflows/concepts) — Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
+- [Vercel Workflows](https://vercel.com/docs/workflows) — Build agents and applications that retry failed steps, wait for external events, and resume across crashes and deploymen
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [Workflow Concepts](https://vercel.com/docs/workflows/concepts) — Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
 
 Full cross-link map for this page: [/docs/agent-resources/workflows.graph.md](/docs/agent-resources/workflows.graph.md)
 <!-- /docsgraph:related -->
@@ -59,6 +59,7 @@ Workflows are distributed throughout the docs, colocated with the features they 
 | Workflow                                                                                                     | Description                                                                             | Entry point           |
 | ------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------- | --------------------- |
 | [Deploying a project from the CLI](/docs/projects/deploy-from-cli)                                           | Set up and deploy a project end-to-end, from linking to production with a custom domain | Projects              |
+| [Deploying without logging in](/docs/deployments/deploy-without-logging-in)                                  | Deploy with no account or token, then claim the project to keep it                      | Deployments           |
 | [Setting up a custom domain](/docs/domains/set-up-custom-domain)                                             | Add a custom domain, configure DNS records, and verify SSL certificates                 | Domains               |
 | [Managing environment variables across environments](/docs/environment-variables/manage-across-environments) | Add, sync, and verify environment variables across development, preview, and production | Environment Variables |
 | [Promoting a preview deployment to production](/docs/deployments/promote-preview-to-production)              | Test a preview deployment and promote it to production without rebuilding               | Deployments           |
@@ -107,6 +108,18 @@ These workflows are designed as composition patterns. Each one shows a complete 
 - Compose commands into multi-step sessions for novel situations
 - Follow the same debugging methodology that experienced Vercel users follow
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

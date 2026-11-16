@@ -12,9 +12,10 @@ related:
   []
 summary: Use list_promote_aliases with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/list_promote_aliases.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "86c7b21a8a1ae29ae900444a6c5ceaca17506c12e223c86cbadb854dfaa6ed3a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "52d43a81416e41df00db5c2cc9ef99ce0114a40731d14fe4de1ecb515ea76e4c"
 ---
 
 # list_promote_aliases
@@ -30,8 +31,8 @@ Gets a list of aliases with status for the current promote.
 - [list_aliases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_aliases) — Use list_aliases with Vercel MCP.
 - [Gets a list of aliases with status for the current promote](https://vercel.com/docs/rest-api/projects/gets-a-list-of-aliases-with-status-for-the-current-promote) — GET /v1/projects/{projectId}/promote/aliases — Get a list of aliases related to the last promote request with their mapp
 - [list_deployment_aliases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_deployment_aliases) — Use list_deployment_aliases with Vercel MCP.
-- [List aliases](https://vercel.com/docs/rest-api/aliases/list-aliases) — GET /v4/aliases — Retrieves a list of aliases for the authenticated User or Team. When \\`domain\\` is provided, only alia
-- [List Deployment Aliases](https://vercel.com/docs/rest-api/aliases/list-deployment-aliases) — GET /v2/deployments/{id}/aliases — Retrieves all Aliases for the Deployment with the given ID. The authenticated user or
+- [request_promote](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/request_promote) — Use request_promote with Vercel MCP.
+- [vercel promote](https://vercel.com/docs/cli/promote) — Learn how to promote an existing deployment using the vercel promote CLI command.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/rolling-releases/list_promote_aliases.graph.md](/docs/agent-resources/vercel-mcp/tools/rolling-releases/list_promote_aliases.graph.md)
 <!-- /docsgraph:related -->
@@ -48,6 +49,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/rolli
 | `teamId`     | string  | No       | Team ID to use for this operation.                                            |
 | `slug`       | string  | No       | Team slug to use for this operation. Use instead of teamId.                   |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

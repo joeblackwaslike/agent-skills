@@ -12,9 +12,10 @@ related:
   - /docs/platforms/platform-elements/blocks/custom-domain
 summary: A content moderation interface for reporting abuse with categorization, validation, and privacy-focused design.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/report-abuse.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f91c567195e4922d721764479f47516e72a610febf596bf9b6aaef92dfa02ef7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "36300d278690c31c4ed1ff726651f9547528c92fe594f265e5173c53a008ac85"
 ---
 
 # Report Abuse
@@ -31,12 +32,11 @@ The Report Abuse block provides platforms with a professional content moderation
 
 - [Introducing Platform Elements](https://vercel.com/changelog/introducing-platform-elements)
 - [Error Reports for Your Projects with URIports and Vercel](https://vercel.com/kb/guide/client-side-error-reports-with-uriports-vercel) — Enable error reporting for your websites deployed with Vercel and act fast on issues.
-- [How we made the Vercel Dashboard twice as fast](https://vercel.com/blog/how-we-made-the-vercel-dashboard-twice-as-fast)
+- [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
+- [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
 - [Redacting Sensitive Data from Web Analytics Events](https://vercel.com/docs/analytics/redacting-sensitive-data) — Learn how to redact sensitive data from your Web Analytics events.
 - [Get Started with BotID](https://vercel.com/docs/botid/get-started) — Step-by-step guide to setting up BotID protection in your Vercel project
-- [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
-- [Claim Deployment](https://vercel.com/docs/platforms/platform-elements/blocks/claim-deployment) — A component for users to claim ownership of Vercel deployments created on their behalf.
-- [Platform Template](https://vercel.com/docs/platforms/examples/platform-template) — Build an AI app builder on Vercel with sandboxes, AI Gateway, deployments, and project transfers.
+- [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views) — GET /v1/query/web-analytics/visits/aggregate — Counts pageviews on a project, within the requested date range. Results a
 
 Full cross-link map for this page: [/docs/platforms/platform-elements/blocks/report-abuse.graph.md](/docs/platforms/platform-elements/blocks/report-abuse.graph.md)
 <!-- /docsgraph:related -->
@@ -363,6 +363,18 @@ const ModerationWorkflow = {
 
 - [Custom Domain block](/docs/platforms/platform-elements/blocks/custom-domain)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

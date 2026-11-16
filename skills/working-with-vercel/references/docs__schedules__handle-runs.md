@@ -15,9 +15,10 @@ related:
   - /docs/environment-variables
 summary: Write the private function, route, or queue consumer that a schedule runs, and make it safe to run more than once.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/schedules/handle-runs.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "1eff6a77ffda0d0980801c117c1e4f33d736e24e5e56a2d70d27b59dd226d30c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5fe3593a8e1bcd34b97380124ca9967420a46be9f4a7d841472b0f38af7208bb"
 ---
 
 # Handling Scheduled Runs
@@ -32,12 +33,11 @@ When a schedule fires, Vercel delivers a run to the schedule's target. This page
 
 - [Vercel Schedules is now in public beta](https://vercel.com/changelog/vercel-schedules-is-now-in-public-beta)
 - [Introducing Vercel Schedules](https://vercel.com/blog/introducing-vercel-schedules)
-- [Schedules](https://eve.dev/docs/schedules) — Run an agent on a cron cadence, either a fire-and-forget prompt or a handler that hands work off to a channel.
 - [Vercel Schedules: API Reference](https://vercel.com/docs/schedules/http-api) — Reference for the Vercel Schedules HTTP API: authenticate, choose an environment, and create, list, update, enable, disa
-- [Migrating from Cron Jobs to Schedules](https://vercel.com/docs/schedules/migrate-from-cron-jobs) — Move Cron Jobs in vercel.json to Schedules without changing your route code, then optionally make the route private.
 - [Managing Schedules](https://vercel.com/docs/schedules/manage) — View, enable, disable, and run schedules across environments, and check their execution history from the dashboard, CLI,
-- [Getting Started with Schedules](https://vercel.com/docs/schedules/quickstart) — Run a private Vercel Function every hour with a static schedule in vercel.json, test it locally, and deploy it.
+- [Migrating from Cron Jobs to Schedules](https://vercel.com/docs/schedules/migrate-from-cron-jobs) — Move Cron Jobs in vercel.json to Schedules without changing your route code, then optionally make the route private.
 - [vercel schedules](https://vercel.com/docs/cli/schedules) — Inspect and manage schedules in production, a custom environment, a Preview branch, CLI deployments by a user, or a loca
+- [Getting Started with Schedules](https://vercel.com/docs/schedules/quickstart) — Run a private Vercel Function every hour with a static schedule in vercel.json, test it locally, and deploy it.
 
 Full cross-link map for this page: [/docs/schedules/handle-runs.graph.md](/docs/schedules/handle-runs.graph.md)
 <!-- /docsgraph:related -->
@@ -313,9 +313,22 @@ Function and path targets receive a request with an empty body. The run's detail
 ## Related
 
 - [Concepts](/docs/schedules/concepts): Learn about retries, duplicates, and late runs.
+- [Starting workflows from schedules](/docs/schedules/workflows): Run long or multi-step scheduled jobs as durable workflows.
 - [Configuration reference](/docs/schedules/configuration): Look up every schedule property.
 - [Testing schedules locally](/docs/schedules/local-development): Run your handler with `vercel dev`.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

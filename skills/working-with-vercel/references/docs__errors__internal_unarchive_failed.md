@@ -11,9 +11,10 @@ related:
   - /docs/functions/limitations
 summary: Unarchiving of the deployment or resource failed. This is an internal error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/internal_unarchive_failed.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "a44b0e73151c96228ccc76d2915179c0d4381a6d88361299202444355d65ab86"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "abeffbaced768e006a54095f64c16c59dfab223db83ef7b6044af8a64b74b9d8"
 ---
 
 # INTERNAL_UNARCHIVE_FAILED
@@ -33,6 +34,18 @@ To troubleshoot this error, follow these steps:
 - **Check your project files**: Check for any files or directories that have been unnecessarily included in the deployment. Removing unnecessary files or directories can help reduce the size of your deployment
 - **Check bundle size**: Looking into your `includeFiles` and `excludeFiles` configuration to specify items affecting the function size. See [bundle size limits](/docs/functions/limitations#bundle-size-limits)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

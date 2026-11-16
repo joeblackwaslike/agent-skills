@@ -15,9 +15,10 @@ related:
   - /docs/bot-management
 summary: "Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low latency."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/how-vercel-cdn-works.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "a801a2831ad651bada6ebcfa372885d4b1daf9da0be9fa0f769db4f6fd36c5de"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b1d42f9f7f4644ab2a3e0cf2df27075c6699514e5b70b11bbd746c51aee44dab"
 ---
 
 # How Vercel CDN Works
@@ -33,14 +34,13 @@ Every request to a Vercel deployment flows through a globally distributed CDN be
 - [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
 - [How to choose a Salesforce Commerce Cloud storefront: PWA Kit, Storefront Next, or Next.js](https://vercel.com/kb/guide/salesforce-pwa-kit-vs-storefront-next-vs-nextjs) — Compare PWA Kit, Storefront Next, and a Next.js storefront on Vercel for Salesforce Commerce Cloud. Learn how caching, p
 - [How we run Vercel's CDN in front of Discourse](https://vercel.com/blog/how-we-run-vercels-cdn-in-front-of-discourse)
-- [Life of a Vercel request: What happens when a user presses enter](https://vercel.com/blog/life-of-a-vercel-request-what-happens-when-a-user-presses-enter)
-- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
 - [How to troubleshoot stale content returned from the Vercel CDN when using an external proxy or CDN](https://vercel.com/kb/guide/how-to-troubleshoot-stale-content-returned-from-the-edge-network-when-using-an-external-proxy-or-cdn) — Learn how to diagnose and fix stale content issues when using external proxies or CDNs with Vercel. Understand troublesh
-- [Vercel CDN gets a new dashboard experience](https://vercel.com/changelog/vercels-cdn-gets-a-new-dashboard-experience)
-- [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
+- [Life of a Vercel request: What happens when a user presses enter](https://vercel.com/blog/life-of-a-vercel-request-what-happens-when-a-user-presses-enter)
+- [Vercel CDN overview](https://vercel.com/docs/cdn) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 - [Caching](https://vercel.com/docs/caching) — Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
-- [Vercel fundamental concepts](https://vercel.com/docs/fundamentals) — Learn about the core concepts of Vercel
+- [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption) — Learn how Vercel encrypts data in transit and at rest.
+- [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 
 Full cross-link map for this page: [/docs/how-vercel-cdn-works.graph.md](/docs/how-vercel-cdn-works.graph.md)
 <!-- /docsgraph:related -->
@@ -87,7 +87,7 @@ Vercel maintains two tiers of caching. Together, they minimize how often your fu
 - **[ISR cache](/docs/incremental-static-regeneration)**: A durable store in your configured [function region](/docs/functions/configuring-functions/region): Vercel selects one region if you have multiple regions configured. It persists content for up to 31 days. When the CDN misses but the ISR cache has the content, Vercel serves it without invoking your function.
   - [Request collapsing](/docs/incremental-static-regeneration/request-collapsing) further protects this layer by deduplicating concurrent requests to the same ISR path into a single function invocation.
 
-For data fetched inside your functions (individual API calls, database queries), [runtime cache](/docs/caching/runtime-cache) provides an additional caching layer that works alongside response caching.
+For data fetched inside your functions (individual API calls, database queries), [runtime cache](/docs/runtime-cache) provides an additional caching layer that works alongside response caching.
 
 ## Compute layer
 
@@ -99,6 +99,18 @@ Vercel supports 35 [frontend frameworks](/docs/frameworks) with local developmen
 
 If you use [Vercel Functions](/docs/functions) without a framework, run [`vercel dev`](/docs/cli/dev) to test locally.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

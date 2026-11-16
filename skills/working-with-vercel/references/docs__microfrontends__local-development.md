@@ -14,9 +14,10 @@ related:
   - /docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation
 summary: Learn how to run and test your microfrontends locally.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/microfrontends/local-development.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "56f358f7d31d44d6948cbeafb2c6ed83a08cabcc1192e09522f665655ac78fa2"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "065660a986b7ca0982a170e4e0d0a50612413b76e5db1bc9bfa7a3dc2e6796e0"
 ---
 
 # Microfrontends local development
@@ -30,13 +31,12 @@ To provide a seamless local development experience, `@vercel/microfrontends` pro
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Microfrontends](https://turborepo.dev/docs/guides/microfrontends) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
-- [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends)
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
 - [Managing microfrontends](https://vercel.com/docs/microfrontends/managing-microfrontends) — Learn how to manage your microfrontends on Vercel.
-- [Microfrontends Routing](https://vercel.com/docs/microfrontends/routing) — Configure which microfrontend handles each path and understand how Vercel selects deployments.
 - [Microfrontends Configuration](https://vercel.com/docs/microfrontends/configuration) — Configure your microfrontends.json.
+- [Microfrontends Routing](https://vercel.com/docs/microfrontends/routing) — Configure which microfrontend handles each path and understand how Vercel selects deployments.
 - [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
-- [Automated & Agent Access](https://vercel.com/docs/deployment-protection/automated-agent-access) — Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Prote
+- [Deploying Turborepo to Vercel](https://vercel.com/docs/monorepos/turborepo) — Learn about Turborepo, a build system for monorepos that allows you to have faster incremental builds, content-aware has
 
 Full cross-link map for this page: [/docs/microfrontends/local-development.graph.md](/docs/microfrontends/local-development.graph.md)
 <!-- /docsgraph:related -->
@@ -331,6 +331,18 @@ The name is transformed to be uppercase, and any character that is not a letter 
 
 Set this variable to the value of the protected project's [Protection Bypass for Automation](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation) secret, scope it to the `Development` environment on the default application's project, and run `vercel env pull` in the default app to bring it down locally.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

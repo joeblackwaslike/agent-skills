@@ -15,9 +15,10 @@ related:
   - /docs/cli/schedules
 summary: Run static and dynamic schedules on your machine with vercel dev, trigger runs on demand, and learn what differs from production.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/schedules/local-development.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "37fa79ca8c8faaa74c283a4f7d706dc7330052d48ef19eab4cbbbf529bbad4cf"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "fba4bfda8e90ac9b818d87d1350d6d1ab220f17bb5d5e7b72896b0d3fb91cd72"
 ---
 
 # Testing Schedules Locally
@@ -35,8 +36,8 @@ sha256: "37fa79ca8c8faaa74c283a4f7d706dc7330052d48ef19eab4cbbbf529bbad4cf"
 - [Managing Schedules](https://vercel.com/docs/schedules/manage) — View, enable, disable, and run schedules across environments, and check their execution history from the dashboard, CLI,
 - [Schedules Configuration Reference](https://vercel.com/docs/schedules/configuration) — Reference for static schedules in vercel.json and the Build Output API, including targets, function identifiers, cron sy
 - [Getting Started with Schedules](https://vercel.com/docs/schedules/quickstart) — Run a private Vercel Function every hour with a static schedule in vercel.json, test it locally, and deploy it.
-- [Migrating from Cron Jobs to Schedules](https://vercel.com/docs/schedules/migrate-from-cron-jobs) — Move Cron Jobs in vercel.json to Schedules without changing your route code, then optionally make the route private.
 - [Vercel Schedules: JS SDK Reference](https://vercel.com/docs/schedules/sdk) — Reference for @vercel/schedules: create, list, update, enable, disable, invoke, and delete schedules, and handle schedul
+- [Migrating from Cron Jobs to Schedules](https://vercel.com/docs/schedules/migrate-from-cron-jobs) — Move Cron Jobs in vercel.json to Schedules without changing your route code, then optionally make the route private.
 
 Full cross-link map for this page: [/docs/schedules/local-development.graph.md](/docs/schedules/local-development.graph.md)
 <!-- /docsgraph:related -->
@@ -112,6 +113,18 @@ Locally, you can't create a one-time schedule for a time that a daylight saving 
 - [`vercel schedules` reference](/docs/cli/schedules)
 - [`vercel dev` reference](/docs/cli/dev)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

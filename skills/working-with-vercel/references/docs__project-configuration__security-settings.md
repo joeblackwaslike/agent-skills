@@ -14,9 +14,10 @@ related:
   - /docs/deployment-retention
 summary: Configure security settings for your Vercel project, including Vercel Support Code Visibility, Git Fork Protection, and Secure Backend Access with...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/project-configuration/security-settings.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "8723c1de41ce6cc25500f28047f122a0965cb4f84ef5bb59007c8f38d64d3c10"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3faf0b2dfb970cf37ebab68d020a07ba5fbab7e26ab731fb09f75d24bfd97120"
 ---
 
 # Security settings
@@ -32,9 +33,9 @@ To adjust your project's security settings:
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments) — Protect who can see your deployments.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Vercel security overview](https://vercel.com/docs/security) — Vercel provides built-in and customizable features to ensure that your site is secure.
-- [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
-- [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Deployment Protection on Vercel](https://vercel.com/docs/deployment-protection) — Learn how to control access to your Vercel project's preview and production URLs with Deployment Protection. Configure p
+- [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
 
 Full cross-link map for this page: [/docs/project-configuration/security-settings.graph.md](/docs/project-configuration/security-settings.graph.md)
 <!-- /docsgraph:related -->
@@ -84,6 +85,18 @@ This section lists the recently deleted deployments of your project. You can res
 
 To set a limit on how long Vercel keeps older deployments for your project, use the **Deployment Retention Policy** section of your project's **Build and Deployment** settings. To learn more, see [Deployment Retention Policy](/docs/deployment-retention).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

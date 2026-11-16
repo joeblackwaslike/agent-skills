@@ -14,9 +14,10 @@ related:
   - /docs/cli/env
 summary: Learn how to add Replicate connectable account integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/replicate.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c57c1eeab3fd710c5fabcaaa3067c6274e2d15b8d29db56eeb44d43dec45fc7e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "17e28bada32ff961943d155573dbcafa5eb87c71f956a23b1934fe957042d8a5"
 ---
 
 # Vercel Replicate Integration
@@ -36,8 +37,8 @@ applications, enabling advanced functionalities and enhancing user experiences.
 
 - [Vercel ElevenLabs Integration](https://vercel.com/docs/agent-resources/integrations-for-models/elevenlabs) — Learn how to add the ElevenLabs connectable account integration with Vercel.
 - [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai) — Learn how to add the xAI native integration with Vercel.
-- [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model) — Learn how to add a new AI model to your Vercel projects
 - [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra) — Learn how to add the Deep Infra native integration with Vercel.
+- [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model) — Learn how to add a new AI model to your Vercel projects
 - [Vercel Together AI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai) — Learn how to add Together AI connectable account integration with Vercel.
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/replicate.graph.md](/docs/agent-resources/integrations-for-models/replicate.graph.md)
@@ -110,6 +111,18 @@ You can deploy a template to Vercel that uses a pre-trained model from Replicate
 
 ## More resources
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

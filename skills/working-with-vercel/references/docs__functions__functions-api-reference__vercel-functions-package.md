@@ -16,9 +16,10 @@ related:
   - /docs/caching/cdn-cache/purge
 summary: Learn about available APIs when working with Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "7b61d074638ad8a104ad0edce33d434b7dd820aa507eb44384b06786c6bd0936"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e1e73c4fd52253851c113e55e16bd0b717a5c0917681295632ed216c9caa91d4"
 ---
 
 # @vercel/functions API Reference (Node.js)
@@ -482,7 +483,7 @@ export default async function action() {
 
 #### Limits and usage
 
-The Runtime Cache is isolated per deployment environment (`preview` and `production`). On Pro and Enterprise, each project uses its own cache. On Hobby, all projects in your team share a single cache. See [storage scope by plan](/docs/caching/runtime-cache#storage-scope-by-plan). Cached data is persisted across deployments and can be invalidated either through time-based expiration or by calling `expireTag`. However, TTL (time-to-live) and tag updates aren't reconciled between deployments. In those cases, we recommend either purging the runtime cache or modifying the cache key.
+The Runtime Cache is isolated per deployment environment (`preview` and `production`). On Pro and Enterprise, each project uses its own cache. On Hobby, all projects in your team share a single cache. See [storage scope by plan](/docs/runtime-cache#storage-scope-by-plan). Cached data is persisted across deployments and can be invalidated either through time-based expiration or by calling `expireTag`. However, TTL (time-to-live) and tag updates aren't reconciled between deployments. In those cases, we recommend either purging the runtime cache or modifying the cache key.
 
 The Runtime Cache API does not have first class integration with [Incremental Static Regeneration](/docs/incremental-static-regeneration). This means that:
 
@@ -691,6 +692,18 @@ export const GET = async () => {
 };
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

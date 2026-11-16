@@ -3,7 +3,7 @@ title: upsert-installation
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/upsert-installation
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/upsert-installation"
-last_updated: 2026-11-09
+last_updated: 2026-11-16
 type: conceptual
 prerequisites:
   []
@@ -13,9 +13,10 @@ related:
   - /docs/integrations/create-integration/native-integration
 summary: Learn about upsert-installation on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/upsert-installation.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "a8bf7b48f05b02a50e80999e2c488b2153a27c582dd7979861bae570e271e618"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "6f8f1db45555c05bd79e65d42ab195dd70075e05ec51687572ef82133db77113"
 ---
 
 # Upsert Installation
@@ -290,6 +291,18 @@ Operation failed because of a conflict with the current state of the resource
 - [Marketplace API Reference](/docs/integrations/create-integration/marketplace-api/reference)
 - [Native Integration Concepts](/docs/integrations/create-integration/native-integration)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

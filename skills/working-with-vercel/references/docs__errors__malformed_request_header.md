@@ -11,9 +11,10 @@ related:
   []
 summary: The MALFORMED_REQUEST_HEADER error occurs when a request contains an improperly formatted or invalid header. This is a request error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/malformed_request_header.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5f94bafd72c5fcc7504d7942fce2751183c8e8e391b592f753bf7b2825801bdf"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "6179140bb648e068088e206c475d3eb4c6b2f198fd2d08d1c6ac03d43eea291f"
 ---
 
 # MALFORMED_REQUEST_HEADER
@@ -32,6 +33,18 @@ To troubleshoot this error, follow these steps:
 2. **Validate UTF-8 encoding**: Confirm that all request headers, especially cookie values, are valid UTF-8 strings. Non-UTF-8 characters in headers, particularly in the cookie header, often cause this error
 3. **Examine Vercel Function behavior**: Since this error is specific to Vercel functions, verify the functionality and responses of your Vercel functions. Ensure they are correctly handling request headers and not contributing to malformed responses
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

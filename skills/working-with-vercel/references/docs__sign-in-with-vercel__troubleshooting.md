@@ -13,9 +13,10 @@ related:
   - /docs/sign-in-with-vercel/manage-from-dashboard
 summary: Learn how to troubleshoot common errors with Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sign-in-with-vercel/troubleshooting.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "3e210b10f0a917a59c2e392e2eecc2ac9613b1b0a1af2270625e87a9a2775db4"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "deaeb22e1def53044bd3036088068dd0e1b227c7b402f29671367312afc08b3d"
 ---
 
 # Troubleshooting Sign in with Vercel
@@ -28,11 +29,11 @@ When users try to authorize your app, several errors can occur. Common troublesh
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel KMS Authentication](https://vercel.com/docs/kms/concepts/authentication) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
 - [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
-- [Tokens](https://vercel.com/docs/sign-in-with-vercel/tokens) — Learn how to Sign in with Vercel
+- [Revoke a signing key](https://vercel.com/docs/rest-api/kms/revoke-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/revoke — Immediately revoke a signing key that is already scheduled for rev
+- [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys — Create a new signing key for a KMS issuer. Depending on the activation mode, the
 - [OIDC Federation Reference](https://vercel.com/docs/oidc/reference) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
-- [Vercel KMS SDK Reference](https://vercel.com/docs/kms/ts-sdk-reference) — API reference for @vercel/kms, including signJWT, signMessage, region resolution, and signing the KMS API directly witho
+- [Vercel KMS Authentication](https://vercel.com/docs/kms/concepts/authentication) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/troubleshooting.graph.md](/docs/sign-in-with-vercel/troubleshooting.graph.md)
 <!-- /docsgraph:related -->
@@ -213,6 +214,18 @@ The token's `exp` must be in the future, the token must include `iss`, `sub`, `a
 
 **Fix**: Send a fresh token, and confirm the issuer publishes its OpenID configuration and JWKS.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

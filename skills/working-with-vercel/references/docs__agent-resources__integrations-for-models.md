@@ -15,9 +15,10 @@ related:
   - /docs/agent-resources/integrations-for-models/groq
 summary: Integrate powerful AI services and models seamlessly into your Vercel projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/integrations-for-models.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "7f43874e9be307eb2783e7c8c5e587d96dcdfd0b3d1ef85033b67b95ff14d5a3"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b5c4b794adcc99cee46bdefa8a4cd16039e1f7cc7066c6f6528282061d78c2db"
 ---
 
 # Build with AI on Vercel
@@ -31,13 +32,14 @@ AI services and models help enhance and automate the building and deployment of 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing AI Integrations on Vercel](https://vercel.com/blog/ai-integrations)
-- [AI Integrations and playground in the Vercel Dashboard](https://vercel.com/changelog/ai-integration-and-playground-in-the-vercel-dashboard)
 - [xAI and Vercel partner to bring zero-friction AI to developers](https://vercel.com/blog/xai-and-vercel-partner-to-bring-zero-friction-ai-to-developers)
+- [AI Integrations and playground in the Vercel Dashboard](https://vercel.com/changelog/ai-integration-and-playground-in-the-vercel-dashboard)
 - [Groq, fal, and DeepInfra join the Vercel Marketplace ](https://vercel.com/changelog/groq-fal-and-deepinfra-join-the-vercel-marketplace)
-- [AI agents and services on the Vercel Marketplace](https://vercel.com/blog/ai-agents-and-services-on-the-vercel-marketplace)
-- [How to integrate AI into your business](https://vercel.com/blog/how-to-integrate-ai-into-your-business)
 - [Introducing AI agents & services on the Vercel Marketplace](https://vercel.com/changelog/introducing-ai-agents-and-services-on-the-vercel-marketplace)
+- [Build with AI agents on Vercel](https://vercel.com/docs/agent-resources/integrations-for-agents) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
 - [Vercel Integrations](https://vercel.com/docs/integrations) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
+- [Vercel AI Gateway: Models, Routing, and Observability](https://vercel.com/docs/ai-gateway) — A hosted AI gateway for any cloud or language. Centralize credentials, request logs, cost tracking, budgets, prompt cach
+- [AI Gateway Framework Integrations](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations) — Connect Flue, LangChain, LiteLLM, LlamaIndex, Mastra, Pydantic AI, TanStack AI, and other frameworks to Vercel AI Gatewa
 - [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models.graph.md](/docs/agent-resources/integrations-for-models.graph.md)
@@ -89,6 +91,18 @@ See the [adding a provider](/docs/agent-resources/integrations-for-models/adding
 
 - [AI Integrations for Vercel](https://www.youtube.com/watch?v=so4Jatc85Aw)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

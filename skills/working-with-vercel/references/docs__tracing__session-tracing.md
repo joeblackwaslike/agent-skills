@@ -15,9 +15,10 @@ related:
   - /docs/logs/runtime
 summary: Learn how to trace your sessions to understand performance and infrastructure details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/tracing/session-tracing.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "844ee4260d7dc3d91431f39fb2b5c7eac8a68c1db3ea2948a72a417a2b0b96aa"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "be7145949b01112abda8bc87f53be6ec41d95ab28e13edd04464bea6fc7162b5"
 ---
 
 # Session Tracing
@@ -35,12 +36,11 @@ With Session Tracing, you can use the Vercel toolbar to trace **your** own brows
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [Track a request's full lifecycle with session tracing](https://vercel.com/changelog/session-tracing-now-available)
 - [Vercel Tracing is now generally available](https://vercel.com/changelog/vercel-tracing-is-now-generally-available)
-- [Search trace spans from the Vercel CLI](https://vercel.com/changelog/search-trace-spans-from-the-vercel-cli)
 - [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
+- [Create a trace session token for a deployment](https://vercel.com/docs/rest-api/projects/create-a-trace-session-token-for-a-deployment) — POST /v1/projects/traces/session — Mints a short-lived HS256 JWT scoped to a deployment hostname. The Vercel CLI present
 - [create_trace_session](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/create_trace_session) — Use create_trace_session with Vercel MCP.
 - [Instrumentation](https://vercel.com/docs/tracing/instrumentation) — Learn how to instrument your application to understand performance and infrastructure details.
-- [Create a trace session token for a deployment](https://vercel.com/docs/rest-api/projects/create-a-trace-session-token-for-a-deployment) — POST /v1/projects/traces/session — Mints a short-lived HS256 JWT scoped to a deployment hostname. The Vercel CLI present
-- [Testing & troubleshooting microfrontends](https://vercel.com/docs/microfrontends/troubleshooting) — Learn about testing, common issues, and how to troubleshoot microfrontends on Vercel.
+- [Tracing in Daemons](https://vercel.com/docs/daemons/tracing) — Instrument a daemon using OpenTelemetry traces.
 
 Full cross-link map for this page: [/docs/tracing/session-tracing.graph.md](/docs/tracing/session-tracing.graph.md)
 <!-- /docsgraph:related -->
@@ -128,6 +128,18 @@ Session Tracing follows the shared [Tracing limitations](/docs/tracing#limitatio
 - [Learn about the Vercel toolbar](/docs/vercel-toolbar)
 - [Explore Observability on Vercel](/docs/observability)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

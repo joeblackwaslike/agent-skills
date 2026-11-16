@@ -4,8 +4,8 @@ description: Learn how to generate videos with the AI SDK.
 url: "https://ai-sdk.dev/docs/ai-sdk-core/video-generation"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/video-generation.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "0b2e301b5c291b879953329163c925632605274b68dadb83d169f7ff5c119871"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "6794ff471636452115678ca099d471a1013fdfd5c8d313c5f391d6ee0d68d2c7"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -31,6 +31,13 @@ You can access the video data using the `base64` or `uint8Array` properties:
 const base64 = video.base64; // base64 video data
 const uint8Array = video.uint8Array; // Uint8Array video data
 ```
+
+## URL download protection
+
+Provider polling requests use the provider's `fetch` option; the final video
+download uses the `download` option. For untrusted URLs on Node.js, pass a
+`guarded-fetch` transport to both (`download: createDownload({ fetch })`). See
+[Secure URL Fetching](/docs/advanced/secure-url-fetching#core-file-downloads).
 
 ## Settings
 

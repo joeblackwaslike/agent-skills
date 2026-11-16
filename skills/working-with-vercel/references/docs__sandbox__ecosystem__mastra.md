@@ -16,9 +16,10 @@ related:
   - /docs/cli
 summary: Give a Mastra agent an isolated workspace for running commands with the Vercel Sandbox adapter and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/ecosystem/mastra.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "a5de231c1b392906dfa7b802d895a1db441904ed3e3ee7e6841a0bbf08bf800f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "63aeb02faca4e0e3771231a3189093d94f4a2c68b662fc2aa9892f557d2fa004"
 ---
 
 # Mastra with Vercel Sandbox
@@ -34,8 +35,8 @@ Give a [Mastra](/docs/frameworks/agents/mastra) agent a workspace that executes 
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
 - [How to give agents persistent storage with Vercel Drives](https://vercel.com/kb/guide/persistent-storage-with-vercel-drives) — Give AI SDK and TanStack AI agents persistent storage with Vercel Drives so they can save and reuse research notes acros
 - [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
-- [Vercel Sandbox vs CodeSandbox](https://vercel.com/kb/guide/vercel-sandbox-vs-codesandbox) — A detailed guide to Vercel Sandbox vs CodeSandbox: compute isolation, credential brokering, Active CPU billing, Docker s
-- [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
+- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
+- [How to run Herdr coding agents in isolated Vercel Sandboxes](https://vercel.com/kb/guide/run-herdr-coding-agents-isolated-vercel-sandboxes) — Install the vercel.sandbox plugin for Herdr, approve an upload manifest, run each AI coding agent in its own isolated Ve
 - [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available)
 - [Agent Frameworks on Vercel](https://vercel.com/docs/frameworks/agents) — Build AI agents with eve, Mastra, Flue, and Vercel. Learn how each framework connects to Vercel compute, models, and sto
 
@@ -189,12 +190,58 @@ Use [Chat SDK](/docs/chat-sdk) to let people interact with your Mastra agent on 
 
 Mastra's channels integration accepts Chat SDK adapters through `channels.adapters` and registers their webhook routes. Point the platform's webhook URL to your deployed Mastra server. See [Mastra's channels guide](https://mastra.ai/docs/channels) for adapter credentials, webhook configuration, and persistent storage.
 
+## Prepare your agent for launch
+
+Before you launch your Mastra agent, work through the [agent checklist](/docs/agent-checklist?framework=mastra). It lists the Sandbox settings to check, such as network policies, credentials brokering, and timeouts. Its Mastra items include the choice of sandbox adapter and workspace cleanup.
+
+## Frequently asked questions
+
+### What's the difference between VercelSandbox and VercelServerlessSandbox in Mastra?
+
+`VercelSandbox` runs commands in a Vercel Sandbox microVM, a full Linux environment with its own filesystem, exposed ports, and background processes. `VercelServerlessSandbox` runs each command in a stateless Vercel Function. Only its `/tmp` directory is writable, and files there are ephemeral. A later invocation might still see them, so delete sensitive files explicitly when a command finishes. Use `VercelSandbox` when your agent needs to install packages, keep files between commands, or run a server.
+
+### How does a Mastra agent authenticate with Vercel Sandbox?
+
+The `VercelSandbox` adapter uses the Sandbox SDK, which authenticates with a Vercel OIDC token. For local development, run `vercel link` and `vercel env pull` to write `VERCEL_OIDC_TOKEN` to `.env.local`. When your application runs on Vercel, the SDK uses the deployment's token automatically. In other environments, set `VERCEL_TOKEN`, `VERCEL_TEAM_ID`, and `VERCEL_PROJECT_ID` together. Model requests use AI Gateway credentials in your application process, so you don't pass `AI_GATEWAY_API_KEY` into the sandbox.
+
+### How long can a Mastra agent's sandbox run?
+
+Set the `timeout` option on `VercelSandbox` in milliseconds. The default is five minutes. Each sandbox session can run for up to 45 minutes on Hobby and up to 24 hours on Pro and Enterprise. See [Sandbox runtime limits](/docs/sandbox/pricing#runtime-limits). Call `workspace.destroy()` when the session ends to delete the sandbox and its snapshots.
+
+### How do I keep files between Mastra sandbox runs?
+
+Vercel sandboxes are [persistent](/docs/sandbox/concepts/persistent-sandboxes) by default. When a sandbox stops, Vercel snapshots its filesystem and restores it on resume, so you can pass the same `sandboxName` to `VercelSandbox` to reuse those files. Calling `workspace.destroy()` deletes the sandbox and its snapshots. To keep files independently of any sandbox, including after you delete it, mount a [Vercel Drive](/docs/sandbox/concepts/drives). The `VercelSandbox` adapter doesn't accept a `mounts` option, so create a named, drive-mounted sandbox with `@vercel/sandbox` and pass its name to `VercelSandbox` with `sandboxName`. Follow [Keep workspace files on a drive](/docs/frameworks/agents/mastra#keep-workspace-files-on-a-drive) for the full steps.
+
+### What else can a Mastra agent with a sandbox use on Vercel?
+
+Vercel Sandbox runs the agent's commands. You can combine it with these Vercel products:
+
+- [AI Gateway](/docs/ai-gateway) routes the agent's model requests. See [Mastra with AI Gateway](/docs/ai-gateway/ecosystem/framework-integrations/mastra).
+- [Vercel Functions](/docs/functions) run your Mastra server when you deploy with `VercelDeployer`. See [Mastra on Vercel](/docs/frameworks/agents/mastra).
+- [Vercel Blob](/docs/vercel-blob) stores reports and other files the agent produces.
+- [Vercel Workflows](/docs/workflows) coordinate multi-step tasks that call the agent.
+- [Vercel Daemons](/docs/daemons) run Mastra's background workers.
+- [Vercel Passport](/docs/passport) signs visitors in so you can scope agent memory to each user.
+- [Chat SDK](/docs/chat-sdk) connects the agent to Slack, Discord, or Microsoft Teams.
+
 ## Next steps
 
 - See [Mastra's Vercel Sandbox integration](https://mastra.ai/integrations/sandboxes/vercel#vercel-sandbox) for adapter options, exposed ports, and background processes.
 - Read the [Mastra workspace reference](https://mastra.ai/reference/workspace/workspace-class) for workspace tools and lifecycle methods.
 - Configure model access with [Mastra and AI Gateway](/docs/ai-gateway/ecosystem/framework-integrations/mastra).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

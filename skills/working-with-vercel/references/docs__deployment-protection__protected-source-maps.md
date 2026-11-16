@@ -15,9 +15,10 @@ related:
   - /docs/rest-api/projects/update-an-existing-project
 summary: Protected Source Maps gates requests for browser source maps behind Vercel Authentication, so only authorized users can view your production source...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployment-protection/protected-source-maps.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "aac91ffede7589bd490579bc806eb35f0f0003b89559c71378a5b2ed0df5878d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7f2b50279745b5c9d41055a6ded3b8f837f611d82c8b8b89634a2a3fa7a7274c"
 ---
 
 # Restrict access to production source maps
@@ -36,10 +37,10 @@ Protected Source Maps gates requests for browser source maps behind [Vercel Auth
 
 - [Protected Source Maps: Ship browser source maps securely](https://vercel.com/changelog/protected-source-maps-ship-browser-source-maps-securely)
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments) — Protect who can see your deployments.
-- [Protect production deployments for free on every plan](https://vercel.com/changelog/protect-production-deployments-for-free-on-every-plan)
 - [Choose between Vercel Passport and other Deployment Protection methods](https://vercel.com/kb/guide/vercel-passport-vs-deployment-protection) — Compare Vercel Passport with Vercel Authentication, Password Protection, and Trusted IPs to choose the right Deployment
-- [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments)
+- [Protect production deployments for free on every plan](https://vercel.com/changelog/protect-production-deployments-for-free-on-every-plan)
 - [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
+- [Automated & Agent Access](https://vercel.com/docs/deployment-protection/automated-agent-access) — Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Prote
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Vercel Support Code Visibility, Git Fork Protection, and
 - [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 
@@ -141,6 +142,18 @@ This protection applies to browser source maps generated during a build, such as
 - [Methods to bypass Deployment Protection](/docs/deployment-protection/methods-to-bypass-deployment-protection)
 - [`NEXTJS_NO_PRODUCTION_SOURCE_MAPS` conformance rule](/docs/conformance/rules/nextjs_no_production_source_maps)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

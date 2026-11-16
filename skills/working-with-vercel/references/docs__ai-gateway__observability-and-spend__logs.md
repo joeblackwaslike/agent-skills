@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/observability-and-spend/trace-drains
 summary: Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the results as CSV or JSON.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/logs.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "41c54857ad64e891b863c053e672748c4d6259cdf9433de5f07e53e3c07a69ff"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c2f0068f2dda8f1850e4438a6fc5cb72a44c7e38d43023aeb5e27a1c5413c051"
 ---
 
 # AI Gateway Request Logs
@@ -34,12 +35,12 @@ The Logs page lists every request and asynchronous job your team sends through A
 - [AI Gateway logs now have a dedicated page](https://vercel.com/changelog/ai-gateway-logs)
 - [AI Gateway logs now show session affinity](https://vercel.com/changelog/ai-gateway-logs-now-show-session-affinity)
 - [Baseten's Mammoth-1 and Elephant-1 now available on AI Gateway for free](https://vercel.com/changelog/basetens-mammoth-1-and-elephant-1-now-available-on-ai-gateway-for-free)
+- [Gemini Decision 1 now available on AI Gateway](https://vercel.com/changelog/gemini-decision-1-now-available-on-ai-gateway)
 - [Liquid AI's d1 is available on AI Gateway](https://vercel.com/changelog/liquid-ai-d1-is-available-on-ai-gateway)
-- [Liquid AI's d1-ultra now available on AI Gateway](https://vercel.com/changelog/liquid-ais-d1-ultra-now-available-on-ai-gateway)
 - [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
 - [How to classify, route, and score with Jev and AI SDK](https://vercel.com/kb/guide/typesafe-jev-and-ai-sdk) — Use Jev from TypeSafe AI with AI SDK's experimental \\`evaluate\\` API to classify, route, score, and verify inside your a
-- [Open-weight models surge to 29% of volume, price per token flattens](https://vercel.com/blog/ai-gateway-production-index-july-2026)
 - [Runtime Logs](https://vercel.com/docs/logs/runtime) — Learn how to search, inspect, and share your runtime logs with the Logs tab.
+- [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
 - [Amp with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/amp) — Connect Amp to AI Gateway through Amp's Model Routing settings. Add an AI Gateway API key, choose models for Amp's modes
 
@@ -106,18 +107,18 @@ The filter bar sits above the table.
 
 **Dropdowns** each accept multiple values:
 
-| Filter             | What it filters                                                                                                                   |
-| ------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
-| **Status**         | Response outcomes by `2xx`, `4xx`, `5xx`, or an exact status code such as `429`                                                  |
-| **Model**          | The model that handled the request or job                                                                                         |
-| **Provider**       | The provider that served the model                                                                                                |
-| **Authentication** | The API key, project OpenID Connect (OIDC) token, app token, or personal access token that authenticated the operation             |
-| **Routing**        | How AI Gateway routed the operation: system credentials, bring your own key (BYOK), or Virtual Models                                |
-| **Modality**       | The model's input or output type, such as Language, Embedding, Image, or Video                                                    |
-| **Request Mode**   | Synchronous requests or asynchronous jobs                                                                                         |
-| **Latency**        | Request duration or time to first token                                                                                            |
-| **Tokens**         | Input or output token count                                                                                                        |
-| **Cost**           | Inference cost                                                                                                                      |
+| Filter             | What it filters                                                                                                        |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------- |
+| **Status**         | Response outcomes by `2xx`, `4xx`, `5xx`, or an exact status code such as `429`                                        |
+| **Model**          | The model that handled the request or job                                                                              |
+| **Provider**       | The provider that served the model                                                                                     |
+| **Authentication** | The API key, project OpenID Connect (OIDC) token, app token, or personal access token that authenticated the operation |
+| **Routing**        | How AI Gateway routed the operation: Vercel's provider keys, bring your own key (BYOK), or Virtual Models              |
+| **Modality**       | The model's input or output type, such as Language, Embedding, Image, or Video                                         |
+| **Request Mode**   | Synchronous requests or asynchronous jobs                                                                              |
+| **Latency**        | Request duration or time to first token                                                                                |
+| **Tokens**         | Input or output token count                                                                                            |
+| **Cost**           | Inference cost                                                                                                         |
 
 **Date range** offers presets from the last 5 minutes to the last 30 days. You can look back at most 36 days.
 
@@ -155,7 +156,7 @@ Timing spans use green for successful work, amber for a 4xx response, and red fo
 
 ### Verify the billing route for provider credits
 
-When using [ChatGPT API credits](/i/chatgpt-api-credits-ai-gateway) or [Claude API credits](/i/claude-api-credits-ai-gateway), inspect the successful attempt's provider and credential source. Confirm that OpenAI or Anthropic served the request with BYOK. If the request used system credentials, AI Gateway billed its own credits balance.
+When using [ChatGPT API credits](/i/chatgpt-api-credits-ai-gateway) or [Claude API credits](/i/claude-api-credits-ai-gateway), inspect the successful attempt's provider and credential source. Confirm that OpenAI or Anthropic served the request with BYOK. If the request used Vercel's provider keys, AI Gateway billed its own credits balance.
 
 Logs establish the route the request took. To confirm whether a promotional grant paid for it, check the linked organization's billing dashboard with the provider. Contact OpenAI or Anthropic support for missing grants, eligibility, or unexpected balances.
 
@@ -179,6 +180,18 @@ Routing attempt details are kept for **30 days**. Older requests still appear in
 
 Viewing logs requires read access to your team's usage. Team roles without it see a permission message in place of the table rather than an empty list.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -12,9 +12,10 @@ related:
   - /docs/deployments
 summary: Use create_deployment with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/create_deployment.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "198283f42f2592c6b96120fed16d8c8f9742e6f3d8d911dc76467a5b2f88e857"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "af59fc83c0b47cfda958d95efbd1c217b38f369a26d9130b1f99fcf70fedb885"
 ---
 
 # create_deployment
@@ -28,10 +29,10 @@ Create a [deployment](/docs/deployments) from a Git source or files. Put `name`,
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [deploy_to_vercel](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/deploy_to_vercel) — Use deploy_to_vercel with Vercel MCP.
-- [cancel_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/cancel_deployment) — Use cancel_deployment with Vercel MCP.
-- [create_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project) — Use create_project with Vercel MCP.
 - [get_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment) — Use get_deployment with Vercel MCP.
-- [request_promote](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/request_promote) — Use request_promote with Vercel MCP.
+- [cancel_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/cancel_deployment) — Use cancel_deployment with Vercel MCP.
+- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
+- [list_deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployments) — Use list_deployments with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/create_deployment.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/create_deployment.graph.md)
 <!-- /docsgraph:related -->
@@ -48,6 +49,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deplo
 | `slug`                          | string | No       | Team slug to use for this operation. Use instead of teamId.                                                                                                                                                                                                                                         |
 | `requestBody`                   | object | Yes      | Request body for this tool.                                                                                                                                                                                                                                                                         |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/schedules/handle-runs
 summary: Use schedule namespaces to give each customer in a multi-tenant app their own recurring and one-time schedules.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/schedules/multi-tenant.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "59107960a127cdc5cf1e0061e91d937be9a5ce40e4b3b2568b4271e1174d395b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "84e6243e3bffcd00054a48eb70d194cbc74f6566df617f54733deb808fa128bb"
 ---
 
 # Creating Schedules for Each Customer
@@ -30,13 +31,13 @@ In a multi-tenant app, each customer (tenant) often needs their own schedules, l
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Introducing Vercel Schedules](https://vercel.com/blog/introducing-vercel-schedules)
 - [Vercel Schedules is now in public beta](https://vercel.com/changelog/vercel-schedules-is-now-in-public-beta)
-- [Schedules Concepts](https://vercel.com/docs/schedules/concepts) — Learn how Vercel Schedules handles environments, deployments, jitter, one-time schedules, late runs, and duplicate deliv
-- [Managing Schedules](https://vercel.com/docs/schedules/manage) — View, enable, disable, and run schedules across environments, and check their execution history from the dashboard, CLI,
+- [Introducing Vercel Schedules](https://vercel.com/blog/introducing-vercel-schedules)
 - [Vercel Schedules: API Reference](https://vercel.com/docs/schedules/http-api) — Reference for the Vercel Schedules HTTP API: authenticate, choose an environment, and create, list, update, enable, disa
-- [Getting Started with Schedules](https://vercel.com/docs/schedules/quickstart) — Run a private Vercel Function every hour with a static schedule in vercel.json, test it locally, and deploy it.
+- [Managing Schedules](https://vercel.com/docs/schedules/manage) — View, enable, disable, and run schedules across environments, and check their execution history from the dashboard, CLI,
+- [Schedules Concepts](https://vercel.com/docs/schedules/concepts) — Learn how Vercel Schedules handles environments, deployments, jitter, one-time schedules, late runs, and duplicate deliv
 - [vercel schedules](https://vercel.com/docs/cli/schedules) — Inspect and manage schedules in production, a custom environment, a Preview branch, CLI deployments by a user, or a loca
+- [Scheduling Work for Agents](https://vercel.com/docs/schedules/agents) — Give an agent a tool that creates dynamic schedules, so it can do work for a user later or on a recurring basis.
 
 Full cross-link map for this page: [/docs/schedules/multi-tenant.graph.md](/docs/schedules/multi-tenant.graph.md)
 <!-- /docsgraph:related -->
@@ -181,6 +182,18 @@ A one-time schedule can't be deleted while its run is being dispatched, which ca
 - [Handling scheduled runs](/docs/schedules/handle-runs#queue-targets)
 - [Limits](/docs/schedules/limits)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

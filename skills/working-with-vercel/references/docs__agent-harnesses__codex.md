@@ -15,9 +15,10 @@ related:
   - /docs/functions/limitations
 summary: Run Codex in a Vercel Sandbox, driven by a Vercel Function, with its session in a durable log, so a crashed turn resumes on a new function.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-harnesses/codex.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "d0bd26e5afedda6721eb38d335184afe124e0c16b6cd0f4a52e12851dca4fa06"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "cd1ef6801ff367f3ca3fdef082d38d9d37f439052304c396900ee08196287865"
 ---
 
 # Running Codex Durably on Vercel
@@ -37,14 +38,14 @@ Each session of [Codex](https://github.com/openai/codex) gets its own [Vercel Sa
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
+- [Workflow SDK 5: built for production](https://vercel.com/blog/workflow-sdk-5)
+- [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
 - [How to give agents persistent storage with Vercel Drives](https://vercel.com/kb/guide/persistent-storage-with-vercel-drives) — Give AI SDK and TanStack AI agents persistent storage with Vercel Drives so they can save and reuse research notes acros
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
-- [Running Claude Code Durably on Vercel](https://vercel.com/docs/agent-harnesses/claude-code) — Run Claude Code in a Vercel Sandbox, driven by a Vercel Function, with its session in a durable log, so a crashed turn r
-- [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
-- [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
 - [Running OpenCode Durably on Vercel](https://vercel.com/docs/agent-harnesses/opencode) — Run OpenCode v2 inside a Vercel Function with its session in a durable log, so a crashed turn resumes in a new function.
 - [Running fx Durably on Vercel](https://vercel.com/docs/agent-harnesses/fx) — Deploy an fx agent with libfx so its sessions survive crashes, function timeouts, and redeploys on Vercel.
 - [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
+- [OpenAI Codex with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openai-codex) — Connect OpenAI Codex to AI Gateway with one CLI command, or configure it manually.
 - [Agent Harnesses You Can Run Durably on Vercel](https://vercel.com/docs/agent-harnesses/harnesses) — Guides for running Pi, fx, OpenCode, eve, Claude Code, and Codex durably on Vercel, so a crash or a timeout resumes the
 
 Full cross-link map for this page: [/docs/agent-harnesses/codex.graph.md](/docs/agent-harnesses/codex.graph.md)
@@ -67,7 +68,7 @@ The Sandbox holds no secrets. A crashed turn resumes on a new function, and if t
   ```ts {3} filename="lib/agent.ts"
   import { codex } from 'durable-harness/codex';
 
-  export const agent = codex({ model: 'openai/gpt-5.5' });
+  export const agent = codex({ model: 'openai/gpt-6.1-terra' });
   ```
   `codex()` runs Codex in a Vercel Sandbox by default, so you don't pass anything to get one. A session's Sandbox starts with its first turn. Use any AI Gateway model that supports the Responses API.
 
@@ -210,8 +211,8 @@ An app can make several agents, each with its own chat route. The queue route se
 ```ts {3-4} filename="lib/agents.ts"
 import { codex } from 'durable-harness/codex';
 
-export const reviewer = codex({ name: 'reviewer', model: 'openai/gpt-5.5' });
-export const fixer = codex({ name: 'fixer', model: 'openai/gpt-5.5' });
+export const reviewer = codex({ name: 'reviewer', model: 'openai/gpt-6.1-terra' });
+export const fixer = codex({ name: 'fixer', model: 'openai/gpt-6.1-terra' });
 ```
 
 Keep each name stable, because sessions that already started carry it. Two agents with the same name throw when their module loads, so the build fails.
@@ -226,7 +227,7 @@ To turn on Codex's own shell and `apply_patch`, pass `builtins: true`. They run 
 import { codex } from 'durable-harness/codex';
 
 export const agent = codex({
-  model: 'openai/gpt-5.5',
+  model: 'openai/gpt-6.1-terra',
   builtins: true,
 });
 ```
@@ -246,7 +247,7 @@ import { codex } from 'durable-harness/codex';
 import { sandbox } from 'durable-harness/sandbox';
 
 export const agent = codex({
-  model: 'openai/gpt-5.5',
+  model: 'openai/gpt-6.1-terra',
   workspace: sandbox({
     region: 'iad1',
     network: 'deny-all',
@@ -293,7 +294,7 @@ import { codex } from 'durable-harness/codex';
 import { sandbox } from 'durable-harness/sandbox';
 
 export const agent = codex({
-  model: 'openai/gpt-5.5',
+  model: 'openai/gpt-6.1-terra',
   workspace: sandbox({
     credentials: {
       token: process.env.VERCEL_TOKEN!,
@@ -313,12 +314,46 @@ export const agent = codex({
 - The Sandbox allows all outbound traffic by default. To restrict it, pass `network: 'deny-all'` or `{ allow: [...] }` to `sandbox()`. See [Security](/docs/agent-harnesses/security#what-these-controls-dont-cover).
 - `durable-harness` drives Codex from your function, so it needs the Node.js runtime. It can't run in the Edge runtime or a browser.
 
+## Frequently asked questions
+
+### Can I run OpenAI Codex on Vercel?
+
+Yes, in a [Vercel Sandbox](/docs/sandbox). Each session runs `codex app-server` in its own Sandbox, and your function drives it: it sends Codex its messages, makes its model calls, runs your own tools, and writes the session's durable log. You don't install Codex, because it comes with the Sandbox. `durable-harness` runs Codex 0.160.0 today and refuses to run it in a function or on a server of your own. See [Security](/docs/agent-harnesses/security#why-claude-code-and-codex-run-only-in-a-sandbox).
+
+### Which models can a durable Codex agent use?
+
+Any [AI Gateway](/docs/ai-gateway) model that supports the Responses API. Codex's model calls go to your function, which sends them to AI Gateway with the deployment's [OIDC token](/docs/oidc), so you don't put an OpenAI API key in the Sandbox. On your machine, run `vercel link` first, because each session's Sandbox starts on Vercel under the linked project.
+
+### What does `builtins: true` turn on for Codex?
+
+Codex's own shell and `apply_patch`, which run in the Sandbox on the session's files in `/workspace`. Codex runs each command under its own sandbox inside the Vercel Sandbox when it can start one. When it can't, the command runs with full access to the Sandbox, which still holds no secrets. Each command is in the session's log before it runs, and none runs again after a crash. Without `builtins`, the model can call only the tools you pass in `tools`.
+
+### How do I stop a Codex session from reaching the internet?
+
+Pass `network: 'deny-all'` to `sandbox()`, or allow only the hosts commands need with `network: { allow: [...] }`. A Sandbox allows all outbound traffic by default. Codex keeps working with `deny-all`, because your function makes its model calls. Provider-hosted tools, such as web search, are off for Codex. See [What these controls don't cover](/docs/agent-harnesses/security#what-these-controls-dont-cover).
+
+### How much does a Codex session cost, and how do I cap it?
+
+Every session starts a Sandbox, even with no tools, so you pay for Sandbox time and Drive storage as [Sandbox pricing](/docs/sandbox/pricing) shows, plus model tokens through [AI Gateway](/docs/ai-gateway/pricing). By default, a session's Sandbox runs for at most 4 hours, and model spend has no cap. Set `sandbox({ budget: { turnUsd, sessionUsd, vmSeconds } })` to cap spend and Sandbox time per turn or per session, and add an [AI Gateway budget](/docs/ai-gateway/observability-and-spend/budgets). A project budget counts the project's OIDC requests and API keys scoped to the project. With an unscoped `AI_GATEWAY_API_KEY`, use an API key or team budget instead.
+
 ## More resources
 
 - [`durable-harness` on GitHub](https://github.com/vercel-labs/durable-harness)
 - [Codex](https://github.com/openai/codex)
 - [Vercel Sandbox](/docs/sandbox)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

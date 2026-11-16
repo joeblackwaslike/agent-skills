@@ -15,9 +15,10 @@ related:
   - /docs/rest-api/web-analytics/counts-custom-events
 summary: Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/analytics/web-analytics-api.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ef2135391a1588cec7c3039f8029182d403a9c30842a0ba49496eccc3a86af2e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "63adc633b8cc353df5c62d31345f70a90dec704471d4793bccd6361b91ce3074"
 ---
 
 # Query Web Analytics with the API
@@ -32,9 +33,9 @@ Use the Web Analytics API to query page views, visitors, and custom events from 
 
 - [Public Web Analytics API now available](https://vercel.com/changelog/web-analytics-api)
 - [Query Web Analytics from the Vercel CLI](https://vercel.com/changelog/query-web-analytics-from-the-vercel-cli)
-- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
 - [get_web_analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/get_web_analytics) — Use get_web_analytics with Vercel MCP.
+- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Query](https://vercel.com/docs/query) — Query and visualize your Vercel usage, traffic, and more in observability.
 - [Filtering Analytics](https://vercel.com/docs/analytics/filtering) — Learn how filters allow you to explore insights about your website's visitors.
 
@@ -262,6 +263,18 @@ This pattern works for any custom data property that you send with the event, su
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

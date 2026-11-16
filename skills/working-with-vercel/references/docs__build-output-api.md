@@ -15,9 +15,10 @@ related:
   - /docs/build-output-api/services
 summary: The Build Output API is a file-system-based specification for a directory structure that can produce a Vercel deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/build-output-api.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "e318cf729ba0fd31b72ce020a983358e531fbe401c34ceb00d414286090b0357"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b07d084c5a99aee7d4a1cccbe5f116ad6f62455c5802f80fd7524261ea672ff0"
 ---
 
 # Build Output API
@@ -35,11 +36,9 @@ The Build Output API is a file-system-based specification for a directory struct
 - [How we made global routing faster with Bloom filters](https://vercel.com/blog/how-we-made-global-routing-faster-with-bloom-filters)
 - [NestJS](https://workflow-sdk.dev/docs/getting-started/nestjs) — Set up Workflow SDK in a NestJS app.
 - [Announcing the Build Output API](https://vercel.com/blog/build-output-api)
-- [What can I do when I run into build output limits with Next.js on Vercel?](https://vercel.com/kb/guide/what-can-i-do-when-i-run-into-build-output-limits-with-next-js-on-vercel) — Learn how to work with build output limits for Next.js on Vercel.
-- [New build and deploy capabilities in Vercel CLI](https://vercel.com/changelog/new-build-and-deploy-capabilities-in-vercel-cli)
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
-- [Frameworks on Vercel](https://vercel.com/docs/frameworks) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
 - [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+- [Frameworks on Vercel](https://vercel.com/docs/frameworks) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
 - [Vercel fundamental concepts](https://vercel.com/docs/fundamentals) — Learn about the core concepts of Vercel
 - [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
 
@@ -84,6 +83,18 @@ ideally the same as the platform [Build Image](/docs/builds/build-image).
 - [Services](/docs/build-output-api/services)
 - [Daemons](/docs/build-output-api/daemons)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

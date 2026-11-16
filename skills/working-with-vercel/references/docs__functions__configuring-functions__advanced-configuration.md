@@ -16,9 +16,10 @@ related:
   - /docs/fluid-compute
 summary: Learn how to add utility files to the /api directory, and bundle Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/configuring-functions/advanced-configuration.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "78a08884830d0450d81fcbc1d72154d28f9a2946115c065346d1bfa63493f14d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c1f997cdb1626f179b9ca063569fb792038444484b11cc4b1865c3ca13f8fc3d"
 ---
 
 # Advanced Configuration
@@ -34,8 +35,8 @@ For an advanced configuration, you can create a `vercel.json` file to use [Runti
 - [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions) — Learn how to import files inside Serverless Functions on Vercel.
 - [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart) — Build your first Vercel Function in a few steps.
 - [Advanced Node.js Usage](https://vercel.com/docs/functions/runtimes/node-js/advanced-node-configuration) — Learn about advanced configurations for Vercel functions on Vercel.
-- [Configuring the Runtime for Vercel Functions](https://vercel.com/docs/functions/configuring-functions/runtime) — Learn how to configure the runtime for Vercel Functions.
 - [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
+- [Configuring the Runtime for Vercel Functions](https://vercel.com/docs/functions/configuring-functions/runtime) — Learn how to configure the runtime for Vercel Functions.
 - [Using the Node.js Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/node-js) — Learn how to use the Node.js runtime to create Vercel Functions in JavaScript or TypeScript.
 
 Full cross-link map for this page: [/docs/functions/configuring-functions/advanced-configuration.graph.md](/docs/functions/configuring-functions/advanced-configuration.graph.md)
@@ -164,6 +165,18 @@ In the following example, `app/api/hello/route.ts` will be bundled separately fr
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

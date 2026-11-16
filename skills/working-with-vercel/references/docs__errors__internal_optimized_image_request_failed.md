@@ -11,9 +11,10 @@ related:
   - /docs/runtime-logs
 summary: The request for an internally optimized image failed. This is a server error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/internal_optimized_image_request_failed.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "ee5f81c532fd7592ffa450c018d4b50f8d18cc06b997563cc02ad4635dcef37d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ae6b8ac7d681089a594048b2c0407c8536d95e65ebc1ca4c465d0d92ea9629db"
 ---
 
 # INTERNAL_OPTIMIZED_IMAGE_REQUEST_FAILED
@@ -32,6 +33,18 @@ To troubleshoot this error, follow these steps:
 2. **Check logs:** Review [logs](/docs/runtime-logs) for more details on the error
 3. **Validate configuration:** Ensure that the configuration for image optimization is correct
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

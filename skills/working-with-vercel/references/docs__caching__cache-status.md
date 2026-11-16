@@ -10,14 +10,15 @@ prerequisites:
 related:
   - /docs/headers/response-headers
   - /docs/logs/runtime
-  - /docs/caching/runtime-cache
+  - /docs/runtime-cache
   - /docs/incremental-static-regeneration
   - /docs/partial-prerendering
 summary: Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass, or serve stale from the...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/caching/cache-status.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "46803499af746520f0d175ed01bd3af783486d1328286fbbbcbfc36cfcf32662"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8a6b8557fee8095c6d857de9ca04e0dc320a56de70dd82799c70d8ac476b5b2b"
 ---
 
 # Cache Status and Reasons
@@ -30,22 +31,22 @@ Vercel records how each cacheable request resolves as a cache **status**, and wh
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Control CDN caching for shared and personalized pages on Vercel](https://vercel.com/kb/guide/cdn-cache-personalized-pages) — Control CDN caching for shared and personalized Next.js pages. Set cache headers, separate per-user content, and verify
 - [Runtime logs now show cache reasons](https://vercel.com/changelog/runtime-logs-now-show-cache-reasons)
 - [Vercel CDN no longer caches responses with Vary: Cookie](https://vercel.com/changelog/vary-cookie-responses-no-longer-cached)
-- [Control CDN caching for shared and personalized pages on Vercel](https://vercel.com/kb/guide/cdn-cache-personalized-pages) — Control CDN caching for shared and personalized Next.js pages. Set cache headers, separate per-user content, and verify
 - [A/B testing on ecommerce storefronts without hurting Core Web Vitals](https://vercel.com/kb/guide/ecommerce-ab-testing-core-web-vitals) — Client-side A/B tools can worsen LCP and CLS on the pages you're testing. Run ecommerce A/B tests at the edge with Routi
 - [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
 - [Troubleshoot and optimize Function Invocations on Vercel](https://vercel.com/kb/guide/optimize-function-invocations) — Diagnose which routes drive Function Invocations and learn to optimize them. Separate necessary dynamic traffic from div
 - [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache)
-- [Preventing the stampede: Request collapsing in the Vercel CDN ](https://vercel.com/blog/cdn-request-collapsing)
+- [vercel cache](https://vercel.com/docs/cli/cache) — Learn how to manage cache for your project using the vercel cache CLI command.
 
 Full cross-link map for this page: [/docs/caching/cache-status.graph.md](/docs/caching/cache-status.graph.md)
 <!-- /docsgraph:related -->
 
 These statuses appear in the [`x-vercel-cache`](/docs/headers/response-headers#x-vercel-cache) response header, and, with the reason and extra context, in the **Cache** section of a request in [runtime logs](/docs/logs/runtime).
 
-For requests that aren't cached, some data used by the origin may still be cached through [Runtime Cache](/docs/caching/runtime-cache).
+For requests that aren't cached, some data used by the origin may still be cached through [Runtime Cache](/docs/runtime-cache).
 
 ## Cache statuses
 
@@ -158,6 +159,18 @@ This reason appears when a [cache tag](/docs/caching/cdn-cache/purge) deletion t
 - [Diagnosing and fixing cache issues](/docs/caching/cdn-cache/debug-cache-issues)
 - [Incremental Static Regeneration](/docs/incremental-static-regeneration)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

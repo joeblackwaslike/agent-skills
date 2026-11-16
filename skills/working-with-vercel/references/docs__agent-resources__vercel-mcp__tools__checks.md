@@ -12,9 +12,10 @@ related:
   []
 summary: Vercel MCP tools for checks.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/checks.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "42f505f3dbaa105ffbd007d99e5072c5e7502963d43527d85450794c589cb390"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "866719c778ca1e1eabca375da74fc8f7991e166ba553d2d2463ceb976a2d4344"
 ---
 
 # Checks
@@ -28,10 +29,10 @@ Request another run of a legacy deployment check. MCP does not create checks or 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Checks API Reference](https://vercel.com/docs/checks/checks-api) — The Vercel Checks API lets you create tests and assertions that run after each deployment has been built, and are powere
-- [List check runs for a deployment](https://vercel.com/docs/rest-api/checks-v2/list-check-runs-for-a-deployment) — GET /v2/deployments/{deploymentId}/check-runs — List all check runs for a deployment.
-- [Create a check run](https://vercel.com/docs/rest-api/checks-v2/create-a-check-run) — POST /v2/deployments/{deploymentId}/check-runs — Creates a new check run for a deployment.
+- [Anatomy of the Checks API](https://vercel.com/docs/checks/creating-checks) — Learn how to create your own Checks with Vercel Integrations. You can build your own Integration to register any arbitra
 - [List runs for a check](https://vercel.com/docs/rest-api/checks-v2/list-runs-for-a-check) — GET /v2/projects/{projectIdOrName}/checks/{checkId}/runs — List all runs associated with a given check.
-- [Get a check run](https://vercel.com/docs/rest-api/checks-v2/get-a-check-run) — GET /v2/deployments/{deploymentId}/check-runs/{checkRunId} — Return a detailed response for a single check run.
+- [List check runs for a deployment](https://vercel.com/docs/rest-api/checks-v2/list-check-runs-for-a-deployment) — GET /v2/deployments/{deploymentId}/check-runs — List all check runs for a deployment.
+- [Delete a check](https://vercel.com/docs/rest-api/checks-v2/delete-a-check) — DELETE /v2/projects/{projectIdOrName}/checks/{checkId} — Delete an existing check and all of its runs.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/checks.graph.md](/docs/agent-resources/vercel-mcp/tools/checks.graph.md)
 <!-- /docsgraph:related -->
@@ -51,6 +52,18 @@ Rerequest a check.
 | `slug`         | string  | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody`  | unknown | No       | Request body for this tool.                                 |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

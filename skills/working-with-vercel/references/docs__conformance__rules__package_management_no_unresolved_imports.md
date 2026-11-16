@@ -11,9 +11,10 @@ related:
   []
 summary: Import statements that can not be resolved to a local file or a package from package.json dependencies are not allowed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/package_management_no_unresolved_imports.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "806b1450ba872b0356744e493411ecbccaea3c7b1273e7123cee8bab8811e850"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9b4ad5ff23ae2132af854ed17d76cce67ed98da03a35592ab3fc0d40a7c0fee3"
 ---
 
 # PACKAGE_MANAGEMENT_NO_UNRESOLVED_IMPORTS
@@ -49,6 +50,18 @@ If the workspace is missing a package dependency, add the appropriate one to
 the `package.json` file of the workspace. In the example above, a dependency
 on the `next` package should be added.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

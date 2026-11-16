@@ -3,7 +3,7 @@ title: Vercel CLI Global Options
 product: vercel
 url: /docs/cli/global-options
 canonical_url: "https://vercel.com/docs/cli/global-options"
-last_updated: 2026-05-28
+last_updated: 2026-11-14
 type: reference
 prerequisites:
   - /docs/cli
@@ -12,12 +12,13 @@ related:
   - /docs/cli/switch
   - /docs/cli/login
   - /docs/cli/link
-  - /docs/cli/inspect
+  - /docs/cli/deploy
 summary: "Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options here."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/global-options.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "a68a212161cc984839e83598a175f275170cb33280c62cc835d29320fadb3110"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "04e9bfbad7c5ef0529b6b4cae2729bca8366a03ae28087f4b9bad8b6b58802e7"
 ---
 
 # Vercel CLI Global Options
@@ -30,11 +31,11 @@ Global options are commonly available to use with multiple Vercel CLI commands.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
 - [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, delete, and manage items, read tokens, a
+- [vercel templates](https://vercel.com/docs/cli/templates) — Search the template catalog, inspect deployment requirements, and deploy templates from the Vercel CLI.
 
 Full cross-link map for this page: [/docs/cli/global-options.graph.md](/docs/cli/global-options.graph.md)
 <!-- /docsgraph:related -->
@@ -154,6 +155,8 @@ If both are provided, the `--token` flag takes precedence over the environment v
 
 Using the `VERCEL_TOKEN` environment variable is recommended for CI/CD pipelines because it avoids exposing the token in command-line arguments, which can be visible in process lists and logs.
 
+To deploy without a token or login, run [`vercel deploy --temporary`](/docs/cli/deploy#temporary). See [Deploying without logging in](/docs/deployments/deploy-without-logging-in).
+
 ```bash filename="terminal"
 vercel --token vcp_7ceTtedqEf96eTe7Mw32n9gjfSo23kHBHAbTrchMINrvUMZv0EXAMPLE
 ```
@@ -217,6 +220,18 @@ Some commands return other exit codes. For example, `vercel env run` exits with 
 
 [`vercel inspect --wait`](/docs/cli/inspect#wait) exits `1` when its wait times out while the deployment is still in progress.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

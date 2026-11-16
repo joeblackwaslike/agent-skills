@@ -4,8 +4,8 @@ description: Learn how to use Azure OpenAI with AI Gateway and the direct provid
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/azure"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/azure.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "94cf5f3a529428039427af65bb173435878fca5722f6d73327b04e658488411d"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "97bb0fda0eb655efb721bb800520016ceb469a10119f62a34119a91d05650afd"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -1448,6 +1448,12 @@ MAI-Image models use the [MAI image API](#mai-image) instead.
 ```ts
 const model = azure.image('your-dalle-deployment-name');
 ```
+
+Azure image models (including MAI-Image) download remote reference images and
+masks using the `fetch` option of `createAzure`; provider credentials are not
+sent to those hosts. For untrusted URLs on Node.js, pass a `guarded-fetch`
+transport there. See [Secure URL
+Fetching](/docs/advanced/secure-url-fetching#opt-in-dns-protection-on-nodejs).
 
 Azure OpenAI image models support several additional settings. You can pass them as `providerOptions.openai` or `providerOptions.azure` when generating the image (`azure` wins when both set the same option):
 

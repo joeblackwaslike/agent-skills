@@ -3,7 +3,7 @@ title: errors
 product: vercel
 url: /docs/rest-api/errors
 canonical_url: "https://vercel.com/docs/rest-api/errors"
-last_updated: 2026-11-09
+last_updated: 2026-11-16
 type: reference
 prerequisites:
   []
@@ -11,9 +11,10 @@ related:
   - /docs/integrations/vercel-api-integrations
 summary: Learn about errors on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/rest-api/errors.md"
-fetched_at: "2026-11-09T12:41:17.654Z"
-sha256: "bbfeeca6605462af8aad9a52b1c7e0ee2bbbbe07d6014d5a432234ce7e66b187"
+fetched_at: "2026-11-16T12:35:06.708Z"
+sha256: "9c68c038e3ec377f0e77338d1e6537b2ebd7dc02f5fe0571e56816ef5bfa7ab0"
 ---
 
 # Errors
@@ -530,6 +531,19 @@ The OAuth2 client ID could not be found or doesn't exist.
     "message": "OAuth client not found: CLIENT_ID"
   }
 }
+```
+
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
 ```
 
 ---

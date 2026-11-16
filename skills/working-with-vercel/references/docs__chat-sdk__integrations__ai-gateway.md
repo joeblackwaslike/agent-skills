@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/pricing
 summary: Stream AI Gateway model responses into Chat SDK conversations with AI SDK and message history.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/chat-sdk/integrations/ai-gateway.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "5c289fa667416f2e83c22c9cbda71a19acf6c184983f079b557509138b6f699b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "db50b9342e7a902ba36f316c20bb4f96ac3f249bf788a3a5dedc0c3f0dd7b407"
 ---
 
 # Chat SDK with AI Gateway
@@ -34,13 +35,13 @@ Turn a Chat SDK bot into an AI assistant with [AI Gateway](/docs/ai-gateway) and
 - [The Complete Guide to Chat SDK](https://vercel.com/kb/guide/the-complete-guide-to-chat-sdk) — Chat SDK is a TypeScript library for building chat bots that work across Slack, Teams, Discord, Linear, and more from a
 - [Create a Discord support bot with Nuxt and Redis](https://vercel.com/kb/guide/create-a-discord-support-bot-with-nuxt-and-redis) — This guide walks through building a Discord support bot with Nuxt, covering project setup, Discord app configuration, Ga
 - [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
-- [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
 - [Chat SDK brings agents to your users](https://vercel.com/blog/chat-sdk-brings-agents-to-your-users)
-- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
-- [Chat SDK with Vercel Passport](https://vercel.com/docs/chat-sdk/integrations/passport) — Use a verified Vercel Passport identity to store and retrieve per-user conversation history in a Chat SDK bot.
-- [Chat SDK with Vercel Connect](https://vercel.com/docs/chat-sdk/integrations/connect) — Use Vercel Connect for Chat SDK platform credentials, verified webhooks, and separate per-user tool access.
+- [Triage form submissions with Chat SDK](https://vercel.com/kb/guide/triage-form-submissions-with-chat-sdk) — Build a Slack bot that triages form submissions with interactive cards. Forward, edit, or mark as spam without leaving S
+- [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
+- [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
 - [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
 - [Chat SDK with Vercel Daemons](https://vercel.com/docs/chat-sdk/integrations/daemons) — Process Chat SDK jobs with Vercel Queues and Daemons, using Vercel Connect for Slack credentials and event delivery.
+- [Chat SDK with Vercel Sandbox](https://vercel.com/docs/chat-sdk/integrations/sandbox) — Build a Chat SDK agent that analyzes CSV attachments with the AI SDK Bash tool in Vercel Sandbox.
 
 Full cross-link map for this page: [/docs/chat-sdk/integrations/ai-gateway.graph.md](/docs/chat-sdk/integrations/ai-gateway.graph.md)
 <!-- /docsgraph:related -->
@@ -174,6 +175,135 @@ Platforms differ in how they display streamed replies. Use the [Web Adapter](/do
 
 The handler reads at most 20 messages; it does not summarize older conversations. The model request has a 60-second timeout, and the webhook function's [maximum duration](/docs/functions/configuring-functions/duration) must also cover history retrieval and delivery.
 
+## Stream generative UI with json-render
+
+To reply with a table, a chart, or buttons instead of text, have the model write a [json-render](https://json-render.dev) spec. A spec is JSON that describes a card using components from a catalog you define. `@json-render/chat` converts the spec into a [Chat SDK card](https://chat-sdk.dev/docs/cards), and each platform adapter posts the card in its native format, such as Block Kit on Slack and Adaptive Cards on Microsoft Teams.
+
+Install json-render and Zod. `@json-render/chat` requires `chat` 4.43 or later:
+
+```bash filename="Terminal"
+pnpm add @json-render/core @json-render/chat zod
+```
+
+Create `src/lib/respond-card.ts`. `catalog.prompt()` returns a system prompt that lists the catalog's components and tells the model to reply with a spec and no other text:
+
+**src/lib/respond-card.ts**
+
+```typescript filename="src/lib/respond-card.ts"
+import { defineCatalog } from '@json-render/core';
+import {
+  CardSpecError,
+  schema,
+  standardComponentDefinitions,
+  streamCard,
+} from '@json-render/chat';
+import { streamText } from 'ai';
+import type { Message, Thread } from 'chat';
+
+const catalog = defineCatalog(schema, {
+  components: standardComponentDefinitions,
+});
+
+export async function respondWithCard(thread: Thread, message: Message) {
+  const model = process.env.AI_GATEWAY_MODEL;
+  if (!model)
+    throw new Error('Set AI_GATEWAY_MODEL to an AI Gateway model ID.');
+
+  const result = streamText({
+    model,
+    system: catalog.prompt(),
+    prompt: message.text,
+    abortSignal: AbortSignal.timeout(60_000),
+  });
+
+  try {
+    await streamCard(thread, result.textStream, {
+      limits: { tables: 1, charts: 2 },
+    });
+  } catch (error) {
+    if (!(error instanceof CardSpecError)) throw error;
+    console.error(error.issues);
+    await thread.post(
+      'That card failed validation. Try rephrasing your request.',
+    );
+  }
+}
+```
+
+**src/lib/respond-card.js**
+
+```javascript filename="src/lib/respond-card.js"
+import { defineCatalog } from '@json-render/core';
+import {
+  CardSpecError,
+  schema,
+  standardComponentDefinitions,
+  streamCard,
+} from '@json-render/chat';
+import { streamText } from 'ai';
+
+const catalog = defineCatalog(schema, {
+  components: standardComponentDefinitions,
+});
+
+export async function respondWithCard(thread, message) {
+  const model = process.env.AI_GATEWAY_MODEL;
+  if (!model)
+    throw new Error('Set AI_GATEWAY_MODEL to an AI Gateway model ID.');
+
+  const result = streamText({
+    model,
+    system: catalog.prompt(),
+    prompt: message.text,
+    abortSignal: AbortSignal.timeout(60_000),
+  });
+
+  try {
+    await streamCard(thread, result.textStream, {
+      limits: { tables: 1, charts: 2 },
+    });
+  } catch (error) {
+    if (!(error instanceof CardSpecError)) throw error;
+    console.error(error.issues);
+    await thread.post(
+      'That card failed validation. Try rephrasing your request.',
+    );
+  }
+}
+```
+
+In `src/lib/bot.ts`, call `respondWithCard` instead of `respond` in the handlers that should reply with a card. This handler sends only the current message to the model. It doesn't read conversation history.
+
+`streamCard` posts the message once the card has content, then edits it as the model writes more elements. Edits go out at most once every 500 milliseconds by default. Change the interval with `updateIntervalMs`. When the stream ends, `streamCard` validates the complete spec and sends the final card.
+
+### Choose the components the model can use
+
+`standardComponentDefinitions` gives the model these components. Each one maps to a Chat SDK card element:
+
+| Component | Renders as |
+| --- | --- |
+| `Card` | The message's root element, with an optional title, subtitle, and image. |
+| `Section` | A group of related elements. |
+| `Text` | A paragraph of Markdown text. |
+| `Fields` and `Field` | A grid of label and value pairs. |
+| `Table` | Rows of data under column headers. |
+| `Chart` | A pie, bar, line, or area chart. |
+| `Divider` | A separator between groups. |
+| `Image` | An image from a public URL. |
+| `Actions`, `Button`, and `LinkButton` | A row of buttons that trigger a handler or open a URL. |
+
+A generated `Button` includes an `id`. When someone clicks the button, Chat SDK passes that `id` to your `bot.onAction` handlers as `actionId`. To tell the model which IDs your bot handles, add a rule with `catalog.prompt({ customRules: [...] })`.
+
+Platforms render the same card differently. For example, Slack draws a `Chart` natively, and other platforms show the chart's data as a text table. See [how each card element renders](https://chat-sdk.dev/docs/cards#components).
+
+### Handle invalid specs and platform limits
+
+`streamCard` throws `CardSpecError` when the final spec is invalid, for example when a table row has more cells than the table has headers. By then, the partial card is already visible in the thread. The error's `issues` array has one readable entry per problem. The example logs the issues and posts a fallback message. You can also send the issues back to the model and ask for a corrected spec.
+
+Platforms cap what one message can hold, and Chat SDK adapters degrade content past those caps. The Slack adapter, for example, turns a second table into a code block. Pass `limits` to reject those specs instead. The example allows one table and two charts, which matches Slack's caps.
+
+To convert a complete spec without streaming, call `toCard(spec)` and post the result with `thread.post()`. See the [`@json-render/chat` reference](https://json-render.dev/docs/api/chat) for every option, or try prompts in the [json-render Chat SDK playground](https://chat-sdk-demo.json-render.dev).
+
 ## Frequently asked questions
 
 ### Which AI models can a Chat SDK bot use through AI Gateway?
@@ -202,6 +332,18 @@ The example aborts the model request after 60 seconds, and the webhook function'
 - [Configure model fallbacks](/docs/ai-gateway/models-and-providers/model-fallbacks)
 - [Give agents Chat SDK tools](https://chat-sdk.dev/docs/ai/ai-sdk-tools)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

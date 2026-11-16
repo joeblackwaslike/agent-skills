@@ -13,9 +13,10 @@ related:
   - /docs/botid/verify-on-page-load
 summary: Step-by-step guide to setting up BotID protection in your Vercel project
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/botid/get-started.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ec7a3cba53f9f20b6cc0e2fb4c68aca5620f23e741044ca1aaef2ccdeae83f54"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "71117b0941aebe55bd70d3ad7159577562650f7eac1b5abf315e5aa1747ad0c0"
 ---
 
 # Get Started with BotID
@@ -28,18 +29,18 @@ This guide shows you how to add BotID protection to your Vercel project. BotID b
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Deploying and testing BotID](https://vercel.com/kb/guide/deploying-and-testing-botid) — This guide gives an overview on Vercel BotID and how to deploy and test it in production
+- [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\\(\\) so inference runs only for verified callers
 - [Improved fake hardware detection with Vercel BotID](https://vercel.com/changelog/botid-deep-analysis-model-improved-for-fake-hardware-detection)
 - [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
 - [How to use Vercel’s Bot Management features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
-- [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\\(\\) so inference runs only for verified callers
 - [Vercel BotID vs Cloudflare Turnstile](https://vercel.com/kb/guide/vercel-botid-vs-cloudflare-turnstile) — Compare Vercel BotID and Cloudflare Turnstile for bot protection, including detection model, hosting requirements, check
 - [The AI Cloud: A unified platform for AI workloads](https://vercel.com/blog/the-ai-cloud-a-unified-platform-for-ai-workloads)
-- [Vercel BotID now leverages Vercel's verified bot directory](https://vercel.com/changelog/vercel-botid-now-leverages-vercels-verified-bot-directory)
 - [Vercel BotID is now generally available](https://vercel.com/changelog/vercel-botid-is-now-generally-available)
 - [Vercel BotID now  available for all frameworks](https://vercel.com/changelog/botid-now-available-for-all-frameworks)
-- [Common mistakes with the Next.js App Router and how to fix them](https://vercel.com/blog/common-mistakes-with-the-next-js-app-router-and-how-to-fix-them)
+- [Vercel BotID now leverages Vercel's verified bot directory](https://vercel.com/changelog/vercel-botid-now-leverages-vercels-verified-bot-directory)
 - [Chat SDK with Next.js](https://vercel.com/docs/chat-sdk/frameworks/nextjs) — Add a Chat SDK bot to Next.js, receive Slack events through Vercel Connect, and deploy on Vercel.
-- [Redacting Sensitive Data from Web Analytics Events](https://vercel.com/docs/analytics/redacting-sensitive-data) — Learn how to redact sensitive data from your Web Analytics events.
+- [Add the Vercel Toolbar to your local environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost) — Learn how to use the Vercel Toolbar in your local environment.
 
 Full cross-link map for this page: [/docs/botid/get-started.graph.md](/docs/botid/get-started.graph.md)
 <!-- /docsgraph:related -->
@@ -645,6 +646,18 @@ async function processCheckout(data: any) {
 
 To verify a browser before a later interaction, review [verify visitors on page load and issue a signed verification cookie](/docs/botid/verify-on-page-load). Your server can validate that cookie on subsequent requests until it expires.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

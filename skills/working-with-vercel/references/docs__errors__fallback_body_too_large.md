@@ -11,9 +11,10 @@ related:
   []
 summary: The fallback body is too large for the cache. This is a cache error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/fallback_body_too_large.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "7d275141eefe588eb57a6e0cd8663ad576b0be5e7f528be67fd45fc9150ab0a5"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "6989908bf28a48150ebaa501b854632aee4143b45dbcff2031b827f2410bed5a"
 ---
 
 # FALLBACK_BODY_TOO_LARGE
@@ -35,6 +36,18 @@ To resolve this error, consider the following steps:
 
 To prevent this error, ensure that the size of the fallback page is less than 20 MB.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

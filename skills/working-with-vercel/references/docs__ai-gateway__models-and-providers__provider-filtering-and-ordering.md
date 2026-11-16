@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/pricing
 summary: Control AI Gateway provider routing with order, only, and sort. Set preferences, restrict providers, and rank them by cost, latency, or throughput.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f609ce9f17b1dc011ae70b5a93eb7cc195efd522c762718865c67ebf29bd4eb1"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5b0ca813687b9de5de6d4d5aba3726257a234067435592d091d7bc1e6849d0a6"
 ---
 
 # AI Gateway Provider Filtering, Ordering, and Sorting
@@ -467,7 +468,7 @@ The team [provider allowlist](/docs/ai-gateway/security-and-compliance/provider-
 
 Use the `only` array to restrict routing to a specific subset of providers. Providers are specified by their slug and are matched against the model's available providers.
 
-To use provider API credits through [BYOK](/docs/ai-gateway/authentication-and-byok/byok#use-api-credits-from-a-chatgpt-or-claude-subscription), set `only: ['openai']` for OpenAI credits or `only: ['anthropic']` for Anthropic credits. Selecting a Claude model alone doesn't ensure Anthropic serves it; credits in a Claude Console organization don't pay for requests through Bedrock or Vertex AI. The `only` filter restricts providers, but it doesn't prevent fallback from your key to AI Gateway's system credentials.
+To use provider API credits through [BYOK](/docs/ai-gateway/authentication-and-byok/byok#use-api-credits-from-a-chatgpt-or-claude-subscription), set `only: ['openai']` for OpenAI credits or `only: ['anthropic']` for Anthropic credits. Selecting a Claude model alone doesn't ensure Anthropic serves it; credits in a Claude Console organization don't pay for requests through Bedrock or Vertex AI. The `only` filter restricts providers, but it doesn't prevent fallback from your key to Vercel's provider keys.
 
 These examples use AI SDK 7 and the AI SDK for Python beta. Set `AI_GATEWAY_API_KEY` before running them. See [API format differences](/docs/ai-gateway/sdks-and-apis#api-format-differences) for setup, request fields, and response handling.
 
@@ -1151,6 +1152,18 @@ To filter by a capability of the model itself (rather than by provider), see [Mo
 
 A [virtual model](/docs/ai-gateway/models-and-providers/virtual-models) can pin provider order and provider-only lists for all of its traffic. The virtual model's values override the request's `order` and `only`.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

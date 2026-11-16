@@ -15,9 +15,10 @@ related:
   - /docs/domains/working-with-domains/view-and-search-domains
 summary: No error with the DNS resolution but no IP was returned. This is a DNS error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/dns_hostname_resolve_failed.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "d5a8f1ab25c19af5fc6c3c1445fb89f2a9b7be7f37e4bc06e19feb0d62da0bd5"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ae1a61068204e17588c99d5719e0598f6e2c3f768feb55019ab4902be2c88427"
 ---
 
 # DNS_HOSTNAME_RESOLVE_FAILED
@@ -37,6 +38,18 @@ To troubleshoot this error, follow these steps:
 3. **Firewall and security software:** Check if any firewall or security software on your system is blocking DNS requests. Ensure that the DNS queries are allowed through your firewall
 4. **Inspect network connectivity:** Ensure that there are no network issues that could be affecting the DNS resolution
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

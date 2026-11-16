@@ -15,9 +15,10 @@ related:
   - /docs/cron-jobs
 summary: Learn how to transfer a project between Vercel teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/projects/transferring-projects.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ab646090271ded3e39befad17e9b18480377ca94fd2677fd9ebe908c86780d9c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2fb844dcf751ba538b130e287295a224476b8d255eb52751bd4bde1f91f178b7"
 ---
 
 # Transferring a project
@@ -33,12 +34,12 @@ You can transfer projects between your Vercel teams with **zero downtime** and *
 - [Projects can now be transferred to Personal Accounts](https://vercel.com/changelog/projects-can-now-be-transferred-to-personal-accounts)
 - [Transfer Vercel projects with zero downtime](https://vercel.com/blog/transfer-vercel-projects-with-zero-downtime)
 - [Projects can now be transferred without downtime](https://vercel.com/changelog/projects-can-now-be-transferred-without-downtime)
-- [Enterprise customers can now transfer projects](https://vercel.com/changelog/enterprise-customers-can-now-transfer-projects)
+- [How do I change the name of my Vercel Project?](https://vercel.com/kb/guide/how-do-i-change-the-name-of-my-vercel-project) — Change your Vercel project name in the dashboard, CLI, or REST API, then update the environment variables, callbacks, an
 - [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
-- [Projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects) — Vercel MCP tools for projects.
 - [Create project transfer request](https://vercel.com/docs/rest-api/projects/create-project-transfer-request) — POST /projects/{idOrName}/transfer-request — Initiates a project transfer request from one team to another. \<br/\> Return
 - [Accept project transfer request](https://vercel.com/docs/rest-api/projects/accept-project-transfer-request) — PUT /projects/transfer-request/{code} — Accept a project transfer request initated by another team. \<br/\> The \\`code\\` i
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects) — Vercel MCP tools for projects.
+- [Managing projects](https://vercel.com/docs/projects/managing-projects) — Learn how to manage your projects through the Vercel Dashboard.
 
 Full cross-link map for this page: [/docs/projects/transferring-projects.graph.md](/docs/projects/transferring-projects.graph.md)
 <!-- /docsgraph:related -->
@@ -130,6 +131,18 @@ If your project uses a [Wildcard domain](/docs/domains/working-with-domains#wild
 When transferring between teams, you may be asked whether you want to add additional features to the target team to match the origin team's features. This ensures an uninterrupted workflow and a consistent experience between teams.
 Adding these features is optional.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/global-config
 summary: "Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/routing/redirects.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "3e553112ada7259064b011463f54cc656ecd07e1654f8264bf690bdc0de03739"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8819834bdfa72236830b88d6ab7a322055663d3dcb5aab82b14c3fbaa292dcf8"
 ---
 
 # Redirects
@@ -32,11 +33,10 @@ Redirects are rules that instruct Vercel to send users to a different URL than t
 
 - [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
 - [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
-- [Scaling redirects to infinity on Vercel](https://vercel.com/blog/scaling-redirects-to-infinity-on-vercel)
-- [Rewrites on Vercel](https://vercel.com/docs/routing/rewrites) — Learn how to use rewrites to send users to different URLs without modifying the visible URL.
 - [vercel redirects](https://vercel.com/docs/cli/redirects) — Learn how to manage project-level redirects using the vercel redirects CLI command.
-- [Incremental Migration to Vercel](https://vercel.com/docs/incremental-migration) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
+- [Rewrites on Vercel](https://vercel.com/docs/routing/rewrites) — Learn how to use rewrites to send users to different URLs without modifying the visible URL.
 - [Edit a project-level redirect.](https://vercel.com/docs/rest-api/bulk-redirects/edit-a-project-level-redirect) — PATCH /v1/bulk-redirects — Edits a single redirect identified by its source path. Stages a new change with the modified
+- [Gets project-level redirects.](https://vercel.com/docs/rest-api/bulk-redirects/gets-project-level-redirects) — GET /v1/bulk-redirects — Get the version history for a project's bulk redirects
 - [Vercel CDN overview](https://vercel.com/docs/cdn) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
 
 Full cross-link map for this page: [/docs/routing/redirects.graph.md](/docs/routing/redirects.graph.md)
@@ -278,6 +278,18 @@ There are some best practices to keep in mind when implementing redirects in you
 4. **Use wildcards carefully**: Wildcards can be powerful but should be used with caution. For example, if you use a wildcard in a source rule that matches any URL path, you could inadvertently redirect all incoming requests to a single destination, effectively breaking your site.
 5. **Prioritize HTTPS**: Use redirects to enforce HTTPS for all requests to your domain
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

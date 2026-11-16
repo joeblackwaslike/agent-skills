@@ -12,9 +12,10 @@ related:
   []
 summary: Generate structured JSON responses that conform to a specific schema using the Chat Completions API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "56516f69174d753e3d7f3cb39d24d32d6dccccc3ccdd737d1712a334c75fc2e0"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5a0164eb15a26b08958f3eb25210a910b1f4339f4fce8c1ebb170381ddef7afc"
 ---
 
 # OpenAI Chat Completions Structured Outputs with AI Gateway
@@ -33,6 +34,8 @@ Generate structured JSON responses that conform to a specific schema, ensuring p
 - [Tencent Hy4 now available on AI Gateway](https://vercel.com/changelog/tencent-hy4-now-available-on-ai-gateway)
 - [Anthropic Messages Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs) — Get JSON responses conforming to a JSON Schema from Anthropic models through AI Gateway.
 - [OpenResponses Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/structured-outputs) — Request schema-constrained JSON with OpenResponses through AI Gateway, and handle provider support and response validati
+- [Streaming](https://vercel.com/docs/functions/streaming-functions) — Learn how to stream responses from Vercel Functions.
+- [AI Gateway Video Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/video-input) — Analyze video clips with AI Gateway using AI SDK 7, Python, Chat Completions, and Responses / OpenResponses.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs.graph.md](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs.graph.md)
 <!-- /docsgraph:related -->
@@ -666,6 +669,18 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
 > need to collect all the content chunks and parse the complete JSON response
 > once the stream is finished.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

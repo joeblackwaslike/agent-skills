@@ -15,9 +15,10 @@ related:
   - /docs/botid/advanced-configuration
 summary: Protect your applications from automated attacks with intelligent bot detection and verification, powered by Kasada.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/botid.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "6746b7ac33d457d332c1529f14c58330277aaa6706510e05fe7896f592bcd6fb"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2f745ee21bd93f63e5f0e522bbc57cc69fb255c34bcaa04d3fafea6d098cb847"
 ---
 
 # BotID
@@ -32,16 +33,16 @@ sha256: "6746b7ac33d457d332c1529f14c58330277aaa6706510e05fe7896f592bcd6fb"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\\(\\) so inference runs only for verified callers
-- [Deploying and testing BotID](https://vercel.com/kb/guide/deploying-and-testing-botid) — This guide gives an overview on Vercel BotID and how to deploy and test it in production
 - [​Introducing BotID, invisible bot filtering for critical routes](https://vercel.com/blog/introducing-botid)
+- [Vercel BotID is now generally available](https://vercel.com/changelog/vercel-botid-is-now-generally-available)
 - [Improved fake hardware detection with Vercel BotID](https://vercel.com/changelog/botid-deep-analysis-model-improved-for-fake-hardware-detection)
 - [Vercel BotID now  available for all frameworks](https://vercel.com/changelog/botid-now-available-for-all-frameworks)
-- [Vercel BotID is now generally available](https://vercel.com/changelog/vercel-botid-is-now-generally-available)
 - [Vercel BotID now leverages Vercel's verified bot directory](https://vercel.com/changelog/vercel-botid-now-leverages-vercels-verified-bot-directory)
+- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
+- [Deploy a Shopify storefront with an AI assistant](https://vercel.com/kb/guide/deploy-shopify-ai-storefront) — Deploy an eve shopping agent with Vercel Shop to find Shopify products, manage carts, and answer store questions.
 - [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
-- [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app) — Learn the key AI concepts and tools for building and scaling AI apps.
 - [How to effectively load test your application on Vercel](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
+- [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Introduction](https://vercel.shop/docs) — What Vercel Shop is, what you get out of the box, and how it fits Shopify's new Hydrogen.
 - [Shop Configuration](https://vercel.shop/docs/reference/shop-config) — Choose optional storefront features and set your store's identity and locale.
 
@@ -129,6 +130,20 @@ Metrics are also available in [Observability Plus](/docs/observability/observabi
 - [Vercel BotID vs Cloudflare Turnstile](https://vercel.com/kb/guide/vercel-botid-vs-cloudflare-turnstile): Compare Vercel BotID and Cloudflare Turnstile for bot protection, including detection model, hosting requirements, checkBotId() vs Siteverify, framework support, and pricing.
 - [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid): Gate every request to your AI endpoints with Vercel BotID and checkBotId() so inference runs only for verified callers. Covers setup, Deep Analysis, and verified bots.
 - [How to use Vercel’s Bot Management features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features): A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protection Managed Rules, AI Bots Managed Rules, BotID, and custom WAF rules. Learn how to enable, monitor, and tune protections to block bad bots, preserve performance for real users, and safely allow good crawlers.
+- [Deploying and testing BotID](https://vercel.com/kb/guide/deploying-and-testing-botid): This guide gives an overview on Vercel BotID and how to deploy and test it in production
+
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

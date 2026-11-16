@@ -13,9 +13,10 @@ related:
   - /docs/agent/pricing
 summary: Customize which repositories get reviewed and track your review metrics and spending.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent/pr-review/usage.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "2e2ab3be7df0a7ecc38e2f6bec5ab212ab7c33d8bf92f734fd6cf77cf067166a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "629e09500a3e16b28f70a2125edebfca89602286aa3f99dd309be52c1e16733e"
 ---
 
 # Managing Code Reviews
@@ -31,11 +32,11 @@ Once you've [set up Code Review](/docs/agent/pr-review#how-to-set-up-code-review
 - [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
 - [On-demand Vercel Agent code reviews](https://vercel.com/changelog/on-demand-vercel-agent-code-reviews)
 - [Introducing Vercel Security Review](https://vercel.com/blog/vercel-security-review)
-- [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
 - [Vercel Security Review now in public beta](https://vercel.com/changelog/vercel-security-review-public-beta)
 - [Apply code suggestions from Vercel Agent with one click](https://vercel.com/changelog/apply-code-suggestions-from-vercel-agent-with-one-click)
 - [AI code reviews by Vercel Agent now in Public Beta](https://vercel.com/changelog/ai-code-reviews-by-vercel-agent-now-in-beta)
-- [Automatic build fix suggestions with Vercel Agent](https://vercel.com/changelog/automatic-build-fix-suggestions-with-vercel-agent)
+- [Vercel Security Review no longer requires a linked Vercel project](https://vercel.com/changelog/vercel-security-review-no-longer-requires-a-linked-vercel-project)
+- [Vercel CI](https://vercel.com/docs/ci) — Configure Vercel CI to run Turborepo tasks with custom CPU allocations and environment variables.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 
 Full cross-link map for this page: [/docs/agent/pr-review/usage.graph.md](/docs/agent/pr-review/usage.graph.md)
@@ -134,6 +135,18 @@ To turn off automatic Code Reviews:
 
 Once disabled, Code Review won't run automatically on new pull requests. You can re-enable automatic reviews at any time from the same menu.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

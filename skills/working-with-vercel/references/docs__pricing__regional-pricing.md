@@ -15,9 +15,10 @@ related:
   - /docs/pricing/regional-pricing/cpt1
 summary: Vercel pricing for Managed Infrastructure resources in different regions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/pricing/regional-pricing.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "818d8b03af25430de3d0b26cfd9b949175429cf45d394be965d5def3b50fc755"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "6b8043e3bfde897d45d5a69073e369858c5738ffc616bb72d0c9ab1343369dbb"
 ---
 
 # Regional Pricing
@@ -39,9 +40,9 @@ When using Managed Infrastructure resources on Vercel, some, but not all, are pr
 - [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Simplifying runtime caching on Vercel](https://vercel.com/blog/simplifying-runtime-caching-on-vercel)
-- [Runtime Cache](https://vercel.com/docs/caching/runtime-cache) — Vercel Runtime Cache is a specialized cache that stores responses from data fetches in Vercel functions
-- [Data Cache for Next.js](https://vercel.com/docs/caching/runtime-cache/data-cache) — Vercel Data Cache is a specialized cache that stores responses from data fetches in Next.js App Router
+- [@vercel/functions API Reference \\(Node.js\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package) — Learn about available APIs when working with Vercel Functions.
 - [ISR Usage and Pricing](https://vercel.com/docs/incremental-static-regeneration/limits-and-pricing) — Learn about ISR costs, usage metrics, and strategies to optimize your ISR reads and writes.
+- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 
 Full cross-link map for this page: [/docs/pricing/regional-pricing.graph.md](/docs/pricing/regional-pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -108,6 +109,18 @@ For specific, region based pricing, see the following pages:
 
 For more information on Managed Infrastructure pricing, see the [pricing documentation](/docs/pricing#managed-infrastructure).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

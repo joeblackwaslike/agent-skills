@@ -12,9 +12,10 @@ related:
   []
 summary: Use list_access_group_projects with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_group_projects.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "3fcd973e831e43b32522cec9e84daff8f1886fe453cd54e020cf214257ca5efe"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "580494a27cfd880dd733e94b2eb6f7229c79b2daff19262e605fd3cb3b179954"
 ---
 
 # list_access_group_projects
@@ -28,10 +29,10 @@ List projects of an access group.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [list_access_groups](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_groups) — Use list_access_groups with Vercel MCP.
-- [list_access_group_members](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_group_members) — Use list_access_group_members with Vercel MCP.
 - [List projects of an access group](https://vercel.com/docs/rest-api/access-groups/list-projects-of-an-access-group) — GET /v1/access-groups/{idOrName}/projects — List projects of an access group
-- [get_observability_configuration_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_observability_configuration_projects) — Use get_observability_configuration_projects with Vercel MCP.
+- [list_access_group_members](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_group_members) — Use list_access_group_members with Vercel MCP.
 - [list_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/list_projects) — Use list_projects with Vercel MCP.
+- [read_access_group_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/read_access_group_project) — Use read_access_group_project with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_group_projects.graph.md](/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_group_projects.graph.md)
 <!-- /docsgraph:related -->
@@ -46,6 +47,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/acces
 | `teamId`   | string  | No       | Team ID to use for this operation.                                                 |
 | `slug`     | string  | No       | Team slug to use for this operation. Use instead of teamId.                        |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -11,9 +11,10 @@ related:
   - /docs/skew-protection
 summary: System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the Git branch deployed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/environment-variables/system-environment-variables.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "dcedd98a6bae788eed7369216b70df099ee4631a7f9d3b20dad801c833c785ee"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1570e8ee9d0f6c3870a7d6860a962a788ebdc9ff546efaf32bef4e61e199764a"
 ---
 
 # System environment variables
@@ -31,12 +32,11 @@ Vercel provides a set of environment variables that are automatically populated 
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
 - [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
 - [How to deploy a Saleor storefront on Vercel](https://vercel.com/kb/guide/how-to-deploy-a-saleor-storefront-on-vercel) — Deploy Saleor's Paper storefront template on Vercel, including environment variables, GraphQL caching, checkout, and pro
-- [May 2020](https://vercel.com/blog/changelog-may-2020)
-- [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
-- [Environment Variables](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables) — Vercel MCP tools for environment variables.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Framework environment variables](https://vercel.com/docs/environment-variables/framework-environment-variables) — Framework environment variables are automatically populated by the Vercel, based on your project's framework.
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
+- [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
+- [vercel env](https://vercel.com/docs/cli/env) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
 
 Full cross-link map for this page: [/docs/environment-variables/system-environment-variables.graph.md](/docs/environment-variables/system-environment-variables.graph.md)
 <!-- /docsgraph:related -->
@@ -327,6 +327,18 @@ The pull request id the deployment was triggered by. If a deployment is created 
 VERCEL_GIT_PULL_REQUEST_ID=23
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

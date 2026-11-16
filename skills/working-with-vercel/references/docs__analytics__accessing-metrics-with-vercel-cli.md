@@ -13,9 +13,10 @@ related:
   - /docs/cli/metrics
 summary: Use the Vercel CLI to query Web Analytics metrics from your terminal.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "3918d5980560bc9c32218602d5b3bc6f1152d92d3f38335a94b7e823f318675e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8f6e7bfb00b55c243e1b172f317dd696a29a238e7aa487c4c40de28f90ce5b9a"
 ---
 
 # Accessing Metrics with Vercel CLI
@@ -29,12 +30,11 @@ Use `vercel metrics` to query Web Analytics data from your terminal. You can rep
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Query Web Analytics from the Vercel CLI](https://vercel.com/changelog/query-web-analytics-from-the-vercel-cli)
-- [Query observability metrics using the Vercel CLI](https://vercel.com/changelog/vercel-metrics-in-cli)
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
 - [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Query](https://vercel.com/docs/query) — Query and visualize your Vercel usage, traffic, and more in observability.
-- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
+- [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 
 Full cross-link map for this page: [/docs/analytics/accessing-metrics-with-vercel-cli.graph.md](/docs/analytics/accessing-metrics-with-vercel-cli.graph.md)
 <!-- /docsgraph:related -->
@@ -119,6 +119,18 @@ vercel metrics vercel.analytics.page_view.count --all --group-by projectId --gro
 
 For all options, see the [`vercel metrics` reference](/docs/cli/metrics).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

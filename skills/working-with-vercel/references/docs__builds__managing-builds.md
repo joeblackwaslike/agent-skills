@@ -15,9 +15,10 @@ related:
   - /docs/git/vercel-for-github
 summary: Vercel allows you to increase the speed of your builds when needed in specific situations and workflows.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/builds/managing-builds.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "8f9baa5e77ec393effb52b92998b37bffbc85a53020a88eee01db27ea854faf0"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "dd128873ea08236cc6791a1ef24864442be7d572beb51b09920b829a64bd3876"
 ---
 
 # Managing Builds
@@ -30,17 +31,17 @@ When you build your application code, Vercel runs compute to install dependencie
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
+- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
+- [Build cache size limit on Vercel increased to 5 GB](https://vercel.com/changelog/build-cache-size-limit-on-vercel-increased-to-five-gb)
 - [Build cache storage increased for larger build machines](https://vercel.com/changelog/build-cache-storage-increased-for-larger-build-machines)
 - [Commits to the same branch now build with no queues](https://vercel.com/changelog/build-commits-to-the-same-branch-without-waiting)
+- [Build disk space on Vercel increased to 64 GB](https://vercel.com/changelog/build-disk-space-on-vercel-increased-to-64-gb)
 - [Bulk enable on-demand concurrent builds across projects ](https://vercel.com/changelog/bulk-enable-on-demand-concurrent-builds-across-projects)
-- [Configure build machine settings across all projects](https://vercel.com/changelog/configure-build-machine-settings-across-all-projects)
-- [Deployments now show billable duration and CPU minutes](https://vercel.com/changelog/deployments-now-show-billable-duration-and-cpu-minutes)
-- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
 - [Technical audits: Finding the bottlenecks that cost performance, money, and velocity](https://vercel.com/kb/guide/technical-audits) — How Vercel's Forward Deployed Engineering team runs code review, web performance, and usage audits, the recurring patter
-- [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
-- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
-- [A more flexible Pro plan for modern teams](https://vercel.com/blog/new-pro-pricing-plan)
+- [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Configuring a Build](https://vercel.com/docs/builds/configure-a-build) — Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build a
 
 Full cross-link map for this page: [/docs/builds/managing-builds.graph.md](/docs/builds/managing-builds.graph.md)
@@ -70,11 +71,11 @@ For Pro and Enterprise customers, Elastic build machines auto-scale based on you
 
 | Build machine type | Number of vCPUs | Memory (GB) | Disk size (GB) |
 | ------------------ | --------------- | ----------- | -------------- |
-| Basic              | 2               | 8           | 32             |
-| Standard           | 4               | 8           | 32             |
+| Basic              | 2               | 8           | 64             |
+| Standard           | 4               | 8           | 64             |
 | Enhanced           | 8               | 16          | 64             |
 | Turbo              | 30              | 60          | 64             |
-| Elastic            | 4-30            | 8-60        | Auto-scaled    |
+| Elastic            | 4-30            | 8-60        | 64             |
 
 You can set the build machine type in the **Build and Deployment** section of your settings [for your team](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbuild-and-deployment%23build-machines\&title=Set+team+level+build+machines) or [for individual projects](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fbuild-and-deployment%23build-machine\&title=Configure+your+build+machine).
 
@@ -86,7 +87,7 @@ You can select Turbo for one deployment without changing the project's build mac
 - Include `#VERCEL_BUILD_MACHINE=TURBO` in the commit message for a deployment [triggered by Vercel's GitHub integration](/docs/git/vercel-for-github#select-turbo-for-one-deployment).
 - Set `buildMachine` to `turbo` when [creating a deployment with the REST API](/docs/rest-api/deployments/create-a-new-deployment#buildMachine).
 
-Basic is included with Hobby. For paid teams, Basic usage is billed at $0.0035 per CPU minute, or $0.007 per build minute. Elastic build machines are also billed by CPU minute, starting at $0.0035 per CPU minute. A CPU minute is one minute of build time multiplied by the number of vCPU cores used. For example, if a build takes 3 minutes and Elastic assigns the Standard machine (4 vCPUs), you're billed for 3 minutes × 4 cores = 12 CPU minutes.
+Basic is included with Hobby. For paid teams, Basic usage is billed at $0.0035 per CPU minute, or $0.007 per build minute. Elastic build machines are also billed by CPU minute, starting at $0.0035 per CPU minute. A CPU minute is one minute of build time multiplied by the number of vCPU cores used. For example, if a build takes 3 minutes and Elastic assigns the Standard machine (4 vCPUs), you're billed for 3 minutes × 4 cores = 12 CPU minutes. If your Build CPU Minutes charge is higher than expected, see [How to reduce build costs on Vercel](/kb/guide/how-reduce-build-costs).
 
 Enterprise customers who have Enhanced build machines enabled via contract will always use them by default. You can view if you have this enabled in [the Build Machines section of the Build and Deployment tab in your Team Settings](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbuild-and-deployment%23build-machines\&title=Configure+your+build+machines). To update your build machine preferences, you need to contact your account manager.
 
@@ -270,6 +271,18 @@ To ensure that changes to the [production environment](/docs/deployments/environ
 2. Open **Settings** in the sidebar, and go to the [**Build and Deployment** section](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fbuild-and-deployment\&title=Prioritize+Production+Builds+Setting) of your [Project Settings](/docs/project-configuration/project-settings#build-and-deployment-settings)
 3. Under **Prioritize Production Builds**, toggle the switch to **Enabled**
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

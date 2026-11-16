@@ -12,9 +12,10 @@ related:
   []
 summary: Use update_flag_segment with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/update_flag_segment.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "00e3727360085c8e427f75de4ba216ff69b09871ce01c710938285a3b17d6b7d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ae549ea1dc492b70b72e5fb9387a70479045e2a2b455d9695db5b2fa0b6f5ec8"
 ---
 
 # update_flag_segment
@@ -31,7 +32,7 @@ Update an existing feature flag segment.
 - [update_flag](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/update_flag) — Use update_flag with Vercel MCP.
 - [list_flag_segments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flag_segments) — Use list_flag_segments with Vercel MCP.
 - [update_flag_settings](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/update_flag_settings) — Use update_flag_settings with Vercel MCP.
-- [Update a segment](https://vercel.com/docs/rest-api/feature-flags/update-a-segment) — PATCH /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} — Update an existing feature flag segment.
+- [Delete a segment](https://vercel.com/docs/rest-api/feature-flags/delete-a-segment) — DELETE /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} — Delete a feature flag segment.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/feature-flags/update_flag_segment.graph.md](/docs/agent-resources/vercel-mcp/tools/feature-flags/update_flag_segment.graph.md)
 <!-- /docsgraph:related -->
@@ -47,6 +48,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/featu
 | `slug`            | string  | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody`     | object  | No       | Request body for this tool.                                 |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

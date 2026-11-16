@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced
 summary: Control how much a model thinks before answering with the OpenAI Chat Completions API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "110eeb05706990a0e5685338317c62f22f25d090dfc8b21ded9c5f3e563d1069"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "755de5984962b105fc982fdbb8bd3336fdac51e373b3ddd4d00934f5ad6e5c1d"
 ---
 
 # OpenAI Chat Completions Reasoning with AI Gateway
@@ -31,12 +32,11 @@ Reasoning models work through a problem before answering. Configure that with th
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Reasoning](https://ai-sdk.dev/docs/ai-sdk-core/reasoning) — Learn how to control reasoning across providers with the top-level reasoning parameter.
-- [OpenResponses Reasoning with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning) — Control how much a reasoning model thinks before answering with the OpenResponses API through AI Gateway.
 - [AI Gateway OpenAI Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai) — Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
+- [OpenResponses Reasoning with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning) — Control how much a reasoning model thinks before answering with the OpenResponses API through AI Gateway.
 - [OpenAI Responses Reasoning with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/reasoning) — Control how much a model thinks before answering with the OpenAI Responses API through AI Gateway.
-- [Python with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/python) — Use AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
 - [AI Gateway Amazon Bedrock Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock) — Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
+- [AI Gateway Google and Vertex Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/google) — Configure thinking for Google Gemini and Gemma models with the AI SDK and AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning.graph.md](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning.graph.md)
 <!-- /docsgraph:related -->
@@ -544,6 +544,18 @@ The AI Gateway automatically maps reasoning parameters to each provider's native
 - [Reasoning](/docs/ai-gateway/models-and-providers/reasoning) - Model discovery and API-format mappings
 - [Advanced](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced) - Provider options and prompt caching
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

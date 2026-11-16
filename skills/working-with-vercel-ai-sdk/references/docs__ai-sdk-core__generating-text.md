@@ -3,9 +3,14 @@ title: Generating Text
 description: Learn how to generate text with the AI SDK.
 url: "https://ai-sdk.dev/docs/ai-sdk-core/generating-text"
 docs_index: /llms.txt
+keywords:
+  - text generation
+  - generate text
+  - stream text
+  - streaming text
 source: "https://ai-sdk.dev/docs/ai-sdk-core/generating-text.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "44ed2f75e0b25f0c6e2582fd463c00ee4e69f102441b212cba6753f88c8a1f21"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "75919671ed3808941f96d7445c4d3b3991a931eda9b54fe1d24e5916e98e7ea8"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -707,7 +712,7 @@ When you use `generateText`, you can access the sources using the `sources` prop
 
 ```ts
 const result = await generateText({
-  model: 'google/gemini-3.8-flash',
+  model: 'google/gemini-4-hydrogen',
   tools: {
     google_search: google.tools.googleSearch({}),
   },
@@ -729,7 +734,7 @@ When you use `streamText`, you can access the sources using the `stream` propert
 
 ```tsx
 const result = streamText({
-  model: 'google/gemini-3.8-flash',
+  model: 'google/gemini-4-hydrogen',
   tools: {
     google_search: google.tools.googleSearch({}),
   },

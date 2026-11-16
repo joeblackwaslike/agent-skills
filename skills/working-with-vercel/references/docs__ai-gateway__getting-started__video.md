@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/modalities/video-generation/reference-to-video
 summary: Generate a video from a text prompt using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/getting-started/video.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9c66706a86e9dccb8b6eb57c4eb40e5cff50e0b9d57f593bf0c6fcd2b737bf5d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "55784012c5cb606f398e539f3750a31ad175b8b8987ef92b1680836371952abd"
 ---
 
 # Video Generation Quickstart
@@ -100,6 +101,18 @@ node index.mts
 - Host input media with [Vercel Blob](/docs/vercel-blob) when a model requires URLs
 - Browse [video generation models](/ai-gateway/models?capabilities=video-generation)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -11,13 +11,15 @@ prerequisites:
 related:
   - /docs/ai-gateway/token-pass
   - /docs/ai-gateway/token-pass/models-and-routing
+  - /docs/ai-gateway/pricing
   - /docs/ai-gateway/security-and-compliance/zdr
   - /docs/ai-gateway/observability-and-spend/observability
 summary: How Vercel charges for Token Pass, how you receive and use credit, and what happens when you cancel or downgrade.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/token-pass/billing.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "ffd4d0c281c548fbaec217fdd226baa2093084f76b5e4013457193ffbb1f04fc"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7a0e315824eec559ae825c3ba56d80e78258586a26862e8fc86fb349da1e429d"
 ---
 
 # Token Pass Credits and Billing
@@ -29,36 +31,39 @@ Token Pass is a monthly add-on to your team's Pro subscription. Vercel charges i
 | Item           | Details                                                                  |
 | -------------- | ------------------------------------------------------------------------ |
 | Price          | $30 per team per month                                                   |
-| Credit         | $80 per billing period                                                   |
+| Credit         | $150 per billing period                                                  |
 | Billing period | Your team's Pro billing period                                           |
 | First period   | Vercel prorates the charge and credit for the days left in the period    |
 | Expiry         | Credit expires at the end of each billing period. It doesn't roll over   |
-| Overage        | None. When credit runs out, Token Pass requests fail until the next period |
-| Scope          | Per team. All members and Token Pass API keys on the team share the credit |
+| Overage        | None from Token Pass. When credit runs out, requests with a standard API key or OIDC token fall back to your AI Gateway credits; requests with a Token Pass-scoped key fail until the next period |
+| Scope          | Per team. All members, API keys, and OIDC tokens on the team share the credit |
 | Cancelling     | Takes effect at the end of the billing period. No refund for that period |
 
 ## How Token Pass credit works
 
-AI Gateway prices each Token Pass request at the model's [list price](/docs/ai-gateway/token-pass#list-price) and deducts the cost from your Token Pass credit.
+AI Gateway prices each Token Pass request at the model's [list price](/docs/ai-gateway/token-pass#list-price) and deducts the cost from your Token Pass credit. Token Pass credit applies automatically to [featured model](/docs/ai-gateway/token-pass/models-and-routing#featured-models) usage with any AI Gateway credential, whether a standard API key, an OIDC token, or Vercel sign-in. You don't need a dedicated Token Pass API key.
 
 Token Pass credit is a separate balance from your AI Gateway credits:
 
 - Token Pass credit only pays for [featured models](/docs/ai-gateway/token-pass/models-and-routing#featured-models) served by the Token Pass provider. It can't pay for other models.
-- Your AI Gateway credit balance doesn't include Token Pass credit, and Token Pass requests don't use your AI Gateway credits.
+- Your AI Gateway credit balance doesn't include Token Pass credit, and Token Pass requests don't use your AI Gateway credits. Once you use up your Token Pass credit, featured-model requests from standard credentials continue as regular AI Gateway usage billed to your AI Gateway credits.
 
 ## Subscribing mid-period
 
 If you subscribe partway through your Pro billing period, your first charge covers only the days left in that period. Vercel prorates your first credit the same way. The confirmation screen shows the exact amount, including taxes and fees, and the date your $30 monthly charge starts.
 
-After that, at the start of each billing period, Vercel charges $30 and adds $80 of credit.
+After that, at the start of each billing period, Vercel charges $30 and adds $150 of credit.
 
 ## Credit reset
 
-At the end of each billing period, unused credit expires. When the next period starts, your credit resets to $80. To see your remaining credit and reset date, open the [Token Pass tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Ftoken-pass\&title=Go+to+Token+Pass).
+At the end of each billing period, unused credit expires. When the next period starts, your credit resets to $150. To see your remaining credit and reset date, open the [Token Pass tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Ftoken-pass\&title=Go+to+Token+Pass).
 
 ## When credit runs out
 
-Token Pass doesn't charge overages or top up automatically. Once you use up your credit, requests with your Token Pass API key fail with a `403` error until your next billing period. To continue with paid usage, switch to a regular AI Gateway API key, which bills to your AI Gateway credits. See [Switch to regular AI Gateway usage](/docs/ai-gateway/token-pass/models-and-routing#switch-to-regular-ai-gateway-usage).
+Token Pass doesn't charge overages or top up automatically. There's no way to spend more than the pass through Token Pass itself. When you use up your credit for the billing period, what happens next depends on the credential:
+
+- **Standard API key or OIDC token**: featured-model requests fall back automatically to your team's AI Gateway credits at the serving provider's rates. This fallback is ordinary AI Gateway usage, so keep enough [AI Gateway credits](/docs/ai-gateway/pricing#configure-auto-top-up) for those requests to succeed.
+- **Token Pass-scoped API key**: requests fail with a `403` error until your next billing period. There's no fallback and no charge beyond the pass. To continue with paid usage, [switch to regular AI Gateway usage](/docs/ai-gateway/token-pass/models-and-routing#switch-to-regular-ai-gateway-usage) with a standard credential, which bills to your AI Gateway credits.
 
 ## Cancel
 
@@ -84,7 +89,7 @@ Token Pass requires a Pro plan. If you downgrade your team to Hobby:
 
 ## Team-wide ZDR fee
 
-If your team has [team-wide zero data retention](/docs/ai-gateway/security-and-compliance/zdr#team-wide-zero-data-retention) on, the $0.10 per 1,000 requests fee applies to Token Pass requests too. Per-request ZDR has no extra cost.
+If your team has [team-wide zero data retention](/docs/ai-gateway/security-and-compliance/zdr#team-wide-zero-data-retention) on, Vercel waives the $0.10 per 1,000 requests fee for featured-model requests while your Token Pass is active with credit remaining. The fee applies as usual to fallback requests after your credit runs out and to non-featured models. Fallback requests follow your team's ZDR setting, and with team-wide ZDR on they route only to ZDR providers. Per-request ZDR has no extra cost.
 
 ## Changes to Token Pass
 
@@ -99,9 +104,21 @@ Token Pass is in Early Access, and the [Token Pass Terms](/docs/ai-gateway/token
 Check these places:
 
 - **Token Pass tab**: remaining credit, usage this billing period, reset date, and the featured models.
-- **[Observability](/docs/ai-gateway/observability-and-spend/observability)**: Token Pass requests, listed under the Vercel Token Pass provider.
+- **[Observability](/docs/ai-gateway/observability-and-spend/observability)**: Token Pass requests, listed under the Vercel Token Pass provider. Fallback requests after your credit runs out count as regular AI Gateway usage.
 - **Invoices**: the $30 charge, listed as an add-on on your Pro invoice.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

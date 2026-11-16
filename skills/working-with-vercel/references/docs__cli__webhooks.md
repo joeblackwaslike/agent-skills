@@ -14,9 +14,10 @@ related:
   - /docs/cli/global-options
 summary: Learn how to manage webhooks for your Vercel account using the vercel webhooks CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/webhooks.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "8d68a6a304e558f3344e878f32219ccd8e5a4895e7109ff5ac7911a5cdb997d9"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c885840083cb5f1f02d8d99281ecefac2fc04a9e107cd70d5ceb8b91217877c0"
 ---
 
 # vercel webhooks
@@ -29,11 +30,11 @@ The `vercel webhooks` command is used to manage [webhooks](/docs/webhooks) for y
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel deploy-hooks](https://vercel.com/docs/cli/deploy-hooks) — Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and delete deploy hook URLs that trigger
 - [Get a list of webhooks](https://vercel.com/docs/rest-api/webhooks/get-a-list-of-webhooks) — GET /v1/webhooks — Get a list of webhooks
-- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [Creates a webhook](https://vercel.com/docs/rest-api/webhooks/creates-a-webhook) — POST /v1/webhooks — Creates a webhook
 - [Get a webhook](https://vercel.com/docs/rest-api/webhooks/get-a-webhook) — GET /v1/webhooks/{id} — Get a webhook
+- [vercel deploy-hooks](https://vercel.com/docs/cli/deploy-hooks) — Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list, create, and delete deploy hook URLs that trigger
+- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 
 Full cross-link map for this page: [/docs/cli/webhooks.graph.md](/docs/cli/webhooks.graph.md)
 <!-- /docsgraph:related -->
@@ -219,6 +220,18 @@ For more information on global options and their usage, refer to the [options se
 - [Setting up webhooks](/docs/webhooks)
 - [Webhooks API reference](/docs/webhooks/webhooks-api)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

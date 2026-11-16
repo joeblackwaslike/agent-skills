@@ -16,9 +16,10 @@ related:
   - /docs/sandbox/sdk-reference
 summary: Define network policies on sandboxes, preventing data exfiltration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/concepts/firewall.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "8090abec63c5381c9b1d5deea4d6d4f2652423b839a54bef08cff5207e6ab6de"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c80aee796f6a45b22e98e9975bf49a7aaf998fe19ae76da2a7d84d8d4aaff40c"
 ---
 
 # Sandbox firewall
@@ -42,7 +43,7 @@ Network firewall allows users to restrict egress traffic from their sandbox. It 
 - [Advanced egress firewall filtering for Vercel Sandbox](https://vercel.com/changelog/advanced-egress-firewall-filtering-for-vercel-sandbox)
 - [Vercel Sandbox firewall now supports request proxying and filtering](https://vercel.com/changelog/vercel-sandbox-firewall-now-supports-request-proxying-and-filtering)
 - [Safely inject credentials in HTTP headers with Vercel Sandbox](https://vercel.com/changelog/safely-inject-credentials-in-http-headers-with-vercel-sandbox)
-- [Protect Sensitive Routes with Vercel WAF: Challenge and Deny Rule Recipes](https://vercel.com/kb/guide/suspicious-traffic-in-specific-countries) — Use Vercel WAF custom rules to block or challenge unwanted traffic by country, ASN, IP address, user agent, path, or coo
+- [Update network policy](https://vercel.com/docs/rest-api/sandboxes/update-network-policy) — POST /v2/sandboxes/sessions/{sessionId}/network-policy — Replaces the network access policy of a running session. Use th
 
 Full cross-link map for this page: [/docs/sandbox/concepts/firewall.graph.md](/docs/sandbox/concepts/firewall.graph.md)
 <!-- /docsgraph:related -->
@@ -545,7 +546,7 @@ asyncio.run(main())
 
 To apply transformation, forwarding, and direct-response rules, the firewall terminates TLS connections. It only terminates connections to domains with these rules.
 
-A unique, per-sandbox CA is added to the system certificates. Standard environment variables are configured automatically to ensure compatibility with most clients. If your application uses a custom CA bundle, configure it to trust the mounted certificate. See [Proxy CA certificates](/docs/sandbox/concepts#proxy-ca-certificates).
+A unique, per-sandbox CA is added to the system certificates. Standard environment variables are configured automatically to ensure compatibility with most clients. If your application uses a custom CA bundle, configure it to trust the mounted certificate. See [Proxy CA certificates](/docs/sandbox/concepts/security#proxy-ca-certificates).
 
 ## Sandbox creation
 
@@ -692,6 +693,18 @@ async def main() -> None:
 asyncio.run(main())
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

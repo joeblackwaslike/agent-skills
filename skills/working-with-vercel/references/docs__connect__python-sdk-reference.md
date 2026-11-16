@@ -15,9 +15,10 @@ related:
   - /docs/connect/concepts/installations
 summary: API reference for vercel-connect, the Python SDK for requesting runtime tokens from Vercel Connect.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/connect/python-sdk-reference.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b888fb9226d75ea6140b875fc63276d5b755309f23a2d4100723009f2d2fac5a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "39184c4eed60fd945d1de8dc6d7d86ca90b17dfb2f28b9de8abb2610090a3556"
 ---
 
 # Python SDK Reference
@@ -38,6 +39,7 @@ sha256: "b888fb9226d75ea6140b875fc63276d5b755309f23a2d4100723009f2d2fac5a"
 - [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect)
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
+- [Frameworks and Adapters for Vercel Connect](https://vercel.com/docs/connect/frameworks) — Use Vercel Connect with AI SDK, TanStack AI, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.
 
 Full cross-link map for this page: [/docs/connect/python-sdk-reference.graph.md](/docs/connect/python-sdk-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -650,6 +652,18 @@ Most SDK calls have a [`vercel connect`](/docs/cli/connect) CLI equivalent. The 
 - [Tokens](/docs/connect/concepts/tokens): How a token request is shaped and what each field does.
 - [Authentication](/docs/connect/concepts/authentication): What the OIDC token carries and how the API checks it.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

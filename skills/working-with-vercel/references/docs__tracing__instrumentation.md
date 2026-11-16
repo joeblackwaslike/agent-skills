@@ -15,9 +15,10 @@ related:
   - /docs/drains/reference/traces
 summary: Learn how to instrument your application to understand performance and infrastructure details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/tracing/instrumentation.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "451912a2f983a139034b5a8637be5a4c5a85ea74b353dd2cc00e982a501cce06"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2eb7c5244bd98cb79f07919f86acbfabef5b214ff351fdbc4af55ce02aba4cf9"
 ---
 
 # Instrumentation
@@ -37,11 +38,11 @@ Observability is crucial for understanding and optimizing the behavior and perfo
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [Tracing](https://workflow-sdk.dev/docs/observability/tracing) — Trace workflow execution end to end with OpenTelemetry.
 - [Instrument and trace applications with the OpenTelemetry collector](https://vercel.com/changelog/instrument-and-trace-applications-with-the-opentelemetry-collector)
-- [OpenTelemetry](https://eve.dev/docs/observability/otel) — Configure OpenTelemetry destinations, content capture, and third-party exports.
 - [@vercel/otel 1.3.0](https://vercel.com/changelog/vercel-otel-1-3-0)
-- [Native support for SvelteKit's new OpenTelemetry spans](https://vercel.com/changelog/native-support-for-sveltekits-new-opentelemetry-spans)
+- [OpenTelemetry](https://eve.dev/docs/observability/otel) — Configure OpenTelemetry destinations, content capture, and third-party exports.
 - [Always-on tracing for production and preview traffic](https://vercel.com/changelog/always-on-tracing-for-production-and-preview-traffic)
-- [Instrumentation](https://eve.dev/docs/observability/instrumentation) — Configure lifecycle instrumentation, handle runtime events, and control the content each destination receives.
+- [Tracing in Daemons](https://vercel.com/docs/daemons/tracing) — Instrument a daemon using OpenTelemetry traces.
+- [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
 
 Full cross-link map for this page: [/docs/tracing/instrumentation.graph.md](/docs/tracing/instrumentation.graph.md)
 <!-- /docsgraph:related -->
@@ -61,25 +62,25 @@ To get started, install the following packages:
 **pnpm**
 
 ```bash
-pnpm i @opentelemetry/api @vercel/otel
+pnpm i @opentelemetry/api @opentelemetry/api-logs @vercel/otel
 ```
 
 **yarn**
 
 ```bash
-yarn add @opentelemetry/api @vercel/otel
+yarn add @opentelemetry/api @opentelemetry/api-logs @vercel/otel
 ```
 
 **npm**
 
 ```bash
-npm i @opentelemetry/api @vercel/otel
+npm i @opentelemetry/api @opentelemetry/api-logs @vercel/otel
 ```
 
 **bun**
 
 ```bash
-bun add @opentelemetry/api @vercel/otel
+bun add @opentelemetry/api @opentelemetry/api-logs @vercel/otel
 ```
 
 Next, create a `instrumentation.ts` (or `.js`) file in the root directory of the project, or, on Next.js [it must be placed](https://nextjs.org/docs/app/guides/open-telemetry#using-vercelotel) in the `src` directory if you are using one. Add the following code to initialize and configure OTel using `@vercel/otel`:
@@ -396,6 +397,18 @@ For the full list of configuration options, see the [@vercel/otel documentation]
 
 - If your app uses manual OpenTelemetry SDK configuration without the usage of `@vercel/otel`, you will not be able to use [Session Tracing](/docs/tracing/session-tracing) or [Trace Drains](/docs/drains/reference/traces).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

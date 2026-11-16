@@ -12,9 +12,10 @@ related:
   []
 summary: Guidelines for creating images for integrations, including layout, content, visual assets, descriptions, and design standards.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/integration-image-guidelines.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "7389eb6d5b290e6c59b94d0c98f9f22e98d53e303154fa17ff41d7cea01076a7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "69fc9596dac002aa2498fe1b9f1cda625a293579b4ea432795b85df599f237cf"
 ---
 
 # Integration Image Guidelines
@@ -27,12 +28,11 @@ These guidelines help ensure consistent, high-quality previews for integrations 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Easily access Vercel Brand Assets and Guidelines](https://vercel.com/changelog/easily-access-vercel-brand-assets-and-guidelines)
 - [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
-- [Vercel CMS Integrations](https://vercel.com/docs/integrations/cms) — Learn how to integrate Vercel with CMS platforms, including Contentful, Sanity, and Sitecore XM Cloud.
-- [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
 - [List products for integration configuration](https://vercel.com/docs/rest-api/integrations/list-products-for-integration-configuration) — GET /v1/integrations/configuration/{id}/products — Returns products available for an integration configuration. Each pro
-- [Create a Native Integration](https://vercel.com/docs/integrations/create-integration/marketplace-product) — Learn how to create a product for your Vercel native integration
+- [Vercel CI Guides](https://vercel.com/docs/ci/guides) — Follow complete examples of common Vercel CI workflows, from end-to-end tests to pull request comments.
+- [Vercel CMS Integrations](https://vercel.com/docs/integrations/cms) — Learn how to integrate Vercel with CMS platforms, including Contentful, Sanity, and Sitecore XM Cloud.
+- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
 
 Full cross-link map for this page: [/docs/integrations/create-integration/integration-image-guidelines.graph.md](/docs/integrations/create-integration/integration-image-guidelines.graph.md)
 <!-- /docsgraph:related -->
@@ -77,6 +77,18 @@ d. All images must be high-resolution to prevent any pixelation.
 
 e. Images should clearly highlight the most compelling parts of the UI and showcase features that are valuable to customers.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

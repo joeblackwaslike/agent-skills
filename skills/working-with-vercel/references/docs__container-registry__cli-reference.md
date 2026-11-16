@@ -14,9 +14,10 @@ related:
   - /docs/cli/link
 summary: Use the vercel vcr command group to manage Vercel Container Registry repositories, tags, and images from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/container-registry/cli-reference.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "240d1ed325ab19f6b9519fb2058dd1e05e591047d7c44ed375141f84b801dc9e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7734bcbf792705fc27fd03cd5c6e17d3efe762c27577488d65d2f60563f7de8a"
 ---
 
 # Container Registry CLI Reference
@@ -36,8 +37,8 @@ The `vercel vcr` command group lets you manage [Vercel Container Registry](/docs
 - [vercel vcr](https://vercel.com/docs/cli/vcr) — Manage Vercel Container Registry from the Vercel CLI: build and push images, manage repositories, tags, and images, and
 - [vercel blob](https://vercel.com/docs/cli/blob) — Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
 - [Get a repository image](https://vercel.com/docs/rest-api/vcr/get-a-repository-image) — GET /v1/vcr/repository/{idOrName}/images/{imageIdOrDigest} — Fetch an individual image from a repository, including its
-- [vercel agent-runs](https://vercel.com/docs/cli/agent-runs) — Find projects with Agent Runs, list recent runs, and inspect run metadata and conversation traces from the command line.
-- [vercel cache](https://vercel.com/docs/cli/cache) — Learn how to manage cache for your project using the vercel cache CLI command.
+- [vercel ci](https://vercel.com/docs/cli/ci) — Enable or disable Vercel CI for repositories, inspect runs, search logs, and rerun jobs from the command line.
+- [List image tags](https://vercel.com/docs/rest-api/vcr/list-image-tags) — GET /v2/{teamSlug}/{projectSlug}/{repositoryName}/tags/list — GET /v2/:teamSlug/:projectSlug/:repositoryName/tags/list L
 
 Full cross-link map for this page: [/docs/container-registry/cli-reference.graph.md](/docs/container-registry/cli-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -839,6 +840,18 @@ vercel vcr update my-repository --no-public
 | -------------- | ------------------------------------------- |
 | `<repository>` | The name or ID of the repository to configure. |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

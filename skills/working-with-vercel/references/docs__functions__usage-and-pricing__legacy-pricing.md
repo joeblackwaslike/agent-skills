@@ -16,9 +16,10 @@ related:
   - /docs/plans/hobby
 summary: Learn about legacy usage and pricing for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "686e680ffcad386a8acf22f282162ec449bcd59a404680dee7f7dd6afd6538aa"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "61ea4b34c1456fe5de40ddbba3677b7986afe3b7ccbf230d611461d671c708fa"
 ---
 
 # Legacy Usage & Pricing for Functions
@@ -38,13 +39,11 @@ Functions using the Node.js runtime are measured in [GB-hours](/docs/pricing/man
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
-- [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing)
-- [Fluid: How we built serverless servers](https://vercel.com/blog/fluid-how-we-built-serverless-servers)
+- [How can I improve function cold start performance on Vercel?](https://vercel.com/kb/guide/improve-function-cold-start-performance-on-vercel) — Learn how to confirm whether cold starts cause function latency on Vercel, and how Fluid compute reduces how often they
+- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis) — Learn how to build and scale performant APIs on Vercel.
 - [Vercel Functions Limits](https://vercel.com/docs/functions/limitations) — Learn about the limits and restrictions of using Vercel Functions.
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
-- [Legacy Metrics](https://vercel.com/docs/pricing/legacy) — Learn about legacy usage metrics, including Bandwidth, Requests, Vercel Function Invocations, and Vercel Function Execut
-- [Vercel Blob Pricing](https://vercel.com/docs/vercel-blob/usage-and-pricing) — Learn about the pricing for Vercel Blob.
+- [What is Compute?](https://vercel.com/docs/fundamentals/what-is-compute) — Learn how compute works on Vercel with Fluid compute, and how it compares to traditional server and serverless models.
 
 Full cross-link map for this page: [/docs/functions/usage-and-pricing/legacy-pricing.graph.md](/docs/functions/usage-and-pricing/legacy-pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -173,6 +172,18 @@ This counts the number of times that a request to your Functions could not be se
 
 While this is not a chargeable metric, it will cause a `503: FUNCTION_THROTTLED` error. To learn more, see [What should I do if I receive a 503 error on Vercel?](/kb/guide/what-should-i-do-if-i-receive-a-503-error-on-vercel).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

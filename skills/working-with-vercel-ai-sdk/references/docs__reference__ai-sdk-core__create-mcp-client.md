@@ -4,8 +4,8 @@ description: Create a client for connecting to MCP servers
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/create-mcp-client"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/create-mcp-client.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "5722829929e8e893edced590ec4ddfce5ac69f8f3699a6c2920c428ffc717de3"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "ac2bc1853192359ddee6a3e3d4bfe91a3ba6db03f7a9a415c158603e15901d56"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -53,14 +53,14 @@ import { createMCPClient } from "@ai-sdk/mcp"
         - `type` (`'sse' | 'http'`): Use Server-Sent Events for communication
         - `url` (`string`): URL of the MCP server
         - `headers?` (`Record<string, string>`): Additional HTTP headers to be sent with requests.
-        - `authProvider?` (`OAuthClientProvider`): Optional OAuth provider for authorization to access protected remote MCP servers. Implement \`validateAuthorizationServerURL\` on the provider to allowlist discovered OAuth authorization server URLs before metadata is fetched.
+        - `authProvider?` (`OAuthClientProvider`): Optional OAuth provider for authorization to access protected remote MCP servers. Implement \`validateAuthorizationServerURL\` on the provider to allowlist discovered OAuth authorization server URLs before metadata is fetched. On server runtimes, including Node.js, an authorization server on a different origin than the MCP server also requires the \`fetch\` option.
         - `redirect?` (`'follow' | 'error'`): Controls how HTTP redirects are handled for transport requests. Set to 'follow' to allow redirect responses. Defaults to 'error' to reject any redirect response, preventing servers from redirecting requests to unintended hosts.
         - `initialSessionId?` (`string`): Initial legacy MCP session id to send with resumed Streamable HTTP requests after initialization. Pair with initialInitializeResult when using createMCPClient. Only used by the HTTP transport and initialization-based protocol versions.
         - `initialProtocolVersion?` (`string`): Initial legacy MCP protocol version to send before initialize negotiates one. Only used by the HTTP transport.
         - `onSessionIdChange?` (`(sessionId: string | undefined) => void`): Callback invoked when the Streamable HTTP server creates, changes, or clears the MCP session id. Only used by the HTTP transport.
         - `onSessionExpired?` (`(sessionId: string) => void`): Callback invoked when a Streamable HTTP request returns 404 for an existing MCP session id. The transport clears the session id before reporting the underlying HTTP error. Only used by the HTTP transport.
         - `terminateSessionOnClose?` (`boolean`): Whether close() should send DELETE for the current MCP session id. Set to false when the application intends to reattach to the session later. Defaults to true. Only used by the HTTP transport.
-        - `fetch?` (`FetchFunction`): Optional custom fetch implementation to use for HTTP requests. Useful for runtimes that need a request-local fetch.
+        - `fetch?` (`FetchFunction`): Optional custom fetch implementation for the built-in HTTP/SSE transport and its OAuth requests, e.g. a \`guarded-fetch\` transport for user-configured server URLs (see \[Securing remote server URLs]\(/docs/ai-sdk-core/mcp-tools#securing-remote-server-urls)). On server runtimes, including Node.js, OAuth with an authorization server on a different origin than the MCP server requires a fetch with connect-time DNS validation here. Also useful for runtimes that need a request-local fetch.
     - `protocolVersionDiscovery?` (`boolean`): Whether transports that support protocol discovery probe with server/discover before legacy initialization. Defaults to true. Set to false for a known legacy server to start with initialize. Recognized modern protocol errors do not trigger automatic legacy fallback.
     - `initializationOptions?` (`RequestOptions`): Optional signal and timeout settings that bound transport startup and protocol negotiation. A timeout or abort closes the transport and rejects createMCPClient.
     - `clientName?` (`string`): Client name. Defaults to "ai-sdk-mcp-client".

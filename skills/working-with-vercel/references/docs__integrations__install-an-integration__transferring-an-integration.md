@@ -15,9 +15,10 @@ related:
   - /docs/integrations/install-an-integration/manage-integrations-reference
 summary: Move your installation of a Native Integration from one Vercel team to another, including its resources and prepayment balances.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/install-an-integration/transferring-an-integration.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "805ff49e71ba0cc0d269b8a8e6eb676de66ed267b4b988395a1bec2d14b1bc78"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9bcc7dce2e59e7ef9053c40fe779b481cdebdccca286994b6a1492414ea30a5e"
 ---
 
 # Transferring an Integration
@@ -35,7 +36,7 @@ You can transfer your installation of a [Native Integration](/docs/integrations/
 - [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
 - [Upgrade an Integration](https://vercel.com/docs/integrations/create-integration/upgrade-integration) — Lean more about when you may need to upgrade your Integration.
 - [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
-- [Create an Integration](https://vercel.com/docs/integrations/create-integration) — Learn how to create and manage your own integration for internal or public use with Vercel.
+- [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
 
 Full cross-link map for this page: [/docs/integrations/install-an-integration/transferring-an-integration.graph.md](/docs/integrations/install-an-integration/transferring-an-integration.graph.md)
 <!-- /docsgraph:related -->
@@ -101,6 +102,18 @@ After the transfer, reconnect each project to the integration on the target team
 - [Transferring projects](/docs/projects/transferring-projects)
 - [Permissions and Access](/docs/integrations/install-an-integration/manage-integrations-reference)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

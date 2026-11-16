@@ -12,9 +12,10 @@ related:
   - /docs/accounts
 summary: Vercel MCP tools for teams and users.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "15e7ea8c62ca2754bea54145d75baddc94b66560ad19d417d7eade1ef0d8b584"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0fe522c23bc5fcfab5a8c4d47f4ed6208206f1b50db35358edaf5f1a73cb1a37"
 ---
 
 # Teams and Users
@@ -27,11 +28,11 @@ Inspect your account and teams, list team members, and read activity events. The
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [List team members](https://vercel.com/docs/rest-api/teams/list-team-members) — GET /v3/teams/{teamId}/members — Get a paginated list of team members for the provided team.
 - [vercel teams](https://vercel.com/docs/cli/teams) — Learn how to list, create, switch, invite, and manage your teams with the vercel teams CLI command.
+- [List team members](https://vercel.com/docs/rest-api/teams/list-team-members) — GET /v3/teams/{teamId}/members — Get a paginated list of team members for the provided team.
 - [Invite a user](https://vercel.com/docs/rest-api/teams/invite-a-user) — POST /v2/teams/{teamId}/members — Invite a user to join the team specified in the URL. The authenticated user needs to b
 - [List all teams](https://vercel.com/docs/rest-api/teams/list-all-teams) — GET /v2/teams — Get a paginated list of all the Teams the authenticated User is a member of.
-- [list_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/list_projects) — Use list_projects with Vercel MCP.
+- [List Organization Teams](https://vercel.com/docs/rest-api/organizations/list-organization-teams) — GET /v1/organizations/{organizationId}/teams — List up to 100 teams in an organization, each enriched with the team's sl
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/teams.graph.md](/docs/agent-resources/vercel-mcp/tools/teams.graph.md)
 <!-- /docsgraph:related -->
@@ -122,6 +123,18 @@ List User Events.
 | `teamId`      | string | No       | Team ID to use for this operation.                                                                                                  |
 | `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId.                                                                         |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

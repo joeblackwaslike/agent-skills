@@ -14,9 +14,10 @@ related:
   - /docs/cli/global-options
 summary: Learn how to check your Vercel CLI setup and fix problems with the vercel doctor CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/doctor.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "19520df03d0339fe6b93ab409525d2c65ccc666a33db01cb5a7918f22a72e26a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b56cf72df7b644193aca53c370aa46945221678b03488caa3c249fef2f05f4d4"
 ---
 
 # vercel doctor
@@ -31,10 +32,10 @@ The `vercel doctor` command checks your [Vercel CLI](/docs/cli) setup and shows 
 
 - [Diagnose Vercel CLI setup problems with vercel doctor](https://vercel.com/changelog/vercel-cli-now-diagnoses-setup-problems-with-vercel-doctor)
 - [vercel health](https://vercel.com/docs/cli/health) — Read Vercel platform status, active incidents, scheduled maintenance, and recently resolved incidents from your terminal
-- [vercel security](https://vercel.com/docs/cli/security) — Inspect the security posture of your Vercel team from the terminal: run every security check, list findings, and triage
-- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel docs](https://vercel.com/docs/cli/docs) — Search and read the Vercel docs from your terminal using the Vercel CLI.
+- [vercel ci](https://vercel.com/docs/cli/ci) — Enable or disable Vercel CI for repositories, inspect runs, search logs, and rerun jobs from the command line.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
+- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 
 Full cross-link map for this page: [/docs/cli/doctor.graph.md](/docs/cli/doctor.graph.md)
 <!-- /docsgraph:related -->
@@ -106,6 +107,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

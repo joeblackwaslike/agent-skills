@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api
 summary: Generate and stream text responses using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/getting-started/text.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "36e7d8fac10e1dbd4b4040c6dfab2288c291c5c611ab1ccc40687581a2c02403"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "052f4c9b8dc079ba6e4fb98708a8a4033915e52d6e840fc6719aafe94d7254bc"
 ---
 
 # AI Gateway Text Generation Quickstart
@@ -37,7 +38,6 @@ Stream a text response through AI Gateway.
 - [OpenAI Responses Text Generation with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/text-generation) — Generate text responses with the OpenAI Responses API through AI Gateway.
 - [Video Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/video) — Generate a video from a text prompt using AI Gateway.
 - [OpenResponses Text Generation with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/text-generation) — Generate text responses using the OpenResponses API through AI Gateway.
-- [Chat SDK with AI Gateway](https://vercel.com/docs/chat-sdk/integrations/ai-gateway) — Stream AI Gateway model responses into Chat SDK conversations with AI SDK and message history.
 
 Full cross-link map for this page: [/docs/ai-gateway/getting-started/text.graph.md](/docs/ai-gateway/getting-started/text.graph.md)
 <!-- /docsgraph:related -->
@@ -97,6 +97,18 @@ node index.mts
 - Add [tools and structured output](/docs/ai-gateway/modalities/text-generation)
 - Configure [provider routing and fallbacks](/docs/ai-gateway/models-and-providers/provider-options)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

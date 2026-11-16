@@ -11,9 +11,10 @@ related:
   - /docs/runtime-logs
 summary: The function returned a non-string body. This is a function error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/body_not_a_string_from_function.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "8351a05fe2e432bf24902187bad242babd43fd015be1aaa2ddca21f7cf572aa8"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c89b3fca03f68c188a1fe7e5bb0f8324e7371895f8dd8e797f18825ca6f738cc"
 ---
 
 # BODY_NOT_A_STRING_FROM_FUNCTION
@@ -33,6 +34,18 @@ To troubleshoot this error, follow these steps:
 3. **Check data types:** If the function is processing input data or retrieving data from external sources, ensure that the data is being correctly converted to a string before being returned
 4. **Review function logs:** Check the [function logs](/docs/runtime-logs#type) for any errors or warnings that might indicate why a non-string value is being returned
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/deployment-protection/methods-to-protect-deployments/trusted-ips
 summary: Compare Deployment Protection feature availability and pricing across Hobby, Pro, and Enterprise plans.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployment-protection/usage-and-pricing.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "e6451b379d2c8dc5995861d343aa15c5f9e0dc9f312964d5d810e5c5e22f4ea4"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c7ac4c7f530c5cb1ef1b7edc133dfcaa7db22a86ebb51b5504181db0e9319e32"
 ---
 
 # Usage & Pricing for Deployment Protection
@@ -34,12 +35,11 @@ Most Deployment Protection features are available on all plans at no additional 
 - [Choose between Vercel Passport and other Deployment Protection methods](https://vercel.com/kb/guide/vercel-passport-vs-deployment-protection) — Compare Vercel Passport with Vercel Authentication, Password Protection, and Trusted IPs to choose the right Deployment
 - [Protect production deployments for free on every plan](https://vercel.com/changelog/protect-production-deployments-for-free-on-every-plan)
 - [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments)
-- [Deployment Protection is now enabled by default for new projects](https://vercel.com/changelog/deployment-protection-is-now-enabled-by-default-for-new-projects)
 - [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [get_project_deployment_protection](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project_deployment_protection) — Use get_project_deployment_protection with Vercel MCP.
 - [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
-- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
-- [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
+- [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby) — Learn about the Hobby plan and how it compares to the Pro plan.
 
 Full cross-link map for this page: [/docs/deployment-protection/usage-and-pricing.graph.md](/docs/deployment-protection/usage-and-pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -81,6 +81,18 @@ If you prefer to switch to project-level Password Protection, contact support.
 - [Methods to protect deployments](/docs/deployment-protection/methods-to-protect-deployments)
 - [Methods to bypass Deployment Protection](/docs/deployment-protection/methods-to-bypass-deployment-protection)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

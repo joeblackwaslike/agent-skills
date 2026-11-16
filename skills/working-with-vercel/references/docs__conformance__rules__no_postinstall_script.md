@@ -11,9 +11,10 @@ related:
   []
 summary: "Prevent the use of `\"postinstall\"` script in packages."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/no_postinstall_script.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "661b589286ad946d255ac6cbd2ed54fbaccd56a2df98de16cfa033d32b0d6b7e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3b5aa6b182362eb1bc0e8f19524c0c3f93fff449c3db8d77e01553ce53880b3c"
 ---
 
 # NO_POSTINSTALL_SCRIPT
@@ -36,6 +37,18 @@ If you hit this issue, you can resolve it by removing the `"postinstall"` script
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

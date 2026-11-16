@@ -14,9 +14,10 @@ related:
   - /docs/deploy-hooks
 summary: "Learn how to use the Deploy Button's callback parameters to redirect users to your application after a successful deployment."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deploy-button/callback.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "32eb5f3ac433b32ce2b2cbc90d8ec8782e75c1ed72b9eaa5a906479a579919b5"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9a9c683a8a6547f7526b2c3284c8983730d28f06adedd3021659a74941b177e4"
 ---
 
 # Using Callbacks with the Deploy Button
@@ -114,6 +115,18 @@ The example below shows a Deploy Button source URL using the Redirect URL, Devel
 https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fhello-world&redirect-url=https%3A%2F%2Fmy-headless-application.com&developer-id=oac_7rUTiCMow23Gyfao9RQQ3Es2&production-deploy-hook=MyHeadlessProject
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

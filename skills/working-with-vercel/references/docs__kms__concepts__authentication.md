@@ -16,9 +16,10 @@ related:
   - /docs/kms/concepts/project-grants
 summary: How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel access token, and how relying...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/kms/concepts/authentication.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "003337975b7d740f5e6189dfe9a4662f2d7ba36640b8cd007d7f71bfd629b544"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f21bc182feccdcec88003848c23683dbcaad2259991a0b0655f929e65ccb48ca"
 ---
 
 # Vercel KMS Authentication
@@ -36,7 +37,7 @@ KMS authorizes requests differently depending on what you are doing. Signing is 
 - [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
 - [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys — Create a new signing key for a KMS issuer. Depending on the activation mode, the
 - [Create an issuer policy](https://vercel.com/docs/rest-api/kms/create-an-issuer-policy) — POST /v1/kms/issuers/{issuerId}/policies — Attach a policy to a KMS issuer that grants a project's deployments permissio
-- [Troubleshooting Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/troubleshooting) — Learn how to troubleshoot common errors with Sign in with Vercel
+- [Sign a message](https://vercel.com/docs/rest-api/kms/sign-a-message) — POST /v1/kms/issuers/{issuerId}/sign/message — Sign a raw message with a KMS issuer's active signing key. Authenticate t
 
 Full cross-link map for this page: [/docs/kms/concepts/authentication.graph.md](/docs/kms/concepts/authentication.graph.md)
 <!-- /docsgraph:related -->
@@ -92,6 +93,18 @@ const { payload } = await jwtVerify(token, jwks, { issuer });
 - [Key rotation](/docs/kms/concepts/key-rotation)
 - [OIDC federation](/docs/oidc)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

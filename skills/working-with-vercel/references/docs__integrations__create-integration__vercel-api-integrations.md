@@ -16,9 +16,10 @@ related:
   - /docs/rest-api/integrations/retrieve-an-integration-configuration
 summary: Learn how to use Vercel REST API to build your integrations and work with redirect URLs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/vercel-api-integrations.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c38cd60f690933888439cc484078155e9099bcbd8d285a1fbad892e1ad526fa7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1ccf6d11e74f3c8f3c21fc866c34a93df94b82ec9ca4332a0059c9be206fae36"
 ---
 
 # Building Integrations with Vercel REST API
@@ -35,8 +36,8 @@ See the following API reference documentation for how to use Vercel REST API to 
 
 - [Vercel SDK Reference](https://vercel.com/docs/rest-api/sdk) — Interact programmatically with your Vercel account using the SDK.
 - [Retrieve project domains by project by id or name](https://vercel.com/docs/rest-api/projects/retrieve-project-domains-by-project-by-id-or-name) — GET /v9/projects/{idOrName}/domains — Retrieve the domains associated with a given project by passing either the project
-- [Vercel CLI Overview](https://vercel.com/docs/cli) — Learn how to use the Vercel command-line interface \\(CLI\\) to manage and configure your Vercel Projects from the command
 - [Get a project domain](https://vercel.com/docs/rest-api/projects/get-a-project-domain) — GET /v9/projects/{idOrName}/domains/{domain} — Get project domain by project id/name and domain name.
+- [Vercel CLI Overview](https://vercel.com/docs/cli) — Learn how to use the Vercel command-line interface \\(CLI\\) to manage and configure your Vercel Projects from the command
 - [Update a project domain](https://vercel.com/docs/rest-api/projects/update-a-project-domain) — PATCH /v9/projects/{idOrName}/domains/{domain} — Update a project domain's configuration, including the name, git branch
 
 Full cross-link map for this page: [/docs/integrations/create-integration/vercel-api-integrations.graph.md](/docs/integrations/create-integration/vercel-api-integrations.graph.md)
@@ -204,6 +205,18 @@ Ensure the Scope of Your [Access Token](/docs/integrations/create-integration/ve
 
 No, integration configuration IDs (`icfg_*`) are not reused after an integration is deleted or uninstalled. Each installation of an integration receives a unique configuration ID that is permanently retired when the integration is removed. If you reinstall the same integration later, a new unique configuration ID will be generated.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

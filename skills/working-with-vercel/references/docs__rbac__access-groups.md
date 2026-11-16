@@ -13,9 +13,10 @@ related:
   - /docs/directory-sync
 summary: Learn how to configure access groups for team members on a Vercel account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/rbac/access-groups.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "6c4da83007f8c255d2009659fdc6cc77f790fb6dfd0d5e0c1e8108419ac17335"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "59d3f5dc4fb57ae008f7bdfb0da596a6351ff2ba9b36f8793f90c54cc26afb6e"
 ---
 
 # Access Groups
@@ -35,10 +36,10 @@ Access Groups provide a way to manage groups of Vercel users across projects on 
 - [Enterprise](https://v0.app/docs/enterprise) — Learn how to manage v0 seats, access, and more in your Vercel Enterprise account.
 - [Access groups now generally available on Enterprise plans](https://vercel.com/changelog/access-groups-now-generally-available-on-enterprise-plans)
 - [Access Groups](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups) — Vercel MCP tools for access groups.
-- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 - [List access groups for a team, project or member](https://vercel.com/docs/rest-api/access-groups/list-access-groups-for-a-team-project-or-member) — GET /v1/access-groups — List access groups
 - [Create an access group project](https://vercel.com/docs/rest-api/access-groups/create-an-access-group-project) — POST /v1/access-groups/{accessGroupIdOrName}/projects — Allows creation of an access group project
 - [Creates an access group](https://vercel.com/docs/rest-api/access-groups/creates-an-access-group) — POST /v1/access-groups — Allows to create an access group
+- [Reads an access group project](https://vercel.com/docs/rest-api/access-groups/reads-an-access-group-project) — GET /v1/access-groups/{accessGroupIdOrName}/projects/{projectId} — Allows reading an access group project
 
 Full cross-link map for this page: [/docs/rbac/access-groups.graph.md](/docs/rbac/access-groups.graph.md)
 <!-- /docsgraph:related -->
@@ -117,6 +118,18 @@ Some things to note:
 - Assignations using directory sync can lead to `Owners`, `Members` `Billing` and `Viewers` being part of an Access Group dependent on these mappings. **In this scenario, access groups assignations will get ignored**
 - When a Directory Group is mapped to an Access Group, members of that group will default to `Contributor` role at team level. This is unless another Directory Group assignation overrides the team role
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

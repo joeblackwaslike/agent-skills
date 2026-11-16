@@ -15,9 +15,10 @@ related:
   - /docs/vercel-blob
 summary: Learn about the pricing for Vercel Blob.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-blob/usage-and-pricing.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "594429fb6f31dc8311dfab27223edbe4ca3ac4efae1fcf6543339544b1807366"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "51de82729367367ca58c129f2e78d700d94770c238ef6299bec5855ff67b56b7"
 ---
 
 # Vercel Blob Pricing
@@ -36,25 +37,25 @@ Vercel Blob usage is measured based on the following:
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
+- [Vercel Blob is now generally available: Cost-efficient, durable storage](https://vercel.com/blog/vercel-blob-now-generally-available)
 - [Increased Blob store limit for Hobby users](https://vercel.com/changelog/increased-blob-store-limit-for-hobby-users)
 - [Unlimited Vercel Blob stores on every plan](https://vercel.com/changelog/unlimited-vercel-blob-stores-on-every-plan)
 - [Store and serve files from Python with Vercel Blob](https://vercel.com/kb/guide/python-and-vercel-blob) — Upload, list, stream, and protect files from a Python app with Vercel Blob, including private per-user storage in FastAP
-- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
 - [Vercel Blob vs Netlify Blobs](https://vercel.com/kb/guide/vercel-blob-vs-netlify-blobs) — Compare Vercel Blob and Netlify Blobs on storage model, public URLs, delivery, limits, and pricing to choose the right o
-- [Vercel Blob is now generally available: Cost-efficient, durable storage](https://vercel.com/blog/vercel-blob-now-generally-available)
-- [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
 - [Vercel Blob is now generally available](https://vercel.com/changelog/vercel-blob-is-now-generally-available)
-- [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing)
+- [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Vercel Storage overview](https://vercel.com/docs/storage) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
 - [Limits and Pricing for Image Optimization](https://vercel.com/docs/image-optimization/limits-and-pricing) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
+- [Cleveland, USA \\(cle1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cle1) — Vercel pricing for the Cleveland, USA \\(cle1\\) region.
 
 Full cross-link map for this page: [/docs/vercel-blob/usage-and-pricing.graph.md](/docs/vercel-blob/usage-and-pricing.graph.md)
 <!-- /docsgraph:related -->
 
 - **Storage Size**: Monthly average of your blob store size (GB-month)
 - **Simple Operations**: Counts when a blob is accessed by its URL and it's a cache MISS, or when you retrieve blob metadata without downloading the blob
-- **Advanced Operations**: Counts when you upload, copy, or list blobs, and when you create a Blob store
+- **Advanced Operations**: Counts when you upload, copy, or list blobs, when you set a TTL on a blob, and when you create a Blob store
 - **Blob Data Transfer**: Charged when blobs are downloaded or viewed
 - **[CDN Requests](/docs/manage-cdn-usage#cdn-requests)**: Each blob access by its URL counts as one CDN Request, regardless if it's a MISS or HIT
 - **[Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer)**: Applied only for cache MISS scenarios
@@ -90,6 +91,7 @@ See the [usage details](#usage-details) and [pricing example](#pricing-example) 
 - Uploads incur [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer) charges when using [Server Uploads](/docs/vercel-blob/server-upload) if your Vercel application is the one receiving the file upload
 - [Multipart uploads](/docs/vercel-blob#multipart-uploads) count as multiple Advanced Operations: one when starting, one per part, one for completion
 - Creating a Blob store counts as one Advanced Operation; deleting a store is free
+- Setting a TTL on a blob adds one Advanced Operation per started 60 days of TTL on top of the write (`setTtl()` is billed only this charge): 1 to 60 days is one extra operation, 61 to 120 days is two, and the maximum of 730 days is 13. Blobs deleted by their TTL are free to delete
 - Delete operations are free
 - **Dashboard interactions count as operations**: Each time you interact with the Vercel dashboard to browse your blob store, upload files, or view blob details, these actions count as Advanced Operations and will appear in your usage metrics.
 
@@ -182,6 +184,18 @@ You pay for storage, operations, and data transfer based on what you use. Splitt
 
 You can monitor and analyze your Vercel Blob usage with the [Observability section in the sidebar](https://vercel.com/d?to=%2F%5Bteam%5D%2F~%2Fobservability%2Fblob\&title=Go+to+Blob+Observability) in the Vercel Dashboard.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

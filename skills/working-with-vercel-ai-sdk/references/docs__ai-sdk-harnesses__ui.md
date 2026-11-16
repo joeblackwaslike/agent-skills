@@ -4,8 +4,8 @@ description: Use AI SDK harnesses with useChat.
 url: "https://ai-sdk.dev/docs/ai-sdk-harnesses/ui"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-harnesses/ui.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "7c47cc2e5d5b31c0571c6c7408e0beb33653fd30b6aff3ff19b3a731cc123852"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "27c2263fc06d23ed25e4ecb47f26b84f9fe3027db2ee4eb4c96bfb7e7b9aa14c"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -207,6 +207,11 @@ Creating the UI message stream before acquiring the session ensures sandbox,
 bootstrap, and harness startup failures are sent as UI error parts instead of
 becoming generic HTTP errors. `getHarnessErrorMessage` preserves reviewed,
 client-safe harness messages and masks unknown server errors.
+
+Because the route passes `onError`, it also formats the errors of failed host
+tool calls that the harness reports itself. Set `redactToolErrors: false` to
+send those error texts unchanged. See
+[Errors](/docs/ai-sdk-ui/chatbot-tool-usage#errors) for details.
 
 Do not use `createAgentUIStreamResponse` directly with `HarnessAgent` unless you
 wrap the agent to inject the required session. `HarnessAgent.stream()` requires

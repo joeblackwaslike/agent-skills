@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai
 summary: Run TanStack AI coding agents in isolated Vercel Sandbox microVMs with the dedicated provider, workspace configuration, and policies.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/ecosystem/tanstack-ai.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "2f29446f35d98283b7f355828451baef0f55b659efe4226af664271897dc410a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "41ad8b53c36a19affbdf009e02300e7b0fed7fd5803eddbd445efd7013011ded"
 ---
 
 # TanStack AI with Vercel Sandbox
@@ -31,12 +32,11 @@ Run [TanStack AI](https://tanstack.com/ai) coding agents in [Vercel Sandbox](/do
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to give agents persistent storage with Vercel Drives](https://vercel.com/kb/guide/persistent-storage-with-vercel-drives) — Give AI SDK and TanStack AI agents persistent storage with Vercel Drives so they can save and reuse research notes acros
-- [Safely running AI generated code in your Next.js application](https://vercel.com/kb/guide/running-ai-generated-code-sandbox) — How to execute untrusted, AI‑generated code from a Next.js app using Vercel Sandbox, an isolated, ephemeral environment.
 - [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
+- [How to give agents persistent storage with Vercel Drives](https://vercel.com/kb/guide/persistent-storage-with-vercel-drives) — Give AI SDK and TanStack AI agents persistent storage with Vercel Drives so they can save and reuse research notes acros
 - [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
-- [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available)
+- [Safely running AI generated code in your Next.js application](https://vercel.com/kb/guide/running-ai-generated-code-sandbox) — How to execute untrusted, AI‑generated code from a Next.js app using Vercel Sandbox, an isolated, ephemeral environment.
 - [TanStack AI with MCP](https://vercel.com/docs/mcp/integrations/tanstack-ai) — Connect TanStack AI to a Model Context Protocol server on Vercel and call its tools with models served through AI Gatewa
 - [TanStack Start on Vercel](https://vercel.com/docs/frameworks/full-stack/tanstack-start) — Deploy TanStack Start applications to Vercel with Nitro and configure Vercel Functions.
 
@@ -209,6 +209,18 @@ For JavaScript, run `node --env-file=.env index.mjs`. Your terminal displays str
 - Explore the [Vercel provider reference](https://tanstack.com/ai/latest/docs/sandbox/providers#vercel) and [workspace configuration](https://tanstack.com/ai/latest/docs/sandbox/workspace).
 - Connect model requests to [TanStack AI with AI Gateway](/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

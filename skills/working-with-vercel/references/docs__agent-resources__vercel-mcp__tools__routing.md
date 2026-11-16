@@ -12,9 +12,10 @@ related:
   []
 summary: Vercel MCP tools for routing.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9682d9df7bcf8e379255aaa3e563c18a4a17fd38bd948d97c09f7b6a253cf10e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2c4e2e33d8c7a3dea52f39c2a4ef2ae526fc2c93e3efb3c5197cc0829efd38b1"
 ---
 
 # Routing
@@ -27,9 +28,9 @@ Control where requests go with project routing rules, redirects, and deployment 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Promote, restore, or discard a routing rule version](https://vercel.com/docs/rest-api/project-routes/promote-restore-or-discard-a-routing-rule-version) — POST /v1/projects/{projectId}/routes/versions — Promote staged routing rules to production, restore a previous productio
 - [vercel routes](https://vercel.com/docs/cli/routes) — Learn how to manage project-level routing rules using the vercel routes CLI command.
-- [Project-Level Routing Rules](https://vercel.com/docs/routing/project-routing-rules) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
+- [Promote, restore, or discard a routing rule version](https://vercel.com/docs/rest-api/project-routes/promote-restore-or-discard-a-routing-rule-version) — POST /v1/projects/{projectId}/routes/versions — Promote staged routing rules to production, restore a previous productio
+- [Get routing rule version history](https://vercel.com/docs/rest-api/project-routes/get-routing-rule-version-history) — GET /v1/projects/{projectId}/routes/versions — Get the version history for a project's routing rules. Returns the stagin
 - [Edit a routing rule](https://vercel.com/docs/rest-api/project-routes/edit-a-routing-rule) — PATCH /v1/projects/{projectId}/routes/{routeId} — Replace a routing rule identified by its ID, or restore it from the cu
 - [Stage routing rules](https://vercel.com/docs/rest-api/project-routes/stage-routing-rules) — PUT /v1/projects/{projectId}/routes — Stage routing rules for a project. Set \\`overwrite\\` to true to replace all existi
 
@@ -271,6 +272,18 @@ Promote, restore, or discard a routing rule version.
 | `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody` | object | No       | Request body for this tool.                                 |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

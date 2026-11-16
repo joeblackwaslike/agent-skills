@@ -11,9 +11,10 @@ related:
   []
 summary: Requires that all exported functions have JSDoc comments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/require_docs_on_exported_functions.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f8590131fdadb01ed5e75620a1729a50d172d9a0f569364cdf1dcbb5e65ab68d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "47ad9161b2d9114a521cc0d4087164b277b8d1443555f073e12c2966cf625e16"
 ---
 
 # REQUIRE_DOCS_ON_EXPORTED_FUNCTIONS
@@ -104,6 +105,18 @@ export function appendWorld(str) {
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

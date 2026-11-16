@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/github-enterprise-server.md"
-fetched_at: "2026-11-02T12:02:15.109Z"
-sha256: "81c40ba871e40b9c0d3e8f4ebcc631c71912ae1a8996bfb35e320c05ebc5498e"
+fetched_at: "2026-11-16T12:28:44.823Z"
+sha256: "50025e0d4f143e72e52aa2ef6505fa44961a0b050d45dd2ed86898943318ba2f"
 ---
 
 > ## Documentation Index
@@ -196,7 +196,7 @@ See the [strictKnownMarketplaces](https://code.claude.com/docs/en/settings-refer
 A few features behave differently on GHES than on github.com. The [feature table](#what-works-with-github-enterprise-server) summarizes support; this section covers the workarounds.
 
 * **`/install-github-app` command**: follow the [admin setup](#admin-setup) flow on claude.ai instead. If you also want GitHub Actions workflows on GHES, adapt the [example workflow](https://github.com/anthropics/claude-code-action/blob/main/examples/claude.yml) manually.
-* **GitHub MCP server**: use the `gh` CLI configured for your GHES host instead. Run `gh auth login --hostname github.example.com` to authenticate, then Claude can use `gh` commands in sessions.
+* **GitHub MCP server**: in a session on your own machine, use the `gh` CLI configured for your GHES host instead. Run `gh auth login --hostname github.example.com` to authenticate, then Claude can use `gh` commands there.
 
 ## Troubleshooting
 

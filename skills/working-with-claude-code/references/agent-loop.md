@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/agent-loop.md"
-fetched_at: "2026-11-09T12:34:10.263Z"
-sha256: "cdcdc82c3740d17b2eaac637c0ab7e7855b98674f01718072b92607a95ae59c9"
+fetched_at: "2026-11-16T12:28:44.823Z"
+sha256: "0668f2f6378432f95974710c16c14a966a0b60e1239edadbf1e3730a09eb285e"
 ---
 
 > ## Documentation Index
@@ -226,7 +226,7 @@ If you don't set `effort`, Claude Code resolves the effort level itself, in the 
 
 > [!NOTE]
 >
-> `effort` trades latency and token cost for reasoning depth within each response. [Extended thinking](https://platform.claude.com/docs/en/build-with-claude/extended-thinking) is a separate feature that produces `thinking` blocks in the output, and the `display` field on `ThinkingConfig` for [Python](https://code.claude.com/docs/en/agent-sdk/python.md#thinkingconfig) or [TypeScript](https://code.claude.com/docs/en/agent-sdk/typescript.md#thinkingconfig) controls whether you receive their text. They are independent: you can set `effort: "low"` with extended thinking enabled, or `effort: "max"` without it.
+> `effort` trades latency and token cost for reasoning depth within each response. [Extended thinking](https://platform.claude.com/docs/en/build-with-claude/extended-thinking) produces `thinking` blocks in the output, and the `display` field on `ThinkingConfig` for [Python](https://code.claude.com/docs/en/agent-sdk/python.md#thinkingconfig) or [TypeScript](https://code.claude.com/docs/en/agent-sdk/typescript.md#thinkingconfig) controls whether you receive their text.
 
 Use lower effort for agents doing simple, well-scoped tasks, such as listing files or running a single grep, to reduce cost and latency. Set `effort` in the top-level `query()` options for the [session](https://code.claude.com/docs/en/sub-agents.md#choose-an-effort-level), or per subagent with the `effort` field on [`AgentDefinition`](https://code.claude.com/docs/en/agent-sdk/subagents#agentdefinition-configuration) to override the session level.
 
@@ -260,7 +260,7 @@ Here's how each component affects context in the SDK:
 | Source | When it loads | Impact |
 | :- | :- | :- |
 | **System prompt** | Every request | Small fixed cost, always present |
-| **CLAUDE.md files** | Session start, via [`settingSources`](https://code.claude.com/docs/en/agent-sdk/claude-code-features) | Full content in every request (but prompt-cached, so only the first request pays full cost) |
+| **CLAUDE.md files** | Session start, via [`settingSources`](https://code.claude.com/docs/en/agent-sdk/claude-code-features) | Full content in every request (but prompt-cached) |
 | **Tool definitions** | Every request for core built-in tools such as Bash, Read, and Edit; on demand for MCP tools and other built-in tools, which [tool search](https://code.claude.com/docs/en/agent-sdk/mcp.md#mcp-tool-search) defers by default | Every schema loads upfront in the cases under [Configure tool search](https://code.claude.com/docs/en/agent-sdk/tool-search.md#configure-tool-search) |
 | **Conversation history** | Accumulates over turns | Grows with each turn: prompts, responses, tool inputs, tool outputs |
 | **Skill descriptions** | Session start, via setting sources | Short summaries; full content loads only when invoked |

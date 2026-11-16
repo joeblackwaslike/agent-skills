@@ -11,9 +11,10 @@ related:
   []
 summary: Learn how the Content Security Policy (CSP) offers defense against web vulnerabilities, its key features, and best practices.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cdn-security/security-headers.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "5105a39d01dc779ddd47ed2672f6c158c708dcd47b1eda5eb96d2e02595eccc9"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "6106da87ddef1230717a6225b6b387a427c6ce5731a8fa1d8c9c8e47e9c2a55f"
 ---
 
 # Content Security Policy
@@ -26,14 +27,11 @@ Content Security Policy is a browser feature designed to prevent cross-site scri
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to set a Content Security Policy (CSP) for your Next.js application](https://nextjs.org/docs/pages/guides/content-security-policy) — Learn how to set a Content Security Policy (CSP) for your Next.js application.
-- [How to conduct PCI scans on Vercel: A complete guide to IP safelisting](https://vercel.com/kb/guide/how-to-conduct-pci-scans-on-vercel-guide) — Scan and verify your Vercel deployments for secure, PCI-compliant payment processing.
-- [Troubleshooting Cross-Origin Errors \\(net::ERR_BLOCKED_BY_ORB\\) with Deployment Protection](https://vercel.com/kb/guide/troubleshooting-cross-origin-errors-neterr-blocked-by-orb-with-deployment-protection) — Learn to resolve \\`net::ERR_BLOCKED_BY_ORB\\` errors on protected Vercel deployments. This guide explains how cross-origi
 - [Security](https://vercel.com/docs/vercel-blob/security) — Learn how your Vercel Blob store is secured
 - [Vercel security overview](https://vercel.com/docs/security) — Vercel provides built-in and customizable features to ensure that your site is secure.
 - [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption) — Learn how Vercel encrypts data in transit and at rest.
+- [Vercel CDN overview](https://vercel.com/docs/cdn) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Vercel Support Code Visibility, Git Fork Protection, and
-- [How Vercel CDN Works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
 
 Full cross-link map for this page: [/docs/cdn-security/security-headers.graph.md](/docs/cdn-security/security-headers.graph.md)
 <!-- /docsgraph:related -->
@@ -80,6 +78,18 @@ Keep in mind that while CSP is a robust security measure, it's part of a multi-l
 
 Additionally, while CSP is supported by modern browsers, nuances exist in their implementations. Ensure you **test your policy across diverse browsers**, accounting for variations and ensuring the same security postures.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/observability/observability-plus
 summary: Query and visualize your Vercel usage, traffic, and more with Monitoring.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/query/monitoring.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "982d92949cc4b79fb43bbcc5299086e7d435f45354a50e9b98a7a9caf4f54aee"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b3ffdd4999f830b0d08cb0723f52689723426ce8af81496e54a4189a10ce6843"
 ---
 
 # Monitoring
@@ -30,17 +31,16 @@ Monitoring is now
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Monitoring is now available to view traffic and performance data for improved observability ](https://vercel.com/changelog/monitoring-is-now-available-to-view-traffic-and-performance-data-for)
-- [Observability Plus replacing legacy Monitoring](https://vercel.com/changelog/observability-plus-replacing-legacy-monitoring)
 - [Introducing Vercel Monitoring](https://vercel.com/blog/introducing-monitoring)
+- [Observability Plus replacing legacy Monitoring](https://vercel.com/changelog/observability-plus-replacing-legacy-monitoring)
+- [Monitoring is now available to view traffic and performance data for improved observability ](https://vercel.com/changelog/monitoring-is-now-available-to-view-traffic-and-performance-data-for)
 - [Create custom monitors in Vercel Observability](https://vercel.com/changelog/create-custom-monitors-in-vercel-observability)
 - [Monitoring is in public beta for Enterprise Teams](https://vercel.com/changelog/monitoring-is-in-public-beta-for-enterprise-teams)
-- [Monitoring pricing reduced up to 87%](https://vercel.com/changelog/monitoring-pricing-reduced-up-to-87)
-- [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
+- [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
 - [Incremental Static Regeneration \\(ISR\\)](https://vercel.com/docs/incremental-static-regeneration) — ISR serves cached static pages while regenerating content in the background. Vercel\\\\
-- [Limits](https://vercel.com/docs/limits) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 
 Full cross-link map for this page: [/docs/query/monitoring.graph.md](/docs/query/monitoring.graph.md)
 <!-- /docsgraph:related -->
@@ -137,6 +137,18 @@ For more information on what to do next, we recommend the following articles:
 - [Reference](/docs/query/monitoring/monitoring-reference): Learn about the clauses, fields, and variables used to create a Monitoring
 - [Limits and Pricing](/docs/query/monitoring/limits-and-pricing): Learn about our limits and pricing when using Monitoring. Different limitations are applied depending on your plan.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

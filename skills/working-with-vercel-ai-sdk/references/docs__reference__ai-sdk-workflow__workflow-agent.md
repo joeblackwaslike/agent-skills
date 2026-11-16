@@ -4,8 +4,8 @@ description: API Reference for the WorkflowAgent class.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-workflow/workflow-agent"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-workflow/workflow-agent.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "a6314e8b2a62b403b12a9e221fcdda188f90413f8977dac1da1684987e2dbef3"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "af145ca6971380da39797e751ddef159437c4c76d97dad4afcfeb6848a50a100"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -13,6 +13,8 @@ sha256: "a6314e8b2a62b403b12a9e221fcdda188f90413f8977dac1da1684987e2dbef3"
 Creates a durable, resumable AI agent for use inside a workflow. `WorkflowAgent` handles the agent loop, tool schema serialization across workflow step boundaries, and built-in tool approval flows.
 
 Unlike [`ToolLoopAgent`](/docs/reference/ai-sdk-core/tool-loop-agent) from the `ai` package, `WorkflowAgent` is designed to survive process restarts, pause for human approval, and integrate with the Workflow DevKit's step mechanism.
+
+`WorkflowAgent` does not implement the `Agent` interface, and its options, callbacks, and results differ from `ToolLoopAgent`. See [Differences from ToolLoopAgent](/docs/agents/workflow-agent#differences-from-toolloopagent) for the list.
 
 `WorkflowAgent` supports `runtimeContext` for shared agent state and `toolsContext` for per-tool context. Because these values can cross workflow and step boundaries, keep them serializable durable data. Unlike `ToolLoopAgent`, do not place functions, class instances, symbols, database clients, or SDK clients in context; pass identifiers or configuration and recreate non-serializable resources inside step functions.
 
@@ -70,10 +72,13 @@ import { WorkflowAgent } from "@ai-sdk/workflow"
 - `stopWhen?` (`StopCondition | StopCondition[]`): Default stop condition for the agent loop. When omitted, generate defaults to 20 steps, while stream has no maximum step count. Use \`isStepCount()\` to bound execution. Per-call values override this default.
 - `toolCallConcurrency?` (`number`): Maximum number of local tool calls executing concurrently within a step, including approved calls. Must be a positive integer. Set to 1 for sequential execution in model order. Defaults to unlimited concurrency. Can be changed by prepareCall; explicit generate/stream call options take precedence. Provider-executed tools are unaffected.
 - `activeTools?` (`ActiveTools<TTools>`): Default set of active tools. Limits which tools the model can call without changing tool call and result types. Per-stream values override this default.
+- `toolOrder?` (`ToolOrder<TTools>`): Controls the order in which tools are sent to the provider. The list can be partial. Tools not listed in \`toolOrder\` are sent after the listed tools, sorted alphabetically. Tool names are restricted to the string keys of the tool set.
 - `output?` (`OutputSpecification`): Default structured output specification. Per-stream values override this default.
 - `repairToolCall?` (`ToolCallRepairFunction`): Default function to repair tool calls that fail to parse. Mark the function with 'use step' when used in a workflow. Per-stream values override this default.
-- `experimental_download?` (`DownloadFunction`): Default custom download function for URLs. Mark the function with 'use step' when used in a workflow. Per-stream values override this default.
+- `experimental_refineToolInput?` (`ToolInputRefinement<TTools>`): Optional mapping of tool names to functions that refine parsed tool inputs. Each function receives the typed input for its tool and must return the same input type shape. The refined input is used for tool execution, output parts, lifecycle callbacks, and telemetry in both \`generate()\` and \`stream()\`. Per-stream values override this default.
+- `experimental_download?` (`DownloadFunction`): Default custom download function for URLs. Mark the function with 'use step' when used in a workflow and create any fetch transport inside the step rather than passing it across workflow boundaries. Per-stream values override this default. For untrusted URLs, see \[Secure URL Fetching]\(/docs/advanced/secure-url-fetching#core-file-downloads).
 - `experimental_sandbox?` (`Experimental_SandboxSession`): Default sandbox session passed to tool descriptions and execution as \`experimental\_sandbox\`, and exposed to \`prepareStep\`. Per-stream values override this default.
+- `toolApproval?` (`ToolApprovalConfiguration<TTools, TRuntimeContext>`): Default approval configuration for tool calls. Pass a \`GenericToolApprovalFunction\` to handle all tool calls in one callback with \`toolCall\`, \`tools\`, \`toolsContext\`, \`messages\`, and \`runtimeContext\`, or pass a per-tool object where each key can be a status (\`'not-applicable'\`, \`'approved'\`, \`'denied'\`, or \`'user-approval'\`), an object form such as \`\{ type: 'denied', reason: 'blocked by policy' }\`, or a \`SingleToolApprovalFunction\` that receives the tool input and options \`toolCallId\`, \`messages\`, \`toolContext\`, and \`runtimeContext\`. This setting takes precedence over a tool's \`needsApproval\` default. The functions in the configuration run in workflow context, outside of the durable model steps, and are never passed across a step boundary. Per-stream values override this default.
 - `experimental_toolApprovalSecret?` (`WorkflowToolApprovalSecret`): Workflow-safe reference to the environment variable containing the secret used to HMAC-sign tool approval requests and verify approved message history before tool execution. Only the environment variable name crosses workflow boundaries; the secret is read inside signing and verification steps. Per-stream values override this default.
 - `prepareStep?` (`PrepareStepCallback`): Callback called before each step in the agent loop. Use it to modify settings, manage context, inject messages dynamically, or override \`experimental\_sandbox\` for the current step. Receives step number, previous steps, messages, context, and sandbox.
 - `prepareCall?` (`PrepareCallCallback`): Callback called once before the agent loop starts. Use it to transform model, instructions, tools configuration, or other settings based on runtime context. Cannot override \`tools\` (bound at construction for type safety).
@@ -114,6 +119,8 @@ import { WorkflowAgent } from "@ai-sdk/workflow"
 - `onStepEnd?` (`WorkflowAgentOnStepEndCallback`): Callback invoked after each agent step completes. If also specified in \`stream()\`, both callbacks fire (constructor first).
 - `onStepFinish?` (`WorkflowAgentOnStepFinishCallback`): Deprecated. Use \`onStepEnd\` instead. This alias is only used as a fallback when \`onStepEnd\` is not provided.
 - `onEnd?` (`WorkflowAgentOnEndCallback`): Callback called when all agent steps are finished and the response is complete. Receives steps, messages, text, finish reason, total usage, and context. If also specified in \`stream()\`, both callbacks fire (constructor first).
+- `onError?` (`WorkflowAgentOnErrorCallback`): Callback called when an error occurs. Aborts are not reported. If also specified in \`generate()\` or \`stream()\`, both callbacks fire (constructor first). Errors thrown by the callback are ignored.
+- `onAbort?` (`WorkflowAgentOnAbortCallback`): Callback called when the operation is aborted. Receives all previously finished steps. If also specified in \`generate()\` or \`stream()\`, both callbacks fire (constructor first). Errors thrown by the callback are ignored.
 - `maxOutputTokens?` (`number`): Maximum number of tokens the model is allowed to generate.
 - `temperature?` (`number`): Sampling temperature, controls randomness.
 - `topP?` (`number`): Top-p (nucleus) sampling parameter.
@@ -125,6 +132,9 @@ import { WorkflowAgent } from "@ai-sdk/workflow"
 - `maxRetries?` (`number`): How many times to retry retryable model-call failures. Set to 0 to disable retries. Retry-After response headers are respected, and durable workflow step retries are not stacked. Default: 2.
 - `headers?` (`Record<string, string | undefined>`): Additional HTTP headers to be sent with the request. Only applicable for HTTP-based providers.
 - `providerOptions?` (`ProviderOptions`): Additional provider-specific configuration.
+- `reasoning?` (`LanguageModelV4CallOptions['reasoning']`): Reasoning effort for the model. Controls how much reasoning the model performs before it generates a response.
+- `abortSignal?` (`AbortSignal`): Default abort signal for every call on this agent. An \`abortSignal\` passed to \`generate()\` or \`stream()\` overrides it.
+- `allowSystemInMessages?` (`boolean`): Whether system messages are allowed in the \`prompt\` or \`messages\` fields. When \`false\`, system messages in \`prompt\` or \`messages\` are rejected and must be provided through \`instructions\`. Default: false.
 
 ## Properties
 
@@ -178,6 +188,8 @@ const result = await agent.stream({
 });
 ```
 
+In addition to the options in the table, `stream()` accepts the generation settings of the constructor (`maxOutputTokens`, `temperature`, `topP`, `topK`, `presencePenalty`, `frequencyPenalty`, `stopSequences`, `seed`, `reasoning`, `maxRetries`, `headers`, `providerOptions`) and `abortSignal`. A value passed to `stream()` overrides the constructor value.
+
 - `prompt` (`string | Array<ModelMessage>`): A prompt string or a list of messages. You can either use \`prompt\` or \`messages\` but not both.
 - `messages` (`Array<ModelMessage>`): The conversation messages to process. You can either use \`prompt\` or \`messages\` but not both.
 - `writable?` (`WritableStream<ModelCallStreamPart>`): A writable stream that receives raw model stream parts in real-time. Convert to UI message chunks at the response boundary using \`createModelCallToUIChunkTransform()\`.
@@ -187,14 +199,17 @@ const result = await agent.stream({
 - `toolChoice?` (`ToolChoice`): Override the tool choice strategy for this call. Default: 'auto'.
 - `toolCallConcurrency?` (`number`): Override the local tool call concurrency limit for this call. Must be a positive integer. Set to 1 for sequential execution in model order, including approved calls. Takes precedence over the constructor and prepareCall.
 - `activeTools?` (`ActiveTools<TTools>`): Limits the subset of tools available for this call without changing tool call and result types.
+- `toolOrder?` (`ToolOrder<TTools>`): Controls the order in which tools are sent to the provider. The list can be partial. Tools not listed in \`toolOrder\` are sent after the listed tools, sorted alphabetically. Tool names are restricted to the string keys of the tool set.
 - `output?` (`OutputSpecification`): Structured output specification. Use \`Output.object(\{ schema })\` for typed objects or \`Output.text()\` for text.
-- `timeout?` (`number`): Model-call deadline in milliseconds. Inside a workflow, the absolute deadline is checked at dispatch and retry and remains in effect across suspension. It does not cancel a tool waiting on a Workflow hook; use run.cancel() to stop the suspended run.
+- `timeout?` (`WorkflowAgentTimeoutConfiguration`): Timeout for model calls. A number, or \`totalMs\` in the object form, is one deadline in milliseconds for the whole run. Inside a workflow, the absolute deadline is checked at dispatch and retry and remains in effect across suspension. \`stepMs\` limits each model call. \`firstChunkMs\` limits the wait for the first output of each model call, and \`chunkMs\` limits the wait between two outputs. A timeout does not cancel a tool waiting on a Workflow hook; use run.cancel() to stop the suspended run.
 - `sendFinish?` (`boolean`): Whether to send a 'finish' chunk to the writable stream when streaming completes. Default: true.
 - `preventClose?` (`boolean`): Whether to prevent the writable stream from being closed after streaming completes. Default: false.
 - `includeRawChunks?` (`boolean`): Include raw, unprocessed chunks from the provider in the stream. Default: false.
 - `repairToolCall?` (`ToolCallRepairFunction`): Callback to attempt automatic recovery when a tool call cannot be parsed. Mark the function with 'use step' when used in a workflow.
-- `experimental_download?` (`DownloadFunction`): Custom download function for fetching files/URLs. Mark the function with 'use step' when used in a workflow.
+- `experimental_refineToolInput?` (`ToolInputRefinement<TTools>`): Optional mapping of tool names to functions that refine parsed tool inputs. Each function receives the typed input for its tool and must return the same input type shape. The refined input is used for tool execution, output parts, lifecycle callbacks, and telemetry in both \`generate()\` and \`stream()\`. Overrides the constructor default.
+- `experimental_download?` (`DownloadFunction`): Custom download function for fetching files/URLs. Mark the function with 'use step' when used in a workflow. For untrusted URLs, see \[Secure URL Fetching]\(/docs/advanced/secure-url-fetching#core-file-downloads).
 - `experimental_sandbox?` (`Experimental_SandboxSession`): Sandbox session passed to tool descriptions and execution as \`experimental\_sandbox\`, and exposed to \`prepareStep\`. Overrides the constructor default.
+- `toolApproval?` (`ToolApprovalConfiguration<TTools, TRuntimeContext>`): Approval configuration for tool calls. Pass a \`GenericToolApprovalFunction\` to handle all tool calls in one callback with \`toolCall\`, \`tools\`, \`toolsContext\`, \`messages\`, and \`runtimeContext\`, or pass a per-tool object where each key can be a status (\`'not-applicable'\`, \`'approved'\`, \`'denied'\`, or \`'user-approval'\`), an object form such as \`\{ type: 'denied', reason: 'blocked by policy' }\`, or a \`SingleToolApprovalFunction\` that receives the tool input and options \`toolCallId\`, \`messages\`, \`toolContext\`, and \`runtimeContext\`. This setting takes precedence over a tool's \`needsApproval\` default. The functions in the configuration run in workflow context, outside of the durable model steps, and are never passed across a step boundary. Overrides the constructor default.
 - `experimental_toolApprovalSecret?` (`WorkflowToolApprovalSecret`): Workflow-safe reference to the environment variable containing the secret used to HMAC-sign tool approval requests and verify approved message history before tool execution. Only the environment variable name crosses workflow boundaries; the secret is read inside signing and verification steps. Overrides the constructor default.
 - `telemetry?` (`TelemetryOptions`): Per-call telemetry configuration.
 - `runtimeContext?` (`Context`): Shared runtime context for this stream call. Overrides the constructor default and flows through \`prepareStep\`, lifecycle callbacks, and step results. Must be serializable when used in workflows.
@@ -209,8 +224,8 @@ const result = await agent.stream({
 - `onStepEnd?` (`WorkflowAgentOnStepEndCallback`): Per-call onStepEnd callback. If also specified in the constructor, both fire (constructor first).
 - `onStepFinish?` (`WorkflowAgentOnStepFinishCallback`): Deprecated. Use \`onStepEnd\` instead. This alias is only used as a fallback when \`onStepEnd\` is not provided.
 - `onEnd?` (`WorkflowAgentOnEndCallback`): Per-call onEnd callback. If also specified in the constructor, both fire (constructor first).
-- `onError?` (`WorkflowAgentOnErrorCallback`): Callback invoked when an error occurs during streaming.
-- `onAbort?` (`WorkflowAgentOnAbortCallback`): Callback invoked when the operation is aborted. Receives all previously finished steps.
+- `onError?` (`WorkflowAgentOnErrorCallback`): Callback invoked when an error occurs. Aborts are not reported. If also specified in the constructor, both callbacks fire (constructor first). Errors thrown by the callback are ignored.
+- `onAbort?` (`WorkflowAgentOnAbortCallback`): Callback invoked when the operation is aborted. Receives all previously finished steps. If also specified in the constructor, both callbacks fire (constructor first). Errors thrown by the callback are ignored.
 
 #### Returns
 
@@ -220,6 +235,8 @@ Returns a `Promise<WorkflowAgentStreamResult>` with the following properties:
 - `steps` (`Array<StepResult>`): Details for all steps taken by the agent.
 - `toolCalls` (`Array<ToolCall>`): Tool calls from the last step, including unexecuted calls (e.g., tools requiring approval).
 - `toolResults` (`Array<ToolResult>`): Tool results from the last step. Only includes results for tools that were executed.
+- `finishReason` (`FinishReason`): The finish reason of the last step.
+- `totalUsage` (`LanguageModelUsage`): The token usage of all steps combined.
 - `error` (`unknown | undefined`): The original value from a model stream error part. The property is present when an error part was emitted, even if its value is undefined; use \`'error' in result\` to distinguish that case.
 - `output` (`OUTPUT`): The structured output if an \`output\` specification was provided.
 
@@ -287,6 +304,21 @@ type ActiveTools<TTools extends ToolSet> =
 ```
 
 Limits a workflow agent call to the listed tool names. `undefined` means no tool restriction is applied.
+
+### `WorkflowAgentTimeoutConfiguration`
+
+```ts
+type WorkflowAgentTimeoutConfiguration =
+  | number
+  | {
+      totalMs?: number;
+      stepMs?: number;
+      firstChunkMs?: number;
+      chunkMs?: number;
+    };
+```
+
+The `timeout` option of `generate()` and `stream()`. A number is the total deadline in milliseconds. `generate()` uses `totalMs` and `stepMs`. `stream()` uses all four values. See [Deadlines, cancellation, and replay](/docs/agents/workflow-agent#deadlines-cancellation-and-replay).
 
 ### `InferWorkflowAgentUIMessage`
 
@@ -455,9 +487,9 @@ console.log(result.output);
 
 ### Agent with Tool Approval
 
-For `WorkflowAgent`, tool approval is configured on the tool definition with
-`needsApproval`. For `generateText`, `streamText`, and `ToolLoopAgent`, use
-`toolApproval` instead.
+Tool approval is configured on the tool definition with `needsApproval` or on
+the agent with `toolApproval`. The `toolApproval` configuration takes precedence
+over `needsApproval`.
 
 ```ts
 import { WorkflowAgent } from '@ai-sdk/workflow';

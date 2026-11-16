@@ -4,8 +4,8 @@ description: Learn how to use TypeSafe with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/typesafe-ai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/typesafe-ai.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "801ff31a8a86a9ccf0172e74bc62fff726144129fcc8f2d9daaed406f9233ed5"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "3da2ba1981967dd8111af01f5004d8b54e518333ff616a89fd95086ddf61142a"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -148,7 +148,7 @@ directly. See [model aliases and registries](/docs/ai-sdk-core/decisions#model-a
 
 The provider includes these model IDs and aliases:
 
-| Model ID      | Description                                       |
+| Model         | Description                                       |
 | ------------- | ------------------------------------------------- |
 | `jev-1.13.0`  | Jev 1.13 release.                                 |
 | `jev-1.14.0`  | Jev 1.14 release.                                 |
@@ -333,6 +333,23 @@ embedding, and image model factories throw `NoSuchModelError`.
 
 Decision models support workflow serialization. A custom fetch function is not
 serialized; restored models use the default fetch implementation.
+
+### Decision Model Capabilities
+
+| Model         | Boolean | Choice | Score | Box | Image Input | Reasoning | Max Output Tokens |
+| ------------- | ------- | ------ | ----- | --- | ----------- | --------- | ----------------- |
+| `jev-1.13.0`  | ✓       | ✓      | ✓     | ✓   | ✓           | ✗         | ✗                 |
+| `jev-1.14.0`  | ✓       | ✓      | ✓     | ✓   | ✓           | ✗         | ✗                 |
+| `jev-latest`  | ✓       | ✓      | ✓     | ✓   | ✓           | ✗         | ✗                 |
+| `jev-preview` | ✓       | ✓      | ✓     | ✓   | ✓           | ✗         | ✗                 |
+
+### Provider Option Catalog
+
+| Operation | Option            | Description                                                                                                                            |
+| --------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| decision  | `longContext`     | Enable experimental long context mode with 262k tokens per request and per question; slower and less accurate than default mode.       |
+| decision  | `reference`       | Image file parts only: asset reference used to place the image in state, instructions, or criteria. Defaults to a generated unique ID. |
+| decision  | `insertReference` | Image file parts only: whether to insert the asset reference into state. False requires an explicit reference.                         |
 
 ---
 

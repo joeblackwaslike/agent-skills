@@ -15,9 +15,10 @@ related:
   - /docs/vercel-firewall/vercel-waf/managed-rulesets
 summary: "Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cdn-security.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "8392468bae5aa334a334ccc8bfd9d0625c94e8227842804803d8e2850547f558"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1e8a2b315a01be42e6b92acc93d9c448adc7f3963995505c8573fa2f693b3053"
 ---
 
 # CDN security
@@ -32,14 +33,11 @@ Vercel's CDN applies multiple layers of security to every incoming request befor
 
 - [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
 - [Vercel security roundup: improved bot defenses, DoS mitigations, and insights](https://vercel.com/blog/vercel-security-roundup-improved-bot-defenses-dos-mitigations-and-insights)
-- [How we run Vercel's CDN in front of Discourse](https://vercel.com/blog/how-we-run-vercels-cdn-in-front-of-discourse)
-- [Life of a Vercel request: Securing your app's traffic with Vercel](https://vercel.com/blog/life-of-a-request-securing-your-apps-traffic-with-vercel)
-- [Preventing infrastructure abuse with Vercel Firewall](https://vercel.com/blog/preventing-infrastructure-abuse-with-vercel-firewall)
-- [Vercel security roundup: Faster defenses and better visibility for your apps](https://vercel.com/blog/vercel-security-roundup-faster-defenses-and-better-visibility-for-your-apps)
+- [How Vercel CDN Works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
+- [Vercel CDN overview](https://vercel.com/docs/cdn) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
 - [Vercel security overview](https://vercel.com/docs/security) — Vercel provides built-in and customizable features to ensure that your site is secure.
-- [Security](https://vercel.com/docs/vercel-blob/security) — Learn how your Vercel Blob store is secured
+- [Vercel Firewall](https://vercel.com/docs/vercel-firewall) — Learn how Vercel Firewall helps protect your applications and websites from malicious attacks and unauthorized access.
 - [Security & Compliance Measures](https://vercel.com/docs/security/compliance) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
-- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 
 Full cross-link map for this page: [/docs/cdn-security.graph.md](/docs/cdn-security.graph.md)
 <!-- /docsgraph:related -->
@@ -111,6 +109,18 @@ The `.vercel.app` domain and all subdomains support HSTS by default and are prel
 
 - [HSTS details](/docs/cdn-security/encryption#support-for-hsts)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

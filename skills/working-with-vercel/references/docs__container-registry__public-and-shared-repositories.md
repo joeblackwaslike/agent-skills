@@ -12,9 +12,10 @@ related:
   - /docs/sandbox/concepts/images
 summary: Share a Vercel Container Registry repository with specific Vercel teams or make it public for any Vercel team to access.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/container-registry/public-and-shared-repositories.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c69df97b8b501736cb41750366e545d4d01d1054e80d0f2b8fec70d063e62385"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2c561f4365e74ae41d5ad9a63efd3e5d09b7b70354b6f5e783a117236a659ac8"
 ---
 
 # Public and Shared Repositories
@@ -27,12 +28,12 @@ Vercel Container Registry (VCR) repositories are private by default. Share a rep
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Share Vercel Container Registry repositories across teams](https://vercel.com/changelog/share-vercel-container-registry-repositories-across-teams)
 - [Vercel Container Registry repositories can now be made public](https://vercel.com/changelog/vercel-container-registry-repositories-can-now-be-made-public)
-- [vercel vcr](https://vercel.com/docs/cli/vcr) — Manage Vercel Container Registry from the Vercel CLI: build and push images, manage repositories, tags, and images, and
+- [Share Vercel Container Registry repositories across teams](https://vercel.com/changelog/share-vercel-container-registry-repositories-across-teams)
 - [List repositories](https://vercel.com/docs/rest-api/vcr/list-repositories) — GET /v1/vcr/repository — List container registry repositories for a project.
 - [Create a repository](https://vercel.com/docs/rest-api/vcr/create-a-repository) — POST /v1/vcr/repository — Create a container registry repository for a project.
-- [Getting Started](https://vercel.com/docs/container-registry/getting-started) — Authenticate your container tool with Vercel Container Registry, then push and pull your first image with the Vercel CLI
+- [vercel vcr](https://vercel.com/docs/cli/vcr) — Manage Vercel Container Registry from the Vercel CLI: build and push images, manage repositories, tags, and images, and
+- [Get a repository](https://vercel.com/docs/rest-api/vcr/get-a-repository) — GET /v1/vcr/repository/{idOrName} — Fetch a container registry repository for a project by ID or name.
 - [Get a repository image](https://vercel.com/docs/rest-api/vcr/get-a-repository-image) — GET /v1/vcr/repository/{idOrName}/images/{imageIdOrDigest} — Fetch an individual image from a repository, including its
 
 Full cross-link map for this page: [/docs/container-registry/public-and-shared-repositories.graph.md](/docs/container-registry/public-and-shared-repositories.graph.md)
@@ -93,6 +94,18 @@ vercel vcr config my-repository --public true
 vercel vcr config my-repository --public false
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

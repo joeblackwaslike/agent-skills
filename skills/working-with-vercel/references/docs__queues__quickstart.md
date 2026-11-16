@@ -15,9 +15,10 @@ related:
   - /docs/queues/python-sdk
 summary: Set up Vercel Queues with the SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/queues/quickstart.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "e676abb37bf246e2834d7be6fda53184f980535d2a43c7298893044537653431"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e1ef4823fe938e2fee6bb495bfc53132e9315e36a16db1f319d2b4271f29ce5a"
 ---
 
 # Quickstart
@@ -34,12 +35,13 @@ This guide shows how to send your first queue message and process it with the Ve
 - [How to choose between Functions, containers, and Daemons on Vercel](https://vercel.com/kb/guide/vercel-functions-containers-daemons) — Choose Vercel Functions for HTTP requests, container images for custom runtimes, and Daemons for continuous background w
 - [Introducing Vercel Schedules](https://vercel.com/blog/introducing-vercel-schedules)
 - [Vercel Python Queues SDK is now available in beta](https://vercel.com/changelog/vercel-python-queues-sdk-is-now-available-in-beta)
-- [Process background jobs in Python with Vercel Queues](https://vercel.com/kb/guide/python-and-vercel-queues) — Move slow and failure-prone work out of your Python request handlers, with typed topics, consumer groups, and built-in r
 - [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta)
-- [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
 - [Vercel Queues is now in Limited Beta](https://vercel.com/changelog/vercel-queues-is-now-in-limited-beta)
+- [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
 - [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
-- [Getting Started with Chat SDK](https://vercel.com/docs/chat-sdk/quickstart) — Create a Slack bot with the Chat SDK CLI, connect it to Slack through Vercel Connect, and deploy it on Vercel.
+- [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
+- [Chat SDK with Vercel Daemons](https://vercel.com/docs/chat-sdk/integrations/daemons) — Process Chat SDK jobs with Vercel Queues and Daemons, using Vercel Connect for Slack credentials and event delivery.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 
 Full cross-link map for this page: [/docs/queues/quickstart.graph.md](/docs/queues/quickstart.graph.md)
 <!-- /docsgraph:related -->
@@ -208,6 +210,18 @@ This works locally with `vercel dev` so you can test without deploying. Next.js 
 - [Poll mode](/docs/queues/poll-mode)
 - [Pricing and limits](/docs/queues/pricing)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

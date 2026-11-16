@@ -16,9 +16,10 @@ related:
   - /docs/flags/flags-explorer/reference
 summary: "Learn how to set up the Flags Explorer so you can see and override your application's feature flags"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/flags-explorer/getting-started.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ce275ce1cfa80e55b7164fe726b8460d8c67184021383cdb32a619377fbbf854"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c0fdddf94508693d00582dc955c9440ae5cae6de5ef28956c4db7cacf76652c0"
 ---
 
 # Getting started with Flags Explorer
@@ -33,12 +34,12 @@ This guide walks you through connecting your application to the Flags Explorer, 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
-- [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
-- [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit) — Using the Flags SDK in SvelteKit
-- [Flags Explorer is now generally available](https://vercel.com/changelog/flags-explorer-is-now-generally-available)
+- [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
+- [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta)
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
+- [Vercel Flags](https://vercel.com/docs/flags/vercel-flags) — Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directl
 - [Using the Flags SDK with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
 - [Setting up Flags Explorer](https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer) — Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting ot
 - [Marketplace](https://vercel.com/docs/flags/marketplace) — Connect your preferred feature flag provider through the Vercel Marketplace for a unified flags experience.
@@ -268,6 +269,18 @@ Help me set up Flags Explorer for this project. First, make sure the Vercel CLI 
 - [Flags SDK](/docs/flags/flags-sdk-reference)
 - [Feature Flags using Next.js example](/templates/next.js/shirt-shop-feature-flags)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

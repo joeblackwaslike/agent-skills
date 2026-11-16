@@ -14,9 +14,10 @@ related:
   - /docs/deployments/sharing-deployments
 summary: Learn how to share your deployments with external users.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "5a6721178b27d4d82f724fab761162433670554a68b9333ba5fb39a1186ac200"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8e618cfedb84f2d977a46f322a0c80c6cbae2cd328d9d371b8ce852d8da217a6"
 ---
 
 # Sharable Links
@@ -34,14 +35,13 @@ Shareable links include the ability to leave [Comments](/docs/comments) on deplo
 
 - [Agents can now access protected deployments via Vercel’s MCP server](https://vercel.com/changelog/give-agents-access-to-protected-deployments-via-vercels-mcp-server)
 - [Additional options for sharing deployments externally](https://vercel.com/changelog/additional-options-for-sharing-deployments-externally)
-- [Protected Preview Deployments available on all plans](https://vercel.com/changelog/protected-preview-deployments-available-on-all-plans)
-- [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments)
+- [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments) — Protect who can see your deployments.
 - [Invite collaborators to view and comment on your deployments](https://vercel.com/changelog/invite-collaborators-to-view-and-comment-on-your-deployments)
 - [get_access_to_vercel_url](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_access_to_vercel_url) — Use get_access_to_vercel_url with Vercel MCP.
 - [Accessing Deployments through Generated URLs](https://vercel.com/docs/deployments/generated-urls) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
-- [Shared environment variables](https://vercel.com/docs/environment-variables/shared-environment-variables) — Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can
+- [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
 - [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
-- [Enabling and Disabling Comments](https://vercel.com/docs/comments/how-comments-work) — Learn when and where Comments are available, and how to enable and disable Comments at the account, project, and session
+- [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 
 Full cross-link map for this page: [/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links.graph.md](/docs/deployment-protection/methods-to-bypass-deployment-protection/sharable-links.graph.md)
 <!-- /docsgraph:related -->
@@ -92,6 +92,18 @@ You can view and manage all the existing Shareable Links for your team in the fo
 
 ![Dashboard > Settings > Deployment Protection > Access](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/preview-deployments/shareable-links-list.png)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

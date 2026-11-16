@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/modalities/video-generation/video-editing
 summary: Generate videos from text prompts, images, or video input using AI models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "07b1ec5f9d72d1b6b8059fed9c175da103e83955b7c91368dfc9fc2ba8dbc6a1"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "53285f413182385ab7d4b83e3f165315f0154b87498b3f88043fa292d515f945"
 ---
 
 # AI Gateway Video Generation
@@ -39,8 +40,8 @@ AI Gateway supports video generation, letting you create videos from text prompt
 - [MiniMax H3 and H3 Max are 50% off on AI Gateway](https://vercel.com/changelog/minimax-h3-and-h3-max-are-50-off-on-ai-gateway)
 - [Wan 3.0 now available on AI Gateway](https://vercel.com/changelog/wan-3-0-now-available-on-ai-gateway)
 - [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance) — Learn how to use ByteDance with AI Gateway and the direct provider.
+- [MiniMax](https://ai-sdk.dev/providers/ai-sdk-providers/minimax) — Learn how to use MiniMax with AI Gateway and the direct provider.
 - [generateVideo](https://ai-sdk.dev/docs/reference/ai-sdk-workflow/generate-video) — API Reference for durable video generation in workflows.
-- [HeyGen](https://ai-sdk.dev/providers/ai-sdk-providers/heygen) — Learn how to use HeyGen with AI Gateway and the direct provider.
 - [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation.graph.md](/docs/ai-gateway/modalities/video-generation.graph.md)
@@ -634,6 +635,18 @@ export async function register() {
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

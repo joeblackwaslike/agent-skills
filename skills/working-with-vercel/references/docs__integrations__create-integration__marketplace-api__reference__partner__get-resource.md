@@ -3,7 +3,7 @@ title: get-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/get-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/get-resource"
-last_updated: 2026-11-09
+last_updated: 2026-11-16
 type: conceptual
 prerequisites:
   []
@@ -12,9 +12,10 @@ related:
   - /docs/integrations/create-integration/native-integration
 summary: Learn about get-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/get-resource.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ec2818aafd4c083952a25a08e80e3b5096238f08750d28f7a31e995ce4c93fa4"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d987ec84df7c8af514fd9ad27f9b4edb9182016fe19a5093db5ac80bdbb9b432"
 ---
 
 # Get Resource
@@ -199,6 +200,18 @@ Operation failed because the authentication is not allowed to perform this opera
 - [Marketplace API Reference](/docs/integrations/create-integration/marketplace-api/reference)
 - [Native Integration Concepts](/docs/integrations/create-integration/native-integration)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

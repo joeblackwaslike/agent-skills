@@ -14,9 +14,10 @@ related:
   - /docs/ai-gateway/observability-and-spend/budgets
 summary: Connect Pi to AI Gateway with one CLI command, or configure it manually.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/pi.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "7d176bae54d582cfb4f35bf3f2adb525774686f928d6402ceb6cbe306ecf88b3"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "acc8ec95a3d7bb4ad8993344c939dd596e7bd200f2e01e636a30e4c6ca26096e"
 ---
 
 # Pi with AI Gateway
@@ -33,8 +34,9 @@ sha256: "7d176bae54d582cfb4f35bf3f2adb525774686f928d6402ceb6cbe306ecf88b3"
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 - [Pydantic AI with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai) — Learn how to integrate Vercel AI Gateway with Pydantic AI to access multiple AI models through a unified interface.
+- [gptme with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/gptme) — Connect gptme to AI Gateway with the Vercel CLI or a TOML provider configuration.
 - [GitHub Copilot CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/copilot) — Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and
-- [Kilo Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/kilo-code) — Connect Kilo Code to AI Gateway with the Vercel CLI or an OpenAI-compatible provider configuration. Set your API key and
+- [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/pi.graph.md](/docs/ai-gateway/coding-agents/pi.graph.md)
 <!-- /docsgraph:related -->
@@ -121,6 +123,18 @@ To deploy Pi as a service that resumes after crashes, function timeouts, and dep
 - Configure [spend limits](/docs/ai-gateway/observability-and-spend/budgets) on your API key
 - Connect your other agents with the [Vercel CLI](/docs/cli/ai-gateway#setup)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

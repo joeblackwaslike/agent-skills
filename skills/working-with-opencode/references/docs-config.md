@@ -1,7 +1,7 @@
 ---
 source: "https://opencode.ai/docs/config/"
-fetched_at: "2026-11-09T12:39:24.590Z"
-sha256: "b4cfff1c4786e3b073ffdb6107818ae585cda9181e9c9a541068a350be38bf97"
+fetched_at: "2026-11-16T12:32:19.624Z"
+sha256: "6d4d8e0ecc7466b15c434737883545527fbce7041aec0fee75bf22ffe2b00eed"
 ---
 
 # Config
@@ -400,21 +400,23 @@ budgeting and overflow recovery.
 ### Warming
 
 Keep recently active model sessions warm with periodic transient requests.
-Warming is disabled by default; set it to `true` to use the four-minute idle
-interval and 30-minute active window.
+Warming is disabled by default; set it to `true` to warm just before each
+model's cache expires, for up to 30 minutes.
 
 ```jsonc
 {
   "warming": {
     "prompt": "Do not perform any work. Reply with exactly: OK",
-    "interval": "4 minutes",
+    "interval": "auto",
     "duration": "30 minutes",
   },
 }
 ```
 
-See the [warming guide](/warming) for request behavior, customization,
-and cost considerations.
+A provider's or model's `settings.cache.warming` overrides it, and
+`settings.cache.ttl` sets how long the provider keeps the cache. See the
+[warming guide](/warming) for request behavior, customization, and cost
+considerations, and [cache lifetime](/models#cache-lifetime) for `cache.ttl`.
 
 ### Skills
 

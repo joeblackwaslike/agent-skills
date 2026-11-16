@@ -13,9 +13,10 @@ related:
   - /docs/analytics/redacting-sensitive-data
 summary: With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/analytics/package.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "be9eadfa586801478b749128a5acf2feea2660e00fd3b91d00740104e886b237"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "53992851697909c935b259e391d4149ab17d5e221fa3b012813c3e5bf6f34a78"
 ---
 
 # Advanced Web Analytics Config with @vercel/analytics
@@ -31,15 +32,16 @@ To get started with analytics, follow our [Quickstart](/docs/analytics/quickstar
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Web Analytics now has route support](https://vercel.com/changelog/web-analytics-now-has-route-support)
-- [How to prevent flash before hydration](https://nextjs.org/docs/app/guides/preventing-flash-before-hydration) — Learn how to prevent a flash of unstyled content (FOUC) by correcting server-rendered HTML, such as a dark mode theme, b
 - [layout.js](https://nextjs.org/docs/app/api-reference/file-conventions/layout) — API reference for the layout.js file.
+- [How to prevent flash before hydration](https://nextjs.org/docs/app/guides/preventing-flash-before-hydration) — Learn how to prevent a flash of unstyled content (FOUC) by correcting server-rendered HTML, such as a dark mode theme, b
 - [How to build single-page applications with Next.js](https://nextjs.org/docs/app/guides/single-page-applications) — Next.js fully supports building Single-Page Applications (SPAs).
 - [Adopting Partial Prefetching](https://nextjs.org/docs/app/guides/adopting-partial-prefetching) — Learn how to enable Partial Prefetching and what changes for `\<Link\>`.
-- [Streaming](https://nextjs.org/docs/app/guides/streaming) — Learn how streaming works in Next.js and how to use it to progressively render UI as data becomes available.
+- [Codemods](https://nextjs.org/docs/pages/guides/upgrading/codemods) — Use codemods to upgrade your Next.js codebase when new features are released.
+- [Build a fullstack app with Next.js 16 and Prisma Postgres](https://vercel.com/kb/guide/nextjs-prisma-postgres) — Create a fullstack blog with the Next.js App Router, Prisma, Sign in with Vercel, Prisma Postgres from the Vercel Market
 - [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
-- [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
 - [OG Image Generation Examples](https://vercel.com/docs/og-image-generation/examples) — Learn how to use the @vercel/og library with examples.
-- [Using Global Config with Split](https://vercel.com/docs/global-config/global-config-integrations/split-global-config) — Learn how to use Global Config with Vercel's Split integration.
+- [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
+- [Nuxt on Vercel](https://vercel.com/docs/frameworks/full-stack/nuxt) — Deploy Nuxt applications to Vercel and configure rendering, functions, middleware, routing, image optimization, and cach
 - [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
 
 Full cross-link map for this page: [/docs/analytics/package.graph.md](/docs/analytics/package.graph.md)
@@ -1174,6 +1176,18 @@ To change configured values, you can:
 - Pass individual properties to the `injectAnalytics()` function.
 - Provide your own value for the `VERCEL_OBSERVABILITY_CLIENT_CONFIG` build configuration variable.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

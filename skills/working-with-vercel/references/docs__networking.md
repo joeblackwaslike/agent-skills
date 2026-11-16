@@ -15,9 +15,10 @@ related:
   - /docs/pricing/regional-pricing
 summary: Connect your Vercel projects to backend services with static IPs and secure networking options.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/networking.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b14e9491a21987b3868236bd74246fa3766a8b3399ea350981d97089bf84d1ef"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b204efe56f166b1597e9d62b3cc55d2f5f6bd525c5816cc8f4fc9c08d7ec0cae"
 ---
 
 # Networking
@@ -34,10 +35,10 @@ Connect your projects to backend services that require IP allowlisting, AWS Priv
 - [The Complete Guide to Bring Your Own Cloud](https://vercel.com/kb/guide/byoc) — Use Bring Your Own Cloud \\(BYOC\\) to run Vercel Functions as AWS Lambda functions in your own AWS account, from setup to
 - [Private enterprise agents on Vercel](https://vercel.com/kb/guide/private-enterprise-agents-vercel) — Design private enterprise agents that call internal APIs and databases with Vercel Functions, Secure Compute, AI Gateway
 - [AWS PrivateLink is now available on Pro and Enterprise](https://vercel.com/changelog/aws-privatelink-is-now-available-on-pro-and-enterprise)
+- [Static IPs are now available for more secure connectivity](https://vercel.com/changelog/static-ips-are-now-available-for-more-secure-connectivity)
+- [Create a Secure Compute network](https://vercel.com/docs/rest-api/networking/create-a-secure-compute-network) — POST /v1/connect/networks — Allows to create a Secure Compute network.
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [CDN pricing and usage](https://vercel.com/docs/manage-cdn-usage) — Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transf
 - [Portland, USA \\(pdx1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/pdx1) — Vercel pricing for the Portland, USA \\(pdx1\\) region.
-- [Flat Rate CDN](https://vercel.com/docs/pricing/flat-rate-cdn) — Flat Rate CDN gives you fixed monthly CDN pricing and protection against usage spikes across capacity tiers.
 - [Cleveland, USA \\(cle1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cle1) — Vercel pricing for the Cleveland, USA \\(cle1\\) region.
 
 Full cross-link map for this page: [/docs/networking.graph.md](/docs/networking.graph.md)
@@ -77,6 +78,7 @@ When an AWS-hosted service exposes an AWS PrivateLink endpoint, PrivateLink keep
 
 - **Use case**: Private connectivity to RDS, SaaS with PrivateLink endpoints, S3 or DynamoDB interface endpoints, and compliance-focused deployments
 - **Network**: Shared VPC with dedicated endpoint interfaces per connection
+- [**Pricing**](/docs/networking/privatelink#pricing): The Advanced Networking monthly charge ($100/month per project) covers [Static IPs](/docs/networking/static-ips) and includes your first PrivateLink connection. Additional connections and PrivateLink data transfer are billed separately
 
 [Learn more about AWS PrivateLink](/docs/networking/privatelink)
 
@@ -106,7 +108,7 @@ Bring Your Own Cloud is available on the Enterprise plan. To scope it, [contact 
 
 Static IPs and Secure Compute usage includes **Private Data Transfer** priced regionally based on the [regional pricing documentation](/docs/pricing/regional-pricing).
 
-PrivateLink usage is tracked separately on your team's Usage tab. See [AWS PrivateLink](/docs/networking/privatelink) for setup and behavior.
+PrivateLink requires [Static IPs](/docs/networking/static-ips) to be enabled on the project, so the Advanced Networking monthly charge applies and includes your first PrivateLink connection. Traffic that routes through a PrivateLink endpoint is billed as PrivateLink data transfer rather than Private Data Transfer, so each request is billed at one rate, never both. PrivateLink usage is tracked separately on your team's Usage tab. See [AWS PrivateLink pricing](/docs/networking/privatelink#pricing) for the full breakdown.
 
 [Bring Your Own Cloud](/docs/networking/bring-your-own-cloud) is an Enterprise feature with custom pricing. [Contact the Vercel sales team](https://vercel.com/contact/sales) to scope it.
 
@@ -126,6 +128,18 @@ Data transfer costs kick in for all traffic to or from your Vercel Functions, in
 
 Keep tabs on your usage in the **Private Data Transfer** section of **Usage** in your dashboard sidebar.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

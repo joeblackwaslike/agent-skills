@@ -8,16 +8,17 @@ type: reference
 prerequisites:
   []
 related:
+  - /docs/agent-checklist
   - /docs/instant-rollback
   - /docs/deployments/managing-deployments
   - /docs/monorepos/turborepo
   - /docs/domains/managing-dns-records
-  - /docs/cdn-security/security-headers
 summary: Ensure your application is ready for launch with this comprehensive production checklist by the Vercel engineering team. Covering operational...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/production-checklist.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ece2c8f49f6e2bb59e4ef5f27090d260d7a64b527c3a829f71ebf52b27eb5d0f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f0f7c9a217f63c8c997f057b157e25068199d3d02a365c50a0d9183de6aef86c"
 ---
 
 # Production checklist for launch
@@ -31,15 +32,10 @@ When launching your application on Vercel, it is important to ensure that it's r
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to choose a Salesforce Commerce Cloud storefront: PWA Kit, Storefront Next, or Next.js](https://vercel.com/kb/guide/salesforce-pwa-kit-vs-storefront-next-vs-nextjs) — Compare PWA Kit, Storefront Next, and a Next.js storefront on Vercel for Salesforce Commerce Cloud. Learn how caching, p
-- [Vercel security roundup: improved bot defenses, DoS mitigations, and insights](https://vercel.com/blog/vercel-security-roundup-improved-bot-defenses-dos-mitigations-and-insights)
-- [Life of a Vercel request: What happens when a user presses enter](https://vercel.com/blog/life-of-a-vercel-request-what-happens-when-a-user-presses-enter)
-- [The Next.js SEO Playbook: Ranking higher with Next.js on Vercel](https://vercel.com/blog/nextjs-seo-playbook)
-- [How we made the Vercel Dashboard twice as fast](https://vercel.com/blog/how-we-made-the-vercel-dashboard-twice-as-fast)
-- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
 - [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
-- [Security & Compliance Measures](https://vercel.com/docs/security/compliance) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
 - [Get Started with BotID](https://vercel.com/docs/botid/get-started) — Step-by-step guide to setting up BotID protection in your Vercel project
 
 Full cross-link map for this page: [/docs/production-checklist.graph.md](/docs/production-checklist.graph.md)
@@ -50,6 +46,8 @@ Full cross-link map for this page: [/docs/production-checklist.graph.md](/docs/p
 - [Reliability](#reliability)
 - [Performance efficiency](#performance)
 - [Cost optimization](#cost-optimization).
+
+If you're launching an agent built with eve, Mastra, or Flue, also work through the [agent checklist](/docs/agent-checklist).
 
 ## Operational excellence
 
@@ -109,6 +107,18 @@ Full cross-link map for this page: [/docs/production-checklist.graph.md](/docs/p
 
 Need help with your production rollout?
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

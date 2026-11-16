@@ -11,9 +11,10 @@ related:
   - /docs/deployments/logs
 summary: The DNS hostname resolved to a private IP address or an IPv6 address during an external rewrite. This is a DNS error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/dns_hostname_resolved_private.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "9f86e81e785f3833d34f2f1fd820a2a933f506de542377f330ee63e89422b28a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "39ba25766f6370277f19a76c9b42798c310c949ae2e28f8a6e2e6385d9dc80bc"
 ---
 
 # DNS_HOSTNAME_RESOLVED_PRIVATE
@@ -37,6 +38,18 @@ To troubleshoot this error, follow these steps:
 2. **Inspect network connectivity:** Ensure that there are no network issues that could be affecting the DNS resolution
 3. **Review application logs:** Inspect the [application logs](/docs/deployments/logs) for any warnings or errors related to DNS or the attempted connections
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

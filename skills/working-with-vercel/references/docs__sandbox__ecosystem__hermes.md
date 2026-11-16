@@ -16,9 +16,10 @@ related:
   - /docs/sandbox/concepts/images
 summary: Run Hermes Agent terminal commands in isolated Vercel Sandbox microVMs, with models served through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/ecosystem/hermes.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "0705bebc5ce1464098e101df5c423a14caa69be68c0e139f08499c73d6789072"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1f04baec4f46672d73becff1c444be101025228ff834611a130015f2ae245467"
 ---
 
 # Hermes
@@ -38,8 +39,9 @@ instead of on your machine.
 - [How to run Herdr coding agents in isolated Vercel Sandboxes](https://vercel.com/kb/guide/run-herdr-coding-agents-isolated-vercel-sandboxes) — Install the vercel.sandbox plugin for Herdr, approve an upload manifest, run each AI coding agent in its own isolated Ve
 - [Run Terminal-Bench and any Harbor benchmark on Vercel Sandbox](https://vercel.com/kb/guide/run-terminal-bench-harbor-benchmarks-vercel-sandbox) — Run Terminal-Bench, SWE-bench, and any Harbor benchmark on Vercel Sandbox. Each trial executes in an isolated Firecracke
 - [Give every agent in Herdr its own Vercel Sandbox](https://vercel.com/changelog/give-every-agent-in-herdr-its-own-vercel-sandbox)
-- [Run Terminal-Bench and other Harbor evals on Vercel Sandbox](https://vercel.com/changelog/run-terminal-bench-and-other-harbor-evals-on-vercel-sandbox)
-- [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available)
+- [Herdr](https://vercel.com/docs/sandbox/ecosystem/herdr) — Run terminal-based coding agents in persistent Vercel Sandbox microVMs from Herdr. Review and apply their changes locall
+- [Harbor and Terminal-Bench](https://vercel.com/docs/sandbox/ecosystem/harbor) — Run Terminal-Bench and any other Harbor Hub dataset on Vercel Sandbox, with each trial in its own isolated Firecracker m
+- [Gemini API Managed Agents](https://vercel.com/docs/sandbox/ecosystem/gemini-api) — Connect a Gemini API self-hosted environment to Vercel Sandbox so agent file and shell tools run in your own microVM.
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/hermes.graph.md](/docs/sandbox/ecosystem/hermes.graph.md)
 <!-- /docsgraph:related -->
@@ -171,6 +173,18 @@ predates the Vercel Sandbox backend, and warns that the `vercel` extra does
 not exist. Install or update with the official installer instead, and
 confirm `hermes version` reports 0.20.0 or newer.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

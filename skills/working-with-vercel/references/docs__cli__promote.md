@@ -12,9 +12,10 @@ related:
   - /docs/cli/global-options
 summary: Learn how to promote an existing deployment using the vercel promote CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/promote.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "5ac5a12353b45a993221078d1c8e78eb412910f553b0153ab4694f3d79af49b5"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3a335c86d4c286a5573a76750746a636ee8f0da26ef63ec184c3d8f50c26d8f5"
 ---
 
 # vercel promote
@@ -31,7 +32,7 @@ The `vercel promote` command is used to promote an existing deployment to be the
 - [Promoting a preview deployment to production](https://vercel.com/docs/deployments/promote-preview-to-production) — Test a preview deployment and promote it to production using the CLI.
 - [Promoting Deployments](https://vercel.com/docs/deployments/promoting-a-deployment) — Learn how to promote deployments to production on Vercel.
 - [request_promote](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/request_promote) — Use request_promote with Vercel MCP.
-- [vercel redeploy](https://vercel.com/docs/cli/redeploy) — Learn how to redeploy your project using the vercel redeploy CLI command.
+- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 
 Full cross-link map for this page: [/docs/cli/promote.graph.md](/docs/cli/promote.graph.md)
@@ -113,6 +114,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

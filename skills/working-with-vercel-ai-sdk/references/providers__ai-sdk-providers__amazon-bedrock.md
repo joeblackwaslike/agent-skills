@@ -4,8 +4,8 @@ description: Learn how to use Amazon Bedrock with AI Gateway and the direct prov
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/amazon-bedrock.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "733f39a25ec0ed07f41052c843d09fddb83702fc9184be75608417fc0e315968"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "7c38e718dab448198f7caf61006bb940f72198c225d37e9387bebf06f90b9011"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -1844,6 +1844,7 @@ const result = await generateText({
 
 Anthropic has reasoning support for Claude 3.7 and Claude 4 models on Bedrock, including:
 
+- `us.anthropic.claude-fable-5-2`
 - `us.anthropic.claude-fable-5-1`
 - `us.anthropic.claude-sonnet-5-5`
 - `us.anthropic.claude-sonnet-5`
@@ -1892,6 +1893,7 @@ on how to integrate reasoning into your chatbot.
 | Model                                          | Image Input | Object Generation | Tool Usage | Computer Use | Reasoning |
 | ---------------------------------------------- | ----------- | ----------------- | ---------- | ------------ | --------- |
 | `us.anthropic.claude-fable-5-1`                | ✓           | ✓                 | ✓          | ✓            | ✓         |
+| `us.anthropic.claude-fable-5-2`                | ✓           | ✓                 | ✓          | ✓            | ✓         |
 | `us.anthropic.claude-sonnet-5-5`               | ✓           | ✓                 | ✓          | ✓            | ✓         |
 | `us.anthropic.claude-sonnet-5`                 | ✓           | ✓                 | ✓          | ✓            | ✓         |
 | `us.anthropic.claude-haiku-5-5`                | ✓           | ✓                 | ✓          | ✓            | ✓         |

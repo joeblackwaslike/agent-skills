@@ -13,9 +13,10 @@ related:
   - /docs/storage/vercel-blob/client-upload
 summary: Prevent video files from being added to Next.js applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/nextjs_no_self_hosted_videos.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "0a65278d16cd0f0e8a9de106d58b0b0fd9087dc20ddf179b516c6b0f1c844a06"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a18d379559f7f6effc5a3f839c545201d1b9d8d92ffcc39239079973da4374e6"
 ---
 
 # NEXTJS_NO_SELF_HOSTED_VIDEOS
@@ -35,6 +36,18 @@ You can use either [server uploads or client uploads](/docs/storage/vercel-blob#
 
 See the [best practices for hosting videos on Vercel](/kb/guide/best-practices-for-hosting-videos-on-vercel-nextjs-mp4-gif) guide to learn more about various other options for hosting videos.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

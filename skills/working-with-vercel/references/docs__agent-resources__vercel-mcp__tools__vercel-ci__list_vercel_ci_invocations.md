@@ -12,9 +12,10 @@ related:
   []
 summary: Use list_vercel_ci_invocations with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/list_vercel_ci_invocations.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d9296b055faa12f405267f7fdcde9f38b80bb7e587b87de368cb52a5ad121d18"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3417eac571820b40f3e8a1b72716d7be74e8f454a3075b15de7c3a61ec0a5538"
 ---
 
 # list_vercel_ci_invocations
@@ -29,8 +30,8 @@ List Vercel CI invocations for your team. Filter by repository, branch, status, 
 
 - [list_vercel_ci_invocation_attempts](https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/list_vercel_ci_invocation_attempts) — Use list_vercel_ci_invocation_attempts with Vercel MCP.
 - [List invocations for a team, optionally filtered by repository and invocation metadata](https://vercel.com/docs/rest-api/vercel-ci/list-invocations-for-a-team-optionally-filtered-by-repository-and-invocation-metadata) — GET /v2/vercel-ci/invocations — List Invocations
-- [get_vercel_ci_invocation](https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/get_vercel_ci_invocation) — Use get_vercel_ci_invocation with Vercel MCP.
 - [List Vercel CI branch suggestions for a team](https://vercel.com/docs/rest-api/vercel-ci/list-vercel-ci-branch-suggestions-for-a-team) — GET /v2/vercel-ci/branches — List branches
+- [get_vercel_ci_invocation](https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/get_vercel_ci_invocation) — Use get_vercel_ci_invocation with Vercel MCP.
 - [get_vercel_ci_invocation_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/get_vercel_ci_invocation_logs) — Use get_vercel_ci_invocation_logs with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/vercel-ci/list_vercel_ci_invocations.graph.md](/docs/agent-resources/vercel-mcp/tools/vercel-ci/list_vercel_ci_invocations.graph.md)
@@ -56,6 +57,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/verce
 | `teamId`         | string           | No       | Team ID to use for this operation.                                                                                                                                                                                                                                            |
 | `slug`           | string           | No       | Team slug to use for this operation. Use instead of teamId.                                                                                                                                                                                                                   |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

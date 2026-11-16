@@ -11,9 +11,10 @@ related:
   - /docs/security/shared-responsibility
 summary: Learn how to integrate an iframe into your application to support PCI DSS compliance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/security/pci-dss.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b712f8a214762a9b7fcce4a7ace71f7ce7a167d3af0527a9ad29c2811b5bc31d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e368b2f138e2a207384e5c478955939a670981572d6b5773e2bf97687120f300"
 ---
 
 # PCI DSS iframe Integration
@@ -30,12 +31,12 @@ When you use an [\`iframe\`](https://developer.mozilla.org/en-US/docs/Web/HTML/E
 
 - [PCI compliance for ecommerce](https://vercel.com/blog/pci-compliance-for-ecommerce-teams)
 - [How to conduct PCI scans on Vercel: A complete guide to IP safelisting](https://vercel.com/kb/guide/how-to-conduct-pci-scans-on-vercel-guide) — Scan and verify your Vercel deployments for secure, PCI-compliant payment processing.
+- [Upgraded PCI DSS version 3.2.1 to 4.0](https://vercel.com/changelog/upgraded-pci-dss-version-3-2-1-to-4-0)
 - [From idea to secure checkout in minutes with Stripe](https://vercel.com/blog/from-idea-to-secure-checkout-in-minutes-with-stripe)
-- [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf) — Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in secur
 - [Vercel Commerce and Payments Integrations](https://vercel.com/docs/integrations/ecommerce) — Learn how to integrate Vercel with payment processors and ecommerce platforms, including Stripe, Shopify, BigCommerce, a
+- [Security & Compliance Measures](https://vercel.com/docs/security/compliance) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [CDN security](https://vercel.com/docs/cdn-security) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
 - [Stripe Integration](https://vercel.com/docs/integrations/ecommerce/stripe) — Connect your Stripe account to Vercel and accept payments in your applications.
-- [Content Security Policy](https://vercel.com/docs/cdn-security/security-headers) — Learn how the Content Security Policy \\(CSP\\) offers defense against web vulnerabilities, its key features, and best pra
 - [Vercel Integrations](https://vercel.com/docs/integrations) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
 
 Full cross-link map for this page: [/docs/security/pci-dss.graph.md](/docs/security/pci-dss.graph.md)
@@ -108,6 +109,18 @@ In accordance with Vercel's [shared responsibility model](/docs/security/shared-
    - `allow-top-navigation`: Allows the `iframe` to change the full page URL. This is useful for post-transaction redirections
    - `allow-same-origin`: Permits the `iframe` to interact with resources from the hosting page's origin. This is important for functionality but slightly reduces isolation
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

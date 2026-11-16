@@ -12,9 +12,10 @@ related:
   - /docs/functions
 summary: Vercel MCP tools for observability.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b9d59dd2718851f9ed66d5680d4c94a8ed52abab58f33b2a7dc49a621d29aaab"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "bef944b96bed4f4f8f5d4b00d8961fddf0fc1b2bdfa04f75945026497448663b"
 ---
 
 # Observability
@@ -29,9 +30,9 @@ Investigate errors and request behavior in your projects with runtime logs and t
 
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
-- [Agent Runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs) — Vercel MCP tools for agent runs.
 - [Runtime Logs](https://vercel.com/docs/logs/runtime) — Learn how to search, inspect, and share your runtime logs with the Logs tab.
-- [Lists disabled Observability Plus projects](https://vercel.com/docs/rest-api/observability/lists-disabled-observability-plus-projects) — GET /v1/observability/manage/configuration/projects — Lists the projects that are currently configured as disabled for O
+- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
+- [Observability](https://vercel.com/docs/connect/observability) — Monitor token requests, authorizations, revocations, and trigger deliveries for your connectors.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/observability.graph.md](/docs/agent-resources/vercel-mcp/tools/observability.graph.md)
 <!-- /docsgraph:related -->
@@ -126,6 +127,18 @@ Get runtime logs for a project or deployment. Runtime logs include application o
 
 **Sample prompt:** "Show me the runtime error logs for my project from the last hour"
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

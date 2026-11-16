@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/issues/tracking-your-work-with-issues/learning-about-issues/about-issues.md"
-fetched_at: "2026-11-02T12:05:56.062Z"
-sha256: "1d756ede32ac1fa306cdc9e660d28039c4d40eb2f83558ffc96ee39591e3ddc9"
+fetched_at: "2026-11-16T12:31:54.241Z"
+sha256: "86e8b5af3682a34b14bf874b1c8dc3730fd8657c614545dc6845c28338cd136c"
 ---
 
 You can create issues in your repository to plan, discuss, and track work. Issues are quick to create, flexible, and can be used in many ways. Issues can track bug reports, new features and ideas, and anything else you need to write down or discuss with your team, and you can use {% data variables.projects.projects_v2 %} to plan and track the work for your team. You can also break your work down further by adding sub-issues and easily browse the full hierarchy of work to be done.
@@ -26,7 +26,7 @@ You can define blocking relationships between issues using issue dependencies. I
 
 You can add metadata to your issues, including issue types, labels and milestones to organize your issues.
 
-See [AUTOTITLE](/issues/tracking-your-work-with-issues/using-issues/managing-issue-types-in-an-organization), [AUTOTITLE](/issues/using-labels-and-milestones-to-track-work/managing-labels) and [AUTOTITLE](/issues/using-labels-and-milestones-to-track-work/about-milestones).
+See [AUTOTITLE](/issues/tracking-your-work-with-issues/using-issues/managing-issue-types), [AUTOTITLE](/issues/using-labels-and-milestones-to-track-work/managing-labels) and [AUTOTITLE](/issues/using-labels-and-milestones-to-track-work/about-milestones).
 
 ## About integration with {% data variables.product.github %}
 

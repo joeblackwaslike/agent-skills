@@ -12,9 +12,10 @@ related:
   []
 summary: Use put_firewall_config with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall/put_firewall_config.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d4c9bfddd5da1928f3ef6c3dc1989069f6e4c5ffcec35e8d6ea2a0b146dcb446"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "daaafaa9a486f21fcf5978bf5f5b79d041e36a04159a4d76210b75e385a5bc03"
 ---
 
 # put_firewall_config
@@ -31,7 +32,7 @@ Put Firewall Configuration.
 - [get_firewall_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall/get_firewall_config) — Use get_firewall_config with Vercel MCP.
 - [Update Firewall Configuration](https://vercel.com/docs/rest-api/security/update-firewall-configuration) — PATCH /v1/security/firewall/config — Process updates to modify the existing firewall config for a project
 - [create_edge_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/create_edge_config) — Use create_edge_config with Vercel MCP.
-- [create_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project) — Use create_project with Vercel MCP.
+- [Using the REST API with the Firewall](https://vercel.com/docs/vercel-firewall/firewall-api) — Learn how to interact with the security endpoints of the Vercel REST API programmatically.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/firewall/put_firewall_config.graph.md](/docs/agent-resources/vercel-mcp/tools/firewall/put_firewall_config.graph.md)
 <!-- /docsgraph:related -->
@@ -45,6 +46,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/firew
 | `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody` | object | Yes      | Request body for this tool.                                 |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -13,9 +13,10 @@ related:
   - /docs/integrations/create-integration/marketplace-api/reference/vercel/update-resource-secrets-by-id
 summary: Learn how to implement secrets rotation in your integration to allow users to rotate credentials securely.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/secrets-rotation.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "1a1a75fa81c15457976483c5a7efb2cac059776f95fbf56aec857bc42ae1d1df"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ca4eaed810009b962ff73e717f7d96246eab7ecdddd7104d3f3c1cb1e53b0711"
 ---
 
 # Implementing secrets rotation
@@ -32,12 +33,11 @@ When your integration provisions resources with credentials (like API keys, data
 - [How to rotate the secrets of your Hypertune integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-hypertune-integration) — Rotate Hypertune API keys with zero-downtime.
 - [How to rotate the secrets of your Clerk integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-clerk-integration) — Rotate Clerk API keys
 - [How to rotate the secrets of your Neon integration](https://vercel.com/kb/guide/how-to-reset-a-secret-for-a-neon-integration) — This will guide you how to update the password for a Neon project.
-- [How to rotate the secrets of your Redis integration](https://vercel.com/kb/guide/how-to-reset-the-secret-for-your-redis-integration) — This will guide you how to update the password for a Redis databse.
+- [How to rotate the secrets of your MongoDB Atlas integration](https://vercel.com/kb/guide/how-to-reset-the-secret-for-your-mongodb-atlas-integration) — This will guide you how to update the password for a MongoDB Atlas databse.
 - [Rotating environment variables](https://vercel.com/docs/environment-variables/rotating-secrets) — Safely rotate API keys, tokens, and other secrets in your Vercel environment variables.
-- [Death to long-lived static credentials](https://vercel.com/blog/death-to-long-lived-static-credentials)
 - [Rotate Installation Credential](https://vercel.com/docs/rest-api/marketplace/rotate-installation-credential) — POST /v1/installations/{integrationConfigurationId}/credentials/rotate — Issues a replacement access token for an instal
-- [Vercel KMS Key Rotation](https://vercel.com/docs/kms/concepts/key-rotation) — How Vercel KMS stages a pending signing key, schedules its activation, and retires the previous key so already-issued to
 - [Update Resource Secrets](https://vercel.com/docs/rest-api/marketplace/update-resource-secrets) — PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/secrets — This endpoint updates the secrets of
+- [Vercel KMS Key Rotation](https://vercel.com/docs/kms/concepts/key-rotation) — How Vercel KMS stages a pending signing key, schedules its activation, and retires the previous key so already-issued to
 - [Revoke Installation Credential](https://vercel.com/docs/rest-api/marketplace/revoke-installation-credential) — POST /v1/installations/{integrationConfigurationId}/credentials/revoke — Retires a superseded installation credential, s
 
 Full cross-link map for this page: [/docs/integrations/create-integration/secrets-rotation.graph.md](/docs/integrations/create-integration/secrets-rotation.graph.md)
@@ -259,6 +259,18 @@ When testing your implementation:
 - **Implement idempotency**: Handle duplicate rotation requests gracefully
 - **Monitor rotation requests**: Track rotation frequency to detect unusual patterns
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

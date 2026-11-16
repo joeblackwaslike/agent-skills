@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions/images
 summary: Analyze video clips with AI Gateway using AI SDK 7, Python, Chat Completions, and Responses / OpenResponses.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/inputs-and-tools/video-input.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "fe35cb11d73e6c4a710461823bdc0427eda5e607f9d61c73506d4b49677d96de"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "dcbe97220ff8e99a95ef85360561c0e6dbb95cc77021f8ee4c70849d5c7f55e6"
 ---
 
 # AI Gateway Video Input
@@ -35,7 +36,7 @@ Send a video clip and a question to a video-capable model to summarize events or
 - [AI Gateway File and PDF Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/file-input) — Send PDFs and documents to AI Gateway models with examples for each supported SDK and API format.
 - [OpenAI Responses Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
 - [OpenResponses Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/images) — Send images and PDF documents for analysis using the OpenResponses API through AI Gateway.
-- [Python with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/python) — Use AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
+- [OpenAI Chat Completions API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions) — Use OpenAI SDKs with the AI Gateway Chat Completions API. Configure the base URL and authentication for chat, streaming,
 
 Full cross-link map for this page: [/docs/ai-gateway/inputs-and-tools/video-input.graph.md](/docs/ai-gateway/inputs-and-tools/video-input.graph.md)
 <!-- /docsgraph:related -->
@@ -341,6 +342,18 @@ Inline base64 increases the request size. Check the selected model's context and
 
 For request details and failures, inspect [AI Gateway logs](/docs/ai-gateway/observability-and-spend/logs). See [Inputs & Tools](/docs/ai-gateway/inputs-and-tools) to choose another capability.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/integrations
 summary: Safely rotate API keys, tokens, and other secrets in your Vercel environment variables.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/environment-variables/rotating-secrets.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "48c25ae889789ec06ba473a4ee91d04533d84480a3ee0a662f27ac4ea079377a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "54b5e2c53b8a581ed97480f3f7b82a8f7a85e22202fa163a2319e6612a54b3a1"
 ---
 
 # Rotating environment variables
@@ -33,17 +34,16 @@ When you need to rotate API keys, tokens, or other credentials stored in your [e
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Rotating Secrets for Vercel Marketplace Integrations](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-supabase-integration) — Rotate the Supabase service role key, JWT secret, and database password from your Vercel integration, then apply the new
-- [How to rotate the secrets of your Neon integration](https://vercel.com/kb/guide/how-to-reset-a-secret-for-a-neon-integration) — This will guide you how to update the password for a Neon project.
 - [How to rotate the secrets of your Hypertune integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-hypertune-integration) — Rotate Hypertune API keys with zero-downtime.
-- [How to rotate the secrets of your Redis integration](https://vercel.com/kb/guide/how-to-reset-the-secret-for-your-redis-integration) — This will guide you how to update the password for a Redis databse.
+- [How to rotate the secrets of your Neon integration](https://vercel.com/kb/guide/how-to-reset-a-secret-for-a-neon-integration) — This will guide you how to update the password for a Neon project.
 - [Legacy environment variable secrets are being sunset](https://vercel.com/changelog/legacy-environment-variable-secrets-are-being-sunset)
-- [How to rotate the secrets of your Clerk integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-clerk-integration) — Rotate Clerk API keys
+- [How to rotate the secrets of your Redis integration](https://vercel.com/kb/guide/how-to-reset-the-secret-for-your-redis-integration) — This will guide you how to update the password for a Redis databse.
 - [Reminder of legacy environment variable secrets sunset](https://vercel.com/changelog/legacy-environment-variable-secrets-sunset-reminder)
 - [Implementing secrets rotation](https://vercel.com/docs/integrations/create-integration/secrets-rotation) — Learn how to implement secrets rotation in your integration to allow users to rotate credentials securely.
-- [Environment Variables](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables) — Vercel MCP tools for environment variables.
 - [Config and Secret environment variables](https://vercel.com/docs/environment-variables/sensitive-environment-variables) — Choose Config or Secret environment variables based on whether their values should remain readable after saving.
 - [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables) — Learn how to create and manage environment variables for Vercel.
 - [Rotate Installation Credential](https://vercel.com/docs/rest-api/marketplace/rotate-installation-credential) — POST /v1/installations/{integrationConfigurationId}/credentials/rotate — Issues a replacement access token for an instal
+- [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
 
 Full cross-link map for this page: [/docs/environment-variables/rotating-secrets.graph.md](/docs/environment-variables/rotating-secrets.graph.md)
 <!-- /docsgraph:related -->
@@ -146,6 +146,18 @@ If you rotated a team-level environment variable and multiple projects broke, yo
 2. Find the variable you rotated and check which projects have access to it.
 3. Redeploy any projects you missed.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

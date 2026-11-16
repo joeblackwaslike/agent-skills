@@ -15,9 +15,10 @@ related:
   - /docs/ai-gateway/modalities/video-generation
 summary: "The inputs and outputs AI Gateway models work with: text, image, and video generation, speech to text, text to speech, realtime voice, embeddings,..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/modalities.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "6aa40cd39d992581e7c1c0f1853e1ead527c0e54cf0a52faf016423e04ca5053"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2c8c688d6c6b4204cf859919555df05ad44413dc2ce5a69aa5e0c1e1be2193b5"
 ---
 
 # AI Gateway Model Modalities
@@ -31,13 +32,11 @@ Modalities are the kinds of input and output models work with. Through AI Gatewa
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway)
-- [ElevenLabs on AI Gateway](https://vercel.com/blog/elevenlabs-on-ai-gateway)
-- [Building AI apps on Vercel: an overview](https://vercel.com/kb/guide/how-to-build-ai-app) — Learn the key AI concepts and tools for building and scaling AI apps.
-- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 - [AI Gateway Chat Completions Image Generation Reference](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation) — Generate images using AI models that support multimodal output through the Chat Completions API through AI Gateway.
-- [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
-- [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
+- [OpenAI Responses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses) — Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported
+- [AI Gateway Video Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/video-input) — Analyze video clips with AI Gateway using AI SDK 7, Python, Chat Completions, and Responses / OpenResponses.
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities.graph.md](/docs/ai-gateway/modalities.graph.md)
 <!-- /docsgraph:related -->
@@ -154,6 +153,18 @@ Ask typed questions about shared state and get structured answers back: boolean 
 
 For cross-cutting abilities, see [Models & Providers](/docs/ai-gateway/models-and-providers). For monitoring and spend, see [Observability and Spend](/docs/ai-gateway/observability-and-spend). For data privacy and governance, see [Security and Compliance](/docs/ai-gateway/security-and-compliance).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

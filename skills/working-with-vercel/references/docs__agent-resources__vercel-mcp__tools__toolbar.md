@@ -12,9 +12,10 @@ related:
   - /docs/vercel-toolbar
 summary: Vercel MCP tools for toolbar.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "920c3eb359379d24a4fff6541e90ec174d5d153d2cbad747276c1e77a2adb392"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1f3f24b8c89e0bec72e84deac89c4180449402c271a8f544ad84742f2c249481"
 ---
 
 # Toolbar
@@ -30,7 +31,7 @@ Review feedback on your deployments through Vercel Toolbar comment threads. You 
 - [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production)
 - [Improvements to Vercel Toolbar: Shrinking when inactive, removal of avatars, and more](https://vercel.com/changelog/improvements-to-vercel-toolbar)
 - [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar)
-- [The Vercel Toolbar is now more compact and dynamic](https://vercel.com/changelog/the-vercel-toolbar-is-now-more-compact-and-dynamic)
+- [Easier toolbar setup for SvelteKit and other Vite-based frameworks](https://vercel.com/changelog/easier-toolbar-setup-for-sveltekit-and-other-vite-based-frameworks)
 - [Managing the visibility of the Vercel Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
 - [Add the Vercel Toolbar to local and production environments](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost) — Learn how to use the Vercel Toolbar in production and local environments.
 
@@ -115,6 +116,18 @@ Add a reply message to an existing toolbar thread.
 
 **Sample prompt:** "Reply to toolbar thread tbt\_123 with 'Fixed in the latest deploy'"
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

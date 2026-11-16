@@ -11,9 +11,10 @@ related:
   []
 summary: Disallows dependency on client libraries inside of middleware to improve performance of middleware.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/nextjs_no_client_deps_in_middleware.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5c10ed625fd6f214a449ae680597f31928be2aeccdb7a84978ea44e14e63e028"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5b643c84ac8c6515423ed0ebaaa893e5400f9812378f58de4a88f0d254a63f6a"
 ---
 
 # NEXTJS_NO_CLIENT_DEPS_IN_MIDDLEWARE
@@ -72,6 +73,18 @@ be refactored to avoid depending on the client libraries. In the example above,
 the code that is used by middleware to fetch experiments should be moved to a
 separate file from the code that provides the React functionality.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

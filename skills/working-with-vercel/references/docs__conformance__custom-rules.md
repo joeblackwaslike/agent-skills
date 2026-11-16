@@ -15,9 +15,10 @@ related:
   - /docs/conformance/custom-rules/forbidden-packages
 summary: Learn how Conformance improves collaboration, productivity, and software quality at scale.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/custom-rules.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "509df766c44a087317578ee46b06fa6940afe05f138b29ed5a8a6d996f2e5cf6"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "60d578d2d25b518c84877049e5ae7d37ef301d6be781782cc8f54f9e84657b9d"
 ---
 
 # Conformance Custom Rules
@@ -157,6 +158,18 @@ version of that package.
   }
   ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

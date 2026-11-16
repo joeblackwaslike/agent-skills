@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis/responses/structured-outputs
 summary: Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "2f704060bab3cc7dd7747ded2570c6168c9f74a485f3f5088eac9c61ba15e131"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "bb8d9ab9a229f34361bba409c2c31d8ac5b65c1e5804a7734fb1da115f8ae1a6"
 ---
 
 # OpenAI Responses API with AI Gateway
@@ -33,12 +34,12 @@ The [OpenAI Responses API](https://developers.openai.com/api/reference/responses
 
 - [AI Gateway supports OpenAI's Responses API](https://vercel.com/changelog/ai-gateway-supports-openais-responses-api)
 - [Cat Jam is now available in stealth for free on AI Gateway](https://vercel.com/changelog/cat-jam-is-now-available-in-stealth-for-free-on-ai-gateway)
+- [Claude Fable 5.2 now available on AI Gateway](https://vercel.com/changelog/claude-fable-5-2-now-available-on-ai-gateway)
 - [Claude Sonnet 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-sonnet-5-5-now-available-on-ai-gateway)
 - [Gemini 4 Argon now available on AI Gateway](https://vercel.com/changelog/gemini-4-argon-now-available-on-ai-gateway)
-- [Glyph Cluster is now available in stealth for free on AI Gateway](https://vercel.com/changelog/glyph-cluster-is-now-available-in-stealth-for-free-on-ai-gateway)
 - [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway)
-- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
-- [OpenAI Codex with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openai-codex) — Connect OpenAI Codex to AI Gateway with one CLI command, or configure it manually.
+- [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
+- [AI Gateway OIDC Authentication](https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc) — Authenticate AI Gateway requests from Vercel deployments with OIDC tokens. Configure the AI SDK or send bearer tokens di
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/responses.graph.md](/docs/ai-gateway/sdks-and-apis/responses.graph.md)
 <!-- /docsgraph:related -->
@@ -157,6 +158,18 @@ When an error occurs, the API returns a JSON object with details about what went
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

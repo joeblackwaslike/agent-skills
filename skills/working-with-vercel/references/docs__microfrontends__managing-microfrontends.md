@@ -15,9 +15,10 @@ related:
   - /docs/domains/working-with-domains/assign-domain-to-a-git-branch
 summary: Learn how to manage your microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/microfrontends/managing-microfrontends.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "1dac402c6167ac98b8613630fc8b3b0f5320c7feb26a679de307751528bd6885"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d6c4f05f46d140434dc9b6c44395e811015a239b7994a1b62f45226e6d940d33"
 ---
 
 # Managing microfrontends
@@ -33,12 +34,11 @@ With a project's **Microfrontends** settings of the Vercel dashboard, you can:
 - [Microfrontends support is now in Public Beta](https://vercel.com/changelog/microfrontends-support-is-now-in-public-beta)
 - [Preview links between microfrontends projects now serve all paths](https://vercel.com/changelog/preview-links-between-microfrontends-projects-now-serve-all-paths)
 - [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends)
-- [Microfrontends now generally available](https://vercel.com/changelog/microfrontends-now-generally-available)
 - [Microfrontends Routing](https://vercel.com/docs/microfrontends/routing) — Configure which microfrontend handles each path and understand how Vercel selects deployments.
 - [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart) — Learn how to get started with microfrontends on Vercel.
 - [Testing & troubleshooting microfrontends](https://vercel.com/docs/microfrontends/troubleshooting) — Learn about testing, common issues, and how to troubleshoot microfrontends on Vercel.
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/microfrontends/managing-microfrontends.graph.md](/docs/microfrontends/managing-microfrontends.graph.md)
 <!-- /docsgraph:related -->
@@ -333,6 +333,18 @@ Microfrontends also provides an option to route a project's own observability da
 
 If you are using Turborepo with `--env-mode=strict`, you need to either add `ROUTE_OBSERVABILITY_TO_THIS_PROJECT` and `NEXT_PUBLIC_VERCEL_OBSERVABILITY_BASEPATH` to the allowed env variables or set `--env-mode` to `loose`. See [documentation](https://turborepo.com/docs/crafting-your-repository/using-environment-variables#environment-modes) for more information.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

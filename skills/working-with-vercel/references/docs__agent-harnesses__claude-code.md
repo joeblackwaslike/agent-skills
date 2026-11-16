@@ -15,9 +15,10 @@ related:
   - /docs/functions/limitations
 summary: Run Claude Code in a Vercel Sandbox, driven by a Vercel Function, with its session in a durable log, so a crashed turn resumes on a new function.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-harnesses/claude-code.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "555563ec58cf9bf8ae63c3664fa7809627ff236b9196b3ad2c6d2d35fb51b913"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1b498ad1433cb855d96f7fd40973e25e0038bf017ae5e674ec0dbfcdb3768dc2"
 ---
 
 # Running Claude Code Durably on Vercel
@@ -36,16 +37,17 @@ Each session of [Claude Code](https://docs.claude.com/en/docs/claude-code/overvi
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Workflow SDK 5: built for production](https://vercel.com/blog/workflow-sdk-5)
 - [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
+- [Build Claude Managed Agents with Vercel Services](https://vercel.com/kb/guide/claude-managed-agents-vercel-services) — Deploy Claude Managed Agents with Vercel Services to run a streaming research analyst in a browser chat, using Anthropic
+- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
 - [How to give agents persistent storage with Vercel Drives](https://vercel.com/kb/guide/persistent-storage-with-vercel-drives) — Give AI SDK and TanStack AI agents persistent storage with Vercel Drives so they can save and reuse research notes acros
-- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
-- [Running Codex Durably on Vercel](https://vercel.com/docs/agent-harnesses/codex) — Run Codex in a Vercel Sandbox, driven by a Vercel Function, with its session in a durable log, so a crashed turn resumes
-- [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
 - [Running OpenCode Durably on Vercel](https://vercel.com/docs/agent-harnesses/opencode) — Run OpenCode v2 inside a Vercel Function with its session in a durable log, so a crashed turn resumes in a new function.
 - [Running fx Durably on Vercel](https://vercel.com/docs/agent-harnesses/fx) — Deploy an fx agent with libfx so its sessions survive crashes, function timeouts, and redeploys on Vercel.
+- [Running Pi Durably on Vercel](https://vercel.com/docs/agent-harnesses/pi) — Make a Pi agent durable on Vercel so a crashed turn resumes in a new function instead of starting over.
 - [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
-- [eve on Vercel](https://vercel.com/docs/frameworks/agents/eve) — Create and deploy an eve agent on Vercel with AI Gateway model access, durable sessions, and authenticated requests.
+- [Claude Code and Claude Agent SDK with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/claude-code) — Connect Claude Code to AI Gateway with one CLI command, or configure it manually.
 
 Full cross-link map for this page: [/docs/agent-harnesses/claude-code.graph.md](/docs/agent-harnesses/claude-code.graph.md)
 <!-- /docsgraph:related -->
@@ -67,7 +69,7 @@ The Sandbox holds no secrets. A crashed turn resumes on a new function, and if t
   ```ts {3} filename="lib/agent.ts"
   import { claudeCode } from 'durable-harness/claude-code';
 
-  export const agent = claudeCode({ model: 'anthropic/claude-sonnet-5.5' });
+  export const agent = claudeCode({ model: 'anthropic/claude-fable-5.2' });
   ```
   `claudeCode()` runs Claude Code in a Vercel Sandbox by default, so you don't pass anything to get one. A session's Sandbox starts with its first turn. Model calls go through AI Gateway with the deployment's OIDC token, so you don't need an Anthropic API key.
 
@@ -211,7 +213,7 @@ An app can make several agents, each with its own chat route. The queue route se
 import { claudeCode } from 'durable-harness/claude-code';
 
 export const reviewer = claudeCode({ name: 'reviewer', model: 'anthropic/claude-opus-5.5' });
-export const fixer = claudeCode({ name: 'fixer', model: 'anthropic/claude-sonnet-5.5' });
+export const fixer = claudeCode({ name: 'fixer', model: 'anthropic/claude-fable-5.2' });
 ```
 
 Keep each name stable, because sessions that already started carry it. Two agents with the same name throw when their module loads, so the build fails.
@@ -226,7 +228,7 @@ To turn on Claude Code's own tools, pass `builtins: true`. They run in the Sandb
 import { claudeCode } from 'durable-harness/claude-code';
 
 export const agent = claudeCode({
-  model: 'anthropic/claude-sonnet-5.5',
+  model: 'anthropic/claude-fable-5.2',
   builtins: true,
 });
 ```
@@ -246,7 +248,7 @@ import { claudeCode } from 'durable-harness/claude-code';
 import { sandbox } from 'durable-harness/sandbox';
 
 export const agent = claudeCode({
-  model: 'anthropic/claude-sonnet-5.5',
+  model: 'anthropic/claude-fable-5.2',
   workspace: sandbox({
     region: 'iad1',
     network: 'deny-all',
@@ -293,7 +295,7 @@ import { claudeCode } from 'durable-harness/claude-code';
 import { sandbox } from 'durable-harness/sandbox';
 
 export const agent = claudeCode({
-  model: 'anthropic/claude-sonnet-5.5',
+  model: 'anthropic/claude-fable-5.2',
   workspace: sandbox({
     credentials: {
       token: process.env.VERCEL_TOKEN!,
@@ -313,12 +315,46 @@ export const agent = claudeCode({
 - The Sandbox allows all outbound traffic by default. To restrict it, pass `network: 'deny-all'` or `{ allow: [...] }` to `sandbox()`. See [Security](/docs/agent-harnesses/security#what-these-controls-dont-cover).
 - The Agent SDK runs in your function, so it needs the Node.js runtime. It can't run in the Edge runtime or a browser.
 
+## Frequently asked questions
+
+### Can Claude Code run in a Vercel Function?
+
+Not directly. Claude Code is a command-line tool built for one user, it keeps its state on disk, and with Fluid compute one function instance serves many sessions. So `durable-harness` runs each session's Claude Code in its own [Vercel Sandbox](/docs/sandbox) and refuses to run it anywhere else. Your function drives the CLI through the Claude Agent SDK, makes its model calls, runs your own tools, and writes the session's durable log. See [Security](/docs/agent-harnesses/security#why-claude-code-and-codex-run-only-in-a-sandbox).
+
+### Do I need an Anthropic API key to run Claude Code on Vercel?
+
+No. The CLI's model calls go to your function, which sends them to [AI Gateway](/docs/ai-gateway) with the deployment's [OIDC token](/docs/oidc), so the Sandbox holds no API key. To use your own Anthropic key or Claude API credits, add it to [AI Gateway Bring Your Own Key (BYOK)](/docs/ai-gateway/authentication-and-byok/byok), which applies across your Vercel team. Spend through your own key isn't counted in AI Gateway budgets. On your machine, run `vercel link` first.
+
+### Which Claude Code tools can the agent use?
+
+None by default. The model can call only the tools you pass in `tools`, and those run in your function. Pass `builtins: true` to turn on Bash, Read, Edit, Write, NotebookEdit, and WebFetch, or list the ones you want, as in `builtins: ['Read', 'Edit']`. Built-in tools run in the Sandbox on the session's files in `/workspace`, and none runs again after a crash. Provider-hosted tools, such as web search, stay off unless you list them in `providerTools`. See [Tools](#tools).
+
+### How much does a Claude Code session cost, and how do I cap it?
+
+Every session starts a Sandbox, even with no tools, so you pay for Sandbox time and Drive storage as [Sandbox pricing](/docs/sandbox/pricing) shows, plus model tokens through [AI Gateway](/docs/ai-gateway/pricing). By default, a session's Sandbox runs for at most 4 hours, and model spend has no cap. Set `sandbox({ budget: { turnUsd, sessionUsd, vmSeconds } })` to cap spend and Sandbox time per turn or per session, and add an [AI Gateway budget](/docs/ai-gateway/observability-and-spend/budgets). A project budget counts the project's OIDC requests and API keys scoped to the project. With an unscoped `AI_GATEWAY_API_KEY`, use an API key or team budget instead.
+
+### Do a Claude Code session's files survive a crash or a new Sandbox?
+
+Yes. Each session's `/workspace` is on a [Drive](/docs/sandbox/concepts/drives) that outlives its Sandbox, so a session that moves to a new Sandbox keeps its files and resumes its conversation. Before a session would pass your plan's [maximum Sandbox session duration](/docs/sandbox/pricing#runtime-limits), `durable-harness` replaces the Sandbox between turns and keeps the Drive. The Drive lasts until you delete it with `deleteSessionSandbox(sessionId)`, or with `sandboxCleanup({ idleDays })` from a [cron job](/docs/cron-jobs). See [The Sandbox](#the-sandbox).
+
 ## More resources
 
 - [`durable-harness` on GitHub](https://github.com/vercel-labs/durable-harness)
 - [Claude Agent SDK](https://docs.claude.com/en/docs/agent-sdk/overview)
 - [Vercel Sandbox](/docs/sandbox)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

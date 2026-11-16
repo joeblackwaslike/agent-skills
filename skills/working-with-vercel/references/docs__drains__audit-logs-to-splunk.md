@@ -12,9 +12,10 @@ related:
   - /docs/drains/using-drains
 summary: Learn how to forward Vercel Audit Log Drain events to Splunk using the HTTP Event Collector (HEC).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/drains/audit-logs-to-splunk.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "e2c25af4245da02d7fb5ab9f9cbd386d8d13c6ac3ad951ad484335cbc8b64010"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "eeb4f7c9034532fba8d28abc414a79514c3c4514c9d14c90f9fde215b828e05f"
 ---
 
 # Drain Audit Logs to Splunk
@@ -30,12 +31,11 @@ Audit Log Drains can forward team activity events to [Splunk](https://www.splunk
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Audit Log Drains now support Datadog, Splunk, and Panther](https://vercel.com/changelog/audit-log-drains-now-support-datadog-splunk-and-panther)
-- [Expanded Audit Log coverage, now delivered through Vercel Drains](https://vercel.com/changelog/expanded-audit-log-coverage-now-delivered-through-vercel-drains)
 - [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains)
 - [Drain Audit Logs to Datadog](https://vercel.com/docs/drains/audit-logs-to-datadog) — Learn how to forward Vercel Audit Log Drain events to Datadog using the Datadog Logs API.
 - [Migrating from Custom SIEM Log Streaming to Audit Log Drains](https://vercel.com/docs/audit-log/migrating-to-drains) — Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event
 - [Drain Audit Logs to Panther](https://vercel.com/docs/drains/audit-logs-to-panther) — Learn how to forward Vercel Audit Log Drain events to Panther using Panther's built-in Vercel source.
-- [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
+- [Drain Audit Logs to S3](https://vercel.com/docs/drains/audit-logs-to-s3) — Learn how to configure AWS IAM and Amazon S3 so Vercel can write Audit Log Drain events to your S3 bucket.
 - [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics) — Learn about Web Analytics Drains - data formats and custom events configuration.
 
 Full cross-link map for this page: [/docs/drains/audit-logs-to-splunk.graph.md](/docs/drains/audit-logs-to-splunk.graph.md)
@@ -101,6 +101,18 @@ See the [Audit Log Drains reference](/docs/drains/reference/audit-logs#splunk-he
 - [Configure Drains](/docs/drains/using-drains)
 - [Splunk HTTP Event Collector documentation](https://help.splunk.com/en/data-management/collect-http-event-data/use-hec-in-splunk-cloud-platform/set-up-and-use-http-event-collector-in-splunk-web)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

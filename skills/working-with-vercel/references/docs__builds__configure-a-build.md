@@ -15,9 +15,10 @@ related:
   - /docs/deployments/troubleshoot-a-build
 summary: Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build according to your requirements.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/builds/configure-a-build.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "1f29c8c3ffdbaa7213f8114937b7866dda61833bd5854aaf40a11e85f89b0d0c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2663a1bc0ce27d3b2b92af9abe2f1dfb530197dabaf0cf7957184a73806faa83"
 ---
 
 # Configuring a Build
@@ -40,8 +41,8 @@ When you make a [deployment](/docs/deployments), Vercel **builds** your project.
 - [Announcing the Build Output API](https://vercel.com/blog/build-output-api)
 - [Advanced Project Settings](https://vercel.com/blog/advanced-project-settings)
 - [New configuration overrides available per-deployment](https://vercel.com/changelog/new-configuration-overrides-available-per-deployment)
-- [Frameworks on Vercel](https://vercel.com/docs/frameworks) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
-- [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
+- [Optimized CDN caching and deploying of immutable static assets](https://vercel.com/changelog/optimized-cdn-caching-and-deploying-of-immutable-static-assets)
+- [Dry-run deployments with Vercel CLI](https://vercel.com/changelog/dry-run-deployments-with-vercel-cli)
 
 Full cross-link map for this page: [/docs/builds/configure-a-build.graph.md](/docs/builds/configure-a-build.graph.md)
 <!-- /docsgraph:related -->
@@ -346,6 +347,18 @@ In a monorepo, you can [skip deployments](/docs/monorepos#skipping-unaffected-pr
 2. Scroll down to **Root Directory**
 3. Enable the **Skip deployment** switch
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

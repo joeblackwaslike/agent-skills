@@ -4,8 +4,8 @@ description: Learn how to use the Deep Agents harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/deepagents"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/deepagents.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "29b22bc28dec2d3489aa1a514bed8ab736d7bb3e788dbbaf02b1acc73c26f26b"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "7f50dcc01382da68bac14a746d3c47988cb74d41fd5ab73a30c373a51ae4dfbc"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -119,10 +119,9 @@ Settings:
   2 seconds. These retries use exponential backoff and are separate from
   `startupTimeoutMs`. They cannot recover when the sandbox, bridge process, or
   bridge endpoint is permanently unavailable.
-- `mintBridgeToken`: synchronous function that receives the sandbox id and
-  returns the bridge authentication token. By default, the adapter generates a
-  random 32-byte token. Custom implementations must return a suitably secret
-  token.
+- `mintBridgeToken`: deprecated and ignored. Passing it logs a warning. The
+  adapter generates a key pair for each bridge, passes only the public key into
+  the sandbox, and keeps the private key in host-side resume state.
 
 ## Structured Output
 
@@ -164,7 +163,7 @@ To run a non-Anthropic model, select `ai-gateway`:
 const harness = createDeepAgents({ auth: 'ai-gateway' });
 const agent = new HarnessAgent({
   harness,
-  model: 'google/gemini-2.5-flash',
+  model: 'google/gemini-4-hydrogen',
   sandbox,
 });
 ```
@@ -228,6 +227,16 @@ that cannot be resolved require host approval through Deep Agents' native
 human-in-the-loop interrupts. Native absolute paths keep their original meaning.
 `allow-all` remains unrestricted. These approval rules are not a filesystem
 sandbox, and approved shell commands can access paths outside the workdir.
+
+Under `allow-edits`, file changes that touch `.agents/skills` or `.deepagents`
+in the session workdir always require host approval. These paths hold memory,
+configuration, and skills that can change the agent's behavior in later
+sessions. A path matches when it is a protected path, lies inside one, or is a
+parent of one. Symlinks are resolved in both directions: writes through an
+alias that points into a protected path match, as do writes to targets of
+symlinks inside protected directories. While a protected path exists, writes to
+hard-linked files also require approval. Reads of protected paths follow the
+usual rules.
 
 ## Known Limitations
 

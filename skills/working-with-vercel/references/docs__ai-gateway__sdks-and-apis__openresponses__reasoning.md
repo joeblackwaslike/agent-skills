@@ -15,9 +15,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis/openresponses/streaming
 summary: Control how much a reasoning model thinks before answering with the OpenResponses API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/reasoning.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ce3947c512511f3d01314bc8eb73349053d2bd6e1268082513ae95b24fd43ec3"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5eb8d00be606209033b216cb6876dea5fe957e41ed7a5b69e8dcbca1815074ae"
 ---
 
 # OpenResponses Reasoning with AI Gateway
@@ -32,7 +33,6 @@ Reasoning models work through a problem before answering. With the [OpenResponse
 
 - [OpenAI Responses Reasoning with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/reasoning) — Control how much a model thinks before answering with the OpenAI Responses API through AI Gateway.
 - [AI Gateway OpenAI Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai) — Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
-- [OpenResponses API now supported on Vercel AI Gateway](https://vercel.com/changelog/openresponses-api-now-supported-on-vercel-ai-gateway)
 - [OpenAI Chat Completions Reasoning with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning) — Control how much a model thinks before answering with the OpenAI Chat Completions API through AI Gateway.
 - [Anthropic Messages Extended Thinking with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning) — Configure how much Claude thinks before answering, using the Anthropic Messages API thinking parameter through AI Gatewa
 - [AI Gateway Amazon Bedrock Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock) — Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
@@ -176,6 +176,18 @@ for (const block of message.content) {
 - [Structured outputs](/docs/ai-gateway/sdks-and-apis/openresponses/structured-outputs) - Constrain the answer to a schema
 - [Streaming](/docs/ai-gateway/sdks-and-apis/openresponses/streaming) - Stream tokens as they're generated
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

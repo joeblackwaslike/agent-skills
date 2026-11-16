@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/plugins/host-marketplace.md"
-fetched_at: "2026-11-02T12:02:15.109Z"
-sha256: "9e64737ef4095d9ebd0d3809853efd653faa5334000833a9a277c62a6abb0e2e"
+fetched_at: "2026-11-16T12:28:44.823Z"
+sha256: "52787e3decc5e4d2169f611ce8cf87a34d1b4ec5748ff8264a05e4d1a6149a0e"
 ---
 
 > ## Documentation Index
@@ -129,7 +129,7 @@ Users without a git-host account can add a marketplace you serve as a `marketpla
 
 These entry sources need no git account:
 
-* **`archive`**: a zip downloaded over HTTPS. Users need neither `git` nor an account, only network access to the URL. Requires Claude Code v2.1.224 or later. Pin each archive with `sha256` so Claude Code refuses a changed download. To send credentials with the download, see [Authenticate archive downloads](#authenticate-archive-downloads).
+* **`archive`**: a zip downloaded over HTTPS. Users need neither `git` nor an account, only network access to the URL. Pin each archive with `sha256` so Claude Code refuses a changed download. To send credentials with the download, see [Authenticate archive downloads](#authenticate-archive-downloads).
 * **A public git repository**: Claude Code clones a public `url` or `git-subdir` source over HTTPS without credentials when the entry gives an `https://` URL. For a `github` source, or a `git-subdir` source written as `owner/repo`, tell users without a GitHub SSH key to set `CLAUDE_CODE_PLUGIN_PREFER_HTTPS=1`.
 
 Keep `CLAUDE_CODE_PLUGIN_PREFER_HTTPS=1` in your instructions even if `claude plugin install` succeeds without it from the shell on a machine with no SSH key. For a `github` source, that command can fall back to HTTPS on its own, printing `SSH not configured, cloning via HTTPS`. Installs from `/plugin` inside a session and plugin updates don't fall back, so without the variable they fail for users who have no GitHub SSH key.

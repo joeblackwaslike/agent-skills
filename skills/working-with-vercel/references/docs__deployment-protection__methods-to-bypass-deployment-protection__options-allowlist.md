@@ -14,9 +14,10 @@ related:
   - /docs/deployment-protection/methods-to-protect-deployments/trusted-ips
 summary: Learn how to disable Deployment Protection for CORS preflight requests for a list of paths.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/options-allowlist.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b271baf64004f645bbefa5ae10b931fe69e5ef5b83d3c34e9ee995ff8a4ada68"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9bb1b29977f980da50e16c254700a008f2920a6ac9b4034dc34904f4f523514c"
 ---
 
 # OPTIONS Allowlist
@@ -38,6 +39,7 @@ You can use OPTIONS Allowlist to disable [Vercel Authentication](/docs/deploymen
 - [Deployment Protection Exceptions](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions) — Disable Deployment Protection for a list of preview domains.
 - [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Vercel Support Code Visibility, Git Fork Protection, and
+- [update_project_deployment_protection](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/update_project_deployment_protection) — Use update_project_deployment_protection with Vercel MCP.
 
 Full cross-link map for this page: [/docs/deployment-protection/methods-to-bypass-deployment-protection/options-allowlist.graph.md](/docs/deployment-protection/methods-to-bypass-deployment-protection/options-allowlist.graph.md)
 <!-- /docsgraph:related -->
@@ -90,6 +92,18 @@ For example, if you specify `/api`, all requests to paths that start with `/api`
 - ### Save changes
   Select **Save**
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

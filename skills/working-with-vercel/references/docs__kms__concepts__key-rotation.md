@@ -13,9 +13,10 @@ related:
   - /docs/kms/ts-sdk-reference
 summary: How Vercel KMS stages a pending signing key, schedules its activation, and retires the previous key so already-issued tokens keep verifying.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/kms/concepts/key-rotation.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "375ff9e7693eeee2e4eb7d75e0f0101aef6784196093bcf110ee852d93bed237"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "aa6e327332a5dcdcdcfdac4a5c093a68f342dffb79612ccba58a537138618dc0"
 ---
 
 # Vercel KMS Key Rotation
@@ -29,11 +30,11 @@ Rotation replaces an issuer's active signing key without changing the issuer ID 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Sign JWTs from your Functions without managing private keys](https://vercel.com/changelog/sign-jwts-from-your-functions-without-managing-private-keys)
-- [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management) — Vercel MCP tools for key management.
 - [Vercel KMS Quickstart](https://vercel.com/docs/kms/quickstart) — Create a KMS issuer, sign a JWT from a Vercel Function with @vercel/kms, and verify it against the published JWKS.
-- [Vercel KMS Pricing and Limits](https://vercel.com/docs/kms/pricing) — How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
+- [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management) — Vercel MCP tools for key management.
 - [Activate a signing key](https://vercel.com/docs/rest-api/kms/activate-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/activate — Activate a pending signing key so the issuer starts signing with
 - [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys — Create a new signing key for a KMS issuer. Depending on the activation mode, the
+- [Vercel KMS Pricing and Limits](https://vercel.com/docs/kms/pricing) — How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
 
 Full cross-link map for this page: [/docs/kms/concepts/key-rotation.graph.md](/docs/kms/concepts/key-rotation.graph.md)
 <!-- /docsgraph:related -->
@@ -90,6 +91,18 @@ To rotate an external issuer, include the new key material as an `importKey` (a 
 - [Authentication](/docs/kms/concepts/authentication)
 - [SDK Reference](/docs/kms/ts-sdk-reference)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

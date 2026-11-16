@@ -13,9 +13,10 @@ related:
   - /docs/cli/global-options
 summary: Learn how to install marketplace native integrations and provision resources with the vercel install CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/install.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "fba0ba8fc4f502cfeb802f3460ae9e728c042d05ac3f906d8537c31a7cdcd9c5"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9bd8ea84bb4f379256ab4df2fb57990cd7d1f852a47fee8c3734dbad3f86211f"
 ---
 
 # vercel install
@@ -29,11 +30,12 @@ sha256: "fba0ba8fc4f502cfeb802f3460ae9e728c042d05ac3f906d8537c31a7cdcd9c5"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Install Marketplace Integrations from the Vercel CLI](https://vercel.com/changelog/install-marketplace-integrations-from-the-vercel-cli)
+- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Install an Integration](https://vercel.com/docs/integrations/install-an-integration) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
-- [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code, Codex, and OpenCode, and co
-- [vercel init](https://vercel.com/docs/cli/init) — Learn how to initialize Vercel supported framework examples locally using the vercel init CLI command.
-- [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
-- [vercel login](https://vercel.com/docs/cli/login) — Learn how to login into your Vercel account using the vercel login CLI command.
+- [Update Installation](https://vercel.com/docs/rest-api/marketplace/update-installation) — PATCH /v1/installations/{integrationConfigurationId} — This endpoint updates an integration installation.
+- [Marketplace Vercel API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel) — Learn how to call Vercel API endpoints to interact with Vercel resources
+- [Finalize Installation](https://vercel.com/docs/rest-api/marketplace/finalize-installation) — POST /v1/installations/{integrationConfigurationId}/billing/finalize — This endpoint allows the partner to mark an insta
+- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
 
 Full cross-link map for this page: [/docs/cli/install.graph.md](/docs/cli/install.graph.md)
 <!-- /docsgraph:related -->
@@ -74,6 +76,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

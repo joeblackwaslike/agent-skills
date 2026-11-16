@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis/openresponses/structured-outputs
 summary: Use the OpenResponses API specification with AI Gateway for a unified, provider-agnostic interface.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "9d22cdfd50ba5dadf576a6afd4668cdce2f778a525e44827bb033f8d7e30e6a3"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "eb37cbd2fc3237e8c55fe6061f88644df1ac4166e6fa22c307357fdb57c53c5d"
 ---
 
 # OpenResponses API with AI Gateway
@@ -35,8 +36,8 @@ AI Gateway supports the [OpenResponses API](https://openresponses.org) specifica
 - [Open Responses](https://ai-sdk.dev/providers/ai-sdk-providers/open-responses) — Learn how to use Open Responses with AI Gateway and the direct provider.
 - [Service tiers now available on AI Gateway](https://vercel.com/changelog/service-tiers-now-available-on-ai-gateway)
 - [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway)
-- [AI Gateway supports OpenAI's Responses API](https://vercel.com/changelog/ai-gateway-supports-openais-responses-api)
 - [OpenAI Responses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses) — Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported
+- [OpenAI Responses Text Generation with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/text-generation) — Generate text responses with the OpenAI Responses API through AI Gateway.
 - [AI Gateway Video Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/video-input) — Analyze video clips with AI Gateway using AI SDK 7, Python, Chat Completions, and Responses / OpenResponses.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openresponses.graph.md](/docs/ai-gateway/sdks-and-apis/openresponses.graph.md)
@@ -229,6 +230,18 @@ When an error occurs, the API returns a JSON object with details about what went
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

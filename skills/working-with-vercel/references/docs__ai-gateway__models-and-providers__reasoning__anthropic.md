@@ -12,9 +12,10 @@ related:
   - /docs/ai-gateway/models-and-providers/reasoning
 summary: Configure adaptive and extended thinking for Anthropic Claude models with the AI SDK and AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/anthropic.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ca9b076a4395df7b5479cf65e0b8f2bf72ed1d85e07b09e8bff04f389ee028a5"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5e2776f02597447a9da194720f378b7c4ea14247f6f8eddd58717f38fc736cba"
 ---
 
 # AI Gateway Anthropic Reasoning
@@ -27,14 +28,14 @@ Anthropic Claude models support thinking, which lets the model reason through co
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Anthropic Messages Extended Thinking with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning) — Configure how much Claude thinks before answering, using the Anthropic Messages API thinking parameter through AI Gatewa
-- [Reasoning](https://ai-sdk.dev/docs/ai-sdk-core/reasoning) — Learn how to control reasoning across providers with the top-level reasoning parameter.
 - [Claude Haiku 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-haiku-5-5-now-available-on-ai-gateway)
 - [Use Claude Opus 4.6 on AI Gateway](https://vercel.com/changelog/claude-opus-4.6-on-ai-gateway)
-- [Claude Opus 4.7 on AI Gateway](https://vercel.com/changelog/opus-4.7-on-ai-gateway)
-- [Claude Platform on AWS](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws) — Learn how to use Claude Platform on AWS with AI Gateway and the direct provider.
 - [Claude Opus 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-5-now-available-on-ai-gateway)
-- [Get started with Claude 4](https://ai-sdk.dev/cookbook/guides/claude-4) — Get started with Claude 4 using the AI SDK.
+- [Claude Opus 4.7 on AI Gateway](https://vercel.com/changelog/opus-4.7-on-ai-gateway)
+- [Anthropic Messages Extended Thinking with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning) — Configure how much Claude thinks before answering, using the Anthropic Messages API thinking parameter through AI Gatewa
+- [Claude Opus 4.5 now available in Vercel AI Gateway](https://vercel.com/changelog/claude-opus-4-5-now-available-in-vercel-ai-gateway)
+- [AI Gateway Amazon Bedrock Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock) — Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
+- [Claude Code and Claude Agent SDK with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/claude-code) — Connect Claude Code to AI Gateway with one CLI command, or configure it manually.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/reasoning/anthropic.graph.md](/docs/ai-gateway/models-and-providers/reasoning/anthropic.graph.md)
 <!-- /docsgraph:related -->
@@ -352,6 +353,18 @@ For more details, see the [Anthropic extended thinking docs](https://platform.cl
 
 Claude 4 and later models return **summarized** thinking output, not full thinking tokens. You're charged for the full thinking tokens, but the response contains a condensed summary.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

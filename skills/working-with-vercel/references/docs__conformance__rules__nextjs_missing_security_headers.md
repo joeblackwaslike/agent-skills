@@ -11,9 +11,10 @@ related:
   []
 summary: Requires that security headers are set correctly for Next.js apps and contain valid directives.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/nextjs_missing_security_headers.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "7a087b5916501c7afb14f07276a5bceb534b4a7136400647541e8fbd2983111c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c4c577094456ed5de50800f62c3b046c0a11fc5371720627a14f7f89abeaa07f"
 ---
 
 # NEXTJS_MISSING_SECURITY_HEADERS
@@ -69,6 +70,18 @@ to fix this Conformance test. That document will walk through each of the
 headers and also links to further documentation to understand what the headers
 do and how to set the best values for your application.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -14,9 +14,10 @@ related:
   - /docs/functions/limitations
 summary: The Edge Function invocation timed out. This is an application error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/edge_function_invocation_timeout.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b44ab7021b9466bc80e83458dd7525313d1b00d4540f5528db20d97c8c104c44"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "197ed86ff8541218abbb519611d562c2faa629ec1dd0747b4c9ad673c493d436"
 ---
 
 # EDGE_FUNCTION_INVOCATION_TIMEOUT
@@ -40,6 +41,18 @@ To troubleshoot this error, follow these steps:
 5. **Consider streaming data**: If the function is processing large amounts of data, consider using a [streaming approach](/docs/functions/streaming-functions) to avoid timeouts
 6. **Implement error handling:** Add error handling in the function to manage timeouts and other exceptions effectively
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

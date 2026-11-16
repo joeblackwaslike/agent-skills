@@ -15,9 +15,10 @@ related:
   - /docs/comments
 summary: Learn how to share a preview deployment with your team and external collaborators.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployments/sharing-deployments.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "65cfa79081fb71b5a0285bf89a7c6029b29deb3d1c57cb403e9daf33f8c2fa65"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d90dd1e9299317c6ea2dedd383eeddf7f4fd0581aa710ea76dec8d26298c5cac"
 ---
 
 # Sharing a Preview Deployment
@@ -35,9 +36,10 @@ By default, members of your [Vercel team](/docs/accounts#creating-a-team) that h
 - [Additional options for sharing deployments externally](https://vercel.com/changelog/additional-options-for-sharing-deployments-externally)
 - [Invite collaborators to view and comment on your deployments](https://vercel.com/changelog/invite-collaborators-to-view-and-comment-on-your-deployments)
 - [Preview deployments for retail campaign review](https://vercel.com/kb/guide/preview-deployments-retail-campaign-review) — Use preview deployments so merchandising, brand, and engineering review a retail campaign on one live URL before launch.
-- [Protected Preview Deployments available on all plans](https://vercel.com/changelog/protected-preview-deployments-available-on-all-plans)
-- [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments)
 - [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments) — Protect who can see your deployments.
+- [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments)
+- [Managing Comments on Preview Deployments](https://vercel.com/docs/comments/managing-comments) — Learn how to manage Comments on your Preview Deployments from Team members and invited collaborators.
+- [Preview Deployment Suffix](https://vercel.com/docs/deployments/preview-deployment-suffix) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
 - [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 
 Full cross-link map for this page: [/docs/deployments/sharing-deployments.graph.md](/docs/deployments/sharing-deployments.graph.md)
@@ -114,6 +116,18 @@ Deployment protection allows you to secure your preview deployments, with [Authe
 - If you have **Authentication** enabled, only team members can view your deployment, unless you have added the user individually or they have requested access, or you have enabled sharable links
 - If you have **Password Protection** enabled, only users with the password can view your deployment, unless you have added the user individually or they have requested access, or you have enabled sharable links
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

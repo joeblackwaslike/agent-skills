@@ -14,9 +14,10 @@ related:
   - /docs/connect/concepts/triggers
 summary: Platform limits and per-minute rate limits for Vercel Connect SDK methods, CLI commands, and public endpoints.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/connect/limits.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b2a7494f855b926e676d938bdfd3bbff7d22f0f986d1b0c5a2faee7862de82d7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "eeef12871b12fb6a3fd798c4c40f4b1f376adb82dca079dc3d8e67885ca815c6"
 ---
 
 # Vercel Connect Limits
@@ -33,8 +34,8 @@ The following limits apply. Contact your account team if you need higher limits.
 
 - [Optimizing Vercel Connect Usage](https://vercel.com/docs/connect/optimizing-usage) — Reduce billed token requests and triggers by using the SDK cache effectively, tuning refresh behavior, and pruning trigg
 - [Authentication in Vercel Connect](https://vercel.com/docs/connect/concepts/authentication) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
-- [Vercel Connect Pricing](https://vercel.com/docs/connect/pricing) — How Vercel Connect is billed for token requests and triggers across plans and how to stop being billed.
 - [Get a Connect token](https://vercel.com/docs/rest-api/connect/get-a-connect-token) — POST /v1/connect/token/{connector} — Get an access token for a connector identified by the path parameter and scoped to
+- [Vercel Connect Pricing](https://vercel.com/docs/connect/pricing) — How Vercel Connect is billed for token requests and triggers across plans and how to stop being billed.
 - [List connectors for a project](https://vercel.com/docs/rest-api/connect/list-connectors-for-a-project) — GET /v2/connect/projects/{projectId}/connectors — List the connectors connected to a project and the environments where
 
 Full cross-link map for this page: [/docs/connect/limits.graph.md](/docs/connect/limits.graph.md)
@@ -105,6 +106,18 @@ When you exceed a rate limit, the API returns a `429 Too Many Requests` response
 
 For the SDK methods `getToken` and `getTokenResponse`, a `429` response throws an error in your application. Use in-process [token caching](/docs/connect/ts-sdk-reference#caching) to reduce the number of token requests and stay within limits.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

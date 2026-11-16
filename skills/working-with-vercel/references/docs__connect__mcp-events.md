@@ -15,9 +15,10 @@ related:
   - /docs/deployments/environments
 summary: Use MCP events with Vercel Connect to react to changes, receive verified webhook deliveries, and manage subscription lifecycles.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/connect/mcp-events.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ae344a6c57df57c49c2e4a8dfd1e94a2e1d62edbeb90da9f6ce23bac54654677"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8705d9f8723fe3186d2486c9152dce7deb44d8db908f3e4fbaca9b90db884cfb"
 ---
 
 # MCP Events
@@ -35,14 +36,13 @@ polling for updates.
 
 - [Receive MCP Webhook Events](https://ai-sdk.dev/cookbook/node/mcp-events) — Subscribe to MCP events and receive verified webhooks with AI SDK.
 - [MCP Events support in Vercel Connect is now in public beta](https://vercel.com/changelog/mcp-events-support-in-vercel-connect-is-now-in-public-beta)
-- [MCP Events](https://ai-sdk.dev/docs/ai-sdk-core/mcp-events) — Understand the MCP webhook events contract and the AI SDK APIs for subscribing, verifying, and receiving events.
 - [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
-- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
-- [Introducing Vercel MCP: Connect Vercel to your AI tools](https://vercel.com/blog/introducing-vercel-mcp-connect-vercel-to-your-ai-tools)
+- [MCP Events](https://ai-sdk.dev/docs/ai-sdk-core/mcp-events) — Understand the MCP webhook events contract and the AI SDK APIs for subscribing, verifying, and receiving events.
 - [Deploy MCP servers to Vercel](https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel) — Learn how to deploy Model Context Protocol \\(MCP\\) servers on Vercel with OAuth authentication and efficient scaling.
+- [AI SDK with MCP](https://vercel.com/docs/mcp/integrations/ai-sdk) — Connect the AI SDK to an MCP server on Vercel, discover its tools, and call them with models served through AI Gateway.
+- [Model Context Protocol](https://vercel.com/docs/mcp) — Learn more about MCP and how you can use it on Vercel.
 - [Use Vercel](https://vercel.com/docs/agent-resources/vercel-mcp) — Vercel MCP has tools available for searching docs, managing teams, projects, and deployments, and querying Web Analytics
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
-- [AI SDK with MCP](https://vercel.com/docs/mcp/integrations/ai-sdk) — Connect the AI SDK to an MCP server on Vercel, discover its tools, and call them with models served through AI Gateway.
 
 Full cross-link map for this page: [/docs/connect/mcp-events.graph.md](/docs/connect/mcp-events.graph.md)
 <!-- /docsgraph:related -->
@@ -469,6 +469,18 @@ billed, [stop the subscription](#inspect-and-stop-subscriptions).
 - [SDK Reference](/docs/connect/ts-sdk-reference#mcp-events): Review event API options, return values, and verification errors.
 - [Triggers](/docs/connect/concepts/triggers): Receive provider webhooks configured at the connector level.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

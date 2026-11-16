@@ -11,9 +11,10 @@ related:
   - /docs/cli/global-options
 summary: Learn how to retrieve information about your Vercel deployments using the vercel inspect CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/inspect.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "709293998938636f8d3e4b29c8fc6da3ba3c0a4381dd7db7c3540a2689f494e9"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f6b067d567a7e49c3a435d580d985bd24dabb629d84a6c53007645f6884a54fd"
 ---
 
 # vercel inspect
@@ -29,9 +30,9 @@ The `vercel inspect` command is used to retrieve information about a deployment 
 - [Improvements to command line logs](https://vercel.com/changelog/improvements-to-command-line-logs)
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [vercel docs](https://vercel.com/docs/cli/docs) — Search and read the Vercel docs from your terminal using the Vercel CLI.
+- [vercel ci](https://vercel.com/docs/cli/ci) — Enable or disable Vercel CI for repositories, inspect runs, search logs, and rerun jobs from the command line.
 - [vercel httpstat](https://vercel.com/docs/cli/httpstat) — Learn how to visualize HTTP request timing statistics for your Vercel deployments using the vercel httpstat CLI command.
-- [vercel bisect](https://vercel.com/docs/cli/bisect) — Learn how to perform a binary search on your deployments to help surface issues using the vercel bisect CLI command.
-- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
 
 Full cross-link map for this page: [/docs/cli/inspect.graph.md](/docs/cli/inspect.graph.md)
 <!-- /docsgraph:related -->
@@ -115,6 +116,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

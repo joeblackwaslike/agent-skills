@@ -13,9 +13,10 @@ related:
   - /docs/cli/ai-gateway
 summary: Connect Conductor to AI Gateway through its Claude Code configuration. Route parallel coding agents through the Anthropic-compatible endpoint.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/conductor.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c950756f81a212c8cc3f576389a6eb5987a21bda5cfc11c9d1b4d711d594b360"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b4e22befe4fbc32f5cc546c03e94bd3857afb9a803e6378e794fa4b08401c7be"
 ---
 
 # Conductor with AI Gateway
@@ -28,12 +29,11 @@ AI Gateway provides [Anthropic-compatible API endpoints](/docs/ai-gateway/sdks-a
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [AI Gateway support for Claude Code](https://vercel.com/changelog/ai-gateway-support-for-claude-code)
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 - [Claude Code and Claude Agent SDK with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/claude-code) — Connect Claude Code to AI Gateway with one CLI command, or configure it manually.
-- [Superset with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/superset) — Configure Superset to use AI Gateway with terminal-based coding agents. Set provider credentials and route model request
+- [GitHub Copilot CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/copilot) — Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and
+- [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 - [Cline with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/cline) — Connect Cline to AI Gateway through the Vercel CLI or VS Code settings. Configure model access and monitor usage and spe
-- [Command Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/command-code) — Connect Command Code to AI Gateway with your own API key and a custom base URL. Configure models, switch between them, a
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/conductor.graph.md](/docs/ai-gateway/coding-agents/conductor.graph.md)
 <!-- /docsgraph:related -->
@@ -67,6 +67,18 @@ Conductor also supports running Claude Code on OpenRouter, AWS Bedrock, Google V
 - ### Start using Conductor
   Your requests will now be routed through Vercel AI Gateway. You can verify this by checking your [AI Gateway Overview](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) in the Vercel dashboard.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

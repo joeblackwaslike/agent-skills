@@ -10,20 +10,21 @@ prerequisites:
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/token-pass
+  - /docs/ai-gateway/authentication-and-byok/api-keys
   - /docs/ai-gateway/token-pass/coding-agents
   - /docs/ai-gateway/observability-and-spend/observability
   - /docs/ai-gateway/token-pass/models-and-routing
-  - /docs/ai-gateway/sdks-and-apis/ai-sdk
-summary: Subscribe to Token Pass, create a Token Pass API key, connect a coding agent, and confirm your first request uses Token Pass credit.
+summary: Subscribe to Token Pass, connect a coding agent with any AI Gateway API key, and confirm your first request uses Token Pass credit.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/token-pass/getting-started.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "0c29a4581a47621472859f912926556737a3badc40d806a83e3ce9c32905a539"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e74e299749f8f1a74a04e47fd57915c4c8e2be1c2fdc43b877fab65eabadb8ea"
 ---
 
 # Getting Started with Token Pass
 
-This guide covers subscribing, creating a Token Pass API key, connecting a coding agent, and confirming that AI Gateway billed your first request to Token Pass credit.
+This guide covers subscribing, connecting a coding agent, and confirming that AI Gateway billed your first request to Token Pass credit. A standard API key, an OIDC token, and signing in with your Vercel account all work with Token Pass.
 
 ## Prerequisites
 
@@ -38,32 +39,28 @@ Before you start, you need:
 
   The confirmation shows today's prorated charge and the date your $30 monthly charge starts. Click **Enable and Pay** to subscribe and accept the [Token Pass Terms](/docs/ai-gateway/token-pass#terms).
 
+  Checkout may offer an optional team-wide zero data retention toggle that applies to your whole team. Models served through Token Pass are zero data retention regardless of this setting.
+
   After checkout, the tab shows your credit balance and the featured models.
 
-- ### Create a Token Pass API key
-  On the Token Pass tab, click **Create API Key**. AI Gateway creates a Token Pass API key on the team that has Token Pass.
-
-  A Token Pass API key only works with featured models, and you can't change its type later. Keep a regular AI Gateway API key for other models.
-
-  Export the key in your shell:
-  ```bash filename="terminal"
-  export AI_GATEWAY_API_KEY="your-token-pass-api-key"
-  ```
-
 - ### Connect your coding agent
-  Run the Vercel CLI setup command with your Token Pass API key:
+  You can use any AI Gateway API key. If you don't already have one, the setup command below creates a standard key for you. Run the Vercel CLI setup command:
   ```bash filename="terminal"
-  npx vercel@latest ai-gateway setup --key "$AI_GATEWAY_API_KEY"
+  npx vercel@latest ai-gateway setup
   ```
-  The command detects the agents installed on your machine and asks which ones to configure. It backs up every file it changes, and on macOS it stores the key in your Keychain. Add `--dry-run` to preview the changes, or `--agent <name>` to configure one agent.
-
-  Pass `--key`. Without it, the command creates a regular AI Gateway API key instead of using your Token Pass API key.
-  > **💡 Note:** Each agent you configure uses the Token Pass API key for every request, so it
-  > can only use featured models. To use other models in that agent, run the
-  > setup command again with a regular AI Gateway API key.
+  The command detects the agents installed on your machine and asks which ones to configure. It backs up every file it changes, and on macOS it stores the key in your Keychain. Add `--dry-run` to preview the changes, or `--agent <name>` to configure one agent. To use a specific existing key instead of creating one, pass `--key "$AI_GATEWAY_API_KEY"`.
+  > **💡 Note:** While your team has Token Pass credit, AI Gateway bills featured-model
+  > requests to Token Pass credit with any key. Requests for non-featured models
+  > bill AI Gateway credits instead, so pick a featured model to keep usage on
+  > Token Pass.
+  > **💡 Note:** To cap usage at your Token Pass credit with no fallback, turn on **Restrict
+  > to Token Pass only** under **Advanced Configuration** during [key
+  > creation](/docs/ai-gateway/authentication-and-byok/api-keys#create-a-key).
+  > A Token Pass key only works with featured models, and you can't change its
+  > type later.
 
 - ### Select a featured model
-  In your agent's model picker, choose `zai/glm-5.3`, `moonshotai/kimi-k3`, or `deepseek/deepseek-v4.1-flash`. If the agent has a fast mode, turn it off. Fast variants aren't featured models, so a Token Pass API key can't use them.
+  In your agent's model picker, choose `zai/glm-5.3`, `zai/glm-5.3-flash`, `moonshotai/kimi-k3`, `moonshotai/kimi-k3.1-pro`, or `deepseek/deepseek-v4.1-flash`. If the agent has a fast mode, turn it off. Fast variants aren't featured models, so with a standard key they bill AI Gateway credits instead of drawing from Token Pass credit.
 
   Each agent handles model selection differently. [Coding and personal agents](/docs/ai-gateway/token-pass/coding-agents) has the steps for fx, Claude Code, Codex, Cline, and OpenCode.
 
@@ -75,7 +72,11 @@ Before you start, you need:
 
 ## Test with cURL
 
-To check your key and subscription without an agent, send a request to a featured model:
+To check your subscription without an agent, send a request to a featured model. Export an AI Gateway API key first:
+
+```bash filename="terminal"
+export AI_GATEWAY_API_KEY="your-ai-gateway-api-key"
+```
 
 ```bash filename="terminal"
 curl --fail-with-body https://ai-gateway.vercel.sh/v1/chat/completions \
@@ -89,25 +90,37 @@ curl --fail-with-body https://ai-gateway.vercel.sh/v1/chat/completions \
 }'
 ```
 
-You don't need `providerOptions`. A Token Pass API key sends featured models to the Token Pass provider.
+You don't need `providerOptions`. While you have Token Pass credit, AI Gateway sends featured-model requests to the Token Pass provider with any AI Gateway API key.
 
 The same model IDs work with the [AI SDK](/docs/ai-gateway/sdks-and-apis/ai-sdk), the [OpenAI-compatible API](/docs/ai-gateway/sdks-and-apis/openai-chat-completions), and the [Anthropic-compatible API](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api).
 
 ## Set up with an agent
 
-To have a coding agent do the setup for you, export your Token Pass API key as `AI_GATEWAY_API_KEY`, then give the agent this prompt:
+To have a coding agent do the setup for you, give it this prompt:
 
 ```text filename="prompt"
 Connect my coding agent to Vercel AI Gateway so it uses my Token Pass credit.
-My Token Pass API key is in the AI_GATEWAY_API_KEY environment variable. Run
-`npx vercel@latest ai-gateway setup --key "$AI_GATEWAY_API_KEY"` and let me
-choose which installed agent to configure. Show me the proposed changes before
-applying them. Then select `zai/glm-5.3` in that agent's model picker, turn off
-any fast mode, and send one test request. Confirm the provider was Vercel Token
-Pass (`token-pass`). Never print, log, or commit an API key. Follow
+Run `npx vercel@latest ai-gateway setup` and let me choose which installed
+agent to configure. The command creates a standard AI Gateway API key if I
+don't have one. Show me the proposed changes before applying them. Then select
+`zai/glm-5.3` in that agent's model picker, turn off any fast mode, and send
+one test request. Confirm the provider was Vercel Token Pass (`token-pass`).
+Never print, log, or commit an API key. Follow
 https://vercel.com/docs/ai-gateway/token-pass/coding-agents.
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

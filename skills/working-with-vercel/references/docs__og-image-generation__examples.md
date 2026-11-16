@@ -11,9 +11,10 @@ related:
   []
 summary: Learn how to use the @vercel/og library with examples.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/og-image-generation/examples.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "515a984ca010fbac50ddddcba73a1e09445e95d24e68caeed7a0866d09c598ee"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2f2cfdc12dfa0138487a0b612dbd79fa9c304fbfb142a510f2699d7504841f79"
 ---
 
 # OG Image Generation Examples
@@ -33,13 +34,12 @@ Create an api route with `route.tsx` in `/app/api/og/` and paste the following c
 - [OG Image Generation: The Complete Customization Guide](https://vercel.com/kb/guide/using-custom-font) — Learn how to use custom fonts in your Vercel OG image, plus emoji, external images, non-Latin text, dynamic titles, and
 - [Encrypting parameters](https://vercel.com/kb/guide/encrypting-parameters) — Learn how to encrypt parameters so that only certain values can be passed to generate your image.
 - [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image) — API Reference for the Open Graph Image and Twitter Image file conventions.
-- [ImageResponse](https://nextjs.org/docs/app/api-reference/functions/image-response) — API Reference for the ImageResponse constructor.
 - [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 - [Introducing OG Image Generation: Fast, dynamic social card images at the Edge](https://vercel.com/blog/introducing-vercel-og-image-generation-fast-dynamic-social-card-images)
 - [Client Uploads with Vercel Blob](https://vercel.com/docs/vercel-blob/client-upload) — Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
 - [Advanced Web Analytics Config with @vercel/analytics](https://vercel.com/docs/analytics/package) — With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
-- [Routing Middleware: JS Reference](https://vercel.com/docs/routing-middleware/js-reference) — Reference for writing Routing Middleware in TypeScript and JavaScript, including entrypoints, the config object, the mid
-- [Update a connector](https://vercel.com/docs/rest-api/connect/update-a-connector) — PATCH /v2/connect/connectors/{connector} — Update a connector and return the connector with any service-side update sign
+- [Using Global Config with Split](https://vercel.com/docs/global-config/global-config-integrations/split-global-config) — Learn how to use Global Config with Vercel's Split integration.
+- [Private Storage](https://vercel.com/docs/vercel-blob/private-storage) — Learn how to use private Vercel Blob storage to serve files with authentication
 
 Full cross-link map for this page: [/docs/og-image-generation/examples.graph.md](/docs/og-image-generation/examples.graph.md)
 <!-- /docsgraph:related -->
@@ -2709,6 +2709,18 @@ export default function Page({ id, token }) {
 
 If you're not using Next.js, check your preferred framework's documentation to learn how to best access query params in page components.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

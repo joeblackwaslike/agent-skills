@@ -16,9 +16,10 @@ related:
   - /docs/cdn
 summary: Learn how to deploy your domains and set up domain redirects with this guide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "fc4fb6d13a770c29f59ce10179bc97193e0186e4f18ae31854cc95424db1d753"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9d17329986e833858b2ab1a0957ea8bacbf442771dfc7257730f1b4a585fa12d"
 ---
 
 # Deploying & Redirecting Domains
@@ -35,8 +36,8 @@ Once the domain has been added to your project and configured, it is **automatic
 
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
 - [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
-- [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
+- [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 
@@ -90,6 +91,18 @@ While we recommend using `www` as described above, Vercel maximizes the reliabil
 
 You can also add redirects programmatically using frameworks and Vercel Functions. [Learn more](/docs/routing/redirects).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

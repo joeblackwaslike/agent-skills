@@ -12,9 +12,10 @@ related:
   - /docs/functions/runtimes/node-js/advanced-node-configuration
 summary: Learn about the supported Node.js versions on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/runtimes/node-js/node-js-versions.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "0e6d79d701d58d194af1451cac9d69c57ab3a5cbaf7dff83220130c50b3cc5a2"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c91e6c2a44943503fe829118f063c6a3fc0394471ed6aca6c1f8d9f8b5b31a8d"
 ---
 
 # Supported Node.js versions
@@ -34,7 +35,6 @@ By default, a new project uses the latest Node.js LTS version available on Verce
 - [Node.js 20 is being deprecated on October 1, 2026](https://vercel.com/changelog/node-js-20-is-being-deprecated)
 - [Node.js 26 LTS is now Generally Available on Vercel](https://vercel.com/changelog/node-js-26-lts-is-now-generally-available-on-vercel)
 - [One-click upgrade for deprecated Node.js versions](https://vercel.com/changelog/one-click-upgrade-for-deprecated-node-js-versions)
-- [Node.js 10 is Now Available](https://vercel.com/blog/node-10)
 - [Package Managers](https://vercel.com/docs/package-managers) — Discover the package managers supported by Vercel for dependency management. Learn how Vercel detects and uses npm, Yarn
 - [Configuring a Build](https://vercel.com/docs/builds/configure-a-build) — Vercel automatically configures the build settings for many front-end frameworks, but you can also customize the build a
 - [Fluid compute](https://vercel.com/docs/fluid-compute) — Learn about fluid compute, an execution model for Vercel Functions that provides a more flexible and efficient way to ru
@@ -91,6 +91,18 @@ For Node.js 26 `fetch` behavior and the HTTP/1.1 opt-out, see [Advanced Node.js 
 
 To check the build's Node.js version, run `node -v` in the Build Command. To check a function's Node.js version, log `process.version` inside the function.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

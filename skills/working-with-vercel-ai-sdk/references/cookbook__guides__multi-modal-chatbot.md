@@ -11,8 +11,8 @@ tags:
   - vision
   - next
 source: "https://ai-sdk.dev/cookbook/guides/multi-modal-chatbot.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "55f348ecdb032daf0106657ea5d10d28b71abf472288bb9141cc0b78f3d27dd6"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "c44c3c1eb6ebb9e3cd14cd5cf288eae02dbc12cccb7c2be41cac7bb5c078f67d"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -373,7 +373,7 @@ const result = streamText({
 
 // Using Google
 const result = streamText({
-  model: 'google/gemini-3.8-flash',
+  model: 'google/gemini-4-hydrogen',
   messages: await convertToModelMessages(messages),
 });
 ```

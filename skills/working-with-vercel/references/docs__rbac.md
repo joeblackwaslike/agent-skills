@@ -13,9 +13,10 @@ related:
   - /docs/rbac/access-groups
 summary: Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control (RBAC).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/rbac.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "1839ded89981fc9d7feb073591ace7af3e934dfb6cf3776560628e9208a35c1e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4ee8b8ab78d4b6747decf5cc5c69e66d66a6f219e11811a62ebcbd521e973f2c"
 ---
 
 # Role-based access control (RBAC)
@@ -37,8 +38,8 @@ Teams consist of members, and each member of a team can get assigned a role. The
 - [Role-based Access Control now generally available on Enterprise Plans](https://vercel.com/changelog/role-based-access-control-now-generally-available-on-enterprise-plans)
 - [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [List access groups for a team, project or member](https://vercel.com/docs/rest-api/access-groups/list-access-groups-for-a-team-project-or-member) — GET /v1/access-groups — List access groups
-- [Directory Sync \\(SCIM\\)](https://vercel.com/docs/directory-sync) — Learn how to configure Directory Sync for your Vercel Team.
-- [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
+- [Update Team Directory Sync Role Mappings](https://vercel.com/docs/rest-api/teams/update-team-directory-sync-role-mappings) — POST /v1/teams/{teamId}/dsync-roles — Update the Directory Sync role mappings for a Team. This endpoint allows updating
+- [Reads an access group project](https://vercel.com/docs/rest-api/access-groups/reads-an-access-group-project) — GET /v1/access-groups/{accessGroupIdOrName}/projects/{projectId} — Allows reading an access group project
 - [Scopes and Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions) — Learn how to manage scopes and permissions for Sign in with Vercel
 
 Full cross-link map for this page: [/docs/rbac.graph.md](/docs/rbac.graph.md)
@@ -62,6 +63,18 @@ For specific information on the different access roles available on each plan, s
 - [Access groups](/docs/rbac/access-groups)
 - [Access roles](/docs/rbac/access-roles)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

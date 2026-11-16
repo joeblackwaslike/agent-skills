@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/observability-and-spend/budgets
 summary: "Connect Amp to AI Gateway through Amp's Model Routing settings. Add an AI Gateway API key, choose models for Amp's modes, and monitor requests."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/amp.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "6fb0d8eb04b3732c51e4640304875be34d57d00c5c247b564442f23c17a451f9"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ba62e3ac44837a4530b6222e71a6283ffd4d715519e23efe7581b7f0bafc65bf"
 ---
 
 # Amp with AI Gateway
@@ -31,10 +32,10 @@ sha256: "6fb0d8eb04b3732c51e4640304875be34d57d00c5c247b564442f23c17a451f9"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Aider with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/aider) — Connect Aider to AI Gateway with the Vercel CLI or an OpenAI-compatible base URL, API key, and model metadata.
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
-- [Aider with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/aider) — Connect Aider to AI Gateway with the Vercel CLI or an OpenAI-compatible base URL, API key, and model metadata.
-- [Blackbox AI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/blackbox) — Configure the Blackbox AI CLI to use AI Gateway for code generation and debugging. Set your API key and model and monito
+- [gptme with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/gptme) — Connect gptme to AI Gateway with the Vercel CLI or a TOML provider configuration.
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/amp.graph.md](/docs/ai-gateway/coding-agents/amp.graph.md)
@@ -78,6 +79,18 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 - Configure [spend limits](/docs/ai-gateway/observability-and-spend/budgets) for your AI Gateway API key
 - Review [AI Gateway provider and model support](/docs/ai-gateway/models-and-providers)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

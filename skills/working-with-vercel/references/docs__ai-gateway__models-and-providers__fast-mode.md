@@ -14,9 +14,10 @@ related:
   - /docs/ai-gateway/models-and-providers/virtual-models
 summary: Request the faster serving path for supported models through AI Gateway using the `speed` option or the fast model slug, with automatic fallback to...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/fast-mode.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "fa7c2c93a0991315e8488081f6a12afbf05c921fe4505d08203e15820c486ec3"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "28543775a2bd536ea1843c233277a422190031ebd6c6078f09a0905088ec1af7"
 ---
 
 # AI Gateway Fast Mode
@@ -32,9 +33,10 @@ Some models expose a faster serving path that trades a higher per-token cost for
 - [AI Gateway adds unified fast mode support](https://vercel.com/changelog/ai-gateway-adds-unified-fast-mode-support)
 - [Claude Opus 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-5-now-available-on-ai-gateway)
 - [GPT-6.1 Terra now available on AI Gateway](https://vercel.com/changelog/gpt-6-1-terra-now-available-on-ai-gateway)
-- [Fast mode for Opus 4.7 available on AI Gateway](https://vercel.com/changelog/fast-mode-for-opus-4-7-available-on-ai-gateway)
 - [Opus 4.6 Fast Mode available on AI Gateway](https://vercel.com/changelog/opus-4-6-fast-mode-available-on-ai-gateway)
-- [Introducing Virtual Models on AI Gateway](https://vercel.com/blog/ai-gateway-virtual-models)
+- [Fast mode for Opus 4.7 available on AI Gateway](https://vercel.com/changelog/fast-mode-for-opus-4-7-available-on-ai-gateway)
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, caching, SDK and API compati
+- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/fast-mode.graph.md](/docs/ai-gateway/models-and-providers/fast-mode.graph.md)
 <!-- /docsgraph:related -->
@@ -636,6 +638,18 @@ AI Gateway adjusts pricing based on the speed the provider actually served. For 
 
 Pin fast mode on a [virtual model](/docs/ai-gateway/models-and-providers/virtual-models) to serve all of its traffic on the fast tier, with optional fallback to the base model, or pick the model's **(Fast)** variant as the slug's target model.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

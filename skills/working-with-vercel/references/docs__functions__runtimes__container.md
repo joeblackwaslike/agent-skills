@@ -16,9 +16,10 @@ related:
   - /docs/services
 summary: Run any code and library on Vercel Functions with an OCI container image built from a Dockerfile or Containerfile at the project root.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/runtimes/container.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "3853087dead5706232d38eb90f0226e44b6c56bf97e8cfa7afc1b7845cc8fbd6"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f849721f359136446c123a2e948f1431112663d792bfcf12aac731f67f488c6a"
 ---
 
 # Container Runtime
@@ -35,12 +36,12 @@ Vercel Functions can run any code and library using Open Container Initiative (O
 
 - [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
-- [Deploy a container from a plain Dockerfile](https://vercel.com/changelog/deploy-a-container-from-a-plain-dockerfile)
-- [Deploy PHP on Vercel with Docker](https://vercel.com/kb/guide/deploy-php-on-vercel-with-docker) — Build a PHP application with FrankenPHP and Docker, then deploy it to Vercel Functions with managed configuration, stora
-- [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
-- [How to choose between Functions, containers, and Daemons on Vercel](https://vercel.com/kb/guide/vercel-functions-containers-daemons) — Choose Vercel Functions for HTTP requests, container images for custom runtimes, and Daemons for continuous background w
 - [Run any Dockerfile on Vercel](https://vercel.com/blog/dockerfile-on-vercel)
+- [Deploy Go apps on Vercel using Docker](https://vercel.com/kb/guide/deploy-go-using-docker-vercel) — Deploy an existing Dockerized Go app to Vercel using Memos as a real-world example, with Neon Postgres for durable data.
+- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
+- [Deploy Rust on Vercel with Docker](https://vercel.com/kb/guide/deploy-rust-on-vercel-with-docker) — Build a Rust application with Axum and Docker, then deploy it to Vercel Functions. Learn how to configure environment va
 - [Bring your Dockerfile to Vercel Functions](https://vercel.com/changelog/bring-your-dockerfile-to-vercel-functions)
+- [Deploy a container from a plain Dockerfile](https://vercel.com/changelog/deploy-a-container-from-a-plain-dockerfile)
 - [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 
 Full cross-link map for this page: [/docs/functions/runtimes/container.graph.md](/docs/functions/runtimes/container.graph.md)
@@ -173,6 +174,18 @@ Custom container images are supported for projects using [Secure Compute](/docs/
 - [Daemons](/docs/daemons) for container images that run continuously without receiving traffic
 - [Container Images Demo template](https://vercel.com/templates/container-images/container-images-demo)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

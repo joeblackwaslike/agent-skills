@@ -11,9 +11,10 @@ related:
   []
 summary: "The internal function could not be found. This is a Vercel's error."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/internal_function_not_found.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b581a15554daff9ee17a775c97ee7cca7670750c4655eded42f1f579339e880a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a9fce054793cfeb39d9a943effb8e8657a030d0e35d26f0240704711c6fbe5ad"
 ---
 
 # INTERNAL_FUNCTION_NOT_FOUND
@@ -33,6 +34,18 @@ To troubleshoot this error, follow these steps:
 3. **Review configuration:** Check the function configuration in your project, including the function file name and the path where it is located
 4. **Check for typos:** Ensure that there are no typos or incorrect references in the function name or in the invocation command
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

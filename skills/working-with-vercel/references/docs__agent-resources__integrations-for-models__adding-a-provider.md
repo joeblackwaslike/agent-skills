@@ -16,9 +16,10 @@ related:
   - /docs/agent-resources/integrations-for-models/deepinfra
 summary: Learn how to add a new AI provider to your Vercel projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "304d0fc4a1eeef0de16b11d6949f1ae79208849139368558b8f03d336f65d41c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "bad60ba56059ff58635be6e36f53592cb2e65a07c33590842399f500a8b1db4e"
 ---
 
 # Adding a Provider
@@ -31,13 +32,11 @@ You add AI providers from the Vercel Marketplace. To view your installed AI inte
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Groq, fal, and DeepInfra join the Vercel Marketplace ](https://vercel.com/changelog/groq-fal-and-deepinfra-join-the-vercel-marketplace)
-- [Introducing AI Integrations on Vercel](https://vercel.com/blog/ai-integrations)
 - [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model) — Learn how to add a new AI model to your Vercel projects
 - [Vercel Integrations](https://vercel.com/docs/integrations) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
 - [Build with AI agents on Vercel](https://vercel.com/docs/agent-resources/integrations-for-agents) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
-- [Vercel Together AI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai) — Learn how to add Together AI connectable account integration with Vercel.
 - [Install an Integration](https://vercel.com/docs/integrations/install-an-integration) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
+- [Vercel Together AI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai) — Learn how to add Together AI connectable account integration with Vercel.
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/adding-a-provider.graph.md](/docs/agent-resources/integrations-for-models/adding-a-provider.graph.md)
 <!-- /docsgraph:related -->
@@ -89,6 +88,18 @@ Once you add a provider, **Integrations** in the sidebar lists the providers you
 
 **DeepInfra** (Marketplace native integration): A platform with access to a vast library of open-source models. [Learn more →](/docs/agent-resources/integrations-for-models/deepinfra)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

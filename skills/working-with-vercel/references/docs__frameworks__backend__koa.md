@@ -3,7 +3,7 @@ title: Koa on Vercel
 product: vercel
 url: /docs/frameworks/backend/koa
 canonical_url: "https://vercel.com/docs/frameworks/backend/koa"
-last_updated: 2026-08-10
+last_updated: 2026-11-14
 type: how-to
 prerequisites:
   - /docs/frameworks/backend
@@ -16,9 +16,10 @@ related:
   - /docs/vercel-firewall
 summary: Deploy Koa applications to Vercel with zero configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/backend/koa.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "5c18db5fe4dc32556cb757fce267afb5d1cec1022bf91b17df4e15627679aa4e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "caad0810858a9c9f9d969c71fc6ad8f55917ca37f0dae69987b345f63990df00"
 ---
 
 # Koa on Vercel
@@ -36,11 +37,12 @@ Koa is an expressive HTTP middleware framework for building web applications and
 - [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
 - [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
 - [How to ship a NestJS app on Vercel](https://vercel.com/kb/guide/ship-a-nestjs-app-on-vercel) — Deploy a NestJS app to Vercel with zero configuration. Learn how to ship from a template, the Nest CLI, or Git, and conf
+- [How to ship an Elysia app on Vercel](https://vercel.com/kb/guide/ship-a-elysia-app-on-vercel) — Deploy a Elysia app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and co
 - [Express on Vercel](https://vercel.com/docs/frameworks/backend/express) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
 - [Hono on Vercel](https://vercel.com/docs/frameworks/backend/hono) — Deploy Hono applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurati
-- [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify) — Deploy Fastify applications to Vercel with zero configuration.
-- [NestJS on Vercel](https://vercel.com/docs/frameworks/backend/nestjs) — Deploy NestJS applications to Vercel with zero configuration.
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
+- [NestJS on Vercel](https://vercel.com/docs/frameworks/backend/nestjs) — Deploy NestJS applications to Vercel with zero configuration.
+- [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify) — Deploy Fastify applications to Vercel with zero configuration.
 
 Full cross-link map for this page: [/docs/frameworks/backend/koa.graph.md](/docs/frameworks/backend/koa.graph.md)
 <!-- /docsgraph:related -->
@@ -103,6 +105,16 @@ vc deploy
 
 > **💡 Note:** Minimum CLI version required: 50.4.8
 
+## Deploy without an account
+
+To deploy your Koa app without an account or login, run this command in the project root:
+
+```bash filename="terminal"
+vercel deploy --temporary
+```
+
+The CLI builds the project, deploys it to production, and prints a claim URL. Claim the project to keep it live. See [Deploying without logging in](/docs/deployments/deploy-without-logging-in).
+
 ## Vercel Functions
 
 When you deploy a Koa app to Vercel, your Koa application becomes a single [Vercel Function](/docs/functions) and uses [Fluid compute](/docs/fluid-compute) by default. Vercel automatically scales your Koa app up and down based on traffic.
@@ -132,6 +144,18 @@ Learn more about deploying Koa projects on Vercel with the following resources:
 - [Vercel Functions documentation](/docs/functions)
 - [Backend templates on Vercel](https://vercel.com/templates?type=backend)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

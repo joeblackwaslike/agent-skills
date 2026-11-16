@@ -15,9 +15,10 @@ related:
   - /docs/cli/inspect
 summary: Test a preview deployment and promote it to production using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployments/promote-preview-to-production.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "927df488848f5035f42da758113259176655c223792167b2812f4f9a5e249d8b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "878cd30beadfcab4edca4f4b8ccf0f683e52dd4139d359c1178530516db411e9"
 ---
 
 # Promoting a preview deployment to production
@@ -30,14 +31,13 @@ Use this guide to verify a preview deployment and promote it to production. You'
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Stage and manually promote deployments to production](https://vercel.com/changelog/stage-and-manually-promote-deployments-to-production)
 - [Preview deployments for retail campaign review](https://vercel.com/kb/guide/preview-deployments-retail-campaign-review) — Use preview deployments so merchandising, brand, and engineering review a retail campaign on one live URL before launch.
-- [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues)
+- [Stage and manually promote deployments to production](https://vercel.com/changelog/stage-and-manually-promote-deployments-to-production)
 - [Promoting Deployments](https://vercel.com/docs/deployments/promoting-a-deployment) — Learn how to promote deployments to production on Vercel.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Performing a rolling release deployment](https://vercel.com/docs/rolling-releases/rolling-release-deployment) — Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
-- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [Environments](https://vercel.com/docs/deployments/environments) — Environments are for developing locally, testing changes in a pre-production environment, and serving end-users in produ
 
 Full cross-link map for this page: [/docs/deployments/promote-preview-to-production.graph.md](/docs/deployments/promote-preview-to-production.graph.md)
 <!-- /docsgraph:related -->
@@ -202,6 +202,18 @@ This restores the deployment you specify. See [Rolling back a production deploym
 - [vercel logs](/docs/cli/logs)
 - [Rolling back a production deployment](/docs/deployments/rollback-production-deployment)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

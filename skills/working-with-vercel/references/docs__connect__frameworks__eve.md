@@ -16,9 +16,10 @@ related:
   - /docs/connect/concepts/installations
 summary: Use Vercel Connect to configure eve channel credentials, including Microsoft Teams, authorize MCP client connections, and authenticate inbound...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/connect/frameworks/eve.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "2d8b36615fcc3f881440b1fb07a0ded2cc17cb4e73a37aa1953c736d1bd4cc6d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e75061d7a4734a2baf6d32cf457a3f18e6e8a6562917d578a882c7fc1aa4e720"
 ---
 
 # eve with Vercel Connect
@@ -36,16 +37,17 @@ tokens, so your app doesn't store provider refresh tokens.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
-- [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
 - [Vercel Connect now supports Microsoft Teams](https://vercel.com/changelog/vercel-connect-microsoft-teams)
-- [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect)
 - [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
-- [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
-- [Vercel Connect: Secure access to external services for your agents](https://vercel.com/changelog/vercel-connect-secure-access-to-external-services-for-your-agents)
-- [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
-- [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
-- [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
+- [Connections](https://eve.dev/docs/connections) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
+- [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect)
+- [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
+- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
+- [eve (HTTP & web)](https://eve.dev/docs/channels/eve) — The default HTTP API for an agent, covering session routes, auth, and customization.
+- [Give your software factory a browser](https://vercel.com/kb/guide/software-factory-browser) — Add a KERNEL cloud browser to the eve software factory template so Foreman can reproduce flow bugs, sign in through mana
+- [Using eve with Chat SDK](https://vercel.com/docs/chat-sdk/eve) — Send Chat SDK messages to an eve agent with a channel, persistent state, and Vercel Connect.
+- [Agent Checklist for Launch](https://vercel.com/docs/agent-checklist) — Prepare an eve, Mastra, or Flue agent for launch on Vercel. Check who can call the agent, what its tools can change, how
+- [MCP Integrations](https://vercel.com/docs/mcp/integrations) — Connect AI SDK, TanStack AI, and eve applications to MCP servers to discover and call tools.
 
 Full cross-link map for this page: [/docs/connect/frameworks/eve.graph.md](/docs/connect/frameworks/eve.graph.md)
 <!-- /docsgraph:related -->
@@ -182,6 +184,9 @@ export default githubChannel({
   credentials: connectGitHubCredentials('github/my-agent'),
 });
 ```
+
+The channel receives and answers GitHub events. To let the agent read and
+change repositories, see [Give the agent GitHub tools](#give-the-agent-github-tools).
 
 ### Linear
 
@@ -488,6 +493,53 @@ export default defineMcpClientConnection({
 Revocation is destructive and best-effort. The helper still removes the local
 cache entry if the server-side revoke fails.
 
+## Give the agent GitHub tools
+
+The [GitHub Tools eve extension](https://github-tools.com/integrations/eve)
+adds tools for reading and changing repositories, issues, and pull requests.
+It's a separate package from `@vercel/connect/eve`, and it can use the same
+GitHub connector as the [GitHub channel](#github). Install it next to
+`@vercel/connect` 2.7.0 or later and eve 1.0.0-rc.6 or later:
+
+```bash filename="Terminal"
+pnpm add @github-tools/eve-extension
+```
+
+Mount the extension and pass the connector's name:
+
+```ts filename="agent/extensions/github.ts"
+import githubExtension from '@github-tools/eve-extension';
+
+export default githubExtension({
+  connector: 'github/my-agent',
+  preset: 'issue-triage',
+  actAs: { read: 'app', write: 'caller' },
+});
+```
+
+Each tool call requests a short-lived token that covers only the selected
+tools. Two options decide what that token can reach:
+
+- **`preset`** selects the tools the model can call. The connector's GitHub
+  App needs the
+  [permissions of every selected tool](https://github-tools.com/auth#permissions-per-preset).
+- **`actAs`** chooses whose GitHub access a call uses. The default, `'app'`,
+  uses the App's installation token for every caller. With the value above,
+  reads use the App. Writes use the signed-in user's own token when a user
+  drives the turn, and the App's token when nobody does, such as in a
+  scheduled run. A user who hasn't authorized the App gets a sign-in prompt,
+  and the call resumes after they authorize.
+
+When a turn starts from the GitHub channel, the extension fills in the
+repository and the issue or pull request number from the thread, so the model
+can leave them out of tool calls.
+
+Every write tool asks for approval before it runs, and eve pauses the session
+until someone answers. See the
+[extension's documentation](https://github-tools.com/integrations/eve) to set
+approval for each tool and limit the repositories and branches the tools can
+reach.
+
 ## Authenticate an inbound Connect OAuth route
 
 `connectOAuth()` solves a separate problem from `connect()`. It returns an eve
@@ -523,6 +575,28 @@ Deploy an eve [software factory](/templates/eve/eve-software-factory),
 [marketing team](/templates/eve/eve-marketing-team) on Vercel. Use the integration
 above to manage access to third-party services with Vercel Connect:
 
+## Frequently asked questions
+
+### Do I still need bot tokens and signing secrets for eve channels?
+
+No, not for channels configured with a Connect credential helper. For example, `connectSlackCredentials` replaces `SLACK_BOT_TOKEN` and `SLACK_SIGNING_SECRET`, and `connectGitHubCredentials` replaces `GITHUB_APP_ID`, `GITHUB_APP_PRIVATE_KEY`, and `GITHUB_WEBHOOK_SECRET`. The helpers request app-scoped credentials from Vercel Connect. Their webhook verifiers check the Vercel OIDC token that a [Connect trigger](/docs/connect/concepts/triggers) adds to each forwarded request. See [Check channel capabilities](#check-channel-capabilities).
+
+### What happens to an eve session while a user authorizes a connection?
+
+eve suspends the turn. When a user-scoped connection has no valid grant, eve calls `startAuthorization` and shows the user an authorization URL or device code. On Vercel, each eve session runs on [Vercel Workflows](/docs/workflows), which persists the suspended session without a separate database or queue. After Vercel Connect completes OAuth, it resumes eve, and eve requests the token again. See [Understand the consent lifecycle](#understand-the-consent-lifecycle).
+
+### Should an eve connection use a user or app principal?
+
+Use a user principal, the default, when each person should act through their own provider account. eve maps the principal to a Connect user subject and handles interactive consent. Use `principalType: 'app'` when the agent shares one installed credential. App authorization never starts a consent flow, and it fails with a non-retryable error if the connector has no app credential. See [Choose user or app authorization](#choose-user-or-app-authorization).
+
+### Can eve receive Connect triggers on Preview deployments or localhost?
+
+Preview deployments can receive triggers, but `localhost` can't, because Vercel Connect forwards triggers only to deployed URLs. Register the branch with `vercel connect attach` and `--triggers --git-branch <branch> --trigger-path /eve/v1/<channel>`, which also enables `preview` on the project link. Each connector supports up to three trigger destinations. See [Account for delivery limitations](#account-for-delivery-limitations).
+
+### Does an eve agent need separate credentials for AI Gateway and Vercel Connect?
+
+No. On Vercel, eve authenticates model requests to [AI Gateway](/docs/ai-gateway) with the project's OIDC identity, and `@vercel/connect/eve` uses the deployment's OIDC token to request provider tokens. Neither needs a model provider API key or a stored provider refresh token. For local runs, link the project and run `vercel env pull` to get a development token for Vercel Connect. See [eve on Vercel](/docs/frameworks/agents/eve).
+
 ## Next steps
 
 - [Connect quickstart](/docs/connect/quickstart): Create and link a connector.
@@ -531,6 +605,18 @@ above to manage access to third-party services with Vercel Connect:
 - [Authentication](/docs/connect/concepts/authentication): Understand Vercel
   OIDC and project-link enforcement.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

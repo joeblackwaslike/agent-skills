@@ -14,9 +14,10 @@ related:
   - /docs/agent-resources/vercel-mcp/tools/billing/buy_domain
 summary: Vercel MCP tools for billing and purchases.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "d9bf1ca08507fcf0804ab9beaf4f6a3cba6956256ca32489166ea97984993850"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c53886db86f37585f936a60960be8cd20e1caaa38ddff8c9e829fb670f1ab6ee"
 ---
 
 # Billing and Purchases
@@ -31,9 +32,9 @@ Review your team's billing charges and contract commitments. Get a domain regist
 
 - [Domains and DNS](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains) — Vercel MCP tools for domains and dns.
 - [buy_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/buy_domains) — Use buy_domains with Vercel MCP.
-- [get_domain_price](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_price) — Use get_domain_price with Vercel MCP.
-- [Purchase credits](https://vercel.com/docs/rest-api/billing/purchase-credits) — POST /v1/billing/buy — Purchases credits for a Vercel team using the default payment method on file. The purchase is cha
 - [vercel buy](https://vercel.com/docs/cli/buy) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
+- [Purchase credits](https://vercel.com/docs/rest-api/billing/purchase-credits) — POST /v1/billing/buy — Purchases credits for a Vercel team using the default payment method on file. The purchase is cha
+- [get_domain_price](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_price) — Use get_domain_price with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/billing.graph.md](/docs/agent-resources/vercel-mcp/tools/billing.graph.md)
 <!-- /docsgraph:related -->
@@ -132,6 +133,18 @@ List FOCUS contract commitments.
 | `teamId`  | string | No       | Team ID to use for this operation.                          |
 | `slug`    | string | No       | Team slug to use for this operation. Use instead of teamId. |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

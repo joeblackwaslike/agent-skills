@@ -16,9 +16,10 @@ related:
   - /docs/domains/troubleshooting
 summary: Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains/working-with-domains/add-a-domain.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "5334612907111ddfec117a4b53d1f0ac863ca1a83d80dc2e892d1860834b42e7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8aa708c9bb12eefa384370dddde51217f72c128d983f72f6f7a3efae1555fbba"
 ---
 
 # Adding & Configuring a Custom Domain
@@ -39,9 +40,9 @@ Vercel provides all deployments with a `vercel.app` URL, which enables you to sh
 - [Migrate a Python API from Heroku to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-heroku-to-vercel) — Move a FastAPI, Flask, or Django API from Heroku to Vercel Functions. Replace your Procfile, worker dynos, Heroku Schedu
 - [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 - [Working with DNS](https://vercel.com/docs/domains/working-with-dns) — Learn how DNS works to properly configure your domain.
-- [Assigning a custom domain to an environment](https://vercel.com/docs/domains/working-with-domains/add-a-domain-to-environment) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
-- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart) — Build a multi-tenant Next.js app on your computer, then add wildcard and custom domains on Vercel.
-- [Working with SSL Certificates](https://vercel.com/docs/domains/working-with-ssl) — Learn how Vercel uses SSL certification to keep your site secure.
+- [Add a domain to a project](https://vercel.com/docs/rest-api/projects/add-a-domain-to-a-project) — POST /v10/projects/{idOrName}/domains — Add a domain to the project by passing its domain name and by specifying the pro
+- [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
+- [Custom Domain](https://vercel.com/docs/platforms/platform-elements/blocks/custom-domain) — A complete domain management interface with DNS verification and real-time status tracking.
 
 Full cross-link map for this page: [/docs/domains/working-with-domains/add-a-domain.graph.md](/docs/domains/working-with-domains/add-a-domain.graph.md)
 <!-- /docsgraph:related -->
@@ -175,6 +176,18 @@ If the domain does not show a valid configuration, compare the records at your a
 
 DNS changes can take time to propagate. Use [DNS verification](/docs/domains/managing-dns-records#verifying-dns-records) to compare the published records, and see [domain troubleshooting](/docs/domains/troubleshooting) for configuration and certificate errors.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

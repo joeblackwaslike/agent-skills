@@ -16,9 +16,10 @@ related:
   - /docs/drains/reference/audit-logs
 summary: "Triage findings, fix them with Vercel Agent, and give reviews the context of your team's standards."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent/security-review/usage.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "7cbe1294768383d4ddd0537372a414d89be0c63ba084b086ca39c3ab8ce39d84"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "955cb38d587548f8e6b4ac657518c600d9a8c918cdb31d20ae1033e87ca14ff6"
 ---
 
 # Managing Security Reviews
@@ -31,7 +32,7 @@ To shape what future reviews look for, write a [security policy](#set-a-security
 
 ## Triage findings
 
-The list shows open findings by default. You can search it, and filter by status, severity, environment, and branch. Each project also has its own Vulnerabilities page. You can also list, inspect, dismiss, and reopen findings from the terminal with [`vercel security vulnerabilities`](/docs/cli/security#vulnerabilities).
+The list shows open findings by default. You can search it, and filter by status, severity, environment, and branch. Each project also has its own Vulnerabilities page. Findings from [repository reviews](/docs/agent/security-review#projects-and-repositories) appear under their repository in the team's dashboard. You can also list, inspect, dismiss, and reopen findings from the terminal with [`vercel security vulnerabilities`](/docs/cli/security#vulnerabilities).
 
 Click a finding to open its detail page, which shows the project, environment, branch, commit, and the deployments where the finding was first seen and closed. **Summary**, **Details**, and **Suggested Fix** explain the issue, and you can copy the whole finding as Markdown or JSON.
 
@@ -93,7 +94,7 @@ Policies are treated as context, not as commands. Security Review's core behavio
 ### Add a team policy
 
 1. From your team, go to **Settings**, then open **Agent**.
-2. In the **Security Reviews** section, find the **Policy** field. It appears once **Review Deployments Automatically** is on.
+2. In the **Security Reviews** section, find the **Policy** field. It appears once **Review Changes Automatically** is on.
 3. Enter your policy and click **Save**.
 
 ### Add a project policy
@@ -102,7 +103,7 @@ Policies are treated as context, not as commands. Security Review's core behavio
 2. Open **Security**.
 3. Under **Security Review Policy**, enter your policy and click **Save**.
 
-Security Review applies both policies, with the project policy adding context on top of what the team policy already says. Policy changes apply to reviews that start after you save them.
+Security Review applies both policies, with the project policy adding context on top of what the team policy already says. A repository review has no project, so it applies only the team policy. Policy changes apply to reviews that start after you save them.
 
 ### Security is a shared responsibility
 
@@ -114,16 +115,28 @@ For more on how these responsibilities are divided, see the [shared responsibili
 
 What you can do with Security Review depends on your [team role](/docs/rbac/access-roles).
 
-| Action                                         | Roles                                                                        |
-| ---------------------------------------------- | ---------------------------------------------------------------------------- |
-| View findings                                  | Owner, Member, Developer, Security; Contributors for their assigned projects |
-| Dismiss or reopen a finding                    | Owner, Member, Developer, Security                                           |
-| Fix a finding with Vercel Agent                | Any role that can use [Vercel Agent](/docs/agent) chat                       |
-| Add or edit a team or project policy           | Owner, Member                                                                |
-| Turn reviews on and set **Projects to Review** | Owner                                                                        |
+| Action                                                                        | Roles                                                                        |
+| ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| View findings                                                                 | Owner, Member, Developer, Security; Contributors for their assigned projects |
+| Dismiss or reopen a finding                                                   | Owner, Member, Developer, Security                                           |
+| Fix a finding with Vercel Agent                                               | Any role that can use [Vercel Agent](/docs/agent) chat                       |
+| Add or edit a team or project policy                                          | Owner, Member                                                                |
+| Turn reviews on and set **Projects to Review** and **Repositories to Review** | Owner                                                                        |
 
-Findings include source code and how to exploit it, so the Billing and Viewer roles can't see them, and a Contributor sees findings only for the projects assigned to them.
+Findings include source code and how to exploit it, so the Billing and Viewer roles can't see them. A Contributor sees findings only for the projects assigned to them, and doesn't see findings from repository reviews.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

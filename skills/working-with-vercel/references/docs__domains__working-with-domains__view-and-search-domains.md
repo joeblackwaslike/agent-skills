@@ -12,9 +12,10 @@ related:
   []
 summary: Learn how to view and search all registered domains that are assigned to Vercel Projects through the Vercel dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains/working-with-domains/view-and-search-domains.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c88ab227ec508ce2a9e4d326541e3e31efe8962bf5ceb094fdfe4e0127dcc717"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4f988de7c30857839f5efdfde85f3d0935f378b96d9523e60a484123afbb3ce6"
 ---
 
 # Viewing & Searching Domains
@@ -29,11 +30,10 @@ To view all your registered domains, open [**Domains**](https://vercel.com/d?to=
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Search domains on the Vercel dashboard](https://vercel.com/changelog/search-domains-on-the-vercel-dashboard)
 - [search_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/search_domains) — Use search_domains with Vercel MCP.
 - [List all the domains](https://vercel.com/docs/rest-api/domains/list-all-the-domains) — GET /v5/domains — Retrieves a list of domains registered for the authenticated user or team. By default it returns the l
-- [Programmatic Domain Management](https://vercel.com/docs/domains/registrar-api) — Programmatically search, price, purchase, renew, and manage domains with Vercel's domains registrar API endpoints.
 - [list_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/list_domains) — Use list_domains with Vercel MCP.
+- [list_project_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/list_project_domains) — Use list_project_domains with Vercel MCP.
 - [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 
 Full cross-link map for this page: [/docs/domains/working-with-domains/view-and-search-domains.graph.md](/docs/domains/working-with-domains/view-and-search-domains.graph.md)
@@ -53,6 +53,18 @@ It is not possible to search a multi-level wildcard subdomain. It is only possib
 
 ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/domains/domains-settings-search-light.png)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

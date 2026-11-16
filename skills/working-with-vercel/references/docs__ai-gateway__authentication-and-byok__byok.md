@@ -16,16 +16,17 @@ related:
   - /docs/ai-gateway/models-and-providers/provider-filtering-and-ordering
 summary: Learn how to configure your own provider keys with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok/byok.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "4eedce387eeb8cb31e8f4889c510c21f1eb92df13abfb7cdcf4b205c00a85028"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1865c909a7ebd8b2493c1302e2479d41d0948b8b559a9701f1b70ef56910bcb0"
 ---
 
 # Bring Your Own Key (BYOK) to AI Gateway
 
 Using your own credentials with an external AI provider allows AI Gateway to authenticate requests on your behalf with [no added markup](/docs/ai-gateway/pricing#bring-your-own-key-byok).
 This approach is useful for using credits provided by the AI provider or executing AI queries that access private cloud data.
-If a query using your credentials fails, AI Gateway will retry the query with its system credentials to improve service availability. When [ZDR](#zero-data-retention-zdr) is enabled, this fallback is limited to ZDR-eligible system credentials.
+If a query using your credentials fails, AI Gateway will retry the query with Vercel's provider keys, the credentials Vercel holds with each provider, to improve service availability. When [ZDR](#zero-data-retention-zdr) is enabled, this fallback is limited to Vercel's ZDR-eligible provider keys.
 
 
 <!-- docsgraph:related -->
@@ -37,11 +38,13 @@ If a query using your credentials fails, AI Gateway will retry the query with it
 - [AI Gateway adds Browserbase Search and Fetch tools](https://vercel.com/changelog/ai-gateway-adds-browserbase-search-and-fetch-tools)
 - [AI Gateway adds DeepSeek Search and Fetch tools](https://vercel.com/changelog/ai-gateway-adds-deepseek-search-and-fetch-tools)
 - [Cat Jam is now available in stealth for free on AI Gateway](https://vercel.com/changelog/cat-jam-is-now-available-in-stealth-for-free-on-ai-gateway)
-- [Claude Sonnet 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-sonnet-5-5-now-available-on-ai-gateway)
+- [Claude Fable 5.2 now available on AI Gateway](https://vercel.com/changelog/claude-fable-5-2-now-available-on-ai-gateway)
 - [Cost-aware model routing with Vercel AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Send easy requests to a lower-cost model and escalate only the complex ones to a frontier model through AI Gateway, with
+- [Running Claude Code Durably on Vercel](https://vercel.com/docs/agent-harnesses/claude-code) — Run Claude Code in a Vercel Sandbox, driven by a Vercel Function, with its session in a durable log, so a crashed turn r
+- [Running eve Agents Durably on Vercel](https://vercel.com/docs/agent-harnesses/eve) — eve agents are durable out of the box on Vercel, with no extra configuration.
 - [Claude Code and Claude Agent SDK with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/claude-code) — Connect Claude Code to AI Gateway with one CLI command, or configure it manually.
+- [Flue with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/flue) — Route Flue agent requests through Vercel AI Gateway with the built-in provider, using an API key or Vercel OIDC authenti
 - [AI Gateway Google and Vertex Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/google) — Configure thinking for Google Gemini and Gemma models with the AI SDK and AI Gateway.
-- [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
 
 Full cross-link map for this page: [/docs/ai-gateway/authentication-and-byok/byok.graph.md](/docs/ai-gateway/authentication-and-byok/byok.graph.md)
 <!-- /docsgraph:related -->
@@ -51,17 +54,18 @@ Integrating credentials like this with AI Gateway is sometimes referred to as **
 Provider credentials are scoped to be available throughout your Vercel team, so you can use the same credentials across multiple projects.
 
 > **💡 Note:** BYOK is available on the paid tier. When a request with your credentials
-> fails, AI Gateway keeps it running by falling back to system credentials,
+> fails, AI Gateway keeps it running by falling back to Vercel's provider keys,
 > and that fallback usage is billed against your credits balance. To use
 > BYOK, your team needs purchased [AI Gateway
-> credits](/docs/ai-gateway/pricing).
+> credits](/docs/ai-gateway/pricing) and a positive credit balance. Without a
+> positive balance, AI Gateway rejects BYOK requests with a `402`.
 
 Spend through your own credentials isn't counted in [budgets](/docs/ai-gateway/observability-and-spend/budgets). It's metered separately and doesn't count toward a team, project, or API key limit, so a budget can't be used to cap BYOK spend. After a budget is exceeded, AI Gateway rejects every request in that budget's scope, including BYOK requests.
 
 ## Getting started
 
 - ### Retrieve credentials from your AI provider
-  First, retrieve credentials from your AI provider. AI Gateway uses these credentials first to authenticate requests to that provider. If a query made with your credentials fails, AI Gateway will re-attempt with system credentials, aiming to provide improved availability.
+  First, retrieve credentials from your AI provider. AI Gateway uses these credentials first to authenticate requests to that provider. If a query made with your credentials fails, AI Gateway will re-attempt with Vercel's provider keys, aiming to provide improved availability.
 
 - ### Add the credentials to your Vercel team
   1. Go to the [AI Gateway Bring Your Own Key (BYOK) page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbyok\&title=AI+Gateway+BYOK) in your Vercel dashboard.
@@ -85,7 +89,7 @@ After claiming the grant:
 
 1. Add the organization's OpenAI or Anthropic key using the steps above. For dashboard credentials, confirm that the key is enabled. If the provider has more than one key, also confirm that the dashboard marks this key **In Use**.
 2. Authenticate your application to AI Gateway with an [AI Gateway API key](/docs/ai-gateway/authentication-and-byok/api-keys) or [OIDC](/docs/ai-gateway/authentication-and-byok/oidc). These credentials authenticate to AI Gateway; the provider key authenticates to OpenAI or Anthropic.
-3. [Restrict the serving provider](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering#restrict-providers-with-the-only-filter) to `openai` or `anthropic`, respectively. A provider restriction doesn't disable fallback to AI Gateway's system credentials if your key fails.
+3. [Restrict the serving provider](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering#restrict-providers-with-the-only-filter) to `openai` or `anthropic`, respectively. A provider restriction doesn't disable fallback to Vercel's provider keys if your key fails.
 4. Check the request's provider and credential source in [AI Gateway Logs](/docs/ai-gateway/observability-and-spend/logs), then confirm grant usage in the provider's billing dashboard. A successful response or key test doesn't establish that the grant funded the request.
 
 ## Manage keys in the dashboard
@@ -96,11 +100,11 @@ You can add up to 10 keys per provider. Each key has its own name, **Enabled** s
 
 AI Gateway uses the oldest enabled key for a provider, which the dashboard marks **In Use**. Requests that require [Zero Data Retention (ZDR)](#zero-data-retention-zdr) can use another enabled key that's marked ZDR-compliant.
 
-Other enabled keys are on standby. If the key in use fails, requests fall back to system credentials, not to your next key. To switch to a standby key, disable the key in use.
+Other enabled keys are on standby. If the key in use fails, requests fall back to Vercel's provider keys, not to your next key. To switch to a standby key, disable the key in use.
 
 ### Replace a key
 
-Replace a key when you rotate it at the provider. Replacing a key changes only the stored credential, so the key keeps its name, **Enabled** state, ZDR setting, and [model mappings](#model-mappings). Your BYOK traffic keeps using your own credentials during the swap. If you delete a key and add a new one instead, requests use system credentials in between.
+Replace a key when you rotate it at the provider. Replacing a key changes only the stored credential, so the key keeps its name, **Enabled** state, ZDR setting, and [model mappings](#model-mappings). Your BYOK traffic keeps using your own credentials during the swap. If you delete a key and add a new one instead, requests use Vercel's provider keys in between.
 
 1. In the [AI Gateway Bring Your Own Key (BYOK) page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbyok\&title=AI+Gateway+BYOK), click the menu for the key you want to replace.
 2. Select **Replace Key**.
@@ -124,7 +128,7 @@ AI Gateway tests the new credentials before saving them. If the test fails, the 
 
 In addition to configuring credentials in the dashboard, you can pass provider credentials on a per-request basis using the `byok` option in `providerOptions.gateway`. This is useful when you need to use different credentials for specific requests without changing your team-wide configuration.
 
-When request-scoped BYOK credentials are provided, AI Gateway doesn't consider any cached BYOK credentials configured in the dashboard for that request. Requests may still fall back to system credentials if the provided credentials fail.
+When request-scoped BYOK credentials are provided, AI Gateway doesn't consider any cached BYOK credentials configured in the dashboard for that request. Requests may still fall back to Vercel's provider keys if the provided credentials fail.
 
 ### Request examples
 
@@ -523,20 +527,20 @@ You can also configure model mappings in the dashboard when adding or editing BY
 
 ## Zero Data Retention (ZDR)
 
-When ZDR is enabled, either team-wide or per-request, AI Gateway skips your BYOK keys by default. BYOK keys operate under your own agreements and permissions with providers, which can differ from the ZDR agreements Vercel has negotiated for AI Gateway system credentials.
+When ZDR is enabled, either team-wide or per-request, AI Gateway skips your BYOK keys by default. BYOK keys operate under your own agreements and permissions with providers, which can differ from the ZDR agreements Vercel has negotiated for its own provider keys.
 
 If you have your own ZDR agreement with a provider, mark an individual BYOK key as ZDR-compliant to include it in the ZDR routing set. This applies to both team-wide and request-level ZDR.
 
 Marking a key as ZDR-compliant makes it eligible for ZDR routing; it does not enable ZDR. ZDR is enforced only when team-wide ZDR is on or the request sets `zeroDataRetention: true`. Without team-wide or request-level ZDR enabled, normal routing and fallback apply. Marking a BYOK key as ZDR-compliant does not enforce ZDR for the request.
 
-ZDR also changes fallback. With ZDR enabled, a ZDR-marked BYOK key is tried first, and a failed request falls back only to system credentials for providers with ZDR agreements. If none are available for the model, the request fails instead of routing through a non-ZDR provider.
+ZDR also changes fallback. With ZDR enabled, a ZDR-marked BYOK key is tried first, and a failed request falls back only to Vercel's provider keys for providers with ZDR agreements. If none are available for the model, the request fails instead of routing through a non-ZDR provider.
 
 > **💡 Note:** For the full behavior and configuration steps, see [ZDR and
 > BYOK](/docs/ai-gateway/security-and-compliance/zdr#byok).
 
 ## Regional inference
 
-Using your own credentials doesn't opt you out of regional routing. AI Gateway applies `inferenceRegion` to BYOK requests the same way it does to system credentials, calling the provider's in-region endpoint with your key. A region set on the request overrides a region saved on the credential, such as a Vertex `location`.
+Using your own credentials doesn't opt you out of regional routing. AI Gateway applies `inferenceRegion` to BYOK requests the same way it does to Vercel's provider keys, calling the provider's in-region endpoint with your key. A region set on the request overrides a region saved on the credential, such as a Vertex `location`.
 
 For the full behavior, including failure cases and how to confirm where a request ran, see [BYOK and data residency](/docs/ai-gateway/security-and-compliance/regional-inference#byok-and-data-residency).
 
@@ -555,6 +559,18 @@ Once the test completes, you can click on the test result badge to open a detail
 - The code used to make the test request
 - The raw JSON response returned by the AI Gateway
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

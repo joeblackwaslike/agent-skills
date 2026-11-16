@@ -12,9 +12,10 @@ related:
   []
 summary: Use read_session_file with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/read_session_file.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c0d8c41922d3f907d764c13fefb08f2ff269d4df58be2bff46ed123f7cccf0e6"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "28af974bb1e666a1cbad7a8c2545d4a7ac49926c9e07d797eecc184b5091cd16"
 ---
 
 # read_session_file
@@ -30,8 +31,8 @@ Read a file.
 - [write_session_files](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/write_session_files) — Use write_session_files with Vercel MCP.
 - [get_session](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/get_session) — Use get_session with Vercel MCP.
 - [stop_session](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/stop_session) — Use stop_session with Vercel MCP.
-- [create_session_directory](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/create_session_directory) — Use create_session_directory with Vercel MCP.
 - [run_session_command](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/run_session_command) — Use run_session_command with Vercel MCP.
+- [Read a file](https://vercel.com/docs/rest-api/sandboxes/read-a-file) — POST /v2/sandboxes/sessions/{sessionId}/fs/read — Downloads the contents of a file from a session's filesystem. The file
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandboxes/read_session_file.graph.md](/docs/agent-resources/vercel-mcp/tools/sandboxes/read_session_file.graph.md)
 <!-- /docsgraph:related -->
@@ -45,6 +46,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandb
 | `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody` | object | Yes      | Request body for this tool.                                 |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

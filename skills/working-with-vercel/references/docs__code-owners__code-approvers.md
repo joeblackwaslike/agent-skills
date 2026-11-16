@@ -11,9 +11,10 @@ related:
   []
 summary: Use Code Owners to define users or teams that are responsible for directories and files in your codebase
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/code-owners/code-approvers.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "3c826057acdb777d1fe13ea1aecc2cef2a690ef03ff30f64b6246e39f6f2c331"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5cd9da5b7f21bad67f0dbc805743201db6ea33d74dbd118e939557c9d97d8fa8"
 ---
 
 # Code Approvers
@@ -263,6 +264,18 @@ pnpm-lock.yaml *
 
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

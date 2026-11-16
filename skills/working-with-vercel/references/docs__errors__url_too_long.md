@@ -11,9 +11,10 @@ related:
   []
 summary: The URL of the request is too long. This is a request error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/url_too_long.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c2658d9bb6ad0b2dfd9f525fd43a741ffe9f9d278797e2de8f3c6decd8b4a31b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "96a8ddff78f4bec175476580277fa10b2eec595676f23da0bd0ebc35639036c5"
 ---
 
 # URL_TOO_LONG
@@ -33,6 +34,18 @@ To troubleshoot this error, follow these steps:
 3. **Use POST method:** If the long URL is a result of a form submission, consider changing the form method from `GET` to `POST`
 4. **Check for unintended redirection:** Ensure there isn't a redirection loop or logic that is appending to the URL causing it to grow in length with each redirect
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -12,9 +12,10 @@ related:
   - /docs/limits
 summary: The deployment was blocked due to certain conditions. This is a deployment error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/deployment_blocked.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a96e0238661ba29c0bbe272db0ac40bcd475b6957aaefc921256f014511dbbf0"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "74ed0d4737c3260051ed5c654810db8d84c706d030eb3725e2c0f6f156db67ab"
 ---
 
 # DEPLOYMENT_BLOCKED
@@ -36,6 +37,18 @@ To troubleshoot this error, follow these steps:
 5. **Review policies:** Ensure that your deployment complies with all platform [policies](/legal/privacy-policy) and isn't in violation of any [terms](/legal/terms)
 6. **Check for platform outages:** Sometimes, platform-wide outages or issues can cause deployments to be blocked. Check the [status page](https://www.vercel-status.com/) for any ongoing incidents
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: "Testing Extensions"
 source: "https://code.visualstudio.com/api/working-with-extensions/testing-extension"
-fetched_at: "2026-11-09T12:33:26.963Z"
-sha256: "f4a764a848c394e92e489e707fa30e2b5a44b6b946af21ec37119f6235ba9e22"
+fetched_at: "2026-11-16T12:28:04.438Z"
+sha256: "7616714b783e6b24821d762f474e912480f1ae4ed4b83b0eb1db3f42851498c6"
 ---
 
 # Testing Extensions
@@ -377,6 +377,44 @@ await runTests({
 ```
 
 
+### Debugging with a clean, isolated profile
+
+When you launch the Extension Development Host from VS Code, it can reuse an existing profile and its settings, keybindings, and extensions. To run and debug your extension in a clean, isolated environment without affecting your personal profile, add the `--profile-temp` argument to the `args` array in `launch.json` or to the `launchArgs` option in `@vscode/test-electron`.
+
+Passing `--profile-temp` creates a new, empty temporary profile for the debugging session.
+
+
+```
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Extension Tests",
+      "type": "extensionHost",
+      "request": "launch",
+      "runtimeExecutable": "${execPath}",
+      "args": [
+        "--profile-temp",
+        "--disable-extensions",
+        "--extensionDevelopmentPath=${workspaceFolder}",
+        "--extensionTestsPath=${workspaceFolder}/out/test/suite/index"
+      ],
+      "outFiles": ["${workspaceFolder}/out/test/**/*.js"]
+    }
+  ]
+}
+```
+
+
+```
+await runTests({
+  extensionDevelopmentPath,
+  extensionTestsPath,
+  launchArgs: ['--profile-temp', '--disable-extensions']
+});
+```
+
+
 ### Custom setup with `@vscode/test-electron`
 
 Sometimes you might want to run custom setups, such as running `code --install-extension` to install another extension before starting your test. `@vscode/test-electron` has a more granular API to accommodate that case:
@@ -495,4 +533,4 @@ For more information on how to declare trust requirements in your extension mani
 - [Workspace Trust Extension Guide](https://code.visualstudio.com/api/extension-guides/workspace-trust) - Learn how to declare and handle workspace trust in your extension.
 
  
- 11/4/2026
+ 11/11/2026

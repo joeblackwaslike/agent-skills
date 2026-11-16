@@ -15,9 +15,10 @@ related:
   - /docs/cli/promote
 summary: Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/deploying-from-cli.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "a260fc431127272c9f68f70182a7a9a6af28d1e8f8a7c752bd182bb07e863585"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1ed3d948d93262bcf181eb4376d24f507edc39c84c66e7acc04b54264be45cb2"
 ---
 
 # Deploying Projects from Vercel CLI
@@ -32,18 +33,18 @@ The `vercel` command is used to [deploy](/docs/cli/deploy) Vercel Projects and c
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
 - [Claim Deployments now available for fast and secure deployment transfers](https://vercel.com/changelog/claim-deployments)
 - [Migrate from Render to Vercel](https://vercel.com/kb/guide/migrate-render-to-vercel) — Migrate from Render to Vercel: map web services, cron jobs, and containers to their equivalents, and handle what doesn't
 - [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
 - [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
 - [How to ship a Koa app on Vercel](https://vercel.com/kb/guide/ship-a-koa-app-on-vercel) — Deploy a Koa app to Vercel with zero configuration. Learn how to ship from the Vercel CLI or Git, and configure response
-- [How to ship a NestJS app on Vercel](https://vercel.com/kb/guide/ship-a-nestjs-app-on-vercel) — Deploy a NestJS app to Vercel with zero configuration. Learn how to ship from a template, the Nest CLI, or Git, and conf
 - [Enhanced Preview experience](https://vercel.com/blog/making-live-reviews-a-reality-enhanced-preview-experience)
 - [Zero Config Deployments](https://vercel.com/blog/zero-config)
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [Deploying to Vercel Without Logging In](https://vercel.com/docs/deployments/deploy-without-logging-in) — Deploy to Vercel without an account using Vercel Drop or the CLI, then claim the project to keep it.
-- [vercel redeploy](https://vercel.com/docs/cli/redeploy) — Learn how to redeploy your project using the vercel redeploy CLI command.
+- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [Deploying to Vercel Without Logging In](https://vercel.com/docs/deployments/deploy-without-logging-in) — Deploy to Vercel without an account using Vercel Drop or the CLI, then claim the project to keep it.
 
 Full cross-link map for this page: [/docs/cli/deploying-from-cli.graph.md](/docs/cli/deploying-from-cli.graph.md)
 <!-- /docsgraph:related -->
@@ -156,6 +157,18 @@ See more details at [Build Output API](/docs/build-output-api).
 - [build](/docs/cli/build)
 - [deploy](/docs/cli/deploy)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

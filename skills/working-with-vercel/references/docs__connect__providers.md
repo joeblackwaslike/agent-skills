@@ -14,9 +14,10 @@ related:
   - /docs/connect/concepts/authentication
 summary: What your service needs to declare so Vercel Connect can discover, register, and authorize against it using standard OAuth.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/connect/providers.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "bcf66ebf87e477bad176c8538ef288747a90495a4fb117d3b223a01103e44050"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "27fa6631c9407e8b2c1a2a2c6e2a40c90a857c418a9059ecfbde8509a6e54353"
 ---
 
 # For Service Providers
@@ -34,7 +35,7 @@ If you are a service owner, this page covers what your service needs to support 
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
 - [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect)
-- [Quickstart](https://vercel.com/docs/connect/quickstart) — Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
+- [Vercel Connect: Secure access to external services for your agents](https://vercel.com/changelog/vercel-connect-secure-access-to-external-services-for-your-agents)
 - [Better Auth with Vercel Connect](https://vercel.com/docs/connect/frameworks/better-auth) — Use Vercel Connect as a generic OAuth provider for Better Auth in a Next.js application.
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
 
@@ -311,6 +312,18 @@ A token test only counts for the exact configuration it tested. Create a new tes
 - [Tokens](/docs/connect/concepts/tokens): subject types, scopes, refresh, and revocation as your users see them.
 - [Authentication](/docs/connect/concepts/authentication): how Vercel Connect proves identity in both directions.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

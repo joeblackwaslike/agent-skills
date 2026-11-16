@@ -15,9 +15,10 @@ related:
   - /docs/kms/concepts/key-rotation
 summary: Create a KMS issuer, sign a JWT from a Vercel Function with @vercel/kms, and verify it against the published JWKS.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/kms/quickstart.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "2a6a7432b5fa7a0c88ef92e88c0eeb1af25eb61f97f56e16f7e27045751a61d8"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "6a56d252985c1ed81990f150219c6f0b3e13f2bd8d8462e4134f26506d5c3e15"
 ---
 
 # Vercel KMS Quickstart
@@ -33,9 +34,9 @@ Sign a JWT from a Vercel Function with a Vercel-managed key, then verify it agai
 - [Sign JWTs from your Functions without managing private keys](https://vercel.com/changelog/sign-jwts-from-your-functions-without-managing-private-keys)
 - [Vercel KMS Concepts](https://vercel.com/docs/kms/concepts) — Understand how Vercel KMS rotates signing keys and how it authorizes signing, management, and verification.
 - [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
-- [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management) — Vercel MCP tools for key management.
 - [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys — Create a new signing key for a KMS issuer. Depending on the activation mode, the
 - [Sign a message](https://vercel.com/docs/rest-api/kms/sign-a-message) — POST /v1/kms/issuers/{issuerId}/sign/message — Sign a raw message with a KMS issuer's active signing key. Authenticate t
+- [Activate a signing key](https://vercel.com/docs/rest-api/kms/activate-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/activate — Activate a pending signing key so the issuer starts signing with
 
 Full cross-link map for this page: [/docs/kms/quickstart.graph.md](/docs/kms/quickstart.graph.md)
 <!-- /docsgraph:related -->
@@ -96,6 +97,18 @@ Full cross-link map for this page: [/docs/kms/quickstart.graph.md](/docs/kms/qui
 - [Authentication](/docs/kms/concepts/authentication): how signing and management requests are authorized.
 - [Key rotation](/docs/kms/concepts/key-rotation): rotate signing keys without breaking verification.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

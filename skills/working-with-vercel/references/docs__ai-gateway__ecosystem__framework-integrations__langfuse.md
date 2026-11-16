@@ -13,9 +13,10 @@ related:
   - /docs/ai-gateway/authentication-and-byok
 summary: Trace and monitor AI Gateway requests with Langfuse. Configure an OpenAI client and wrap it with observeOpenAI to log model generations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langfuse.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "a541571348b67887f6ca3111253a54e9f680bc04c1b3088cbb008a756dd2fe92"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d8eebb1d0ec5ee596beb469962f019e7d366cf755edf6ccf0e31eac08f78f6ff"
 ---
 
 # Langfuse with AI Gateway
@@ -33,12 +34,12 @@ with Langfuse to access various AI models and providers.
 
 - [Langfuse](https://ai-sdk.dev/providers/observability/langfuse) — Monitor, evaluate and debug your AI SDK application with Langfuse
 - [Ling 3.1 Flash 1019 now available on AI Gateway for free](https://vercel.com/changelog/ling-3-1-flash-1019-now-available-on-ai-gateway-for-free)
-- [Ling 3.1 Flash is now available on AI Gateway](https://vercel.com/changelog/ling-3-1-flash-is-now-available-on-ai-gateway)
+- [Muse Spark Open now available on AI Gateway](https://vercel.com/changelog/muse-spark-open-now-available-on-ai-gateway)
 - [LangChain with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langchain) — Learn how to integrate Vercel AI Gateway with LangChain to access multiple AI models through a unified interface.
 - [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
-- [LiteLLM with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/litellm) — Learn how to integrate Vercel AI Gateway with LiteLLM to access multiple AI models through a unified interface.
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
-- [Flue with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/flue) — Route Flue agent requests through Vercel AI Gateway with the built-in provider, using an API key or Vercel OIDC authenti
+- [Vercel & OpenAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/openai) — Integrate your Vercel project with OpenAI's powerful suite of models.
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integrations/langfuse.graph.md](/docs/ai-gateway/ecosystem/framework-integrations/langfuse.graph.md)
 <!-- /docsgraph:related -->
@@ -140,6 +141,18 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
   ```
   You should see a response from the AI model in your console.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

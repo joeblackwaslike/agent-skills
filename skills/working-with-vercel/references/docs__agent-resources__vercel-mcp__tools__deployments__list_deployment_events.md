@@ -12,9 +12,10 @@ related:
   []
 summary: Use list_deployment_events with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_events.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "43ea65c5263c51ba74c3f23ddb9427c1575d90a6067b011780e3528edd9e10bd"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d6e5a18eae287ebe98721060a6eceb192d069e986730194f29ab7e0886e0c548"
 ---
 
 # list_deployment_events
@@ -27,11 +28,11 @@ Get deployment events, including build output. Use `direction: "backward"` for r
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Get deployment events](https://vercel.com/docs/rest-api/deployments/get-deployment-events) — GET /v3/deployments/{idOrUrl}/events — Get the build logs of a deployment by deployment ID and build ID. It can work as
 - [list_deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployments) — Use list_deployments with Vercel MCP.
+- [Get deployment events](https://vercel.com/docs/rest-api/deployments/get-deployment-events) — GET /v3/deployments/{idOrUrl}/events — Get the build logs of a deployment by deployment ID and build ID. It can work as
 - [get_deployment_build_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_build_logs) — Use get_deployment_build_logs with Vercel MCP.
 - [list_deployment_files](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_files) — Use list_deployment_files with Vercel MCP.
-- [ui_get_build_log_excerpt](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/ui_get_build_log_excerpt) — Use ui_get_build_log_excerpt with Vercel MCP.
+- [List Deployment Files](https://vercel.com/docs/rest-api/deployments/list-deployment-files) — GET /v6/deployments/{id}/files — Allows to retrieve the file structure of the source code of a deployment by supplying t
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_events.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_events.graph.md)
 <!-- /docsgraph:related -->
@@ -53,6 +54,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deplo
 
 **Sample prompt:** "Show me the latest build logs for the failed deployment"
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

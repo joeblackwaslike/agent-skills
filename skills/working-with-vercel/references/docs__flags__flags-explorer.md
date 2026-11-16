@@ -15,9 +15,10 @@ related:
   - /docs/flags/flags-explorer/limits-and-pricing
 summary: "View and override your application's feature flags from the Vercel Toolbar"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/flags-explorer.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "955d102b8ad6be2f6f61463c0a0d076e7ffe6f52576b2a928c019919eb657db1"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a8d6272134410df3152d8b589b28081d440a48235e383622b723436fa7ff0b5d"
 ---
 
 # Flags Explorer
@@ -98,6 +99,18 @@ You can send this link to team members. When they visit the link they will get a
 - [Flags Explorer pricing and limits](/docs/flags/flags-explorer/limits-and-pricing)
 - [Flags SDK Reference](/docs/flags/flags-sdk-reference)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/routing/redirects
 summary: Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the vercel dev CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/dev.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "d95bde6b9fa6c92743b862c985f97f9e0ac7158e80967a33bd7513f26b65725a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "37c9cd91a486c8e7f3b36325b94a40ad676058088a31b4218dffa9ce3a20e2fa"
 ---
 
 # vercel dev
@@ -35,10 +36,10 @@ The `vercel dev` command is used to replicate the Vercel deployment environment 
 - [Introducing Vercel Schedules](https://vercel.com/blog/introducing-vercel-schedules)
 - [Introducing `vercel dev`: Serverless, on localhost](https://vercel.com/blog/vercel-dev)
 - [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
-- [vercel link](https://vercel.com/docs/cli/link) — Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
-- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 
 Full cross-link map for this page: [/docs/cli/dev.graph.md](/docs/cli/dev.graph.md)
 <!-- /docsgraph:related -->
@@ -120,6 +121,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

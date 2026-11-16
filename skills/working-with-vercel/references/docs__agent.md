@@ -15,9 +15,10 @@ related:
   - /docs/agent/pr-review
 summary: Use Vercel Agent to investigate production issues, review code, and take approved actions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ac6893db4831b28036a481c9cc4d3811948ee1e09583e1ff2ae765acbdcc684b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9f760218e4c4efa23f5c9586d30cd978c7ea04f54a270aa119f4569c9e6f9052"
 ---
 
 # Vercel Agent
@@ -33,17 +34,17 @@ Vercel Agent is an AI assistant built into Vercel. Use it to understand your pro
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [An expanded Vercel Agent: chat, investigations, and approved actions, now in public beta](https://vercel.com/changelog/an-expanded-vercel-agent-chat-investigations-and-approved-actions-now-in-public-beta)
+- [Introducing the new Vercel Agent](https://vercel.com/blog/vercel-agent)
 - [Apply code suggestions from Vercel Agent with one click](https://vercel.com/changelog/apply-code-suggestions-from-vercel-agent-with-one-click)
 - [Automatic build fix suggestions with Vercel Agent](https://vercel.com/changelog/automatic-build-fix-suggestions-with-vercel-agent)
 - [Native Deployment Checks are now available](https://vercel.com/changelog/native-deployment-checks)
 - [On-demand Vercel Agent code reviews](https://vercel.com/changelog/on-demand-vercel-agent-code-reviews)
-- [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, container image functions, security defaults,
+- [Vercel vs Railway](https://vercel.com/kb/guide/vercel-vs-railway) — A detailed guide to Vercel vs Railway: serverless vs always-on containers, container images from a Dockerfile, framework
 - [Introducing Vercel Security Review](https://vercel.com/blog/vercel-security-review)
-- [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 
 Full cross-link map for this page: [/docs/agent.graph.md](/docs/agent.graph.md)
 <!-- /docsgraph:related -->
@@ -110,6 +111,18 @@ Vercel Agent charges for paid work based on the tokens used. See [Vercel Agent p
 
 For information about data access, staff review, product improvement, retention, and deletion, see the [Chat](/docs/agent/chat), [Vercel Agent Permissions](/docs/agent/chat/permissions), and [Privacy Notice](/legal/privacy-policy) documentation.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/flags/observability
 summary: "Control feature visibility, run experiments, and ship with confidence using Vercel's feature flags platform."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "77c87052c24c75893d1cd812392de89b9ff6cd265c7c9ba0d3028203c949a0d8"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "6b0203e500e285b36c6dbb20e3017e8a2efdb55beb0237d7096e7f796ea5e3ed"
 ---
 
 # Flags
@@ -30,14 +31,14 @@ Vercel provides a complete feature flags platform. Use Vercel as your feature fl
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
+- [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
+- [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta)
 - [Vercel Flags no longer requires SDK Keys for Vercel deployments](https://vercel.com/changelog/authenticate-vercel-flags-with-openid-connect-by-default)
 - [Manage Vercel Flags segments with Vercel CLI](https://vercel.com/changelog/manage-vercel-flags-segments-with-vercel-cli)
 - [Manage Vercel Flags targeting rules from the CLI](https://vercel.com/changelog/manage-vercel-flags-targeting-rules-from-the-cli)
 - [Automate progressive rollouts with Vercel Flags](https://vercel.com/changelog/progressive-rollouts-in-vercel-flags)
-- [Timestamp attributes are now supported in Vercel Flags](https://vercel.com/changelog/timestamp-attributes-are-now-supported-in-vercel-flags)
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [Vercel Web Analytics](https://vercel.com/docs/analytics) — With Web Analytics, you can get detailed insights into your website's visitors with new metrics like top pages, top refe
 - [Filtering Analytics](https://vercel.com/docs/analytics/filtering) — Learn how filters allow you to explore insights about your website's visitors.
@@ -90,6 +91,18 @@ Track flag evaluations in Runtime Logs and analyze their impact on user behavior
 
 [Learn more about flags observability](/docs/flags/observability)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

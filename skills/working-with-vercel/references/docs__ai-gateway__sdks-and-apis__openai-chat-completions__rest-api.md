@@ -12,9 +12,10 @@ related:
   []
 summary: Use AI Gateway API directly without client libraries using curl and fetch.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "92e4f22cbd8b317806c9c8200ed8f30445ff0be8f2a26a6b9e0f8a2f87dfbda9"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3d1cbb10314b59b71884326906f20a2a4625d40d45713ad88d065b514830cad8"
 ---
 
 # Call AI Gateway Chat Completions with REST
@@ -27,11 +28,11 @@ If you prefer to use the AI Gateway API directly without the OpenAI client libra
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Python with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/python) — Use AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
 - [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
 - [AI Gateway App Attribution](https://vercel.com/docs/ai-gateway/ecosystem/app-attribution) — Attribute your requests so Vercel can identify and feature your app on AI Gateway pages.
-- [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
 - [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
+- [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
+- [Go with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/go) — Use AI Gateway from any Go application with the OpenAI or Anthropic Go SDKs, including model fallbacks, cost tracking, a
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api.graph.md](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api.graph.md)
 <!-- /docsgraph:related -->
@@ -590,6 +591,18 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
   }'
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/observability/observability-plus
 summary: Discover the essentials of our Shared Responsibility Model, outlining the key roles and responsibilities for customers, Vercel, and shared aspects in...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/security/shared-responsibility.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "206444704d58b275f24d6ed504c64d4569567a6ad91140b59e82885202fe51fb"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "37d9e899804dcc42e2ab687b474dca4831c51dc456f6f53d617a9ec3dcf166f4"
 ---
 
 # Shared Responsibility Model
@@ -38,10 +39,10 @@ A shared responsibility model is a framework designed to split tasks and obligat
 - [The Frontend Cloud: Powering resiliency for global web applications](https://vercel.com/blog/the-resiliency-of-the-frontend-cloud)
 - [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
 - [Vercel supports HIPAA compliance](https://vercel.com/blog/vercel-supports-hipaa-compliance)
-- [Introducing Vercel Firewall and Vercel Secure Compute](https://vercel.com/blog/vercel-security)
 - [Security & Compliance Measures](https://vercel.com/docs/security/compliance) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
-- [CDN security](https://vercel.com/docs/cdn-security) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
+- [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Vercel Support Code Visibility, Git Fork Protection, and
+- [Scopes and Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions) — Learn how to manage scopes and permissions for Sign in with Vercel
 
 Full cross-link map for this page: [/docs/security/shared-responsibility.graph.md](/docs/security/shared-responsibility.graph.md)
 <!-- /docsgraph:related -->
@@ -86,6 +87,18 @@ Vercel manages infrastructure components, such as compute, storage, and networki
 - **Storage**: Vercel is responsible for the security and reliability of storage environments for customer data. This includes the storage of application code, configuration files, and other data required to run customer applications. Vercel uses industry-standard encryption and access controls to ensure that customer data is protected from unauthorized access
 - **Networking**: Vercel is responsible for providing a secure and reliable networking environment for customer applications. This includes the network infrastructure used to connect customer applications to the internet, as well as the firewalls and other security measures used to protect them from unauthorized access. Industry-standard security practices are used to monitor network traffic and detect and respond to potential security threats
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

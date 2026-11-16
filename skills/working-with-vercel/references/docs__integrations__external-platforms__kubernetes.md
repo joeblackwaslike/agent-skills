@@ -15,9 +15,10 @@ related:
   - /docs/deployments/environments
 summary: Deploy your frontend on Vercel alongside your existing Kubernetes infrastructure.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/external-platforms/kubernetes.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "a80239f35fb32d0944c091eae31851cd17c993b795710627bae2838641b11ffd"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d74df65fc48c9637df7587095151eeb9c0efd9b134a13b781ac44105e44ed779"
 ---
 
 # Integrating Vercel and Kubernetes
@@ -30,16 +31,18 @@ Kubernetes (K8s) is an open-source system for automating deployment, scaling, an
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Does Vercel support Kubernetes?](https://vercel.com/kb/guide/vercel-kubernetes-support) — Vercel doesn't run Kubernetes clusters. Learn how Kubernetes workloads like Deployments, Ingress, ConfigMaps, and CronJo
 - [Vercel vs Kubernetes](https://vercel.com/kb/guide/vercel-vs-kubernetes) — Compare Vercel and Kubernetes on operational ownership, deployment workflow, scaling, and cost model to decide which pla
+- [Does Vercel support Kubernetes?](https://vercel.com/kb/guide/vercel-kubernetes-support) — Vercel doesn't run Kubernetes clusters. Learn how Kubernetes workloads like Deployments, Ingress, ConfigMaps, and CronJo
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
-- [Building secure and performant web applications on Vercel](https://vercel.com/blog/building-secure-and-performant-web-applications-on-vercel)
-- [Iterating from design to deploy: the shape of future builders](https://vercel.com/blog/iterating-from-design-to-deploy)
 - [Translate Kubernetes manifests to vercel.json](https://vercel.com/kb/guide/kubernetes-manifests-to-vercel-json) — Translate Kubernetes Deployments, Services, Ingress, ConfigMaps, and CronJobs into vercel.json configuration and Vercel
-- [Accelerating developer velocity and creating high-impact web teams](https://vercel.com/blog/accelerating-developer-velocity-and-creating-high-impact-web-teams)
-- [What does Vercel do? ](https://vercel.com/blog/what-is-vercel)
+- [Building secure and performant web applications on Vercel](https://vercel.com/blog/building-secure-and-performant-web-applications-on-vercel)
+- [Does Vercel support Ruby on Rails applications?](https://vercel.com/kb/guide/does-vercel-support-ruby-on-rails-applications) — Learn how to deploy a Ruby on Rails application on Vercel — either as a container image on Vercel Functions or as a head
+- [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify) — Migrate your website's configuration from Netlify to Vercel
+- [Iterating from design to deploy: the shape of future builders](https://vercel.com/blog/iterating-from-design-to-deploy)
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Backends on Vercel](https://vercel.com/docs/frameworks/backend) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
+- [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [Builds](https://vercel.com/docs/builds) — Understand how the build step works when creating a Vercel Deployment.
 
 Full cross-link map for this page: [/docs/integrations/external-platforms/kubernetes.graph.md](/docs/integrations/external-platforms/kubernetes.graph.md)
 <!-- /docsgraph:related -->
@@ -178,6 +181,18 @@ To incrementally move your frontend applications to Vercel:
   - Up to 80% reduction in time spent deploying
   - Up to 4x faster time to market
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

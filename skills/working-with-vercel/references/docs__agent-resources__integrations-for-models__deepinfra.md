@@ -15,9 +15,10 @@ related:
   - /docs/cli/install
 summary: Learn how to add the Deep Infra native integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "50ae7b541d82d94e91105845dfdae46db15ee88fb611b56aaab4ed6148122a85"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f54cf38f946e0fdd5a6286af5081d33bfcb6b7c20d815dbdf15285a6884446b1"
 ---
 
 # Vercel Deep Infra Integration
@@ -36,8 +37,8 @@ cloud providers.
 - [Vercel fal Integration](https://vercel.com/docs/agent-resources/integrations-for-models/fal) — Learn how to add the fal native integration with Vercel.
 - [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai) — Learn how to add the xAI native integration with Vercel.
 - [Adding a Provider](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider) — Learn how to add a new AI provider to your Vercel projects.
+- [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model) — Learn how to add a new AI model to your Vercel projects
 - [Vercel Together AI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai) — Learn how to add Together AI connectable account integration with Vercel.
-- [Vercel Groq Integration](https://vercel.com/docs/agent-resources/integrations-for-models/groq) — Learn how to add the Groq native integration with Vercel.
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/deepinfra.graph.md](/docs/agent-resources/integrations-for-models/deepinfra.graph.md)
 <!-- /docsgraph:related -->
@@ -116,6 +117,18 @@ To follow this guide, you'll need the following:
 
 ## More resources
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

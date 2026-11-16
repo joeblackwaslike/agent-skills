@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions/images
 summary: Analyze images with AI Gateway using AI SDK 7, the Python beta, Chat Completions, Messages, and Responses APIs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/inputs-and-tools/vision.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "e86c20a0c62d4371b0a7b023480a06c7b39e4f120b463ab5f305caf82c5ebb4d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c28ba57f49d8b2f46cf18c01c8071ea2a1efde80d810d31cf6f27a3909f97510"
 ---
 
 # AI Gateway Vision and Image Input
@@ -35,7 +36,7 @@ Send an image and a question to a vision-capable model to describe a scene, read
 - [AI Gateway Video Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/video-input) — Analyze video clips with AI Gateway using AI SDK 7, Python, Chat Completions, and Responses / OpenResponses.
 - [AI Gateway Audio Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/audio-input) — Analyze recorded audio with AI Gateway, compare audio input with transcription and realtime voice, and choose a supporte
 - [AI Gateway Chat Completions Image Generation Reference](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation) — Generate images using AI models that support multimodal output through the Chat Completions API through AI Gateway.
-- [Python with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/python) — Use AI Gateway with Python through OpenAI or Anthropic SDKs with full streaming, tool calling, and async support.
+- [AI Gateway Image Generation with AI SDK](https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk) — Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
 
 Full cross-link map for this page: [/docs/ai-gateway/inputs-and-tools/vision.graph.md](/docs/ai-gateway/inputs-and-tools/vision.graph.md)
 <!-- /docsgraph:related -->
@@ -443,6 +444,18 @@ Inline base64 increases the request size. Check the selected model's context and
 
 For request details and failures, inspect [AI Gateway logs](/docs/ai-gateway/observability-and-spend/logs). See [Inputs & Tools](/docs/ai-gateway/inputs-and-tools) to choose another capability.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

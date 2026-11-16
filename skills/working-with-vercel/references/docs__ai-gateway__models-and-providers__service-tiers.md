@@ -15,9 +15,10 @@ related:
   - /docs/ai-gateway/models-and-providers/virtual-models
 summary: Control processing priority and cost for OpenAI, Google AI Studio, Google Vertex AI, and SpaceXAI models using service tiers through AI Gateway,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f6b7c7f4237a49e8ee616708d99dfee1a5cb2211b9b5e8770c646f62262bf854"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "23cd1ef8b814dcf2917be45d10a2daa2091b8a91ea9c347b3f6bcf0e7e7de0e5"
 ---
 
 # AI Gateway Service Tiers
@@ -32,10 +33,10 @@ OpenAI, Google AI Studio, Google Vertex AI, and SpaceXAI offer different process
 
 - [OpenAI Ultrafast mode now available on AI Gateway](https://vercel.com/changelog/openai-ultrafast-mode-now-available-on-ai-gateway)
 - [Service tiers now available on AI Gateway](https://vercel.com/changelog/service-tiers-now-available-on-ai-gateway)
+- [Cost-aware model routing with Vercel AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Send easy requests to a lower-cost model and escalate only the complex ones to a frontier model through AI Gateway, with
 - [Azure OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/azure) — Learn how to use Azure OpenAI with AI Gateway and the direct provider.
 - [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway) — Learn how to use the AI Gateway provider with the AI SDK.
-- [OpenAI Compatible Providers](https://ai-sdk.dev/providers/openai-compatible-providers) — Use OpenAI compatible providers with the AI SDK.
-- [AI SDK 7](https://vercel.com/blog/ai-sdk-7)
+- [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai) — Learn how to use OpenAI with AI Gateway and the direct provider.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/service-tiers.graph.md](/docs/ai-gateway/models-and-providers/service-tiers.graph.md)
 <!-- /docsgraph:related -->
@@ -906,6 +907,18 @@ AI Gateway adjusts pricing based on the service tier the provider actually serve
 
 Pin a service tier on a [virtual model](/docs/ai-gateway/models-and-providers/virtual-models) to run all of its traffic on that tier, or set it to `@default` to drop the request's choice and apply the system default.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

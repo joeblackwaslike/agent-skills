@@ -15,9 +15,10 @@ related:
   - /docs/global-config/using-global-config
 summary: The Global Config client SDK is the most ergonomic way to read data from Global Configs. Learn how to set up the SDK so you can start reading Global...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/global-config/global-config-sdk.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "54298421482a962116368ed9e1abadda5ced9ef4a2cc0e2f638983d3333e6622"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f3d8ca652ab556da46d901606815863007603de03995e4d29b86a8af3e5ec0f5"
 ---
 
 # @vercel/global-config
@@ -32,11 +33,11 @@ The [Global Config](/docs/global-config) client SDK is the most ergonomic way to
 
 - [Global Config](https://flags-sdk.dev/docs/providers/global-config)
 - [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
-- [Global Config Limits and pricing](https://vercel.com/docs/global-config/global-config-limits) — Learn about the Global Configs limits and pricing based on account plans.
 - [Getting started with Global Config](https://vercel.com/docs/global-config/get-started) — Learn how to create a Global Config store and read from it in your project.
-- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
-- [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config) — POST /v1/global-config — Creates a Global Config.
+- [Global Config Limits and pricing](https://vercel.com/docs/global-config/global-config-limits) — Learn about the Global Configs limits and pricing based on account plans.
 - [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, delete, and manage items, read tokens, a
+- [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config) — POST /v1/global-config — Creates a Global Config.
+- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
 
 Full cross-link map for this page: [/docs/global-config/global-config-sdk.graph.md](/docs/global-config/global-config-sdk.graph.md)
 <!-- /docsgraph:related -->
@@ -556,6 +557,18 @@ All helper methods throw errors when:
 
 Manage your Global Configs at different levels in your Vercel Dashboard
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

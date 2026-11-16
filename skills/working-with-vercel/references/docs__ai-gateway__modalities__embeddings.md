@@ -13,9 +13,10 @@ related:
   - /docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai
 summary: Generate vector embeddings for semantic search, similarity matching, and retrieval-augmented generation (RAG) through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/modalities/embeddings.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "d755eefb3a8484884631b97e2d3ea1ed0adb1803917c9a00246e92244385a1d1"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2dd92714f6d20b522f39e9dae7a90d9846aefa6ad970a1e66b45944688769233"
 ---
 
 # AI Gateway Embeddings
@@ -28,11 +29,11 @@ Generate vector embeddings for semantic search, similarity matching, and retriev
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [AI Gateway Image Generation](https://vercel.com/docs/ai-gateway/modalities/image-generation) — Generate and edit images using AI models through Vercel AI Gateway with support for multiple providers and modalities.
+- [OpenAI Chat Completions API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions) — Use OpenAI SDKs with the AI Gateway Chat Completions API. Configure the base URL and authentication for chat, streaming,
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
-- [OpenAI Chat Completions API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions) — Use OpenAI SDKs with the AI Gateway Chat Completions API. Configure the base URL and authentication for chat, streaming,
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
+- [Go with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/go) — Use AI Gateway from any Go application with the OpenAI or Anthropic Go SDKs, including model fallbacks, cost tracking, a
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/embeddings.graph.md](/docs/ai-gateway/modalities/embeddings.graph.md)
 <!-- /docsgraph:related -->
@@ -244,6 +245,18 @@ Use TanStack AI's `embed` function with `vercelGatewayEmbedding` from `@tanstack
 
 Follow the [TanStack AI setup guide](/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai) for installation and authentication, then use the [embedding example](/kb/guide/tanstack-ai-vercel-ai-gateway#generate-embeddings). See the [TanStack AI adapter reference](https://tanstack.com/ai/latest/docs/adapters/vercel-gateway#embeddings) for the API and result shape.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

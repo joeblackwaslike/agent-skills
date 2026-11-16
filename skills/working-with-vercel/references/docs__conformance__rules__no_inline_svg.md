@@ -11,9 +11,10 @@ related:
   - /docs/conformance/customize
 summary: Prevent the use of `svg` tags inline.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/no_inline_svg.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "2a9c7bef06961d7444d73d71eb04c45500a4d7d262972f8bee702c77489f0b9e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f234a963fa1f6c232e11452818be30e5b0f1034dd60743733e414d50faf5791b"
 ---
 
 # NO_INLINE_SVG
@@ -51,6 +52,18 @@ export default function Page() {
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/domains/working-with-nameservers
 summary: Learn how DNS works to properly configure your domain.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains/working-with-dns.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c6951f9fa21a56831af7a433df5fbc88ef8ad6a3317e2c82e206174220161ebd"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "6ff8a29e3ec2051570afa21dee054c4a4cb8d4e7f0d8a7a04eda7437455c8e25"
 ---
 
 # Working with DNS
@@ -30,12 +31,11 @@ DNS is the system used to connect domain names to IP addresses. When you make a 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [DNS Records UI](https://vercel.com/blog/dns-records-ui)
-- [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
-- [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
 - [vercel dns](https://vercel.com/docs/cli/dns) — Learn how to manage your DNS records for your domains using the vercel dns CLI command.
+- [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
+- [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
+- [Update an existing DNS record](https://vercel.com/docs/rest-api/dns/update-an-existing-dns-record) — PATCH /v1/domains/records/{recordId} — Updates an existing DNS record for a domain name.
 - [Domains and DNS](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains) — Vercel MCP tools for domains and dns.
-- [Domain Connect](https://vercel.com/docs/domains/domain-connect) — Learn how to integrate your service with Vercel DNS using the Domain Connect protocol to automatically configure DNS rec
 
 Full cross-link map for this page: [/docs/domains/working-with-dns.graph.md](/docs/domains/working-with-dns.graph.md)
 <!-- /docsgraph:related -->
@@ -108,6 +108,18 @@ Learn how Vercel uses SSL certificates to keep your site secure.
 Learn about common reasons for domain misconfigurations and how to
 troubleshoot your domain on Vercel.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

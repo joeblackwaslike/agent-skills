@@ -15,9 +15,10 @@ related:
   - /docs/rbac/access-roles
 summary: "Inspect the security posture of your Vercel team from the terminal: run every security check, list findings, and triage Security Review..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/security.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "11bb20f746668836ae09026eedd946e980b5e3279c9d8dcf9848360b6b3f9740"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9d961c89188599ac2dac1d1f5a528790698e7bf7bb270c930773a5428ef6d5e5"
 ---
 
 # vercel security
@@ -34,9 +35,9 @@ The `vercel security` command runs your team's security checks and prints them i
 - [Introducing Vercel Security Review](https://vercel.com/blog/vercel-security-review)
 - [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel doctor](https://vercel.com/docs/cli/doctor) — Learn how to check your Vercel CLI setup and fix problems with the vercel doctor CLI command.
-- [vercel health](https://vercel.com/docs/cli/health) — Read Vercel platform status, active incidents, scheduled maintenance, and recently resolved incidents from your terminal
+- [vercel ci](https://vercel.com/docs/cli/ci) — Enable or disable Vercel CI for repositories, inspect runs, search logs, and rerun jobs from the command line.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [vercel health](https://vercel.com/docs/cli/health) — Read Vercel platform status, active incidents, scheduled maintenance, and recently resolved incidents from your terminal
 
 Full cross-link map for this page: [/docs/cli/security.graph.md](/docs/cli/security.graph.md)
 <!-- /docsgraph:related -->
@@ -120,6 +121,7 @@ Lists the team's vulnerabilities, Production and most severe first. It shows ope
 | Option | Type | Description |
 | --- | --- | --- |
 | `-p, --project <NAME_OR_ID>` | String | Only list vulnerabilities in this project |
+| `--repository <REPOSITORY>` | String | Only list vulnerabilities in this Git repository (`<owner>/<repo>`), including those in projects deployed from it. Any other format fails the command |
 | `-e, --environment <ENVIRONMENT>` | String | Only list vulnerabilities in this environment |
 | `--git-branch <BRANCH>` | String | Only list vulnerabilities on this Git branch |
 | `--status <STATUS>` | String | Comma-separated statuses to list: `open`, `closed`, or `dismissed`, or `all`. The default is `open` |
@@ -245,6 +247,15 @@ vercel security vulnerabilities --project my-app --environment production --seve
 
 *Combine filters to narrow the vulnerability list.*
 
+### List open vulnerabilities in one Git repository
+
+```bash filename="terminal"
+vercel security vulnerabilities --repository acme/app
+```
+
+*List vulnerabilities in the \`acme/app\` repository and in projects deployed
+from it.*
+
 ### Dismiss an accepted risk with a note
 
 ```bash filename="terminal"
@@ -277,6 +288,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

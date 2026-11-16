@@ -11,9 +11,10 @@ related:
   - /docs/conformance/customize
 summary: Requires using native `fetch` which Next.js provides, removing the need for third-party fetch libraries.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/nextjs_use_native_fetch.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "7438601017056a099d606cb1ec1dd8d69791b07400f4d49a49cd6c4b5a5d012b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "738eff12fc847110d57e5d8ea494cfd5eaeeea062a37bd1b475ce8b0fcc4aa12"
 ---
 
 # NEXTJS_USE_NATIVE_FETCH
@@ -62,6 +63,18 @@ export async function getAuth() {
 
 Replace the third-party fetch library with the native `fetch` API Next.js provides.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/workflows-and-actions/dependency-caching.md"
-fetched_at: "2026-09-14T09:42:05.851Z"
-sha256: "b92f2ad71a3b0a2910fd755158a34466fec28d6e32d1f9f72eb9a47468a53e09"
+fetched_at: "2026-11-16T12:31:24.152Z"
+sha256: "576202e2b30d84ee14f9dad4c17bd72782f87603a47bda3cebc6b3495c362959"
 ---
 
 ## `cache` action usage
@@ -296,6 +296,9 @@ If you omit `cache-mode`, a `read` or `write` default is used based on the trigg
 For the trusted-versus-low-trust trigger breakdown, see [Cache access for low-trust workflow triggers](#cache-access-for-low-trust-workflow-triggers).
 
 The runner exposes the effective mode in the `ACTIONS_CACHE_MODE` environment variable, and the `actions/cache` action and the `@actions/cache` toolkit honor it. Restore is skipped when the mode does not allow reads (`none` or `write-only`), and save is skipped when the mode does not allow writes (`none` or `read`). When a cache operation is skipped because of the mode, the action logs an informational message and the step and run continue without failing. A skipped restore is treated as a cache miss; a skipped save is simply not performed.
+
+> [!NOTE]
+> `ACTIONS_CACHE_MODE` is only set in the environment of JavaScript and Docker container actions. It is not available to `run` steps, including `run` steps in composite actions.
 
 ### Cache access in reusable workflows
 

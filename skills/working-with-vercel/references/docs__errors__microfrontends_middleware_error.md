@@ -11,9 +11,10 @@ related:
   []
 summary: The microfrontend middleware returned an invalid application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/microfrontends_middleware_error.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "e6049b0dc828528b318ba3f54c0bb578bcb0d10fe3b29a1265886d8ac018322a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1c3906db62ced1d8b320462eaeeefd87d43f61e8ff4ab4a9eb5c65051b63903c"
 ---
 
 # MICROFRONTENDS_MIDDLEWARE_ERROR
@@ -27,6 +28,18 @@ To troubleshoot this error, follow these steps:
 1. If you are setting the header, ensure that the value is a valid application name.
 2. If you are not setting the header, this is an error caused by the [@vercel/microfrontends](https://www.npmjs.com/package/@vercel/microfrontends) package. Please [open an issue](https://github.com/vercel/microfrontends/issues) and include the error message.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

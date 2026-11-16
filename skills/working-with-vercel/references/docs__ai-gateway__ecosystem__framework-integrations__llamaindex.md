@@ -13,9 +13,10 @@ related:
   - /docs/ai-gateway/authentication-and-byok
 summary: Learn how to integrate Vercel AI Gateway with LlamaIndex to access multiple AI models through a unified interface.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/llamaindex.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5191b394b188643ac206eedcc23ffd9926efc8822909bbde38ac59df36338b2f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "893873631c42719de500c45cbc509b778df3c1c8ce27e5fcc29780e0bff9e5a2"
 ---
 
 # LlamaIndex with AI Gateway
@@ -28,14 +29,12 @@ sha256: "5191b394b188643ac206eedcc23ffd9926efc8822909bbde38ac59df36338b2f"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [LlamaGate](https://ai-sdk.dev/providers/community-providers/llamagate) — LlamaGate Provider for the AI SDK
-- [LlamaIndex](https://ai-sdk.dev/providers/adapters/llamaindex) — Learn how to use LlamaIndex with the AI SDK.
 - [What is a Large Language Model \\(LLM\\)?](https://vercel.com/kb/guide/what-is-a-large-language-model) — Learn what Large Language Models \\(LLMs\\) are, how they work, and how you can use them to generate UI, debug code, and i
 - [LiteLLM with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/litellm) — Learn how to integrate Vercel AI Gateway with LiteLLM to access multiple AI models through a unified interface.
 - [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
+- [Pydantic AI with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai) — Learn how to integrate Vercel AI Gateway with Pydantic AI to access multiple AI models through a unified interface.
 - [LangChain with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langchain) — Learn how to integrate Vercel AI Gateway with LangChain to access multiple AI models through a unified interface.
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
-- [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai) — Learn how to add the xAI native integration with Vercel.
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integrations/llamaindex.graph.md](/docs/ai-gateway/ecosystem/framework-integrations/llamaindex.graph.md)
 <!-- /docsgraph:related -->
@@ -99,6 +98,18 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
   ```
   You should see a streaming response from the AI model.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

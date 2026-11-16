@@ -16,9 +16,10 @@ related:
   - /docs/integrations/create-integration/marketplace-api/reference/partner/list-billing-plans-for-product
 summary: Learn how to create a product for your Vercel native integration
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-product.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "29f13ebe1101a2fffa23e9f1f951977100e2fec31ff0be5aaedb7928754b2f37"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1011620ef30f997fa9b1040377417b08eaf7caf89992c6f5adf99bcfe2bcde21"
 ---
 
 # Create a Native Integration
@@ -34,8 +35,8 @@ With a product, you allow a Vercel customer who has installed your integration t
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
 - [Install an Integration](https://vercel.com/docs/integrations/install-an-integration) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
-- [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
 - [Marketplace Partner API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner) — Learn how to implement Partner API endpoints for your Vercel integration
+- [Marketplace Vercel API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel) — Learn how to call Vercel API endpoints to interact with Vercel resources
 
 Full cross-link map for this page: [/docs/integrations/create-integration/marketplace-product.graph.md](/docs/integrations/create-integration/marketplace-product.graph.md)
 <!-- /docsgraph:related -->
@@ -152,6 +153,18 @@ You can add it to your editor configuration as follows:
 - [Native integration server Github code sample](https://github.com/vercel/example-marketplace-integration)
 - [Native Integration Flows](/docs/integrations/create-integration/marketplace-flows)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

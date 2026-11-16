@@ -15,9 +15,10 @@ related:
   - /docs/deployments
 summary: Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection, functions, project members,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/project-configuration/project-settings.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "403a0634b52022fbb007f72430d3a357a7590301a655255b772879c3a55ba21f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "541f5aa857cf880c7340066fd7fd3db381f9126dcf986146af7cb9868282d2e5"
 ---
 
 # Project settings
@@ -30,13 +31,11 @@ From the Vercel [dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Das
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [July 2020](https://vercel.com/blog/changelog-july-2020)
-- [June 2020](https://vercel.com/blog/changelog-june-2020)
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Managing projects](https://vercel.com/docs/projects/managing-projects) — Learn how to manage your projects through the Vercel Dashboard.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
 - [Builds](https://vercel.com/docs/builds) — Understand how the build step works when creating a Vercel Deployment.
+- [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
 
 Full cross-link map for this page: [/docs/project-configuration/project-settings.graph.md](/docs/project-configuration/project-settings.graph.md)
 <!-- /docsgraph:related -->
@@ -187,6 +186,18 @@ Vercel provides some additional features to configure your project in a more adv
 - Displaying [directory listing](/docs/directory-listing)
 - Enabling [Skew protection](/docs/skew-protection)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

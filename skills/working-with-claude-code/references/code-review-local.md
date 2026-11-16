@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/code-review-local.md"
-fetched_at: "2026-11-09T12:34:10.263Z"
-sha256: "52ea6f9127e4c3b05aa3725bf3430de9a4bc631c03b0e1f4d14978b825c30695"
+fetched_at: "2026-11-16T12:28:44.823Z"
+sha256: "092b76076a9fad31f02a4054ae6f601d6b864ffc07030e90ef3991e7e30ec6f5"
 ---
 
 > ## Documentation Index
@@ -20,7 +20,7 @@ The command works on any plan. The review runs in your own session, so it counts
 >
 > To have every pull request in a repository reviewed automatically on GitHub, see [Code Review](https://code.claude.com/docs/en/code-review.md), a managed service that an Owner turns on for your organization.
 
-`/review` is an alias of `/code-review`. Before v2.1.223, `/review` was a separate command that ran a single-pass, read-only review of a GitHub pull request.
+`/review` is an alias of `/code-review`.
 
 **1. Run /code-review**
 
@@ -96,8 +96,6 @@ When you don't type a level, the review reuses the last level from `low` through
 * **Non-interactive runs**: a level you pass in a non-interactive `-p` run doesn't update the remembered level
 * **`ultra`**: the review neither uses nor updates the remembered level
 * **No level ever typed**: the review uses the session's current effort
-
-Before v2.1.223, a `/code-review` without a level always used the session's current effort.
 
 ### Post findings to a GitLab merge request
 

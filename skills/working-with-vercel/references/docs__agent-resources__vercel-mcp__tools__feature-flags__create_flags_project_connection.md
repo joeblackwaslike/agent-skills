@@ -12,9 +12,10 @@ related:
   - /docs/flags/vercel-flags/project-connections
 summary: "Grant another project access to a project's flags."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/create_flags_project_connection.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ae0492dadb14673b43d2b6cdfb0f11b013b2ce8a34dd1790dc3279d4e179451b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3f24511e5a12bc0085cc9962e72b5fec6f531e30cc0b9e33f237deb82b90b5f9"
 ---
 
 # create_flags_project_connection
@@ -50,6 +51,18 @@ Your MCP OAuth grant must cover both projects. You need permission to manage con
 | `slug`            | string | No       | Team slug.                  |
 | `requestBody`     | object | Yes      | Request body for this tool. |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

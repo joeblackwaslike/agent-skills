@@ -15,9 +15,10 @@ related:
   - /docs/observability/observability-plus
 summary: "Learn how to explore firewall traffic and manage your project's custom firewall rules, managed bot rules, IP blocks, system bypass rules, attack..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/firewall.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c26cae4f7b7afbb245adbce4bb581c4b796fd36f96e247e959042b8afdaeff98"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0c6fb13f27d272aca2b8db5c7ff258ed347e86a91d0a2eaacc03c8f2e6d3e7dc"
 ---
 
 # vercel firewall
@@ -36,9 +37,9 @@ The `vercel firewall` command is used to inspect and configure the [Vercel Firew
 - [Create Vercel Firewall rules with natural language](https://vercel.com/changelog/create-vercel-waf-custom-rules-using-natural-language)
 - [vercel traces](https://vercel.com/docs/cli/traces) — Search spans across a team, inspect a trace by trace ID or request ID, capture session traces, or manage project trace s
 - [Rate Limiting SDK](https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting-sdk) — Learn how to configure a custom rule with rate limit in your code.
-- [Read Firewall Configuration](https://vercel.com/docs/rest-api/security/read-firewall-configuration) — GET /v1/security/firewall/config/{configVersion} — Retrieve the specified firewall configuration for a project. The depl
 - [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
-- [vercel routes](https://vercel.com/docs/cli/routes) — Learn how to manage project-level routing rules using the vercel routes CLI command.
+- [Generate a firewall rule from natural language](https://vercel.com/docs/rest-api/security/generate-a-firewall-rule-from-natural-language) — POST /v1/security/firewall/config/generate-rule — Generate a firewall rule from a natural language description.
+- [AI Gateway Routing Rules](https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules) — Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
 
 Full cross-link map for this page: [/docs/cli/firewall.graph.md](/docs/cli/firewall.graph.md)
 <!-- /docsgraph:related -->
@@ -1129,6 +1130,18 @@ For more information on global options and their usage, refer to the [options se
 - [Attack Mode](/docs/vercel-firewall/attack-mode)
 - [DDoS mitigation](/docs/vercel-firewall/ddos-mitigation)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

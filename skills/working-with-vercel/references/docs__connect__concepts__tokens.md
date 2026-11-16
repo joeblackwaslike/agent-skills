@@ -16,9 +16,10 @@ related:
   - /docs/connect/concepts/triggers
 summary: Short-lived provider credentials issued by Vercel Connect. Each token request specifies a subject, optional installation, scopes, and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/connect/concepts/tokens.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "bb6c146b143fcf99dd50a370d77e9e894bc6fb4a9b907aa429e5151a4c5c2be7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e9b903d6ac8d80164325996522938f3810a9db42ca991be83a1f2fb3be53deb1"
 ---
 
 # Provider tokens in Vercel Connect
@@ -38,8 +39,9 @@ A token is a short-lived credential that Vercel Connect issues against a provide
 - [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
-- [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
 - [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
+- [Observability](https://vercel.com/docs/connect/observability) — Monitor token requests, authorizations, revocations, and trigger deliveries for your connectors.
+- [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
 - [Frameworks and Adapters for Vercel Connect](https://vercel.com/docs/connect/frameworks) — Use Vercel Connect with AI SDK, TanStack AI, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.
 
 Full cross-link map for this page: [/docs/connect/concepts/tokens.graph.md](/docs/connect/concepts/tokens.graph.md)
@@ -192,6 +194,18 @@ Each SDK exports its error classes, so you can match on `instanceof` in TypeScri
 - [Python SDK Reference](/docs/connect/python-sdk-reference): The same API for Python.
 - [Triggers](/docs/connect/concepts/triggers): Tokens are the outbound half of Vercel Connect; triggers are the inbound half.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

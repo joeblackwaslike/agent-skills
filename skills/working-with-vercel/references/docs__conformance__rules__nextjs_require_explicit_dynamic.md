@@ -11,9 +11,10 @@ related:
   - /docs/conformance/customize
 summary: Requires explicitly setting the `dynamic` route segment option for Next.js pages and routes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/nextjs_require_explicit_dynamic.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9cd548a9fcca3918459f545d30221c4afce86094490e29dfaecc690bcc38cfa5"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "426c899b2cedf7443d6046a756dea3b74d44d2706a2bd5cb55b0a37f8054e844"
 ---
 
 # NEXTJS_REQUIRE_EXPLICIT_DYNAMIC
@@ -93,6 +94,18 @@ export default function Page() {
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

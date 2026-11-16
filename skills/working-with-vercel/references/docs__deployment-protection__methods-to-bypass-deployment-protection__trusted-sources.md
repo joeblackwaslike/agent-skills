@@ -16,9 +16,10 @@ related:
   - /docs/oidc/reference
 summary: Let other Vercel projects and external services reach your protected deployments by presenting a verified OIDC token.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "0f3466a65871594c5d5d4f3efb06e5eed36caa0c72e3f2d4f88077a12628ee39"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2eddf873b9c06292e982d138972e0f8b37dd362b5cd54cfed2246fada6c2dd91"
 ---
 
 # Trusted Sources
@@ -290,6 +291,18 @@ The external service can no longer reach this project's protected deployments.
 - [Methods to protect deployments](/docs/security/deployment-protection/methods-to-protect-deployments)
 - [Methods to bypass Deployment Protection](/docs/security/deployment-protection/methods-to-bypass-deployment-protection)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

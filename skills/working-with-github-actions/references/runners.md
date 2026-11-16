@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/runners/github-hosted-runners.md"
-fetched_at: "2026-11-02T12:05:29.724Z"
-sha256: "5e17a71c988e6d13c6097fa6258bd0a6161461832c4d45f9d76dd0d9a56fc0e5"
+fetched_at: "2026-11-16T12:31:24.152Z"
+sha256: "15c7ee8f9ac17055434ad28bda41ce53c679fdd0a9a6d23d3b5eec514e73b54d"
 ---
 
 {% ifversion ghes %}
@@ -31,6 +31,9 @@ For lists of available runners, see:
 {% endif %}
 
 {% data reusables.actions.supported-github-runners %}
+
+> [!NOTE]
+> {% data reusables.actions.macos-runner-capacity %}
 
 Workflow logs list the runner used to run a job. For more information, see [AUTOTITLE](/actions/how-tos/monitor-workflows/view-workflow-run-history).
 

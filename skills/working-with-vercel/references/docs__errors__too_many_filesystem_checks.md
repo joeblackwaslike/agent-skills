@@ -13,9 +13,10 @@ related:
   - /docs/deployments/logs
 summary: Too many filesystem checks occurred while processing the request. This is a routing error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/too_many_filesystem_checks.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "66995a27872bdbfd3e1d4cfcf6f8e29cb61788758268ac9bf0f0778cbb949fb1"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "639ff8772546e15a247807034612571637b1c3b893dfa3486db8906b75bee98c"
 ---
 
 # TOO_MANY_FILESYSTEM_CHECKS
@@ -35,6 +36,18 @@ To troubleshoot this error, follow these steps:
 3. **Check for Loops**: Ensure there isn't any looping logic in the routing or filesystem access code that could lead to excessive filesystem checks
 4. **Review application logs**: Inspect the [application logs](/docs/deployments/logs) for any warnings or errors related to filesystem access or routing
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -16,9 +16,10 @@ related:
   - /docs/sandbox/concepts/drives
 summary: Compose investigation, sandbox execution, review, and GitHub publication stages with the AI SDK on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/software-factory/ai-sdk.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f3556beee99c00b98cd1cdae5089afd3c4185bd0ece240ed67f50d39323e11d9"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1016f459b7a8f7b5ff7ff5eaf4cca3b0e52ff75713b4f617b9f1a1252740d29f"
 ---
 
 # Build a Software Factory with the AI SDK
@@ -31,12 +32,12 @@ Use the [AI SDK](/docs/ai-sdk) to build a software factory from explicit agent s
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Building a software factory for AI SDK](https://vercel.com/blog/building-a-software-factory-for-ai-sdk)
 - [Run Python code securely with AI SDK and Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox) — Add an \\`executeCode\\` tool to your AI SDK agent with the \\`ai-sdk-tool-code-execution\\` package to run Python 3.13 insi
-- [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
+- [Building a software factory for AI SDK](https://vercel.com/blog/building-a-software-factory-for-ai-sdk)
 - [How to give agents persistent storage with Vercel Drives](https://vercel.com/kb/guide/persistent-storage-with-vercel-drives) — Give AI SDK and TanStack AI agents persistent storage with Vercel Drives so they can save and reuse research notes acros
+- [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
-- [Build an agentic app in FastAPI with OpenAI Agents API and Vercel Sandbox](https://vercel.com/kb/guide/fastapi-openai-agents-api-vercel-sandbox) — Learn how to build a repository Q&A app using FastAPI, OpenAI Agents API, and Vercel Sandbox, with isolated code inspect
+- [Safely running AI generated code in your Next.js application](https://vercel.com/kb/guide/running-ai-generated-code-sandbox) — How to execute untrusted, AI‑generated code from a Next.js app using Vercel Sandbox, an isolated, ephemeral environment.
 - [Build a Software Factory with eve](https://vercel.com/docs/agent-resources/software-factory/eve) — Customize an eve software factory on Vercel with GitHub access, sandbox execution, and reviewed draft pull requests.
 - [Build a Software Factory with Flue](https://vercel.com/docs/agent-resources/software-factory/flue) — Use Flue with AI Gateway, Vercel Sandbox, and explicit GitHub tool adapters for investigated and reviewed code changes.
 
@@ -114,7 +115,7 @@ export const investigator = new ToolLoopAgent({
 });
 ```
 
-Only the three read tools enter the agent loop. `context` supplies default arguments; restrict the token or GitHub App installation to the intended repository to enforce access.
+Only the three read tools enter the agent loop. `context` supplies default arguments; restrict the token or GitHub App installation to the intended repository to enforce access. To make `getIssue` and `getFileContent` reject calls to any other repository, also pass `guardrails: { repositories: ['your-org/your-repo'] }` to `createGithubTools`. Guardrails don't restrict `searchCode`, because a search has no repository target, so the token's access decides what a search can reach.
 
 Call the investigator from a local entrypoint, replacing `42` with an issue in that repository:
 
@@ -165,9 +166,9 @@ Give a separate review agent the acceptance criteria, diff, and check evidence. 
 
 ## Publish a reviewed draft pull request
 
-Use [GitHub Tools with Vercel Connect](https://github-tools.com/guide/vercel-connect) for the publishing stage. Attach a GitHub connector to the deployment and give it only the repository permissions needed to create the branch, commit changes, and open a PR.
+Use [GitHub Tools with Vercel Connect](https://github-tools.com/auth#vercel-connect) for the publishing stage. Attach a GitHub connector to the deployment and give it only the repository permissions needed to create the branch, commit changes, and open a PR.
 
-Expose `createBranch`, `createOrUpdateFile`, and `createPullRequest` only after the application has accepted the review and authorized publication. For changes that include deletions, renames, or multiple files in one commit, use a publishing implementation that preserves that complete diff. Set `draft: true` on `createPullRequest` and include the issue, changes, check results, and remaining questions in the body.
+Expose `createBranch`, `createOrUpdateFile`, and `createPullRequest` only after the application has accepted the review and authorized publication. Set [`guardrails`](https://github-tools.com/approval#guardrails) with a `branches` pattern, such as `factory/*`, so these tools can create and commit to the run's branch but not your default branch. For changes that include deletions, renames, or multiple files in one commit, use a publishing implementation that preserves that complete diff. Set `draft: true` on `createPullRequest` and include the issue, changes, check results, and remaining questions in the body.
 
 AI SDK write tools carry `needsApproval`; your application must show the request and return an approval or denial through the [AI SDK approval flow](https://ai-sdk.dev/docs/ai-sdk-core/tools-and-tool-calling#tool-execution-approval). An instruction telling the model to ask first isn't an approval handler. Keep merge operations outside the factory.
 
@@ -175,7 +176,7 @@ AI SDK write tools carry `needsApproval`; your application must show the request
 
 A `ToolLoopAgent` invocation alone doesn't checkpoint the factory. For runs that span function invocations or approval waits, use [Vercel Workflows](/docs/workflows). Store the run ID, base commit, branch, stage outputs, and reviewed commit as durable state.
 
-GitHub Tools provides a [Workflow integration](https://github-tools.com/frameworks/vercel-workflow) for durable agent execution. Follow that integration when GitHub calls need individual step boundaries. Wrapping an entire tool loop in a single step can repeat the loop's side effects if the step retries.
+GitHub Tools provides a [Workflow integration](https://github-tools.com/integrations/workflow) for durable agent execution. Follow that integration when GitHub calls need individual step boundaries. Wrapping an entire tool loop in a single step can repeat the loop's side effects if the step retries.
 
 Before retrying publication, look up the run's existing branch and PR. Approval should apply to the exact reviewed commit, and subsequent edits should return to review.
 
@@ -183,6 +184,18 @@ Before retrying publication, look up the run's existing branch and PR. Approval 
 
 Use a small test issue and confirm that the final draft PR contains the actual diff and check evidence. Also test a failed check, denied approval, and interrupted publication. A failure or denial must stop publication; a retry must reuse the existing run and avoid creating duplicate PRs.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

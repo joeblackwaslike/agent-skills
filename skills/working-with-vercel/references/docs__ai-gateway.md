@@ -13,11 +13,12 @@ related:
   - /docs/ai-gateway/sdks-and-apis/ai-sdk
   - /docs/ai-gateway/sdks-and-apis/openai-chat-completions
   - /docs/ai-gateway/sdks-and-apis/responses
-summary: Call AI models from any infrastructure through a managed gateway. Centralize credentials, request logs, spend budgets, routing, and provider failover.
+summary: A hosted AI gateway for any cloud or language. Centralize credentials, request logs, cost tracking, budgets, prompt caching, and provider failover.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f11cd65b9c2b881e30d325bbb96414a21c15bbe25447188442fff072758ee0bc"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2c9128bd80faa178c35bee6c87d9f9b2967ac78b2bf02c70706b0a276a302478"
 ---
 
 # Vercel AI Gateway: Models, Routing, and Observability
@@ -32,14 +33,14 @@ Use one managed gateway from any infrastructure to centralize credentials, log r
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available)
 - [Introducing the AI Gateway](https://vercel.com/blog/ai-gateway)
-- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway) — Learn how to use the AI Gateway provider with the AI SDK.
 - [TanStack AI](https://chat-sdk.dev/docs/ai/tanstack-ai) — Feed thread history into TanStack AI's chat(), give it Chat SDK tools, and serve a TanStack AI browser chat from the sam
 - [Agent configuration (agent.ts)](https://eve.dev/docs/agent-config) — Configure an eve agent's model, reasoning effort, compaction, limits, and runtime behavior in agent.ts.
 - [Deployment](https://eve.dev/docs/guides/deployment) — How an eve agent runs in production, and the backends you choose on Vercel or your own infrastructure.
-- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
+- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel) — Deploy an eve agent with Vercel Workflow, Sandbox, Schedules, and project credentials.
 - [AI Gateway and one-click deploys now available on TRAE](https://vercel.com/changelog/ai-gateway-and-one-click-deploys-now-available-on-trae)
 - [AI Gateway is now in Beta](https://vercel.com/changelog/ai-gateway-is-now-in-beta)
 - [ Routing rules now available on AI Gateway](https://vercel.com/changelog/ai-gateway-routing-rules)
@@ -88,20 +89,31 @@ Call AI Gateway from any environment with the [AI SDK](/docs/ai-gateway/sdks-and
 
 AI Gateway routes requests across providers and fallback models, then records status, provider, latency, token usage, cost, and every routing attempt. To prefer an inference provider and verify which provider served the request, [set a provider order and read the response metadata](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering#provider-ordering). Configure [budgets](/docs/ai-gateway/observability-and-spend/budgets), access policies, data handling, and [Bring Your Own Key (BYOK)](/docs/ai-gateway/authentication-and-byok/byok) for your team. AI Gateway adds zero markup to provider token prices, including with BYOK.
 
-## Centralize multi-provider AI operations
+## Use AI Gateway from any cloud or language
 
-Your application does not need to run on Vercel. Call AI Gateway from any server, cloud, or local environment with an [AI Gateway API key](/docs/ai-gateway/authentication-and-byok/api-keys). Vercel deployments can use [OpenID Connect (OIDC)](/docs/ai-gateway/authentication-and-byok/oidc) instead.
+AI Gateway is a hosted API at `https://ai-gateway.vercel.sh`. Your application does not need to run on Vercel. Call AI Gateway from any server, cloud, or local environment with an [AI Gateway API key](/docs/ai-gateway/authentication-and-byok/api-keys). You need a Vercel account to create the key and manage billing, but not a Vercel project or deployment. Vercel deployments can use [OpenID Connect (OIDC)](/docs/ai-gateway/authentication-and-byok/oidc) instead of a key.
+
+| Language                  | Connect with                                                                                                                                                                                                                                                                              |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| TypeScript and JavaScript | The [AI SDK](/docs/ai-gateway/sdks-and-apis/ai-sdk), or the OpenAI or Anthropic SDK with the AI Gateway base URL                                                                                                                                                                          |
+| Python                    | The [OpenAI or Anthropic Python SDK](/docs/ai-gateway/sdks-and-apis/python), the [AI SDK for Python](/docs/ai-gateway/sdks-and-apis/ai-sdk-python), or a [framework integration](/docs/ai-gateway/ecosystem/framework-integrations) such as LangChain, LiteLLM, or Pydantic AI             |
+| Go                        | The [OpenAI or Anthropic Go SDK](/docs/ai-gateway/sdks-and-apis/go) with the AI Gateway base URL                                                                                                                                                                                          |
+| Other languages           | Any client for the [OpenAI Chat Completions](/docs/ai-gateway/sdks-and-apis/openai-chat-completions), [OpenAI Responses](/docs/ai-gateway/sdks-and-apis/responses), or [Anthropic Messages](/docs/ai-gateway/sdks-and-apis/anthropic-messages-api) API, or the [REST API](/docs/ai-gateway/sdks-and-apis/rest-api) |
+
+## Centralize multi-provider AI operations
 
 Use AI Gateway when you want these controls without operating your own proxy, database, and routing control plane:
 
-| Requirement             | How AI Gateway handles it                                                                                                                                                                                                    |
-| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Centralized credentials | Authenticate your application once, then use AI Gateway system credentials or your own provider accounts through [BYOK](/docs/ai-gateway/authentication-and-byok/byok).                                                      |
-| Request logging         | Inspect each request's model, provider attempts, latency, token usage, status, and cost in [request logs](/docs/ai-gateway/observability-and-spend/logs).                                                                    |
-| Spending controls       | Set [budgets](/docs/ai-gateway/observability-and-spend/budgets) for a team, project, API key, or team member. AI Gateway rejects new requests after an applicable budget is exceeded.                                        |
-| Provider failover       | Route a model across healthy providers and configure ordered [provider](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering) and [model fallbacks](/docs/ai-gateway/models-and-providers/model-fallbacks). |
+| Requirement             | How AI Gateway handles it                                                                                                                                                                                                                                                                                                                             |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Centralized credentials | Authenticate your application once, then use Vercel's provider keys or your own provider accounts through [BYOK](/docs/ai-gateway/authentication-and-byok/byok).                                                                                                                                                                                      |
+| Request logging         | Inspect each request's model, provider attempts, latency, token usage, status, and cost in [request logs](/docs/ai-gateway/observability-and-spend/logs).                                                                                                                                                                                             |
+| Cost tracking           | See spend by model in the dashboard and the cost of each request in request logs. Query spend by user, tag, or provider with [Custom Reporting](/docs/ai-gateway/observability-and-spend/custom-reporting), which has [its own pricing](/docs/ai-gateway/observability-and-spend/custom-reporting#pricing).                                           |
+| Spending controls       | Set [budgets](/docs/ai-gateway/observability-and-spend/budgets) for a team, project, API key, or team member. AI Gateway rejects new requests after an applicable budget is exceeded.                                                                                                                                                                 |
+| Caching                 | Set `caching: 'auto'` for [prompt caching](/docs/ai-gateway/models-and-providers/automatic-caching) across providers. You pay the provider's reduced cache-read rate for cached input tokens. To reuse full responses, [cache them in your application](/docs/ai-gateway/models-and-providers/automatic-caching#cache-responses-in-your-application). |
+| Provider failover       | Route a model across healthy providers and configure ordered [provider](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering) and [model fallbacks](/docs/ai-gateway/models-and-providers/model-fallbacks).                                                                                                                          |
 
-Budgets cover spend billed through AI Gateway system credentials. BYOK spend is metered separately and does not count toward those limits. If a BYOK request fails, AI Gateway can fall back to system credentials. After a budget is exceeded, AI Gateway rejects every request in that budget's scope with an HTTP `402` response. This includes BYOK requests. Review the [BYOK behavior](/docs/ai-gateway/authentication-and-byok/byok) and [soft-cap budget semantics](/docs/ai-gateway/observability-and-spend/budgets#how-budgets-work) when strict provider-account use or zero-overshoot limits are requirements.
+Budgets cover spend billed through Vercel's provider keys. BYOK spend is metered separately and does not count toward those limits. If a BYOK request fails, AI Gateway can fall back to Vercel's provider keys. After a budget is exceeded, AI Gateway rejects every request in that budget's scope with an HTTP `402` response. This includes BYOK requests. Review the [BYOK behavior](/docs/ai-gateway/authentication-and-byok/byok) and [soft-cap budget semantics](/docs/ai-gateway/observability-and-spend/budgets#how-budgets-work) when strict provider-account use or zero-overshoot limits are requirements.
 
 ## Choose how to start
 
@@ -129,13 +141,27 @@ Budgets cover spend billed through AI Gateway system credentials. BYOK spend is 
 
 **Pricing**: Review model prices, credits, payment options, and discounts. [Learn more →](/docs/ai-gateway/pricing)
 
-Explore [chat platforms](/docs/ai-gateway/chat-platforms) and [ecosystem integrations](/docs/ai-gateway/ecosystem), learn how to handle [`429` responses](/docs/ai-gateway/rate-limits), or see the [AI Gateway FAQ](/docs/ai-gateway/faq) for common questions about model availability, pricing, and request errors.
+Explore [chat platforms](/docs/ai-gateway/coding-agents) and [ecosystem integrations](/docs/ai-gateway/ecosystem), learn how to handle [`429` responses](/docs/ai-gateway/rate-limits), or see the [AI Gateway FAQ](/docs/ai-gateway/faq) for common questions about model availability, pricing, and request errors.
 
 ## Related guides
 
+- [Deploy a Shopify storefront with an AI assistant](https://vercel.com/kb/guide/deploy-shopify-ai-storefront): Deploy an eve shopping agent with Vercel Shop to find Shopify products, manage carts, and answer store questions.
 - [Build AI agents in Python with the AI SDK](https://vercel.com/kb/guide/python-and-ai-sdk): Stream model responses, get typed output, and build tool-using agents in Python on Vercel.
 - [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data): Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with Vercel AI Gateway.
 - [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents): Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment changes, and persistent files.
+
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

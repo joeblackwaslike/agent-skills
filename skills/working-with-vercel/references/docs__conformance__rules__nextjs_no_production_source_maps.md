@@ -11,9 +11,10 @@ related:
   - /docs/security/deployment-protection/methods-to-protect-deployments
 summary: "Applications using Next.js should not enable production source maps so that they don't publicly share source code."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/nextjs_no_production_source_maps.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "004ab03ae08ac02f8f5e0e92953c993a5387728052463f9f2eadc98e3b6a544f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3448059ef6cf9e73ac7e25d585dcb7ebc2a6888808d93766adc098e277877c8f"
 ---
 
 # NEXTJS_NO_PRODUCTION_SOURCE_MAPS
@@ -77,6 +78,18 @@ await Promise.all(
 );
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

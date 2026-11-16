@@ -14,9 +14,10 @@ related:
   - /docs/kms/concepts/authentication
 summary: How a Connect grant lets Vercel Connect provision and sign with a KMS issuer on behalf of your team, identified by a Connect client ID.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/kms/concepts/connect-grants.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "88a31176fa10d24a65f99d86fd7865646c13c88d4b27fa057d946dec753d3d7e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f8bf78cf838fb21a39069990eb410cab29f2ac183383754919210ed1fc11c42c"
 ---
 
 # Vercel KMS Connect Grants
@@ -29,12 +30,11 @@ A Connect grant is an issuer policy (`connex-grant`) that lets [Vercel Connect](
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Connect](https://v0.app/docs/vercel-connect) — Connect your v0 apps and agents to third-party services – no API keys required.
-- [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management) — Vercel MCP tools for key management.
 - [Vercel KMS Claims](https://vercel.com/docs/kms/concepts/claims) — How a KMS grant sets KMS-owned token claims the caller cannot override, and how an issuer claims schema validates every
+- [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management) — Vercel MCP tools for key management.
 - [Vercel Connect Concepts](https://vercel.com/docs/connect/concepts) — Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and a
 - [Connectors in Vercel Connect](https://vercel.com/docs/connect/concepts/connectors) — A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are
-- [Authentication in Vercel Connect](https://vercel.com/docs/connect/concepts/authentication) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
+- [vercel kms](https://vercel.com/docs/cli/kms) — Manage Vercel KMS issuers, rotate signing keys, and control which projects can sign tokens from the command line.
 
 Full cross-link map for this page: [/docs/kms/concepts/connect-grants.graph.md](/docs/kms/concepts/connect-grants.graph.md)
 <!-- /docsgraph:related -->
@@ -67,6 +67,18 @@ If any check fails, KMS rejects the request.
 - [Project grants](/docs/kms/concepts/project-grants)
 - [Authentication](/docs/kms/concepts/authentication)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

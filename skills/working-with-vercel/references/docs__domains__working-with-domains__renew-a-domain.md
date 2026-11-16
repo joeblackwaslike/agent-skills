@@ -13,9 +13,10 @@ related:
   - /docs/rest-api/domains-registrar/update-auto-renew-for-a-domain
 summary: Learn how to manage automatic and manual renewals for custom domains purchased through or registered with Vercel, and how to redeem expired domains...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains/working-with-domains/renew-a-domain.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "82ccd1bdaa6da3859e67f244ea005c7aeb9f28ac6c9dd10115be99a842190d10"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b354fe6c8a21d7b0e03da66527d7b213a615cf74e915f2f57b9983e333e3be74"
 ---
 
 # Managing Domain Renewals and Redemptions
@@ -37,8 +38,8 @@ Custom domains purchased through or registered with Vercel are [automatically re
 - [Programmatic Domain Management](https://vercel.com/docs/domains/registrar-api) — Programmatically search, price, purchase, renew, and manage domains with Vercel's domains registrar API endpoints.
 - [Renew a domain](https://vercel.com/docs/rest-api/domains-registrar/renew-a-domain) — POST /v1/registrar/domains/{domain}/renew — Renew a domain
 - [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
+- [List all the domains](https://vercel.com/docs/rest-api/domains/list-all-the-domains) — GET /v5/domains — Retrieves a list of domains registered for the authenticated user or team. By default it returns the l
 - [Working with SSL Certificates](https://vercel.com/docs/domains/working-with-ssl) — Learn how Vercel uses SSL certification to keep your site secure.
-- [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
 
 Full cross-link map for this page: [/docs/domains/working-with-domains/renew-a-domain.graph.md](/docs/domains/working-with-domains/renew-a-domain.graph.md)
 <!-- /docsgraph:related -->
@@ -151,6 +152,18 @@ You can filter your Vercel owned domains by their renewal status by clicking the
 
 Third-Party Domains (ones not purchased with or transferred into Vercel) are not subject to auto-renewal. Please refer to your Domain name registrar's policy regarding renewals.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

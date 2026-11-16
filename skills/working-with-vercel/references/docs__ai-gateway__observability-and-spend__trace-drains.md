@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/models-and-providers/provider-options
 summary: Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain billing.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f3abf43580380532703d1b152d98ed7cf4b232425c97a7c52c13d6d79a055cf4"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "fbf80952a662188052da213087c39e8b66369e9ab7f4ae1c7fc677da1ffea50e"
 ---
 
 # AI Gateway Trace Drains
@@ -34,11 +35,9 @@ AI Gateway produces an [OpenTelemetry](https://opentelemetry.io/docs/concepts/si
 - [Export AI Gateway traces with Vercel Drains](https://vercel.com/changelog/export-ai-gateway-traces-with-vercel-drains)
 - [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
 - [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains)
-- [Introducing Trace Drains on the Vercel Marketplace](https://vercel.com/changelog/introducing-trace-drains-on-the-vercel-marketplace)
 - [Tracing](https://vercel.com/docs/tracing) — Learn how to trace your application to understand performance and infrastructure details.
-- [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics) — Learn about Web Analytics Drains - data formats and custom events configuration.
+- [vercel drains](https://vercel.com/docs/cli/drains) — List, inspect, create, update, pause, resume, and delete Vercel Drains from your terminal.
 - [Find a Drain by id](https://vercel.com/docs/rest-api/drains/find-a-drain-by-id) — GET /v1/drains/{id} — Get the information for a specific Drain by passing the drain id in the URL.
-- [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
 - [AI Gateway Request Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
 
 Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/trace-drains.graph.md](/docs/ai-gateway/observability-and-spend/trace-drains.graph.md)
@@ -152,7 +151,7 @@ Standard `gen_ai.*` attributes describe the model interaction:
 
 Gateway-specific `vercel.ai_gateway.*` attributes carry routing, billing, and attribution detail:
 
-AI Gateway records project and deployment IDs as span attributes named `vercel.project.id` and `vercel.deployment.id`. These differ from the `vercel.projectId` and `vercel.deploymentId` resource attributes on Vercel deployment traces.
+AI Gateway records project and deployment IDs as span attributes named `vercel.project.id` and `vercel.deployment.id`. These differ from the `vercel.project_id` and `vercel.deployment_id` resource attributes on Vercel deployment traces.
 
 | Attribute                                  | Type    | Description                                                          |
 | ------------------------------------------ | ------- | -------------------------------------------------------------------- |
@@ -231,6 +230,18 @@ Each provider attempt span records one upstream call:
 - [Trace Drains reference](/docs/drains/reference/traces)
 - [AI Gateway pricing](/docs/ai-gateway/pricing)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

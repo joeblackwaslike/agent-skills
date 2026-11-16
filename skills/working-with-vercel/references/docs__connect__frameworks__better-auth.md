@@ -13,12 +13,13 @@ related:
   - /docs/connect/concepts/project-links
   - /docs/connect/concepts/tokens
   - /docs/passport
-  - /docs/connect/quickstart
+  - /docs/connect/frameworks/ai-sdk-and-mcp
 summary: Use Vercel Connect as a generic OAuth provider for Better Auth in a Next.js application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/connect/frameworks/better-auth.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "62ca966f931f95d48e657446b5aa0d5f987a04b485d4b7da14c7dc6cf86ae097"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b48444be845f6e39140c591a480a157aab10a400f3f2b0f0cc0dee2463b2f336"
 ---
 
 # Better Auth with Vercel Connect
@@ -37,14 +38,12 @@ plugin to use the Vercel Connect OAuth gateway.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
-- [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
-- [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect)
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
+- [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
 - [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
-- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
 - [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
-- [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
+- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
 
 Full cross-link map for this page: [/docs/connect/frameworks/better-auth.graph.md](/docs/connect/frameworks/better-auth.graph.md)
 <!-- /docsgraph:related -->
@@ -335,6 +334,28 @@ These three features solve different problems:
   your application. It does not create a Better Auth session and does not
   issue provider API tokens. See [Passport](/docs/passport).
 
+## Frequently asked questions
+
+### Can I use the Better Auth access token to call the provider's API?
+
+No. This integration signs a person into your application, so don't send the access token stored on Better Auth's generic OAuth account to the provider API. When your server needs to call the provider, request a scoped token with `getToken()` from `@vercel/connect`, using the signed-in user's ID from your session as the subject. The same subject works for an AI agent's MCP tools through [`connectAuthProvider`](/docs/connect/frameworks/ai-sdk-and-mcp). See [Tokens](/docs/connect/concepts/tokens).
+
+### Which redirect URI do I register with the OAuth provider?
+
+Register `https://connect.vercel.com/callback`, and only when you supplied your own OAuth application credentials while creating the connector. The provider returns its response to Vercel Connect at that URI. Your application's callback, `/api/auth/oauth2/callback/<providerId>`, is separate, and Better Auth's generic OAuth plugin mounts it for you.
+
+### Do I need an OAuth client secret for Better Auth with Vercel Connect?
+
+No. The adapter authenticates the authorization-code exchange with your project's Vercel OIDC token instead of a static client secret, and it enables Proof Key for Code Exchange (PKCE). Vercel provides and rotates the token after you deploy, and `vercel env pull` writes a development token locally. Better Auth still needs its own `BETTER_AUTH_SECRET`. See [Understand authorization requirements](#understand-authorization-requirements).
+
+### Why does sign-in redirect with `oauth_code_verification_failed`?
+
+Better Auth catches errors from the Vercel Connect authorization-code exchange, logs them on the server, and redirects with that code. Find the underlying `ConnectError` in your server logs, because `onAPIError` doesn't run for this redirect. Then check the connector, its project link for the current environment, the requested scopes, and your local OIDC token. The development token expires after about 12 hours, so run `vercel env pull` again if it's stale. See [Handle Connect errors](#handle-connect-errors).
+
+### Which scopes does the Better Auth adapter request?
+
+By default, it requests `openid profile email offline_access`. Passing `scopes` replaces `openid`, `profile`, and `email`, so include the identity scopes your sign-in flow needs. The adapter always adds `offline_access` once and removes duplicate scopes. See [Configure scopes](#configure-scopes).
+
 ## Next steps
 
 - [Vercel Connect quickstart](/docs/connect/quickstart)
@@ -342,6 +363,18 @@ These three features solve different problems:
 - [Authentication](/docs/connect/concepts/authentication)
 - [Tokens](/docs/connect/concepts/tokens)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

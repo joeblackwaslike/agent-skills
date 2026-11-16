@@ -11,9 +11,10 @@ related:
   []
 summary: Catches usages of getServerSideProps that could use static rendering instead, improving the performance of those pages.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/nextjs_unneeded_get_server_side_props.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "2b6d031a54acc3831464519adffb4b1269ac1a3859fb01119197cc246a9616bf"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c034c0cc3435bdfb845dc7396e128ab0a8be0b2108fbe323338cfe2610aa9b2d"
 ---
 
 # NEXTJS_UNNEEDED_GET_SERVER_SIDE_PROPS
@@ -111,6 +112,18 @@ function Home({ repoName, stargazersCount }) {
 export default Home;
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

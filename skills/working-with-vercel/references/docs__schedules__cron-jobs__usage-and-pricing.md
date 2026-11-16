@@ -15,9 +15,10 @@ related:
   - /docs/functions/usage-and-pricing
 summary: Learn about cron jobs usage and pricing details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/schedules/cron-jobs/usage-and-pricing.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "aef89c4cff3a692757e18da57a1d2bae022b67df3aafdb3c8b4f5943cb0a9e50"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "09a4020827edb720e9e5a612fd787975f7062941d7b7d0548ea0430a7b5535f3"
 ---
 
 # Usage & Pricing for Cron Jobs
@@ -34,10 +35,10 @@ Cron Jobs are a legacy feature and will be migrated to
 - [Cron jobs now support 100 per project on every plan](https://vercel.com/changelog/cron-jobs-now-support-100-per-project-on-every-plan)
 - [Vercel Cron Jobs are now generally available](https://vercel.com/changelog/vercel-cron-jobs-are-now-generally-available)
 - [Getting started with cron jobs](https://vercel.com/docs/schedules/cron-jobs/quickstart) — Learn how to schedule cron jobs to run at specific times or intervals.
-- [Schedules Limits](https://vercel.com/docs/schedules/limits) — Limits for Vercel Schedules, including schedules per team, run frequency, jitter, Hobby usage, and API requests.
 - [vercel crons](https://vercel.com/docs/cli/crons) — Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand.
+- [Schedules Limits](https://vercel.com/docs/schedules/limits) — Limits for Vercel Schedules, including schedules per team, run frequency, jitter, Hobby usage, and API requests.
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing) — Learn about legacy usage and pricing for Vercel Functions.
+- [Vercel CI Pricing](https://vercel.com/docs/ci/pricing) — Understand how Vercel CI usage is billed.
 
 Full cross-link map for this page: [/docs/schedules/cron-jobs/usage-and-pricing.graph.md](/docs/schedules/cron-jobs/usage-and-pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -82,6 +83,18 @@ You use a function to invoke a cron job, and therefore [usage](/docs/limits) and
 
 - [Functions limits and pricing](/docs/functions/usage-and-pricing)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

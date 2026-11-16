@@ -12,9 +12,10 @@ related:
   []
 summary: Use list_bulk_redirect_versions with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_bulk_redirect_versions.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "691d378700a879611fa01daaced06d9bbce6c68521373b16401c9fe1cabbca81"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2b5cdaf48dfe2fd1772ca49c54b18487a82403d09b322cc7e01e7e9f2b9f309c"
 ---
 
 # list_bulk_redirect_versions
@@ -31,7 +32,7 @@ Get the version history for a project's redirects.
 - [update_bulk_redirect_version](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/update_bulk_redirect_version) — Use update_bulk_redirect_version with Vercel MCP.
 - [list_project_route_versions](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_project_route_versions) — Use list_project_route_versions with Vercel MCP.
 - [Get the version history for a project's redirects.](https://vercel.com/docs/rest-api/bulk-redirects/get-the-version-history-for-a-project-s-redirects) — GET /v1/bulk-redirects/versions — Get the version history for a project's bulk redirects
-- [update_route_versions](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/update_route_versions) — Use update_route_versions with Vercel MCP.
+- [Gets project-level redirects.](https://vercel.com/docs/rest-api/bulk-redirects/gets-project-level-redirects) — GET /v1/bulk-redirects — Get the version history for a project's bulk redirects
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routing/list_bulk_redirect_versions.graph.md](/docs/agent-resources/vercel-mcp/tools/routing/list_bulk_redirect_versions.graph.md)
 <!-- /docsgraph:related -->
@@ -44,6 +45,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routi
 | `teamId`    | string | No       | Team ID to use for this operation.                          |
 | `slug`      | string | No       | Team slug to use for this operation. Use instead of teamId. |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

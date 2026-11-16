@@ -12,9 +12,10 @@ related:
   []
 summary: Use pause_project with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/pause_project.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "cede9ba2ef15bb127a30b853078583fae343e3b5314107b54af562ffb7b1070b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ebe4bc55a0b7daa4ef7639602180bca348c341e984ba8a2fcccb1aeada70907e"
 ---
 
 # pause_project
@@ -54,6 +55,18 @@ If your connection exposes the smaller workflow tool list, use these parameters 
 | `projectId` | string | Yes      | -       | The project ID or slug. Find the project ID in `.vercel/project.json` or use `list_projects`. |
 | `teamId`    | string | Yes      | -       | The team ID or slug. Use the team that owns the resource.                                     |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

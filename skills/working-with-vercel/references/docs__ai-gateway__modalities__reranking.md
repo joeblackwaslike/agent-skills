@@ -12,9 +12,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis/cohere-rerank
 summary: Rerank documents by relevance to a search query for improved retrieval-augmented generation (RAG) pipelines through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/modalities/reranking.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d78e2ccd979542817214c5771d31d8c55a8003372e9db2fba70cb6d2f90a716b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3df726b14b4c6696d42aedc4862e4e9ba1a3bed0e670ddd5dc7afb3814f01b7e"
 ---
 
 # AI Gateway Reranking
@@ -31,8 +32,9 @@ Rerank documents by relevance to a search query. Reranking is useful for improvi
 - [Production architecture for a RAG chatbot on Vercel](https://vercel.com/kb/guide/rag-chatbot-production-architecture-on-vercel) — Architect a production RAG chatbot on Vercel Functions with Fluid compute, AI Gateway, and a region-pinned vector store.
 - [Voyage Rerank 3 and Rerank 3 Lite are now available on AI Gateway](https://vercel.com/changelog/voyage-rerank-3-and-rerank-3-lite-are-now-available-on-ai-gateway)
 - [Cohere Rerank API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/cohere-rerank) — Use the Cohere-compatible Rerank API with AI Gateway to reorder documents by relevance with the Cohere SDK or plain HTTP
-- [rerank](https://ai-sdk.dev/docs/reference/ai-sdk-core/rerank) — API Reference for rerank.
-- [Cohere](https://ai-sdk.dev/providers/ai-sdk-providers/cohere) — Learn how to use Cohere with AI Gateway and the direct provider.
+- [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
+- [Go with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/go) — Use AI Gateway from any Go application with the OpenAI or Anthropic Go SDKs, including model fallbacks, cost tracking, a
+- [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/reranking.graph.md](/docs/ai-gateway/modalities/reranking.graph.md)
 <!-- /docsgraph:related -->
@@ -196,6 +198,18 @@ export async function GET() {
 > `secretAccessKey`) and does not accept API keys. If you BYOK and plan to use
 > reranking models through Bedrock, you must use SigV4 credentials.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

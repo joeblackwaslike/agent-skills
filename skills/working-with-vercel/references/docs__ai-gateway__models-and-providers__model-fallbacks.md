@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/models-and-providers/provider-filtering-and-ordering
 summary: Configure AI Gateway model fallbacks to try backup models when the primary model is unavailable. Set fallback order and combine it with provider...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f0845b6ede6ba6860384f008efdaf599c75232c42772133999df19f8d6bdbc14"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f38044c485ed29b1744d1578765b71f055b37a05b9701c6c86bac6b25189a66c"
 ---
 
 # AI Gateway Model Fallbacks
@@ -34,10 +35,12 @@ You can configure model failover to specify backups that are tried in order if t
 - [Model fallbacks now available in Vercel AI Gateway](https://vercel.com/changelog/model-fallbacks-now-available-in-vercel-ai-gateway)
 - [ Routing rules now available on AI Gateway](https://vercel.com/changelog/ai-gateway-routing-rules)
 - [Claude Fable 5.1 now available on AI Gateway](https://vercel.com/changelog/claude-fable-5-1-now-available-on-ai-gateway)
+- [Claude Fable 5.2 now available on AI Gateway](https://vercel.com/changelog/claude-fable-5-2-now-available-on-ai-gateway)
 - [Claude Fable 5 access restored on AI Gateway](https://vercel.com/changelog/claude-fable-5-access-restored-on-ai-gateway)
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
-- [How to build a Shopify MCP agent on Vercel](https://vercel.com/kb/guide/build-a-shopify-mcp-agent-on-vercel) — Build a Shopify MCP agent on Vercel with AI SDK 7. Connect to Shopify's UCP MCP servers, update carts safely, and hand t
-- [AI Gateway adds confidence-based decision fallbacks](https://vercel.com/changelog/confidence-based-decision-fallbacks)
+- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
+- [Agent Checklist for Launch](https://vercel.com/docs/agent-checklist) — Prepare an eve, Mastra, or Flue agent for launch on Vercel. Check who can call the agent, what its tools can change, how
+- [TanStack AI with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai) — Connect TanStack AI to Vercel AI Gateway with the official adapter to authenticate requests and stream responses from AI
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
 - [Chat SDK with AI Gateway](https://vercel.com/docs/chat-sdk/integrations/ai-gateway) — Stream AI Gateway model responses into Chat SDK conversations with AI SDK and message history.
 
@@ -427,6 +430,18 @@ When model fallbacks occur, the `modelAttempts` array in the provider metadata s
 
 A [virtual model](/docs/ai-gateway/models-and-providers/virtual-models) carries its own fallback chain, which replaces the request's `models` list when set. A decision virtual model can store one [conditional decision fallback](/docs/ai-gateway/models-and-providers/decision-fallbacks#store-the-fallback-policy-in-a-virtual-model). A `vmc/<slug>` can also be a string or conditional destination in a request's fallback list, and each entry resolves independently.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

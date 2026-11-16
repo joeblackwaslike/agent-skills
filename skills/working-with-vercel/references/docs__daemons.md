@@ -15,9 +15,10 @@ related:
   - /docs/workflows
 summary: Run long-running background workers, such as queue consumers and workflow workers, next to your app with Vercel Daemons.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/daemons.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "52c5610622861f0e14d74e892c07c1060e8c3f9cf592ed0c0700467ad63545cb"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "56f646c45228743b55932950277aaec549540be2b0c3920fb21c499b6a0c023c"
 ---
 
 # Daemons
@@ -33,14 +34,14 @@ Vercel Daemons run long-running background processes from container images, such
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Daemons is now in public beta](https://vercel.com/changelog/vercel-daemons-is-now-in-public-beta)
+- [How to choose between Functions, containers, and Daemons on Vercel](https://vercel.com/kb/guide/vercel-functions-containers-daemons) — Choose Vercel Functions for HTTP requests, container images for custom runtimes, and Daemons for continuous background w
 - [Add liveness checks to your Daemons](https://vercel.com/changelog/add-liveness-checks-to-your-daemons)
 - [Vercel Daemons can now call services with bindings](https://vercel.com/changelog/vercel-daemons-can-now-call-services-with-bindings)
+- [Daemons can now send traces to Vercel Tracing](https://vercel.com/changelog/vercel-daemons-can-now-send-traces-to-vercel-tracing)
 - [Capture AI SDK token usage, tool calls, and cost with evlog](https://vercel.com/kb/guide/ai-sdk-and-evlog) — Record AI SDK usage with evlog, add cost estimates and request context, and investigate expensive or failed requests.
 - [Deploy PHP on Vercel with Docker](https://vercel.com/kb/guide/deploy-php-on-vercel-with-docker) — Build a PHP application with FrankenPHP and Docker, then deploy it to Vercel Functions with managed configuration, stora
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
 - [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
-- [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
-- [Backends on Vercel: Python, containers, and Daemons](https://vercel.com/blog/backends-on-vercel-python-containers-and-daemons)
 - [vercel daemons](https://vercel.com/docs/cli/daemons) — List and inspect production daemons, override regional instance counts, and inspect or restart individual instances with
 - [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
 - [Running eve Agents Durably on Vercel](https://vercel.com/docs/agent-harnesses/eve) — eve agents are durable out of the box on Vercel, with no extra configuration.
@@ -431,7 +432,7 @@ Use `vercel env pull` to download your project's development environment variabl
 
 ### What does the Daemons beta support?
 
-During the beta, daemons run in production deployments with manually configured instance counts and ephemeral storage. You can scale daemons from the Vercel dashboard or the Vercel CLI.
+During the beta, daemons run in production deployments with manually configured instance counts and ephemeral storage. You can scale daemons from the Vercel dashboard, the Vercel CLI, or the [REST API](/docs/rest-api/daemons).
 
 Preview deployments, autoscaling, and persistent storage aren't supported. See [Daemons limits](/docs/daemons/limits) for all limits and available alternatives.
 
@@ -471,6 +472,18 @@ Follow these guides to deploy background workers or migrate them from another pl
 - [Poll mode](/docs/queues/poll-mode): Consume Vercel Queues messages from a daemon.
 - [Build Output API daemons](/docs/build-output-api/daemons): How daemons appear in the Build Output API.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

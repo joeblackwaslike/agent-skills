@@ -15,9 +15,10 @@ related:
   - /docs/sandbox/concepts/images
 summary: Use the Sandbox CLI to run coding agents, manage sandboxes, execute commands, and copy files from your terminal.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/cli-reference.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "16327fe349511fa29e4b1c02d3648d3182caf700a583042392542e45596793aa"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ccde8edc0b00ed5462d52bac81f14bc7e1e45476a001bd00b7def8a60cb95b7b"
 ---
 
 # Sandbox CLI Reference
@@ -35,17 +36,19 @@ Use the Sandbox CLI to [run coding agents](#run-a-coding-agent), manage sandboxe
 - [The Vercel Sandbox CLI is now more agent-friendly](https://vercel.com/changelog/the-vercel-sandbox-cli-is-now-more-agent-friendly)
 - [Use and manage Vercel Sandbox directly from the Vercel CLI](https://vercel.com/changelog/use-vercel-sandbox-directly-within-vercel-cli)
 - [How to use Vercel Drives with an eve agent](https://vercel.com/kb/guide/vercel-drives-eve-agent) — Mount Vercel Drives in an eve agent's sandbox to give each user a persistent workspace and share read-only reference dat
+- [How Vercel Drives work and how to use them](https://vercel.com/kb/guide/vercel-drives) — Learn how Vercel Drives give Vercel Sandbox persistent, shareable storage, and how to create, mount, snapshot, fork, lis
 - [Vercel Sandbox supports forking](https://vercel.com/changelog/vercel-sandbox-supports-forking)
-- [Run untrusted Python code safely with Vercel Sandbox](https://vercel.com/kb/guide/python-and-vercel-sandbox) — Execute untrusted and AI-generated code from Python in isolated microVMs, with files, processes, network policies, and s
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
+- [Vercel Container Registry](https://vercel.com/docs/container-registry) — Store and manage Docker container images on Vercel. Build and push images with the Vercel CLI, then run them on Vercel F
+- [Gemini API Managed Agents](https://vercel.com/docs/sandbox/ecosystem/gemini-api) — Connect a Gemini API self-hosted environment to Vercel Sandbox so agent file and shell tools run in your own microVM.
 
 Full cross-link map for this page: [/docs/sandbox/cli-reference.graph.md](/docs/sandbox/cli-reference.graph.md)
 <!-- /docsgraph:related -->
 
 Use the CLI for manual testing and debugging, or use the [JS SDK](/docs/sandbox/sdk-reference) or [Python SDK](/docs/sandbox/python-sdk-reference) to automate sandbox workflows in your application.
 
-Sandboxes are identified by **name** (unique within your project) and are **persistent by default**: when stopped, the filesystem is snapshotted and restored on the next resume. Use `sandbox remove` to delete a sandbox permanently.
+Sandboxes are identified by **name** (unique within your project) and are **persistent by default**: when stopped, the filesystem is snapshotted and restored on the next resume. Use `sandbox remove` to delete a sandbox permanently, which keeps its snapshots unless you pass `--delete-orphan-snapshots`.
 
 ## Installation
 
@@ -115,7 +118,7 @@ sandbox <subcommand>
 - [`copy`](#sandbox-copy): Copy files between your local filesystem and a remote sandbox. \[alias: `cp`]
 - [`stop`](#sandbox-stop): Stop the current session of one or more sandboxes.
 - [`extend`](#sandbox-extend): Add time to a running session without changing its default timeout.
-- [`remove`](#sandbox-remove): Permanently delete one or more sandboxes and all their sessions. \[alias: `rm`]
+- [`remove`](#sandbox-remove): Permanently delete one or more sandboxes and all their sessions, keeping their snapshots unless you pass `--delete-orphan-snapshots`. \[alias: `rm`]
 - [`config`](#sandbox-config): View and update sandbox configuration (resources, timeout, persistence, snapshot retention, network policy, drive mounts, tags).
 - [`sessions`](#sandbox-sessions): Inspect VM sessions for a sandbox.
 - [`snapshot`](#sandbox-snapshot): Take a snapshot of the filesystem of a sandbox.
@@ -298,6 +301,7 @@ sandbox create --mount cache:/data:snapshot
 | `--publish-port <port>`             | `-p`     | Make a port from your sandbox accessible via a public URL. Repeatable.                                                                                           |
 | `--snapshot <snapshot_id>`          | `-s`     | Create the sandbox from a previously saved snapshot. To fork from another sandbox by name, use [`sandbox fork`](#sandbox-fork) instead.                          |
 | `--env <key=value>`                 | `-e`     | Default environment variables for sandbox commands. Repeatable.                                                                                                  |
+| `--credentials <provider,...>`      | -        | Comma-separated Vercel managed [credentials](/docs/sandbox/credentials) the sandbox can use. Supports `npm`.                              |
 | `--tag <key=value>`                 | `-t`     | Key-value tag. Up to five. Repeatable. See [Tags](/docs/sandbox/concepts/tags).                                                                                  |
 | `--mount <drive:path[:mode]>`       | -        | Mount a drive onto the sandbox. Repeatable. `mode` can be `read-write` (default) or `snapshot`. See [Drives](/docs/sandbox/concepts/drives).                 |
 | `--region <region>`                 | -        | [Region](/docs/sandbox/concepts/regions) to create the sandbox in. Defaults to the [project's default sandbox region](/docs/sandbox/concepts/regions#set-a-default-region-for-your-project), or `iad1`.                                  |
@@ -331,9 +335,11 @@ A persistent sandbox snapshots its filesystem every time a session stops, so its
 
 ## `sandbox fork`
 
-Fork an existing sandbox into a new one. The fork is seeded from the source sandbox's current snapshot and inherits its config. Any option you pass overrides the copied value. If the source has no current snapshot, the fork falls back to creating a fresh sandbox with the source's image plus the copied config.
+Fork an existing sandbox into a new one. The fork starts from the source sandbox's current saved snapshot and inherits its configuration, except for drive mounts. A fork doesn't capture unsaved changes from a running session. If the source has no current snapshot, the fork starts from the source's base environment and copied configuration.
 
-The fork copies the source's environment variables. Variables you pass with `--env` fully replace the copied set (no per-key merge). Tags passed via `--tag` fully replace the source's tags (no per-key merge).
+Any option you pass overrides the corresponding inherited value. The CLI doesn't attach the source's drives to the fork. Use the [SDK's `mounts` parameter](/docs/sandbox/sdk-reference#sandbox.fork) to attach drives explicitly.
+
+Omitting `--env` inherits the source's environment variables. Passing `--env` replaces the entire inherited environment with the supplied variables, without merging keys. Tags passed via `--tag` also replace the entire inherited tag map.
 
 The fork runs in the source sandbox's [region](/docs/sandbox/concepts/regions) unless you pass `--region`. The fork also inherits the source's failover regions. Pass `--failover-regions` to replace them. If the source has a snapshot, that snapshot must be available in the target region.
 
@@ -346,10 +352,10 @@ sandbox fork [OPTIONS] <source>
 ### Sandbox fork example
 
 ```bash filename="terminal"
-# Fork with every supported field copied from the source
+# Inherit configuration and saved state, without drive mounts
 sandbox fork my-source
 
-# Override the name, bump vCPUs, and replace the copied environment variables
+# Override the name and vCPUs; replace the entire environment with FOO=1
 sandbox fork my-source --name my-forked-sandbox --vcpus 4 --env FOO=1
 ```
 
@@ -717,7 +723,7 @@ sandbox connect --env DEBUG=true --sudo my-sandbox
 
 ## `sandbox stop`
 
-Stop the current session of one or more sandboxes. For persistent sandboxes (the default), the filesystem is snapshotted first so the sandbox can be resumed later with the same name. To delete a sandbox permanently, use [`sandbox remove`](#sandbox-remove).
+Stop the current session of one or more sandboxes. For persistent sandboxes (the default), the filesystem is snapshotted first so the sandbox can be resumed later with the same name. To delete a sandbox permanently, use [`sandbox remove`](#sandbox-remove). A snapshot keeps incurring [storage charges](/docs/sandbox/pricing#snapshot-storage) until it expires or you delete it, whether its sandbox is stopped or removed.
 
 ```bash filename="terminal"
 sandbox stop [OPTIONS] <name> [...name]
@@ -1561,6 +1567,20 @@ sandbox exec --workdir /vercel/app dev -- npm run dev
 # Visit: https://<random-id>.vercel.run
 ```
 
+For SDK examples and limits, see [Expose a port](/docs/sandbox/working-with-sandbox#expose-a-port).
+
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

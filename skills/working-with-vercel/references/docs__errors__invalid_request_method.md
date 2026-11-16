@@ -11,9 +11,10 @@ related:
   []
 summary: The request method used is invalid or not supported. This is a request error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/invalid_request_method.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d5f09b9401480ed14fbd78f548aa4149dcdb26253c99a5b11530f3d2ce758150"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "66c72e59fd2c1d1059d7593dfc4635dbef34dd18f4a9d2fab19b8996e758ccac"
 ---
 
 # INVALID_REQUEST_METHOD
@@ -32,6 +33,18 @@ To troubleshoot this error, follow these steps:
 2. **Review code:** Check the code where the request is being made to ensure the correct method is being used
 3. **Test with different methods:** If possible, test the endpoint with different HTTP methods to determine if the issue is with the method or another part of the request
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -16,9 +16,10 @@ related:
   - /docs/rest-api/projects/move-a-project-domain
 summary: Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how to transfer domains with this...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains/working-with-domains/transfer-your-domain.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "cb2ef481ff81e554325509c71d06ef51ef1c05d3a6a46fb85a0c213e5b6efc31"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0b1a7321b661d793246f827d7e627edcf926998d8a4de0156300339449f3b2e1"
 ---
 
 # Transferring Domains to Another Team or Project
@@ -34,12 +35,11 @@ If you are moving a website and its domains to another team, [transfer the proje
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
-- [Domains can now easily be transferred out](https://vercel.com/changelog/domains-can-now-easily-be-transferred-out)
 - [Deploying & Redirecting Domains](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting) — Learn how to deploy your domains and set up domain redirects with this guide.
-- [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
 - [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 - [Transfer-in a domain](https://vercel.com/docs/rest-api/domains-registrar/transfer-in-a-domain) — POST /v1/registrar/domains/{domain}/transfer — Transfer a domain in from another registrar
+- [Add a domain to a project](https://vercel.com/docs/rest-api/projects/add-a-domain-to-a-project) — POST /v10/projects/{idOrName}/domains — Add a domain to the project by passing its domain name and by specifying the pro
 
 Full cross-link map for this page: [/docs/domains/working-with-domains/transfer-your-domain.graph.md](/docs/domains/working-with-domains/transfer-your-domain.graph.md)
 <!-- /docsgraph:related -->
@@ -190,6 +190,18 @@ Transferring your domain into Vercel moves its registration to Vercel. You can a
   ```
   This command will deploy your project and make it accessible at the production domain that you have setup.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

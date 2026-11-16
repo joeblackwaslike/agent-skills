@@ -15,9 +15,10 @@ related:
   - /docs/speed-insights/managing-usage
 summary: Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/speed-insights/limits-and-pricing.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "bdb8160a0afb2ed4aa1cbd5039942370698eaa3dd0332a4918e29a21737da7ca"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8d47319f64f991536eb6e78a837d50fe212824fa1c1c05ea6ab73eae0ccfe95c"
 ---
 
 # Limits and Pricing for Speed Insights
@@ -38,10 +39,10 @@ Speed Insights has two tiers:
 - [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
 - [Speed Insights now has a free tier](https://vercel.com/changelog/speed-insights-free-tier)
 - [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights) — Learn how to use Speed Insights to analyze your application's performance data.
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Pricing for Web Analytics](https://vercel.com/docs/analytics/limits-and-pricing) — Learn about pricing for Vercel Web Analytics.
-- [Observability Plus](https://vercel.com/docs/observability/observability-plus) — Learn about using Observability Plus and its limits.
+- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
 
 Full cross-link map for this page: [/docs/speed-insights/limits-and-pricing.graph.md](/docs/speed-insights/limits-and-pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -104,6 +105,18 @@ To view information on managing each resource, select the resource link in the *
 
 See the [manage and optimize Observability usage](/docs/manage-and-optimize-observability) section for more information on how to optimize your usage.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

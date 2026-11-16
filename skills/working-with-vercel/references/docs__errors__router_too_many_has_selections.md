@@ -12,9 +12,10 @@ related:
   - /docs/deployments/logs
 summary: The router has too many selections. This is a routing error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/router_too_many_has_selections.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "87543259946e192b3c696d092058f20e38e5868a83236022469a3a368e5731d6"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "096f01d726cff43703141cc3aadde1496755291a421ee0ff5d610e1a261a8d56"
 ---
 
 # ROUTER_TOO_MANY_HAS_SELECTIONS
@@ -34,6 +35,18 @@ To troubleshoot this error, follow these steps:
 3. **Check for recursive or looping logic:** Ensure there isn't any recursive or looping logic in the routing configuration that could lead to excessive selections
 4. **Review application logs:** Inspect the [application logs](/docs/deployments/logs) for any warnings or errors related to routing or selections
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

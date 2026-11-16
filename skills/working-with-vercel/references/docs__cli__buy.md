@@ -14,9 +14,10 @@ related:
   - /docs/cli/global-options
 summary: Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/buy.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "e99d5f75ada8b8f5672c141e27702df4bb09d0ecce5b3de9900e1ff6c4873d74"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ab9ff71748b51d92dbcab04060496eeba402096fb04e4d52a44b6dae8a112211"
 ---
 
 # vercel buy
@@ -30,11 +31,11 @@ The `vercel buy` command allows you to purchase Vercel products for your team di
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Inside the Vercel intern experience](https://vercel.com/blog/inside-the-vercel-intern-experience)
-- [vercel billing](https://vercel.com/docs/cli/billing) — Learn how to view usage, contracts, budgets, and invoices for your Vercel team using the vercel billing CLI command.
-- [vercel billing budgets](https://vercel.com/docs/cli/budgets) — View and manage your team's on-demand spend budget from the Vercel CLI.
+- [vercel billing](https://vercel.com/docs/cli/billing) — Learn how to view your billing overview, usage, contracts, budgets, and invoices for your Vercel team using the vercel b
+- [Billing and Purchases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing) — Vercel MCP tools for billing and purchases.
+- [Purchase credits](https://vercel.com/docs/rest-api/billing/purchase-credits) — POST /v1/billing/buy — Purchases credits for a Vercel team using the default payment method on file. The purchase is cha
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel pricing](https://vercel.com/docs/cli/pricing) — Look up Hobby, Pro, and Enterprise features from the public Vercel pricing table using the CLI.
-- [vercel organizations](https://vercel.com/docs/cli/organizations) — Create and manage organizations and their child teams with the vercel organizations CLI command.
+- [buy_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing/buy_domain) — Use buy_domain with Vercel MCP.
 
 Full cross-link map for this page: [/docs/cli/buy.graph.md](/docs/cli/buy.graph.md)
 <!-- /docsgraph:related -->
@@ -215,6 +216,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

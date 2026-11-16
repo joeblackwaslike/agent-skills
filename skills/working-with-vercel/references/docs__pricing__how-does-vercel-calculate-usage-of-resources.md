@@ -10,14 +10,15 @@ prerequisites:
 related:
   - /docs/pricing
   - /docs/incremental-static-regeneration
-  - /docs/caching/runtime-cache
+  - /docs/runtime-cache
   - /docs/marketplace-storage
   - /docs/routing-middleware
 summary: Understand how Vercel measures and calculates your resource usage based on a typical user journey.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/pricing/how-does-vercel-calculate-usage-of-resources.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "810dd8a8cf74dc8d009cd80df137bb07b371e7999d0372a9df79382682dbe198"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1deefcde82773401d17d9a789c0e9f2ae7f2d0d959ffa33afae60dd9d5151619"
 ---
 
 # Calculating usage of resources
@@ -30,15 +31,12 @@ Understanding how usage and accrual happen on Vercel helps you make the best cho
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing)
-- [Life of a Vercel request: Navigating the Edge Network](https://vercel.com/blog/life-of-a-vercel-request-navigating-the-edge-network)
 - [How to effectively load test your application on Vercel](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
-- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
-- [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
+- [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
 - [Managing Usage & Costs](https://vercel.com/docs/image-optimization/managing-image-optimization-costs) — Learn how to measure and manage Image Optimization usage with this guide to avoid any unexpected costs.
-- [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
+- [Regional Pricing](https://vercel.com/docs/pricing/regional-pricing) — Vercel pricing for Managed Infrastructure resources in different regions.
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
-- [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
+- [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
 - [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 
 Full cross-link map for this page: [/docs/pricing/how-does-vercel-calculate-usage-of-resources.graph.md](/docs/pricing/how-does-vercel-calculate-usage-of-resources.graph.md)
@@ -57,7 +55,7 @@ A typical user journey through an ecommerce store touches on multiple resources 
 
 The ecommerce store employs a combination of caching strategies to optimize both static and dynamic content delivery. For static pages, it uses [Incremental Static Regeneration (ISR)](/docs/incremental-static-regeneration).
 
-For dynamic content like product price discounts, the site uses [Vercel Runtime Cache](/docs/caching/runtime-cache) to store and retrieve the latest product information. This ensures that all users see the most up-to-date pricing information, while minimizing the need to fetch data from the backend on each request.
+For dynamic content like product price discounts, the site uses [Vercel Runtime Cache](/docs/runtime-cache) to store and retrieve the latest product information. This ensures that all users see the most up-to-date pricing information, while minimizing the need to fetch data from the backend on each request.
 
 For dynamic, user-specific content like shopping cart states, [Vercel Marketplace Redis integrations](/docs/marketplace-storage) are used. This allows the site to store and retrieve user-specific data in real-time, ensuring a seamless experience across sessions.
 
@@ -99,7 +97,7 @@ The user decides to view the details of a product. This product's price was rece
 
 Behind the scenes the site uses [Incremental Static Regeneration (ISR)](/docs/incremental-static-regeneration) to update the products description and image. The new information for the product is then cached on Vercel's [CDN](/docs/cdn) for future requests, and the revalidation period is reset.
 
-For products with real-time discounts, these discounts are calculated using a [Vercel Function](/docs/functions) that fetches the latest product information from the backend. The results, which include any standard discounts applicable to all users, are cached using the [Vercel Runtime Cache](/docs/caching/runtime-cache).
+For products with real-time discounts, these discounts are calculated using a [Vercel Function](/docs/functions) that fetches the latest product information from the backend. The results, which include any standard discounts applicable to all users, are cached using the [Vercel Runtime Cache](/docs/runtime-cache).
 
 Upon viewing a product, if the discount data is already in the Data Cache and still fresh, it will be served from there. If the data is stale, it will be re-fetched and cached again for future requests. This ensures that all users see the most up-to-date pricing information.
 
@@ -157,6 +155,18 @@ For more information on Vercel's pricing, guidance on optimizing consumption, an
 - [Learn how Vercel usage is calculated and how it accrues](/docs/pricing/manage-and-optimize-usage)
 - [Learn how to understand your Vercel invoice](/docs/pricing/understanding-my-invoice)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -11,9 +11,10 @@ related:
   []
 summary: Found duplicate dependencies between the list of dependencies and devDependencies or peerDependencies in a package.json file..
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/package_json_duplicate_dependencies.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c9c8dc3663943a2e0c06a4ed0477b59ca4893c17d2835e5157657e36ef128c7d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "96dc46a10bf5e28d13a68ed212adf070cfae3f18614c13b5f16330e5d7ee5269"
 ---
 
 # PACKAGE_JSON_DUPLICATE_DEPENDENCIES
@@ -52,6 +53,18 @@ for the functionality of your workspace when people use your package, then it
 can be left in `devDependencies` or `peerDependencies` and be removed from
 `dependencies`.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

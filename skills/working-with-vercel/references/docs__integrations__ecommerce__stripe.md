@@ -12,9 +12,10 @@ related:
   []
 summary: Connect your Stripe account to Vercel and accept payments in your applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/ecommerce/stripe.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "9b5317bcb412f4d53509867647497b787b884e0e288b114cc059a8d6164517b5"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2712ddf8d3710695ccb2225f588441b52bf582e6a3ecd45715a1e83254c37b2b"
 ---
 
 # Stripe Integration
@@ -34,11 +35,11 @@ Connect your [Stripe](https://docs.stripe.com/) account to Vercel to accept paym
 - [Vercel is now available in Stripe Projects](https://vercel.com/changelog/vercel-is-now-available-in-stripe-projects)
 - [Vercel Connect adds managed Stripe API keys](https://vercel.com/changelog/vercel-connect-adds-managed-stripe-api-keys)
 - [Vercel now supports Pro plan in Stripe Projects ](https://vercel.com/changelog/vercel-now-supports-pro-plan-in-stripe-projects)
+- [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
 - [Install an Integration](https://vercel.com/docs/integrations/install-an-integration) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
 - [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
 - [Marketplace Vercel API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel) — Learn how to call Vercel API endpoints to interact with Vercel resources
-- [Manage Billing and Refunds for Integrations](https://vercel.com/docs/integrations/create-integration/billing) — Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
 
 Full cross-link map for this page: [/docs/integrations/ecommerce/stripe.graph.md](/docs/integrations/ecommerce/stripe.graph.md)
 <!-- /docsgraph:related -->
@@ -127,6 +128,18 @@ After connecting Stripe to your project, try these resources:
 
 - [Stripe documentation](https://stripe.com/docs): Official Stripe API reference
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

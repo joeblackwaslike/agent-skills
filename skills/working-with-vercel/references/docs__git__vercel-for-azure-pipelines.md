@@ -15,9 +15,10 @@ related:
   - /docs/projects/managing-projects
 summary: ​Vercel for Azure DevOps allows you to deploy from Azure Pipelines to Vercel automatically.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/git/vercel-for-azure-pipelines.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "be7f54674663ee31ddfd2c66d12fe01d07f2088bb60aea3b61c84938cfe05811"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "19bc30bcae5f02b0278c2f4b45141d3310b3e83e3aebddbf6f5855728781a2a8"
 ---
 
 # Deploying from Azure DevOps with Vercel
@@ -31,15 +32,13 @@ The [Vercel Deployment Extension](https://marketplace.visualstudio.com/items?ite
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel extension for Azure DevOps now available](https://vercel.com/changelog/vercel-extension-for-azure-devops-now-available)
-- [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
 - [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
-- [How can I use the Vercel CLI for custom workflows?](https://vercel.com/kb/guide/using-vercel-cli-for-custom-workflows) — You can use the Vercel CLI to deploy any application, including custom git providers and restricted source code.
 - [How can I use CircleCI with Vercel?](https://vercel.com/kb/guide/how-can-i-use-circleci-with-vercel) — Learn how to use CircleCI to deploy to Vercel with custom CI/CD.
 - [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
+- [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [System environment variables](https://vercel.com/docs/environment-variables/system-environment-variables) — System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the
 - [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
-- [Integrations for Comments](https://vercel.com/docs/comments/integrations) — Learn how Comments integrates with Git providers like GitHub, GitLab, and Bitbucket, as well as the Vercel app for Slack
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 
 Full cross-link map for this page: [/docs/git/vercel-for-azure-pipelines.graph.md](/docs/git/vercel-for-azure-pipelines.graph.md)
 <!-- /docsgraph:related -->
@@ -270,6 +269,18 @@ Here, you can find a list of available properties for each of the available task
 | `azureToken`            | Yes      | string | An [Azure Personal Access Token](#create-an-azure-devops-personal-access-token) with the `PullRequestContribute` permission for your Azure DevOps Organization |
 | `deploymentTaskMessage` | Yes      | string | The message that will added as a comment on the pull request. It is normally created by the Vercel Deployment Task                                             |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

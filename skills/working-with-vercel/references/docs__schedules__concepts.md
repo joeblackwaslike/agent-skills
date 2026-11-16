@@ -15,9 +15,10 @@ related:
   - /docs/schedules/handle-runs
 summary: Learn how Vercel Schedules handles environments, deployments, jitter, one-time schedules, late runs, and duplicate deliveries.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/schedules/concepts.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "df31f50b9ba1f15111ded002af1dc4700ff17ff023ec8c0b2ae5e429a85a0b75"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f10d66ba3fdcd1e51a305f0d09da1655d4f473f4967fce55edc85c5f19c165dd"
 ---
 
 # Schedules Concepts
@@ -30,13 +31,14 @@ This page explains what happens between declaring a schedule and your code runni
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Introducing Vercel Schedules](https://vercel.com/blog/introducing-vercel-schedules)
+- [Schedules](https://eve.dev/docs/schedules) — Run an agent on a cron cadence, either a fire-and-forget prompt or a handler that hands work off to a channel.
 - [Vercel Schedules is now in public beta](https://vercel.com/changelog/vercel-schedules-is-now-in-public-beta)
+- [Introducing Vercel Schedules](https://vercel.com/blog/introducing-vercel-schedules)
 - [Vercel Schedules: API Reference](https://vercel.com/docs/schedules/http-api) — Reference for the Vercel Schedules HTTP API: authenticate, choose an environment, and create, list, update, enable, disa
 - [Testing Schedules Locally](https://vercel.com/docs/schedules/local-development) — Run static and dynamic schedules on your machine with vercel dev, trigger runs on demand, and learn what differs from pr
 - [Migrating from Cron Jobs to Schedules](https://vercel.com/docs/schedules/migrate-from-cron-jobs) — Move Cron Jobs in vercel.json to Schedules without changing your route code, then optionally make the route private.
 - [Getting Started with Schedules](https://vercel.com/docs/schedules/quickstart) — Run a private Vercel Function every hour with a static schedule in vercel.json, test it locally, and deploy it.
-- [Creating Schedules for Each Customer](https://vercel.com/docs/schedules/multi-tenant) — Use schedule namespaces to give each customer in a multi-tenant app their own recurring and one-time schedules.
+- [Scheduling Work for Agents](https://vercel.com/docs/schedules/agents) — Give an agent a tool that creates dynamic schedules, so it can do work for a user later or on a recurring basis.
 
 Full cross-link map for this page: [/docs/schedules/concepts.graph.md](/docs/schedules/concepts.graph.md)
 <!-- /docsgraph:related -->
@@ -183,6 +185,18 @@ If a failed run must be retried, target a queue topic.
 - [Managing schedules](/docs/schedules/manage)
 - [Limits](/docs/schedules/limits)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

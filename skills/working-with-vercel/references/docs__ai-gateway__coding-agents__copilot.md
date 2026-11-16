@@ -15,9 +15,10 @@ related:
   - /docs/ai-gateway/observability-and-spend/budgets
 summary: Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and model.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/copilot.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9c01c922e407e49d89bcdace8977f6f6d38bc0b50a97b558cbeb3426050c61a3"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "386716ffc2522fec07051d3abbb42319a350120fa35bd2241828389eb51745fe"
 ---
 
 # GitHub Copilot CLI with AI Gateway
@@ -31,8 +32,8 @@ sha256: "9c01c922e407e49d89bcdace8977f6f6d38bc0b50a97b558cbeb3426050c61a3"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Continue CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/continue) — Connect Continue CLI to AI Gateway with the Vercel CLI or a YAML model configuration that reads your API key from the en
-- [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
 - [Command Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/command-code) — Connect Command Code to AI Gateway with your own API key and a custom base URL. Configure models, switch between them, a
+- [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 
@@ -99,6 +100,18 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 - Browse the [models catalog](/ai-gateway/models) for available models
 - Configure [spend limits](/docs/ai-gateway/observability-and-spend/budgets) on your API key
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

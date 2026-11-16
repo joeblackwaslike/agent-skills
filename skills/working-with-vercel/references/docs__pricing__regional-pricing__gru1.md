@@ -16,9 +16,10 @@ related:
   - /docs/sandbox/pricing
 summary: Vercel pricing for the São Paulo, Brazil (gru1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/pricing/regional-pricing/gru1.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "6ff11fc4d1d4d9eea73ae6c0ffc8d867216a78f73284123e69bdd2f4978d8065"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "116098618180d9dd687df595689459bae6c07eabcaae690edf5128338efcbd9d"
 ---
 
 # São Paulo, Brazil (gru1) pricing
@@ -32,10 +33,10 @@ The table below shows Managed Infrastructure products with pricing specific to t
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
-- [Paris, France \\(cdg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cdg1) — Vercel pricing for the Paris, France \\(cdg1\\) region.
+- [Stockholm, Sweden \\(arn1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/arn1) — Vercel pricing for the Stockholm, Sweden \\(arn1\\) region.
 - [Portland, USA \\(pdx1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/pdx1) — Vercel pricing for the Portland, USA \\(pdx1\\) region.
+- [Paris, France \\(cdg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cdg1) — Vercel pricing for the Paris, France \\(cdg1\\) region.
 - [Seoul, South Korea \\(icn1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/icn1) — Vercel pricing for the Seoul, South Korea \\(icn1\\) region.
-- [Singapore \\(sin1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sin1) — Vercel pricing for the Singapore \\(sin1\\) region.
 
 Full cross-link map for this page: [/docs/pricing/regional-pricing/gru1.graph.md](/docs/pricing/regional-pricing/gru1.graph.md)
 <!-- /docsgraph:related -->
@@ -55,8 +56,8 @@ The **On-demand (Billing Cycle)** column shows the rate for each resource in thi
 | [CDN Requests](/docs/manage-cdn-usage#cdn-requests) | $3.20 per 1,000,000 Requests |
 | [ISR Writes](/docs/incremental-static-regeneration/limits-and-pricing#isr-writes-chart) | $6.40 per 1,000,000 Write Units |
 | [ISR Reads](/docs/incremental-static-regeneration/limits-and-pricing#isr-reads-chart) | $0.64 per 1,000,000 Read Units |
-| [Runtime Cache Writes](/docs/caching/runtime-cache#pricing) | $6.40 per 1,000,000 Write Units |
-| [Runtime Cache Reads](/docs/caching/runtime-cache#pricing) | $0.64 per 1,000,000 Read Units |
+| [Runtime Cache Writes](/docs/runtime-cache#pricing) | $6.40 per 1,000,000 Write Units |
+| [Runtime Cache Reads](/docs/runtime-cache#pricing) | $0.64 per 1,000,000 Read Units |
 | [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer) | $0.41 per 1 GB |
 | [Queue API Operations](/docs/queues/pricing) | $0.96 per 1,000,000 Operations |
 | [CDN Requests - Additional CPU Duration](/docs/manage-cdn-usage#cdn-request-cpu-duration) | $0.48 per 1 Hour |
@@ -78,6 +79,18 @@ The **On-demand (Billing Cycle)** column shows the rate for each resource in thi
 
 Learn more about the different regions available on Vercel in the [regions](/docs/regions) documentation. See the [pricing](/docs/pricing#managed-infrastructure) documentation for more information on Managed Infrastructure.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

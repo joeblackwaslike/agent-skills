@@ -12,9 +12,10 @@ related:
   []
 summary: Use list_access_groups with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_groups.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f2862409a338104d007ba5942a82ff13f6a8563a4237e11305d27241802d2918"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "66da56bf5fd84ccad4702db6a9bb60fa432301337198f7ddc2b89b89acbd48d0"
 ---
 
 # list_access_groups
@@ -27,8 +28,8 @@ List access groups
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [list_access_group_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_group_projects) — Use list_access_group_projects with Vercel MCP.
 - [list_access_group_members](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_group_members) — Use list_access_group_members with Vercel MCP.
+- [list_access_group_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/list_access_group_projects) — Use list_access_group_projects with Vercel MCP.
 - [List access groups for a team, project or member](https://vercel.com/docs/rest-api/access-groups/list-access-groups-for-a-team-project-or-member) — GET /v1/access-groups — List access groups
 - [List members of an access group](https://vercel.com/docs/rest-api/access-groups/list-members-of-an-access-group) — GET /v1/access-groups/{idOrName}/members — List members of an access group
 - [List projects of an access group](https://vercel.com/docs/rest-api/access-groups/list-projects-of-an-access-group) — GET /v1/access-groups/{idOrName}/projects — List projects of an access group
@@ -49,6 +50,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/acces
 | `teamId`        | string  | No       | Team ID to use for this operation.                                       |
 | `slug`          | string  | No       | Team slug to use for this operation. Use instead of teamId.              |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

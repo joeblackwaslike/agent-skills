@@ -15,9 +15,10 @@ related:
   - /docs/passport/additional-identity-scopes
 summary: Read verified Passport identity in server-side code and apply application-level authorization.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/passport/read-identity.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "bfdbb8fd65b375db52fe39727c4f389fa208047dc46b03e853a8dfd7705efc64"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "476f7417a65dbf3d4797554098fe7ee0ae994644c54741fb542ee6e76aff21d7"
 ---
 
 # Read Passport identity in your application
@@ -30,8 +31,8 @@ After Passport authenticates a visitor, Vercel stores a signed Passport session 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Identify users and control access in Next.js with Vercel Passport](https://vercel.com/kb/guide/vercel-passport-nextjs) — Use \\`getIdentity\\(\\)\\` to read a visitor’s verified Vercel Passport identity in Next.js, then personalize pages, restri
 - [Protect internal apps with Vercel Passport and your identity provider](https://vercel.com/kb/guide/vercel-passport) — Vercel Passport protects internal apps behind your own identity provider, such as Okta or Microsoft Entra ID. Learn how
+- [Identify users and control access in Next.js with Vercel Passport](https://vercel.com/kb/guide/vercel-passport-nextjs) — Use \\`getIdentity\\(\\)\\` to read a visitor’s verified Vercel Passport identity in Next.js, then personalize pages, restri
 - [Vercel Passport is now generally available](https://vercel.com/changelog/vercel-passport-generally-available)
 - [Use Vercel Passport with Node.js and Python backends](https://vercel.com/kb/guide/vercel-passport-backend-frameworks) — Secure internal apps and verify a visitor's identity with Vercel Passport in your backend, with examples for Express, Ho
 - [Personalize and lock down a Nuxt app with Vercel Passport](https://vercel.com/kb/guide/vercel-passport-nuxt) — Use \\`getIdentity\\(\\)\\` to read a visitor’s verified Vercel Passport identity in Nuxt server routes, then personalize pa
@@ -182,6 +183,18 @@ Profile and additional claims are optional. Confirm that the identity provider r
 
 Treat the request as unauthenticated. Confirm that application code reads the Vercel-injected `x-vercel-oidc-passport-token` header instead of a client-supplied value. Do not log the raw token while investigating the failure.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

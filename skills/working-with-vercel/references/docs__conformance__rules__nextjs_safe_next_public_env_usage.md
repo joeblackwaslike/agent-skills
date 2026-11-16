@@ -11,9 +11,10 @@ related:
   []
 summary: Usage process.env.NEXT_PUBLIC_* environment variables must be allowlisted.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/nextjs_safe_next_public_env_usage.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d838d6ddf2caa928a7e7907bca6430709171b75985b472a25f44c62d6892a739"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "05b34f055fab83f6c04278da44995efda507cfc7429e087d8ca09fda329a8f74"
 ---
 
 # NEXTJS_SAFE_NEXT_PUBLIC_ENV_USAGE
@@ -46,6 +47,18 @@ export default HomePage;
 
 If you hit this issue, include the entry in the [Conformance allowlist file](https://vercel.com/docs/conformance/allowlist).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

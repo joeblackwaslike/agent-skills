@@ -12,9 +12,10 @@ related:
   []
 summary: Build and deploy your own AI-powered coding platform with Vercel Sandboxes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/platforms/examples/oss-coding-agent.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "2060c99d3c98501694ca6fa80e0230d05266e856511ff0eb507cca37b8bd3151"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "585fd63587678a1148df74ed3ec9f568556531838ec46f7d01d95a1c32d6d746"
 ---
 
 # OSS AI Vibe Coding Platform
@@ -27,12 +28,12 @@ The AI Vibe Coding Platform represents a new paradigm in development environment
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Safely running AI generated code in your Next.js application](https://vercel.com/kb/guide/running-ai-generated-code-sandbox) — How to execute untrusted, AI‑generated code from a Next.js app using Vercel Sandbox, an isolated, ephemeral environment.
 - [What you need to know about vibe coding](https://vercel.com/blog/what-you-need-to-know-about-vibe-coding)
 - [Vercel collaborates with OpenAI for GPT-5 launch](https://vercel.com/blog/vercel-collaborates-with-openai-for-gpt-5-launch)
-- [Safely running AI generated code in your Next.js application](https://vercel.com/kb/guide/running-ai-generated-code-sandbox) — How to execute untrusted, AI‑generated code from a Next.js app using Vercel Sandbox, an isolated, ephemeral environment.
-- [v0: vibe coding, securely](https://vercel.com/blog/v0-vibe-coding-securely)
 - [Build your own AI app builder with the v0 Platform API](https://vercel.com/blog/build-your-own-ai-app-builder-with-the-v0-platform-api)
-- [Deploying AI-driven apps on Vercel](https://vercel.com/blog/deploying-ai-applications)
+- [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
+- [v0: vibe coding, securely](https://vercel.com/blog/v0-vibe-coding-securely)
 - [Platform Template](https://vercel.com/docs/platforms/examples/platform-template) — Build an AI app builder on Vercel with sandboxes, AI Gateway, deployments, and project transfers.
 
 Full cross-link map for this page: [/docs/platforms/examples/oss-coding-agent.graph.md](/docs/platforms/examples/oss-coding-agent.graph.md)
@@ -231,6 +232,18 @@ The AI Vibe Coding Platform democratizes application development by allowing any
 
 By combining the power of modern AI models with secure sandbox environments, we're entering a new era where the barrier between idea and implementation is just a conversation.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

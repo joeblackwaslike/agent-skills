@@ -13,9 +13,10 @@ related:
   - /docs/agent-resources/vercel-mcp/tools/billing/buy_domain
 summary: Vercel MCP tools for domains and dns.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "8054bb39eb8bd76c8c9c67b6a8fce60fd06c93d621c79aeb157c4ed71a1e2328"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f7feff24cb1354fd1f260534cb63d327ef3b5498e10e66368297766fc1dc6715"
 ---
 
 # Domains and DNS
@@ -29,10 +30,10 @@ Check domain availability and pricing, then manage domains connected to your acc
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Working with domains](https://vercel.com/docs/domains/working-with-domains) — Learn how domains work and the options Vercel provides for managing them.
-- [Billing and Purchases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing) — Vercel MCP tools for billing and purchases.
-- [Create a DNS record](https://vercel.com/docs/rest-api/dns/create-a-dns-record) — POST /v2/domains/{domain}/records — Creates a DNS record for a domain.
+- [Get Domain Verification Record](https://vercel.com/docs/rest-api/domains/get-domain-verification-record) — GET /v9/domains/{domain}/verification — Get the TXT verification record needed to claim ownership of a domain for the au
+- [List all the domains](https://vercel.com/docs/rest-api/domains/list-all-the-domains) — GET /v5/domains — Retrieves a list of domains registered for the authenticated user or team. By default it returns the l
+- [Domains Overview](https://vercel.com/docs/domains) — Learn the fundamentals of how domains, DNS, and nameservers work on Vercel.
 - [Get Domain Availability and Pricing](https://vercel.com/docs/rest-api/domains-registrar/get-domain-availability-and-pricing) — POST /v1/registrar/domains/search — Start domain research here. Get registration availability and pricing for 1–200 exac
-- [Get price data for multiple domains](https://vercel.com/docs/rest-api/domains-registrar/get-price-data-for-multiple-domains) — POST /v1/registrar/domains/price — Get price data for multiple domains in a single request.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains.graph.md](/docs/agent-resources/vercel-mcp/tools/domains.graph.md)
 <!-- /docsgraph:related -->
@@ -353,6 +354,18 @@ Update an existing DNS record.
 | `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody` | object | Yes      | Request body for this tool.                                 |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

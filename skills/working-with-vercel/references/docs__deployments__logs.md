@@ -15,9 +15,10 @@ related:
   - /docs/rbac/managing-team-members
 summary: "Learn how to use Vercel's build logs to monitor the progress of building or running your deployment, and check for possible errors or build failures."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployments/logs.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "49329c390a513f65e447df129160618f88aaae925ecb1ffd470d9aaf5ceddbd7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9f94d2edabeccd05fa51a8167f7a6aca1d8939e4da06fff349fcf170f0b1a3c8"
 ---
 
 # Accessing Build Logs
@@ -39,9 +40,9 @@ When you deploy your website to Vercel, the platform generates build logs that s
 - [How do I resolve a 'module not found' error?](https://vercel.com/kb/guide/how-do-i-resolve-a-module-not-found-error) — Information on resolving a 'module not found' error.
 - [How Vercel Agent accesses production safely](https://vercel.com/blog/how-vercel-agent-accesses-production-safely)
 - [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
-- [Why are my Build Logs loading infinitely and not showing up?](https://vercel.com/kb/guide/why-are-my-build-logs-loading-infinitely-and-not-showing-up) — How to mitigate the issue when build logs aren't showing up?
-- [Link and share Build Logs](https://vercel.com/changelog/link-and-share-build-logs)
-- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
+- [Logs](https://vercel.com/docs/logs) — Use logs to find information on deployment builds, function executions, and more.
+- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
+- [Get logs for a deployment](https://vercel.com/docs/rest-api/logs/get-logs-for-a-deployment) — GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs — Returns a stream of logs for a given deployment.
 
 Full cross-link map for this page: [/docs/deployments/logs.graph.md](/docs/deployments/logs.graph.md)
 <!-- /docsgraph:related -->
@@ -85,6 +86,18 @@ The log link is only accessible to [team members](/docs/rbac/managing-team-membe
 
 You can use [Drains](/docs/drains) to export, store, and analyze your build logs. You can configure Drains through the Vercel dashboard or through one of our [Logging integrations](/integrations#logging).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

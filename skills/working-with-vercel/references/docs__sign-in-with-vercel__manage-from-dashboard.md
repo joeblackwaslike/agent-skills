@@ -15,9 +15,10 @@ related:
   - /docs/deployment-protection/methods-to-protect-deployments/vercel-authentication
 summary: Learn how to manage Sign in with Vercel from the Dashboard
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "12ccc27b23fa8e23b1c289e8668a8f0b3bffc467a803ac3013166b6ca911f226"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a7a0fb4556fea794ca7447a1e4b39c93af08525e6992d4ffe67d94750958596d"
 ---
 
 # Manage Sign in with Vercel from the Dashboard
@@ -34,11 +35,10 @@ To manage any third-party apps, or create a new one yourself, you need to create
 
 - [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
 - [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
-- [Sign in with Vercel now generally available](https://vercel.com/changelog/sign-in-with-vercel)
 - [Troubleshooting Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/troubleshooting) — Learn how to troubleshoot common errors with Sign in with Vercel
-- [Access tokens](https://vercel.com/docs/accounts/access-tokens) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
-- [Vercel KMS Authentication](https://vercel.com/docs/kms/concepts/authentication) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
 - [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
+- [Access tokens](https://vercel.com/docs/accounts/access-tokens) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
+- [SAML Single Sign-On](https://vercel.com/docs/saml) — Learn how to configure SAML SSO for your organization on Vercel.
 - [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/manage-from-dashboard.graph.md](/docs/sign-in-with-vercel/manage-from-dashboard.graph.md)
@@ -169,6 +169,18 @@ When users authorize your app, they'll see these permissions on the consent page
 
 Learn more about scopes and permissions in the [scopes and permissions](/docs/sign-in-with-vercel/scopes-and-permissions) documentation.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

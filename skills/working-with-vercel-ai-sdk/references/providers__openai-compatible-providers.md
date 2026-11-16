@@ -4,8 +4,8 @@ description: Use OpenAI compatible providers with the AI SDK.
 url: "https://ai-sdk.dev/providers/openai-compatible-providers"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/openai-compatible-providers.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "6963c3b5aad78ded520288cde62ae6527095832dbff9a7469b778cb0107b7a8b"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "adeff80cce884acd5b6a7e149c9384327743c9b9a05571b0e1f7c62fec9b7fc8"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -25,6 +25,7 @@ We provide detailed documentation for the following OpenAI compatible providers:
 - [NEAR AI Cloud](/providers/openai-compatible-providers/nearai)
 - [TopxAI](/providers/openai-compatible-providers/topxai)
 - [Synthorai](/providers/openai-compatible-providers/synthorai)
+- [Meta (Muse)](/providers/openai-compatible-providers/meta)
 
 The general setup and provider instance creation is the same for all of these providers.
 
@@ -81,6 +82,14 @@ You can use the following optional settings to customize the provider instance:
   Defaults to the global `fetch` function.
   You can use it as a middleware to intercept requests,
   or to provide a custom fetch implementation for e.g. testing.
+  The same fetch is used to download remote input images for image editing.
+
+  When passing a `guarded-fetch` transport here for untrusted image URLs, a
+  `baseURL` on a private or local network (e.g. `http://localhost:11434/v1`
+  for a self-hosted server) is rejected as well, since the transport checks
+  every request it sends. Add that origin to its `trustedOrigins` option. See
+  [Secure URL
+  Fetching](/docs/advanced/secure-url-fetching#trusted-private-endpoints).
 
 - **includeUsage** *boolean*
 

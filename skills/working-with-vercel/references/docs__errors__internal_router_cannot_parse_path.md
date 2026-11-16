@@ -11,9 +11,10 @@ related:
   []
 summary: The CDN has failed to parse application-specified URL, such as rewrite/redirection URLs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/internal_router_cannot_parse_path.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f34efd871da28d181bc75a6169ea2b9323ccb8a768f018ed3e4cae42768b4c50"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "755066f665e751a65a33364362ac2c939966173e5fa710d3e50e1cc2c08fbcbe"
 ---
 
 # INTERNAL_ROUTER_CANNOT_PARSE_PATH
@@ -30,6 +31,18 @@ To troubleshoot this error, follow these steps:
 
 1. **Check configuration**: Check your configuration and make sure your app doesn't generate invalid URLs
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

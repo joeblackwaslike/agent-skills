@@ -14,9 +14,10 @@ related:
   - /docs/services/routing
 summary: Options available for service configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/services/config-reference.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5f5b6d8e86dd3dcd8b3738c4e117173e932f2c11b810a7cc5785469ad9408afb"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4b4a69bda0aa195cab0fc02e8619fd679b21333a610160bf901d430dd25d8569"
 ---
 
 # Service configuration reference
@@ -34,11 +35,12 @@ A service is configured like any standalone Vercel project, using the same build
 - [Migrate from Railway to Vercel](https://vercel.com/kb/guide/migrate-railway-to-vercel) — Migrate an app from Railway to Vercel. Choose a deployment path, configure services, plan for stored data, and test befo
 - [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
 - [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
+- [Secure internal communication between services (beta)](https://vercel.com/changelog/secure-internal-communication-between-services)
 - [Services](https://vercel.com/docs/build-output-api/services) — Learn how a deployment with multiple services is structured in the Build Output API.
 - [Project Configuration](https://vercel.com/docs/project-configuration) — Learn how to configure your Vercel projects using vercel.json, vercel.toml, vercel.ts, or the dashboard to control build
 - [Daemon Configuration Reference](https://vercel.com/docs/daemons/config-reference) — Every field you can set on a daemon in the daemons key of vercel.json.
 - [Routing](https://vercel.com/docs/routing) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
-- [General settings](https://vercel.com/docs/project-configuration/general-settings) — Configure basic settings for your Vercel project, including the project name, build and development settings, root direc
+- [Frameworks on Vercel](https://vercel.com/docs/frameworks) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
 
 Full cross-link map for this page: [/docs/services/config-reference.graph.md](/docs/services/config-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -174,6 +176,18 @@ Caller-side bindings to other services. See [Service bindings](/docs/services/bi
 
 The routing and URL keys run only after a request enters the service. See [Routing](/docs/services/routing).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

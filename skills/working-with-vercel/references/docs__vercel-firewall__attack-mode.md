@@ -15,9 +15,10 @@ related:
   - /docs/vercel-firewall/vercel-waf/custom-rules
 summary: "Learn how to use Attack Mode to help control who has access to your site when it's under attack."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-firewall/attack-mode.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "3869b696f2070d4e8ca6e1cf73623a31b30c01b0c1a2ec55f88cc75b9c422c4a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f4a4e16c3cdd07d95940ff48b8ea07263bc4ddfd93166dd12faa2e7b50908cf5"
 ---
 
 # Attack Mode
@@ -35,17 +36,17 @@ Attack Mode is a security feature that protects your site during DDoS attacks. W
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Manage Vercel Firewall in the CLI](https://vercel.com/changelog/manage-vercel-firewall-in-the-cli)
-- [Prevent malicious traffic with Attack Challenge Mode for the Vercel Firewall](https://vercel.com/changelog/prevent-malicious-traffic-with-attack-challenge-mode-for-vercel-firewall)
 - [Preventing infrastructure abuse with Vercel Firewall](https://vercel.com/blog/preventing-infrastructure-abuse-with-vercel-firewall)
-- [Attack Challenge Mode now allows verified bots and Vercel cron jobs](https://vercel.com/changelog/attack-challenge-mode-now-allows-verified-bots-and-vercel-cron-jobs)
+- [Prevent malicious traffic with Attack Challenge Mode for the Vercel Firewall](https://vercel.com/changelog/prevent-malicious-traffic-with-attack-challenge-mode-for-vercel-firewall)
 - [Mitigating Denial of Wallet risks with Vercel](https://vercel.com/blog/mitigating-denial-of-wallet-risks-with-vercel)
-- [Vercel security roundup: improved bot defenses, DoS mitigations, and insights](https://vercel.com/blog/vercel-security-roundup-improved-bot-defenses-dos-mitigations-and-insights)
-- [How to use Vercel’s Bot Management features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
 - [Vercel WAF upgrade brings persistent actions, rate limiting, and API control](https://vercel.com/blog/vercel-waf-upgrade-brings-persistent-actions-rate-limiting-and-api-control)
+- [How to block bots from OpenAI GPTBot](https://vercel.com/kb/guide/how-to-block-bots-openai-gptbot) — Learn how to use the Vercel WAF to block, rate limit, or challenge traffic from OpenAI GPTBot.
+- [How to protect your AI app from bots](https://vercel.com/kb/guide/how-to-protect-your-ai-app-from-bots) — Learn how to protect your AI app from bots, scrapers, and abuse using Firewall, BotID, and more.
+- [Firewall and Security](https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall) — Vercel MCP tools for firewall and security.
 - [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 - [Update Attack Challenge mode](https://vercel.com/docs/rest-api/security/update-attack-challenge-mode) — POST /v1/security/attack-mode — Update the setting for determining if the project has Attack Challenge mode enabled.
-- [Firewall and Security](https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall) — Vercel MCP tools for firewall and security.
 - [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
+- [Billing FAQ for Enterprise Plan](https://vercel.com/docs/plans/enterprise/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
 
 Full cross-link map for this page: [/docs/vercel-firewall/attack-mode.graph.md](/docs/vercel-firewall/attack-mode.graph.md)
 <!-- /docsgraph:related -->
@@ -124,6 +125,18 @@ Attack Mode is available for free on all plans.
 
 All mitigations by Attack Mode are free and unlimited, and there are zero costs associated with traffic blocked by Attack Mode.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

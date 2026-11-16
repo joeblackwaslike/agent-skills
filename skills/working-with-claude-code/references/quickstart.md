@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/quickstart.md"
-fetched_at: "2026-11-09T12:34:10.263Z"
-sha256: "0fd6919f5b7c4b5b3b5b12fda4296179ec970764b21c24cbfd51921d57f37791"
+fetched_at: "2026-11-16T12:28:44.823Z"
+sha256: "23c55fbb18ebf8690ee7c02ba405cc7bfde226beca2350c427909f77e6a6afbf"
 ---
 
 > ## Documentation Index
@@ -263,7 +263,7 @@ Run these inside Claude Code after it starts.
 
 | Command | What it does | Example |
 | - | - | - |
-| `/clear` | Clear conversation history | `/clear` |
+| `/clear` | Start a new conversation. Resume the previous one with `/resume`. | `/clear` |
 | `/help` | Show available commands | `/help` |
 | `/exit` or Ctrl+D twice | Exit Claude Code | `/exit` |
 

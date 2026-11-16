@@ -11,9 +11,10 @@ related:
   - /docs/conformance/customize
 summary: Requires that next/script is used for all scripts.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/nextjs_use_next_script.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "44b9a35f6ce61700ddcd6015e623150293eb0d16231df4c0ce9e38643bc6290a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8c48f52236f43911125891ca2d70827bcf1c2bc3789985d3b5d97d4bfc8259d4"
 ---
 
 # NEXTJS_USE_NEXT_SCRIPT
@@ -65,6 +66,18 @@ function App() {
 Replace any `document.createElement('script')` calls and `<script>`
 elements that are caught by this rule with [`next/script`](https://nextjs.org/docs/pages/api-reference/components/script).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

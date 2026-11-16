@@ -15,9 +15,10 @@ related:
   - /docs/microfrontends/troubleshooting
 summary: Learn how to use the Vercel Toolbar to make it easier to manage microfrontends.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "4014075e0811075087ac4b5e13af1212ca2b934d8d1a9d156084d54f4042d2c8"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5205b112d2f58fe63332adc8a61040868883f30c3ed1cb23b35bf9502e90821d"
 ---
 
 # Managing with the Vercel Toolbar
@@ -31,12 +32,11 @@ Using the [Vercel Toolbar](/docs/vercel-toolbar), you can visualize and independ
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Microfrontends support is now in Public Beta](https://vercel.com/changelog/microfrontends-support-is-now-in-public-beta)
-- [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar)
-- [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production)
 - [Easier toolbar setup for SvelteKit and other Vite-based frameworks](https://vercel.com/changelog/easier-toolbar-setup-for-sveltekit-and-other-vite-based-frameworks)
 - [Managing the visibility of the Vercel Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
 - [Add the Vercel Toolbar to your production environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production) — Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access t
 - [Microfrontends Routing](https://vercel.com/docs/microfrontends/routing) — Configure which microfrontend handles each path and understand how Vercel selects deployments.
+- [Add the Vercel Toolbar to your local environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost) — Learn how to use the Vercel Toolbar in your local environment.
 - [Toolbar](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar) — Vercel MCP tools for toolbar.
 
 Full cross-link map for this page: [/docs/microfrontends/managing-microfrontends/vercel-toolbar.graph.md](/docs/microfrontends/managing-microfrontends/vercel-toolbar.graph.md)
@@ -77,6 +77,18 @@ To undo the changes back to the original values, open the microfrontends panel a
 
 You can enable [debug headers](/docs/microfrontends/troubleshooting#debug-headers-when-deployed) on microfrontends responses to help [debug issues with routing](/docs/microfrontends/troubleshooting#requests-are-not-routed-to-the-correct-microfrontend-in-production). In the **Microfrontends** panel in the Toolbar, click the **Enable Debug Mode** toggle at the bottom of the panel.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

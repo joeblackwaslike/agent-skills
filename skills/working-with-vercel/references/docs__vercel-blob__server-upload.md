@@ -15,9 +15,10 @@ related:
   - /docs/vercel-blob/python-sdk-reference
 summary: Learn how to upload files to Vercel Blob from server routes and Server Actions
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-blob/server-upload.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c85c2918c76afda5eddffc1e34f624eb4dc994ea2215ca04be7f1adaedfea103"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "44ebdf37008e2fad6d594446784509edf5b1ab06dbe5c6a12e7e39e3c0d8f8b2"
 ---
 
 # Server Uploads with Vercel Blob
@@ -34,17 +35,17 @@ In this guide, you'll learn how to do the following:
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to use and optimize videos](https://nextjs.org/docs/app/guides/videos) — Recommendations and best practices for optimizing videos in your Next.js application.
-- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
-- [Vercel Blob vs Netlify Blobs](https://vercel.com/kb/guide/vercel-blob-vs-netlify-blobs) — Compare Vercel Blob and Netlify Blobs on storage model, public URLs, delivery, limits, and pricing to choose the right o
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
+- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [How can I use AWS S3 with Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-s3-with-vercel) — Example how to use AWS S3 library on Vercel
+- [How to use and optimize videos](https://nextjs.org/docs/app/guides/videos) — Recommendations and best practices for optimizing videos in your Next.js application.
+- [Vercel Blob vs Netlify Blobs](https://vercel.com/kb/guide/vercel-blob-vs-netlify-blobs) — Compare Vercel Blob and Netlify Blobs on storage model, public URLs, delivery, limits, and pricing to choose the right o
 - [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
-- [View, upload, and delete Blob files in the dashboard](https://vercel.com/changelog/view-upload-and-delete-blob-files-in-the-dashboard)
-- [Introducing Vercel Blob](https://vercel.com/changelog/vercel-blob)
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
-- [Vercel Storage overview](https://vercel.com/docs/storage) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
 - [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store) — POST /storage/stores/blob — Create a Blob store
+- [Vercel Storage overview](https://vercel.com/docs/storage) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
+- [Complete a blob upload](https://vercel.com/docs/rest-api/vcr/complete-a-blob-upload) — PUT /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} — PUT /v2/:teamSlug/:projectSlug/:repositoryName/
+- [Start a blob upload](https://vercel.com/docs/rest-api/vcr/start-a-blob-upload) — POST /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/ — POST /v2/:teamSlug/:projectSlug/:repositoryName/blob
 
 Full cross-link map for this page: [/docs/vercel-blob/server-upload.graph.md](/docs/vercel-blob/server-upload.graph.md)
 <!-- /docsgraph:related -->
@@ -531,6 +532,18 @@ You have successfully uploaded an object to your Vercel Blob store and are able 
 
 - Learn about the methods available in the [JS SDK](/docs/vercel-blob/using-blob-sdk) and the [Python SDK](/docs/vercel-blob/python-sdk-reference)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

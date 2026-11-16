@@ -14,9 +14,10 @@ related:
   - /docs/ai-gateway/observability-and-spend/budgets
 summary: Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/zcode.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "0286490b63a481f7864beb77845687f0a271880016109ee9ce0e475ed0cc6f6b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9022fa788043610bc95acf33374edb8f1061a9b2456385984c5ac5df24586da2"
 ---
 
 # ZCode with AI Gateway
@@ -105,6 +106,18 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 - Browse the [models catalog](/ai-gateway/models) for available models
 - Configure [spend limits](/docs/ai-gateway/observability-and-spend/budgets) on your API key
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

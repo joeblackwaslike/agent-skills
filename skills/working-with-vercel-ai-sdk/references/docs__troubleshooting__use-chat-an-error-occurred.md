@@ -4,8 +4,8 @@ description: "Troubleshooting errors related to the \"An error occurred\" error 
 url: "https://ai-sdk.dev/docs/troubleshooting/use-chat-an-error-occurred"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/troubleshooting/use-chat-an-error-occurred.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "d76d82f63a80b14a1cbe269ca3dd1e113542022429b0c6623160d3f8c3b7c431"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "9e1de0914d90fac194500545ede96f2b213ba79079f66ee606a2cb1c83cb7c6f"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -18,6 +18,10 @@ I am using [`useChat`](/docs/reference/ai-sdk-ui/use-chat) and I get the error "
 
 Error messages from `streamText` are masked by default when using `toUIMessageStream` for security reasons (secure-by-default).
 This prevents leaking sensitive information to the client.
+
+Failed tool calls are not masked by default. Their error text is sent to the client as the model received it,
+unless you set `redactToolErrors` or pass your own `onError`.
+See [Errors](/docs/ai-sdk-ui/chatbot-tool-usage#errors) in the tool usage guide.
 
 ## Solution
 
@@ -34,12 +38,18 @@ export function errorHandler(error: unknown) {
   }
 
   if (error instanceof Error) {
-    return error.message;
+    // matches the error text that the model receives for a failed tool call
+    return error.toString();
   }
 
   return JSON.stringify(error);
 }
 ```
+
+A custom `onError` also handles failed tool calls, unless you set `redactToolErrors` to `false`.
+This function returns the same error text that the model receives for a failed tool call.
+If the two texts differ, the stored messages no longer match what the model received.
+See [Tool error text and message history](/docs/ai-sdk-ui/chatbot-tool-usage#tool-error-text-and-message-history).
 
 ```tsx
 const result = streamText({

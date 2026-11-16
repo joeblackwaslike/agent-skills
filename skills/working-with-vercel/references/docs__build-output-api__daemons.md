@@ -14,9 +14,10 @@ related:
   - /docs/daemons/config-reference
 summary: Learn how Vercel Daemons are represented in the Build Output API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/build-output-api/daemons.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "a1f0ea6b1eca882cdb2afeef1dc7ef53ae9d429e6e8037eac3f2f6316958144f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "321e6f8a3afcce1579bbfbdad9e9dad1962810f853894eeed6caf6219d43a083"
 ---
 
 # Daemons
@@ -34,10 +35,10 @@ A deployment can declare [daemons](/docs/daemons), which are long-running contai
 - [Add liveness checks to your Daemons](https://vercel.com/changelog/add-liveness-checks-to-your-daemons)
 - [Vercel Daemons can now call services with bindings](https://vercel.com/changelog/vercel-daemons-can-now-call-services-with-bindings)
 - [How to choose between Functions, containers, and Daemons on Vercel](https://vercel.com/kb/guide/vercel-functions-containers-daemons) — Choose Vercel Functions for HTTP requests, container images for custom runtimes, and Daemons for continuous background w
-- [Migrate Render background workers to Vercel Daemons](https://vercel.com/kb/guide/migrate-render-workers-to-vercel-daemons) — Migrate Render workers to Vercel Daemons. Translate render.yaml, package Celery in Docker, prepare the broker, and verif
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
 - [vercel daemons](https://vercel.com/docs/cli/daemons) — List and inspect production daemons, override regional instance counts, and inspect or restart individual instances with
 - [Get project daemons](https://vercel.com/docs/rest-api/daemons/get-project-daemons) — GET /v1/projects/{idOrName}/daemons — List the daemons of a project.
+- [Builds](https://vercel.com/docs/builds) — Understand how the build step works when creating a Vercel Deployment.
 - [Services](https://vercel.com/docs/build-output-api/services) — Learn how a deployment with multiple services is structured in the Build Output API.
 
 Full cross-link map for this page: [/docs/build-output-api/daemons.graph.md](/docs/build-output-api/daemons.graph.md)
@@ -168,6 +169,18 @@ When you use `vercel build`, the CLI builds each daemon's `Dockerfile`, pushes t
 - The `image` must be in Vercel Container Registry.
 - Routes can't target a daemon, because daemons don't receive traffic.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

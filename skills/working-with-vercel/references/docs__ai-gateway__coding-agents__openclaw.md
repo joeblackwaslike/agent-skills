@@ -13,9 +13,10 @@ related:
   - /docs/ai-gateway/observability-and-spend/budgets
 summary: Connect OpenClaw to AI Gateway with the Vercel CLI or manual provider configuration. Use gateway models across coding agents and messaging channels.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/openclaw.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5ce339004092c9495d0037c3521246b1d790c6e3bfcc94f380c92cbe14e94d3d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f8fdc0383f766a3c78eb73fecbe035a800fcc583a69b1581e5790e4aeefe6287"
 ---
 
 # OpenClaw with AI Gateway
@@ -28,12 +29,11 @@ sha256: "5ce339004092c9495d0037c3521246b1d790c6e3bfcc94f380c92cbe14e94d3d"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 - [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
-- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
-- [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 - [Cline with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/cline) — Connect Cline to AI Gateway through the Vercel CLI or VS Code settings. Configure model access and monitor usage and spe
+- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
+- [OpenHands with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openhands) — Connect OpenHands to AI Gateway with the Vercel CLI or an OpenAI-compatible LLM configuration.
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/openclaw.graph.md](/docs/ai-gateway/coding-agents/openclaw.graph.md)
 <!-- /docsgraph:related -->
@@ -105,6 +105,18 @@ If you can't use the Vercel CLI, configure OpenClaw manually:
 - Configure [spend limits](/docs/ai-gateway/observability-and-spend/budgets) on your API key
 - Connect your other agents with the [Vercel CLI](/docs/cli/ai-gateway#setup)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

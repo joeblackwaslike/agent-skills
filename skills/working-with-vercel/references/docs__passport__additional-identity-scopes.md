@@ -12,9 +12,10 @@ related:
   - /docs/passport/verify-identity
 summary: Request group membership and other provider-specific identity claims when using Passport.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/passport/additional-identity-scopes.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "61a6644f8afd1494eaf15440c093d0c8d8653b3dad788541495ee0559373e524"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3281fa29f8945aaa964094604bfa45f9a5dafdf2a6150758dcd1702e61341429"
 ---
 
 # Configure additional identity scopes
@@ -33,6 +34,7 @@ Passport requests identity information through the Connect application assigned 
 - [Identify users and control access in Next.js with Vercel Passport](https://vercel.com/kb/guide/vercel-passport-nextjs) — Use \\`getIdentity\\(\\)\\` to read a visitor’s verified Vercel Passport identity in Next.js, then personalize pages, restri
 - [Personalize and lock down a Nuxt app with Vercel Passport](https://vercel.com/kb/guide/vercel-passport-nuxt) — Use \\`getIdentity\\(\\)\\` to read a visitor’s verified Vercel Passport identity in Nuxt server routes, then personalize pa
 - [Build user-aware TanStack Start apps with Vercel Passport](https://vercel.com/kb/guide/vercel-passport-tanstack-start) — Use \\`getIdentity\\(\\)\\` to read a visitor’s verified Vercel Passport identity in TanStack Start server functions, then p
+- [Vercel Passport is now in Public Beta](https://vercel.com/changelog/vercel-passport-is-now-in-public-beta)
 - [Set up Passport with an identity provider](https://vercel.com/docs/passport/set-up-identity-provider) — Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.
 - [Scopes and Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions) — Learn how to manage scopes and permissions for Sign in with Vercel
 - [OIDC Federation Reference](https://vercel.com/docs/oidc/reference) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
@@ -116,6 +118,18 @@ Read identity only in server-side code and use the verified Passport token. See 
 
 Do not assume a claim is always present or has the same shape for every provider. Check that it exists, validate its type, and deny access when your authorization policy requires a claim that is absent or invalid.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

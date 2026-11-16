@@ -16,9 +16,10 @@ related:
   - /docs/vercel-firewall/firewall-concepts
 summary: Learn how to use WAF Managed Rulesets with the Vercel Web Application Firewall (WAF)
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/managed-rulesets.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "e9d1e2fb2ddec87708f786b7060fcf47906c7e62796d9f5bd9d8dca7e100fdec"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7614a5dba4fb682d73caf4fece8249d9f07ad4c0d8ebc7136b64ab1c69eaaec6"
 ---
 
 # WAF Managed Rulesets
@@ -39,10 +40,10 @@ WAF Managed Rulesets are collections of predefined WAF rules based on standards 
 - [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf) — Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in secur
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Security through design: Creating the improved Firewall experience](https://vercel.com/blog/security-through-design-creating-the-improved-firewall-experience)
-- [How to use Vercel’s Bot Management features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
 - [Create Vercel Firewall rules with natural language](https://vercel.com/changelog/create-vercel-waf-custom-rules-using-natural-language)
+- [Firewall Terraform Configuration](https://vercel.com/kb/guide/firewall-terraform-configuration) — Learn how to create scalable firewall configurations with Terraform
+- [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 - [CDN security](https://vercel.com/docs/cdn-security) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
-- [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
 
 Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/managed-rulesets.graph.md](/docs/vercel-firewall/vercel-waf/managed-rulesets.graph.md)
 <!-- /docsgraph:related -->
@@ -152,6 +153,18 @@ The Vercel WAF executes rules on incoming traffic in the following order:
 1. Custom rules set up in the project
 2. WAF Managed Rulesets configured in the project
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

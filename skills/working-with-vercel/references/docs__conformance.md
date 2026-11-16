@@ -14,9 +14,10 @@ related:
   - /docs/conformance/customize
 summary: Learn how Conformance improves collaboration, productivity, and software quality at scale.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a7e23045368d7de7b16410acdedfd0f98bf0f1ae550c4213da6c26ae95eaa3ce"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "30b530df301b3df00c2f48fff27574d34d591dd93464556245a47b4d18a5788c"
 ---
 
 # Introduction to Conformance
@@ -60,6 +61,18 @@ information.
 
 - [Learn how Vercel helps organizations grow with Conformance and Code owners](https://www.youtube.com/watch?v=IFkZz3_7Poo)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

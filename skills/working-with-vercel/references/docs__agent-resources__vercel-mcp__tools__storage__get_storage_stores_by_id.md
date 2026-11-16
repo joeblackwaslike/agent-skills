@@ -12,9 +12,10 @@ related:
   []
 summary: Use get_storage_stores_by_id with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/storage/get_storage_stores_by_id.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f3283e1c2a2a22e4cc7a62f9d2ce7527d3e3e1bd141bc566f062df4e3024a71e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0016bf050724cfc6ab9c1326eb72fb406a5e2e2067de68cc031c23e1bb829872"
 ---
 
 # get_storage_stores_by_id
@@ -31,7 +32,7 @@ Get a store.
 - [create_storage_stores_blob](https://vercel.com/docs/agent-resources/vercel-mcp/tools/storage/create_storage_stores_blob) — Use create_storage_stores_blob with Vercel MCP.
 - [Delete a Blob store](https://vercel.com/docs/rest-api/storage/delete-a-blob-store) — DELETE /storage/stores/blob/{id} — Delete a Blob store
 - [vercel storage](https://vercel.com/docs/cli/storage) — List, create, inspect, and delete storage resources, and manage their project connections with the Vercel CLI.
-- [get_team](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/get_team) — Use get_team with Vercel MCP.
+- [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store) — POST /storage/stores/blob — Create a Blob store
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/storage/get_storage_stores_by_id.graph.md](/docs/agent-resources/vercel-mcp/tools/storage/get_storage_stores_by_id.graph.md)
 <!-- /docsgraph:related -->
@@ -45,6 +46,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/stora
 | `includeGuides` | boolean | No       | -                                  |
 | `teamId`        | string  | No       | Team ID to use for this operation. |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

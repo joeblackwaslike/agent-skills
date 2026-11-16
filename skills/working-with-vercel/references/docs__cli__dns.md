@@ -11,9 +11,10 @@ related:
   - /docs/cli/global-options
 summary: Learn how to manage your DNS records for your domains using the vercel dns CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/dns.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "a48276f4f69d20e8030a6e0b11063b3f4f4a7809cc14203c1039186fd7588c39"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "761b761e9d037aa5e8e831c35cfefa49a9eeb383b5387459f1e4192d4398474c"
 ---
 
 # vercel dns
@@ -28,9 +29,9 @@ The `vercel dns` command manages DNS records for domains: list, inspect, add, up
 
 - [Vercel CLI expands commands for DNS, domains, and projects](https://vercel.com/changelog/vercel-cli-expands-commands-for-dns-domains-and-projects)
 - [Working with DNS](https://vercel.com/docs/domains/working-with-dns) — Learn how DNS works to properly configure your domain.
-- [vercel domains](https://vercel.com/docs/cli/domains) — Learn how to buy, transfer, and manage your domains using the vercel domains CLI command.
-- [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 - [Update an existing DNS record](https://vercel.com/docs/rest-api/dns/update-an-existing-dns-record) — PATCH /v1/domains/records/{recordId} — Updates an existing DNS record for a domain name.
+- [vercel domains](https://vercel.com/docs/cli/domains) — Learn how to buy, transfer, and manage your domains using the vercel domains CLI command.
+- [Create a DNS record](https://vercel.com/docs/rest-api/dns/create-a-dns-record) — POST /v2/domains/{domain}/records — Creates a DNS record for a domain.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
 
 Full cross-link map for this page: [/docs/cli/dns.graph.md](/docs/cli/dns.graph.md)
@@ -280,6 +281,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

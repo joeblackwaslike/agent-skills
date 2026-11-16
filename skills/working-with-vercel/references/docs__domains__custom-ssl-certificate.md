@@ -12,9 +12,10 @@ related:
   - /docs/cli/certs
 summary: By default, Vercel provides all domains with a custom SSL certificates. However, Enterprise teams can upload their own custom SSL certificate.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains/custom-ssl-certificate.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "ab6683333bdf31ced79ce4478d153887c6a35213b7d0b13c398decd63bd64c73"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "cd399e80c59e3414d2ac88d24d10faae7706b159d4833574d63c289c905bce99"
 ---
 
 # Uploading Custom SSL Certificates
@@ -96,6 +97,18 @@ Run [`vercel certs add`](/docs/cli/certs) and pass `cert.pem` as both the certif
 vercel certs add --crt cert.pem --key key.pem --ca cert.pem
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

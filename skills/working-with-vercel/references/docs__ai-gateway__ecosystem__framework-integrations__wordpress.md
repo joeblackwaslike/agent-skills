@@ -13,9 +13,10 @@ related:
   - /docs/ai-gateway/authentication-and-byok/api-keys
 summary: Learn how to integrate Vercel AI Gateway with WordPress to let your plugins access multiple AI models.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/wordpress.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "92399c66876085283bffcd9de37185cbe3d259e2189563e71efbaaacc1cc01c5"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ccedc18fa47106725ae853c1b72fe6fcb4322409aaa77596b0f06e69f13a1c9f"
 ---
 
 # WordPress with AI Gateway
@@ -35,9 +36,9 @@ built on top of the WordPress AI Client will then benefit from these capabilitie
 - [Vercel AI Gateway plugin for WordPress](https://vercel.com/changelog/vercel-ai-gateway-plugin-for-wordpress)
 - [Using Headless WordPress with Next.js and Vercel](https://vercel.com/kb/guide/wordpress-with-vercel) — Learn how to use Headless WordPress with your Next.js application and deploy it to Vercel.
 - [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
-- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
-- [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai) — Learn how to add the xAI native integration with Vercel.
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
+- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
+- [Go with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/go) — Use AI Gateway from any Go application with the OpenAI or Anthropic Go SDKs, including model fallbacks, cost tracking, a
 - [Build with AI on Vercel](https://vercel.com/docs/agent-resources/integrations-for-models) — Integrate powerful AI services and models seamlessly into your Vercel projects.
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integrations/wordpress.graph.md](/docs/ai-gateway/ecosystem/framework-integrations/wordpress.graph.md)
@@ -218,6 +219,18 @@ which can be used in any PHP project. Install the
 [`vercel-labs/ai-gateway-provider`](https://packagist.org/packages/vercel-labs/ai-gateway-provider)
 Composer package and register it with the SDK's default registry.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

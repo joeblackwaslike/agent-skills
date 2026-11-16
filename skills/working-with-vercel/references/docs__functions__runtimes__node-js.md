@@ -16,9 +16,10 @@ related:
   - /docs/routing/rewrites
 summary: Learn how to use the Node.js runtime to create Vercel Functions in JavaScript or TypeScript.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/runtimes/node-js.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "87d20ecb996c028ec6008bb7c0ce110867d47c1d8a091f1919ea34ffc9409f0f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4a67618e8582c72dc26e527415e64902b1f9f2cde5ecf4be8fcd9a34d1594d6b"
 ---
 
 # Using the Node.js Runtime with Vercel Functions
@@ -40,9 +41,9 @@ Use the Node.js runtime to run Vercel Functions written in JavaScript or TypeScr
 - [Can I use SMTP with Vercel?](https://vercel.com/kb/guide/serverless-functions-and-smtp) — Vercel Functions can open SMTP connections on the Node.js runtime. Learn which ports are open, why you must await the se
 - [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
 - [Function streaming to be framework-agnostic on Vercel](https://vercel.com/blog/vercel-functions-streaming-to-be-framework-agnostic)
-- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
+- [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
+- [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
-- [Build image overview](https://vercel.com/docs/builds/build-image) — Learn about the container image used for Vercel builds.
 
 Full cross-link map for this page: [/docs/functions/runtimes/node-js.graph.md](/docs/functions/runtimes/node-js.graph.md)
 <!-- /docsgraph:related -->
@@ -243,6 +244,18 @@ export default async (request: VercelRequest, response: VercelResponse) => {
 
 Express.js is a popular framework used with Node.js. For information on how to use Express with Vercel, see the guide: [Using Express.js with Vercel](/kb/guide/using-express-with-vercel).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

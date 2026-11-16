@@ -13,9 +13,10 @@ related:
   - /docs/fundamentals/what-is-compute
 summary: Learn about the core concepts of Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/fundamentals.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "2f4ea86d3abfe3cf0f2af8c5835ce58eaa97e90d60cb8fbdfe0ae12c89608d52"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "384cad8b3e115acff03a607fa1337e2e8505c04d35c014bac8cbc393554700af"
 ---
 
 # Vercel fundamental concepts
@@ -28,15 +29,11 @@ The articles below explain core concepts that shape how Vercel works:
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [What is the best way to get support from Vercel?](https://vercel.com/kb/guide/how-to-get-vercel-support) — Information on how to get help from Vercel Support through the available channels.
-- [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
-- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
-- [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify) — Migrate your website's configuration from Netlify to Vercel
 - [Vercel Connect Concepts](https://vercel.com/docs/connect/concepts) — Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and a
-- [How Vercel CDN Works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
-- [Frameworks on Vercel](https://vercel.com/docs/frameworks) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
 - [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
+- [How Vercel CDN Works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
 - [Vercel KMS Concepts](https://vercel.com/docs/kms/concepts) — Understand how Vercel KMS rotates signing keys and how it authorizes signing, management, and verification.
+- [Vercel security overview](https://vercel.com/docs/security) — Vercel provides built-in and customizable features to ensure that your site is secure.
 
 Full cross-link map for this page: [/docs/fundamentals.graph.md](/docs/fundamentals.graph.md)
 <!-- /docsgraph:related -->
@@ -51,6 +48,18 @@ Full cross-link map for this page: [/docs/fundamentals.graph.md](/docs/fundament
 
 Explore [reference architectures](/kb/architecture) to choose a stack and work through application design decisions. Each stack brings together documentation, guides, templates, and courses for building on Vercel.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

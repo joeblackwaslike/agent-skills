@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/models-and-providers
 summary: Use a verified Vercel Passport identity to store and retrieve per-user conversation history in a Chat SDK bot.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/chat-sdk/integrations/passport.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "7b15a59c64451f10dbd675fb7fa69c27e6d3a83860faf3ad90c71af7acf9bc91"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d7024f635929f2f5e5f1a4d41b66e488f93c1caa323ab58dc050d2f2df7c3fbc"
 ---
 
 # Chat SDK with Vercel Passport
@@ -35,8 +36,8 @@ Use [Vercel Passport](/docs/passport) to identify signed-in users of a browser c
 - [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
 - [The Complete Guide to Chat SDK](https://vercel.com/kb/guide/the-complete-guide-to-chat-sdk) — Chat SDK is a TypeScript library for building chat bots that work across Slack, Teams, Discord, Linear, and more from a
 - [Triage form submissions with Chat SDK](https://vercel.com/kb/guide/triage-form-submissions-with-chat-sdk) — Build a Slack bot that triages form submissions with interactive cards. Forward, edit, or mark as spam without leaving S
-- [Chat SDK brings agents to your users](https://vercel.com/blog/chat-sdk-brings-agents-to-your-users)
-- [Chat SDK with Vercel Connect](https://vercel.com/docs/chat-sdk/integrations/connect) — Use Vercel Connect for Chat SDK platform credentials, verified webhooks, and separate per-user tool access.
+- [Getting Started with Chat SDK](https://vercel.com/docs/chat-sdk/quickstart) — Create a Slack bot with the Chat SDK CLI, connect it to Slack through Vercel Connect, and deploy it on Vercel.
+- [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
 - [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
 - [eve on Vercel](https://vercel.com/docs/frameworks/agents/eve) — Create and deploy an eve agent on Vercel with AI Gateway model access, durable sessions, and authenticated requests.
 
@@ -313,6 +314,18 @@ The example turns off Passport's unverified development identity with `getIdenti
 - [Review Passport identity claims](/docs/passport/token-claims)
 - [Configure AI Gateway for Chat SDK](/docs/chat-sdk/integrations/ai-gateway)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

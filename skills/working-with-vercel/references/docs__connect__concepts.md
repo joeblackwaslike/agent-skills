@@ -15,9 +15,10 @@ related:
   - /docs/connect/concepts/triggers
 summary: "Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and authentication."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/connect/concepts.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "67152467b902d9e0bc39b564b84fc70ef7747a70b9e3ca220c082535a7fafbff"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e57e799a55e9933a3c0ffc959802d18ba39d24a8f9f8c46d89bf21af4310eaa0"
 ---
 
 # Vercel Connect Concepts
@@ -32,13 +33,11 @@ Vercel Connect is built around six primitives. Read these in order if you want a
 
 - [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
 - [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
-- [Vercel Connect adds 100+ preset connectors](https://vercel.com/changelog/vercel-connect-preset-connectors)
-- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
-- [Frameworks and Adapters for Vercel Connect](https://vercel.com/docs/connect/frameworks) — Use Vercel Connect with AI SDK, TanStack AI, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.
 - [List connectors for a project](https://vercel.com/docs/rest-api/connect/list-connectors-for-a-project) — GET /v2/connect/projects/{projectId}/connectors — List the connectors connected to a project and the environments where
-- [Vercel fundamental concepts](https://vercel.com/docs/fundamentals) — Learn about the core concepts of Vercel
-- [Vercel KMS Concepts](https://vercel.com/docs/kms/concepts) — Understand how Vercel KMS rotates signing keys and how it authorizes signing, management, and verification.
+- [Frameworks and Adapters for Vercel Connect](https://vercel.com/docs/connect/frameworks) — Use Vercel Connect with AI SDK, TanStack AI, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.
 - [Get a connector project connection](https://vercel.com/docs/rest-api/connect/get-a-connector-project-connection) — GET /v1/connect/connectors/{connector}/projects/{projectId} — Get the configuration that connects a connector to a proje
+- [Vercel fundamental concepts](https://vercel.com/docs/fundamentals) — Learn about the core concepts of Vercel
+- [Observability](https://vercel.com/docs/connect/observability) — Monitor token requests, authorizations, revocations, and trigger deliveries for your connectors.
 
 Full cross-link map for this page: [/docs/connect/concepts.graph.md](/docs/connect/concepts.graph.md)
 <!-- /docsgraph:related -->
@@ -60,6 +59,18 @@ A team creates a **connector** for a provider. That connector accepts **installa
 - [SDK Reference](/docs/connect/ts-sdk-reference): API reference for `@vercel/connect`.
 - [CLI Reference](/docs/cli/connect): API reference for `vercel connect`.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -12,9 +12,10 @@ related:
   - /docs/sandbox/sdk-reference
 summary: The Sandbox is mid-shutdown and is no longer accepting commands. This is a transient state.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/sandbox_stopping.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "e8c9bf6090061e1a33f565ae6bc5a7ded85c40b0d06bbd8f08fc5ef40315cf9a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3348284c6104574e10c8895489397f3c1c778009471c159988b56c4d42cad0b2"
 ---
 
 # SANDBOX_STOPPING
@@ -33,6 +34,18 @@ To troubleshoot this error, follow these steps:
 2. **Check whether your code is racing `stop()`:** If your application calls `sandbox.stop()` from one path while another path is still issuing commands, the second path can see `SANDBOX_STOPPING`. Coordinate the two paths so `stop()` finishes before submitting more commands. The [`status`](/docs/sandbox/sdk-reference#status) accessor reads cached metadata and doesn't prevent lifecycle races.
 3. **Inspect the Sandbox history:** Navigate to the [Sandboxes dashboard](/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fsandboxes\&title=Go+to+Sandboxes), select the Sandbox, and check the history section to see what triggered the shutdown.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

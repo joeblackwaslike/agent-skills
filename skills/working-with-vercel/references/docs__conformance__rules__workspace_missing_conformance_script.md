@@ -11,9 +11,10 @@ related:
   []
 summary: All packages must define a conformance script that invokes the Conformance package.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/workspace_missing_conformance_script.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "ebcd16eba2a0c230dd175f0208e289f29a6d04c95af8ed6583d2d6f790503588"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0aa7eaa5d57e9e56c0ae06b665c1de2f0225ce0484032ac978a36fa0a91afc3c"
 ---
 
 # WORKSPACE_MISSING_CONFORMANCE_SCRIPT
@@ -58,6 +59,18 @@ a `conformance` script in the `package.json` file.
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

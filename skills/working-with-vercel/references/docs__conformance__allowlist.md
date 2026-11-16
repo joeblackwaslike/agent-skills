@@ -11,9 +11,10 @@ related:
   - /docs/code-owners
 summary: Learn how to use allowlists to bypass your Conformance rules to merge changes into your codebase.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/allowlist.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f6925868560eb684669836dee7a5489b9b9db103c1e936c9c8804666e1a135d1"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "09fcc4b09cf2fa5fe830fee6564b68e6112c7d9257e4de206fd933faf5b25778"
 ---
 
 # Conformance Allowlists
@@ -150,6 +151,18 @@ NO_EXTERNAL_CSS_AT_IMPORTS.* @org/performance-team:required
 
 The `:required` check ensures any modifications need the specified owners' review.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

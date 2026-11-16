@@ -12,9 +12,10 @@ related:
   - /docs/og-image-generation
 summary: Learn how to inspect and validate your Open Graph metadata through the Open Graph deployment tab.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployments/og-preview.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "e122c52b272f8a669acb6bfea1601511f392099dd4fed5e9586904f1264fda37"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "23908e0ba1c83ca993f50df91447472ce7fe3a65c6ad6de433bb94ad1706c659"
 ---
 
 # Inspecting your Open Graph metadata
@@ -27,14 +28,13 @@ You can use the **Open Graph** section in the sidebar on every deployment on Ver
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [OG Image Generation: The Complete Customization Guide](https://vercel.com/kb/guide/using-custom-font) — Learn how to use custom fonts in your Vercel OG image, plus emoji, external images, non-Latin text, dynamic titles, and
 - [Inspect and validate Open Graph metadata for enhanced link sharing](https://vercel.com/changelog/open-graph-link-sharing-inspector)
-- [Inspect Open Graph data with the Vercel Toolbar](https://vercel.com/changelog/inspect-open-graph-data-with-the-vercel-toolbar)
-- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
-- [Accessing Deployments through Generated URLs](https://vercel.com/docs/deployments/generated-urls) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
+- [OG Image Generation: The Complete Customization Guide](https://vercel.com/kb/guide/using-custom-font) — Learn how to use custom fonts in your Vercel OG image, plus emoji, external images, non-Latin text, dynamic titles, and
 - [List deployments](https://vercel.com/docs/rest-api/deployments/list-deployments) — GET /v7/deployments — List deployments under the authenticated user or team. If a deployment hasn't finished uploading \\
-- [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
-- [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
+- [Accessing Deployments through Generated URLs](https://vercel.com/docs/deployments/generated-urls) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
+- [System environment variables](https://vercel.com/docs/environment-variables/system-environment-variables) — System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 
 Full cross-link map for this page: [/docs/deployments/og-preview.graph.md](/docs/deployments/og-preview.graph.md)
 <!-- /docsgraph:related -->
@@ -114,6 +114,18 @@ These properties set by the [Open Graph protocol](https://ogp.me/#metadata).
 </div>
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

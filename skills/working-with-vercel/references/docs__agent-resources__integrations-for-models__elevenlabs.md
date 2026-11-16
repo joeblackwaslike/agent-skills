@@ -14,9 +14,10 @@ related:
   - /docs/cli/env
 summary: Learn how to add the ElevenLabs connectable account integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/elevenlabs.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ad2b2da39ed564662327b33ce5dc2359e8e135990230f41f1ecf49ac12da1644"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "417d38b8d4f6c3a85b80846a69690712212d92715de5fcc272d3070f74139014"
 ---
 
 # Vercel ElevenLabs Integration
@@ -34,9 +35,9 @@ applications, ideal for creating interactive media experiences.
 
 - [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai) — Learn how to add the xAI native integration with Vercel.
 - [Vercel LMNT Integration](https://vercel.com/docs/agent-resources/integrations-for-models/lmnt) — Learn how to add LMNT connectable account integration with Vercel.
-- [Vercel Together AI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai) — Learn how to add Together AI connectable account integration with Vercel.
 - [Vercel fal Integration](https://vercel.com/docs/agent-resources/integrations-for-models/fal) — Learn how to add the fal native integration with Vercel.
-- [Vercel Perplexity Integration](https://vercel.com/docs/agent-resources/integrations-for-models/perplexity) — Learn how to add Perplexity connectable account integration with Vercel.
+- [Vercel Together AI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai) — Learn how to add Together AI connectable account integration with Vercel.
+- [Vercel Replicate Integration](https://vercel.com/docs/agent-resources/integrations-for-models/replicate) — Learn how to add Replicate connectable account integration with Vercel.
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/elevenlabs.graph.md](/docs/agent-resources/integrations-for-models/elevenlabs.graph.md)
 <!-- /docsgraph:related -->
@@ -104,6 +105,18 @@ To follow this guide, you'll need the following:
 
 ## More resources
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

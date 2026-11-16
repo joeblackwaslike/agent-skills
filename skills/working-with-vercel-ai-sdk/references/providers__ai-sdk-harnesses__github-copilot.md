@@ -4,8 +4,8 @@ description: Learn how to use the GitHub Copilot harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/github-copilot"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/github-copilot.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "3042a9fc00bf128a3bb21ad1f722752315abf20bf6a7285aadc7a4a9b95f757c"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "874d9e13ac761fcbe8c260cd3159c1590e4026edef62694812d5e446eb9ac100"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -139,10 +139,9 @@ Settings:
   2 seconds. These retries use exponential backoff and are separate from
   `startupTimeoutMs`. They cannot recover when the sandbox, bridge process, or
   bridge endpoint is permanently unavailable.
-- `mintBridgeToken`: synchronous function that receives the sandbox id and
-  returns the ACP bridge authentication token. By default, the adapter generates
-  a random 32-byte token. Custom implementations must return a suitably secret
-  token.
+- `mintBridgeToken`: deprecated and ignored. Passing it logs a warning. The
+  adapter generates a key pair for each bridge, passes only the public key into
+  the sandbox, and keeps the private key in host-side resume state.
 
 `reasoningEffort` is fixed for the launched GitHub Copilot server and applies
 to every session it creates.

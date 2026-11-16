@@ -15,9 +15,10 @@ related:
   - /docs/ai-gateway/authentication-and-byok/byok
 summary: Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit top-ups and spending budgets.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/pricing.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "0c8400fd6c838d8f3a7c515bc44fa77357efd14c052aefd5e9b47afb9972fb1d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "dd897e19499f2b4d4cb4a0adfb22a749e8b64a534fda44d94c4948a6c81a83a4"
 ---
 
 # AI Gateway Pricing
@@ -32,16 +33,15 @@ sha256: "0c8400fd6c838d8f3a7c515bc44fa77357efd14c052aefd5e9b47afb9972fb1d"
 
 - [GPT-5.6 Sol is now 50% off a lower price](https://vercel.com/changelog/gpt-5-6-sol-is-now-50-percent-off-a-lower-price)
 - [MiniMax H3 and H3 Max are 50% off on AI Gateway](https://vercel.com/changelog/minimax-h3-and-h3-max-are-50-off-on-ai-gateway)
+- [MiniMax H3 Image and Highspeed now available on AI Gateway](https://vercel.com/changelog/minimax-h3-image-and-highspeed-now-available-on-ai-gateway)
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [Use Vercel Daemons with eve agents](https://vercel.com/kb/guide/vercel-daemons-eve-agents) — Connect eve agents to Vercel Daemons to process queued jobs, offload heavy work, and react to events. Includes code, aut
 - [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available)
-- [Introducing the AI Gateway](https://vercel.com/blog/ai-gateway)
-- [Budgets for API keys on AI Gateway](https://vercel.com/changelog/budgets-for-api-keys-on-ai-gateway)
 - [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Vercel Agent Pricing](https://vercel.com/docs/agent/pricing) — Understand Vercel Agent pricing and how to track costs
-- [Chat SDK with AI Gateway](https://vercel.com/docs/chat-sdk/integrations/ai-gateway) — Stream AI Gateway model responses into Chat SDK conversations with AI SDK and message history.
-- [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
+- [Running Agent Harnesses Durably on Vercel](https://vercel.com/docs/agent-harnesses) — Run Pi, fx, OpenCode, eve, Claude Code, and Codex on Vercel so a crash, a function timeout, or a redeploy resumes the ag
+- [Running Claude Code Durably on Vercel](https://vercel.com/docs/agent-harnesses/claude-code) — Run Claude Code in a Vercel Sandbox, driven by a Vercel Function, with its session in a durable log, so a crashed turn r
+- [Running eve Agents Durably on Vercel](https://vercel.com/docs/agent-harnesses/eve) — eve agents are durable out of the box on Vercel, with no extra configuration.
 
 Full cross-link map for this page: [/docs/ai-gateway/pricing.graph.md](/docs/ai-gateway/pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -81,19 +81,21 @@ When you click on a model, you can see the full pricing breakdown including vari
 
 ## Bring Your Own Key (BYOK)
 
-AI Gateway also supports [Bring Your Own Key (BYOK)](/docs/ai-gateway/authentication-and-byok/byok) for any provider listed in our catalog. With BYOK, there is no markup or fee from AI Gateway.
+AI Gateway also supports [Bring Your Own Key (BYOK)](/docs/ai-gateway/authentication-and-byok/byok) for any provider listed in our catalog. With BYOK, AI Gateway adds no markup to inference, and you pay the provider directly. Every [add-on surcharge](#add-on-surcharges) you have turned on still applies to BYOK requests and is charged to your AI Gateway Credits. That includes the team-wide provider and model allowlists, team-wide region pinning, and regional hosting.
 
-BYOK is available on the paid tier. When a request with your credentials fails, AI Gateway retries it with system credentials for reliability, and that fallback usage is charged against your credits balance. To use your own provider keys, you'll need purchased AI Gateway Credits.
+BYOK is available on the paid tier. When a request with your credentials fails, AI Gateway retries it with Vercel's provider keys for reliability, and that fallback usage is charged against your credits balance. To use your own provider keys, you'll need purchased AI Gateway Credits and a positive credit balance.
 
 ### API credits from provider subscriptions
 
 API credits claimed through eligible [ChatGPT subscriptions](/i/chatgpt-api-credits-ai-gateway) or [Claude subscriptions](/i/claude-api-credits-ai-gateway) stay in the linked provider organization. Use that organization's key with BYOK for eligible provider-billed requests. These grants don't top up your AI Gateway Credits balance or replace the purchased-credit requirement for BYOK.
 
-Exhausting a grant doesn't necessarily stop requests. A provider's purchased balance or automatic recharge can fund further usage, and AI Gateway can charge its own balance after a system-credential fallback. [AI Gateway budgets](/docs/ai-gateway/observability-and-spend/budgets) exclude BYOK spend, so configure provider-side spending controls as well.
+Exhausting a grant doesn't necessarily stop requests. A provider's purchased balance or automatic recharge can fund further usage, and AI Gateway can charge its own balance after a fallback to Vercel's provider keys. [AI Gateway budgets](/docs/ai-gateway/observability-and-spend/budgets) exclude BYOK spend, so configure provider-side spending controls as well.
 
 ## Add-on surcharges
 
 Some AI Gateway capabilities are off by default. When you enable one, it incurs additional charges beyond the per-token rates, deducted from your AI Gateway Credits balance. Disable the capability in your team's AI Gateway settings to stop the charges.
+
+Per-request surcharges apply to each request AI Gateway bills. That includes a request billed without completing normally, such as a response the provider blocks on safety grounds and still charges for. Requests that AI Gateway doesn't bill aren't charged a surcharge. Surcharges apply to [BYOK](#bring-your-own-key-byok) requests too.
 
 ### Custom Reporting
 
@@ -114,7 +116,7 @@ The [provider allowlist](/docs/ai-gateway/security-and-compliance/provider-allow
 | Option                       | Cost                                | Availability       |
 | ---------------------------- | ----------------------------------- | ------------------ |
 | Per-request `only` filter    | No additional cost                  | All plans          |
-| Team-wide provider allowlist | $0.10 per 1,000 successful requests | Pro and Enterprise |
+| Team-wide provider allowlist | $0.10 per 1,000 billed requests     | Pro and Enterprise |
 
 ### Zero Data Retention (ZDR)
 
@@ -126,6 +128,18 @@ The [provider allowlist](/docs/ai-gateway/security-and-compliance/provider-allow
 | Team-wide zero data retention   | $0.10 per 1,000 requests | Pro, Enterprise, or purchased credits |
 
 Teams on a Pro trial need [purchased credits](#top-up-your-ai-gateway-credits) to use ZDR. Free credits don't count.
+
+### Regional Hosting
+
+With [Regional Hosting](/docs/ai-gateway/security-and-compliance/regional-hosting), which is in beta, you send requests to a regional endpoint (`eu.ai-gateway.vercel.sh` or `us.ai-gateway.vercel.sh`) to control where AI Gateway receives them: in the EU or in the US.
+
+| Option                          | Cost                 | Availability       |
+| ------------------------------- | -------------------- | ------------------ |
+| Requests to a regional endpoint | 5% of inference cost | Pro and Enterprise |
+
+The 5% is of the request's inference cost at market rate. It applies to every request sent to a regional endpoint, wherever inference runs. That includes BYOK requests, embedding, image, and other non-language requests, WebSocket sessions, and async batch and video jobs submitted to the endpoint. For a BYOK request, the provider bills you for inference, and the 5% is of what the request would cost at AI Gateway's market rate, charged to your AI Gateway Credits. Hobby teams and teams on a Pro trial can't use regional endpoints, and their requests to one fail with HTTP 403.
+
+To stop the charge, send requests to `https://ai-gateway.vercel.sh`.
 
 ## Trace Drains
 
@@ -178,6 +192,18 @@ To enable auto top-up:
 
 When your balance drops below the threshold, AI Gateway automatically charges your payment method and restores your balance to the target balance that you set.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

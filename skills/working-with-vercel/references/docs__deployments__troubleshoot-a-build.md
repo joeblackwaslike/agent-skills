@@ -15,9 +15,10 @@ related:
   - /docs/integrations/create-integration/deployment-integration-action
 summary: Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a deployment and long build times.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployments/troubleshoot-a-build.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "dedfc412efa1a4086fb64fd7cec5b7fa595b4e7121b2678b0e489d9b85d197c3"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5c04b2f32373e3698345ce9cd3e69e12f4f3eee956ed8878ae5af79db13b705c"
 ---
 
 # Troubleshooting Build Errors
@@ -31,17 +32,17 @@ You can troubleshoot build errors that occur during the Build step of your deplo
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
+- [Troubleshooting Builds Failing with SIGKILL or Out of Memory Errors](https://vercel.com/kb/guide/troubleshooting-sigkill-out-of-memory-errors) — Learn how to troubleshoot builds failing with SIGKILL or Out of Memory errors on a Vercel Deployment.
+- [Build cache size limit on Vercel increased to 5 GB](https://vercel.com/changelog/build-cache-size-limit-on-vercel-increased-to-five-gb)
 - [Build cache storage increased for larger build machines](https://vercel.com/changelog/build-cache-storage-increased-for-larger-build-machines)
 - [Enhanced Builds now have double the compute](https://vercel.com/changelog/enhanced-builds-now-have-double-the-compute)
 - [Improved error messages for failed or canceled builds](https://vercel.com/changelog/improved-error-messages-for-failed-or-canceled-builds)
 - [More detailed report on out of memory or disk space errors on builds](https://vercel.com/changelog/report-on-out-of-memory-or-disk-space)
-- [Yarn 2+ dependency caching now supported](https://vercel.com/changelog/yarn-2-dependency-caching-now-supported)
 - [Does Vercel Support Yarn? \\(Versions 2, 3, and 4\\)](https://vercel.com/kb/guide/does-vercel-support-yarn-4) — Vercel supports Yarn 1, 2, 3, and 4. Learn which version your build uses by default, and how to pin Yarn 4 with Corepack
-- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
 - [How can I share my Vercel cache across deployments?](https://vercel.com/kb/guide/share-vercel-cache-across-deployments-nextjs) — Learn how to reuse cached responses across deployments with the Next.js App Router and the Vercel Data Cache.
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
-- [Deploying Turborepo to Vercel](https://vercel.com/docs/monorepos/turborepo) — Learn about Turborepo, a build system for monorepos that allows you to have faster incremental builds, content-aware has
 - [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
+- [Deploying Turborepo to Vercel](https://vercel.com/docs/monorepos/turborepo) — Learn about Turborepo, a build system for monorepos that allows you to have faster incremental builds, content-aware has
 
 Full cross-link map for this page: [/docs/deployments/troubleshoot-a-build.graph.md](/docs/deployments/troubleshoot-a-build.graph.md)
 <!-- /docsgraph:related -->
@@ -157,7 +158,7 @@ A Build can last for a maximum of 45 minutes. If the build exceeds this time, th
 
 ### Caching
 
-The maximum size of the build cache depends on the [build machine type](/docs/builds/managing-builds#build-machines). See [Build cache maximum size](/docs/limits#build-cache-maximum-size) for the limits for Basic, Standard, Enhanced, and Turbo machines. Elastic build machines use the limit of the machine type assigned to each build. The cache is retained for one month and applies at the level of each [Build cache key](#caching-process).
+The [maximum size](/docs/limits#build-cache-maximum-size) of the build cache is the same for every [build machine type](/docs/builds/managing-builds#build-machines), including Elastic build machines. The cache is retained for one month and applies at the level of each [Build cache key](#caching-process).
 
 It is not possible to manually configure which files are cached at this time.
 
@@ -175,7 +176,7 @@ A 'module not found' error is a syntax error that will appear at build time. Thi
 
 ### Understanding Build cache
 
-The first Build in a Project will take longer as the Build cache is initially empty. Subsequent builds that have the same [Build cache key](#caching-process) will take less time because elements from your build, such as [framework files and node modules](#what-is-cached), will be reused from the available cache. The next sections will describe the factors that affect the Build cache to help you decrease the Build time
+The first Build in a Project will take longer as the Build cache is initially empty. Subsequent builds that have the same [Build cache key](#caching-process) will take less time because elements from your build, such as [framework files and node modules](#what-is-cached), will be reused from the available cache. The next sections will describe the factors that affect the Build cache to help you decrease the Build time. For more ways to shorten builds and lower their cost, see [How to reduce build costs on Vercel](/kb/guide/how-reduce-build-costs).
 
 ### What is cached
 
@@ -233,6 +234,18 @@ Sometimes, you may not want to use the Build cache for a specific deployment. Yo
 > [Turborepo](https://turborepo.com/docs/core-concepts/remote-caching) and
 > [Nx](https://nx.app/) are automatically excluded.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

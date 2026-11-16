@@ -15,9 +15,10 @@ related:
   - /docs/project-configuration/security-settings
 summary: The Security Dashboard aggregates the security posture of every account and project on your team, flags misconfigurations, and shows how to fix them.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/security/security-dashboard.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "0b416a00e63f81c10d458b83566bf07c889a464d12fe761378dd33f515818ec1"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "eee59eccc8ae84a94ed6845ed7da697328312cec51eb7d3b1f52702e917380aa"
 ---
 
 # Security Dashboard
@@ -35,12 +36,10 @@ The Security Dashboard aggregates the security posture of every account and proj
 - [Unified security actions dashboard](https://vercel.com/changelog/unified-security-actions-dashboard)
 - [Introducing Vercel Security Review](https://vercel.com/blog/vercel-security-review)
 - [Vercel Security Dashboard is in private beta](https://vercel.com/changelog/vercel-security-dashboard-is-in-private-beta)
-- [Vercel Security Review now in public beta](https://vercel.com/changelog/vercel-security-review-public-beta)
-- [Does Vercel have a SOC 2 Type 2 attestation?](https://vercel.com/kb/guide/is-vercel-soc-2-compliant) — Vercel holds a SOC 2 Type 2 attestation for Security, Confidentiality, and Availability. See what the report covers, how
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
 - [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
-- [Attestations and Compliance Report](https://vercel.com/docs/security/attestations-and-compliance-report) — Learn how to preview and download Vercel compliance documents from the dashboard.
-- [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
+- [Create a check](https://vercel.com/docs/rest-api/checks-v2/create-a-check) — POST /v2/projects/{projectIdOrName}/checks — Creates a new check for a project.
 - [List all checks for a project](https://vercel.com/docs/rest-api/checks-v2/list-all-checks-for-a-project) — GET /v2/projects/{projectIdOrName}/checks — List all checks for a project, optionally filtered by target.
 
 Full cross-link map for this page: [/docs/security/security-dashboard.graph.md](/docs/security/security-dashboard.graph.md)
@@ -183,6 +182,18 @@ Access to the Security Dashboard depends on your team role. Some checks read dat
 - [Access roles](/docs/rbac/access-roles)
 - [Deployment protection](/docs/deployment-protection)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -12,9 +12,10 @@ related:
   - /docs/cli/global-options
 summary: Learn how to view billing usage and costs, for your Vercel account using the vercel billing usage CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/usage.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c4625f8874b4206842e299fea540f43789c68ac51074732f2e67e14903211323"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "560e8e67859e6f68b309ff10fa8cc553aa0125ebf327219455cb309035bb25ff"
 ---
 
 # vercel billing usage
@@ -28,10 +29,11 @@ The `vercel billing usage` command displays billing usage for the current billin
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Access billing usage and cost data via API](https://vercel.com/changelog/access-billing-usage-cost-data-api)
-- [vercel billing](https://vercel.com/docs/cli/billing) — Learn how to view usage, contracts, budgets, and invoices for your Vercel team using the vercel billing CLI command.
-- [vercel billing budgets](https://vercel.com/docs/cli/budgets) — View and manage your team's on-demand spend budget from the Vercel CLI.
+- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
+- [vercel billing](https://vercel.com/docs/cli/billing) — Learn how to view your billing overview, usage, contracts, budgets, and invoices for your Vercel team using the vercel b
+- [vercel billing budgets](https://vercel.com/docs/cli/budgets) — View and manage Spend Management budgets for your team, projects, products, and organization from the Vercel CLI.
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [vercel pricing](https://vercel.com/docs/cli/pricing) — Look up Hobby, Pro, and Enterprise features from the public Vercel pricing table using the CLI.
-- [vercel billing contract](https://vercel.com/docs/cli/contract) — Learn how to view contract commitment information for your Vercel account using the vercel billing contract CLI command.
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
 
 Full cross-link map for this page: [/docs/cli/usage.graph.md](/docs/cli/usage.graph.md)
@@ -170,6 +172,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

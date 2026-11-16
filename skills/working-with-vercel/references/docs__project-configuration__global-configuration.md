@@ -14,9 +14,10 @@ related:
   - /docs/cli/about-telemetry
 summary: Learn how to configure Vercel CLI under your system user.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/project-configuration/global-configuration.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "5df4eaa72586f7400bd201433a5df41e779cf0c4b7f6cce96b2d78ce40327645"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "85b9119d017b7a06a6e12bf99ed7ddace6b75ae38016a998c65b8ab6fdc8d67a"
 ---
 
 # Global Vercel CLI Configuration
@@ -30,10 +31,10 @@ Using the following files and configuration options, you can configure [Vercel C
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel CLI Global Options](https://vercel.com/docs/cli/global-options) — Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options
-- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, delete, and manage items, read tokens, a
 - [Using Global Config](https://vercel.com/docs/global-config/using-global-config) — Learn how to use Global Configs in your projects.
-- [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
+- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, delete, and manage items, read tokens, a
 - [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs) — GET /v1/global-config — Returns all Global Configs.
+- [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config) — POST /v1/global-config — Creates a Global Config.
 
 Full cross-link map for this page: [/docs/project-configuration/global-configuration.graph.md](/docs/project-configuration/global-configuration.graph.md)
 <!-- /docsgraph:related -->
@@ -91,6 +92,18 @@ This file should not be edited manually. It exists to contain the authentication
 
 In the case that you are uploading your global configuration setup to a potentially insecure destination, we highly recommend ensuring that this file will not be uploaded, as it allows an attacker to gain access to your provider accounts.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

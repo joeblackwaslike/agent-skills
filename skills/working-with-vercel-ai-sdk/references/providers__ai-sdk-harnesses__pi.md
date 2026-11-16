@@ -4,8 +4,8 @@ description: Learn how to use the Pi harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/pi"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/pi.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "1e28698563bfde63f19b6845a39836e7f2b32811613c817f6080acbfd027f157"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "5a889e175853a5e6ae0258acebf818e6bcf737dc3df7203e169ac607bddeb6fa"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -456,6 +456,16 @@ common tool shape.
 
 Pi supports built-in tool approval requests when `permissionMode` is
 `allow-reads` or `allow-edits`.
+
+Under `allow-edits`, `write` and `edit` calls that touch `.agents/skills` or
+`.pi` in the session workdir still require host approval. These paths hold
+configuration and skills that can change the agent's behavior in later
+sessions. A path matches when it is a protected path, lies inside one, or is a
+parent of one. Symlinks are resolved in both directions: writes through an
+alias that points into a protected path match, as do writes to targets of
+symlinks inside protected directories. While a protected path exists, writes to
+hard-linked files also require approval. Paths that cannot be resolved require
+approval.
 
 ## Known Limitations
 

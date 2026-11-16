@@ -9,8 +9,8 @@ tags:
   - agent
   - web
 source: "https://ai-sdk.dev/cookbook/node/web-search-agent.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "a3ac78b94d8a9b2efd6bb1b352376cc23edf2f1e6f95cc11fdc7eeaae715b703"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "e4242e97c8ddf472e36be121818425f111bd9a01a420ba69235371dbbbb5f1ce"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -114,7 +114,7 @@ import { google } from '@ai-sdk/google';
 import { generateText } from 'ai';
 
 const { text, sources, providerMetadata } = await generateText({
-  model: 'google/gemini-3.8-flash',
+  model: 'google/gemini-4-hydrogen',
   tools: {
     google_search: google.tools.googleSearch({}),
   },

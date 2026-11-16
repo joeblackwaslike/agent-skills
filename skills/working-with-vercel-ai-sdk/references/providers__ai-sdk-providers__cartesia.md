@@ -4,8 +4,8 @@ description: Learn how to set up the Cartesia provider and check AI Gateway avai
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/cartesia"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/cartesia.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "d6dd47fab7e65c5cad6481de1f70457845475dc1dcbadac3815c71b6027ff414"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "3a24cc3883ed363af4b919bbeb078fb6289df9ebfc7110c66eefde801fcbc7bb"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -232,13 +232,13 @@ The following provider options are available:
 
 ### Model Capabilities
 
-| Model          |
-| -------------- |
-| `sonic-3.5`    |
-| `sonic-3`      |
-| `sonic-2`      |
-| `sonic-turbo`  |
-| `sonic-latest` |
+| Model          | Instructions |
+| -------------- | ------------ |
+| `sonic-3.5`    | ✗            |
+| `sonic-3`      | ✗            |
+| `sonic-2`      | ✗            |
+| `sonic-turbo`  | ✗            |
+| `sonic-latest` | ✗            |
 
 ## Realtime Transcription Models
 
@@ -435,9 +435,29 @@ The following provider options are available:
 
 ### Model Capabilities
 
-| Model         | Transcription | Duration | Segments | Language |
-| ------------- | ------------- | -------- | -------- | -------- |
-| `ink-whisper` | ✓             | ✓        | ✓        | ✓        |
+| Model         | Transcription | Streaming | Duration | Segments | Language |
+| ------------- | ------------- | --------- | -------- | -------- | -------- |
+| `ink-whisper` | ✓             | ✗         | ✓        | ✓        | ✓        |
+| `ink-2`       | ✗             | ✓         | ✓        | ✗        | ✓        |
+
+### Provider Option Catalog
+
+| Operation     | Option                      | Description                                                                                                |
+| ------------- | --------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| speech        | `container`                 | Container format for the output audio (raw, wav, mp3).                                                     |
+| speech        | `encoding`                  | Encoding type for the audio output (pcm\_f32le, pcm\_s16le, pcm\_mulaw, pcm\_alaw).                        |
+| speech        | `sampleRate`                | Sample rate for the output audio in Hz (e.g. 8000, 16000, 22050, 24000, 44100, 48000).                     |
+| speech        | `bitRate`                   | Bitrate for mp3 output in bits per second (e.g. 32000, 64000, 128000, 192000).                             |
+| speech        | `speed`                     | Controls the speed of the generated speech.                                                                |
+| speech        | `volume`                    | Volume of the generated speech, between 0.5 and 2. Sonic 3 and newer.                                      |
+| speech        | `emotion`                   | Emotion of the generated speech. Beta, works best with English. Sonic 3 and newer.                         |
+| speech        | `language`                  | The language to generate speech in (ISO 639-1 code).                                                       |
+| speech        | `locale`                    | The regional locale code to generate speech in (e.g. 'en-GB', 'es-MX'). Supported for Sonic 3.6 and later. |
+| speech        | `normalization`             | Controls text normalization ('auto', 'off', or a language or locale code).                                 |
+| speech        | `pronunciationDictionaryId` | ID of a pronunciation dictionary created with the Cartesia API. Sonic 3 and newer.                         |
+| transcription | `language`                  | The language of the audio (ISO 639-1 code). Defaults to English.                                           |
+| transcription | `timestampGranularities`    | The timestamp granularities to populate. Currently only `word` is supported.                               |
+| transcription | `streaming`                 | Options for realtime Ink 2 transcription over WebSocket.                                                   |
 
 ---
 

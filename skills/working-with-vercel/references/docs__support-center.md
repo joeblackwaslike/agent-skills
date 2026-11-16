@@ -11,9 +11,10 @@ related:
   []
 summary: Learn how to communicate securely with the Vercel support team
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/support-center.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "bda86df9cdac751803c71dc28311d2cda76e020c931aec44ca0217712af0579d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4d7eaec8e9ea77669463ba5547e07135f83d470568a2f45df3db1896ad5df3ac"
 ---
 
 # Support Center
@@ -35,9 +36,9 @@ The Vercel Support Center provides a secure and streamlined way for you to submi
 - [What is the best way to get support from Vercel?](https://vercel.com/kb/guide/how-to-get-vercel-support) — Information on how to get help from Vercel Support through the available channels.
 - [Documentation, CLI, and Feedback](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation) — Find documentation, use the CLI, and share feedback with Vercel.
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Vercel Support Code Visibility, Git Fork Protection, and
+- [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
-- [Vercel security overview](https://vercel.com/docs/security) — Vercel provides built-in and customizable features to ensure that your site is secure.
+- [Shared Responsibility Model](https://vercel.com/docs/security/shared-responsibility) — Discover the essentials of our Shared Responsibility Model, outlining the key roles and responsibilities for customers,
 
 Full cross-link map for this page: [/docs/support-center.graph.md](/docs/support-center.graph.md)
 <!-- /docsgraph:related -->
@@ -79,6 +80,18 @@ The support team may request additional logs or other information from you that 
 2. Find the ticket from the list and click the ticket name to open it
 3. Click **Attach a File** to bring up your system file dialog. Select the relevant file and click **Upload**
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

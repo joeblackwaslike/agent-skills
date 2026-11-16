@@ -3,7 +3,7 @@ title: Access tokens
 product: vercel
 url: /docs/accounts/access-tokens
 canonical_url: "https://vercel.com/docs/accounts/access-tokens"
-last_updated: 2026-09-08
+last_updated: 2026-11-14
 type: how-to
 prerequisites:
   - /docs/accounts
@@ -11,13 +11,14 @@ related:
   - /docs/rest-api
   - /docs/cli/tokens
   - /docs/rest-api/authentication/create-an-auth-token
-  - /docs/rest-api/deployments/list-deployments
-  - /docs/accounts
+  - /docs/cli/deploy
+  - /docs/deployments/deploy-without-logging-in
 summary: Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate API and CLI requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/accounts/access-tokens.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "cecc4c4ad1de61fcc416513908aa88ddb1182457e3e8218f9f786f09e9c9355d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4ec402d1e4f48a958400d1bb38df64ddbe985e6d8529b1827e739228c1b31502"
 ---
 
 # Access tokens
@@ -34,14 +35,16 @@ Vercel access tokens authenticate requests to the [Vercel REST API](/docs/rest-a
 - [Project-scoped Tokens](https://vercel.com/changelog/project-scoped-tokens)
 - [Make Your First Vercel API Request](https://vercel.com/docs/rest-api/getting-started) — Create a scoped Vercel access token, make a read-only REST API request, and call the same operation with the Vercel SDK.
 - [Tokens](https://vercel.com/docs/sign-in-with-vercel/tokens) — Learn how to Sign in with Vercel
-- [List Auth Tokens](https://vercel.com/docs/rest-api/authentication/list-auth-tokens) — GET /v6/user/tokens — Retrieve a list of the current User's authentication tokens.
 - [Scopes and Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions) — Learn how to manage scopes and permissions for Sign in with Vercel
-- [Create an access group project](https://vercel.com/docs/rest-api/access-groups/create-an-access-group-project) — POST /v1/access-groups/{accessGroupIdOrName}/projects — Allows creation of an access group project
+- [Authentication in Vercel Connect](https://vercel.com/docs/connect/concepts/authentication) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
+- [Generate a project OIDC token](https://vercel.com/docs/rest-api/projects/generate-a-project-oidc-token) — POST /v1/projects/{idOrName}/token — Generates an OIDC token for the project and returns it.
 
 Full cross-link map for this page: [/docs/accounts/access-tokens.graph.md](/docs/accounts/access-tokens.graph.md)
 <!-- /docsgraph:related -->
 
 A token's value appears only once, at creation, so copy it then and store it somewhere secure because you cannot retrieve it again afterward. Every token carries a scope that determines which resources it can reach. This page explains the three scoping levels and walks through [creating a **project-scoped token**](#project-scoped-access-token), which limits a token to a single project.
+
+If you're looking for a token so you can deploy, and you don't have a Vercel account yet, you don't need one. Run [`vercel deploy --temporary`](/docs/cli/deploy#temporary) to deploy without credentials, then claim the project. See [Deploying without logging in](/docs/deployments/deploy-without-logging-in).
 
 ## Token scoping levels
 
@@ -177,13 +180,63 @@ You can create tokens without the dashboard through two paths.
 > **💡 Note:** Creating a full-account token through the CLI or API, or a team-scoped token through the API, requires a full-account token. A team-scoped token can create only project-scoped tokens for projects in its team. A
 > project-scoped token cannot mint new tokens.
 
+## Review a token's use
+
+The Vercel REST API returns when a request last used a token, and your team's Activity Log shows which events happened on the team and the user involved in each one.
+
+### Read a token's last-used timestamp with the REST API
+
+The [Get Auth Token Metadata](/docs/rest-api/authentication/get-auth-token-metadata) endpoint, `GET /v5/user/tokens/{tokenId}`, returns the token's `activeAt` field, the timestamp in milliseconds of the most recent request that used the token. Pass `current` as the `tokenId` to read the metadata for the token that authenticates the request. With your token in the `VERCEL_ACCESS_TOKEN` environment variable, run:
+
+```bash filename="terminal"
+curl "https://api.vercel.com/v5/user/tokens/current" \
+  -H "Authorization: Bearer $VERCEL_ACCESS_TOKEN"
+```
+
+The response contains a `token` object with `activeAt` alongside the token's other metadata:
+
+```json
+{
+  "token": {
+    "activeAt": 1234567890123,
+    "createdAt": 1234567890123,
+    "id": "your_token_id_here",
+    "name": "your_token_name_here",
+    "type": "token"
+  }
+}
+```
+
+To check all of your tokens, call the [List Auth Tokens](/docs/rest-api/authentication/list-auth-tokens) endpoint, `GET /v6/user/tokens`, which returns `activeAt` for each token in its `tokens` array. This endpoint requires a Full Account token. It returns tokens in pages. When `pagination.next` isn't `null`, pass its value as the `until` query parameter to request the next page.
+
+### Review team events in the Activity Log or Audit Logs
+
+The [Activity Log](/docs/activity-log), available on all plans, lists the events on a team with the user involved, the type of event, and the time it happened. See [Events logged](/docs/activity-log#events-logged) for the events the Activity Log records, or query the same events from the command line with [`vercel activity`](/docs/cli/activity).
+
+On Enterprise plans, team members with the owner or security role can use [Audit Logs](/docs/audit-log) for security review. Audit Logs include Activity Log events and additional audit metadata. You can export Audit Logs as a CSV file for the last 90 days, or forward them to an external destination with [Audit Log Drains](/docs/drains/reference/audit-logs).
+
 ## Related
 
 - [Vercel REST API authentication](/docs/rest-api#creating-an-access-token)
 - [Managing tokens with the Vercel CLI](/docs/cli/tokens)
 - [Create an auth token API endpoint](/docs/rest-api/authentication/create-an-auth-token)
 - [Account Management](/docs/accounts)
+- [Get Auth Token Metadata API endpoint](/docs/rest-api/authentication/get-auth-token-metadata)
+- [Activity Log](/docs/activity-log)
+- [Audit Logs](/docs/audit-log)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

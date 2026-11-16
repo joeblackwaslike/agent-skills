@@ -16,9 +16,10 @@ related:
   - /docs/functions
 summary: Process Chat SDK jobs with Vercel Queues and Daemons, using Vercel Connect for Slack credentials and event delivery.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/chat-sdk/integrations/daemons.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f33cd727506745e86d9ae66de1ac69543ce0588a97756739fda513ec081bc8b8"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5a90a96c8706acf26ab96fb8246be002791b67615a7a2a1f5450284bed72c526"
 ---
 
 # Chat SDK with Vercel Daemons
@@ -37,6 +38,7 @@ Process work from a [Chat SDK](/docs/chat-sdk) bot in a [Vercel Daemon](/docs/da
 - [The Complete Guide to Chat SDK](https://vercel.com/kb/guide/the-complete-guide-to-chat-sdk) — Chat SDK is a TypeScript library for building chat bots that work across Slack, Teams, Discord, Linear, and more from a
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/chat-sdk/integrations/connect) — Use Vercel Connect for Chat SDK platform credentials, verified webhooks, and separate per-user tool access.
 - [Chat SDK with Next.js](https://vercel.com/docs/chat-sdk/frameworks/nextjs) — Add a Chat SDK bot to Next.js, receive Slack events through Vercel Connect, and deploy on Vercel.
+- [Background Workers on Vercel](https://vercel.com/docs/background-workers) — Run background jobs on Vercel, from continuous workers with Daemons to queued tasks, scheduled jobs, and durable workflo
 - [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
 
 Full cross-link map for this page: [/docs/chat-sdk/integrations/daemons.graph.md](/docs/chat-sdk/integrations/daemons.graph.md)
@@ -407,6 +409,18 @@ No. During the beta, daemons run only in production deployments. To test a worke
 - [Run durable chat tasks with Vercel Workflows](/docs/chat-sdk/integrations/workflows)
 - [Manage Vercel Daemons](/docs/daemons/managing-daemons)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

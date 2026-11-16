@@ -15,9 +15,10 @@ related:
   - /docs/observability/log-drains
 summary: The request was blocked by the OWASP Core Ruleset managed ruleset because its cumulative anomaly score exceeded the configured threshold.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/anomaly_score_exceeded.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "a49c599f4c0370c2e1d6e9f15ebddb8deee15ed828103c02b874307269f7bbdb"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2852e65af2340f74bee546b51c1b915d98f096cf928f173f849810482160fa9c"
 ---
 
 # ANOMALY_SCORE_EXCEEDED
@@ -128,6 +129,18 @@ For continuous monitoring, use [Log Drains](/docs/observability/log-drains) with
 
 You can also manage firewall rules as code using the [Terraform provider](https://registry.terraform.io/providers/vercel/vercel/latest/docs/resources/firewall_config) with the `vercel_firewall_config` resource.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

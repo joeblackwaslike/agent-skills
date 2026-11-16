@@ -15,9 +15,10 @@ related:
   - /docs/integrations/install-an-integration/manage-integrations-reference
 summary: "Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing tools, connect to your CMS,..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/install-an-integration.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c8ea7cebbdec1c78bb3889f6c8fc111e4ebcaa50f75edb32756c302ff8758a3b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ff9e0848bf95f026ca6d49ab38f7b8086bc9d3a437b6bad4f793d64d97fbe28a"
 ---
 
 # Install an Integration
@@ -33,11 +34,11 @@ Using Vercel doesn't stop at the products and features that we provide. Through 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
-- [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
 - [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
 - [vercel install](https://vercel.com/docs/cli/install) — Learn how to install marketplace native integrations and provision resources with the vercel install CLI command.
+- [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
 - [Create a Native Integration](https://vercel.com/docs/integrations/create-integration/marketplace-product) — Learn how to create a product for your Vercel native integration
-- [Create an Integration](https://vercel.com/docs/integrations/create-integration) — Learn how to create and manage your own integration for internal or public use with Vercel.
+- [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
 
 Full cross-link map for this page: [/docs/integrations/install-an-integration.graph.md](/docs/integrations/install-an-integration.graph.md)
 <!-- /docsgraph:related -->
@@ -91,6 +92,18 @@ We suggest reviewing the terms and policies for the integration and/or
 contacting the integration creator directly for further information on their
 privacy practices.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

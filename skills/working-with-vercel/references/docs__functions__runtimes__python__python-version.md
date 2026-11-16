@@ -12,9 +12,10 @@ related:
   - /docs/functions/runtimes/python
 summary: Set the Python version for your Vercel project with pyproject.toml, .python-version, or Pipfile.lock.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/runtimes/python/python-version.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "a03cdbecab92351425e677961bf889f3f11081a30fb320d54658bde7e722f899"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "93ff2dd200b3e53e2e838d33b0141336e54640f810fb5f672f932af75cd5ddcc"
 ---
 
 # Set the Python version for your Vercel project
@@ -35,12 +36,12 @@ the default Python version.
 - [How to ship a Flask app on Vercel](https://vercel.com/kb/guide/ship-a-flask-app-on-vercel) — Deploy a Flask app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
 - [Python 3.13 and 3.14 are now available ](https://vercel.com/changelog/python-3-13-and-3-14-are-now-available)
 - [Python on Vercel is now generally available](https://vercel.com/changelog/python-on-vercel-is-now-generally-available)
+- [Python 3.9 is now available](https://vercel.com/changelog/python-3-9-is-now-available)
+- [Python 3.6 is being deprecated](https://vercel.com/changelog/python-3-6-is-being-deprecated)
 - [Python 3.12 and Ruby 3.3 are now available](https://vercel.com/changelog/python-3-12-and-ruby-3-3-are-now-available)
-- [Python on Vercel is now generally available](https://vercel.com/blog/python-on-vercel-is-now-generally-available)
 - [Supported Node.js versions](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions) — Learn about the supported Node.js versions on Vercel.
 - [General settings](https://vercel.com/docs/project-configuration/general-settings) — Configure basic settings for your Vercel project, including the project name, build and development settings, root direc
 - [Package Managers](https://vercel.com/docs/package-managers) — Discover the package managers supported by Vercel for dependency management. Learn how Vercel detects and uses npm, Yarn
-- [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
 
 Full cross-link map for this page: [/docs/functions/runtimes/python/python-version.graph.md](/docs/functions/runtimes/python/python-version.graph.md)
 <!-- /docsgraph:related -->
@@ -91,6 +92,18 @@ version.
 
 - [Using the Python Runtime with Vercel Functions](/docs/functions/runtimes/python)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

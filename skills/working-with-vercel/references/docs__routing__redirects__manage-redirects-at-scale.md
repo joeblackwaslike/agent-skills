@@ -15,9 +15,10 @@ related:
   - /docs/project-configuration
 summary: Add, bulk upload, version, and roll back project-level redirects using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/routing/redirects/manage-redirects-at-scale.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "39466bd7d27e8ae04b1afd4691de41a2a1055a00f2db806a5e25f9b24d907e64"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "243921ad8da01d2cf8b2ab34b451e5bbdc3e32edf86e20ea6c639b57a755af51"
 ---
 
 # Managing redirects at scale
@@ -31,13 +32,12 @@ Use this guide to manage project-level redirects from the CLI. You'll add indivi
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
-- [Scaling redirects to infinity on Vercel](https://vercel.com/blog/scaling-redirects-to-infinity-on-vercel)
-- [Bulk redirects UI, API, and CLI now generally available](https://vercel.com/changelog/bulk-redirects-ui-api-and-cli-now-generally-available)
+- [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
 - [Getting Started](https://vercel.com/docs/routing/redirects/bulk-redirects/getting-started) — Learn how to import thousands of simple redirects from CSV, JSON, or JSONL files.
 - [Bulk Redirects](https://vercel.com/docs/routing/redirects/bulk-redirects) — Learn how to import thousands of simple redirects from CSV, JSON, or JSONL files.
 - [Edit a project-level redirect.](https://vercel.com/docs/rest-api/bulk-redirects/edit-a-project-level-redirect) — PATCH /v1/bulk-redirects — Edits a single redirect identified by its source path. Stages a new change with the modified
 - [Configuration Redirects](https://vercel.com/docs/routing/redirects/configuration-redirects) — Learn how to define static redirects in your framework configuration or vercel.json with support for wildcards, pattern
-- [Deploying & Redirecting Domains](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting) — Learn how to deploy your domains and set up domain redirects with this guide.
+- [Stages new redirects for a project.](https://vercel.com/docs/rest-api/bulk-redirects/stages-new-redirects-for-a-project) — PUT /v1/bulk-redirects — Stages new redirects for a project and returns the new version.
 
 Full cross-link map for this page: [/docs/routing/redirects/manage-redirects-at-scale.graph.md](/docs/routing/redirects/manage-redirects-at-scale.graph.md)
 <!-- /docsgraph:related -->
@@ -194,6 +194,18 @@ This immediately reverts the live redirects to the selected version.
 - [Redirects overview](/docs/routing/redirects)
 - [Project configuration](/docs/project-configuration)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

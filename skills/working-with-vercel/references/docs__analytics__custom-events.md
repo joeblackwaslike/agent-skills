@@ -15,9 +15,10 @@ related:
   - /docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation
 summary: Learn how to send custom analytics events from your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/analytics/custom-events.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a5a70cec1e0e0d3c041295ec7952dd8147d305db8deb4ab9d6b708b8c3be1232"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "384e33dd7d3cfc7a32ffa868973d202c0c010375ec50f74f51b3c68a11182370"
 ---
 
 # Tracking custom events
@@ -34,15 +35,16 @@ This is useful for tracking user interactions, such as button clicks, form submi
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Track server-side custom events with Vercel Web Analytics](https://vercel.com/changelog/track-server-side-custom-events-with-vercel-web-analytics)
+- [Deploy a Shopify storefront with an AI assistant](https://vercel.com/kb/guide/deploy-shopify-ai-storefront) — Deploy an eve shopping agent with Vercel Shop to find Shopify products, manage carts, and answer store questions.
 - [How to deploy a Python backend with Vercel Services ](https://vercel.com/kb/guide/python-backend-on-vercel) — Deploy a Python backend with a Next.js frontend on Vercel. Learn how to configure both apps with Vercel Services, use a
 - [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
 - [Custom events now available for Web Analytics](https://vercel.com/changelog/custom-events-now-available-for-web-analytics)
 - [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available)
 - [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
 - [Aggregates custom events](https://vercel.com/docs/rest-api/web-analytics/aggregates-custom-events) — GET /v1/query/web-analytics/events/aggregate — Counts custom events on a project, within the requested date range. Resul
-- [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
-- [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
 - [Get Started with BotID](https://vercel.com/docs/botid/get-started) — Step-by-step guide to setting up BotID protection in your Vercel project
+- [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
+- [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 
 Full cross-link map for this page: [/docs/analytics/custom-events.graph.md](/docs/analytics/custom-events.graph.md)
 <!-- /docsgraph:related -->
@@ -502,6 +504,18 @@ Once you have tracked an event, you can view and filter for it in the dashboard.
 3. The events panel displays a list of all the event names that you have created in your project. Select the event name to drill down into the event data.
 4. The event details page displays a list, organized by custom data properties, of all the events that have been tracked.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

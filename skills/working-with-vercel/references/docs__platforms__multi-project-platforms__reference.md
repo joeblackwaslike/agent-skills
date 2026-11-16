@@ -16,9 +16,10 @@ related:
   - /docs/rest-api/deployments/list-deployments
 summary: API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/platforms/multi-project-platforms/reference.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "5816722a432484fb8a3a77ff6775916562cffcdae2585770bd73bcbcdea9598c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "32d9d46c73efff7c4e0e27fd730017ed3fd5a5fc6025b1c0e65a61fb368c51f5"
 ---
 
 # Multi-Project Platforms Reference
@@ -34,12 +35,11 @@ Start with our Custom [Blocks](/docs/platforms/platform-elements/blocks/deploy-p
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing Vercel for Platforms](https://vercel.com/changelog/introducing-vercel-for-platforms)
-- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
 - [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
-- [Multi-Tenant Platforms](https://vercel.com/docs/platforms/multi-tenant-platforms) — Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
-- [Multi-Tenant Platform Concepts](https://vercel.com/docs/platforms/multi-tenant-platforms/concepts) — Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
+- [Managing projects](https://vercel.com/docs/projects/managing-projects) — Learn how to manage your projects through the Vercel Dashboard.
 - [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart) — Build a multi-tenant Next.js app on your computer, then add wildcard and custom domains on Vercel.
+- [Multi-Tenant Platforms](https://vercel.com/docs/platforms/multi-tenant-platforms) — Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
 
 Full cross-link map for this page: [/docs/platforms/multi-project-platforms/reference.graph.md](/docs/platforms/multi-project-platforms/reference.graph.md)
 <!-- /docsgraph:related -->
@@ -353,6 +353,18 @@ Instead, build your own interface for tenants to:
 - [Quickstart](/docs/platforms/multi-project-platforms/quickstart): Get started with multi-project platforms
 - [Vercel SDK](/docs/rest-api/sdk): Complete SDK documentation
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

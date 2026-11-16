@@ -12,9 +12,10 @@ related:
   []
 summary: Use get_deployment_file_contents with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_file_contents.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "1ff03f4c96ebcf98e14d6eba356ca6a24671e7fee41ee730a7778e5535223709"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "695afd26c70d0bc2f9738ead60250c5eb8f1ec012aefbfae03e07178972bbb52"
 ---
 
 # get_deployment_file_contents
@@ -30,8 +31,8 @@ Get Deployment File Contents.
 - [Get Deployment File Contents](https://vercel.com/docs/rest-api/deployments/get-deployment-file-contents) — GET /v8/deployments/{id}/files/{fileId} — Allows to retrieve the content of a file by supplying the file identifier and
 - [list_deployment_files](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_files) — Use list_deployment_files with Vercel MCP.
 - [get_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment) — Use get_deployment with Vercel MCP.
-- [get_deployment_feature_flags](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_feature_flags) — Use get_deployment_feature_flags with Vercel MCP.
 - [List Deployment Files](https://vercel.com/docs/rest-api/deployments/list-deployment-files) — GET /v6/deployments/{id}/files — Allows to retrieve the file structure of the source code of a deployment by supplying t
+- [get_git_deployment_context](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_git_deployment_context) — Use get_git_deployment_context with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_file_contents.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_file_contents.graph.md)
 <!-- /docsgraph:related -->
@@ -46,6 +47,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deplo
 | `teamId`  | string | No       | Team ID to use for this operation.                          |
 | `slug`    | string | No       | Team slug to use for this operation. Use instead of teamId. |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

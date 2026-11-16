@@ -15,9 +15,10 @@ related:
   - /docs/domains/working-with-domains/add-a-domain
 summary: Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains/managing-dns-records.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "050956028f164ac28e2e034d83f70604b395faffbac03831f1f861b6b7941b7a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "305379a22bada4c3ff4a98007850d0431036af5f5bd7af03ab30975059e60269"
 ---
 
 # Managing DNS Records
@@ -319,6 +320,18 @@ In your registrar's dashboard (where you bought the domain), change the Nameserv
 Nameserver changes can take up to 48 hours to propagate. If you bought the domain from Vercel, you can
 [manage nameservers](https://vercel.com/docs/domains/managing-nameservers) from the [domains page](https://vercel.com/dashboard/domains).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

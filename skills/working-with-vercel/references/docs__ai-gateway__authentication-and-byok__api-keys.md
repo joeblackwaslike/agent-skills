@@ -16,9 +16,10 @@ related:
   - /docs/rest-api
 summary: "Create, view, and delete AI Gateway API keys, and set each key's budget and spend attribution, from the dashboard, CLI, or API."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok/api-keys.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "bda020e9cc3e76c69412b52c5b1de3925b774a1ed609ea6e7db1455dd7c00538"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a486d9c1e8fd516fc8f922ffb6732b5d2b561cc3d21523724d6f8536645bb615"
 ---
 
 # AI Gateway API Keys
@@ -36,13 +37,13 @@ Use API keys to authenticate AI Gateway requests. You can:
 - [AI Gateway adds DeepSeek Search and Fetch tools](https://vercel.com/changelog/ai-gateway-adds-deepseek-search-and-fetch-tools)
 - [Budgets for API keys on AI Gateway](https://vercel.com/changelog/budgets-for-api-keys-on-ai-gateway)
 - [Cat Jam is now available in stealth for free on AI Gateway](https://vercel.com/changelog/cat-jam-is-now-available-in-stealth-for-free-on-ai-gateway)
-- [Claude Sonnet 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-sonnet-5-5-now-available-on-ai-gateway)
+- [Claude Fable 5.2 now available on AI Gateway](https://vercel.com/changelog/claude-fable-5-2-now-available-on-ai-gateway)
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
 - [Self-Hosting Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/self-hosting) — Keep durable agent harness sessions in another World, such as Postgres, and run Pi, Claude Code, Codex, OpenCode, and fx
 - [Amp with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/amp) — Connect Amp to AI Gateway through Amp's Model Routing settings. Add an AI Gateway API key, choose models for Amp's modes
 - [AI Gateway Custom Reporting API](https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting) — Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
-- [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
+- [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis) — Connect to AI Gateway with the AI SDK, Python, Go, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Co
 
 Full cross-link map for this page: [/docs/ai-gateway/authentication-and-byok/api-keys.graph.md](/docs/ai-gateway/authentication-and-byok/api-keys.graph.md)
 <!-- /docsgraph:related -->
@@ -209,6 +210,18 @@ curl -X POST "https://api.vercel.com/external/compromised_secret" \
   -d '{ "secret": { "api_key": "vck_..." } }'
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

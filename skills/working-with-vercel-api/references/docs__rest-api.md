@@ -3,7 +3,7 @@ title: Vercel REST API Reference
 product: vercel
 url: /docs/rest-api
 canonical_url: "https://vercel.com/docs/rest-api"
-last_updated: 2026-11-09
+last_updated: 2026-11-16
 type: reference
 prerequisites:
   []
@@ -15,9 +15,10 @@ related:
   - /docs/rest-api/access-groups/list-access-groups-for-a-team-project-or-member.md
 summary: Interact programmatically with your Vercel account using the SDK or direct HTTP requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/rest-api.md"
-fetched_at: "2026-11-09T12:41:17.654Z"
-sha256: "a0078d03e42f66f88da76654d43e656c0a15f7c35c1b971713580f9d79e2d508"
+fetched_at: "2026-11-16T12:35:06.708Z"
+sha256: "eec0ac313b5bc7e80a83d89c1cc440d589eb59ed2ecefa2e55fe15b278971104"
 ---
 
 # Vercel REST API Reference
@@ -246,6 +247,16 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **PATCH** | [`/v1/drains/{id}`](/docs/rest-api/drains/update-an-existing-drain.md) | Update an existing Drain |
 | **DELETE** | [`/v1/drains/{id}`](/docs/rest-api/drains/delete-a-drain.md) | Delete a drain |
 | **POST** | [`/v1/drains/test`](/docs/rest-api/drains/validate-drain-delivery-configuration.md) | Validate Drain delivery configuration |
+
+## Drives
+
+| Method | Endpoint | Description |
+|---|---|---|
+| **GET** | [`/v1/drives`](/docs/rest-api/drives/list-drives.md) | List drives |
+| **GET** | [`/v1/drives/{nameOrId}`](/docs/rest-api/drives/get-a-drive.md) | Get a drive |
+| **DELETE** | [`/v1/drives/{nameOrId}`](/docs/rest-api/drives/delete-a-drive.md) | Delete a drive |
+| **POST** | [`/v1/drives/{name}`](/docs/rest-api/drives/get-or-create-a-drive.md) | Get or create a drive |
+| **POST** | [`/v1/drives/{name}/fork`](/docs/rest-api/drives/fork-a-drive.md) | Fork a drive |
 
 ## CDN Cache
 
@@ -520,11 +531,6 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 |---|---|---|
 | **GET** | [`/v2/sandboxes`](/docs/rest-api/sandboxes/list-sandboxes.md) | List sandboxes |
 | **POST** | [`/v2/sandboxes`](/docs/rest-api/sandboxes/create-a-named-sandbox.md) | Create a named sandbox |
-| **GET** | [`/v2/sandboxes/drives`](/docs/rest-api/sandboxes/list-drives.md) | List drives |
-| **GET** | [`/v2/sandboxes/drives/{nameOrId}`](/docs/rest-api/sandboxes/get-a-drive.md) | Get a drive |
-| **POST** | [`/v2/sandboxes/drives/{name}`](/docs/rest-api/sandboxes/get-or-create-a-drive.md) | Get or create a drive |
-| **DELETE** | [`/v2/sandboxes/drives/{name}`](/docs/rest-api/sandboxes/delete-a-drive.md) | Delete a drive |
-| **POST** | [`/v2/sandboxes/drives/{name}/fork`](/docs/rest-api/sandboxes/fork-a-drive.md) | Fork a drive |
 | **GET** | [`/v2/sandboxes/snapshots`](/docs/rest-api/sandboxes/list-snapshots.md) | List snapshots |
 | **GET** | [`/v2/sandboxes/snapshots/{snapshotId}`](/docs/rest-api/sandboxes/get-a-snapshot.md) | Get a snapshot |
 | **DELETE** | [`/v2/sandboxes/snapshots/{snapshotId}`](/docs/rest-api/sandboxes/delete-a-snapshot.md) | Delete a snapshot |
@@ -712,6 +718,19 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 - [REST API errors](/docs/rest-api/errors)
 
 - [OpenAPI spec](https://vercel.com/openapi.json) (machine-readable, all endpoints)
+
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

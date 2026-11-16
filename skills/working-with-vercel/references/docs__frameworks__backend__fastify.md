@@ -3,7 +3,7 @@ title: Fastify on Vercel
 product: vercel
 url: /docs/frameworks/backend/fastify
 canonical_url: "https://vercel.com/docs/frameworks/backend/fastify"
-last_updated: 2026-08-10
+last_updated: 2026-11-14
 type: how-to
 prerequisites:
   - /docs/frameworks/backend
@@ -16,9 +16,10 @@ related:
   - /docs/vercel-firewall
 summary: Deploy Fastify applications to Vercel with zero configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/backend/fastify.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "386d54eec8b0d9c066cc323eef4b1b597f74c9cb5eec0a9324460e0bf2acc4df"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "72cbb44dc102b26942ee2b1349504702a614f2fc07b0067e4443017e154c65df"
 ---
 
 # Fastify on Vercel
@@ -35,8 +36,8 @@ Fastify is a web framework highly focused on providing the best developer experi
 - [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
 - [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
 - [Build with a FastAPI starter template](https://vercel.com/kb/guide/build-with-a-fastapi-starter-template) — Browse FastAPI starter templates for Vercel and deploy one in a few steps. Compare minimal, AI, agent, and full-stack Fa
+- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
 - [Deploy a FastAPI app on Vercel](https://vercel.com/docs/frameworks/backend/fastapi) — Deploy a FastAPI app on Vercel. Learn how the Python runtime, ASGI, static assets, and Vercel Functions work together.
-- [Express on Vercel](https://vercel.com/docs/frameworks/backend/express) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
 - [NestJS on Vercel](https://vercel.com/docs/frameworks/backend/nestjs) — Deploy NestJS applications to Vercel with zero configuration.
 
 Full cross-link map for this page: [/docs/frameworks/backend/fastify.graph.md](/docs/frameworks/backend/fastify.graph.md)
@@ -99,6 +100,16 @@ vc deploy
 
 > **💡 Note:** Minimum CLI version required: 48.6.0
 
+## Deploy without an account
+
+To deploy your Fastify app without an account or login, run this command in the project root:
+
+```bash filename="terminal"
+vercel deploy --temporary
+```
+
+The CLI builds the project, deploys it to production, and prints a claim URL. Claim the project to keep it live. See [Deploying without logging in](/docs/deployments/deploy-without-logging-in).
+
 ## Vercel Functions
 
 When you deploy a Fastify app to Vercel, your Fastify application becomes a single [Vercel Function](/docs/functions) and uses [Fluid compute](/docs/fluid-compute) by default. This means your Fastify app will automatically scale up and down based on traffic.
@@ -128,6 +139,18 @@ Learn more about deploying Fastify projects on Vercel with the following resourc
 - [Vercel Functions documentation](/docs/functions)
 - [Backend templates on Vercel](https://vercel.com/templates?type=backend)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

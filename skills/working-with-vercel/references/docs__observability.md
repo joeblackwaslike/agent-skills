@@ -15,9 +15,10 @@ related:
   - /docs/query
 summary: Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/observability.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "49df6dd4d59f66c58729f93788b40b04e2f74f9965fe55b271042cf701ce2516"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ea2ad3a748d7aa836ced81547ea303bf168e585cfb4a5088a45c1f68a9885446"
 ---
 
 # Observability
@@ -32,16 +33,16 @@ Find production errors, capture request traces, and discover queryable metrics f
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Observability is now generally available](https://vercel.com/changelog/vercel-observability-is-now-generally-available)
 - [AI query prompting now available in Observability Plus](https://vercel.com/changelog/ai-query-prompting-now-available-in-observability-plus)
 - [AI traffic insights now available in Vercel Observability](https://vercel.com/changelog/ai-traffic-insights-now-available-in-vercel-observability)
 - [Anomaly alert configuration now available](https://vercel.com/changelog/anomaly-alert-configuration-now-available)
 - [Create and share queries with notebooks in Vercel Observability](https://vercel.com/changelog/create-and-share-queries-with-notebooks-in-vercel-observability)
-- [Edge Function metrics now available in Monitoring](https://vercel.com/changelog/edge-function-metrics-now-available-in-monitoring)
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
-- [Capture AI SDK token usage, tool calls, and cost with evlog](https://vercel.com/kb/guide/ai-sdk-and-evlog) — Record AI SDK usage with evlog, add cost estimates and request context, and investigate expensive or failed requests.
 - [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
 - [Caching audits: Five antipatterns that cost you performance and money](https://vercel.com/kb/guide/caching-antipatterns) — Five caching antipatterns from hundreds of Vercel technical audits: write amplification, deploy-wiped caches, spinner sh
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
+- [Build an incident response sre agent with eve](https://vercel.com/kb/guide/eve-incident-sre-agent) — sre is an incident response agent for Slack. It investigates production issues using a hypothesis-driven approach and re
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure)
 - [How to integrate AI into your business](https://vercel.com/blog/how-to-integrate-ai-into-your-business)
 
@@ -166,6 +167,20 @@ For step-by-step debugging workflows using the Vercel CLI with Observability dat
 - [Capture AI SDK token usage, tool calls, and cost with evlog](https://vercel.com/kb/guide/ai-sdk-and-evlog): Record AI SDK usage with evlog, add cost estimates and request context, and investigate expensive or failed requests.
 - [Trace and debug eve agent runs](https://vercel.com/kb/guide/trace-and-debug-eve-agent-runs): Inspect eve traces in Vercel Agent Runs, control captured content, export OpenTelemetry spans, and test fixes with regression evals.
 - [Optimize Runtime Cache on Vercel](https://vercel.com/kb/guide/optimize-runtime-cache-reads-on-vercel): Diagnose rising Runtime Cache usage, trace reads to tags and code paths, and reduce avoidable reads while checking write cost and origin traffic.
+- [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data): Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with Vercel AI Gateway.
+
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

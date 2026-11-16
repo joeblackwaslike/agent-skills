@@ -11,9 +11,10 @@ related:
   - /docs/conformance/customize
 summary: "Prevent the use of dependencies without a caret (\"^\") as a prefix."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/require_caret_dependencies.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a543d0815620959a272cf293a6152ea5049528ddbe88020ebf1ba5ec1123aefc"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5fef77ea9da4a0ed504a1f8d9efb08ebccba0b1a53db0c54f5eda6cec34214ea"
 ---
 
 # REQUIRE_CARET_DEPENDENCIES
@@ -58,6 +59,18 @@ If you hit this issue, you can resolve it by adding a `"^"` to the version of yo
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

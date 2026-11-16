@@ -12,9 +12,10 @@ related:
   []
 summary: Use git_namespaces with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/git_namespaces.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ed4c38284a9218cc35e20fd56f5a66ebde671fb15633ee8130dad827453e4c11"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7b824ee45f4e2379ffddaf977fc2d3dd03d698c87fbb1dac6d67ed59d30253b8"
 ---
 
 # git_namespaces
@@ -45,6 +46,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/proje
 | `provider`       | string  | No       | Allowed values: `"github"`, `"github-limited"`, `"github-custom-host"`, `"gitlab"`, `"bitbucket"`. |
 | `viewerMetadata` | boolean | No       | When true, includes the viewer object for each namespace.                                          |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -14,9 +14,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis/ai-sdk-python
 summary: Generate spoken audio from text with speech models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/modalities/text-to-speech.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "2efdcd9ac7d9a9897e93108866f423b5ba0350533ca32575883ebe55f77f317b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "709e7c73deb28cbd37e6bb0911b006fbd5708b68b7ded11eca8b702539875337"
 ---
 
 # AI Gateway Text to Speech
@@ -35,7 +36,6 @@ Generate spoken audio from text with ElevenLabs, Google, Microsoft, and OpenAI s
 - [ElevenLabs on AI Gateway](https://vercel.com/blog/elevenlabs-on-ai-gateway)
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway)
 - [Microsoft AI models are now available on AI Gateway](https://vercel.com/changelog/microsoft-ai-models-are-now-available-on-ai-gateway)
-- [generateSpeech](https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-speech) — API Reference for generateSpeech.
 - [xAI Grok audio models now available on Vercel AI Gateway](https://vercel.com/changelog/xai-grok-audio-models-now-available-on-vercel-ai-gateway)
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 
@@ -508,6 +508,18 @@ The response is a JSON object with the base64-encoded audio:
 - Microsoft speech models don't support `instructions`. Set the delivery with `providerOptions.azure.style` instead.
 - Microsoft speech models reject unknown voices and unsupported styles.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

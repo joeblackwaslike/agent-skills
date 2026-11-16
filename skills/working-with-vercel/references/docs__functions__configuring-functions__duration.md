@@ -16,9 +16,10 @@ related:
   - /docs/networking/secure-compute
 summary: Learn how to set the maximum duration of a Vercel Function.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/configuring-functions/duration.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f2a354e81e510822890904b132cf17680a19434515a8814bcadf6b0cbc41cf51"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3f0c9b7611b4c8180f6ad3c7811fd8e9ef65423163e57d8c2321089ccdae07a8"
 ---
 
 # Configuring Maximum Duration for Vercel Functions
@@ -38,10 +39,10 @@ The maximum duration configuration determines the longest time that a function c
 - [Vercel Functions for Hobby can now run up to 60 seconds](https://vercel.com/changelog/vercel-functions-for-hobby-can-now-run-up-to-60-seconds)
 - [Workflow steps now support extended function durations](https://vercel.com/changelog/workflow-steps-now-support-extended-function-durations)
 - [Running background workers on Vercel](https://vercel.com/kb/guide/background-workers-on-vercel) — Run background jobs on Vercel with waitUntil, Cron Jobs, Queues, Workflows, Daemons, or Sandbox. Compare the options and
-- [How to build a Shopify MCP agent on Vercel](https://vercel.com/kb/guide/build-a-shopify-mcp-agent-on-vercel) — Build a Shopify MCP agent on Vercel with AI SDK 7. Connect to Shopify's UCP MCP servers, update carts safely, and hand t
 - [Building an AI chat app with RAG and source citations on Vercel](https://vercel.com/kb/guide/building-ai-chat-app-with-rag-and-citations-on-vercel) — A production stack for AI chat with retrieval, reranking, source citations, and background ingestion on Vercel using Nex
 - [Do Vercel Functions support WebSocket connections?](https://vercel.com/kb/guide/do-vercel-serverless-functions-support-websocket-connections) — Vercel Functions serve WebSocket connections natively, in public beta on all plans. Learn how connections pin to instanc
 - [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
+- [Publish and subscribe to realtime data on Vercel](https://vercel.com/kb/guide/publish-and-subscribe-to-realtime-data-on-vercel) — Learn how to publish and subscribe to realtime data on Vercel with WebSockets, SSE, Redis, and Queues, and when a manage
 - [Introducing Spend Management](https://vercel.com/blog/introducing-spend-management-realtime-usage-alerts-sms-notifications)
 
 Full cross-link map for this page: [/docs/functions/configuring-functions/duration.graph.md](/docs/functions/configuring-functions/duration.graph.md)
@@ -432,6 +433,16 @@ The dashboard sets the project default. During the extended max duration beta, u
 
 This glob pattern will match *everything* in the specified path, so you may wish to be more specific by adding a file type, such as `app/api/**/*.ts` instead.
 
+## Maximum duration of a deployment
+
+To check the max duration that a specific deployment's functions run with, run `vercel inspect` with the `--json` flag against that deployment's URL:
+
+```bash filename="terminal"
+vercel inspect <deployment-url> --json
+```
+
+The JSON output lists each function's max duration as `timeout` and its memory size as `memorySize`. The default `vercel inspect` output doesn't show max duration or memory, so include `--json`. To find out what is useful to check in this output, see [Check function configuration](/docs/functions/debug-slow-functions#3.-check-function-configuration) in Debugging slow Vercel Functions. To view a deployment's function memory size in the dashboard instead, see [Viewing your function memory size](/docs/functions/configuring-functions/memory#viewing-your-function-memory-size).
+
 ## Duration limits
 
 Vercel Functions have the following defaults and maximum limits for the duration of a function with [fluid compute](/docs/fluid-compute) (enabled by default):
@@ -448,6 +459,18 @@ The 800 second maximum is generally available for Pro and Enterprise teams. For 
 > Workflows](/docs/workflows), which allow your code to pause, resume, and
 > maintain state for minutes to months without duration limits.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

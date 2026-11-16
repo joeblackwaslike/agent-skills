@@ -4,8 +4,8 @@ description: Learn how to use Claude Platform on AWS with AI Gateway and the dir
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "5a6047cc11aa3c6f22f20eb996cc5c9e57e66213ce3c8bcb0f63ca13129fbda7"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "035fbe2653fd439838a8aee268118b605507c022ee66ed02c2d7638f191cb9e1"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -220,6 +220,7 @@ Your IAM principal needs permission to call the Claude Platform on AWS actions o
 | `claude-sonnet-5-5` | ✓           | ✓                 | ✓          | ✓              | ✓            | ✓          | ✓           | ✓          |
 | `claude-sonnet-5`   | ✓           | ✓                 | ✓          | ✓              | ✓            | ✓          | ✓           | ✓          |
 | `claude-haiku-5-5`  | ✓           | ✓                 | ✓          | ✓              | ✓            | ✓          | ✓           | ✓          |
+| `claude-fable-5-2`  | ✓           | ✓                 | ✓          | ✓              | ✓            | ✓          | ✓           | ✓          |
 | `claude-fable-5-1`  | ✓           | ✓                 | ✓          | ✓              | ✓            | ✓          | ✓           | ✓          |
 | `claude-fable-5`    | ✓           | ✓                 | ✓          | ✓              | ✓            | ✓          | ✓           | ✓          |
 | `claude-opus-4-8`   | ✓           | ✓                 | ✓          | ✓              | ✓            | ✓          | ✓           | ✓          |

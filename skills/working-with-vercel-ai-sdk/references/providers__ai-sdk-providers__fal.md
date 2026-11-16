@@ -4,8 +4,8 @@ description: Learn how to use Fal with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/fal"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fal.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "e686fdc3d1164e1c920cfab52990f2141fc1146bba3c5f6362303825afaf0e80"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "31062bc0bd6b29583ff8fa75f8328cea07b55e99a174368f9d4dea193e737479"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -115,6 +115,11 @@ You can use the following optional settings to customize the Fal provider instan
 
 You can create Fal image models using the `.image()` factory method.
 For more on image generation with the AI SDK see [generateImage()](/docs/reference/ai-sdk-core/generate-image).
+
+The provider downloads generated images from URLs returned by Fal using the
+`fetch` option of `createFal`. On Node.js, pass a `guarded-fetch` transport
+there to validate DNS results. See [Secure URL
+Fetching](/docs/advanced/secure-url-fetching#opt-in-dns-protection-on-nodejs).
 
 ### Basic Usage
 

@@ -4,8 +4,8 @@ description: Learn how to use Agent Client Protocol implementations through the 
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/acp"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/acp.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "8e4ac258cecca591e2862938133de4b63960fb9ee268c7744e31f9c3f1219e28"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "7f9632cf8ce03f0bbda15447839c139daa1d1afdad02239023cb0653468a10a8"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -161,6 +161,12 @@ try {
   advertised ACP session modes or configuration options. Set an entry to
   `null` when the ACP implementation does not support that mode. When omitted,
   the adapter applies `permissionMode` to ACP permission requests by tool kind.
+- `writeProtectedPaths`: optional paths relative to the session working
+  directory, such as files or directories that hold the implementation's own
+  configuration, which the agent must not write to without Harness approval.
+  Under `allow-edits`, `edit`, `delete`, and `move` permission requests that
+  touch these paths always require approval. `.agents/skills` is always
+  protected. Entries must not be absolute or contain `.` or `..` segments.
 - `session.meta`: serializable implementation-specific metadata for session
   creation and restoration.
 - `port`: exposed bridge port override.
@@ -177,10 +183,9 @@ try {
   2 seconds. These retries use exponential backoff and are separate from
   `startupTimeoutMs`. They cannot recover when the sandbox, bridge process, or
   bridge endpoint is permanently unavailable.
-- `mintBridgeToken`: synchronous function that receives the sandbox id and
-  returns the bridge authentication token. By default, the adapter generates a
-  random 32-byte token. Custom implementations must return a suitably secret
-  token.
+- `mintBridgeToken`: deprecated and ignored. Passing it logs a warning. The
+  adapter generates a key pair for each bridge, passes only the public key into
+  the sandbox, and keeps the private key in host-side resume state.
 - `clientApp`: optional client attribution with `name` and `version`. It
   defaults to the installed `ai-sdk-harness-acp/<version>` identity and is
   available to Gateway environment placeholders.
@@ -367,6 +372,16 @@ directories for new files. External, missing, or unresolvable file locations
 require Harness approval. `allow-all` retains unrestricted automatic approval.
 These checks apply to permission requests received from the ACP implementation;
 use separate sandboxes when jobs require filesystem isolation.
+
+Under `allow-edits`, `edit`, `delete`, and `move` permission requests that
+touch `.agents/skills` or a configured `writeProtectedPaths` entry also require
+Harness approval, even inside the session working directory. A location matches
+when it is a protected path, lies inside one, or is a parent of one. Symlinks
+are resolved in both directions: writes through an alias that points into a
+protected path match, as do writes to targets of symlinks inside protected
+directories. While a protected path exists, writes to hard-linked files also
+require approval. Reads of protected paths are still automatically approved,
+and `allow-all` is unaffected.
 
 ## Complete ACP Harness Implementations
 

@@ -15,9 +15,10 @@ related:
   - /docs/cli/global-options
 summary: Learn how to manage Vercel Connect connectors using the vercel connect CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/connect.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "7400e5b93d85c3e039a451de0fa63f5fc298c21d52bd6b08e5f2fcf8d008111e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "74e0987855197909943b4914e84329e4cd0c59ddd1d9a9474ae823da6470aef0"
 ---
 
 # vercel connect
@@ -598,6 +599,18 @@ For more information on global options and their usage, refer to the [options se
 - [Vercel Connect overview](/docs/connect)
 - [Quickstart with Vercel Connect](/docs/connect/quickstart)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

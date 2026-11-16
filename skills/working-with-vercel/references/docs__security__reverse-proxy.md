@@ -12,9 +12,10 @@ related:
   - /docs/domains/troubleshooting
 summary: "Learn why reverse proxy servers are not recommended with Vercel's firewall."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/security/reverse-proxy.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "67402fbf9df78ca2cb9df1c7c08ff8c80a81342601aa6923f016ce7d086263b6"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0fceeeebbd1ae7512b9ed3d715603f4fd5438ed12e9dc3a796cebdc7112b9b5b"
 ---
 
 # Reverse Proxy Servers and Vercel
@@ -32,11 +33,11 @@ sha256: "67402fbf9df78ca2cb9df1c7c08ff8c80a81342601aa6923f016ce7d086263b6"
 - [How to use Vercel’s Bot Management features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
 - [How to architect multi-location QSR menus on Vercel](https://vercel.com/kb/guide/multi-location-qsr-menus) — Multi-location QSR menus vary by price, hours, and availability. Learn how to model them on Vercel with ISR, Global Conf
 - [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
-- [Redirects](https://vercel.com/docs/routing/redirects) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
-- [Routing](https://vercel.com/docs/routing) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
-- [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption) — Learn how Vercel encrypts data in transit and at rest.
-- [CDN security](https://vercel.com/docs/cdn-security) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
+- [Redirects](https://vercel.com/docs/routing/redirects) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
+- [Rewrites on Vercel](https://vercel.com/docs/routing/rewrites) — Learn how to use rewrites to send users to different URLs without modifying the visible URL.
+- [Domains Overview](https://vercel.com/docs/domains) — Learn the fundamentals of how domains, DNS, and nameservers work on Vercel.
+- [Vercel WAF](https://vercel.com/docs/vercel-firewall/vercel-waf) — Learn how to secure your website with the Vercel Web Application Firewall \\(WAF\\)
 
 Full cross-link map for this page: [/docs/security/reverse-proxy.graph.md](/docs/security/reverse-proxy.graph.md)
 <!-- /docsgraph:related -->
@@ -102,6 +103,18 @@ If the origin certificate hasn't been issued, use [certificate diagnostics](/doc
 
 - [Can I use Vercel as a reverse proxy?](/kb/guide/vercel-reverse-proxy-rewrites-external)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

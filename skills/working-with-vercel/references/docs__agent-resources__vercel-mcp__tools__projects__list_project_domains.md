@@ -12,9 +12,10 @@ related:
   []
 summary: Use list_project_domains with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/list_project_domains.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5a5186d29d2beb01cc140e320ebea10acf1aa4dd19f3c37a45c9f6b7f4cfc616"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b742279bbfc91d4947515dbebc5aecc71a66474596506c15738003e79ceb54e0"
 ---
 
 # list_project_domains
@@ -30,8 +31,8 @@ Retrieve project domains by project by id or name.
 - [get_domain_project_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_project_domains) — Use get_domain_project_domains with Vercel MCP.
 - [list_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/list_domains) — Use list_domains with Vercel MCP.
 - [Retrieve project domains by project by id or name](https://vercel.com/docs/rest-api/projects/retrieve-project-domains-by-project-by-id-or-name) — GET /v9/projects/{idOrName}/domains — Retrieve the domains associated with a given project by passing either the project
-- [get_project_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project_domain) — Use get_project_domain with Vercel MCP.
 - [List Project Domains by Apex Domain](https://vercel.com/docs/rest-api/domains/list-project-domains-by-apex-domain) — GET /v1/domains/{domain}/project-domains — List all project domains associated with an apex domain owned by the authenti
+- [get_project_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project_domain) — Use get_project_domain with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/projects/list_project_domains.graph.md](/docs/agent-resources/vercel-mcp/tools/projects/list_project_domains.graph.md)
 <!-- /docsgraph:related -->
@@ -55,6 +56,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/proje
 | `teamId`              | string | No       | Team ID to use for this operation.                                                                                                                               |
 | `slug`                | string | No       | Team slug to use for this operation. Use instead of teamId.                                                                                                      |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

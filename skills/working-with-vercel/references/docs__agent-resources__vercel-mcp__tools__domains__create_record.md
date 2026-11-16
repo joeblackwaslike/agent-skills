@@ -12,9 +12,10 @@ related:
   []
 summary: Use create_record with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/create_record.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b7002ce1ea7b92d25625c4ded14e6c891ff6310f1c60c6df44275206851a1a0f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "aeeb90a0bfaa80a80f19fd637205cb58c986f8b4665def583caaffc09f4f76b2"
 ---
 
 # create_record
@@ -30,8 +31,8 @@ Creates a DNS record for a domain.
 - [update_record](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/update_record) — Use update_record with Vercel MCP.
 - [get_domain_verification_record](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_verification_record) — Use get_domain_verification_record with Vercel MCP.
 - [replace_domain_dns_records](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/replace_domain_dns_records) — Use replace_domain_dns_records with Vercel MCP.
+- [Delete a DNS record](https://vercel.com/docs/rest-api/dns/delete-a-dns-record) — DELETE /v2/domains/{domain}/records/{recordId} — Removes an existing DNS record from a domain name.
 - [create_or_transfer_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/create_or_transfer_domain) — Use create_or_transfer_domain with Vercel MCP.
-- [Create a DNS record](https://vercel.com/docs/rest-api/dns/create-a-dns-record) — POST /v2/domains/{domain}/records — Creates a DNS record for a domain.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/create_record.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/create_record.graph.md)
 <!-- /docsgraph:related -->
@@ -45,6 +46,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domai
 | `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody` | object | Yes      | Request body for this tool.                                 |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

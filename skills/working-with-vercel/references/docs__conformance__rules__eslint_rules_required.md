@@ -11,9 +11,10 @@ related:
   []
 summary: Requires that a workspace package is configured with required ESLint plugins and rules
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/eslint_rules_required.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "61fd0c5385a8b2700d68e67b004a1d0ff7ccecb40f3d3a55c582eb3a8b0edb9f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "dcf1ab646cfc941a5ada1e0fed9d91191b9739a44a9fb71ccf329e20a4778d41"
 ---
 
 # ESLINT_RULES_REQUIRED
@@ -100,6 +101,18 @@ module.exports = {
 You should also add `"eslint-config-custom": "workspace:*"` to your
 `devDependencies`.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -12,9 +12,10 @@ related:
   - /docs/audit-log
 summary: Learn how to preview and download Vercel compliance documents from the dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/security/attestations-and-compliance-report.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "85ca1b3196eb28c7c27cd53f7fe349f2cdbb11824f3712b709b166e83cd41cea"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "705042d94431825663d0db98b2d5608b38866a5254234575d1f051abb7a754e3"
 ---
 
 # Attestations and Compliance Report
@@ -29,7 +30,6 @@ Team members on Pro and Enterprise plans can preview and download Vercel's compl
 
 - [Does Vercel have a SOC 2 Type 2 attestation?](https://vercel.com/kb/guide/is-vercel-soc-2-compliant) — Vercel holds a SOC 2 Type 2 attestation for Security, Confidentiality, and Availability. See what the report covers, how
 - [Compliance documents are now available in Team settings](https://vercel.com/changelog/compliance-documents-are-now-available-in-team-settings)
-- [Vercel Security Dashboard is now generally available](https://vercel.com/changelog/vercel-security-dashboard-is-now-generally-available)
 - [Security Dashboard](https://vercel.com/docs/security/security-dashboard) — The Security Dashboard aggregates the security posture of every account and project on your team, flags misconfiguration
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Vercel Support Code Visibility, Git Fork Protection, and
 - [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
@@ -53,6 +53,18 @@ Preview and download actions appear in the [Activity Log](/docs/activity-log). E
 
 For public reports and more information about Vercel's security and compliance program, visit the [Vercel Trust Center](https://security.vercel.com/).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

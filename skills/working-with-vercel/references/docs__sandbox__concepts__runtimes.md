@@ -14,9 +14,10 @@ related:
   - /docs/sandbox/concepts/firewall
 summary: Detailed specifications for the Vercel Sandbox environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/concepts/runtimes.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "e8fa43d6a98732deaae100cf99b92f6dad59e081400e9badcdbe1b53c70957fa"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "eebac43a25fc98d2f7a4f4549a142f3cb3fa509757074773e5408fb4f9ce1785"
 ---
 
 # Runtimes
@@ -31,14 +32,12 @@ Vercel Sandbox provides a secure, isolated environment for running your code. Th
 
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
 - [Build an agent with OpenAI Agents API on Vercel](https://vercel.com/kb/guide/openai-agents-api-vercel) — Build and deploy an agent with OpenAI Agents API, Vercel Functions, Queues, and Sandbox for isolated code execution.
-- [Run Docker containers inside Vercel Sandbox](https://vercel.com/changelog/run-docker-containers-inside-vercel-sandbox)
 - [Vercel Sandbox now runs on Vercel Managed Images](https://vercel.com/changelog/vercel-sandbox-managed-images)
+- [Run Docker containers inside Vercel Sandbox](https://vercel.com/changelog/run-docker-containers-inside-vercel-sandbox)
 - [A sandbox without a network boundary is only half a sandbox](https://vercel.com/blog/a-sandbox-without-a-network-boundary-is-only-half-a-sandbox)
-- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
 - [Vercel Sandboxes are now generally available](https://vercel.com/changelog/vercel-sandboxes-ga)
-- [Sandbox now supports sudo and installing RPM packages](https://vercel.com/changelog/sandbox-now-supports-sudo-and-installing-rpm-packages)
-- [Advanced egress firewall filtering for Vercel Sandbox](https://vercel.com/changelog/advanced-egress-firewall-filtering-for-vercel-sandbox)
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
+- [Delete a sandbox](https://vercel.com/docs/rest-api/sandboxes/delete-a-sandbox) — DELETE /v2/sandboxes/{name} — Deletes a sandbox by name. If sandboxes are currently running, they will be stopped first.
 - [Hermes](https://vercel.com/docs/sandbox/ecosystem/hermes) — Run Hermes Agent terminal commands in isolated Vercel Sandbox microVMs, with models served through Vercel AI Gateway.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/runtimes.graph.md](/docs/sandbox/concepts/runtimes.graph.md)
@@ -159,6 +158,18 @@ Outbound network access from these workloads still follows the [sandbox firewall
 
 If you run containers inside the sandbox, the proxy CA certificate is not available inside the container by default. Install it in the container's trust store so HTTPS traffic that the firewall terminates passes TLS verification. See [Proxy CA certificates](#proxy-ca-certificates).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

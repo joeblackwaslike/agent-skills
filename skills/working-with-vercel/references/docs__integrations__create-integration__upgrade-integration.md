@@ -16,9 +16,10 @@ related:
   - /docs/integrations/create-integration/marketplace-product
 summary: Lean more about when you may need to upgrade your Integration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/upgrade-integration.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "5c5e857e088b274645d1018f88338bb9e74c97c2867e534f5848ab02dd57001d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "58f9611c21f31e90b3961c9d3536d312aa37df0cbecd9a2050cfef72507382c0"
 ---
 
 # Upgrade an Integration
@@ -35,10 +36,10 @@ You should upgrade your integration if you are using any of the following scenar
 - [UI Hooks for Integrations will be deprecated](https://vercel.com/changelog/ui-hooks-for-integrations-will-be-deprecated)
 - [Integrations can now be managed more efficiently](https://vercel.com/changelog/integrations-can-now-be-managed-more-efficiently)
 - [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
-- [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
 - [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
 - [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference) — Learn how to manage project access and added products for your integrations.
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
+- [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
 
 Full cross-link map for this page: [/docs/integrations/create-integration/upgrade-integration.graph.md](/docs/integrations/create-integration/upgrade-integration.graph.md)
 <!-- /docsgraph:related -->
@@ -140,6 +141,18 @@ If your Integration is setting Environment Variables, please make sure to use `t
 > **💡 Note:** Creating project secrets is not required anymore and will be deprecated in the
 > near future.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

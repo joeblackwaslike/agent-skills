@@ -15,9 +15,10 @@ related:
   - /docs/functions/runtimes/node-js
 summary: Learn about fluid compute, an execution model for Vercel Functions that provides a more flexible and efficient way to run your functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/fluid-compute.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "757a5369b6f0c7e3000017d617e95f12add236f1fc7c6d33e90f41c97ba5c4c4"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "601d66933ea289901b0066204dc28e24f83d1297b1df7e21f4291e17ef5893b4"
 ---
 
 # Fluid compute
@@ -31,17 +32,17 @@ Fluid compute offers a blend of serverless flexibility and server-like capabilit
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing Fluid compute](https://vercel.com/blog/introducing-fluid-compute)
+- [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
+- [How Fluid compute works on Vercel](https://vercel.com/blog/how-fluid-compute-works-on-vercel)
+- [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
+- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis) — Learn how to build and scale performant APIs on Vercel.
+- [How can I improve function cold start performance on Vercel?](https://vercel.com/kb/guide/improve-function-cold-start-performance-on-vercel) — Learn how to confirm whether cold starts cause function latency on Vercel, and how Fluid compute reduces how often they
+- [Vercel Functions can now run on Fluid compute](https://vercel.com/changelog/vercel-functions-can-now-run-on-fluid-compute)
+- [Fluid: How we built serverless servers](https://vercel.com/blog/fluid-how-we-built-serverless-servers)
 - [Getting Timeouts When Deploying on Vercel](https://ai-sdk.dev/docs/troubleshooting/timeout-on-vercel) — Learn how to fix timeouts and cut off responses when deploying to Vercel.
 - [Advanced Remix integration with streaming SSR and multi-runtime support](https://vercel.com/changelog/advanced-remix-integration-with-streaming-ssr-and-multi-runtime-support)
 - [Bun runtime now supports large functions and extended max duration](https://vercel.com/changelog/bun-runtime-now-supports-large-functions-and-extended-max-duration)
 - [Bun runtime for Vercel Functions now accepts Bun.serve as an entrypoint](https://vercel.com/changelog/bun-serve-entrypoint-for-vercel-functions)
-- [Deploy Hono backends with zero configuration](https://vercel.com/changelog/deploy-hono-backends-with-zero-configuration)
-- [Deployment-level configuration for Fluid compute](https://vercel.com/changelog/deployment-level-configuration-for-fluid-compute)
-- [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
-- [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
-- [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
-- [Build with an Express starter template](https://vercel.com/kb/guide/build-with-a-express-starter-template) — Deploy an Express app to Vercel from a template. Browse Express starters from Vercel and the community, then run them lo
-- [Build with a FastAPI starter template](https://vercel.com/kb/guide/build-with-a-fastapi-starter-template) — Browse FastAPI starter templates for Vercel and deploy one in a few steps. Compare minimal, AI, agent, and full-stack Fa
 
 Full cross-link map for this page: [/docs/fluid-compute.graph.md](/docs/fluid-compute.graph.md)
 <!-- /docsgraph:related -->
@@ -138,8 +139,8 @@ Fluid Compute includes default settings that vary by plan:
 | [**CPU configuration**](/docs/functions/configuring-functions/memory#memory-/-cpu-type)      | Standard                            | Standard / Performance               | Standard / Performance               |
 | [**Default / Max duration**](/docs/functions/limitations#max-duration)                       | 300s (5 minutes) / 300s (5 minutes) | 300s (5 minutes) / 800s | 300s (5 minutes) / 800s |
 | [**Extended max duration**](/docs/functions/configuring-functions/duration#extended-max-duration-beta) | -                                   | 1800s (30 minutes) Beta | 1800s (30 minutes) Beta |
-| [**Multi-region failover**](/docs/functions/configuring-functions/region#automatic-failover) |                       |                        |                    |
-| [**Multi-region functions**](/docs/functions/runtimes#location)                              |                       | Up to 3                              | All                                  |
+| [**Multi-region failover**](/docs/functions/configuring-functions/region#automatic-failover) | No                      | No                       | Yes                   |
+| [**Multi-region functions**](/docs/functions/runtimes#location)                              | No                      | Up to 3                              | All                                  |
 
 > **💡 Note:** The 800 second maximum is generally available for Pro and Enterprise teams.
 > The 30 minute extended maximum is in beta for supported Node.js, Bun, and
@@ -164,7 +165,7 @@ The following order of precedence determines which settings take effect. Setting
 | 1              | **Function code**  | Settings in your function code always take top priority. These include max duration defined directly in your code.                                 | [`maxDuration`](/docs/functions/configuring-functions/duration)                                                                                                                     |
 | 2              | **`vercel.json`**  | Any settings in your [`vercel.json`](/docs/project-configuration) file, like max duration, and region, will override dashboard and Fluid defaults. | [`maxDuration`](/docs/functions/configuring-functions/duration), [`region`](/docs/functions/configuring-functions/region)                                                           |
 | 3              | **Dashboard**      | Changes made in the dashboard, such as max duration, region, or CPU, override Fluid defaults.                                                      | [`maxDuration`](/docs/functions/configuring-functions/duration), [`region`](/docs/functions/configuring-functions/region), [`memory`](/docs/functions/configuring-functions/memory) |
-| 4              | **Fluid defaults** | These are the default settings applied automatically when fluid compute is enabled, and do not configure any other settings.                       |                                                                                                                                                                             |
+| 4              | **Fluid defaults** | These are the default settings applied automatically when fluid compute is enabled, and do not configure any other settings.                       | N/A                                                                                                                                                                            |
 
 ## Pricing and usage
 
@@ -175,6 +176,20 @@ See the [fluid compute pricing](/docs/functions/usage-and-pricing) documentation
 - [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons): Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns, and manage instances.
 - [How to choose between Functions, containers, and Daemons on Vercel](https://vercel.com/kb/guide/vercel-functions-containers-daemons): Choose Vercel Functions for HTTP requests, container images for custom runtimes, and Daemons for continuous background workers.
 - [How to optimize Next.js and Sitecore Content SDK apps](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-content-sdk): Learn how to choose a rendering strategy, configure proxy middleware, and optimize costs for Next.js and Sitecore Content SDK apps on Vercel.
+- [Deploy Symfony on Vercel with Docker](https://vercel.com/kb/guide/symfony-php-with-docker): Build a Symfony application with FrankenPHP and Docker, then deploy it to Vercel with production configuration, external storage, and preview deployments.
+
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

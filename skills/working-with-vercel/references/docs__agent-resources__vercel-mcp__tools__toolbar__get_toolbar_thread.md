@@ -12,9 +12,10 @@ related:
   []
 summary: Use get_toolbar_thread with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/get_toolbar_thread.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b2e934317a0bc31f53bd35bafdded83c993a2e221c27f0a83d3cb9c5d7aa4a46"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "88748d4f2e3f41e7a184c4c2f96680f3dc50a03246b27efb995dab48cb8d23e5"
 ---
 
 # get_toolbar_thread
@@ -43,6 +44,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/toolb
 
 **Sample prompt:** "Show me the full conversation on toolbar thread tbt\_123"
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

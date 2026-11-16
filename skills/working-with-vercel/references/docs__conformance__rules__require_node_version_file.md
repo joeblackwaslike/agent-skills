@@ -11,9 +11,10 @@ related:
   - /docs/conformance/customize
 summary: Requires that workspaces have a valid Node.js version file (`.node-version` or `.nvmrc`) file defined.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/require_node_version_file.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "876292cc4f6f057c7ea60731d5cfb1eccbbbb8c21fd03e8ef4947c8066b85b33"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "6108fe423b6edfe0a453dcd969fb29967d5a2615bb2d1712c9d239dcac690c6f"
 ---
 
 # REQUIRE_NODE_VERSION_FILE
@@ -52,6 +53,18 @@ strictness can be adjusted based on your teams needs.
 v20.9
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

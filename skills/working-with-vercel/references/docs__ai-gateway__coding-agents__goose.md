@@ -15,9 +15,10 @@ related:
   - /docs/ai-gateway/observability-and-spend/budgets
 summary: Connect Goose to AI Gateway with the Vercel CLI or a custom OpenAI-compatible provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/goose.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c99f2baa08d3dfad8dc8d9987e92bfcc84fab44fb10a6bf8678e0d5b525da83a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e145c9a167ab1b589498bdb7b900534c1cd690474c8b4d834de37b9556123741"
 ---
 
 # Goose with AI Gateway
@@ -30,11 +31,11 @@ sha256: "c99f2baa08d3dfad8dc8d9987e92bfcc84fab44fb10a6bf8678e0d5b525da83a"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Go with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/go) — Use AI Gateway from any Go application with the OpenAI or Anthropic Go SDKs, including model fallbacks, cost tracking, a
 - [gptme with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/gptme) — Connect gptme to AI Gateway with the Vercel CLI or a TOML provider configuration.
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
-- [GitHub Copilot CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/copilot) — Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and
-- [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/goose.graph.md](/docs/ai-gateway/coding-agents/goose.graph.md)
 <!-- /docsgraph:related -->
@@ -47,7 +48,7 @@ Run the [Vercel CLI setup command](/docs/cli/ai-gateway#setup) for Goose:
 npx vercel@latest ai-gateway setup --agent goose
 ```
 
-The command writes a declarative provider JSON into `~/.config/goose/custom_providers/` that shadows Goose's built-in `vercel_ai_gateway` definition, sets the default provider and model in `config.yaml`, and records context sizes from the gateway catalog for the gateway language models that support tool use. Re-run it to refresh the context sizes.
+The command writes a declarative provider JSON into `~/.config/goose/custom_providers/` that shadows Goose's built-in `vercel_ai_gateway` definition, turns on model discovery so Goose's model picker refreshes from the gateway catalog, sets the default provider and model in `config.yaml`, and records context sizes from the gateway catalog for the gateway language models that support tool use. Re-run it to refresh the context sizes.
 
 ## Configuring Goose
 
@@ -72,12 +73,14 @@ If you can't use the Vercel CLI, configure Goose manually:
     "display_name": "Vercel AI Gateway",
     "api_key_env": "AI_GATEWAY_API_KEY",
     "base_url": "https://ai-gateway.vercel.sh/coding-agent/v1/chat/completions",
+    "catalog_provider_id": "vercel",
+    "dynamic_models": true,
     "models": [
       { "name": "openai/gpt-6-astra", "context_limit": 1050000 }
     ]
   }
   ```
-  This file shadows Goose's built-in `vercel_ai_gateway` definition and repoints it at the gateway. The `models` array only supplies context sizes. Goose still discovers the rest of the catalog from the API, so list a few models and let discovery fill in the rest. Never set `dynamic_models: false`, which would reduce Goose to exactly this array.
+  This file shadows Goose's built-in `vercel_ai_gateway` definition and repoints it at the gateway. `dynamic_models: true` makes Goose refresh its model picker from the gateway catalog. Without it, the picker shows only the models in this file. `catalog_provider_id: "vercel"` gives the refreshed models their context limits and reasoning settings. The `models` array supplies context sizes, so list the models you use most and let discovery fill in the rest.
 
 - ### Select the provider and model
   Set the default provider and model in `~/.config/goose/config.yaml`:
@@ -113,6 +116,18 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 - Configure [spend limits](/docs/ai-gateway/observability-and-spend/budgets) on your API key
 - Read the [Goose documentation](https://block.github.io/goose/) for extensions and recipes
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

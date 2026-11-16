@@ -15,9 +15,10 @@ related:
   - /docs/flags/vercel-flags/sdks/flags-sdk
 summary: Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directly from the dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/vercel-flags.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c774d619b38d3917c74d5994d895117f10db473e2e954fb75477afe4f007dc7f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f09b6dac2091b8a169a998621e9d3b1f6e0d3b3a96145c2e0bb2d1c43920e84e"
 ---
 
 # Vercel Flags
@@ -35,14 +36,11 @@ Vercel Flags is a feature flag provider built into the Vercel platform. Create f
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
 - [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta)
-- [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
 - [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
-- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
-- [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga)
 - [Flags SDK now evaluates flags 10x faster](https://vercel.com/changelog/flags-sdk-now-evaluates-flags-10x-faster)
 - [Inspect feature flag history with Vercel CLI](https://vercel.com/changelog/inspect-feature-flag-history-with-vercel-cli)
+- [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga)
 - [Vercel Flags now supports JSON values](https://vercel.com/changelog/vercel-flags-now-supports-json-values)
-- [A/B testing on ecommerce storefronts without hurting Core Web Vitals](https://vercel.com/kb/guide/ecommerce-ab-testing-core-web-vitals) — Client-side A/B tools can worsen LCP and CLS on the pages you're testing. Run ecommerce A/B tests at the edge with Routi
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference) — API reference for the Flags SDK for Next.js and SvelteKit.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags.graph.md](/docs/flags/vercel-flags.graph.md)
@@ -138,6 +136,20 @@ Understand the limits and pricing model of Vercel Flags.
 - [A/B testing on ecommerce storefronts without hurting Core Web Vitals](https://vercel.com/kb/guide/ecommerce-ab-testing-core-web-vitals): Client-side A/B tools can worsen LCP and CLS on the pages you're testing. Run ecommerce A/B tests at the edge with Routing Middleware and Vercel Flags.
 - [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects): Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated): Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fallback outcomes.
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments): Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment to the correct flag environment
+
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

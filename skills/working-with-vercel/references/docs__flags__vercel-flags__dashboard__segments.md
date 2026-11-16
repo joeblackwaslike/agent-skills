@@ -15,9 +15,10 @@ related:
   - /docs/flags/vercel-flags/sdks
 summary: Create reusable user segments for targeting feature flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/segments.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c5285bf45862f078c31c51189b42cf54281502cbf225abf01c29481e90761c03"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ba851bf842b99f992ef3592eeaec3b7468ebef927d7f3a2378fc0c0b055768bb"
 ---
 
 # Segments
@@ -36,9 +37,9 @@ Segments are reusable groups of users for targeting feature flags. Instead of re
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
 - [Create a segment](https://vercel.com/docs/rest-api/feature-flags/create-a-segment) — PUT /v1/projects/{projectIdOrName}/feature-flags/segments — Create a new feature flag segment.
 - [List segments](https://vercel.com/docs/rest-api/feature-flags/list-segments) — GET /v1/projects/{projectIdOrName}/feature-flags/segments — List all feature flag segments for a project.
-- [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Get a segment](https://vercel.com/docs/rest-api/feature-flags/get-a-segment) — GET /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} — Retrieve a feature flag segment by ID or s
-- [Delete a segment](https://vercel.com/docs/rest-api/feature-flags/delete-a-segment) — DELETE /v1/projects/{projectIdOrName}/feature-flags/segments/{segmentIdOrSlug} — Delete a feature flag segment.
+- [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
+- [list_flag_segments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flag_segments) — Use list_flag_segments with Vercel MCP.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard/segments.graph.md](/docs/flags/vercel-flags/dashboard/segments.graph.md)
 <!-- /docsgraph:related -->
@@ -146,6 +147,18 @@ If a segment is referenced by a flag or segment:
 - [Configure flag targeting](/docs/flags/vercel-flags/dashboard/feature-flag)
 - [Set up your SDK](/docs/flags/vercel-flags/sdks) to pass evaluation context
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

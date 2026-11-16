@@ -16,9 +16,10 @@ related:
   - /docs/flags/vercel-flags/dashboard/archive
 summary: Learn how to configure individual feature flags in the Vercel Dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "73f478336ea860439b95fd6945f4c11346aecfa95d90ce07d6045567311dfb1a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1bd3d0cafa0a765c293eea7fe7d321bb07cfcd83be931c3f3e3caa4fcdebfb63"
 ---
 
 # Feature Flag Configuration
@@ -36,10 +37,9 @@ When you select a flag from the Flags overview, you can configure how it behaves
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
 - [How Splits Work in Vercel Flags](https://vercel.com/kb/guide/how-splits-work-in-vercel-flags) — Use weighted splits in Vercel Flags to deterministically bucket users into variants by percentage for gradual rollouts a
 - [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
-- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
-- [Using the Flags SDK with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
+- [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference) — API reference for the Flags SDK for Next.js and SvelteKit.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/dashboard/feature-flag.graph.md](/docs/flags/vercel-flags/dashboard/feature-flag.graph.md)
 <!-- /docsgraph:related -->
@@ -304,6 +304,18 @@ When a flag is no longer needed:
 - [Define entities for targeting](/docs/flags/vercel-flags/dashboard/entities)
 - [Manage SDK Keys](/docs/flags/vercel-flags/dashboard/sdk-keys)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

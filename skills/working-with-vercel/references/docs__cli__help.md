@@ -11,9 +11,10 @@ related:
   - /docs/cli/global-options
 summary: Learn how to use the vercel help CLI command to get information about all available Vercel CLI commands.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/help.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "0bbef853dad7492476a011988ce62c15f6753f4abeeb2eb136200df62c80ccb9"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "363c6b00741c64abcadaf16dd05101fd0574d3ed4e66b1f9fa48b469d62c5cdd"
 ---
 
 # vercel help
@@ -27,10 +28,10 @@ The `vercel help` command generates a list of all available Vercel CLI commands 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [use_vercel_cli](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation/use_vercel_cli) — Use use_vercel_cli with Vercel MCP.
+- [vercel docs](https://vercel.com/docs/cli/docs) — Search and read the Vercel docs from your terminal using the Vercel CLI.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel changelog](https://vercel.com/docs/cli/changelog) — Read recent Vercel product updates and search the changelog from your terminal using the Vercel CLI.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel guidance](https://vercel.com/docs/cli/guidance) — Enable or disable guidance messages in the Vercel CLI using the vercel guidance command.
 
 Full cross-link map for this page: [/docs/cli/help.graph.md](/docs/cli/help.graph.md)
 <!-- /docsgraph:related -->
@@ -64,6 +65,18 @@ vercel help env add
 *Using the \`vercel help\` command to generate detailed
 information about the \`vercel env add\` subcommand.*
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

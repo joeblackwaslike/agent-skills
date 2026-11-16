@@ -11,18 +11,21 @@ related:
   - /docs/functions/container-images
   - /docs/sandbox/concepts/images
   - /docs/daemons
+  - /docs/sandbox/cli-reference
   - /docs/cli
-  - /docs/container-registry/public-and-shared-repositories
 summary: Store and manage Docker container images on Vercel. Build and push images with the Vercel CLI, then run them on Vercel Functions or in Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/container-registry.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "7c13164dd1ef5e22a48443178a57a1c495d64d3c1ae0962714deb1348333ad83"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e019d1104333a58e7951f92dac68dcf6f0d73e538cd825b5fcb83d29d2750b42"
 ---
 
 # Vercel Container Registry
 
-Vercel Container Registry (VCR) is a Docker-compatible container registry built into Vercel. Store the images you build from a Dockerfile or Containerfile, then run them on [Vercel Functions](/docs/functions/container-images) or use them as custom [Vercel Sandbox](/docs/sandbox/concepts/images) images. When you deploy [Daemons](/docs/daemons), Vercel pushes each daemon's image to a repository named `daemon.<name>`.
+## Store and run container images
+
+Build and push images to Vercel Container Registry (VCR) with Docker, Podman, or Buildah, then run them on Vercel Functions or start Vercel Sandboxes from them.
 
 
 <!-- docsgraph:related -->
@@ -31,20 +34,48 @@ Vercel Container Registry (VCR) is a Docker-compatible container registry built 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to migrate from GHCR to Vercel Container Registry](https://vercel.com/kb/guide/migrate-ghcr-to-vcr) — Migrate container images from GitHub Container Registry \\(GHCR\\) to Vercel Container Registry \\(VCR\\), including authent
+- [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
+- [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
 - [Manage Vercel Container Registry with Vercel CLI](https://vercel.com/changelog/manage-vercel-container-registry-with-vercel-cli)
-- [Introducing VCR: Vercel Container Registry](https://vercel.com/changelog/introducing-vcr-vercel-container-registry)
 - [Bring your Dockerfile to Vercel Functions](https://vercel.com/changelog/bring-your-dockerfile-to-vercel-functions)
+- [Introducing VCR: Vercel Container Registry](https://vercel.com/changelog/introducing-vcr-vercel-container-registry)
 - [Share Vercel Container Registry repositories across teams](https://vercel.com/changelog/share-vercel-container-registry-repositories-across-teams)
 - [Push images to Vercel Container Registry from GitHub Actions](https://vercel.com/changelog/vcr-login-github-action)
 - [Deploy Go apps on Vercel using Docker](https://vercel.com/kb/guide/deploy-go-using-docker-vercel) — Deploy an existing Dockerized Go app to Vercel using Memos as a real-world example, with Neon Postgres for durable data.
 - [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
-- [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
-- [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
 - [Backends on Vercel: Python, containers, and Daemons](https://vercel.com/blog/backends-on-vercel-python-containers-and-daemons)
 - [vercel vcr](https://vercel.com/docs/cli/vcr) — Manage Vercel Container Registry from the Vercel CLI: build and push images, manage repositories, tags, and images, and
 
 Full cross-link map for this page: [/docs/container-registry.graph.md](/docs/container-registry.graph.md)
 <!-- /docsgraph:related -->
+
+#### Push an image
+
+```bash filename="terminal"
+vercel link
+vercel vcr login docker
+vercel vcr build docker . my-api:1.2.3 --push
+```
+
+#### Pull an image
+
+```bash filename="terminal"
+vercel vcr tag inspect my-api 1.2.3
+docker pull \
+  vcr.vercel.com/my-team/my-site/my-api:1.2.3
+```
+
+#### Run in a sandbox
+
+```bash filename="terminal"
+npm i -g sandbox
+sandbox login
+sandbox run --image my-api:1.2.3 --rm -- ls /
+```
+
+Vercel Container Registry (VCR) is a Docker-compatible container registry built into Vercel. [Vercel Functions](/docs/functions/container-images) can run the images you store in it, and [Vercel Sandbox](/docs/sandbox/concepts/images) can start from them as custom images. When you deploy [Daemons](/docs/daemons), Vercel pushes each daemon's image to a repository named `daemon.<name>`.
+
+The examples above push an image to a repository named `my-api` with the tag `1.2.3`, pull it back with Docker, and start a sandbox from it. In the pull example, replace `my-team` and `my-site` with the team slug and project name that `vercel vcr tag inspect` reports. The sandbox example uses the [Sandbox CLI](/docs/sandbox/cli-reference) in your linked project directory and lists the image's root directory. Sandbox can start from the image once its repository shows **Ready**, as described in [Verify an image before you use it](#verify-an-image-before-you-use-it).
 
 With the [Vercel CLI](/docs/cli), `vercel vcr` authenticates your container tool and resolves the full image reference.
 
@@ -255,6 +286,20 @@ Use the `vercel vcr` command group in the [Vercel CLI](/docs/cli) to list, inspe
 - [How to choose between Functions, containers, and Daemons on Vercel](https://vercel.com/kb/guide/vercel-functions-containers-daemons): Choose Vercel Functions for HTTP requests, container images for custom runtimes, and Daemons for continuous background workers.
 - [Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel): Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflows, and keep previews for every PR.
 - [Deploy Laravel on Vercel with Docker](https://vercel.com/kb/guide/laravel-php-with-docker): Build a Laravel application with FrankenPHP and Docker, then deploy it to Vercel with production configuration, external storage, and preview deployments.
+- [Vercel vs Kubernetes](https://vercel.com/kb/guide/vercel-vs-kubernetes): Compare Vercel and Kubernetes on operational ownership, deployment workflow, scaling, and cost model to decide which platform fits your workload and team.
+
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

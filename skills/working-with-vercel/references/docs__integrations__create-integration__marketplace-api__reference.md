@@ -3,7 +3,7 @@ title: reference
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference"
-last_updated: 2026-11-09
+last_updated: 2026-11-16
 type: conceptual
 prerequisites:
   []
@@ -13,9 +13,10 @@ related:
   - /docs/integrations/webhooks
 summary: Learn about reference on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "0acada27be49068746b38e97163c8e06c75e8b89d61a0b95ac21dbedec337f23"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "31f346aab75d0af27f1d66e50212bec33c0e790d454f64f0c6fe737e0286432b"
 ---
 
 # Vercel Marketplace REST API
@@ -1451,7 +1452,18 @@ For information about webhooks, see the [Native Integration Webhooks](/docs/inte
 
 For the latest changes to the Marketplace API, refer to the main documentation page.
 
+## Search the docs from your terminal
 
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

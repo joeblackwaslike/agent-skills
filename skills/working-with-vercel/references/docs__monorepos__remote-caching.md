@@ -15,9 +15,10 @@ related:
   - /docs/rbac
 summary: Vercel Remote Cache allows you to share build outputs and artifacts across distributed teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/monorepos/remote-caching.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "6f099b5f887aa0098d7da1387a901af1be457c5dabb0ae4702db1cdbb9c46922"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d303f5791a31158e84a975b4cf0c41857b8ff083a92a4b9a8993db25043d5bb3"
 ---
 
 # Remote Caching
@@ -32,8 +33,8 @@ Remote Caching saves you time by ensuring you never repeat the same task twice, 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) — Share a single Turborepo cache across your team and CI to avoid duplicated work.
 - [Faster iteration with Turborepo and Vercel Remote Cache](https://vercel.com/blog/vercel-remote-cache-turbo)
+- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) — Share a single Turborepo cache across your team and CI to avoid duplicated work.
 - [Constructing CI](https://turborepo.dev/docs/crafting-your-repository/constructing-ci) — Set up CI pipelines with Remote Caching, task filtering, Docker support, and affected package detection for maximum spee
 - [Buildkite](https://turborepo.dev/docs/guides/ci-vendors/buildkite) — Configure Buildkite pipelines to run Turborepo tasks with Remote Caching.
 - [CircleCI](https://turborepo.dev/docs/guides/ci-vendors/circleci) — Configure CircleCI workflows to run Turborepo tasks with Remote Caching.
@@ -298,6 +299,18 @@ Remote Caching can only be enabled by [team owners](/docs/rbac/access-roles#owne
 
 - [Use this SDK to manage Remote Cache Artifacts](https://github.com/vercel/remote-cache)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

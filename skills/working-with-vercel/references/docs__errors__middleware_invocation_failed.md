@@ -11,9 +11,10 @@ related:
   - /docs/deployments/build-features
 summary: The request for an Routing Middleware was not completed successfully. This is an application error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/middleware_invocation_failed.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "39f1d8476d289370507c8a8a22c1b5828613be304b72b6281d1c07e9a741b2d7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "50f6559ec77462ee8dd5fbe4de0486cf0fa23e449542d37c35b533ae1c1d5175"
 ---
 
 # MIDDLEWARE_INVOCATION_FAILED
@@ -32,6 +33,18 @@ To troubleshoot this error, follow these steps:
 2. **Use Vercel's status page**: If you have tried the steps above and are still experiencing the error, check Vercel's [status page](https://www.vercel-status.com/) for any reported outages in the CDN, which can sometimes cause this error
 3. **Check function code**: Ensure that the code for the Routing Middleware is correct and does not contain any errors or infinite loops
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

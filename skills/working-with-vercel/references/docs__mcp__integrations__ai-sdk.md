@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/authentication-and-byok/api-keys
 summary: Connect the AI SDK to an MCP server on Vercel, discover its tools, and call them with models served through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/mcp/integrations/ai-sdk.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "7b9ee605faefed7b19ec8cfea57dfdcb7b458d67f826a664324d4af2889fffe7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3e94918c6a663313c7abf359736d4a58263bdecb1d4a74f2f1a47449981d1a3d"
 ---
 
 # AI SDK with MCP
@@ -34,12 +35,11 @@ Use the [AI SDK](/docs/ai-sdk) to call tools from a [Model Context Protocol (MCP
 - [MCP server support on Vercel](https://vercel.com/changelog/mcp-server-support-on-vercel)
 - [Introducing Vercel MCP: Connect Vercel to your AI tools](https://vercel.com/blog/introducing-vercel-mcp-connect-vercel-to-your-ai-tools)
 - [Addressing security and quality issues with MCP tools in AI Agent](https://vercel.com/blog/generate-static-ai-sdk-tools-from-mcp-servers-with-mcp-to-ai-sdk)
-- [Model Context Protocol (MCP) explained: An FAQ](https://vercel.com/blog/model-context-protocol-mcp-explained)
 - [Add MCP Apps to your AI SDK application](https://vercel.com/kb/guide/ai-sdk-mcp-apps) — Build an MCP Apps host with the AI SDK using @ai-sdk/mcp and @ai-sdk/react to filter model-visible tools, read ui:// res
-- [Build an MCP Server with Weather tools using Express and Vercel](https://vercel.com/kb/guide/mcp-server-with-weather-tool-express) — Make your Express weather API accessible to AI assistants through the Model Context Protocol.
-- [Using xmcp with Next.js](https://vercel.com/kb/guide/using-xmcp-with-nextjs) — Add an MCP server to an existing Next.js app with xmcp. Create typed tools, add authentication, and deploy to Vercel as
+- [Model Context Protocol (MCP) explained: An FAQ](https://vercel.com/blog/model-context-protocol-mcp-explained)
 - [TanStack AI with MCP](https://vercel.com/docs/mcp/integrations/tanstack-ai) — Connect TanStack AI to a Model Context Protocol server on Vercel and call its tools with models served through AI Gatewa
 - [Use Vercel](https://vercel.com/docs/agent-resources/vercel-mcp) — Vercel MCP has tools available for searching docs, managing teams, projects, and deployments, and querying Web Analytics
+- [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/mcp/integrations/ai-sdk.graph.md](/docs/mcp/integrations/ai-sdk.graph.md)
 <!-- /docsgraph:related -->
@@ -177,12 +177,46 @@ pnpm dlx tsx --env-file=.env index.mts
 
 For JavaScript, run `node --env-file=.env index.mjs`. Your terminal displays the model's response with a dice result between one and six.
 
+## Frequently asked questions
+
+### Do I need an AI Gateway API key when my AI SDK app runs on Vercel?
+
+No. On Vercel, the AI SDK authenticates to AI Gateway with your project's OIDC token, so deployed code doesn't need `AI_GATEWAY_API_KEY`. A non-empty API key takes priority over OIDC, even if the key is invalid, so remove the key from your project's environment variables to use OIDC. For local development, run `vercel link` and `vercel env pull` to write `VERCEL_OIDC_TOKEN` to `.env.local`. Your MCP server token is a separate credential that you still pass in the transport's `headers`. See [AI Gateway OIDC authentication](/docs/ai-gateway/authentication-and-byok/oidc).
+
+### How do I limit which MCP tools the model can call?
+
+Pass `schemas` to `client.tools()`. The client then loads only the tools you list and types their inputs with your Zod schemas. Add an `outputSchema` to validate a tool's `structuredContent` and get a typed result. Without `schemas`, `client.tools()` loads every tool the server offers and infers input types from the server's schemas at runtime, so your code has no compile-time type checking. See [Using MCP tools](https://ai-sdk.dev/docs/ai-sdk-core/mcp-tools#using-mcp-tools) in the AI SDK documentation.
+
+### Can I require approval before the model runs an MCP tool?
+
+Yes. The AI SDK copies each MCP tool's annotations, such as `readOnlyHint` and `destructiveHint`, to the tool call's `toolMetadata.annotations`. Read them in the `toolApproval` option and request user approval for any tool the server doesn't mark as read-only. The client doesn't create an approval policy from annotations automatically. Annotations are hints from the server, so combine them with a tool allowlist and narrowly scoped credentials. See [Tool annotations and approval](https://ai-sdk.dev/docs/ai-sdk-core/mcp-tools#tool-annotations-and-approval).
+
+### Can the AI SDK connect to a local stdio MCP server?
+
+Yes, during local development. Import `StdioMCPTransport` from `@ai-sdk/mcp/mcp-stdio` and give it the command that starts the server. A stdio server runs as a subprocess of your application, so it can't serve a production deployment. In production, connect over the HTTP transport, as this guide does. The client also supports SSE for servers that still use it.
+
+### How do I keep an agent's MCP tool calls running after a failure?
+
+Set `maxRetries` on `createMCPClient` to retry `tools/call` requests after transient HTTP or network failures. Retries are off by default, so turn them on only for tools that are safe to repeat. For agents that run for a long time or wait for a person, run the agent loop with `WorkflowAgent` from `@ai-sdk/workflow` on [Vercel Workflows](/docs/workflows). When you mark a tool's `execute` function with `'use step'`, each call becomes a durable step that retries up to three times by default and survives restarts. Workflow steps pass only serializable values, so create and close the MCP client inside the step that calls the tool. See [What is WorkflowAgent?](/kb/guide/what-is-workflowagent).
+
 ## Next steps
 
 - Follow [Vercel Connect with AI SDK and MCP](/docs/connect/frameworks/ai-sdk-and-mcp) for a streaming route with user consent and OAuth authentication.
 - Configure model requests with [AI SDK and AI Gateway](/docs/ai-gateway/sdks-and-apis/ai-sdk).
 - Explore [MCP integrations](/docs/mcp/integrations) for TanStack AI and eve examples.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

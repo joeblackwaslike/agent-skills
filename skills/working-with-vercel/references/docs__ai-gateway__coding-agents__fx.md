@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/observability-and-spend/budgets
 summary: Connect fx to AI Gateway with the Vercel CLI or the AI_GATEWAY_API_KEY environment variable.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/fx.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "21460a53e5cc408559b41d29aeea4d2e1481b65354a88644786c18abdd9b175d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c79306a6a6444e3feeb397011c693af8402e058c752d5357a469fddf22f46762"
 ---
 
 # fx with AI Gateway
@@ -32,9 +33,10 @@ sha256: "21460a53e5cc408559b41d29aeea4d2e1481b65354a88644786c18abdd9b175d"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [fx is now available in the AI SDK harness layer](https://vercel.com/changelog/fx-ai-sdk-harness-adapter)
-- [DeepSeek V4.1 Flash 1017 Ultrafast now available on AI Gateway](https://vercel.com/changelog/deepseek-v4-1-flash-1017-ultrafast-now-available-on-ai-gateway)
 - [fx is now available in T3 Code](https://vercel.com/changelog/fx-is-now-available-in-t3-code)
+- [LongCat 2.5 now available on AI Gateway](https://vercel.com/changelog/longcat-2-5-now-available-on-ai-gateway)
 - [Step 5 Preview now available on AI Gateway](https://vercel.com/changelog/step-5-preview-now-available-on-ai-gateway)
+- [Claude Fable 5.2 now available on AI Gateway](https://vercel.com/changelog/claude-fable-5-2-now-available-on-ai-gateway)
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 - [ForgeCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/forge) — Connect ForgeCode to AI Gateway with the Vercel CLI or custom provider and credential files.
 
@@ -100,6 +102,18 @@ To deploy an fx agent as a service, use `libfx`, which has durability built in a
 - Browse the [models catalog](/ai-gateway/models) for available models
 - Configure [spend limits](/docs/ai-gateway/observability-and-spend/budgets) on your API key
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

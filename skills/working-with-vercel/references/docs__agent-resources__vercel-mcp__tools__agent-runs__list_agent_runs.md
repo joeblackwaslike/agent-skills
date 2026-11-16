@@ -12,9 +12,10 @@ related:
   - /docs/agent-runs
 summary: Use list_agent_runs with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_runs.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c49a838cb92ef4831922516f4773598a3a9663f253870066c528ab3a380200ae"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "05be0463751625099c104802ccbd330a67108910bd4e4410e848a0c666da89c7"
 ---
 
 # list_agent_runs
@@ -27,12 +28,12 @@ Use this tool with agents built with [eve](/docs/agent-runs#inspect-runs-with-ve
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Agent Runs now available in the Vercel MCP and CLI](https://vercel.com/changelog/agent-runs-vercel-mcp-cli)
 - [list_agent_run_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_run_projects) — Use list_agent_run_projects with Vercel MCP.
 - [get_agent_run](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/get_agent_run) — Use get_agent_run with Vercel MCP.
-- [Agent Runs now available in the Vercel MCP and CLI](https://vercel.com/changelog/agent-runs-vercel-mcp-cli)
-- [Agent Runs](https://eve.dev/docs/observability/agent-runs) — Inspect eve sessions in Vercel and configure the Agent Runs destination.
 - [Agent Runs now show subagent activity on eve projects](https://vercel.com/changelog/agent-runs-now-show-subagent-activity-on-eve-projects)
 - [vercel agent-runs](https://vercel.com/docs/cli/agent-runs) — Find projects with Agent Runs, list recent runs, and inspect run metadata and conversation traces from the command line.
+- [get_agent_run_trace](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/get_agent_run_trace) — Use get_agent_run_trace with Vercel MCP.
 - [List task runs for a job run](https://vercel.com/docs/rest-api/vercel-ci/list-task-runs-for-a-job-run) — GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_runs.graph.md](/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_runs.graph.md)
@@ -54,6 +55,18 @@ List Agent Runs for a Vercel project. The response includes summaries, status, m
 
 **Sample prompt:** "Show me the latest production Agent Runs for my project"
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

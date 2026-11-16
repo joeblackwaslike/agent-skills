@@ -15,9 +15,10 @@ related:
   - /docs/agent-harnesses/claude-code
 summary: Guides for running Pi, fx, OpenCode, eve, Claude Code, and Codex durably on Vercel, so a crash or a timeout resumes the agent instead of losing its...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-harnesses/harnesses.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b9fcae6330c081b9507db08ef341702be2516874e5e5e44aee2e0aa6dbbc0ee9"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4b3e2938990267bf9f88129da87e524d07a254b37bdd1f10d0e02b7c7e6796ad"
 ---
 
 # Agent Harnesses You Can Run Durably on Vercel
@@ -32,9 +33,10 @@ Each guide gets one harness running durably on Vercel: the agent, a chat route, 
 
 - [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
 - [Program Claude Code, Codex, Pi and other agent harnesses with AI SDK](https://vercel.com/changelog/program-agent-harnesses-with-ai-sdk)
+- [Use ACP-compatible harnesses with the AI SDK harness layer](https://vercel.com/changelog/use-acp-compatible-harnesses-with-the-ai-sdk-harness-layer)
 - [Scheduling Work for Agents](https://vercel.com/docs/schedules/agents) — Give an agent a tool that creates dynamic schedules, so it can do work for a user later or on a recurring basis.
-- [Coding Agents and Chat Platforms with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents) — Connect coding agents and chat platforms to AI Gateway. Configure Claude Code, Codex, Chatbox, Open WebUI, and more.
-- [Agent Frameworks on Vercel](https://vercel.com/docs/frameworks/agents) — Build AI agents with eve, Mastra, Flue, and Vercel. Learn how each framework connects to Vercel compute, models, and sto
+- [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
+- [Scheduling Work with Pi](https://vercel.com/docs/schedules/agents/pi) — Give a Pi agent on durable-harness a tool that creates schedules, and send each run back into the session that created i
 
 Full cross-link map for this page: [/docs/agent-harnesses/harnesses.graph.md](/docs/agent-harnesses/harnesses.graph.md)
 <!-- /docsgraph:related -->
@@ -57,6 +59,18 @@ These pages apply to every `durable-harness` guide:
 - [Security](/docs/agent-harnesses/security): what may run in your function, and where commands and files the model picks run instead.
 - [Self-hosting](/docs/agent-harnesses/self-hosting): sessions in another World, such as Postgres, on your own servers.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

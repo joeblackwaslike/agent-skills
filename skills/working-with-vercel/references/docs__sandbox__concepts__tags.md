@@ -15,9 +15,10 @@ related:
   - /docs/sandbox/cli-reference
 summary: Categorize sandboxes by environment, team, or any other criteria using key-value tags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/concepts/tags.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "20ae54633ebdba9f6b6cd9f35ad163e30582e8d4819b4727b021f52cc985865d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "32c9998a316ec2b5a8cb5ebce772b0b0ec2b713518e5a03c43a4f564830c1ef8"
 ---
 
 # Tags
@@ -31,11 +32,10 @@ Tags let you categorize sandboxes by environment, team, or any other criteria. E
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Custom tags available in beta on Vercel Sandbox](https://vercel.com/changelog/custom-tags-available-in-beta-on-vercel-sandbox)
-- [Vercel Sandboxes now allow unique, customizable names](https://vercel.com/changelog/vercel-sandboxes-now-allow-unique-customizable-names)
 - [Running commands in a Vercel Sandbox](https://vercel.com/docs/sandbox/run-commands-in-sandbox) — Create isolated sandbox environments to run builds, tests, and commands safely.
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
-- [Sandbox Regions](https://vercel.com/docs/sandbox/concepts/regions) — Choose the regions where Vercel Sandbox runs your sandboxes, set a project default, and configure failover regions.
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart) — Learn how to run your first code in a Vercel Sandbox.
+- [Run isolated AI agents in one sandbox](https://vercel.com/docs/sandbox/concepts/multi-agent) — Give each AI agent an isolated Linux user in a Vercel Sandbox with the JS and Python SDKs, then share files between agen
 - [Delete a sandbox](https://vercel.com/docs/rest-api/sandboxes/delete-a-sandbox) — DELETE /v2/sandboxes/{name} — Deletes a sandbox by name. If sandboxes are currently running, they will be stopped first.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/tags.graph.md](/docs/sandbox/concepts/tags.graph.md)
@@ -43,7 +43,7 @@ Full cross-link map for this page: [/docs/sandbox/concepts/tags.graph.md](/docs/
 
 ## SDK usage
 
-Set, update, and filter on tags from the JS SDK using `Sandbox.create()`, `sandbox.update()`, and `Sandbox.list()`.
+Set, update, and filter on tags from the SDKs.
 
 ### Create a sandbox with tags
 
@@ -80,7 +80,7 @@ asyncio.run(main())
 
 ### Update tags
 
-Use `sandbox.update()` to change a sandbox's tags at any time. The provided object replaces the existing tag set, so pass every tag you want to keep:
+Update a sandbox to change its tags at any time. The tags you provide replace the existing tag set, so pass every tag you want to keep:
 
 **index.ts**
 
@@ -108,7 +108,7 @@ asyncio.run(main())
 
 ### Filter sandboxes by tag
 
-Pass a `tags` object to `Sandbox.list()` to filter results. You can filter by one tag at a time:
+Filter the list of sandboxes by tag. You can filter by one tag at a time:
 
 **index.ts**
 
@@ -189,6 +189,18 @@ Tags have a few hard limits to keep in mind when designing your tagging scheme:
 - [Python SDK Reference](/docs/sandbox/python-sdk-reference): Full API documentation for the Python SDK.
 - [CLI Reference](/docs/sandbox/cli-reference): Command reference for the CLI.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

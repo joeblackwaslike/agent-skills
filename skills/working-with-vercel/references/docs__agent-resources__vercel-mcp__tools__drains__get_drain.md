@@ -12,9 +12,10 @@ related:
   []
 summary: Use get_drain with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains/get_drain.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "ec3796d8acb095935c889372365f48924e3fe9cb8b7089cfd3032a178c555ec8"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7d6fdebaee1e17bafbae9bd5f59864d05518e425db8d5f3b4e2dd6831f51138d"
 ---
 
 # get_drain
@@ -29,8 +30,8 @@ Find a Drain by id.
 
 - [list_drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains/list_drains) — Use list_drains with Vercel MCP.
 - [create_drain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains/create_drain) — Use create_drain with Vercel MCP.
-- [update_drain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains/update_drain) — Use update_drain with Vercel MCP.
 - [test_drain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains/test_drain) — Use test_drain with Vercel MCP.
+- [update_drain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains/update_drain) — Use update_drain with Vercel MCP.
 - [Delete a drain](https://vercel.com/docs/rest-api/drains/delete-a-drain) — DELETE /v1/drains/{id} — Delete a specific Drain by passing the drain id in the URL.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/drains/get_drain.graph.md](/docs/agent-resources/vercel-mcp/tools/drains/get_drain.graph.md)
@@ -44,6 +45,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/drain
 | `teamId`  | string | No       | Team ID to use for this operation.                          |
 | `slug`    | string | No       | Team slug to use for this operation. Use instead of teamId. |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

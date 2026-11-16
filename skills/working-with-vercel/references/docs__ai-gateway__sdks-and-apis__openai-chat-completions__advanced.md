@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/authentication-and-byok/byok
 summary: Configure provider options, model fallbacks, BYOK credentials, and prompt caching through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "3d2d188b079b5f8ff0fd360600b33180db60d1cfb8c3d8cc85ff924ebb998876"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "46749fedb27171b5cfe6500629ee70a54b3e12d3d1ea0238a1e772ced581c00f"
 ---
 
 # OpenAI Chat Completions Configuration with AI Gateway
@@ -33,10 +34,10 @@ Control which providers serve your request, what happens when one fails, and how
 
 - [Provider Options](https://ai-sdk.dev/docs/foundations/provider-options) — Learn how to use provider-specific options to control reasoning, caching, and other advanced features.
 - [OpenAI Compatible Providers](https://ai-sdk.dev/providers/openai-compatible-providers) — Use OpenAI compatible providers with the AI SDK.
-- [Provider & Model Management](https://ai-sdk.dev/docs/ai-sdk-core/provider-management) — Learn how to work with multiple providers and models
 - [Sort providers by cost, latency, or throughput on AI Gateway](https://vercel.com/changelog/sort-providers-by-cost-latency-or-throughput-on-ai-gateway)
-- [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
-- [Bring Your Own Key \\(BYOK\\) to AI Gateway](https://vercel.com/docs/ai-gateway/authentication-and-byok/byok) — Learn how to configure your own provider keys with AI Gateway.
+- [Provider & Model Management](https://ai-sdk.dev/docs/ai-sdk-core/provider-management) — Learn how to work with multiple providers and models
+- [Customize timeouts for faster automatic failover on Vercel AI Gateway](https://vercel.com/changelog/provider-level-custom-timeouts-for-faster-fail-over-on-ai-gateway)
+- [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai) — Learn how to use OpenAI with AI Gateway and the direct provider.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced.graph.md](/docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced.graph.md)
 <!-- /docsgraph:related -->
@@ -805,7 +806,7 @@ providerOptions: {
 
 > **💡 Note:** **Credential precedence:** When request-scoped BYOK credentials are provided,
 > any cached BYOK credentials configured in the gateway settings are not
-> considered. Requests may still fall back to system credentials if the provided
+> considered. Requests may still fall back to Vercel's provider keys if the provided
 > credentials fail. For persistent BYOK configuration, see the [BYOK
 > documentation](/docs/ai-gateway/authentication-and-byok/byok).
 
@@ -907,6 +908,18 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
 > AI, and Bedrock). For more details, see [Anthropic's prompt caching
 > documentation](https://platform.claude.com/docs/en/build-with-claude/prompt-caching).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

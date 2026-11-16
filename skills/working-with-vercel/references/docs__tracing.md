@@ -15,9 +15,10 @@ related:
   - /docs/cli/traces
 summary: Learn how to trace your application to understand performance and infrastructure details.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/tracing.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "84c9c7220146b8861bc830fa16b348e5b081dadec3df1a3609daa4b37d9197d8"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "14a76352edd3198e4c8d3d41ed71e53cf24533582650b33d07f75ec6c874c360"
 ---
 
 # Tracing
@@ -31,6 +32,7 @@ In observability, tracing is the process of collecting and analyzing how a reque
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Traces now support Tree and Waterfall views](https://vercel.com/changelog/traces-now-support-tree-and-waterfall-views)
+- [Daemons can now send traces to Vercel Tracing](https://vercel.com/changelog/vercel-daemons-can-now-send-traces-to-vercel-tracing)
 - [Vercel Tracing is now generally available](https://vercel.com/changelog/vercel-tracing-is-now-generally-available)
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
@@ -38,10 +40,9 @@ In observability, tracing is the process of collecting and analyzing how a reque
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, container image functions, security defaults,
 - [Always-on tracing for production and preview traffic](https://vercel.com/changelog/always-on-tracing-for-production-and-preview-traffic)
-- [Search trace spans from the Vercel CLI](https://vercel.com/changelog/search-trace-spans-from-the-vercel-cli)
 - [Track a request's full lifecycle with session tracing](https://vercel.com/changelog/session-tracing-now-available)
 - [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
-- [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
+- [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 
 Full cross-link map for this page: [/docs/tracing.graph.md](/docs/tracing.graph.md)
 <!-- /docsgraph:related -->
@@ -228,7 +229,20 @@ attribute.
 - [Trace Drains](/docs/drains/reference/traces)
 - [Learn about the Vercel toolbar](/docs/vercel-toolbar)
 - [Session Tracing](/docs/tracing/session-tracing)
+- [Tracing in Daemons](/docs/daemons/tracing)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -9,15 +9,16 @@ prerequisites:
   - /docs/sandbox
 related:
   - /docs/sandbox/concepts/images
+  - /docs/sandbox/sdk-reference
+  - /docs/sandbox/pricing
   - /docs/sandbox/cli-reference
   - /docs/sandbox/concepts/runtimes
-  - /docs/sandbox/concepts/persistent-sandboxes
-  - /docs/sandbox/pricing
 summary: Task-oriented examples for common Vercel Sandbox operations in TypeScript, Python, and the Sandbox CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/working-with-sandbox.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "77b96b0e33c99f9b0e42eff5ec16696ef19bc3d5e6a6e2728783cac3f6db195c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "041ba61c1e6badb824e19b005ce1a6d0725ae95532455bcb9a2a8b5fb80f6d8c"
 ---
 
 # Working with Sandbox
@@ -32,12 +33,10 @@ Use Vercel Sandbox to run code, stream command output, manage files, capture sna
 
 - [Run untrusted Python code safely with Vercel Sandbox](https://vercel.com/kb/guide/python-and-vercel-sandbox) — Execute untrusted and AI-generated code from Python in isolated microVMs, with files, processes, network policies, and s
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
-- [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available)
-- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
 - [Vercel Sandbox](https://eve.dev/docs/sandbox/vercel) — Create persistent sandboxes on Vercel, from a prepared snapshot when the environment has build-time setup.
 - [Running commands in a Vercel Sandbox](https://vercel.com/docs/sandbox/run-commands-in-sandbox) — Create isolated sandbox environments to run builds, tests, and commands safely.
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
-- [Run isolated AI agents in one sandbox](https://vercel.com/docs/sandbox/concepts/multi-agent) — Give each AI agent an isolated Linux user in a Vercel Sandbox with the @vercel/sandbox createUser, createGroup, and asUs
+- [Run isolated AI agents in one sandbox](https://vercel.com/docs/sandbox/concepts/multi-agent) — Give each AI agent an isolated Linux user in a Vercel Sandbox with the JS and Python SDKs, then share files between agen
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 
 Full cross-link map for this page: [/docs/sandbox/working-with-sandbox.graph.md](/docs/sandbox/working-with-sandbox.graph.md)
@@ -102,7 +101,7 @@ async def main() -> None:
             capture_output=True,
             check=True,
         )
-        print(result.stdout)
+        print(result.stdout.decode())
 
 
 asyncio.run(main())
@@ -131,11 +130,91 @@ const sandbox = await Sandbox.create({
 });
 ```
 
+**main.py**
+
+```py filename="main.py"
+import asyncio
+
+from vercel import sandbox
+
+
+async def main() -> None:
+    await sandbox.create_sandbox(image="my-repository:latest")
+
+
+asyncio.run(main())
+```
+
 **script.sh**
 
 ```bash filename="script.sh"
 sandbox create --image my-repository:latest
 ```
+
+## Expose a port
+
+To reach a server running in a sandbox, such as a dev server or an API, expose its port when you create the sandbox. Each exposed port gets its own public URL. You can expose up to 15 ports.
+
+**index.ts**
+
+```ts filename="index.ts"
+import { Sandbox } from '@vercel/sandbox';
+
+const sandbox = await Sandbox.create({ ports: [3000] });
+
+// Start a web server in the background on the exposed port.
+await sandbox.runCommand({
+  cmd: 'python3',
+  args: ['-m', 'http.server', '3000'],
+  detached: true,
+});
+
+console.log(sandbox.domain(3000));
+```
+
+**main.py**
+
+```py filename="main.py"
+import asyncio
+import subprocess
+
+from vercel import sandbox
+
+
+async def main() -> None:
+    box = await sandbox.create_sandbox(ports=[3000])
+
+    # Start a web server in the background on the exposed port.
+    await box.create_command(
+        "python3",
+        ["-m", "http.server", "3000"],
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    )
+
+    for route in box.routes:
+        if route.port == 3000:
+            print(route.url)
+
+
+asyncio.run(main())
+```
+
+**script.sh**
+
+```bash filename="script.sh"
+# The output lists each published port and its public URL.
+sandbox create --name my-sandbox --publish-port 3000
+
+# Start a web server on that port. It runs until you press Ctrl+C.
+sandbox exec my-sandbox -- python3 -m http.server 3000
+```
+
+Anyone with the URL can reach the server, so only expose services you intend to share. To change the exposed ports later, pass `ports` to [`sandbox.update()`](/docs/sandbox/sdk-reference#sandbox.update), which replaces the full list. Traffic to and from exposed ports counts toward [Sandbox Data Transfer](/docs/sandbox/pricing).
+
+### Long-running WebSocket connections
+
+WebSocket connections to a sandbox's public URL can close while the sandbox continues running. For long-running sessions, reconnect clients automatically and resume application state after an interruption. You can also host the WebSocket server outside the sandbox and have the sandbox initiate the connection.
 
 ## Clone a private Git repository
 
@@ -228,7 +307,7 @@ Choose the GitHub token that fits your use case:
 | [GitHub App installation token](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-an-installation-access-token-for-a-github-app)                         | Platforms where users connect their repositories | Give the app **Contents: Read**. Tokens expire after 1 hour and only cover the repositories in that installation.      |
 | [Classic personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic)           | Tools that don't support fine-grained tokens     | Grant the `repo` scope. This token can read every repository your account can access, so prefer the other two options. |
 
-If users bring their own repositories, have them install your GitHub App, store the installation ID, and generate a fresh installation token each time you create a sandbox. This example uses [`@octokit/auth-app`](https://github.com/octokit/auth-app.js):
+If users bring their own repositories, have them install your GitHub App, store the installation ID, and generate a fresh installation token each time you create a sandbox:
 
 **index.ts**
 
@@ -281,6 +360,50 @@ export async function createSandboxForRepo(installationId, repoUrl) {
     },
   });
 }
+```
+
+**main.py**
+
+```py filename="main.py"
+import asyncio
+import os
+
+from github import Auth, GithubIntegration
+from vercel import sandbox
+from vercel.sandbox import GitSource
+
+integration = GithubIntegration(
+    auth=Auth.AppAuth(
+        os.environ["GITHUB_APP_ID"],
+        os.environ["GITHUB_APP_PRIVATE_KEY"],
+    )
+)
+
+
+async def create_sandbox_for_repo(
+    installation_id: int,
+    repo_url: str,
+) -> sandbox.Sandbox:
+    token = integration.get_access_token(installation_id).token
+
+    return await sandbox.create_sandbox(
+        source=GitSource(
+            url=repo_url,
+            username="x-access-token",
+            password=token,
+        ),
+    )
+
+
+async def main() -> None:
+    box = await create_sandbox_for_repo(
+        installation_id=int(os.environ["GITHUB_APP_INSTALLATION_ID"]),
+        repo_url="https://github.com/your-org/private-repo.git",
+    )
+    print(box.name)
+
+
+asyncio.run(main())
 ```
 
 Pass tokens through environment variables so they stay out of logs and source code. Grant only **Contents: Read**, which is all cloning needs, and rotate personal access tokens on a schedule.
@@ -472,7 +595,7 @@ asyncio.run(main())
 sandbox create --name my-sandbox --timeout 3h
 ```
 
-To extend a running sandbox, call `extendTimeout()` in TypeScript or `extend_execution_time_limit()` in Python:
+To give a running sandbox more time, extend its timeout:
 
 **index.ts**
 
@@ -554,9 +677,9 @@ try {
 
 ```py filename="main.py"
 import asyncio
-import sys
 from datetime import timedelta
 
+from anyio.streams.text import TextReceiveStream
 from vercel import sandbox
 
 
@@ -569,9 +692,10 @@ async def main() -> None:
             ["-lc", "for i in 1 2 3; do echo $i; sleep 1; done"],
         )
 
+        # Command output arrives as bytes. Decode it as it streams.
         assert process.stdout is not None
-        async for line in process.stdout:
-            sys.stdout.write(line)
+        async for text in TextReceiveStream(process.stdout):
+            print(text, end="", flush=True)
 
         print(await process.wait())
 
@@ -701,6 +825,25 @@ const child = await Sandbox.fork({
   sourceSandbox: 'my-base-sandbox',
   persistent: false,
 });
+```
+
+**main.py**
+
+```py filename="main.py"
+import asyncio
+
+from vercel import sandbox
+
+
+async def main() -> None:
+    child = await sandbox.fork_sandbox(
+        source_sandbox="my-base-sandbox",
+        persistent=False,
+    )
+    print(child.name)
+
+
+asyncio.run(main())
 ```
 
 **script.sh**
@@ -906,13 +1049,31 @@ The dashboard is the safest way to delete a single sandbox interactively. It req
 
 ### Programmatically
 
-Use `sandbox.delete()` from the JS SDK to remove the sandbox in code. This is useful for cleanup at the end of a job or when reacting to an event:
+Delete the sandbox from your code. This is useful for cleanup at the end of a job or when reacting to an event:
+
+**index.ts**
 
 ```ts filename="index.ts"
 import { Sandbox } from '@vercel/sandbox';
 
 const sandbox = await Sandbox.get({ name: 'my-sandbox' });
 await sandbox.delete();
+```
+
+**main.py**
+
+```py filename="main.py"
+import asyncio
+
+from vercel import sandbox
+
+
+async def main() -> None:
+    box = await sandbox.get_sandbox(name="my-sandbox")
+    await box.destroy()
+
+
+asyncio.run(main())
 ```
 
 ### From the CLI
@@ -939,6 +1100,18 @@ sandbox remove my-sandbox
 
 **Run Cursor Cloud Agents in Vercel Sandbox**: Learn how to run Cursor Cloud Agents in Vercel Sandbox instead of Cursor's hosted machines. [Learn more →](/kb/guide/cursor-vercel-sandbox)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

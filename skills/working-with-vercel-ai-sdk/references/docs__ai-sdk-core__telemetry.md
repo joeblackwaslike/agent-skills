@@ -4,8 +4,8 @@ description: Using OpenTelemetry with AI SDK Core
 url: "https://ai-sdk.dev/docs/ai-sdk-core/telemetry"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/telemetry.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "357790cf7a8621b9dce30ad60f41576e8c240d818253aecc9c2f6ba419845975"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "f61a7bcc5e7d219df1c69289ae437092414db863d558428eef16bedbbd3c9ec4"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -87,6 +87,15 @@ are omitted when either recording option is disabled. Raw tracing span results
 are also omitted in that case because they can contain both inputs and outputs.
 Tracing span errors use a generic failure message.
 Application lifecycle callbacks and returned results retain their full content.
+
+OpenAI Code Interpreter and shell domain secrets, and MCP authorization and
+header values, are redacted from tool definitions and object request/response
+bodies before they reach telemetry integrations or tracing-channel subscribers,
+including when recording is enabled. Redaction uses telemetry-only copies;
+provider requests and application results retain their original values.
+The OpenAI provider supplies these rules, so update `@ai-sdk/openai` together
+with `ai` to use this protection. Older provider versions do not supply these
+telemetry views.
 
 For `generateSpeech`, input telemetry contains the source text and output
 telemetry contains the generated audio byte length, media type, and format.

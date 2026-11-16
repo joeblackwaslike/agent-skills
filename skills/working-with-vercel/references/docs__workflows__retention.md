@@ -15,9 +15,10 @@ related:
   - /docs/agent-runs
 summary: Learn how long Vercel Workflows keeps run data, when Vercel deletes it, where Vercel stores it, and how to delete it sooner.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/workflows/retention.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "8d6c7e87189c472f7977daf14616520fda69bd4447dd97bfa83cf7f2b0c90cee"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7ba16d005573777747e0de84e78e5370a6e389b3b92d1735ff13d4b36e72389d"
 ---
 
 # Workflow Data Retention
@@ -30,16 +31,16 @@ Vercel Workflows stores the inputs, outputs, event log, and streams of every wor
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution)
 - [How to migrate from Cloudflare Workflows to Vercel Workflows](https://vercel.com/kb/guide/migrate-cloudflare-workflows-to-vercel-workflows) — Migrate from Cloudflare Workflows to Vercel Workflows by mapping WorkflowEntrypoint, step.do, and waitForEvent to workfl
-- [Versioning](https://workflow-sdk.dev/docs/foundations/versioning) — Keep in-flight runs stable by default, then choose explicit upgrade boundaries when you need them.
-- [Built-in durability: Introducing Workflow Development Kit](https://vercel.com/blog/introducing-workflow)
-- [The best workflow engine is a programming language](https://vercel.com/blog/the-best-workflow-engine-is-a-programming-language)
-- [Running background workers on Vercel](https://vercel.com/kb/guide/background-workers-on-vercel) — Run background jobs on Vercel with waitUntil, Cron Jobs, Queues, Workflows, Daemons, or Sandbox. Compare the options and
+- [Workflow SDK 5: built for production](https://vercel.com/blog/workflow-sdk-5)
 - [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
+- [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution)
+- [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
+- [Built-in durability: Introducing Workflow Development Kit](https://vercel.com/blog/introducing-workflow)
+- [How to choose between Functions, containers, and Daemons on Vercel](https://vercel.com/kb/guide/vercel-functions-containers-daemons) — Choose Vercel Functions for HTTP requests, container images for custom runtimes, and Daemons for continuous background w
+- [Versioning](https://workflow-sdk.dev/docs/foundations/versioning) — Keep in-flight runs stable by default, then choose explicit upgrade boundaries when you need them.
 - [Workflow Concepts](https://vercel.com/docs/workflows/concepts) — Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
 - [Optimize Deployment Storage](https://vercel.com/docs/deployment-storage/optimize) — Set retention periods, review remaining usage, and reduce deployment output size.
-- [Runtimes](https://vercel.com/docs/functions/runtimes) — Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes suppo
 
 Full cross-link map for this page: [/docs/workflows/retention.graph.md](/docs/workflows/retention.graph.md)
 <!-- /docsgraph:related -->
@@ -80,7 +81,7 @@ These rules apply to every run:
 
 - **All finished runs follow the same rules**: Completed, failed, and cancelled runs all get the same retention period and **Kept for up to** period.
 - **Active runs keep all their data**: While a run is running, sleeping, or waiting on a hook, Vercel keeps all of its data with no time limit. The retention period only starts once the run finishes.
-- **Cancelling a run doesn't delete its data**: Cancelling finishes the run, which starts its retention period. To stop retaining data for a run you no longer need, cancel it.
+- **Cancelling a run doesn't delete its data**: Cancelling finishes the run, which starts its retention period. To delete the data of a run you no longer need, cancel it, then [delete its data](#delete-the-data-of-finished-runs).
 - **Vercel fixes a run's retention period when the run finishes**: Vercel records the retention period on the run as soon as the run finishes. If you later change plans, the change applies to runs that finish afterward. Runs that already finished keep the period they finished with.
 - **Environment and SDK version don't matter**: Production and preview runs, and runs created by the 4.x and 5.x releases of the `workflow` package, follow the same rules.
 - **Frameworks built on Workflows**: If you use eve, see eve's code or documentation for when it terminates a run. After that, the regular Workflows retention rules on this page apply.
@@ -132,7 +133,7 @@ Vercel dispatches the [Vercel Queues](/docs/queues) messages that orchestrate a 
 
 ## Delete run data sooner
 
-### Zero retention for new runs
+### Auto-delete for new runs
 
 To delete a run's payloads as soon as it finishes, pass `experimental_retention: 0` when you start the run:
 
@@ -145,20 +146,42 @@ const run = await start(processProfile, [profileId], {
 });
 ```
 
-With zero retention:
+With auto-delete:
 
-- When the run completes, fails, or you cancel it, its payloads stop being readable immediately. Vercel keeps them for up to 36 days after the run finishes.
+- When the run completes, fails, or you cancel it, its payloads stop being readable immediately, and Vercel deletes them from run storage.
 - Run metadata follows the normal [run metadata retention](#how-long-vercel-keeps-run-metadata), so the run still appears in the dashboard with its payloads shown as expired.
 - You can't read the run's return value. `await run.returnValue` usually throws `RunExpiredError` because deletion happens as soon as the run finishes. If you need the result, write it to your own storage from a step before the run finishes.
 - Vercel doesn't bill Workflow Data Retained for the run's payloads.
 
-Zero retention requires `workflow` 5.0.0 or later, and applies to the run you pass it to. The option is experimental, so its name and accepted values can change. For details, see [Data retention](https://workflow-sdk.dev/docs/observability/retention) in the Workflow SDK documentation.
+> **💡 Note:** Run data may still persist in encrypted database backups for a short period
+> after deletion.
 
-### Runs that have already finished
+Auto-delete requires `workflow` 5.0.0 or later, and applies to the run you pass it to. The option is experimental, so its name and accepted values can change. For details, see [Data retention](https://workflow-sdk.dev/docs/observability/retention) in the Workflow SDK documentation.
 
-You can't delete the data of a run that has already finished. There's no API, CLI command, or dashboard action that deletes specific runs, or all runs created before a date. This applies to runs created by every SDK version, including 4.x.
+### Delete the data of finished runs
 
-Payload access always ends at the run's `expiredAt`, and Vercel deletes the payloads by the end of the [**Kept for up to** period](#how-long-vercel-keeps-run-payloads). To make sure future runs don't keep payloads, start them with [zero retention](#zero-retention-for-new-runs).
+You can delete the payloads of runs that have already finished from the Vercel dashboard. Vercel removes them the same way it does for a run started with [auto-delete](#auto-delete-for-new-runs), but doesn't change how the run was billed:
+
+- The run's payloads stop being readable immediately. The dashboard shows them as **Data expired**, and reads respond as described in [What happens when the retention period ends](#what-happens-when-the-retention-period-ends).
+- Vercel deletes the run's inputs, return values, errors, hook metadata and payloads, event payloads, and stream contents. As with auto-delete, the data may still persist in encrypted database backups for a short period after you delete it.
+- The run stays listed in the dashboard with its run metadata, such as its steps, statuses, and timestamps, which follows the normal [run metadata retention](#how-long-vercel-keeps-run-metadata).
+
+To delete the data of one or more runs from the run list:
+
+1. Open your project in the [Vercel dashboard](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fworkflows\&title=Vercel+Workflows).
+2. Select **Observability**, then **Workflows**.
+3. Select the checkbox of each run whose data you want to delete. You can delete the data of up to 100 runs at a time.
+4. Select **Delete Data**, then confirm.
+
+To delete the data of a single run, open the run, open its actions menu (**⋯**), select **Delete Run Data**, then confirm.
+
+These rules apply when you delete run data:
+
+- **Only finished runs**: You can only delete the data of completed, failed, or cancelled runs. Vercel skips any run that's still running, sleeping, or waiting on a hook, and leaves its data untouched. To delete the data of an active run, cancel it first from the dashboard or with the Workflow SDK, then delete its data.
+- **Deletion can't be undone**: You can't restore deleted payloads, and **Rerun on latest** stops working for the run because its original input is gone.
+- **No refund for retained data**: Vercel bills [Workflow Data Retained](/docs/workflows/pricing#storage-retention) for a run's full retention period when the run finishes. Deleting the run's data early doesn't refund or prorate that charge.
+- **Permissions**: You need permission to update the project, the same permission that cancelling runs requires.
+- **Dashboard only**: There's no Workflow SDK function or CLI command that deletes run data yet.
 
 ### Deleting a project or team
 
@@ -207,12 +230,13 @@ Run retention only applies to the data that Workflows stores for a run. Copies o
 
 - **Why can I still see runs older than my retention period?** Run metadata has its own retention. See [Run metadata](#how-long-vercel-keeps-run-metadata).
 - **Do completed, failed, and cancelled runs differ?** No. See [Run payloads](#how-long-vercel-keeps-run-payloads).
-- **Does cancelling a run delete its data?** No. Cancelling starts the retention period.
+- **Does cancelling a run delete its data?** No. Cancelling starts the retention period. To delete the data, cancel the run, then [delete its data](#delete-the-data-of-finished-runs).
+- **Does deleting a run's data refund Workflow Data Retained?** No. See [Delete the data of finished runs](#delete-the-data-of-finished-runs).
 - **If I upgrade my plan, do runs that already finished keep their data longer?** No. A run keeps the retention period it finished with.
 - **Can an expired run still be read or resumed?** No. A finished run can't resume, and its payloads can't be read after `expiredAt`.
 - **When is every copy of a run's payloads gone?** By the end of the **Kept for up to** period. See [How long Vercel keeps run payloads](#how-long-vercel-keeps-run-payloads).
 - **Is data from runs in `iad1` stored outside `iad1`?** Vercel stores run payloads only in `iad1`, but processes run metadata in its observability systems, which aren't pinned to a region. See [Where Vercel stores run data](#where-vercel-stores-run-data).
-- **How do I delete specific runs?** See [Delete run data sooner](#delete-run-data-sooner).
+- **How do I delete the data of specific runs?** Delete it from the dashboard. See [Delete the data of finished runs](#delete-the-data-of-finished-runs).
 
 ## Related
 
@@ -221,6 +245,18 @@ Run retention only applies to the data that Workflows stores for a run. Copies o
 - [Workflow SDK encryption](https://workflow-sdk.dev/docs/how-it-works/encryption)
 - [Observability Plus](/docs/observability/observability-plus)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

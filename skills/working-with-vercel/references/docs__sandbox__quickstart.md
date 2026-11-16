@@ -15,9 +15,10 @@ related:
   - /docs/sandbox/concepts/persistent-sandboxes
 summary: Learn how to run your first code in a Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/quickstart.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "9466c0081f2b8984acf50700722194e223fc5dd93ce2cfa4b05d16a82733304b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "79758ea9f016b68af243b6e0781ae94b4f512de8d928532d9eb63e9e67a9bfc8"
 ---
 
 # Quickstart
@@ -30,18 +31,17 @@ This guide shows you how to run your first code in a Vercel Sandbox.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
-- [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available)
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
 - [Safely running AI generated code in your Next.js application](https://vercel.com/kb/guide/running-ai-generated-code-sandbox) — How to execute untrusted, AI‑generated code from a Next.js app using Vercel Sandbox, an isolated, ephemeral environment.
 - [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
+- [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
+- [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available)
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
-- [Vercel Sandboxes are now generally available](https://vercel.com/changelog/vercel-sandboxes-ga)
-- [OpenAI SDK](https://vercel.com/docs/sandbox/ecosystem/openai-sdk) — Use OpenAI function calling with AI Gateway to execute model-generated code in an isolated Vercel Sandbox.
-- [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
-- [Run isolated AI agents in one sandbox](https://vercel.com/docs/sandbox/concepts/multi-agent) — Give each AI agent an isolated Linux user in a Vercel Sandbox with the @vercel/sandbox createUser, createGroup, and asUs
+- [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
+- [OpenAI SDK](https://vercel.com/docs/sandbox/ecosystem/openai-sdk) — Use OpenAI function calling with AI Gateway to execute model-generated code in an isolated Vercel Sandbox.
 - [Agent Skills](https://vercel.com/docs/agent-resources/skills) — Install skills to enhance AI coding agents with specialized capabilities for React, Next.js, deployment, and more.
+- [Build a Software Factory with the AI SDK](https://vercel.com/docs/agent-resources/software-factory/ai-sdk) — Compose investigation, sandbox execution, review, and GitHub publication stages with the AI SDK on Vercel.
 
 Full cross-link map for this page: [/docs/sandbox/quickstart.graph.md](/docs/sandbox/quickstart.graph.md)
 <!-- /docsgraph:related -->
@@ -67,7 +67,7 @@ The plugin includes `vercel-sandbox` for SDK and CLI guidance, and `offload-to-s
 
 - A [Vercel account](https://vercel.com/signup)
 - [Vercel CLI](/docs/cli) installed (`npm i -g vercel`)
-- Node.js 22+ or Python 3.10+
+- Node.js 22+ or Python 3.11+
 
 - ### Set up your environment
   Create a new directory and connect it to a Vercel project. This is the recommended way to authenticate because the project handles secure [OIDC token authentication](/docs/sandbox/concepts/authentication) for you.
@@ -111,7 +111,7 @@ The plugin includes `vercel-sandbox` for SDK and CLI guidance, and `offload-to-s
   ```
   **Terminal**
   ```bash filename="Terminal" framework=py
-  uv add vercel python-dotenv
+  uv add vercel-sandbox python-dotenv
   ```
   For TypeScript, `dotenv` provides access to environment variables, `tsx` runs TypeScript code, `typescript` provides the compiler, and `@types/node` provides Node.js type definitions.
   #### Add Sandbox guidance for your coding agent (optional)
@@ -158,7 +158,7 @@ The plugin includes `vercel-sandbox` for SDK and CLI guidance, and `offload-to-s
               capture_output=True,
               check=True,
           )
-          print(result.stdout)
+          print(result.stdout.decode())
 
 
   asyncio.run(main())
@@ -192,6 +192,18 @@ The plugin includes `vercel-sandbox` for SDK and CLI guidance, and `offload-to-s
 - [Snapshots](/docs/sandbox/concepts/snapshots): Save sandbox state to skip setup on future runs.
 - [Examples](/docs/sandbox/working-with-sandbox#examples): See real-world use cases.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

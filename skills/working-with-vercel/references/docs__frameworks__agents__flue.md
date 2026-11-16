@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/observability-and-spend/observability
 summary: Create a Flue agent that uses Vercel AI Gateway for model requests, then add Vercel Sandbox for isolated code execution.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/agents/flue.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "be222721f253270a54881c4867d4606cdde7274d5e4d1c60d9c2e57e460f9cd2"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d742ebf0687357a8f484d5d876eae4cd12ab4060f4674e04982d65227a20c120"
 ---
 
 # Flue with Vercel
@@ -31,20 +32,38 @@ Use [Flue](https://flueframework.com) with [AI Gateway](/docs/ai-gateway) to rou
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to ship a Flask app on Vercel](https://vercel.com/kb/guide/ship-a-flask-app-on-vercel) — Deploy a Flask app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
-- [How to give agents persistent storage with Vercel Drives](https://vercel.com/kb/guide/persistent-storage-with-vercel-drives) — Give AI SDK and TanStack AI agents persistent storage with Vercel Drives so they can save and reuse research notes acros
-- [Introducing the new Vercel Agent](https://vercel.com/blog/vercel-agent)
-- [Vercel for Enterprise](https://vercel.com/blog/vercel-for-enterprise)
-- [How to build an on-demand voice agent with Vercel Sandbox](https://vercel.com/kb/guide/how-to-build-an-on-demand-voice-agent-with-vercel-sandbox) — Build a voice AI application that creates isolated LiveKit agent environments using Vercel Sandbox, enabling real-time c
-- [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
-- [Choosing between eve, AI SDK agents, and \\`WorkflowAgent\\`](https://vercel.com/kb/guide/eve-vs-ai-sdk-agents-vs-workflowagent) — Compare eve, \\`ToolLoopAgent\\`, and \\`WorkflowAgent\\` by durability, approvals, channels, and setup to choose an agent f
+- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
+- [Build Claude Managed Agents with Vercel Services](https://vercel.com/kb/guide/claude-managed-agents-vercel-services) — Deploy Claude Managed Agents with Vercel Services to run a streaming research analyst in a browser chat, using Anthropic
+- [Run a research workspace on Vercel](https://vercel.com/kb/guide/run-research-workspace-vercel) — Plan a durable research workspace on Vercel's Agentic Infrastructure with Workflows, internal API tools, Vercel Sandbox
+- [Build user-aware TanStack Start apps with Vercel Passport](https://vercel.com/kb/guide/vercel-passport-tanstack-start) — Use \\`getIdentity\\(\\)\\` to read a visitor’s verified Vercel Passport identity in TanStack Start server functions, then p
+- [Private enterprise agents on Vercel](https://vercel.com/kb/guide/private-enterprise-agents-vercel) — Design private enterprise agents that call internal APIs and databases with Vercel Functions, Secure Compute, AI Gateway
 - [eve on Vercel](https://vercel.com/docs/frameworks/agents/eve) — Create and deploy an eve agent on Vercel with AI Gateway model access, durable sessions, and authenticated requests.
-- [Running fx Durably on Vercel](https://vercel.com/docs/agent-harnesses/fx) — Deploy an fx agent with libfx so its sessions survive crashes, function timeouts, and redeploys on Vercel.
+- [Security for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/security) — What a durable agent harness may run in your Vercel Function, where the commands and files a model picks run instead, an
 
 Full cross-link map for this page: [/docs/frameworks/agents/flue.graph.md](/docs/frameworks/agents/flue.graph.md)
 <!-- /docsgraph:related -->
 
 This guide runs the Flue runtime locally while AI Gateway handles model requests. Flue's durable Node.js server requires a single process to own each conversation. See [Hosting considerations](#hosting-considerations) before deploying that server to an environment that scales across processes.
+
+**Agent prompt**
+
+```text
+Build a working Flue agent for my project's use case with Vercel AI Gateway, verify it locally, and explain how to host it alongside a Vercel application.
+
+Use https://vercel.com/docs/frameworks/agents/flue.md as the framework setup and hosting reference.
+
+1. Define the outcome. Inspect the project and its repository instructions. Identify the task the agent should perform, the tools or data it needs, and one representative input with an expected result. Ask me about requirements you can't determine from the project before implementing them.
+
+2. Prepare the environment. Check the guide's prerequisites and my Vercel setup. Check whether the Vercel Plugin is installed in your coding tool. If it's missing, install it using the tool-specific instructions at https://vercel.com/docs/agent-resources/vercel-plugin.md.
+
+3. Implement the agent. Create or extend the Flue project with its Node.js runtime, an AI Gateway model, and instructions for my use case. Reuse existing code and conventions, preserve unrelated work, and add only the tools the task needs. Use Vercel Sandbox if isolated code execution is required.
+
+4. Verify the outcome. Run the agent with the representative input and compare its response and tool results with the expected outcome. Run relevant existing project checks and fix failures introduced by your changes. A model returning text alone doesn't establish that the task works.
+
+5. Plan hosting. Follow the guide's requirement that one live process owns each conversation. Don't deploy Flue's durable HTTP router as a Vercel Function. Explain a suitable host and routing approach, the required configuration, and how the Vercel application calls the hosted agent. Keep this task scoped to implementation, local verification, and hosting preparation.
+
+Finish with a concise handoff: the implementation, commands you actually ran and their results, an example input and observed output, and the remaining deployment steps. If credentials, tools, or services block a check, mark it as unverified, explain what's missing, and give the command to rerun it.
+```
 
 ## Prerequisites
 
@@ -446,6 +465,36 @@ In your Vercel request handler, read the visitor with [`getIdentity()`](/docs/pa
 
 Keep the token out of agent messages, tool inputs, logs, and browser responses. Passport authenticates the visitor; the middleware's conversation ownership check controls access to Flue state. Use [Vercel Connect](/docs/connect) when the agent also needs credentials for a third-party service.
 
+## Frequently asked questions
+
+### Can I deploy a Flue agent to Vercel?
+
+Don't deploy Flue's durable HTTP router as a Vercel Function. Flue's Node.js server requires one live process to own each agent conversation. Vercel Functions can serve requests for the same conversation on different instances, and each invocation has a [maximum duration](/docs/functions/configuring-functions/duration). Host the Flue runtime on a server or container that routes each conversation to a single owner. Your Vercel application can then call the hosted agent with the [Flue Agent SDK](https://flueframework.com/docs/sdk/overview/). AI Gateway and Vercel Sandbox work wherever you host the runtime. See [Hosting considerations](#hosting-considerations).
+
+### Which Vercel products work with Flue?
+
+You can use each of these Vercel products with a Flue agent:
+
+- [AI Gateway](/docs/ai-gateway) routes your agent's model requests through Flue's built-in `vercel-ai-gateway` provider and records their usage.
+- [Vercel Sandbox](/docs/sandbox) runs your agent's file and command tools in an isolated microVM, and [Vercel Drives](/docs/sandbox/concepts/drives) keep workspace files across runs.
+- [Vercel Blob](/docs/vercel-blob) stores completed responses and other artifacts.
+- [Vercel Workflows](/docs/workflows) coordinate a hosted Flue agent with other application steps.
+- [Vercel Passport](/docs/passport) verifies visitors in your Vercel app and forwards their identity to your Flue service.
+- [Vercel Connect](/docs/connect) provides credentials when your agent needs to call a third-party service.
+- [Vercel Functions](/docs/functions) run the application that sends requests to your hosted agent.
+
+### How do I use AI Gateway with Flue?
+
+Select a model with `useModel()` and the `vercel-ai-gateway` provider prefix, such as `useModel('vercel-ai-gateway/openai/gpt-6.1-sol')`. The built-in provider reads `AI_GATEWAY_API_KEY`, so your agent doesn't need a separate OpenAI or Anthropic API key. If your Flue configuration sets a `providers` list, include `'vercel-ai-gateway'` in it for server builds. To authenticate with a Vercel OIDC token instead of an API key, register a custom provider with `setProvider()`, as shown in [Flue with AI Gateway](/docs/ai-gateway/ecosystem/framework-integrations/flue#use-vercel-oidc-authentication).
+
+### Can a Flue agent run code in Vercel Sandbox?
+
+Yes. Run `flue add sandbox vercel --print` to print Flue's Vercel adapter blueprint, then apply it to create a `sandboxes/vercel.ts` adapter that wraps a sandbox from `@vercel/sandbox`. In your agent, pass `useSandbox()` a factory that creates the sandbox and returns `vercel(sandbox).createSandbox(options)`. Flue's `read`, `write`, `edit`, `bash`, `grep`, and `glob` tools then run inside the microVM, while the runtime and its model calls stay in your application. Flue doesn't delete sandboxes when a run ends, so your application must stop or delete them. To keep files across runs, [mount a drive](#keep-a-workspace-across-runs).
+
+### How do I orchestrate a Flue agent with Vercel Workflows?
+
+Call your hosted Flue agent from functions marked with `'use step'`, using a client from `@flue/sdk`. Send the message with `client.send()` in one step and return its receipt. Read the response with `client.read(receipt)` in a separate step, so a retry reattaches to the recorded submission instead of sending the message again. Save the result in another step, for example to [Vercel Blob](#save-completed-responses-to-blob) keyed by its submission ID. Workflows preserves the orchestration, while the Flue host runs the conversation. See [Orchestrate hosted agents with Workflows](#orchestrate-hosted-agents-with-workflows) for retry and duplicate-send handling.
+
 ## Next steps
 
 - [Build a software factory](/docs/agent-resources/software-factory/flue) that investigates issues, checks changes, and prepares draft pull requests.
@@ -456,6 +505,23 @@ Keep the token out of agent messages, tool inputs, logs, and browser responses. 
 
 - Monitor model requests with [AI Gateway observability](/docs/ai-gateway/observability-and-spend/observability).
 
+**Agent checklist** [→](/docs/agent-checklist?framework=flue)
+
+Check access, tools, reliability, observability, and cost before you launch
+your Flue agent.
+
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

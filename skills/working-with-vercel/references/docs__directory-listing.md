@@ -11,9 +11,10 @@ related:
   []
 summary: The Directory Listing is served when a particular path is a directory and does not contain an index file. Learn how to toggle and disable it in this...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/directory-listing.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "10b2709b531e3dfefc160c9daf5d39aafd84d679e35ac2e79aeed940982ca5a1"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "811c0c2a5f52ca63edfc9a86fc100633efd700b1dcd95fceea1f47a193889f49"
 ---
 
 # Using the Directory Listing
@@ -38,6 +39,18 @@ To prevent Directory Listing for a specific path, add an index file with any ext
 
 A [custom 404 page](/kb/guide/custom-404-page) doesn't prevent Directory Listing. When the directory contains files, Vercel displays the Directory Listing instead of the 404 page.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

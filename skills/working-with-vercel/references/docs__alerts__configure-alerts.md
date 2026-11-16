@@ -14,9 +14,10 @@ related:
   - /docs/webhooks/webhooks-api
 summary: Configure alert rules and notification destinations for Vercel Observability alerts.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/alerts/configure-alerts.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "98a1020ea3f48cd3e9c12bb43bd0ab41a663abeab143aa30eb1e49b3eaf2a09c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "dec999cb56a75a63ce2fb74a67a670f2d263e69b6fb53c6e0c404c252c46b2ad"
 ---
 
 # Configure alerts
@@ -35,12 +36,11 @@ Use monitors to notify your team when Vercel detects error or usage anomalies.
 - [Vercel Agent can now validate alerts before paging](https://vercel.com/changelog/vercel-agent-can-now-validate-alerts-before-paging-you)
 - [Monitor uptime for AI-native apps with Vercel Alerts](https://vercel.com/kb/guide/monitor-uptime-for-ai-native-apps-with-vercel-alerts) — Learn how to use Vercel Anomaly Alerts as an early-warning system for AI-powered apps, helping you catch 5xx spikes and
 - [Introducing Vercel Monitoring](https://vercel.com/blog/introducing-monitoring)
-- [Anomaly alert configuration now available](https://vercel.com/changelog/anomaly-alert-configuration-now-available)
 - [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
-- [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
-- [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
 - [Monitoring](https://vercel.com/docs/query/monitoring) — Query and visualize your Vercel usage, traffic, and more with Monitoring.
+- [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
+- [Observability](https://vercel.com/docs/connect/observability) — Monitor token requests, authorizations, revocations, and trigger deliveries for your connectors.
 
 Full cross-link map for this page: [/docs/alerts/configure-alerts.graph.md](/docs/alerts/configure-alerts.graph.md)
 <!-- /docsgraph:related -->
@@ -311,6 +311,18 @@ Optionally, add tags to a monitor: select it, open **Configure**, and click **Ed
 
 Vercel includes each alert's [severity](#severity-levels) in the alerts it sends to incident.io. Optionally, map the severity to incident.io priorities in your alert routes, so alerts page responders with the right urgency.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

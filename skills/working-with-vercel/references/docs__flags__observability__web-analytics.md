@@ -14,9 +14,10 @@ related:
   - /docs/flags/flags-sdk-reference
 summary: Learn how to tag your page views and custom events with feature flags
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/observability/web-analytics.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c6e15d94dc7da4df9d80685b29ef1cada54389a977ac8d8281f06b9123495e7b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0efc7fcb62b7282783cd1754046050b741f2afdc74ba42bb0563aa9e1d22b9c8"
 ---
 
 # Integrate flags with Vercel Web Analytics
@@ -32,12 +33,12 @@ sha256: "c6e15d94dc7da4df9d80685b29ef1cada54389a977ac8d8281f06b9123495e7b"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [A/B testing on ecommerce storefronts without hurting Core Web Vitals](https://vercel.com/kb/guide/ecommerce-ab-testing-core-web-vitals) — Client-side A/B tools can worsen LCP and CLS on the pages you're testing. Run ecommerce A/B tests at the edge with Routi
-- [Observe your feature flags with the Vercel DX platform](https://vercel.com/changelog/observe-your-feature-flags-with-the-vercel-dx-platform)
-- [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
-- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
 - [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta)
-- [Introducing feature flag management from the Vercel Toolbar](https://vercel.com/blog/toolbar-feature-flags)
+- [Observe your feature flags with the Vercel DX platform](https://vercel.com/changelog/observe-your-feature-flags-with-the-vercel-dx-platform)
+- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
+- [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
 - [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga)
+- [Declaring feature flags in code](https://vercel.com/changelog/declaring-feature-flags-in-code)
 - [Using the Flags SDK with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
 - [Running an A/B test](https://vercel.com/docs/flags/vercel-flags/cli/run-ab-test) — Set up an A/B test with a feature flag, track results through Web Analytics, and clean up afterward using the Vercel CLI
 
@@ -97,6 +98,18 @@ To track feature flags in server-side events:
 > `reportValue`. The respective implementation will automatically call
 > `reportValue` for you.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

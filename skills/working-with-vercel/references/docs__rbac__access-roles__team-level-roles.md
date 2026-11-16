@@ -14,9 +14,10 @@ related:
   - /docs/rbac/access-roles
 summary: Learn about the different team level roles and the permissions they provide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/rbac/access-roles/team-level-roles.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "cdf8c50f13084bea5ca6a1eaa126d91c9aa39b3875625f7d8c8e588f8d6acf47"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "65f87c9a62aafba60bccadaf74cea86ced533c7c72f66f0106cc60e10bf63890"
 ---
 
 # Team Level Roles
@@ -34,7 +35,6 @@ Team level roles are designed to provide a comprehensive level of control and ac
 - [Developer role now available for Pro teams](https://vercel.com/changelog/developer-role-now-available-for-pro-teams)
 - [Project Level Roles](https://vercel.com/docs/rbac/access-roles/project-level-roles) — Learn about the project level roles and their permissions.
 - [Expanded Role-Based Access Control (RBAC) for Enterprise teams](https://vercel.com/changelog/expanded-role-based-access-control-rbac-for-enterprise-teams)
-- [Role-based Access Control now generally available on Enterprise Plans](https://vercel.com/changelog/role-based-access-control-now-generally-available-on-enterprise-plans)
 - [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 - [Extended permissions](https://vercel.com/docs/rbac/access-roles/extended-permissions) — Learn about extended permissions in Vercel's RBAC system. Understand how to combine roles and permissions for precise ac
 - [Access Groups](https://vercel.com/docs/rbac/access-groups) — Learn how to configure access groups for team members on a Vercel account.
@@ -48,6 +48,18 @@ Full cross-link map for this page: [/docs/rbac/access-roles/team-level-roles.gra
 > [Security](/docs/rbac/access-roles#security-role) and
 > [Contributor](/docs/rbac/access-roles#contributor-role) roles.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

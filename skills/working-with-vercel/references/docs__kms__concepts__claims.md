@@ -14,9 +14,10 @@ related:
   - /docs/kms/ts-sdk-reference
 summary: How a KMS grant sets KMS-owned token claims the caller cannot override, and how an issuer claims schema validates every token it signs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/kms/concepts/claims.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "60773d00e7930b927ce872045a0a6f7ddcd7048e2c305d14c0c9eb03b1163359"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2a0789783a7752e9cfc4d24bfcd3688a8be13bfadbe77acdc3cf25e72abb1374"
 ---
 
 # Vercel KMS Claims
@@ -33,8 +34,8 @@ KMS lets you control the claims in every token an issuer signs. A grant's claim 
 - [Vercel KMS Authentication](https://vercel.com/docs/kms/concepts/authentication) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
 - [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management) — Vercel MCP tools for key management.
 - [Vercel KMS Quickstart](https://vercel.com/docs/kms/quickstart) — Create a KMS issuer, sign a JWT from a Vercel Function with @vercel/kms, and verify it against the published JWKS.
-- [OIDC Federation Reference](https://vercel.com/docs/oidc/reference) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 - [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
+- [Create an issuer policy](https://vercel.com/docs/rest-api/kms/create-an-issuer-policy) — POST /v1/kms/issuers/{issuerId}/policies — Attach a policy to a KMS issuer that grants a project's deployments permissio
 
 Full cross-link map for this page: [/docs/kms/concepts/claims.graph.md](/docs/kms/concepts/claims.graph.md)
 <!-- /docsgraph:related -->
@@ -86,6 +87,18 @@ When a grant defines `tokenClaims`, or an issuer defines a claims schema, KMS di
 - [Connect grants](/docs/kms/concepts/connect-grants)
 - [SDK Reference](/docs/kms/ts-sdk-reference)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

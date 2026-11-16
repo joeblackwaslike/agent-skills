@@ -11,9 +11,10 @@ related:
   - /docs/cli/global-options
 summary: Learn how to switch between different team scopes using the vercel switch CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/switch.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f480bd6997867215f92cb114bf69cd17204dd746b2324c944cc263b4c0e01829"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "552afb4f248cc4d0d8b91f5c4afe58ffc869c55600ebde9f8b41bb7462a497a0"
 ---
 
 # vercel switch
@@ -28,9 +29,9 @@ The `vercel switch` command is used to switch to a different team scope when log
 
 - [vercel teams](https://vercel.com/docs/cli/teams) — Learn how to list, create, switch, invite, and manage your teams with the vercel teams CLI command.
 - [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
-- [vercel link](https://vercel.com/docs/cli/link) — Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
-- [vercel whoami](https://vercel.com/docs/cli/whoami) — Learn how to display the username of the currently logged in user with the vercel whoami CLI command.
+- [vercel ci](https://vercel.com/docs/cli/ci) — Enable or disable Vercel CI for repositories, inspect runs, search logs, and rerun jobs from the command line.
 - [vercel upgrade](https://vercel.com/docs/cli/upgrade) — Upgrade the Vercel CLI to the latest version and manage automatic updates with the vercel upgrade CLI command.
+- [vercel link](https://vercel.com/docs/cli/link) — Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
 
 Full cross-link map for this page: [/docs/cli/switch.graph.md](/docs/cli/switch.graph.md)
 <!-- /docsgraph:related -->
@@ -70,6 +71,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

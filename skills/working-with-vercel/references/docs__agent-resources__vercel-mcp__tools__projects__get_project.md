@@ -12,9 +12,10 @@ related:
   - /docs/projects
 summary: Use get_project with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5701a2da9817ddfe5deb0d3e30368577b1890ed99e7f667b595a7cd7f5916baf"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d42010d7f3ae5ac1a6adec3c087b9cb77a85e36b520ff7145cb79c98a87fc46e"
 ---
 
 # get_project
@@ -27,11 +28,11 @@ Get a [project](/docs/projects) by ID or name, including its configuration.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [create_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project) — Use create_project with Vercel MCP.
 - [get_microfrontends_config_for_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends/get_microfrontends_config_for_project) — Use get_microfrontends_config_for_project with Vercel MCP.
+- [list_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/list_projects) — Use list_projects with Vercel MCP.
 - [get_project_env](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables/get_project_env) — Use get_project_env with Vercel MCP.
 - [get_project_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project_domain) — Use get_project_domain with Vercel MCP.
-- [create_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project) — Use create_project with Vercel MCP.
-- [get_connector_project_connection](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/get_connector_project_connection) — Use get_connector_project_connection with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/projects/get_project.graph.md](/docs/agent-resources/vercel-mcp/tools/projects/get_project.graph.md)
 <!-- /docsgraph:related -->
@@ -53,6 +54,18 @@ If your connection exposes the smaller workflow tool list, use these parameters 
 | `projectId` | string | Yes      | -       | The project ID or slug. Find the project ID in `.vercel/project.json` or use `list_projects`. |
 | `teamId`    | string | Yes      | -       | The team ID or slug. Use the team that owns the resource.                                     |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -16,9 +16,10 @@ related:
   - /docs/vercel-firewall/attack-mode
 summary: This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/plans/enterprise/billing.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "78a98a72fadd1bfce62785dbd4385794a694eb00444f6f1c9ec9de555c4ee096"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0a91273ef68f6b7198b6d9f70a2cc8f4c401dea3f36d02738911d5a8708f1e09"
 ---
 
 # Billing FAQ for Enterprise Plan
@@ -32,11 +33,10 @@ The Vercel Enterprise plan is perfect for [teams](/docs/accounts#creating-a-team
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
-- [Advanced Invoice Settings](https://vercel.com/blog/advanced-invoice-settings)
 - [Billing & Invoices](https://vercel.com/docs/pricing/understanding-my-invoice) — Learn how Vercel invoices are structured for Pro and Enterprise plans, including plan charges, credits, and usage-based
-- [Manage Billing and Refunds for Integrations](https://vercel.com/docs/integrations/create-integration/billing) — Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
+- [vercel billing](https://vercel.com/docs/cli/billing) — Learn how to view your billing overview, usage, contracts, budgets, and invoices for your Vercel team using the vercel b
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Organizations](https://vercel.com/docs/organizations) — Learn how organizations let you group multiple Vercel teams under a single entity with consolidated billing and central
+- [Manage Billing and Refunds for Integrations](https://vercel.com/docs/integrations/create-integration/billing) — Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
 
 Full cross-link map for this page: [/docs/plans/enterprise/billing.graph.md](/docs/plans/enterprise/billing.graph.md)
 <!-- /docsgraph:related -->
@@ -146,6 +146,18 @@ You can monitor usage in the [Vercel Dashboard](/dashboard) under the **Usage** 
 
 The billing cycle refers to the period of time between invoices. The start date depends on when you created the account. You will be billed every 1, 2, 3, 6, or 12 months depending on your contract.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

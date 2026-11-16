@@ -15,9 +15,10 @@ related:
   - /docs/agent/pricing
 summary: Use Vercel Agent from your Vercel dashboard
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent/chat/dashboard.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "fd034f33a153f90dbca6800cd9639f5996df759138b5ccc929a70599d03944ef"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "946c2dd6995b35afc130f92204791572800a045db460901968d8622b4a6a7152"
 ---
 
 # Dashboard
@@ -103,6 +104,18 @@ Only a team Owner or Billing member can change this setting. Other members can a
 - [Vercel Agent pricing](/docs/agent/pricing) explains included usage, rates, and cost tracking.
 - [Vercel Privacy Notice](https://vercel.com/legal/privacy-policy) explains how Vercel handles personal information.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

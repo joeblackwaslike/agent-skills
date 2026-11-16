@@ -16,9 +16,10 @@ related:
   - /docs/sandbox/concepts/persistent-sandboxes
 summary: Persistent storage that can be mounted into sandboxes and shared across runs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/concepts/drives.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "6cef6a29a9ceae0e1935ab6819247c44955ddf67d9dafe61a9d361997060e995"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2671eab70843f01c4265e5bdf75d4d1ef29d162c8b0d413587d859f761b3c98c"
 ---
 
 # Drives
@@ -31,18 +32,18 @@ Drives provide persistent storage that you mount into a sandbox as a working dir
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How Vercel Drives work and how to use them](https://vercel.com/kb/guide/vercel-drives) — Learn how Vercel Drives give Vercel Sandbox persistent, shareable storage, and how to create, mount, snapshot, fork, lis
 - [Drives for Vercel Sandbox are now in public beta](https://vercel.com/changelog/drives-for-vercel-sandbox-are-now-in-public-beta)
+- [How Vercel Drives work and how to use them](https://vercel.com/kb/guide/vercel-drives) — Learn how Vercel Drives give Vercel Sandbox persistent, shareable storage, and how to create, mount, snapshot, fork, lis
+- [How to use Vercel Drives with an eve agent](https://vercel.com/kb/guide/vercel-drives-eve-agent) — Mount Vercel Drives in an eve agent's sandbox to give each user a persistent workspace and share read-only reference dat
+- [Introducing Vercel Drives: persistent storage for agents](https://vercel.com/blog/introducing-vercel-drives-persistent-storage-for-agents)
 - [Vercel Sandbox](https://eve.dev/docs/sandbox/vercel) — Create persistent sandboxes on Vercel, from a prepared snapshot when the environment has build-time setup.
 - [Drives for Vercel Sandbox in Private Beta](https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta)
 - [Vercel Drives is now generally available](https://vercel.com/changelog/vercel-drives-is-now-generally-available)
 - [Vercel Sandbox with Drives now starts up to 2.4× faster](https://vercel.com/changelog/vercel-sandbox-with-drives-now-starts-up-to-2-4x-faster)
 - [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
 - [How to give agents persistent storage with Vercel Drives](https://vercel.com/kb/guide/persistent-storage-with-vercel-drives) — Give AI SDK and TanStack AI agents persistent storage with Vercel Drives so they can save and reuse research notes acros
+- [Build a Shopify agent with AI SDK and Vercel Connect](https://vercel.com/kb/guide/shopify-agent-ai-sdk-vercel-connect) — Build a Shopify agent with AI SDK and Vercel Connect to search products, check orders, and request approval before chang
 - [Compute that takes any shape](https://vercel.com/blog/fluid-compute-takes-any-shape)
-- [Running fx Durably on Vercel](https://vercel.com/docs/agent-harnesses/fx) — Deploy an fx agent with libfx so its sessions survive crashes, function timeouts, and redeploys on Vercel.
-- [Running OpenCode Durably on Vercel](https://vercel.com/docs/agent-harnesses/opencode) — Run OpenCode v2 inside a Vercel Function with its session in a durable log, so a crashed turn resumes in a new function.
-- [Running Pi Durably on Vercel](https://vercel.com/docs/agent-harnesses/pi) — Make a Pi agent durable on Vercel so a crashed turn resumes in a new function instead of starting over.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/drives.graph.md](/docs/sandbox/concepts/drives.graph.md)
 <!-- /docsgraph:related -->
@@ -97,9 +98,18 @@ const cache = await Drive.getOrCreate({ name: 'shared-deps' });
 
 // One sandbox populates the cache (single read-write mount)
 const writer = await Sandbox.create({
+  source: {
+    type: 'git',
+    url: 'https://github.com/vercel/ms.git',
+    depth: 1,
+  },
   mounts: { '/cache': cache },
 });
-await writer.runCommand('pnpm', ['install', '--store-dir', '/cache']);
+await writer.runCommand({
+  cmd: 'pnpm',
+  args: ['install', '--store-dir', '/cache'],
+  cwd: 'ms',
+});
 await writer.stop();
 
 // Later sandboxes read the same cache without reinstalling
@@ -111,23 +121,38 @@ const sandbox = await Sandbox.create({
 **main.py**
 
 ```py filename="main.py"
+import asyncio
+
 from vercel import sandbox
+from vercel.sandbox import GitSource
 
-cache, created = await sandbox.get_or_create_drive(name="shared-deps")
 
-# One sandbox populates the cache (single read-write mount)
-writer = await sandbox.create_sandbox(mounts={"/cache": cache})
-await writer.run_command(
-    "pnpm",
-    ["install", "--store-dir", "/cache"],
-    check=True,
-)
-await writer.stop()
+async def main() -> None:
+    cache, created = await sandbox.get_or_create_drive(name="shared-deps")
 
-# Later sandboxes read the same cache without reinstalling
-reader = await sandbox.create_sandbox(
-    mounts={"/cache": cache.snapshot()},
-)
+    # One sandbox populates the cache (single read-write mount)
+    writer = await sandbox.create_sandbox(
+        source=GitSource(
+            url="https://github.com/vercel/ms.git",
+            depth=1,
+        ),
+        mounts={"/cache": cache},
+    )
+    await writer.run_command(
+        "pnpm",
+        ["install", "--store-dir", "/cache"],
+        cwd="ms",
+        check=True,
+    )
+    await writer.stop()
+
+    # Later sandboxes read the same cache without reinstalling
+    reader = await sandbox.create_sandbox(
+        mounts={"/cache": cache.snapshot()},
+    )
+
+
+asyncio.run(main())
 ```
 
 A snapshot copies the entire filesystem per sandbox. A drive is one directory that many sandboxes share, so there is one copy to update and every sandbox reads from it.
@@ -153,13 +178,20 @@ const drive = await Drive.getOrCreate({
 **main.py**
 
 ```py filename="main.py"
+import asyncio
+
 from vercel import sandbox
 
-drive, created = await sandbox.get_or_create_drive(
-    name="workspace-cache",
-    max_size_bytes=200 * 1024 * 1024 * 1024,  # 200 GiB
-    region="sfo1",
-)
+
+async def main() -> None:
+    drive, created = await sandbox.get_or_create_drive(
+        name="workspace-cache",
+        max_size_bytes=200 * 1024 * 1024 * 1024,  # 200 GiB
+        region="sfo1",
+    )
+
+
+asyncio.run(main())
 ```
 
 **terminal.sh**
@@ -170,9 +202,9 @@ sandbox drives get-or-create workspace-cache \
   --region sfo1
 ```
 
-If you omit the maximum size, the drive defaults to 1 TiB (1 GiB for Hobby). Set `maxSize` in TypeScript, `max_size_bytes` in Python, or `--max-size` in the CLI to specify the maximum drive size in bytes. The size must be a multiple of 4096 bytes. The default maximum quota is 16 TiB.
+If you omit the maximum size, the drive defaults to 1 TiB (1 GiB for Hobby). To choose another size, set the maximum drive size in bytes when you create the drive. The size must be a multiple of 4096 bytes. The default maximum quota is 16 TiB.
 
-Drives are created in `iad1` by default. Set `region` in the SDKs or `--region` in the CLI to store the drive in another [region](/docs/sandbox/concepts/regions#regions-and-drives).
+Drives are created in `iad1` by default. Set a region when you create the drive to store it in another [region](/docs/sandbox/concepts/regions#regions-and-drives).
 
 A drive's region can't change after creation. Requesting an existing drive with a different region or maximum size than it was created with fails with a `conflict` error.
 
@@ -201,15 +233,22 @@ const sandbox = await Sandbox.create({
 **main.py**
 
 ```py filename="main.py"
+import asyncio
+
 from vercel import sandbox
 
-drive, created = await sandbox.get_or_create_drive(name="workspace-cache")
 
-# Mount as read-write once
-box = await sandbox.create_sandbox(
-    name="my-sandbox",
-    mounts={"/data": drive},
-)
+async def main() -> None:
+    drive, created = await sandbox.get_or_create_drive(name="workspace-cache")
+
+    # Mount as read-write once
+    box = await sandbox.create_sandbox(
+        name="my-sandbox",
+        mounts={"/data": drive},
+    )
+
+
+asyncio.run(main())
 ```
 
 **terminal.sh**
@@ -249,19 +288,26 @@ const secondReader = await Sandbox.create({
 **main.py**
 
 ```py filename="main.py"
+import asyncio
+
 from vercel import sandbox
 
-drive, created = await sandbox.get_or_create_drive(name="shared")
 
-# Mount many snapshots of the same drive
-first_reader = await sandbox.create_sandbox(
-    name="reader-1",
-    mounts={"/data": drive.snapshot()},
-)
-second_reader = await sandbox.create_sandbox(
-    name="reader-2",
-    mounts={"/data": drive.snapshot()},
-)
+async def main() -> None:
+    drive, created = await sandbox.get_or_create_drive(name="shared")
+
+    # Mount many snapshots of the same drive
+    first_reader = await sandbox.create_sandbox(
+        name="reader-1",
+        mounts={"/data": drive.snapshot()},
+    )
+    second_reader = await sandbox.create_sandbox(
+        name="reader-2",
+        mounts={"/data": drive.snapshot()},
+    )
+
+
+asyncio.run(main())
 ```
 
 **terminal.sh**
@@ -293,6 +339,27 @@ const sandbox = await Sandbox.create({
   region: forkedDrive.region,
   mounts: { '/data': forkedDrive },
 });
+```
+
+**main.py**
+
+```py filename="main.py"
+import asyncio
+
+from vercel import sandbox
+
+
+async def main() -> None:
+    drive = await sandbox.get_drive(name_or_id="workspace-cache")
+    forked_drive = await drive.fork(name="workspace-cache-fork")
+
+    box = await sandbox.create_sandbox(
+        region=forked_drive.region,
+        mounts={"/data": forked_drive},
+    )
+
+
+asyncio.run(main())
 ```
 
 **terminal.sh**
@@ -327,16 +394,23 @@ for (const drive of result.drives) {
 **main.py**
 
 ```py filename="main.py"
+import asyncio
+
 from vercel import sandbox
 from vercel.sandbox import DriveQueryByName
 
-query = DriveQueryByName(
-    name_prefix="workspace",
-    sort_order="asc",
-)
 
-async for drive in sandbox.query_drives(query=query, page_size=10):
-    print(drive.name, drive.current_sandbox_name or "detached")
+async def main() -> None:
+    query = DriveQueryByName(
+        name_prefix="workspace",
+        sort_order="asc",
+    )
+
+    async for drive in sandbox.query_drives(query=query, page_size=10):
+        print(drive.name, drive.current_sandbox_name or "detached")
+
+
+asyncio.run(main())
 ```
 
 **terminal.sh**
@@ -362,10 +436,17 @@ await drive.delete();
 **main.py**
 
 ```py filename="main.py"
+import asyncio
+
 from vercel import sandbox
 
-drive, created = await sandbox.get_or_create_drive(name="workspace-cache")
-await drive.delete()
+
+async def main() -> None:
+    drive, created = await sandbox.get_or_create_drive(name="workspace-cache")
+    await drive.delete()
+
+
+asyncio.run(main())
 ```
 
 **terminal.sh**
@@ -398,6 +479,18 @@ Deploy an eve template to start building AI agents that store and search files o
 - [JS SDK Reference](/docs/sandbox/sdk-reference): Full API documentation for the JavaScript SDK.
 - [Python SDK Reference](/docs/sandbox/python-sdk-reference): Full API documentation for the Python SDK.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

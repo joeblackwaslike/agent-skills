@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/observability-and-spend/budgets
 summary: Connect Hermes to AI Gateway with the Vercel CLI or manual provider configuration. Set your API key, discover models, and monitor usage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/hermes.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "50f557831cd468560145da486632f813597c1cb56ddfc2d79dc32ba6124af78b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7bfb22fa975ab8d41412313d7de3e285c360f485917c36890bea7b46beef1567"
 ---
 
 # Hermes with AI Gateway
@@ -33,9 +34,10 @@ sha256: "50f557831cd468560145da486632f813597c1cb56ddfc2d79dc32ba6124af78b"
 
 - [GPT 6 Astra now available on Vercel AI Gateway](https://vercel.com/changelog/gpt-6-astra-now-available-on-vercel-ai-gateway)
 - [Vercel AI Gateway and Vercel Sandbox now available on Hermes Agent](https://vercel.com/changelog/vercel-ai-gateway-and-vercel-sandbox-now-available-on-hermes-agent)
-- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
 - [Hermes](https://vercel.com/docs/sandbox/ecosystem/hermes) — Run Hermes Agent terminal commands in isolated Vercel Sandbox microVMs, with models served through Vercel AI Gateway.
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
+- [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
+- [Harbor with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/harbor) — Evaluate coding-agent harnesses with Harbor and AI Gateway. Choose a harness, configure its connection, and pass separat
 - [gptme with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/gptme) — Connect gptme to AI Gateway with the Vercel CLI or a TOML provider configuration.
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/hermes.graph.md](/docs/ai-gateway/coding-agents/hermes.graph.md)
@@ -106,6 +108,18 @@ Hermes identifies itself to the gateway, so its requests are attributable in you
 - Learn about [model routing and fallbacks](/docs/ai-gateway/models-and-providers/provider-options)
 - Configure [spend limits](/docs/ai-gateway/observability-and-spend/budgets) on your API key
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

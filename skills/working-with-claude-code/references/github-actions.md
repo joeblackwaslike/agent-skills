@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/github-actions.md"
-fetched_at: "2026-11-02T12:02:15.109Z"
-sha256: "5d695320e5381dd90cbe88a7c7df35407a75c4ccbd177e26572ac190731e41f4"
+fetched_at: "2026-11-16T12:28:44.823Z"
+sha256: "5c793c4ef08da88eb59e5e9ea6eedad0a2b97b31fd8e504ed7ac7995c738c471"
 ---
 
 > ## Documentation Index
@@ -135,12 +135,14 @@ When you install the app, you grant the following permissions:
 | Administration | Read |
 | Checks | Read and write |
 | Contents | Read and write |
+| Dependabot alerts | Read |
 | Discussions | Read and write |
 | Issues | Read and write |
 | Members | Read |
 | Merge queues | Read |
 | Metadata | Read |
 | Pull requests | Read and write |
+| Repository creation | Read and write |
 | Repository hooks | Read and write |
 | Statuses | Read |
 | Workflows | Read and write |

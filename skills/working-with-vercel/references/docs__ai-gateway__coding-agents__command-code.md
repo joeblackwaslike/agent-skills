@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/observability-and-spend/usage
 summary: Connect Command Code to AI Gateway with your own API key and a custom base URL. Configure models, switch between them, and monitor usage and spending.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/command-code.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "cd9ff3a0cfc237c05a71c69ca37473863b0c1399bb2c22c77940865601423715"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a646c91b18cfc665df34e4c216fe6a88eb6a761c34b1a321a03828f449eddc55"
 ---
 
 # Command Code with AI Gateway
@@ -31,7 +32,7 @@ Use [Command Code](https://commandcode.ai/) with AI Gateway for model access and
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
+- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 - [Kilo Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/kilo-code) — Connect Kilo Code to AI Gateway with the Vercel CLI or an OpenAI-compatible provider configuration. Set your API key and
@@ -102,6 +103,18 @@ Command Code requires manual configuration. The [Vercel CLI setup command](/docs
 - [Monitor usage and spending](/docs/ai-gateway/observability-and-spend/usage)
 - [Explore Command Code's BYOK options](https://commandcode.ai/docs/byok)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

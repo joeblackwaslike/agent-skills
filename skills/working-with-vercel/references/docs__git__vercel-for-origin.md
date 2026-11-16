@@ -14,9 +14,10 @@ related:
   - /docs/git
 summary: Connect Origin to Vercel to create automatic Preview and Production Deployments from your repositories.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/git/vercel-for-origin.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "1400baad30fc65b0ed6bee5a14694a5f2060eafc086b949f0b44262d69f72390"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0887943452bbf53f61406477519f44f527e0e87c73d0eefef179c0d9111507f3"
 ---
 
 # Deploying Origin Repositories with Vercel
@@ -59,6 +60,18 @@ To view or reconnect your Origin teams, open your Vercel team's [**Git settings*
 
 To disconnect an Origin repository from a Vercel project, open the project's [**Git settings**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fgit\&title=Go+to+Git+settings) and select **Disconnect** under **Connected Git Repository**.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -4,8 +4,8 @@ description: Learn how to use DeepInfra with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/deepinfra"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepinfra.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "63190d725751089ceb34974c69a4c9423343cce3a1e2392d345aff26c6d508c2"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "7a58d1d7adf660447bb03fc8ecb47fe51db0118d3211868b891e20584b317474"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -250,6 +250,11 @@ DeepInfra.
 ### Image Editing
 
 DeepInfra supports image editing through models like `Qwen/Qwen-Image-Edit`. Pass input images via `prompt.images` to transform or edit existing images.
+
+The provider downloads remote input images and masks before uploading them to
+DeepInfra, using the `fetch` option of `createDeepInfra`. For untrusted URLs
+on Node.js, pass a `guarded-fetch` transport there. See [Secure URL
+Fetching](/docs/advanced/secure-url-fetching#opt-in-dns-protection-on-nodejs).
 
 #### Basic Image Editing
 

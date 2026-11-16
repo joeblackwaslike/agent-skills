@@ -15,9 +15,10 @@ related:
   - /docs/cron-jobs/usage-and-pricing
 summary: Learn about cron jobs, how they work, and how to use them on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/schedules/cron-jobs.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "d8e50a3b6b8a598f8755bed8a6d4f90607462e741163618c4f983c228ace819d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1faf48baff0b9654420ef4d84abccb7e0ca860d37fbd37b46698f866300cb997"
 ---
 
 # Cron Jobs
@@ -31,14 +32,13 @@ Cron Jobs are a legacy feature and will be migrated to
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing Vercel Cron Jobs](https://vercel.com/blog/cron-jobs)
+- [Cron jobs now support 100 per project on every plan](https://vercel.com/changelog/cron-jobs-now-support-100-per-project-on-every-plan)
 - [Vercel Cron Jobs are now generally available](https://vercel.com/changelog/vercel-cron-jobs-are-now-generally-available)
 - [Run scheduled jobs with Vercel Cron Jobs and Vercel Functions](https://vercel.com/changelog/run-scheduled-jobs-with-vercel-cron-jobs-and-vercel-functions)
-- [Cron jobs now support 100 per project on every plan](https://vercel.com/changelog/cron-jobs-now-support-100-per-project-on-every-plan)
-- [Introducing Vercel Schedules](https://vercel.com/blog/introducing-vercel-schedules)
 - [vercel crons](https://vercel.com/docs/cli/crons) — Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand.
+- [Migrating from Cron Jobs to Schedules](https://vercel.com/docs/schedules/migrate-from-cron-jobs) — Move Cron Jobs in vercel.json to Schedules without changing your route code, then optionally make the route private.
 - [Schedules Configuration Reference](https://vercel.com/docs/schedules/configuration) — Reference for static schedules in vercel.json and the Build Output API, including targets, function identifiers, cron sy
 - [Schedules Concepts](https://vercel.com/docs/schedules/concepts) — Learn how Vercel Schedules handles environments, deployments, jitter, one-time schedules, late runs, and duplicate deliv
-- [Getting Started with Schedules](https://vercel.com/docs/schedules/quickstart) — Run a private Vercel Function every hour with a static schedule in vercel.json, test it locally, and deploy it.
 - [Handling Scheduled Runs](https://vercel.com/docs/schedules/handle-runs) — Write the private function, route, or queue consumer that a schedule runs, and make it safe to run more than once.
 
 Full cross-link map for this page: [/docs/schedules/cron-jobs.graph.md](/docs/schedules/cron-jobs.graph.md)
@@ -107,6 +107,18 @@ You can also use [crontab guru](https://crontab.guru/) to validate your cron exp
 - [Managing Cron Jobs](/docs/cron-jobs/manage-cron-jobs)
 - [Usage and Pricing](/docs/cron-jobs/usage-and-pricing)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

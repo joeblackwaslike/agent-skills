@@ -15,9 +15,10 @@ related:
   - /docs/agent-resources/vercel-mcp
 summary: Learn how Vercel serves documentation to AI agents as Markdown and helps them discover related pages through content negotiation, discovery indexes,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/markdown-access.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "473ab52602976d124d4adb84cd81273b6e4e18d46d0afa7e62f441960510d96a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "be31cac5be8e79896cbbd117c737f8d2b46ea06fc1be0f8b703fb48cdd8e2bf4"
 ---
 
 # Markdown and Agent Discovery
@@ -34,14 +35,13 @@ Vercel documentation is available as HTML for humans and structured Markdown for
 - [Making agent-friendly pages with content negotiation](https://vercel.com/blog/making-agent-friendly-pages-with-content-negotiation)
 - [Docs pages support Markdown responses](https://vercel.com/changelog/docs-pages-support-markdown-responses)
 - [Open Vercel documentation pages in AI providers](https://vercel.com/changelog/open-vercel-documentation-pages-in-ai-providers)
-- [Making your catalog discoverable to AI agents](https://vercel.com/kb/guide/agentic-commerce-readiness) — Agentic commerce readiness starts with the initial HTML response. Server-render your product catalog, ship JSON-LD, and
-- [AI-enhanced search for Vercel documentation](https://vercel.com/changelog/ai-enhanced-search-for-vercel-documentation)
-- [How to create a contentful asset on Vercel](https://vercel.com/kb/guide/how-to-create-a-contentful-asset-on-vercel) — This is my wonderful
-- [How our agents build on-brand pages with design.md](https://vercel.com/blog/how-our-agents-build-on-brand-pages-with-design-md)
 - [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify) — Migrate your website's configuration from Netlify to Vercel
-- [AGENTS.md outperforms skills in our agent evals](https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals)
 - [How to build an MCP server with Nuxt](https://vercel.com/kb/guide/how-to-build-an-mcp-server-with-nuxt) — Add an MCP server to your Nuxt app with the Nuxt MCP Toolkit. Create tools, resources, and prompt templates that AI assi
-- [AEO & GEO](https://vercel.shop/docs/anatomy/aeo-geo) — How the storefront makes itself legible to AI answer engines and generative search, with built-in content negotiation, s
+- [How to create a contentful asset on Vercel](https://vercel.com/kb/guide/how-to-create-a-contentful-asset-on-vercel) — This is my wonderful
+- [Making your catalog discoverable to AI agents](https://vercel.com/kb/guide/agentic-commerce-readiness) — Agentic commerce readiness starts with the initial HTML response. Server-render your product catalog, ship JSON-LD, and
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [Call AI Gateway Chat Completions with REST](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api) — Use AI Gateway API directly without client libraries using curl and fetch.
+- [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
 
 Full cross-link map for this page: [/docs/agent-resources/markdown-access.graph.md](/docs/agent-resources/markdown-access.graph.md)
 <!-- /docsgraph:related -->
@@ -91,10 +91,21 @@ Each Markdown response starts with YAML frontmatter with these fields:
 | `related` | Paths of up to five other docs pages that the page links to. Empty (`[]`) when none are available |
 | `summary` | A one-sentence description of the page |
 | `install_vercel_plugin` | The command to install the [Vercel Plugin](/docs/agent-resources/vercel-plugin) |
+| `search_with_vercel_cli` | The command to [search the docs](#search-the-docs-from-the-terminal) with the Vercel CLI |
 
 The response body preserves headings, links, fenced code blocks, and tables. When the docs graph has curated links for the page, the Markdown response also includes a **Related pages** section after the introduction.
 
 Each HTML page advertises its Markdown version in a `rel="alternate"` link with the `text/markdown` content type. It also advertises the page's `.graph.md` cross-link map.
+
+## Knowledge Base guides
+
+Append `.md` to a [Knowledge Base](/kb) guide URL to read the guide as Markdown. For example, [the evlog guide as Markdown](/kb/guide/ai-sdk-and-evlog.md) covers recording AI SDK usage and cost.
+
+Guide pages, topic pages, and the [Knowledge Base index](/kb.md) also show agents how to find more guides with the Vercel CLI, without logging in. Their frontmatter includes a `search_with_vercel_cli` field, and a footer lists example searches:
+
+```bash filename="terminal"
+npx vercel@latest kb search "rewrites and redirects"
+```
 
 ## Prompt library
 
@@ -130,6 +141,17 @@ Append `.graph.md` to a page URL for a smaller cross-link map designed for agent
 - Pages that link to the source page, grouped by site
 
 Each `.graph.md` response contains the page's complete set of relationships, and section headings include the link count. The header of every response links to [`/docs/graph.json`](/docs/graph.json) and states when the graph was built. Pages that are newer than the last nightly build return a `200` response explaining that no cross-link map exists yet.
+
+## Search the docs from the terminal
+
+Agents can search the Vercel docs and read pages as Markdown with the `vercel docs` command, without logging in. Search returns one result per page, best match first, with the page's title, URL, and description:
+
+```bash filename="terminal"
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs inspect functions
+```
+
+Each docs Markdown response points agents at these commands. Its frontmatter includes a `search_with_vercel_cli` field, and a footer lists example searches. The Markdown response for a page that doesn't exist also suggests a search.
 
 ## Site-wide discovery files
 
@@ -192,6 +214,18 @@ Help me set this up step by step.
 
 In tools like Cursor, add `.md` documentation URLs to your [project rules](https://cursor.com/docs/context/rules) so the AI can load the relevant Vercel documentation.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -11,9 +11,10 @@ related:
   - /docs/conformance/customize
 summary: Requires that next/image is used for all images.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/nextjs_use_next_image.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "3ed3d348a0362815635f97e8f2e41495b339ceea8e1960270401a2c4448edd9f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7de872bdd9193b7751467a4e0543fa62a653f216de2eb452db77438284bb747e"
 ---
 
 # NEXTJS_USE_NEXT_IMAGE
@@ -92,6 +93,18 @@ Replace any `<img>` elements that are caught by this rule with
 Again, please check with your managed hosting provider for image optimization
 costs.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/models-and-providers
 summary: "Move your app's model calls to Vercel AI Gateway with a single coding-agent prompt, whatever provider or SDK you use today."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/getting-started/migrate-to-ai-gateway.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "26897f17e3c2cd27fdc6ef39dcd8fc6ceb555ad19fe08828f8e8c581ae1cba3d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8fac69e9bec43ece3c8e33d79dabca62278bd18e27e3fbfa5d9e61b7d9ee0f10"
 ---
 
 # Migrate to AI Gateway Using Your Coding Agent
@@ -34,12 +35,12 @@ AI Gateway puts one endpoint and one API key in front of 400+ models, and layers
 - [AI Gateway production index](https://vercel.com/blog/ai-gateway-production-index)
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
-- [How to migrate from DurableAgent to WorkflowAgent](https://vercel.com/kb/guide/durableagent-to-workflowagent) — Switch your app from \\`DurableAgent\\` \\(@workflow/ai\\) to \\`WorkflowAgent\\` \\(@ai-sdk/workflow\\) by updating imports, st
 - [Why all application migrations should be incremental ](https://vercel.com/blog/incremental-migrations)
-- [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
-- [Technical audits: Finding the bottlenecks that cost performance, money, and velocity](https://vercel.com/kb/guide/technical-audits) — How Vercel's Forward Deployed Engineering team runs code review, web performance, and usage audits, the recurring patter
+- [Introducing Virtual Models on AI Gateway](https://vercel.com/blog/ai-gateway-virtual-models)
+- [Draft content in your voice from Slack with eve](https://vercel.com/kb/guide/eve-content-agent) — Deploy the eve content agent template, a Slack bot that drafts blog posts, LinkedIn posts, release notes, and newsletter
+- [How to migrate from DurableAgent to WorkflowAgent](https://vercel.com/kb/guide/durableagent-to-workflowagent) — Switch your app from \\`DurableAgent\\` \\(@workflow/ai\\) to \\`WorkflowAgent\\` \\(@ai-sdk/workflow\\) by updating imports, st
 - [Incremental Migration to Vercel](https://vercel.com/docs/incremental-migration) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
-- [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
+- [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis) — Connect to AI Gateway with the AI SDK, Python, Go, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Co
 - [vercel ai-gateway](https://vercel.com/docs/cli/ai-gateway) — Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, virtual models, models, leaderboards,
 
 Full cross-link map for this page: [/docs/ai-gateway/getting-started/migrate-to-ai-gateway.graph.md](/docs/ai-gateway/getting-started/migrate-to-ai-gateway.graph.md)
@@ -346,6 +347,18 @@ See [Coding agents](/docs/ai-gateway/coding-agents) to set it up.
 - Add [provider fallbacks](/docs/ai-gateway/models-and-providers/provider-options) so a single provider outage doesn't take your app down.
 - Set [spend limits and budgets](/docs/ai-gateway/observability-and-spend) before you send production traffic.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -12,9 +12,10 @@ related:
   - /docs/accounts
 summary: Set up two-factor authentication with an authenticator app, save recovery codes, and add a passkey.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/two-factor-authentication.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "89af1eb414dcbf3e717db3c51ac0a49963a17dc816e040455b6569ba55f878f0"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2045918f4d8fe14fbc3de20316185f1e95f21ebd148aa13b851b7ce0c449758c"
 ---
 
 # Two-factor Authentication
@@ -30,11 +31,11 @@ Two-factor authentication (2FA) adds a verification step when you sign in to Ver
 - [Two-Factor Authentication (2FA) is now available](https://vercel.com/changelog/2fa-is-now-available)
 - [Two-factor authentication (2FA) team enforcement](https://vercel.com/changelog/2fa-team-enforcement)
 - [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
-- [Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel) — Learn how to Sign in with Vercel
 - [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
+- [Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel) — Learn how to Sign in with Vercel
 - [Troubleshooting Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/troubleshooting) — Learn how to troubleshoot common errors with Sign in with Vercel
-- [SAML Single Sign-On](https://vercel.com/docs/saml) — Learn how to configure SAML SSO for your organization on Vercel.
-- [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
+- [Authentication](https://vercel.com/docs/rest-api/authentication) — Endpoints in the authentication group of the Vercel REST API Reference.
+- [Create an Auth Token](https://vercel.com/docs/rest-api/authentication/create-an-auth-token) — POST /v3/user/tokens — Creates and returns a new authentication token for the currently authenticated User. The \\`bearer
 
 Full cross-link map for this page: [/docs/two-factor-authentication.graph.md](/docs/two-factor-authentication.graph.md)
 <!-- /docsgraph:related -->
@@ -93,6 +94,18 @@ Team owners can require members to enable 2FA before accessing team resources. E
 
 See [two-factor enforcement](/docs/two-factor-enforcement) to prepare members, review automation, and enable enforcement.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

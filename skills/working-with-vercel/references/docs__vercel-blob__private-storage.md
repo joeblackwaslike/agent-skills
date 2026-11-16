@@ -15,9 +15,10 @@ related:
   - /docs/cli/blob
 summary: Learn how to use private Vercel Blob storage to serve files with authentication
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-blob/private-storage.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "1f17c130a5e32c172ebe8ef1ce0afd5500a650633b62500fe072e1687ed3ebb6"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "04ac20964b11c36e6ce3e1893c29d8bead20b39ed5fbc97d0f562f8545fcbe86"
 ---
 
 # Private Storage
@@ -45,7 +46,6 @@ Private Blob stores require authentication for all read and write operations, en
 - [Use Vercel Daemons with eve agents](https://vercel.com/kb/guide/vercel-daemons-eve-agents) — Connect eve agents to Vercel Daemons to process queued jobs, offload heavy work, and react to events. Includes code, aut
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
 - [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
-- [Private storage for Vercel Blob, now available in public beta](https://vercel.com/changelog/private-storage-for-vercel-blob-now-available-in-public-beta)
 - [Flue with Vercel](https://vercel.com/docs/frameworks/agents/flue) — Create a Flue agent that uses Vercel AI Gateway for model requests, then add Vercel Sandbox for isolated code execution.
 
 Full cross-link map for this page: [/docs/vercel-blob/private-storage.graph.md](/docs/vercel-blob/private-storage.graph.md)
@@ -728,6 +728,18 @@ Upload charges depend on your implementation method:
 
 See [pricing documentation](/docs/vercel-blob/usage-and-pricing) for full details.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

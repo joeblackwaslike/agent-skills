@@ -14,9 +14,10 @@ related:
   - /docs/integrations/create-integration/marketplace-product
 summary: Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/integrations-for-agents.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "3aa6ca535ff156481f365ca47b62f3dafa1cd93935b2d6f140d888573d6dbc7a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3bc70387c155f1b8d48b1d4314a6a65a42e4c59a3d97ae51d578d89e1e50a362"
 ---
 
 # Build with AI agents on Vercel
@@ -32,13 +33,13 @@ Integrating AI agents in your application often means working with separate dash
 - [AI agents and services on the Vercel Marketplace](https://vercel.com/blog/ai-agents-and-services-on-the-vercel-marketplace)
 - [Introducing AI agents & services on the Vercel Marketplace](https://vercel.com/changelog/introducing-ai-agents-and-services-on-the-vercel-marketplace)
 - [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
+- [Chat with Vercel Marketplace integrations using Vercel Agent](https://vercel.com/changelog/chat-with-vercel-marketplace-integrations-using-vercel-agent)
 - [Vercel Ship AI 2025 recap](https://vercel.com/blog/ship-ai-2025-recap)
-- [Build with OpenAI Agents API on Vercel](https://vercel.com/changelog/build-with-openai-agents-api-on-vercel)
 - [Build with AI on Vercel](https://vercel.com/docs/agent-resources/integrations-for-models) — Integrate powerful AI services and models seamlessly into your Vercel projects.
 - [Adding a Provider](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider) — Learn how to add a new AI provider to your Vercel projects.
-- [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai) — Learn how to add the xAI native integration with Vercel.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model) — Learn how to add a new AI model to your Vercel projects
+- [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai) — Learn how to add the xAI native integration with Vercel.
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-agents.graph.md](/docs/agent-resources/integrations-for-agents.graph.md)
 <!-- /docsgraph:related -->
@@ -95,6 +96,18 @@ These services plug into your Vercel workflows so you can build agents specific 
 - [Explore templates for building agents with eve](https://vercel.com/templates/eve)
 - [Connect agents to third-party services with Vercel Connect](https://vercel.com/kb/guide/vercel-connect)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

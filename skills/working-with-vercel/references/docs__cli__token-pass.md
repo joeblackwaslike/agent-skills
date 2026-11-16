@@ -9,15 +9,16 @@ prerequisites:
   - /docs/cli
 related:
   - /docs/ai-gateway/token-pass
+  - /docs/ai-gateway/token-pass/models-and-routing
   - /docs/cli/login
   - /docs/cli
   - /docs/ai-gateway/token-pass/coding-agents
-  - /docs/cli/ai-gateway
 summary: Configure supported coding agents to use Vercel Token Pass through AI Gateway from your terminal.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/token-pass.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c5144ab3755e49daa3abcd5b0268bc0401b3d70c0ad46dad1fc3ddc5194747c8"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "23f10ca95bcbe86b20bc2b48e178acf4a480fd3ebeb0241c1e087cabebc30230"
 ---
 
 # vercel token-pass
@@ -30,17 +31,26 @@ The `vercel token-pass` command connects supported coding agents to [Token Pass]
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Token Pass now includes $150 in tokens for $30/month](https://vercel.com/changelog/vercel-token-pass-now-includes-one-hundred-fifty-dollars-of-monthly-tokens)
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
-- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
 - [Introducing Token Pass](https://vercel.com/changelog/introducing-token-pass)
+- [Token Pass credit now applies automatically across AI Gateway](https://vercel.com/changelog/token-pass-credit-now-applies-automatically-across-ai-gateway)
+- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
 - [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code, Codex, and OpenCode, and co
 - [vercel tokens](https://vercel.com/docs/cli/tokens) — Manage your personal Vercel authentication tokens from the CLI: list, create, and revoke access tokens for use with the
 - [vercel kms](https://vercel.com/docs/cli/kms) — Manage Vercel KMS issuers, rotate signing keys, and control which projects can sign tokens from the command line.
-- [vercel agent](https://vercel.com/docs/cli/agent) — Generate an AGENTS.md file with Vercel deployment best practices using the vercel agent CLI command.
 - [vercel agent-runs](https://vercel.com/docs/cli/agent-runs) — Find projects with Agent Runs, list recent runs, and inspect run metadata and conversation traces from the command line.
+- [Coding Agents and Chat Platforms with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents) — Connect coding agents and chat platforms to AI Gateway. Configure Claude Code, Codex, Chatbox, Open WebUI, and more.
 
 Full cross-link map for this page: [/docs/cli/token-pass.graph.md](/docs/cli/token-pass.graph.md)
 <!-- /docsgraph:related -->
+
+> **💡 Note:** A dedicated Token Pass API key is optional. Any AI Gateway API key or OIDC
+> token uses Token Pass credit automatically for featured models and falls
+> back to your team's AI Gateway credits when the credit runs out. Use this
+> command when you want a key scoped only to Token Pass credit, with no
+> fallback. See [models and
+> routing](/docs/ai-gateway/token-pass/models-and-routing) for details.
 
 ## Usage
 
@@ -161,6 +171,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

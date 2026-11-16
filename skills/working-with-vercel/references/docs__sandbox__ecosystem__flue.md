@@ -16,9 +16,10 @@ related:
   - /docs/cli
 summary: Give a Flue agent file and command tools backed by Vercel Sandbox using the Vercel adapter blueprint.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/ecosystem/flue.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "eccc26cca293fe1285197e6fc8f636f87a3078575d1df7daeb9fcfc77020624e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "fdc39ff6a78665300c1c7eda03277d77c0e7158ae073181224b6a629bda18c73"
 ---
 
 # Flue with Vercel Sandbox
@@ -39,7 +40,6 @@ Attach [Vercel Sandbox](/docs/sandbox) to a [Flue](/docs/frameworks/agents/flue)
 - [Running OpenClaw in Vercel Sandbox](https://vercel.com/kb/guide/running-openclaw-in-vercel-sandbox) — This guide walks you through setting up OpenClaw inside a Vercel Sandbox and configuring the WhatsApp channel.
 - [Build a Software Factory with Flue](https://vercel.com/docs/agent-resources/software-factory/flue) — Use Flue with AI Gateway, Vercel Sandbox, and explicit GitHub tool adapters for investigated and reviewed code changes.
 - [Agent Frameworks on Vercel](https://vercel.com/docs/frameworks/agents) — Build AI agents with eve, Mastra, Flue, and Vercel. Learn how each framework connects to Vercel compute, models, and sto
-- [Run isolated AI agents in one sandbox](https://vercel.com/docs/sandbox/concepts/multi-agent) — Give each AI agent an isolated Linux user in a Vercel Sandbox with the @vercel/sandbox createUser, createGroup, and asUs
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/flue.graph.md](/docs/sandbox/ecosystem/flue.graph.md)
 <!-- /docsgraph:related -->
@@ -161,12 +161,59 @@ This deletes the sandbox and its snapshots that no other sandbox uses. Save any 
 
 The example's five-minute timeout limits its running session; it doesn't replace cleanup. For a workspace that survives across runs, store a mapping from Flue's `createSandbox({ id })` agent instance ID to the Sandbox name and reconnect when that agent runs again. See [persistent sandboxes](/docs/sandbox/concepts/persistent-sandboxes). To keep files independently of a sandbox, [use a Drive-backed Flue workspace](/docs/frameworks/agents/flue#keep-a-workspace-across-runs).
 
+## Prepare your agent for launch
+
+Before you launch your Flue agent, work through the [agent checklist](/docs/agent-checklist?framework=flue). It lists the Sandbox settings to check, such as network policies, credentials brokering, and timeouts. Its Flue items include sandbox cleanup.
+
+## Frequently asked questions
+
+### How does Flue's Vercel Sandbox adapter work?
+
+The adapter wraps a sandbox you create with `@vercel/sandbox` in Flue's sandbox interface. Your application creates the sandbox, passes it to `vercel(sandbox)`, and returns the result from the factory you give `useSandbox()`. Flue's `read`, `write`, `edit`, `bash`, `grep`, and `glob` tools then run inside the microVM, and relative paths resolve from `/vercel/sandbox`. The Flue runtime and its model requests stay in your application. Your application also owns authentication, provisioning, and cleanup.
+
+### When does Flue create a Vercel sandbox?
+
+Flue calls your factory's `createSandbox()` when it initializes the agent's harness, not on each agent re-render. The example on this page creates a new sandbox at each initialization. To reuse a sandbox across runs, store a mapping from Flue's agent instance ID to the sandbox name and reconnect when that agent runs again. See [persistent sandboxes](/docs/sandbox/concepts/persistent-sandboxes).
+
+### Does Flue delete the sandbox when a run ends?
+
+No. Remove the sandbox yourself with the Sandbox CLI's `sandbox remove` command, or call `sandbox.delete()` from your application code. The sandbox `timeout` limits how long a session runs, but it doesn't delete the sandbox or its snapshots. Save any files you need first, or keep them on a [Drive-backed workspace](/docs/frameworks/agents/flue#keep-a-workspace-across-runs) that survives sandbox removal.
+
+### How does a Flue agent authenticate with Vercel Sandbox?
+
+The Sandbox SDK authenticates with a Vercel OIDC token. For local development, run `vercel link` and `vercel env pull .env.local` to write `VERCEL_OIDC_TOKEN`. When your application runs on Vercel, the SDK uses the deployment's token automatically. Outside Vercel, pass `token`, `teamId`, and `projectId` to `Sandbox.create()`. Model requests authenticate separately with `AI_GATEWAY_API_KEY` in your application process.
+
+### What other Vercel products can a Flue agent with a sandbox use?
+
+Vercel Sandbox runs the agent's tools. You can combine it with these Vercel products:
+
+- [AI Gateway](/docs/ai-gateway) routes the agent's model requests. See [Flue with AI Gateway](/docs/ai-gateway/ecosystem/framework-integrations/flue).
+- [Vercel Drives](/docs/sandbox/concepts/drives) keep workspace files independently of any one sandbox.
+- [Vercel Blob](/docs/vercel-blob) stores completed responses and other artifacts.
+- [Vercel Workflows](/docs/workflows) coordinate a hosted Flue agent with other application steps.
+- [Vercel Passport](/docs/passport) forwards a verified visitor identity from your Vercel app to your Flue service.
+- [Vercel Connect](/docs/connect) provides credentials for third-party services.
+
+Flue's durable runtime needs a host where one process owns each conversation. See [Flue with Vercel](/docs/frameworks/agents/flue#hosting-considerations) before you choose where to run it.
+
 ## Next steps
 
 - Read [Flue's Vercel Sandbox integration](https://flueframework.com/docs/ecosystem/sandboxes/vercel/) for the adapter blueprint.
 - See the [Flue Sandbox Adapter API](https://flueframework.com/docs/reference/sandbox-api/) for factory and filesystem behavior.
 - Configure [Sandbox runtimes](/docs/sandbox/concepts/runtimes) and [network access](/docs/sandbox/concepts/firewall) for your agent's tasks.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

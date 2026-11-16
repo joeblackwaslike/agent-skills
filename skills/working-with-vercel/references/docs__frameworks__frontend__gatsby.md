@@ -3,21 +3,22 @@ title: Gatsby on Vercel
 product: vercel
 url: /docs/frameworks/frontend/gatsby
 canonical_url: "https://vercel.com/docs/frameworks/frontend/gatsby"
-last_updated: 2025-12-18
+last_updated: 2026-11-14
 type: conceptual
 prerequisites:
   []
 related:
   - /docs/cli
+  - /docs/deployments/deploy-without-logging-in
   - /docs/functions
   - /docs/cdn-cache
   - /docs/routing-middleware
-  - /docs/routing-middleware/js-reference
 summary: "Learn how to use Vercel's features with Gatsby."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/frontend/gatsby.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "3f3a93be0f57c4e2aa8b2d4965cbac500d67d62f5ff6052e30ec5f3c55bda52e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d500bbf612adcb7b1cf01f1d1240aeddc81316ff320f807c65c517082a843bee"
 ---
 
 # Gatsby on Vercel
@@ -36,6 +37,16 @@ To get started with Gatsby on Vercel:
 \- Or, choose a template from Vercel's marketplace:
 
 Vercel deployments can \[integrate with your git provider]\(/docs/git) to \[generate preview URLs]\(/docs/deployments/environments#preview-environment-pre-production) for each pull request you make to your Gatsby project.
+
+## Deploy without an account
+
+To deploy an existing Gatsby project without an account or login, run this command in the project root:
+
+```bash filename="terminal"
+vercel deploy --temporary
+```
+
+The CLI builds the project, deploys it to production, and prints a claim URL. Claim the project to keep it live. See [Deploying without logging in](/docs/deployments/deploy-without-logging-in).
 
 ## Using the Gatsby Vercel Plugin
 
@@ -395,7 +406,7 @@ After visitors load your deployed site, open your project in the dashboard and s
 
 **To summarize, using Speed Insights with Gatsby on Vercel:**
 
-- Enables you to track traffic performance metrics, such as [First Contentful Paint](/docs/speed-insights/metrics#first-contentful-paint-fcp), or [First Input Delay](/docs/speed-insights/metrics#first-input-delay-fid)
+- Enables you to track traffic performance metrics, such as [First Contentful Paint](/docs/speed-insights/metrics#first-contentful-paint-fcp), or [Interaction to Next Paint](/docs/speed-insights/metrics#interaction-to-next-paint-inp)
 - Enables you to view performance analytics by page name and URL for more granular analysis
 - Shows you [a score for your app's performance](/docs/speed-insights/metrics#how-the-scores-are-determined) on each recorded metric, which you can use to track improvements or regressions
 
@@ -417,6 +428,18 @@ See [our Frameworks documentation page](/docs/frameworks) to learn about the ben
 
 - [Build Output API](/docs/build-output-api/v3)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

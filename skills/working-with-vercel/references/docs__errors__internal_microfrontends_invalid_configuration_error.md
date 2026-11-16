@@ -11,9 +11,10 @@ related:
   - /docs/microfrontends/quickstart
 summary: The microfrontend configuration file is invalid.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/internal_microfrontends_invalid_configuration_error.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "ec0081ba91c5f1ce1e679362af6b2b83254b19468f54c1678385b09fb8b3592c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a498e83d889613ffdfff6861d73dd4aa4fa4af241d33417190a4eb2c166ac982"
 ---
 
 # INTERNAL_MICROFRONTENDS_INVALID_CONFIGURATION_ERROR
@@ -30,6 +31,18 @@ To troubleshoot this error, follow these steps:
 2. Ensure you are on the latest version of the [`@vercel/microfrontends`](https://www.npmjs.com/package/@vercel/microfrontends) package.
 3. We have been notified of this error. For more information, check the [Vercel status page](https://www.vercel-status.com/) or [contact Vercel support](/help#issues)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

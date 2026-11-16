@@ -3,7 +3,7 @@ title: create-event
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/create-event
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/create-event"
-last_updated: 2026-11-09
+last_updated: 2026-11-16
 type: conceptual
 prerequisites:
   []
@@ -12,9 +12,10 @@ related:
   - /docs/integrations/create-integration/native-integration
 summary: Learn about create-event on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/create-event.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b71597e61385e7e54b7577671ef5c3838e0a6fe19c153b85ae9c9b112853c24e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "eeb93dd72c6b299ed4f54a3a3607e68f9721a1bde3207f44a3dececa1e20f4ce"
 ---
 
 # Create Event
@@ -80,6 +81,18 @@ Success
 - [Marketplace API Reference](/docs/integrations/create-integration/marketplace-api/reference)
 - [Native Integration Concepts](/docs/integrations/create-integration/native-integration)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

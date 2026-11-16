@@ -15,9 +15,10 @@ related:
   - /docs/oidc/azure
 summary: Run your frontend on Vercel alongside backends hosted in Microsoft Azure, with private network connectivity, keyless authentication through Microsoft...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/external-platforms/azure.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "60226f85105da643b9bba36ba455994ec0571a14b4ed94459643b4941bf4bc02"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f0ca045c16625783eb4193438d9e27c21827bbc5ede4a85c481b81dd13c60bf5"
 ---
 
 # Using Vercel with Microsoft Azure
@@ -32,14 +33,10 @@ You can run your frontend on Vercel while your APIs, databases, and internal ser
 
 - [Vercel Connect now supports Microsoft](https://vercel.com/changelog/vercel-connect-supports-microsoft)
 - [Can I use Vercel to deploy to a private cloud?](https://vercel.com/kb/guide/can-i-use-vercel-to-deploy-to-a-private-cloud) — Learn about if it's possible to deploy to a private cloud with Vercel.
-- [Deploy ASP.NET Core on Vercel with Docker](https://vercel.com/kb/guide/dot-net-asp-net-on-vercel-with-docker) — Build a .NET application with Docker and deploy it to Vercel Functions. Learn how to configure environment variables, in
-- [Building secure and performant web applications on Vercel](https://vercel.com/blog/building-secure-and-performant-web-applications-on-vercel)
-- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
-- [Introducing Vercel Firewall and Vercel Secure Compute](https://vercel.com/blog/vercel-security)
 - [Bring Your Own Cloud](https://vercel.com/docs/networking/bring-your-own-cloud) — Bring Your Own Cloud \\(BYOC\\) lets you run Vercel Functions behind your project in your own AWS account while Vercel rou
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [Backends on Vercel](https://vercel.com/docs/frameworks/backend) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
+- [Networking](https://vercel.com/docs/networking) — Connect your Vercel projects to backend services with static IPs and secure networking options.
 - [Integrating Vercel and Kubernetes](https://vercel.com/docs/integrations/external-platforms/kubernetes) — Deploy your frontend on Vercel alongside your existing Kubernetes infrastructure.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 
 Full cross-link map for this page: [/docs/integrations/external-platforms/azure.graph.md](/docs/integrations/external-platforms/azure.graph.md)
@@ -87,6 +84,18 @@ Vercel builds and deploys from wherever your code lives:
 - [**GitHub**](/docs/git/vercel-for-github): connect a repository for automatic [production deployments](/docs/deployments/environments#production-environment) on pushes to your production branch and [preview deployments](/docs/deployments/environments#preview-environment-pre-production) on every other push.
 - [**Azure DevOps**](/docs/git/vercel-for-azure-pipelines): use the Vercel Deployment Extension to trigger deployments from Azure Pipelines, whether your code is in Azure Repos or another Git provider connected to your pipeline.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

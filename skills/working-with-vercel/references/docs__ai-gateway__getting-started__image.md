@@ -15,9 +15,10 @@ related:
   - /docs/ai-gateway/modalities/image-generation/openai
 summary: Generate an image from a text prompt using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/getting-started/image.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "030805f4ecf5311f08412a7c8d5e1d4ac9d9345cc1e38cc61ba987aa801c8810"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0b3954cd4bc95797cdbdbcf3791293eb0ff34c3ca758a5a9612e608b14b689b5"
 ---
 
 # AI Gateway Image Generation Quickstart
@@ -32,10 +33,11 @@ Generate an image through AI Gateway and save it to a file.
 
 - [MAI-Image-2.6 and MAI-Image-2.6-Flash now available on AI Gateway](https://vercel.com/changelog/mai-image-2-6-and-mai-image-2-6-flash-now-available-on-ai-gateway)
 - [Image-only models available in Vercel AI Gateway](https://vercel.com/changelog/image-only-models-available-in-vercel-ai-gateway)
-- [Generate Text with Image Prompt](https://ai-sdk.dev/cookbook/node/generate-text-with-image-prompt) — Learn how to generate text with image prompt using the AI SDK and Node
-- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
+- [GPT Image 2 on AI Gateway](https://vercel.com/changelog/gpt-image-2-on-ai-gateway)
 - [Video Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/video) — Generate a video from a text prompt using AI Gateway.
 - [AI Gateway Text Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/text) — Generate and stream text responses using AI Gateway.
+- [AI Gateway Chat Completions Image Generation Reference](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation) — Generate images using AI models that support multimodal output through the Chat Completions API through AI Gateway.
+- [AI Gateway Vision and Image Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/vision) — Analyze images with AI Gateway using AI SDK 7, the Python beta, Chat Completions, Messages, and Responses APIs.
 
 Full cross-link map for this page: [/docs/ai-gateway/getting-started/image.graph.md](/docs/ai-gateway/getting-started/image.graph.md)
 <!-- /docsgraph:related -->
@@ -94,6 +96,18 @@ node index.mts
 * Learn how the AI SDK [returns generated images](/docs/ai-gateway/modalities/image-generation/ai-sdk)
 * Edit images with [OpenAI image models](/docs/ai-gateway/modalities/image-generation/openai#editing-images)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

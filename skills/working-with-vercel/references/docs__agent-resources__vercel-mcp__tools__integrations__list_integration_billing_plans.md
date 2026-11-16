@@ -12,9 +12,10 @@ related:
   []
 summary: Use list_integration_billing_plans with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/list_integration_billing_plans.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "3e1ca862ac2836a37256fb34541a51dfd189dc6078e7a960dbddb63057dfb885"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f2b69a4944dbfed9cd9ca8e4e8baa363b1fae85152c4e1ed1a76585ef403dc9b"
 ---
 
 # list_integration_billing_plans
@@ -31,7 +32,7 @@ List integration billing plans.
 - [list_integration_configuration_products](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/list_integration_configuration_products) — Use list_integration_configuration_products with Vercel MCP.
 - [list_integration_configurations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/list_integration_configurations) — Use list_integration_configurations with Vercel MCP.
 - [List products for integration configuration](https://vercel.com/docs/rest-api/integrations/list-products-for-integration-configuration) — GET /v1/integrations/configuration/{id}/products — Returns products available for an integration configuration. Each pro
-- [list_contract_commitments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing/list_contract_commitments) — Use list_contract_commitments with Vercel MCP.
+- [list_billing_charges](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing/list_billing_charges) — Use list_billing_charges with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/integrations/list_integration_billing_plans.graph.md](/docs/agent-resources/vercel-mcp/tools/integrations/list_integration_billing_plans.graph.md)
 <!-- /docsgraph:related -->
@@ -48,6 +49,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/integ
 | `teamId`                     | string | No       | Team ID to use for this operation.                                                                                                                                                        |
 | `slug`                       | string | No       | Team slug to use for this operation. Use instead of teamId.                                                                                                                               |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

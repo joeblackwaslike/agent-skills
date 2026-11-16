@@ -12,9 +12,10 @@ related:
   []
 summary: Use filter_project_envs with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables/filter_project_envs.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "2ec1887d538882e8ec92cc2fa45fe18d5bf77cc972ca96ba969f6fd7c44af777"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8b7343159164736bfa7fc5e04a644157903e849e08dfe2f51252fea2f680535c"
 ---
 
 # filter_project_envs
@@ -49,6 +50,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/envir
 | `teamId`                | string | No       | Team ID to use for this operation.                                                                      |
 | `slug`                  | string | No       | Team slug to use for this operation. Use instead of teamId.                                             |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

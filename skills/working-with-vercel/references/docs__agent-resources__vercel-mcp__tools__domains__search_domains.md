@@ -12,9 +12,10 @@ related:
   []
 summary: Use search_domains with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/search_domains.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "910b341fbb7896982b37c6f8b520e0efe74b89629db1df84cb4be19eeca994ab"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "6431a32a2997d378af1b770a48fd9f70a95ab15c89de52d2768ab480db4a4ee7"
 ---
 
 # search_domains
@@ -28,10 +29,10 @@ Check availability and registration and renewal prices for one to 200 exact doma
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [list_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/list_domains) — Use list_domains with Vercel MCP.
-- [Viewing & Searching Domains](https://vercel.com/docs/domains/working-with-domains/view-and-search-domains) — Learn how to view and search all registered domains that are assigned to Vercel Projects through the Vercel dashboard.
 - [buy_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/buy_domains) — Use buy_domains with Vercel MCP.
-- [get_bulk_price](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_bulk_price) — Use get_bulk_price with Vercel MCP.
-- [get_bulk_availability](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_bulk_availability) — Use get_bulk_availability with Vercel MCP.
+- [Viewing & Searching Domains](https://vercel.com/docs/domains/working-with-domains/view-and-search-domains) — Learn how to view and search all registered domains that are assigned to Vercel Projects through the Vercel dashboard.
+- [Get Domain Availability and Pricing](https://vercel.com/docs/rest-api/domains-registrar/get-domain-availability-and-pricing) — POST /v1/registrar/domains/search — Start domain research here. Get registration availability and pricing for 1–200 exac
+- [Get availability for multiple domains](https://vercel.com/docs/rest-api/domains-registrar/get-availability-for-multiple-domains) — POST /v1/registrar/domains/availability — Get availability for multiple domains. If the domains are available, they can
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/search_domains.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/search_domains.graph.md)
 <!-- /docsgraph:related -->
@@ -43,6 +44,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domai
 | `teamId`      | string | No       | Team ID to use for this operation. |
 | `requestBody` | object | Yes      | Request body for this tool.        |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

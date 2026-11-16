@@ -14,9 +14,10 @@ related:
   - /docs/cli/env
 summary: Learn how to add Pinecone connectable account integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/pinecone.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "4c845a80bf03cd1593a02a9f116b0866ab52a9e437df9c537d3cd06f05bde644"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "274a4d343a7a2091dd0c55004ff649e0770e718e828629a5f5ebaac0238b307a"
 ---
 
 # Vercel Pinecone Integration
@@ -35,11 +36,11 @@ them in your applications.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Pinecone integration now available for vector databases](https://vercel.com/changelog/pinecone-integration-now-available-for-vector-databases)
-- [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra) — Learn how to add the Deep Infra native integration with Vercel.
 - [Vercel fal Integration](https://vercel.com/docs/agent-resources/integrations-for-models/fal) — Learn how to add the fal native integration with Vercel.
+- [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra) — Learn how to add the Deep Infra native integration with Vercel.
 - [Vercel Perplexity Integration](https://vercel.com/docs/agent-resources/integrations-for-models/perplexity) — Learn how to add Perplexity connectable account integration with Vercel.
+- [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai) — Learn how to add the xAI native integration with Vercel.
 - [Vercel Replicate Integration](https://vercel.com/docs/agent-resources/integrations-for-models/replicate) — Learn how to add Replicate connectable account integration with Vercel.
-- [Vercel Together AI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai) — Learn how to add Together AI connectable account integration with Vercel.
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/pinecone.graph.md](/docs/agent-resources/integrations-for-models/pinecone.graph.md)
 <!-- /docsgraph:related -->
@@ -122,6 +123,18 @@ You can deploy a template to Vercel that includes a pre-trained model and a samp
 
 ## More resources
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/regions
 summary: Learn delivery, retries, visibility timeouts, and deployment isolation in Vercel Queues.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/queues/concepts.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "85b057475bf01333ff09a7af70f5c69273be760d40cb0287c4d0fb0fa2b39346"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "532c9cf1a2cc626a2e445e454c7f4cfbfb9a1788364de677e8e621eaaaf88e1d"
 ---
 
 # Queues concepts
@@ -36,11 +37,12 @@ Vercel Queues is a durable event streaming system for asynchronous workloads. Yo
 - [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
 - [Framework Integrations](https://workflow-sdk.dev/docs/how-it-works/framework-integrations) — Build a custom framework integration using the Workflow SDK compiler and combined runtime handler.
 - [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta)
+- [Worlds](https://workflow-sdk.dev/docs/configuration/worlds) — Select and configure Local, Postgres, Vercel, or custom Worlds.
 - [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
-- [Vercel Queues is now in Limited Beta](https://vercel.com/changelog/vercel-queues-is-now-in-limited-beta)
 - [Chat SDK with Vercel Daemons](https://vercel.com/docs/chat-sdk/integrations/daemons) — Process Chat SDK jobs with Vercel Queues and Daemons, using Vercel Connect for Slack credentials and event delivery.
 - [Deploy Dramatiq workers on Vercel](https://vercel.com/docs/frameworks/backend/dramatiq) — Deploy Dramatiq workers on Vercel. Learn how Dramatiq actors use Vercel Queues and Vercel Functions to process backgroun
-- [Schedules Concepts](https://vercel.com/docs/schedules/concepts) — Learn how Vercel Schedules handles environments, deployments, jitter, one-time schedules, late runs, and duplicate deliv
+- [Scheduling Work with the AI SDK](https://vercel.com/docs/schedules/agents/ai-sdk) — Give an AI SDK agent a tool that creates schedules, and run each scheduled task as a new agent turn.
+- [Scheduling Work with libfx](https://vercel.com/docs/schedules/agents/libfx) — Give an fx agent a tool that creates schedules, and send each run back into the session that created it.
 
 Full cross-link map for this page: [/docs/queues/concepts.graph.md](/docs/queues/concepts.graph.md)
 <!-- /docsgraph:related -->
@@ -402,6 +404,18 @@ A queue consumer is never reachable from the internet, the same as in a single-a
 
 In push mode, triggers in different services have independent [consumer groups](#topics-and-consumer-groups), so each consumer in a service receives its own copy of every message. In [poll mode](/docs/queues/poll-mode#poll-mode-in-services), you need to manage consumer groups manually to avoid collisions across services.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

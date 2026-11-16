@@ -12,9 +12,10 @@ related:
   - /docs/platforms/platform-elements/blocks
 summary: Prebuilt server actions and UI blocks you can install to speed up common platform tasks.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/platforms/platform-elements.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "36ead5041c2a7cfac5fc3c8027aa67985964f68d517cf042273a27c61e571600"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7dfcc82e0192c7615ddccd13b1ec055d52cc598a2a284e3a92ea724cff67fefb"
 ---
 
 # Platform Elements
@@ -30,10 +31,10 @@ Platform Elements are prebuilt building blocks for platforms. Actions are server
 - [Introducing Platform Elements](https://vercel.com/changelog/introducing-platform-elements)
 - [Introducing Vercel for Platforms](https://vercel.com/changelog/introducing-vercel-for-platforms)
 - [Platform Template](https://vercel.com/docs/platforms/examples/platform-template) — Build an AI app builder on Vercel with sandboxes, AI Gateway, deployments, and project transfers.
-- [Vercel fundamental concepts](https://vercel.com/docs/fundamentals) — Learn about the core concepts of Vercel
 - [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
+- [Vercel fundamental concepts](https://vercel.com/docs/fundamentals) — Learn about the core concepts of Vercel
+- [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
 - [Multi-Tenant Platforms](https://vercel.com/docs/platforms/multi-tenant-platforms) — Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
-- [Examples](https://vercel.com/docs/platforms/examples) — Clone working multi-tenant and multi-project starters to begin your platform build.
 
 Full cross-link map for this page: [/docs/platforms/platform-elements.graph.md](/docs/platforms/platform-elements.graph.md)
 <!-- /docsgraph:related -->
@@ -42,6 +43,18 @@ Full cross-link map for this page: [/docs/platforms/platform-elements.graph.md](
 
 **Blocks**: UI components for claiming deployments, managing domains, and reporting abuse. [Learn more →](/docs/platforms/platform-elements/blocks)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

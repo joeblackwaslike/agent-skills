@@ -11,9 +11,10 @@ related:
   - /docs/conformance/custom-rules/forbidden-imports
 summary: Learn how to set custom rules to disallow one or more files from depending on one or more predefined module
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/custom-rules/forbidden-dependencies.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "8192a7bef52800057aed1ca03b26a2654ae8d6e510a8dc6ffd1bb5fe40842cf8"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "06e71fd24690e7e9a593498fc411bb388c41f7f377a3b147a0d26f240fd28cd1"
 ---
 
 # forbidden-dependencies
@@ -154,6 +155,18 @@ files, and without workspace restrictions.
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

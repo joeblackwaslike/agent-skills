@@ -13,9 +13,10 @@ related:
   - /docs/agent/pr-review
 summary: Understand how Vercel Agent reads linked GitHub repositories and creates pull requests.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent/chat/github.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "8acb346b86f9a1ca8991f45934b421a057111457121e2590dd0aba4c39c780f4"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8c5f3e1d88a9e38ac0900c281dcf812f967baf87f29f5319d6da2846b188be79"
 ---
 
 # GitHub Operations
@@ -102,6 +103,18 @@ GitHub writes are authorized by you. Commits and pull requests are created and s
 
 For the full Chat approval model, see [Vercel Agent Permissions](/docs/agent/chat/permissions). For automatic reviews and `@vercel` commands in pull request comments, see [Code Review](/docs/agent/pr-review).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

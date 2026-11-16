@@ -15,9 +15,10 @@ related:
   - /docs/schedules/manage
 summary: "Reference for the Vercel Schedules HTTP API: authenticate, choose an environment, and create, list, update, enable, disable, invoke, and delete..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/schedules/http-api.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "937764d25431f2830a98a6af4ad9b4305c82d7b22eb2ed3140d4c9f3f908c899"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "aa877fb57c8a19f2f044d1b52bc7d538d1e1ea92aab51d051edfbc72b317e431"
 ---
 
 # Vercel Schedules: API Reference
@@ -32,7 +33,7 @@ The Schedules HTTP API is a REST API for managing static and dynamic schedules. 
 
 - [Introducing Vercel Schedules](https://vercel.com/blog/introducing-vercel-schedules)
 - [Vercel Schedules is now in public beta](https://vercel.com/changelog/vercel-schedules-is-now-in-public-beta)
-- [Schedules](https://eve.dev/docs/schedules) — Run an agent on a cron cadence, either a fire-and-forget prompt or a handler that hands work off to a channel.
+- [Scheduling Work for Agents](https://vercel.com/docs/schedules/agents) — Give an agent a tool that creates dynamic schedules, so it can do work for a user later or on a recurring basis.
 - [Migrating from Cron Jobs to Schedules](https://vercel.com/docs/schedules/migrate-from-cron-jobs) — Move Cron Jobs in vercel.json to Schedules without changing your route code, then optionally make the route private.
 - [Getting Started with Schedules](https://vercel.com/docs/schedules/quickstart) — Run a private Vercel Function every hour with a static schedule in vercel.json, test it locally, and deploy it.
 - [Testing Schedules Locally](https://vercel.com/docs/schedules/local-development) — Run static and dynamic schedules on your machine with vercel dev, trigger runs on demand, and learn what differs from pr
@@ -336,6 +337,18 @@ The [JS SDK Reference](/docs/schedules/sdk#errors) describes what causes each co
 - [`vercel schedules` reference](/docs/cli/schedules)
 - [Limits](/docs/schedules/limits)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

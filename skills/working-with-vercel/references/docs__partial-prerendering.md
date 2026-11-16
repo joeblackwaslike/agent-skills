@@ -15,9 +15,10 @@ related:
   - /docs/regions
 summary: Partial Prerendering serves a cached static shell instantly, then renders and streams the dynamic parts of a page per request.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/partial-prerendering.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "9fba20ac7d6b4fa2bd14f3b84c65d7c64e043d74c7c968478a7040991f0d9c2a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "31c9a42030a4aad491e0d81d00d31161b045e8195e68a40d88756e49e0733071"
 ---
 
 # Partial Prerendering (PPR)
@@ -39,11 +40,11 @@ Partial Prerendering (PPR) is a rendering strategy that combines fast cached sta
 - [Next.js 16.3 support on Vercel](https://vercel.com/blog/vercel-supports-next-js-16-3)
 - [Control CDN caching for shared and personalized pages on Vercel](https://vercel.com/kb/guide/cdn-cache-personalized-pages) — Control CDN caching for shared and personalized Next.js pages. Set cache headers, separate per-user content, and verify
 - [Introducing Serverless Pre-Rendering (SPR)](https://vercel.com/blog/serverless-pre-rendering)
-- [Implementing Partial Prerendering on your platform](https://nextjs.org/docs/app/guides/ppr-platform-guide) — A guide for platform engineers on implementing PPR support, from basic origin rendering to optimized CDN integration.
 - [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache)
+- [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
+- [How to architect multi-location QSR menus on Vercel](https://vercel.com/kb/guide/multi-location-qsr-menus) — Multi-location QSR menus vary by price, hours, and availability. Learn how to model them on Vercel with ISR, Global Conf
 - [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
-- [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
-- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
+- [Vercel CDN overview](https://vercel.com/docs/cdn) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
 
 Full cross-link map for this page: [/docs/partial-prerendering.graph.md](/docs/partial-prerendering.graph.md)
 <!-- /docsgraph:related -->
@@ -179,7 +180,7 @@ export default function Page() {
 }
 ```
 
-For the full explanation and tutorial for how to use this, see [Cache Components](https://nextjs.org/docs/app/getting-started/caching). To cache data inside the dynamic sections separately from the page response, see [Runtime Cache](/docs/caching/runtime-cache).
+For the full explanation and tutorial for how to use this, see [Cache Components](https://nextjs.org/docs/app/getting-started/caching). To cache data inside the dynamic sections separately from the page response, see [Runtime Cache](/docs/runtime-cache).
 
 ## How PPR works
 
@@ -266,8 +267,20 @@ When you use PPR with a framework on Vercel, you incur usage for:
 - [Partial Prerendering with Next.js](/docs/frameworks/full-stack/nextjs#partial-prerendering)
 - [Incremental Static Regeneration (ISR)](/docs/incremental-static-regeneration)
 - [Vercel Functions](/docs/functions)
-- [Runtime Cache](/docs/caching/runtime-cache)
+- [Runtime Cache](/docs/runtime-cache)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

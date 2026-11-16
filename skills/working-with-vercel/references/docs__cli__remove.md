@@ -13,9 +13,10 @@ related:
   - /docs/cli/global-options
 summary: Learn how to remove a deployment using the vercel remove CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/remove.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "aaf22d25fdef61b4afd8ccf412e6af80eaa622b1d69a5a86de5e1271c26eee70"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "456bf40f03fdd9c424df9d8c39b297b9ffc66c8cd4ae6f2f0b479564b324b0a1"
 ---
 
 # vercel remove
@@ -29,10 +30,10 @@ The `vercel remove` command is used to remove deployments either by ID or for a 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
+- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [Delete a Deployment](https://vercel.com/docs/rest-api/deployments/delete-a-deployment) — DELETE /v13/deployments/{id} — This API allows you to delete a deployment, either by supplying its \\`id\\` in the URL or
 - [vercel redeploy](https://vercel.com/docs/cli/redeploy) — Learn how to redeploy your project using the vercel redeploy CLI command.
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [vercel curl](https://vercel.com/docs/cli/curl) — Learn how to make HTTP requests to your Vercel deployments with automatic deployment protection bypass using the vercel
-- [vercel rollback](https://vercel.com/docs/cli/rollback) — Learn how to roll back your production deployments to previous deployments using the vercel rollback CLI command.
 
 Full cross-link map for this page: [/docs/cli/remove.graph.md](/docs/cli/remove.graph.md)
 <!-- /docsgraph:related -->
@@ -112,6 +113,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

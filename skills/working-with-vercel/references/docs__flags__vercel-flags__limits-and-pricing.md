@@ -12,9 +12,10 @@ related:
   []
 summary: Review Vercel Flags request pricing and limits for flags, segments, configuration size, and connected projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/vercel-flags/limits-and-pricing.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f1ad6563663a8768d6f44c283cf3ab452d100ff93ae801908c193bb3b1ec1de9"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "cd6b29dbd5271d7fbb76a6d4e9da8ea97a3ed9c20d580b85bf1c1cd962122571"
 ---
 
 # Limits and Pricing for Vercel Flags
@@ -34,9 +35,9 @@ A flag request is an application request that reads a source project's flag conf
 - [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta)
 - [Pricing for Flags Explorer](https://vercel.com/docs/flags/flags-explorer/limits-and-pricing) — Compare monthly Flags Explorer override limits and the price of unlimited overrides across Vercel plans.
 - [Feature Flag Configuration](https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag) — Learn how to configure individual feature flags in the Vercel Dashboard.
+- [List flags](https://vercel.com/docs/rest-api/feature-flags/list-flags) — GET /v2/projects/{projectIdOrName}/feature-flags/flags — Retrieve feature flags for a project. Returns an opaque cursor
+- [Get a flag](https://vercel.com/docs/rest-api/feature-flags/get-a-flag) — GET /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} — Retrieve a specific feature flag by its ID or sl
 - [Managing flags in the dashboard](https://vercel.com/docs/flags/vercel-flags/dashboard) — Learn how to manage your feature flags using the Vercel Dashboard.
-- [List segments](https://vercel.com/docs/rest-api/feature-flags/list-segments) — GET /v1/projects/{projectIdOrName}/feature-flags/segments — List all feature flag segments for a project.
-- [Get project flag settings](https://vercel.com/docs/rest-api/feature-flags/get-project-flag-settings) — GET /v1/projects/{projectIdOrName}/feature-flags/settings — Retrieve feature flag settings for a project.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/limits-and-pricing.graph.md](/docs/flags/vercel-flags/limits-and-pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -111,13 +112,25 @@ All variant IDs referenced in rules must exist in the flag's variants array. Seg
 | ---------------------------- | -------------- |
 | Entity types                 | 32             |
 | Attributes per entity        | 32             |
-| Labels per attribute         | 256            |
+| Labels per attribute         | 1,000          |
 | Entity kind string length    | 128 characters |
 | Entity label string length   | 128 characters |
 | Attribute key string length  | 128 characters |
 | Attribute type string length | 128 characters |
 | Label value string length    | 128 characters |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

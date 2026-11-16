@@ -12,9 +12,10 @@ related:
   - /docs/environment-variables
 summary: "Integrate your Vercel project with OpenAI's powerful suite of models."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/openai.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "769cddc516435035613b268ed7bc0c37cf88eaed1c689eaf095c735f130e8fc6"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1fc22edab81c4ea5ed9bb82b0fc75c1e08f36e7fbe927a4cd4415c889b7f4491"
 ---
 
 # Vercel & OpenAI Integration
@@ -28,12 +29,11 @@ Vercel integrates with [OpenAI](https://platform.openai.com/overview) to enable 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing AI Integrations on Vercel](https://vercel.com/blog/ai-integrations)
-- [AI Integrations and playground in the Vercel Dashboard](https://vercel.com/changelog/ai-integration-and-playground-in-the-vercel-dashboard)
 - [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai) — Learn how to add the xAI native integration with Vercel.
-- [Vercel Together AI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai) — Learn how to add Together AI connectable account integration with Vercel.
 - [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model) — Learn how to add a new AI model to your Vercel projects
-- [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
-- [Build with AI agents on Vercel](https://vercel.com/docs/agent-resources/integrations-for-agents) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
+- [Vercel Together AI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/togetherai) — Learn how to add Together AI connectable account integration with Vercel.
+- [OpenAI Chat Completions API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions) — Use OpenAI SDKs with the AI Gateway Chat Completions API. Configure the base URL and authentication for chat, streaming,
+- [Go with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/go) — Use AI Gateway from any Go application with the OpenAI or Anthropic Go SDKs, including model fallbacks, cost tracking, a
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/openai.graph.md](/docs/agent-resources/integrations-for-models/openai.graph.md)
 <!-- /docsgraph:related -->
@@ -107,6 +107,18 @@ The AI SDK also has **full support** for [OpenAI Functions (tool calling)](https
 
 Learn more about using [tools with the AI SDK](https://ai-sdk.dev/docs/foundations/tools).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

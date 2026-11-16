@@ -3,7 +3,7 @@ title: Agent Resources
 product: vercel
 url: /docs/agent-resources
 canonical_url: "https://vercel.com/docs/agent-resources"
-last_updated: 2026-09-15
+last_updated: 2026-11-14
 type: conceptual
 prerequisites:
   []
@@ -15,9 +15,10 @@ related:
   - /docs/ai-gateway/coding-agents
 summary: Set up AI coding tools with Vercel documentation, reusable skills, and secure access to projects, deployments, and logs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "363e075f339c879f93d242c543ddd2e62935b68a572f5bbbc5fe0c47ab08ea30"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e195c99329129082d55b839e20152379d4b96adc3d2ddcb2d83b4d4c4cc533a6"
 ---
 
 # Agent Resources
@@ -33,14 +34,15 @@ Give AI coding tools Vercel documentation, reusable skills, and secure access to
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
-- [Introducing the Vercel plugin for coding agents](https://vercel.com/changelog/introducing-vercel-plugin-for-coding-agents)
-- [Building Slack agents can be easy](https://vercel.com/blog/building-slack-agents-can-be-easy)
 - [Build your first Slack agent with eve](https://vercel.com/kb/guide/eve-slack-agent-starter) — Deploy the eve Slack agent template: a starter Slack bot built on the eve framework with an example tool and skill.
-- [Agent Skills: Creating, Installing, and Sharing Reusable Agent Context](https://vercel.com/kb/guide/agent-skills-creating-installing-and-sharing-reusable-agent-context) — This guide will cover what skills are, how to create custom skills for yourself and your team, and how to publish them t
+- [Introducing the Vercel plugin for coding agents](https://vercel.com/changelog/introducing-vercel-plugin-for-coding-agents)
 - [How to add skills to your eve agent](https://vercel.com/kb/guide/how-to-add-eve-skills) — Add skills to an eve agent by creating a file under agent/skills/ or installing a published skill with the npx skills ad
-- [Vercel Ship AI 2025 recap](https://vercel.com/blog/ship-ai-2025-recap)
+- [Agent Skills: Creating, Installing, and Sharing Reusable Agent Context](https://vercel.com/kb/guide/agent-skills-creating-installing-and-sharing-reusable-agent-context) — This guide will cover what skills are, how to create custom skills for yourself and your team, and how to publish them t
+- [Building Slack agents can be easy](https://vercel.com/blog/building-slack-agents-can-be-easy)
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code, Codex, and OpenCode, and co
 - [AI SDK](https://vercel.com/docs/ai-sdk) — Build TypeScript agents and AI applications with a unified API for models, tools, structured output, and streaming.
+- [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
 
 Full cross-link map for this page: [/docs/agent-resources.graph.md](/docs/agent-resources.graph.md)
 <!-- /docsgraph:related -->
@@ -98,6 +100,7 @@ See [Markdown and Agent Discovery](/docs/agent-resources/markdown-access) for de
 
 - Requesting any page as Markdown with the `Accept: text/markdown` header or the `.md` extension
 - Using site-wide discovery indexes such as `llms.txt` and `sitemap.md`
+- Searching the docs and reading pages as Markdown with the Vercel CLI
 - Accessing the complete cross-link graph at [`/docs/graph.json`](/docs/graph.json)
 - Exploring per-page `.graph.md` cross-link maps
 - Feeding documentation to AI assistants
@@ -164,6 +167,7 @@ See [CLI Workflows](/docs/agent-resources/workflows) for the full list, includin
 - [Rolling back a production deployment](/docs/deployments/rollback-production-deployment)
 - [Debugging slow Vercel Functions](/docs/functions/debug-slow-functions)
 - [Deploying a project from the CLI](/docs/projects/deploy-from-cli)
+- [Deploying without logging in](/docs/deployments/deploy-without-logging-in)
 
 ## Build a software factory
 
@@ -173,10 +177,28 @@ See [CLI Workflows](/docs/agent-resources/workflows) for the full list, includin
 
 Deploy an eve template, then customize the agent for your use case:
 
+## Prepare an agent for launch
+
+If you're building an agent with eve, Mastra, or Flue, work through the [agent checklist](/docs/agent-checklist) before you launch. It covers access and security, tools and code execution, reliability and state, observability and evaluation, and cost control, with items for each framework.
+
+To have your coding agent review your project against the checklist, copy the agent prompt at the top of that page.
+
 ## More resources
 
 - [The complete guide to Agent Plugins](/kb/guide/agent-plugins)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

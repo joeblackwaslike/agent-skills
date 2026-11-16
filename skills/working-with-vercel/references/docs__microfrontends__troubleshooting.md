@@ -15,9 +15,10 @@ related:
   - /docs/tracing
 summary: Learn about testing, common issues, and how to troubleshoot microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/microfrontends/troubleshooting.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "264266df238da52c176a1ede42a1c7444f5127ce7499ae3629a45ae6ed869df7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b120d5ac06d3396346bfade46f1d09a33c77fb1a9ce421bb75afca45df8c9632"
 ---
 
 # Testing & troubleshooting microfrontends
@@ -33,14 +34,11 @@ The `@vercel/microfrontends` package includes test utilities to help avoid commo
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Microfrontends support is now in Public Beta](https://vercel.com/changelog/microfrontends-support-is-now-in-public-beta)
-- [Microfrontends](https://turborepo.dev/docs/guides/microfrontends) — Set up Turborepo's built-in proxy to route traffic between multiple frontend applications during local development.
-- [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends)
-- [Vercel Microfrontends checks for missing configuration](https://vercel.com/changelog/vercel-microfrontends-checks-for-missing-configuration)
-- [Microfrontends now generally available](https://vercel.com/changelog/microfrontends-now-generally-available)
 - [Managing microfrontends](https://vercel.com/docs/microfrontends/managing-microfrontends) — Learn how to manage your microfrontends on Vercel.
 - [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
 - [Microfrontends](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends) — Vercel MCP tools for microfrontends.
-- [Getting Started with Routing Middleware](https://vercel.com/docs/routing-middleware/getting-started) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
+- [Get microfrontends config for a project](https://vercel.com/docs/rest-api/microfrontends/get-microfrontends-config-for-a-project) — GET /v1/microfrontends/projects/{projectIdOrName}/production-mfe-config — Get the microfrontends config for a project by
+- [vercel microfrontends](https://vercel.com/docs/cli/microfrontends) — Manage microfrontends groups from the CLI. Learn how to create groups, inspect group metadata, add and remove projects,
 
 Full cross-link map for this page: [/docs/microfrontends/troubleshooting.graph.md](/docs/microfrontends/troubleshooting.graph.md)
 <!-- /docsgraph:related -->
@@ -226,6 +224,18 @@ Next.js Pages Router routes:
 - Test through the [local microfrontends proxy](/docs/microfrontends/local-development#accessing-the-microfrontends-proxy).
 - Test on a Preview deployment.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -12,9 +12,10 @@ related:
   - /docs/sign-in-with-vercel/manage-from-dashboard
 summary: Learn how to Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sign-in-with-vercel/tokens.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "5924ab4a19d86ab0893464865b9c5fa20456142b71c28236b7b4484a49471e60"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "eea331d9441c660042170562800c011bb975ae3f2d8759a5d5c74f53b5267776"
 ---
 
 # Tokens
@@ -31,8 +32,8 @@ There are three tokens your application will work with when using Sign in with V
 - [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
 - [Access tokens](https://vercel.com/docs/accounts/access-tokens) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
 - [List Auth Tokens](https://vercel.com/docs/rest-api/authentication/list-auth-tokens) — GET /v6/user/tokens — Retrieve a list of the current User's authentication tokens.
+- [Create an Auth Token](https://vercel.com/docs/rest-api/authentication/create-an-auth-token) — POST /v3/user/tokens — Creates and returns a new authentication token for the currently authenticated User. The \\`bearer
 - [OIDC Federation Reference](https://vercel.com/docs/oidc/reference) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
-- [Troubleshooting Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/troubleshooting) — Learn how to troubleshoot common errors with Sign in with Vercel
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/tokens.graph.md](/docs/sign-in-with-vercel/tokens.graph.md)
 <!-- /docsgraph:related -->
@@ -148,6 +149,18 @@ Access and Refresh Tokens are sensitive credentials and should be stored securel
 - They can be stored in a database with encryption
 - Revoke tokens immediately if you suspect they have been compromised, either by calling the [Revoke Token Endpoint](/docs/sign-in-with-vercel/authorization-server-api#revoke-token-endpoint) or by invalidating all tokens for your application from the [dashboard](/dashboard). See [manage Sign in with Vercel from the dashboard](/docs/sign-in-with-vercel/manage-from-dashboard) for more information.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

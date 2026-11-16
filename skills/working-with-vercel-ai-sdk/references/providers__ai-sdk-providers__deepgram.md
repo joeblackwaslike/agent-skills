@@ -4,8 +4,8 @@ description: Learn how to set up the Deepgram provider and check AI Gateway avai
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/deepgram"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/deepgram.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "7827ed5fcc8cdba27342608c690880b79a61ef6abe1aa1e4ad92a439ed223c0b"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "8ab55acd093ad4cf9e761b09833601a811094e18baf7fe1d6a765b5404a1376b"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -360,13 +360,40 @@ The following provider options are available:
 
 ### Model Capabilities
 
-| Model                                                                                              | Transcription | Duration | Segments | Language |
-| -------------------------------------------------------------------------------------------------- | ------------- | -------- | -------- | -------- |
-| `nova-3` (+ [variants](https://developers.deepgram.com/docs/models-languages-overview#nova-3))     | ✓             | ✓        | ✓        | ✗        |
-| `nova-2` (+ [variants](https://developers.deepgram.com/docs/models-languages-overview#nova-2))     | ✓             | ✓        | ✓        | ✗        |
-| `nova` (+ [variants](https://developers.deepgram.com/docs/models-languages-overview#nova))         | ✓             | ✓        | ✓        | ✗        |
-| `enhanced` (+ [variants](https://developers.deepgram.com/docs/models-languages-overview#enhanced)) | ✓             | ✓        | ✓        | ✗        |
-| `base` (+ [variants](https://developers.deepgram.com/docs/models-languages-overview#base))         | ✓             | ✓        | ✓        | ✗        |
+| Model                     | Transcription | Streaming | Duration | Segments | Language                                                                                                    |
+| ------------------------- | ------------- | --------- | -------- | -------- | ----------------------------------------------------------------------------------------------------------- |
+| `base`                    | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `base-general`            | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `base-meeting`            | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `base-phonecall`          | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `base-finance`            | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `base-conversationalai`   | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `base-voicemail`          | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `base-video`              | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `enhanced`                | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `enhanced-general`        | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `enhanced-meeting`        | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `enhanced-phonecall`      | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `enhanced-finance`        | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `nova`                    | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `nova-general`            | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `nova-phonecall`          | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `nova-medical`            | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `nova-2`                  | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `nova-2-general`          | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `nova-2-meeting`          | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `nova-2-phonecall`        | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `nova-2-finance`          | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `nova-2-conversationalai` | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `nova-2-voicemail`        | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `nova-2-video`            | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `nova-2-medical`          | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `nova-2-drivethru`        | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `nova-2-automotive`       | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `nova-2-atc`              | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `nova-3`                  | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `nova-3-general`          | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
+| `nova-3-medical`          | ✓             | ✓         | ✓        | ✓        | Conditional: Returned when automatic language detection is enabled and the API supplies detected\_language. |
 
 ## Streaming Transcription
 
@@ -443,6 +470,45 @@ to the `experimental_onStreamTranscriptionEnd` telemetry callback. The
 `providerMetadata.deepgram.speechFinal` flag indicates an utterance boundary.
 Enable `includeRawChunks` for complete provider events, including request IDs,
 speaker labels, and utterance-end events.
+
+### Speech Model Capabilities
+
+| Model    | Instructions |
+| -------- | ------------ |
+| `aura`   | ✗            |
+| `aura-2` | ✗            |
+
+### Provider Option Catalog
+
+| Operation     | Option           | Description                                                                                                                                                                             |
+| ------------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| speech        | `bitRate`        | Bitrate of the audio in bits per second. Can be a number or predefined enum value.                                                                                                      |
+| speech        | `container`      | Container format for the output audio (mp3, wav, etc.).                                                                                                                                 |
+| speech        | `encoding`       | Encoding type for the audio output (linear16, mulaw, alaw, etc.).                                                                                                                       |
+| speech        | `sampleRate`     | Sample rate for the output audio in Hz (8000, 16000, 24000, 44100, 48000).                                                                                                              |
+| speech        | `callback`       | URL to which Deepgram would deliver the audio asynchronously. Deepgram answers callback requests with a JSON acknowledgement instead of audio, so `generateSpeech` rejects this option. |
+| speech        | `callbackMethod` | HTTP method by which the callback request will be made (POST or PUT).                                                                                                                   |
+| speech        | `mipOptOut`      | Opts out requests from the Deepgram Model Improvement Program.                                                                                                                          |
+| speech        | `tag`            | Label your requests for the purpose of identification during usage reporting.                                                                                                           |
+| transcription | `language`       | Language to use for transcription. If not specified, Deepgram defaults to English. Use `detectLanguage: true` to enable automatic language detection.                                   |
+| transcription | `detectLanguage` | Whether to enable automatic language detection. When true, Deepgram will detect the language of the audio.                                                                              |
+| transcription | `smartFormat`    | Whether to use smart formatting, which formats written-out numbers, dates, times, etc.                                                                                                  |
+| transcription | `punctuate`      | Whether to add punctuation to the transcript.                                                                                                                                           |
+| transcription | `paragraphs`     | Whether to format the transcript into paragraphs.                                                                                                                                       |
+| transcription | `summarize`      | Whether to generate a summary of the transcript. Use 'v2' for the latest version or false to disable.                                                                                   |
+| transcription | `topics`         | Whether to identify topics in the transcript.                                                                                                                                           |
+| transcription | `intents`        | Whether to identify intents in the transcript.                                                                                                                                          |
+| transcription | `sentiment`      | Whether to analyze sentiment in the transcript.                                                                                                                                         |
+| transcription | `detectEntities` | Whether to detect and tag named entities in the transcript.                                                                                                                             |
+| transcription | `redact`         | Specify terms or patterns to redact from the transcript. Can be a string or array of strings.                                                                                           |
+| transcription | `replace`        | String to replace redacted content with.                                                                                                                                                |
+| transcription | `search`         | Term or phrase to search for in the transcript.                                                                                                                                         |
+| transcription | `keyterm`        | Key term to identify in the transcript.                                                                                                                                                 |
+| transcription | `diarize`        | Whether to identify different speakers in the audio.                                                                                                                                    |
+| transcription | `utterances`     | Whether to segment the transcript into utterances.                                                                                                                                      |
+| transcription | `uttSplit`       | Minimum duration of silence (in seconds) to trigger a new utterance.                                                                                                                    |
+| transcription | `fillerWords`    | Whether to include filler words (um, uh, etc.) in the transcript.                                                                                                                       |
+| transcription | `streaming`      | Options for live transcription over the /v1/listen WebSocket.                                                                                                                           |
 
 ---
 

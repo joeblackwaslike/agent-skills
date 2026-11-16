@@ -15,9 +15,10 @@ related:
   - /docs/functions
 summary: Build bots for Slack and other chat platforms with Chat SDK, and deploy them on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/chat-sdk.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "65e9fbcf69e08aaae15828531384eafa4e2af25688c48eecd75e63bbac5b61c2"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "48e55987f5cbabf8f697523475a116dc691971fc623e18e01d4ac70c1123e02d"
 ---
 
 # Chat SDK
@@ -32,18 +33,18 @@ Build bots for Slack, Teams, and more with one TypeScript API, and deploy them o
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
 - [The Complete Guide to Chat SDK](https://vercel.com/kb/guide/the-complete-guide-to-chat-sdk) — Chat SDK is a TypeScript library for building chat bots that work across Slack, Teams, Discord, Linear, and more from a
+- [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
 - [Create a Discord support bot with Nuxt and Redis](https://vercel.com/kb/guide/create-a-discord-support-bot-with-nuxt-and-redis) — This guide walks through building a Discord support bot with Nuxt, covering project setup, Discord app configuration, Ga
 - [Triage form submissions with Chat SDK](https://vercel.com/kb/guide/triage-form-submissions-with-chat-sdk) — Build a Slack bot that triages form submissions with interactive cards. Forward, edit, or mark as spam without leaving S
 - [Chat SDK brings agents to your users](https://vercel.com/blog/chat-sdk-brings-agents-to-your-users)
-- [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
+- [Ship a GitHub code review bot with Hono and Redis](https://vercel.com/kb/guide/ship-a-github-code-review-bot-with-hono-and-redis) — This guide walks through building a GitHub bot that reviews pull requests on demand. When a user @mentions the bot on a
 - [Introducing npm i chat – One codebase, every chat platform](https://vercel.com/changelog/chat-sdk)
-- [TanStack AI with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai) — Connect TanStack AI to Vercel AI Gateway with the official adapter to authenticate requests and stream responses from AI
+- [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
+- [Mastra with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/mastra) — Learn how to integrate Vercel AI Gateway with Mastra to access multiple AI models through a unified interface.
 - [Agent Frameworks on Vercel](https://vercel.com/docs/frameworks/agents) — Build AI agents with eve, Mastra, Flue, and Vercel. Learn how each framework connects to Vercel compute, models, and sto
 - [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
-- [Mastra with Vercel Sandbox](https://vercel.com/docs/sandbox/ecosystem/mastra) — Give a Mastra agent an isolated workspace for running commands with the Vercel Sandbox adapter and AI Gateway.
 
 Full cross-link map for this page: [/docs/chat-sdk.graph.md](/docs/chat-sdk.graph.md)
 <!-- /docsgraph:related -->
@@ -225,6 +226,14 @@ Explore the [integration guides](/docs/chat-sdk/integrations) for complete examp
 
 Persistent Chat SDK state keeps track of subscriptions and coordinates event processing. Vercel Workflows provides durable execution for the tasks your bot starts.
 
+## Stream generative UI
+
+Your bot can reply with a card that the model composes, instead of plain text. With [json-render](https://json-render.dev), you define a catalog of components such as tables, charts, and buttons. The model writes a JSON spec from that catalog, and `@json-render/chat` converts the spec into a [Chat SDK card](https://chat-sdk.dev/docs/cards). Each adapter posts the card in its platform's native format, such as Block Kit on Slack and Adaptive Cards on Microsoft Teams.
+
+The card fills in as the model writes. `streamCard` posts the message once the card has content, edits it as new elements arrive, and finishes with a validated card. Because the model composes each card from one catalog, you don't build and maintain a separate tool for each message shape.
+
+Follow [Stream generative UI with json-render](/docs/chat-sdk/integrations/ai-gateway#stream-generative-ui-with-json-render) to add generated cards to your bot, or try prompts in the [json-render Chat SDK playground](https://chat-sdk-demo.json-render.dev).
+
 ## Build with an AI coding agent
 
 Install the [Chat SDK skill](https://chat-sdk.dev/docs#ai-coding-agents) to give your coding agent guidance on SDK APIs, adapter patterns, and project conventions:
@@ -267,7 +276,7 @@ No. Chat SDK handles messages, threads, cards, and button clicks, so you can bui
 
 ### How do I stream AI responses into Slack with Chat SDK?
 
-Pass the stream from AI SDK's `streamText()` to `thread.post()`, and await the call so the handler stays active until the stream finishes. In Slack, Chat SDK uses Slack's native streaming API to update the message as text arrives. On Discord and Google Chat, it posts a message and edits it as chunks arrive, throttling the edits to avoid rate limits. Adapters such as GitHub and WhatsApp wait for the whole stream and post one final message. See [streaming responses](https://chat-sdk.dev/docs/streaming).
+Pass the stream from AI SDK's `streamText()` to `thread.post()`, and await the call so the handler stays active until the stream finishes. In Slack, Chat SDK uses Slack's native streaming API to update the message as text arrives. On Discord and Google Chat, it posts a message and edits it as chunks arrive, throttling the edits to avoid rate limits. Adapters such as GitHub and WhatsApp wait for the whole stream and post one final message. See [streaming responses](https://chat-sdk.dev/docs/streaming). To stream a card with tables, charts, and buttons instead of text, see [Stream generative UI with json-render](/docs/chat-sdk/integrations/ai-gateway#stream-generative-ui-with-json-render).
 
 ## Next steps
 
@@ -275,6 +284,18 @@ Pass the stream from AI SDK's `streamText()` to `thread.post()`, and await the c
 - [Choose platform and state adapters](/docs/chat-sdk/adapters)
 - [Read the Chat SDK API and platform documentation](https://chat-sdk.dev/docs)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

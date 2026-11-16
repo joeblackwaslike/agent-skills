@@ -12,9 +12,10 @@ related:
   []
 summary: Use create_sdk_key with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/create_sdk_key.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "10e081b17f39e84a5c5d3676c64835c400ce1bda0f4905e79cfdceae66191576"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2c0027430395877b36f1d36918a56214ae48f0805243691fae6a34f0fc84f9d7"
 ---
 
 # create_sdk_key
@@ -29,9 +30,9 @@ Create an SDK key.
 
 - [create_kms_signing_key](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/create_kms_signing_key) — Use create_kms_signing_key with Vercel MCP.
 - [list_feature_flag_sdk_keys](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_feature_flag_sdk_keys) — Use list_feature_flag_sdk_keys with Vercel MCP.
-- [create_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project) — Use create_project with Vercel MCP.
 - [Create an SDK key](https://vercel.com/docs/rest-api/feature-flags/create-an-sdk-key) — PUT /v1/projects/{projectIdOrName}/feature-flags/sdk-keys — Creates an SDK key.
-- [activate_kms_signing_key](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/activate_kms_signing_key) — Use activate_kms_signing_key with Vercel MCP.
+- [Delete an SDK key](https://vercel.com/docs/rest-api/feature-flags/delete-an-sdk-key) — DELETE /v1/projects/{projectIdOrName}/feature-flags/sdk-keys/{hashKey} — Deletes an SDK key.
+- [create_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project) — Use create_project with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/feature-flags/create_sdk_key.graph.md](/docs/agent-resources/vercel-mcp/tools/feature-flags/create_sdk_key.graph.md)
 <!-- /docsgraph:related -->
@@ -45,6 +46,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/featu
 | `slug`            | string | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody`     | object | No       | Request body for this tool.                                 |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

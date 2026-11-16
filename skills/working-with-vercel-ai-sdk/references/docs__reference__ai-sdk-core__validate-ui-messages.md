@@ -4,13 +4,19 @@ description: API Reference for validateUIMessages
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/validate-ui-messages"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/validate-ui-messages.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "663953cbe484ee4fb75f653e3aa530e9bb39b16671310b7ad85bbe4a47628cde"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "e694bf588fbf990514d9457e2d0bd261fbac8a927d3c1c286db18e87801c5337"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 `validateUIMessages` is an async function that validates UI messages against schemas for metadata, data parts, and tools. It ensures type safety and data integrity for your message arrays before processing or rendering.
+
+Structural validation stops at the first invalid element in message and part arrays.
+Part types and tool states select the applicable schema before its fields are validated.
+The error retains the failing element's path without accumulating errors for every
+malformed element. Valid message and part arrays have no SDK-imposed count limit;
+apply request size and message history limits appropriate for your application.
 
 ## Basic Usage
 

@@ -12,9 +12,10 @@ related:
   []
 summary: Constrain a response to a JSON schema with the OpenAI Responses API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/structured-outputs.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "ec98abb0ed772396e985f06f4cb2355f8f023bb73d3a6e49ed17b29c6fafc73e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a8777e3be8852f9e98f64fdbd145c25f2d6c77bf0be0fa920dbd9d3e2eeef9c1"
 ---
 
 # OpenAI Responses Structured Outputs with AI Gateway
@@ -28,6 +29,7 @@ Use `text.format` to constrain the model's output to a JSON schema:
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [OpenResponses Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/structured-outputs) — Request schema-constrained JSON with OpenResponses through AI Gateway, and handle provider support and response validati
+- [AI Gateway supports OpenAI's Responses API](https://vercel.com/changelog/ai-gateway-supports-openais-responses-api)
 - [OpenAI Chat Completions Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs) — Generate structured JSON responses that conform to a specific schema using the Chat Completions API through AI Gateway.
 - [Anthropic Messages Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs) — Get JSON responses conforming to a JSON Schema from Anthropic models through AI Gateway.
 - [OpenAI Responses Text Generation with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/text-generation) — Generate text responses with the OpenAI Responses API through AI Gateway.
@@ -175,6 +177,18 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
   }'
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

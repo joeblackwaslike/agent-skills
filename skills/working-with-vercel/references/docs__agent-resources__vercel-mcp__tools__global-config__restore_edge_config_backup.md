@@ -12,9 +12,10 @@ related:
   []
 summary: Use restore_edge_config_backup with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/restore_edge_config_backup.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "4cf513ca9bd0d82aeb99aef9c0f7e9452fe8aecd77c49a0ea9632ec9f609aba0"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "fa8c51b27ff1f2fad76841c69be59fee908c97605bb39a74668d0eb769e36b64"
 ---
 
 # restore_edge_config_backup
@@ -28,8 +29,8 @@ Restores a Global Config backup.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [get_edge_config_backup](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config_backup) — Use get_edge_config_backup with Vercel MCP.
-- [Restore Global Config backup](https://vercel.com/docs/rest-api/global-config/restore-global-config-backup) — POST /v1/global-config/{edgeConfigId}/backups/{edgeConfigBackupVersionId}/restore — Restores a Global Config backup.
 - [get_edge_config_backups](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config_backups) — Use get_edge_config_backups with Vercel MCP.
+- [Restore Global Config backup](https://vercel.com/docs/rest-api/global-config/restore-global-config-backup) — POST /v1/global-config/{edgeConfigId}/backups/{edgeConfigBackupVersionId}/restore — Restores a Global Config backup.
 - [update_edge_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/update_edge_config) — Use update_edge_config with Vercel MCP.
 - [create_edge_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/create_edge_config) — Use create_edge_config with Vercel MCP.
 
@@ -46,6 +47,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/globa
 | `slug`                      | string  | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody`               | unknown | No       | Request body for this tool.                                 |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -16,9 +16,10 @@ related:
   - /docs/sandbox/pricing
 summary: Vercel pricing for the Dublin, Ireland (dub1) region.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/pricing/regional-pricing/dub1.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "222539c7088a737a4d79d4c70eddc4f08f774a89631a04adb8519fed53548060"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b260509825ff411f03ea9bbb10e73cc948c54b7bce2bb6c87080a475fa8769f6"
 ---
 
 # Dublin, Ireland (dub1) pricing
@@ -31,11 +32,11 @@ The table below shows Managed Infrastructure products with pricing specific to t
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Sydney, Australia \\(syd1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/syd1) — Vercel pricing for the Sydney, Australia \\(syd1\\) region.
-- [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
 - [Hong Kong \\(hkg1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/hkg1) — Vercel pricing for the Hong Kong \\(hkg1\\) region.
+- [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
+- [Sydney, Australia \\(syd1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/syd1) — Vercel pricing for the Sydney, Australia \\(syd1\\) region.
+- [Cleveland, USA \\(cle1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cle1) — Vercel pricing for the Cleveland, USA \\(cle1\\) region.
 - [London, UK \\(lhr1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/lhr1) — Vercel pricing for the London, UK \\(lhr1\\) region.
-- [Washington D.C., USA \\(iad1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/iad1) — Vercel pricing for the Washington D.C., USA \\(iad1\\) region.
 
 Full cross-link map for this page: [/docs/pricing/regional-pricing/dub1.graph.md](/docs/pricing/regional-pricing/dub1.graph.md)
 <!-- /docsgraph:related -->
@@ -55,8 +56,8 @@ The **On-demand (Billing Cycle)** column shows the rate for each resource in thi
 | [CDN Requests](/docs/manage-cdn-usage#cdn-requests) | $2.40 per 1,000,000 Requests |
 | [ISR Writes](/docs/incremental-static-regeneration/limits-and-pricing#isr-writes-chart) | $4.80 per 1,000,000 Write Units |
 | [ISR Reads](/docs/incremental-static-regeneration/limits-and-pricing#isr-reads-chart) | $0.48 per 1,000,000 Read Units |
-| [Runtime Cache Writes](/docs/caching/runtime-cache#pricing) | $4.80 per 1,000,000 Write Units |
-| [Runtime Cache Reads](/docs/caching/runtime-cache#pricing) | $0.48 per 1,000,000 Read Units |
+| [Runtime Cache Writes](/docs/runtime-cache#pricing) | $4.80 per 1,000,000 Write Units |
+| [Runtime Cache Reads](/docs/runtime-cache#pricing) | $0.48 per 1,000,000 Read Units |
 | [Fast Origin Transfer](/docs/manage-cdn-usage#fast-origin-transfer) | $0.06 per 1 GB |
 | [Queue API Operations](/docs/queues/pricing) | $0.72 per 1,000,000 Operations |
 | [CDN Requests - Additional CPU Duration](/docs/manage-cdn-usage#cdn-request-cpu-duration) | $0.36 per 1 Hour |
@@ -78,6 +79,18 @@ The **On-demand (Billing Cycle)** column shows the rate for each resource in thi
 
 Learn more about the different regions available on Vercel in the [regions](/docs/regions) documentation. See the [pricing](/docs/pricing#managed-infrastructure) documentation for more information on Managed Infrastructure.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

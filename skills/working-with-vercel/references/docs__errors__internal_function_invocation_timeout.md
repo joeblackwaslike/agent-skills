@@ -14,9 +14,10 @@ related:
   - /docs/deployments/build-features
 summary: "The internal invocation of a function timed out. This is Vercel's error."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/internal_function_invocation_timeout.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "8e1c8113aa7945bd94eae33f98253be3ae4350564fe4d39cc0a2de7cf1832942"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "36d2e9a9b5ddba093b99c95b796ff9509509a6ea4f1c3af5efd214380c9f1c3d"
 ---
 
 # INTERNAL_FUNCTION_INVOCATION_TIMEOUT
@@ -43,6 +44,18 @@ https://my-deployment-my-username.vercel.app/_logs
 
 For more information on Vercel Functions timeouts, see [What can I do about Vercel Functions timing out?](/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

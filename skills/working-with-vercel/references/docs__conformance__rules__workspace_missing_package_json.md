@@ -11,9 +11,10 @@ related:
   []
 summary: All directories that match a workspace glob must include a package.json file.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/workspace_missing_package_json.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "694f4b4ad058f9dde8d298c146df23c8d5415a89a7a613e7290aba41c5afcaf0"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0d9b44ed7b375a2ca953f65f49a51eae06cae860ca84b1f552247fbb5a87d368"
 ---
 
 # WORKSPACE_MISSING_PACKAGE_JSON
@@ -45,6 +46,18 @@ Directories that match a workspace glob but do not have a `package.json` file
 should either be converted to a package, be moved to a different directory, or
 be excluded in the workspaces configuration.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

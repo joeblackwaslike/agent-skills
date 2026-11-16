@@ -12,9 +12,10 @@ related:
   - /docs/deployments/logs
 summary: An empty DNS record was received as part of the DNS response. This is a DNS error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/dns_hostname_empty.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ddf6c79ea1df6a9ca8fa4789f9738b73dff7ca98c1b80e2f6713dc64374cd44a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "25406189e2a426173ef053c4bba73285a1016da179ce5484d74a17a68da945b5"
 ---
 
 # DNS_HOSTNAME_EMPTY
@@ -33,6 +34,18 @@ To troubleshoot this error, follow these steps:
 2. **Check the rewrite destination:** Ensure that the destination hostname of the external rewrite is correct and has a DNS record that resolves to an IP address
 3. **Review application logs:** Inspect the [application logs](/docs/deployments/logs) for any warnings or errors related to DNS or the attempted connections
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -16,9 +16,10 @@ related:
   - /docs/sandbox/concepts/authentication
 summary: Run Terminal-Bench and any other Harbor Hub dataset on Vercel Sandbox, with each trial in its own isolated Firecracker microVM.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/ecosystem/harbor.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b2c5efbbd796826bd83aeace4a0ba77e2e297ef69adbf5136cd33b6e47c21b47"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0d73926e359e202b21c0d57d9944157439d5d68d9e054118fee783ce92043044"
 ---
 
 # Harbor and Terminal-Bench
@@ -44,11 +45,10 @@ parallel than on your local machine.
 - [Run Terminal-Bench and any Harbor benchmark on Vercel Sandbox](https://vercel.com/kb/guide/run-terminal-bench-harbor-benchmarks-vercel-sandbox) — Run Terminal-Bench, SWE-bench, and any Harbor benchmark on Vercel Sandbox. Each trial executes in an isolated Firecracke
 - [Run Terminal-Bench and other Harbor evals on Vercel Sandbox](https://vercel.com/changelog/run-terminal-bench-and-other-harbor-evals-on-vercel-sandbox)
 - [How to run Herdr coding agents in isolated Vercel Sandboxes](https://vercel.com/kb/guide/run-herdr-coding-agents-isolated-vercel-sandboxes) — Install the vercel.sandbox plugin for Herdr, approve an upload manifest, run each AI coding agent in its own isolated Ve
-- [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
 - [Vercel Sandbox vs CodeSandbox](https://vercel.com/kb/guide/vercel-sandbox-vs-codesandbox) — A detailed guide to Vercel Sandbox vs CodeSandbox: compute isolation, credential brokering, Active CPU billing, Docker s
+- [How to run Devin Outposts sessions on Vercel](https://vercel.com/kb/guide/devin-outposts-vercel-sandbox) — Run Devin Outposts sessions in isolated Vercel Sandbox microVMs. One browser authorization to set up, then sessions star
 - [Harbor with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/harbor) — Evaluate coding-agent harnesses with Harbor and AI Gateway. Choose a harness, configure its connection, and pass separat
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
-- [AgentEnv by Scale AI](https://vercel.com/docs/sandbox/ecosystem/agentenv) — Run evaluations with AgentEnv by Scale AI using separate Vercel sandboxes for the environment and agent.
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/harbor.graph.md](/docs/sandbox/ecosystem/harbor.graph.md)
 <!-- /docsgraph:related -->
@@ -223,6 +223,18 @@ Tasks with a `docker-compose.yaml` support the public and no-network modes
 but not hostname allowlists. Harbor fails the trial at validation time with
 an explanatory error rather than running with a weaker policy.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

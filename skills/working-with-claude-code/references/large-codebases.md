@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/large-codebases.md"
-fetched_at: "2026-11-09T12:34:10.263Z"
-sha256: "0fb31217b99dea58320eddf89e374270d6900cdd8bb835c48dbbe463ead0b3de"
+fetched_at: "2026-11-16T12:28:44.823Z"
+sha256: "5764008ddd893fa5177b2e6239155b0a8796fd594c53e5071927ad748cc6790e"
 ---
 
 > ## Documentation Index
@@ -203,7 +203,7 @@ If the install fails, match the message Claude Code reports:
 * `Marketplace "claude-plugins-official" not found`: add the marketplace with `/plugin marketplace add anthropics/claude-plugins-official`, then retry the install.
 * `Plugin "<name>" not found in marketplace "claude-plugins-official"`: your local copy of the marketplace catalog may be out of date. Refresh it with `/plugin marketplace update claude-plugins-official`, then retry the install. If the retry prints the same message, see [Plugin not found in marketplace](https://code.claude.com/docs/en/plugins/troubleshooting.md#plugin-not-found-in-marketplace).
 
-To enable a plugin for everyone in the repository rather than installing it yourself, add it to the [`enabledPlugins` project setting](https://code.claude.com/docs/en/settings-reference#plugin-settings).
+To turn a plugin on for everyone in the repository, add it to the [`enabledPlugins` project setting](https://code.claude.com/docs/en/settings-reference#plugin-settings). Each person still [installs it](https://code.claude.com/docs/en/plugins/loading.md#enabled-in-project-settings-but-not-installed).
 
 Code intelligence plugins require the language's language server binary on each developer's machine. See [which binary each language requires](https://code.claude.com/docs/en/plugins/code-intelligence.md). Installing from the official marketplace requires network access to GitHub, where the marketplace is hosted. On a restricted network, [add the marketplace from an internal Git host or local path](https://code.claude.com/docs/en/plugins/install.md#add-a-marketplace) instead.
 
@@ -241,7 +241,9 @@ This is particularly useful for [subagent worktree isolation](https://code.claud
 
 List directories in `sparsePaths`, not individual files. Root-level files like `package.json`, `tsconfig.base.json`, and lock files are always checked out alongside the directories you list. Root-level directories are not, so include `.claude` in the list if you want the repository root's `.claude/settings.json` or `.claude/rules/` available inside the worktree. For project skills, agents, and commands, see [What worktrees share with the main checkout](https://code.claude.com/docs/en/worktrees.md#what-worktrees-share-with-the-main-checkout).
 
-Sparse checkout requires git to enable `extensions.worktreeConfig` in the repository's shared `.git/config` while a sparse worktree exists. Claude Code removes that entry after the last worktree is removed, but only if Claude Code added it. It never removes a value you set yourself.
+> [!NOTE]
+>
+> Sparse checkout requires git to enable `extensions.worktreeConfig` in the repository's shared `.git/config` while a sparse worktree exists. Claude Code removes that entry after the last worktree is removed, but only if Claude Code added it.
 
 To avoid duplicating large directories like `node_modules` across worktrees, pair `sparsePaths` with `symlinkDirectories` in the same `.claude/settings.json`:
 

@@ -13,9 +13,10 @@ related:
   - /docs/pricing
 summary: When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that particular deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployments/preview-deployment-suffix.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "365763ec00d47b485e01b84f1c850dcb0a672fc20bff8b5fbc603cdf65d47875"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "dde47b54afa9faa2e267c8fdf5aa7934af8a8d4663f09da6c0a8d0c61f1ef885"
 ---
 
 # Preview Deployment Suffix
@@ -31,14 +32,12 @@ Preview Deployment Suffixes allow you to customize the URL of a [preview deploym
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Preview URLs optimized for multi-tenant platforms](https://vercel.com/changelog/preview-urls-optimized-for-multi-tenant-platforms)
-- [Protected Preview Deployments available on all plans](https://vercel.com/changelog/protected-preview-deployments-available-on-all-plans)
-- [Project-level deployment suffixes](https://vercel.com/changelog/project-level-deployment-suffixes)
 - [Preview deployments for retail campaign review](https://vercel.com/kb/guide/preview-deployments-retail-campaign-review) — Use preview deployments so merchandising, brand, and engineering review a retail campaign on one live URL before launch.
 - [Accessing Deployments through Generated URLs](https://vercel.com/docs/deployments/generated-urls) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
 - [Multi-tenant Preview URLs](https://vercel.com/docs/platforms/multi-tenant-platforms/preview-url-prefixes) — Test tenant-specific experiences in preview deployments using dynamic URL prefixes.
-- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
-- [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Deployment Protection on Vercel](https://vercel.com/docs/deployment-protection) — Learn how to control access to your Vercel project's preview and production URLs with Deployment Protection. Configure p
+- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 
 Full cross-link map for this page: [/docs/deployments/preview-deployment-suffix.graph.md](/docs/deployments/preview-deployment-suffix.graph.md)
 <!-- /docsgraph:related -->
@@ -105,6 +104,18 @@ You may encounter this error if you are using the [Preview Deployment Suffix](#p
 
 The best way to satisfy all of these constraints is to ensure the domain is also added to a project located in the same team. In this project, you can include a single `index.html` that displays when someone visits the root of the domain.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

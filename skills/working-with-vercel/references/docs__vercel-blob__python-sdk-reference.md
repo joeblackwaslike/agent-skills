@@ -15,9 +15,10 @@ related:
   - /docs/vercel-blob/vercel-signed-urls
 summary: Reference for the Vercel Blob Python SDK, including uploads, streaming and multipart uploads, downloads, metadata, listing, copying, deletion,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-blob/python-sdk-reference.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "058f335f63d5d3ff7e068927a431262c4cd20c01c67218caca05c28a03fc5e50"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "bf599250ef3fb7788d853778764dc79be884c448b6109f33ee42e917c7af4c4e"
 ---
 
 # Python SDK Reference
@@ -617,6 +618,18 @@ asyncio.run(main())
 
 For sync calls, use `SyncBlobServiceOptions` from `vercel.blob.sync` with a synchronous factory and a sync session. The sync API rejects async factories.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

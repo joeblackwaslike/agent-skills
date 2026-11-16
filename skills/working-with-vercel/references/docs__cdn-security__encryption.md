@@ -11,9 +11,10 @@ related:
   - /docs/caching/cache-control-headers
 summary: Learn how Vercel encrypts data in transit and at rest.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cdn-security/encryption.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "57b62830afab062c860a4b6705e31825a8ad78817c6c9426df08c6be884d4082"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "98ede27a03d61926f2cbb020b1500ef50886e8a655f713209de506c43ab47b55"
 ---
 
 # Encryption and TLS
@@ -30,12 +31,11 @@ Every **deployment** on Vercel is served over an HTTPS connection. Vercel automa
 - [Encrypted Client Hello (ECH) is now supported on Vercel CDN](https://vercel.com/changelog/encrypted-client-hello-now-supported-on-vercel-cdn)
 - [How to set up local HTTPS for Next.js and other dev servers](https://vercel.com/kb/guide/access-nextjs-localhost-https-certificate-self-signed) — Learn when you need local HTTPS, how to enable it with next dev --experimental-https, and how to clear certificate warni
 - [Automatic SSL with Vercel and Let's Encrypt](https://vercel.com/blog/automatic-ssl-with-vercel-lets-encrypt)
-- [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
 - [Working with SSL Certificates](https://vercel.com/docs/domains/working-with-ssl) — Learn how Vercel uses SSL certification to keep your site secure.
-- [Security](https://vercel.com/docs/vercel-blob/security) — Learn how your Vercel Blob store is secured
 - [Vercel security overview](https://vercel.com/docs/security) — Vercel provides built-in and customizable features to ensure that your site is secure.
-- [How Vercel CDN Works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
 - [Security & Compliance Measures](https://vercel.com/docs/security/compliance) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [How Vercel CDN Works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
+- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 
 Full cross-link map for this page: [/docs/cdn-security/encryption.graph.md](/docs/cdn-security/encryption.graph.md)
 <!-- /docsgraph:related -->
@@ -141,6 +141,18 @@ When a hostname is requested, the CDN reads the certificate and key from the dat
 
 For a complete breakdown, see the [SSL Labs report for vercel.com](https://www.ssllabs.com/ssltest/analyze.html?d=vercel.com). You can select any IP address. The results are the same for all.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

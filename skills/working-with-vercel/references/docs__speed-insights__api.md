@@ -11,9 +11,10 @@ related:
   - /docs/speed-insights/package
 summary: Learn how to use Speed Insights in Vercel with any frontend framework or project through the Speed Insights intake API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/speed-insights/api.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "999182e146d5f4beaee5196766f6899187438ba8c961cc1998cb3b9f1211cf74"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "88aa9b8190143f4f30f49cde5e43eb883af1fbaee3e2e1db0aa5eea10b60b593"
 ---
 
 # Speed Insights Intake API
@@ -100,6 +101,18 @@ export function webVitals(options) {
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

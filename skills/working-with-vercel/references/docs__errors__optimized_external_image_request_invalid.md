@@ -11,9 +11,10 @@ related:
   []
 summary: The external image request is invalid. This is a request error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/optimized_external_image_request_invalid.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "39d652ad8c38e52acf5a7b42b020424439866ae36061e271d202aec11d907d29"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "958bc7068a6bcf0f1fdf5bc3eac1b1eea590c6991ec369d3a721a45b1ae61adb"
 ---
 
 # OPTIMIZED_EXTERNAL_IMAGE_REQUEST_INVALID
@@ -32,6 +33,18 @@ To troubleshoot this error, follow these steps:
 2. **Check query parameters:** Ensure that any query parameters are valid
 3. **Validate source configuration:** Verify that the external source is configured correctly and accessible
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -11,9 +11,10 @@ related:
   []
 summary: "Applications using Next 13 should use the \"next\" TypeScript plugin."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/nextjs_missing_next13_typescript_plugin.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "80ec45617bf91a8b8383e1ecd41604305702a4c1d55089a032c6404660de5202"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "544cd2772a29d175ae176432d14d6300a29294d63ddc255e20ee22fc77e6da3b"
 ---
 
 # NEXTJS_MISSING_NEXT13_TYPESCRIPT_PLUGIN
@@ -34,6 +35,18 @@ file.
   }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/functions/functions-api-reference/vercel-functions-package
 summary: Reference for writing Routing Middleware in TypeScript and JavaScript, including entrypoints, the config object, the middleware signature, and helper...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/routing-middleware/js-reference.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "7d2138783d7dc60f48649db7346fde7daab875643789866d9c84e4392dfc1fdd"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3b32682a8c99713f735a646e6e1618625b380ec1f3875c7e93d296c9a4952528"
 ---
 
 # Routing Middleware: JS Reference
@@ -30,14 +31,14 @@ Use this reference to write [Routing Middleware](/docs/routing-middleware) in Ty
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to use Next.js as a backend for your frontend](https://nextjs.org/docs/app/guides/backend-for-frontend) — Learn how to use Next.js as a backend framework
 - [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
+- [Filtering query parameters](https://vercel.com/kb/guide/filter-query-parameters) — Learn how to filter query parameters in your Middleware.
+- [How to use Next.js as a backend for your frontend](https://nextjs.org/docs/app/guides/backend-for-frontend) — Learn how to use Next.js as a backend framework
 - [Vercel Edge Middleware: Dynamic at the speed of static (historical)](https://vercel.com/blog/vercel-edge-middleware-dynamic-at-the-speed-of-static)
-- [route.js](https://nextjs.org/docs/app/api-reference/file-conventions/route) — API reference for the route.js special file.
-- [Getting Started with Routing Middleware](https://vercel.com/docs/routing-middleware/getting-started) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
+- [Middleware now supports Node.js](https://vercel.com/changelog/middleware-now-supports-node-js)
+- [Rendering content based on device](https://vercel.com/kb/guide/rendering-content-based-on-device) — Learn how to render different content based on the user agent in your Middleware.
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart) — Build your first Vercel Function in a few steps.
-- [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 - [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
 
 Full cross-link map for this page: [/docs/routing-middleware/js-reference.graph.md](/docs/routing-middleware/js-reference.graph.md)
@@ -902,6 +903,18 @@ export default function middleware() {
 
 - [Redirect with unique tokens](/kb/guide/use-crypto-web-api)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

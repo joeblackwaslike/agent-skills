@@ -3,7 +3,7 @@ title: Fair Use Guidelines
 product: vercel
 url: /docs/limits/fair-use-guidelines
 canonical_url: "https://vercel.com/docs/limits/fair-use-guidelines"
-last_updated: 2026-09-14
+last_updated: 2026-11-12
 type: reference
 prerequisites:
   - /docs/limits
@@ -15,9 +15,10 @@ related:
   - /docs/builds/managing-builds
 summary: Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/limits/fair-use-guidelines.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f59361649a29e0b9cfb5733dea07fc82301e9a6b3ba7d55900bccab615bfca8d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8e4490d4b475ce69b8d9cd5ba0d3fe395f9b170beb4505501cd550f467f9b1c3"
 ---
 
 # Fair Use Guidelines
@@ -38,10 +39,10 @@ Vercel usage is subject to these fair use guidelines across plans and usage-base
 - [Penetration testing on Vercel](https://vercel.com/kb/guide/penetration-testing-on-vercel) — Learn how to perform pentesting on Vercel.
 - [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
 - [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
-- [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing)
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
+- [CDN pricing and usage](https://vercel.com/docs/manage-cdn-usage) — Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transf
 
 Full cross-link map for this page: [/docs/limits/fair-use-guidelines.graph.md](/docs/limits/fair-use-guidelines.graph.md)
 <!-- /docsgraph:related -->
@@ -94,22 +95,6 @@ Pro plan members can use a pay-as-you-go model for additional usage, giving you 
 | [Image Optimization Cache Writes](/docs/image-optimization/limits-and-pricing#image-cache-writes) | $4.00 per 1M writes |
 
 
-### Commercial usage
-
-**Hobby teams** are restricted to non-commercial personal use only. All commercial usage of the platform requires either a Pro or Enterprise plan.
-
-Commercial usage is defined as any [Deployment](/docs/deployments) that is used for the purpose of financial gain of **anyone** involved in **any part of the production** of the project, including a paid employee or consultant writing the code. Examples of this include, but are not limited to, the following:
-
-- Any method of requesting or processing payment from visitors of the site
-- Advertising the sale of a product or service
-- Receiving payment to create, update, or host the site
-- Affiliate linking is the primary purpose of the site
-- The inclusion of advertisements, including but not limited to online advertising platforms like Google AdSense
-
-> **💡 Note:** Asking for Donations **does not** fall under commercial usage.
-
-If you are unsure whether or not your site would be defined as commercial usage, please [contact the Vercel Support team](/help#issues).
-
 ### General Limits
 
 [**Take a look at our Limits documentation**](/docs/limits#general-limits) for the limits we apply to all accounts.
@@ -120,6 +105,18 @@ Circumventing or otherwise misusing Vercel's limits or usage guidelines is a vio
 
 For further information regarding these guidelines and acceptable use of our services, refer to our [Terms of Service](/legal/terms#fair-use) or your Enterprise Service Agreement.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

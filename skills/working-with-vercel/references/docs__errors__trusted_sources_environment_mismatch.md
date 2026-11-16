@@ -11,9 +11,10 @@ related:
   - /docs/security/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources
 summary: "The Trusted Sources OIDC token presented with the request comes from an environment that isn't permitted to reach the target deployment."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/trusted_sources_environment_mismatch.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "df22c766a6ef543cc5ee59376bcdc839ef76a7be6adf2622f3cafd7a932c015e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "22c94c1e85a757decc43ce54af60c7d581bed547d6b9f79881e05b3e35323cd1"
 ---
 
 # TRUSTED_SOURCES_ENVIRONMENT_MISMATCH
@@ -39,6 +40,18 @@ If you didn't expect this caller to reach the deployment, no change is required:
 
 For more details on how rules are matched and which claims are checked, see the [Trusted Sources documentation](/docs/security/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

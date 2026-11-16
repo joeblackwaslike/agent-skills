@@ -16,9 +16,10 @@ related:
   - /docs/image-optimization/limits-and-pricing
 summary: "Learn all about Vercel's Pro Plan free trial, including features, usage limits, and options post-trial. Learn how to manage your team's projects with..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/plans/pro-plan/trials.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "5b4f2d45979bc41396cc663f26bec5dd1dbe26677014360c7ee63c894b7d91d0"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "bd93d783d227af1df5abf81f1bf2438dc4681310becae6240d0418f1a8421cc9"
 ---
 
 # Understanding Vercel
@@ -33,10 +34,9 @@ Vercel offers three plan tiers: **Hobby**, **Pro**, and **Enterprise**.
 
 - [A more flexible Pro plan for modern teams](https://vercel.com/blog/new-pro-pricing-plan)
 - [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby) — Learn about the Hobby plan and how it compares to the Pro plan.
-- [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing)
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Pricing for Web Analytics](https://vercel.com/docs/analytics/limits-and-pricing) — Learn about pricing for Vercel Web Analytics.
 - [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
+- [Pricing for Web Analytics](https://vercel.com/docs/analytics/limits-and-pricing) — Learn about pricing for Vercel Web Analytics.
 - [Free Domain with Pro](https://vercel.com/docs/domains/free-domain-with-pro) — Every paid Pro team gets one free first-year custom domain on an eligible TLD. Claim yours at checkout or from domain se
 
 Full cross-link map for this page: [/docs/plans/pro-plan/trials.graph.md](/docs/plans/pro-plan/trials.graph.md)
@@ -127,6 +127,18 @@ When you upgrade to Pro, the pause status on your account will get lifted. This 
 
 No charges apply for the months of inactivity. Billing will only cover the current billing cycle.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

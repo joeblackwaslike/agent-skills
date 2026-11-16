@@ -16,9 +16,10 @@ related:
   - /docs/cli/tokens
 summary: Cap AI Gateway spend for your team, a project, an individual API key, or a team member with budgets, refresh periods, spend alerts, and defaults.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/budgets.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "2462d328efbf0c3e2ca8705d42ce3add0c463d5c70d1f43de3ce6f29cf027a56"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "dc7f29edde92f658794f611dadb26372dde767887bc1bfc8afb3fa3bd396a708"
 ---
 
 # AI Gateway Budgets and Spend Limits
@@ -33,16 +34,16 @@ A budget caps AI Gateway spend at one of four scopes:
 
 - [AI Gateway now supports team and project spend budgets](https://vercel.com/changelog/ai-gateway-spend-budgets-and-alerts)
 - [Baseten's Mammoth-1 and Elephant-1 now available on AI Gateway for free](https://vercel.com/changelog/basetens-mammoth-1-and-elephant-1-now-available-on-ai-gateway-for-free)
+- [Gemini Decision 1 now available on AI Gateway](https://vercel.com/changelog/gemini-decision-1-now-available-on-ai-gateway)
 - [Liquid AI's d1 is available on AI Gateway](https://vercel.com/changelog/liquid-ai-d1-is-available-on-ai-gateway)
 - [Liquid AI's d1-ultra now available on AI Gateway](https://vercel.com/changelog/liquid-ais-d1-ultra-now-available-on-ai-gateway)
-- [Microsoft Decision-1 now available on AI Gateway](https://vercel.com/changelog/microsoft-decision-1-now-available-on-ai-gateway)
 - [Cost-aware model routing with Vercel AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Send easy requests to a lower-cost model and escalate only the complex ones to a frontier model through AI Gateway, with
 - [Run recurring security reviews with deepsec on Vercel](https://vercel.com/kb/guide/deepsec-reviews-on-vercel) — Learn how to run periodic security scans on your code with deepsec. Set up deepsec to review GitHub repositories and del
+- [Deploy a Shopify storefront with an AI assistant](https://vercel.com/kb/guide/deploy-shopify-ai-storefront) — Deploy an eve shopping agent with Vercel Shop to find Shopify products, manage carts, and answer store questions.
 - [How to classify, route, and score with Jev and AI SDK](https://vercel.com/kb/guide/typesafe-jev-and-ai-sdk) — Use Jev from TypeSafe AI with AI SDK's experimental \\`evaluate\\` API to classify, route, score, and verify inside your a
 - [Vercel for Enterprise](https://vercel.com/blog/vercel-for-enterprise)
-- [vercel billing budgets](https://vercel.com/docs/cli/budgets) — View and manage your team's on-demand spend budget from the Vercel CLI.
-- [Spend Management](https://vercel.com/docs/spend-management) — Learn how to get notified about your account spend and configure a webhook.
-- [Security for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/security) — What a durable agent harness may run in your Vercel Function, where the commands and files a model picks run instead, an
+- [Spend Management](https://vercel.com/docs/spend-management) — Set budgets for your team, projects, products, or organization, and get notified, trigger a webhook, or pause deployment
+- [vercel billing budgets](https://vercel.com/docs/cli/budgets) — View and manage Spend Management budgets for your team, projects, products, and organization from the Vercel CLI.
 
 Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/budgets.graph.md](/docs/ai-gateway/observability-and-spend/budgets.graph.md)
 <!-- /docsgraph:related -->
@@ -818,6 +819,18 @@ Budgets limit usage; they do not reserve or purchase capacity. Your team still n
 > doesn't count toward any limit. An exceeded budget still rejects BYOK
 > requests in its scope with an HTTP `402` response.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

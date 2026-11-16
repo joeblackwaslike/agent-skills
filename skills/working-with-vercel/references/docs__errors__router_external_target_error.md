@@ -12,9 +12,10 @@ related:
   - /docs/deployments/logs
 summary: Error occurred while routing to an external target. This is a routing error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/router_external_target_error.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "6d81c64a653ad3cbf66b4b2e031c51aab87c87b83ddc09429b14b5003a711299"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c5d3471451f7fccbf62b2a872f8463e308f2594aa7193bb521afa6a4c0bf5414"
 ---
 
 # ROUTER_EXTERNAL_TARGET_ERROR
@@ -35,6 +36,18 @@ To troubleshoot this error, follow these steps:
 4. **Inspect firewall settings:** Verify that there are no firewall settings blocking the connection to the external target
 5. **Review application logs:** Inspect the [application logs](/docs/deployments/logs) for any warnings or errors related to routing or the external target
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

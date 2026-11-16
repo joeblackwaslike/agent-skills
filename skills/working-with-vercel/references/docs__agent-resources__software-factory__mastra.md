@@ -13,11 +13,13 @@ related:
   - /docs/environment-variables
   - /docs/sandbox/ecosystem/mastra
   - /docs/functions/configuring-functions/duration
+  - /docs/ai-gateway
 summary: Combine Mastra workflow stages with AI Gateway, Vercel Sandbox, and GitHub Tools to prepare reviewed changes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/software-factory/mastra.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "e520e6208a8171ea01bbd1fa86bafac88ca14c1bd02f83071b5f807d0c3b8745"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a83a07c63aed2bae5d583a817fc2d4eba99ef9701a7f9591aa278ba34c61b611"
 ---
 
 # Build a Software Factory with Mastra
@@ -32,14 +34,15 @@ Build a software factory with [Mastra on Vercel](/docs/frameworks/agents/mastra)
 
 - [Building a software factory for AI SDK](https://vercel.com/blog/building-a-software-factory-for-ai-sdk)
 - [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
-- [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
 - [Choosing between eve, AI SDK agents, and \\`WorkflowAgent\\`](https://vercel.com/kb/guide/eve-vs-ai-sdk-agents-vs-workflowagent) — Compare eve, \\`ToolLoopAgent\\`, and \\`WorkflowAgent\\` by durability, approvals, channels, and setup to choose an agent f
-- [Give your software factory a browser](https://vercel.com/kb/guide/software-factory-browser) — Add a KERNEL cloud browser to the eve software factory template so Foreman can reproduce flow bugs, sign in through mana
-- [Build a Software Factory with the AI SDK](https://vercel.com/docs/agent-resources/software-factory/ai-sdk) — Compose investigation, sandbox execution, review, and GitHub publication stages with the AI SDK on Vercel.
-- [Manage Vercel projects with a software factory](https://vercel.com/kb/guide/software-factory-vercel-mcp) — Add Vercel's hosted MCP to the eve software factory template so Foreman can read build logs, runtime errors, and deploym
+- [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
+- [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
+- [How to give agents persistent storage with Vercel Drives](https://vercel.com/kb/guide/persistent-storage-with-vercel-drives) — Give AI SDK and TanStack AI agents persistent storage with Vercel Drives so they can save and reuse research notes acros
+- [Mastra with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/mastra) — Learn how to integrate Vercel AI Gateway with Mastra to access multiple AI models through a unified interface.
 - [Build a Software Factory with eve](https://vercel.com/docs/agent-resources/software-factory/eve) — Customize an eve software factory on Vercel with GitHub access, sandbox execution, and reviewed draft pull requests.
 - [Build a Software Factory with Flue](https://vercel.com/docs/agent-resources/software-factory/flue) — Use Flue with AI Gateway, Vercel Sandbox, and explicit GitHub tool adapters for investigated and reviewed code changes.
 - [Agent Frameworks on Vercel](https://vercel.com/docs/frameworks/agents) — Build AI agents with eve, Mastra, Flue, and Vercel. Learn how each framework connects to Vercel compute, models, and sto
+- [Agent Checklist for Launch](https://vercel.com/docs/agent-checklist) — Prepare an eve, Mastra, or Flue agent for launch on Vercel. Check who can call the agent, what its tools can change, how
 
 Full cross-link map for this page: [/docs/agent-resources/software-factory/mastra.graph.md](/docs/agent-resources/software-factory/mastra.graph.md)
 <!-- /docsgraph:related -->
@@ -132,7 +135,7 @@ Register `investigator` in your existing `Mastra` configuration's `agents` map. 
 
 The adapter calls the read tool's `execute` method. It does not transfer AI SDK approval metadata into Mastra. Don't use this wrapper for write tools without implementing a Mastra approval boundary first.
 
-For deployed runs, replace the static token with a provider from [`connectGithubToken`](https://github-tools.com/guide/vercel-connect), configured for the operations the stage needs. The provider can mint short-lived credentials through an attached Vercel Connect GitHub connector. Authenticate callers and determine the permitted repository before starting a workflow.
+For deployed runs, replace the static token with a provider from [`connectGithubToken`](https://github-tools.com/auth#vercel-connect), configured for the operations the stage needs. The provider can mint short-lived credentials through an attached Vercel Connect GitHub connector. Authenticate callers and determine the permitted repository before starting a workflow.
 
 ## Connect implementation and review stages
 
@@ -167,6 +170,49 @@ Keep individual execution stages within [Vercel Function duration limits](/docs/
 
 Run a small issue through investigation, implementation, and review. Confirm that a passing run creates one draft PR with check evidence. Then reject an approval, resume an approved run after a restart, and retry after publication. Verify that denial blocks writes, stored snapshots resume the intended run, and a retry doesn't create a duplicate PR.
 
+## Frequently asked questions
+
+### What is a software factory built with Mastra?
+
+It's a set of Mastra workflow stages that take a GitHub issue to a draft pull request. An investigator reads the issue, an implementer changes the code in Vercel Sandbox, a reviewer checks the real diff and test output, and a publishing stage opens the draft pull request after a person approves it. Each stage passes structured evidence to the next. AI Gateway handles every model call.
+
+### How does a Mastra software factory get access to GitHub?
+
+During development, set `GITHUB_TOKEN` with read access to issues in your test repository, and keep it in environment variables rather than prompts or repository files. For deployed runs, replace the static token with a provider from GitHub Tools' `connectGithubToken`, which can mint short-lived credentials through a Vercel Connect GitHub connector. The `createTool` wrapper on this page exposes one read operation. Don't use it for write tools, because it doesn't carry AI SDK approval metadata into Mastra.
+
+### How do I add human approval before a Mastra factory opens a pull request?
+
+Put the decision in a workflow step that uses Mastra's [suspend and resume API](https://mastra.ai/docs/workflows/suspend-and-resume). Save the branch, reviewed commit, diff, and check results before the run suspends, and let only an authenticated, authorized reviewer resume it. After approval, call GitHub Tools' `createPullRequest` with `draft: true` and record the pull request URL. On a retry, check for an existing pull request first so the run doesn't open a duplicate. Leave merging to a person.
+
+### Where does a Mastra software factory keep its state on Vercel?
+
+Configure a remote [Mastra storage adapter](https://mastra.ai/docs/storage) for workflow snapshots and run state. Local SQLite files and process memory don't carry over between Vercel Function instances. A suspended run stores a snapshot in that adapter, so no function keeps running while a person reviews the change. Keep each stage within [Vercel Function duration limits](/docs/functions/configuring-functions/duration). Use [Vercel Drives](/docs/frameworks/agents/mastra#keep-workspace-files-on-a-drive) for repository files that must outlive a sandbox, and [Vercel Blob](/docs/frameworks/agents/mastra#save-agent-reports-in-vercel-blob) for reports.
+
+### Which Vercel products does a Mastra software factory use?
+
+A factory built from this guide can use these Vercel products:
+
+- [AI Gateway](/docs/ai-gateway) routes model requests for every stage.
+- [Vercel Sandbox](/docs/sandbox) runs repository commands for the implementer, and [Vercel Drives](/docs/sandbox/concepts/drives) keep its workspace across sandbox replacements.
+- [Vercel Blob](/docs/vercel-blob) stores reports.
+- [Vercel Connect](/docs/connect) issues short-lived GitHub credentials for deployed runs.
+- [Vercel Functions](/docs/functions) run the Mastra server that you deploy with `VercelDeployer`.
+- [Vercel Daemons](/docs/daemons) run Mastra's workers in a split worker architecture.
+
+See [Mastra on Vercel](/docs/frameworks/agents/mastra) for every integration, including Passport, Vercel Workflows, and Chat SDK.
+
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

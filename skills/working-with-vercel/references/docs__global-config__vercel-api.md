@@ -15,9 +15,10 @@ related:
   - /docs/integrations/create-integration/vercel-api-integrations
 summary: Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Configs with the Vercel REST API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/global-config/vercel-api.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "7ae11249fa1affac8505af544b1ff7519379a9b87849f1cb6f4acee05dfb34a3"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "601b50ce1efff6e9e9235bc236906e9cb52cc1d66c6c6f7fb567fcaaef8f5b29"
 ---
 
 # Managing Global Configs with Vercel REST API
@@ -32,9 +33,9 @@ We recommend you use the Vercel REST API only for creating and updating a [Globa
 
 - [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
 - [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config) — POST /v1/global-config — Creates a Global Config.
-- [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
 - [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs) — GET /v1/global-config — Returns all Global Configs.
 - [Get Global Config items](https://vercel.com/docs/rest-api/global-config/get-global-config-items) — GET /v1/global-config/{edgeConfigId}/items — Returns all items of a Global Config.
+- [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
 - [Update a Global Config](https://vercel.com/docs/rest-api/global-config/update-a-global-config) — PUT /v1/global-config/{edgeConfigId} — Updates a Global Config.
 
 Full cross-link map for this page: [/docs/global-config/vercel-api.graph.md](/docs/global-config/vercel-api.graph.md)
@@ -560,6 +561,18 @@ try {
 
 Data size and request limits based on account plans
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

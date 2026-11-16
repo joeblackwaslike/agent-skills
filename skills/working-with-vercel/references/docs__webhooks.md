@@ -15,9 +15,10 @@ related:
   - /docs/headers/request-headers
 summary: Learn how to set up webhooks and use them with Vercel Integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/webhooks.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "85aa86baaa387cb95ca8d5a1525a6b7b882206ae98d3d1e2069272030c7b12b0"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c34730f7fc768200541bdc6e32ba5f502b2c75176b0713473e294b7f909d2034"
 ---
 
 # Setting Up Webhooks
@@ -31,12 +32,12 @@ A webhook is a trigger-based HTTP endpoint configured to receive HTTP POST reque
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How can I run end-to-end tests after my Vercel Preview Deployment?](https://vercel.com/kb/guide/how-can-i-run-end-to-end-tests-after-my-vercel-preview-deployment) — Learn how to use the Vercel CLI in combination with your CI/CD provider to run end-to-end tests for every code change.
-- [Webhooks are now generally available](https://vercel.com/changelog/webhooks-are-now-generally-available)
 - [Integration Webhooks are now easier to configure](https://vercel.com/changelog/integration-webhooks-are-now-easier-to-configure)
+- [Webhooks are now generally available](https://vercel.com/changelog/webhooks-are-now-generally-available)
 - [Configurable webhooks ](https://vercel.com/changelog/configurable-webhooks)
 - [Creates a webhook](https://vercel.com/docs/rest-api/webhooks/creates-a-webhook) — POST /v1/webhooks — Creates a webhook
-- [vercel webhooks](https://vercel.com/docs/cli/webhooks) — Learn how to manage webhooks for your Vercel account using the vercel webhooks CLI command.
 - [Get a webhook](https://vercel.com/docs/rest-api/webhooks/get-a-webhook) — GET /v1/webhooks/{id} — Get a webhook
+- [vercel webhooks](https://vercel.com/docs/cli/webhooks) — Learn how to manage webhooks for your Vercel account using the vercel webhooks CLI command.
 - [Get a list of webhooks](https://vercel.com/docs/rest-api/webhooks/get-a-list-of-webhooks) — GET /v1/webhooks — Get a list of webhooks
 - [get_webhooks](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/get_webhooks) — Use get_webhooks with Vercel MCP.
 
@@ -137,6 +138,18 @@ The webhook URL receives an HTTP POST request with a JSON payload for each event
 
 Here's a [list of supported event types](/docs/webhooks/webhooks-api#supported-event-types) and their [`payload`](/docs/webhooks/webhooks-api#payload).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

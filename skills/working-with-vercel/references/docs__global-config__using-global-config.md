@@ -15,9 +15,10 @@ related:
   - /docs/global-config/vercel-api
 summary: Learn how to use Global Configs in your projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/global-config/using-global-config.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "98a77568d3c97f321d95a37362efa6dd76b8543ae9fbf35839cbc814fddd801f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2f53a9bacb763020535401f66e36a969b9e279d835be9f3032183df110ca44bb"
 ---
 
 # Using Global Config
@@ -31,10 +32,10 @@ sha256: "98a77568d3c97f321d95a37362efa6dd76b8543ae9fbf35839cbc814fddd801f"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Global Config](https://flags-sdk.dev/docs/providers/global-config)
-- [Getting started with Global Config](https://vercel.com/docs/global-config/get-started) — Learn how to create a Global Config store and read from it in your project.
 - [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config) — POST /v1/global-config — Creates a Global Config.
 - [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs) — GET /v1/global-config — Returns all Global Configs.
 - [Get a Global Config](https://vercel.com/docs/rest-api/global-config/get-a-global-config) — GET /v1/global-config/{edgeConfigId} — Returns a Global Config.
+- [Getting started with Global Config](https://vercel.com/docs/global-config/get-started) — Learn how to create a Global Config store and read from it in your project.
 - [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, delete, and manage items, read tokens, a
 
 Full cross-link map for this page: [/docs/global-config/using-global-config.graph.md](/docs/global-config/using-global-config.graph.md)
@@ -205,6 +206,18 @@ Restoring a backup will immediately update the live data, and the data that was 
 
 Backups are taken when you make any changes either through the dashboard or API. They do not contribute to your storage size. The length of time each backup is held for depends on your plan, see [Limits and Pricing](/docs/global-config/global-config-limits) for more information.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

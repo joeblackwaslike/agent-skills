@@ -13,9 +13,10 @@ related:
   - /docs/platforms/platform-elements/blocks/deploy-popover
 summary: A component for users to claim ownership of Vercel deployments created on their behalf.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/claim-deployment.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "831dd0218fd4f295ead5e9a044d47e22257ffbe99ab0b8ec726c1cc2346e6de7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "63a33755f0c645d3479f90bddf545e03583ecc8d63ace25df3b6d3830bbfed85"
 ---
 
 # Claim Deployment
@@ -35,7 +36,7 @@ The Claim Deployment block provides a polished interface for platforms that depl
 - [Introducing Platform Elements](https://vercel.com/changelog/introducing-platform-elements)
 - [Claim Deployments](https://vercel.com/docs/deployments/claim-deployments) — Learn how to take ownership of deployments on Vercel with the Claim Deployments feature.
 - [Deploying to Vercel Without Logging In](https://vercel.com/docs/deployments/deploy-without-logging-in) — Deploy to Vercel without an account using Vercel Drop or the CLI, then claim the project to keep it.
-- [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Platform Template](https://vercel.com/docs/platforms/examples/platform-template) — Build an AI app builder on Vercel with sandboxes, AI Gateway, deployments, and project transfers.
 
@@ -106,6 +107,18 @@ The component uses shadcn/ui components internally, allowing you to customize th
 - [Deploy Files action](/docs/platforms/platform-elements/actions/deploy-files)
 - [Deploy Popover block](/docs/platforms/platform-elements/blocks/deploy-popover)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

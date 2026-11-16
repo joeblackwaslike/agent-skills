@@ -13,16 +13,17 @@ related:
   - /docs/ai-gateway/security-and-compliance/model-allowlist
   - /docs/ai-gateway/security-and-compliance/provider-allowlist
   - /docs/ai-gateway/rate-limits
-summary: Answers to common questions about AI Gateway, including request errors, pricing and markup, SDK and API compatibility, model availability, uptime,...
+summary: Answers to common questions about AI Gateway, including request errors, pricing and markup, caching, SDK and API compatibility, use outside Vercel,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/faq.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "89de4728cb9a0949fe92e7d41c312f241df53c32fb132cde009bf9ec1f2248b9"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d9b901a9104c6353fb4e524a83f5dc45e2936e69ab9dc911099d4ff6e1c2a447"
 ---
 
 # AI Gateway FAQ
 
-Answers to common questions about AI Gateway, including request errors, pricing, compatibility, model availability, and data handling.
+Answers to common questions about AI Gateway, including request errors, pricing, caching, compatibility, model availability, and data handling.
 
 
 <!-- docsgraph:related -->
@@ -34,9 +35,8 @@ Answers to common questions about AI Gateway, including request errors, pricing,
 - [Introducing the AI Gateway](https://vercel.com/blog/ai-gateway)
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
-- [Open weight takes 71.5% of tokens and 23% of spend](https://vercel.com/blog/ai-gateway-production-index-october-2026)
-- [Introducing Virtual Models on AI Gateway](https://vercel.com/blog/ai-gateway-virtual-models)
-- [AI Gateway logs now have a dedicated page](https://vercel.com/changelog/ai-gateway-logs)
+- [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 - [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
 
 Full cross-link map for this page: [/docs/ai-gateway/faq.graph.md](/docs/ai-gateway/faq.graph.md)
@@ -49,7 +49,7 @@ Match the response status, type, and message to its cause. A `403` has several p
 | Response or symptom                                   | Cause                                                                                                                                                                       | Resolution                                                                                                                                        |
 | ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `401`                                                 | The API key or OIDC token is missing, invalid, or revoked                                                                                                                   | Export a current AI Gateway key and retry                                                                                                         |
-| `402` whose `type` is not `quota_for_entity_exceeded` | The team does not have a positive credit balance                                                                                                                            | [Add AI Gateway Credits](/docs/ai-gateway/pricing#top-up-your-ai-gateway-credits)                                                                 |
+| `402` whose `type` is not `quota_for_entity_exceeded` | The team does not have a positive credit balance. Every request needs one, including BYOK requests                                                                          | [Add AI Gateway Credits](/docs/ai-gateway/pricing#top-up-your-ai-gateway-credits)                                                                 |
 | `402` with `quota_for_entity_exceeded`                | A team, project, API key, or user budget has reached its limit                                                                                                              | Wait for the budget to refresh or [raise its limit](/docs/ai-gateway/observability-and-spend/budgets)                                             |
 | `403` with `customer_verification_required`           | The team must add a valid payment method before using free credits                                                                                                          | Add a payment method from the link in the error response                                                                                          |
 | `403` whose message names the free tier               | The model is not in the free-tier subset and requires purchased credits                                                                                                     | Choose a [free-tier model](/ai-gateway/models?freeTier=true) or [add AI Gateway Credits](/docs/ai-gateway/pricing#top-up-your-ai-gateway-credits) |
@@ -67,6 +67,12 @@ Token prices match provider list rates, and two mechanisms bring them below list
 ## How do I track what I spend?
 
 The AI Gateway Overview charts usage and spend by model, and [Logs](/docs/ai-gateway/observability-and-spend/logs) shows the cost of every request. Two REST endpoints cover the same ground without the dashboard. `GET /v1/credits` returns your credit balance and lifetime spend, and `GET /v1/generation` returns the cost of one request. For aggregates grouped by model, user, tag, provider, or credential type, use [Custom Reporting](/docs/ai-gateway/observability-and-spend/custom-reporting), and set [budgets](/docs/ai-gateway/observability-and-spend/budgets) with spend alerts to hear about usage before it grows.
+
+## Does AI Gateway support caching?
+
+Yes. AI Gateway supports prompt caching across providers. Set `caching: 'auto'` and AI Gateway adds cache markers for providers that require them, such as Anthropic. Providers such as OpenAI and Google cache repeated prompt prefixes automatically. In both cases, you pay the provider's reduced cache-read rate for cached input tokens.
+
+AI Gateway doesn't store prompts or responses, so it doesn't cache full responses. To return a stored response for an identical request, [cache responses in your application](/docs/ai-gateway/models-and-providers/automatic-caching#cache-responses-in-your-application). See [Caching](/docs/ai-gateway/models-and-providers/automatic-caching) for both approaches.
 
 ## Does AI Gateway only work with the AI SDK?
 
@@ -90,7 +96,11 @@ Only the suffix carries that meaning. A provider's own model name can contain "f
 
 ## Does AI Gateway only work on Vercel?
 
-No. An [AI Gateway API key](/docs/ai-gateway/authentication-and-byok/api-keys) authenticates requests from any environment, including local development, CI, and other cloud providers. Applications deployed on Vercel can authenticate with [OIDC tokens](/docs/ai-gateway/authentication-and-byok/oidc) instead of managing a key, but nothing about AI Gateway requires deploying to Vercel.
+No. An [AI Gateway API key](/docs/ai-gateway/authentication-and-byok/api-keys) authenticates requests from any environment, including local development, CI, and production on other cloud providers. You need a Vercel account to create the key and manage billing, but not a Vercel project or deployment.
+
+Your application can use any language. [Python](/docs/ai-gateway/sdks-and-apis/python), [Go](/docs/ai-gateway/sdks-and-apis/go), and other backends connect with an OpenAI or Anthropic SDK by changing its base URL, or call the [REST API](/docs/ai-gateway/sdks-and-apis/rest-api) directly.
+
+Applications deployed on Vercel can authenticate with [OIDC tokens](/docs/ai-gateway/authentication-and-byok/oidc) instead of managing a key, but nothing about AI Gateway requires deploying to Vercel.
 
 ## Is the free tier a time-limited trial?
 
@@ -132,6 +142,18 @@ The free tier applies lower per-model limits. The paid tier removes them, and a 
 
 Open your dashboard's **Support** entry for technical and billing questions. For custom rate limits, volume discounts, or invoice payment, [contact sales](/contact/sales).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

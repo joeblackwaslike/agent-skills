@@ -13,9 +13,10 @@ related:
   - /docs/rolling-releases
 summary: Set conditions that must be met before proceeding to the next phase of the deployment lifecycle.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployment-checks.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "00e2799c87f1622bb0b68715462ea2e841680763c956f98fa0e49a86a91b68ae"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c4697a9ccf43f7868057321c1e06b5d112f9b294e4f44ac45866b9f41a49583b"
 ---
 
 # Deployment Checks
@@ -33,12 +34,11 @@ Deployment Checks are conditions that must be met before promoting a production 
 - [Vercel Microfrontends checks for missing configuration](https://vercel.com/changelog/vercel-microfrontends-checks-for-missing-configuration)
 - [Migrate from Railway to Vercel](https://vercel.com/kb/guide/migrate-railway-to-vercel) — Migrate an app from Railway to Vercel. Choose a deployment path, configure services, plan for stored data, and test befo
 - [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues)
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
-- [Working with Checks](https://vercel.com/docs/checks) — Vercel automatically keeps an eye on various aspects of your web application using the Checks API. Learn how to use Chec
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
-- [Deploying Git Repositories with Vercel](https://vercel.com/docs/git) — Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production
-- [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
+- [Anatomy of the Checks API](https://vercel.com/docs/checks/creating-checks) — Learn how to create your own Checks with Vercel Integrations. You can build your own Integration to register any arbitra
+- [Working with Checks](https://vercel.com/docs/checks) — Vercel automatically keeps an eye on various aspects of your web application using the Checks API. Learn how to use Chec
 - [List check runs for a deployment](https://vercel.com/docs/rest-api/checks-v2/list-check-runs-for-a-deployment) — GET /v2/deployments/{deploymentId}/check-runs — List all check runs for a deployment.
+- [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 
 Full cross-link map for this page: [/docs/deployment-checks.graph.md](/docs/deployment-checks.graph.md)
 <!-- /docsgraph:related -->
@@ -82,11 +82,11 @@ Native Deployment Checks let Vercel run checks directly on your deployment, with
 
 ### Available checks
 
-| Check | Script | Description |
-| --- | --- | --- |
-| **Lint** | `lint` | Catches code style issues and potential errors |
-| **Typecheck** | `typecheck`, `type-check`, or `check-types` | Verifies type safety across your codebase |
-| **Microfrontends Config Present** | — | Verifies that `microfrontends.json` is included in the deployment's build outputs |
+| Check                             | Script                                      | Description                                                                       |
+| --------------------------------- | ------------------------------------------- | --------------------------------------------------------------------------------- |
+| **Lint**                          | `lint`                                      | Catches code style issues and potential errors                                    |
+| **Typecheck**                     | `typecheck`, `type-check`, or `check-types` | Verifies type safety across your codebase                                         |
+| **Microfrontends Config Present** | —                                           | Verifies that `microfrontends.json` is included in the deployment's build outputs |
 
 ### Requirements
 
@@ -173,6 +173,18 @@ GitHub and GitHub Actions have edge cases with status reporting. These behaviors
   - Each run of a GitHub Workflow should result in only one commit status. For example, when using [`repository_dispatch`](https://docs.github.com/en/actions/writing-workflows/choosing-when-your-workflow-runs/events-that-trigger-workflows#repository_dispatch), ensure the commit status includes the environment name to avoid writing to the same status for each of the triggered workflow runs.
 - Avoid using the same name for actions across multiple workflows. Due to GitHub's implementation of Check Runs, these will collide and introduce race conditions when used with GitHub branch protection rules, GitHub rulesets, and Vercel Deployment Checks.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

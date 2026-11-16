@@ -3,7 +3,7 @@ title: exchange-sso-token
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/exchange-sso-token
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/exchange-sso-token"
-last_updated: 2026-11-09
+last_updated: 2026-11-16
 type: conceptual
 prerequisites:
   []
@@ -12,9 +12,10 @@ related:
   - /docs/integrations/create-integration/native-integration
 summary: Learn about exchange-sso-token on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/exchange-sso-token.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "96bf7e971c0114e79c73bbd28cad13d1e512484ec2eb0a5378e725a313efcdfe"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "432c24874226c5d7c0beee37490c15b180f114f4d92f3a19f622e0fe69b98001"
 ---
 
 # SSO Token Exchange
@@ -59,6 +60,18 @@ Success
 - [Marketplace API Reference](/docs/integrations/create-integration/marketplace-api/reference)
 - [Native Integration Concepts](/docs/integrations/create-integration/native-integration)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

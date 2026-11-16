@@ -15,9 +15,10 @@ related:
   - /docs/project-configuration/vercel-json
 summary: You may encounter a variety of errors when you interact with the Vercel platform. This section focuses on errors that can happen when you interact...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/error-list.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "62f83e833bcf1945608b3f968a6f8034fa76f3f39a170983f98ce1d687f4b37c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7309a7b261db08dc8c12fa1ae3bd9d626053877bd392bde00135009e548564f0"
 ---
 
 # Error List
@@ -470,6 +471,18 @@ To fix this error, add the packages to your `package.json` file as a dependency.
 
 To prevent this, the build fails by default when a pre-rendered response is greater than 20 MB. To fix the build, reduce the size of the response and redeploy.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

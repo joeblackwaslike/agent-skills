@@ -15,9 +15,10 @@ related:
   - /docs/cli/traces
 summary: Turn tracing on or off and control sampling for production and preview traffic, including default tracing for Next.js projects.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/tracing/configure-tracing.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "9ac0d97f831e87b2e9e29d460e6f50029be17b679b9835d8d4da11afea9044fd"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "17fb1636055d067a7399ddcdd227502064f16bffac3efa325bb1d0f4a864e5e6"
 ---
 
 # Configuring Tracing
@@ -35,11 +36,12 @@ With tracing turned on, Vercel continuously collects traces from your production
 - [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
 - [Always-on tracing for production and preview traffic](https://vercel.com/changelog/always-on-tracing-for-production-and-preview-traffic)
 - [Search trace spans from the Vercel CLI](https://vercel.com/changelog/search-trace-spans-from-the-vercel-cli)
+- [Track a request's full lifecycle with session tracing](https://vercel.com/changelog/session-tracing-now-available)
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
+- [Tracing in Daemons](https://vercel.com/docs/daemons/tracing) — Instrument a daemon using OpenTelemetry traces.
 - [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
-- [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
-- [Understanding Vercel](https://vercel.com/docs/plans/pro-plan/trials) — Learn all about Vercel's Pro Plan free trial, including features, usage limits, and options post-trial. Learn how to man
-- [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
+- [Agent Checklist for Launch](https://vercel.com/docs/agent-checklist) — Prepare an eve, Mastra, or Flue agent for launch on Vercel. Check who can call the agent, what its tools can change, how
+- [Running eve Agents Durably on Vercel](https://vercel.com/docs/agent-harnesses/eve) — eve agents are durable out of the box on Vercel, with no extra configuration.
 
 Full cross-link map for this page: [/docs/tracing/configure-tracing.graph.md](/docs/tracing/configure-tracing.graph.md)
 <!-- /docsgraph:related -->
@@ -221,6 +223,18 @@ For details, see the shared [tracing limitations](/docs/tracing#limitations).
 - [Instrumentation](/docs/tracing/instrumentation)
 - [Trace Drains](/docs/drains/reference/traces)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

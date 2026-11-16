@@ -12,9 +12,10 @@ related:
   []
 summary: Use update_rolling_release_config with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/update_rolling_release_config.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "03b95b96dfac684bf039d4ad1f2eff14f9568d381cea4351b5c64131106bf2ff"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "68e46435f3baf2c6d36b0cb09e129b97a160adf71c8fd7e72b14604e71c4a323"
 ---
 
 # update_rolling_release_config
@@ -28,10 +29,10 @@ Update the rolling release settings for the project.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [get_rolling_release_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/get_rolling_release_config) — Use get_rolling_release_config with Vercel MCP.
-- [complete_rolling_release](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/complete_rolling_release) — Use complete_rolling_release with Vercel MCP.
 - [start_rolling_release](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/start_rolling_release) — Use start_rolling_release with Vercel MCP.
+- [complete_rolling_release](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/complete_rolling_release) — Use complete_rolling_release with Vercel MCP.
 - [Update the rolling release settings for the project](https://vercel.com/docs/rest-api/rolling-release/update-the-rolling-release-settings-for-the-project) — PATCH /v1/projects/{idOrName}/rolling-release/config — Update \\(or disable\\) Rolling Releases for a project. When disabl
-- [approve_rolling_release_stage](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/approve_rolling_release_stage) — Use approve_rolling_release_stage with Vercel MCP.
+- [get_rolling_release](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/get_rolling_release) — Use get_rolling_release with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/rolling-releases/update_rolling_release_config.graph.md](/docs/agent-resources/vercel-mcp/tools/rolling-releases/update_rolling_release_config.graph.md)
 <!-- /docsgraph:related -->
@@ -45,6 +46,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/rolli
 | `slug`        | string  | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody` | unknown | No       | Request body for this tool.                                 |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

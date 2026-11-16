@@ -12,9 +12,10 @@ related:
   []
 summary: Use revoke_kms_signing_key with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/revoke_kms_signing_key.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "000cd44bab9eb9b23b0ffd5373e5fb9c29e9f2e3b3557242206484a599563148"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "30d9f93016359f6a0b70edcd95e54f53e3a412bc59c63f5ec126584c332b38fb"
 ---
 
 # revoke_kms_signing_key
@@ -31,7 +32,7 @@ Revoke a signing key.
 - [activate_kms_signing_key](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/activate_kms_signing_key) — Use activate_kms_signing_key with Vercel MCP.
 - [Revoke a signing key](https://vercel.com/docs/rest-api/kms/revoke-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/revoke — Immediately revoke a signing key that is already scheduled for rev
 - [create_kms_issuer](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/create_kms_issuer) — Use create_kms_issuer with Vercel MCP.
-- [update_kms_issuer](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/update_kms_issuer) — Use update_kms_issuer with Vercel MCP.
+- [update_kms_issuer_policy](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/update_kms_issuer_policy) — Use update_kms_issuer_policy with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/key-management/revoke_kms_signing_key.graph.md](/docs/agent-resources/vercel-mcp/tools/key-management/revoke_kms_signing_key.graph.md)
 <!-- /docsgraph:related -->
@@ -46,6 +47,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/key-m
 | `slug`        | string  | No       | Team slug to use for this operation. Use instead of teamId.                                        |
 | `requestBody` | unknown | No       | Request body for this tool.                                                                        |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

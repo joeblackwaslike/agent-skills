@@ -11,9 +11,10 @@ related:
   - /docs/domains/working-with-domains
 summary: Find which top-level domains you can buy or transfer to Vercel and whether each TLD supports WHOIS privacy.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains/supported-domains.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5368d2272b2d8c66f198b5da42d19ee7070401cb71bfdc06ec71faf4a00dbcf4"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9cde8ab50211e1da37d6532f32395ff0dd2fad549fd51c928057fce9198eaea8"
 ---
 
 # Supported domains
@@ -579,7 +580,18 @@ Vercel supports the following top-level domains (TLDs) for [purchase](/docs/doma
 | `.zip` | Yes | Yes |
 | `.zone` | Yes | Yes |
 
+## Search the docs from your terminal
 
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

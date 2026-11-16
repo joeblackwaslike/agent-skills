@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/security-and-compliance/model-allowlist
 summary: Save a model with its provider routing, fallbacks, regional inference, zero data retention, and provider options under one vmc/ model ID. Your code,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/virtual-models.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "7491c6ce0baa068750c6bf05f484696cd0443d66237639119942fc343ec46bf8"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3419b4efabe7caaca4e97bc576ac5b0306f9106eef47598a3fdec798c0f88388"
 ---
 
 # AI Gateway Virtual Models for Reusable Model Configurations
@@ -57,7 +58,7 @@ Create a virtual model from the dashboard or the [Vercel CLI](/docs/cli/ai-gatew
 
   Under **Provider Only**, select providers to restrict the slug to exactly that list. This list is a filter, not an order. The routing order still applies within it. There is no fallback outside the list, so the request fails if all listed providers fail.
 
-  Under **Inference Region**, pin requests that use system credentials to a region.
+  Under **Inference Region**, pin requests that use Vercel's provider keys to a region.
 
 - ### Set behavior (optional)
   Under **Model Fallbacks**, add models AI Gateway should try when every provider of the primary model fails, in order.
@@ -460,14 +461,14 @@ A few things to keep in mind:
 
 Your team's AI Gateway settings apply to every request, including requests through a virtual model. A virtual model can add restrictions for its own traffic, but it can't bypass or loosen a team setting:
 
-| Team setting | Effect on requests through a virtual model |
-| --- | --- |
-| [Model allowlist](/docs/ai-gateway/security-and-compliance/model-allowlist#virtual-models) | AI Gateway checks the model the virtual model points at, not the `vmc/` slug. If that model isn't on the allowlist, the request is blocked. |
-| [Provider allowlist](/docs/ai-gateway/security-and-compliance/provider-allowlist) | Applies on top of the virtual model's **Provider Order** and **Provider Only** lists. A provider your team disabled can't serve the request, even when the virtual model lists it. |
-| [Routing rules](/docs/ai-gateway/models-and-providers/routing-rules#virtual-models) | A deny rule on the underlying model blocks it through the virtual model too. If the virtual model has model fallbacks, AI Gateway skips the denied attempt and tries the next one. Rewrites run before AI Gateway resolves the virtual model, so a rewrite can send direct callers to a `vmc/` slug, and AI Gateway doesn't apply rewrites again to the model inside it. |
-| [Team-wide zero data retention](/docs/ai-gateway/security-and-compliance/zdr#team-wide-zero-data-retention) | Stays on for virtual model traffic. A virtual model can turn on ZDR for its own traffic, but it can't turn off the team setting. |
-| [Budgets](/docs/ai-gateway/observability-and-spend/budgets) | A request through a virtual model counts toward every budget in scope for how it authenticates, the same as a direct request. |
-| [BYOK credentials](/docs/ai-gateway/authentication-and-byok/byok) | A virtual model's inference region applies only to attempts on AI Gateway's system credentials, not to attempts on your team's own credentials. |
+| Team setting                                                                                                | Effect on requests through a virtual model                                                                                                                                                                                                                                                                                                                               |
+| ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [Model allowlist](/docs/ai-gateway/security-and-compliance/model-allowlist#virtual-models)                  | AI Gateway checks the model the virtual model points at, not the `vmc/` slug. If that model isn't on the allowlist, the request is blocked.                                                                                                                                                                                                                              |
+| [Provider allowlist](/docs/ai-gateway/security-and-compliance/provider-allowlist)                           | Applies on top of the virtual model's **Provider Order** and **Provider Only** lists. A provider your team disabled can't serve the request, even when the virtual model lists it.                                                                                                                                                                                       |
+| [Routing rules](/docs/ai-gateway/models-and-providers/routing-rules#virtual-models)                         | A deny rule on the underlying model blocks it through the virtual model too. If the virtual model has model fallbacks, AI Gateway skips the denied attempt and tries the next one. Rewrites run before AI Gateway resolves the virtual model, so a rewrite can send direct callers to a `vmc/` slug, and AI Gateway doesn't apply rewrites again to the model inside it. |
+| [Team-wide zero data retention](/docs/ai-gateway/security-and-compliance/zdr#team-wide-zero-data-retention) | Stays on for virtual model traffic. A virtual model can turn on ZDR for its own traffic, but it can't turn off the team setting.                                                                                                                                                                                                                                         |
+| [Budgets](/docs/ai-gateway/observability-and-spend/budgets)                                                 | A request through a virtual model counts toward every budget in scope for how it authenticates, the same as a direct request.                                                                                                                                                                                                                                            |
+| [BYOK credentials](/docs/ai-gateway/authentication-and-byok/byok)                                           | A virtual model's inference region applies only to attempts on Vercel's provider keys, not to attempts on your team's own credentials.                                                                                                                                                                                                                                   |
 
 [Team-wide disallow prompt training](/docs/ai-gateway/security-and-compliance/disallow-prompt-training#team-wide-disallow-prompt-training) works the same way as team-wide ZDR. It stays on for virtual model traffic, and a virtual model can't turn it off.
 
@@ -475,21 +476,21 @@ Your team's AI Gateway settings apply to every request, including requests throu
 
 Requests to `vmc/<slug>` go through the same AI Gateway routing as direct model requests, so many options can come from either side. The resolving rule depends on the field:
 
-| Setting | Virtual model sets it | Request also sets it |
-| --- | --- | --- |
-| Provider order (`order`) | Wins | Ignored |
-| Provider restriction (`only`) | Wins | Ignored |
-| Model fallbacks (`models`) | Wins, replaces the request's string or conditional chain | Ignored |
-| Fast mode (`speed`, `allowFallbackFromFast`) | Wins | Ignored |
-| Provider sort (`sort`) | Wins | Ignored |
-| Service tier (`serviceTier`) | Wins | Ignored |
-| Prompt caching (`caching`) | Wins | Ignored |
-| Provider timeouts (`providerTimeouts`) | Wins | Ignored |
-| Inference region (`inferenceRegion`) | Wins on system-credential attempts | Ignored |
-| Required capabilities (`has`) | Wins | Ignored |
-| Observability tags (`tags`) | Wins | Ignored |
-| Provider options (`providerOptions`) | Wins per option | Applies for options the virtual model doesn't set |
-| Compliance (ZDR, block training) | Turns it on | On when either side turns it on, neither side turns it off |
+| Setting                                      | Virtual model sets it                                    | Request also sets it                                       |
+| -------------------------------------------- | -------------------------------------------------------- | ---------------------------------------------------------- |
+| Provider order (`order`)                     | Wins                                                     | Ignored                                                    |
+| Provider restriction (`only`)                | Wins                                                     | Ignored                                                    |
+| Model fallbacks (`models`)                   | Wins, replaces the request's string or conditional chain | Ignored                                                    |
+| Fast mode (`speed`, `allowFallbackFromFast`) | Wins                                                     | Ignored                                                    |
+| Provider sort (`sort`)                       | Wins                                                     | Ignored                                                    |
+| Service tier (`serviceTier`)                 | Wins                                                     | Ignored                                                    |
+| Prompt caching (`caching`)                   | Wins                                                     | Ignored                                                    |
+| Provider timeouts (`providerTimeouts`)       | Wins                                                     | Ignored                                                    |
+| Inference region (`inferenceRegion`)         | Wins on attempts with Vercel's provider keys             | Ignored                                                    |
+| Required capabilities (`has`)                | Wins                                                     | Ignored                                                    |
+| Observability tags (`tags`)                  | Wins                                                     | Ignored                                                    |
+| Provider options (`providerOptions`)         | Wins per option                                          | Applies for options the virtual model doesn't set          |
+| Compliance (ZDR, block training)             | Turns it on                                              | On when either side turns it on, neither side turns it off |
 
 For example, `vmc/coding-agent-eu` from the diagram at the top of this page sets an EU inference region, provider order `bedrock, vertex`, the Anthropic provider option `effort: high`, and the tag `coding-agents`. It leaves prompt caching unset. A caller sends its own options anyway:
 
@@ -599,6 +600,18 @@ Any member of your team can use a virtual model in their application. Team **Own
 - [Provider filtering, ordering, and sorting](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering)
 - [Decision Fallbacks](/docs/ai-gateway/models-and-providers/decision-fallbacks)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

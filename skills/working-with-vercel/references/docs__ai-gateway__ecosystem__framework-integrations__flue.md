@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/observability-and-spend/observability
 summary: Route Flue agent requests through Vercel AI Gateway with the built-in provider, using an API key or Vercel OIDC authentication.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/flue.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "dcd678e372a238b8f3937824436a0bfb8a7842c81f38461852e3fa94f0f3844d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b5c35a343333be43e95fc72dbcf27c2db4202c2b74b158f1a4fe99250a316774"
 ---
 
 # Flue with AI Gateway
@@ -31,12 +32,12 @@ sha256: "dcd678e372a238b8f3937824436a0bfb8a7842c81f38461852e3fa94f0f3844d"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How AI Gateway runs on Fluid compute](https://vercel.com/blog/how-ai-gateway-runs-on-fluid-compute)
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
-- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
-- [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
+- [Ling 3.1 Flash 1019 now available on AI Gateway for free](https://vercel.com/changelog/ling-3-1-flash-1019-now-available-on-ai-gateway-for-free)
 - [Build a Software Factory with Flue](https://vercel.com/docs/agent-resources/software-factory/flue) — Use Flue with AI Gateway, Vercel Sandbox, and explicit GitHub tool adapters for investigated and reviewed code changes.
 - [Agent Frameworks on Vercel](https://vercel.com/docs/frameworks/agents) — Build AI agents with eve, Mastra, Flue, and Vercel. Learn how each framework connects to Vercel compute, models, and sto
-- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
+- [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integrations/flue.graph.md](/docs/ai-gateway/ecosystem/framework-integrations/flue.graph.md)
@@ -223,6 +224,51 @@ On Vercel, your deployment supplies the [OIDC token](/docs/oidc). For local deve
 
 To give your agent isolated file and command tools, follow [Flue with Vercel Sandbox](/docs/sandbox/ecosystem/flue). Model requests continue to use AI Gateway from your application process.
 
+## Prepare your agent for launch
+
+Before you launch your Flue agent, work through the [agent checklist](/docs/agent-checklist?framework=flue). It lists the AI Gateway settings to check, such as budgets, spend alerts, and model fallbacks. Its Flue items include route authentication and conversation storage.
+
+## Frequently asked questions
+
+### How does Flue send model requests through AI Gateway?
+
+Flue includes a built-in `vercel-ai-gateway` provider. When you call `useModel('vercel-ai-gateway/openai/gpt-6.1-sol')`, Flue splits the specifier at the first `/`. The `vercel-ai-gateway` part selects the provider, and `openai/gpt-6.1-sol` is the AI Gateway model ID. The provider reads `AI_GATEWAY_API_KEY`, so you don't need separate OpenAI or Anthropic keys. To switch models, change the model ID in `useModel()`.
+
+### Can Flue authenticate to AI Gateway with Vercel OIDC instead of an API key?
+
+Yes, but the built-in provider only reads `AI_GATEWAY_API_KEY`. To use OIDC, register a replacement `vercel-ai-gateway` provider with `setProvider()` that resolves a token from `getVercelOidcToken()` on each request, as shown in [Use Vercel OIDC authentication](#use-vercel-oidc-authentication). The replacement uses OIDC even when `AI_GATEWAY_API_KEY` is set. Register it in the agent module, because `flue run` doesn't load `app.ts`.
+
+### Why does a vercel-ai-gateway model work with flue run but fail in my server build?
+
+Check the `providers` list in your Flue configuration. When you set that list, Flue registers only the providers it names in server builds, so a `vercel-ai-gateway/...` specifier fails at model resolution if the list omits `'vercel-ai-gateway'`. `flue run` ignores the list and always registers every built-in provider, which hides the problem locally. Add `'vercel-ai-gateway'` to the list, or remove the list to include all built-in providers.
+
+### How do I track the usage and cost of my Flue agent's model requests?
+
+Open [AI Gateway observability](/docs/ai-gateway/observability-and-spend/observability) in your Vercel dashboard. Each request your Flue agent sends through AI Gateway appears there, with usage, spend, and a request log at team and project level. To bill requests to your own provider accounts, add your credentials at the team level with [Bring Your Own Key (BYOK)](/docs/ai-gateway/authentication-and-byok/byok).
+
+### Which other Vercel products can a Flue agent use?
+
+AI Gateway handles model requests wherever you host the Flue runtime. You can also use these Vercel products:
+
+- [Vercel Sandbox](/docs/sandbox) runs the agent's file and command tools in an isolated microVM, and [Vercel Drives](/docs/sandbox/concepts/drives) keep workspace files across runs.
+- [Vercel Blob](/docs/vercel-blob) stores completed responses and other artifacts.
+- [Vercel Workflows](/docs/workflows) coordinate a hosted Flue agent with other application steps.
+- [Vercel Passport](/docs/passport) forwards a verified visitor identity from your Vercel app to your Flue service.
+- [Vercel Connect](/docs/connect) provides credentials for third-party services.
+- [Vercel Functions](/docs/functions) run the application that calls your agent. Flue's durable runtime needs a host where one process owns each conversation, so see [Flue with Vercel](/docs/frameworks/agents/flue#hosting-considerations) before you choose where to run it.
+
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

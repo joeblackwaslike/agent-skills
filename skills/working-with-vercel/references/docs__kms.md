@@ -15,9 +15,10 @@ related:
   - /docs/kms/ts-sdk-reference
 summary: Sign JWTs and messages with Vercel-managed signing keys. Learn about issuers, keys, and policies, and how to sign from Vercel Functions with...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/kms.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c7dfbff9341ede71d22755f292bd0396eae10a61658deffdf17644abe801dae8"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1a9b1875f2fb837c9912a11b3f169545c80889efd152eb2e49bfccd6fc515043"
 ---
 
 # Key Management Service (KMS)
@@ -36,8 +37,8 @@ Vercel Key Management Service (KMS) gives you managed signing keys that live on 
 - [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys — Create a new signing key for a KMS issuer. Depending on the activation mode, the
 - [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management) — Vercel MCP tools for key management.
 - [Activate a signing key](https://vercel.com/docs/rest-api/kms/activate-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/activate — Activate a pending signing key so the issuer starts signing with
-- [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
 - [Sign a message](https://vercel.com/docs/rest-api/kms/sign-a-message) — POST /v1/kms/issuers/{issuerId}/sign/message — Sign a raw message with a KMS issuer's active signing key. Authenticate t
+- [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
 
 Full cross-link map for this page: [/docs/kms.graph.md](/docs/kms.graph.md)
 <!-- /docsgraph:related -->
@@ -105,6 +106,18 @@ KMS is billed per signing operation, with no per-key or per-issuer charge. For t
 - [Vercel Functions](/docs/functions)
 - [`@vercel/kms` on npm](https://www.npmjs.com/package/@vercel/kms)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

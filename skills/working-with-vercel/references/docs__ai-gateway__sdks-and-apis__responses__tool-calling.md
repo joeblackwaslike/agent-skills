@@ -12,9 +12,10 @@ related:
   []
 summary: Define tools the model can call with the OpenAI Responses API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/tool-calling.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "41be3ba35f16a533c90c02ba61be6b60ae3bc30d6820efda8f5bb697d635a0bb"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e701cab33c11e74d750f2c9baef9aa867eacd438f39724874e9e89010069b62a"
 ---
 
 # OpenAI Responses Tool Calling with AI Gateway
@@ -253,6 +254,18 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/responses" \
   }'
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

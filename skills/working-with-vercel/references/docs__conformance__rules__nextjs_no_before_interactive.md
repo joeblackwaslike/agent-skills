@@ -11,9 +11,10 @@ related:
   []
 summary: Requires review of usage of the beforeInteractive strategy in Script (next/script) elements.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/nextjs_no_before_interactive.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "6264c8114fe7f4ff7568264cb3f838bf00f36aaf50d75b119a71884286193d2c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "706c8f80d7343e44386e54aa626759cf6d6ff5cd9e27bf530f09ba34da4e2ada"
 ---
 
 # NEXTJS_NO_BEFORE_INTERACTIVE
@@ -53,6 +54,18 @@ export default function MyPage() {
 This rule flags any usage of `beforeInteractive` for review. If approved, the
 exception should be added to the allowlist.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -12,9 +12,10 @@ related:
   []
 summary: Use get_git_deployment_context with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_git_deployment_context.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "89fa61f6bbd4cdb0e48aa94690118b5b2e0fead0fabda6323eabe5c0feb75f52"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "69ff14fb85ceb272bbc8831e683917cf42936be7148aad40486c0ff05add30ef"
 ---
 
 # get_git_deployment_context
@@ -29,9 +30,9 @@ List your teams, their plans, linked Git projects, and connected Cursor Origin w
 
 - [get_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment) — Use get_deployment with Vercel MCP.
 - [get_deployment_file_contents](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_file_contents) — Use get_deployment_file_contents with Vercel MCP.
-- [create_git_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_git_project) — Use create_git_project with Vercel MCP.
-- [open_deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/open_deployments) — Use open_deployments with Vercel MCP.
 - [list_deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployments) — Use list_deployments with Vercel MCP.
+- [open_deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/open_deployments) — Use open_deployments with Vercel MCP.
+- [list_deployment_files](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_files) — Use list_deployment_files with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/get_git_deployment_context.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/get_git_deployment_context.graph.md)
 <!-- /docsgraph:related -->
@@ -40,6 +41,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deplo
 
 This tool is available on the root connection. Project-scoped connections already bind a team and project and do not register this discovery tool.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: "Available templates index"
 source: "https://containers.dev/templates"
-fetched_at: "2026-11-09T12:33:06.901Z"
-sha256: "a6ec3215298c0f93e3d8aba114f129e648494d7343bf5423a1df9da1c6740668"
+fetched_at: "2026-11-16T12:27:35.191Z"
+sha256: "5597e711ea3d9976cc1009a76d9c431d1e9e4935535f250b81856701cffe1b21"
 ---
 
 # Available templates index
@@ -263,12 +263,12 @@ Templates
 | kubernetes | jhoareaumarion | `ghcr.io/jhoareaumarion/devcontainers/kubernetes:1.0.2` | `1.0.2` |
 | OpenTofu | jhoareaumarion | `ghcr.io/jhoareaumarion/devcontainers/tofu:1.0.0` | `1.0.0` |
 | SAP BTP CAP Dev Stack | Navin Krishnan | `ghcr.io/navinkrishnan/devcontainer-templates-btp/btp-cap-dev-stack:1.0.2` | `1.0.2` |
-| EdgeActions Development Container | Azure EdgeActions Developer Experiences Team | `ghcr.io/Azure/edgeactions-devcontainers/edgeactions:0.0.5` | `0.0.5` |
+| EdgeActions Development Container | Azure EdgeActions Developer Experiences Team | `ghcr.io/Azure/edgeactions-devcontainers/edgeactions:0.0.7` | `0.0.7` |
 | Nevermore Roblox | EstebenR (Papabos) | `ghcr.io/estebenr/devcontainers/nevermore:1.1.0` | `1.1.0` |
-| C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/cpp:9.0.0` | `9.0.0` |
-| Embedded C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/embedded-cpp:9.0.0` | `9.0.0` |
-| Embedded Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/embedded-rust:9.0.0` | `9.0.0` |
-| Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/rust:9.0.0` | `9.0.0` |
+| C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/cpp:9.1.0` | `9.1.0` |
+| Embedded C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/embedded-cpp:9.1.0` | `9.1.0` |
+| Embedded Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/embedded-rust:9.1.0` | `9.1.0` |
+| Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/rust:9.1.0` | `9.1.0` |
 | Pretalx | Tjark | `ghcr.io/tjarbo/pretalx-devcontainer/pretalx:0.0.1` | `0.0.1` |
 | Pretalx Plugin | Tjark | `ghcr.io/tjarbo/pretalx-devcontainer/pretalx-plugin:0.0.1` | `0.0.1` |
 | Python | Metin Senturk | `ghcr.io/metinsenturk/devcontainer-templates/python:1.0.6` | `1.0.6` |
@@ -294,11 +294,11 @@ Templates
 | Terraform | nozaq | `ghcr.io/bare-devcontainer/templates/terraform:1.3.0` | `1.3.0` |
 | Python (uv) | nozaq | `ghcr.io/bare-devcontainer/templates/uv:1.1.1` | `1.1.1` |
 | Zig | nozaq | `ghcr.io/bare-devcontainer/templates/zig:1.5.0` | `1.5.0` |
-| mise-devcontainer-alpine | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/alpine:2026.10.26-18.40.30` | `2026.10.26-18.40.30` |
-| mise-devcontainer-archlinux | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/archlinux:2026.10.26-18.40.30` | `2026.10.26-18.40.30` |
-| mise-devcontainer-debian | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/debian:2026.10.26-18.40.30` | `2026.10.26-18.40.30` |
-| mise-devcontainer-fedora | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/fedora:2026.10.26-18.40.30` | `2026.10.26-18.40.30` |
-| mise-devcontainer-ubuntu | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/ubuntu:2026.10.26-18.40.30` | `2026.10.26-18.40.30` |
+| mise-devcontainer-alpine | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/alpine:2026.11.10-22.17.31` | `2026.11.10-22.17.31` |
+| mise-devcontainer-archlinux | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/archlinux:2026.11.10-22.17.31` | `2026.11.10-22.17.31` |
+| mise-devcontainer-debian | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/debian:2026.11.10-22.17.31` | `2026.11.10-22.17.31` |
+| mise-devcontainer-fedora | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/fedora:2026.11.10-22.17.31` | `2026.11.10-22.17.31` |
+| mise-devcontainer-ubuntu | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/ubuntu:2026.11.10-22.17.31` | `2026.11.10-22.17.31` |
 | Blank ESP-IDF Environment | T0ng5 | `ghcr.io/t0ng5/esp-idf/esp-idf:0.0.1` | `0.0.1` |
 
 

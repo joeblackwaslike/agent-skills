@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/runners/self-hosted-runners.md"
-fetched_at: "2026-10-26T09:51:55.825Z"
-sha256: "570da958730391e031f7185d0d763a926a097edfcfdbf585a4808c4ee75e5604"
+fetched_at: "2026-11-16T12:31:24.152Z"
+sha256: "5dec37ce4d7720887b26aa7612b7ebb7cd64cca386b088e969238d113acc38c0"
 ---
 
 ## Requirements for self-hosted runner machines
@@ -116,11 +116,16 @@ To turn off automatic software updates and install software updates yourself, sp
 
 If you disable automatic updates, you must still update your runner version regularly. New functionality in {% data variables.product.prodname_actions %} requires changes in both the {% data variables.product.prodname_actions %} service _and_ the runner software. The runner may not be able to correctly process jobs that take advantage of new features in {% data variables.product.prodname_actions %} without a software update.
 
-If you disable automatic updates, you will be required to update your runner version within 30 days of a new version being made available. You may want to subscribe to notifications for releases in the [`actions/runner` repository](https://github.com/actions/runner/releases). For more information, see [AUTOTITLE](/subscriptions-and-notifications/get-started/configuring-notifications#about-custom-notifications).
+If you disable automatic updates, you must update your runner version within {% ifversion fpt or ghec %}63{% else %}30{% endif %} days of a newer version being made available. You may want to subscribe to notifications for releases in the [`actions/runner` repository](https://github.com/actions/runner/releases). For more information, see [AUTOTITLE](/subscriptions-and-notifications/get-started/configuring-notifications#about-custom-notifications).
+
+{% ifversion fpt or ghec %}
+The date a runner version becomes available for updates can differ from its release date. To check a version's end-of-life schedule, use the REST API endpoint for your [repository](/rest/actions/self-hosted-runners#get-runner-version-end-of-life-schedule-for-a-repository) or [organization](/rest/actions/self-hosted-runners#get-runner-version-end-of-life-schedule-for-an-organization){% ifversion ghec %}, or for your [enterprise](/rest/actions/self-hosted-runners#get-runner-version-end-of-life-schedule-for-an-enterprise){% endif %}. The `registration_deprecates_at` date is when you can no longer register a runner using that version. The `runtime_deprecates_at` date is when runners on that version can no longer receive jobs. A `null` value means no date is currently scheduled.
+{% endif %}
 
 For instructions on how to install the latest runner version, see the installation instructions for [the latest release](https://github.com/actions/runner/releases).
 
-{% data reusables.actions.self-hosted-runner-update-warning %}
+> [!WARNING]
+> {% data reusables.actions.self-hosted-runner-update-warning %}
 
 ### Webhooks for autoscaling
 

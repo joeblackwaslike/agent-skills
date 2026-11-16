@@ -15,9 +15,10 @@ related:
   - /docs/functions
 summary: Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/build-output-api/primitives.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "dca5f00f10ee9620cb77d4e0a3fb3942bf5afd4c784aba2627b09b61cdc516b2"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "bf878445d1fdaaf2b87d9fa1c011dc95bbe8828228862de207ba1e31b8390756"
 ---
 
 # Vercel Primitives
@@ -34,13 +35,13 @@ These primitives are the "building blocks" that make up a Vercel Deployment.
 - [Optimized CDN caching and deploying of immutable static assets](https://vercel.com/changelog/optimized-cdn-caching-and-deploying-of-immutable-static-assets)
 - [Next.js 16.3 support on Vercel](https://vercel.com/blog/vercel-supports-next-js-16-3)
 - [Build your own web framework](https://vercel.com/blog/build-your-own-web-framework)
-- [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions) — Learn how to import files inside Serverless Functions on Vercel.
 - [Vercel Edge Functions are now generally available](https://vercel.com/blog/edge-functions-generally-available)
+- [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions) — Learn how to import files inside Serverless Functions on Vercel.
 - [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
-- [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
 - [Static Configuration with vercel.json](https://vercel.com/docs/project-configuration/vercel-json) — Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project.
-- [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
 - [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
+- [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
+- [Environment variables](https://vercel.com/docs/environment-variables) — Learn more about environment variables on Vercel.
 
 Full cross-link map for this page: [/docs/build-output-api/primitives.graph.md](/docs/build-output-api/primitives.graph.md)
 <!-- /docsgraph:related -->
@@ -400,6 +401,18 @@ The following example shows a directory structure where the Prerender will be ac
       - `blog.prerender-config.json`
       - `blog.prerender-fallback.html`
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

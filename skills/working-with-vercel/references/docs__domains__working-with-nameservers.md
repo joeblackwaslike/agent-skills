@@ -15,9 +15,10 @@ related:
   - /docs/domains/working-with-dns
 summary: Learn about nameservers and the benefits Vercel nameservers provide.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains/working-with-nameservers.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f4d3d524c5abfd21fa3fdf488fb57d1c0c2d65b805aa34662b6a46c85b4ea5b8"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1a9305a20982a4ff73417673cc4a3787339e2406227c5b5b552bd20d7ea48f01"
 ---
 
 # Working with nameservers
@@ -33,11 +34,10 @@ Nameservers are the actual servers on the network that are responsible for resol
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Easily manage custom nameservers for domains](https://vercel.com/changelog/easily-manage-custom-nameservers-for-domains)
-- [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
-- [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 - [Update nameservers for a domain](https://vercel.com/docs/rest-api/domains-registrar/update-nameservers-for-a-domain) — PATCH /v1/registrar/domains/{domain}/nameservers — Update the nameservers for a domain. Pass an empty array to use Verce
+- [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
+- [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
 - [vercel dns](https://vercel.com/docs/cli/dns) — Learn how to manage your DNS records for your domains using the vercel dns CLI command.
 
 Full cross-link map for this page: [/docs/domains/working-with-nameservers.graph.md](/docs/domains/working-with-nameservers.graph.md)
@@ -85,6 +85,18 @@ Learn how Vercel uses SSL certificates to keep your site secure.
 Learn about common reasons for domain misconfigurations and how to
 troubleshoot your domain on Vercel.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

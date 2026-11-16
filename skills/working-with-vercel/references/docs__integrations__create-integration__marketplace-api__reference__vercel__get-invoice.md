@@ -3,7 +3,7 @@ title: get-invoice
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/get-invoice
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/get-invoice"
-last_updated: 2026-11-09
+last_updated: 2026-11-16
 type: conceptual
 prerequisites:
   []
@@ -12,9 +12,10 @@ related:
   - /docs/integrations/create-integration/native-integration
 summary: Learn about get-invoice on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/get-invoice.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "0e8daf5dd4c9d08cb57479c04f673f3257e9b0f61ab45f0135492d9e66f3faae"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a3ea3e30893e6e244ab4e95c60378a523a2e20669cb4ec271a4e3a097c06ad8d"
 ---
 
 # Get Invoice
@@ -124,6 +125,18 @@ Success
 - [Marketplace API Reference](/docs/integrations/create-integration/marketplace-api/reference)
 - [Native Integration Concepts](/docs/integrations/create-integration/native-integration)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

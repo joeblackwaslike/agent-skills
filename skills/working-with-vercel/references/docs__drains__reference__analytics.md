@@ -12,9 +12,10 @@ related:
   - /docs/drains
 summary: Learn about Web Analytics Drains - data formats and custom events configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/drains/reference/analytics.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "7482cd952967e2a80eff0181b50886fbc06cf3c1b5844627a8ae288d3df445ee"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c5770b14ef4b88561a1efcfc1725da398074bdef2f9521ee62c2dd4842bf8704"
 ---
 
 # Web Analytics Drains Reference
@@ -30,9 +31,9 @@ If a Web Analytics Drain has been configured, Vercel will send page views and cu
 - [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains)
 - [Speed Insights Drains Reference](https://vercel.com/docs/drains/reference/speed-insights) — Learn about Speed Insights Drains - data formats and performance metrics configuration.
 - [Audit Log Drains Reference](https://vercel.com/docs/drains/reference/audit-logs) — Learn about Audit Log Drains - data formats, fields, and team activity events.
-- [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
-- [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
 - [Drain Audit Logs to Datadog](https://vercel.com/docs/drains/audit-logs-to-datadog) — Learn how to forward Vercel Audit Log Drain events to Datadog using the Datadog Logs API.
+- [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
+- [Retrieve a list of all Drains](https://vercel.com/docs/rest-api/drains/retrieve-a-list-of-all-drains) — GET /v1/drains — Allows to retrieve the list of Drains of the authenticated team.
 
 Full cross-link map for this page: [/docs/drains/reference/analytics.graph.md](/docs/drains/reference/analytics.graph.md)
 <!-- /docsgraph:related -->
@@ -112,6 +113,18 @@ For more information on Web Analytics Drains and how to use them, refer to the f
 - [Drains overview](/docs/drains)
 - [Configure Drains](/docs/drains/using-drains)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

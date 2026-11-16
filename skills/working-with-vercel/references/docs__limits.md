@@ -15,9 +15,10 @@ related:
   - /docs/deploy-hooks
 summary: Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/limits.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ceae517ebb1b1cac91f61e54899de4ecb7f8d3ff778b98344225f54a134aa32d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "926ee256fe33d73c90affd38717216a5d5bc58da8a1280919198b459a2bb0e20"
 ---
 
 # Limits
@@ -67,7 +68,7 @@ To prevent abuse of our platform, we apply the following limits to all accounts.
 | [Build Time per Deployment](#build-time-per-deployment) (Minutes)                         | 45                                                                                 | 45                                                                      | 45                                                              |
 | [Static File uploads](#static-file-uploads)                                               | 100 MB                                                                             | 1 GB                                                                    | N/A                                                             |
 | [Concurrent Deployments](/docs/builds/managing-builds#on-demand-concurrent-builds)        | 1                                                                                  | [Up to 500\*](/docs/builds/managing-builds#on-demand-concurrent-builds) | Custom                                                          |
-| Disk Size (GB)                                                                            | 32                                                                                 | 32 up to [64](/docs/builds/managing-builds#build-machine-types)         | 32 up to [64](/docs/builds/managing-builds#build-machine-types) |
+| Disk Size (GB)                                                                            | 64                                                                                 | 64                                                                      | 64                                                              |
 | Cron Jobs (per project)                                                                   | [100\*](/docs/cron-jobs/usage-and-pricing)                                         | 100                                                                     | 100                                                             |
 | [Deploy Hooks](/docs/deploy-hooks) (per project)                                          | 5                                                                                  | 5                                                                       | 10                                                              |
 
@@ -103,16 +104,7 @@ When using the CLI to deploy, the maximum size of the source files that can be u
 
 ### Build cache maximum size
 
-The maximum size of the Build's cache depends on the [build machine type](/docs/builds/managing-builds#build-machines):
-
-| Build machine type | Maximum cache size |
-| ------------------ | ------------------ |
-| Basic              | 1.5 GB             |
-| Standard           | 1.5 GB             |
-| Enhanced           | 3 GB               |
-| Turbo              | 4.75 GB            |
-
-Elastic build machines use the limit of the machine type assigned to each build.
+The maximum size of the build cache is 5 GB for every [build machine type](/docs/builds/managing-builds#build-machines), including Elastic build machines.
 
 The cache is retained for one month and applies at the level of each [Build cache key](/docs/deployments/troubleshoot-a-build#caching-process).
 
@@ -314,6 +306,7 @@ The following table lists all API rate limits that apply when using the [Vercel 
 | Enterprise domain delegation requests per minute. | `api-domains-post-request-delegation-enterprise` | 10 | 60 | `owner` |
 | Domains record update per minute. | `api-domains-records-patch` | 50 | 60 | `owner` |
 | Domains record creation per minute. | `api-domains-records-post` | 50 | 60 | `owner` |
+| Domains record list requests per domain per minute. | `api-domains-records-get` | 50 | 60 | `resource` |
 | Domains status retrieval per minute. | `api-domains-status` | 150 | 60 | `owner` |
 | Domains availability retrieval per minute. | `api-domains-availability` | 60 | 60 | `user` |
 | Domain verification record retrieval per minute. | `api-domains-get-verification-record` | 60 | 60 | `owner` |
@@ -421,6 +414,10 @@ The following table lists all API rate limits that apply when using the [Vercel 
 | Integration product delete per minute. | `api-integrations-delete-product` | 120 | 3600 | `user` |
 | Integration product create per minute. | `api-integrations-create-product` | 120 | 3600 | `user` |
 | Integration product create per minute. | `api-integrations-update-product` | 120 | 3600 | `user` |
+| Integration product aliases get per minute. | `api-integrations-get-product-aliases` | 120 | 60 | `user` |
+| Integration product alias get per minute. | `api-integrations-get-product-alias` | 240 | 60 | `user` |
+| Integration product alias requests per hour. | `api-integrations-request-product-alias` | 20 | 3600 | `user` |
+| Integration product alias request cancellations per hour. | `api-integrations-cancel-product-alias-request` | 60 | 3600 | `user` |
 | Integration product billing plans retrieval per minute. | `api-integrations-get-billing-plans` | 120 | 3600 | `user` |
 | Integration installation billing plans retrieval per minute. | `api-integrations-get-installation-billing-plans` | 120 | 3600 | `user` |
 | Integration resource billing plans retrieval per minute. | `api-integrations-get-resource-billing-plans` | 120 | 3600 | `user` |
@@ -613,6 +610,9 @@ The following table lists all API rate limits that apply when using the [Vercel 
 | Drive control plane requests per minute for Hobby plan. | `api-drives-control-plane-hobby` | 1000 | 60 | `owner` |
 | Drive control plane requests per minute for Pro plan. | `api-drives-control-plane-pro` | 10000 | 60 | `owner` |
 | Drive control plane requests per minute for Enterprise plan. | `api-drives-control-plane-enterprise` | 100000 | 60 | `owner` |
+| Drive filesystem reads per minute for Hobby plan. Each read starts a drive cell. | `api-drives-fs-read-hobby` | 10 | 60 | `owner` |
+| Drive filesystem reads per minute for Pro plan. Each read starts a drive cell. | `api-drives-fs-read-pro` | 30 | 60 | `owner` |
+| Drive filesystem reads per minute for Enterprise plan. Each read starts a drive cell. | `api-drives-fs-read-enterprise` | 60 | 60 | `owner` |
 | Drive and drive snapshot deletions per second. | `api-drives-control-plane-delete` | 20 | 1 | `owner` |
 | Sandbox, snapshot and drive deletions per second. | `api-sandboxes-control-plane-delete` | 20 | 1 | `owner` |
 | Manual AI code review requests per minute. | `api-vade-request-review` | 30 | 60 | `owner` |
@@ -634,9 +634,10 @@ The following table lists all API rate limits that apply when using the [Vercel 
 
 Each dynamic quota has an allowed rate, measured per minute, that moves between a minimum and a maximum. The unit depends on the resource and is named in the limit's description.
 
-- You start at the **minimum rate** when you have made no requests against the limit for 10 minutes.
+- You start at the **minimum rate** when you have made no requests against the limit for 10 minutes. A quota that holds your allowed rate (see below) can take longer.
 - While you consume at or above your current allowed rate, that rate climbs at the **ramp per minute** rate, toward the **maximum rate**.
 - Consuming less than your allowed rate lets it decay back down toward the minimum at the same slope.
+- The Sandbox vCPU quotas hold your allowed rate before it decays: for 5 minutes on Hobby, and for 10 minutes on Pro and Enterprise, after you last consumed at your full allowed rate.
 
 Your allowance is one minute's worth of your current allowed rate, so you can spend a full minute of capacity in one burst and then wait for it to refill.
 
@@ -668,6 +669,18 @@ The **dynamic quotas** table consists of the following five columns:
 | Sandbox vCPU provisioning ramp for Pro plan (vCPUs per minute). | 150 | 5000 | 500 | `owner` |
 | Sandbox vCPU provisioning ramp for Enterprise plan (vCPUs per minute). | 150 | 5000 | 500 | `owner` |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

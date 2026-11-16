@@ -15,9 +15,10 @@ related:
   - /docs/incremental-static-regeneration
 summary: Learn about the frameworks that can be deployed to Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/more-frameworks.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b48cc2c609d3b6eb0ba0d4297d9c058b6d2b26099ac38c91dc69dcaa58b3ba70"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "246cd780d3d8189e0c2776071b0407d6047eb8743120b6fb305f4dbe1b09ac52"
 ---
 
 # Supported Frameworks on Vercel
@@ -40,10 +41,10 @@ The following table shows which features are supported by each framework on Verc
 - [Python on Vercel is now generally available](https://vercel.com/blog/python-on-vercel-is-now-generally-available)
 - [Announcing the Build Output API](https://vercel.com/blog/build-output-api)
 - [How to Deploy a Solid App with Vercel](https://vercel.com/kb/guide/deploying-solid-with-vercel) — Deploy Solid to Vercel with zero configuration. Covers SolidStart 1 and 2, static Solid apps, build settings, and custom
+- [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify) — Migrate your website's configuration from Netlify to Vercel
+- [Custom 404 Page](https://vercel.com/kb/guide/custom-404-page) — Create a custom 404 page and deploy with Vercel.
 - [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
 - [Full-stack frameworks on Vercel](https://vercel.com/docs/frameworks/full-stack) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
-- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
-- [Vite on Vercel](https://vercel.com/docs/frameworks/frontend/vite) — Deploy Vite projects to Vercel and configure environment variables, Vercel Functions, server-side rendering, and SPA rew
 
 Full cross-link map for this page: [/docs/frameworks/more-frameworks.graph.md](/docs/frameworks/more-frameworks.graph.md)
 <!-- /docsgraph:related -->
@@ -61,7 +62,7 @@ We're committed to having support for all Vercel features across frameworks, and
 | [Streaming SSR](/docs/functions/streaming-functions) | ✓ | ✓ | ✗ | ✓ | ✓ | ✓ | N/A | N/A |
 | [Incremental Static Regeneration](/docs/incremental-static-regeneration) | ✓ | ✓ | ✓ | ✗ | ✓ | ✗ | N/A | N/A |
 | [Image Optimization](/docs/image-optimization) | ✓ | ✓ | ✓ | N/A | ✓ | ✗ | N/A | N/A |
-| [Runtime Cache](/docs/caching/runtime-cache) | ✓ | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| [Runtime Cache](/docs/runtime-cache) | ✓ | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
 | [Native OG Image Generation](/docs/og-image-generation) | ✓ | N/A | ✓ | N/A | N/A | N/A | N/A | N/A |
 | [Multi-runtime support (different routes)](/docs/functions/runtimes) | ✓ | ✓ | ✓ | N/A | ✗ | ✓ | N/A | N/A |
 | [Multi-runtime support (entire app)](/docs/functions/runtimes) | ✓ | ✓ | ✓ | N/A | ✓ | ✓ | N/A | N/A |
@@ -213,6 +214,18 @@ Learn more about deploying your preferred framework on Vercel with the following
 - [Astro on Vercel](/docs/frameworks/frontend/astro)
 - [Nuxt on Vercel](/docs/frameworks/full-stack/nuxt)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

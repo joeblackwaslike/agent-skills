@@ -15,9 +15,10 @@ related:
   - /docs/cli
 summary: List and inspect production daemons, override regional instance counts, and inspect or restart individual instances with Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/daemons.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "0e71739ee98fb13d3027b3805d1b6f5efaf945e298073afd18e488ba721cbc54"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "734b5d4cb7ba5d1c3e1e52b0c4b40003ec0585289154d6abd1fc8db7f7132dea"
 ---
 
 # vercel daemons
@@ -30,11 +31,11 @@ The `vercel daemons` command manages [Daemons](/docs/daemons) for a project.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [Daemons](https://vercel.com/docs/build-output-api/daemons) — Learn how Vercel Daemons are represented in the Build Output API.
 - [Daemon Configuration Reference](https://vercel.com/docs/daemons/config-reference) — Every field you can set on a daemon in the daemons key of vercel.json.
-- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [Get project daemons](https://vercel.com/docs/rest-api/daemons/get-project-daemons) — GET /v1/projects/{idOrName}/daemons — List the daemons of a project.
+- [Daemons](https://vercel.com/docs/build-output-api/daemons) — Learn how Vercel Daemons are represented in the Build Output API.
+- [Daemons Limits](https://vercel.com/docs/daemons/limits) — Limits on the configuration, size, and capabilities of Vercel Daemons during the beta.
 
 Full cross-link map for this page: [/docs/cli/daemons.graph.md](/docs/cli/daemons.graph.md)
 <!-- /docsgraph:related -->
@@ -178,6 +179,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

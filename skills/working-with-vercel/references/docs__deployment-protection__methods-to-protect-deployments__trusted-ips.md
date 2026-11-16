@@ -16,9 +16,10 @@ related:
   - /docs/deployment-protection/methods-to-protect-deployments/password-protection
 summary: Trusted IPs let you restrict access to your deployments to a list of allowed IP addresses.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/trusted-ips.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "0a0af60ce5c5f229ccadc3b94767933d5517d5fe6a592959069111b3794af078"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "831e326f932e54bd81d6d6ab051052a591fa7a9900dc3073166754e9f098b708"
 ---
 
 # Restrict deployment access by IP address
@@ -52,6 +53,7 @@ With Trusted IPs [enabled](/docs/deployment-protection/methods-to-protect-deploy
 - [Trusted IPs for Deployment Protection is now Generally Available](https://vercel.com/changelog/trusted-ips-is-now-generally-available-for-enterprise-customers)
 - [Trusted Sources for Deployment Protection](https://vercel.com/changelog/trusted-sources-for-deployment-protection)
 - [Automated & Agent Access](https://vercel.com/docs/deployment-protection/automated-agent-access) — Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Prote
+- [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Vercel Support Code Visibility, Git Fork Protection, and
 - [Vercel Enterprise Plan](https://vercel.com/docs/plans/enterprise) — Learn about the Enterprise plan for Vercel, including features, pricing, and more.
 
 Full cross-link map for this page: [/docs/deployment-protection/methods-to-protect-deployments/trusted-ips.graph.md](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips.graph.md)
@@ -184,6 +186,18 @@ To disable Trusted IPs, set `trustedIps` to `null`:
 
 You can configure Trusted IPs using `trusted_ips` in the `vercel_project` data source in the [Vercel Terraform Provider](https://registry.terraform.io/providers/vercel/vercel/latest/docs/data-sources/project).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

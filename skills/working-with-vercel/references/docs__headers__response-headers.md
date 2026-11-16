@@ -15,9 +15,10 @@ related:
   - /docs/deployments
 summary: Learn about the response headers sent to each Vercel deployment and how to use them to process responses before sending a response.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/headers/response-headers.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "d7bdacf26acd6a9465a97f8a5138bb2722febc716a51fa726e2539107d394d0d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3ad6ce01adafb38d825923bb3dfcae1f6f7d9130d46276268efff37104e0fbb7"
 ---
 
 # Response headers
@@ -32,12 +33,11 @@ The following headers are included in Vercel deployment responses and indicate c
 
 - [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
 - [Control CDN caching for shared and personalized pages on Vercel](https://vercel.com/kb/guide/cdn-cache-personalized-pages) — Control CDN caching for shared and personalized Next.js pages. Set cache headers, separate per-user content, and verify
-- [How to troubleshoot stale content returned from the Vercel CDN when using an external proxy or CDN](https://vercel.com/kb/guide/how-to-troubleshoot-stale-content-returned-from-the-edge-network-when-using-an-external-proxy-or-cdn) — Learn how to diagnose and fix stale content issues when using external proxies or CDNs with Vercel. Understand troublesh
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
-- [How Vercel CDN Works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
-- [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
-- [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption) — Learn how Vercel encrypts data in transit and at rest.
+- [Vercel CDN overview](https://vercel.com/docs/cdn) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
 - [Diagnosing and fixing cache issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
+- [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
+- [List deployments](https://vercel.com/docs/rest-api/deployments/list-deployments) — GET /v7/deployments — List deployments under the authenticated user or team. If a deployment hasn't finished uploading \\
 
 Full cross-link map for this page: [/docs/headers/response-headers.graph.md](/docs/headers/response-headers.graph.md)
 <!-- /docsgraph:related -->
@@ -130,7 +130,7 @@ Redeploy, then run the `curl -I` check against the custom domain to confirm the 
 
 ## `x-vercel-cache`
 
-The `x-vercel-cache` header indicates the cache status of static assets and responses from Vercel's CDN. For dynamic routes and fetch requests that use the [runtime cache](/docs/caching/runtime-cache), this header often shows `MISS` even if the data is served from the runtime cache. Use [custom headers](/docs/caching/cache-control-headers#custom-response-headers) or [runtime logs](/docs/logs/runtime) to check whether a fetch response was served from the runtime cache.
+The `x-vercel-cache` header indicates the cache status of static assets and responses from Vercel's CDN. For dynamic routes and fetch requests that use the [runtime cache](/docs/runtime-cache), this header often shows `MISS` even if the data is served from the runtime cache. Use [custom headers](/docs/caching/cache-control-headers#custom-response-headers) or [runtime logs](/docs/logs/runtime) to check whether a fetch response was served from the runtime cache.
 
 The header returns one of the following values. For what each one means in depth, including the reasons behind a miss, bypass, or stale response, see [Cache Status and Reasons](/docs/caching/cache-status):
 
@@ -147,6 +147,18 @@ This header contains a list of [Vercel regions](/docs/regions) your request hit,
 
 It also allows Vercel to automatically prevent infinite loops.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

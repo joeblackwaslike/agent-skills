@@ -4,8 +4,8 @@ description: API reference for the useChat hook.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "79fa7a0516a368f2b03c6f8528a9f8dff406f084b9a3e1b2d3e8cd91d688f8fa"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "31a64f1cd6f518cf7bbd9ffdc831071a842522ffed57d8139cc2ee1b12b0c77b"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -87,6 +87,7 @@ import { Chat } from '@ai-sdk/angular'
 - `generateId?` (`IdGenerator`): A function to generate unique IDs for messages and the chat. If not provided, the default AI SDK generateId is used.
 - `onToolCall?` (`({toolCall: ToolCall}) => void | Promise<void>`): Optional callback function that is invoked when a tool call is received. You must call addToolOutput to provide the tool result.
 - `sendAutomaticallyWhen?` (`(options: { messages: UIMessage[] }) => boolean | PromiseLike<boolean>`): When provided, this function will be called when the stream is finished or a tool call is added to determine if the current messages should be resubmitted. You can use the lastAssistantMessageIsCompleteWithToolCalls helper for common scenarios.
+- `experimental_queue?` (`boolean`): Experimental. When true, messages sent while a response is in progress, or while the assistant waits for a tool result or approval, are queued and sent one at a time after each response finishes. Stopping, an error or an interrupted response pauses the queue until the next message is sent. Editing a message or regenerating clears the queue. Defaults to false.
 - `onFinish?` (`(options: OnFinishOptions) => void`): Called when the assistant response has finished streaming.
   - `OnFinishOptions`
     - `message` (`UIMessage`): The response message.
@@ -119,6 +120,9 @@ import { Chat } from '@ai-sdk/angular'
 - `regenerate` (`(options?: { messageId?: string } & ChatRequestOptions) => Promise<void>`): Function to regenerate the last assistant message or a specific message. If no messageId is provided, regenerates the last assistant message. Accepts ChatRequestOptions for headers, body, and metadata.
 - `stop` (`() => void`): Function to abort the current streaming response from the assistant.
 - `clearError` (`() => void`): Clears the error state.
+- `experimental_queuedMessages` (`UIMessage[]`): Experimental. Messages that wait to be sent when \`experimental\_queue\` is enabled, in the order they will be sent.
+- `experimental_removeQueuedMessage` (`(id: string) => void`): Experimental. Removes a queued message so it is not sent.
+- `experimental_sendQueuedMessageNow` (`(id: string) => Promise<void>`): Experimental. Stops the response in progress and sends the queued message with the given id next. The rest of the queue is sent after it.
 - `resumeStream` (`() => void`): Function to resume an interrupted streaming response. Useful when a network error occurs during streaming.
 - `addToolOutput` (`(options: { tool: string; toolCallId: string; output: unknown } | { tool: string; toolCallId: string; state: "output-error", errorText: string }) => void`): Function to add a tool result to the chat. This will update the chat messages with the tool result. If sendAutomaticallyWhen is configured, it may trigger an automatic submission.
 - `addToolApprovalResponse` (`(options: { id: string; approved: boolean; reason?: string }) => void | PromiseLike<void>`): Function to respond to a tool approval request. The id should match the approval id from the tool call. If sendAutomaticallyWhen is configured, it may trigger an automatic submission.

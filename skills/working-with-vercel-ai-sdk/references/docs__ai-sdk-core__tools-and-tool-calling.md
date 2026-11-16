@@ -4,8 +4,8 @@ description: Learn about tool calling and multi-step calls (using stopWhen) with
 url: "https://ai-sdk.dev/docs/ai-sdk-core/tools-and-tool-calling"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/tools-and-tool-calling.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "dab6020bf99be7fb5b0f60284e8b5280b07ac0e90f5401e0d36cdd72b5635a70"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "53f6261775edbbe0c3ee56d42aab8c1c68fb56554bbf366f60eb4d9f6b1e1fc6"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -621,6 +621,13 @@ The `messages` parameter contains the messages for the current step. By default,
 Use `initialMessages` when you need the original input messages and `responseMessages` when you need the discrete assistant/tool response messages from the model so far.
 
 The `pruneMessages` helper provides a built-in way to remove selected messages or message parts. You can use it inside `prepareStep` when you want a simple compaction strategy.
+
+With OpenAI Responses models, editing earlier history can cause subsequent
+reasoning to be dropped. Pruning earlier messages or tool results changes that
+history. Prefer provider compaction when supported, and preserve positioned
+configuration updates, including empty system messages. See [preserving
+reasoning across
+turns](/providers/ai-sdk-providers/openai#preserving-reasoning-across-turns).
 
 ```tsx
 import { generateText, pruneMessages, type ModelMessage } from 'ai';
@@ -1426,6 +1433,11 @@ The [Google Vertex provider](/providers/ai-sdk-providers/google-vertex#tool-resu
 also supports direct `gs://` tool-result file references for Gemini 3 and later
 models with supported image and document MIME types. It downloads HTTP(S)
 tool-result URLs and sends their contents as inline data.
+
+File URLs returned by tools are untrusted input. To validate DNS results when
+the provider downloads them on Node.js, pass a `guarded-fetch` transport as
+the provider's `fetch` option. See [Secure URL
+Fetching](/docs/advanced/secure-url-fetching).
 
 In order to send multi-modal tool results, e.g. screenshots, back to the model,
 they need to be converted into a specific format.

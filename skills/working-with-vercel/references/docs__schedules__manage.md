@@ -15,9 +15,10 @@ related:
   - /docs/schedules/limits
 summary: View, enable, disable, and run schedules across environments, and check their execution history from the dashboard, CLI, or SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/schedules/manage.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ba6a6c195d0de686d7a0572dac22cef171588efa3030aa30347b36f40fbd2bb7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a76bb9bdf56728fdc9c7df42517e597185027ba7532a8aaf8e723a118fa328cc"
 ---
 
 # Managing Schedules
@@ -32,7 +33,6 @@ You can manage static and dynamic schedules from the dashboard, the [`vercel sch
 
 - [Vercel Schedules is now in public beta](https://vercel.com/changelog/vercel-schedules-is-now-in-public-beta)
 - [Introducing Vercel Schedules](https://vercel.com/blog/introducing-vercel-schedules)
-- [Schedules](https://eve.dev/docs/schedules) — Run an agent on a cron cadence, either a fire-and-forget prompt or a handler that hands work off to a channel.
 - [Schedules Configuration Reference](https://vercel.com/docs/schedules/configuration) — Reference for static schedules in vercel.json and the Build Output API, including targets, function identifiers, cron sy
 - [Vercel Schedules: API Reference](https://vercel.com/docs/schedules/http-api) — Reference for the Vercel Schedules HTTP API: authenticate, choose an environment, and create, list, update, enable, disa
 - [Getting Started with Schedules](https://vercel.com/docs/schedules/quickstart) — Run a private Vercel Function every hour with a static schedule in vercel.json, test it locally, and deploy it.
@@ -285,6 +285,18 @@ Vercel records an event when a person or integration makes the change. That incl
 - [JS SDK Reference](/docs/schedules/sdk)
 - [Concepts](/docs/schedules/concepts)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

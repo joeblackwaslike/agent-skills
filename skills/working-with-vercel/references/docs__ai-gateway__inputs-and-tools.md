@@ -15,9 +15,10 @@ related:
   - /docs/ai-gateway/inputs-and-tools/video-input
 summary: Send images, PDFs, audio, and video to AI Gateway models, and connect models to application functions with tool use.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/inputs-and-tools.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5cdf181360d1116f9113d723eb1141c7a4a8372c265c76a594df36ca74b9966f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f075de8d9b732679efcd2b3ba53bf8b9b9e422f8dcde62e6031ccf6eec17f6d1"
 ---
 
 # AI Gateway Inputs and Tools
@@ -32,8 +33,8 @@ Choose a guide for the input you have or the function you want a model to call. 
 
 - [AI Gateway Model Modalities](https://vercel.com/docs/ai-gateway/modalities) — The inputs and outputs AI Gateway models work with: text, image, and video generation, speech to text, text to speech, r
 - [OpenAI Responses Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
-- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
+- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 
 Full cross-link map for this page: [/docs/ai-gateway/inputs-and-tools.graph.md](/docs/ai-gateway/inputs-and-tools.graph.md)
@@ -68,6 +69,18 @@ These guides focus on understanding existing input. For other tasks, see:
 - [Realtime](/docs/ai-gateway/modalities/realtime) for a live voice conversation.
 - [Coding agents](/docs/ai-gateway/coding-agents) to connect an existing coding tool to AI Gateway.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

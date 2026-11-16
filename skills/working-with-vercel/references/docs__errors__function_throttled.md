@@ -15,9 +15,10 @@ related:
   - /docs/cdn-cache
 summary: The function you are trying to call has exceeded the rate limit.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/function_throttled.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "bf29584efe902eb77913c4b8e3aa34029d7c91a2c290e9126a41ab4fc25b3401"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d9664e72eee36b77090dd64bfb352df84795e02825e2f616bc15e6dd2ed6c408"
 ---
 
 # FUNCTION_THROTTLED
@@ -34,6 +35,18 @@ To troubleshoot this error, follow these steps:
 2. **Handle request spikes**: If you're experiencing a sudden spike in requests, consider using the [Vercel Firewall](/docs/vercel-firewall) to block unwanted traffic, or enabling [Rate Limiting](/docs/security/vercel-waf/rate-limiting) to limit the number of requests per second.
 3. **Optimize your function**: Review your function code to ensure it's optimized for performance. For example, you can use [Vercel's CDN Cache](/docs/cdn-cache) to cache responses and reduce the number of invocations. You can also enable [fluid compute](/docs/fluid-compute) to handle more requests concurrently on a single function instance.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

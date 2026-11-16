@@ -13,9 +13,10 @@ related:
   - /docs/domains/working-with-dns
 summary: Learn how to integrate your service with Vercel DNS using the Domain Connect protocol to automatically configure DNS records for your users.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains/domain-connect.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f238854aa51cef9501c00f59a882c9bad6febdf836f8680aa6c51a5a8bb8cd40"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "274efb2f5bab3fbc6694079d986062790a6f4aefb7aabd5068c6613c13f21ddd"
 ---
 
 # Domain Connect
@@ -30,12 +31,11 @@ sha256: "f238854aa51cef9501c00f59a882c9bad6febdf836f8680aa6c51a5a8bb8cd40"
 
 - [Vercel now supports Domain Connect as a DNS Provider](https://vercel.com/changelog/vercel-now-supports-domain-connect-as-a-dns-provider)
 - [Automated DNS configuration with Domain Connect](https://vercel.com/changelog/automated-dns-configuration-with-domain-connect)
-- [DNS Records UI](https://vercel.com/blog/dns-records-ui)
 - [Working with domains](https://vercel.com/docs/domains/working-with-domains) — Learn how domains work and the options Vercel provides for managing them.
 - [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
 - [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
-- [Working with nameservers](https://vercel.com/docs/domains/working-with-nameservers) — Learn about nameservers and the benefits Vercel nameservers provide.
+- [Create a DNS record](https://vercel.com/docs/rest-api/dns/create-a-dns-record) — POST /v2/domains/{domain}/records — Creates a DNS record for a domain.
 
 Full cross-link map for this page: [/docs/domains/domain-connect.graph.md](/docs/domains/domain-connect.graph.md)
 <!-- /docsgraph:related -->
@@ -342,6 +342,18 @@ Learn how to update your domain's nameservers to Vercel.
 
 Read the full Domain Connect protocol specification on GitHub.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

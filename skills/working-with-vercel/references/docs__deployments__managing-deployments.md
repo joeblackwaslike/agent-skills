@@ -15,9 +15,10 @@ related:
   - /docs/deployment-protection/methods-to-protect-deployments/vercel-authentication
 summary: Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at any time and even delete a...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployments/managing-deployments.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "cc1361672741244e8b3a7cea404de8cb6c12548055748cbb04be31dc3eee32d3"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b589f77904800e48dea59cfcac8cb7d13f3f9dd16621025b05ddc9283ce6c61d"
 ---
 
 # Managing Deployments
@@ -41,7 +42,7 @@ You can manage all current and previous deployments regardless of environment, s
 - [Missing routes-manifest.json file or No Output Directory when using Turborepo or NX](https://vercel.com/kb/guide/missing-routes-manifest-or-output-turborepo-nx) — How to solve the error \\`The file "/vercel/path0/apps/web/.next/routes-manifest.json" couldn't be found\\` or \\`No Output
 - [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues)
 - [How we cut CDN metadata lookup latency by 91%](https://vercel.com/blog/how-we-cut-cdn-metadata-lookup-latency-by-91-percent)
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
+- [Delete a Deployment](https://vercel.com/docs/rest-api/deployments/delete-a-deployment) — DELETE /v13/deployments/{id} — This API allows you to delete a deployment, either by supplying its \\`id\\` in the URL or
 
 Full cross-link map for this page: [/docs/deployments/managing-deployments.graph.md](/docs/deployments/managing-deployments.graph.md)
 <!-- /docsgraph:related -->
@@ -153,6 +154,18 @@ Other than your custom needs to redeploy, it's always recommended to redeploy yo
 - Making changes to **Build & Development Settings**
 - **Redirect** or **Rewrites** from a subdomain to a subpath
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

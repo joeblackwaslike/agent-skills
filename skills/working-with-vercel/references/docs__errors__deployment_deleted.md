@@ -11,9 +11,10 @@ related:
   - /docs/deployment-retention
 summary: The deployment has been removed
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/deployment_deleted.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "e2b50f55ff73f21de2df4c6dbf3148b4fe64e13698a59a81ee090ece10e99cb7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "fd9426634f3e71968ca5041fec62cc276b87340075b5bc8a8927024307d99b27"
 ---
 
 # DEPLOYMENT_DELETED
@@ -37,6 +38,18 @@ To restore a deleted deployment, open **Settings** in the sidebar of your projec
 3. Find the deployment that needs to be restored, and click on the dropdown menu item **Restore**
 4. Complete the modal
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

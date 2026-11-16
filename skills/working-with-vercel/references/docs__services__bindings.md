@@ -14,9 +14,10 @@ related:
   - /docs/routing-middleware
 summary: Call one service from another using caller-declared service bindings.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/services/bindings.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "008966281ad84cef452017a52860076c66a18dcec1e893f4a337a0ddaaa92dfc"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f46543ae7e525b5a64a2db76ee92554454629c8d890b1d8856fa2371a2566369"
 ---
 
 # Service bindings
@@ -40,7 +41,7 @@ A service binding lets server-side code in one service call another service dire
 - [Daemon Configuration Reference](https://vercel.com/docs/daemons/config-reference) — Every field you can set on a daemon in the daemons key of vercel.json.
 - [Service configuration reference](https://vercel.com/docs/services/config-reference) — Options available for service configuration.
 - [Services](https://vercel.com/docs/build-output-api/services) — Learn how a deployment with multiple services is structured in the Build Output API.
-- [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
+- [Rewrites on Vercel](https://vercel.com/docs/routing/rewrites) — Learn how to use rewrites to send users to different URLs without modifying the visible URL.
 
 Full cross-link map for this page: [/docs/services/bindings.graph.md](/docs/services/bindings.graph.md)
 <!-- /docsgraph:related -->
@@ -118,6 +119,18 @@ A call over a binding is billed as a single service request, with no separate CD
 
 Bindings are available to a service's functions at runtime only. They do not resolve during builds, and code running in [middleware](/docs/routing-middleware) cannot call another service over a binding. Make service-to-service calls from a function instead.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

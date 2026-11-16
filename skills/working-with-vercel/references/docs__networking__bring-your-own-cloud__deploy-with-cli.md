@@ -16,9 +16,10 @@ related:
   - /docs/networking/bring-your-own-cloud/deploy-with-github-actions
 summary: Build a project, provision its functions in your AWS account, and complete a Bring Your Own Cloud (BYOC) deployment with the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/networking/bring-your-own-cloud/deploy-with-cli.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c72ef7165aeb3f7928bc002426e7ffe70933633117f7f0d0dab9d06a4a164567"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0f44c6b5370d344e2ef883c0d4a8ace302e5f666cce85466c5e322b07af2786c"
 ---
 
 # Deploying with BYOC Using the Vercel CLI
@@ -34,13 +35,11 @@ Create a [Bring Your Own Cloud (BYOC)](/docs/networking/bring-your-own-cloud) de
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Complete Guide to Bring Your Own Cloud](https://vercel.com/kb/guide/byoc) — Use Bring Your Own Cloud \\(BYOC\\) to run Vercel Functions as AWS Lambda functions in your own AWS account, from setup to
-- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
-- [Implementing Canary Deployments on Vercel](https://vercel.com/kb/guide/implementing_canary_deployments_on_vercel) — This guide explains how to set up canary deployments on Vercel, enabling developers to gradually roll out new versions t
-- [Bring Your Own Cloud on AWS is now generally available](https://vercel.com/changelog/bring-your-own-cloud-on-aws-is-now-generally-available)
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
+- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 
 Full cross-link map for this page: [/docs/networking/bring-your-own-cloud/deploy-with-cli.graph.md](/docs/networking/bring-your-own-cloud/deploy-with-cli.graph.md)
 <!-- /docsgraph:related -->
@@ -201,6 +200,18 @@ For function packages larger than 50 MB, upload the ZIP files to a private Amazo
 - [Operate BYOC deployments](/docs/networking/bring-your-own-cloud/operations), including retries and cleanup
 - [Review the BYOC provisioning reference](/docs/networking/bring-your-own-cloud/provisioning-reference)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

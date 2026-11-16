@@ -11,9 +11,10 @@ related:
   - /docs/instant-rollback
 summary: This error occurs when a request for a static file in a project fails.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/internal_static_request_failed.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "bf446f91dd54f0c189abe7d480b0c540b55a718c25158c3987b2318105096478"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "099125b928cfb1e55a431e8cb26d3f5c34fff42c3fa5af0a50cc90090d87def2"
 ---
 
 # INTERNAL_STATIC_REQUEST_FAILED
@@ -32,6 +33,18 @@ To troubleshoot this error, follow these steps:
 2. **Verify file paths:** Check that the paths to your static files are correct and reachable. Path errors or misconfigurations can lead to this issue
 3. **Rollback changes:** If your project was working previously, consider reverting to a known working state. [Rollback](/docs/instant-rollback) your recent changes one by one and redeploy to see if the error resolves. This can help identify if recent changes are causing the issue
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

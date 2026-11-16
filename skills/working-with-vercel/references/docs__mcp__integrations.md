@@ -15,9 +15,10 @@ related:
   - /docs/ai-gateway
 summary: Connect AI SDK, TanStack AI, and eve applications to MCP servers to discover and call tools.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/mcp/integrations.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "cdb1f54ed0663e49f78c0d23da06ee5ecd43a308d793e24ba8f8ee1e60b48e78"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c24780b3e70bc5c9092cba22a1bb19ed7e1273ad7e02323664c7fd9363ab4183"
 ---
 
 # MCP Integrations
@@ -34,11 +35,9 @@ Connect your application or agent to a [Model Context Protocol (MCP)](/docs/mcp)
 - [MCP server support on Vercel](https://vercel.com/changelog/mcp-server-support-on-vercel)
 - [Introducing Vercel MCP: Connect Vercel to your AI tools](https://vercel.com/blog/introducing-vercel-mcp-connect-vercel-to-your-ai-tools)
 - [MCP Integrations](https://v0.app/docs/MCP) — Connect and use MCP servers directly in v0
-- [Model Context Protocol (MCP) explained: An FAQ](https://vercel.com/blog/model-context-protocol-mcp-explained)
-- [Vercel MCP now in Public Beta](https://vercel.com/changelog/vercels-mcp)
-- [MCP Server](https://v0.app/docs/api/v1/adapters/mcp-server) — The v0 MCP (Model Context Protocol) server allows you to integrate v0's capabilities directly into your IDE, providing s
 - [Devin, Raycast, Windsurf, and Goose now supported on Vercel MCP](https://vercel.com/changelog/devin-raycast-windsurf-and-goose-now-supported-on-vercel-mcp)
-- [Frameworks and Adapters for Vercel Connect](https://vercel.com/docs/connect/frameworks) — Use Vercel Connect with AI SDK, TanStack AI, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.
+- [Vercel MCP now in Public Beta](https://vercel.com/changelog/vercels-mcp)
+- [Vercel Integrations](https://vercel.com/docs/integrations) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
 
 Full cross-link map for this page: [/docs/mcp/integrations.graph.md](/docs/mcp/integrations.graph.md)
 <!-- /docsgraph:related -->
@@ -62,6 +61,18 @@ For OAuth-protected servers, see the Vercel Connect guides for [AI SDK](/docs/co
 - [Deploy an MCP server on Vercel](/docs/mcp/deploy-mcp-servers-to-vercel) to expose your application's tools.
 - [Use Vercel's MCP server](/docs/agent-resources/vercel-mcp) to work with Vercel projects, deployments, and documentation.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

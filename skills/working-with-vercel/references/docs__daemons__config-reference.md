@@ -15,9 +15,10 @@ related:
   - /docs/services/bindings
 summary: Every field you can set on a daemon in the daemons key of vercel.json.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/daemons/config-reference.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "3c597688262b10df036a44f808ae8908661b14a3424221f3577d90c6e3deb9f2"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "65b25cdd260efd71e6e71295a7d580c75b7373a2dc1b5c1fb8ea30e41d4d7e57"
 ---
 
 # Daemon Configuration Reference
@@ -36,12 +37,12 @@ You declare daemons with the top-level `daemons` key in `vercel.json`. The key i
 - [Migrate from Render to Vercel](https://vercel.com/kb/guide/migrate-render-to-vercel) — Migrate from Render to Vercel: map web services, cron jobs, and containers to their equivalents, and handle what doesn't
 - [Migrate Render background workers to Vercel Daemons](https://vercel.com/kb/guide/migrate-render-workers-to-vercel-daemons) — Migrate Render workers to Vercel Daemons. Translate render.yaml, package Celery in Docker, prepare the broker, and verif
 - [Vercel Daemons can now call services with bindings](https://vercel.com/changelog/vercel-daemons-can-now-call-services-with-bindings)
-- [Daemons](https://vercel.com/docs/build-output-api/daemons) — Learn how Vercel Daemons are represented in the Build Output API.
 - [Vercel Daemons is now in public beta](https://vercel.com/changelog/vercel-daemons-is-now-in-public-beta)
 - [Add liveness checks to your Daemons](https://vercel.com/changelog/add-liveness-checks-to-your-daemons)
+- [Daemons](https://vercel.com/docs/build-output-api/daemons) — Learn how Vercel Daemons are represented in the Build Output API.
 - [vercel daemons](https://vercel.com/docs/cli/daemons) — List and inspect production daemons, override regional instance counts, and inspect or restart individual instances with
-- [Service configuration reference](https://vercel.com/docs/services/config-reference) — Options available for service configuration.
 - [Get project daemons](https://vercel.com/docs/rest-api/daemons/get-project-daemons) — GET /v1/projects/{idOrName}/daemons — List the daemons of a project.
+- [Service configuration reference](https://vercel.com/docs/services/config-reference) — Options available for service configuration.
 
 Full cross-link map for this page: [/docs/daemons/config-reference.graph.md](/docs/daemons/config-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -264,6 +265,18 @@ Raise the value when your process needs more time to finish work after `SIGTERM`
 
 A binding can only target a service. Daemons don't receive traffic, so services can't bind to daemons, and a daemon can't bind to another daemon. Each binding in a daemon must use a different `env`.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

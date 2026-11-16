@@ -15,9 +15,10 @@ related:
   - /docs/agent-harnesses/security
 summary: What tools do when a durable agent harness resumes after a crash, where its files live, and how to keep typed state with a session.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-harnesses/tools.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "5c63a046d46218c1177ff5e0a40769b9349ad9be631dfecbdb9a6474a1223139"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e3b436c8f81fc88c68a060f813f98e2771575ab0501b5e398ddd097651b6ff39"
 ---
 
 # Tools, Files, and Documents in Durable Agent Harnesses
@@ -32,13 +33,12 @@ A durable harness keeps each session in a log: the conversation and every model 
 
 - [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
 - [How to give agents persistent storage with Vercel Drives](https://vercel.com/kb/guide/persistent-storage-with-vercel-drives) — Give AI SDK and TanStack AI agents persistent storage with Vercel Drives so they can save and reuse research notes acros
-- [Pi](https://ai-sdk.dev/providers/ai-sdk-harnesses/pi) — Learn how to use the Pi harness adapter.
 - [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
-- [Running fx Durably on Vercel](https://vercel.com/docs/agent-harnesses/fx) — Deploy an fx agent with libfx so its sessions survive crashes, function timeouts, and redeploys on Vercel.
-- [Agent Harnesses You Can Run Durably on Vercel](https://vercel.com/docs/agent-harnesses/harnesses) — Guides for running Pi, fx, OpenCode, eve, Claude Code, and Codex durably on Vercel, so a crash or a timeout resumes the
 - [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
+- [Agent Harnesses You Can Run Durably on Vercel](https://vercel.com/docs/agent-harnesses/harnesses) — Guides for running Pi, fx, OpenCode, eve, Claude Code, and Codex durably on Vercel, so a crash or a timeout resumes the
+- [Running fx Durably on Vercel](https://vercel.com/docs/agent-harnesses/fx) — Deploy an fx agent with libfx so its sessions survive crashes, function timeouts, and redeploys on Vercel.
 - [Self-Hosting Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/self-hosting) — Keep durable agent harness sessions in another World, such as Postgres, and run Pi, Claude Code, Codex, OpenCode, and fx
-- [eve on Vercel](https://vercel.com/docs/frameworks/agents/eve) — Create and deploy an eve agent on Vercel with AI Gateway model access, durable sessions, and authenticated requests.
+- [Scheduling Work with Pi](https://vercel.com/docs/schedules/agents/pi) — Give a Pi agent on durable-harness a tool that creates schedules, and send each run back into the session that created i
 
 Full cross-link map for this page: [/docs/agent-harnesses/tools.graph.md](/docs/agent-harnesses/tools.graph.md)
 <!-- /docsgraph:related -->
@@ -86,7 +86,7 @@ const tools: HostTool[] = [
   },
 ];
 
-export const agent = pi({ model: 'anthropic/claude-sonnet-5.5', tools });
+export const agent = pi({ model: 'anthropic/claude-fable-5.2', tools });
 ```
 
 Your tools run in your function, with its environment variables, and the model writes their arguments. Before you write one, read [Your own tools](/docs/agent-harnesses/security#your-own-tools) on the Security page.
@@ -122,7 +122,7 @@ const registry = createRegistry();
 registry.install(CodingTools); // Pi's read, write, edit, and bash
 
 export { ctx };
-export const agent = { model: { provider: GATEWAY_PROVIDER, modelId: 'anthropic/claude-sonnet-5.5' } };
+export const agent = { model: { provider: GATEWAY_PROVIDER, modelId: 'anthropic/claude-fable-5.2' } };
 export const open = resumeWith((storage: Storage) =>
   Harness.open(storage, { models, registry, env: sandboxEnv() }, ctx),
 );
@@ -134,7 +134,7 @@ export const open = resumeWith((storage: Storage) =>
 import { sandbox } from 'durable-harness';
 import { createCodingTools, pi } from 'durable-harness/pi';
 
-export const agent = pi({ model: 'anthropic/claude-sonnet-5.5', tools: createCodingTools(sandbox()) });
+export const agent = pi({ model: 'anthropic/claude-fable-5.2', tools: createCodingTools(sandbox()) });
 ```
 
 #### fx
@@ -144,7 +144,7 @@ import { createFxAgent } from 'libfx';
 import { sandbox } from 'durable-harness';
 import { fxTools } from 'durable-harness/fx';
 
-export const agent = createFxAgent({ model: 'anthropic/claude-sonnet-5.5', tools: fxTools(sandbox()) });
+export const agent = createFxAgent({ model: 'anthropic/claude-fable-5.2', tools: fxTools(sandbox()) });
 ```
 
 #### OpenCode
@@ -168,7 +168,7 @@ For short tasks and small workspaces, `virtual()` keeps the files in the session
 import { virtual } from 'durable-harness';
 import { createCodingTools, pi } from 'durable-harness/pi'; // also install just-bash
 
-export const agent = pi({ model: 'anthropic/claude-sonnet-5.5', tools: createCodingTools(virtual()) });
+export const agent = pi({ model: 'anthropic/claude-fable-5.2', tools: createCodingTools(virtual()) });
 ```
 
 The agent gets Pi's `read`, `bash`, `edit`, and `write`, with Pi's names, input schemas, and descriptions, on `/workspace`. Add your own tools to the same array. `bash` runs [just-bash](https://www.npmjs.com/package/just-bash), a bash-compatible shell with coreutils, `grep`, `sed`, `awk`, and `jq`: its commands can't reach your function's files, processes, or environment, and it has no network and no real binaries such as `node` or `python`. Each call that changes files commits the change with its own result, so a crash in the middle of a call leaves nothing behind, and the call runs again. Small files are stored in the log, and larger ones as hash-checked blobs next to it.
@@ -185,7 +185,7 @@ For scratch work within a turn, `virtual({ durable: false })` gives the same too
 import { virtual } from 'durable-harness';
 import { createCodingTools, pi } from 'durable-harness/pi';
 
-export const agent = pi({ model: 'anthropic/claude-sonnet-5.5', tools: createCodingTools(virtual({ durable: false })) });
+export const agent = pi({ model: 'anthropic/claude-fable-5.2', tools: createCodingTools(virtual({ durable: false })) });
 ```
 
 ## Documents
@@ -268,7 +268,7 @@ import { pi } from 'durable-harness/pi';
 import { docTools } from 'durable-harness/tools';
 import { Todos } from './todos';
 
-export const agent = pi({ model: 'anthropic/claude-sonnet-5.5', tools: docTools([Todos]) }); // read_todos, update_todos
+export const agent = pi({ model: 'anthropic/claude-fable-5.2', tools: docTools([Todos]) }); // read_todos, update_todos
 ```
 
 With `durable-harness/pi`, `promptDocs: [Todos]` also puts the listed documents in the instructions of every model call.
@@ -279,6 +279,28 @@ With `durable-harness/pi`, `promptDocs: [Todos]` also puts the listed documents 
 - To change a document's shape, bump its `version` and give `migrate(value, fromVersion)`, which runs when an older document is read. A document stored at a newer version than your code's throws `DocVersionError`.
 - Documents work with `durable-harness/pi`, Claude Code, Codex, and OpenCode. `durable-harness/pi-durable` keeps Pi's own documents.
 
+## Frequently asked questions
+
+### What happens to an agent's tool call when its function crashes?
+
+A tool call that finished is read back from the session's log and never runs again. A call that a crash interrupted follows the tool's replay rule. Pi runs an interrupted `'safe'` tool again, and Claude Code, Codex, and OpenCode tell the model it's safe to repeat. An interrupted `'never'` tool never runs twice, and the model is told it may or may not have happened, so it can check before it tries again. See [What happens to a tool call after a crash](#what-happens-to-a-tool-call-after-a-crash).
+
+### Should I mark a tool `'safe'` or `'never'`?
+
+Mark read-only and repeatable tools `'safe'`, and mark tools with side effects, such as a refund or an email, `'never'`. With `durability: 'on'`, the default for `durable-harness/pi`, a `'safe'` call starts without waiting for the log, so replay-safe tools make turns faster. Claude Code, Codex, and OpenCode default to `durability: 'strict'`. Before a `'never'` call, every harness waits until the log records it. Also pass the system a `'never'` tool calls an idempotency key, so a call the model repeats doesn't repeat the effect.
+
+### Should my agent use a virtual workspace or a Vercel Sandbox?
+
+Use a virtual workspace for short tasks and small workspaces, and a [Vercel Sandbox](/docs/sandbox) for real projects and long-running work. A virtual workspace runs just-bash on files stored in the session's log, with no sandbox startup time. A Sandbox is a virtual machine for the session, with files on a [Drive](/docs/sandbox/concepts/drives), so it can install packages and run builds. Either way, commands never run on your function's disk or in its processes. See [Files](#files).
+
+### What are the limits of a virtual workspace?
+
+A virtual workspace holds about 500 files, and every write is an event in the session's log. Its `bash` is [just-bash](https://www.npmjs.com/package/just-bash), with coreutils, `grep`, `sed`, `awk`, and `jq`, but it has no network and no real binaries such as `node` or `python`. For work that needs those, such as installing packages or running a build, give the agent a Vercel Sandbox. See [A virtual workspace in the log](#a-virtual-workspace-in-the-log).
+
+### How do I keep state, such as a todo list, with an agent session?
+
+Use a document: typed JSON state that lives in the session's log. Define it with `defineDoc()`, edit it from a tool through `io.docs`, and read or edit it from your app through `agent.sessions`. A tool's edit commits with the tool's result, so the state always matches what the agent did, and you don't need a database of your own. A document holds at most 64 KB of JSON. Documents work with `durable-harness/pi`, Claude Code, Codex, and OpenCode. See [Documents](#documents).
+
 ## More resources
 
 - [Security](/docs/agent-harnesses/security)
@@ -286,6 +308,18 @@ With `durable-harness/pi`, `promptDocs: [Todos]` also puts the listed documents 
 - [Vercel Sandbox](/docs/sandbox)
 - [Drives](/docs/sandbox/concepts/drives)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

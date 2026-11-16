@@ -11,11 +11,13 @@ prerequisites:
 related:
   - /docs/sandbox
   - /docs/ai-gateway
+  - /docs/sandbox/concepts/multi-agent
 summary: Run a contract review in Vercel Sandbox with Box files and sync the review back to Box.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/ecosystem/box-mount.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "03da3023a974744be5dd49b0805f4dacaa88fd519eebf5f304701c9268deaa59"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "32b10ad54c7c5c9b2ab489e633e8950d2fed124cf38bd7755ac5b982c7398b59"
 ---
 
 # Box Mount
@@ -32,9 +34,10 @@ runs.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Box Mount now runs in Vercel Sandbox](https://vercel.com/changelog/box-mount-now-runs-in-vercel-sandbox)
-- [Vercel Sandbox](https://eve.dev/docs/sandbox/vercel) — Create persistent sandboxes on Vercel, from a prepared snapshot when the environment has build-time setup.
+- [Vercel Sandbox now supports FUSE-based filesystems](https://vercel.com/changelog/vercel-sandbox-now-supports-fuse-based-filesystems)
+- [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
 - [Mount remote storage](https://vercel.com/docs/sandbox/mount-remote-storage) — Mount an external object store such as Amazon S3 into a Vercel Sandbox with a FUSE driver, so code reads and writes remo
-- [Running commands in a Vercel Sandbox](https://vercel.com/docs/sandbox/run-commands-in-sandbox) — Create isolated sandbox environments to run builds, tests, and commands safely.
+- [Quickstart](https://vercel.com/docs/sandbox/quickstart) — Learn how to run your first code in a Vercel Sandbox.
 - [TanStack AI with Vercel Sandbox](https://vercel.com/docs/sandbox/ecosystem/tanstack-ai) — Run TanStack AI coding agents in isolated Vercel Sandbox microVMs with the dedicated provider, workspace configuration,
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
@@ -101,13 +104,26 @@ The example runs Box Mount and the agent as separate sandbox users. Box Mount
 holds the Box credentials; the agent can access the shared folder. Read the
 [implementation](https://github.com/vercel-labs/vercel-box-mount/blob/main/src/vercel.ts)
 and [Box's setup guide](https://developer.box.com/guides/box-mount) before
-adapting the mount to another workload.
+adapting the mount to another workload. The Python SDK supports the same
+[user isolation](/docs/sandbox/concepts/multi-agent).
 
 Box developer tokens expire after 60 minutes and cannot be refreshed. Box
 Mount also has [preview workload and file-save limits](https://developer.box.com/guides/box-mount/#known-limitations).
 Check those limits before using tools that replace files through an atomic
 rename.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

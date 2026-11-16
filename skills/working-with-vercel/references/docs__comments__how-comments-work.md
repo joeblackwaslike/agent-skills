@@ -14,9 +14,10 @@ related:
   - /docs/deployments/sharing-deployments
 summary: Learn when and where Comments are available, and how to enable and disable Comments at the account, project, and session or interface levels.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/comments/how-comments-work.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "99ce61e6b8742e81728c0479bf353fad3b81f693a1b02a8099a5d9a5d7e78d13"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b158461a598f31c17ce3f06cef1d50e86dc09cfa1d6d6b586bd9db42b44bbc95"
 ---
 
 # Enabling and Disabling Comments
@@ -32,12 +33,11 @@ Comments are enabled by default for all preview deployments on all new projects.
 - [Manage Vercel Toolbar comments from the CLI](https://vercel.com/changelog/manage-vercel-toolbar-comments-from-the-cli)
 - [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production)
 - [Introducing Commenting on Preview Deployments](https://vercel.com/blog/introducing-commenting-on-preview-deployments)
-- [Using Vercel comments to improve the Next.js 13 documentation](https://vercel.com/blog/using-vercel-comments-to-improve-the-next-js-13-documentation)
-- [Enhanced Preview experience](https://vercel.com/blog/making-live-reviews-a-reality-enhanced-preview-experience)
-- [Comments are now visible in your dashboard notifications](https://vercel.com/changelog/comments-are-now-visible-in-your-dashboard-notifications)
+- [Managing Comments on Preview Deployments](https://vercel.com/docs/comments/managing-comments) — Learn how to manage Comments on your Preview Deployments from Team members and invited collaborators.
+- [Using Comments with Preview Deployments](https://vercel.com/docs/comments/using-comments) — This guide will help you get started with using Comments with your Vercel Preview Deployments.
 - [Vercel Toolbar](https://vercel.com/docs/vercel-toolbar) — Learn how to use the Vercel Toolbar to leave feedback, navigate through important dashboard pages, share deployments, us
-- [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability
-- [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Commenting on Pull Requests from Vercel CI](https://vercel.com/docs/ci/guides/github-comments) — Post the deployment URL to the pull request for each commit from a Vercel CI task.
 
 Full cross-link map for this page: [/docs/comments/how-comments-work.graph.md](/docs/comments/how-comments-work.graph.md)
 <!-- /docsgraph:related -->
@@ -93,6 +93,18 @@ See [Managing the toolbar](/docs/vercel-toolbar/managing-toolbar) for more infor
 
 To learn how to share deployments with comments enabled, see the [Sharing Deployments](/docs/deployments/sharing-deployments) docs.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

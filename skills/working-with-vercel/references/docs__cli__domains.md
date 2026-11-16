@@ -12,9 +12,10 @@ related:
   - /docs/cli/global-options
 summary: Learn how to buy, transfer, and manage your domains using the vercel domains CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/domains.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "7bc8635e93489892043f6b12aa8597787cd2d23be898241ef83b5fa712fb134f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f2f3c4b2f5440a85d4d34175b4b5b0c461ebee1a8487070779114744d841cb27"
 ---
 
 # vercel domains
@@ -31,10 +32,10 @@ The `vercel domains` command manages domains under the current scope. With it, y
 - [Search domains without authentication](https://vercel.com/changelog/search-domains-without-authentication)
 - [Vercel CLI now supports verifying DNS configuration](https://vercel.com/changelog/vercel-cli-now-supports-verifying-dns-configuration)
 - [vercel buy](https://vercel.com/docs/cli/buy) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
+- [Working with domains](https://vercel.com/docs/domains/working-with-domains) — Learn how domains work and the options Vercel provides for managing them.
 - [vercel dns](https://vercel.com/docs/cli/dns) — Learn how to manage your DNS records for your domains using the vercel dns CLI command.
-- [vercel organizations](https://vercel.com/docs/cli/organizations) — Create and manage organizations and their child teams with the vercel organizations CLI command.
-- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel kms](https://vercel.com/docs/cli/kms) — Manage Vercel KMS issuers, rotate signing keys, and control which projects can sign tokens from the command line.
+- [Domains and DNS](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains) — Vercel MCP tools for domains and dns.
+- [Programmatic Domain Management](https://vercel.com/docs/domains/registrar-api) — Programmatically search, price, purchase, renew, and manage domains with Vercel's domains registrar API endpoints.
 
 Full cross-link map for this page: [/docs/cli/domains.graph.md](/docs/cli/domains.graph.md)
 <!-- /docsgraph:related -->
@@ -402,6 +403,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

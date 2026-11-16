@@ -15,18 +15,17 @@ related:
   - /docs/cli/blob
 summary: Vercel Blob is a scalable, cost-effective object storage service with private and public access modes for files up to 5 TB.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-blob.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "4612775e5d9e2837ac6014da1644d6c0457620844b849df7e74f1706b2804415"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2fb00a09f1b82abac7b4fb742c406a27b1c08b260870f330af8927e501d25ff9"
 ---
 
 # Vercel Blob
 
-> Vercel Blob is available on all plans
->
-> Those with the owner, member, developer role can access this feature
+## Store and serve files with Vercel Blob
 
-[Vercel Blob](/storage/blob) is Vercel's object storage for files. Use it to store images, videos, documents, and other files your app uploads or serves. Each store lives in [one region that you choose](#choosing-your-blob-store-region), and Vercel's [CDN](/docs/cdn) [caches your files](#caching) close to your users, leveraging Vercel CDN network infrastructure. Stores are private or public, and you can store files up to 5 TB.
+Upload images, videos, documents, and other files up to 5 TB. Keep them private behind your own authentication, or serve them publicly by URL.
 
 
 <!-- docsgraph:related -->
@@ -35,6 +34,8 @@ sha256: "4612775e5d9e2837ac6014da1644d6c0457620844b849df7e74f1706b2804415"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
+- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
+- [Vercel Blob is now generally available: Cost-efficient, durable storage](https://vercel.com/blog/vercel-blob-now-generally-available)
 - [How to use and optimize videos](https://nextjs.org/docs/app/guides/videos) — Recommendations and best practices for optimizing videos in your Next.js application.
 - [Databases](https://v0.app/docs/databases) — Build full-stack applications with v0's database integrations.
 - [Amazon S3 joins the Vercel Marketplace](https://vercel.com/changelog/amazon-s3-joins-the-vercel-marketplace)
@@ -44,11 +45,89 @@ sha256: "4612775e5d9e2837ac6014da1644d6c0457620844b849df7e74f1706b2804415"
 - [Unlimited Vercel Blob stores on every plan](https://vercel.com/changelog/unlimited-vercel-blob-stores-on-every-plan)
 - [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
-- [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
-- [What are the best practices for hosting videos on Vercel?](https://vercel.com/kb/guide/best-practices-for-hosting-videos-on-vercel-nextjs-mp4-gif) — Learn the ideal solutions for using video files like .mp4 and .gif on Vercel to prevent excess bandwidth consumption.
 
 Full cross-link map for this page: [/docs/vercel-blob.graph.md](/docs/vercel-blob.graph.md)
 <!-- /docsgraph:related -->
+
+#### Upload a file
+
+**index.ts**
+
+```ts filename="index.ts"
+import { put } from '@vercel/blob';
+
+const blob = await put('notes/q3.txt', 'Q3 notes', {
+  access: 'private',
+});
+console.log(blob.url);
+```
+
+**main.py**
+
+```py filename="main.py"
+from vercel import blob
+
+uploaded = await blob.put_blob(
+    "notes/q3.txt", b"Q3 notes", access="private"
+)
+print(uploaded.url)
+```
+
+#### Read a file
+
+**index.ts**
+
+```ts filename="index.ts"
+import { get } from '@vercel/blob';
+
+const file = await get('notes/q3.txt', {
+  access: 'private',
+});
+console.log(await new Response(file?.stream).text());
+```
+
+**main.py**
+
+```py filename="main.py"
+from vercel import blob
+
+file = await blob.get_blob(
+    "notes/q3.txt", access="private"
+)
+print(file.body.decode())
+```
+
+#### List files
+
+**index.ts**
+
+```ts filename="index.ts"
+import { list } from '@vercel/blob';
+
+const { blobs } = await list({ prefix: 'notes/' });
+for (const blob of blobs) {
+  console.log(blob.pathname, blob.size);
+}
+```
+
+**main.py**
+
+```py filename="main.py"
+from vercel import blob
+
+notes = blob.query_blobs(prefix="notes/")
+
+async for item in notes:
+    print(item.pathname, item.size)
+```
+
+> Vercel Blob is available on all plans
+>
+> Those with the owner, member, developer role can access this feature
+
+[Vercel Blob](/storage/blob) is Vercel's object storage for files. Use it to store images, videos, documents, and other files your app uploads or serves. Each store lives in [one region that you choose](#choosing-your-blob-store-region), and Vercel's [CDN](/docs/cdn) [caches your files](#caching) close to your users, leveraging Vercel CDN network infrastructure. Stores are private or public, and you can store files up to 5 TB.
+
+The examples above use a private store that's [connected to your project](#connecting-a-store-to-your-projects). For a public store, set `access` to `public`.
 
 ## Use cases
 
@@ -378,6 +457,7 @@ Advanced operations in Vercel Blob are write, copy, and listing actions counted 
 - When you upload a blob from the browser with a [client upload](/docs/vercel-blob/client-upload)
 - When you copy an existing blob
 - When you list blobs in your store
+- When you set a TTL on a blob with `ttlDays` or `setTtl()`: one extra operation per started 60 days of TTL, on top of the write itself. `setTtl()` is billed only that TTL charge. See [Expire blobs automatically](/docs/vercel-blob/using-blob-sdk#expire-blobs-automatically)
 
 ### Dashboard usage counts as operations
 
@@ -568,6 +648,18 @@ For complex sorting, sort results client-side using the upload time or other pro
 - [Vercel Blob Examples](/docs/vercel-blob/examples)
 - [Observability](/docs/observability)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

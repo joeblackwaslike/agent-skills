@@ -14,9 +14,10 @@ related:
   - /docs/audit-log
 summary: Learn how to configure AWS IAM and Amazon S3 so Vercel can write Audit Log Drain events to your S3 bucket.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/drains/audit-logs-to-s3.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "de251bb1c83e0ebbc9f25a1599a9659e6ed23a0838e73b587477a93530e5127d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7b18cc943d82e36aeeed48503b3ebe9b0a8d618c22d280f34689dcfa13a2565a"
 ---
 
 # Drain Audit Logs to S3
@@ -32,13 +33,11 @@ Audit Log Drains can write team activity events directly to your Amazon S3 bucke
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Expanded Audit Log coverage, now delivered through Vercel Drains](https://vercel.com/changelog/expanded-audit-log-coverage-now-delivered-through-vercel-drains)
-- [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains)
-- [Audit Log Drains now support Datadog, Splunk, and Panther](https://vercel.com/changelog/audit-log-drains-now-support-datadog-splunk-and-panther)
 - [Migrating from Custom SIEM Log Streaming to Audit Log Drains](https://vercel.com/docs/audit-log/migrating-to-drains) — Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event
 - [Drain Audit Logs to Datadog](https://vercel.com/docs/drains/audit-logs-to-datadog) — Learn how to forward Vercel Audit Log Drain events to Datadog using the Datadog Logs API.
-- [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
-- [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics) — Learn about Web Analytics Drains - data formats and custom events configuration.
-- [Validate Drain delivery configuration](https://vercel.com/docs/rest-api/drains/validate-drain-delivery-configuration) — POST /v1/drains/test — Validate the delivery configuration of a Drain using sample events.
+- [vercel drains](https://vercel.com/docs/cli/drains) — List, inspect, create, update, pause, resume, and delete Vercel Drains from your terminal.
+- [Drain Audit Logs to Splunk](https://vercel.com/docs/drains/audit-logs-to-splunk) — Learn how to forward Vercel Audit Log Drain events to Splunk using the HTTP Event Collector \\(HEC\\).
+- [Drains Security](https://vercel.com/docs/drains/security) — Learn how to secure your Drains endpoints with authentication and signature verification.
 
 Full cross-link map for this page: [/docs/drains/audit-logs-to-s3.graph.md](/docs/drains/audit-logs-to-s3.graph.md)
 <!-- /docsgraph:related -->
@@ -54,12 +53,13 @@ Before you configure the drain, make sure you have:
 - Access to create or update an S3 bucket, IAM role, and IAM policy
 - Access to view the S3 bucket default encryption and Object Ownership settings
 - Access to update the AWS Key Management Service (AWS KMS) key policy if your bucket uses a customer managed AWS KMS key
+- The full KMS key ARN, if the bucket uses SSE-KMS or DSSE-KMS with a customer managed key
 - An S3 bucket and optional prefix for audit log objects
 - The AWS region where the bucket is located
 - Your [Vercel team ID](/docs/accounts#find-your-team-id)
 - The Vercel S3 drain writer role ARN: `arn:aws:iam::977805900156:role/vercel-drains-s3-writer`
 
-The S3 bucket and IAM role must be in the same AWS account.
+The S3 bucket and IAM role must be in the same AWS account. The KMS key can be in another AWS account.
 
 - ### Create an IAM role
   Create an IAM role in the same AWS account as the bucket. In AWS IAM, select **Custom trust policy** as the trusted entity type.
@@ -108,11 +108,11 @@ The S3 bucket and IAM role must be in the same AWS account.
   | `s3://<bucket-name>`           | `arn:aws:s3:::<bucket-name>/*`             |
   | `s3://<bucket-name>/audit-logs` | `arn:aws:s3:::<bucket-name>/audit-logs/*`  |
 
-  Test deliveries write objects under `test/`. If the `endpoint` is `s3://<bucket-name>`, your IAM role must allow `s3:PutObject` on `arn:aws:s3:::<bucket-name>/*` so test and production objects can be written.
+  Test deliveries write objects under `_test/`. If the `endpoint` is `s3://<bucket-name>`, your IAM role must allow `s3:PutObject` on `arn:aws:s3:::<bucket-name>/*` so test and production objects can be written.
 
   If you set **Object ACL** in Vercel, add `s3:PutObjectAcl` to the same S3 statement. Amazon S3 requires `s3:PutObjectAcl` when a `PutObject` request includes an ACL header.
   #### S3 or AWS managed key
-  Use this option when the bucket uses SSE-S3, or SSE-KMS with the AWS managed `aws/s3` key.
+  Use this option when the bucket uses SSE-S3, or SSE-KMS with the AWS managed `aws/s3` key. For SSE-KMS with `aws/s3`, leave **KMS key ARN** empty.
 
   The following example allows writes to `s3://<bucket-name>/audit-logs`:
   ```jsonc
@@ -133,9 +133,9 @@ The S3 bucket and IAM role must be in the same AWS account.
   }
   ```
   #### Customer managed KMS key
-  Use this option when the bucket uses SSE-KMS or DSSE-KMS with an AWS KMS key that you manage. This includes buckets whose default encryption uses a customer managed AWS KMS key.
+  Use this option when the bucket uses SSE-KMS or DSSE-KMS with an AWS KMS key that you manage. This includes buckets whose default encryption uses a customer managed AWS KMS key. Set `kmsKeyId` to that key's full ARN. Without `kmsKeyId`, S3 encrypts objects with the AWS managed `aws/s3` key, not the bucket default key.
 
-  The identity-based IAM policy must allow `s3:PutObject` on the destination path and `kms:GenerateDataKey` for the customer managed key through S3 in the bucket region.
+  The identity-based IAM policy must allow `s3:PutObject` on the destination path and `kms:GenerateDataKey` on the KMS key ARN. `kms:CallerAccount` is the account in `roleArn`, not the account in the key ARN. The key can be in another AWS account.
 
   The following example allows writes to `s3://<bucket-name>/audit-logs` with a customer managed AWS KMS key in `<aws-region>`:
   ```jsonc
@@ -156,10 +156,10 @@ The S3 bucket and IAM role must be in the same AWS account.
         "Sid": "AllowKmsForS3Writes",
         "Effect": "Allow",
         "Action": "kms:GenerateDataKey",
-        "Resource": "arn:aws:kms:<aws-region>:<your-aws-account-id>:key/<your-kms-key-id>",
+        "Resource": "arn:aws:kms:<aws-region>:<key-account-id>:key/<kms-key-id>",
         "Condition": {
           "StringEquals": {
-            "kms:CallerAccount": "<your-aws-account-id>",
+            "kms:CallerAccount": "<role-account-id>",
             "kms:ViaService": "s3.<aws-region>.amazonaws.com"
           }
         }
@@ -167,7 +167,7 @@ The S3 bucket and IAM role must be in the same AWS account.
     ]
   }
   ```
-  The AWS KMS key policy must also allow the same IAM role that you use as `roleArn` in Vercel. Add this statement to the AWS KMS key policy and keep your existing key administration statements:
+  Add this statement to the key policy for the key in `kmsKeyId`. Edit that policy in the AWS account that owns the key. That account can differ from the bucket account. `kms:CallerAccount` stays the account in `roleArn`. Keep your existing key administration statements:
   ```json
   {
     "Sid": "AllowVercelDrainRoleToUseKeyViaS3",
@@ -179,7 +179,7 @@ The S3 bucket and IAM role must be in the same AWS account.
     "Resource": "*",
     "Condition": {
       "StringEquals": {
-        "kms:CallerAccount": "<your-aws-account-id>",
+        "kms:CallerAccount": "<role-account-id>",
         "kms:ViaService": "s3.<aws-region>.amazonaws.com"
       }
     }
@@ -190,7 +190,7 @@ The S3 bucket and IAM role must be in the same AWS account.
 - ### Configure the drain in Vercel
   In Vercel, create an Audit Log drain and choose **S3 Bucket** as the destination.
 
-  Enter `endpoint`, `encoding`, `roleArn`, and `region`. Leave **Advanced Options** off unless your bucket configuration requires extra S3 headers. Set **Encryption** only when the bucket default encryption is SSE-KMS or DSSE-KMS. Set **Object ACL** only when the bucket requires a canned ACL for object uploads. See [Advanced options](#advanced-options).
+  Enter `endpoint`, `encoding`, `roleArn`, and `region`. Keep **Compression** set to `none` unless you want gzip objects. See [Compression](#compression). Leave **Advanced Options** off unless your bucket configuration requires extra S3 headers. Set **Encryption** only when the bucket default encryption is SSE-KMS or DSSE-KMS. For SSE-KMS or DSSE-KMS with a customer managed key, enter the full key ARN in **KMS key ARN**. Without it, S3 encrypts with the AWS managed `aws/s3` key, not the bucket default key. Set **Object ACL** only when the bucket requires a canned ACL for object uploads. See [Advanced options](#advanced-options).
 
 - ### Test the drain
   Run a test delivery from the Drains page to verify the IAM role, external ID, region, and object write permissions.
@@ -209,9 +209,11 @@ The S3 destination setup accepts the following values. Advanced options are opti
 | ---------------------- | ------------------------------------------------ | ------------------------------------------------------------- |
 | `endpoint`             | S3 bucket path where Vercel writes audit logs    | `s3://<bucket-name>/audit-logs`                               |
 | `encoding`             | Object body format                               | `json` or `ndjson`                                            |
+| `compression`          | Object compression                               | `none` or `gzip`                                              |
 | `roleArn`              | IAM role ARN Vercel assumes to write objects     | `arn:aws:iam::<your-aws-account-id>:role/vercel-drain-writer` |
 | `region`               | AWS region where the S3 bucket is located        | `<aws-region>`                                                |
 | `serverSideEncryption` | Advanced option for SSE-KMS or DSSE-KMS buckets  | `aws:kms` or `aws:kms:dsse`                                   |
+| `kmsKeyId`             | Full KMS key ARN for SSE-KMS or DSSE-KMS         | `arn:aws:kms:<aws-region>:<key-account-id>:key/<kms-key-id>`  |
 | `objectAcl`            | Advanced option for buckets that require an ACL  | `bucket-owner-full-control`                                   |
 
 ### Endpoint and region
@@ -231,6 +233,14 @@ Set `region` to the AWS region where the bucket is located. Vercel writes all Au
 
 Choose `json` to write each audit log event as a JSON object. Choose `ndjson` to write each audit log event as a newline-delimited JSON object.
 
+### Compression
+
+Audit Log drains use `none` by default. Vercel writes uncompressed objects.
+
+Choose `gzip` to write gzip-compressed objects. Vercel adds `.gz` to the object key and sets `Content-Encoding: gzip` on the object.
+
+If you change `compression` on an existing drain, new object keys change. Update S3 event notifications, lifecycle rules, and other tools that filter on `.json` or `.jsonl`.
+
 ## File structure
 
 S3 object bodies use the [Audit Log Drains schema](/docs/drains/reference/audit-logs#audit-log-schema).
@@ -248,12 +258,16 @@ audit-logs/schema=audit_log/version=v1/year=YYYY/month=MM/day=DD/{timestamp}_{id
 Test objects use this key shape:
 
 ```txt
-audit-logs/test/schema=audit_log/version=v1/year=YYYY/month=MM/day=DD/{timestamp}_{id}.json
+audit-logs/_test/schema=audit_log/version=v1/year=YYYY/month=MM/day=DD/{timestamp}_{id}.json
 ```
 
-Test deliveries use a separate `test/` directory so validation files stay separate from delivered audit log events. You can identify and delete test files without changing the production `endpoint` or IAM permissions.
+Test deliveries use a separate `_test/` directory so validation files stay separate from delivered audit log events. You can identify and delete test files without changing the production `endpoint` or IAM permissions.
 
-`year`, `month`, `day`, and `{timestamp}` are UTC values from the event timestamp. `{id}` is the audit log event ID. NDJSON objects use the `.jsonl` extension.
+Amazon Athena, Apache Hive, Trino, and Apache Spark skip directories that start with an underscore when they read a table location. A table located at the `endpoint` path doesn't return test objects in these query engines. AWS doesn't document this behavior for AWS Glue crawlers. If an AWS Glue crawler includes the `endpoint` path, add the exclude pattern `_test/**` to the crawler.
+
+Test deliveries previously wrote objects under `test/`. Vercel can't delete objects in your bucket, so delete the `test/` directory when you no longer need it. If an IAM policy or S3 lifecycle rule names `test/`, update it to `_test/`.
+
+`year`, `month`, `day`, and `{timestamp}` are UTC values from the event timestamp. `{id}` is the audit log event ID. NDJSON objects use the `.jsonl` extension. With `compression` set to `gzip`, keys end in `.json.gz` or `.jsonl.gz`.
 
 ## Advanced options
 
@@ -273,7 +287,7 @@ Choose the `serverSideEncryption` value that matches the bucket default encrypti
 | Server-side encryption with AWS KMS keys (SSE-KMS)        | `aws:kms`                     |
 | Dual-layer server-side encryption with AWS KMS keys (DSSE-KMS) | `aws:kms:dsse`             |
 
-For SSE-KMS and DSSE-KMS, Vercel does not ask for an AWS KMS key ID. Configure the AWS KMS key as the bucket default encryption key in AWS, then choose the matching `serverSideEncryption` value in Vercel. Add AWS KMS permissions only when the bucket uses a customer managed AWS KMS key.
+For SSE-KMS or DSSE-KMS with a customer managed key, set `kmsKeyId` to the full KMS key ARN, such as `arn:aws:kms:<aws-region>:<key-account-id>:key/1234abcd-12ab-34cd-56ef-1234567890ab`. The key ID at the end of the ARN is either a UUID or a multi-Region key ID that starts with `mrk-`. Alias ARNs (`alias/<alias-name>`) and bare key IDs aren't accepted. Match the key region to `region`, and match the key partition to `roleArn`. The key account can differ from the role account. Without `kmsKeyId`, S3 encrypts objects with the AWS managed `aws/s3` key, not the bucket default key. Add the IAM and key policy permissions above when the key is customer managed.
 
 S3 Bucket Keys are not supported for DSSE-KMS. DSSE-KMS can also increase AWS KMS request costs compared to SSE-KMS.
 
@@ -289,9 +303,15 @@ If the drain test fails with an STS error, check that your IAM role trust policy
 
 If the drain test fails with an S3 `AccessDenied` error that says no identity-based policy allows `s3:PutObject`, check that the S3 permissions policy is attached to the same IAM role used as `roleArn` in Vercel. Also check that the policy resource matches the configured `endpoint`.
 
-If the drain test fails for an `endpoint` without a prefix, such as `s3://<bucket-name>`, check that the S3 permissions policy allows `arn:aws:s3:::<bucket-name>/*`. Test deliveries write under `test/`, so policies scoped only to another prefix won't match test objects.
+If the drain test fails for an `endpoint` without a prefix, such as `s3://<bucket-name>`, check that the S3 permissions policy allows `arn:aws:s3:::<bucket-name>/*`. Test deliveries write under `_test/`, so policies scoped only to another prefix won't match test objects.
 
-If the drain test fails with an AWS KMS error for a customer managed AWS KMS key, check both the IAM role policy and the AWS KMS key policy. Both policies must allow your IAM role to use `kms:GenerateDataKey` through S3 in the bucket region.
+If objects are encrypted with the AWS managed `aws/s3` key, set `kmsKeyId`. S3 uses `aws/s3` when the drain sends SSE-KMS or DSSE-KMS without a key ARN. S3 does not use the bucket default key in that case.
+
+If saving or testing the drain fails with `S3 delivery KMS key ID requires aws:kms or aws:kms:dsse encryption`, set **Encryption** to SSE-KMS or DSSE-KMS. Vercel treats a `kmsKeyId` sent without `serverSideEncryption` as SSE-S3, which doesn't use a KMS key.
+
+If saving or testing the drain fails with `Invalid S3 delivery KMS key ID`, check that `kmsKeyId` is a full KMS key ARN with a UUID or `mrk-` key ID. Also check that the key region matches `region` and the key partition matches `roleArn`.
+
+If the drain test fails with an AWS KMS error for a customer managed AWS KMS key, check `kmsKeyId`, the IAM role policy, and the key policy. `Resource` in the IAM policy must be the key ARN. `kms:CallerAccount` must be the role account. If the key is in another account, add the key policy statement in that account.
 
 ## More resources
 
@@ -299,6 +319,18 @@ If the drain test fails with an AWS KMS error for a customer managed AWS KMS key
 - [Configure Drains](/docs/drains/using-drains)
 - [Audit Logs](/docs/audit-log)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/background-workers
 summary: Publish agent events and background work to durable topics with independent consumers, automatic retries, and at-least-once delivery.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/queues.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "4e14a8504e2f20576c68bff5c95ba9b005a8727a30b8091b28af1cdd9b3ac651"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "32e55beb502ceb133ed3f437916de8613e47a5e39e0961a421f184b0389854e7"
 ---
 
 # Vercel Queues
@@ -33,10 +34,10 @@ Send messages for agent events and background work to durable topics, then proce
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta)
+- [Vercel Queues is now in Limited Beta](https://vercel.com/changelog/vercel-queues-is-now-in-limited-beta)
 - [Build with OpenAI Agents API on Vercel](https://vercel.com/changelog/build-with-openai-agents-api-on-vercel)
 - [Vercel Queues now supports 7-day message TTL](https://vercel.com/changelog/queues-now-supports-7-day-ttl)
 - [Run background tasks with Celery on Vercel](https://vercel.com/changelog/run-background-tasks-with-celery-on-vercel)
-- [Vercel Daemons is now in public beta](https://vercel.com/changelog/vercel-daemons-is-now-in-public-beta)
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
 - [Building an AI chat app with RAG and source citations on Vercel](https://vercel.com/kb/guide/building-ai-chat-app-with-rag-and-citations-on-vercel) — A production stack for AI chat with retrieval, reranking, source citations, and background ingestion on Vercel using Nex
@@ -141,6 +142,18 @@ To choose how jobs start and where they execute, compare [background worker opti
 
 **Vercel Workflows**: Build durable multi-step workflows on top of Queues. [Learn more →](/docs/workflows)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

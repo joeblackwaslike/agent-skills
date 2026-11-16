@@ -4,8 +4,8 @@ description: API Reference for the DirectChatTransport class.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/direct-chat-transport"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/direct-chat-transport.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "50115a5e8c90c17041e7e942db9341974174452754762f19ab88614f0d965afd"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "4a691b2bff335fa9dcfb93c84d7ba44478628496b60f6f0ae56ef85fb96982cf"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -57,7 +57,8 @@ import { DirectChatTransport } from "ai"
 - `sendSources?` (`boolean`): Send source parts to the client. Defaults to false.
 - `sendFinish?` (`boolean`): Send the finish event to the client. Set to false if you are using additional streamText calls that send additional data. Defaults to true.
 - `sendStart?` (`boolean`): Send the message start event to the client. Set to false if you are using additional streamText calls and the message start event has already been sent. Defaults to true.
-- `onError?` (`(error: unknown) => string`): Process an error, e.g. to log it. Defaults to \`() => 'An error occurred.'\`. Return the error message to include in the data stream.
+- `onError?` (`(error: unknown) => string`): Process an error, e.g. to log it. Defaults to \`() => 'An error occurred.'\`. Return the error message to include in the data stream. Handles stream errors. Also handles failed tool calls (tool execution errors and invalid tool calls) when \`redactToolErrors\` is enabled, which is the default when this callback is provided.
+- `redactToolErrors?` (`boolean`): Replace the error text of failed tool calls (tool execution errors and invalid tool calls) with the result of onError. By default, the client receives the same error text as the model, because the UI messages are sent back to the model on the next request and a different text changes the message history. Defaults to true when onError is provided, and to false otherwise.
 
 ## Methods
 

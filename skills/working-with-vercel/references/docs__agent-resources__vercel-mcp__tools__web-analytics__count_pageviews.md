@@ -12,9 +12,10 @@ related:
   - /docs/analytics
 summary: Use count_pageviews with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/count_pageviews.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5fba1c6210afbba35d8519c4af95dc3b4728e42e7daedc277152431ed937e88c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "dc0523009eac1387f90b4659a496a49373353540042e717384fe99c7bcaadae6"
 ---
 
 # count_pageviews
@@ -31,7 +32,7 @@ Counts page views.
 - [count_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/count_events) — Use count_events with Vercel MCP.
 - [Counts page views](https://vercel.com/docs/rest-api/web-analytics/counts-page-views) — GET /v1/query/web-analytics/visits/count — Counts the number of page views on a project \\(production only\\), since Web A
 - [get_web_analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/get_web_analytics) — Use get_web_analytics with Vercel MCP.
-- [aggregate_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/aggregate_events) — Use aggregate_events with Vercel MCP.
+- [Counts custom events](https://vercel.com/docs/rest-api/web-analytics/counts-custom-events) — GET /v1/query/web-analytics/events/count — Counts the number of custom events on a project \\(production only\\), since We
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/web-analytics/count_pageviews.graph.md](/docs/agent-resources/vercel-mcp/tools/web-analytics/count_pageviews.graph.md)
 <!-- /docsgraph:related -->
@@ -49,6 +50,18 @@ Enable [Web Analytics](/docs/analytics) for your project before querying its dat
 | `teamId`    | string           | No       | Team ID to use for this operation.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | `slug`      | string           | No       | Team slug to use for this operation. Use instead of teamId.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -12,9 +12,10 @@ related:
   []
 summary: Use update_edge_config with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/update_edge_config.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "2d814c288f601368a7b870e1f348ba69c4d2f4ba800e3347a5b5590553501a49"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c8b918819be6217170c28d7973f536dfb69c5e5075f339f8d797106977a39576"
 ---
 
 # update_edge_config
@@ -30,8 +31,8 @@ Updates a Global Config.
 - [create_edge_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/create_edge_config) — Use create_edge_config with Vercel MCP.
 - [get_edge_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config) — Use get_edge_config with Vercel MCP.
 - [patch_edge_config_items](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/patch_edge_config_items) — Use patch_edge_config_items with Vercel MCP.
-- [create_edge_config_token](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/create_edge_config_token) — Use create_edge_config_token with Vercel MCP.
 - [get_edge_config_items](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config_items) — Use get_edge_config_items with Vercel MCP.
+- [get_edge_configs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_configs) — Use get_edge_configs with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/global-config/update_edge_config.graph.md](/docs/agent-resources/vercel-mcp/tools/global-config/update_edge_config.graph.md)
 <!-- /docsgraph:related -->
@@ -45,6 +46,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/globa
 | `slug`         | string | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody`  | object | Yes      | Request body for this tool.                                 |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

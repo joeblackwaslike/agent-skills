@@ -14,9 +14,10 @@ related:
   - /docs/agent
 summary: Use Vercel Agent from your dashboard or Slack
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent/chat.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b05c1c393e455b559160cbb8a5408df10e16c32c57216a2be13a6dc50cd7449d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "fe1a94eb64d3fa65cf915cc1998200690f63d836513531f059398187d811d6d4"
 ---
 
 # Chat
@@ -49,6 +50,18 @@ Chat requests can include conversation context, project and team data, and files
 
 For information about stored content, staff review, product improvement, retention, and deletion, see the [Vercel Agent privacy and data-use guidance](/docs/agent#pricing-and-privacy).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

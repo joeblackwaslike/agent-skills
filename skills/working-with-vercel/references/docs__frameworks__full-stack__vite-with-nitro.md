@@ -3,7 +3,7 @@ title: Vite + Nitro on Vercel
 product: vercel
 url: /docs/frameworks/full-stack/vite-with-nitro
 canonical_url: "https://vercel.com/docs/frameworks/full-stack/vite-with-nitro"
-last_updated: 2026-08-11
+last_updated: 2026-11-14
 type: conceptual
 prerequisites:
   - /docs/frameworks/full-stack
@@ -12,13 +12,14 @@ related:
   - /docs/frameworks/full-stack/nuxt
   - /docs/functions
   - /docs/fluid-compute
+  - /docs/deployments/deploy-without-logging-in
   - /docs/incremental-static-regeneration
-  - /docs/cdn
 summary: Add a backend to any Vite app with Nitro and deploy to Vercel with zero configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/full-stack/vite-with-nitro.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "5fb2b870f42c83ed06eca464470d904af79dfd57eb5ec45fe46e9aa6742c0515"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4fbeb587668811f0f6649f2c45bac1e79359519c9cd04fdf10dc8069b57221f6"
 ---
 
 # Vite + Nitro on Vercel
@@ -36,8 +37,11 @@ sha256: "5fb2b870f42c83ed06eca464470d904af79dfd57eb5ec45fe46e9aa6742c0515"
 - [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
 - [Build with a Nitro starter template](https://vercel.com/kb/guide/build-with-a-nitro-starter-template) — Deploy a Nitro app to Vercel from a starter template. Compare the Nitro Starter, route rules, cached HTTP handler, plugi
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
-- [Improved support for Nuxt on Vercel](https://vercel.com/blog/nuxt-on-vercel)
+- [Nitro on Vercel](https://vercel.com/docs/frameworks/backend/nitro) — Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurat
+- [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
+- [Chat SDK with Nitro](https://vercel.com/docs/chat-sdk/frameworks/nitro) — Add a Chat SDK bot to Nitro, receive Slack events through Vercel Connect, and deploy on Vercel.
+- [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
 
 Full cross-link map for this page: [/docs/frameworks/full-stack/vite-with-nitro.graph.md](/docs/frameworks/full-stack/vite-with-nitro.graph.md)
 <!-- /docsgraph:related -->
@@ -86,6 +90,16 @@ export default defineConfig({
   plugins: [nitro()],
 });
 ```
+
+## Deploy without an account
+
+To deploy your Vite and Nitro project without an account or login, run this command in the project root:
+
+```bash filename="terminal"
+vercel deploy --temporary
+```
+
+The CLI builds the project, deploys it to production, and prints a claim URL. Claim the project to keep it live. See [Deploying without logging in](/docs/deployments/deploy-without-logging-in).
 
 ## Adding API routes
 
@@ -824,6 +838,18 @@ Learn more about deploying Vite + Nitro projects on Vercel:
 - [Vite documentation](https://vitejs.dev)
 - [Nitro examples](https://nitro.build/examples)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

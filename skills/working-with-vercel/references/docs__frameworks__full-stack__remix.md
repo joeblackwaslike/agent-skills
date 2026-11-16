@@ -3,22 +3,23 @@ title: Remix on Vercel
 product: vercel
 url: /docs/frameworks/full-stack/remix
 canonical_url: "https://vercel.com/docs/frameworks/full-stack/remix"
-last_updated: 2026-09-16
+last_updated: 2026-11-14
 type: conceptual
 prerequisites:
   - /docs/frameworks/full-stack
   - /docs/frameworks
 related:
   - /docs/cli
+  - /docs/deployments/deploy-without-logging-in
   - /docs/functions/streaming-functions
   - /docs/cdn
   - /docs/cdn-cache
-  - /docs/analytics
 summary: Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/full-stack/remix.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "39ea8ee2dfd4e262e70c0c166ae54ab28bdb2f467563aa0a19ccb06f7e14ddd7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3470e2efb60b227271e6f9cb2a4bdc679b4df2620e6878989e8be219836dcff5"
 ---
 
 # Remix on Vercel
@@ -38,9 +39,9 @@ Remix is a fullstack, [server-rendered](#server-side-rendering-ssr) React framew
 - [Advanced Remix integration with streaming SSR and multi-runtime support](https://vercel.com/changelog/advanced-remix-integration-with-streaming-ssr-and-multi-runtime-support)
 - [How to ship an Elysia app on Vercel](https://vercel.com/kb/guide/ship-a-elysia-app-on-vercel) — Deploy a Elysia app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and co
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
+- [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
 - [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
 - [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability
-- [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
 - [Vite on Vercel](https://vercel.com/docs/frameworks/frontend/vite) — Deploy Vite projects to Vercel and configure environment variables, Vercel Functions, server-side rendering, and SPA rew
 
 Full cross-link map for this page: [/docs/frameworks/full-stack/remix.graph.md](/docs/frameworks/full-stack/remix.graph.md)
@@ -62,6 +63,16 @@ To get started with Remix on Vercel:
 \- Or, choose a template from Vercel's marketplace:
 
 Vercel deployments can \[integrate with your git provider]\(/docs/git) to \[generate preview URLs]\(/docs/deployments/environments#preview-environment-pre-production) for each pull request you make to your Remix project.
+
+## Deploy without an account
+
+To deploy an existing Remix project without an account or login, run this command in the project root:
+
+```bash filename="terminal"
+vercel deploy --temporary
+```
+
+The CLI builds the project, deploys it to production, and prints a claim URL. Claim the project to keep it live. See [Deploying without logging in](/docs/deployments/deploy-without-logging-in).
 
 ## `@vercel/remix`
 
@@ -478,6 +489,18 @@ Learn more about deploying Remix projects on Vercel with the following resources
 - [Deploy our Product Roadmap template](/templates/remix/roadmap-voting-app-rowy)
 - [Explore the Remix docs](https://remix.run/docs/en/main)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

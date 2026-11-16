@@ -14,9 +14,10 @@ related:
   - /docs/ai-gateway/faq
 summary: Learn how AI Gateway rate limits work on the free and paid tiers, what the 429 response looks like, and how to retry a rate-limited request.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/rate-limits.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "50a36b362ffa87ab1385df1650a2001b71d7d4a55291257443524908d9b9e519"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "fe7abc257f7c267085fbb22164472b77bf8f071903e188560e7beb1b3a5ceacd"
 ---
 
 # AI Gateway Rate Limits
@@ -29,13 +30,11 @@ AI Gateway does not rate limit paid-tier requests. The free tier applies lower p
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available)
-- [Securing your AI applications with Rate Limiting](https://vercel.com/kb/guide/securing-ai-app-rate-limiting) — Learn how to secure your AI applications with rate limiting using Vercel WAF and Vercel AI SDK
-- [AI Gateway Discounts](https://vercel.com/docs/ai-gateway/pricing/discounts) — Discounts on AI Gateway token spend: models already priced below list for every team, plus custom volume discounts with
-- [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
-- [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
 - [AI Gateway Model Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist) — Restrict which AI models your team can use through AI Gateway. Available on Pro and Enterprise.
-- [Vercel Connect Limits](https://vercel.com/docs/connect/limits) — Platform limits and per-minute rate limits for Vercel Connect SDK methods, CLI commands, and public endpoints.
+- [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
+- [List AI Gateway budgets](https://vercel.com/docs/rest-api/ai-gateway/list-ai-gateway-budgets) — GET /ai-gateway/budgets/list — List the team's AI Gateway budgets \\(team/project/user scopes, plus default-covered api-k
+- [Update an AI Gateway API key budget](https://vercel.com/docs/rest-api/ai-gateway/update-an-ai-gateway-api-key-budget) — PATCH /api-keys/{apiKeyID}/quota — Set, change, or remove the AI Gateway budget on an API key. Creates the budget if the
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 
 Full cross-link map for this page: [/docs/ai-gateway/rate-limits.graph.md](/docs/ai-gateway/rate-limits.graph.md)
 <!-- /docsgraph:related -->
@@ -143,7 +142,7 @@ To cap spend instead of request rate, set a [budget](/docs/ai-gateway/observabil
 
 ## Rate limits with BYOK
 
-[BYOK](/docs/ai-gateway/authentication-and-byok/byok) requests use your own provider credentials, so the provider's own rate limits apply to them. When a BYOK request fails and falls back to AI Gateway system credentials, the fallback attempt is subject to AI Gateway rate limits, and its usage is billed to your AI Gateway Credits.
+[BYOK](/docs/ai-gateway/authentication-and-byok/byok) requests use your own provider credentials, so the provider's own rate limits apply to them. When a BYOK request fails and falls back to Vercel's provider keys, the fallback attempt is subject to AI Gateway rate limits, and its usage is billed to your AI Gateway Credits.
 
 ## Raise a limit
 
@@ -155,6 +154,18 @@ Purchase [AI Gateway Credits](/docs/ai-gateway/pricing#top-up-your-ai-gateway-cr
 - [Budgets](/docs/ai-gateway/observability-and-spend/budgets) to cap spend by team, project, API key, or team member
 - [Troubleshoot request errors](/docs/ai-gateway/faq#why-did-my-ai-gateway-request-fail) by status code, type, and message
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

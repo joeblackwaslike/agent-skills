@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/reasoning
 summary: Use the Anthropic Messages API with AI Gateway. Configure authentication and send requests with streaming, tools, images, and extended thinking.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "764b59f04317bd9ec1f70b08ca07c07e111583074fb8eabca4f9ba9118085690"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e4ebac296967433c93cc3429f9a45ca6d98756b32593da689fd228346f7edd9b"
 ---
 
 # Anthropic Messages API with AI Gateway
@@ -32,15 +33,14 @@ AI Gateway provides Anthropic Messages API endpoints, so you can use the Anthrop
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Cat Jam is now available in stealth for free on AI Gateway](https://vercel.com/changelog/cat-jam-is-now-available-in-stealth-for-free-on-ai-gateway)
+- [Claude Fable 5.2 now available on AI Gateway](https://vercel.com/changelog/claude-fable-5-2-now-available-on-ai-gateway)
 - [Claude Sonnet 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-sonnet-5-5-now-available-on-ai-gateway)
 - [Fast mode for Opus 4.7 available on AI Gateway](https://vercel.com/changelog/fast-mode-for-opus-4-7-available-on-ai-gateway)
 - [Gemini 4 Argon now available on AI Gateway](https://vercel.com/changelog/gemini-4-argon-now-available-on-ai-gateway)
-- [Kimi K3.1 Pro and Kimi K3.1 Pro Highspeed are available now in AI Gateway](https://vercel.com/changelog/kimi-k3-1-pro-and-kimi-k3-1-pro-highspeed-are-available-now-in-ai-gateway)
 - [Dynamic Prompt Caching](https://ai-sdk.dev/cookbook/node/dynamic-prompt-caching) — Learn how to reduce API costs by implementing dynamic prompt caching for Anthropic models using cache control directives
 - [Anthropic](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic) — Learn how to use Anthropic with AI Gateway and the direct provider.
 - [Claude Platform on AWS](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws) — Learn how to use Claude Platform on AWS with AI Gateway and the direct provider.
 - [Caching](https://ai-sdk.dev/docs/advanced/caching) — How to handle caching when working with the AI SDK
-- [Control CDN caching for shared and personalized pages on Vercel](https://vercel.com/kb/guide/cdn-cache-personalized-pages) — Control CDN caching for shared and personalized Next.js pages. Set cache headers, separate per-user content, and verify
 - [Conductor with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/conductor) — Connect Conductor to AI Gateway through its Claude Code configuration. Route parallel coding agents through the Anthropi
 - [Flue with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/flue) — Route Flue agent requests through Vercel AI Gateway with the built-in provider, using an API key or Vercel OIDC authenti
 
@@ -605,6 +605,18 @@ For `POST /v1/messages`, authentication, billing, and model routing errors use t
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

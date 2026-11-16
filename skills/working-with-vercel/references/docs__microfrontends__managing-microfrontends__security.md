@@ -16,9 +16,10 @@ related:
   - /docs/deployment-protection/methods-to-protect-deployments/vercel-authentication
 summary: Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/microfrontends/managing-microfrontends/security.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "24033dfb4975a6dcf23647a8d28e63f2d4b7967bbb18d70fcdb62c276ea2e6a2"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b05485bd44eb007e80e77345ce5935bb433c39d998cc6ff859e0b6d3742aeb07"
 ---
 
 # Managing microfrontends security
@@ -31,13 +32,11 @@ Understand how and where you manage [Deployment Protection](/docs/deployment-pro
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Life of a Vercel request: Securing your app's traffic with Vercel](https://vercel.com/blog/life-of-a-request-securing-your-apps-traffic-with-vercel)
-- [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf) — Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in secur
-- [Vercel security overview](https://vercel.com/docs/security) — Vercel provides built-in and customizable features to ensure that your site is secure.
 - [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart) — Learn how to get started with microfrontends on Vercel.
+- [Vercel security overview](https://vercel.com/docs/security) — Vercel provides built-in and customizable features to ensure that your site is secure.
 - [Testing & troubleshooting microfrontends](https://vercel.com/docs/microfrontends/troubleshooting) — Learn about testing, common issues, and how to troubleshoot microfrontends on Vercel.
-- [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Vercel Support Code Visibility, Git Fork Protection, and
 - [Microfrontends](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends) — Vercel MCP tools for microfrontends.
+- [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Vercel Support Code Visibility, Git Fork Protection, and
 
 Full cross-link map for this page: [/docs/microfrontends/managing-microfrontends/security.graph.md](/docs/microfrontends/managing-microfrontends/security.graph.md)
 <!-- /docsgraph:related -->
@@ -106,6 +105,18 @@ This applies for the entire [Vercel WAF](/docs/vercel-firewall/vercel-waf), incl
 
 - To set a WAF rule that applies **only** to requests to paths of a child application, use the [Vercel WAF](/docs/vercel-firewall/vercel-waf) for the child project.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

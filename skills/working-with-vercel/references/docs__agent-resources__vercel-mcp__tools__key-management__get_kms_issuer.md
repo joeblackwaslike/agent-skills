@@ -12,9 +12,10 @@ related:
   []
 summary: Use get_kms_issuer with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/get_kms_issuer.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "153930e6179fc5d25ed0cd50fcd89b43230501642d62405410e9f0650d4dcdda"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3638e898d47f9c7d2b1046cb9f4b448073aca4091f583267a6a54cd2951e2ce1"
 ---
 
 # get_kms_issuer
@@ -31,7 +32,7 @@ Get an issuer.
 - [list_kms_issuers](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/list_kms_issuers) — Use list_kms_issuers with Vercel MCP.
 - [create_kms_issuer](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/create_kms_issuer) — Use create_kms_issuer with Vercel MCP.
 - [create_kms_issuer_policy](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/create_kms_issuer_policy) — Use create_kms_issuer_policy with Vercel MCP.
-- [update_kms_issuer_policy](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management/update_kms_issuer_policy) — Use update_kms_issuer_policy with Vercel MCP.
+- [Delete an issuer](https://vercel.com/docs/rest-api/kms/delete-an-issuer) — DELETE /v1/kms/issuers/{issuerId} — Delete a KMS issuer and its signing keys.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/key-management/get_kms_issuer.graph.md](/docs/agent-resources/vercel-mcp/tools/key-management/get_kms_issuer.graph.md)
 <!-- /docsgraph:related -->
@@ -44,6 +45,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/key-m
 | `teamId`   | string | No       | Team ID to use for this operation.                          |
 | `slug`     | string | No       | Team slug to use for this operation. Use instead of teamId. |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

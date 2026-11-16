@@ -14,9 +14,10 @@ related:
   - /docs/conformance/rules/PACKAGE_JSON_SIDE_EFFECTS_REQUIRED
 summary: Requires that every package.json file has the private field set to prevent accidental publishing to npm.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/package_json_private_required.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "62e782424f8759a2c988b00fb52200a636b71a895c9b1c17288a43ece0dbd554"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "617d2916cd3122e485356ba5c875a1258e627453bed6128fd317c08a59cb807a"
 ---
 
 # PACKAGE_JSON_PRIVATE_REQUIRED
@@ -40,6 +41,18 @@ this should be the default to prevent packages from being accidentally published
 Packages should set `private` to `true` unless the package is
 intended to be published in which case it can be explicitly set to `false`.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

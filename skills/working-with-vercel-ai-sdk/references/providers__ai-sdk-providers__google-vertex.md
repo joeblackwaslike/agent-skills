@@ -4,8 +4,8 @@ description: Learn how to use Google Vertex AI with AI Gateway and the direct pr
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/google-vertex"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/google-vertex.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "552ca12efd00f244065a38c9ec362927809a306518caa3fdbdb6ce428c7f6762"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "53d9a546e0b9bf58ad473f41b6b93a133a325010080e6e481c0b28307c1c4837"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -315,10 +315,10 @@ const googleVertex = createGoogleVertex({
 ### Language Models
 
 You can create models that call the Vertex API using the provider instance.
-The first argument is the model id, e.g. `gemini-3.8-flash`.
+The first argument is the model id, e.g. `gemini-4-hydrogen`.
 
 ```ts
-const model = googleVertex('gemini-3.8-flash');
+const model = googleVertex('gemini-4-hydrogen');
 ```
 
 If you are using [your own
@@ -597,7 +597,7 @@ import { googleVertex } from '@ai-sdk/google-vertex';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: googleVertex('gemini-3.8-flash'),
+  model: googleVertex('gemini-4-hydrogen'),
   tools: {
     enterprise_web_search: googleVertex.tools.enterpriseWebSearch({}),
   },
@@ -615,7 +615,7 @@ import { type GoogleLanguageModelOptions } from '@ai-sdk/google';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: googleVertex('gemini-3.8-flash'),
+  model: googleVertex('gemini-4-hydrogen'),
   tools: {
     google_maps: googleVertex.tools.googleMaps({}),
   },
@@ -696,7 +696,7 @@ import { generateText, streamText } from 'ai';
 
 // For generateText:
 const { text, reasoningText, reasoning } = await generateText({
-  model: googleVertex('gemini-3.8-flash'), // Or other supported model via Vertex
+  model: googleVertex('gemini-4-hydrogen'), // Or other supported model via Vertex
   providerOptions: {
     vertex: {
       thinkingConfig: {
@@ -714,7 +714,7 @@ console.log('Final Text:', text);
 
 // For streamText:
 const result = streamText({
-  model: googleVertex('gemini-3.8-flash'), // Or other supported model via Vertex
+  model: googleVertex('gemini-4-hydrogen'), // Or other supported model via Vertex
   providerOptions: {
     vertex: {
       thinkingConfig: {
@@ -851,6 +851,12 @@ caller must have access to the referenced object.
 HTTP(S) tool-result files are downloaded and sent as inline data, subject to
 `toolResultDownloads.maxBytes`. Direct GCS tool-result forwarding is not supported
 for older Gemini models or MIME types outside the list above.
+
+HTTP(S) tool-result files are downloaded using the `fetch` option of
+`createGoogleVertex`; the Vertex API key is not sent to those hosts. For
+untrusted URLs on Node.js, pass a `guarded-fetch` transport there. Direct
+`gs://` references are fetched by Vertex instead. See [Secure URL
+Fetching](/docs/advanced/secure-url-fetching#opt-in-dns-protection-on-nodejs).
 
 ### Cached Content
 
@@ -1057,6 +1063,8 @@ The following Zod features are known to not work with Google Vertex:
 | -------------------------------- | ----------- | ----------------- | ---------- | -------------- |
 | `gemini-nano-banana-2.1`         | ✓           | ✗                 | ✗          | ✗              |
 | `gemini-4-argon`                 | ✓           | ✓                 | ✓          | ✓              |
+| `gemini-4-carbon`                | ✓           | ✓                 | ✓          | ✓              |
+| `gemini-4-hydrogen`              | ✓           | ✓                 | ✓          | ✓              |
 | `gemini-3.8-flash`               | ✓           | ✓                 | ✓          | ✓              |
 | `gemini-3.7-flash`               | ✓           | ✓                 | ✓          | ✓              |
 | `gemini-3.6-flash`               | ✓           | ✓                 | ✓          | ✓              |
@@ -1791,8 +1799,8 @@ You can still set `providerOptions.anthropic.structuredOutputMode` per request:
   the Anthropic provider's existing behavior of switching to native output when
   the model supports it and the schema can be represented, even without this
   opt-in. This fallback also applies in `'auto'` mode with the opt-in disabled.
-  Models such as `claude-opus-5-5`, `claude-sonnet-5-5`, and `claude-fable-5-1`
-  therefore require the `structured_outputs` policy regardless of this setting.
+  Models such as `claude-opus-5-5`, `claude-sonnet-5-5`, `claude-fable-5-1`,
+  and `claude-fable-5-2` therefore require the `structured_outputs` policy regardless of this setting.
 - `'outputFormat'` explicitly requests native output, bypassing the opt-in and
   model detection. The API rejects unsupported or policy-denied requests.
 
@@ -2098,6 +2106,7 @@ See also [Anthropic Model Comparison](https://docs.anthropic.com/en/docs/about-c
 | Model                           | Image Input | Object Generation | Tool Usage | Tool Streaming | Computer Use |
 | ------------------------------- | ----------- | ----------------- | ---------- | -------------- | ------------ |
 | `claude-fable-5-1`              | ✓           | ✓                 | ✓          | ✓              | ✓            |
+| `claude-fable-5-2`              | ✓           | ✓                 | ✓          | ✓              | ✓            |
 | `claude-3-7-sonnet@20250219`    | ✓           | ✓                 | ✓          | ✓              | ✓            |
 | `claude-3-5-sonnet-v2@20241022` | ✓           | ✓                 | ✓          | ✓              | ✓            |
 | `claude-3-5-sonnet@20240620`    | ✓           | ✓                 | ✓          | ✓              | ✗            |

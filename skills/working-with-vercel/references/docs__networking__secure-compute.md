@@ -11,13 +11,14 @@ related:
   - /docs/functions
   - /docs/networking/static-ips
   - /docs/projects
+  - /docs/networking/privatelink
   - /docs/builds
-  - /docs/functions/configuring-functions/region
 summary: Secure Compute provides dedicated private networks with VPC peering for Enterprise teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/networking/secure-compute.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "eda59e7ecdef2524ed1c126e6cc8e093c83a6a05e8007c0d87921eb296e2680b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "524bb2ca40e41f0fdda0bce2c0fb4b02c5c671775a6cfcb7639f1ef0cfda8093"
 ---
 
 # Secure Compute
@@ -43,7 +44,7 @@ Secure Compute creates private connections between your [Vercel Functions](/docs
 - [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
 - [Vercel for Enterprise](https://vercel.com/blog/vercel-for-enterprise)
 - [Secure Compute is now self-serve](https://vercel.com/changelog/secure-compute-is-now-self-serve)
-- [Introducing Vercel Firewall and Vercel Secure Compute](https://vercel.com/blog/vercel-security)
+- [Create a Secure Compute network](https://vercel.com/docs/rest-api/networking/create-a-secure-compute-network) — POST /v1/connect/networks — Allows to create a Secure Compute network.
 
 Full cross-link map for this page: [/docs/networking/secure-compute.graph.md](/docs/networking/secure-compute.graph.md)
 <!-- /docsgraph:related -->
@@ -54,7 +55,7 @@ When you enable Secure Compute on your [project](/docs/projects), your deploymen
 
 You can provision and manage your own Secure Compute networks directly from the Vercel dashboard. Create networks for different teams, projects, or environments, all through self-service.
 
-> **💡 Note:** If you only need static IP addresses for IP allowlisting, without features like dedicated infrastructure, VPC peering, or complete network isolation, consider [Static IPs](/docs/networking/static-ips).
+> **💡 Note:** If you don't need dedicated infrastructure, VPC peering, VPN, or complete network isolation, consider [**Static IPs**](/docs/networking/static-ips) for IP allowlisting or [**AWS PrivateLink**](/docs/networking/privatelink) in **Advanced Networking** for private access to AWS-hosted services.
 
 ## How Secure Compute works
 
@@ -245,6 +246,18 @@ A Secure Compute network supports up to 100 projects. If you need to connect mor
 
 The maximum number of VPC peering connections that can be established per network is **50**.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

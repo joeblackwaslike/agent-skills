@@ -15,9 +15,10 @@ related:
   - /docs/cli/logs
 summary: Learn how to search, inspect, and share your runtime logs with the Logs tab.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/logs/runtime.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5f01f3e6ece9f9d9e4ed0619f342ab7fe21f3be686289b235e2b3b52d41bd1b3"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3849461b684a669858be16c9870f0ff252fd264c6b445a4c7d9c2bae6f2cf100"
 ---
 
 # Runtime Logs
@@ -43,7 +44,7 @@ The **Logs** section in the sidebar allows you to view, search, inspect, and [sh
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
 - [How to deploy a Python backend with Vercel Services ](https://vercel.com/kb/guide/python-backend-on-vercel) — Deploy a Python backend with a Next.js frontend on Vercel. Learn how to configure both apps with Vercel Services, use a
 - [Vercel Function Logs](https://vercel.com/docs/functions/logs) — Use runtime logs to debug and monitor your Vercel Functions.
-- [AI Gateway Request Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
+- [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 
 Full cross-link map for this page: [/docs/logs/runtime.graph.md](/docs/logs/runtime.graph.md)
 <!-- /docsgraph:related -->
@@ -275,6 +276,18 @@ With [Observability Plus](/docs/observability/observability-plus), you can view 
 > [Hobby](/docs/plans/hobby) to [Pro](/docs/plans/pro-plan), you will have access to
 > the Pro plan limits, and access historical logs for up to 1 day.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

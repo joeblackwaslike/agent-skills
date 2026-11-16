@@ -11,9 +11,10 @@ related:
   []
 summary: The Sandbox could not be found on Vercel. This is a platform error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/sandbox_not_found.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "504702d6191ccb0358a0a68f4c267b972fb32fcd040dd23da5b883f75aa9c8a8"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "dc415537444fb364aeff8e9c8c850781cfb09a7ddb318cd2fc7731eac3190254"
 ---
 
 # SANDBOX_NOT_FOUND
@@ -31,6 +32,18 @@ To troubleshoot this error, follow these steps:
 1. **Verify the Sandbox URL:** Navigate to the [Sandboxes dashboard](/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fsandboxes\&title=Go+to+Sandboxes), select the one you want to access, and copy the displayed URL
 2. **Check for typos:** Ensure that there are no typos in the Sandbox URL you are trying to access
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

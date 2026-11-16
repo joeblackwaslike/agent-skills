@@ -11,9 +11,10 @@ related:
   []
 summary: An unexpected internal error occurred in the microfrontend.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/internal_microfrontends_unexpected_error.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "02a2eeda635a9c2b7eccaad2d8db2d6e3dd9d959d2dca8e8927f0820f9cbd571"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2b11c551d274acc4af8a1581884fc1431da1486918919b165d48ae5ebe4bab88"
 ---
 
 # INTERNAL_MICROFRONTENDS_UNEXPECTED_ERROR
@@ -26,6 +27,18 @@ To troubleshoot this error, follow these steps:
 
 1. We have been notified of this error. For more information, check the [Vercel status page](https://www.vercel-status.com/) or [contact Vercel support](/help#issues)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

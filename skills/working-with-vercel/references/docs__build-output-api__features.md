@@ -15,9 +15,10 @@ related:
   - /docs/services/routing
 summary: Learn how to implement common Vercel platform features through the Build Output API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/build-output-api/features.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "9f86cebfa0b0b85ff333f44ff466ae994bea63e8e074a3ba2991a1f95488a5e9"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "cad900e3c0807ef063affcb1a10c96e7d8afab985235f6da42516274d3782a1f"
 ---
 
 # Features
@@ -32,13 +33,11 @@ helper functions.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Announcing the Build Output API](https://vercel.com/blog/build-output-api)
-- [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing)
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
-- [Routing](https://vercel.com/docs/routing) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
 - [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
-- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
-- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
+- [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
+- [Routing](https://vercel.com/docs/routing) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
+- [Advanced Node.js Usage](https://vercel.com/docs/functions/runtimes/node-js/advanced-node-configuration) — Learn about advanced configurations for Vercel functions on Vercel.
 
 Full cross-link map for this page: [/docs/build-output-api/features.graph.md](/docs/build-output-api/features.graph.md)
 <!-- /docsgraph:related -->
@@ -162,6 +161,18 @@ To implement this, the `bypassToken` of the `<name>.prerender-config.json` file 
 
 To trigger "On-Demand Incremental Static Regeneration (ISR)" and revalidate a path to a Prerender Function, make a `GET` or `HEAD` request to that path with a header of `x-prerender-revalidate: <bypassToken>`. When that Prerender Function endpoint is accessed with this header set, the cache will be revalidated. The next request to that function should return a fresh response.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

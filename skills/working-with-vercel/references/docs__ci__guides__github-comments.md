@@ -15,14 +15,32 @@ related:
   - /docs/ci/guides/end-to-end-tests
 summary: Post the deployment URL to the pull request for each commit from a Vercel CI task.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ci/guides/github-comments.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a27e176fc3bacf3f70070bae9a814cd819e96042cae4787a6a1c0f09089bc33a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "57e04711363d83c40fa16b052336d9893608f6b89255242709aaa4995ae4bea1"
 ---
 
 # Commenting on Pull Requests from Vercel CI
 
 In this tutorial, you'll add a Vercel CI task that comments on your pull request with the URL of the commit's Vercel deployment. On each new push, the task updates the same comment instead of adding a new one.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Manage Vercel Toolbar comments from the CLI](https://vercel.com/changelog/manage-vercel-toolbar-comments-from-the-cli)
+- [Improved formatting for Pull Request comments](https://vercel.com/changelog/improved-formatting-for-pull-request-comments)
+- [Integrations for Comments](https://vercel.com/docs/comments/integrations) — Learn how Comments integrates with Git providers like GitHub, GitLab, and Bitbucket, as well as the Vercel app for Slack
+- [Managing Comments on Preview Deployments](https://vercel.com/docs/comments/managing-comments) — Learn how to manage Comments on your Preview Deployments from Team members and invited collaborators.
+- [Using Comments with Preview Deployments](https://vercel.com/docs/comments/using-comments) — This guide will help you get started with using Comments with your Vercel Preview Deployments.
+- [Comments Overview](https://vercel.com/docs/comments) — Comments allow teams and invited participants to give direct feedback on preview deployments. Learn more about Comments
+- [Deploying from Azure DevOps with Vercel](https://vercel.com/docs/git/vercel-for-azure-pipelines) — ​Vercel for Azure DevOps allows you to deploy from Azure Pipelines to Vercel automatically.
+
+Full cross-link map for this page: [/docs/ci/guides/github-comments.graph.md](/docs/ci/guides/github-comments.graph.md)
+<!-- /docsgraph:related -->
 
 You'll configure a task that:
 
@@ -143,6 +161,18 @@ You'll configure a task that:
 - [Run end-to-end tests against your deployment](/docs/ci/guides/end-to-end-tests)
 - [Learn more about CI environment variables](/docs/ci/environment-variables)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

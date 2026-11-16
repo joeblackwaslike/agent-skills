@@ -11,9 +11,10 @@ related:
   []
 summary: Prevent usage of force-dynamic as a dynamic page rendering strategy.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/nextjs_no_dynamic_auto.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "52e86abea51e9c264ed61e879f3b4d5d88fc93731bf7a304077a56c325c42664"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a7e4e2d3d302522373edef0d1230bb31ac4b13032b00dfd4b541e21984920418"
 ---
 
 # NEXTJS_NO_DYNAMIC_AUTO
@@ -41,6 +42,18 @@ to use `force-dynamic`.
 const data = fetch(someURL, { cache: 'no-store' });
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

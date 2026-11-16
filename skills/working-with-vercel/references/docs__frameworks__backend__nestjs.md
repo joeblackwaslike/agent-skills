@@ -3,7 +3,7 @@ title: NestJS on Vercel
 product: vercel
 url: /docs/frameworks/backend/nestjs
 canonical_url: "https://vercel.com/docs/frameworks/backend/nestjs"
-last_updated: 2026-08-10
+last_updated: 2026-11-14
 type: how-to
 prerequisites:
   - /docs/frameworks/backend
@@ -16,9 +16,10 @@ related:
   - /docs/vercel-firewall
 summary: Deploy NestJS applications to Vercel with zero configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/backend/nestjs.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "0d5a7e5bab89794adf20c52b4870217cd88285236ad34da69f87e9a1ce8b6715"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "58c38b7617ec459024ad4327aacfa57e56b4659fae793c9042026b939bf3363a"
 ---
 
 # NestJS on Vercel
@@ -32,12 +33,13 @@ NestJS is a progressive Node.js framework for building efficient, reliable and s
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Zero-configuration support for NestJS](https://vercel.com/changelog/zero-configuration-support-for-nestjs)
+- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
 - [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
-- [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify) — Migrate your website's configuration from Netlify to Vercel
-- [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
+- [Express on Vercel](https://vercel.com/docs/frameworks/backend/express) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
 - [Nitro on Vercel](https://vercel.com/docs/frameworks/backend/nitro) — Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurat
 - [Fastify on Vercel](https://vercel.com/docs/frameworks/backend/fastify) — Deploy Fastify applications to Vercel with zero configuration.
+- [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
 
 Full cross-link map for this page: [/docs/frameworks/backend/nestjs.graph.md](/docs/frameworks/backend/nestjs.graph.md)
 <!-- /docsgraph:related -->
@@ -100,6 +102,16 @@ vc deploy
 
 > **💡 Note:** Minimum CLI version required: 48.4.0
 
+## Deploy without an account
+
+To deploy your NestJS app without an account or login, run this command in the project root:
+
+```bash filename="terminal"
+vercel deploy --temporary
+```
+
+The CLI builds the project, deploys it to production, and prints a claim URL. Claim the project to keep it live. See [Deploying without logging in](/docs/deployments/deploy-without-logging-in).
+
 ## Vercel Functions
 
 When you deploy a NestJS app to Vercel, your NestJS application becomes a single [Vercel Function](/docs/functions) and uses [Fluid compute](/docs/fluid-compute) by default. This means your NestJS app will automatically scale up and down based on traffic.
@@ -129,6 +141,18 @@ Learn more about deploying NestJS projects on Vercel with the following resource
 - [Vercel Functions documentation](/docs/functions)
 - [Backend templates on Vercel](https://vercel.com/templates?type=backend)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -14,9 +14,10 @@ related:
   - /docs/directory-sync
 summary: Explains the account update screen EMU members see at SSO sign-in and how to complete it.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/security/enterprise-managed-users-account-update.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "83ae31e1b5c816dd1ad7c0e58bbb75e8a1bbf5a335442ad61222fb54f8865c0a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "617c5c7b4f3aa381a89966c7c3166427f8e9f9fcefb51191370f7835c2aadd93"
 ---
 
 # Transition your Hobby team after EMU enrollment
@@ -30,13 +31,10 @@ Enabling [Enterprise Managed Users](/docs/security/enterprise-managed-users) (EM
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Enterprise Managed Users is now generally available](https://vercel.com/changelog/enterprise-managed-users)
-- [Easier transitions between hobby and pro](https://vercel.com/changelog/2024-01-account-changes)
-- [Enterprise](https://v0.app/docs/enterprise) — Learn how to manage v0 seats, access, and more in your Vercel Enterprise account.
-- [Teams](https://v0.app/docs/teams) — Collaborate with your team on projects with shared resources.
 - [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
-- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 - [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
-- [Organizations](https://vercel.com/docs/organizations) — Learn how organizations let you group multiple Vercel teams under a single entity with consolidated billing and central
+- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
+- [Access tokens](https://vercel.com/docs/accounts/access-tokens) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
 - [Transferring a project](https://vercel.com/docs/projects/transferring-projects) — Learn how to transfer a project between Vercel teams.
 
 Full cross-link map for this page: [/docs/security/enterprise-managed-users-account-update.graph.md](/docs/security/enterprise-managed-users-account-update.graph.md)
@@ -173,6 +171,18 @@ If a partner returns an error because your old identity is still linked under th
 - [SAML SSO](/docs/saml)
 - [Directory Sync](/docs/directory-sync)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

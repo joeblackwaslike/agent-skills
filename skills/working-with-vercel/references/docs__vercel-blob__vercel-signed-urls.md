@@ -12,9 +12,10 @@ related:
   - /docs/vercel-blob
 summary: Grant time-limited access to Vercel Blob URLs with signed tokens, and authorize browser-to-blob presigned uploads.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-blob/vercel-signed-urls.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "d749a797fa4b88c6e0cfbbbb2ae3406dccad1128f7e9be8cd3127ca8eb670ab0"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "41c175cb2f4f1cf8e0081769dbc704bb1d01bfefbcae0adc1784ec7023a6be3a"
 ---
 
 # Vercel Signed URLs
@@ -37,7 +38,7 @@ Vercel Signed URLs grant time-limited access to a Blob URL without exposing a re
 - [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
 - [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
-- [How can I use AWS S3 with Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-s3-with-vercel) — Example how to use AWS S3 library on Vercel
+- [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
 - [Introducing Vercel Blob](https://vercel.com/changelog/vercel-blob)
 - [Private Storage](https://vercel.com/docs/vercel-blob/private-storage) — Learn how to use private Vercel Blob storage to serve files with authentication
 
@@ -105,7 +106,7 @@ It accepts the following parameters:
 | `access`     | Yes      | `'public'` or `'private'`, matching the store's access mode.                                                                                                                                 |
 | `validUntil` | No       | A timestamp in milliseconds since the epoch when this specific URL expires. Capped to the delegation's `validUntil`. Serialized as the `vercel-blob-valid-until` query parameter and signed. |
 
-For `'put'` operations, `options` also accepts upload-shaping fields (`allowedContentTypes`, `maximumSizeInBytes`, `addRandomSuffix`, `allowOverwrite`, `cacheControlMaxAge`, `ifMatch`, and `onUploadCompleted`).
+For `'put'` operations, `options` also accepts upload-shaping fields (`allowedContentTypes`, `maximumSizeInBytes`, `addRandomSuffix`, `allowOverwrite`, `cacheControlMaxAge`, `ttlDays`, `ifMatch`, and `onUploadCompleted`).
 
 For `'get'` operations, `options` also accepts `useCache`. Set it to `false` to append a `cache=0` query parameter so fetches bypass the CDN cache and read the latest content directly from origin storage. This applies to private blobs only. `presignUrl()` ignores `useCache` when `access` is `'public'`. See the [`GET` example](#get---get-a-blob) below.
 
@@ -419,6 +420,18 @@ On the client:
 - Point `handleUploadUrl` at the new presigned route handler.
 - The result type is `PutBlobResult`. If you were typing the awaited value with `BlobResult`, update it.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

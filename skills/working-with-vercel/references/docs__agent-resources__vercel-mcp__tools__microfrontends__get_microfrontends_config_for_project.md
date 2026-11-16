@@ -12,9 +12,10 @@ related:
   []
 summary: Use get_microfrontends_config_for_project with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends/get_microfrontends_config_for_project.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b1925d2a64d8f7f6f85ecc4ffbc5c248999af89db4d1d37f23864c5d4b3bde66"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "bb5491db2b215d414eb8ea6bd0ae69c225dccc9b1b08898a08a063cf44e06fec"
 ---
 
 # get_microfrontends_config_for_project
@@ -31,7 +32,7 @@ Get microfrontends config for a project.
 - [get_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project) — Use get_project with Vercel MCP.
 - [Get microfrontends config for a project](https://vercel.com/docs/rest-api/microfrontends/get-microfrontends-config-for-a-project) — GET /v1/microfrontends/projects/{projectIdOrName}/production-mfe-config — Get the microfrontends config for a project by
 - [get_project_env](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables/get_project_env) — Use get_project_env with Vercel MCP.
-- [get_rolling_release_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/get_rolling_release_config) — Use get_rolling_release_config with Vercel MCP.
+- [get_connector_project_connection](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking/get_connector_project_connection) — Use get_connector_project_connection with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/microfrontends/get_microfrontends_config_for_project.graph.md](/docs/agent-resources/vercel-mcp/tools/microfrontends/get_microfrontends_config_for_project.graph.md)
 <!-- /docsgraph:related -->
@@ -44,6 +45,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/micro
 | `teamId`          | string | No       | Team ID to use for this operation.                          |
 | `slug`            | string | No       | Team slug to use for this operation. Use instead of teamId. |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

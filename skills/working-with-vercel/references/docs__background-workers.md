@@ -15,14 +15,17 @@ related:
   - /docs/functions/functions-api-reference/vercel-functions-package
 summary: Run background jobs on Vercel, from continuous workers with Daemons to queued tasks, scheduled jobs, and durable workflows. Choose an approach for...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/background-workers.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "e365c6d61f155b2d5ae2c9298dd6a578942a387ff6279e2b70913e745ae3d6e5"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3ee96024589f5382ff1daef41c82ff3fa21ec8c09ccb3f47ae5c639f17adeb50"
 ---
 
 # Background Workers on Vercel
 
-Run background jobs on Vercel, from sending emails and processing uploads to running continuous queue consumers and durable AI agents. [Vercel Daemons](/docs/daemons) run workers such as Celery, BullMQ, and Sidekiq alongside your application. Functions, Cron Jobs, Queues, Workflows, and Sandbox support other ways to start and execute background work.
+## Run background workers on Vercel
+
+Send emails, process uploads, consume queues, and run durable AI agents in the background. Choose a continuous worker, a queued job, a scheduled task, or a durable workflow for each workload.
 
 
 <!-- docsgraph:related -->
@@ -31,12 +34,10 @@ Run background jobs on Vercel, from sending emails and processing uploads to run
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to choose between Functions, containers, and Daemons on Vercel](https://vercel.com/kb/guide/vercel-functions-containers-daemons) — Choose Vercel Functions for HTTP requests, container images for custom runtimes, and Daemons for continuous background w
-- [Backends on Vercel: Python, containers, and Daemons](https://vercel.com/blog/backends-on-vercel-python-containers-and-daemons)
 - [Vercel Daemons is now in public beta](https://vercel.com/changelog/vercel-daemons-is-now-in-public-beta)
-- [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
+- [Backends on Vercel: Python, containers, and Daemons](https://vercel.com/blog/backends-on-vercel-python-containers-and-daemons)
 - [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
-- [Migrate from Fly.io to Vercel](https://vercel.com/kb/guide/migrate-fly-io-to-vercel) — Move an app from Fly.io to Vercel. Map configuration, choose Functions or Daemons, plan persistent storage, and verify t
-- [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution)
+- [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
 - [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without
 - [Chat SDK with Vercel Daemons](https://vercel.com/docs/chat-sdk/integrations/daemons) — Process Chat SDK jobs with Vercel Queues and Daemons, using Vercel Connect for Slack credentials and event delivery.
 - [Backends on Vercel](https://vercel.com/docs/frameworks/backend) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
@@ -45,6 +46,55 @@ Run background jobs on Vercel, from sending emails and processing uploads to run
 
 Full cross-link map for this page: [/docs/background-workers.graph.md](/docs/background-workers.graph.md)
 <!-- /docsgraph:related -->
+
+#### Run a worker
+
+```json filename="vercel.json"
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "daemons": {
+    "worker": {
+      "root": "worker/",
+      "entrypoint": "Dockerfile",
+      "instances": { "iad1": 2 }
+    }
+  }
+}
+```
+
+#### Queue a job
+
+```typescript filename="app/api/uploads/route.ts"
+import { send } from '@vercel/queue';
+
+export async function POST(request: Request) {
+  const upload = await request.json();
+
+  // Return now. A consumer processes the upload later.
+  const { messageId } = await send('uploads', upload);
+
+  return Response.json({ messageId });
+}
+```
+
+#### Run a workflow
+
+```typescript filename="app/workflows/fulfill-order.ts"
+import { sleep } from 'workflow';
+
+export async function fulfillOrder(orderId: string) {
+  'use workflow';
+
+  await chargePayment(orderId);
+
+  await sleep('3 days');
+  await sendFollowUp(orderId);
+}
+```
+
+[Vercel Daemons](/docs/daemons) run workers such as Celery, BullMQ, and Sidekiq alongside your application. Functions, Cron Jobs, Queues, Workflows, and Sandbox support other ways to start and execute background work.
+
+Each example above needs more setup to run. The daemon needs a `Dockerfile` in `worker/`, the queue needs a consumer for the `uploads` topic, and the workflow needs the step functions it calls. See [Get started](#get-started) for the full setup.
 
 ## Choose an approach
 
@@ -125,6 +175,18 @@ Yes. Use [Workflows](/docs/workflows) for agents that preserve progress and resu
 - [Configure a cron job](/docs/cron-jobs/quickstart) for recurring tasks.
 - [Follow the background workers guide](/kb/guide/background-workers-on-vercel) for detailed examples, failure handling, and migrations from other platforms.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -16,9 +16,10 @@ related:
   - /docs/sandbox/sdk-reference
 summary: Use OpenAI function calling with AI Gateway to execute model-generated code in an isolated Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/ecosystem/openai-sdk.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "395952d47de575ccc3bcd6fac55166d9745863436b52a8d9a089b300f3ce2351"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a9a11cfcf7a42e1efae35aaae14b481af9153bd37835ebac5d25902e26c91b04"
 ---
 
 # OpenAI SDK
@@ -42,43 +43,56 @@ credentials covers both the model and the sandbox.
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
 - [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
 - [Anthropic SDK](https://vercel.com/docs/sandbox/ecosystem/anthropic-sdk) — Use Anthropic tool use with AI Gateway to execute model-generated code in an isolated Vercel Sandbox.
+- [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
+- [Chat SDK with Vercel Sandbox](https://vercel.com/docs/chat-sdk/integrations/sandbox) — Build a Chat SDK agent that analyzes CSV attachments with the AI SDK Bash tool in Vercel Sandbox.
 - [OpenAI Agents API](https://vercel.com/docs/sandbox/ecosystem/openai-agents-api) — Connect OpenAI Agents API sessions to Vercel Sandbox for isolated code execution and persistent workspace files.
-- [OSS AI Vibe Coding Platform](https://vercel.com/docs/platforms/examples/oss-coding-agent) — Build and deploy your own AI-powered coding platform with Vercel Sandboxes.
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/openai-sdk.graph.md](/docs/sandbox/ecosystem/openai-sdk.graph.md)
 <!-- /docsgraph:related -->
 
 > **💡 Note:** You need a [Vercel account](https://vercel.com/signup), [Vercel
-> CLI](/docs/cli), and Node.js 22 or later.
+> CLI](/docs/cli), and Node.js 22 or later or Python 3.11 or later.
 
 ## Getting started
 
 - ### Create a new project
   Create a new directory for your project and initialize it:
-  ```bash filename="terminal"
+
+  **terminal**
+  ```bash filename="terminal" framework=node
   mkdir openai-sandbox
   cd openai-sandbox
   npm init -y
+  ```
+  **terminal**
+  ```bash filename="terminal" framework=py
+  mkdir openai-sandbox
+  cd openai-sandbox
+  uv init
   ```
 
 - ### Install dependencies
   Install the OpenAI SDK and the Sandbox SDK:
 
-  **pnpm**
-  ```bash
-  pnpm i openai @vercel/sandbox
+  **terminal**
+  ```bash filename="terminal" framework=node package-manager="npm"
+  npm install openai @vercel/sandbox
   ```
-  **yarn**
-  ```bash
+  **terminal**
+  ```bash filename="terminal" framework=node package-manager="yarn"
   yarn add openai @vercel/sandbox
   ```
-  **npm**
-  ```bash
-  npm i openai @vercel/sandbox
+  **terminal**
+  ```bash filename="terminal" framework=node package-manager="pnpm"
+  pnpm add openai @vercel/sandbox
   ```
-  **bun**
-  ```bash
+  **terminal**
+  ```bash filename="terminal" framework=node package-manager="bun"
   bun add openai @vercel/sandbox
+  ```
+  **terminal**
+  ```bash filename="terminal" framework=py
+  uv add openai vercel-sandbox
   ```
 
 - ### Configure authentication
@@ -96,8 +110,10 @@ Full cross-link map for this page: [/docs/sandbox/ecosystem/openai-sdk.graph.md]
   > [Authentication](/docs/sandbox/sdk-reference#authentication) in the SDK reference.
 
 - ### Create your application
-  Create a new file called `index.ts` with the following code:
-  ```typescript filename="index.ts"
+  Create your application file with the following code:
+
+  **index.ts**
+  ```ts filename="index.ts"
   import OpenAI from 'openai';
   import { Sandbox } from '@vercel/sandbox';
 
@@ -142,7 +158,8 @@ Full cross-link map for this page: [/docs/sandbox/ecosystem/openai-sdk.graph.md]
     });
 
     while (response.output.some((item) => item.type === 'function_call')) {
-      const toolOutputs: OpenAI.Responses.ResponseInput = [];
+      // Keep the model's output, including reasoning items, for the next call.
+      input.push(...(response.output as OpenAI.Responses.ResponseInputItem[]));
       for (const item of response.output) {
         if (item.type !== 'function_call') continue;
         const { code } = JSON.parse(item.arguments);
@@ -151,7 +168,7 @@ Full cross-link map for this page: [/docs/sandbox/ecosystem/openai-sdk.graph.md]
           result.exitCode === 0
             ? await result.stdout()
             : `Command failed: ${await result.stderr()}`;
-        toolOutputs.push({
+        input.push({
           type: 'function_call_output',
           call_id: item.call_id,
           output,
@@ -160,8 +177,7 @@ Full cross-link map for this page: [/docs/sandbox/ecosystem/openai-sdk.graph.md]
       response = await openai.responses.create({
         model: 'openai/gpt-5.6-sol',
         tools,
-        previous_response_id: response.id,
-        input: toolOutputs,
+        input,
       });
     }
 
@@ -170,7 +186,100 @@ Full cross-link map for this page: [/docs/sandbox/ecosystem/openai-sdk.graph.md]
     await sandbox.stop();
   }
   ```
-  The `timeout` value gives the sandbox up to five minutes to finish the function
+  **main.py**
+  ```py filename="main.py"
+  import asyncio
+  import json
+  import os
+  from datetime import timedelta
+  from typing import Any
+
+  from openai import AsyncOpenAI
+  from openai.types.responses import FunctionToolParam
+  from vercel import sandbox
+
+  MODEL = "openai/gpt-5.6-sol"
+
+  client = AsyncOpenAI(
+      api_key=os.environ.get("AI_GATEWAY_API_KEY") or os.environ["VERCEL_OIDC_TOKEN"],
+      base_url="https://ai-gateway.vercel.sh/v1",
+  )
+
+  tools: list[FunctionToolParam] = [
+      {
+          "type": "function",
+          "name": "run_code",
+          "description": (
+              "Run Python code in an isolated Vercel Sandbox and return its output."
+          ),
+          "parameters": {
+              "type": "object",
+              "properties": {
+                  "code": {"type": "string", "description": "Python code to execute"},
+              },
+              "required": ["code"],
+              "additionalProperties": False,
+          },
+          "strict": True,
+      },
+  ]
+
+
+  async def main() -> None:
+      box = await sandbox.create_sandbox(execution_time_limit=timedelta(minutes=5))
+
+      try:
+          conversation: list[Any] = [
+              {
+                  "role": "user",
+                  "content": (
+                      "Compute the SHA-256 hex digest of the exact string "
+                      "'vercel sandbox' with Python, then report the digest."
+                  ),
+              },
+          ]
+
+          response = await client.responses.create(
+              model=MODEL,
+              tools=tools,
+              input=conversation,
+          )
+
+          while any(item.type == "function_call" for item in response.output):
+              conversation += response.output
+              for item in response.output:
+                  if item.type != "function_call":
+                      continue
+                  code = json.loads(item.arguments)["code"]
+                  result = await box.run_command(
+                      "python", ["-c", code], capture_output=True
+                  )
+                  output = (
+                      result.stdout.decode()
+                      if result.returncode == 0
+                      else f"Command failed: {result.stderr.decode()}"
+                  )
+                  conversation.append(
+                      {
+                          "type": "function_call_output",
+                          "call_id": item.call_id,
+                          "output": output,
+                      }
+                  )
+              response = await client.responses.create(
+                  model=MODEL,
+                  tools=tools,
+                  input=conversation,
+              )
+
+          print(response.output_text)
+      finally:
+          await box.stop()
+
+
+  asyncio.run(main())
+  ```
+  The sandbox's timeout gives it up to five minutes to finish the function
   loop. The `finally` block stops it sooner when the loop finishes or throws.
 
   The following code:
@@ -178,21 +287,39 @@ Full cross-link map for this page: [/docs/sandbox/ecosystem/openai-sdk.graph.md]
     credentials
   - Creates a sandbox that is reused across function calls
   - Declares a `run_code` function the model can call
-  - Executes each function call with
-    [`sandbox.runCommand()`](/docs/sandbox/sdk-reference#sandboxruncommand)
-    and returns the output as a `function_call_output` item
-  - Uses `previous_response_id` to preserve the full response, including reasoning
-    items, before the next call
+  - Executes each function call in the sandbox and returns the output as a
+    `function_call_output` item
+  - Sends the earlier turns again in `input` on each call, including the model's
+    output and reasoning items, because AI Gateway doesn't accept its response
+    IDs as `previous_response_id` over HTTP
   - Loops until the model responds without calling a function
 
 - ### Run the application
   Run your application with the environment variables from `.env.local`:
-  ```bash filename="terminal"
+
+  **terminal**
+  ```bash filename="terminal" framework=node
   npx tsx --env-file=.env.local index.ts
   ```
-  The model writes Node.js code, the sandbox executes it, and the final
+  **terminal**
+  ```bash filename="terminal" framework=py
+  uv run --env-file .env.local main.py
+  ```
+  The model writes the code, the sandbox executes it, and the final
   response reports the digest.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

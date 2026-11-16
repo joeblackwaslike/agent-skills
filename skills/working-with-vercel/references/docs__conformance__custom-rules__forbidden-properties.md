@@ -11,9 +11,10 @@ related:
   []
 summary: "Learn how to set custom rules to disallow reading from, writing to, and/or calling one or more properties"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/custom-rules/forbidden-properties.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "4d15627b2678bf6f800077898778ac95f82114d86c45c42196f46e23e1a14bb9"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "81d6a0bbee8d636f49f2c1a037a3576151d8546a12ae4f8d9f55eb2a949bae3b"
 ---
 
 # forbidden-properties
@@ -123,6 +124,18 @@ example, the custom rule is also restricted to the `dashboard` and
 
 ;
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

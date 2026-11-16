@@ -13,9 +13,10 @@ related:
   - /docs/cli/global-options
 summary: Learn how to roll back your production deployments to previous deployments using the vercel rollback CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/rollback.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "af37598c8a22fa9da7b4625aecd556df428e60f7d29940ab261f7b1f0e46544d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "92a24fbf3a0a21011ff9259c32a70559fe8aa44a0f793a679986a95fa5ab7d68"
 ---
 
 # vercel rollback
@@ -32,7 +33,7 @@ The `vercel rollback` command is used to [roll back production deployments](/doc
 - [Rolling back a production deployment](https://vercel.com/docs/deployments/rollback-production-deployment) — Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
 - [vercel rolling-release](https://vercel.com/docs/cli/rolling-release) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
 - [request_rollback](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/request_rollback) — Use request_rollback with Vercel MCP.
-- [vercel redeploy](https://vercel.com/docs/cli/redeploy) — Learn how to redeploy your project using the vercel redeploy CLI command.
+- [Updates the description for a rollback](https://vercel.com/docs/rest-api/projects/updates-the-description-for-a-rollback) — PATCH /v1/projects/{projectId}/rollback/{deploymentId}/update-description — Updates the reason for a rollback, without c
 - [Performing a rolling release deployment](https://vercel.com/docs/rolling-releases/rolling-release-deployment) — Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
 
 Full cross-link map for this page: [/docs/cli/rollback.graph.md](/docs/cli/rollback.graph.md)
@@ -123,6 +124,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

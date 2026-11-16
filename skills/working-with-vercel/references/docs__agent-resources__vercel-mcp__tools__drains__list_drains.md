@@ -12,9 +12,10 @@ related:
   []
 summary: Use list_drains with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains/list_drains.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d3d1325624e6d57f9839b9cbac77d0921feec9530776a2a22d72a1d3ff2db469"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "87a49e64319c6d014ca661502c1200636024a7e343d30de4ba34bb4e973bf696"
 ---
 
 # list_drains
@@ -45,6 +46,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/drain
 | `teamId`          | string  | No       | Team ID to use for this operation.                          |
 | `slug`            | string  | No       | Team slug to use for this operation. Use instead of teamId. |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

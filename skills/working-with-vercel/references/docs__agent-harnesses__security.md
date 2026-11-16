@@ -15,9 +15,10 @@ related:
   - /docs/agent-harnesses/fx
 summary: What a durable agent harness may run in your Vercel Function, where the commands and files a model picks run instead, and how to write tools that a...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-harnesses/security.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "e914d6bfc840bb508be1a138c66daff6d9de92b7d70456d68aeaa28a8c18ea28"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "68cbc1ccfe8e3f544b3a9addb2e7c2303fd2e48c3c5ce1674adf7b5642e99e77"
 ---
 
 # Security for Durable Agent Harnesses
@@ -32,11 +33,11 @@ An agent harness runs what a model decides. On Vercel, the harness runs in your 
 
 - [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
 - [How to give agents persistent storage with Vercel Drives](https://vercel.com/kb/guide/persistent-storage-with-vercel-drives) — Give AI SDK and TanStack AI agents persistent storage with Vercel Drives so they can save and reuse research notes acros
-- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
+- [Run Python code securely with AI SDK and Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox) — Add an \\`executeCode\\` tool to your AI SDK agent with the \\`ai-sdk-tool-code-execution\\` package to run Python 3.13 insi
 - [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
 - [Self-Hosting Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/self-hosting) — Keep durable agent harness sessions in another World, such as Postgres, and run Pi, Claude Code, Codex, OpenCode, and fx
 - [Agent Harnesses You Can Run Durably on Vercel](https://vercel.com/docs/agent-harnesses/harnesses) — Guides for running Pi, fx, OpenCode, eve, Claude Code, and Codex durably on Vercel, so a crash or a timeout resumes the
-- [Coding Agents and Chat Platforms with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents) — Connect coding agents and chat platforms to AI Gateway. Configure Claude Code, Codex, Chatbox, Open WebUI, and more.
+- [Chat SDK with Vercel Sandbox](https://vercel.com/docs/chat-sdk/integrations/sandbox) — Build a Chat SDK agent that analyzes CSV attachments with the AI SDK Bash tool in Vercel Sandbox.
 
 Full cross-link map for this page: [/docs/agent-harnesses/security.graph.md](/docs/agent-harnesses/security.graph.md)
 <!-- /docsgraph:related -->
@@ -211,6 +212,28 @@ export function withSessionOwnership({ createRoute, start }: {
 
 `start()` must create an empty session without submitting a prompt or opening the Harness. If saving ownership fails, the helper doesn't submit the message. Authentication remains required during local development. For a custom World or a named Pi setup, use the same World and name when creating the session and the chat route.
 
+## Frequently asked questions
+
+### Is it safe to let an AI agent run shell commands in a Vercel Function?
+
+Not on the function itself. With [Fluid compute](/docs/fluid-compute), one function instance serves many requests at once, so a real shell or disk in your function would let one session's model read another session's files and your function's environment variables. Run the commands and files the model picks in a virtual workspace, which can't reach your function's files, processes, or environment, or in a [Vercel Sandbox](/docs/sandbox), a virtual machine for each session. See [The rule](#the-rule).
+
+### Can the model read my AI Gateway key or OIDC token from the Sandbox?
+
+No. The Sandbox holds no World credential, AI Gateway key, or OIDC token. Your function makes the model calls and writes the session's log, and with Claude Code and Codex, only your function can connect to the CLI in the Sandbox. Don't pass secrets in the Sandbox's `env`, because the model's commands can read every variable there. Set `AI_GATEWAY_API_KEY` to a key that can only call [AI Gateway](/docs/ai-gateway), so your function doesn't use the project's OIDC token for model calls. See [What runs in the Sandbox](#what-runs-in-the-sandbox).
+
+### How do I stop a prompt-injected agent from sending data to the internet?
+
+Restrict the Sandbox's network. A Sandbox allows all outbound traffic by default, so pass `network: 'deny-all'` to `sandbox()`, or allow only the hosts your agent needs, as in `network: { allow: ['registry.npmjs.org'] }`. Provider-hosted tools, such as web search, reach the internet from the provider whatever the Sandbox allows. Don't render remote images from model output in your UI, because the browser requests a URL the model chose. See [What these controls don't cover](#what-these-controls-dont-cover).
+
+### How do I write a tool that an AI agent can call safely?
+
+Treat the tool's code as trusted and its arguments as untrusted, because the model writes them. Validate every argument, find the session's user from your own records instead of an argument such as `userId`, and keep arguments out of a shell, `eval`, and file paths. Return only the fields the model needs. For a tool that changes something, use `replay: 'never'` and pass the system it calls an idempotency key. See [Your own tools](#your-own-tools).
+
+### Can I make a durable agent's chat route public?
+
+Yes, with `authorize: 'public'`, but anyone who can use the route runs your agent on your AI Gateway credits. In production, a chat route without `authorize` refuses every request with a 401. For an agent whose sessions start a Sandbox, a public route also needs `allowPublicSandbox: true` and a finite `sandbox({ budget: { sessionUsd } })`, or it throws when it's created. `sessionUsd` caps model spend only for Claude Code and Codex, so also set an [AI Gateway budget](/docs/ai-gateway/observability-and-spend/budgets) that covers how your deployment authenticates. See [Chat routes](#chat-routes).
+
 ## More resources
 
 - [Tools, files, and documents](/docs/agent-harnesses/tools)
@@ -218,6 +241,18 @@ export function withSessionOwnership({ createRoute, start }: {
 - [Fluid compute](/docs/fluid-compute)
 - [just-bash](https://www.npmjs.com/package/just-bash)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

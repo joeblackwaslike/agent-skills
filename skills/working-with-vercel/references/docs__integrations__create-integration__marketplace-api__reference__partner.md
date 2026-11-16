@@ -3,7 +3,7 @@ title: Marketplace Partner API Reference
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner"
-last_updated: 2026-11-09
+last_updated: 2026-11-16
 type: reference
 prerequisites:
   []
@@ -15,9 +15,10 @@ related:
   - /docs/integrations/create-integration/marketplace-api/reference/partner/provision-resource
 summary: Learn how to implement Partner API endpoints for your Vercel integration
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "5c99868dbc54aef73384b6522e129ee6e04355201ad9d94158c03f7b72fb7c43"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "94db99a2e231a4b9b55024fb24e36c58dd4c4001fb9433d23dda3b4a7622e45a"
 ---
 
 # Partner API Reference
@@ -230,6 +231,18 @@ API related to Transfer operations
 - [Native Integration Flows](/docs/integrations/marketplace-flows)
 - [Vercel API Reference](/docs/integrations/create-integration/marketplace-api/reference/vercel)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

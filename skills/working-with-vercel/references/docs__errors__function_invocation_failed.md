@@ -11,9 +11,10 @@ related:
   []
 summary: The invocation of a function failed. This is a function error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/function_invocation_failed.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "df821b4d8ee54ab504e881d5d83d8274ccbf3ea7c4a503810dd6b69b5a5d83a0"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "97ce12b4a65125aab6fc78960dfd365aec2987b56d71946454dd8a448ec7b3b1"
 ---
 
 # FUNCTION_INVOCATION_FAILED
@@ -38,6 +39,18 @@ To troubleshoot this error, follow these steps:
 3. **Check for unhandled exceptions:** Look for any unhandled exceptions within the function code that might be causing the invocation to fail
 4. **Verify function configuration:** Double-check the function configuration to ensure that it's set up correctly, including any environment variables or other settings
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

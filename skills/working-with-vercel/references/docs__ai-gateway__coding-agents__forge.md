@@ -15,9 +15,10 @@ related:
   - /docs/ai-gateway/observability-and-spend/budgets
 summary: Connect ForgeCode to AI Gateway with the Vercel CLI or custom provider and credential files.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/forge.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "15bc74e6251c7928568bb94cdbe1bf6a92f77bf40770345d7d8c37a49dae8fce"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ce0947d8b7e439695a1b8df35f913f2d7d3b245b7e732388d44b97ba9e8d5a9a"
 ---
 
 # ForgeCode with AI Gateway
@@ -33,8 +34,8 @@ sha256: "15bc74e6251c7928568bb94cdbe1bf6a92f77bf40770345d7d8c37a49dae8fce"
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
 - [Command Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/command-code) — Connect Command Code to AI Gateway with your own API key and a custom base URL. Configure models, switch between them, a
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
-- [GitHub Copilot CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/copilot) — Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and
 - [Kilo Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/kilo-code) — Connect Kilo Code to AI Gateway with the Vercel CLI or an OpenAI-compatible provider configuration. Set your API key and
+- [GitHub Copilot CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/copilot) — Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/forge.graph.md](/docs/ai-gateway/coding-agents/forge.graph.md)
 <!-- /docsgraph:related -->
@@ -114,6 +115,18 @@ View your usage, spend, and request activity in the [**AI Gateway**](https://ver
 - Browse the [models catalog](/ai-gateway/models) for available models
 - Configure [spend limits](/docs/ai-gateway/observability-and-spend/budgets) on your API key
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

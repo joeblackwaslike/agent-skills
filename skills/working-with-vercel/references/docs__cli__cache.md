@@ -9,20 +9,21 @@ prerequisites:
   - /docs/cli
 related:
   - /docs/caching/cdn-cache
-  - /docs/caching/runtime-cache
+  - /docs/runtime-cache
   - /docs/caching/cdn-cache/purge
-  - /docs/caching/runtime-cache/data-cache
+  - /docs/runtime-cache/data-cache
   - /docs/cli/project-linking
 summary: Learn how to manage cache for your project using the vercel cache CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/cache.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f7a9d27ba179bb810c47a3af82f393b587500ba7ae7fba4da02ca2e7211c3c91"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b1c26b6954225415a4d13ea525a1bbe041cd14a531455c101ca488934b495b42"
 ---
 
 # vercel cache
 
-The `vercel cache` command is used to manage the cache for your project, such as [CDN cache](/docs/caching/cdn-cache) and [Runtime cache](/docs/caching/runtime-cache).
+The `vercel cache` command is used to manage the cache for your project, such as [CDN cache](/docs/caching/cdn-cache) and [Runtime cache](/docs/runtime-cache).
 
 
 <!-- docsgraph:related -->
@@ -36,10 +37,10 @@ The `vercel cache` command is used to manage the cache for your project, such as
 - [You can now invalidate the CDN cache by providing a source image](https://vercel.com/changelog/you-can-now-invalidate-the-cdn-cache-by-providing-a-source-image)
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
 - [Diagnosing and fixing cache issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
-- [vercel blob](https://vercel.com/docs/cli/blob) — Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
-- [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
+- [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
+- [Invalidate by tag](https://vercel.com/docs/rest-api/edge-cache/invalidate-by-tag) — POST /v1/edge-cache/invalidate-by-tags — Marks a cache tag as stale, causing cache entries associated with that tag to b
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [Caching](https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching) — Vercel MCP tools for caching.
 
 Full cross-link map for this page: [/docs/cli/cache.graph.md](/docs/cli/cache.graph.md)
 <!-- /docsgraph:related -->
@@ -55,7 +56,7 @@ vercel cache purge
 *Using the \`vercel cache purge\` command to purge the CDN
 cache, Runtime cache, and Data cache for the current project.*
 
-On some plans, the projects in your team share one Runtime cache or Data cache. Purging a shared cache deletes the cached data of every project in your team. See storage scope by plan for [Runtime cache](/docs/caching/runtime-cache#storage-scope-by-plan) and [Data cache](/docs/caching/runtime-cache/data-cache#storage-scope-by-plan).
+On some plans, the projects in your team share one Runtime cache or Data cache. Purging a shared cache deletes the cached data of every project in your team. See storage scope by plan for [Runtime cache](/docs/runtime-cache#storage-scope-by-plan) and [Data cache](/docs/runtime-cache/data-cache#storage-scope-by-plan).
 
 ## Extended Usage
 
@@ -194,6 +195,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

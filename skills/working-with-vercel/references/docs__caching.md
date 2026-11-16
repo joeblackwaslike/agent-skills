@@ -15,9 +15,10 @@ related:
   - /docs/functions/configuring-functions/region
 summary: Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/caching.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "dca6d70cc861f2a15f64f66b2b4cbdbd7f728b85674c72683a1249321b421c30"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e1e692b06debe3e0eb138bb6516fd4326f5121bfb2fb976fb242168b13beca8a"
 ---
 
 # Caching
@@ -35,11 +36,12 @@ Vercel caches content at multiple layers between the visitor and your backend. T
 - [Troubleshoot and optimize Function Invocations on Vercel](https://vercel.com/kb/guide/optimize-function-invocations) — Diagnose which routes drive Function Invocations and learn to optimize them. Separate necessary dynamic traffic from div
 - [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
 - [Control CDN caching for shared and personalized pages on Vercel](https://vercel.com/kb/guide/cdn-cache-personalized-pages) — Control CDN caching for shared and personalized Next.js pages. Set cache headers, separate per-user content, and verify
-- [Simplifying runtime caching on Vercel](https://vercel.com/blog/simplifying-runtime-caching-on-vercel)
-- [Preventing the stampede: Request collapsing in the Vercel CDN ](https://vercel.com/blog/cdn-request-collapsing)
-- [Caching details now available in Runtime Logs](https://vercel.com/changelog/caching-details-now-available-in-runtime-logs)
 - [Introducing the Runtime Cache API](https://vercel.com/changelog/introducing-the-runtime-cache-api)
-- [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache)
+- [Simplifying runtime caching on Vercel](https://vercel.com/blog/simplifying-runtime-caching-on-vercel)
+- [Caching details now available in Runtime Logs](https://vercel.com/changelog/caching-details-now-available-in-runtime-logs)
+- [How Vercel CDN Works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
+- [Caching](https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching) — Vercel MCP tools for caching.
+- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 - [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 
 Full cross-link map for this page: [/docs/caching.graph.md](/docs/caching.graph.md)
@@ -69,7 +71,7 @@ When a page isn't in the CDN cache, the CDN checks the ISR cache next. Your func
 
 ### Runtime cache
 
-The [runtime cache](/docs/caching/runtime-cache) stores data fetched inside Vercel Functions. Your framework's data-fetching API activates it when it opts into caching, such as Next.js `fetch` with `force-cache`. You can also call the runtime cache API directly. The function region caches the response for subsequent requests.
+The [runtime cache](/docs/runtime-cache) stores data fetched inside Vercel Functions. Your framework's data-fetching API activates it when it opts into caching, such as Next.js `fetch` with `force-cache`. You can also call the runtime cache API directly. The function region caches the response for subsequent requests.
 
 This reduces latency for repeated data lookups and lowers the number of calls to external APIs and databases.
 
@@ -85,6 +87,18 @@ When multiple visitors request the same uncached content at the same time, [requ
 
 - [Request collapsing](/docs/incremental-static-regeneration/request-collapsing)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

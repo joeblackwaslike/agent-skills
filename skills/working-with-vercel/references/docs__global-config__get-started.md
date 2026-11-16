@@ -15,9 +15,10 @@ related:
   - /docs/routing-middleware
 summary: Learn how to create a Global Config store and read from it in your project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/global-config/get-started.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "6e8d207a33299661bc4f35c4db271273a0038b3b582d19f5d31fb2611960dadf"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "6a37d63f34d1da7fef5977348b7dc987822224081992143780c7b12f13c9e4fd"
 ---
 
 # Getting started with Global Config
@@ -34,10 +35,10 @@ Global Config is a distributed key-value store that allows you to store and retr
 - [How to handle redirects in Next.js](https://nextjs.org/docs/pages/guides/redirecting) — Learn the different ways to handle redirects in Next.js.
 - [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
 - [Using Global Config with LaunchDarkly](https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config) — Learn how to use Global Config with Vercel's LaunchDarkly integration.
-- [Using Global Config with DevCycle](https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config) — Learn how to use Global Config with Vercel's DevCycle integration.
 - [Using Global Config with Statsig](https://vercel.com/docs/global-config/global-config-integrations/statsig-global-config) — Learn how to use Global Config with Vercel's Statsig integration.
-- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
+- [Using Global Config with DevCycle](https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config) — Learn how to use Global Config with Vercel's DevCycle integration.
 - [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, delete, and manage items, read tokens, a
+- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
 
 Full cross-link map for this page: [/docs/global-config/get-started.graph.md](/docs/global-config/get-started.graph.md)
 <!-- /docsgraph:related -->
@@ -179,6 +180,18 @@ Now that you've created a Global Config store and read from it, you can explore 
 - [Learn about the `@vercel/global-config` package](https://github.com/vercel/storage/tree/main/packages/global-config#readme)
 - [Explore the SDK](/docs/global-config/global-config-sdk)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

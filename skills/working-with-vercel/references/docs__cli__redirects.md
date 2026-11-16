@@ -11,9 +11,10 @@ related:
   - /docs/cli/global-options
 summary: Learn how to manage project-level redirects using the vercel redirects CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/redirects.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "8f684306fbec96d97b919ad887c625a9cba795a3441d710a57658b2ea07984eb"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0b406f3324f2374ae50c23a698469e7fb129d243d160d38bc480997c502d7a6a"
 ---
 
 # vercel redirects
@@ -29,9 +30,9 @@ The `vercel redirects` command lets you manage redirects for a project. Redirect
 - [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
 - [Managing redirects at scale](https://vercel.com/docs/routing/redirects/manage-redirects-at-scale) — Add, bulk upload, version, and roll back project-level redirects using the CLI.
 - [Getting Started](https://vercel.com/docs/routing/redirects/bulk-redirects/getting-started) — Learn how to import thousands of simple redirects from CSV, JSON, or JSONL files.
-- [vercel routes](https://vercel.com/docs/cli/routes) — Learn how to manage project-level routing rules using the vercel routes CLI command.
-- [Redirects](https://vercel.com/docs/routing/redirects) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
 - [Configuration Redirects](https://vercel.com/docs/routing/redirects/configuration-redirects) — Learn how to define static redirects in your framework configuration or vercel.json with support for wildcards, pattern
+- [Redirects](https://vercel.com/docs/routing/redirects) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
+- [Edit a project-level redirect.](https://vercel.com/docs/rest-api/bulk-redirects/edit-a-project-level-redirect) — PATCH /v1/bulk-redirects — Edits a single redirect identified by its source path. Stages a new change with the modified
 
 Full cross-link map for this page: [/docs/cli/redirects.graph.md](/docs/cli/redirects.graph.md)
 <!-- /docsgraph:related -->
@@ -268,6 +269,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

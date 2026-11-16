@@ -12,9 +12,10 @@ related:
   - /docs/conformance/customize
 summary: modularizeImports can improve dev compilation speed for packages that use barrel files.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/nextjs_missing_modularize_imports.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9be782cac59bce7a35d8b996f7d56a1ce3511f1e7a00510f8a316c26156d956e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "35051e4a95d57201fa67642e295e486494d6c2726341a17b7f6c8e63b1602d26"
 ---
 
 # NEXTJS_MISSING_MODULARIZE_IMPORTS
@@ -74,6 +75,18 @@ in their `next.config.js` file.
 
 See [Customizing Conformance](/docs/conformance/customize) for more information.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

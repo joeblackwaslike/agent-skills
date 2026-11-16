@@ -15,9 +15,10 @@ related:
   - /docs/flags/vercel-flags/sdks/flags-sdk
 summary: Learn how draft flags work and how to promote them to Vercel Flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/drafts.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "580ceef0184c08f7777b12c878b69a4500fb047cff3b0309c4a016c11b9ae736"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "64d7c933aa72ac1c3e83eb4f8b516c059434ac020a52941374bf8fa89454c96d"
 ---
 
 # Draft Flags
@@ -34,7 +35,6 @@ Drafts are flags that Vercel detects in your code but haven't been created in th
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta)
-- [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga)
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference) — API reference for the Flags SDK for Next.js and SvelteKit.
@@ -128,6 +128,18 @@ export const GET = createFlagsDiscoveryEndpoint(async () => {
 - [Configure your flags](/docs/flags/vercel-flags/dashboard/feature-flag)
 - [Learn about the Flags SDK](/docs/flags/vercel-flags/sdks/flags-sdk)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

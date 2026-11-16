@@ -12,9 +12,10 @@ related:
   - /docs/cli/flags
 summary: Create a feature flag, wire it into your application with the Flags SDK, and start a staged rollout using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/vercel-flags/cli/roll-out-feature.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "4da7f10ec67bbf59efe88ce43f3b0452bef9e6e82db9a740cbd4a50e4da53025"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "32a8267a79beea285f162d54702f067ae916f19ebdc14225313460c808204847"
 ---
 
 # Rolling out a new feature
@@ -27,16 +28,16 @@ This workflow creates a Boolean feature flag, adds the entity context needed for
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Automate progressive rollouts with Vercel Flags](https://vercel.com/changelog/progressive-rollouts-in-vercel-flags)
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
+- [Automate progressive rollouts with Vercel Flags](https://vercel.com/changelog/progressive-rollouts-in-vercel-flags)
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
 - [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta)
-- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [How Splits Work in Vercel Flags](https://vercel.com/kb/guide/how-splits-work-in-vercel-flags) — Use weighted splits in Vercel Flags to deterministically bucket users into variants by percentage for gradual rollouts a
-- [Introducing feature flag management from the Vercel Toolbar](https://vercel.com/blog/toolbar-feature-flags)
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Cleaning up after a full rollout](https://vercel.com/docs/flags/vercel-flags/cli/clean-up-after-rollout) — Audit active flags, remove a fully rolled-out flag from your codebase, and archive it using the Vercel CLI.
 - [Running an A/B test](https://vercel.com/docs/flags/vercel-flags/cli/run-ab-test) — Set up an A/B test with a feature flag, track results through Web Analytics, and clean up afterward using the Vercel CLI
+- [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/cli/roll-out-feature.graph.md](/docs/flags/vercel-flags/cli/roll-out-feature.graph.md)
 <!-- /docsgraph:related -->
@@ -166,6 +167,18 @@ vercel flags rollout welcome-message --environment production --by user.id \
   --stage 10,2h --stage 50,12h --start 2026-04-16T09:00:00Z
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

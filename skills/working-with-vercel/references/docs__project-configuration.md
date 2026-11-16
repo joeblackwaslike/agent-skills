@@ -15,9 +15,10 @@ related:
   - /docs/project-configuration/global-configuration
 summary: Learn how to configure your Vercel projects using vercel.json, vercel.toml, vercel.ts, or the dashboard to control builds, routing, functions, and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/project-configuration.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "6c3a86c7902a97b04796bafc0b21eaa79de09061486adc37bf386407b6e9b2a2"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d78282f376434c6a841faebc3dc56ac178c2e77df2760685cfc126928528d254"
 ---
 
 # Project Configuration
@@ -99,6 +100,18 @@ For detailed information about specific configuration areas, see:
 - [Git Settings](/docs/project-configuration/git-settings) - Manage Git connection, LFS, and deploy hooks
 - [Security settings](/docs/project-configuration/security-settings) - Attack Mode, logs protection, fork protection, OIDC, and recently deleted deployments
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

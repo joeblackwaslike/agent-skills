@@ -11,13 +11,14 @@ related:
   - /docs/agent/chat
   - /docs/agent/chat/slack
   - /docs/agent/pr-review
+  - /docs/agent/security-review
   - /docs/agent/investigation
-  - /docs/agent/installation
 summary: Understand Vercel Agent pricing and how to track costs
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent/pricing.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b3ece9423b291ec5cacc0fdceeeef269af9c34fbe4e75f1616d8244a92a4189d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e9d15afcb95ca16cd683b880742ebbd68975c77aa0f82cf9b9ef029375facfb5"
 ---
 
 # Vercel Agent Pricing
@@ -31,16 +32,15 @@ Vercel Agent charges the underlying provider inference rate with no markup, plus
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
+- [Vercel Agent has updated pricing](https://vercel.com/changelog/vercel-agent-has-updated-pricing)
 - [Vercel Agent can now validate alerts before paging](https://vercel.com/changelog/vercel-agent-can-now-validate-alerts-before-paging-you)
 - [Vercel Agent investigations now included in Observability Plus](https://vercel.com/changelog/vercel-agent-investigations-now-included-in-observability-plus)
 - [Vercel Agent sessions now cost 67% less](https://vercel.com/changelog/vercel-agent-sessions-now-cost-67-percent-less)
 - [Vercel for Slack now in public beta](https://vercel.com/changelog/vercel-for-slack-now-in-public-beta)
-- [Vercel Security Review now in public beta](https://vercel.com/changelog/vercel-security-review-public-beta)
 - [Introducing Vercel Security Review](https://vercel.com/blog/vercel-security-review)
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
-- [Vercel Connect Pricing](https://vercel.com/docs/connect/pricing) — How Vercel Connect is billed for token requests and triggers across plans and how to stop being billed.
 
 Full cross-link map for this page: [/docs/agent/pricing.graph.md](/docs/agent/pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -52,6 +52,7 @@ Full cross-link map for this page: [/docs/agent/pricing.graph.md](/docs/agent/pr
 | [Chat](/docs/agent/chat) | 50 messages per team member per day during the beta, excluding approved plans | Provider inference at the underlying token rate with no markup, plus $0.25 per million tokens |
 | [Slack](/docs/agent/chat/slack) | Shares the Chat allowance of 50 messages per team member per day | Provider inference at the underlying token rate with no markup, plus $0.25 per million tokens |
 | [Code Review](/docs/agent/pr-review) | None | Provider inference at the underlying token rate with no markup, plus $0.25 per million tokens |
+| [Security Review](/docs/agent/security-review) | None | Provider inference at the underlying token rate with no markup, plus $0.25 per million tokens |
 | [Vercel Agent Investigation](/docs/agent/investigation) | 10 investigations per billing cycle with Observability Plus | Additional investigations use provider inference at the underlying token rate with no markup, plus $0.25 per million tokens |
 | [Installation](/docs/agent/installation) | No charge for installation | Standard usage charges for installed products still apply |
 
@@ -82,6 +83,16 @@ A message that only proposes a plan counts like any other message. It uses one o
 
 Code Review uses provider inference at the underlying token rate with no markup, plus the Vercel Token Rate of $0.25 per million tokens. The cost varies based on the complexity of the changes and the amount of code Vercel Agent analyzes.
 
+## Security Review
+
+Security Review uses provider inference at the underlying token rate with no markup, plus the Vercel Token Rate of $0.25 per million tokens. Security reviews are billed as Vercel Agent usage.
+
+Reviews run per Git push event rather than per pull request, so cost scales with how often you push and how much code changed.
+
+Fixes made with Vercel Agent from Security Review findings are separate work, billed as Vercel Agent usage at the same rate.
+
+If the team isn't already on Vercel Agent usage-based billing, enabling Security Review consents the team to it, and that first save requires a team Owner or Billing member role. Teams on a flexible commitment are billed against that commitment instead.
+
 ## Vercel Agent Investigation
 
 Observability Plus includes 10 investigations per billing cycle. Additional investigations use provider inference at the underlying token rate with no markup, plus the Vercel Token Rate of $0.25 per million tokens. The cost varies based on how much log and metric data Vercel Agent analyzes.
@@ -96,7 +107,7 @@ To view Vercel Agent usage and costs:
 
 1. Select [**Agent**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fagent%2Ftasks\&title=Open+Vercel+Agent) in the top-right corner of the dashboard.
 2. Open **Usage**.
-3. Select a time range and review the usage and cost information for Chat, Code Review, and investigations.
+3. Select a time range and review the usage and cost information for Chat, Code Review, Security Review, and investigations.
 
 If certain repositories, alerts, or Chat tasks consistently cost more, adjust your settings or usage patterns to control spending.
 
@@ -108,10 +119,23 @@ To reduce new Vercel Agent usage, manage each source of automatic usage separate
 
 - Disable [Dashboard chat](/docs/agent/chat/dashboard#enable-or-disable-dashboard-chat) to prevent new dashboard conversations.
 - Turn off [automatic Code Reviews](/docs/agent/pr-review/usage#turn-off-automatic-code-reviews) to stop automatic pull request reviews. Manual reviews and explicit `@vercel` requests remain available and can create paid usage.
+- Turn off Security Review in the team's [Agent settings](/docs/agent/security-review) to stop automatic security reviews of new pushes.
 - Disable [Vercel Agent Investigation](/docs/agent/investigation#disable-vercel-agent-investigation) to stop automatic alert investigations.
 
 Manual investigations and investigation reruns remain available and can create paid usage. Review the [Agent Usage page](#track-costs-and-usage) after you change a setting.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/connect/mcp-events
 summary: API reference for @vercel/connect, the TypeScript SDK for requesting runtime tokens from Vercel Connect.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/connect/ts-sdk-reference.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "3c05d50af3711366ffacf8e96cc74ce90353f08e7f1364186d78c0fb89e3099f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "dd45450e66013162063fa4b6b0df8e4dd6e0158870d18212bd3d5c3a67fbeea4"
 ---
 
 # TypeScript SDK Reference
@@ -41,7 +42,7 @@ sha256: "3c05d50af3711366ffacf8e96cc74ce90353f08e7f1364186d78c0fb89e3099f"
 - [MCP Events](https://ai-sdk.dev/docs/reference/ai-sdk-core/mcp-events) — Reference for experimental MCP event methods, the webhook handler, and subscription and storage types.
 - [experimental_useRealtime](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-realtime) — API reference for the experimental_useRealtime hook.
 - [Connections](https://eve.dev/docs/connections) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
-- [Observability](https://vercel.com/docs/connect/observability) — Monitor token requests, authorizations, revocations, and trigger deliveries for your connectors.
+- [MCP Events support in Vercel Connect is now in public beta](https://vercel.com/changelog/mcp-events-support-in-vercel-connect-is-now-in-public-beta)
 
 Full cross-link map for this page: [/docs/connect/ts-sdk-reference.graph.md](/docs/connect/ts-sdk-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -585,6 +586,18 @@ Most SDK calls have a [`vercel connect`](/docs/cli/connect) CLI equivalent. The 
 - [Tokens](/docs/connect/concepts/tokens): How a token request is shaped and what each field does.
 - [Authentication](/docs/connect/concepts/authentication): What the OIDC token carries and how the API checks it.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

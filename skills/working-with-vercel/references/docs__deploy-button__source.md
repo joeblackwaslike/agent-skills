@@ -11,9 +11,10 @@ related:
   []
 summary: Learn how to use the Vercel Deploy Button source URL parameters.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deploy-button/source.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "8650772b66acfd2014186e037165833bb1063befe9e41bbeab749f687a178b55"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ada421099b2c2f8e48d6cfa3aa094b7f2304a463d441efc7af352c54156d1ff8"
 ---
 
 # Deploy Button Source
@@ -153,6 +154,18 @@ Then, use it as follows:
 https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fvercel%2Ftree%2Fmain%2Fexamples%2Fnextjs&project-name=my-awesome-project&repository-name=my-awesome-project&stores=%5B%7B%22type%22%3A%22integration%22%2C%22integrationSlug%22%3A%22aws-marketplace-integration-demo%22%2C%22productSlug%22%3A%22vector%22%7D%5D
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

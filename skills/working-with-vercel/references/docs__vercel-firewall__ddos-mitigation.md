@@ -15,9 +15,10 @@ related:
   - /docs/spend-management
 summary: Learn how the Vercel Firewall mitigates against DoS and DDoS attacks
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-firewall/ddos-mitigation.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "9cb75b96f2c15b525fc3fba4318302db2fb57fe4f2313789ca67bf80e9b013e6"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2e83cc43dc1d624127413f3bfda4a663ffacc66652c5d06a1a608c4ea443fede"
 ---
 
 # DDoS Mitigation
@@ -39,11 +40,11 @@ Vercel provides automatic DDoS mitigation for all deployments, regardless of you
 - [Bot Protection: One-click managed ruleset now in public beta](https://vercel.com/blog/one-click-bot-protection-now-in-public-beta)
 - [Temporarily disable Vercel Firewall system DDoS mitigations](https://vercel.com/changelog/temporarily-disable-vercel-firewall-system-ddos-mitigations)
 - [Preventing infrastructure abuse with Vercel Firewall](https://vercel.com/blog/preventing-infrastructure-abuse-with-vercel-firewall)
-- [Mitigating Denial of Wallet risks with Vercel](https://vercel.com/blog/mitigating-denial-of-wallet-risks-with-vercel)
-- [Protectd: Evolving Vercel’s always-on denial-of-service mitigations](https://vercel.com/blog/protectd-evolving-vercels-always-on-denial-of-service-mitigations)
-- [Introducing Vercel Firewall DDoS mitigation notifications](https://vercel.com/changelog/introducing-vercel-firewall-notifications)
-- [Vercel security roundup: improved bot defenses, DoS mitigations, and insights](https://vercel.com/blog/vercel-security-roundup-improved-bot-defenses-dos-mitigations-and-insights)
 - [Vercel Firewall now supports bypassing system mitigations for specific IPs](https://vercel.com/changelog/vercel-firewall-now-supports-bypassing-system-mitigations-for-specific-ips)
+- [Introducing Vercel Firewall DDoS mitigation notifications](https://vercel.com/changelog/introducing-vercel-firewall-notifications)
+- [Protectd: Evolving Vercel’s always-on denial-of-service mitigations](https://vercel.com/blog/protectd-evolving-vercels-always-on-denial-of-service-mitigations)
+- [Mitigating Denial of Wallet risks with Vercel](https://vercel.com/blog/mitigating-denial-of-wallet-risks-with-vercel)
+- [Vercel security roundup: improved bot defenses, DoS mitigations, and insights](https://vercel.com/blog/vercel-security-roundup-improved-bot-defenses-dos-mitigations-and-insights)
 
 Full cross-link map for this page: [/docs/vercel-firewall/ddos-mitigation.graph.md](/docs/vercel-firewall/ddos-mitigation.graph.md)
 <!-- /docsgraph:related -->
@@ -115,6 +116,18 @@ For an additional layer of security, we recommend that you enable [Attack Mode](
 
 You can monitor usage in the [Vercel Dashboard](/dashboard) under the **Usage** section in the sidebar, although you will [receive notifications](/docs/notifications#on-demand-usage-notifications) when nearing your usage limits.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

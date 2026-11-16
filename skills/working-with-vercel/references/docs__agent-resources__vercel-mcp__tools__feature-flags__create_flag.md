@@ -12,9 +12,10 @@ related:
   []
 summary: Use create_flag with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/create_flag.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "2408a2ba47a690bb99731c706c80a91b464d80c4b84a450cf8e9b69178aedda3"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5fa66fe6f12bd759d2820b18c2bb74b2179548a68909d8e74daa7346d015a84b"
 ---
 
 # create_flag
@@ -27,11 +28,11 @@ Create a flag.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [update_flag](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/update_flag) — Use update_flag with Vercel MCP.
 - [get_flag](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/get_flag) — Use get_flag with Vercel MCP.
+- [update_flag](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/update_flag) — Use update_flag with Vercel MCP.
 - [update_flag_settings](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/update_flag_settings) — Use update_flag_settings with Vercel MCP.
-- [create_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project) — Use create_project with Vercel MCP.
 - [get_flag_settings](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/get_flag_settings) — Use get_flag_settings with Vercel MCP.
+- [Delete a flag](https://vercel.com/docs/rest-api/feature-flags/delete-a-flag) — DELETE /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} — Permanently delete a feature flag from the pr
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/feature-flags/create_flag.graph.md](/docs/agent-resources/vercel-mcp/tools/feature-flags/create_flag.graph.md)
 <!-- /docsgraph:related -->
@@ -45,6 +46,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/featu
 | `slug`            | string | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody`     | object | Yes      | Request body for this tool.                                 |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

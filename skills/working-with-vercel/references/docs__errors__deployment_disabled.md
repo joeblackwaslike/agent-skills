@@ -11,9 +11,10 @@ related:
   - /docs/plans/hobby
 summary: The deployment is disabled. This is a deployment error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/deployment_disabled.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c52abf0fb17f865816402bee7a06770165792f77cb60a1cb58187865828cf241"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7301c4d56e3ccc5d240bb309c7aa87b9785f022b997ea5dbed58125915bb302b"
 ---
 
 # DEPLOYMENT_DISABLED
@@ -33,6 +34,18 @@ To troubleshoot this error, follow these steps:
 3. **Review email notifications**: If you receive an email from Vercel about the pause, it may contain more details about the issue and next steps
 4. **Restore your site**: The fastest solution is to [upgrade to the Pro plan](/docs/plans/hobby#upgrading-to-pro). This plan offers more generous usage limits and pay-as-you-go options
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

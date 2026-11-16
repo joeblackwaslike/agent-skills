@@ -14,9 +14,10 @@ related:
   - /docs/conformance/rules/PACKAGE_JSON_TYPE_REQUIRED
 summary: Requires that every package.json file has the sideEffects field set to ensure tree-shaking works optimally.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/package_json_side_effects_required.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "3e779d1c8e00f4792efdd6a44f62043ab2997a96c6b60b7b4749d93c56eb0674"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3e7c061877d6c44e5b98ed7dfc4427aad975bbf693b4e3ccc04508150f7ecd7d"
 ---
 
 # PACKAGE_JSON_PRIVATE_REQUIREDPACKAGE_JSON_SIDE_EFFECTS_REQUIRED
@@ -43,6 +44,18 @@ The `sideEffects` field should be set to `false` unless the code in that workspa
 global side effects, in which case it should be set to `true` or an array of glob
 patterns for files that do have side effects.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

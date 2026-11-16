@@ -13,9 +13,10 @@ related:
   - /docs/cli/global-options
 summary: Set up Model Context Protocol (MCP) clients to use Vercel MCP with the vercel mcp CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/mcp.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "64c1e6da044ac3c5dfb15b5b17718dc57877a03f4f6d426eb16a1f42b540da5b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "818fbc95ff6172b19e15594bf57b31f362bc6c25e51e2e5eb43ce0805e1163e0"
 ---
 
 # vercel mcp
@@ -29,13 +30,15 @@ The `vercel mcp` command helps you set up MCP clients (Claude Code, Claude.ai an
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing Vercel MCP: Connect Vercel to your AI tools](https://vercel.com/blog/introducing-vercel-mcp-connect-vercel-to-your-ai-tools)
+- [Build an MCP Server with Weather tools using Express and Vercel](https://vercel.com/kb/guide/mcp-server-with-weather-tool-express) — Make your Express weather API accessible to AI assistants through the Model Context Protocol.
+- [Devin, Raycast, Windsurf, and Goose now supported on Vercel MCP](https://vercel.com/changelog/devin-raycast-windsurf-and-goose-now-supported-on-vercel-mcp)
+- [MCP server support on Vercel](https://vercel.com/changelog/mcp-server-support-on-vercel)
 - [Vercel MCP now supports Client ID Metadata Documents](https://vercel.com/changelog/vercel-mcp-now-supports-client-id-metadata-documents)
-- [Vercel MCP now in Public Beta](https://vercel.com/changelog/vercels-mcp)
 - [Model Context Protocol](https://vercel.com/docs/mcp) — Learn more about MCP and how you can use it on Vercel.
-- [use_vercel_cli](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation/use_vercel_cli) — Use use_vercel_cli with Vercel MCP.
-- [Deploy MCP servers to Vercel](https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel) — Learn how to deploy Model Context Protocol \\(MCP\\) servers on Vercel with OAuth authentication and efficient scaling.
-- [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code, Codex, and OpenCode, and co
 - [MCP Integrations](https://vercel.com/docs/mcp/integrations) — Connect AI SDK, TanStack AI, and eve applications to MCP servers to discover and call tools.
+- [Deploy MCP servers to Vercel](https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel) — Learn how to deploy Model Context Protocol \\(MCP\\) servers on Vercel with OAuth authentication and efficient scaling.
+- [AI SDK with MCP](https://vercel.com/docs/mcp/integrations/ai-sdk) — Connect the AI SDK to an MCP server on Vercel, discover its tools, and call them with models served through AI Gateway.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 
 Full cross-link map for this page: [/docs/cli/mcp.graph.md](/docs/cli/mcp.graph.md)
 <!-- /docsgraph:related -->
@@ -135,6 +138,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

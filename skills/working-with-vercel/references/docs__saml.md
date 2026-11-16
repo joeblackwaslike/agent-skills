@@ -14,9 +14,10 @@ related:
   - /docs/rbac/access-roles/team-level-roles
 summary: Learn how to configure SAML SSO for your organization on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/saml.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "eb9d308798158856603d76468253c9a59be3ad58fe2ac6e4b62306091a9af3ad"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c52b6abaa0a2262701be240e2ab873b44590e3cb95b4f6503f9c915def6441e8"
 ---
 
 # SAML Single Sign-On
@@ -39,9 +40,9 @@ To manage the [members](/docs/rbac/managing-team-members) of your team through a
 - [SAML Single Sign-On and Directory Sync now fully available](https://vercel.com/changelog/saml-single-sign-on-and-directory-sync-now-fully-available)
 - [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
 - [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
-- [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
-- [Transition your Hobby team after EMU enrollment](https://vercel.com/docs/security/enterprise-managed-users-account-update) — Explains the account update screen EMU members see at SSO sign-in and how to complete it.
-- [Set up Passport with an identity provider](https://vercel.com/docs/passport/set-up-identity-provider) — Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.
+- [OIDC Federation Reference](https://vercel.com/docs/oidc/reference) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
+- [vercel teams](https://vercel.com/docs/cli/teams) — Learn how to list, create, switch, invite, and manage your teams with the vercel teams CLI command.
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/saml.graph.md](/docs/saml.graph.md)
 <!-- /docsgraph:related -->
@@ -136,6 +137,18 @@ Vercel supports the following third-party SAML providers:
 - [Cloudflare](https://developers.cloudflare.com/cloudflare-one/applications/configure-apps/dash-sso-apps/)
 - [SimpleSAMLphp](https://simplesamlphp.org/)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

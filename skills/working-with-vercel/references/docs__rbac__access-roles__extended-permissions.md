@@ -13,9 +13,10 @@ related:
   - /docs/rbac/access-roles/team-level-roles
 summary: "Learn about extended permissions in Vercel's RBAC system. Understand how to combine roles and permissions for precise access control."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/rbac/access-roles/extended-permissions.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "91bf4954a0dcd9a468b022cc79e69f0f4c293bf80280e0bd6c74616c0baec086"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1245bbd962ed6babdfc4511173d59ab0f348cca211d2784101ef99e16692004d"
 ---
 
 # Extended permissions
@@ -31,8 +32,6 @@ Vercel's Role-Based Access Control (RBAC) system consists of three main componen
 - [Control who can manage connectors in Vercel Connect](https://vercel.com/changelog/control-who-can-manage-connectors-in-vercel-connect)
 - [Expanded Role-Based Access Control (RBAC) for Enterprise teams](https://vercel.com/changelog/expanded-role-based-access-control-rbac-for-enterprise-teams)
 - [Project Level Roles](https://vercel.com/docs/rbac/access-roles/project-level-roles) — Learn about the project level roles and their permissions.
-- [Role-based Access Control now generally available on Enterprise Plans](https://vercel.com/changelog/role-based-access-control-now-generally-available-on-enterprise-plans)
-- [New project access controls for Enterprise customers](https://vercel.com/changelog/new-project-access-controls-for-enterprise-customers)
 - [Scopes and Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions) — Learn how to manage scopes and permissions for Sign in with Vercel
 - [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference) — Learn how to manage project access and added products for your integrations.
 - [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
@@ -114,6 +113,18 @@ Not all roles and permissions can be meaningfully combined. For example:
 - Some extended permissions are only compatible with specific roles (e.g. [Full Production Deployment](#full-production-deployment) can only be added to the [Developer](/docs/rbac/access-roles#developer-role) role, and is already included in the [Member](/docs/rbac/access-roles#member-role) and [Owner](/docs/rbac/access-roles#owner-role) roles)
 - Project roles are primarily assigned to [Contributors](/docs/rbac/access-roles#contributor-role) or via Access Groups
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

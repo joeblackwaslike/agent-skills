@@ -15,9 +15,10 @@ related:
   - /docs/routing-middleware
 summary: Learn how Vercel routes, secures, and serves requests from your users to your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/fundamentals/infrastructure.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b7a685b99141053d41133b180eec5f58829b8bf3f46e97faa5ea5e9b77823f5b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f7663971c3b5eae9890c158fe920620515887011db3e7a93bfde8fff840f2be6"
 ---
 
 # How requests flow through Vercel
@@ -31,12 +32,13 @@ When you deploy to Vercel, your code runs on a global network of servers. This n
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
-- [Building secure and performant web applications on Vercel](https://vercel.com/blog/building-secure-and-performant-web-applications-on-vercel)
-- [Life of a Vercel request: Securing your app's traffic with Vercel](https://vercel.com/blog/life-of-a-request-securing-your-apps-traffic-with-vercel)
 - [How we run Vercel's CDN in front of Discourse](https://vercel.com/blog/how-we-run-vercels-cdn-in-front-of-discourse)
-- [The user experience of the Frontend Cloud](https://vercel.com/blog/the-user-experience-of-the-frontend-cloud)
-- [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
+- [Building secure and performant web applications on Vercel](https://vercel.com/blog/building-secure-and-performant-web-applications-on-vercel)
+- [How Vercel CDN Works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
+- [Vercel CDN overview](https://vercel.com/docs/cdn) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
+- [Security & Compliance Measures](https://vercel.com/docs/security/compliance) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [Backends on Vercel](https://vercel.com/docs/frameworks/backend) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
 
 Full cross-link map for this page: [/docs/fundamentals/infrastructure.graph.md](/docs/fundamentals/infrastructure.graph.md)
 <!-- /docsgraph:related -->
@@ -151,6 +153,18 @@ For more on what happens during deployment, see [Behind the Scenes of Vercel's I
 
 **Build Output API**: Understand the output format that powers Vercel deployments. [Learn more →](/docs/build-output-api)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

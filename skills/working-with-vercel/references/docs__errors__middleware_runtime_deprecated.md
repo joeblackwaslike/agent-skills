@@ -12,9 +12,10 @@ related:
   - /docs/functions/runtimes/node-js
 summary: A middleware is using a deprecated runtime.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/middleware_runtime_deprecated.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "13022c139586cc3f6a03ecb5cb3c6332f7d7f62f27090b7aef65d11ee74076f5"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "10b309d20bbbc1dc2a7b3b247d42d78418c303c34224b9dafaad405669a10ddb"
 ---
 
 # MIDDLEWARE_RUNTIME_DEPRECATED
@@ -35,6 +36,18 @@ To troubleshoot this error, follow these steps:
    - **Update your Node.js version:** Check your project's Node.js version setting in the Vercel dashboard or `package.json` and update it to a [supported version](/docs/functions/runtimes/node-js#node.js-version)
    - **Update dependencies:** Outdated dependencies may not be compatible with newer Node.js versions. Update your `package.json` dependencies to their latest compatible versions before redeploying
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

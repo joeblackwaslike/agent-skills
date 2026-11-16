@@ -15,9 +15,10 @@ related:
   - /docs/regions
 summary: Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS mitigation and SOC 2 compliance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/security/compliance.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "282be7146af6e5975ea9af5448be5d1088aec0062c39b86e03a24a4f233229ac"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "61b960f966c87256686b4c8a46411b4db9ea815f4543f0a19fde87e5db8ad811"
 ---
 
 # Security & Compliance Measures
@@ -40,7 +41,7 @@ This page covers the protection and compliance measures Vercel takes to ensure t
 - [Does Vercel have a SOC 2 Type 2 attestation?](https://vercel.com/kb/guide/is-vercel-soc-2-compliant) — Vercel holds a SOC 2 Type 2 attestation for Security, Confidentiality, and Availability. See what the report covers, how
 - [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel) — Migrate Next.js apps and HTTP containers from AWS to Vercel. Configure AWS access, assess background workers, and plan t
 - [Vercel supports HIPAA compliance](https://vercel.com/blog/vercel-supports-hipaa-compliance)
-- [The Frontend Cloud: Powering resiliency for global web applications](https://vercel.com/blog/the-resiliency-of-the-frontend-cloud)
+- [Introducing Vercel Firewall and Vercel Secure Compute](https://vercel.com/blog/vercel-security)
 - [Vercel security roundup: improved bot defenses, DoS mitigations, and insights](https://vercel.com/blog/vercel-security-roundup-improved-bot-defenses-dos-mitigations-and-insights)
 
 Full cross-link map for this page: [/docs/security/compliance.graph.md](/docs/security/compliance.graph.md)
@@ -203,6 +204,18 @@ Enterprise Teams on Vercel have their own build infrastructure ensuring isolatio
 
 Vercel conducts regular penetration testing through third-party penetration testers, and has daily code reviews and static analysis checks.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

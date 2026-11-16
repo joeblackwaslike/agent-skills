@@ -11,9 +11,10 @@ related:
   []
 summary: Prevent Turborepo from caching the Next.js .next/cache folder to prevent an oversized cache.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/nextjs_no_turbo_cache.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "3c83e72dee9efbb96f756c33ae62028d879fd9d693e372c6d3e52f05193e0e29"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3fed39bc9573c5a3faf746ee8b4fcf69987b4fb5ac5a6a106c8e6d12b48005ea"
 ---
 
 # NEXTJS_NO_TURBO_CACHE
@@ -55,6 +56,18 @@ To fix, add `"!.next/cache/**"` to the list of outputs for the task.
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

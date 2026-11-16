@@ -15,9 +15,10 @@ related:
   - /docs/vercel-blob/vercel-signed-urls
 summary: Learn how to interact with Vercel Blob storage using the vercel blob CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/blob.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "05c55176bd726f538f08d845bd9d6c2f327076a41e8a49781941787ab4473fa0"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2afe52a0da65e8fbfc694f71612687a0ce7fa1ceb56eb694cc17f33bfa053d63"
 ---
 
 # vercel blob
@@ -33,11 +34,12 @@ The `vercel blob` command is used to interact with [Vercel Blob](/docs/vercel-bl
 - [Vercel Blob CLI is now available](https://vercel.com/changelog/vercel-blob-cli-is-now-available)
 - [Vercel Blob now available in all Vercel Regions](https://vercel.com/changelog/vercel-blob-now-available-in-all-vercel-regions)
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
-- [vercel storage](https://vercel.com/docs/cli/storage) — List, create, inspect, and delete storage resources, and manage their project connections with the Vercel CLI.
+- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [Managing Vercel Blob storage from the CLI](https://vercel.com/docs/vercel-blob/manage-blob-storage) — Create blob stores, upload files, list contents, and manage storage using the CLI.
+- [vercel storage](https://vercel.com/docs/cli/storage) — List, create, inspect, and delete storage resources, and manage their project connections with the Vercel CLI.
 - [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, delete, and manage items, read tokens, a
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store) — POST /storage/stores/blob — Create a Blob store
 
 Full cross-link map for this page: [/docs/cli/blob.graph.md](/docs/cli/blob.graph.md)
 <!-- /docsgraph:related -->
@@ -450,6 +452,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

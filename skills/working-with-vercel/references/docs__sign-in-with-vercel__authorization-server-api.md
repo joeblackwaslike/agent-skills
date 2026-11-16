@@ -15,9 +15,10 @@ related:
   - /docs/oidc
 summary: Learn how to use the Authorization Server API
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sign-in-with-vercel/authorization-server-api.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "9a404edf831f902970a6d347330b0d409c33067b0d7b57305068abd4c69074b5"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "18ee4cbbfee167c663763f48ba37ba7443142dd1e8558afb5ae58302c2a41c53"
 ---
 
 # Authorization Server API
@@ -30,12 +31,12 @@ The Authorization Server API exposes a set of endpoints which are used by your a
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
+- [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect)
 - [Getting started with Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/getting-started) — Learn how to get started with Sign in with Vercel
 - [Connect to Microsoft Azure](https://vercel.com/docs/oidc/azure) — Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 - [Connect to your own API](https://vercel.com/docs/oidc/api) — Learn how to configure your own API to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\)
-- [SSO Token Exchange](https://vercel.com/docs/rest-api/authentication/sso-token-exchange) — POST /v1/integrations/sso/token — During the autorization process, Vercel sends the user to the provider \\\[redirectLogin
 - [OIDC Federation Reference](https://vercel.com/docs/oidc/reference) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
+- [SSO Token Exchange](https://vercel.com/docs/rest-api/authentication/sso-token-exchange) — POST /v1/integrations/sso/token — During the autorization process, Vercel sends the user to the provider \\\[redirectLogin
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/authorization-server-api.graph.md](/docs/sign-in-with-vercel/authorization-server-api.graph.md)
 <!-- /docsgraph:related -->
@@ -683,6 +684,18 @@ export async function GET(): Promise<Response> {
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

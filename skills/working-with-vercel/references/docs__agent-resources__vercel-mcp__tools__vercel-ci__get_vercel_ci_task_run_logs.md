@@ -12,9 +12,10 @@ related:
   []
 summary: Use get_vercel_ci_task_run_logs with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci/get_vercel_ci_task_run_logs.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "69cda4689d260c13de5216661fc3d86e075c654adbd46d833bcdf8f6a89e77c6"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "003f22cba525fd8b4d9266b67551716f6da89824204517cd1d8d2e3a2874eee2"
 ---
 
 # get_vercel_ci_task_run_logs
@@ -52,6 +53,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/verce
 | `teamId`           | string           | No       | Team ID to use for this operation.                                                                                                                            |
 | `slug`             | string           | No       | Team slug to use for this operation. Use instead of teamId.                                                                                                   |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

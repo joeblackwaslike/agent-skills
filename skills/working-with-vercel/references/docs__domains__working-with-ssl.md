@@ -15,9 +15,10 @@ related:
   - /docs/domains
 summary: Learn how Vercel uses SSL certification to keep your site secure.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains/working-with-ssl.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "8fee302e387623036525221c13a992b932b35bfd575296dbf7fa3e754a7bd395"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3a383a6811073dd4eb74e08d64c476e25350c7a98b4935ee6634a009a8d670a0"
 ---
 
 # Working with SSL Certificates
@@ -31,12 +32,11 @@ An SSL certificate enables encrypted communication between user's browser and yo
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Automatic SSL with Vercel and Let's Encrypt](https://vercel.com/blog/automatic-ssl-with-vercel-lets-encrypt)
-- [Pre-generate SSL certs, now in the Domains dashboard](https://vercel.com/changelog/pre-generate-domain-ssl-certs-now-in-dashboard)
 - [Uploading Custom SSL Certificates](https://vercel.com/docs/domains/custom-ssl-certificate) — By default, Vercel provides all domains with a custom SSL certificates. However, Enterprise teams can upload their own c
 - [Pre-Generate SSL Certificates](https://vercel.com/docs/domains/pre-generating-ssl-certs) — test
 - [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption) — Learn how Vercel encrypts data in transit and at rest.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
-- [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
+- [vercel certs](https://vercel.com/docs/cli/certs) — Learn how to manage certificates for your domains using the vercel certs CLI command.
 
 Full cross-link map for this page: [/docs/domains/working-with-ssl.graph.md](/docs/domains/working-with-ssl.graph.md)
 <!-- /docsgraph:related -->
@@ -100,6 +100,18 @@ Learn about nameservers and the benefits Vercel nameservers provide.
 Learn about common reasons for domain misconfigurations and how to
 troubleshoot your domain on Vercel.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

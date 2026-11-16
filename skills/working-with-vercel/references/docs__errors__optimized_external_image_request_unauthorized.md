@@ -11,9 +11,10 @@ related:
   []
 summary: The external image request is unauthorized. This is a request error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/optimized_external_image_request_unauthorized.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9ff93fe638fee44588740851e850483db6bfe9da3a9c2ad6501fc83045beab00"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d667f079935818d771a29f23a274e9c780686938d1ed39f8301bb1de18edb6bf"
 ---
 
 # OPTIMIZED_EXTERNAL_IMAGE_REQUEST_UNAUTHORIZED
@@ -33,6 +34,18 @@ To troubleshoot this error, follow these steps:
 3. **Update credentials:** Ensure that any required credentials or tokens are correctly set and not expired
 4. **Remove filters**: Remove any filters that may be blocking the request, such as headers or IP restrictions
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

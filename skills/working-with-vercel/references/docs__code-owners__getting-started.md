@@ -15,9 +15,10 @@ related:
   - /docs/conformance
 summary: Learn how to set up Code Owners for your codebase.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/code-owners/getting-started.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "e8f00138e8b831ea44f0d67ab88306959cfe71dc2cdb4906e8d3f08768245700"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "eb5d7d1423e4847ea4c3e90efe316a67bc8c37d797815336dc3f7c104edc645a"
 ---
 
 # Getting Started with Code Owners
@@ -175,6 +176,18 @@ Adding your repository to your team's Vercel [dashboard](https://vercel.com/d?to
 - [Code Owners CLI](/docs/code-owners/cli)
 - [Conformance](/docs/conformance)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

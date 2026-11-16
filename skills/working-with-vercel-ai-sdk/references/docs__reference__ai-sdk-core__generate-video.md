@@ -4,8 +4,8 @@ description: API Reference for experimental_generateVideo.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-video"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/generate-video.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "f4a1377e71fab16b5783d9493913849207c2dd4ece82a83eb306573e95128570"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "5cd4bfa51c6e95afe6b4f8f0d6c3f8a722d803ce92bfe5e6481b5732bb1d6929"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -59,7 +59,7 @@ import { experimental_generateVideo } from "ai"
 - `maxRetries?` (`number`): Maximum number of retries. Default: 2.
 - `abortSignal?` (`AbortSignal`): An optional abort signal to cancel the call.
 - `headers?` (`Record<string, string>`): Additional HTTP headers for the request.
-- `download?` (`(options: { url: URL; abortSignal?: AbortSignal }) => Promise<{ data: Uint8Array; mediaType: string | undefined }>`): Custom download function for fetching videos from URLs. Use \`createDownload()\` from \`ai\` to create a download function with custom size limits, e.g. \`createDownload(\{ maxBytes: 50 \* 1024 \* 1024 })\`. Default: built-in download with 2 GiB limit.
+- `download?` (`(options: { url: URL; abortSignal?: AbortSignal }) => Promise<{ data: Uint8Array; mediaType: string | undefined }>`): Custom download function for fetching videos from URLs. Use \`createDownload()\` from \`ai\` to create a download function with a custom size limit (e.g. \`createDownload(\{ maxBytes: 50 \* 1024 \* 1024 })\`) or fetch transport (e.g. \`createDownload(\{ fetch })\` with \`guarded-fetch\` on Node.js for untrusted URLs). Default: built-in download with 2 GiB limit.
 - `poll?` (`object`): Polling configuration for the asynchronous start/status flow.
   - `object`
     - `intervalMs?` (`number`): Interval between status checks in milliseconds. Default: 5000.

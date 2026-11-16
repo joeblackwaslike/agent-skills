@@ -14,9 +14,10 @@ related:
   - /docs/cli/env
 summary: Learn how to add Perplexity connectable account integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/perplexity.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "6edf5232c0faeb3032e84c3acb217e7dcfd3e3fa84a63e74e25fc126ed17f665"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7ed48e177d9cb889ede887df9202c5953597c330979ec06a72604ea3096e3930"
 ---
 
 # Vercel Perplexity Integration
@@ -39,11 +40,12 @@ directly within your product experience.
 
 - [Access Perplexity Web Search on Vercel AI Gateway with any model](https://vercel.com/changelog/access-perplexity-web-search-on-vercel-ai-gateway-with-any-model)
 - [Use Perplexity Web Search with Vercel AI Gateway](https://vercel.com/blog/use-perplexity-web-search-with-vercel-ai-gateway)
+- [Introducing AI Integrations on Vercel](https://vercel.com/blog/ai-integrations)
 - [Vercel ElevenLabs Integration](https://vercel.com/docs/agent-resources/integrations-for-models/elevenlabs) — Learn how to add the ElevenLabs connectable account integration with Vercel.
+- [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model) — Learn how to add a new AI model to your Vercel projects
 - [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai) — Learn how to add the xAI native integration with Vercel.
-- [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra) — Learn how to add the Deep Infra native integration with Vercel.
 - [Vercel fal Integration](https://vercel.com/docs/agent-resources/integrations-for-models/fal) — Learn how to add the fal native integration with Vercel.
-- [Vercel Pinecone Integration](https://vercel.com/docs/agent-resources/integrations-for-models/pinecone) — Learn how to add Pinecone connectable account integration with Vercel.
+- [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra) — Learn how to add the Deep Infra native integration with Vercel.
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/perplexity.graph.md](/docs/agent-resources/integrations-for-models/perplexity.graph.md)
 <!-- /docsgraph:related -->
@@ -113,6 +115,18 @@ To follow this guide, you'll need the following:
 
 ## More resources
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

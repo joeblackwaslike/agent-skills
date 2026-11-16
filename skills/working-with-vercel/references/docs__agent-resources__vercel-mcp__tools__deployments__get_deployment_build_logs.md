@@ -12,9 +12,10 @@ related:
   []
 summary: Use get_deployment_build_logs with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_build_logs.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c2d5a6b8aa1578e6e0ee8cef7f11d89e71a40fdaeb6c92a5859cb6d28784c56e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ced9180227f127bf547b544356ca4680e9b7f02c7054eb7fafeff70cd2886644"
 ---
 
 # get_deployment_build_logs
@@ -30,7 +31,7 @@ Get the build logs for a deployment by ID or URL, to investigate why a build fai
 - [list_deployment_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_events) — Use list_deployment_events with Vercel MCP.
 - [ui_get_build_log_excerpt](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/ui_get_build_log_excerpt) — Use ui_get_build_log_excerpt with Vercel MCP.
 - [Accessing Build Logs](https://vercel.com/docs/deployments/logs) — Learn how to use Vercel's build logs to monitor the progress of building or running your deployment, and check for possi
-- [get_runtime_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_logs) — Use get_runtime_logs with Vercel MCP.
+- [Get logs for a deployment](https://vercel.com/docs/rest-api/logs/get-logs-for-a-deployment) — GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs — Returns a stream of logs for a given deployment.
 - [list_deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployments) — Use list_deployments with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_build_logs.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_build_logs.graph.md)
@@ -49,6 +50,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deplo
 | `buildId`    | string  | No       | -        | Filter to a specific build ID (bld\_...) for multi-build deployments.                                                                                                                   |
 | `teamId`     | string  | Yes      | -        | The team ID or slug. Use the team that owns the resource.                                                                                                                               |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

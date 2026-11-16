@@ -8,23 +8,24 @@ type: conceptual
 prerequisites:
   []
 related:
+  - /docs/global-config/using-global-config
   - /docs/global-config/migration-guide
   - /docs/routing-middleware
   - /docs/functions
   - /docs/functions/runtimes
-  - /docs/global-config/global-config-limits
 summary: A Global Config is a global data store that enables experimentation with feature flags, A/B testing, critical redirects, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/global-config.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "5a564ff7cc67b587839660f84c377d74df1e366592e083befa42cfdf8f8e02ab"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "84ea84b0d24e4515f160b0614c98e60342b3e94dcacf09ec19cf602664b032e6"
 ---
 
 # Vercel Global Config
 
-> Global Config is available on all plans
+## Change feature flags and redirects without redeploying
 
-A [Global Config](/docs/global-config) is a global data store that [enables experimentation with feature flags, A/B testing, critical redirects, and IP blocking](#use-cases). It enables you to read data in the region closest to the user without querying an external database or hitting upstream servers.
+Store feature flags, A/B tests, critical redirects, and blocked IPs in a Global Config. Reads typically complete in less than a millisecond on Vercel, and updates propagate globally without a redeployment.
 
 
 <!-- docsgraph:related -->
@@ -38,15 +39,54 @@ A [Global Config](/docs/global-config) is a global data store that [enables expe
 - [Statsig](https://flags-sdk.dev/docs/providers/statsig)
 - [Edge Config is now Global Config](https://vercel.com/changelog/edge-config-is-now-global-config)
 - [LaunchDarkly is now available on the Vercel Marketplace](https://vercel.com/changelog/launchdarkly-is-now-available-on-the-vercel-marketplace)
+- [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
 - [Implementing Blue-Green Deployments on Vercel](https://vercel.com/kb/guide/blue_green_deployments_on_vercel) — This guide outlines how to implement blue-green deployments on Vercel, leveraging GitHub Actions for seamless and contro
-- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
 - [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
 - [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
 - [A/B testing on ecommerce storefronts without hurting Core Web Vitals](https://vercel.com/kb/guide/ecommerce-ab-testing-core-web-vitals) — Client-side A/B tools can worsen LCP and CLS on the pages you're testing. Run ecommerce A/B tests at the edge with Routi
-- [Introducing Edge Config: Globally distributed, instant configuration](https://vercel.com/blog/edge-config-public-beta)
+- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, delete, and manage items, read tokens, a
 
 Full cross-link map for this page: [/docs/global-config.graph.md](/docs/global-config.graph.md)
 <!-- /docsgraph:related -->
+
+#### Read a value
+
+```ts filename="api/flag.ts"
+import { get } from '@vercel/global-config';
+
+export async function GET() {
+  const enabled = await get('betaUiEnabled');
+  return Response.json({ enabled });
+}
+```
+
+#### Read all values
+
+```ts filename="api/config.ts"
+import { getAll } from '@vercel/global-config';
+
+export async function GET() {
+  const config = await getAll();
+  return Response.json(config);
+}
+```
+
+#### Check a key
+
+```ts filename="api/region.ts"
+import { has } from '@vercel/global-config';
+
+export async function GET() {
+  const hasRegion = await has('region');
+  return Response.json({ hasRegion });
+}
+```
+
+> Global Config is available on all plans
+
+A Global Config lets you read data in the region closest to the user without querying an external database or hitting upstream servers. It fits [data that you read often and update rarely](#use-cases).
+
+The examples above use the [connection string](/docs/global-config/using-global-config#using-a-connection-string) in your project's `GLOBAL_CONFIG` environment variable to find the Global Config to read.
 
 > **💡 Note:** Global Config was previously called **Edge Config**. The store itself is
 > unchanged, and existing projects require no action. See [Migrating from Edge
@@ -148,6 +188,18 @@ To learn about Global Config limits and pricing, see [our Global Config limits d
 - [Manage with the API](/docs/global-config/vercel-api)
 - [Global Config Limits](/docs/global-config/global-config-limits)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

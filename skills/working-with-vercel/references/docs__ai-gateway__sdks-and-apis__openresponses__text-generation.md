@@ -12,9 +12,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis/openresponses
 summary: Generate text responses using the OpenResponses API through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/text-generation.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "86f9b51445acb7e7c542153fce1bd05922503fb5eaa43f4305a31bcd3367e65d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "cfff0ef73a9526ce5f1292a00511bccf5e799f619267f2281f8f05b087f6afbf"
 ---
 
 # OpenResponses Text Generation with AI Gateway
@@ -137,6 +138,18 @@ The response includes the generated text in the `output` array, along with token
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -13,9 +13,10 @@ related:
   - /docs/agent-resources/vercel-mcp/tools/billing/get_domain_order
 summary: Use buy_domain with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing/buy_domain.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "60098ec1eacd434e4c91a1d4a6e0ae7f87698c9971b0ef60e5eb3eccb8f0940c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "42af4dea590656835d5e5dc37994d398601994619dc67ab5eef792d073651041"
 ---
 
 # buy_domain
@@ -30,8 +31,8 @@ Register (purchase) a single [domain](/docs/domains) for a team. The quote (`get
 
 - [get_purchase_quote](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing/get_purchase_quote) — Use get_purchase_quote with Vercel MCP.
 - [buy_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/buy_domains) — Use buy_domains with Vercel MCP.
-- [get_domain_price](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_price) — Use get_domain_price with Vercel MCP.
 - [buy_single_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/buy_single_domain) — Use buy_single_domain with Vercel MCP.
+- [get_domain_price](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_price) — Use get_domain_price with Vercel MCP.
 - [Domains and DNS](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains) — Vercel MCP tools for domains and dns.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/billing/buy_domain.graph.md](/docs/agent-resources/vercel-mcp/tools/billing/buy_domain.graph.md)
@@ -69,6 +70,18 @@ The `contact` object requires the following fields with an optional `companyName
 
 **Sample prompt:** "Buy the domain mydomain.com"
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

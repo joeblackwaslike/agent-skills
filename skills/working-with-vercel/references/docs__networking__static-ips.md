@@ -15,9 +15,10 @@ related:
   - /docs/networking/static-ips/getting-started
 summary: Access IP-restricted backend services through shared static egress IPs for Pro and Enterprise teams.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/networking/static-ips.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "6f610c260499ce95e2e81536fbbe6fe08e54a08fe23bfdcbd91117c9af16497c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5109cfad91f4ea23bbbfd2bc08e4b65675a26a10312b86164aa1a9ed620c04ff"
 ---
 
 # Static IPs
@@ -41,9 +42,9 @@ With Static IPs (shared pool), you can access backend services that require IP a
 - [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
 - [Static IPs are now available for more secure connectivity](https://vercel.com/changelog/static-ips-are-now-available-for-more-secure-connectivity)
 - [Route build traffic through Static IPs](https://vercel.com/changelog/route-build-traffic-through-static-ips)
-- [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing)
-- [Introducing Flat Rate CDN](https://vercel.com/blog/introducing-flat-rate-cdn)
-- [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
+- [Restrict deployment access by IP address](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/trusted-ips) — Trusted IPs let you restrict access to your deployments to a list of allowed IP addresses.
+- [Using Vercel with Microsoft Azure](https://vercel.com/docs/integrations/external-platforms/azure) — Run your frontend on Vercel alongside backends hosted in Microsoft Azure, with private network connectivity, keyless aut
 
 Full cross-link map for this page: [/docs/networking/static-ips.graph.md](/docs/networking/static-ips.graph.md)
 <!-- /docsgraph:related -->
@@ -74,6 +75,8 @@ Therefore, Static IPs should not be used if you need your app to be reachable th
 ### Static IPs or PrivateLink
 
 If the service you call runs on AWS and publishes an AWS PrivateLink endpoint service, [PrivateLink](/docs/networking/privatelink) connects to it without an IP allowlist. The service provider allowlists an AWS IAM role assigned to your team, and traffic stays on the AWS private network.
+
+PrivateLink builds on Static IPs rather than replacing them: it's only usable on projects with Static IPs enabled, and the Advanced Networking monthly charge includes your first PrivateLink connection. Traffic that routes through a PrivateLink endpoint is billed as [PrivateLink data transfer](/docs/networking/privatelink#pricing) rather than Private Data Transfer.
 
 | Feature | Static IPs | PrivateLink |
 | --- | --- | --- |
@@ -192,6 +195,18 @@ No. Each configured region provides two static IP addresses from a shared pool, 
 
 Static IPs apply to every [environment](/docs/deployments/environments) in the project, including preview and production, and you can't limit them to one environment. Builds use dynamic IP addresses until you turn on [Use for builds](#routing-build-traffic). [Routing Middleware](#routing-middleware-support) never uses static IPs, so make IP-restricted calls from a Vercel Function instead.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

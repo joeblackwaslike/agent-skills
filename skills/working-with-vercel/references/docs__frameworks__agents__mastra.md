@@ -16,9 +16,10 @@ related:
   - /docs/environment-variables
 summary: Deploy a Mastra agent as a Vercel Function and route its model requests through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/agents/mastra.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "8c0bf924f0b0a807c44fe78ab99e766916b2ce9667c22e59860bf22530cfe3b4"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5ba91de7af75417c430cf725d013d2d0737df975dd4bc30ad216d842a5c9838e"
 ---
 
 # Mastra on Vercel
@@ -32,18 +33,34 @@ sha256: "8c0bf924f0b0a807c44fe78ab99e766916b2ce9667c22e59860bf22530cfe3b4"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Running background workers on Vercel](https://vercel.com/kb/guide/background-workers-on-vercel) — Run background jobs on Vercel with waitUntil, Cron Jobs, Queues, Workflows, Daemons, or Sandbox. Compare the options and
-- [How to give agents persistent storage with Vercel Drives](https://vercel.com/kb/guide/persistent-storage-with-vercel-drives) — Give AI SDK and TanStack AI agents persistent storage with Vercel Drives so they can save and reuse research notes acros
-- [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
-- [Vercel for Enterprise](https://vercel.com/blog/vercel-for-enterprise)
-- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
-- [Introducing the new Vercel Agent](https://vercel.com/blog/vercel-agent)
-- [How to choose between Functions, containers, and Daemons on Vercel](https://vercel.com/kb/guide/vercel-functions-containers-daemons) — Choose Vercel Functions for HTTP requests, container images for custom runtimes, and Daemons for continuous background w
-- [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
+- [Run a research workspace on Vercel](https://vercel.com/kb/guide/run-research-workspace-vercel) — Plan a durable research workspace on Vercel's Agentic Infrastructure with Workflows, internal API tools, Vercel Sandbox
+- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
+- [ Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel) — Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflo
+- [How to run a multi-step research agent on Vercel](https://vercel.com/kb/guide/how-to-run-a-multi-step-research-agent-on-vercel) — An end-to-end architecture for production research agents on Vercel using Sandbox, Workflows, and AI Gateway with isolat
 - [eve on Vercel](https://vercel.com/docs/frameworks/agents/eve) — Create and deploy an eve agent on Vercel with AI Gateway model access, durable sessions, and authenticated requests.
-- [Agent Resources](https://vercel.com/docs/agent-resources) — Set up AI coding tools with Vercel documentation, reusable skills, and secure access to projects, deployments, and logs.
 
 Full cross-link map for this page: [/docs/frameworks/agents/mastra.graph.md](/docs/frameworks/agents/mastra.graph.md)
 <!-- /docsgraph:related -->
+
+**Agent prompt**
+
+```text
+Build a working Mastra agent API for my project's use case, verify it locally, and prepare it for deployment on Vercel.
+
+Use https://vercel.com/docs/frameworks/agents/mastra.md as the framework setup reference.
+
+1. Define the outcome. Inspect the project and its repository instructions. Identify the task the agent should perform, the tools or data it needs, and one representative input with an expected result. Ask me about requirements you can't determine from the project before implementing them.
+
+2. Prepare the environment. Check the guide's prerequisites and my Vercel setup. Check whether the Vercel Plugin is installed in your coding tool. If it's missing, install it using the tool-specific instructions at https://vercel.com/docs/agent-resources/vercel-plugin.md.
+
+3. Implement the agent. Create or extend the Mastra project, register the agent with instructions for my use case, connect its model to AI Gateway, and configure the Vercel deployer. Reuse existing code and conventions, preserve unrelated work, and add only the tools and integrations the task needs.
+
+4. Verify the outcome. Send the representative request to the agent's local generate endpoint and compare the response and tool results with the expected outcome. Run relevant existing project checks and the deployment build. Confirm the build succeeds and produces the deployment output described in the guide. Fix failures introduced by your changes.
+
+5. Prepare deployment. Identify required environment variables and check the implementation against the guide's runtime and storage requirements. Provide the configuration and commands needed to deploy the API. Keep this task scoped to implementation, local verification, and deployment preparation.
+
+Finish with a concise handoff: the implementation, commands you actually ran and their results, an example input and observed output, and the remaining deployment steps. If credentials, tools, or services block a check, mark it as unverified, explain what's missing, and give the command to rerun it.
+```
 
 ## Prerequisites
 
@@ -412,6 +429,37 @@ The generated worker handles `SIGTERM` by stopping its workers before exit. The 
 
 Daemons expose Vercel identity through the rotating `VERCEL_OIDC_TOKEN_FILE`, rather than a request's `VERCEL_OIDC_TOKEN`. Use file-aware SDK authentication as described in [Daemon OIDC](/docs/daemons#environment-variables-and-oidc), or configure an AI Gateway API key where model calls run. Don't copy the file's token into a long-lived environment variable.
 
+## Frequently asked questions
+
+### Can I deploy a Mastra agent to Vercel?
+
+Yes. Add `VercelDeployer` from `@mastra/deployer-vercel` to your Mastra configuration. When you run `mastra build`, the deployer writes your Mastra server to `.vercel/output` as a [Vercel Function](/docs/functions) with its routing configuration, following the [Build Output API](/docs/build-output-api). The deployed server exposes your agents and workflows under `/api`. If you run Mastra inside a Next.js or Astro application, deploy that application as usual and apply the settings in [Mastra's web framework guide](https://mastra.ai/docs/deployment/web-framework).
+
+### Which Vercel products work with Mastra?
+
+You can use each of these Vercel products with a Mastra agent:
+
+- [Vercel Functions](/docs/functions) run the Mastra server that `VercelDeployer` builds.
+- [AI Gateway](/docs/ai-gateway) routes your agent's model requests and records their usage.
+- [Vercel Sandbox](/docs/sandbox) runs agent commands in an isolated microVM, and [Vercel Drives](/docs/sandbox/concepts/drives) keep workspace files after a sandbox stops.
+- [Vercel Blob](/docs/vercel-blob) stores reports and other files your agent creates.
+- [Vercel Workflows](/docs/workflows) coordinate multi-step tasks that call your agent, such as waiting for approval before publishing.
+- [Vercel Daemons](/docs/daemons) run Mastra's orchestration and background-task workers.
+- [Vercel Passport](/docs/passport) signs visitors in so you can scope Mastra memory to each user.
+- [Chat SDK](/docs/chat-sdk) adapters connect your agent to Slack, Discord, or Microsoft Teams through Mastra channels.
+
+### How do I use AI Gateway with Mastra?
+
+Set your agent's `model` to a model from the `gateway` provider in `@ai-sdk/gateway`, such as `gateway('openai/gpt-6.1-terra')`. You can also use a Mastra model router string that starts with `vercel/`, such as `'vercel/openai/gpt-6.1-terra'`. Both options read `AI_GATEWAY_API_KEY`. On Vercel, the `gateway` provider can also authenticate with the deployment's [OIDC token](/docs/ai-gateway/authentication-and-byok#oidc-tokens). Mastra's model router sends requests to an OpenAI-compatible endpoint, so some provider-specific features may not be available through it. See [Mastra with AI Gateway](/docs/ai-gateway/ecosystem/framework-integrations/mastra) for a full setup.
+
+### Can a Mastra agent run code in Vercel Sandbox?
+
+Yes. Create a `Workspace` with the `VercelSandbox` adapter from `@mastra/vercel` and assign it to your agent. The agent gets a command tool that runs in an isolated Linux microVM, while the agent and its model calls stay in your application. To keep working files across sandbox runs, mount a drive as described in [Keep workspace files on a drive](#keep-workspace-files-on-a-drive). Use `VercelSandbox` rather than `VercelServerlessSandbox`, which runs commands in stateless Vercel Functions without a persistent filesystem. See [Mastra with Vercel Sandbox](/docs/sandbox/ecosystem/mastra) for setup and cleanup.
+
+### How do I persist memory and run long tasks with Mastra on Vercel?
+
+Vercel Functions don't share process memory, and local files don't persist across deployments. Configure a remote [Mastra storage adapter](https://mastra.ai/docs/storage), such as PostgreSQL, for conversation memory and workflow state. The Vercel deployer stops the build if your project depends on `@mastra/libsql`. Each request runs within [Vercel Function duration limits](/docs/functions/configuring-functions/duration). To allow longer requests, raise `maxDuration` in `VercelDeployer` and Mastra's `server.timeout` together, because Mastra's own timeout defaults to 180 seconds. For work that outlasts one request, use [Vercel Workflows](#orchestrate-agent-tasks-with-vercel-workflows) to coordinate steps, or run Mastra's workers on [Vercel Daemons](#run-background-workers-with-vercel-daemons).
+
 ## Extend your agent on Vercel
 
 - [Build a software factory](/docs/agent-resources/software-factory/mastra) that investigates issues, checks changes, and prepares draft pull requests.
@@ -422,6 +470,23 @@ Daemons expose Vercel identity through the rotating `VERCEL_OIDC_TOKEN_FILE`, ra
 
 - Connect your deployed agent to Slack, Discord, or Microsoft Teams using Mastra's [Chat SDK integration](/docs/ai-gateway/ecosystem/framework-integrations/mastra#connect-your-agent-on-vercel-to-chat-platforms).
 
+**Agent checklist** [→](/docs/agent-checklist?framework=mastra)
+
+Check access, tools, reliability, observability, and cost before you launch
+your Mastra agent.
+
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

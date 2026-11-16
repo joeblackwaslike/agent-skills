@@ -15,9 +15,10 @@ related:
   - /docs/cli/target
 summary: Add, sync, and verify environment variables across development, preview, production, and custom environments using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/environment-variables/manage-across-environments.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "bd519aa75960c41cac8b55453c26f97b7547a12f545e902812a5e18ad5778558"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5b5f80593a44627a3a5d82bd6f532e6af21bb2766b30f971c8dd4cc07c5a3c9f"
 ---
 
 # Managing environment variables across environments
@@ -32,14 +33,11 @@ Use this guide to manage environment variables across multiple environments. You
 
 - [Full-stack previews on Vercel](https://vercel.com/kb/guide/full-stack-preview-deployments-on-vercel) — Learn how to use full-stack previews for your Vercel projects. Deploy Next.js, FastAPI, and a containerized Go service t
 - [Environment Variables UI](https://vercel.com/blog/environment-variables-ui)
-- [Environments Variables per Git branch](https://vercel.com/changelog/environments-variables-per-git-branch)
-- [Environment variables now use Config and Secret types](https://vercel.com/changelog/environment-variables-now-use-config-and-secret-types)
-- [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
 - [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables) — Learn how to create and manage environment variables for Vercel.
-- [Environments](https://vercel.com/docs/deployments/environments) — Environments are for developing locally, testing changes in a pre-production environment, and serving end-users in produ
 - [Environment Variables](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables) — Vercel MCP tools for environment variables.
+- [Environments](https://vercel.com/docs/deployments/environments) — Environments are for developing locally, testing changes in a pre-production environment, and serving end-users in produ
+- [Vercel CI Environment Variables](https://vercel.com/docs/ci/environment-variables) — Manage environment variables and secrets for Vercel CI runs.
 - [Edit an environment variable](https://vercel.com/docs/rest-api/projects/edit-an-environment-variable) — PATCH /v9/projects/{idOrName}/env/{id} — Edit a specific environment variable for a given project by passing the environ
-- [Shared environment variables](https://vercel.com/docs/environment-variables/shared-environment-variables) — Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can
 
 Full cross-link map for this page: [/docs/environment-variables/manage-across-environments.graph.md](/docs/environment-variables/manage-across-environments.graph.md)
 <!-- /docsgraph:related -->
@@ -236,6 +234,18 @@ vercel env remove DATABASE_URL --environment production --yes
 - [Environment variables overview](/docs/environment-variables)
 - [Deploying a project from the CLI](/docs/projects/deploy-from-cli)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

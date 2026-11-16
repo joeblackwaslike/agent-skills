@@ -13,9 +13,10 @@ related:
   - /docs/ai-gateway/authentication-and-byok
 summary: Learn how to integrate Vercel AI Gateway with LiteLLM to access multiple AI models through a unified interface.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/litellm.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "99af348e57515d4f9cf9211ce2836448724f305421072cb6c5cf2742d10c1194"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a5d8eb0c4408231e3b6cc686cea426728a7e7be8fbdd676a7226a22de9d49b01"
 ---
 
 # LiteLLM with AI Gateway
@@ -33,10 +34,10 @@ with LiteLLM to access various AI models and providers.
 - [LiteLLM server now supported on Vercel](https://vercel.com/changelog/litellm-server-now-supported-on-vercel)
 - [What is a Large Language Model \\(LLM\\)?](https://vercel.com/kb/guide/what-is-a-large-language-model) — Learn what Large Language Models \\(LLMs\\) are, how they work, and how you can use them to generate UI, debug code, and i
 - [LlamaIndex with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/llamaindex) — Learn how to integrate Vercel AI Gateway with LlamaIndex to access multiple AI models through a unified interface.
-- [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
 - [LangChain with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langchain) — Learn how to integrate Vercel AI Gateway with LangChain to access multiple AI models through a unified interface.
+- [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
 - [Vercel LMNT Integration](https://vercel.com/docs/agent-resources/integrations-for-models/lmnt) — Learn how to add LMNT connectable account integration with Vercel.
-- [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai) — Learn how to add the xAI native integration with Vercel.
+- [Vercel & OpenAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/openai) — Integrate your Vercel project with OpenAI's powerful suite of models.
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integrations/litellm.graph.md](/docs/ai-gateway/ecosystem/framework-integrations/litellm.graph.md)
 <!-- /docsgraph:related -->
@@ -102,6 +103,18 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
   ```
   You should see a response from the AI model in your console.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

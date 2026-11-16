@@ -12,9 +12,10 @@ related:
   - /docs/flags/vercel-flags/project-connections
 summary: Vercel MCP tools for feature flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "2d4130f2b7249f62d855bd3d97781f77094dfa2fe11be2c0f9bf7b4381d2090d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "fd595f87a0a767a18d677412ec4efa7e9d003626722cfdc02e647a0f98315eb5"
 ---
 
 # Feature Flags
@@ -27,11 +28,11 @@ Read and update feature flags and their settings. Create SDK keys and list the k
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [List all flags for a team](https://vercel.com/docs/rest-api/feature-flags/list-all-flags-for-a-team) — GET /v2/teams/{teamId}/feature-flags/flags — Retrieve all feature flags for a team across all projects. Returns an opaqu
-- [List flags](https://vercel.com/docs/rest-api/feature-flags/list-flags) — GET /v2/projects/{projectIdOrName}/feature-flags/flags — Retrieve feature flags for a project. Returns an opaque cursor
-- [Update a flag](https://vercel.com/docs/rest-api/feature-flags/update-a-flag) — PATCH /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} — Update an existing feature flag. This endpoint
+- [Managing flags in the dashboard](https://vercel.com/docs/flags/vercel-flags/dashboard) — Learn how to manage your feature flags using the Vercel Dashboard.
 - [List team project flag settings](https://vercel.com/docs/rest-api/feature-flags/list-team-project-flag-settings) — GET /v1/teams/{teamId}/feature-flags/settings — Retrieve feature flag settings for projects in a team.
-- [List flag versions](https://vercel.com/docs/rest-api/feature-flags/list-flag-versions) — GET /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug}/versions — Lists flag versions for a given flag.
+- [List flags](https://vercel.com/docs/rest-api/feature-flags/list-flags) — GET /v2/projects/{projectIdOrName}/feature-flags/flags — Retrieve feature flags for a project. Returns an opaque cursor
+- [List all flags for a team](https://vercel.com/docs/rest-api/feature-flags/list-all-flags-for-a-team) — GET /v2/teams/{teamId}/feature-flags/flags — Retrieve all feature flags for a team across all projects. Returns an opaqu
+- [Vercel Flags](https://vercel.com/docs/flags/vercel-flags) — Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directl
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/feature-flags.graph.md](/docs/agent-resources/vercel-mcp/tools/feature-flags.graph.md)
 <!-- /docsgraph:related -->
@@ -368,6 +369,18 @@ You need permission to manage connections on the source to complete this action.
 | `consumerProjectId` | string | Yes      | The connected consumer project id |
 | `teamId`            | string | Yes      | Team ID.                          |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

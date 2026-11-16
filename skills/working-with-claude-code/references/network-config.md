@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/network-config.md"
-fetched_at: "2026-11-09T12:34:10.263Z"
-sha256: "f8772ba8eb25afded1255706e59abfee95ab4e3bf3ea456bbc564d32e3dc0921"
+fetched_at: "2026-11-16T12:28:44.823Z"
+sha256: "2e5c8c9b8d62a7de8a4f164dd80e278c3fb248a39c197da47585ee4a5737425a"
 ---
 
 > ## Documentation Index
@@ -12,13 +12,15 @@ sha256: "f8772ba8eb25afded1255706e59abfee95ab4e3bf3ea456bbc564d32e3dc0921"
 
 > Configure Claude Code for enterprise environments with proxy servers, custom Certificate Authorities (CA), and mutual Transport Layer Security (mTLS) authentication.
 
-Claude Code supports various enterprise network and security configurations through environment variables. This includes routing traffic through corporate proxy servers, trusting custom Certificate Authorities (CA), and authenticating with mutual Transport Layer Security (mTLS) certificates for enhanced security.
+Claude Code supports various enterprise network and security configurations through environment variables.
 
 Set these environment variables before you launch Claude Code. Variables exported in your shell are read once at startup, so a running session doesn't pick up later changes to your shell environment.
 
 > [!NOTE]
 >
 > All environment variables shown on this page can also be configured in [`settings.json`](https://code.claude.com/docs/en/settings).
+
+When you [sign in to a remote MCP server](https://code.claude.com/docs/en/mcp.md#authenticate-with-remote-mcp-servers), Claude Code applies your [proxy](#proxy-configuration), [CA](#custom-ca-certificates), and [client certificate](#mtls-authentication) variables to the sign-in requests it sends. For [`claude mcp login`](https://code.claude.com/docs/en/mcp#authenticate-from-the-command-line), set the variables in your shell, `~/.claude/settings.json`, or a [managed settings file](https://code.claude.com/docs/en/managed-settings.md#deploy-a-managed-settings-file), not in project or local settings.
 
 ## Proxy configuration
 

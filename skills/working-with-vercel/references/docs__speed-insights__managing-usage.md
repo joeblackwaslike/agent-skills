@@ -14,9 +14,10 @@ related:
   - /docs/speed-insights/limits-and-pricing
 summary: Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/speed-insights/managing-usage.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "37dd732ba1952da7f8519aef8b22d4b86970fd3e8259c9633f08334d9889a5f3"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "130eec12f761e3600eec694ae2601a3e723c0c06f84c689c3f66de236e0fc98c"
 ---
 
 # Managing Usage & Costs
@@ -35,8 +36,8 @@ Use the [`@vercel/speed-insights`](https://www.npmjs.com/package/@vercel/speed-i
 - [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights) — Learn how to use Speed Insights to analyze your application's performance data.
 - [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
 - [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Vercel Speed Insights Privacy & Compliance](https://vercel.com/docs/speed-insights/privacy-policy) — Learn how Vercel follows the latest privacy and data compliance standards with its Speed Insights feature.
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 
 Full cross-link map for this page: [/docs/speed-insights/managing-usage.graph.md](/docs/speed-insights/managing-usage.graph.md)
 <!-- /docsgraph:related -->
@@ -202,6 +203,18 @@ For maximum cost control, you can combine both options. The `sampleRate` determi
 - [Limits and pricing](/docs/speed-insights/limits-and-pricing)
 - [Understanding data points](/docs/speed-insights/metrics#understanding-data-points)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

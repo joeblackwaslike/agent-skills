@@ -16,9 +16,10 @@ related:
   - /docs/sandbox/pricing
 summary: Run Cursor Cloud Agents on Vercel Sandbox by backing a Cursor Self-Hosted Machines Team Pool with one isolated microVM per request.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/ecosystem/cursor.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "61137e590aa0453f3e40837bea3d5ca16d15f470e53fdfb7ea3e9adb673730ae"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b924af21af7209775c22ee37ec613e39961b8efeb8775ab62e1fb3da46adc66f"
 ---
 
 # Cursor Cloud Agents
@@ -37,11 +38,10 @@ clones code, runs commands, edits files, and executes tests.
 - [Cursor Cloud Agents can now run in Vercel Sandbox](https://vercel.com/changelog/run-cursor-cloud-agents-vercel-sandbox)
 - [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
 - [How to run Herdr coding agents in isolated Vercel Sandboxes](https://vercel.com/kb/guide/run-herdr-coding-agents-isolated-vercel-sandboxes) — Install the vercel.sandbox plugin for Herdr, approve an upload manifest, run each AI coding agent in its own isolated Ve
-- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
 - [Vercel Sandbox vs CodeSandbox](https://vercel.com/kb/guide/vercel-sandbox-vs-codesandbox) — A detailed guide to Vercel Sandbox vs CodeSandbox: compute isolation, credential brokering, Active CPU billing, Docker s
 - [How to run Devin Outposts sessions on Vercel](https://vercel.com/kb/guide/devin-outposts-vercel-sandbox) — Run Devin Outposts sessions in isolated Vercel Sandbox microVMs. One browser authorization to set up, then sessions star
+- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
 - [Cursor with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/cursor) — Connect Cursor to AI Gateway with its OpenAI base URL override. Configure the Cursor compatibility endpoint, API key, an
-- [AgentEnv by Scale AI](https://vercel.com/docs/sandbox/ecosystem/agentenv) — Run evaluations with AgentEnv by Scale AI using separate Vercel sandboxes for the environment and agent.
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/cursor.graph.md](/docs/sandbox/ecosystem/cursor.graph.md)
 <!-- /docsgraph:related -->
@@ -217,6 +217,18 @@ For cleanup, network access, capacity limits, and token refresh in production,
 see [Production
 considerations](/kb/guide/cursor-vercel-sandbox#production-considerations).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

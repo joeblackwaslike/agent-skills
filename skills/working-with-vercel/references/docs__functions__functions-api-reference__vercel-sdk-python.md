@@ -10,14 +10,15 @@ prerequisites:
   - /docs/functions
 related:
   - /docs/environment-variables/system-environment-variables
-  - /docs/caching/runtime-cache
+  - /docs/runtime-cache
   - /docs/incremental-static-regeneration
   - /docs/pricing/regional-pricing
 summary: Learn about available APIs when working with Vercel Functions in Python.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/functions-api-reference/vercel-sdk-python.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "dd7f3e422505ede6c3faa1c27a589fdb4d811e1f3540002de45f0edbd48e3b73"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "25d6da1fa6b114177a1d1048755743f68045d16f60da29611f4c3efe78cf6a9c"
 ---
 
 # vercel.functions API Reference (Python)
@@ -50,11 +51,11 @@ sha256: "dd7f3e422505ede6c3faa1c27a589fdb4d811e1f3540002de45f0edbd48e3b73"
 
 - [Vercel Python SDK is now available in beta](https://vercel.com/changelog/vercel-python-sdk-in-beta)
 - [Introducing the Runtime Cache API](https://vercel.com/changelog/introducing-the-runtime-cache-api)
-- [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
-- [API Reference](https://vercel.com/docs/queues/api) — HTTP API reference for Vercel Queues. Publish, consume, acknowledge, and manage messages.
-- [Runtimes](https://vercel.com/docs/functions/runtimes) — Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes suppo
 - [Using the Python Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/python) — Learn how to use the Python runtime to run Python applications on Vercel.
-- [Caching](https://vercel.com/docs/caching) — Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
+- [Runtimes](https://vercel.com/docs/functions/runtimes) — Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes suppo
+- [Configuring the Runtime for Vercel Functions](https://vercel.com/docs/functions/configuring-functions/runtime) — Learn how to configure the runtime for Vercel Functions.
+- [Deploy a FastAPI app on Vercel](https://vercel.com/docs/frameworks/backend/fastapi) — Deploy a FastAPI app on Vercel. Learn how the Python runtime, ASGI, static assets, and Vercel Functions work together.
+- [API Reference](https://vercel.com/docs/queues/api) — HTTP API reference for Vercel Queues. Publish, consume, acknowledge, and manage messages.
 
 Full cross-link map for this page: [/docs/functions/functions-api-reference/vercel-sdk-python.graph.md](/docs/functions/functions-api-reference/vercel-sdk-python.graph.md)
 <!-- /docsgraph:related -->
@@ -196,7 +197,7 @@ def expire_blog(request: Request):
 
 #### Limits and usage
 
-The Runtime Cache is isolated per deployment environment (`preview` and `production`). On Pro and Enterprise, each project uses its own cache. On Hobby, all projects in your team share a single cache. See [storage scope by plan](/docs/caching/runtime-cache#storage-scope-by-plan). Cached data is persisted across deployments and can be invalidated either through time-based expiration or by calling `expire_tag`. However, TTL (time-to-live) and tag updates aren't reconciled between deployments. In those cases, we recommend either purging the runtime cache or modifying the cache key.
+The Runtime Cache is isolated per deployment environment (`preview` and `production`). On Pro and Enterprise, each project uses its own cache. On Hobby, all projects in your team share a single cache. See [storage scope by plan](/docs/runtime-cache#storage-scope-by-plan). Cached data is persisted across deployments and can be invalidated either through time-based expiration or by calling `expire_tag`. However, TTL (time-to-live) and tag updates aren't reconciled between deployments. In those cases, we recommend either purging the runtime cache or modifying the cache key.
 
 The Runtime Cache API does not have first class integration with [Incremental Static Regeneration](/docs/incremental-static-regeneration). This means that:
 
@@ -211,6 +212,18 @@ The following Runtime Cache limits apply:
 
 Usage of the Vercel Runtime Cache is charged, learn more about pricing in the [regional pricing docs](/docs/pricing/regional-pricing).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -13,9 +13,10 @@ related:
   - /docs/code-owners/getting-started
 summary: Learn how to use Code Owners with the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/code-owners/cli.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "afbebe96fc69a6f13aa44904d72ef1318c32c70ff44c6bf0270235534867e71d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "292e3a60dcece842764058739121d5fd6e3fabde714f8217f9c5201d190d5fa5"
 ---
 
 # vercel-code-owners
@@ -71,6 +72,18 @@ npx vercel-code-owners validate
 bunx vercel-code-owners validate
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

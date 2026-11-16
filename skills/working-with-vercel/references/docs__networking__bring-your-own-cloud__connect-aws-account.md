@@ -14,9 +14,10 @@ related:
   - /docs/networking/bring-your-own-cloud/provisioning-reference
 summary: Connect an AWS account to your Vercel team so Bring Your Own Cloud (BYOC) can invoke Lambda functions in your account.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/networking/bring-your-own-cloud/connect-aws-account.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c247c6b4141c71c191ef8c57182f7b17f96ded1cc20794263bb6b59153f706e3"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0b87ccd3ae043e89ee46d97eab14d035a26c8cfd1eaf601f4b0e364adbdde62d"
 ---
 
 # Connecting an AWS Account for BYOC
@@ -33,12 +34,11 @@ Connect an AWS account to your Vercel team so [Bring Your Own Cloud (BYOC)](/doc
 
 - [The Complete Guide to Bring Your Own Cloud](https://vercel.com/kb/guide/byoc) — Use Bring Your Own Cloud \\(BYOC\\) to run Vercel Functions as AWS Lambda functions in your own AWS account, from setup to
 - [Bring Your Own Cloud on AWS is now generally available](https://vercel.com/changelog/bring-your-own-cloud-on-aws-is-now-generally-available)
-- [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect)
 - [Operating BYOC Deployments](https://vercel.com/docs/networking/bring-your-own-cloud/operations) — Retry failed Bring Your Own Cloud \\(BYOC\\) deployments, clean up AWS resources, monitor logs, and rotate credentials.
-- [Deploying with BYOC from GitHub Actions](https://vercel.com/docs/networking/bring-your-own-cloud/deploy-with-github-actions) — Keep the Vercel Git integration and use GitHub Actions to build, provision, and complete Bring Your Own Cloud \\(BYOC\\) d
 - [Connect to Amazon Web Services \\(AWS\\)](https://vercel.com/docs/oidc/aws) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
+- [Deploying with BYOC from GitHub Actions](https://vercel.com/docs/networking/bring-your-own-cloud/deploy-with-github-actions) — Keep the Vercel Git integration and use GitHub Actions to build, provision, and complete Bring Your Own Cloud \\(BYOC\\) d
+- [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
 - [OpenID Connect \\(OIDC\\) Federation](https://vercel.com/docs/oidc) — Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent creden
-- [Using Vercel with Microsoft Azure](https://vercel.com/docs/integrations/external-platforms/azure) — Run your frontend on Vercel alongside backends hosted in Microsoft Azure, with private network connectivity, keyless aut
 
 Full cross-link map for this page: [/docs/networking/bring-your-own-cloud/connect-aws-account.graph.md](/docs/networking/bring-your-own-cloud/connect-aws-account.graph.md)
 <!-- /docsgraph:related -->
@@ -170,6 +170,18 @@ Credentials that Vercel obtained before you disconnected stay valid until they e
 - [Deploy with BYOC using the Vercel CLI](/docs/networking/bring-your-own-cloud/deploy-with-cli)
 - [Review the BYOC provisioning reference](/docs/networking/bring-your-own-cloud/provisioning-reference)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

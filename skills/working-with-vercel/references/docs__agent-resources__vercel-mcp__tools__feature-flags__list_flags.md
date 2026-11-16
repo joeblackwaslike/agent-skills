@@ -12,9 +12,10 @@ related:
   []
 summary: Use list_flags with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flags.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "4007cd4a403d00106aa08230f4f15cc364eb673a3881da5a62f5b1792cb0b39a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b2ea52091ac12caa7174c9caf5c046cefbf576ed39d6dec3ccc868d694f0e358"
 ---
 
 # list_flags
@@ -30,8 +31,8 @@ List flags.
 - [list_flags_v2](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flags_v2) — Use list_flags_v2 with Vercel MCP.
 - [list_team_flags](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_team_flags) — Use list_team_flags with Vercel MCP.
 - [list_team_flags_v2](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_team_flags_v2) — Use list_team_flags_v2 with Vercel MCP.
-- [list_flag_versions](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flag_versions) — Use list_flag_versions with Vercel MCP.
 - [get_flag](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/get_flag) — Use get_flag with Vercel MCP.
+- [list_flag_versions](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flag_versions) — Use list_flag_versions with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flags.graph.md](/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flags.graph.md)
 <!-- /docsgraph:related -->
@@ -50,6 +51,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/featu
 | `teamId`          | string           | No       | Team ID to use for this operation.                                                                                                                                                                                                                                                                                                                      |
 | `slug`            | string           | No       | Team slug to use for this operation. Use instead of teamId.                                                                                                                                                                                                                                                                                             |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

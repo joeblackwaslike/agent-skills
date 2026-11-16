@@ -15,9 +15,10 @@ related:
   - /docs/flags
 summary: Configure basic settings for your Vercel project, including the project name, build and development settings, root directory, Node.js version,...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/project-configuration/general-settings.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "0697b06a3b5fa4bb4bd1966bf2788204a61fa932371dfe522e99d49c25a275a7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e33546abcb1d6a996e39fcad7fb9cb1aa63d48122988938d6d403030128130b7"
 ---
 
 # General settings
@@ -38,7 +39,7 @@ Project names can be up to 100 characters long and must be lowercase. They can i
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Vercel Support Code Visibility, Git Fork Protection, and
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
-- [Managing the visibility of the Vercel Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
+- [Managing projects](https://vercel.com/docs/projects/managing-projects) — Learn how to manage your projects through the Vercel Dashboard.
 - [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
 
 Full cross-link map for this page: [/docs/project-configuration/general-settings.graph.md](/docs/project-configuration/general-settings.graph.md)
@@ -86,6 +87,18 @@ The Vercel Toolbar is a tool that assists you in iterating and developing your p
 - Inspect for [Layout Shifts](/docs/vercel-toolbar/layout-shift-tool) and [Interaction Timing](/docs/vercel-toolbar/interaction-timing-tool)
 - Check for accessibility issues with the [Accessibility Audit Tool](/docs/vercel-toolbar/accessibility-audit-tool)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

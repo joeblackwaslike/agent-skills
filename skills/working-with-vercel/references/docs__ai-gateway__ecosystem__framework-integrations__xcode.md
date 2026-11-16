@@ -13,9 +13,10 @@ related:
   - /docs/ai-gateway/observability-and-spend/budgets
 summary: "Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in Xcode settings."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "e8761521ca9f7d52d7f3111893b6aa6f630237654baf219efd0e66f07dac0369"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9cf5f25612640e6cc1519582cd766f8819a4336f6bc9c412e094b206761912ce"
 ---
 
 # Xcode with AI Gateway
@@ -29,10 +30,10 @@ sha256: "e8761521ca9f7d52d7f3111893b6aa6f630237654baf219efd0e66f07dac0369"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
-- [Chatbox with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/chatbox) — Connect Chatbox to AI Gateway. Configure your API key, endpoint, and models to use multiple AI providers and monitor cha
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
-- [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
-- [OpenClaw with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/openclaw) — Connect OpenClaw to AI Gateway with the Vercel CLI or manual provider configuration. Use gateway models across coding ag
+- [Chatbox with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/chatbox) — Connect Chatbox to AI Gateway. Configure your API key, endpoint, and models to use multiple AI providers and monitor cha
+- [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
+- [OpenAI Chat Completions API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions) — Use OpenAI SDKs with the AI Gateway Chat Completions API. Configure the base URL and authentication for chat, streaming,
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integrations/xcode.graph.md](/docs/ai-gateway/ecosystem/framework-integrations/xcode.graph.md)
 <!-- /docsgraph:related -->
@@ -93,6 +94,18 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
 - Configure [spend limits](/docs/ai-gateway/observability-and-spend/budgets) on your API key
 - Connect your terminal agents with the [Vercel CLI](/docs/cli/ai-gateway#setup)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

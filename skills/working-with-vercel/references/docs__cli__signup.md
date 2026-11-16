@@ -8,14 +8,17 @@ type: reference
 prerequisites:
   - /docs/cli
 related:
+  - /docs/cli/deploy
+  - /docs/deployments/deploy-without-logging-in
   - /docs/cli/login
   - /docs/cli/whoami
   - /docs/cli/global-options
 summary: Learn how to create a new Vercel account using the vercel signup CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/signup.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "7bf2915291f35d853f8e522d30cc5f86d5892a0f5eec1d6d59c81f9dea14be3c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ee5e0f96959f1dd6d6ae942e6c9dbc57f074fc65dd23045021442a86575f0943"
 ---
 
 # vercel signup
@@ -28,14 +31,16 @@ The `vercel signup` command allows you to create a new Vercel account through Ve
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel logout](https://vercel.com/docs/cli/logout) — Learn how to logout from your Vercel account using the vercel logout CLI command.
 - [Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel) — Learn how to Sign in with Vercel
+- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
-- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel help](https://vercel.com/docs/cli/help) — Learn how to use the vercel help CLI command to get information about all available Vercel CLI commands.
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 
 Full cross-link map for this page: [/docs/cli/signup.graph.md](/docs/cli/signup.graph.md)
 <!-- /docsgraph:related -->
+
+You don't need an account to deploy. Run [`vercel deploy --temporary`](/docs/cli/deploy#temporary) to get a live URL, then claim the project later. See [Deploying without logging in](/docs/deployments/deploy-without-logging-in).
 
 If you already have a Vercel account, use [`vercel login`](/docs/cli/login) instead.
 
@@ -81,6 +86,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -4,8 +4,8 @@ description: API Reference for transcribe.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/transcribe"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/transcribe.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "7e5fe37a6b7339178e8b415f2a27e66f4361dca72507e8f4e0149a6a9e4031c4"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "b9c4f1ff568e7d966d40898eeb1b5fe340b478eab66aa9e6b4235769f284f2f7"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -43,7 +43,7 @@ import { transcribe } from "ai"
 - `abortSignal?` (`AbortSignal`): An optional abort signal to cancel the call.
 - `headers?` (`Record<string, string>`): Additional HTTP headers for the request.
 - `telemetry?` (`TelemetryOptions`): Telemetry configuration. Supports functionId, recordInputs, recordOutputs, isEnabled, and per-call integrations.
-- `download?` (`(options: { url: URL; abortSignal?: AbortSignal }) => Promise<{ data: Uint8Array; mediaType: string | undefined }>`): Custom download function for fetching audio from URLs. Supplying this option forces local downloading even for models with native URL support. Use \`createDownload()\` from \`ai\` to create a download function with custom size limits, e.g. \`createDownload(\{ maxBytes: 50 \* 1024 \* 1024 })\`. Default: native URL transcription when supported, otherwise built-in download with 2 GiB limit.
+- `download?` (`(options: { url: URL; abortSignal?: AbortSignal }) => Promise<{ data: Uint8Array; mediaType: string | undefined }>`): Custom download function for fetching audio from URLs. Supplying this option forces local downloading even for models with native URL support. Use \`createDownload()\` from \`ai\` to create a download function with a custom size limit (e.g. \`createDownload(\{ maxBytes: 50 \* 1024 \* 1024 })\`) or fetch transport (e.g. \`createDownload(\{ fetch })\` with \`guarded-fetch\` on Node.js for untrusted URLs). Default: native URL transcription when supported, otherwise built-in download with 2 GiB limit.
 
 ### Returns
 

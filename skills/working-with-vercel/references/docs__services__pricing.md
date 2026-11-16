@@ -15,9 +15,10 @@ related:
   - /docs/pricing/regional-pricing
 summary: "Understand how billing works for Vercel Services, what's charged, and which limits apply."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/services/pricing.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "e0882c02132516d6cdb2a03d652bbbb2d09fede5f58712e8085963abf008dd62"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8d51dac84e24d775a323b8b9f6dcccdf3f45031666c1df902e94113fb0d6fb09"
 ---
 
 # Services Pricing and Limits
@@ -34,9 +35,9 @@ Vercel bills Services across the compute each service runs on, the requests serv
 - [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
 - [Pricing and Limits](https://vercel.com/docs/queues/pricing) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
 - [Portland, USA \\(pdx1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/pdx1) — Vercel pricing for the Portland, USA \\(pdx1\\) region.
-- [Dublin, Ireland \\(dub1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dub1) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
 - [Cleveland, USA \\(cle1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cle1) — Vercel pricing for the Cleveland, USA \\(cle1\\) region.
-- [San Francisco, USA \\(sfo1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/sfo1) — Vercel pricing for the San Francisco, USA \\(sfo1\\) region.
+- [Dublin, Ireland \\(dub1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dub1) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
+- [Montréal, Canada \\(yul1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/yul1) — Vercel pricing for the Montréal, Canada \\(yul1\\) region.
 
 Full cross-link map for this page: [/docs/services/pricing.graph.md](/docs/services/pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -68,6 +69,18 @@ The bytes a service returns are billed as [Fast Origin Transfer](/docs/pricing),
 
 The same [function limits](/docs/functions/limitations) apply to each service, such as memory and maximum duration.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

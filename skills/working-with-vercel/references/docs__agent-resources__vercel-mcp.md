@@ -11,9 +11,10 @@ related:
   - /docs/agent-resources/vercel-mcp/tools
 summary: Vercel MCP has tools available for searching docs, managing teams, projects, and deployments, and querying Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "637913ae6676e7cde55520c6a6bbad1041301eb3a58cdd2d7d0fd12b648faab3"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "192c75fac750bbbe94a638053b875b6ed2cebe35dc11867c4b94baa6c823e08f"
 ---
 
 # Use Vercel
@@ -30,14 +31,14 @@ an open standard that lets AI assistants interact with your Vercel projects.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing Vercel MCP: Connect Vercel to your AI tools](https://vercel.com/blog/introducing-vercel-mcp-connect-vercel-to-your-ai-tools)
+- [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
 - [Vercel MCP now renders deployments as an interactive card](https://vercel.com/changelog/monitor-vercel-deployments-in-chatgpt)
 - [Send feedback from the Vercel MCP](https://vercel.com/changelog/send-feedback-from-vercel-mcp)
 - [Vercel MCP can now deploy code](https://vercel.com/changelog/vercel-mcp-can-now-deploy-code)
 - [Vercel MCP now supports Client ID Metadata Documents](https://vercel.com/changelog/vercel-mcp-now-supports-client-id-metadata-documents)
-- [Vercel MCP now supports purchases](https://vercel.com/changelog/vercel-mcp-now-supports-purchases)
+- [Vercel MCP now supports MCP events](https://vercel.com/changelog/vercel-mcp-now-supports-mcp-events)
 - [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
 - [Migrate from GitHub Actions to Vercel CI](https://vercel.com/kb/guide/github-actions-to-vercel-ci) — Move Turborepo tasks from GitHub Actions workflows to Vercel CI, migrate secrets to CI environment variables, and switch
-- [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
 - [How to reduce Vercel Image Optimization costs](https://vercel.com/kb/guide/reduce-image-optimization-costs-on-vercel) — Learn how to reduce Vercel Image Optimization costs in Next.js by tuning cache TTLs, image sizes, formats, and quality.
 - [Trace and debug eve agent runs](https://vercel.com/kb/guide/trace-and-debug-eve-agent-runs) — Inspect eve traces in Vercel Agent Runs, control captured content, export OpenTelemetry spans, and test fixes with regre
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure)
@@ -422,6 +423,18 @@ The MCP ecosystem and technology are evolving quickly. Here are our current best
   - This allows you to review and approve each step before it's executed
   - Prevents accidental or harmful changes to your projects and deployments
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

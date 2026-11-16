@@ -16,9 +16,10 @@ related:
   - /docs/agent-resources/vercel-mcp/tools/deployments/web_fetch_vercel_url
 summary: Explore Vercel MCP tools for projects, deployments, domains, sandboxes, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ad8f910dbae96b81e353581eb78dc2d3ad3f8a13f785dadf8ebd37cfee0478ef"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "da4ade0be9cdf4461d586080f66b15e479c29509b0adefd6adf1be60ecb30e31"
 ---
 
 # Tools
@@ -32,15 +33,11 @@ Vercel MCP tools let your AI assistant work with your projects, deployments, log
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Agent Runs now available in the Vercel MCP and CLI](https://vercel.com/changelog/agent-runs-vercel-mcp-cli)
-- [Tools](https://ai-sdk.dev/docs/foundations/tools) — Learn about tools with the AI SDK.
-- [Introducing Vercel MCP: Connect Vercel to your AI tools](https://vercel.com/blog/introducing-vercel-mcp-connect-vercel-to-your-ai-tools)
-- [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar)
-- [Addressing security and quality issues with MCP tools in AI Agent](https://vercel.com/blog/generate-static-ai-sdk-tools-from-mcp-servers-with-mcp-to-ai-sdk)
-- [Interact with Integrations using Agent Tools](https://vercel.com/docs/integrations/install-an-integration/agent-tools) — Use Agent Tools to query, debug, and manage your installed integrations through a chat interface with natural language.
-- [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [Vercel Toolbar](https://vercel.com/docs/vercel-toolbar) — Learn how to use the Vercel Toolbar to leave feedback, navigate through important dashboard pages, share deployments, us
-- [Deploy MCP servers to Vercel](https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel) — Learn how to deploy Model Context Protocol \\(MCP\\) servers on Vercel with OAuth authentication and efficient scaling.
+- [AI SDK with MCP](https://vercel.com/docs/mcp/integrations/ai-sdk) — Connect the AI SDK to an MCP server on Vercel, discover its tools, and call them with models served through AI Gateway.
+- [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
+- [Interact with Integrations using Agent Tools](https://vercel.com/docs/integrations/install-an-integration/agent-tools) — Use Agent Tools to query, debug, and manage your installed integrations through a chat interface with natural language.
+- [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools.graph.md](/docs/agent-resources/vercel-mcp/tools.graph.md)
 <!-- /docsgraph:related -->
@@ -92,6 +89,18 @@ Browse the categories below, or expand a category in the sidebar to find a tool.
 
 [Access Groups](/docs/agent-resources/vercel-mcp/tools/access-groups)[Agent Runs](/docs/agent-resources/vercel-mcp/tools/agent-runs)[Billing and Purchases](/docs/agent-resources/vercel-mcp/tools/billing)[Caching](/docs/agent-resources/vercel-mcp/tools/caching)[Checks](/docs/agent-resources/vercel-mcp/tools/checks)[Deployments](/docs/agent-resources/vercel-mcp/tools/deployments)[Documentation, CLI, and Feedback](/docs/agent-resources/vercel-mcp/tools/documentation)[Domains and DNS](/docs/agent-resources/vercel-mcp/tools/domains)[Drains](/docs/agent-resources/vercel-mcp/tools/drains)[Environment Variables](/docs/agent-resources/vercel-mcp/tools/environment-variables)[Feature Flags](/docs/agent-resources/vercel-mcp/tools/feature-flags)[Firewall and Security](/docs/agent-resources/vercel-mcp/tools/firewall)[Global Config](/docs/agent-resources/vercel-mcp/tools/global-config)[Integrations](/docs/agent-resources/vercel-mcp/tools/integrations)[Key Management](/docs/agent-resources/vercel-mcp/tools/key-management)[Microfrontends](/docs/agent-resources/vercel-mcp/tools/microfrontends)[Networking](/docs/agent-resources/vercel-mcp/tools/networking)[Observability](/docs/agent-resources/vercel-mcp/tools/observability)[Projects](/docs/agent-resources/vercel-mcp/tools/projects)[Rolling Releases](/docs/agent-resources/vercel-mcp/tools/rolling-releases)[Routing](/docs/agent-resources/vercel-mcp/tools/routing)[Sandboxes](/docs/agent-resources/vercel-mcp/tools/sandboxes)[Storage](/docs/agent-resources/vercel-mcp/tools/storage)[Teams and Users](/docs/agent-resources/vercel-mcp/tools/teams)[Toolbar](/docs/agent-resources/vercel-mcp/tools/toolbar)[Vercel CI](/docs/agent-resources/vercel-mcp/tools/vercel-ci)[Web Analytics](/docs/agent-resources/vercel-mcp/tools/web-analytics)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -3,7 +3,7 @@ title: create-resource-transfer
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/create-resource-transfer
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/create-resource-transfer"
-last_updated: 2026-11-09
+last_updated: 2026-11-16
 type: conceptual
 prerequisites:
   []
@@ -13,9 +13,10 @@ related:
   - /docs/integrations/create-integration/native-integration
 summary: Learn about create-resource-transfer on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/create-resource-transfer.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c9874ed4eea1c906bef7b7c653c71710ab48fd4f5f599db84f202316b061ba09"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d3610edcb88bbe46a1fcf87534ac18043f68a083d41281534ebe22a94a55b691"
 ---
 
 # Create Resources Transfer Request
@@ -223,6 +224,18 @@ Operation is well-formed, but cannot be executed due to semantic errors
 - [Marketplace API Reference](/docs/integrations/create-integration/marketplace-api/reference)
 - [Native Integration Concepts](/docs/integrations/create-integration/native-integration)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

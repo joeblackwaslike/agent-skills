@@ -14,9 +14,10 @@ related:
   - /docs/conformance/rules/PACKAGE_JSON_SIDE_EFFECTS_REQUIRED
 summary: Requires that every package.json file has the description field set.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/package_json_description_required.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d5f195b5ce9241ddeb17e2bdffaaf09ffe48f00edddb854be1e5ab537c8dd60a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c36350cb05c3d6cafefff8a5e0788e9e509a91a73b2c5aa09d6652bb76d8247f"
 ---
 
 # PACKAGE_JSON_DESCRIPTION_REQUIRED
@@ -40,6 +41,18 @@ See the [Node.js docs](https://nodejs.org/api/packages.html#description) for mor
 Add the `description` field to the `package.json` file that explains
 what the package does and when it should be used.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/drains/security
 summary: Learn about the request headers sent to each Vercel deployment and how to use them to process requests before sending a response.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/headers/request-headers.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "5fcdf04feb8e5c23508725f9c54f7768240909cf87daa435d9bcd47d17c28934"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b1bfb07ad0e8dd886926206f68ce8026a9e8d60a73e12418ed618aa9c6ea2ab7"
 ---
 
 # Request headers
@@ -35,9 +36,9 @@ The following headers are sent to each Vercel deployment and can be used to proc
 - [Requester's public IP postal code now available in Vercel Functions](https://vercel.com/changelog/requesters-public-ip-postal-code-now-available-in-vercel-functions)
 - [IP Geolocation for Serverless Functions](https://vercel.com/changelog/ip-geolocation-for-serverless-functions)
 - [Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache) — Learn how Vercel's CDN cache stores your content across a global network to reduce latency and origin load.
-- [Response headers](https://vercel.com/docs/headers/response-headers) — Learn about the response headers sent to each Vercel deployment and how to use them to process responses before sending
 - [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 - [Static Configuration with vercel.json](https://vercel.com/docs/project-configuration/vercel-json) — Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project.
+- [Response headers](https://vercel.com/docs/headers/response-headers) — Learn about the response headers sent to each Vercel deployment and how to use them to process responses before sending
 - [Framework environment variables](https://vercel.com/docs/environment-variables/framework-environment-variables) — Framework environment variables are automatically populated by the Vercel, based on your project's framework.
 
 Full cross-link map for this page: [/docs/headers/request-headers.graph.md](/docs/headers/request-headers.graph.md)
@@ -1197,6 +1198,18 @@ The secret key you need depends on what type of request you're receiving:
 
 For complete examples with additional error handling, see [Securing webhooks](/docs/webhooks/webhooks-api#securing-webhooks) and [Drain security](/docs/drains/security).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

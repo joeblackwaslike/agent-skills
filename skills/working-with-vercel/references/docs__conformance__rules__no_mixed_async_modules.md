@@ -11,9 +11,10 @@ related:
   []
 summary: Prevent imports to modules that contain top-level awaits in your applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/no_mixed_async_modules.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "0164e49f33e01ff86f9fad2205d2da1080744086469e32cb976b5c14e82be6ac"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "459f48f2aab985622e813eff7c769794a6d21816a0c891f48a356dbf66c82d0f"
 ---
 
 # NO_MIXED_ASYNC_MODULES
@@ -71,6 +72,18 @@ async function doSomething(data) {
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

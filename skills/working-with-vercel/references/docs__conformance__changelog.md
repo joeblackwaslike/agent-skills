@@ -15,9 +15,10 @@ related:
   - /docs/conformance/custom-rules/forbidden-packages
 summary: "Find out what's new in each release of Conformance."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/changelog.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "398777fee753be9f0f23f07ed1f8b52ce607cb8d9c0f0a4c9ad01e63d83ee95a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0e41afa7082ac866c48c39e3795f0ffc14c6bf088d2050cc9d986a76b60a6c96"
 ---
 
 # Conformance changelog
@@ -266,6 +267,18 @@ The following new rules have been added:
 
 Initial release of Conformance.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

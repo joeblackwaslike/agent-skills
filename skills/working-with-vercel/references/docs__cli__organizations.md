@@ -13,9 +13,10 @@ related:
   - /docs/cli/global-options
 summary: Create and manage organizations and their child teams with the vercel organizations CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/organizations.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "26672886f23aaf98d6dcc5fa14287f595c73535f172a01dad6b64f4ed62a96a8"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f4bca5789bb2870e297673d5e14779d53f205e63407076a32bdfc97064f119b4"
 ---
 
 # vercel organizations
@@ -28,11 +29,11 @@ Use the `vercel organizations` command to create and manage [organizations](/doc
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [vercel billing](https://vercel.com/docs/cli/billing) — Learn how to view usage, contracts, budgets, and invoices for your Vercel team using the vercel billing CLI command.
-- [vercel billing budgets](https://vercel.com/docs/cli/budgets) — View and manage your team's on-demand spend budget from the Vercel CLI.
-- [vercel domains](https://vercel.com/docs/cli/domains) — Learn how to buy, transfer, and manage your domains using the vercel domains CLI command.
-- [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, delete, and manage items, read tokens, a
 - [Create or Add Team to Organization](https://vercel.com/docs/rest-api/organizations/create-or-add-team-to-organization) — POST /v1/organizations/{organizationId}/teams — Create a new team under an organization, or add an existing team. \\`mode
+- [List Organization Teams](https://vercel.com/docs/rest-api/organizations/list-organization-teams) — GET /v1/organizations/{organizationId}/teams — List up to 100 teams in an organization, each enriched with the team's sl
+- [vercel billing](https://vercel.com/docs/cli/billing) — Learn how to view your billing overview, usage, contracts, budgets, and invoices for your Vercel team using the vercel b
+- [Create an Organization](https://vercel.com/docs/rest-api/organizations/create-an-organization) — POST /v1/organizations — Create a new Organization. This endpoint is in private beta. Contact your Vercel account team f
+- [List Organizations](https://vercel.com/docs/rest-api/organizations/list-organizations) — GET /v1/organizations — List the organizations where the authenticated user holds the OrgAdmin or OrgViewer permission o
 
 Full cross-link map for this page: [/docs/cli/organizations.graph.md](/docs/cli/organizations.graph.md)
 <!-- /docsgraph:related -->
@@ -298,6 +299,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

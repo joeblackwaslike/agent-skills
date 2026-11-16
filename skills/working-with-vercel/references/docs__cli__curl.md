@@ -15,9 +15,10 @@ related:
   - /docs/cli/traces
 summary: Learn how to make HTTP requests to your Vercel deployments with automatic deployment protection bypass using the vercel curl CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/curl.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "42a93a23267d75208d351ef77cb0895473bf33f72c7ca474a4fd0bcbb0995e08"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a7b26092e599b51a76a42f288d3fc6d7ed05bd2f311e3221c4f553d1a9760e81"
 ---
 
 # vercel curl
@@ -36,8 +37,8 @@ The `vercel curl` command works like `curl`, but automatically handles deploymen
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel httpstat](https://vercel.com/docs/cli/httpstat) — Learn how to visualize HTTP request timing statistics for your Vercel deployments using the vercel httpstat CLI command.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel rolling-release](https://vercel.com/docs/cli/rolling-release) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 
 Full cross-link map for this page: [/docs/cli/curl.graph.md](/docs/cli/curl.graph.md)
 <!-- /docsgraph:related -->
@@ -309,6 +310,18 @@ For more information on global options and their usage, refer to the [options se
 - [vercel deploy](/docs/cli/deploy)
 - [vercel inspect](/docs/cli/inspect)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

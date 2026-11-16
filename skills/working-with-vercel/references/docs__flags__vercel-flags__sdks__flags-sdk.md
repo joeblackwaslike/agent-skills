@@ -16,9 +16,10 @@ related:
   - /docs/flags/flags-explorer/reference
 summary: Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "6faef767817b7122f093aa4ae452a3203ad99b1f014f84582e750aa33b7fa3f7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "52eab780861bde20334b81eda46b361f835eb35eab888a8a6fa0225d999575ed"
 ---
 
 # Using the Flags SDK with Vercel Flags
@@ -32,13 +33,12 @@ The [Flags SDK](/docs/flags/flags-sdk-reference) is the recommended way to use V
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
+- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
+- [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
 - [Flags SDK now evaluates flags 10x faster](https://vercel.com/changelog/flags-sdk-now-evaluates-flags-10x-faster)
 - [Vercel Flags starts 7x faster and no longer extends function duration](https://vercel.com/changelog/vercel-flags-starts-7x-faster-and-no-longer-extends-function-duration)
-- [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
-- [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
-- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
-- [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit) — Using the Flags SDK in SvelteKit
-- [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/sdks/flags-sdk.graph.md](/docs/flags/vercel-flags/sdks/flags-sdk.graph.md)
 <!-- /docsgraph:related -->
@@ -154,6 +154,18 @@ See the [Flags SDK SvelteKit guide](https://flags-sdk.dev/docs/getting-started/s
 - [Configure targeting rules](/docs/flags/vercel-flags/dashboard) in the Vercel Dashboard
 - [Learn about entities](/docs/flags/vercel-flags/dashboard/entities) for advanced targeting
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

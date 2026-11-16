@@ -12,9 +12,10 @@ related:
   - /docs/cli/global-options
 summary: View activity events for your Vercel project or team, filtered by type, date range, and project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/activity.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "3c1cdde85e10e97788735819ba5c792a18b6615eb07e8cfc47dd2055822dc53c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "fd0a948173e7f806b0ebf7e897a064f1642dfe56bf1eaa2cc872e7ff63f7c37e"
 ---
 
 # vercel activity
@@ -27,10 +28,11 @@ The `vercel activity` command displays [activity events](/docs/activity-log) for
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Activity Log now available in Vercel CLI](https://vercel.com/changelog/activity-log-now-available-in-vercel-cli)
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
-- [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 - [vercel agent-runs](https://vercel.com/docs/cli/agent-runs) — Find projects with Agent Runs, list recent runs, and inspect run metadata and conversation traces from the command line.
 
 Full cross-link map for this page: [/docs/cli/activity.graph.md](/docs/cli/activity.graph.md)
@@ -187,6 +189,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -11,9 +11,10 @@ related:
   []
 summary: This reference provides information on how the @vercel/og package works on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/og-image-generation/og-image-api.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f36559a72a26118b38158f588d34f56482fd49b1f30899fa4bd63381502d203a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1d11931e792a5ad1c0ef4c7af0a7fe45ca84e09f7b2df4510057c07bbaf1da8e"
 ---
 
 # @vercel/og Reference
@@ -26,16 +27,14 @@ The package exposes an `ImageResponse` constructor, with the following parameter
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [ImageResponse](https://nextjs.org/docs/app/api-reference/functions/image-response) — API Reference for the ImageResponse constructor.
-- [Introducing OG Image Generation: Fast, dynamic social card images at the Edge](https://vercel.com/blog/introducing-vercel-og-image-generation-fast-dynamic-social-card-images)
 - [Encrypting parameters](https://vercel.com/kb/guide/encrypting-parameters) — Learn how to encrypt parameters so that only certain values can be passed to generate your image.
-- [Images on the web](https://vercel.com/blog/images-on-the-web)
-- [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image) — API Reference for the Open Graph Image and Twitter Image file conventions.
-- [Image Optimization with Vercel](https://vercel.com/docs/image-optimization) — Transform and optimize images to improve page load performance.
+- [Introducing OG Image Generation: Fast, dynamic social card images at the Edge](https://vercel.com/blog/introducing-vercel-og-image-generation-fast-dynamic-social-card-images)
+- [ImageResponse](https://nextjs.org/docs/app/api-reference/functions/image-response) — API Reference for the ImageResponse constructor.
 - [Inspecting your Open Graph metadata](https://vercel.com/docs/deployments/og-preview) — Learn how to inspect and validate your Open Graph metadata through the Open Graph deployment tab.
-- [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
-- [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
 - [Get a repository image](https://vercel.com/docs/rest-api/vcr/get-a-repository-image) — GET /v1/vcr/repository/{idOrName}/images/{imageIdOrDigest} — Fetch an individual image from a repository, including its
+- [Image Optimization with Vercel](https://vercel.com/docs/image-optimization) — Transform and optimize images to improve page load performance.
+- [OpenResponses Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/images) — Send images and PDF documents for analysis using the OpenResponses API through AI Gateway.
+- [List repository images](https://vercel.com/docs/rest-api/vcr/list-repository-images) — GET /v1/vcr/repository/{idOrName}/images — List images for a container registry repository, including their tags.
 
 Full cross-link map for this page: [/docs/og-image-generation/og-image-api.graph.md](/docs/og-image-generation/og-image-api.graph.md)
 <!-- /docsgraph:related -->
@@ -114,6 +113,18 @@ By default, `@vercel/og` only has the Geist font included. Earlier versions of `
 - [Google Fonts](https://fonts.google.com) and [Noto Sans](https://www.google.com/get/noto/)
 - [Resvg](https://github.com/RazrFalcon/resvg) and [Resvg.js](https://github.com/yisibl/resvg-js)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -16,9 +16,10 @@ related:
   - /docs/deployments/environments
 summary: This reference covers the clauses, fields, and variables used to create a Monitoring query.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/query/monitoring/monitoring-reference.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "59d7100b03c6fdfdd1ef7dc85be4f4b8d0b478bf6f22c0e182a1cb3ec80e5e45"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b4abf2da8c5636ea6870b78bc9eb9b4e52f2c91e3e05c9b44418dce477017ff4"
 ---
 
 # Monitoring Reference
@@ -35,7 +36,7 @@ Monitoring is now
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views) — GET /v1/query/web-analytics/visits/aggregate — Counts pageviews on a project, within the requested date range. Results a
 - [Counts page views](https://vercel.com/docs/rest-api/web-analytics/counts-page-views) — GET /v1/query/web-analytics/visits/count — Counts the number of page views on a project \\(production only\\), since Web A
-- [Audit Logs](https://vercel.com/docs/audit-log) — Learn how to track and analyze your team members' activities.
+- [vercel metrics](https://vercel.com/docs/cli/metrics) — Discover and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
 
 Full cross-link map for this page: [/docs/query/monitoring/monitoring-reference.graph.md](/docs/query/monitoring/monitoring-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -194,6 +195,18 @@ On the left navigation bar, you will find a list of example queries to get start
 | Average Duration by Host, Path            | The average duration for each `host` and `source_path`                                            |
 | 95th Percentile Duration by Host, Path    | The p95 duration for each `host` and `source_path`                                                |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

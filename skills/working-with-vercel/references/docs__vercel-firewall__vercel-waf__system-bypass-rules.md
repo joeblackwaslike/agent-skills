@@ -16,9 +16,10 @@ related:
   - /docs/plans/hobby
 summary: Learn how to configure IP-based system bypass rules with the Vercel Web Application Firewall (WAF).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/system-bypass-rules.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "af999ce161b2b186df7a9ee639bed7673a19735b1f8c0d7c9f3a5d1e952e4d0e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4a422fbcc3bce3875374fdce9105b64a191be4d791eb3afce0a3b85efdacf536"
 ---
 
 # WAF System Bypass Rules
@@ -41,8 +42,8 @@ While Vercel's system-level mitigations (such as [DDoS protection](/docs/vercel-
 - [WAF Managed Rulesets](https://vercel.com/docs/vercel-firewall/vercel-waf/managed-rulesets) — Learn how to use WAF Managed Rulesets with the Vercel Web Application Firewall \\(WAF\\)
 - [Create System Bypass Rule](https://vercel.com/docs/rest-api/security/create-system-bypass-rule) — POST /v1/security/firewall/bypass — Create new system bypass rules
 - [Remove System Bypass Rule](https://vercel.com/docs/rest-api/security/remove-system-bypass-rule) — DELETE /v1/security/firewall/bypass — Remove system bypass rules
+- [Read System Bypass](https://vercel.com/docs/rest-api/security/read-system-bypass) — GET /v1/security/firewall/bypass — Retrieve the system bypass rules configured for the specified project
 - [Create conditional firewall bypass](https://vercel.com/docs/rest-api/security/create-conditional-firewall-bypass) — POST /v1/security/firewall/bypass/rules — Create a conditional firewall bypass rule for a project domain.
-- [vercel firewall](https://vercel.com/docs/cli/firewall) — Learn how to explore firewall traffic and manage your project's custom firewall rules, managed bot rules, IP blocks, sys
 
 Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/system-bypass-rules.graph.md](/docs/vercel-firewall/vercel-waf/system-bypass-rules.graph.md)
 <!-- /docsgraph:related -->
@@ -74,6 +75,18 @@ System Bypass Rules have limits based on your [account plan](/docs/plans).
 | ----------------------------------------- | -------------------------- | ---------------------- | ------------------------------------ |
 | Number of system bypass rules per project | N/A                        | 10 | 75 |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -12,9 +12,10 @@ related:
   []
 summary: Use create_edge_config_token with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/create_edge_config_token.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "4cf89367379a7c1165e74341353da9ba6aa837953f9af4b710d4d8e88635654f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "02c61753fb932f8126cc5fc31c1ff5da1ee978715fe6cfd3ab92cbca1d5e34be"
 ---
 
 # create_edge_config_token
@@ -27,10 +28,10 @@ Adds a token to an existing Global Config.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [create_edge_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/create_edge_config) — Use create_edge_config with Vercel MCP.
 - [get_edge_config_token](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config_token) — Use get_edge_config_token with Vercel MCP.
-- [Create a Global Config token](https://vercel.com/docs/rest-api/global-config/create-a-global-config-token) — POST /v1/global-config/{edgeConfigId}/token — Adds a token to an existing Global Config.
+- [create_edge_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/create_edge_config) — Use create_edge_config with Vercel MCP.
 - [get_edge_config_tokens](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config_tokens) — Use get_edge_config_tokens with Vercel MCP.
+- [Create a Global Config token](https://vercel.com/docs/rest-api/global-config/create-a-global-config-token) — POST /v1/global-config/{edgeConfigId}/token — Adds a token to an existing Global Config.
 - [update_edge_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/update_edge_config) — Use update_edge_config with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/global-config/create_edge_config_token.graph.md](/docs/agent-resources/vercel-mcp/tools/global-config/create_edge_config_token.graph.md)
@@ -45,6 +46,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/globa
 | `slug`         | string | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody`  | object | Yes      | Request body for this tool.                                 |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

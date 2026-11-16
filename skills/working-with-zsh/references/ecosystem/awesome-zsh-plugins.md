@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/unixorn/awesome-zsh-plugins/main/README.md"
-fetched_at: "2026-11-09T12:48:45.176Z"
-sha256: "557a762d5bd9939b2506075d86d149ffe7fad2bb4881692635bf378febd5e7f6"
+fetched_at: "2026-11-16T12:43:25.539Z"
+sha256: "2e91bb3608a970403a845dee874bd6cd072f993d72fe57d4e7273ed6ed5d6801"
 ---
 
 # awesome-zsh-plugins
@@ -1340,6 +1340,7 @@ If you're looking for a new font to use, check out [www.codingfont.com](https://
 - [gtm-terminal-plugin](https://github.com/git-time-metric/gtm-terminal-plugin) - terminal plugin for [git time metrics](https://github.com/git-time-metric/gtm).
 - [gtr](https://github.com/Zocker1999NET/zsh-gtr) - Allows fast tagging of a release in `git` using the tag name **release-YYYY-MM-DD-HH-MM*- and headline **Release YYYY-MM-DD HH:MM**.
 - [guesswork](https://github.com/findmalek/guesswork) - Fish-style history autosuggestions ranked by an AI model instead of prefix matching, so an abbreviation or a short description of what you want finds the right command out of your recent history.
+- [gui-detach](https://github.com/4h2u/auto.detach) - Returns the prompt in interactive ZSH when a GUI app is launched on Linux, and leaves CLI tools in the foreground.
 - [guish](https://github.com/gcarrarom/oh-my-guish) - Collection of utility functions and aliases.
 - [gumsible](https://github.com/Lowess/gumsible-oh-my-zsh-plugin) - Wrapper plugin for [Molecule](https://molecule.readthedocs.io/).
 - [gunstage](https://github.com/LucasLarson/gunstage) - There are at least eight ways to unstage files in a `git` repository. This is a command-line shell plugin for undoing `git add`.
@@ -1970,6 +1971,7 @@ One command. A short, descriptive name. Zero copy-pasting.
 - [workon](https://github.com/bryanculver/workon.plugin.zsh) - Simple utility for jumping between projects.
 - [worktree-jump](https://github.com/Jermic/worktree-jump) - Lists `git` worktrees in a compact table and lets you jump to one by typing its number at the next shell prompt.
 - [worktree](https://github.com/jspears/worktree) - Adds functions that wrap `git worktree`.
+- [worktrunk-herdr](https://github.com/championswimmer/zsh-worktrunk-herdr) - glues [Worktrunk](https://worktrunk.dev/) (wt), AI coding agents (Claude Code, Codex, Pi) and [herdr](https://herdr.dev/) together.
 - [worktrunk](https://github.com/kguzek/zsh-worktrunk) - Inspired by the [oh-my-zsh](https://ohmyz.sh/) [git plugin](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git) and provides aliases and a few useful functions for working with [worktrunk](https://github.com/max-sixty/worktrunk).
 - [wpm](https://github.com/btror/wpm) - Lets you test your typing speed in a terminal, track WPM, accuracy, and more. Results are saved in a handy JSON format for easy tracking.
 - [wsl](https://github.com/florentinl/omz-wsl) - Adds helper functions to make it easier to work in ZSH when running inside WSL.

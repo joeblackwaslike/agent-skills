@@ -12,9 +12,10 @@ related:
   - /docs/accounts
 summary: Use list_teams with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_teams.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b2bd56b02e90f53a2cda942e229a3515ce2c4f007fc9c33a6801f31a1d8a3b11"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "21ef5b6fd33d00c76a2323ddc40629e8c6afd847faf1b2deaad4ca1730fb1c60"
 ---
 
 # list_teams
@@ -29,9 +30,9 @@ List the [teams](/docs/accounts) you belong to.
 
 - [list_team_members](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_team_members) — Use list_team_members with Vercel MCP.
 - [List all teams](https://vercel.com/docs/rest-api/teams/list-all-teams) — GET /v2/teams — Get a paginated list of all the Teams the authenticated User is a member of.
-- [list_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/list_domains) — Use list_domains with Vercel MCP.
 - [vercel teams](https://vercel.com/docs/cli/teams) — Learn how to list, create, switch, invite, and manage your teams with the vercel teams CLI command.
 - [get_team](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/get_team) — Use get_team with Vercel MCP.
+- [List Organization Teams](https://vercel.com/docs/rest-api/organizations/list-organization-teams) — GET /v1/organizations/{organizationId}/teams — List up to 100 teams in an organization, each enriched with the team's sl
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/teams/list_teams.graph.md](/docs/agent-resources/vercel-mcp/tools/teams/list_teams.graph.md)
 <!-- /docsgraph:related -->
@@ -50,6 +51,18 @@ If your connection exposes the smaller workflow tool list, use these parameters 
 
 This workflow takes no parameters.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

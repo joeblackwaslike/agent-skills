@@ -12,9 +12,10 @@ related:
   []
 summary: Use create_sandboxes_v2 with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/create_sandboxes_v2.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "074caf3b6575d06984173d2eee58d1800d538c7fdd7a47b7d737d92e8cc22af1"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f9bcb1b5f786c2760161c6ba9096f05922fe783492962a6a49c4679d71a41711"
 ---
 
 # create_sandboxes_v2
@@ -30,8 +31,8 @@ Create a named sandbox.
 - [create_sandboxes_v3](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/create_sandboxes_v3) — Use create_sandboxes_v3 with Vercel MCP.
 - [create_sandboxes_v4](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/create_sandboxes_v4) — Use create_sandboxes_v4 with Vercel MCP.
 - [create_sandboxes_sessions_by_session_id_snapshot_v2](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/create_sandboxes_sessions_by_session_id_snapshot_v2) — Use create_sandboxes_sessions_by_session_id_snapshot_v2 with Vercel MCP.
+- [list_named_sandboxes](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/list_named_sandboxes) — Use list_named_sandboxes with Vercel MCP.
 - [create_sandboxes_sessions_by_session_id_snapshot_v3](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/create_sandboxes_sessions_by_session_id_snapshot_v3) — Use create_sandboxes_sessions_by_session_id_snapshot_v3 with Vercel MCP.
-- [update_sandbox](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/update_sandbox) — Use update_sandbox with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandboxes/create_sandboxes_v2.graph.md](/docs/agent-resources/vercel-mcp/tools/sandboxes/create_sandboxes_v2.graph.md)
 <!-- /docsgraph:related -->
@@ -44,6 +45,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandb
 | `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody` | object | Yes      | Request body for this tool.                                 |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

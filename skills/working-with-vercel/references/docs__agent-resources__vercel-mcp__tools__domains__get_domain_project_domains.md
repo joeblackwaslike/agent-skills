@@ -12,9 +12,10 @@ related:
   []
 summary: Use get_domain_project_domains with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_project_domains.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b838b0716ba0b6b59eddffcd5f60bd942d945fb94983afdde7dc3ea1567321a1"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "232bb2204216473645249467f19e4633ef0c75502d236595385f590ffac933f4"
 ---
 
 # get_domain_project_domains
@@ -31,7 +32,7 @@ List all project domains associated with an apex domain owned by the authenticat
 - [list_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/list_domains) — Use list_domains with Vercel MCP.
 - [get_project_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project_domain) — Use get_project_domain with Vercel MCP.
 - [List Project Domains by Apex Domain](https://vercel.com/docs/rest-api/domains/list-project-domains-by-apex-domain) — GET /v1/domains/{domain}/project-domains — List all project domains associated with an apex domain owned by the authenti
-- [get_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain) — Use get_domain with Vercel MCP.
+- [search_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/search_domains) — Use search_domains with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/get_domain_project_domains.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/get_domain_project_domains.graph.md)
 <!-- /docsgraph:related -->
@@ -47,6 +48,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domai
 | `teamId`  | string | No       | Team ID to use for this operation.                            |
 | `slug`    | string | No       | Team slug to use for this operation. Use instead of teamId.   |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

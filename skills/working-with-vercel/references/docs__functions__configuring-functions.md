@@ -15,9 +15,10 @@ related:
   - /docs/functions/limitations
 summary: Learn how to configure the runtime, region, maximum duration, and memory for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/configuring-functions.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "0c2b925cf55c1d1c4f0e3487bb36b5fc682b06b1b1699c2925fc0d54e0238ba2"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "bf2c9a92d11cde30fa93d08b44bdd29696bd1447c00e26b4270205c28650a323"
 ---
 
 # Configuring Functions
@@ -30,12 +31,11 @@ You can configure Vercel functions in many ways, including the runtime, region, 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
 - [vercel.functions API Reference \\(Python\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-sdk-python) — Learn about available APIs when working with Vercel Functions in Python.
-- [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart) — Build your first Vercel Function in a few steps.
-- [Using the Rust Runtime with Vercel functions](https://vercel.com/docs/functions/runtimes/rust) — Build fast, memory-safe serverless functions with Rust on Vercel.
 - [Debugging slow Vercel Functions](https://vercel.com/docs/functions/debug-slow-functions) — Diagnose and fix slow Vercel Functions using CLI tools, logs, and timing analysis.
-- [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing) — Learn about legacy usage and pricing for Vercel Functions.
+- [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart) — Build your first Vercel Function in a few steps.
+- [Using the Ruby Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/ruby) — Learn how to use the Ruby runtime to compile Ruby Vercel Functions on Vercel.
+- [Using the Rust Runtime with Vercel functions](https://vercel.com/docs/functions/runtimes/rust) — Build fast, memory-safe serverless functions with Rust on Vercel.
 
 Full cross-link map for this page: [/docs/functions/configuring-functions.graph.md](/docs/functions/configuring-functions.graph.md)
 <!-- /docsgraph:related -->
@@ -74,6 +74,18 @@ Vercel Functions use an infrastructure that allows you to adjust the memory size
 
 See [configuring a function's memory](/docs/functions/configuring-functions/memory) for more information.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

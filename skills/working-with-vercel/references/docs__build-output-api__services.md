@@ -14,9 +14,10 @@ related:
   - /docs/services/bindings
 summary: Learn how a deployment with multiple services is structured in the Build Output API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/build-output-api/services.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a924844889b0ed9135f2739dcbb5faadc24624644a6bdde8d1c7d04c7adb65f8"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "385c3ee57d302e1f40925d854cc80f816091080c723b91a4c0062e29caa61e6d"
 ---
 
 # Services
@@ -29,15 +30,14 @@ A deployment can contain multiple services. In the Build Output API, each servic
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Run multiple frameworks in one project with Vercel Services](https://vercel.com/changelog/run-multiple-frameworks-in-one-project-with-vercel-services)
 - [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
 - [Vercel Services: Run full stack on Vercel](https://vercel.com/blog/vercel-services-run-full-stack-on-vercel)
-- [Run multiple frameworks in one project with Vercel Services](https://vercel.com/changelog/run-multiple-frameworks-in-one-project-with-vercel-services)
-- [Full-stack previews on Vercel](https://vercel.com/kb/guide/full-stack-preview-deployments-on-vercel) — Learn how to use full-stack previews for your Vercel projects. Deploy Next.js, FastAPI, and a containerized Go service t
 - [Service configuration reference](https://vercel.com/docs/services/config-reference) — Options available for service configuration.
 - [Experimental Services](https://vercel.com/docs/services/experimental) — The experimentalServices configuration model for deploying multiple backends and frontends in a single Vercel project.
 - [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
-- [Daemons](https://vercel.com/docs/build-output-api/daemons) — Learn how Vercel Daemons are represented in the Build Output API.
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
+- [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 
 Full cross-link map for this page: [/docs/build-output-api/services.graph.md](/docs/build-output-api/services.graph.md)
 <!-- /docsgraph:related -->
@@ -104,6 +104,18 @@ A service is internal by default. Public traffic reaches it only when the top-le
 - A deployment can contain up to 100 services.
 - Service names may contain only lowercase letters, hyphens, and underscores, must start and end with a letter, and are limited to 64 characters.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

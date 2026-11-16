@@ -14,9 +14,10 @@ related:
   - /docs/cli/global-options
 summary: Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover available products using the...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/integration.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "81b08fd468db1228dc33e40ea38b24a2586f146cf5ef874e374c8096407f161a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a15166f8bbf5a4fab24632703935ce3d474b6c9a0cde4f76620b60a0ea293055"
 ---
 
 # vercel integration
@@ -865,6 +866,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

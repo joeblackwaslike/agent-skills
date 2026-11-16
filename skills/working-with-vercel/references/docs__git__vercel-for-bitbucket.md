@@ -15,9 +15,10 @@ related:
   - /docs/deployments/environments
 summary: ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and automatic Custom Domain...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/git/vercel-for-bitbucket.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "3de293548b1307c4837687a73b387892772ede021c72bf685074e0e0d7bef88e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e8e1415f6245b4052bf0d93139ae9d0f37b483e343bef6995116e18dd9c7dc27"
 ---
 
 # Deploying Bitbucket Projects with Vercel
@@ -32,13 +33,11 @@ Vercel for Bitbucket automatically deploys your Bitbucket projects with [Vercel]
 
 - [Vercel for Bitbucket](https://vercel.com/blog/bitbucket)
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
-- [September 2020](https://vercel.com/blog/changelog-september-2020)
 - [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
 - [Deploying from Azure DevOps with Vercel](https://vercel.com/docs/git/vercel-for-azure-pipelines) — ​Vercel for Azure DevOps allows you to deploy from Azure Pipelines to Vercel automatically.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
 
 Full cross-link map for this page: [/docs/git/vercel-for-bitbucket.graph.md](/docs/git/vercel-for-bitbucket.graph.md)
 <!-- /docsgraph:related -->
@@ -222,6 +221,18 @@ You can use Bitbucket Pipelines to build and deploy your Vercel Application.
 
 [Learn more about how to configure Bitbucket Pipelines and Vercel](/kb/guide/how-can-i-use-bitbucket-pipelines-with-vercel) for custom CI/CD workflows.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/cli/global-options
 summary: "Manage Vercel Container Registry from the Vercel CLI: build and push images, manage repositories, tags, and images, and control repository sharing..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/vcr.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "d03a97cfdc2cc3f7a29a1736a5b0706cdbb3e24edbe4eecf0fcc37553948ef95"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f124d473549e7dd0ce8072ba70d97ba320ba036dd271bfed685fd52ac47f21a9"
 ---
 
 # vercel vcr
@@ -34,10 +35,10 @@ The `vercel vcr` command is the entry point for managing [Vercel Container Regis
 - [Introducing VCR: Vercel Container Registry](https://vercel.com/changelog/introducing-vcr-vercel-container-registry)
 - [How to migrate from GHCR to Vercel Container Registry](https://vercel.com/kb/guide/migrate-ghcr-to-vcr) — Migrate container images from GitHub Container Registry \\(GHCR\\) to Vercel Container Registry \\(VCR\\), including authent
 - [Getting Started](https://vercel.com/docs/container-registry/getting-started) — Authenticate your container tool with Vercel Container Registry, then push and pull your first image with the Vercel CLI
-- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [vercel ci](https://vercel.com/docs/cli/ci) — Enable or disable Vercel CI for repositories, inspect runs, search logs, and rerun jobs from the command line.
 - [vercel crons](https://vercel.com/docs/cli/crons) — Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand.
-- [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
-- [vercel link](https://vercel.com/docs/cli/link) — Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
+- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
+- [Get a repository image](https://vercel.com/docs/rest-api/vcr/get-a-repository-image) — GET /v1/vcr/repository/{idOrName}/images/{imageIdOrDigest} — Fetch an individual image from a repository, including its
 
 Full cross-link map for this page: [/docs/cli/vcr.graph.md](/docs/cli/vcr.graph.md)
 <!-- /docsgraph:related -->
@@ -105,6 +106,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

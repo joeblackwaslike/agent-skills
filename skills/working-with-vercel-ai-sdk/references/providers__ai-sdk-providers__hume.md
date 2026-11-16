@@ -4,8 +4,8 @@ description: Learn how to set up the Hume provider and check AI Gateway availabi
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/hume"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/hume.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "96499569385820498b169e9377b3ec5e17262efc4408c82776741a3490a652c4"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "9d994fa2786239f54ffcdea942ed90b0b3aa23ce96b3a7573cd85defc0d200b7"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -195,6 +195,12 @@ The following provider options are available:
 | Model     | Instructions | Speed | Output Formats |
 | --------- | ------------ | ----- | -------------- |
 | `default` | ✓            | ✓     | mp3, pcm, wav  |
+
+### Provider Option Catalog
+
+| Operation | Option    | Description                                                                                                                                         |
+| --------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| speech    | `context` | Context for the speech synthesis request. Can be either a generationId for retrieving a previous generation, or a list of utterances to synthesize. |
 
 ---
 

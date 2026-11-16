@@ -14,9 +14,10 @@ related:
   - /docs/platforms/multi-tenant-platforms/configuring-domains
 summary: A DNS record display component with one-click copying for guiding users through domain configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/dns-table.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "dc2b61282847dbcce0e57d7ab5f19dcd179a17686cf683f98c14c26ab2692f62"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ef014bc5e4aac32b2db0d3dc338bb9ba2de1386c3e91b20e2250ce1a6e8c7eca"
 ---
 
 # DNS Table
@@ -34,9 +35,9 @@ The DNS Table block provides a clean, user-friendly interface for displaying DNS
 - [DNS Records UI](https://vercel.com/blog/dns-records-ui)
 - [Working with DNS](https://vercel.com/docs/domains/working-with-dns) — Learn how DNS works to properly configure your domain.
 - [vercel dns](https://vercel.com/docs/cli/dns) — Learn how to manage your DNS records for your domains using the vercel dns CLI command.
-- [Managing DNS Records](https://vercel.com/docs/domains/managing-dns-records) — Learn how to add, verify, and remove DNS records for your domains on Vercel with this guide.
+- [Update an existing DNS record](https://vercel.com/docs/rest-api/dns/update-an-existing-dns-record) — PATCH /v1/domains/records/{recordId} — Updates an existing DNS record for a domain name.
 - [Create a DNS record](https://vercel.com/docs/rest-api/dns/create-a-dns-record) — POST /v2/domains/{domain}/records — Creates a DNS record for a domain.
-- [Domains Overview](https://vercel.com/docs/domains) — Learn the fundamentals of how domains, DNS, and nameservers work on Vercel.
+- [List existing DNS records](https://vercel.com/docs/rest-api/dns/list-existing-dns-records) — GET /v5/domains/{domain}/records — Retrieves a list of DNS records created for a domain name. By default it returns 20 r
 
 Full cross-link map for this page: [/docs/platforms/platform-elements/blocks/dns-table.graph.md](/docs/platforms/platform-elements/blocks/dns-table.graph.md)
 <!-- /docsgraph:related -->
@@ -296,6 +297,18 @@ const DNSInstructions = ({ provider, records }) => {
 - [Add Custom Domain action](/docs/platforms/platform-elements/actions/add-custom-domain)
 - [Configuring domains for multi-tenant platforms](/docs/platforms/multi-tenant-platforms/configuring-domains)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

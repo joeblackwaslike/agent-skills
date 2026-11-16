@@ -15,9 +15,10 @@ related:
   - /docs/domains/custom-ssl-certificate
 summary: Learn about the Enterprise plan for Vercel, including features, pricing, and more.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/plans/enterprise.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "7edc09c9f53c39b32bfd42f97938d4276b4d15e8ec94d0273c7c321ca4affbd5"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "092ec63de1b3d11a41a96b0f5fdc42503766cb94280f6e00d3c33bf105f29fa9"
 ---
 
 # Vercel Enterprise Plan
@@ -36,12 +37,11 @@ Vercel offers an Enterprise plan for organizations and enterprises that need hig
 - [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
 - [Protect internal apps with Vercel Passport and your identity provider](https://vercel.com/kb/guide/vercel-passport) — Vercel Passport protects internal apps behind your own identity provider, such as Okta or Microsoft Entra ID. Learn how
 - [Using Vercel Passport with Microsoft Entra ID](https://vercel.com/kb/guide/vercel-passport-microsoft-entra-id) — Configure Microsoft Entra ID and Vercel Passport to protect a Next.js app, limit access to assigned users, and read veri
-- [Introducing Vercel Firewall and Vercel Secure Compute](https://vercel.com/blog/vercel-security)
-- [A more flexible Pro plan for modern teams](https://vercel.com/blog/new-pro-pricing-plan)
 - [Security & Compliance Measures](https://vercel.com/docs/security/compliance) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
-- [Vercel Pro Plan](https://vercel.com/docs/plans/pro-plan) — Learn about the Vercel Pro plan with credit-based billing, one free first-year domain, free viewer seats, and self-serve
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Organizations](https://vercel.com/docs/organizations) — Learn how organizations let you group multiple Vercel teams under a single entity with consolidated billing and central
+- [Vercel Pro Plan](https://vercel.com/docs/plans/pro-plan) — Learn about the Vercel Pro plan with credit-based billing, one free first-year domain, free viewer seats, and self-serve
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Multi-tenant Limits](https://vercel.com/docs/platforms/multi-tenant-platforms/limits) — Understand the limits and features available for Vercel for Platforms.
 
 Full cross-link map for this page: [/docs/plans/enterprise.graph.md](/docs/plans/enterprise.graph.md)
 <!-- /docsgraph:related -->
@@ -113,6 +113,18 @@ The Enterprise plan allows for streamlined team collaboration and offers robust 
 
 When employees outside IT build internal applications, define who owns each app and when engineering support is required. Read [What is a citizen developer?](/i/what-is-a-citizen-developer) for guidance on supporting these builders and reviewing applications before wider use.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/flags/vercel-flags/sdks/flags-sdk
 summary: Define entities and their attributes for precise feature flag targeting.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/entities.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "24e89d9a67d5a437569b5d4cee33135e481561627cd80ec372bb34b589574f02"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "9c2bb1846b52972613ee645c87b60b8aaeca02098f90ee99e4b8adf3ce31106e"
 ---
 
 # Entities
@@ -35,7 +36,7 @@ Entities represent the things your application knows about: users, teams, device
 - [How Splits Work in Vercel Flags](https://vercel.com/kb/guide/how-splits-work-in-vercel-flags) — Use weighted splits in Vercel Flags to deterministically bucket users into variants by percentage for gradual rollouts a
 - [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
-- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
 
@@ -230,6 +231,18 @@ See [Segments](/docs/flags/vercel-flags/dashboard/segments) for creating reusabl
 - [Configure flag targeting](/docs/flags/vercel-flags/dashboard/feature-flag)
 - [Set up the Flags SDK](/docs/flags/vercel-flags/sdks/flags-sdk) to pass evaluation context
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

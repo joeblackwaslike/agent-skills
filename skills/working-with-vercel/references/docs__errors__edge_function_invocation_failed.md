@@ -11,9 +11,10 @@ related:
   - /docs/deployments/build-features
 summary: The request for a Edge Function was not completed successfully. This is an application error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/edge_function_invocation_failed.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "fbb6e904890250fbca514aac3cacd00203ee1be083d02989e4a96a9cb8278d1a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "508a718fd2029dc059277e2d4c96de01aa054b2557e0642a25a9d264229788ff"
 ---
 
 # EDGE_FUNCTION_INVOCATION_FAILED
@@ -34,6 +35,18 @@ To troubleshoot this error, follow these steps:
 4. **Check function code**: Ensure that the code for the Edge Function is correct and does not contain any errors or infinite loops
 5. **Use Vercel's status page**: If you have tried the steps above and are still experiencing the error, check Vercel's [status page](https://www.vercel-status.com/) for any reported outages in the CDN, which can sometimes cause this error
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

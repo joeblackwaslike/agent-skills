@@ -15,9 +15,10 @@ related:
   - /docs/manage-cdn-usage
 summary: "Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/pricing.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "077d517698ff3b5d9a4ce744eb86054b15704b94db8a6dde45d8952ee68c5820"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "778a15cfc305b25567afffc6ff004f6c44d9a776ea925225aaaf12ed1d05c3c9"
 ---
 
 # Pricing on Vercel
@@ -32,13 +33,11 @@ Vercel's pricing model includes billable metrics and pricing models across Manag
 
 - [Basic build machines are now available on Pro and Enterprise](https://vercel.com/changelog/basic-build-machines)
 - [Preview URLs optimized for multi-tenant platforms](https://vercel.com/changelog/preview-urls-optimized-for-multi-tenant-platforms)
-- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
-- [A more flexible Pro plan for modern teams](https://vercel.com/blog/new-pro-pricing-plan)
-- [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
 - [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 - [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby) — Learn about the Hobby plan and how it compares to the Pro plan.
-- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 - [Build Queues](https://vercel.com/docs/builds/build-queues) — Understand how concurrency and same branch build queues manage multiple simultaneous deployments.
+- [vercel pricing](https://vercel.com/docs/cli/pricing) — Look up Hobby, Pro, and Enterprise features from the public Vercel pricing table using the CLI.
+- [Preview Deployment Suffix](https://vercel.com/docs/deployments/preview-deployment-suffix) — When you create a new deployment, Vercel will automatically generate a unique URL which you can use to access that parti
 
 Full cross-link map for this page: [/docs/pricing.graph.md](/docs/pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -85,14 +84,14 @@ For content delivery, you can pay on demand or through [Flat Rate CDN](/docs/pri
 | *On-demand Invocations* | - | N/A |
 
 
-#### [Runtime Cache](/docs/caching/runtime-cache#pricing)
+#### [Runtime Cache](/docs/runtime-cache#pricing)
 
 Runtime cache reads and writes are measured in 8 KB units. On Hobby, the included units are shared across all projects on the team, and runtime cache pauses for the rest of the billing period once they are used up. Pro teams draw on their [monthly credit](/docs/plans/pro-plan#monthly-credit), then pay the on-demand rate.
 
 | Resource | Hobby Included | On-demand Rates |
 | --- | --- | --- |
-| [Runtime Cache Reads](/docs/caching/runtime-cache#pricing) | 1M/month | $0.40 - $0.64 per 1M read units |
-| [Runtime Cache Writes](/docs/caching/runtime-cache#pricing) | 200K/month | $4.00 - $6.40 per 1M write units |
+| [Runtime Cache Reads](/docs/runtime-cache#pricing) | 1M/month | $0.40 - $0.64 per 1M read units |
+| [Runtime Cache Writes](/docs/runtime-cache#pricing) | 200K/month | $4.00 - $6.40 per 1M write units |
 
 
 #### [Image Optimization](/docs/image-optimization/limits-and-pricing)
@@ -208,7 +207,7 @@ You can purchase more custom environments from each project's environment settin
 
 #### [Builds](/docs/builds/managing-builds)
 
-Basic build machines are included with Hobby. For paid teams, build usage starts at $0.0035 per CPU minute.
+Basic build machines are included with Hobby. For paid teams, build usage starts at $0.0035 per CPU minute. To lower your build usage, see [How to reduce build costs on Vercel](/kb/guide/how-reduce-build-costs).
 
 Billable duration includes build and post-build time and is rounded up to the next whole minute.
 
@@ -265,6 +264,18 @@ For more information on Vercel's pricing, guidance on optimizing consumption, an
 - [Regional pricing](/docs/pricing/regional-pricing)
 - [Legacy usage metrics](/docs/pricing/legacy)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

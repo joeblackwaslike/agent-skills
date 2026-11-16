@@ -16,9 +16,10 @@ related:
   - /docs/flags/vercel-flags/dashboard/sdk-keys
 summary: "Read another project's Vercel Flags using your project's identity, without copying SDK keys."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/vercel-flags/project-connections.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "3ee85cdfaf9f8a063661a1893e27938728457ea1992ca895d9ace0b066cc5029"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0fe80155d896ca2b34e747166b9fd0e4420df2a897a6249c44a0862188007e3f"
 ---
 
 # Connecting Projects to Share Flags
@@ -179,6 +180,18 @@ When you use [embedded definitions](/docs/flags/vercel-flags/sdks/core#embedded-
 
 Flag evaluations and configuration reads count toward the source project's usage, just as they do with SDK keys. See [Vercel Flags limits and pricing](/docs/flags/vercel-flags/limits-and-pricing).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

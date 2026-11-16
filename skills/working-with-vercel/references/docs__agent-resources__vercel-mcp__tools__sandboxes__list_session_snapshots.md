@@ -12,9 +12,10 @@ related:
   []
 summary: Use list_session_snapshots with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/list_session_snapshots.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "d5355b1952b34dc8187095ed62f8b296146ef56fd83aa5df5016acf47907ff60"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5b72a5ead77be55cf0c77a46b0d816fd989b52fa5f5b2aa8b31e25d070bd4e12"
 ---
 
 # list_session_snapshots
@@ -27,8 +28,8 @@ List snapshots.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [list_sessions](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/list_sessions) — Use list_sessions with Vercel MCP.
 - [get_session_snapshot](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/get_session_snapshot) — Use get_session_snapshot with Vercel MCP.
+- [list_sessions](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/list_sessions) — Use list_sessions with Vercel MCP.
 - [List snapshots](https://vercel.com/docs/rest-api/sandboxes/list-snapshots) — GET /v2/sandboxes/snapshots — Retrieves a paginated list of snapshots for a specific project.
 - [create_sandboxes_sessions_by_session_id_snapshot_v2](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/create_sandboxes_sessions_by_session_id_snapshot_v2) — Use create_sandboxes_sessions_by_session_id_snapshot_v2 with Vercel MCP.
 - [create_sandboxes_sessions_by_session_id_snapshot_v3](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/create_sandboxes_sessions_by_session_id_snapshot_v3) — Use create_sandboxes_sessions_by_session_id_snapshot_v3 with Vercel MCP.
@@ -48,6 +49,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandb
 | `teamId`    | string | No       | Team ID to use for this operation.                                                                                  |
 | `slug`      | string | No       | Team slug to use for this operation. Use instead of teamId.                                                         |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

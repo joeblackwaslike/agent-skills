@@ -15,9 +15,10 @@ related:
   - /docs/flags/vercel-flags/sdks/flags-sdk
 summary: Use the vendor-neutral OpenFeature API with Vercel Flags as your provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/vercel-flags/sdks/openfeature.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ce8fd6af3154525875f7e5e2ddb0d4ce7a90cf9ebcc70576b3215abd9862a68e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "40d28568acf385b37a53a82f7e91f63b56b0fd85368410e986339efde085f9fd"
 ---
 
 # Using OpenFeature with Vercel Flags
@@ -32,10 +33,10 @@ sha256: "ce8fd6af3154525875f7e5e2ddb0d4ce7a90cf9ebcc70576b3215abd9862a68e"
 
 - [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga)
 - [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta)
-- [OpenFeature](https://flags-sdk.dev/docs/providers/openfeature)
 - [Flags SDK now supports OpenFeature](https://vercel.com/changelog/flags-sdk-now-supports-openfeature)
+- [OpenFeature](https://flags-sdk.dev/docs/providers/openfeature)
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
-- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
+- [Using the Core Library](https://vercel.com/docs/flags/vercel-flags/sdks/core) — Use the Vercel Flags core evaluation library directly for custom setups.
 - [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference) — API reference for the Flags SDK for Next.js and SvelteKit.
 
@@ -201,6 +202,18 @@ export async function GET(request: Request) {
 - [Configure entities](/docs/flags/vercel-flags/dashboard/entities) for targeting rules
 - Visit [OpenFeature documentation](https://openfeature.dev/docs/reference/intro) for more about the OpenFeature ecosystem
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -12,9 +12,10 @@ related:
   []
 summary: Use get_alias with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/get_alias.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9f79396ad59f088a2781f1eec942faad3fdaa87a7e50b683b63a95e104847d1b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "76f12e71d0ede31b60fefc7ffab970da40f1e743784dee5cb395ac0bf3caf425"
 ---
 
 # get_alias
@@ -27,11 +28,11 @@ Retrieves an Alias for the given host name or alias ID.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Get an Alias](https://vercel.com/docs/rest-api/aliases/get-an-alias) — GET /v4/aliases/{idOrAlias} — Retrieves an Alias for the given host name or alias ID.
 - [assign_alias](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/assign_alias) — Use assign_alias with Vercel MCP.
+- [Get an Alias](https://vercel.com/docs/rest-api/aliases/get-an-alias) — GET /v4/aliases/{idOrAlias} — Retrieves an Alias for the given host name or alias ID.
 - [list_aliases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing/list_aliases) — Use list_aliases with Vercel MCP.
 - [Delete an Alias](https://vercel.com/docs/rest-api/aliases/delete-an-alias) — DELETE /v2/aliases/{aliasId} — Delete an Alias with the specified ID.
-- [list_promote_aliases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/list_promote_aliases) — Use list_promote_aliases with Vercel MCP.
+- [Assign an Alias](https://vercel.com/docs/rest-api/aliases/assign-an-alias) — POST /v2/deployments/{id}/aliases — Creates a new alias for the deployment resolved from the given deployment or alias I
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routing/get_alias.graph.md](/docs/agent-resources/vercel-mcp/tools/routing/get_alias.graph.md)
 <!-- /docsgraph:related -->
@@ -48,6 +49,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routi
 | `teamId`    | string | No       | Team ID to use for this operation.                                    |
 | `slug`      | string | No       | Team slug to use for this operation. Use instead of teamId.           |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

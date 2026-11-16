@@ -15,9 +15,10 @@ related:
   - /docs/deployments/generated-urls
 summary: Environments are for developing locally, testing changes in a pre-production environment, and serving end-users in production.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployments/environments.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "bb8a857d43f3be7fe3e4ea309c56f7ec91b277b69ecd248bfe0d79f3d85eaea4"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "aabe082eaf77a4e5a226632fa506d7e4646645b804e8230657ac4e1c2c4b96ff"
 ---
 
 # Environments
@@ -35,7 +36,7 @@ Vercel provides three default environments (**Local**, **Preview**, and **Produc
 - [Native Marketplace integrations now support custom environments](https://vercel.com/changelog/custom-environments-support-for-marketplace-integrations)
 - [Prioritize production builds available on all plans](https://vercel.com/changelog/prioritize-production-deployments-to-build-before-queued-preview)
 - [Set team-wide defaults for Deployment Protection](https://vercel.com/changelog/set-team-wide-defaults-for-deployment-protection)
-- [Vercel Connect now supports Custom Environments](https://vercel.com/changelog/vercel-connect-now-supports-custom-environments)
+- [Speed Insights and Web Analytics now support custom environments](https://vercel.com/changelog/speed-insights-and-web-analytics-now-support-custom-environments)
 - [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
 - [How to Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel) — Deploy a TanStack Start app to Vercel with the Nitro Vite plugin. Covers Git and CLI deployment, Fluid compute defaults,
 - [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
@@ -380,6 +381,18 @@ To promote a build without rebuilding it, [stage a production deployment](#verif
 
 - [Learn about the different environments on Vercel](https://www.youtube.com/watch?v=nZrAgov_-D8)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

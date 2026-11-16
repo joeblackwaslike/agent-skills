@@ -14,9 +14,10 @@ related:
   - /docs/cli/global-options
 summary: "Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code, Codex, and OpenCode, and connect your agents to AI..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/setup.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "a30993772a35a6a8da7bc4836ffcb16aba8f824aefa3bc89fbb998a2269f2f26"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "19e55439c1749bbbb781626f9975d1ac48931be2e2cf926ab25edb8c27028e97"
 ---
 
 # vercel setup
@@ -29,13 +30,12 @@ The `vercel setup` command prepares your machine for coding agents in two steps:
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
 - [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [vercel agent](https://vercel.com/docs/cli/agent) — Generate an AGENTS.md file with Vercel deployment best practices using the vercel agent CLI command.
+- [Agent Resources](https://vercel.com/docs/agent-resources) — Set up AI coding tools with Vercel documentation, reusable skills, and secure access to projects, deployments, and logs.
 - [vercel token-pass](https://vercel.com/docs/cli/token-pass) — Configure supported coding agents to use Vercel Token Pass through AI Gateway from your terminal.
+- [vercel agent](https://vercel.com/docs/cli/agent) — Generate an AGENTS.md file with Vercel deployment best practices using the vercel agent CLI command.
 - [vercel skills](https://vercel.com/docs/cli/skills) — Discover agent skills relevant to your project using the vercel skills CLI command.
-- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 
 Full cross-link map for this page: [/docs/cli/setup.graph.md](/docs/cli/setup.graph.md)
 <!-- /docsgraph:related -->
@@ -71,6 +71,16 @@ vercel setup plugin --agent codex
 ```
 
 *Only install the Vercel plugin, and only for Codex.*
+
+### Add the Vercel CLI skill
+
+```bash filename="terminal"
+vercel setup skills
+```
+
+*Write the Vercel CLI skill that matches your installed CLI version to
+\`~/.agents/skills/vercel-cli\`. Run it again after upgrading the CLI to
+update the skill.*
 
 ### Preview changes
 
@@ -180,6 +190,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

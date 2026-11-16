@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/models-and-providers/provider-options
 summary: Generate and stream text from 300+ models through AI Gateway, with tool calling and structured output.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/modalities/text-generation.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "221958278e0767ec1ddfc91b52b0dcb3ea63823f9ce836113f50dab1900c643a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d5a89b8520d9e4359dd7b5ff54681c5d814fa3f5d689a325b0aa338d5214af86"
 ---
 
 # AI Gateway Text Generation
@@ -32,11 +33,11 @@ Text generation is the default modality in AI Gateway. You send a prompt and a m
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Migrate AI SDK 5.x to 6.0](https://ai-sdk.dev/docs/migration-guides/migration-guide-6-0) — Learn how to upgrade AI SDK 5.x to 6.0.
-- [OpenAI Responses API](https://ai-sdk.dev/cookbook/guides/openai-responses) — Get started with the OpenAI Responses API using the AI SDK.
-- [Anthropic Messages Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs) — Get JSON responses conforming to a JSON Schema from Anthropic models through AI Gateway.
-- [OpenAI Chat Completions Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs) — Generate structured JSON responses that conform to a specific schema using the Chat Completions API through AI Gateway.
-- [AI Gateway Service Tiers](https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers) — Control processing priority and cost for OpenAI, Google AI Studio, Google Vertex AI, and SpaceXAI models using service t
+- [Generating Text](https://ai-sdk.dev/docs/ai-sdk-core/generating-text) — Learn how to generate text with the AI SDK.
+- [Migrate AI SDK 3.4 to 4.0](https://ai-sdk.dev/docs/migration-guides/migration-guide-4-0) — Learn how to upgrade AI SDK 3.4 to 4.0.
 - [AI Gateway Provider Filtering, Ordering, and Sorting](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering) — Control AI Gateway provider routing with order, only, and sort. Set preferences, restrict providers, and rank them by co
+- [Anthropic Messages Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs) — Get JSON responses conforming to a JSON Schema from Anthropic models through AI Gateway.
+- [AI Gateway Caching: Prompt Caching and Response Caching](https://vercel.com/docs/ai-gateway/models-and-providers/automatic-caching) — Reduce cost and latency with AI Gateway caching. Enable automatic prompt caching across providers with one option, and c
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/text-generation.graph.md](/docs/ai-gateway/modalities/text-generation.graph.md)
 <!-- /docsgraph:related -->
@@ -886,6 +887,18 @@ curl --fail-with-body https://ai-gateway.vercel.sh/v1/responses \
 - [Provider options](/docs/ai-gateway/models-and-providers/provider-options) for routing and fallbacks
 - [Reasoning](/docs/ai-gateway/models-and-providers/reasoning) to enable step-by-step thinking
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

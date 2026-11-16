@@ -13,9 +13,10 @@ related:
   - /docs/passport/additional-identity-scopes
 summary: Verify a Passport token forwarded to your backend as a signed JWT.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/passport/verify-identity.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "8413f3303c5bdaf7255fc4d5a80507d9c07474dc32abce7b3b4b58786f327005"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c3c0a69c30efbd707642198aa595658f4b5211c85ae0900782f4861f92bc6732"
 ---
 
 # Verify forwarded Passport tokens
@@ -34,9 +35,9 @@ When a Passport-protected app forwards a token to another backend, the receiving
 - [Personalize and lock down a Nuxt app with Vercel Passport](https://vercel.com/kb/guide/vercel-passport-nuxt) — Use \\`getIdentity\\(\\)\\` to read a visitor’s verified Vercel Passport identity in Nuxt server routes, then personalize pa
 - [Build user-aware TanStack Start apps with Vercel Passport](https://vercel.com/kb/guide/vercel-passport-tanstack-start) — Use \\`getIdentity\\(\\)\\` to read a visitor’s verified Vercel Passport identity in TanStack Start server functions, then p
 - [Use Vercel Passport with Node.js and Python backends](https://vercel.com/kb/guide/vercel-passport-backend-frameworks) — Secure internal apps and verify a visitor's identity with Vercel Passport in your backend, with examples for Express, Ho
+- [Vercel Passport is now in Public Beta](https://vercel.com/changelog/vercel-passport-is-now-in-public-beta)
 - [Set up Passport with an identity provider](https://vercel.com/docs/passport/set-up-identity-provider) — Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.
 - [OIDC Federation Reference](https://vercel.com/docs/oidc/reference) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
-- [Troubleshooting Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/troubleshooting) — Learn how to troubleshoot common errors with Sign in with Vercel
 
 Full cross-link map for this page: [/docs/passport/verify-identity.graph.md](/docs/passport/verify-identity.graph.md)
 <!-- /docsgraph:related -->
@@ -116,6 +117,18 @@ Confirm that `verifyIdentity()` receives the complete token and that the server 
 
 Profile and additional claims are optional. Base the authorization decision on required, validated claims and deny access when a required claim is absent or has an unexpected type. See [Configure additional identity scopes](/docs/passport/additional-identity-scopes).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -12,9 +12,10 @@ related:
   - /docs/deployment-protection/methods-to-protect-deployments/vercel-authentication
 summary: Use web_fetch_vercel_url with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/web_fetch_vercel_url.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "385972eeb021f378abddd1b50d23ebec3930bd83658a31c89daec96df078cbde"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "019ae8790b623790ce447c7f23675a25f1010b5e281bd487a0d5c06ac2d497fc"
 ---
 
 # web_fetch_vercel_url
@@ -28,10 +29,10 @@ Fetch content directly from a Vercel deployment URL (with [authentication](/docs
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [get_access_to_vercel_url](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_access_to_vercel_url) — Use get_access_to_vercel_url with Vercel MCP.
-- [get_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment) — Use get_deployment with Vercel MCP.
-- [get_deployment_file_contents](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_file_contents) — Use get_deployment_file_contents with Vercel MCP.
 - [Get Deployment File Contents](https://vercel.com/docs/rest-api/deployments/get-deployment-file-contents) — GET /v8/deployments/{id}/files/{fileId} — Allows to retrieve the content of a file by supplying the file identifier and
-- [use_vercel_cli](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation/use_vercel_cli) — Use use_vercel_cli with Vercel MCP.
+- [get_deployment_file_contents](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_file_contents) — Use get_deployment_file_contents with Vercel MCP.
+- [search_vercel_documentation](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation/search_vercel_documentation) — Use search_vercel_documentation with Vercel MCP.
+- [Get microfrontends config for a deployment](https://vercel.com/docs/rest-api/microfrontends/get-microfrontends-config-for-a-deployment) — GET /v1/microfrontends/{deploymentId}/config — Get the microfrontends config for a deployment.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/web_fetch_vercel_url.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/web_fetch_vercel_url.graph.md)
 <!-- /docsgraph:related -->
@@ -42,6 +43,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deplo
 
 **Sample prompt:** "Make sure the content from my-app.vercel.app/api/status looks right"
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

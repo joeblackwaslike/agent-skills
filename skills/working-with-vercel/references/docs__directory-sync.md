@@ -13,9 +13,10 @@ related:
   - /docs/saml
 summary: Learn how to configure Directory Sync for your Vercel Team.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/directory-sync.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "a039f18933048704cdbe6a394100251dc70ce2035b828c4c5336ccbbd6aaa454"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "74abbdf19532fa7e9893441f580e49b7cfc3c7b55a6397ae45d7aee6479e834d"
 ---
 
 # Directory Sync (SCIM)
@@ -34,11 +35,12 @@ Directory Sync uses the System for Cross-domain Identity Management (SCIM) proto
 
 - [Enterprise](https://v0.app/docs/enterprise) — Learn how to manage v0 seats, access, and more in your Vercel Enterprise account.
 - [SAML Single Sign-On and Directory Sync now fully available](https://vercel.com/changelog/saml-single-sign-on-and-directory-sync-now-fully-available)
-- [Access Groups](https://vercel.com/docs/rbac/access-groups) — Learn how to configure access groups for team members on a Vercel account.
+- [Request access to Teams right from the Dashboard](https://vercel.com/changelog/request-access-to-teams-right-from-the-dashboard)
 - [Update Team Directory Sync Role Mappings](https://vercel.com/docs/rest-api/teams/update-team-directory-sync-role-mappings) — POST /v1/teams/{teamId}/dsync-roles — Update the Directory Sync role mappings for a Team. This endpoint allows updating
 - [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
-- [Team Level Roles](https://vercel.com/docs/rbac/access-roles/team-level-roles) — Learn about the different team level roles and the permissions they provide.
-- [Transition your Hobby team after EMU enrollment](https://vercel.com/docs/security/enterprise-managed-users-account-update) — Explains the account update screen EMU members see at SSO sign-in and how to complete it.
+- [Access Groups](https://vercel.com/docs/rbac/access-groups) — Learn how to configure access groups for team members on a Vercel account.
+- [Scopes and Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions) — Learn how to manage scopes and permissions for Sign in with Vercel
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/directory-sync.graph.md](/docs/directory-sync.graph.md)
 <!-- /docsgraph:related -->
@@ -94,6 +96,18 @@ If access is lost due to removal of team owners, use the following group names t
 | `vercel-role-contributor` | [Contributor](/docs/rbac/access-roles#contributor-role)                                                                      |
 | `vercel-role-security`    | [Security](/docs/rbac/access-roles#security-role)                                                                            |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

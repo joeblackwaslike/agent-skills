@@ -15,9 +15,10 @@ related:
   - /docs/deployments/claim-deployments
 summary: Find guides and reference documentation for building, deploying, and managing applications with Vercel, including the CLI, SDKs, and APIs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "7d6aa67d1b2f349d6d7e89ac4789a207aacd43c93463f771d8e581c9934dad32"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e1cadf63456f55ab524e3706e5e498b331c077b3bbddf5af9354c3d863a1640d"
 ---
 
 # Vercel Documentation
@@ -96,10 +97,10 @@ Set up Vercel for me. Fetch https://vercel.com/get-started.md and follow it.
 
 The latest changes across the Vercel platform. Browse the full [changelog](https://vercel.com/changelog) for everything that shipped.
 
-- Nov 7, 2026: [DeepSeek V4.1 Flash 1017 Ultrafast now available on AI Gateway](https://vercel.com/changelog/deepseek-v4-1-flash-1017-ultrafast-now-available-on-ai-gateway). Call DeepSeek V4.1 Flash 1017 Ultrafast through Vercel AI Gateway with one API key, no provider account, spend tracking, and request traces
-- Nov 6, 2026: [Chat SDK agents can now stream generative UI with json-render](https://vercel.com/changelog/json-render-and-chat-sdk-agents). Stream AI-generated cards from one typed catalog to Slack, Teams, and every other Chat SDK platform.
-- Nov 6, 2026: [AI Gateway adds DeepSeek Search and Fetch tools](https://vercel.com/changelog/ai-gateway-adds-deepseek-search-and-fetch-tools). AI Gateway now supports DeepSeek Search and Fetch. Search the web and retrieve page content with any tool-calling model and one API key.
-- Nov 6, 2026: [Vercel CLI can now set new projects to expire](https://vercel.com/changelog/vercel-cli-can-now-set-new-projects-to-expire). Set new projects to expire when you deploy them, and remove the expiration with vercel project keep.
+- Nov 15, 2026: [Qwen4-Max now available on AI Gateway](https://vercel.com/changelog/qwen4-max-now-available-on-ai-gateway). Call Alibaba's Qwen4-Max through Vercel AI Gateway with one API key: no provider account, automatic fallbacks, spend tracking, and traces on every request.
+- Nov 13, 2026: [Daemons can now send traces to Vercel Tracing](https://vercel.com/changelog/vercel-daemons-can-now-send-traces-to-vercel-tracing). Find slow operations and debug errors in your background workers with OpenTelemetry traces.
+- Nov 13, 2026: [Token Pass now includes $150 in tokens for $30/month](https://vercel.com/changelog/vercel-token-pass-now-includes-one-hundred-fifty-dollars-of-monthly-tokens). Token Pass now includes $150 in monthly tokens for featured models at the same $30 per team per month.
+- Nov 13, 2026: [Vercel Security Review no longer requires a linked Vercel project](https://vercel.com/changelog/vercel-security-review-no-longer-requires-a-linked-vercel-project). Scan GitHub code changes for vulnerabilities, with control over which repositories are reviewed.
 
 View the latest Vercel updates from your terminal:
 
@@ -177,6 +178,18 @@ Go deeper with guides, videos, and tutorials from the [Vercel Knowledge Base](/k
 
 **Migrations**: Bring your existing apps, agents, and workflows to Vercel. [Learn more →](/kb/migrations)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/caching/cache-control-headers
 summary: Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-toolbar/managing-toolbar.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "2a8013170894cac9f8d211bfee41b9d2e58e5350ee9d5b1f8e05b22052a5060e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "da27bd840374b0d6d8c674d206b1a7e6146d2594a390d014b476a98698ec7a09"
 ---
 
 # Managing the visibility of the Vercel Toolbar
@@ -34,15 +35,14 @@ When the toolbar is enabled, you'll be able to view it on any preview or enabled
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production)
 - [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar)
+- [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production)
 - [Use the Vercel Toolbar in Production with the Chrome Extension or the toolbar menu](https://vercel.com/changelog/use-the-vercel-toolbar-in-production)
-- [Improvements to Vercel Toolbar: Shrinking when inactive, removal of avatars, and more](https://vercel.com/changelog/improvements-to-vercel-toolbar)
 - [Easier toolbar setup for SvelteKit and other Vite-based frameworks](https://vercel.com/changelog/easier-toolbar-setup-for-sveltekit-and-other-vite-based-frameworks)
+- [Improvements to Vercel Toolbar: Shrinking when inactive, removal of avatars, and more](https://vercel.com/changelog/improvements-to-vercel-toolbar)
 - [The Vercel Toolbar is now more compact and dynamic](https://vercel.com/changelog/the-vercel-toolbar-is-now-more-compact-and-dynamic)
 - [Enabling and Disabling Comments](https://vercel.com/docs/comments/how-comments-work) — Learn when and where Comments are available, and how to enable and disable Comments at the account, project, and session
 - [Toolbar](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar) — Vercel MCP tools for toolbar.
-- [Accessibility Audit Tool](https://vercel.com/docs/vercel-toolbar/accessibility-audit-tool) — Learn how to use the Accessibility Audit Tool to automatically check the Web Content Accessibility Guidelines 2.0 level
 
 Full cross-link map for this page: [/docs/vercel-toolbar/managing-toolbar.graph.md](/docs/vercel-toolbar/managing-toolbar.graph.md)
 <!-- /docsgraph:related -->
@@ -155,6 +155,18 @@ You can make the following adjustments to the `Content-Security-Policy` [respons
     font-src https://vercel.live https://assets.vercel.com
   ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

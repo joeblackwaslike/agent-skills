@@ -15,9 +15,10 @@ related:
   - /docs/global-config/global-config-sdk
 summary: Learn about the Global Configs limits and pricing based on account plans.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/global-config/global-config-limits.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "23328796caf0dca35026cb0950b18c82fd670c7c43462cb46c0d6c51aa80fe57"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d63bff376ed0e5c3f168061b0ee6646e355da42ae4324c1f969f04742f07f1d9"
 ---
 
 # Global Config Limits and pricing
@@ -36,9 +37,9 @@ A [Global Config](/docs/global-config) is a global data store that [enables expe
 - [Edge Config is now Global Config](https://vercel.com/changelog/edge-config-is-now-global-config)
 - [Getting started with Global Config](https://vercel.com/docs/global-config/get-started) — Learn how to create a Global Config store and read from it in your project.
 - [Migrating from Edge Config to Global Config](https://vercel.com/docs/global-config/migration-guide) — Learn what changed when Edge Config was renamed to Global Config, and how to migrate your connection strings, SDK, and e
-- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
 - [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, delete, and manage items, read tokens, a
-- [Vercel Storage overview](https://vercel.com/docs/storage) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
+- [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
+- [Incremental Migration to Vercel](https://vercel.com/docs/incremental-migration) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
 
 Full cross-link map for this page: [/docs/global-config/global-config-limits.graph.md](/docs/global-config/global-config-limits.graph.md)
 <!-- /docsgraph:related -->
@@ -173,6 +174,18 @@ If you are developing locally or self-hosting, your Global Config is loaded thro
 
 - **It is safe to have the token as a parameter in the connection string**, because the SDK parses the passed string, then sends the token through an `Authorization` header instead
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

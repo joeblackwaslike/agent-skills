@@ -16,9 +16,10 @@ related:
   - /docs/cli/connect
 summary: Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub, Linear, Notion, and...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/connect/frameworks/chat-sdk.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "bf053ade241b2ee73baf1e5232a4e2eafd2eb0e285b884d66dece35f50622b21"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7b4a8bef994b405fc1c6d1811712507d20d35ea286dfc00cb5360792f8df57b1"
 ---
 
 # Chat SDK with Vercel Connect
@@ -36,14 +37,13 @@ supported platform.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Chat SDK now supports Vercel Connect](https://vercel.com/changelog/chat-sdk-vercel-connect)
-- [Vercel Connect now supports Microsoft Teams](https://vercel.com/changelog/vercel-connect-microsoft-teams)
-- [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
-- [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect)
-- [Vercel Connect: Secure access to external services for your agents](https://vercel.com/changelog/vercel-connect-secure-access-to-external-services-for-your-agents)
-- [Chat SDK Adapters](https://vercel.com/docs/chat-sdk/adapters) — Choose platform and state adapters for a Chat SDK bot on Vercel.
+- [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
+- [How to build a Slack bot with Next.js and Redis](https://vercel.com/kb/guide/how-to-build-a-slack-bot-with-next-js-and-redis) — This guide walks through building a Slack bot with Next.js, covering project setup, Slack app configuration, event handl
+- [Vercel Connect now supports Microsoft Teams](https://vercel.com/changelog/vercel-connect-microsoft-teams)
 - [Chat SDK with Next.js](https://vercel.com/docs/chat-sdk/frameworks/nextjs) — Add a Chat SDK bot to Next.js, receive Slack events through Vercel Connect, and deploy on Vercel.
 - [Chat SDK with Vercel Daemons](https://vercel.com/docs/chat-sdk/integrations/daemons) — Process Chat SDK jobs with Vercel Queues and Daemons, using Vercel Connect for Slack credentials and event delivery.
+- [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
 
 Full cross-link map for this page: [/docs/connect/frameworks/chat-sdk.graph.md](/docs/connect/frameworks/chat-sdk.graph.md)
 <!-- /docsgraph:related -->
@@ -231,6 +231,17 @@ const github = createGitHubAdapter({
 });
 ```
 
+The adapter handles the bot's conversation in issue and pull request threads.
+To let the bot's agent call other GitHub operations, such as reading a pull
+request's changed files, [GitHub Tools](https://github-tools.com/integrations/chat-sdk)
+can request tokens from the same connector with `connectGithubToken`. Its
+[Review pull requests guide](https://github-tools.com/guides/review-pull-requests)
+builds a bot that reviews a pull request when someone mentions it and keeps
+each thread in a durable workflow. The guide configures the adapter and its
+webhook with environment variables. To use Connect for those too, apply this
+page's adapter and
+[trigger setup](#create-and-attach-a-trigger-capable-connector).
+
 ### Linear
 
 Use the agent sessions mode for an app-actor installation:
@@ -366,6 +377,28 @@ Do not pin it to `production` if a Preview deployment must receive triggers.
 Deploy a Chat SDK template to start building AI agents that use Vercel Connect
 to securely access third-party services and APIs:
 
+## Frequently asked questions
+
+### Do the Chat SDK helpers request tokens on behalf of end users?
+
+No. Every helper in `@vercel/connect/chat` requests credentials with `subject: { type: 'app' }`, and you can't override the subject, so the bot acts as your installed app. When an agent in your bot needs to act through a user's own account, request a user-scoped token with `getToken()`, or attach MCP tools with a Connect auth provider that uses the user's ID as the subject. See [Use authenticated MCP tools in a Chat SDK bot](/docs/connect/frameworks/tanstack-ai#use-authenticated-mcp-tools-in-a-chat-sdk-bot).
+
+### Does the Connect `webhookVerifier` check Slack or Discord signatures?
+
+No. Vercel Connect verifies the provider's request, then forwards it with a Vercel OIDC token. The helper's `webhookVerifier` checks only that OIDC token, so use it only on routes that receive trigger-forwarded requests. By default, it accepts a token only when its project and environment match the current deployment. Notion and Telegram don't use triggers and keep their native verification. See [Customize inbound OIDC verification](#customize-inbound-oidc-verification).
+
+### Why does my bot receive the same event more than once?
+
+Providers and Vercel Connect can retry deliveries, and the verifier doesn't deduplicate them. OIDC token expiry limits how old a forwarded request can be, but a retry can still arrive within that window. Make every handler idempotent, for example by recording processed event IDs and skipping repeats. See [Account for delivery limitations](#account-for-delivery-limitations).
+
+### Can a Connect-backed bot wait for human approval before it acts?
+
+Yes, with Vercel Workflows. The [Chat SDK with Vercel Workflows](/docs/chat-sdk/integrations/workflows) guide configures the bot with `connectSlackAdapter`, starts a workflow from a chat message, and posts a Slack approval card. The run resumes after an approver responds, or expires after a timeout. Vercel Workflows persists the run while it waits, so the pending approval doesn't keep a function running.
+
+### How do I add AI model responses to a Connect-backed bot?
+
+Call AI SDK through [AI Gateway](/docs/ai-gateway) from your event handlers. On Vercel, AI SDK authenticates to AI Gateway with the deployment's OIDC token, the same token the Connect helpers use, so the bot doesn't need a model provider API key. Locally, `vercel env pull` writes a development token for both. See [Chat SDK with AI Gateway](/docs/chat-sdk/integrations/ai-gateway).
+
 ## Next steps
 
 - Review [Connect triggers](/docs/connect/concepts/triggers) to choose a
@@ -375,6 +408,18 @@ to securely access third-party services and APIs:
 - Use the [SDK reference](/docs/connect/ts-sdk-reference) for token parameters
   and errors.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

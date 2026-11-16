@@ -4,8 +4,8 @@ description: Use first-party AI SDK tools to add capabilities to agents and appl
 url: "https://ai-sdk.dev/docs/ai-sdk-core/tools"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/tools.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "760c294f99003ef12f74645c09202af1c8b09784f9b0340a58004d9b8673a36a"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "e17563c562ba5b0fde2834e57c2386f66aa3730a6d41ba0c392706b0e2566be1"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -243,10 +243,24 @@ again.
 The tool makes GET requests without cookies or credentials, and rejects URLs
 that contain credentials. Each request and redirect is validated against
 private and reserved addresses such as `localhost` and cloud metadata
-endpoints. On Node.js, resolved DNS addresses are validated at connect time to
-prevent DNS rebinding. On other runtimes, only the URL is validated, so restrict
-network egress at the platform level. A custom `fetch` must provide equivalent
-validation. See [Secure URL Fetching](/docs/advanced/secure-url-fetching).
+endpoints when they appear as IP literals or blocked local hostnames. The
+default transport does not validate DNS results. On Node.js, inject
+`guarded-fetch` to block hostnames resolving to private addresses and
+DNS rebinding, unless your application controls the destinations or already
+enforces equivalent SSRF protection through its fetch implementation or network
+egress policy. URLs selected by a model remain untrusted:
+
+```ts
+import { createGuardedFetch } from 'guarded-fetch';
+import { experimental_createWebFetchTool as createWebFetchTool } from '@ai-sdk/tool-web-fetch';
+
+const fetch = createGuardedFetch();
+const webFetch = createWebFetchTool({ fetch });
+// Reuse the transport and call await fetch.close() at application shutdown.
+```
+
+Restrict network egress at the platform level, especially on other runtimes.
+See [Secure URL Fetching](/docs/advanced/secure-url-fetching).
 
 Fetched content is untrusted and can contain prompt injections. When an agent
 has access to private data, a model could also be instructed to send that data

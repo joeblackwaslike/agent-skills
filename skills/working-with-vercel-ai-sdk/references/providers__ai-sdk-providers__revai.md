@@ -4,8 +4,8 @@ description: Learn how to set up the Rev.ai provider and check AI Gateway availa
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/revai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/revai.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "cadc27cfad213d7168166f915d3956053fd299f687a8667b56a40b9dbc652a40"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "82cd28609fcb8fe2f5ddf0c80dd48fe5d2ce2b36bc862ee2e01c546d6d197be1"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -259,11 +259,40 @@ The following provider options are available:
 
 ### Model Capabilities
 
-| Model      | Transcription | Duration | Segments | Language |
-| ---------- | ------------- | -------- | -------- | -------- |
-| `machine`  | ✓             | ✓        | ✓        | ✓        |
-| `low_cost` | ✓             | ✓        | ✓        | ✓        |
-| `fusion`   | ✓             | ✓        | ✓        | ✓        |
+| Model      | Transcription | Streaming | Duration | Segments | Language |
+| ---------- | ------------- | --------- | -------- | -------- | -------- |
+| `machine`  | ✓             | ✗         | ✓        | ✓        | ✓        |
+| `low_cost` | ✓             | ✗         | ✓        | ✓        | ✓        |
+| `fusion`   | ✓             | ✗         | ✓        | ✓        | ✓        |
+
+### Provider Option Catalog
+
+| Operation     | Option                     | Description                                                            |
+| ------------- | -------------------------- | ---------------------------------------------------------------------- |
+| transcription | `metadata`                 | Optional metadata string to associate with the transcription job.      |
+| transcription | `notification_config`      | Configuration for webhook notifications when job is complete.          |
+| transcription | `delete_after_seconds`     | Number of seconds after which the job will be automatically deleted.   |
+| transcription | `verbatim`                 | Whether to include filler words and false starts in the transcription. |
+| transcription | `rush`                     | Whether to prioritize the job for faster processing.                   |
+| transcription | `test_mode`                | Whether to run the job in test mode.                                   |
+| transcription | `segments_to_transcribe`   | Specific segments of the audio to transcribe.                          |
+| transcription | `speaker_names`            | Names to assign to speakers in the transcription.                      |
+| transcription | `skip_diarization`         | Whether to skip speaker diarization.                                   |
+| transcription | `skip_postprocessing`      | Whether to skip post-processing steps.                                 |
+| transcription | `skip_punctuation`         | Whether to skip adding punctuation to the transcription.               |
+| transcription | `remove_disfluencies`      | Whether to remove disfluencies (um, uh, etc.) from the transcription.  |
+| transcription | `remove_atmospherics`      | Whether to remove atmospheric sounds from the transcription.           |
+| transcription | `filter_profanity`         | Whether to filter profanity from the transcription.                    |
+| transcription | `speaker_channels_count`   | Number of speaker channels in the audio.                               |
+| transcription | `speakers_count`           | Expected number of speakers in the audio.                              |
+| transcription | `diarization_type`         | Type of diarization to use.                                            |
+| transcription | `custom_vocabulary_id`     | ID of a custom vocabulary to use for the transcription.                |
+| transcription | `custom_vocabularies`      | Custom vocabularies to use for the transcription.                      |
+| transcription | `strict_custom_vocabulary` | Whether to strictly enforce custom vocabulary.                         |
+| transcription | `summarization_config`     | Configuration for generating a summary of the transcription.           |
+| transcription | `translation_config`       | Configuration for translating the transcription.                       |
+| transcription | `language`                 | Language of the audio content.                                         |
+| transcription | `forced_alignment`         | Whether to perform forced alignment.                                   |
 
 ---
 

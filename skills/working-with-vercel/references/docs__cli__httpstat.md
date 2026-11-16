@@ -15,9 +15,10 @@ related:
   - /docs/cli/curl
 summary: Learn how to visualize HTTP request timing statistics for your Vercel deployments using the vercel httpstat CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/httpstat.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c17191cfbae48f7c37c5dfed72f918c3637ddd6ecda7fdb6dfbd0a32d53eebe0"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "267e173b62c870df09c5a27299755220ce6356fdbdd35dcbe2748cc09ecfd1c8"
 ---
 
 # vercel httpstat
@@ -35,8 +36,8 @@ The `vercel httpstat` command works like `httpstat`, but automatically handles d
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
-- [vercel security](https://vercel.com/docs/cli/security) — Inspect the security posture of your Vercel team from the terminal: run every security check, list findings, and triage
-- [vercel health](https://vercel.com/docs/cli/health) — Read Vercel platform status, active incidents, scheduled maintenance, and recently resolved incidents from your terminal
+- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 
 Full cross-link map for this page: [/docs/cli/httpstat.graph.md](/docs/cli/httpstat.graph.md)
 <!-- /docsgraph:related -->
@@ -240,6 +241,18 @@ For more information on global options and their usage, refer to the [options se
 - [vercel deploy](/docs/cli/deploy)
 - [vercel inspect](/docs/cli/inspect)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -11,9 +11,10 @@ related:
   - /docs/sign-in-with-vercel/authorization-server-api
 summary: Learn how the consent page works when users authorize your app
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sign-in-with-vercel/consent-page.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "097d6e022ed76a0dafd6a481cf5a87ddbcc744ca7754917511b068cccb96efbf"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b258351856456644a06024ba64770d1c4f0194e562a1aabc95264d40bcf65d3f"
 ---
 
 # Consent Page
@@ -29,8 +30,8 @@ When users sign in to your application for the first time, Vercel shows them a c
 - [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
 - [Scopes and Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions) — Learn how to manage scopes and permissions for Sign in with Vercel
 - [Troubleshooting Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/troubleshooting) — Learn how to troubleshoot common errors with Sign in with Vercel
-- [Attestations and Compliance Report](https://vercel.com/docs/security/attestations-and-compliance-report) — Learn how to preview and download Vercel compliance documents from the dashboard.
-- [Vercel KMS Concepts](https://vercel.com/docs/kms/concepts) — Understand how Vercel KMS rotates signing keys and how it authorizes signing, management, and verification.
+- [Add a repository permission](https://vercel.com/docs/rest-api/vcr/add-a-repository-permission) — POST /v1/vcr/repository/{idOrName}/permissions — Grant a team access to a VCR repository. Sharing applies to the whole r
+- [Create a Connect authorization request](https://vercel.com/docs/rest-api/connect/create-a-connect-authorization-request) — POST /v1/connect/authorize/{connector} — Create an authorization request for a connector and return the URL and verifier
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/consent-page.graph.md](/docs/sign-in-with-vercel/consent-page.graph.md)
 <!-- /docsgraph:related -->
@@ -69,6 +70,18 @@ Users only see the consent page the first time they authorize your app, and if y
 
 To force users to see the consent page again, include `prompt=consent` in your authorization request. Learn more in the [Authorization Endpoint](/docs/sign-in-with-vercel/authorization-server-api#authorization-endpoint) documentation.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

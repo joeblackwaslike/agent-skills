@@ -15,9 +15,10 @@ related:
   - /docs/workflows/pricing
 summary: Build agents and applications that retry failed steps, wait for external events, and resume across crashes and deployments with Vercel Workflows.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/workflows.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "1f6d33566553a4d1ba3f89d8297ab3df8664379642467d9a93e2d21e51c1c0dc"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "22319666082d4b343215f82e6ee7eb6e70ca7a354c9751e8db67b309827ec2b0"
 ---
 
 # Vercel Workflows
@@ -32,18 +33,18 @@ Vercel Workflows runs multi-step logic as durable code that can retry failed ste
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution)
 - [How to migrate from Cloudflare Workflows to Vercel Workflows](https://vercel.com/kb/guide/migrate-cloudflare-workflows-to-vercel-workflows) — Migrate from Cloudflare Workflows to Vercel Workflows by mapping WorkflowEntrypoint, step.do, and waitForEvent to workfl
-- [Built-in durability: Introducing Workflow Development Kit](https://vercel.com/blog/introducing-workflow)
+- [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution)
+- [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
 - [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
+- [Workflow SDK 5: built for production](https://vercel.com/blog/workflow-sdk-5)
+- [Built-in durability: Introducing Workflow Development Kit](https://vercel.com/blog/introducing-workflow)
+- [What is WorkflowAgent?](https://vercel.com/kb/guide/what-is-workflowagent) — Build durable AI agents with WorkflowAgent: tool calls that retry as workflow steps, suspend for human approval, and res
+- [The best workflow engine is a programming language](https://vercel.com/blog/the-best-workflow-engine-is-a-programming-language)
 - [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation)
 - [Configure where run state lives in Vercel Workflows](https://vercel.com/changelog/configure-where-run-state-lives-in-vercel-workflows)
 - [Expanded search for workflow runs in Vercel Observability](https://vercel.com/changelog/expanded-search-for-workflow-runs-in-vercel-observability)
 - [Measure time between steps in Vercel Workflows](https://vercel.com/changelog/measure-time-between-steps-in-vercel-workflows)
-- [Redesigned trace viewer for Vercel Workflows](https://vercel.com/changelog/redesigned-trace-viewer-for-vercel-workflows)
-- [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
-- [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
-- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 
 Full cross-link map for this page: [/docs/workflows.graph.md](/docs/workflows.graph.md)
 <!-- /docsgraph:related -->
@@ -113,6 +114,8 @@ If you're using Pi, Claude Code, Codex, or OpenCode, [`durable-harness`](/docs/a
 ### Choose a durable agent approach
 
 `WorkflowAgent` runs an AI SDK agent loop inside a workflow. eve uses Workflows for durable sessions and adds built-in channels and approvals. See [Choosing between eve, AI SDK agents, and `WorkflowAgent`](/kb/guide/eve-vs-ai-sdk-agents-vs-workflowagent) to compare these options with an agent that runs within one request.
+
+For a durable agent that works on GitHub, [`createDurableGithubAgent`](https://github-tools.com/integrations/workflow) from GitHub Tools wraps a `WorkflowAgent` with GitHub tools configured. Each model call and tool call runs as a step. A write that needs approval returns an approval request, and the tool runs only after your application sends back an answer.
 
 ### Build workflows in Python
 
@@ -200,7 +203,7 @@ You can write workflows in JavaScript or TypeScript with the Workflow SDK. It ha
 
 ### When should I use Workflows instead of Queues or Schedules?
 
-Use Workflows when a job has several steps whose results must survive crashes and deployments, waits for minutes to months, or pauses until an external event or approval arrives. Use [Vercel Queues](/docs/queues) for independent jobs that each need delivery with retries, and [Vercel Schedules](/docs/schedules) to start work on a cron schedule or once at a specific time. The services work together: a schedule can call a route that starts a workflow, and Workflows uses Queues to dispatch its steps. Compare every option in [Background workers](/docs/background-workers).
+Use Workflows when a job has several steps whose results must survive crashes and deployments, waits for minutes to months, or pauses until an external event or approval arrives. Use [Vercel Queues](/docs/queues) for independent jobs that each need delivery with retries, and [Vercel Schedules](/docs/schedules) to start work on a cron schedule or once at a specific time. The services work together: a schedule can [start a workflow](/docs/schedules/workflows) each time it fires, and Workflows uses Queues to dispatch its steps. Compare every option in [Background workers](/docs/background-workers).
 
 ### How do I build a durable AI agent on Vercel?
 
@@ -230,6 +233,18 @@ Yes. [Chat SDK](/docs/chat-sdk) exports `requestApproval` from `chat/workflow`. 
 
 **Vercel Queues**: The durable event streaming system that powers Workflow. [Learn more →](/docs/queues)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

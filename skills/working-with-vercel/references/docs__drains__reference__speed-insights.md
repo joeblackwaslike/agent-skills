@@ -13,9 +13,10 @@ related:
   - /docs/drains
 summary: Learn about Speed Insights Drains - data formats and performance metrics configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/drains/reference/speed-insights.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "a513ac6586aaf9f3181f365875fc7048ef2d9607dd823f7871b184cfdef21156"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "66a473814c6ac870a78abbde9a1089620f0b911a0163692b54d14742dac56da1"
 ---
 
 # Speed Insights Drains Reference
@@ -30,10 +31,10 @@ Speed Insights Drains send performance metrics and web vitals from your applicat
 
 - [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains)
 - [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics) — Learn about Web Analytics Drains - data formats and custom events configuration.
-- [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
+- [Speed Insights Overview](https://vercel.com/docs/speed-insights) — This page lists out and explains all the performance metrics provided by Vercel's Speed Insights feature.
 - [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
-- [Find a Drain by id](https://vercel.com/docs/rest-api/drains/find-a-drain-by-id) — GET /v1/drains/{id} — Get the information for a specific Drain by passing the drain id in the URL.
 - [Retrieve a list of all Drains](https://vercel.com/docs/rest-api/drains/retrieve-a-list-of-all-drains) — GET /v1/drains — Allows to retrieve the list of Drains of the authenticated team.
+- [Find a Drain by id](https://vercel.com/docs/rest-api/drains/find-a-drain-by-id) — GET /v1/drains/{id} — Get the information for a specific Drain by passing the drain id in the URL.
 
 Full cross-link map for this page: [/docs/drains/reference/speed-insights.graph.md](/docs/drains/reference/speed-insights.graph.md)
 <!-- /docsgraph:related -->
@@ -114,6 +115,18 @@ For more information on Speed Insights Drains and how to use them, check out the
 - [Drains overview](/docs/drains)
 - [Configure Drains](/docs/drains/using-drains)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

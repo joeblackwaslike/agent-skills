@@ -15,9 +15,10 @@ related:
   - /docs/agent/private-dependencies
 summary: Let AI automatically install Web Analytics and Speed Insights in your app
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent/installation.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "248488124171dbb09a860749d2dea99f59bf1845442ebc55dfed5a6d10afae9c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4e6d00615f2723b56ed1f5de8ece0605cb09da767284a2239d523967d0427d75"
 ---
 
 # Installation
@@ -38,12 +39,13 @@ Vercel Agent Installation helps add [Web Analytics](/docs/analytics) and [Speed 
 - [Vercel Agent can now install Web Analytics and Speed insights for you](https://vercel.com/changelog/vercel-agent-installation)
 - [Introducing Vercel Agent: Your new Vercel teammate](https://vercel.com/blog/introducing-vercel-agent)
 - [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
-- [Introducing the new Vercel Agent](https://vercel.com/blog/vercel-agent)
+- [Vercel Agent now in Limited Beta](https://vercel.com/changelog/vercel-agent-now-in-limited-beta)
 - [Vercel Agent now installs private packages from npm and custom registries](https://vercel.com/changelog/vercel-agent-now-installs-private-packages-from-npm-and-custom-registries)
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Install an Integration](https://vercel.com/docs/integrations/install-an-integration) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
-- [Interact with Integrations using Agent Tools](https://vercel.com/docs/integrations/install-an-integration/agent-tools) — Use Agent Tools to query, debug, and manage your installed integrations through a chat interface with natural language.
+- [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code, Codex, and OpenCode, and co
 - [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
+- [Interact with Integrations using Agent Tools](https://vercel.com/docs/integrations/install-an-integration/agent-tools) — Use Agent Tools to query, debug, and manage your installed integrations through a chat interface with natural language.
 
 Full cross-link map for this page: [/docs/agent/installation.graph.md](/docs/agent/installation.graph.md)
 <!-- /docsgraph:related -->
@@ -77,6 +79,18 @@ Vercel Agent runs the repository's normal install command in a secure sandbox wh
 
 To install private npm packages, [configure your team's shared registry credentials](/docs/agent/private-dependencies).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

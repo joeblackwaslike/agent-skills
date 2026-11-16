@@ -12,9 +12,10 @@ related:
   - /docs/analytics
 summary: Vercel MCP tools for web analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "abd2d88e821e060ce7c49e1fcc6cb3ec14545370ff08b16c221c7bcccf3bc6f5"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "14231b711eb65ce8f3eb970d66a2c94bf5f8d29115384063711131c62e23b4b4"
 ---
 
 # Web Analytics
@@ -27,10 +28,10 @@ Explore traffic and custom events for projects with Web Analytics enabled. You c
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Aggregates custom events](https://vercel.com/docs/rest-api/web-analytics/aggregates-custom-events) — GET /v1/query/web-analytics/events/aggregate — Counts custom events on a project, within the requested date range. Resul
 - [Counts custom events](https://vercel.com/docs/rest-api/web-analytics/counts-custom-events) — GET /v1/query/web-analytics/events/count — Counts the number of custom events on a project \\(production only\\), since We
-- [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views) — GET /v1/query/web-analytics/visits/aggregate — Counts pageviews on a project, within the requested date range. Results a
+- [Aggregates custom events](https://vercel.com/docs/rest-api/web-analytics/aggregates-custom-events) — GET /v1/query/web-analytics/events/aggregate — Counts custom events on a project, within the requested date range. Resul
 - [Counts page views](https://vercel.com/docs/rest-api/web-analytics/counts-page-views) — GET /v1/query/web-analytics/visits/count — Counts the number of page views on a project \\(production only\\), since Web A
+- [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views) — GET /v1/query/web-analytics/visits/aggregate — Counts pageviews on a project, within the requested date range. Results a
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/web-analytics.graph.md](/docs/agent-resources/vercel-mcp/tools/web-analytics.graph.md)
@@ -126,6 +127,18 @@ Query Web Analytics for a Vercel project. Count mode returns total visitors and 
 | `filter`    | string           | No       | -       | OData filter expression, for example requestPath eq '/pricing' and country eq 'US', eventName eq 'signup', or eventData/plan eq 'pro'.                                                                                                                                              |
 | `limit`     | integer          | No       | -       | Maximum distinct results in aggregate mode. Remaining values are grouped into Others. Defaults to 10. Minimum: 1. Maximum: 100.                                                                                                                                                     |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

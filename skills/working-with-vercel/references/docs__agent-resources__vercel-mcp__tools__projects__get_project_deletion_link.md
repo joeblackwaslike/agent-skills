@@ -12,9 +12,10 @@ related:
   []
 summary: Use get_project_deletion_link with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project_deletion_link.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "b239b6d1dd8271e8e70c6841805e75d4f1719c76332eaefbf43974f4cae50fc5"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8a27627ac658963921b61270d62830681773aaaaeb1bef5c14cb87d354cf217d"
 ---
 
 # get_project_deletion_link
@@ -29,9 +30,9 @@ Get a link to the Delete Project section in the Vercel dashboard. This tool veri
 
 - [get_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project) — Use get_project with Vercel MCP.
 - [Delete a Project](https://vercel.com/docs/rest-api/projects/delete-a-project) — DELETE /v9/projects/{idOrName} — Delete a specific project by passing either the project \\`id\\` or \\`name\\` in the URL.
-- [get_project_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project_domain) — Use get_project_domain with Vercel MCP.
-- [get_project_env](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables/get_project_env) — Use get_project_env with Vercel MCP.
+- [Delete an access group project](https://vercel.com/docs/rest-api/access-groups/delete-an-access-group-project) — DELETE /v1/access-groups/{accessGroupIdOrName}/projects/{projectId} — Allows deletion of an access group project
 - [get_project_deployment_protection](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project_deployment_protection) — Use get_project_deployment_protection with Vercel MCP.
+- [get_access_to_vercel_url](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_access_to_vercel_url) — Use get_access_to_vercel_url with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/projects/get_project_deletion_link.graph.md](/docs/agent-resources/vercel-mcp/tools/projects/get_project_deletion_link.graph.md)
 <!-- /docsgraph:related -->
@@ -43,6 +44,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/proje
 | `idOrName` | string | Yes      | The unique project identifier or the project name |
 | `teamId`   | string | Yes      | Team ID to use for this operation.                |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

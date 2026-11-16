@@ -11,9 +11,10 @@ related:
   []
 summary: The start value of the Range header in the request is invalid. This is a request error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/range_start_not_valid.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "c78ada2df2db2cf678df64fe76c51263a0644bbfdbd71fbc027cdcdf99857c12"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5bbfe1b43e7d2c11dc89de920293742d165b255b2b569dc13512183c13a662ec"
 ---
 
 # RANGE_START_NOT_VALID
@@ -33,6 +34,18 @@ To troubleshoot this error, follow these steps:
 3. **Check configuration:** If the `Range` header values are being set automatically by some part of your system, check the configuration to ensure it's being set correctly
 4. **Debugging:** If the error persists, log the `Range` header values in your server logs to debug and understand what values are being sent in requests
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

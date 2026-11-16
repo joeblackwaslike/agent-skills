@@ -15,9 +15,10 @@ related:
   - /docs/environment-variables
 summary: Learn the answer to common questions about deploying monorepos on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/monorepos/monorepo-faq.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "47e6d5eed2ac1da6294ecd84e27721777ef4ba09b5095c7c6e19077039056b0c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8bd654c2557ab39cabfbfbaec9ebadeb7c12f44f96bd7b9d65f931b3c4a531d2"
 ---
 
 # Monorepos FAQ
@@ -36,14 +37,13 @@ on the "Billing" page in the team settings.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Does Vercel Support Yarn? \\(Versions 2, 3, and 4\\)](https://vercel.com/kb/guide/does-vercel-support-yarn-4) — Vercel supports Yarn 1, 2, 3, and 4. Learn which version your build uses by default, and how to pin Yarn 4 with Corepack
-- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
 - [Deploying a Monorepo Using Yarn Workspaces to Vercel](https://vercel.com/kb/guide/deploying-yarn-monorepos-to-vercel) — In this guide, you will deploy a monorepo that includes two frontend applications and one shared library with Yarn works
-- [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel) — Deploy your Turborepo on Vercel and run tasks with Vercel CI using zero-config Remote Caching.
-- [Deploying Nx to Vercel](https://vercel.com/docs/monorepos/nx) — Nx is an extensible build system with support for monorepos, integrations, and Remote Caching on Vercel. Learn how to de
+- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
 - [Builds](https://vercel.com/docs/builds) — Understand how the build step works when creating a Vercel Deployment.
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
-- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
+- [Deploying Turborepo to Vercel](https://vercel.com/docs/monorepos/turborepo) — Learn about Turborepo, a build system for monorepos that allows you to have faster incremental builds, content-aware has
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 
 Full cross-link map for this page: [/docs/monorepos/monorepo-faq.graph.md](/docs/monorepos/monorepo-faq.graph.md)
 <!-- /docsgraph:related -->
@@ -123,6 +123,18 @@ add the following to your `nx.json` configuration file:
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

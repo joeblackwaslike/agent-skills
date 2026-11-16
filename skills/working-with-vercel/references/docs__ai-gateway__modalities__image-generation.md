@@ -15,9 +15,10 @@ related:
   - /docs/ai-gateway/modalities/image-generation/openai
 summary: Generate and edit images using AI models through Vercel AI Gateway with support for multiple providers and modalities.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/modalities/image-generation.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "32d55fbb7307e464a74de6e8f86a94f5895d22c687095ea62866a00c541ed2b1"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "311c55072ddb9ababa4b7b52c76409ad578fb7d0769735334bb7639274741fc5"
 ---
 
 # AI Gateway Image Generation
@@ -30,12 +31,12 @@ The Vercel [AI Gateway](/docs/ai-gateway) supports image generation and editing 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [MiniMax H3 Image and Highspeed now available on AI Gateway](https://vercel.com/changelog/minimax-h3-image-and-highspeed-now-available-on-ai-gateway)
 - [Nano Banana 2.1 now available on AI Gateway](https://vercel.com/changelog/nano-banana-2-1-now-available-on-ai-gateway)
 - [Image-only models available in Vercel AI Gateway](https://vercel.com/changelog/image-only-models-available-in-vercel-ai-gateway)
 - [MAI-Image-2.6 and MAI-Image-2.6-Flash now available on AI Gateway](https://vercel.com/changelog/mai-image-2-6-and-mai-image-2-6-flash-now-available-on-ai-gateway)
+- [GPT Image 2 on AI Gateway](https://vercel.com/changelog/gpt-image-2-on-ai-gateway)
 - [AI Gateway Image Generation Quickstart](https://vercel.com/docs/ai-gateway/getting-started/image) — Generate an image from a text prompt using AI Gateway.
-- [AI Gateway Chat Completions Image Generation Reference](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/image-generation) — Generate images using AI models that support multimodal output through the Chat Completions API through AI Gateway.
-- [AI Gateway Embeddings](https://vercel.com/docs/ai-gateway/modalities/embeddings) — Generate vector embeddings for semantic search, similarity matching, and retrieval-augmented generation \\(RAG\\) through
 - [AI Gateway Vision and Image Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/vision) — Analyze images with AI Gateway using AI SDK 7, the Python beta, Chat Completions, Messages, and Responses APIs.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/image-generation.graph.md](/docs/ai-gateway/modalities/image-generation.graph.md)
@@ -52,6 +53,18 @@ To implement image generation with AI Gateway, use one of the following methods:
 - **[TanStack AI](/kb/guide/tanstack-ai-vercel-ai-gateway#generate-images)**: Use `generateImage` with `vercelGatewayImage` from `@tanstack/ai-vercel-gateway` for text-to-image generation. See the [setup guide](/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai) for authentication and the [adapter reference](https://tanstack.com/ai/latest/docs/adapters/vercel-gateway#image) for supported operations.
 - **[Chat Completions API](/docs/ai-gateway/modalities/image-generation/openai)**: Use the Chat Completions endpoints for compatibility with existing OpenAI integrations across any programming language
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

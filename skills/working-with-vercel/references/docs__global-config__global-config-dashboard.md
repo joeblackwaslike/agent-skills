@@ -15,9 +15,10 @@ related:
   - /docs/global-config/global-config-limits
 summary: Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby team, team, and project...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/global-config/global-config-dashboard.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b38ca1db88889d090f80d019dc67c553233170ab6d8d2a584802cbd1d2fbc486"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e45050d21029a5b9487e42c67595a35dd31b95e3f8f81d6418da84de65cc57e2"
 ---
 
 # Managing Global Configs with the Dashboard
@@ -35,7 +36,7 @@ You can create, view and update your [Global Configs](/docs/global-config), and 
 - [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, delete, and manage items, read tokens, a
 - [@vercel/global-config](https://vercel.com/docs/global-config/global-config-sdk) — The Global Config client SDK is the most ergonomic way to read data from Global Configs. Learn how to set up the SDK so
 - [Create a Global Config](https://vercel.com/docs/rest-api/global-config/create-a-global-config) — POST /v1/global-config — Creates a Global Config.
-- [Using Global Config with LaunchDarkly](https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config) — Learn how to use Global Config with Vercel's LaunchDarkly integration.
+- [Get Global Configs](https://vercel.com/docs/rest-api/global-config/get-global-configs) — GET /v1/global-config — Returns all Global Configs.
 
 Full cross-link map for this page: [/docs/global-config/global-config-dashboard.graph.md](/docs/global-config/global-config-dashboard.graph.md)
 <!-- /docsgraph:related -->
@@ -192,6 +193,18 @@ If you no longer have the connection string for a token that was already created
 
 Using the Vercel REST API, you can create and update Global Configs
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/schedules/concepts
 summary: Move Cron Jobs in vercel.json to Schedules without changing your route code, then optionally make the route private.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/schedules/migrate-from-cron-jobs.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "53b125c85e17e2e9c892e9cc1ffb6539fff68666d113f4784c739204f1512d88"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "e206d0c2db3cde7ac4f1d1c0ecdc79819e86caf4c66abff505af38252e2dc6c9"
 ---
 
 # Migrating from Cron Jobs to Schedules
@@ -32,11 +33,11 @@ sha256: "53b125c85e17e2e9c892e9cc1ffb6539fff68666d113f4784c739204f1512d88"
 
 - [Vercel Schedules is now in public beta](https://vercel.com/changelog/vercel-schedules-is-now-in-public-beta)
 - [Introducing Vercel Schedules](https://vercel.com/blog/introducing-vercel-schedules)
-- [Cron Jobs](https://vercel.com/docs/schedules/cron-jobs) — Learn about cron jobs, how they work, and how to use them on Vercel.
-- [Getting Started with Schedules](https://vercel.com/docs/schedules/quickstart) — Run a private Vercel Function every hour with a static schedule in vercel.json, test it locally, and deploy it.
 - [Vercel Schedules: JS SDK Reference](https://vercel.com/docs/schedules/sdk) — Reference for @vercel/schedules: create, list, update, enable, disable, invoke, and delete schedules, and handle schedul
-- [Getting started with cron jobs](https://vercel.com/docs/schedules/cron-jobs/quickstart) — Learn how to schedule cron jobs to run at specific times or intervals.
+- [Getting Started with Schedules](https://vercel.com/docs/schedules/quickstart) — Run a private Vercel Function every hour with a static schedule in vercel.json, test it locally, and deploy it.
+- [Cron Jobs](https://vercel.com/docs/schedules/cron-jobs) — Learn about cron jobs, how they work, and how to use them on Vercel.
 - [Testing Schedules Locally](https://vercel.com/docs/schedules/local-development) — Run static and dynamic schedules on your machine with vercel dev, trigger runs on demand, and learn what differs from pr
+- [Vercel Schedules: API Reference](https://vercel.com/docs/schedules/http-api) — Reference for the Vercel Schedules HTTP API: authenticate, choose an environment, and create, list, update, enable, disa
 
 Full cross-link map for this page: [/docs/schedules/migrate-from-cron-jobs.graph.md](/docs/schedules/migrate-from-cron-jobs.graph.md)
 <!-- /docsgraph:related -->
@@ -166,6 +167,18 @@ See [Function targets](/docs/schedules/handle-runs#function-targets) for the ful
 - [Handling scheduled runs](/docs/schedules/handle-runs): Make your handler safe to run more than once.
 - [`vercel schedules`](/docs/cli/schedules): Manage schedules from the terminal.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

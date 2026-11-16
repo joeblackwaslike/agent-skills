@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/anomalyco/opencode/dev/README.md"
-fetched_at: "2026-11-09T12:39:24.590Z"
-sha256: "bb93505aec5bdf3146198818ecc9031f7b9c1f5d85a48b4d78cbb20fd98f86cd"
+fetched_at: "2026-11-16T12:32:19.624Z"
+sha256: "df8e642cd42bf26246dc9aaac2d5ef60a26cbb500aa631667da294112a1c6fc6"
 ---
 
 <p align="center">
@@ -45,7 +45,7 @@ sha256: "bb93505aec5bdf3146198818ecc9031f7b9c1f5d85a48b4d78cbb20fd98f86cd"
   <a href="README.vi.md">Tiếng Việt</a>
 </p>
 
-[![OpenCode Terminal UI](packages/web/src/assets/lander/screenshot.png)](https://opencode.ai)
+[![OpenCode Terminal UI](services/site/public/v1/docs/assets/lander/screenshot.png)](https://opencode.ai)
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/functions/configuring-functions/region
 summary: Learn about available APIs when working with Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/functions-api-reference.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "a417a5b8997e8ddf83a3aef3330035a2084c4cf9ef5f692e35bbbff562cd4069"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b8d5b1cbf39917616f2ab3e52833f2d015ae39692a94aa4bb2df5ee9cc30fc5e"
 ---
 
 # Functions API Reference
@@ -377,7 +378,7 @@ The `@vercel/functions` package provides a set of helper methods and utilities f
 - [**`dangerouslyDeleteByTag()`**](/docs/functions/functions-api-reference/vercel-functions-package#dangerouslydeletebytag): Marks a cache tag as deleted, causing cache entries associated with that tag to be revalidated in the foreground on the next request.
 - [**`invalidateBySrcImage()`**](/docs/functions/functions-api-reference/vercel-functions-package#invalidatebysrcimage): Marks all cached content associated with a source image as stale, causing those cache entries to be revalidated in the background on the next request. This invalidates all cached transformations of the source image.
 - [**`dangerouslyDeleteBySrcImage()`**](/docs/functions/functions-api-reference/vercel-functions-package#dangerouslydeletebysrcimage): Marks all cached content associated with a source image as deleted, causing those cache entries to be revalidated in the foreground on the next request. Use this method with caution because deleting the cache can cause many concurrent requests to the origin leading to [cache stampede problem](https://en.wikipedia.org/wiki/Cache_stampede).
-- [**`getCache()`**](/docs/functions/functions-api-reference/vercel-functions-package#getcache): Obtain a [`RuntimeCache`](/docs/functions/functions-api-reference/vercel-functions-package#getcache) object to interact with the [Vercel Runtime Cache](/docs/caching/runtime-cache).
+- [**`getCache()`**](/docs/functions/functions-api-reference/vercel-functions-package#getcache): Obtain a [`RuntimeCache`](/docs/functions/functions-api-reference/vercel-functions-package#getcache) object to interact with the [Vercel Runtime Cache](/docs/runtime-cache).
 
 See the [`@vercel/functions`](/docs/functions/functions-api-reference/vercel-functions-package) documentation for more information.
 
@@ -412,6 +413,18 @@ See the [`@vercel/oidc-aws-credentials-provider`](/docs/functions/functions-api-
 - [Streaming Data: Learn about streaming on Vercel](/kb/guide/what-is-streaming)
 - [Python API Reference: Learn about available APIs when working with Vercel Functions in Python](/docs/functions/functions-api-reference/vercel-sdk-python)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/project-configuration/project-settings
 summary: Understand how the build step works when creating a Vercel Deployment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/builds.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f2fc8dc282a7bd29c91392649a4be00e1e3032e949a88dd033a300c73e77f2cb"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "81e1822ec4edac8c2f79bb773da6abbf74cb263950bd39c9f14ea612ee6d676d"
 ---
 
 # Builds
@@ -31,17 +32,17 @@ Vercel automatically performs a **build** every time you deploy your code, wheth
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
+- [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
+- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
 - [Basic build machines are now available on Pro and Enterprise](https://vercel.com/changelog/basic-build-machines)
 - [Blocking malicious npm packages before and during installation](https://vercel.com/changelog/blocking-malicious-npm-packages-before-and-during-installation)
+- [Build cache size limit on Vercel increased to 5 GB](https://vercel.com/changelog/build-cache-size-limit-on-vercel-increased-to-five-gb)
+- [Build disk space on Vercel increased to 64 GB](https://vercel.com/changelog/build-disk-space-on-vercel-increased-to-64-gb)
 - [Deploy steps are now up to 21% faster](https://vercel.com/changelog/deploy-steps-are-now-up-to-21-faster)
-- [Deployment step now 10% faster](https://vercel.com/changelog/deployment-step-now-10-faster)
-- [Deployment step now 15% faster](https://vercel.com/changelog/deployment-step-now-15-percent-faster)
-- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
-- [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
-- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
-- [Announcing the Build Output API](https://vercel.com/blog/build-output-api)
-- [September 2020](https://vercel.com/blog/changelog-september-2020)
+- [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 
 Full cross-link map for this page: [/docs/builds.graph.md](/docs/builds.graph.md)
 <!-- /docsgraph:related -->
@@ -155,23 +156,14 @@ Vercel enforces certain limits to ensure reliable builds for all users:
 
 - **Build timeout**: The maximum build time is **45 minutes**. If your build exceeds this limit, it will be terminated, and the deployment fails.
 
-- **Build cache**: Each build cache is retained for one month. Restoring a build cache can speed up subsequent deployments. The maximum size depends on the [build machine type](/docs/builds/managing-builds#build-machines):
-
-  | Build machine | Cache limit |
-  | ------------- | ----------- |
-  | Basic         | 1.5 GB |
-  | Standard      | 1.5 GB |
-  | Enhanced      | 3 GB |
-  | Turbo         | 4.75 GB |
-
-  Elastic build machines use the limit of the machine type assigned to each build.
+- **Build cache**: Each build cache is retained for one month. Restoring a build cache can speed up subsequent deployments. The maximum size is 5 GB for every [build machine type](/docs/builds/managing-builds#build-machines), including Elastic build machines.
 
 - **Container resources**: Vercel creates a [build container](/docs/builds/build-image) with different resources depending on your plan:
 
   |            | Hobby   | Pro     | Enterprise |
   | ---------- | ------- | ------- | ---------- |
   | Memory     | 8192 MB | 8192 MB | Custom     |
-  | Disk Space | 32 GB   | 32 GB   | Custom     |
+  | Disk Space | 64 GB   | 64 GB   | 64 GB      |
   | CPUs       | 2       | 4       | Custom     |
 
 Hobby teams always use the Basic build machine with 2 vCPUs and 8 GB of memory. See [Managing Builds](/docs/builds/managing-builds#build-machine-types) for all build machine types.
@@ -193,8 +185,20 @@ Vercel bills build usage as Build Minutes based on the build machine type used f
 
 [Vercel CI](/docs/ci/pricing) uses the same per CPU minute billing rates.
 
-For current rates and build machine details, see [Managing Builds](/docs/builds/managing-builds#build-machine-types).
+For current rates and build machine details, see [Managing Builds](/docs/builds/managing-builds#build-machine-types). To lower your build usage, see [How to reduce build costs on Vercel](/kb/guide/how-reduce-build-costs).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

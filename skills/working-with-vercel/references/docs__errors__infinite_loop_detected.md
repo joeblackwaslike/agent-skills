@@ -11,9 +11,10 @@ related:
   - /docs/redirects
 summary: An infinite loop was detected within the application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/infinite_loop_detected.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "41b67b1959f8f6e1add62bfc6c220eb246d00f1708185c68085ecd4d7d6796f7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f2a83e38523636fe06af78f1fe295cbcc83edce7c13cee3350feb0379d8422f9"
 ---
 
 # INFINITE_LOOP_DETECTED
@@ -34,6 +35,18 @@ To troubleshoot this error, follow these steps:
 4. **Handle unhandled exceptions:** Check the application logs for any unhandled exceptions that might be causing the infinite loop
 5. **Use Vercel's status page:** If you have tried the steps above and are still experiencing the error, check Vercel's [status page](https://www.vercel-status.com/) for any reported outages in the CDN, which can sometimes cause this error
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

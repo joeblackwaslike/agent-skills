@@ -11,9 +11,10 @@ related:
   - /docs/cli/global-options
 summary: Read Vercel platform status, active incidents, scheduled maintenance, and recently resolved incidents from your terminal.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/health.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c8cda540678a20bcad9b509b5e1f8cbb870c7ada15ca37c3575c51dbee13aee4"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "892096fd48c676a8b9f24c51750c9491da2cbd1a8b40a94b43056448a84cd5cf"
 ---
 
 # vercel health
@@ -28,9 +29,9 @@ The `vercel health` command reads the public [Vercel status page](https://www.ve
 
 - [vercel doctor](https://vercel.com/docs/cli/doctor) — Learn how to check your Vercel CLI setup and fix problems with the vercel doctor CLI command.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel security](https://vercel.com/docs/cli/security) — Inspect the security posture of your Vercel team from the terminal: run every security check, list findings, and triage
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel changelog](https://vercel.com/docs/cli/changelog) — Read recent Vercel product updates and search the changelog from your terminal using the Vercel CLI.
+- [vercel security](https://vercel.com/docs/cli/security) — Inspect the security posture of your Vercel team from the terminal: run every security check, list findings, and triage
+- [vercel ci](https://vercel.com/docs/cli/ci) — Enable or disable Vercel CI for repositories, inspect runs, search logs, and rerun jobs from the command line.
 
 Full cross-link map for this page: [/docs/cli/health.graph.md](/docs/cli/health.graph.md)
 <!-- /docsgraph:related -->
@@ -133,6 +134,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

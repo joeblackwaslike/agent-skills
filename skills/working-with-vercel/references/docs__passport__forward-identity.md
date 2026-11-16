@@ -11,9 +11,10 @@ related:
   - /docs/passport/verify-identity
 summary: Forward a Passport visitor identity to another backend that you operate.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/passport/forward-identity.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "a9ff701bfed55a48f227e5d5745204023532a0cb6d2fd92cc8a93e57e45da9f7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c41b8137e9f7bd09ba97980f41ece9c5e2b8eac67c5c47f64e81d1eb4949e1a0"
 ---
 
 # Forward Passport identity to another backend
@@ -68,6 +69,18 @@ export async function POST() {
 
 Only forward Passport tokens over HTTPS to backends that you operate. A Passport token authenticates the visitor to your backend. It is not an access token for your identity provider or a downstream service. If the backend needs to exchange or store credentials for another service, use Vercel Connect for that credential flow. If the backend only needs to know who the Passport visitor is, it can use `verifyIdentity()` to [verify the Passport token](/docs/passport/verify-identity) directly.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

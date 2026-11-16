@@ -15,9 +15,10 @@ related:
   - /docs/flags
 summary: Configure which microfrontend handles each path and understand how Vercel selects deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/microfrontends/routing.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "074765ca60b4abe42223a5f901c2941f56f4eb56eef264565419ea61329279c0"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4386aae6a49d7f9dc7391ec41ecd0944a9032694c58b82cdc2ef481c5c7e7534"
 ---
 
 # Microfrontends Routing
@@ -35,13 +36,11 @@ Microfrontends routing determines which application handles a path and which dep
 - [withWorkflow](https://workflow-sdk.dev/docs/api-reference/workflow-next/with-workflow) — Wrap your Next.js config with withWorkflow to enable workflow directive transformation.
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
 - [Preview links between microfrontends projects now serve all paths](https://vercel.com/changelog/preview-links-between-microfrontends-projects-now-serve-all-paths)
-- [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing)
-- [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends)
 - [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart) — Learn how to get started with microfrontends on Vercel.
-- [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
-- [Managing with the Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar) — Learn how to use the Vercel Toolbar to make it easier to manage microfrontends.
 - [Microfrontends Configuration](https://vercel.com/docs/microfrontends/configuration) — Configure your microfrontends.json.
+- [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
+- [Managing with the Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar) — Learn how to use the Vercel Toolbar to make it easier to manage microfrontends.
 
 Full cross-link map for this page: [/docs/microfrontends/routing.graph.md](/docs/microfrontends/routing.graph.md)
 <!-- /docsgraph:related -->
@@ -283,6 +282,18 @@ To identify which microfrontend is responsible for serving a specific path, you 
 
 ![Listing of all paths served by a microfrontend in the Vercel Toolbar.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/microfrontends/toolbar/microfrontends-directory-3-light.png)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

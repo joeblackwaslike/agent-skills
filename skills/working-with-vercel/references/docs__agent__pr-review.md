@@ -15,9 +15,10 @@ related:
   - /docs/agent/pricing
 summary: Get automatic AI-powered code reviews on your pull requests
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent/pr-review.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "bd608517b0162df32c90efd35225e891bddabb27436e8ac434c9199f720ffc36"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a4e206bba1e9a3c9cf77248ef8db6e76bbdc3efce902a2b605fda8314796c14b"
 ---
 
 # Code Review
@@ -34,13 +35,13 @@ Code Review is part of [Vercel Agent](/docs/agent). It provides Sandbox-validate
 
 - [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
 - [AI code reviews by Vercel Agent now in Public Beta](https://vercel.com/changelog/ai-code-reviews-by-vercel-agent-now-in-beta)
+- [Introducing Vercel Security Review](https://vercel.com/blog/vercel-security-review)
 - [Vercel Agent code reviews now follow your code guidelines](https://vercel.com/changelog/vercel-agent-code-reviews-now-follow-your-code-guidelines)
 - [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Vercel Security Review now in public beta](https://vercel.com/changelog/vercel-security-review-public-beta)
-- [Introducing Vercel Security Review](https://vercel.com/blog/vercel-security-review)
 - [On-demand Vercel Agent code reviews](https://vercel.com/changelog/on-demand-vercel-agent-code-reviews)
 - [Apply code suggestions from Vercel Agent with one click](https://vercel.com/changelog/apply-code-suggestions-from-vercel-agent-with-one-click)
 - [Introducing Vercel CI](https://vercel.com/blog/introducing-vercel-ci)
@@ -158,6 +159,18 @@ See [Vercel Agent pricing](/docs/agent/pricing) for complete rates and cost-trac
 
 Code Review never trains on customer code if your Vercel team's [data preferences setting](https://vercel.fyi/team-data-preferences) is "off" or you are on an [Enterprise plan](/docs/plans/enterprise).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

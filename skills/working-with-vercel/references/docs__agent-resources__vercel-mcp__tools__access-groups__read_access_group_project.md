@@ -12,9 +12,10 @@ related:
   []
 summary: Use read_access_group_project with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups/read_access_group_project.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "e1712e45608fce67dbccdf6e4f1680466f74fdea3a6a0decccfcc0a18df99060"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2129b9cecad7c7bc844b4fb234c98531da31a8730409dfdd64f6257a80587a8b"
 ---
 
 # read_access_group_project
@@ -45,6 +46,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/acces
 | `teamId`              | string | No       | Team ID to use for this operation.                          |
 | `slug`                | string | No       | Team slug to use for this operation. Use instead of teamId. |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -12,9 +12,10 @@ related:
   - /docs/cli
 summary: Learn how to integrate ButterCMS with Vercel. Follow our tutorial to set up the ButterCMS template on Vercel and manage content seamlessly using...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/cms/butter-cms.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "51a69467859783fa03fe8d10ceb43501530dce74ff0912b4e26fcbeac34a81de"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c02d3c07850f33de88e1f4758c168cdd7293454072a9a1cc07e2c251520d231f"
 ---
 
 # Vercel ButterCMS Integration
@@ -73,6 +74,18 @@ Or, follow the steps below to install the integration:
 
 See your installed CMSs documentation for next steps on how to use the integration.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

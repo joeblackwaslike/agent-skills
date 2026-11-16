@@ -12,9 +12,10 @@ related:
   []
 summary: Vercel MCP tools for drains.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b83fce8d7889f7d001b8b6d50585e17336e9d46a530fcecd9f45e4fc56f65870"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d84e6b580b9d8ad3ac45e9b4b547c484c07a853b8e853b39859a46cb03c86726"
 ---
 
 # Drains
@@ -27,11 +28,10 @@ Configure Drains to send your Vercel observability data to an external destinati
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains)
-- [Retrieve a list of all Drains](https://vercel.com/docs/rest-api/drains/retrieve-a-list-of-all-drains) — GET /v1/drains — Allows to retrieve the list of Drains of the authenticated team.
 - [Using Drains](https://vercel.com/docs/drains/using-drains) — Learn how to configure drains to forward observability data to custom HTTP endpoints, dedicated Audit Log destinations,
-- [Delete a drain](https://vercel.com/docs/rest-api/drains/delete-a-drain) — DELETE /v1/drains/{id} — Delete a specific Drain by passing the drain id in the URL.
+- [Retrieve a list of all Drains](https://vercel.com/docs/rest-api/drains/retrieve-a-list-of-all-drains) — GET /v1/drains — Allows to retrieve the list of Drains of the authenticated team.
 - [Working with Drains](https://vercel.com/docs/drains) — Drains collect logs, traces, speed insights, and analytics from your applications. Forward observability data to custom
+- [Delete a drain](https://vercel.com/docs/rest-api/drains/delete-a-drain) — DELETE /v1/drains/{id} — Delete a specific Drain by passing the drain id in the URL.
 - [vercel drains](https://vercel.com/docs/cli/drains) — List, inspect, create, update, pause, resume, and delete Vercel Drains from your terminal.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/drains.graph.md](/docs/agent-resources/vercel-mcp/tools/drains.graph.md)
@@ -99,6 +99,18 @@ Update an existing Drain.
 | `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId. |
 | `requestBody` | object | No       | Request body for this tool.                                 |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

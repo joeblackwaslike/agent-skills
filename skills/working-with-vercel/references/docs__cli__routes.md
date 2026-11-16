@@ -11,9 +11,10 @@ related:
   - /docs/cli/global-options
 summary: Learn how to manage project-level routing rules using the vercel routes CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/routes.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "1f0a746f50b1d3348baeddf9714b53987f391cc08965608f6b0dbcb4b1cead03"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7c06a6f871676cb7db09e7c4c24a612837612dcbf648be5275a0ac1709dbc017"
 ---
 
 # vercel routes
@@ -30,11 +31,11 @@ The `vercel routes` command lets you manage routing rules for a project. These r
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
 - [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
 - [Inside the Vercel intern experience](https://vercel.com/blog/inside-the-vercel-intern-experience)
-- [Project-Level Routing Rules](https://vercel.com/docs/routing/project-routing-rules) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
-- [vercel redirects](https://vercel.com/docs/cli/redirects) — Learn how to manage project-level redirects using the vercel redirects CLI command.
 - [Routing](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing) — Vercel MCP tools for routing.
-- [vercel rolling-release](https://vercel.com/docs/cli/rolling-release) — Learn how to manage your project's rolling releases using the vercel rolling-release CLI command.
+- [Project-Level Routing Rules](https://vercel.com/docs/routing/project-routing-rules) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
 - [Edit a routing rule](https://vercel.com/docs/rest-api/project-routes/edit-a-routing-rule) — PATCH /v1/projects/{projectId}/routes/{routeId} — Replace a routing rule identified by its ID, or restore it from the cu
+- [Add a routing rule](https://vercel.com/docs/rest-api/project-routes/add-a-routing-rule) — POST /v1/projects/{projectId}/routes — Add a single routing rule to a project at a specified position. Defaults to the e
+- [Promote, restore, or discard a routing rule version](https://vercel.com/docs/rest-api/project-routes/promote-restore-or-discard-a-routing-rule-version) — POST /v1/projects/{projectId}/routes/versions — Promote staged routing rules to production, restore a previous productio
 
 Full cross-link map for this page: [/docs/cli/routes.graph.md](/docs/cli/routes.graph.md)
 <!-- /docsgraph:related -->
@@ -483,6 +484,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

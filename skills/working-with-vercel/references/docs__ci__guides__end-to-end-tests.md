@@ -16,14 +16,34 @@ related:
   - /docs/cli/ci
 summary: Run Playwright tests against the Vercel deployment of every commit with Vercel CI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ci/guides/end-to-end-tests.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "24e940ef0fed649d333b77643f0189e95e5bc6f4c3ef6743cd3961aaf00391f7"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "62d0e376a39ec9f0e77f7e133aaec9dee7b4785d8454e392471a376d1d03d615"
 ---
 
 # Running End-to-End Tests in Vercel CI
 
 In this tutorial, you'll set up Vercel CI to run [Playwright](https://playwright.dev/) tests against the Vercel deployment of each commit. The tests run in Chromium and work with deployments that use [Deployment Protection](/docs/deployment-protection).
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How can I run end-to-end tests after my Vercel Preview Deployment?](https://vercel.com/kb/guide/how-can-i-run-end-to-end-tests-after-my-vercel-preview-deployment) — Learn how to use the Vercel CLI in combination with your CI/CD provider to run end-to-end tests for every code change.
+- [How can I use CircleCI with Vercel?](https://vercel.com/kb/guide/how-can-i-use-circleci-with-vercel) — Learn how to use CircleCI to deploy to Vercel with custom CI/CD.
+- [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
+- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
+- [Running Integration Tests with a Database in Vercel CI](https://vercel.com/docs/ci/guides/integration-tests) — Start a Postgres container next to your tests in Vercel CI with Turborepo\\\\
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [Commenting on Pull Requests from Vercel CI](https://vercel.com/docs/ci/guides/github-comments) — Post the deployment URL to the pull request for each commit from a Vercel CI task.
+- [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
+
+Full cross-link map for this page: [/docs/ci/guides/end-to-end-tests.graph.md](/docs/ci/guides/end-to-end-tests.graph.md)
+<!-- /docsgraph:related -->
 
 You'll configure a task that:
 
@@ -167,6 +187,18 @@ You'll configure a task that:
 - [Call other projects from your tests](/docs/ci/configuration#call-other-projects)
 - [Understand what your test runs cost](/docs/ci/pricing)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/global-config/global-config-sdk
 summary: Learn what changed when Edge Config was renamed to Global Config, and how to migrate your connection strings, SDK, and environment variables.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/global-config/migration-guide.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "72a71a5cb4e7bc4f44cbf0f46858278ec1591debd2b0739531b0ae4d4372db73"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f56969d71496af05071f320bc3de3275c3999fb483c52418af9a05f95825422a"
 ---
 
 # Migrating from Edge Config to Global Config
@@ -34,11 +35,10 @@ Edge Config is now **Global Config**. This rename better reflects that it is a g
 - [Implementing Blue-Green Deployments on Vercel](https://vercel.com/kb/guide/blue_green_deployments_on_vercel) — This guide outlines how to implement blue-green deployments on Vercel, leveraging GitHub Actions for seamless and contro
 - [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
 - [Implementing Canary Deployments on Vercel](https://vercel.com/kb/guide/implementing_canary_deployments_on_vercel) — This guide explains how to set up canary deployments on Vercel, enabling developers to gradually roll out new versions t
-- [Introducing Edge Config: Globally distributed, instant configuration](https://vercel.com/blog/edge-config-public-beta)
 - [Edge Config is now generally available ](https://vercel.com/changelog/edge-config-is-now-generally-available)
-- [Edge Config: Ultra-low latency data at the edge](https://vercel.com/blog/edge-config-ultra-low-latency-data-at-the-edge)
-- [Vercel Edge Config is now generally available](https://vercel.com/blog/vercel-edge-config-is-now-generally-available)
+- [Introducing Edge Config: Globally distributed, instant configuration](https://vercel.com/blog/edge-config-public-beta)
 - [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
+- [Managing Global Configs with Vercel REST API](https://vercel.com/docs/global-config/vercel-api) — Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Config
 
 Full cross-link map for this page: [/docs/global-config/migration-guide.graph.md](/docs/global-config/migration-guide.graph.md)
 <!-- /docsgraph:related -->
@@ -129,6 +129,18 @@ Pricing is unchanged, see [Limits and Pricing](/docs/global-config/global-config
 - [Using Global Config](/docs/global-config/using-global-config)
 - [Global Config SDK](/docs/global-config/global-config-sdk)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

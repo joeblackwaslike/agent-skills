@@ -15,9 +15,10 @@ related:
   - /docs/global-config/global-config-integrations/launchdarkly-global-config
 summary: Connect your preferred feature flag provider through the Vercel Marketplace for a unified flags experience.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/marketplace.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "e87b1d6a54afb122ea157efd8d121e76ed8c745d3d855e9595bd90bda36e19e6"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c86e2eaab6d1bba85c05350438d323e1224af24ddd54360e79f104869d04de7b"
 ---
 
 # Marketplace
@@ -32,9 +33,9 @@ When you connect a feature flag provider through the [Vercel Marketplace](https:
 
 - [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
 - [Statsig joins the Vercel Marketplace](https://vercel.com/changelog/statsig-joins-the-vercel-marketplace)
+- [LaunchDarkly is now available on the Vercel Marketplace](https://vercel.com/changelog/launchdarkly-is-now-available-on-the-vercel-marketplace)
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
-- [LaunchDarkly is now available on the Vercel Marketplace](https://vercel.com/changelog/launchdarkly-is-now-available-on-the-vercel-marketplace)
 - [Shipping safer and smarter: Integrating feature flags deeper in the Vercel workflow](https://vercel.com/blog/feature-flags)
 - [Using the Flags SDK with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
 
@@ -107,6 +108,18 @@ To integrate a marketplace provider with your Vercel project:
 2. **View your flags**: Check **Flags** in your project sidebar overview to see your flags automatically synced from your provider.
 3. **Use the Toolbar**: Open the [Vercel Toolbar](/docs/flags/flags-explorer/getting-started) in your preview or local environment to interact with your flags.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

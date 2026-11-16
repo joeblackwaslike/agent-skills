@@ -15,9 +15,10 @@ related:
   - /docs/cli/traces
 summary: Find projects with Agent Runs, list recent runs, and inspect run metadata and conversation traces from the command line.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/agent-runs.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f6acb1da5748f47121a569da606101c035b419abbbbddbbcc73f3bda8ebff170"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "236367228448b995a13dd760f21b0015e8780f05f37af1ad46495c75156bf149"
 ---
 
 # vercel agent-runs
@@ -32,12 +33,11 @@ The `vercel agent-runs` command reads [Agent Runs](/docs/agent-runs) data from y
 
 - [Trace and debug eve agent runs](https://vercel.com/kb/guide/trace-and-debug-eve-agent-runs) — Inspect eve traces in Vercel Agent Runs, control captured content, export OpenTelemetry spans, and test fixes with regre
 - [Agent Runs now available in the Vercel MCP and CLI](https://vercel.com/changelog/agent-runs-vercel-mcp-cli)
-- [Agent Runs](https://eve.dev/docs/observability/agent-runs) — Inspect eve sessions in Vercel and configure the Agent Runs destination.
 - [list_agent_runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_runs) — Use list_agent_runs with Vercel MCP.
+- [vercel ci](https://vercel.com/docs/cli/ci) — Enable or disable Vercel CI for repositories, inspect runs, search logs, and rerun jobs from the command line.
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
-- [vercel activity](https://vercel.com/docs/cli/activity) — View activity events for your Vercel project or team, filtered by type, date range, and project.
+- [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 
 Full cross-link map for this page: [/docs/cli/agent-runs.graph.md](/docs/cli/agent-runs.graph.md)
 <!-- /docsgraph:related -->
@@ -180,6 +180,18 @@ For more information on global options and their usage, refer to the [options se
 - [Agent Runs tools in Vercel MCP](/docs/agent-resources/vercel-mcp/tools/agent-runs)
 - [vercel traces](/docs/cli/traces)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

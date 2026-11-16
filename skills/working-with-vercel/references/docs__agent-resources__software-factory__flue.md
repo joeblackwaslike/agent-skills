@@ -11,11 +11,15 @@ prerequisites:
 related:
   - /docs/frameworks/agents/flue
   - /docs/sandbox/ecosystem/flue
+  - /docs/ai-gateway
+  - /docs/sandbox
+  - /docs/sandbox/concepts/drives
 summary: Use Flue with AI Gateway, Vercel Sandbox, and explicit GitHub tool adapters for investigated and reviewed code changes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/software-factory/flue.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f9dfd6aa14bc34e3dbfa365557e0a9565547ba8b3001930c431584f3a1337ec1"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "46e9095c74c1bbfb90f88d9dd82dced12ea1c9b1cf54b6edae01e15f6c458947"
 ---
 
 # Build a Software Factory with Flue
@@ -30,13 +34,13 @@ Use [Flue with Vercel](/docs/frameworks/agents/flue) to investigate issues throu
 
 - [Building a software factory for AI SDK](https://vercel.com/blog/building-a-software-factory-for-ai-sdk)
 - [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
+- [How to ship a Flask app on Vercel](https://vercel.com/kb/guide/ship-a-flask-app-on-vercel) — Deploy a Flask app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
+- [Choosing between eve, AI SDK agents, and \\`WorkflowAgent\\`](https://vercel.com/kb/guide/eve-vs-ai-sdk-agents-vs-workflowagent) — Compare eve, \\`ToolLoopAgent\\`, and \\`WorkflowAgent\\` by durability, approvals, channels, and setup to choose an agent f
 - [Give your software factory a browser](https://vercel.com/kb/guide/software-factory-browser) — Add a KERNEL cloud browser to the eve software factory template so Foreman can reproduce flow bugs, sign in through mana
-- [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
-- [Introducing the new Vercel Agent](https://vercel.com/blog/vercel-agent)
-- [Build a Software Factory with the AI SDK](https://vercel.com/docs/agent-resources/software-factory/ai-sdk) — Compose investigation, sandbox execution, review, and GitHub publication stages with the AI SDK on Vercel.
+- [Flue with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/flue) — Route Flue agent requests through Vercel AI Gateway with the built-in provider, using an API key or Vercel OIDC authenti
+- [Agent Checklist for Launch](https://vercel.com/docs/agent-checklist) — Prepare an eve, Mastra, or Flue agent for launch on Vercel. Check who can call the agent, what its tools can change, how
 - [Build a Software Factory with eve](https://vercel.com/docs/agent-resources/software-factory/eve) — Customize an eve software factory on Vercel with GitHub access, sandbox execution, and reviewed draft pull requests.
 - [Build a Software Factory with Mastra](https://vercel.com/docs/agent-resources/software-factory/mastra) — Combine Mastra workflow stages with AI Gateway, Vercel Sandbox, and GitHub Tools to prepare reviewed changes.
-- [Flue with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/flue) — Route Flue agent requests through Vercel AI Gateway with the built-in provider, using an API key or Vercel OIDC authenti
 - [Agent Frameworks on Vercel](https://vercel.com/docs/frameworks/agents) — Build AI agents with eve, Mastra, Flue, and Vercel. Learn how each framework connects to Vercel compute, models, and sto
 
 Full cross-link map for this page: [/docs/agent-resources/software-factory/flue.graph.md](/docs/agent-resources/software-factory/flue.graph.md)
@@ -162,7 +166,7 @@ pnpm exec flue run src/agents/investigator.ts --message "Investigate issue #42" 
 
 The response should identify acceptance criteria and missing information. This adapter exposes only a read operation. It doesn't make Flue honor AI SDK approval metadata or Workflow SDK step directives. Use Flue's execution and durability APIs for those concerns.
 
-For deployed runs, use [`connectGithubToken`](https://github-tools.com/guide/vercel-connect) when the caller can authenticate to Vercel Connect. An external Flue host doesn't automatically receive a Vercel deployment identity; configure its authentication explicitly or keep GitHub operations in an authenticated Vercel service.
+For deployed runs, use [`connectGithubToken`](https://github-tools.com/auth#vercel-connect) when the caller can authenticate to Vercel Connect. An external Flue host doesn't automatically receive a Vercel deployment identity; configure its authentication explicitly or keep GitHub operations in an authenticated Vercel service.
 
 ## Implement and review in separate stages
 
@@ -190,6 +194,49 @@ Vercel Functions can handle intake and review while a supported Flue host runs t
 
 Test the issue-to-draft-PR path with a small change. Verify that each stage receives the intended run's workspace and evidence. Reject a publication request and confirm no write occurs. Restart the host during an investigation, then confirm the supported recovery path settles the original submission and doesn't publish duplicate changes.
 
+## Frequently asked questions
+
+### What is a software factory built with Flue?
+
+It's a set of Flue agents that take a GitHub issue to a draft pull request. An investigator reads the issue through AI Gateway, an implementer edits the repository in Vercel Sandbox, and a reviewer checks the diff and command output. A separate publishing stage opens the draft pull request only after a person approves it. You can compose the agents with Flue [subagents](https://flueframework.com/docs/guide/subagents/) and [scripted workflows](https://flueframework.com/docs/guide/workflows/).
+
+### How does a Flue software factory get access to GitHub?
+
+Set `GITHUB_TOKEN` in the Flue runtime's environment with read access to issues, and keep it out of version control, prompts, and the sandbox. The `defineTool` wrapper on this page exposes one read operation with the repository fixed in server-side code. For deployed runs, use GitHub Tools' `connectGithubToken` when the caller can authenticate to Vercel Connect. A Flue host outside Vercel doesn't receive a Vercel deployment identity automatically, so configure its authentication explicitly.
+
+### How do I make sure a person approves changes before a Flue factory publishes them?
+
+Keep approval outside the agent's tool loop. A review application shows the diff and check evidence for the exact proposed commit, then stores an authenticated reviewer's approval or denial against the run. Only the approved publishing stage receives credentials to push and open a draft pull request, and it rejects any commit that differs from the reviewed one. Before it opens a pull request on a retry, it looks for an existing one. A person merges the change.
+
+### Can a Flue software factory run on Vercel?
+
+Part of it can. Vercel Functions can handle issue intake and the review application, while a host that gives each live conversation one owner runs the Flue agents. For durable orchestration from Vercel, call the hosted agents from [Vercel Workflows](/docs/frameworks/agents/flue#orchestrate-hosted-agents-with-workflows) and persist submission receipts, so retries wait for accepted work instead of sending it again. See [Hosting considerations](/docs/frameworks/agents/flue#hosting-considerations).
+
+### Which Vercel products does a Flue software factory use?
+
+A factory built from this guide can use these Vercel products:
+
+- [AI Gateway](/docs/ai-gateway) routes model requests for every agent.
+- [Vercel Sandbox](/docs/sandbox) runs repository work for the implementer, and [Vercel Drives](/docs/sandbox/concepts/drives) keep files that must survive sandbox replacement.
+- [Vercel Blob](/docs/vercel-blob) keeps reports.
+- [Vercel Connect](/docs/connect) issues GitHub credentials when the caller can authenticate to it.
+- [Vercel Functions](/docs/functions) run issue intake and the review application.
+- [Vercel Workflows](/docs/workflows) orchestrate calls to the hosted agents.
+
+See [Flue with Vercel](/docs/frameworks/agents/flue) for every integration, including Passport.
+
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

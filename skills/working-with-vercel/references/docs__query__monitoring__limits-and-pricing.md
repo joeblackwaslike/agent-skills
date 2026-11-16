@@ -13,9 +13,10 @@ related:
   - /docs/query/monitoring/monitoring-reference
 summary: Learn about our limits and pricing when using Monitoring. Different limitations are applied depending on your plan.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/query/monitoring/limits-and-pricing.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "f1f4a7726d2e2efdcd6ce1dddc8212e71fa49e3f697181a9970c09f23b5b98a0"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "72746d6888a5e992bd5e6fdd3fb026d3298f3e8254bb89bcee7338aa82029477"
 ---
 
 # Limits and Pricing for Monitoring
@@ -30,10 +31,10 @@ Monitoring is now
 
 - [Monitoring pricing reduced up to 87%](https://vercel.com/changelog/monitoring-pricing-reduced-up-to-87)
 - [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
+- [Pricing and Limits](https://vercel.com/docs/queues/pricing) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
 - [Limits and Pricing for Speed Insights](https://vercel.com/docs/speed-insights/limits-and-pricing) — Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your
 - [Pricing for Web Analytics](https://vercel.com/docs/analytics/limits-and-pricing) — Learn about pricing for Vercel Web Analytics.
-- [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
-- [Pricing and Limits](https://vercel.com/docs/queues/pricing) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
+- [Services Pricing and Limits](https://vercel.com/docs/services/pricing) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
 
 Full cross-link map for this page: [/docs/query/monitoring/limits-and-pricing.graph.md](/docs/query/monitoring/limits-and-pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -69,6 +70,18 @@ To learn more, see [Limits and Pricing for Observability](/docs/observability/ob
 
 Vercel creates an event each time a request is made to your website. These events include unique parameters such as execution time. For a complete list, [see the visualize clause docs](/docs/query/monitoring/monitoring-reference#visualize).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

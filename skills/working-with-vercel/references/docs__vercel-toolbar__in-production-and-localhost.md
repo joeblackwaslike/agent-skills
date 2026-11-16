@@ -15,9 +15,10 @@ related:
   - /docs/edit-mode
 summary: Learn how to use the Vercel Toolbar in production and local environments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-toolbar/in-production-and-localhost.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "43a1dc38324d84d80cb84b240298a9e9ce89053f52a05d68fceaf55fa77e9b77"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "733b7bfb13659268d554f9bcf10169c2c822c6d1ae89b0626b2427b84393080c"
 ---
 
 # Add the Vercel Toolbar to local and production environments
@@ -33,9 +34,10 @@ The Vercel Toolbar is available by default on all [preview environments](/docs/d
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
 - [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production)
 - [Use the Vercel Toolbar in Production with the Chrome Extension or the toolbar menu](https://vercel.com/changelog/use-the-vercel-toolbar-in-production)
-- [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar)
 - [Easier toolbar setup for SvelteKit and other Vite-based frameworks](https://vercel.com/changelog/easier-toolbar-setup-for-sveltekit-and-other-vite-based-frameworks)
+- [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar)
 - [Improvements to Vercel Toolbar: Shrinking when inactive, removal of avatars, and more](https://vercel.com/changelog/improvements-to-vercel-toolbar)
+- [The Vercel Toolbar is now more compact and dynamic](https://vercel.com/changelog/the-vercel-toolbar-is-now-more-compact-and-dynamic)
 - [Enabling and Disabling Comments](https://vercel.com/docs/comments/how-comments-work) — Learn when and where Comments are available, and how to enable and disable Comments at the account, project, and session
 - [Toolbar](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar) — Vercel MCP tools for toolbar.
 - [Toolbar Browser Extensions](https://vercel.com/docs/vercel-toolbar/browser-extension) — The browser extensions enable you to use the toolbar in production environments, take screenshots and attach them to com
@@ -49,6 +51,18 @@ All toolbar features such as [Comments](/docs/comments/using-comments), [Feature
 
 - [Add the toolbar to your local or production environment](/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

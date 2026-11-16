@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis/responses
 summary: Connect TanStack AI to Vercel AI Gateway with the official adapter to authenticate requests and stream responses from AI models.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "70727f3bb90d2df16643f3b9b09691512154f5a0a3592b8de2403c9efb6d3fa2"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "02e9f099044400db6b57721f69c71f64648b666fe4794ec0182c8ba8adf5eccf"
 ---
 
 # TanStack AI with AI Gateway
@@ -37,8 +38,8 @@ Connect [TanStack AI](https://tanstack.com/ai) to [AI Gateway](/docs/ai-gateway)
 - [Using TanStack Intent to ship and consume agent skills](https://vercel.com/kb/guide/tanstack-intent) — TanStack Intent is a CLI for shipping and consuming agent skills, markdown files that teach AI coding agents how to use
 - [TanStack Start on Vercel vs Cloudflare](https://vercel.com/kb/guide/tanstack-start-on-vercel-vs-cloudflare) — Compare running TanStack Start on Vercel Functions with Fluid compute against Cloudflare Workers. Learn how the runtimes
 - [Vercel Connect now supports TanStack AI](https://vercel.com/changelog/vercel-connect-tanstack-ai)
-- [Chat SDK with AI Gateway](https://vercel.com/docs/chat-sdk/integrations/ai-gateway) — Stream AI Gateway model responses into Chat SDK conversations with AI SDK and message history.
 - [TanStack AI with Vercel Sandbox](https://vercel.com/docs/sandbox/ecosystem/tanstack-ai) — Run TanStack AI coding agents in isolated Vercel Sandbox microVMs with the dedicated provider, workspace configuration,
+- [Chat SDK with AI Gateway](https://vercel.com/docs/chat-sdk/integrations/ai-gateway) — Stream AI Gateway model responses into Chat SDK conversations with AI SDK and message history.
 - [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai.graph.md](/docs/ai-gateway/ecosystem/framework-integrations/tanstack-ai.graph.md)
@@ -258,6 +259,18 @@ holds flagged or uncertain reviews for a moderator.
 - Explore [provider routing](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering) and [model fallbacks](/docs/ai-gateway/models-and-providers/model-fallbacks).
 - [Connect to an MCP server on Vercel](/docs/mcp/integrations/tanstack-ai) to make its tools available to TanStack AI.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

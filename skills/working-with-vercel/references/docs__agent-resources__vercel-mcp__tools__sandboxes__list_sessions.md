@@ -12,9 +12,10 @@ related:
   []
 summary: Use list_sessions with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/list_sessions.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "50851023951c77ee0a9f9f929353031f298749fafdcdc8e3a79ec961d5694d4d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "cf3300e089f75348d0c1119ce24dcb3f279db3ef5bc0eec4485f3cc1ddd9cba7"
 ---
 
 # list_sessions
@@ -48,6 +49,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandb
 | `teamId`    | string | No       | Team ID to use for this operation.                                                                                 |
 | `slug`      | string | No       | Team slug to use for this operation. Use instead of teamId.                                                        |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

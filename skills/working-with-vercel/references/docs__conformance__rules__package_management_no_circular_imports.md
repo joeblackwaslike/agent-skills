@@ -11,9 +11,10 @@ related:
   []
 summary: Circular imports between two files are not allowed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/package_management_no_circular_imports.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "92ce135005c2798c8d43a0be91d6b8e7929da630340aed495539c7924c643d04"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "937e8ae7b430a1915a82f7a971e1a045a25e75b6701efc77e604504344b169e7"
 ---
 
 # PACKAGE_MANAGEMENT_NO_CIRCULAR_IMPORTS
@@ -60,6 +61,18 @@ of the exports in a file to a separate file so that the imports don't cause a
 circular import. In some cases, it may be necessary to refactor the code to
 avoid the circular import.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

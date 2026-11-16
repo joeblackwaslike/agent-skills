@@ -4,8 +4,8 @@ description: Learn about the Prompt structure used in the AI SDK.
 url: "https://ai-sdk.dev/docs/foundations/prompts"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/foundations/prompts.md"
-fetched_at: "2026-10-26T09:52:56.075Z"
-sha256: "260736d9ba2b4abf3baeae11d86996570c98d76944197b205fa0bee91792248e"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "f5a55140188a72b484e752a3aa9b8223a5e20453effdd3f31ead95fb07dcb0d2"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -261,6 +261,10 @@ const result = await generateText({
 
 ##### Example: Image URL (string)
 
+For untrusted image URLs, configure a [guarded download
+transport](#custom-download-function-experimental) before downloading them on
+your server.
+
 ```ts {8-12}
 const result = await generateText({
   model: "anthropic/claude-sonnet-5.5",
@@ -304,6 +308,9 @@ User messages can include file parts. A file can be one of the following:
 
 You need to specify the MIME type of the file you are sending.
 
+The same [URL download protections](#custom-download-function-experimental)
+apply when your server downloads remote file parts.
+
 ##### Example: PDF file from Buffer
 
 ```ts {12-15}
@@ -311,7 +318,7 @@ import { google } from '@ai-sdk/google';
 import { generateText } from 'ai';
 
 const result = await generateText({
-  model: google('gemini-3.8-flash'),
+  model: google('gemini-4-hydrogen'),
   messages: [
     {
       role: 'user',
@@ -355,6 +362,12 @@ const result = await generateText({
 
 #### Custom Download Function (Experimental)
 
+The default download only validates the URL itself; it does not check what a
+hostname resolves to. When your server downloads URLs supplied by users,
+models, or tools on Node.js, pass a `guarded-fetch` transport via
+`experimental_download: createDownload({fetch})`. See [Secure URL
+Fetching](/docs/advanced/secure-url-fetching#core-file-downloads).
+
 You can use custom download functions to implement throttling, retries, authentication, caching, and more.
 
 The default download implementation automatically downloads files in parallel when they are not supported by the model.
@@ -368,6 +381,7 @@ const result = await generateText({
     requestedDownloads: Array<{
       url: URL;
       isUrlSupportedByModel: boolean;
+      abortSignal?: AbortSignal;
     }>,
   ): PromiseLike<
     Array<{
@@ -375,7 +389,8 @@ const result = await generateText({
       mediaType: string | undefined;
     } | null>
   > => {
-    // ... download the files and return an array with similar order
+    // Forward each abortSignal to your fetch implementation, and return the
+    // downloaded files in the same order.
   },
   messages: [
     {

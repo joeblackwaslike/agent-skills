@@ -12,9 +12,10 @@ related:
   []
 summary: Vercel MCP tools for sandboxes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "95b9b12676f9bee295a3b8b21af9ce38a1b0e6e9624155331a4bab363e69fe0a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "1c6a8acbab6fc3ffcc52053ef3a956d83617a359186cca712f4c1e16fa6f235d"
 ---
 
 # Sandboxes
@@ -29,9 +30,9 @@ Create sandboxes to run commands and work with files in isolated environments. Y
 
 - [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
 - [JS SDK Reference](https://vercel.com/docs/sandbox/sdk-reference) — A comprehensive reference for the Vercel Sandbox JavaScript SDK, which lets you run code in a secure, isolated environme
-- [Python SDK Reference](https://vercel.com/docs/sandbox/python-sdk-reference) — Reference for the Vercel Sandbox Python SDK, including sandbox lifecycle, processes, files, drives, snapshots, persisten
-- [List sessions](https://vercel.com/docs/rest-api/sandboxes/list-sessions) — GET /v2/sandboxes/sessions — Retrieves a paginated list of sessions belonging to a specific sandbox. Results are sorted
 - [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox) — GET /v2/sandboxes/{name} — Retrieves a named sandbox by name, including its current sandbox and routes. If the sandbox i
+- [List sessions](https://vercel.com/docs/rest-api/sandboxes/list-sessions) — GET /v2/sandboxes/sessions — Retrieves a paginated list of sessions belonging to a specific sandbox. Results are sorted
+- [Snapshots](https://vercel.com/docs/sandbox/concepts/snapshots) — Save and restore sandbox state with snapshots for faster startups and environment sharing.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandboxes.graph.md](/docs/agent-resources/vercel-mcp/tools/sandboxes.graph.md)
 <!-- /docsgraph:related -->
@@ -347,6 +348,18 @@ Write files.
 | `slug`        | string | No       | Team slug to use for this operation. Use instead of teamId.                                                                             |
 | `requestBody` | string | Yes      | A base64-encoded gzipped tarball to extract. Provide this binary value as a base64 string.                                              |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

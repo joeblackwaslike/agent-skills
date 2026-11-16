@@ -16,9 +16,10 @@ related:
   - /docs/rest-api/projects/get-a-project-domain
 summary: Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms/reference.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "fa270026f2b56d4023444a5f8b9f2174ccb88e3054bc0f78b13520163dfb2863"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "6f16352c34c0c1d8d58c856d60ef6c9d1a81826930197d7215e2e42e9f83c53b"
 ---
 
 # Multi-tenant Reference
@@ -33,12 +34,11 @@ Use the [Custom Domain block](/docs/platforms/platform-elements/blocks/custom-do
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
 - [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
-- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart) — Build a multi-tenant Next.js app on your computer, then add wildcard and custom domains on Vercel.
 - [Multi-Project Platforms Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
-- [Multi-tenant Limits](https://vercel.com/docs/platforms/multi-tenant-platforms/limits) — Understand the limits and features available for Vercel for Platforms.
+- [Multi-Tenant Platform Quickstart](https://vercel.com/docs/platforms/multi-tenant-platforms/quickstart) — Build a multi-tenant Next.js app on your computer, then add wildcard and custom domains on Vercel.
 - [Multi-Tenant Platform Concepts](https://vercel.com/docs/platforms/multi-tenant-platforms/concepts) — Understand tenants, domains, routing, and architecture for building multi-tenant applications on Vercel for Platforms.
+- [Multi-Project Platforms Concepts](https://vercel.com/docs/platforms/multi-project-platforms/concepts) — Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
 
 Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms/reference.graph.md](/docs/platforms/multi-tenant-platforms/reference.graph.md)
 <!-- /docsgraph:related -->
@@ -355,6 +355,18 @@ SSL certificates require domain verification. Add the TXT record provided by Ver
 
 Set canonical URLs to indicate the primary domain for each page. This prevents duplicate content issues.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

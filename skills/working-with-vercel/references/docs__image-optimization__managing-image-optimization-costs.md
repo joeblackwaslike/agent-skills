@@ -11,9 +11,10 @@ related:
   - /docs/image-optimization/legacy-pricing
 summary: Learn how to measure and manage Image Optimization usage with this guide to avoid any unexpected costs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/image-optimization/managing-image-optimization-costs.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "e0be7020cf8d4b5acfe9f3c30a371e589ff8d9e388e645b94810cb50cdcffad1"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "26d6e29809b20464891e87cc81e6adfa1e8241ad22775b3ce80341ea9c662215"
 ---
 
 # Managing Usage & Costs
@@ -44,7 +45,7 @@ Your Image Optimization usage over time is displayed under the **Image Optimizat
 - [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
 - [Calculating usage of resources](https://vercel.com/docs/pricing/how-does-vercel-calculate-usage-of-resources) — Understand how Vercel measures and calculates your resource usage based on a typical user journey.
 - [CDN pricing and usage](https://vercel.com/docs/manage-cdn-usage) — Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transf
-- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
+- [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 
 Full cross-link map for this page: [/docs/image-optimization/managing-image-optimization-costs.graph.md](/docs/image-optimization/managing-image-optimization-costs.graph.md)
 <!-- /docsgraph:related -->
@@ -67,6 +68,18 @@ To help you minimize Image Optimization usage costs, consider implementing the f
 
 - **Unoptimized**: For source images that do not benefit from optimization such as small images (under 10 KB), vector images (SVG) and animated images (GIF), use the [`unoptimized` property](https://nextjs.org/docs/app/api-reference/components/image#unoptimized) on the Image component to avoid transformations, cache reads, and cache writes. Use sparingly since `unoptimized` on every image could increase fast data transfer cost.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

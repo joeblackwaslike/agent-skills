@@ -11,9 +11,10 @@ related:
   []
 summary: Prevent unsafe usage of eval() in your application.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/no_eval.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "9c56451fd122bbe42b01faee96ab09c930b3f4071c872e316222dc57ec59e25e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "15e3e747e372c5caba185378d22b57ebd15d6408f143147c57d489e99cc3fe7f"
 ---
 
 # NO_EVAL
@@ -78,6 +79,18 @@ setTimeout(() => {
 });
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,14 +15,17 @@ related:
   - /docs/frameworks/agents/flue
 summary: Build AI agents with eve, Mastra, Flue, and Vercel. Learn how each framework connects to Vercel compute, models, and storage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/agents.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "3c474a96faa426955eb33cc7a8b2fd42d46eae28e86c55f68591f0e80f8bb834"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "80965192af778678e2fc3e09136a6584bd53aab3060a7bb201fda40dfb68fe05"
 ---
 
 # Agent Frameworks on Vercel
 
-Agent frameworks coordinate model calls, tools, and application state. You can use them with Vercel to serve agent requests, access models through [AI Gateway](/docs/ai-gateway), and run isolated code with [Vercel Sandbox](/docs/sandbox).
+## Build agents with eve, Mastra, or Flue
+
+Define your agent in the framework that fits your project. Each one can route model requests through AI Gateway and connect to Vercel compute and storage.
 
 
 <!-- docsgraph:related -->
@@ -31,17 +34,64 @@ Agent frameworks coordinate model calls, tools, and application state. You can u
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Agent Stack](https://vercel.com/blog/agent-stack)
-- [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
-- [Give your eve agent secure access to your private AWS RDS database](https://vercel.com/kb/guide/give-eve-agent-secure-access-to-aws-rds-database) — Connect an eve agent to a private AWS RDS database using Vercel Secure Compute and VPC peering, with a read-only query t
 - [Introducing eve, an open-source agent framework](https://vercel.com/changelog/introducing-eve-an-open-source-agent-framework)
-- [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel) — Deploy an eve agent with Vercel Workflow, Sandbox, Cron, and project credentials.
-- [AI agents and services on the Vercel Marketplace](https://vercel.com/blog/ai-agents-and-services-on-the-vercel-marketplace)
+- [Give your eve agent secure access to your private AWS RDS database](https://vercel.com/kb/guide/give-eve-agent-secure-access-to-aws-rds-database) — Connect an eve agent to a private AWS RDS database using Vercel Secure Compute and VPC peering, with a read-only query t
+- [Introducing the new Vercel Agent](https://vercel.com/blog/vercel-agent)
+- [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
+- [Build your first Slack agent with eve](https://vercel.com/kb/guide/eve-slack-agent-starter) — Deploy the eve Slack agent template: a starter Slack bot built on the eve framework with an example tool and skill.
 - [Build and deploy eve agents from the Vercel dashboard](https://vercel.com/changelog/build-and-deploy-eve-agents-from-the-vercel-dashboard)
+- [How to use subagents with eve](https://vercel.com/kb/guide/how-to-use-eve-subagents) — Learn how to use subagents with eve, including the built-in agent tool, declared specialist subagents, the isolation bou
+- [Mastra with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/mastra) — Learn how to integrate Vercel AI Gateway with Mastra to access multiple AI models through a unified interface.
+- [Flue with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/flue) — Route Flue agent requests through Vercel AI Gateway with the built-in provider, using an API key or Vercel OIDC authenti
 - [Running eve Agents Durably on Vercel](https://vercel.com/docs/agent-harnesses/eve) — eve agents are durable out of the box on Vercel, with no extra configuration.
 - [Agent Resources](https://vercel.com/docs/agent-resources) — Set up AI coding tools with Vercel documentation, reusable skills, and secure access to projects, deployments, and logs.
 
 Full cross-link map for this page: [/docs/frameworks/agents.graph.md](/docs/frameworks/agents.graph.md)
 <!-- /docsgraph:related -->
+
+#### eve
+
+```typescript filename="agent/agent.ts"
+import { defineAgent } from 'eve';
+
+// Instructions live in agent/instructions.md.
+// Tools live in agent/tools/.
+export default defineAgent({
+  // This model string routes through AI Gateway.
+  model: 'anthropic/claude-sonnet-5',
+  reasoning: 'high',
+});
+```
+
+#### Mastra
+
+```typescript filename="src/mastra/agents/assistant.ts"
+import { gateway } from '@ai-sdk/gateway';
+import { Agent } from '@mastra/core/agent';
+
+export const assistant = new Agent({
+  id: 'assistant',
+  name: 'Assistant',
+  instructions: 'Answer questions concisely.',
+  model: gateway('openai/gpt-6.1-terra'),
+});
+```
+
+#### Flue
+
+```typescript filename="src/agents/assistant.ts"
+'use agent';
+
+import { useModel } from '@flue/runtime';
+
+export function Assistant() {
+  // Routes model requests through AI Gateway.
+  useModel('vercel-ai-gateway/openai/gpt-6.1-sol');
+  return 'Answer questions clearly and concisely.';
+}
+```
+
+Agent frameworks coordinate model calls, tools, and application state. You can use them with Vercel to serve agent requests, access models through [AI Gateway](/docs/ai-gateway), and run isolated code with [Vercel Sandbox](/docs/sandbox).
 
 Choose a framework guide to set up a project and run it locally. Each guide explains its Vercel integrations and hosting requirements, including deployment steps where the framework supports running on Vercel.
 
@@ -54,6 +104,8 @@ Choose a framework guide to set up a project and run it locally. Each guide expl
 If you're choosing between eve and building an agent directly with AI SDK, see [Choosing between eve, AI SDK agents, and `WorkflowAgent`](/kb/guide/eve-vs-ai-sdk-agents-vs-workflowagent). Compare execution state, approvals, and channels to decide how much your application needs to manage.
 
 Use the [agent stack reference architecture](/kb/architecture/agents) to plan how your framework connects to models, tools, and durable workflows, and prepare your agent for production.
+
+Before you launch, work through the [agent checklist](/docs/agent-checklist) for your framework. It covers access, tools, reliability, observability, and cost.
 
 ## Vercel services for agents
 
@@ -81,6 +133,18 @@ Framework-specific conversation history and execution state can require a separa
 
 For agents that connect to external services or chat platforms, see [Vercel Connect](/connect) and [Chat SDK](/docs/chat-sdk).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

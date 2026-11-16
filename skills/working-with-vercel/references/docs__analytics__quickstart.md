@@ -15,9 +15,10 @@ related:
   - /docs/analytics/privacy-policy
 summary: "Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you get started with using..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/analytics/quickstart.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "23fdfca62b6540eeb62b0918c29b36efdf3866fc93fdd58b2e8db7a68ef42900"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "29e646f9e967e487a57537b1380743b297c228dc068c586c8b661c4a9569372d"
 ---
 
 # Getting started with Vercel Web Analytics
@@ -35,13 +36,11 @@ This guide will help you get started with using Vercel Web Analytics on your pro
 - [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available)
 - [How we made the Vercel Dashboard twice as fast](https://vercel.com/blog/how-we-made-the-vercel-dashboard-twice-as-fast)
 - [Nuxt Analytics on Vercel](https://vercel.com/blog/nuxt-analytics-on-vercel)
-- [Vercel Analytics for Gatsby](https://vercel.com/blog/gatsby-analytics)
-- [The Next.js SEO Playbook: Ranking higher with Next.js on Vercel](https://vercel.com/blog/nextjs-seo-playbook)
 - [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
-- [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
 - [Create React App on Vercel](https://vercel.com/docs/frameworks/frontend/create-react-app) — Deploy Create React App projects to Vercel and add Preview Deployments, Web Analytics, Speed Insights, and Observability
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
+- [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
 
 Full cross-link map for this page: [/docs/analytics/quickstart.graph.md](/docs/analytics/quickstart.graph.md)
 <!-- /docsgraph:related -->
@@ -500,6 +499,18 @@ Now that you have Vercel Web Analytics set up, you can explore the following top
 - [Explore pricing](/docs/analytics/limits-and-pricing)
 - [Troubleshooting](/docs/analytics/troubleshooting)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

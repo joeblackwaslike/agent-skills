@@ -11,9 +11,10 @@ related:
   - /docs/oidc/aws
 summary: Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/oidc/reference.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "2d77e1b2b5541ac5f8070bc7f59ce75d036e1bb0256088f96339e7d3c199d14d"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ce3364422a015f12667765b39833673dd5661280c3076c14b6aafe1dc5ad870a"
 ---
 
 # OIDC Federation Reference
@@ -37,9 +38,9 @@ They are available from the [@vercel/oidc](https://www.npmjs.com/package/@vercel
 - [OpenID Connect (OIDC) Federation now generally available](https://vercel.com/changelog/openid-connect-federation-now-generally-available)
 - [Connect to your own API](https://vercel.com/docs/oidc/api) — Learn how to configure your own API to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\)
 - [Connect to Microsoft Azure](https://vercel.com/docs/oidc/azure) — Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
-- [Tokens](https://vercel.com/docs/sign-in-with-vercel/tokens) — Learn how to Sign in with Vercel
-- [Vercel KMS Authentication](https://vercel.com/docs/kms/concepts/authentication) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
-- [Passport token claims](https://vercel.com/docs/passport/token-claims) — Review the standard, deployment, and visitor identity claims in a Passport token.
+- [AI Gateway OIDC Authentication](https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc) — Authenticate AI Gateway requests from Vercel deployments with OIDC tokens. Configure the AI SDK or send bearer tokens di
+- [Create an issuer](https://vercel.com/docs/rest-api/kms/create-an-issuer) — POST /v1/kms/issuers — Create a new KMS issuer for the authenticated team, or for the team or organization identified by
+- [Troubleshooting Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/troubleshooting) — Learn how to troubleshoot common errors with Sign in with Vercel
 
 Full cross-link map for this page: [/docs/oidc/reference.graph.md](/docs/oidc/reference.graph.md)
 <!-- /docsgraph:related -->
@@ -253,6 +254,18 @@ These headers are standard to the JWT tokens:
 | `kid`  | Key ID    | The identifier of the key used to sign the token |
 | `typ`  | Type      | The type of token, this is set to `JWT`.         |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

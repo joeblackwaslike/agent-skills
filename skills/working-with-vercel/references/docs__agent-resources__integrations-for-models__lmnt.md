@@ -14,9 +14,10 @@ related:
   - /docs/cli/env
 summary: Learn how to add LMNT connectable account integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/lmnt.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "fd1d92554ba0c6e902cf1a6b79c792b108c5efc918b7de2be8820b14c03442d2"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c810fc7400e8a781d99f9c765fe1427d587ab43e00b6020723c764c82e9df73a"
 ---
 
 # Vercel LMNT Integration
@@ -36,7 +37,7 @@ insights and forecasts, particularly useful in finance and healthcare sectors.
 - [Vercel Deep Infra Integration](https://vercel.com/docs/agent-resources/integrations-for-models/deepinfra) — Learn how to add the Deep Infra native integration with Vercel.
 - [Vercel fal Integration](https://vercel.com/docs/agent-resources/integrations-for-models/fal) — Learn how to add the fal native integration with Vercel.
 - [Vercel xAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/xai) — Learn how to add the xAI native integration with Vercel.
-- [Vercel Perplexity Integration](https://vercel.com/docs/agent-resources/integrations-for-models/perplexity) — Learn how to add Perplexity connectable account integration with Vercel.
+- [LiteLLM with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/litellm) — Learn how to integrate Vercel AI Gateway with LiteLLM to access multiple AI models through a unified interface.
 
 Full cross-link map for this page: [/docs/agent-resources/integrations-for-models/lmnt.graph.md](/docs/agent-resources/integrations-for-models/lmnt.graph.md)
 <!-- /docsgraph:related -->
@@ -100,6 +101,18 @@ To follow this guide, you'll need the following:
 
 ## More resources
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

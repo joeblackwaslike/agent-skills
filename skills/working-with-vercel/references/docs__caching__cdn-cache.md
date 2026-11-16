@@ -12,12 +12,13 @@ related:
   - /docs/incremental-static-regeneration
   - /docs/headers
   - /docs/caching/cdn-cache/purge
-  - /docs/caching/runtime-cache
+  - /docs/runtime-cache
 summary: "Learn how Vercel's CDN cache stores your content across a global network to reduce latency and origin load."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/caching/cdn-cache.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "87d824988faea1ce4bde67463196466ff14625892ce54ad7281b8f6053012acb"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f7364401174034f2706cd8003707d899dd17038735817bbe721dd67cfd54d907"
 ---
 
 # Vercel CDN Cache
@@ -38,10 +39,10 @@ Vercel's CDN caches your content (including pages, API responses, and static ass
 - [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
 - [Optimize Runtime Cache on Vercel](https://vercel.com/kb/guide/optimize-runtime-cache-reads-on-vercel) — Diagnose rising Runtime Cache usage, trace reads to tags and code paths, and reduce avoidable reads while checking write
 - [Simplifying runtime caching on Vercel](https://vercel.com/blog/simplifying-runtime-caching-on-vercel)
+- [Migrating to Cache Components](https://nextjs.org/docs/app/guides/migrating-to-cache-components) — Learn how to migrate from route segment configs to Cache Components in Next.js.
+- [use cache: remote](https://nextjs.org/docs/app/api-reference/directives/use-cache-remote) — Learn how to use the "use cache: remote" directive for persistent, shared caching using remote cache handlers.
+- [cacheLife](https://nextjs.org/docs/app/api-reference/functions/cacheLife) — Learn how to use the cacheLife function to set the cache expiration time for a cached function or component.
 - [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache)
-- [Vercel CDN overview](https://vercel.com/docs/cdn) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
-- [vercel cache](https://vercel.com/docs/cli/cache) — Learn how to manage cache for your project using the vercel cache CLI command.
-- [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
 
 Full cross-link map for this page: [/docs/caching/cdn-cache.graph.md](/docs/caching/cdn-cache.graph.md)
 <!-- /docsgraph:related -->
@@ -55,7 +56,7 @@ There are two ways to cache content:
 
 To learn about cache keys, manually purging the cache, and the differences between invalidate and delete methods, see [Purging Vercel CDN cache](/docs/caching/cdn-cache/purge)
 
-> **💡 Note:** See [Runtime cache](/docs/caching/runtime-cache) for caching data within your
+> **💡 Note:** See [Runtime cache](/docs/runtime-cache) for caching data within your
 > functions during execution and [Remote cache](/docs/monorepos/remote-caching)
 > for caching build artifacts.
 
@@ -70,7 +71,7 @@ CDN cache is best when you want to cache complete HTTP responses (entire pages, 
 
 **CDN Cache isn't the right fit when**:
 
-- You need user-specific content without the `Vary` header (consider [Runtime Cache](/docs/caching/runtime-cache))
+- You need user-specific content without the `Vary` header (consider [Runtime Cache](/docs/runtime-cache))
 - Responses include sensitive user data
 - Content changes on every request to the same url
 
@@ -828,12 +829,26 @@ Vercel's CDN Cache is segmented [by region](/docs/regions). The following cachin
   - `max-age`
   - `stale-while-revalidate`
 
-While you can put the maximum time for server-side caching, cache times are best-effort and not guaranteed. If an asset is requested often, it is more likely to live the entire duration. If your asset is rarely requested (e.g. once a day), it may be evicted from the regional cache.
+While you can put the maximum time for server-side caching, cache times are best-effort and not guaranteed. The `s-maxage` directive sets how long the CDN treats a cached response as fresh, not how long a region keeps it. If an asset is requested often, it is more likely to live the entire duration. If your asset is rarely requested (e.g. once a day), it may be evicted from the regional cache. The next request for it in that region is a `MISS`, and Vercel generates the response again. See [Cold](/docs/caching/cache-status#cold).
+
+[Incremental Static Regeneration (ISR)](/docs/incremental-static-regeneration) also persists page responses to durable storage in a single region. When a region evicts an ISR page, the CDN checks the ISR cache next, and your function only runs when content needs regenerating. See [ISR usage and pricing](/docs/incremental-static-regeneration/limits-and-pricing).
 
 ### `proxy-revalidate`
 
 Vercel doesn't currently support using `proxy-revalidate` for server-side caching. Vercel's CDN supports [`stale-if-error`](/docs/caching/cache-control-headers#stale-if-error).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

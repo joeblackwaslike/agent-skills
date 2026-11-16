@@ -15,9 +15,10 @@ related:
   - /docs/routing/rewrites
 summary: Build your first Vercel Function in a few steps.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/quickstart.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f790c6a8b5e96b0144d2c2d3b9c20a6673047e995a143fe564ace09944cbefad"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4b4a73640f21430397193285b2fcb61a4fd68f669f97ceee9f9610cd6f67ffd2"
 ---
 
 # Getting started with Vercel Functions
@@ -33,11 +34,11 @@ In this guide, you'll learn how to get started with Vercel Functions using your 
 - [Function invocations now billed per unit](https://vercel.com/changelog/function-invocations-now-billed-per-unit)
 - [Vercel Functions now have faster and fewer cold starts](https://vercel.com/changelog/vercel-functions-now-have-faster-and-fewer-cold-starts)
 - [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions) — Learn how to import files inside Serverless Functions on Vercel.
-- [How to Use ML Models from Hugging Face in Vercel Functions](https://vercel.com/kb/guide/ml-models-hugging-face) — This guide provides step-by-step instructions on how to integrate ML models from Hugging Face into Vercel Functions
-- [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
 - [How do I bypass the 4.5MB body size limit of Vercel Serverless Functions?](https://vercel.com/kb/guide/how-to-bypass-vercel-body-size-limit-serverless-functions) — Learn how to deal with the body size limit of Serverless Functions on Vercel.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
+- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Connect to Amazon Web Services \\(AWS\\)](https://vercel.com/docs/oidc/aws) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 
 Full cross-link map for this page: [/docs/functions/quickstart.graph.md](/docs/functions/quickstart.graph.md)
@@ -170,6 +171,18 @@ Now that you have set up a Vercel Function, you can explore the following topics
 - [Choosing a Runtime](/docs/functions/runtimes): Learn more about the differences between the Node.js and Edge runtimes.
 - [Configuring Functions](/docs/functions/configuring-functions): Learn about the different options for configuring a Vercel Function.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

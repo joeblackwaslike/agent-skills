@@ -12,11 +12,13 @@ related:
   - /docs/accounts
   - /docs/project-configuration/general-settings
   - /docs/rest-api
-summary: Learn how to authenticate with Vercel Sandbox using OIDC tokens or access tokens.
+  - /docs/sandbox/cli-reference
+summary: Learn how to authenticate with Vercel Sandbox using OIDC tokens or access tokens, and how an OIDC token sets the team and project for Sandbox CLI...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/concepts/authentication.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "73f661e31a30db540844c130cbd0c2915d6f43b12bd1ce560baba72cb9b3bbe3"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4a7aeb59a377e1b1ffb4802649a0f435a0bcc62886c1a19c175c9a5fb1629ea4"
 ---
 
 # Sandbox Authentication
@@ -36,11 +38,11 @@ The Sandbox SDK supports two authentication methods: Vercel OIDC tokens (recomme
 - [Run Terminal-Bench and any Harbor benchmark on Vercel Sandbox](https://vercel.com/kb/guide/run-terminal-bench-harbor-benchmarks-vercel-sandbox) — Run Terminal-Bench, SWE-bench, and any Harbor benchmark on Vercel Sandbox. Each trial executes in an isolated Firecracke
 - [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
 - [Death to long-lived static credentials](https://vercel.com/blog/death-to-long-lived-static-credentials)
-- [A sandbox without a network boundary is only half a sandbox](https://vercel.com/blog/a-sandbox-without-a-network-boundary-is-only-half-a-sandbox)
-- [Vercel Sandbox is now globally available](https://vercel.com/changelog/vercel-sandbox-is-now-globally-available)
-- [SSH into running Vercel Sandboxes with the CLI](https://vercel.com/changelog/ssh-into-running-sandboxes-with-the-sandbox-cli)
-- [Vercel Sandboxes are now generally available](https://vercel.com/changelog/vercel-sandboxes-ga)
+- [Vercel Sandbox now supports managed npm credentials](https://vercel.com/changelog/vercel-sandbox-now-supports-managed-npm-credentials)
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
+- [Delete a sandbox](https://vercel.com/docs/rest-api/sandboxes/delete-a-sandbox) — DELETE /v2/sandboxes/{name} — Deletes a sandbox by name. If sandboxes are currently running, they will be stopped first.
+- [Using Secure Compute with Sandbox](https://vercel.com/docs/sandbox/concepts/secure-compute) — You can attach a Vercel Sandbox to a Secure Compute network to send its public-internet traffic through static IPs and r
+- [Chat SDK with Vercel Sandbox](https://vercel.com/docs/chat-sdk/integrations/sandbox) — Build a Chat SDK agent that analyzes CSV attachments with the AI SDK Bash tool in Vercel Sandbox.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/authentication.graph.md](/docs/sandbox/concepts/authentication.graph.md)
 <!-- /docsgraph:related -->
@@ -78,7 +80,7 @@ VERCEL_PROJECT_ID=prj_xxx
 VERCEL_TOKEN=your_access_token
 ```
 
-Then pass them to `Sandbox.create()`:
+Then pass them to the SDK:
 
 **index.ts**
 
@@ -98,9 +100,7 @@ const sandbox = await Sandbox.create({
 import asyncio
 import os
 
-from vercel import sandbox
-from vercel.api import session
-from vercel.sandbox import SandboxCredentials, SandboxServiceOptions
+from vercel.sandbox import SandboxClient, SandboxCredentials, SandboxServiceOptions
 
 
 async def resolve_credentials() -> SandboxCredentials:
@@ -112,13 +112,14 @@ async def resolve_credentials() -> SandboxCredentials:
 
 
 async def main() -> None:
-    sandbox_options = SandboxServiceOptions(
-        credentials_factory=resolve_credentials,
+    client = SandboxClient.create(
+        options=SandboxServiceOptions(credentials_factory=resolve_credentials),
     )
-
-    async with session(service_options=[sandbox_options]):
-        async with sandbox.create_sandbox() as box:
+    try:
+        async with client.create_sandbox() as box:
             print(box.name)
+    finally:
+        await client.aclose()
 
 
 asyncio.run(main())
@@ -133,6 +134,40 @@ asyncio.run(main())
 | External CI/CD     | Access token                     |
 | Non-Vercel hosting | Access token                     |
 
+## How a Vercel OIDC token sets the team and project
+
+Each Vercel OIDC token belongs to one Vercel project. The development token that `vercel env pull` downloads belongs to the project you connected with `vercel link`. The Sandbox CLI authenticates with `VERCEL_OIDC_TOKEN` when you don't pass `--token` and `VERCEL_AUTH_TOKEN` isn't set. It reads the variable from your environment or from a `.env.local` file in the current directory. If you also don't pass `--scope` or `--project`, the CLI can infer the team and project for a command from the token. A sandbox you create then belongs to the token's project, which can differ from the project you meant to use.
+
+To work in a different team and project, pass both `--scope` and `--project`:
+
+```bash filename="Terminal"
+sandbox create --name my-sandbox --scope my-team --project my-project
+```
+
+The `sandbox create` command prints the team and project it created the sandbox in, so you can confirm where the sandbox lives:
+
+```text
+✅ Sandbox my-sandbox created.
+   │ team: my-team
+   │ region: iad1
+   │ project: my-project
+   ╰ connect with: sandbox ssh my-sandbox
+```
+
+Pass the same `--scope` and `--project` to later commands that reference the sandbox by name, such as `sandbox connect`. For the options each command accepts, see the [Sandbox CLI reference](/docs/sandbox/cli-reference).
+
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

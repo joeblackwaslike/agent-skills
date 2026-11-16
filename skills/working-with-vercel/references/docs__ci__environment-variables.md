@@ -11,14 +11,31 @@ related:
   []
 summary: Manage environment variables and secrets for Vercel CI runs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ci/environment-variables.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "688fc81fd37530331389b07034c684d10bf505922e2ada71c1ba5ab5417bc89a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "fe15f9dadfe2b2c9e360a6d2b56a61a7024837553016cc1cde8fcd4cc8f79136"
 ---
 
 # Vercel CI Environment Variables
 
 Use repository CI environment variables for secrets and values scoped to one repository. Use Shared Environment Variables to reuse a value across repositories. Use constants in `vercel.json` for non-secret values that you want to commit with your code.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel) — Deploy your Turborepo on Vercel and run tasks with Vercel CI using zero-config Remote Caching.
+- [Environment variables](https://vercel.com/docs/environment-variables) — Learn more about environment variables on Vercel.
+- [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables) — Learn how to create and manage environment variables for Vercel.
+- [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
+- [Config and Secret environment variables](https://vercel.com/docs/environment-variables/sensitive-environment-variables) — Choose Config or Secret environment variables based on whether their values should remain readable after saving.
+- [Shared environment variables](https://vercel.com/docs/environment-variables/shared-environment-variables) — Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can
+
+Full cross-link map for this page: [/docs/ci/environment-variables.graph.md](/docs/ci/environment-variables.graph.md)
+<!-- /docsgraph:related -->
 
 If you're moving from GitHub Actions, follow the [migration guide](/kb/guide/github-actions-to-vercel-ci) to map repository secrets, organization secrets, and workflow `env` values to Vercel CI.
 
@@ -89,6 +106,18 @@ Add a `ci` key to the `vercel.json` file at the root of your repository. Use `ci
 
 Constants in `vercel.json` override linked Shared Environment Variables with the same key. Do not commit secrets to `vercel.json`.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -13,9 +13,10 @@ related:
   - /docs/functions/configuring-functions/region
 summary: "View the list of regions supported by Vercel's CDN and learn about our global infrastructure."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/regions.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "bdd02754a963f31d92d2e6e4995c3323e3a3f1d7c0b4a1c5bc9a2b4453cb389f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "37d7ab485ddfd80e9dda27f4c803532666abe8f7e5778e75e590bf6fd97299cf"
 ---
 
 # Global network and regions
@@ -38,8 +39,8 @@ sha256: "bdd02754a963f31d92d2e6e4995c3323e3a3f1d7c0b4a1c5bc9a2b4453cb389f"
 - [Migrate Fly.io worker processes to Vercel Daemons](https://vercel.com/kb/guide/migrate-fly-io-workers-to-vercel-daemons) — Migrate Fly.io workers to Vercel Daemons with your existing Dockerfile. Map process settings, preserve queue state, and
 - [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
 - [Update regarding Vercel service disruption on October 20, 2025](https://vercel.com/blog/update-regarding-vercel-service-disruption-on-october-20-2025)
-- [Regional execution for ultra-low latency rendering at the edge](https://vercel.com/blog/regional-execution-for-ultra-low-latency-rendering-at-the-edge)
-- [Improved resiliency for Vercel Functions with inter-region failover support](https://vercel.com/changelog/improved-resiliency-for-vercel-functions-with-failover-support)
+- [Vercel CDN overview](https://vercel.com/docs/cdn) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
+- [Security & Compliance Measures](https://vercel.com/docs/security/compliance) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 
 Full cross-link map for this page: [/docs/regions.graph.md](/docs/regions.graph.md)
 <!-- /docsgraph:related -->
@@ -151,6 +152,18 @@ Vercel's CDN is designed with high availability and fault tolerance in mind:
 
 This multi-layered approach to resiliency, combining our extensive PoP network with intelligent routing and regional failover capabilities, ensures high availability and consistent performance for your applications.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

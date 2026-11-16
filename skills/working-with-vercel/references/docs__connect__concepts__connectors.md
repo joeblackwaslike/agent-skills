@@ -16,9 +16,10 @@ related:
   - /docs/connect/concepts/installations
 summary: A connector is the team-owned record that represents one third-party service. Its type determines which capabilities are available.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/connect/concepts/connectors.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "16e2494d3ddcdf43f46a4b62d66dcedd83e24829a05adf64bcf789e29c7e44ce"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3a221025f2d68ab455c1c6adab4808be02e45258dd6a8c0d35cb23bbd06f3d26"
 ---
 
 # Connectors in Vercel Connect
@@ -38,9 +39,9 @@ A **connector** is the team-owned record that represents one third-party service
 - [Vercel Connect now supports Microsoft](https://vercel.com/changelog/vercel-connect-supports-microsoft)
 - [Authentication in Vercel Connect](https://vercel.com/docs/connect/concepts/authentication) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
 - [List connectors for a project](https://vercel.com/docs/rest-api/connect/list-connectors-for-a-project) — GET /v2/connect/projects/{projectId}/connectors — List the connectors connected to a project and the environments where
-- [Networking](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking) — Vercel MCP tools for networking.
 - [Get a connector project connection](https://vercel.com/docs/rest-api/connect/get-a-connector-project-connection) — GET /v1/connect/connectors/{connector}/projects/{projectId} — Get the configuration that connects a connector to a proje
-- [Webhook triggers for Vercel Connect](https://vercel.com/docs/connect/concepts/triggers) — Incoming webhooks from third-party services, verified by Vercel Connect and forwarded to your projects.
+- [Networking](https://vercel.com/docs/agent-resources/vercel-mcp/tools/networking) — Vercel MCP tools for networking.
+- [Delete a connector](https://vercel.com/docs/rest-api/connect/delete-a-connector) — DELETE /v1/connect/connectors/{connector} — Delete a connector, its project connections, and its installation records.
 
 Full cross-link map for this page: [/docs/connect/concepts/connectors.graph.md](/docs/connect/concepts/connectors.graph.md)
 <!-- /docsgraph:related -->
@@ -122,6 +123,18 @@ For some managed connectors, Vercel Connect also cleans up at the provider. For 
 - [Quickstart](/docs/connect/quickstart): Create your first connector end to end.
 - [For Service Providers](/docs/connect/providers): What a service needs to support for Vercel to discover and register a client automatically. Read this if you own a service you want Vercel teams to connect to.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -12,9 +12,10 @@ related:
   []
 summary: Use get_edge_config_items with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config_items.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "30d0582edcb7f254a8efa52c507b6aba9346251ffb7f287746407d7646707cc9"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b9d2871ff5e3731de4477e26f2441b49b1abad6698ccc917db90388218563de4"
 ---
 
 # get_edge_config_items
@@ -44,6 +45,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/globa
 | `teamId`       | string | No       | Team ID to use for this operation.                          |
 | `slug`         | string | No       | Team slug to use for this operation. Use instead of teamId. |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

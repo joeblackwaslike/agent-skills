@@ -16,9 +16,10 @@ related:
   - /docs/functions/runtimes/python/python-version
 summary: Learn how to use the Python runtime to run Python applications on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/runtimes/python.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "8fdc76dd51d88ef3ce354d403f30c25405d7c152708ce3280f6c829cb9dc1e56"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "87e482d080f3fe04dfb775fbb039d463d002c4b67748aed20095e62570aec4cb"
 ---
 
 # Using the Python Runtime with Vercel Functions
@@ -33,18 +34,18 @@ supported Python frameworks and runs your application as Vercel Functions.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
+- [How to ship a Flask app on Vercel](https://vercel.com/kb/guide/ship-a-flask-app-on-vercel) — Deploy a Flask app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
+- [Python on Vercel is now generally available](https://vercel.com/changelog/python-on-vercel-is-now-generally-available)
 - [Python 3.13 and 3.14 are now available ](https://vercel.com/changelog/python-3-13-and-3-14-are-now-available)
 - [Python function bundles now include precompiled bytecode](https://vercel.com/changelog/python-function-bundles-now-include-precompiled-bytecode)
-- [Python on Vercel is now generally available](https://vercel.com/changelog/python-on-vercel-is-now-generally-available)
 - [Python package manager uv is now available for builds with zero configuration](https://vercel.com/changelog/python-package-manager-uv-is-now-available-for-builds-with-zero)
 - [Python support added to in-function concurrency beta](https://vercel.com/changelog/python-support-added-to-in-function-concurrency-beta)
 - [Build with a FastAPI starter template](https://vercel.com/kb/guide/build-with-a-fastapi-starter-template) — Browse FastAPI starter templates for Vercel and deploy one in a few steps. Compare minimal, AI, agent, and full-stack Fa
 - [Migrate from Railway to Vercel](https://vercel.com/kb/guide/migrate-railway-to-vercel) — Migrate an app from Railway to Vercel. Choose a deployment path, configure services, plan for stored data, and test befo
-- [Migrate from Render to Vercel](https://vercel.com/kb/guide/migrate-render-to-vercel) — Migrate from Render to Vercel: map web services, cron jobs, and containers to their equivalents, and handle what doesn't
-- [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
-- [How to ship a Flask app on Vercel](https://vercel.com/kb/guide/ship-a-flask-app-on-vercel) — Deploy a Flask app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
+- [Deploy Python apps on Vercel using Docker ](https://vercel.com/kb/guide/vercel-docker-python-apps) — Deploy a Dockerized Python application that depends on native software, OCR engines, or small local models, plus a Next.
 - [Python on Vercel is now generally available](https://vercel.com/blog/python-on-vercel-is-now-generally-available)
-- [Backends on Vercel: Python, containers, and Daemons](https://vercel.com/blog/backends-on-vercel-python-containers-and-daemons)
+- [Backends on Vercel](https://vercel.com/docs/frameworks/backend) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
 
 Full cross-link map for this page: [/docs/functions/runtimes/python.graph.md](/docs/functions/runtimes/python.graph.md)
 <!-- /docsgraph:related -->
@@ -251,6 +252,18 @@ an `/api` directory. See [Python functions in the `/api`
 directory](/docs/functions/runtimes/python/api-directory) for routing, handlers,
 and configuration.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

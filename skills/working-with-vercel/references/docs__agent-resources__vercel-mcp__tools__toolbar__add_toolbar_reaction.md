@@ -12,9 +12,10 @@ related:
   []
 summary: Use add_toolbar_reaction with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/add_toolbar_reaction.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "f1b18f01ccad1a30973956353a363dc0090c7ab2034307a558c2ca264274e513"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "78facfcbfcd0e84af5e419aee42ba4f52e0706bddac242d8498f53a2111d8228"
 ---
 
 # add_toolbar_reaction
@@ -28,12 +29,13 @@ Add an emoji reaction to a message in a toolbar thread.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [reply_to_toolbar_thread](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/reply_to_toolbar_thread) — Use reply_to_toolbar_thread with Vercel MCP.
+- [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production)
+- [Easier toolbar setup for SvelteKit and other Vite-based frameworks](https://vercel.com/changelog/easier-toolbar-setup-for-sveltekit-and-other-vite-based-frameworks)
 - [edit_toolbar_message](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/edit_toolbar_message) — Use edit_toolbar_message with Vercel MCP.
 - [Emoji reactions now available in Preview Deployment comments ](https://vercel.com/changelog/emoji-reactions-now-available-in-preview-deployment-comments)
-- [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production)
 - [get_toolbar_thread](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/get_toolbar_thread) — Use get_toolbar_thread with Vercel MCP.
-- [change_toolbar_thread_resolve_status](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/change_toolbar_thread_resolve_status) — Use change_toolbar_thread_resolve_status with Vercel MCP.
 - [Add the Vercel Toolbar to local and production environments](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost) — Learn how to use the Vercel Toolbar in production and local environments.
+- [Vercel Toolbar](https://vercel.com/docs/vercel-toolbar) — Learn how to use the Vercel Toolbar to leave feedback, navigate through important dashboard pages, share deployments, us
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/toolbar/add_toolbar_reaction.graph.md](/docs/agent-resources/vercel-mcp/tools/toolbar/add_toolbar_reaction.graph.md)
 <!-- /docsgraph:related -->
@@ -47,6 +49,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/toolb
 
 **Sample prompt:** "Add a 👍 reaction to message msg\_456 on toolbar thread tbt\_123"
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

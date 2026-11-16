@@ -13,9 +13,10 @@ related:
   - /docs/cli/global-options
 summary: "Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/crons.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "36eac0e1359d72153b806b9625c9756e9a563e9e8c4fa328fa6f3d8079e835cd"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2531ecb33f29a5a05dd72a88043eddacf4a2f69675e9d28d50675f5ab2a810f0"
 ---
 
 # vercel crons
@@ -31,9 +32,9 @@ Cron Jobs are a legacy feature and will be migrated to
 - [Introducing Vercel Cron Jobs](https://vercel.com/blog/cron-jobs)
 - [Cron Jobs](https://vercel.com/docs/schedules/cron-jobs) — Learn about cron jobs, how they work, and how to use them on Vercel.
 - [Getting started with cron jobs](https://vercel.com/docs/schedules/cron-jobs/quickstart) — Learn how to schedule cron jobs to run at specific times or intervals.
-- [vercel schedules](https://vercel.com/docs/cli/schedules) — Inspect and manage schedules in production, a custom environment, a Preview branch, CLI deployments by a user, or a loca
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel vcr](https://vercel.com/docs/cli/vcr) — Manage Vercel Container Registry from the Vercel CLI: build and push images, manage repositories, tags, and images, and
+- [Usage & Pricing for Cron Jobs](https://vercel.com/docs/schedules/cron-jobs/usage-and-pricing) — Learn about cron jobs usage and pricing details.
+- [vercel ci](https://vercel.com/docs/cli/ci) — Enable or disable Vercel CI for repositories, inspect runs, search logs, and rerun jobs from the command line.
 
 Full cross-link map for this page: [/docs/cli/crons.graph.md](/docs/cli/crons.graph.md)
 <!-- /docsgraph:related -->
@@ -172,6 +173,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

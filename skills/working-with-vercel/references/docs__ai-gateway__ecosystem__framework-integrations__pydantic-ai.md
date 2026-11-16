@@ -13,9 +13,10 @@ related:
   - /docs/ai-gateway/authentication-and-byok
 summary: Learn how to integrate Vercel AI Gateway with Pydantic AI to access multiple AI models through a unified interface.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "da52ea2fc8808d465704ab6c3827fa6b809ab61c4cf99d80decce52e83aa234a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "641279ee8cbcdbfd4ddf65263748760da3964163e40496b25a52d777803d5917"
 ---
 
 # Pydantic AI with AI Gateway
@@ -30,9 +31,9 @@ Build Python agents with [Pydantic AI](https://ai.pydantic.dev/) and connect the
 
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
-- [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
-- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 - [Pi with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/pi) — Connect Pi to AI Gateway with one CLI command, or configure it manually.
+- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
+- [Build with AI on Vercel](https://vercel.com/docs/agent-resources/integrations-for-models) — Integrate powerful AI services and models seamlessly into your Vercel projects.
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai.graph.md](/docs/ai-gateway/ecosystem/framework-integrations/pydantic-ai.graph.md)
 <!-- /docsgraph:related -->
@@ -110,6 +111,18 @@ Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integra
   ```
   You should see structured city information for Tokyo, Paris, and New York displayed in your console.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

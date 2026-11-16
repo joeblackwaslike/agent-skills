@@ -12,9 +12,10 @@ related:
   - /docs/deployments
 summary: Use get_deployment with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "5367ef2c974c664e53963fe4626a57cb9f69d329ef7421faff4437bb1d28758a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "99596ae199706b36cc6a2deae1e3c270631659906c65e1e26cf9c567d06dd09c"
 ---
 
 # get_deployment
@@ -27,11 +28,10 @@ Get a [deployment](/docs/deployments) by ID or hostname.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Get Deployment](https://v0.app/docs/api/v1/reference/deployments/get-by-id) — Get a deployment by ID. This will return the details of the deployment, including the inspector URL, chat ID, project ID
 - [get_deployment_file_contents](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_file_contents) — Use get_deployment_file_contents with Vercel MCP.
 - [list_deployment_files](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_files) — Use list_deployment_files with Vercel MCP.
 - [list_deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployments) — Use list_deployments with Vercel MCP.
-- [get_deployment_feature_flags](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_feature_flags) — Use get_deployment_feature_flags with Vercel MCP.
+- [Get Deployment File Contents](https://vercel.com/docs/rest-api/deployments/get-deployment-file-contents) — GET /v8/deployments/{id}/files/{fileId} — Allows to retrieve the content of a file by supplying the file identifier and
 - [get_git_deployment_context](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_git_deployment_context) — Use get_git_deployment_context with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment.graph.md)
@@ -55,6 +55,18 @@ If your connection exposes the smaller workflow tool list, use these parameters 
 | `idOrUrl` | string | Yes      | -       | The unique identifier or hostname of the deployment.      |
 | `teamId`  | string | Yes      | -       | The team ID or slug. Use the team that owns the resource. |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

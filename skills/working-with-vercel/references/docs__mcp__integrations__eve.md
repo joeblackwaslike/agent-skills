@@ -13,12 +13,13 @@ related:
   - /docs/mcp
   - /docs/connect
   - /docs/cli
-  - /docs/connect/frameworks/eve
+  - /docs/integrations/sanity-context
 summary: Give eve agents access to MCP tools through filesystem connections and authorize requests with Vercel Connect.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/mcp/integrations/eve.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "cbb14dfd0d352d5e217ef39eb622bf3491c8a373ba8c3c8fdb2961c537b0f888"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "50797f002ab17b3923c14b76b2df9c98c1d04f8e0e171b508a31eca8e7eed3b7"
 ---
 
 # eve with MCP
@@ -31,15 +32,15 @@ Connect an [eve](/docs/frameworks/agents/eve) agent to a [Model Context Protocol
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to perform large-scale data analysis with Vercel Sandbox and MCP](https://vercel.com/kb/guide/large-scale-data-analysis-vercel-sandbox-mcp) — Use Vercel Sandbox and an MCP server built with \\`mcp-handler\\` to let AI agents run DuckDB SQL and Python on large data
 - [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
-- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
 - [Give your eve agent secure access to your private AWS RDS database](https://vercel.com/kb/guide/give-eve-agent-secure-access-to-aws-rds-database) — Connect an eve agent to a private AWS RDS database using Vercel Secure Compute and VPC peering, with a read-only query t
-- [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
-- [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
+- [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
+- [How to add tools to your eve agent](https://vercel.com/kb/guide/how-to-add-eve-tools) — Add tools to an eve agent by creating a TypeScript file under agent/tools/ with defineTool, and gate sensitive ones on h
 - [Use Vercel](https://vercel.com/docs/agent-resources/vercel-mcp) — Vercel MCP has tools available for searching docs, managing teams, projects, and deployments, and querying Web Analytics
+- [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
+- [AI SDK with MCP](https://vercel.com/docs/mcp/integrations/ai-sdk) — Connect the AI SDK to an MCP server on Vercel, discover its tools, and call them with models served through AI Gateway.
+- [Deploy MCP servers to Vercel](https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel) — Learn how to deploy Model Context Protocol \\(MCP\\) servers on Vercel with OAuth authentication and efficient scaling.
 - [Using eve with Chat SDK](https://vercel.com/docs/chat-sdk/eve) — Send Chat SDK messages to an eve agent with a channel, persistent state, and Vercel Connect.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 
 Full cross-link map for this page: [/docs/mcp/integrations/eve.graph.md](/docs/mcp/integrations/eve.graph.md)
 <!-- /docsgraph:related -->
@@ -175,11 +176,45 @@ For an example that uses app authorization to investigate deployment failures, f
 | The connector is unavailable to the project. | Check that the UID in `connect()` matches your connector and run `vercel connect attach <connector>` for the linked project. Custom Environments require an explicit environment link. |
 | App authorization fails because no credential is installed. | Install the app credential before invoking the agent. App authorization cannot prompt an end user for consent. |
 
+## Frequently asked questions
+
+### How do I limit which MCP tools an eve agent can use?
+
+Add `tools` to the connection with either `allow` or `block`, but not both. For example, `tools: { allow: ['search_issues', 'get_issue'] }` lets the model discover only those two tools, while `block` hides specific tools from a larger set. Prefer `allow` when the server also exposes tools that write data. eve names each tool `<connection>__<tool>`, such as `linear__search_issues`. See [Tool filters](https://eve.dev/docs/connections/mcp#tool-filters) in the eve documentation.
+
+### Can an eve agent ask for approval before it calls an MCP tool?
+
+Yes. Set `approval` on the connection. The `never()`, `once()`, `always()`, and `auto()` helpers apply one policy to every tool on the connection. For finer control, pass a function that receives `toolName`, `toolInput`, and `toolAnnotations` and returns `'user-approval'` to pause for a person or `'not-applicable'` to run the call. `toolName` includes the connection prefix, so match it with `endsWith()`. While the agent waits for an answer, eve suspends the session's workflow until the answer arrives. See [Approval gates](https://eve.dev/docs/connections/mcp#approval-gates).
+
+### Can I connect eve to an MCP server that uses an API key instead of OAuth?
+
+Yes. Return `{ token }` from `auth.getToken`, and eve sends it as an `Authorization: Bearer` header on every request. Use `headers` for a server that expects a different header, and omit both only for a public server. Store the key in an environment variable. You don't need Vercel Connect for a static credential. To connect [Sanity Context](/docs/integrations/sanity-context) this way, pass an organization API token with Context permissions. The [Sandbox data analysis guide](/kb/guide/large-scale-data-analysis-vercel-sandbox-mcp) uses this approach to connect eve to an MCP server that runs SQL and Python in Vercel Sandbox.
+
+### Can I publish an eve agent as an MCP server?
+
+Yes. Create `agent/channels/mcp.ts` and export `mcpChannel` from `eve/channels/mcp` with an `auth` strategy, which the channel requires. The channel serves Streamable HTTP at `/eve/v1/mcp`. Clients such as Claude Code start work with the `agent_start` tool and check on it with `agent_get`. Once `agent_start` returns, the work survives restarts and redeploys. Set `tools: true` to also publish the agent's own tools for clients to call directly. See [MCP channel](https://eve.dev/docs/channels/mcp).
+
+### Which Vercel services does an eve agent with MCP connections use?
+
+On Vercel, eve sends model requests through [AI Gateway](/docs/ai-gateway) and authenticates with your project's OIDC identity, so you don't add a provider API key. Each session runs on [Vercel Workflows](/docs/workflows), which checkpoints progress and resumes pending work after interruptions. [Vercel Sandbox](/docs/sandbox) isolates code that the agent runs. [Vercel Connect](/docs/connect) stores each user's OAuth grant and issues tokens for MCP connections. See [eve on Vercel](/docs/frameworks/agents/eve).
+
 ## Next steps
 
 - Follow [Vercel Connect with eve](/docs/connect/frameworks/eve) for scopes, subject mapping, and credential management.
 - Explore [MCP integrations](/docs/mcp/integrations) for AI SDK and TanStack AI examples.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

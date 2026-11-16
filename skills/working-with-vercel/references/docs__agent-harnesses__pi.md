@@ -15,9 +15,10 @@ related:
   - /docs/functions/limitations
 summary: Make a Pi agent durable on Vercel so a crashed turn resumes in a new function instead of starting over.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-harnesses/pi.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "47dada0a44e8b505f57815029af9743f06312b9a3ea1401b11b1b437ddffc12c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "7a8fc002110e829eb0ce9ccc8fd1c6f5fde7948951233555149e3767299f606d"
 ---
 
 # Running Pi Durably on Vercel
@@ -30,14 +31,16 @@ sha256: "47dada0a44e8b505f57815029af9743f06312b9a3ea1401b11b1b437ddffc12c"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Workflow SDK 5: built for production](https://vercel.com/blog/workflow-sdk-5)
 - [useEveAgent Reference](https://eve.dev/docs/guides/frontend/use-eve-agent) — Every value, option, and behavior of useEveAgent, shared by the React, Vue, and Svelte bindings.
 - [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
-- [Build Claude Managed Agents with Vercel Services](https://vercel.com/kb/guide/claude-managed-agents-vercel-services) — Deploy Claude Managed Agents with Vercel Services to run a streaming research analyst in a browser chat, using Anthropic
 - [Build a Claude Managed Agent with Vercel Sandbox](https://vercel.com/kb/guide/run-claude-managed-agent-tools-with-vercel-sandbox) — Build a Claude Managed Agent with Vercel Sandbox: each session runs in a fresh microVM with credential brokering and a w
+- [Build Claude Managed Agents with Vercel Services](https://vercel.com/kb/guide/claude-managed-agents-vercel-services) — Deploy Claude Managed Agents with Vercel Services to run a streaming research analyst in a browser chat, using Anthropic
 - [Build AI agents in Python with the AI SDK](https://vercel.com/kb/guide/python-and-ai-sdk) — Stream model responses, get typed output, and build tool-using agents in Python on Vercel.
+- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
+- [Scheduling Work with Pi](https://vercel.com/docs/schedules/agents/pi) — Give a Pi agent on durable-harness a tool that creates schedules, and send each run back into the session that created i
 - [Running OpenCode Durably on Vercel](https://vercel.com/docs/agent-harnesses/opencode) — Run OpenCode v2 inside a Vercel Function with its session in a durable log, so a crashed turn resumes in a new function.
 - [Running fx Durably on Vercel](https://vercel.com/docs/agent-harnesses/fx) — Deploy an fx agent with libfx so its sessions survive crashes, function timeouts, and redeploys on Vercel.
-- [Scheduling Work with Pi](https://vercel.com/docs/schedules/agents/pi) — Give a Pi agent on durable-harness a tool that creates schedules, and send each run back into the session that created i
 - [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
 - [Agent Harnesses You Can Run Durably on Vercel](https://vercel.com/docs/agent-harnesses/harnesses) — Guides for running Pi, fx, OpenCode, eve, Claude Code, and Codex durably on Vercel, so a crash or a timeout resumes the
 
@@ -78,7 +81,7 @@ Pick `durable-harness/pi-durable`. It's Pi 1.0's full Harness, so your agent get
   const registry = createRegistry(); // your tools and extensions
 
   export { ctx };
-  export const agent = { model: { provider: GATEWAY_PROVIDER, modelId: 'anthropic/claude-sonnet-5.5' } };
+  export const agent = { model: { provider: GATEWAY_PROVIDER, modelId: 'anthropic/claude-fable-5.2' } };
   export const open = resumeWith((storage: Storage) => Harness.open(storage, { models, registry }, ctx));
   ```
   `gatewayModels()` gives Pi its models through [AI Gateway](/docs/ai-gateway) with the deployment's credentials. A build on Vercel fails if the app opens pi-durable sessions and no module calls `resumeWith`.
@@ -229,7 +232,7 @@ Pick `durable-harness/pi-durable`. It's Pi 1.0's full Harness, so your agent get
   ```ts {3} filename="lib/agent.ts"
   import { pi } from 'durable-harness/pi';
 
-  export const agent = pi({ model: 'anthropic/claude-sonnet-5.5' });
+  export const agent = pi({ model: 'anthropic/claude-fable-5.2' });
   ```
 
 - ### Add the chat route
@@ -428,7 +431,7 @@ Give each agent a `name`:
 import { pi } from 'durable-harness/pi';
 
 export const reviewer = pi({ name: 'reviewer', model: 'anthropic/claude-opus-5.5' });
-export const fixer = pi({ name: 'fixer', model: 'anthropic/claude-sonnet-5.5' });
+export const fixer = pi({ name: 'fixer', model: 'anthropic/claude-fable-5.2' });
 ```
 
 Keep each name stable, because sessions that already started carry it. Two agents with the same name throw when their module loads, so the build fails.
@@ -463,7 +466,7 @@ registry.install(CodingTools); // Pi's read, write, edit, and bash
 registry.install(defineExtension({ name: 'orders', tools: [getOrderTool] }));
 
 export { ctx };
-export const agent = { model: { provider: GATEWAY_PROVIDER, modelId: 'anthropic/claude-sonnet-5.5' } };
+export const agent = { model: { provider: GATEWAY_PROVIDER, modelId: 'anthropic/claude-fable-5.2' } };
 export const open = resumeWith((storage: Storage) =>
   Harness.open(storage, { models, registry, env: virtualEnv() }, ctx),
 );
@@ -501,7 +504,7 @@ const getOrderTool: HostTool = {
 };
 
 export const agent = pi({
-  model: 'anthropic/claude-sonnet-5.5',
+  model: 'anthropic/claude-fable-5.2',
   tools: [...createCodingTools(virtual()), getOrderTool],
 });
 ```
@@ -514,7 +517,7 @@ To run Pi's tools in the session's own [Vercel Sandbox](/docs/sandbox), pass `sa
 import { sandbox } from 'durable-harness';
 import { createCodingTools, pi } from 'durable-harness/pi';
 
-export const agent = pi({ model: 'anthropic/claude-sonnet-5.5', tools: createCodingTools(sandbox()) });
+export const agent = pi({ model: 'anthropic/claude-fable-5.2', tools: createCodingTools(sandbox()) });
 ```
 
 The files are on a [Drive](/docs/sandbox/concepts/drives) at `/workspace` that lasts across turns, and the Sandbox starts at the first tool call. Pi itself stays in your function. What a call wrote stays on the Drive even if a crash interrupts it, so after a crash `read` runs again, and `bash`, `edit`, and `write` come back to the model as interrupted. On your machine, run `vercel link` and `vercel env pull` first: the Sandbox starts on Vercel, under the linked project. A long command early in a turn can be cut off: see [A Vercel Sandbox with a Drive](/docs/agent-harnesses/tools#a-vercel-sandbox-with-a-drive).
@@ -549,7 +552,7 @@ const models = gatewayModels();
 const registry = createRegistry();
 
 export const world = createWorld({ connectionString: process.env.WORKFLOW_POSTGRES_URL! });
-export const agent = { model: { provider: GATEWAY_PROVIDER, modelId: 'anthropic/claude-sonnet-5.5' } };
+export const agent = { model: { provider: GATEWAY_PROVIDER, modelId: 'anthropic/claude-fable-5.2' } };
 export const open = resumeWith((storage: Storage) => Harness.open(storage, { models, registry }, ctx), { world });
 
 registerQueue(world); // before start: deliver durable-harness's queue to this process
@@ -566,7 +569,7 @@ import { recoverSessions, registerQueue } from 'durable-harness';
 import { pi } from 'durable-harness/pi';
 
 export const world = createWorld({ connectionString: process.env.WORKFLOW_POSTGRES_URL! });
-export const agent = pi({ model: 'anthropic/claude-sonnet-5.5', world });
+export const agent = pi({ model: 'anthropic/claude-fable-5.2', world });
 
 registerQueue(world); // before start: deliver durable-harness's queue to this process
 await world.start();
@@ -577,11 +580,45 @@ An agent with its own World takes its queue deliveries through `agent.handler`, 
 
 For the tables, the server, and recovery at startup, see [Self-hosting durable agent harnesses](/docs/agent-harnesses/self-hosting).
 
+## Frequently asked questions
+
+### Should I use `durable-harness/pi-durable` or `durable-harness/pi`?
+
+Use `durable-harness/pi-durable` for most Pi agents. It runs Pi 1.0's full `Harness`, with extensions, compaction, and forks, and each step waits for the log, so turns are slower. Use `durable-harness/pi` when you need only Pi's agent loop. It adds less latency, lets any request steer a running turn, and resumes a dropped stream from the last event. See [Choose a variant](#choose-a-variant).
+
+### Can I make my existing Pi agent durable without rewriting it?
+
+Yes, with `durable-harness/pi-durable`. Only the storage changes: where Pi would open SQLite, JSONL, or memory storage, open the session's storage with `openWorldStorage()`, and register the function that opens your Harness with `resumeWith()` so the queue route can reopen a session after a crash. Everything after that is Pi's own API, such as `harness.root()` and `root.submit()`. You can also keep your own route instead of `chatRoute`.
+
+### How does a Pi agent authenticate model calls on Vercel?
+
+Through [AI Gateway](/docs/ai-gateway), with no provider API key. `gatewayModels()` gives Pi its models through AI Gateway, and on Vercel it authenticates with the deployment's [OIDC token](/docs/oidc). On your machine, run `vercel link` and `vercel env pull`, or set `AI_GATEWAY_API_KEY`. You can also pass your own pi-ai models instead. A Sandbox's `sessionUsd` cap doesn't count Pi's model calls, so cap model spend with an [AI Gateway budget](/docs/ai-gateway/observability-and-spend/budgets). A project budget counts the project's OIDC requests and API keys scoped to the project. With an unscoped `AI_GATEWAY_API_KEY`, use an API key or team budget instead.
+
+### Where do Pi's bash and file tools run on Vercel?
+
+Never in your function's processes or on its disk, which other sessions on the same instance share. Give Pi's `read`, `write`, `edit`, and `bash` a virtual workspace with `virtualEnv()` or `virtual()`, where files are stored in the session's log, or the session's own [Vercel Sandbox](/docs/sandbox) with `sandboxEnv()` or `sandbox()`, where files live on a Drive at `/workspace`. Don't give Pi a `NodeExecutionEnv`. See [Tools](#tools).
+
+### What happens to a Pi turn when its function crashes?
+
+A new function resumes it from the log. Both variants read finished steps back, run the model calls and `'safe'` tools that were running again, and return an interrupted `'never'` tool to the model as possibly run, so a side effect such as a refund doesn't repeat on its own. With `durable-harness/pi-durable`, a session that commits nothing for `recoverAfterMs`, 120 seconds by default, while it has unfinished work can be taken over by another function. See [What happens when a function crashes](#what-happens-when-a-function-crashes).
+
 ## More resources
 
 - [`durable-harness` on GitHub](https://github.com/vercel-labs/durable-harness)
 - [Pi](https://github.com/earendil-works/pi)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

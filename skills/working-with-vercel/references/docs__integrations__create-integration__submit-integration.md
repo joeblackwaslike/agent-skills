@@ -16,9 +16,10 @@ related:
   - /docs/integrations/install-an-integration/manage-integrations-reference
 summary: Learn about all the requirements and guidelines needed when creating your Integration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/submit-integration.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "59fb1b62cba556277b52cb386301aa4ef1838b7764dc184b118e72976ca918a1"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5cc8097d12b182208dadb9bfaa0b4d327197f5218d91ffd282b7c9c118046776"
 ---
 
 # Requirements for listing an Integration
@@ -32,10 +33,10 @@ Defining the content specs helps you create the main cover page of your integrat
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
-- [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
 - [Upgrade an Integration](https://vercel.com/docs/integrations/create-integration/upgrade-integration) — Lean more about when you may need to upgrade your Integration.
-- [vercel integration](https://vercel.com/docs/cli/integration) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
+- [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
+- [vercel integration](https://vercel.com/docs/cli/integration) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
 
 Full cross-link map for this page: [/docs/integrations/create-integration/submit-integration.graph.md](/docs/integrations/create-integration/submit-integration.graph.md)
 <!-- /docsgraph:related -->
@@ -482,6 +483,18 @@ When enabled, the integration user can configure a Log Drain for the Native inte
 
 When enabled, the integration can use the [Checks API](/docs/checks)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

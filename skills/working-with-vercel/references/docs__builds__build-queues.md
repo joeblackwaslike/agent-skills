@@ -12,9 +12,10 @@ related:
   - /docs/pricing
 summary: Understand how concurrency and same branch build queues manage multiple simultaneous deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/builds/build-queues.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "3e1b824dcbf3496e9c3ead38b497d2dd68dd2a583b077c3147edca6e2a8b1638"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "d0e9e8883b1c6129bf06f6a248077722d04e0f8d4ff0e996d96d051077d36ff1"
 ---
 
 # Build Queues
@@ -27,17 +28,18 @@ Build queueing is when a build must wait for resources to become available befor
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
 - [Limit on-demand concurrent builds to one build per branch](https://vercel.com/changelog/limit-on-demand-concurrent-builds-to-one-build-per-branch)
 - [Commits to the same branch now build with no queues](https://vercel.com/changelog/build-commits-to-the-same-branch-without-waiting)
 - [Pro customers can now deploy faster without build queues](https://vercel.com/changelog/pro-customers-can-now-deploy-faster-with-on-demand-concurrency-builds)
-- [No build queues: On-demand concurrent builds now on by default](https://vercel.com/changelog/no-build-queues-on-demand-concurrent-builds-now-on-by-default)
 - [Bulk enable on-demand concurrent builds across projects ](https://vercel.com/changelog/bulk-enable-on-demand-concurrent-builds-across-projects)
-- [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues)
+- [Enterprise teams can now ship faster without build queues](https://vercel.com/changelog/enterprise-teams-can-now-ship-faster-without-build-queues)
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
+- [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues)
 - [Vercel Queues](https://vercel.com/docs/queues) — Publish agent events and background work to durable topics with independent consumers, automatic retries, and at-least-o
-- [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 - [Queues Observability](https://vercel.com/docs/queues/observability) — Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.
+- [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
+- [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
 
 Full cross-link map for this page: [/docs/builds/build-queues.graph.md](/docs/builds/build-queues.graph.md)
 <!-- /docsgraph:related -->
@@ -56,7 +58,7 @@ You can choose between two modes:
 
 To configure on-demand concurrent builds, see [Project-level on-demand concurrent builds](/docs/builds/managing-builds#project-level-on-demand-concurrent-builds).
 
-**If you're experiencing build queues, we strongly recommend [enabling On-Demand Concurrent Builds](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbuild-and-deployment%23on-demand-concurrent-builds\&title=Enable+On-Demand+Concurrent+Builds)**. For billing information, see [Pricing](/docs/pricing#builds).
+**If you're experiencing build queues, we strongly recommend [enabling On-Demand Concurrent Builds](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbuild-and-deployment%23on-demand-concurrent-builds\&title=Enable+On-Demand+Concurrent+Builds)**. For billing information, see [Pricing](/docs/pricing#builds). To lower your build usage, see [How to reduce build costs on Vercel](/kb/guide/how-reduce-build-costs).
 
 ## Without On-Demand Concurrent Builds
 
@@ -92,6 +94,18 @@ This means that commits in between the current build and most recent commit will
 > build](/docs/builds/managing-builds#force-an-on-demand-build)
 > to skip the Git branch queue for specific builds.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

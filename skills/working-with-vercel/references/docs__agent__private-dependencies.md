@@ -11,9 +11,10 @@ related:
   - /docs/environment-variables/shared-environment-variables
 summary: Configure shared npm credentials so Vercel Agent can install private dependencies from npm and custom registries.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent/private-dependencies.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "e7746fa5cf1fd8f77a611c5a8656d57110124c683e7c408a4ed45354bd369702"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4cdd11097babf60fff38ae401573f0ced144096c52ea369d16f425eacce5dd7f"
 ---
 
 # Private Dependencies
@@ -27,17 +28,16 @@ Vercel Agent installs private npm packages using your repository's existing pack
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Agent now installs private packages from npm and custom registries](https://vercel.com/changelog/vercel-agent-now-installs-private-packages-from-npm-and-custom-registries)
-- [Private Dependencies](https://v0.app/docs/private-dependencies) — Install private npm packages in v0 by configuring NPM_TOKEN or NPM_RC as environment variables.
 - [How do I use private dependencies with Vercel?](https://vercel.com/kb/guide/using-private-dependencies-with-vercel) — Information on how to use private dependencies with a Vercel deployment.
+- [Private Dependencies](https://v0.app/docs/private-dependencies) — Install private npm packages in v0 by configuring NPM_TOKEN or NPM_RC as environment variables.
 - [Dependencies from package.json are missing after install](https://vercel.com/kb/guide/dependencies-from-package-json-missing-after-install) — Understand why dependencies may not being installed during a build and how to fix.
+- [Vercel Sandbox now supports managed npm credentials](https://vercel.com/changelog/vercel-sandbox-now-supports-managed-npm-credentials)
 - [v0 now reads npm credentials from shared environment variables](https://vercel.com/changelog/v0-now-reads-npm-credentials-from-shared-environment-variables)
-- [Blocking malicious npm packages before and during installation](https://vercel.com/changelog/blocking-malicious-npm-packages-before-and-during-installation)
-- [Private enterprise agents on Vercel](https://vercel.com/kb/guide/private-enterprise-agents-vercel) — Design private enterprise agents that call internal APIs and databases with Vercel Functions, Secure Compute, AI Gateway
+- [npm Credentials](https://vercel.com/docs/sandbox/credentials/npm) — Install your team's private npm packages in Vercel Sandbox with no setup.
+- [Vercel CI Environment Variables](https://vercel.com/docs/ci/environment-variables) — Manage environment variables and secrets for Vercel CI runs.
 - [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
-- [Installation](https://vercel.com/docs/agent/installation) — Let AI automatically install Web Analytics and Speed Insights in your app
+- [Advanced Node.js Usage](https://vercel.com/docs/functions/runtimes/node-js/advanced-node-configuration) — Learn about advanced configurations for Vercel functions on Vercel.
 - [Package Managers](https://vercel.com/docs/package-managers) — Discover the package managers supported by Vercel for dependency management. Learn how Vercel detects and uses npm, Yarn
-- [Public and Shared Repositories](https://vercel.com/docs/container-registry/public-and-shared-repositories) — Share a Vercel Container Registry repository with specific Vercel teams or make it public for any Vercel team to access.
-- [Config and Secret environment variables](https://vercel.com/docs/environment-variables/sensitive-environment-variables) — Choose Config or Secret environment variables based on whether their values should remain readable after saving.
 
 Full cross-link map for this page: [/docs/agent/private-dependencies.graph.md](/docs/agent/private-dependencies.graph.md)
 <!-- /docsgraph:related -->
@@ -116,6 +116,18 @@ If a Development `NPM_RC` or `VERCEL_AGENT_NPM_RC` references a missing variable
 
 Empty or malformed configuration stops lookup instead of falling back to a lower-priority variable.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

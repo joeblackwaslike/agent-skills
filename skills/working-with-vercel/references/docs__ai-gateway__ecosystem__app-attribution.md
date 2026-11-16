@@ -12,9 +12,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis
 summary: Attribute your requests so Vercel can identify and feature your app on AI Gateway pages.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/ecosystem/app-attribution.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "4683a64280127282f71cf8dd745e24010f4f3e4c77332525a18697aae86b52be"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "60c38a3bf81737aa46641cb06e6ae8525e92c770bce9417403a04bb99238c997"
 ---
 
 # AI Gateway App Attribution
@@ -30,10 +31,10 @@ driving awareness.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Call AI Gateway Chat Completions with REST](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api) — Use AI Gateway API directly without client libraries using curl and fetch.
-- [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 - [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
 - [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
+- [OpenAI Responses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses) — Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/app-attribution.graph.md](/docs/ai-gateway/ecosystem/app-attribution.graph.md)
 <!-- /docsgraph:related -->
@@ -378,6 +379,18 @@ for await (const part of result.textStream) {
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

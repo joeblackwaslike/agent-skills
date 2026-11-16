@@ -12,9 +12,10 @@ related:
   []
 summary: Vercel MCP tools for integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "545d2c03b2312ce7e5b1db795d994ce4b6045384e29529a9e1701324959f002e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "28b5e9dd03b546d0245d34cc4e5c20bffa1cf3f9d01bb78c49b3375ffd78aa58"
 ---
 
 # Integrations
@@ -27,11 +28,11 @@ Inspect integration configurations and billing plans, search repositories, and l
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
+- [Vercel Integrations](https://vercel.com/docs/integrations) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
 - [List products for integration configuration](https://vercel.com/docs/rest-api/integrations/list-products-for-integration-configuration) — GET /v1/integrations/configuration/{id}/products — Returns products available for an integration configuration. Each pro
 - [List integration billing plans](https://vercel.com/docs/rest-api/integrations/list-integration-billing-plans) — GET /v1/integrations/integration/{integrationIdOrSlug}/products/{productIdOrSlug}/plans — Get a list of billing plans fo
-- [Install an Integration](https://vercel.com/docs/integrations/install-an-integration) — Learn how to pair Vercel's functionality with a third-party service to streamline observability, integrate with testing
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
-- [Vercel Integrations](https://vercel.com/docs/integrations) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/integrations.graph.md](/docs/agent-resources/vercel-mcp/tools/integrations.graph.md)
 <!-- /docsgraph:related -->
@@ -118,6 +119,18 @@ List git repositories linked to namespace by provider.
 | `teamId`         | string                   | No       | Team ID to use for this operation.                                                                                    |
 | `slug`           | string                   | No       | Team slug to use for this operation. Use instead of teamId.                                                           |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

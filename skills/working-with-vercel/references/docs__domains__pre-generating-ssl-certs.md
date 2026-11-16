@@ -14,9 +14,10 @@ related:
   - /docs/domains/managing-dns-records
 summary: test
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains/pre-generating-ssl-certs.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "3eb127343cb4a696aca191d137d7f865ed3f0bbda3ccf4ef6eea9367873be458"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4e52f3c6948909835150dc9c334b2b281a7f75648e71c17840c06affe2ef3ee6"
 ---
 
 # Pre-Generate SSL Certificates
@@ -42,8 +43,8 @@ DNS changes.
 - [Automatic SSL with Vercel and Let's Encrypt](https://vercel.com/blog/automatic-ssl-with-vercel-lets-encrypt)
 - [Working with SSL Certificates](https://vercel.com/docs/domains/working-with-ssl) — Learn how Vercel uses SSL certification to keep your site secure.
 - [Uploading Custom SSL Certificates](https://vercel.com/docs/domains/custom-ssl-certificate) — By default, Vercel provides all domains with a custom SSL certificates. However, Enterprise teams can upload their own c
-- [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
+- [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
 - [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 
 Full cross-link map for this page: [/docs/domains/pre-generating-ssl-certs.graph.md](/docs/domains/pre-generating-ssl-certs.graph.md)
@@ -126,6 +127,18 @@ See [Records for an apex domain and `www`](/docs/domains/troubleshooting#records
 
 For more details on performing a migration, see [this guide](/docs/domains/managing-dns-records#migrating-dns-records-from-an-external-registrar).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

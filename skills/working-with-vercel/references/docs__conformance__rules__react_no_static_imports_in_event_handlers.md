@@ -12,9 +12,10 @@ related:
   - /docs/conformance/customize
 summary: Prevent static imports that are referenced only in React event handlers from being eagerly loaded in React components.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/react_no_static_imports_in_event_handlers.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "26b2bfb0b1d92b498a1074a4763697c0a3fe55b8fe5306ce8bba632b79f045bf"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4614fe2089374b405c9d505c15f207fe40f382c64457f5cf62d3d1ee3c59ac30"
 ---
 
 # REACT_NO_STATIC_IMPORTS_IN_EVENT_HANDLERS
@@ -59,6 +60,18 @@ Additionally, you can [configure](/docs/conformance/customize) the rule for only
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

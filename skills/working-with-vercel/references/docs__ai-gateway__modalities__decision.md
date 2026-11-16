@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/authentication-and-byok/byok
 summary: Ask typed questions about shared state and get back structured choices, scores, and boolean probabilities through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/modalities/decision.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "10dde3e4cf70c5a90008b0de9760a974c2ec06271f7468d5f2dbd843c91276d0"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "6824d556f1dd2efa6a8b245b1ee6a0febb950585c6a61479c6b1d0c66135a3fa"
 ---
 
 # Decision
@@ -31,13 +32,12 @@ Ask typed questions about a piece of shared state and get structured answers bac
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Decisions](https://ai-sdk.dev/docs/ai-sdk-core/decisions) — Decide answers to Choice, Score, and Boolean questions against shared state.
-- [Baseten's Mammoth-1 and Elephant-1 now available on AI Gateway for free](https://vercel.com/changelog/basetens-mammoth-1-and-elephant-1-now-available-on-ai-gateway-for-free)
-- [Liquid AI's d1 is available on AI Gateway](https://vercel.com/changelog/liquid-ai-d1-is-available-on-ai-gateway)
-- [Liquid AI's d1-ultra now available on AI Gateway](https://vercel.com/changelog/liquid-ais-d1-ultra-now-available-on-ai-gateway)
-- [Microsoft Decision-1 now available on AI Gateway](https://vercel.com/changelog/microsoft-decision-1-now-available-on-ai-gateway)
+- [TypeSafe AI's Jev 1.14 is now available on AI Gateway](https://vercel.com/changelog/typesafe-ais-jev-1-14-is-now-available-on-ai-gateway)
 - [OpenAI Decisions API now available on AI Gateway](https://vercel.com/changelog/openai-decisions-api-now-available-on-ai-gateway)
-- [Automatic Model Selection](https://eve.dev/docs/guides/decide) — Choose agent models automatically or ask typed questions in your tools and application code.
+- [Decisions](https://ai-sdk.dev/docs/ai-sdk-core/decisions) — Decide answers to Choice, Score, and Boolean questions against shared state.
+- [Microsoft Decision-1 now available on AI Gateway](https://vercel.com/changelog/microsoft-decision-1-now-available-on-ai-gateway)
+- [Baseten's Mammoth-1 and Elephant-1 now available on AI Gateway for free](https://vercel.com/changelog/basetens-mammoth-1-and-elephant-1-now-available-on-ai-gateway-for-free)
+- [Gemini Decision 1 now available on AI Gateway](https://vercel.com/changelog/gemini-decision-1-now-available-on-ai-gateway)
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/decision.graph.md](/docs/ai-gateway/modalities/decision.graph.md)
@@ -408,6 +408,18 @@ Test both the model's answer and the action your application takes with it. Use 
 - Learn how to [automatically approve tool calls in eve with Jev](/kb/guide/auto-approve-tool-calls-eve-jev)
 - Build a [product review moderation workflow with Jev and TanStack AI](/kb/guide/moderate-product-reviews-jev-tanstack-ai)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

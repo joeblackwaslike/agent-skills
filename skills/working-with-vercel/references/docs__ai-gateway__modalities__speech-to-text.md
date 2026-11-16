@@ -14,9 +14,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis/ai-sdk-python
 summary: Transcribe audio files into text with transcription models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/modalities/speech-to-text.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "da403a10a2ae9ca189efd0bc89111a9a313ea0d95bd2eaff6f661b3a413b9d4c"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "ebdacb9886985b8159c12bb499f199f1c042702d614ecda8421325ac09ddc2ae"
 ---
 
 # AI Gateway Speech to Text
@@ -31,11 +32,11 @@ Transcribe recorded audio into text with transcription models such as `elevenlab
 
 - [AI Gateway now supports streaming transcription](https://vercel.com/changelog/ai-gateway-now-supports-streaming-transcription)
 - [Realtime voice, speech, and transcription now supported on AI Gateway](https://vercel.com/changelog/realtime-voice-speech-and-transcription-now-supported-on-ai-gateway)
-- [Gemini 3.5 Transcribe now available on AI Gateway](https://vercel.com/changelog/gemini-3-5-transcribe-now-available-on-ai-gateway)
 - [ElevenLabs on AI Gateway](https://vercel.com/blog/elevenlabs-on-ai-gateway)
-- [Deepgram](https://ai-sdk.dev/providers/ai-sdk-providers/deepgram) — Learn how to set up the Deepgram provider and check AI Gateway availability.
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway)
-- [transcribe](https://ai-sdk.dev/docs/reference/ai-sdk-core/transcribe) — API Reference for transcribe.
+- [Gemini 3.5 Transcribe now available on AI Gateway](https://vercel.com/changelog/gemini-3-5-transcribe-now-available-on-ai-gateway)
+- [AI Gateway Audio Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/audio-input) — Analyze recorded audio with AI Gateway, compare audio input with transcription and realtime voice, and choose a supporte
+- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/speech-to-text.graph.md](/docs/ai-gateway/modalities/speech-to-text.graph.md)
 <!-- /docsgraph:related -->
@@ -303,7 +304,7 @@ const result = await transcribe({
 console.log(result.text);
 ```
 
-The transcript includes audio events in brackets, such as `[laughs]`. Speaker IDs and word timing are in `result.providerMetadata.elevenlabs.words`, where each entry has `text`, `type` (`word`, `spacing`, or `audio_event`), `start`, `end`, and `speaker_id`. With AI Gateway credentials, `elevenlabs/scribe-v2-realtime` doesn't accept `keyterms`, because ElevenLabs bills keyterm prompting at a premium. For more options, see the [AI SDK ElevenLabs transcription documentation](https://ai-sdk.dev/providers/ai-sdk-providers/elevenlabs#transcription-models).
+The transcript includes audio events in brackets, such as `[laughs]`. Speaker IDs and word timing are in `result.providerMetadata.elevenlabs.words`, where each entry has `text`, `type` (`word`, `spacing`, or `audio_event`), `start`, `end`, and `speaker_id`. With Vercel's provider keys, `elevenlabs/scribe-v2-realtime` doesn't accept `keyterms`, because ElevenLabs bills keyterm prompting at a premium. For more options, see the [AI SDK ElevenLabs transcription documentation](https://ai-sdk.dev/providers/ai-sdk-providers/elevenlabs#transcription-models).
 
 ## Limitations
 
@@ -312,6 +313,18 @@ The transcript includes audio events in brackets, such as `[laughs]`. Speaker ID
 - Recorded audio and streaming support different model sets. Browse [transcription models](/ai-gateway/models?modality=audio:transcription) and add the [WebSockets filter](/ai-gateway/models?modality=audio:transcription\&features=websockets) to see which models support streaming.
 - Microsoft transcription models reject unsupported options, such as `timestamps` on `microsoft/mai-transcribe-1.5`, with a 400 error.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

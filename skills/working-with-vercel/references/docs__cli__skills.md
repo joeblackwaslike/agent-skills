@@ -12,9 +12,10 @@ related:
   - /docs/cli/global-options
 summary: Discover agent skills relevant to your project using the vercel skills CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/skills.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "95ab3761dc9fa17c3b14d527679ff0ce85bb6bf46fc7ef8193cc4a800e6423e6"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "922a6103496c9ca6af153f39806544f2e1e136ca207e4dfc0a0e5dedf45f908c"
 ---
 
 # vercel skills
@@ -27,16 +28,15 @@ The `vercel skills` command surfaces agent skills relevant to your project. When
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Agent Skills: Creating, Installing, and Sharing Reusable Agent Context](https://vercel.com/kb/guide/agent-skills-creating-installing-and-sharing-reusable-agent-context) — This guide will cover what skills are, how to create custom skills for yourself and your team, and how to publish them t
-- [Agent skills explained: An FAQ](https://vercel.com/blog/agent-skills-explained-an-faq)
 - [Introducing skills, the open agent skills ecosystem](https://vercel.com/changelog/introducing-skills-the-open-agent-skills-ecosystem)
-- [Skills v1.1.1: Interactive discovery, open source release, and agent support](https://vercel.com/changelog/skills-v1-1-1-interactive-discovery-open-source-release-and-agent-support)
+- [Agent Skills: Creating, Installing, and Sharing Reusable Agent Context](https://vercel.com/kb/guide/agent-skills-creating-installing-and-sharing-reusable-agent-context) — This guide will cover what skills are, how to create custom skills for yourself and your team, and how to publish them t
 - [The skills.sh API is now available](https://vercel.com/changelog/the-skills-sh-api-is-now-available)
-- [Skills Night: 69,000+ ways agents are getting smarter](https://vercel.com/blog/skills-night-69000-ways-agents-are-getting-smarter)
+- [Skills v1.1.1: Interactive discovery, open source release, and agent support](https://vercel.com/changelog/skills-v1-1-1-interactive-discovery-open-source-release-and-agent-support)
+- [The skills CLI now supports Notion hosted skills](https://vercel.com/changelog/skills-cli-notion-skills)
+- [Agent skills explained: An FAQ](https://vercel.com/blog/agent-skills-explained-an-faq)
+- [Skill packs are now available on skills.sh](https://vercel.com/changelog/skill-packs-are-now-available)
 - [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code, Codex, and OpenCode, and co
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 
 Full cross-link map for this page: [/docs/cli/skills.graph.md](/docs/cli/skills.graph.md)
 <!-- /docsgraph:related -->
@@ -119,6 +119,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

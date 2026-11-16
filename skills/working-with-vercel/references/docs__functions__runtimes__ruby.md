@@ -12,9 +12,10 @@ related:
   []
 summary: Learn how to use the Ruby runtime to compile Ruby Vercel Functions on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/runtimes/ruby.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "e39abbc197f6c59498267228e1d0bddf8786db29926d4c0f9ffc563542ff5d12"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4010ef01265196ea22dd64526022336d336b8a18d530ebf046fafc913076157d"
 ---
 
 # Using the Ruby Runtime with Vercel Functions
@@ -31,12 +32,11 @@ The Ruby runtime is used by Vercel to compile Ruby Vercel functions that define 
 
 - [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
 - [Does Vercel support Ruby on Rails applications?](https://vercel.com/kb/guide/does-vercel-support-ruby-on-rails-applications) — Learn how to deploy a Ruby on Rails application on Vercel — either as a container image on Vercel Functions or as a head
-- [Rust runtime now in public beta for Vercel Functions](https://vercel.com/changelog/rust-runtime-now-in-public-beta-for-vercel-functions)
 - [Configuring the Runtime for Vercel Functions](https://vercel.com/docs/functions/configuring-functions/runtime) — Learn how to configure the runtime for Vercel Functions.
 - [Using the Rust Runtime with Vercel functions](https://vercel.com/docs/functions/runtimes/rust) — Build fast, memory-safe serverless functions with Rust on Vercel.
 - [Using the Go Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/go) — Learn how to use the Go runtime to run Go APIs on Vercel.
-- [Frameworks on Vercel](https://vercel.com/docs/frameworks) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w
-- [Build image overview](https://vercel.com/docs/builds/build-image) — Learn about the container image used for Vercel builds.
+- [Using the Node.js Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/node-js) — Learn how to use the Node.js runtime to create Vercel Functions in JavaScript or TypeScript.
+- [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
 
 Full cross-link map for this page: [/docs/functions/runtimes/ruby.graph.md](/docs/functions/runtimes/ruby.graph.md)
 <!-- /docsgraph:related -->
@@ -93,6 +93,18 @@ ruby "~> 3.3.x"
 
 This runtime supports installing dependencies defined in the `Gemfile`. Alternatively, dependencies can be vendored with the `bundler install --deployment` command (useful for gems that require native extensions). In this case, dependencies are not built on deployment.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

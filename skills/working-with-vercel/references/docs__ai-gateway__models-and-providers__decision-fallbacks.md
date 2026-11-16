@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/models-and-providers/model-fallbacks
 summary: Escalate uncertain AI Gateway decision results to another model with confidence, probability, and compound conditions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/decision-fallbacks.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "6d6b6e1ca090f7c5e8786d927cb482f0e8bae100f7aae8fe44726ad93274a409"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0eb1428a9f0297a3e97f7538cb96a57607d79f18c86ff018494d1921dc2f7036"
 ---
 
 # Decision Fallbacks
@@ -33,10 +34,10 @@ Decision fallbacks rerun a successful decision with another model when an answer
 
 - [AI Gateway adds confidence-based decision fallbacks](https://vercel.com/changelog/confidence-based-decision-fallbacks)
 - [Decisions](https://ai-sdk.dev/docs/ai-sdk-core/decisions) — Decide answers to Choice, Score, and Boolean questions against shared state.
-- [Route form submissions with Jev and AI SDK](https://vercel.com/kb/guide/jev-ai-sdk-form-router) — Route form submissions to the right team with the Jev x AI SDK Form Router template. Jev routes clear cases and a fallba
 - [TypeSafe](https://ai-sdk.dev/providers/ai-sdk-providers/typesafe-ai) — Learn how to use TypeSafe with AI Gateway and the direct provider.
+- [Route form submissions with Jev and AI SDK](https://vercel.com/kb/guide/jev-ai-sdk-form-router) — Route form submissions to the right team with the Jev x AI SDK Form Router template. Jev routes clear cases and a fallba
 - [experimental_decide](https://ai-sdk.dev/docs/reference/ai-sdk-core/decide) — Decide answers to typed questions against shared state with a decision model.
-- [Perplexity](https://ai-sdk.dev/providers/ai-sdk-providers/perplexity) — Learn how to use Perplexity with AI Gateway and the direct provider.
+- [Cost-aware model routing with Vercel AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Send easy requests to a lower-cost model and escalate only the complex ones to a frontier model through AI Gateway, with
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/decision-fallbacks.graph.md](/docs/ai-gateway/models-and-providers/decision-fallbacks.graph.md)
 <!-- /docsgraph:related -->
@@ -794,6 +795,18 @@ Choose thresholds from your own results and risk tolerance. Start by recording t
 
 * [Virtual Models](/docs/ai-gateway/models-and-providers/virtual-models)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

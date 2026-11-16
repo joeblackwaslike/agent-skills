@@ -15,9 +15,10 @@ related:
   - /docs/builds/managing-builds
 summary: Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize your usage to save costs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/pricing/manage-and-optimize-usage.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "29b89adef6f59eca4e78fe63296e0f7123276ab791f2a9fa1ab4e4028b5bcdbf"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5cc00e84447645dbb7a4ef0e156ffee8a8b0c0c7600c6d7a9e83480711e8555c"
 ---
 
 # Manage and optimize usage
@@ -36,14 +37,14 @@ There are three plans on Vercel: Hobby, Pro, and Enterprise. To see which plan y
 - [Lower pricing for Log Drains](https://vercel.com/changelog/lower-pricing-for-log-drains)
 - [One-click linking from Usage to Vercel Observability dashboards](https://vercel.com/changelog/one-click-linking-from-usage-to-vercel-observability-dashboards)
 - [Speed Insights usage can now be viewed by Project](https://vercel.com/changelog/speed-insights-usage-can-now-be-viewed-by-project)
-- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
 - [Optimize Runtime Cache on Vercel](https://vercel.com/kb/guide/optimize-runtime-cache-reads-on-vercel) — Diagnose rising Runtime Cache usage, trace reads to tags and code paths, and reduce avoidable reads while checking write
 - [Protecting your app (and wallet) against malicious traffic](https://vercel.com/blog/protecting-your-app-and-wallet-against-malicious-traffic)
 - [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
-- [Improved infrastructure pricing](https://vercel.com/blog/improved-infrastructure-pricing)
-- [Visualize Team Usage With Sophisticated Usage Dashboard](https://vercel.com/blog/sophisticated-usage-dashboard)
 - [CDN pricing and usage](https://vercel.com/docs/manage-cdn-usage) — Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transf
+- [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
+- [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
+- [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing) — Learn about legacy usage and pricing for Vercel Functions.
 
 Full cross-link map for this page: [/docs/pricing/manage-and-optimize-usage.graph.md](/docs/pricing/manage-and-optimize-usage.graph.md)
 <!-- /docsgraph:related -->
@@ -120,9 +121,9 @@ To view information on managing each resource, select the resource link in the *
 
 ## Data Cache
 
-The table below shows the metrics for the [**Data Cache**](/docs/caching/runtime-cache/data-cache) section of the **Usage** dashboard.
+The table below shows the metrics for the [**Data Cache**](/docs/runtime-cache/data-cache) section of the **Usage** dashboard.
 
-Vercel is unifying Data Cache with [Runtime Cache](/docs/caching/runtime-cache). Starting October 30, 2026, Runtime Cache serves `fetch` caching and `unstable_cache` for new teams, and Vercel bills that usage as Runtime Cache usage. Vercel will notify existing teams of their migration timeline. See [Data cache is unifying with Runtime Cache](/docs/caching/runtime-cache/data-cache#data-cache-is-unifying-with-runtime-cache).
+Vercel is unifying Data Cache with [Runtime Cache](/docs/runtime-cache). Starting October 30, 2026, Runtime Cache serves `fetch` caching and `unstable_cache` for new teams, and Vercel bills that usage as Runtime Cache usage. Vercel will notify existing teams of their migration timeline. See [Data cache is unifying with Runtime Cache](/docs/runtime-cache/data-cache#data-cache-is-unifying-with-runtime-cache).
 
 To view information on managing each resource, select the resource link in the **Metric** column. To jump straight to guidance on optimization, select the corresponding resource link in the **Optimize** column.
 
@@ -180,7 +181,20 @@ resources:
 
 - [How are resources used on Vercel?](/docs/pricing/how-does-vercel-calculate-usage-of-resources)
 - [Understanding my invoice](/docs/pricing/understanding-my-invoice)
+- [How to reduce build costs on Vercel](/kb/guide/how-reduce-build-costs)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

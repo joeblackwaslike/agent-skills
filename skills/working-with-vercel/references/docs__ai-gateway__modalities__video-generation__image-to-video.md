@@ -15,9 +15,10 @@ related:
   - /docs/ai-gateway/modalities/video-generation
 summary: Animate static images into videos using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/image-to-video.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "5129332c713a8222a6f0be333b351d57a122f0f6bc55c243a9d54eb9d799a680"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "758b9b1cd95a89475f009198239de0c662c848330bbd410d56a96e2c00a148d8"
 ---
 
 # AI Gateway Image-to-Video Generation
@@ -32,10 +33,10 @@ Animate a static image into a video. The image you provide becomes the video con
 
 - [Kling AI](https://ai-sdk.dev/providers/ai-sdk-providers/klingai) — Learn how to use Kling AI with AI Gateway and the direct provider.
 - [Kling video models on AI Gateway](https://vercel.com/changelog/kling-video-models-on-ai-gateway)
+- [Tencent Cloud](https://ai-sdk.dev/providers/ai-sdk-providers/tencent) — Learn how to use Tencent Cloud TokenHub and VOD models with the AI SDK.
 - [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba) — Learn how to use Alibaba with AI Gateway and the direct provider.
-- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation) — Learn how to generate videos with the AI SDK.
 - [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance) — Learn how to use ByteDance with AI Gateway and the direct provider.
-- [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
+- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation) — Learn how to generate videos with the AI SDK.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/image-to-video.graph.md](/docs/ai-gateway/modalities/video-generation/image-to-video.graph.md)
 <!-- /docsgraph:related -->
@@ -682,6 +683,18 @@ The start request AI Gateway persists is capped at 300 KiB, so pass your image a
 
 ***
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

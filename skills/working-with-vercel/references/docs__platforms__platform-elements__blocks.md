@@ -16,9 +16,10 @@ related:
   - /docs/platforms/platform-elements/blocks/report-abuse
 summary: Prebuilt UI components for common platform flows like claiming deployments and managing domains.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/platforms/platform-elements/blocks.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "7ead8549427c1f827ecb21a63fa8e85187ec52e6c8068d8fd7b338250935a18a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2695881deda695e05040ccc81715d1db3514be2d151875f1b770375988eb9bf8"
 ---
 
 # Blocks
@@ -33,10 +34,10 @@ Blocks are ready-to-use UI components for platform flows. Install a block and co
 
 - [Introducing Platform Elements](https://vercel.com/changelog/introducing-platform-elements)
 - [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
-- [Add Custom Domain](https://vercel.com/docs/platforms/platform-elements/actions/add-custom-domain) — Server action for programmatically adding custom domains to Vercel projects.
+- [Domains Overview](https://vercel.com/docs/domains) — Learn the fundamentals of how domains, DNS, and nameservers work on Vercel.
 - [Actions](https://vercel.com/docs/platforms/platform-elements/actions) — Server actions you can install to run common platform tasks against the Vercel API.
 - [Vercel fundamental concepts](https://vercel.com/docs/fundamentals) — Learn about the core concepts of Vercel
-- [Multi-Tenant Platforms](https://vercel.com/docs/platforms/multi-tenant-platforms) — Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 
 Full cross-link map for this page: [/docs/platforms/platform-elements/blocks.graph.md](/docs/platforms/platform-elements/blocks.graph.md)
 <!-- /docsgraph:related -->
@@ -51,6 +52,18 @@ Full cross-link map for this page: [/docs/platforms/platform-elements/blocks.gra
 
 **Report abuse**: A flow for users to report abusive tenant sites on your platform. [Learn more →](/docs/platforms/platform-elements/blocks/report-abuse)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

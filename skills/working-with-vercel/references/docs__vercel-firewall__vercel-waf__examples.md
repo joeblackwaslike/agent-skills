@@ -15,9 +15,10 @@ related:
   - /docs/rest-api/security/update-attack-challenge-mode
 summary: Learn how to use Vercel WAF to protect your site in specific situations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/examples.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "52949ee5f28aefebcc0179177e87c9d6b69bce8c45a49aea501748231de57f4a"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4a0421414e3278376ab5fb61fcd740f31b5f0f57f91fab1317aeb8fd115405a6"
 ---
 
 # WAF Examples
@@ -42,17 +43,28 @@ sha256: "52949ee5f28aefebcc0179177e87c9d6b69bce8c45a49aea501748231de57f4a"
 
 - [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf) — Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in secur
 - [Create Vercel Firewall rules with natural language](https://vercel.com/changelog/create-vercel-waf-custom-rules-using-natural-language)
-- [Vercel WAF upgrade brings persistent actions, rate limiting, and API control](https://vercel.com/blog/vercel-waf-upgrade-brings-persistent-actions-rate-limiting-and-api-control)
+- [Create custom WAF rules directly from the Vercel Firewall tab](https://vercel.com/changelog/create-custom-waf-rules-directly-from-the-vercel-firewall-tab)
 - [Using the REST API with the Firewall](https://vercel.com/docs/vercel-firewall/firewall-api) — Learn how to interact with the security endpoints of the Vercel REST API programmatically.
+- [Returns activated WAF config](https://vercel.com/docs/rest-api/security/returns-activated-waf-config) — GET /v1/security/firewall/config — Lists WAF configs for a project
 - [Usage & Pricing for Vercel WAF](https://vercel.com/docs/vercel-firewall/vercel-waf/usage-and-pricing) — Learn how the Vercel WAF can affect your usage and how specific features are priced.
-- [Rule Configuration Reference](https://vercel.com/docs/vercel-firewall/vercel-waf/rule-configuration) — List of configurable options with the Vercel WAF
-- [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 - [Firewall and Security](https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall) — Vercel MCP tools for firewall and security.
+- [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 
 Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/examples.graph.md](/docs/vercel-firewall/vercel-waf/examples.graph.md)
 <!-- /docsgraph:related -->
 
+## Search the docs from your terminal
 
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

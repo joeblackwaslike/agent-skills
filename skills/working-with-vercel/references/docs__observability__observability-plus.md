@@ -15,9 +15,10 @@ related:
   - /docs/alerts
 summary: Learn about using Observability Plus and its limits.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/observability/observability-plus.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "9545604d744c05c6683c3f9db6f15544d3bbc2bb5ff87fd931fd8cb5b39aac6b"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "8158dac11c8fc848716e6481702e53cf9fadecc6339960ffa3b0b7e9d2e75a3d"
 ---
 
 # Observability Plus
@@ -169,6 +170,18 @@ Observability Plus uses usage-based pricing. You're only charged for events your
 - If you disable Observability Plus before the billing cycle ends, Observability Plus will automatically turn off, Vercel will stop collecting events, and you will lose access to existing data.
 - Once the billing cycle is over, you will be charged for the events collected prior to disabling. You won't be refunded any amounts already paid.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

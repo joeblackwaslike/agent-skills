@@ -15,9 +15,10 @@ related:
   - /docs/functions/runtimes/node-js/node-js-versions
 summary: Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project. 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/project-configuration/vercel-json.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "97948c58fb875b64c084b5db6d49a8937bf154a04aa8f987af55a8617a1d6c9f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "23c062888ef4a20c05d67fa25cc447c0807e5cd668466552ab0689203e3c59c7"
 ---
 
 # Static Configuration with vercel.json
@@ -40,8 +41,8 @@ The `vercel.json` file lets you configure, and override the default behavior of 
 - [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
 - [headers](https://nextjs.org/docs/pages/api-reference/config/next-config-js/headers) — Add custom HTTP headers to your Next.js app.
 - [Vercel Primitives](https://vercel.com/docs/build-output-api/primitives) — Learn about the Vercel platform primitives and how they work together to create a Vercel Deployment.
-- [Cache-Control headers](https://vercel.com/docs/caching/cache-control-headers) — Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior
 - [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
+- [Response headers](https://vercel.com/docs/headers/response-headers) — Learn about the response headers sent to each Vercel deployment and how to use them to process responses before sending
 
 Full cross-link map for this page: [/docs/project-configuration/vercel-json.graph.md](/docs/project-configuration/vercel-json.graph.md)
 <!-- /docsgraph:related -->
@@ -1957,6 +1958,18 @@ The following will include all HTML files as-is (to be served statically), and b
 
 When at least one `builds` item is specified, only the outputs of the build processes will be included in the resulting deployment as a security precaution. This is why we need to allowlist static files explicitly with `@vercel/static`.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

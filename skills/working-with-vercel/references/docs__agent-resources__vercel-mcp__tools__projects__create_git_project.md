@@ -12,9 +12,10 @@ related:
   []
 summary: Use create_git_project with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_git_project.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "a50133abe4f7ddba6ef0672000ef07cdf822116c26737ecb9454c29dd247c708"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "c188ab40903a826fcf857479afdcd82b8f0513d30c1da882c9e89c6889a580c7"
 ---
 
 # create_git_project
@@ -28,10 +29,10 @@ Create or reuse a Vercel project linked to an accessible Git repository. By defa
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [create_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project) — Use create_project with Vercel MCP.
-- [deploy_to_vercel](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/deploy_to_vercel) — Use deploy_to_vercel with Vercel MCP.
 - [Deploying Git Repositories with Vercel](https://vercel.com/docs/git) — Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production
-- [create_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/create_deployment) — Use create_deployment with Vercel MCP.
 - [vercel git](https://vercel.com/docs/cli/git) — Learn how to manage your Git provider connections using the vercel git CLI command.
+- [get_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project) — Use get_project with Vercel MCP.
+- [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/projects/create_git_project.graph.md](/docs/agent-resources/vercel-mcp/tools/projects/create_git_project.graph.md)
 <!-- /docsgraph:related -->
@@ -47,6 +48,18 @@ Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/proje
 
 **Sample prompt:** "Create a Vercel project for my team's GitHub repository and deploy a preview"
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

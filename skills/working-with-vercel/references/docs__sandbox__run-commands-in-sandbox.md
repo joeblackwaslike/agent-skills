@@ -13,9 +13,10 @@ related:
   - /docs/sandbox
 summary: Create isolated sandbox environments to run builds, tests, and commands safely.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/run-commands-in-sandbox.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "00197bcc31464ed949ac8eb4cf97e93a728542f14802945663165273c95d10b6"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "65caea7bb32f8bb8e518786df243e0a450ca3f6951085689733a9ebe9736053b"
 ---
 
 # Running commands in a Vercel Sandbox
@@ -29,15 +30,13 @@ Use this guide to create isolated sandbox environments for running commands, bui
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [SSH into running Vercel Sandboxes with the CLI](https://vercel.com/changelog/ssh-into-running-sandboxes-with-the-sandbox-cli)
-- [The Vercel Sandbox CLI is now more agent-friendly](https://vercel.com/changelog/the-vercel-sandbox-cli-is-now-more-agent-friendly)
-- [Vercel Sandbox CLI is now available](https://vercel.com/changelog/vercel-sandbox-cli-is-now-available)
-- [Use and manage Vercel Sandbox directly from the Vercel CLI](https://vercel.com/changelog/use-vercel-sandbox-directly-within-vercel-cli)
+- [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
+- [Use and manage Vercel Sandbox directly from the Vercel CLI](https://vercel.com/changelog/use-vercel-sandbox-directly-within-vercel-cli)
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [Snapshots](https://vercel.com/docs/sandbox/concepts/snapshots) — Save and restore sandbox state with snapshots for faster startups and environment sharing.
-- [Run isolated AI agents in one sandbox](https://vercel.com/docs/sandbox/concepts/multi-agent) — Give each AI agent an isolated Linux user in a Vercel Sandbox with the @vercel/sandbox createUser, createGroup, and asUs
-- [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
+- [Delete a sandbox](https://vercel.com/docs/rest-api/sandboxes/delete-a-sandbox) — DELETE /v2/sandboxes/{name} — Deletes a sandbox by name. If sandboxes are currently running, they will be stopped first.
 
 Full cross-link map for this page: [/docs/sandbox/run-commands-in-sandbox.graph.md](/docs/sandbox/run-commands-in-sandbox.graph.md)
 <!-- /docsgraph:related -->
@@ -72,8 +71,8 @@ sandbox create --name restored-sandbox --snapshot <snapshot-id> --timeout 30m
 sandbox exec --workdir /tmp/app restored-sandbox -- npm test
 sandbox stop restored-sandbox
 
-# 7. Permanently delete both sandboxes when no longer needed
-sandbox remove restored-sandbox my-sandbox
+# 7. Permanently delete both sandboxes and the snapshot when no longer needed
+sandbox remove restored-sandbox my-sandbox --delete-orphan-snapshots
 ```
 
 ## 1. Create a sandbox
@@ -230,6 +229,9 @@ sandbox stop <name-1> <name-2>
 
 # Permanently delete a sandbox and all its sessions
 sandbox remove <name>
+
+# Delete the sandbox and the snapshots no other sandbox uses
+sandbox remove <name> --delete-orphan-snapshots
 ```
 
 To see all running sandboxes:
@@ -257,6 +259,18 @@ sandbox snapshots delete <snapshot-id>
 - [Sandbox CLI reference](/docs/sandbox/cli-reference)
 - [Vercel Sandbox overview](/docs/sandbox)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

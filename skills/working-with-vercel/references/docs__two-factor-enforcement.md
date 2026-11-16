@@ -12,9 +12,10 @@ related:
   - /docs/rbac/managing-team-members
 summary: Require two-factor authentication for your team and review the impact on members and automation.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/two-factor-enforcement.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "bc9cab2f3273bbda4c3e238535389bd1aa1860d015bb366d7d7aef421436c646"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "f27b190f22a45046513992b92e2796da4440623e5c72de4589b724cee3dc0b58"
 ---
 
 # Two-factor Enforcement
@@ -29,11 +30,11 @@ Two-factor authentication (2FA) enforcement requires members to enable personal 
 
 - [Two-factor authentication (2FA) team enforcement](https://vercel.com/changelog/2fa-team-enforcement)
 - [Two-Factor Authentication (2FA) is now available](https://vercel.com/changelog/2fa-is-now-available)
-- [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
 - [SAML Single Sign-On](https://vercel.com/docs/saml) — Learn how to configure SAML SSO for your organization on Vercel.
-- [Directory Sync \\(SCIM\\)](https://vercel.com/docs/directory-sync) — Learn how to configure Directory Sync for your Vercel Team.
+- [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
 - [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
-- [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
+- [Invite a user](https://vercel.com/docs/rest-api/teams/invite-a-user) — POST /v2/teams/{teamId}/members — Invite a user to join the team specified in the URL. The authenticated user needs to b
+- [Update a Team Member](https://vercel.com/docs/rest-api/teams/update-a-team-member) — PATCH /v1/teams/{teamId}/members/{uid} — Update the membership of a Team Member on the Team specified by \\`teamId\\`, suc
 
 Full cross-link map for this page: [/docs/two-factor-enforcement.graph.md](/docs/two-factor-enforcement.graph.md)
 <!-- /docsgraph:related -->
@@ -84,6 +85,18 @@ Saving takes effect immediately. Members without enabled 2FA must complete setup
 
 ![Two-factor authentication enforcement team setting.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/two-factor/team-2fa-enforcement-light.png)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

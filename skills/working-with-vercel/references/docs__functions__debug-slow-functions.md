@@ -15,9 +15,10 @@ related:
   - /docs/observability
 summary: Diagnose and fix slow Vercel Functions using CLI tools, logs, and timing analysis.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/debug-slow-functions.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "4936f177c095a0af1e8c8fd180ccf1ce63fd673b8ea3926fb9cf78ad97e08215"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3120be54eb22907f69307a57174a464c670e14bcc79bb8a0293fced798241386"
 ---
 
 # Debugging slow Vercel Functions
@@ -32,11 +33,12 @@ Use this guide to diagnose and fix slow Vercel Functions. You'll identify which 
 
 - [How can I improve function cold start performance on Vercel?](https://vercel.com/kb/guide/improve-function-cold-start-performance-on-vercel) — Learn how to confirm whether cold starts cause function latency on Vercel, and how Fluid compute reduces how often they
 - [Investigate latency issues and slowness on Vercel](https://vercel.com/kb/guide/investigate-latency-issues-and-slowness) — Learn how to use Observability to investigate latency issues and slowness on Vercel.
-- [Troubleshoot and optimize Function Invocations on Vercel](https://vercel.com/kb/guide/optimize-function-invocations) — Diagnose which routes drive Function Invocations and learn to optimize them. Separate necessary dynamic traffic from div
 - [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
 - [Troubleshooting Inconsistent Logs in Vercel Functions](https://vercel.com/kb/guide/troubleshooting-inconsistent-logs-in-vercel-functions) — Learn how to troubleshoot and resolve logs that appear mixed in Vercel Functions. This guide explains why logs from diff
-- [Vercel Functions are now faster—and powered by Rust](https://vercel.com/blog/vercel-functions-are-now-faster-and-powered-by-rust)
+- [Troubleshoot and optimize Function Invocations on Vercel](https://vercel.com/kb/guide/optimize-function-invocations) — Diagnose which routes drive Function Invocations and learn to optimize them. Separate necessary dynamic traffic from div
+- [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart) — Build your first Vercel Function in a few steps.
 - [Diagnosing and fixing cache issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Agent Resources](https://vercel.com/docs/agent-resources) — Set up AI coding tools with Vercel documentation, reusable skills, and secure access to projects, deployments, and logs.
 - [CLI Workflows](https://vercel.com/docs/agent-resources/workflows) — End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sess
 
@@ -224,6 +226,18 @@ vercel logs --environment production --query 'source:function' --since 5m
 - [Observability](/docs/observability)
 - [Debugging production 500 errors](/docs/observability/debug-production-errors)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

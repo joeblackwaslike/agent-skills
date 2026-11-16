@@ -4,8 +4,8 @@ description: Learn how to use Fish Audio with AI Gateway and the direct provider
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/fish-audio"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/fish-audio.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "b8ff5100f52ca7071c7e8ac201dd8c03ff11e724966efb48cc1f92a3a436e605"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "f6408a441a50d6aab81a8c1aa5aa452f426f1dd22e3504762082fdce679c4863"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -285,12 +285,13 @@ supported and produce warnings.
 
 ### Model Capabilities
 
-| Model           | Multi-Speaker | Notes                                                                     |
-| --------------- | ------------- | ------------------------------------------------------------------------- |
-| `s1`            |               | Ignores `normalizeLoudness`                                               |
-| `s2-pro`        | ✓             | Supports `normalizeLoudness`                                              |
-| `s2.1-pro`      | ✓             | Recommended default; supports `normalizeLoudness`                         |
-| `s2.1-pro-free` |               | Free developer tier; no time-to-first-audio or data-processing guarantees |
+| Model      | Multi-Speaker | Loudness Normalization | Instructions |
+| ---------- | ------------- | ---------------------- | ------------ |
+| `s1`       | ✗             | ✗                      | ✗            |
+| `s2-pro`   | ✓             | ✓                      | ✗            |
+| `s2.1-pro` | ✓             | ✓                      | ✗            |
+
+`s2.1-pro` is the recommended default. The `s2.1-pro-free` developer tier has no time-to-first-audio or data-processing guarantees; multi-speaker and loudness-normalization support are not declared here.
 
 Streaming text-to-speech (Fish Audio's TTS-live WebSocket and timestamped
 streaming endpoints) is not currently supported, and neither is inline
@@ -374,9 +375,33 @@ Setting `ignoreTimestamps` to `true` makes Fish Audio return an empty
 
 ### Model Capabilities
 
-| Model          | Transcription | Duration | Segments | Language |
-| -------------- | ------------- | -------- | -------- | -------- |
-| `transcribe-1` | ✓             | ✓        | ✓        | ✓        |
+| Model          | Transcription | Streaming | Duration | Segments                                               | Language |
+| -------------- | ------------- | --------- | -------- | ------------------------------------------------------ | -------- |
+| `transcribe-1` | ✓             | ✗         | ✓        | Conditional: Returned unless ignoreTimestamps is true. | ✓        |
+
+### Provider Option Catalog
+
+| Operation     | Option                      | Description                                                                                                                                                                                                                                                                                                                              |
+| ------------- | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| speech        | `referenceId`               | Voice model ID(s). A single ID selects one speaker; an array enables multi-speaker dialogue (S2-Pro models), in which case the text must mark turns with speaker tokens such as `<\|speaker:0\|>`. The speaker index maps to the position in this array. Takes precedence over the top-level `voice` option.                             |
+| speech        | `sampleRate`                | Output sample rate in Hz. Falls back to the format default when unset (44100 Hz for wav/pcm/mp3, 48000 Hz for opus).                                                                                                                                                                                                                     |
+| speech        | `mp3Bitrate`                | Bitrate in kbps for mp3 output. Ignored for other formats.                                                                                                                                                                                                                                                                               |
+| speech        | `opusBitrate`               | Bitrate in bps for opus output, where `-1000` selects automatic. Ignored for other formats.                                                                                                                                                                                                                                              |
+| speech        | `latency`                   | Latency/quality tradeoff. `normal` gives the best quality, `balanced` reduces latency, and `low` is the fastest.                                                                                                                                                                                                                         |
+| speech        | `volume`                    | Volume offset in dB. Negative values are quieter.                                                                                                                                                                                                                                                                                        |
+| speech        | `normalizeLoudness`         | Loudness normalization. Supported by the S2 family (`s2-pro` and `s2.1-pro`). Fish Audio accepts it on `s1` but ignores it, so the provider emits a warning in that case.                                                                                                                                                                |
+| speech        | `temperature`               | Governs expressiveness. Higher values are more varied, lower values more consistent.                                                                                                                                                                                                                                                     |
+| speech        | `topP`                      | Controls diversity via nucleus sampling.                                                                                                                                                                                                                                                                                                 |
+| speech        | `chunkLength`               | Text segment size for processing.                                                                                                                                                                                                                                                                                                        |
+| speech        | `minChunkLength`            | Minimum characters before splitting into a new chunk.                                                                                                                                                                                                                                                                                    |
+| speech        | `normalize`                 | Text normalization for English and Chinese. Helps stability with numbers.                                                                                                                                                                                                                                                                |
+| speech        | `maxNewTokens`              | Maximum audio tokens to generate per text chunk.                                                                                                                                                                                                                                                                                         |
+| speech        | `repetitionPenalty`         | Values above 1.0 discourage repeated audio patterns.                                                                                                                                                                                                                                                                                     |
+| speech        | `conditionOnPreviousChunks` | Reuse prior audio as context for voice consistency across chunks.                                                                                                                                                                                                                                                                        |
+| speech        | `earlyStopThreshold`        | Early-stop threshold used in batch processing.                                                                                                                                                                                                                                                                                           |
+| speech        | `features`                  | Request-scoped flags passed through to the inference backend, e.g. `['quality-guard']`.                                                                                                                                                                                                                                                  |
+| transcription | `language`                  | Language of the audio. A hint only. Fish Audio passes it to the model, but auto-detection is authoritative and overrides it, so this changes neither the transcript nor the reported language. The detected language is reported as `result.language`.                                                                                   |
+| transcription | `ignoreTimestamps`          | Whether to skip precise timestamps. Mirrors the Fish Audio `ignore_timestamps` parameter, whose API default is `true`. This provider defaults it to `false` so that `result.segments` is populated. Fish Audio documents an added latency cost for audio shorter than 30 seconds; set this to `true` to trade segments for that latency. |
 
 ---
 

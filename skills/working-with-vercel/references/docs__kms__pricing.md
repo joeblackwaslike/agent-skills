@@ -12,9 +12,10 @@ related:
   - /docs/kms/ts-sdk-reference
 summary: How Vercel KMS is billed per signing operation, the platform limits that apply, and how to stop being billed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/kms/pricing.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "2cecc3c8c5f7b4822bfb152fe9de9b0f2bc5d4605a47fad7486e64c8c63d3884"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "40bb7b4ef106cfec44c6865cbffb3ae0af19ce24c8dd93e07a7f14923ca297d6"
 ---
 
 # Vercel KMS Pricing and Limits
@@ -28,11 +29,11 @@ KMS is billed per signing operation. A signing operation is a single `signJWT` o
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Sign JWTs from your Functions without managing private keys](https://vercel.com/changelog/sign-jwts-from-your-functions-without-managing-private-keys)
-- [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management) — Vercel MCP tools for key management.
 - [Vercel KMS Authentication](https://vercel.com/docs/kms/concepts/authentication) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
+- [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management) — Vercel MCP tools for key management.
+- [Pricing and Limits](https://vercel.com/docs/queues/pricing) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
 - [Vercel KMS Concepts](https://vercel.com/docs/kms/concepts) — Understand how Vercel KMS rotates signing keys and how it authorizes signing, management, and verification.
 - [Vercel KMS Quickstart](https://vercel.com/docs/kms/quickstart) — Create a KMS issuer, sign a JWT from a Vercel Function with @vercel/kms, and verify it against the published JWKS.
-- [Pricing and Limits](https://vercel.com/docs/queues/pricing) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
 
 Full cross-link map for this page: [/docs/kms/pricing.graph.md](/docs/kms/pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -66,6 +67,18 @@ You stop per-operation charges when you stop calling `signJWT` and `signMessage`
 - [Key rotation](/docs/kms/concepts/key-rotation)
 - [SDK Reference](/docs/kms/ts-sdk-reference)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

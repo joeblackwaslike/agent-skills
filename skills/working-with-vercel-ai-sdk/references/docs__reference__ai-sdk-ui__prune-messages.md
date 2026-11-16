@@ -4,13 +4,20 @@ description: API Reference for pruneMessages.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/prune-messages"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/prune-messages.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "a39c0d3beeeffdf88243fbb312b6bfe6e5969a043273943af7002f229c37ba49"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "6212a5742c972379e98cc3132ecadf0a19412d3bd37a7824c2e9b8f63bd34fe5"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 The `pruneMessages` function is used to prune or filter an array of `ModelMessage` objects. This is useful for reducing message context (to save tokens), removing intermediate reasoning, or trimming tool calls and empty messages before sending to an LLM.
+
+OpenAI Responses models may drop reasoning items after edits to their
+preceding context. Pruning earlier history can therefore increase reasoning
+work. Also preserve empty system messages carrying positioned configuration
+updates; `emptyMessages: 'remove'` removes them. See [preserving reasoning
+across
+turns](/providers/ai-sdk-providers/openai#preserving-reasoning-across-turns).
 
 ```ts title="app/api/chat/route.ts"
 import {

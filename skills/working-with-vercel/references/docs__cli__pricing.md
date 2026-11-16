@@ -12,9 +12,10 @@ related:
   - /docs/cli/global-options
 summary: Look up Hobby, Pro, and Enterprise features from the public Vercel pricing table using the CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/pricing.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "2ef2f30ec7bea9ed5d450fe2f9b64a55b7bd3f7709a7d3eddd5fc49a220cbc52"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "5b83ab789c69cefefa8b0135763ec4985b59d2df1d076739e59cbea44b1fcda6"
 ---
 
 # vercel pricing
@@ -27,11 +28,11 @@ The `vercel pricing` command reads the public pricing table and lists features g
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel CI Pricing](https://vercel.com/docs/ci/pricing) — Understand how Vercel CI usage is billed.
 - [vercel billing usage](https://vercel.com/docs/cli/usage) — Learn how to view billing usage and costs, for your Vercel account using the vercel billing usage CLI command.
-- [vercel billing](https://vercel.com/docs/cli/billing) — Learn how to view usage, contracts, budgets, and invoices for your Vercel team using the vercel billing CLI command.
+- [vercel billing](https://vercel.com/docs/cli/billing) — Learn how to view your billing overview, usage, contracts, budgets, and invoices for your Vercel team using the vercel b
+- [Cleveland, USA \\(cle1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cle1) — Vercel pricing for the Cleveland, USA \\(cle1\\) region.
 - [vercel buy](https://vercel.com/docs/cli/buy) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
-- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel billing contract](https://vercel.com/docs/cli/contract) — Learn how to view contract commitment information for your Vercel account using the vercel billing contract CLI command.
 
 Full cross-link map for this page: [/docs/cli/pricing.graph.md](/docs/cli/pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -82,6 +83,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -15,9 +15,10 @@ related:
   - /docs/ai-gateway/modalities/decision
 summary: Answer a typed boolean question about application state using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/getting-started/decision.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "02e029ed7a85a0ea724aeab9c734f810492880c7b87445ac1793f3f16613e63f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "527b90f04a1301b77d7847caf74f2e1a12f1c78f8e8b1e9f4a909403550dd0ce"
 ---
 
 # AI Gateway Decision Quickstart
@@ -32,10 +33,9 @@ Ask a typed question about application state through AI Gateway and get a boolea
 
 - [OpenAI Decisions API now available on AI Gateway](https://vercel.com/changelog/openai-decisions-api-now-available-on-ai-gateway)
 - [Microsoft Decision-1 now available on AI Gateway](https://vercel.com/changelog/microsoft-decision-1-now-available-on-ai-gateway)
-- [Decisions](https://ai-sdk.dev/docs/ai-sdk-core/decisions) — Decide answers to Choice, Score, and Boolean questions against shared state.
 - [TypeSafe AI's Jev 1.14 is now available on AI Gateway](https://vercel.com/changelog/typesafe-ais-jev-1-14-is-now-available-on-ai-gateway)
 - [Liquid AI's d1 is available on AI Gateway](https://vercel.com/changelog/liquid-ai-d1-is-available-on-ai-gateway)
-- [TypeSafe AI's Jev now available on AI Gateway](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway)
+- [Parallel Decisions now available on AI Gateway for free](https://vercel.com/changelog/parallel-decisions-now-available-on-ai-gateway-for-free)
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
 
@@ -115,6 +115,18 @@ This quickstart logs only `result.answers`. The probability can vary, but you sh
 - Build a [product review moderation workflow with Jev and TanStack AI](/kb/guide/moderate-product-reviews-jev-tanstack-ai)
 - Browse [decision models](/ai-gateway/models?capabilities=decision)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

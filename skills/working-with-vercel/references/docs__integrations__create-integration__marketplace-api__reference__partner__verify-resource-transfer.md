@@ -3,7 +3,7 @@ title: verify-resource-transfer
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/verify-resource-transfer
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/verify-resource-transfer"
-last_updated: 2026-11-09
+last_updated: 2026-11-16
 type: conceptual
 prerequisites:
   []
@@ -12,9 +12,10 @@ related:
   - /docs/integrations/create-integration/native-integration
 summary: Learn about verify-resource-transfer on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/verify-resource-transfer.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "ae382e751ccf185067b2abde0419561527054650a2a0deacf330e37235c69f19"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a826836412dcc4549a70fed2739ded19ff5510c852da83589d32c9b9e522a47c"
 ---
 
 # Validate Resources Transfer Request
@@ -228,6 +229,18 @@ Operation is well-formed, but cannot be executed due to semantic errors
 - [Marketplace API Reference](/docs/integrations/create-integration/marketplace-api/reference)
 - [Native Integration Concepts](/docs/integrations/create-integration/native-integration)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

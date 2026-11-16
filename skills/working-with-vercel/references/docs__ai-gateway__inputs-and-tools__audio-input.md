@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis/ai-sdk-python
 summary: Analyze recorded audio with AI Gateway, compare audio input with transcription and realtime voice, and choose a supported API format.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/inputs-and-tools/audio-input.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "078f2e08c3dbcfef79c00041b69ff6761070a70f1ca793e3b5266cd3f0207607"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a4be201b6ad061b3cb9d3de0dfbf72debf9c71559479f9e28324deeaba6f1af1"
 ---
 
 # AI Gateway Audio Input
@@ -31,8 +32,8 @@ Send a recording with a question to a model that can understand audio. Ask for a
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [AI Gateway Video Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/video-input) — Analyze video clips with AI Gateway using AI SDK 7, Python, Chat Completions, and Responses / OpenResponses.
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway)
+- [AI Gateway Video Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/video-input) — Analyze video clips with AI Gateway using AI SDK 7, Python, Chat Completions, and Responses / OpenResponses.
 - [AI Gateway File and PDF Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/file-input) — Send PDFs and documents to AI Gateway models with examples for each supported SDK and API format.
 - [AI Gateway Vision and Image Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/vision) — Analyze images with AI Gateway using AI SDK 7, the Python beta, Chat Completions, Messages, and Responses APIs.
 - [AI Gateway Text to Speech](https://vercel.com/docs/ai-gateway/modalities/text-to-speech) — Generate spoken audio from text with speech models through Vercel AI Gateway.
@@ -342,6 +343,18 @@ Inline base64 increases the request size. Check the selected model's context and
 
 For request details and failures, inspect [AI Gateway logs](/docs/ai-gateway/observability-and-spend/logs). See [Inputs & Tools](/docs/ai-gateway/inputs-and-tools) to choose another capability.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -16,9 +16,10 @@ related:
   - /docs/ai-gateway/models-and-providers/automatic-caching
 summary: Restrict AI Gateway routing to models that have specific capabilities using the has option.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/model-filtering.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "afa79a90d1e270e22d4d8a442a5b001a672536451473c3d4de66d556bd991a71"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "91725862724ed3c311439279eea97d7ac365acc731feef0b00dc2003beb4a4f6"
 ---
 
 # AI Gateway Model Filtering
@@ -32,10 +33,10 @@ sha256: "afa79a90d1e270e22d4d8a442a5b001a672536451473c3d4de66d556bd991a71"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Model fallbacks now available in Vercel AI Gateway](https://vercel.com/changelog/model-fallbacks-now-available-in-vercel-ai-gateway)
-- [Introducing Virtual Models on AI Gateway](https://vercel.com/blog/ai-gateway-virtual-models)
 - [AI Gateway Model Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks) — Configure AI Gateway model fallbacks to try backup models when the primary model is unavailable. Set fallback order and
 - [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
 - [AI Gateway Disallow Prompt Training](https://vercel.com/docs/ai-gateway/security-and-compliance/disallow-prompt-training) — Learn how to prevent AI providers from using your prompts and responses for model training through AI Gateway.
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, caching, SDK and API compati
 - [AI Gateway Model Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist) — Restrict which AI models your team can use through AI Gateway. Available on Pro and Enterprise.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/model-filtering.graph.md](/docs/ai-gateway/models-and-providers/model-filtering.graph.md)
@@ -378,6 +379,18 @@ Set `has` under `providerOptions.gateway` in every request format shown above. O
 
 A [virtual model](/docs/ai-gateway/models-and-providers/virtual-models) can require capabilities for all of its traffic. Its `has` list replaces the request's, and every capability in it must hold.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

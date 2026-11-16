@@ -14,9 +14,10 @@ related:
   - /docs/errors/deployment_deleted
 summary: "Learn how Deployment Retention policies affect a deployment's lifecycle"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployment-retention.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "43a783fdeb71b867289a12d996a9f5a66fc87045a32762c4d147c7cc19ea9739"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "441de53a2a545fa55508babd946d243f63270cf52505e9a32d130a288ddb10d0"
 ---
 
 # Deployment Retention
@@ -137,6 +138,18 @@ To restore a deleted deployment, open **Settings** in the sidebar of your projec
 - [View Deployment Retention Policies](/docs/cli/list#unique-options)
 - [Troubleshoot Deployment Retention Errors](/docs/errors/deployment_deleted)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

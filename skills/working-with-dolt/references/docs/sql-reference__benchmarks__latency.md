@@ -2,8 +2,8 @@
 title: Latency
 description: Read and write latency benchmarks versus MySQL, and the overhead version control adds.
 source: "https://www.dolthub.com/docs/sql-reference/benchmarks/latency.md"
-fetched_at: "2026-11-09T12:36:18.083Z"
-sha256: "c7ed0a783ff4a49b85f6bb891214a9f3beca190000229c16e020a8686c1791af"
+fetched_at: "2026-11-16T12:31:02.212Z"
+sha256: "0be39b7b4fe43e90d5c158fecfa62beb1026cdb6b145843734952adc91537403"
 ---
 
 ## Latency and Throughput
@@ -36,41 +36,41 @@ attempt to run as many queries as possible in a fixed 2 minute time
 window. The `Dolt` and `MySQL` columns show the median latency in 
 milliseconds (ms) of each query during that 2 minute time window.
 
-The Dolt version is `2.7.2`.
+The Dolt version is `2.7.3`.
 
 <!-- START___DOLT___LATENCY_RESULTS_TABLE -->
 |       Read Tests        | MySQL  |  Dolt  | Multiple |
 |:------------------------|:-------|:-------|:---------|
-| covering\_index\_scan   | 16.71  | 2.35   | 0.14     |
-| groupby\_scan           | 132.49 | 66.84  | 0.5      |
-| index\_join             | 3.43   | 1.93   | 0.56     |
-| index\_join\_scan       | 4.1    | 1.32   | 0.32     |
-| index\_scan             | 344.08 | 183.21 | 0.53     |
-| oltp\_point\_select     | 0.19   | 0.25   | 1.32     |
+| covering\_index\_scan   | 17.32  | 2.35   | 0.14     |
+| groupby\_scan           | 147.61 | 65.65  | 0.44     |
+| index\_join             | 3.43   | 1.96   | 0.57     |
+| index\_join\_scan       | 4.03   | 1.3    | 0.32     |
+| index\_scan             | 344.08 | 186.54 | 0.54     |
+| oltp\_point\_select     | 0.19   | 0.26   | 1.37     |
 | oltp\_read\_only        | 3.62   | 4.91   | 1.36     |
-| select\_random\_points  | 0.36   | 0.52   | 1.44     |
-| select\_random\_ranges  | 0.39   | 0.62   | 1.59     |
-| table\_scan             | 344.08 | 183.21 | 0.53     |
+| select\_random\_points  | 0.35   | 0.54   | 1.54     |
+| select\_random\_ranges  | 0.39   | 0.63   | 1.62     |
+| table\_scan             | 344.08 | 189.93 | 0.55     |
 | types\_table\_scan      | 733.0  | 419.45 | 0.57     |
-| reads\_mean\_multiplier |        |        | 0.81     |
+| reads\_mean\_multiplier |        |        | 0.82     |
 
 |       Write Tests        | MySQL | Dolt | Multiple |
 |:-------------------------|:------|:-----|:---------|
-| oltp\_delete\_insert     | 7.7   | 3.96 | 0.51     |
-| oltp\_insert             | 4.1   | 2.03 | 0.5      |
-| oltp\_read\_write        | 8.74  | 9.91 | 1.13     |
-| oltp\_update\_index      | 4.33  | 2.18 | 0.5      |
-| oltp\_update\_non\_index | 4.1   | 1.93 | 0.47     |
-| oltp\_write\_only        | 5.18  | 5.0  | 0.97     |
-| types\_delete\_insert    | 8.28  | 4.49 | 0.54     |
-| writes\_mean\_multiplier |       |      | 0.66     |
+| oltp\_delete\_insert     | 7.7   | 4.1  | 0.53     |
+| oltp\_insert             | 4.03  | 2.11 | 0.52     |
+| oltp\_read\_write        | 8.74  | 9.22 | 1.05     |
+| oltp\_update\_index      | 4.33  | 2.26 | 0.52     |
+| oltp\_update\_non\_index | 4.1   | 2.0  | 0.49     |
+| oltp\_write\_only        | 5.18  | 4.18 | 0.81     |
+| types\_delete\_insert    | 8.43  | 4.57 | 0.54     |
+| writes\_mean\_multiplier |       |      | 0.64     |
 
 |    TPC-C TPS Tests    | MySQL | Dolt  | Multiple |
 |:----------------------|:------|:------|:---------|
-| tpcc-scale-factor-1   | 97.0  | 57.35 | 1.69     |
-| tpcc\_tps\_multiplier |       |       | 1.69     |
+| tpcc-scale-factor-1   | 96.79 | 71.37 | 1.36     |
+| tpcc\_tps\_multiplier |       |       | 1.36     |
 
-| Overall Mean Multiple | 1.05 |
+| Overall Mean Multiple | 0.94 |
 |:----------------------|:-----|
 <!-- END___DOLT___LATENCY_RESULTS_TABLE -->
 <br/>

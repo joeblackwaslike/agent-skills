@@ -14,9 +14,10 @@ related:
   - /docs/cli/global-options
 summary: Work with custom environments using the --environment option in Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/target.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "10428646c9907cc3bb4058883be8498aa4bb58b1443de112c39a71162c40f5ac"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0369eddb06d477eaf746c35503a93be152a98db5cfab01f33c51242653a43db5"
 ---
 
 # vercel environments
@@ -31,9 +32,9 @@ The `vercel environments` command lists your Vercel project's environments, incl
 
 - [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
 - [list_project_custom_environments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables/list_project_custom_environments) — Use list_project_custom_environments with Vercel MCP.
-- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [Retrieve custom environments](https://vercel.com/docs/rest-api/environment/retrieve-custom-environments) — GET /v9/projects/{idOrName}/custom-environments — Retrieve custom environments for the project. Must not be named 'Produ
 - [Environment Variables](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables) — Vercel MCP tools for environment variables.
+- [Retrieve a custom environment](https://vercel.com/docs/rest-api/environment/retrieve-a-custom-environment) — GET /v9/projects/{idOrName}/custom-environments/{environmentSlugOrId} — Retrieve a custom environment for the project. M
 
 Full cross-link map for this page: [/docs/cli/target.graph.md](/docs/cli/target.graph.md)
 <!-- /docsgraph:related -->
@@ -120,6 +121,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

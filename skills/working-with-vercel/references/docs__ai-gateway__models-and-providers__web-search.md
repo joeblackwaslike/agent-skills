@@ -14,9 +14,10 @@ related:
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced
 summary: Enable AI models to search the web and retrieve source-grounded data using built-in tools through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/web-search.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "d4b1d2a97e4df2d8f005c559394748b1a38084c06540e63d79cbf5506b3ed7dd"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "733ee6fd158295391be7e8de9efaf6cafff678867db6362fd1af87b4ddc098b9"
 ---
 
 # AI Gateway Web Search
@@ -35,10 +36,10 @@ AI Gateway provides built-in search tools that let AI models access current web 
 - [Exa web search free through August 31 on AI Gateway and eve](https://vercel.com/changelog/exa-web-search-free-through-august-31-on-ai-gateway-and-eve)
 - [Tako Search is free on AI Gateway through September 30](https://vercel.com/changelog/tako-search-is-free-on-ai-gateway-through-september-30th)
 - [Web Search Agent](https://ai-sdk.dev/cookbook/node/web-search-agent) — Learn how to build an agent that has access to web with the AI SDK and Node
-- [Use Perplexity Web Search with Vercel AI Gateway](https://vercel.com/blog/use-perplexity-web-search-with-vercel-ai-gateway)
-- [Access Perplexity Web Search on Vercel AI Gateway with any model](https://vercel.com/changelog/access-perplexity-web-search-on-vercel-ai-gateway-with-any-model)
+- [xAI Grok](https://ai-sdk.dev/providers/ai-sdk-providers/xai) — Learn how to use xAI with AI Gateway and the direct provider.
+- [Exa joins the Vercel AI Gateway and Agent Marketplace](https://vercel.com/changelog/exa-joins-vercel-ai-gateway-agent-marketplace)
 - [Tool Search](https://ai-sdk.dev/docs/ai-sdk-core/tool-search) — Let models discover tools on demand, with direct calling or cache-preserving code mode.
-- [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis) — Connect to AI Gateway with the AI SDK, Python, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Cohere
+- [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis) — Connect to AI Gateway with the AI SDK, Python, Go, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Co
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/web-search.graph.md](/docs/ai-gateway/models-and-providers/web-search.graph.md)
 <!-- /docsgraph:related -->
@@ -608,7 +609,7 @@ backs the data results.
 To use Tako Search, import `gateway` from `ai` and pass
 `gateway.tools.takoSearch()` to `tools`:
 
-```typescript filename="tako-search.ts" {9-18}
+```typescript filename="tako-search.ts" {9-19}
 import { gateway, generateText } from 'ai';
 
 export async function POST(request: Request) {
@@ -624,6 +625,7 @@ export async function POST(request: Request) {
           data: { count: 2 },
           web: { count: 2 },
         },
+        maxVariableCostUsd: 0.1,
       }),
     },
   });
@@ -633,11 +635,8 @@ export async function POST(request: Request) {
 ```
 
 > **💡 Note:** Tako Search costs $7 per 1,000 instant or fast requests and $12 per 1,000 deep
-> requests. `sources.data.includeContents` adds variable export surcharges based
-> on the requested rows and underlying data source. Guide agents to search without
-> it first, then inspect each card's `content.export_pricing` before exporting.
-> See [Contents pricing](https://docs.tako.com/documentation/integrating-tako/contents/pricing)
-> for details.
+> requests, plus any inline-data and variable-cost charges. See
+> [Tako pricing](#tako-pricing).
 
 ### Tako parameters
 
@@ -660,15 +659,13 @@ You can configure the `takoSearch` tool with these parameters:
   - `includeContents`: Inline each page's extracted full text.
     `articleContentMaxChars` caps it, defaulting to 30,000 (maximum 1,000,000).
 - `sources.data`: Configure knowledge graph results.
-  - `count`: Maximum data results (1-20). Defaults to 5. The free row
-    allowance is per result, so raising `count` raises both the rows you get
-    and the baseline you pay.
+  - `count`: Maximum data results (1-20). Defaults to 5. Tako returns at most
+    four results for instant and fast searches and eight for deep searches.
   - `includeContents`: Inline each card's underlying rows in `content.dataset`
-    as typed, unit-labeled columns. This is the parameter that adds row charges.
-  - `maxRows`: Row cap per result. Omit it and each result returns the free
-    allowance only (20 rows) with `truncated: true`. You pay for rows actually
-    returned, so a value above the series length costs the series length. Each
-    card reports its own ceiling in `content.export_pricing.max_rows_ceiling`.
+    as typed, unit-labeled columns. Tako charges for every returned row.
+  - `maxRows`: Row cap per result. Omit it to get Tako's default (currently 20
+    rows), with `truncated: true` when the series is longer. Each card reports
+    its own ceiling in `content.export_pricing.max_rows_ceiling`.
   - `contentFormat`: Serialization for inlined card data. Values:
     `'json_compact'` (default), `'json_records'`, `'csv'`, or `'card_json'`.
   - `nodeIds`: Data Graph node IDs to prioritize. Up to 20.
@@ -680,9 +677,59 @@ You can configure the `takoSearch` tool with these parameters:
 - `locale`: BCP-47 locale, such as `'en-US'`.
 - `timezone`: IANA timezone, such as `'America/New_York'`.
 
+These parameters are developer-only. AI Gateway drops any values the model
+sends for them:
+
+- `variableCost`: Serve [variable-cost data](#tako-variable-cost-data).
+  Defaults to `true`. Set it to `false` to opt out.
+- `maxVariableCostUsd`: The most one search call can spend on variable-cost
+  data, in USD. Defaults to `0.25`. Set it to `null` for no cap. A numeric cap
+  with `variableCost: false` fails with an `invalid_input` error.
+- `extraBody`: Tako Search API fields that `takoSearch()` doesn't expose, in
+  Tako's snake\_case. AI Gateway deep-merges it into the request last. It can't
+  set fields that `takoSearch()` exposes or that AI Gateway sets itself, and it
+  can be up to 16,384 characters as JSON. Tako rejects unknown fields with an
+  `api_error`.
+
+In [Chat Completions](#using-ai-gateway-search-tools-with-chat-completions),
+set these in the `vercel:tako_search` `config` as `variable_cost`,
+`max_variable_cost_usd`, and `extra_body`.
+
 AI Gateway applies options you set in `takoSearch()` as developer defaults, overriding model-generated values.
 
-For the complete input and output schema, see the [AI SDK AI Gateway reference](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway#tako-search). For search behavior, data cards, and Tako-specific options, see the [Tako Search documentation](https://docs.tako.com/documentation/integrating-tako/search/for-coding-agent).
+For the complete input and output schema, see the [AI SDK AI Gateway reference](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway#tako-search). For search behavior, data cards, and Tako-specific options, see the [Tako Search documentation](https://docs.tako.com/documentation/integrating-tako/search/for-coding-agent) and the [Tako Search API reference](https://docs.tako.com/api-reference/search-v3).
+
+### Tako variable-cost data
+
+Some Tako data sources, such as web traffic and SEO data, charge for each card
+they return. Tako calls this variable-cost data. It's on by default with a cap
+of $0.25 per search call, and it applies only when the search includes Tako's
+data index: when you omit `sources` or set `sources.data`.
+
+When Tako withholds a variable-cost card, the card keeps its title, a notice
+replaces its data, and `placeholder.reason` tells you why: `'not_served'` when
+variable-cost data is off or unavailable, or `'over_cap'` when the card's
+maximum charge doesn't fit in what's left of the cap. Tako checks the maximum,
+not the actual charge, so a card can come back `over_cap` even when its actual
+charge would have fit.
+
+### Tako pricing
+
+AI Gateway bills each Tako Search call at the cost Tako reports in
+`usage.total_cost_usd`, and doesn't bill failed calls:
+
+| Charge | Price |
+| --- | --- |
+| Search | $7 per 1,000 instant or fast requests. $12 per 1,000 deep requests. |
+| Inline data (`sources.data.includeContents`) | A fee per card plus a rate per row, listed in each card's `content.export_pricing`. |
+| Variable-cost data | A charge per variable-cost card, up to `maxVariableCostUsd` per call ($0.25 by default). |
+
+For current inline-data and variable-cost rates, see Tako's
+[Contents pricing](https://docs.tako.com/documentation/integrating-tako/contents/pricing).
+To stop variable-cost charges, set [`variableCost: false`](#tako-parameters).
+To avoid inline-data charges, leave `sources.data.includeContents` unset.
+AI Gateway also charges for the host model's tokens. See
+[AI Gateway pricing](/docs/ai-gateway/pricing).
 
 ## Using Browserbase Search
 
@@ -999,6 +1046,7 @@ fetch a page instead of searching for one.
 
 Put static tool settings in `config`. Use snake case for config keys. AI Gateway
 uses these values as developer defaults and overrides model-generated values.
+For Tako Search's developer-only settings, see [Tako parameters](#tako-parameters).
 
 For example, this request requires an Exa search before the model answers:
 
@@ -1628,6 +1676,18 @@ export async function POST(request: Request) {
 }
 ```
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

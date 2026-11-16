@@ -14,9 +14,10 @@ related:
   - /docs/sandbox/concepts/persistent-sandboxes
 summary: Run terminal-based coding agents in persistent Vercel Sandbox microVMs from Herdr. Review and apply their changes locally as Git patches.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/ecosystem/herdr.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "80737acbc05663f90a690775a6af0c3134ebb735609eb7727db48b2087a5f9fe"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "3bc6280f8ab10ec2ca3d890287b63444946e405d1e74ec041b860ccc1f162015"
 ---
 
 # Herdr
@@ -37,7 +38,7 @@ back as a Git patch you review and apply locally.
 - [Give every agent in Herdr its own Vercel Sandbox](https://vercel.com/changelog/give-every-agent-in-herdr-its-own-vercel-sandbox)
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
-- [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available)
+- [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
 - [Vercel Sandbox vs CodeSandbox](https://vercel.com/kb/guide/vercel-sandbox-vs-codesandbox) — A detailed guide to Vercel Sandbox vs CodeSandbox: compute isolation, credential brokering, Active CPU billing, Docker s
 - [Hermes](https://vercel.com/docs/sandbox/ecosystem/hermes) — Run Hermes Agent terminal commands in isolated Vercel Sandbox microVMs, with models served through Vercel AI Gateway.
 - [Vercel Plugin for AI Coding Agents](https://vercel.com/docs/agent-resources/vercel-plugin) — Install the Vercel plugin to give supported AI coding tools Vercel context, skills, specialist agents, slash commands, a
@@ -265,6 +266,18 @@ repositories, see the plugin's
 For a guide-form walkthrough with FAQs, see
 [Run Herdr coding agents in isolated Vercel Sandboxes](/kb/guide/run-herdr-coding-agents-isolated-vercel-sandboxes).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

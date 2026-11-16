@@ -15,9 +15,10 @@ related:
   - /docs/integrations
 summary: Use a deployment policy to control which Git sources and deployment mechanisms can deploy to your team and projects, per environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployments/deployment-policy.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "e1c7f74db74959105054151d2176bba21d14d54499ec5c8d560ca53e1367dc05"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "fc9acfb7c4736715317d28c2eccca2ab6c21ca149dcc0c9ba79eed5b539ebd12"
 ---
 
 # Deployment Policies
@@ -37,11 +38,11 @@ Deployment Policies are a set of rules that control which Git sources and deploy
 - [Deployments](https://v0.app/docs/deployments) — Preview and publish v0 projects on Vercel, then manage domains, visibility, and production updates.
 - [Configure which sources can create deployments with Deployment Policies](https://vercel.com/changelog/configure-which-sources-can-create-deployments-with-deployment-policies)
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
-- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 - [Deployment Retention](https://vercel.com/docs/deployment-retention) — Learn how Deployment Retention policies affect a deployment's lifecycle
+- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 - [Deploying Git Repositories with Vercel](https://vercel.com/docs/git) — Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Vercel Support Code Visibility, Git Fork Protection, and
-- [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
+- [Deployment Checks](https://vercel.com/docs/deployment-checks) — Set conditions that must be met before proceeding to the next phase of the deployment lifecycle.
 
 Full cross-link map for this page: [/docs/deployments/deployment-policy.graph.md](/docs/deployments/deployment-policy.graph.md)
 <!-- /docsgraph:related -->
@@ -111,6 +112,18 @@ To stop overriding and return to the team policy, switch the section back to **I
 - [Deploy Hooks](/docs/deploy-hooks)
 - [Environments](/docs/deployments/environments)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

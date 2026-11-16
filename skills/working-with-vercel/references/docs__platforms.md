@@ -15,9 +15,10 @@ related:
   - /docs/platforms/examples/platform-template
 summary: Build platforms where agents and users deploy apps with isolated projects or shared multi-tenant deployments.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/platforms.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "30bfc993775e49c06484c981b17b68f77c351eecd9a4b9c8b9201bb41d2baf12"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "2970889dca7134ea9fa621bb549119473f5b0fac11c211cd859b752358020641"
 ---
 
 # Vercel for Platforms
@@ -35,7 +36,7 @@ Vercel for Platforms gives generated apps isolated projects and deployments. Mul
 - [Introducing Vercel for Platforms](https://vercel.com/changelog/introducing-vercel-for-platforms)
 - [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit)
 - [Vercel for Platforms can now deploy from your users' GitHub repositories](https://vercel.com/changelog/vercel-for-platforms-can-now-deploy-from-your-users-github-repositories)
-- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
+- [Introducing Platform Elements](https://vercel.com/changelog/introducing-platform-elements)
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 - [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
@@ -116,6 +117,18 @@ A typical setup gives you a root domain for your platform (`acme.com`), subdomai
 
 **Starter template**: Deploy a multi-tenant Next.js app with subdomain routing and tenant storage. [Learn more →](/templates/next.js/platforms-starter-kit)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

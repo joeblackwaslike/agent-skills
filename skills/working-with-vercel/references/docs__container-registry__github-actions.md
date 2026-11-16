@@ -13,9 +13,10 @@ related:
   - /docs/container-registry/cli-reference
 summary: Authenticate GitHub Actions with Vercel Container Registry using OIDC, then build and push images with your container tool.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/container-registry/github-actions.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "6819862e0f619483174ffc676d29fd787d7fe28b5aec9ffb7937cc8bdebe632e"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a046ad6bcc9de9e5e8baec27c75f2d7a3c4fab9fae1e0155b0d36f1b633d34b5"
 ---
 
 # Push Images from GitHub Actions
@@ -33,9 +34,8 @@ Push images to Vercel Container Registry (VCR) from GitHub Actions without stori
 - [Introducing VCR: Vercel Container Registry](https://vercel.com/changelog/introducing-vcr-vercel-container-registry)
 - [Manage Vercel Container Registry with Vercel CLI](https://vercel.com/changelog/manage-vercel-container-registry-with-vercel-cli)
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
-- [Block Vercel deployment promotions with GitHub Actions](https://vercel.com/changelog/block-vercel-deployment-promotions-with-github-actions)
-- [How can I use the Vercel CLI for custom workflows?](https://vercel.com/kb/guide/using-vercel-cli-for-custom-workflows) — You can use the Vercel CLI to deploy any application, including custom git providers and restricted source code.
-- [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
+- [Can I use GitHub Enterprise Server with Vercel?](https://vercel.com/kb/guide/can-i-use-github-enterprise-server-with-vercel) — You can use GitHub Enterprise Server and GitHub Actions to deploy your application to Vercel.
+- [Getting Started](https://vercel.com/docs/container-registry/getting-started) — Authenticate your container tool with Vercel Container Registry, then push and pull your first image with the Vercel CLI
 - [Deploying with BYOC from GitHub Actions](https://vercel.com/docs/networking/bring-your-own-cloud/deploy-with-github-actions) — Keep the Vercel Git integration and use GitHub Actions to build, provision, and complete Bring Your Own Cloud \\(BYOC\\) d
 - [Use Remote Caching from External CI/CD](https://vercel.com/docs/monorepos/remote-caching/external-ci-cd) — Authenticate the Turborepo CLI to Vercel Remote Cache from your CI/CD provider using OpenID Connect \\(OIDC\\) or a Person
 - [Push an image manifest](https://vercel.com/docs/rest-api/vcr/push-an-image-manifest) — PUT /v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference} — PUT /v2/:teamSlug/:projectSlug/:repositoryName
@@ -120,6 +120,18 @@ The `engines` input selects which container tools to authenticate. It accepts `d
 - [Use the image with Vercel Functions](/docs/functions/container-images#usage)
 - [Manage repositories with the Vercel CLI](/docs/container-registry/cli-reference)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

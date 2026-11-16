@@ -15,9 +15,10 @@ related:
   - /docs/platforms/multi-tenant-platforms/proxy-and-routing
 summary: Serve multiple customers from a single codebase and deployment, routing each tenant by subdomain or custom domain.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "e066ab43a2fd39e3681fda9de5321b4cb29cbff2957c74507e58231c5f37de35"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "4607a57dfc97d08ef5116e6747e2b34014bd5cf52d48890a93e999add45bcb3f"
 ---
 
 # Multi-Tenant Platforms
@@ -30,10 +31,9 @@ A multi-tenant platform serves every customer from one codebase and one Vercel d
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit)
 - [Multi-Tenant Template](https://vercel.com/docs/platforms/examples/multi-tenant-template) — Build SaaS applications that serve multiple domains from a single Next.js codebase.
-- [Multi-Project Platforms](https://vercel.com/docs/platforms/multi-project-platforms) — Give each customer its own Vercel project and deployment, created and managed programmatically with the Vercel SDK.
 - [Multi-Project Platforms Concepts](https://vercel.com/docs/platforms/multi-project-platforms/concepts) — Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
+- [Multi-Project Platforms](https://vercel.com/docs/platforms/multi-project-platforms) — Give each customer its own Vercel project and deployment, created and managed programmatically with the Vercel SDK.
 - [Multi-Project Platforms Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
 - [Examples](https://vercel.com/docs/platforms/examples) — Clone working multi-tenant and multi-project starters to begin your platform build.
 
@@ -58,6 +58,18 @@ Full cross-link map for this page: [/docs/platforms/multi-tenant-platforms.graph
 
 **Limits**: Domain limits, preview URLs, and SSL options across plans. [Learn more →](/docs/platforms/multi-tenant-platforms/limits)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

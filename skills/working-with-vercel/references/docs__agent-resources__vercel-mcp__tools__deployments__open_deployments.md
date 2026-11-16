@@ -12,9 +12,10 @@ related:
   []
 summary: Use open_deployments with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/open_deployments.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "3c4f07b71e9db3aa6928585e4916668d08645aa73f525959fc0971dfc5faa0ef"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "b86f86751f9b1ea614fd04b3a22648b443e7d04339c51f4c6beb039f5c4cf3a7"
 ---
 
 # open_deployments
@@ -31,7 +32,7 @@ Show deployments in a live card with expandable build logs. In clients without a
 - [deploy_to_vercel](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/deploy_to_vercel) — Use deploy_to_vercel with Vercel MCP.
 - [get_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment) — Use get_deployment with Vercel MCP.
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
-- [create_deployment](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/create_deployment) — Use create_deployment with Vercel MCP.
+- [list_deployment_events](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/list_deployment_events) — Use list_deployment_events with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/deployments/open_deployments.graph.md](/docs/agent-resources/vercel-mcp/tools/deployments/open_deployments.graph.md)
 <!-- /docsgraph:related -->
@@ -54,6 +55,18 @@ The `view` parameter only accepts `"preview"`. `target` filters production or pr
 | `repo`      | string | No       | Preview only. The git remote URL or owner/name (git remote get-url origin). Finds the linked project when projectId is unknown, even before the deployment exists.                                                                          |
 | `target`    | string | No       | Only consider deployments for this environment. Allowed values: `"production"`, `"preview"`.                                                                                                                                                |
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

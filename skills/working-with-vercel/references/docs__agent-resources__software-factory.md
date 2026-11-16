@@ -15,9 +15,10 @@ related:
   - /docs/agent-resources/software-factory/mastra
 summary: Build repeatable agent workflows that investigate issues, test changes, and prepare pull requests for human review.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/software-factory.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "c097d1d4a3e297aabad06027e2ee46ff5e8f64b19834ea04396a5b244e8aa62f"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "a719389606ec60f33b981000c8949b5b5723f1f79f5a7c8a2d2f4d9e9f05680b"
 ---
 
 # Software Factories on Vercel
@@ -30,15 +31,12 @@ Software factories organize AI agents into repeatable development workflows that
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
 - [Choosing between eve, AI SDK agents, and \\`WorkflowAgent\\`](https://vercel.com/kb/guide/eve-vs-ai-sdk-agents-vs-workflowagent) — Compare eve, \\`ToolLoopAgent\\`, and \\`WorkflowAgent\\` by durability, approvals, channels, and setup to choose an agent f
-- [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
-- [You can just ship agents](https://vercel.com/blog/you-can-just-ship-agents)
 - [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
-- [How to choose between Functions, containers, and Daemons on Vercel](https://vercel.com/kb/guide/vercel-functions-containers-daemons) — Choose Vercel Functions for HTTP requests, container images for custom runtimes, and Daemons for continuous background w
-- [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution)
-- [Vercel Ship AI 2025 recap](https://vercel.com/blog/ship-ai-2025-recap)
-- [eve on Vercel](https://vercel.com/docs/frameworks/agents/eve) — Create and deploy an eve agent on Vercel with AI Gateway model access, durable sessions, and authenticated requests.
+- [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
+- [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
+- [How to add tools to your eve agent](https://vercel.com/kb/guide/how-to-add-eve-tools) — Add tools to an eve agent by creating a TypeScript file under agent/tools/ with defineTool, and gate sensitive ones on h
+- [Agent Frameworks on Vercel](https://vercel.com/docs/frameworks/agents) — Build AI agents with eve, Mastra, Flue, and Vercel. Learn how each framework connects to Vercel compute, models, and sto
 
 Full cross-link map for this page: [/docs/agent-resources/software-factory.graph.md](/docs/agent-resources/software-factory.graph.md)
 <!-- /docsgraph:related -->
@@ -134,13 +132,17 @@ Each implementation works toward the same result: an issue becomes a tested chan
 
 ## Give the factory GitHub access
 
-[GitHub Tools](https://github-tools.com/) is Vercel's open-source library for exposing GitHub operations to agents. Use it to read issues and diffs, inspect checks, and prepare pull requests. Its [AI SDK tools](https://github-tools.com/frameworks/ai-sdk) work directly in AI SDK agents. The eve, Mastra, and Flue guides show explicit adapters for a read operation using each runtime's tool interface.
+[GitHub Tools](https://github-tools.com/) is Vercel's open-source library for exposing GitHub operations to agents. Use it to read issues and diffs, inspect checks, and prepare pull requests. Its [AI SDK tools](https://github-tools.com/integrations/ai-sdk) work directly in AI SDK agents, and eve agents mount its [eve extension](https://github-tools.com/integrations/eve). The Mastra and Flue guides show explicit adapters for a read operation using each runtime's tool interface.
 
 Separate the capabilities each stage receives. An investigator needs repository and issue reads. An implementer needs an isolated working tree. Publishing a branch or draft pull request needs write credentials and an authorization decision. A tool preset selects operations; it doesn't restrict which repositories a credential can access. Likewise, `context` supplies default arguments rather than an access policy.
 
-Use a [GitHub connector](https://vercel.com/connect/github) to manage credentials, then follow the [GitHub Tools Connect setup](https://github-tools.com/guide/vercel-connect) to attach it to your project. Limit the GitHub App installation to the intended repositories and grant the permissions required by each stage. Keep credentials in the application that calls GitHub; don't include them in prompts or give publishing credentials to repository code running in a sandbox.
+To limit where calls can act, set [`guardrails`](https://github-tools.com/approval#guardrails). With `repositories`, a call to any other repository fails, reads included. With `branches`, the tools create branches and commit only on matching names, such as `factory/*`, and merge only into matching base branches. An approval can't override a guardrail. Guardrails don't cover tools without a repository target, such as code search, so the credential's own access still matters.
 
-GitHub Tools' AI SDK write tools request approval by default, but the application must handle those requests. Calling a tool's `execute` function directly doesn't enforce that approval metadata. When adapting a write operation to another runtime, implement its authorization and approval flow before executing the operation.
+Use a [GitHub connector](https://vercel.com/connect/github) to manage credentials, then follow the [GitHub Tools Connect setup](https://github-tools.com/auth#vercel-connect) to attach it to your project. Limit the GitHub App installation to the intended repositories and grant the permissions required by each stage. Keep credentials in the application that calls GitHub; don't include them in prompts or give publishing credentials to repository code running in a sandbox.
+
+GitHub Tools' AI SDK write tools request approval by default, but the application must handle those requests. The eve extension handles them through eve, which pauses the session until someone answers. Calling a tool's `execute` function directly doesn't enforce that approval metadata. When adapting a write operation to another runtime, implement its authorization and approval flow before executing the operation.
+
+Before a factory writes to a repository, run it with [`dryRun: true`](https://github-tools.com/approval#shadow-mode). Reads go to GitHub as usual, and each write returns a record of what the agent would have done instead of changing anything. A dry-run write creates nothing, so a step that depends on an earlier write, such as a commit to a branch the agent created, can't run. `guardrails` and `dryRun` require `@github-tools/sdk` 1.21.0 or later.
 
 ## Preserve progress and review evidence
 
@@ -162,6 +164,18 @@ These resources put the concepts into practice:
 
 **Manage Vercel projects with a software factory**: Add deployment context through Vercel MCP to investigate failed builds and runtime errors. [Learn more →](/kb/guide/software-factory-vercel-mcp)
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

@@ -12,9 +12,10 @@ related:
   - /docs/cli/global-options
 summary: "Learn how to manage your project's rolling releases using the vercel rolling-release CLI command."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/rolling-release.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "a928ad6bd6c7f0daa076ea297acd5d1c8581e44edaadd6c5742fb4eefed9bed9"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "0a7eba30fa2e695b77c3bb585ac344f4b99f4c5a12be522077ebc835b91db0bb"
 ---
 
 # vercel rolling-release
@@ -27,11 +28,12 @@ Use the `vercel rolling-release` command to manage your project's rolling releas
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to gradually roll out new versions of your backend](https://vercel.com/kb/guide/how-to-gradually-roll-out-new-versions-of-your-backend) — Incrementally release updates to your backend to minimize impact of mistakes.
 - [Performing a rolling release deployment](https://vercel.com/docs/rolling-releases/rolling-release-deployment) — Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
-- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [Rolling Releases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases) — Vercel MCP tools for rolling releases.
-- [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [Update the rolling release settings for the project](https://vercel.com/docs/rest-api/rolling-release/update-the-rolling-release-settings-for-the-project) — PATCH /v1/projects/{idOrName}/rolling-release/config — Update \\(or disable\\) Rolling Releases for a project. When disabl
+- [Get rolling release configuration](https://vercel.com/docs/rest-api/rolling-release/get-rolling-release-configuration) — GET /v1/projects/{idOrName}/rolling-release/config — Get the Rolling Releases configuration for a project. The project-l
+- [Update the active rolling release to the next stage for a project](https://vercel.com/docs/rest-api/rolling-release/update-the-active-rolling-release-to-the-next-stage-for-a-project) — POST /v1/projects/{idOrName}/rolling-release/approve-stage — Advance a rollout to the next stage. This is only needed wh
 
 Full cross-link map for this page: [/docs/cli/rolling-release.graph.md](/docs/cli/rolling-release.graph.md)
 <!-- /docsgraph:related -->
@@ -277,6 +279,18 @@ The following [global options](/docs/cli/global-options) can be passed when usin
 
 For more information on global options and their usage, refer to the [options section](/docs/cli/global-options).
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

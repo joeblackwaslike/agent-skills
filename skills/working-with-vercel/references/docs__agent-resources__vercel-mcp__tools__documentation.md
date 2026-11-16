@@ -12,9 +12,10 @@ related:
   - /docs/cli/feedback
 summary: Find documentation, use the CLI, and share feedback with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation.md"
-fetched_at: "2026-11-09T12:41:22.042Z"
-sha256: "b547f2017fe008370ec4cd2cab75574f783c87399259b72c6b529c2f5c953b98"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "bb690c90846fb121ac844eebfd421566cb3a390fc98c5b413bf4012a68797492"
 ---
 
 # Documentation, CLI, and Feedback
@@ -31,9 +32,9 @@ Find Vercel documentation for a task and get guidance on the Vercel CLI commands
 - [Send feedback from the Vercel CLI](https://vercel.com/changelog/send-feedback-from-vercel-cli)
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [vercel comments](https://vercel.com/docs/cli/comments) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
-- [Vercel CLI Global Options](https://vercel.com/docs/cli/global-options) — Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Vercel CLI Global Options](https://vercel.com/docs/cli/global-options) — Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options
+- [vercel comments](https://vercel.com/docs/cli/comments) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/documentation.graph.md](/docs/agent-resources/vercel-mcp/tools/documentation.graph.md)
 <!-- /docsgraph:related -->
@@ -108,6 +109,18 @@ If the error says the feedback service is unavailable and nothing was submitted,
 
 If a request times out or returns an uncertain outcome, it may already have reached Vercel. The error won't offer a CLI fallback. Submitting again, including through `vercel feedback`, can create a duplicate. Decide whether to send another copy. If you reach a rate limit, wait before trying again.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

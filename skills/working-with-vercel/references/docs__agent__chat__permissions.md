@@ -12,9 +12,10 @@ related:
   - /docs/agent/chat/github
 summary: Understand how Vercel Agent scopes access, requests approval, and attributes changes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent/chat/permissions.md"
-fetched_at: "2026-11-02T12:08:37.581Z"
-sha256: "94d0e7c801d042833b96779b88fdb3266a6a03b7ee3fbcc6556332d7fc328cda"
+fetched_at: "2026-11-16T12:35:12.533Z"
+sha256: "6a6a1ff181b7a4824d9f33e3ccb269a5e107b22090f9cc4538ee4b281e845058"
 ---
 
 # Vercel Agent Permissions
@@ -75,6 +76,18 @@ Vercel Agent can refuse an operation when:
 - The operation is not supported by scoped authorization.
 - The team or feature is not eligible for Vercel Agent.
 
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
 
 ---
 

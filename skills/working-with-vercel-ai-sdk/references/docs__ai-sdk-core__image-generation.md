@@ -3,9 +3,11 @@ title: Image Generation
 description: Learn how to generate images with the AI SDK.
 url: "https://ai-sdk.dev/docs/ai-sdk-core/image-generation"
 docs_index: /llms.txt
+keywords:
+  - generate images
 source: "https://ai-sdk.dev/docs/ai-sdk-core/image-generation.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "0a7e728ab383056419beecba8f9237f55e66a8e580e109e4e7b222b3c609d480"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "71cf2939f875010879bd93d01bbd90dbc41b31a00f5a1d65e54adbbc6b8c5aa7"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -289,6 +291,13 @@ try {
   }
 }
 ```
+
+## URL download protection
+
+Some image providers return URLs that the SDK downloads, and image editing can
+download URL inputs. These downloads use the provider's `fetch` option; on
+Node.js, pass a `guarded-fetch` transport there to validate DNS results. See
+[Secure URL Fetching](/docs/advanced/secure-url-fetching#opt-in-dns-protection-on-nodejs).
 
 ## Image Middleware
 

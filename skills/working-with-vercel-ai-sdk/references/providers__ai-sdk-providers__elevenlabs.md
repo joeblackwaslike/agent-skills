@@ -4,8 +4,8 @@ description: Learn how to set up the ElevenLabs provider and check AI Gateway av
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/elevenlabs"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/elevenlabs.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "973f42ece420004772a34a3cd0833b43000da5bf2df369a524b95d3f31dc979d"
+fetched_at: "2026-11-16T12:32:31.917Z"
+sha256: "356371c1eccd96931e814d3ccedca98ce33ad63181f769a11e3b5f9234269192"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -267,24 +267,24 @@ variant when enabled. This includes `eleven_multilingual_v2`, `eleven_v3`,
 
 ### Model Capabilities
 
-| Model                      | Speech | Streaming Speech |
-| -------------------------- | ------ | ---------------- |
-| `eleven_v4`                | ✓      | ✓ (dialogue)     |
-| `eleven_v4_turbo`          | ✓      | ✓ (dialogue)     |
-| `eleven_v3`                | ✓      | ✓ (dialogue)     |
-| `eleven_v3_conversational` | ✓      | ✓ (dialogue)     |
-| `eleven_multilingual_v2`   | ✓      | ✓                |
-| `eleven_flash_v2_5`        | ✓      | ✓                |
-| `eleven_flash_v2`          | ✓      | ✓                |
-| `eleven_turbo_v2_5`        | ✓      | ✓                |
-| `eleven_turbo_v2`          | ✓      | ✓                |
-| `eleven_monolingual_v1`    | ✓      | ✗                |
-| `eleven_multilingual_v1`   | ✓      | ✗                |
-| `music_v2_5`               | ✓      | ✗                |
-| `music_v2`                 | ✓      | ✗                |
-| `music_v1`                 | ✓      | ✗                |
-| `eleven_text_to_sound_v2`  | ✓      | ✗                |
-| `eleven_text_to_sound_v3`  | ✓      | ✗                |
+| Model                      | Speech | Streaming Speech                                           | Instructions |
+| -------------------------- | ------ | ---------------------------------------------------------- | ------------ |
+| `eleven_v4`                | ✓      | Conditional: Requires providerOptions.elevenlabs.dialogue. | ✗            |
+| `eleven_v4_turbo`          | ✓      | Conditional: Requires providerOptions.elevenlabs.dialogue. | ✗            |
+| `eleven_v3`                | ✓      | Conditional: Requires providerOptions.elevenlabs.dialogue. | ✗            |
+| `eleven_v3_conversational` | ✓      | Conditional: Requires providerOptions.elevenlabs.dialogue. | ✗            |
+| `eleven_multilingual_v2`   | ✓      | ✓                                                          | ✗            |
+| `eleven_flash_v2_5`        | ✓      | ✓                                                          | ✗            |
+| `eleven_flash_v2`          | ✓      | ✓                                                          | ✗            |
+| `eleven_turbo_v2_5`        | ✓      | ✓                                                          | ✗            |
+| `eleven_turbo_v2`          | ✓      | ✓                                                          | ✗            |
+| `eleven_monolingual_v1`    | ✓      | ✗                                                          | ✗            |
+| `eleven_multilingual_v1`   | ✓      | ✗                                                          | ✗            |
+| `music_v2_5`               | ✓      | ✗                                                          | ✗            |
+| `music_v2`                 | ✓      | ✗                                                          | ✗            |
+| `music_v1`                 | ✓      | ✗                                                          | ✗            |
+| `eleven_text_to_sound_v2`  | ✓      | ✗                                                          | ✗            |
+| `eleven_text_to_sound_v3`  | ✓      | ✗                                                          | ✗            |
 
 ElevenLabs speech models do not support `instructions`; the option is ignored
 with a warning.
@@ -645,11 +645,12 @@ timestamped word segments from `await result.segments` after the stream finishes
 
 ### Model Capabilities
 
-| Model                    | Transcription | Duration | Segments | Language |
-| ------------------------ | ------------- | -------- | -------- | -------- |
-| `scribe_v1`              | ✓             | ✓        | ✓        | ✓        |
-| `scribe_v1_experimental` | ✓             | ✓        | ✓        | ✓        |
-| `scribe_v2`              | ✓             | ✓        | ✓        | ✓        |
+| Model                    | Transcription | Streaming | Duration | Segments | Language |
+| ------------------------ | ------------- | --------- | -------- | -------- | -------- |
+| `scribe_v1`              | ✓             | ✗         | ✓        | ✓        | ✓        |
+| `scribe_v1_experimental` | ✓             | ✗         | ✓        | ✓        | ✓        |
+| `scribe_v2`              | ✓             | ✗         | ✓        | ✓        | ✓        |
+| `scribe_v2_realtime`     | ✗             | ✓         | ✓        | ✓        | ✓        |
 
 ## Streaming Transcription Models
 
@@ -720,6 +721,40 @@ streaming transcription.
 | Model                | Streaming Transcription | Timestamps | Language Detection |
 | -------------------- | ----------------------- | ---------- | ------------------ |
 | `scribe_v2_realtime` | ✓                       | ✓          | ✓                  |
+
+### Provider Option Catalog
+
+| Operation     | Option                            | Description                                                               |
+| ------------- | --------------------------------- | ------------------------------------------------------------------------- |
+| speech        | `withTimestamps`                  | Return character alignment for speech or lyric word timestamps for music. |
+| speech        | `languageCode`                    | Language code.                                                            |
+| speech        | `voiceSettings`                   | Voice settings.                                                           |
+| speech        | `pronunciationDictionaryLocators` | Pronunciation dictionary locators.                                        |
+| speech        | `seed`                            | Seed.                                                                     |
+| speech        | `previousText`                    | Previous text.                                                            |
+| speech        | `nextText`                        | Next text.                                                                |
+| speech        | `previousRequestIds`              | Previous request ids.                                                     |
+| speech        | `nextRequestIds`                  | Next request ids.                                                         |
+| speech        | `applyTextNormalization`          | Apply text normalization.                                                 |
+| speech        | `applyLanguageTextNormalization`  | Apply language text normalization.                                        |
+| speech        | `enableLogging`                   | Enable logging.                                                           |
+| speech        | `streaming`                       | WebSocket speech settings; not used by non-streaming generation.          |
+| speech        | `dialogue`                        | Voice settings for streaming text-to-dialogue.                            |
+| speech        | `inputs`                          | Text and voice pairs for non-streaming text-to-dialogue.                  |
+| speech        | `musicLengthMs`                   | Music length ms.                                                          |
+| speech        | `forceInstrumental`               | Force instrumental.                                                       |
+| speech        | `compositionPlan`                 | Native music composition plan; replaces the text prompt.                  |
+| speech        | `durationSeconds`                 | Duration seconds.                                                         |
+| speech        | `promptInfluence`                 | Prompt influence.                                                         |
+| speech        | `loop`                            | Loop.                                                                     |
+| transcription | `languageCode`                    | Language hint for transcription.                                          |
+| transcription | `tagAudioEvents`                  | Include audio event tags in batch transcripts.                            |
+| transcription | `numSpeakers`                     | Expected speaker count for batch transcription.                           |
+| transcription | `timestampsGranularity`           | Timestamp precision for batch transcription.                              |
+| transcription | `diarize`                         | Identify speakers in batch transcripts.                                   |
+| transcription | `fileFormat`                      | Input audio format for batch transcription.                               |
+| transcription | `sourceUrl`                       | Transcribe a remote audio source in batch mode.                           |
+| transcription | `streaming`                       | Scribe realtime transcription settings.                                   |
 
 ---
 
