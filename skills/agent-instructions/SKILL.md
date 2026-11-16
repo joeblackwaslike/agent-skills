@@ -110,7 +110,7 @@ discipline for doc edits (a check that the guidance is actually missing before w
 it, one incident citation per rule, and where a fix belongs: local file vs. the global
 instruction files loaded into every session). For creating a genuinely new skill from
 nothing, use `superpowers:writing-skills` instead — its pressure-scenario testing is
-the heavier tool for guidance that doesn't exist yet.
+the heavier tool for guidance that doesn't exist yet. For how to word a rule or a description inside a `SKILL.md` (rule strength, what a description may list), use `skill-principles`.
 
 ---
 
@@ -164,3 +164,8 @@ for the full decision matrix. Quick summary:
   `claude-extras.md`, and set `CLAUDE.md` = `@AGENTS.md` + `@claude-extras.md` so the shared
   `AGENTS.md` stays universal. Prefer symlinks from a canonical source over copies; see
   `references/multi-tool-compat.md`.
+
+## Related skills
+
+- `skill-principles`: wording rules for a `SKILL.md` specifically (authority, descriptions, defenses).
+- `reviewing-skills`: review a changed skill or runbook before it ships.

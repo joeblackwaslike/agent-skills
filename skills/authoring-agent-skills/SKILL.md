@@ -75,5 +75,7 @@ Track these with TodoWrite when building a real skill.
 
 - `skill-creator` / `superpowers:writing-skills` — generic skill description quality, triggering, and progressive disclosure.
 - `agent-skills:agent-instructions` (`references/editing-discipline.md`) — RED-GREEN discipline for *editing* an existing `SKILL.md` or runbook, as opposed to authoring a new one.
+- `skill-principles` — how to word the instructions inside the skill (rule strength, descriptions, defenses, examples). This skill covers layout, naming and registration.
+- `reviewing-skills` — review the finished skill, including its registry rows, before it ships.
 - `marketplace-publishing` — version bump rules and official-marketplace submission once the skill is registered.
 - Repo conventions also summarized in [`AGENTS.md`](../../AGENTS.md) ("Auto-generated docs convention" and "Freshness metadata convention").
