@@ -16,7 +16,7 @@ A skill is only used if its `description` makes it into the skill listing and ma
 
 - Scan `SKILLS.md` for skills whose triggers overlap yours. Add `Not for … (use …)` to the new description and a matching exclusion to each neighbour.
 - Run `make lint-descriptions`. It must report 0 FAIL.
-- Run the `skill-reviewer` agent on the new SKILL.md.
+- Run `/review-skill` on the new skill.
 
 ## Model
 
