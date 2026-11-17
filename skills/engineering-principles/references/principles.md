@@ -173,6 +173,7 @@ def format_price(amount: int, currency: str) -> str: ...
 wants to be:
 
 ```python
+# fragment
 @dataclass(frozen=True, slots=True)
 class Money:
     amount_minor: int
@@ -185,6 +186,7 @@ class Money:
 In TypeScript, the same model is a readonly type with functions that operate on it, or a small class when it has invariants to protect:
 
 ```typescript
+// fragment
 type Money = Readonly<{ amountMinor: bigint; currency: CurrencyCode }>;
 
 declare function applyDiscount(price: Money, discount: Discount): Money;
@@ -198,6 +200,7 @@ The missing model shows up most clearly in constructors. Ten arguments, six of w
 Group the related arguments into an object and pass that object around instead. A frozen dataclass, or a Pydantic model when the data needs validating, is usually right. Check that the grouping is cohesive: a catch-all `Options` or `Config` holding unrelated settings is the same smell under a new name. Put optional behavior after a `*` so it is keyword-only.
 
 ```python
+# fragment
 class Invoice:
     def __init__(
         self,
@@ -217,6 +220,7 @@ class Invoice:
 becomes:
 
 ```python
+# fragment
 @dataclass(frozen=True, slots=True)
 class Address:
     street: str
@@ -282,6 +286,7 @@ A practical measure: if testing a unit means patching five things, it is coupled
 High-level policy should depend on abstractions it owns, and each consumer should depend only on the methods it uses. In Python that means small `Protocol`s defined by the code that consumes them. Reach for an ABC only when you need shared implementation or enforcement at instantiation.
 
 ```python
+# fragment
 class UserRepository(Protocol):
     async def get(self, user_id: UserId) -> User | None: ...
     async def add(self, user: User) -> None: ...
@@ -290,6 +295,7 @@ class UserRepository(Protocol):
 TypeScript interfaces are structural already, so the consumer declares the shape it needs and any implementation that fits satisfies it, with or without `implements`:
 
 ```typescript
+// fragment
 interface UserRepository {
   get(userId: UserId): Promise<User | null>;
   add(user: User): Promise<void>;
@@ -314,6 +320,7 @@ Signs inheritance is being used for code reuse:
 - Hierarchies deeper than two levels.
 
 ```python
+# fragment
 class RetryingClient(HttpClient):
     def get(self, url: str) -> Response:
         for _ in range(3):
@@ -327,6 +334,7 @@ class RetryingClient(HttpClient):
 The composed version retries any client, including a fake in tests, and the retry policy becomes data:
 
 ```python
+# fragment
 class RetryingClient:
     def __init__(self, inner: HttpClient, policy: RetryPolicy) -> None: ...
 
@@ -346,6 +354,7 @@ Look for:
 - A dict of callables keyed by a string that mirrors a type name.
 
 ```python
+# fragment
 def notify(target: Email | Sms | Webhook, body: str) -> None:
     if isinstance(target, Email):
         smtp.send(target.address, body)
@@ -358,6 +367,7 @@ def notify(target: Email | Sms | Webhook, body: str) -> None:
 becomes:
 
 ```python
+# fragment
 class Channel(Protocol):
     def send(self, body: str) -> None: ...
 
