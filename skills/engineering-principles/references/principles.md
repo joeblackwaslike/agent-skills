@@ -25,7 +25,7 @@ The same rules apply to the process around the code: confirm the change is what 
 **DRY (Don't Repeat Yourself)**
 
 - **Means:** Every piece of *knowledge* (a rule, a constant, a schema) has one authoritative home.
-- **Apply:** Dedupe business rules, not code that merely looks alike. Two functions that coincidentally match today but change for different reasons are not duplication. In review, flag the same validation or business rule encoded in two places. Don't flag a repeated literal that already explains itself; see section 1, Simplicity and scope.
+- **Apply:** Dedupe business rules, not code that merely looks alike. Two functions that coincidentally match today but change for different reasons are not duplication. In review, flag the same validation or business rule encoded in two places. Don't flag a repeated literal that already explains itself; see "Constants for self-explanatory literals" below.
 
 **Rule of Three (a.k.a. AHA: Avoid Hasty Abstractions)**
 
