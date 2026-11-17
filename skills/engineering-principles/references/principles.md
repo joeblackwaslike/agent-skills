@@ -6,11 +6,9 @@ A small set of principles covers most of what makes code good. Apply them while 
 
 The same rules apply to the process around the code: confirm the change is what was asked for and as small as it can be, get the design right before the details, and hand anything a rule can state to a tool.
 
-## Principles
+## 1. Simplicity and scope
 
-The principles fall into four groups. Each one says what it means and how to apply it, both when writing code and when reviewing it.
-
-### Simplicity and scope
+### The principles
 
 **KISS (Keep It Simple, Stupid)**
 
@@ -48,97 +46,6 @@ The principles fall into four groups. Each one says what it means and how to app
 
 - **Means:** Working complex systems evolve from working simple ones. Complex systems built from scratch don't work.
 - **Apply:** Ship the thin vertical slice first. Be suspicious of designs that need five services before the first request succeeds.
-
-### Design and structure
-
-**SOLID** (five principles, one line each; the design and structure section applies each one in review)
-
-- **SRP (Single Responsibility):** A module has one reason to change. Split a handler that validates, persists, and sends email.
-- **OCP (Open/Closed):** Extend behavior without editing existing code. Add a new strategy or handler instead of another `elif`.
-- **LSP (Liskov Substitution):** Subtypes must be usable wherever the base type is. A subclass that raises on an inherited method is a violation.
-- **ISP (Interface Segregation):** Don't force consumers to depend on methods they don't use. In Python, small `Protocol`s over one fat interface.
-- **DIP (Dependency Inversion):** High-level policy depends on abstractions, not concrete details. Inject the repository protocol; don't import the SQLAlchemy session in domain code.
-
-**Separation of Concerns**
-
-- **Means:** Each part of the system addresses one distinct concern (transport, domain logic, persistence).
-- **Apply:** No SQL in route handlers, no HTTP types in domain services. In review, flag layer-crossing imports.
-
-**High Cohesion, Low Coupling**
-
-- **Means:** Things that change together live together. Things that don't shouldn't know about each other.
-- **Apply:** If a change to one feature touches six modules, coupling is too high. If a module's contents have nothing in common, cohesion is too low.
-
-**Law of Demeter (Principle of Least Knowledge)**
-
-- **Means:** Talk to your direct collaborators, not their internals.
-- **Apply:** `order.customer.address.city` chains mean the caller knows too much. Expose `order.shipping_city` or pass what's needed.
-
-**Tell, Don't Ask**
-
-- **Means:** Tell objects what to do instead of pulling their state out and deciding for them.
-- **Apply:** Replace `if account.balance >= amt: account.balance -= amt` in the caller with `account.withdraw(amt)`, where the invariant lives.
-
-**Composition over Inheritance**
-
-- **Means:** Assemble behavior from small collaborators instead of deep class hierarchies.
-- **Apply:** Reach for injected dependencies or `Protocol`s before a base class. Be wary of any inheritance chain deeper than two.
-
-**Command-Query Separation (CQS)**
-
-- **Means:** A method either changes state or returns data, not both.
-- **Apply:** It's the seed of CQRS. In review, flag `get_*` functions with side effects.
-
-### Correctness and safety
-
-**Fail Fast**
-
-- **Means:** Surface errors at the earliest point, close to the cause.
-- **Apply:** Validate at boundaries, raise on invalid state, and don't swallow exceptions or return `None` to defer the problem. In review, flag bare `except` and silent fallbacks.
-
-**Parse, Don't Validate / Make Illegal States Unrepresentable**
-
-- **Means:** Convert untrusted input into a type that can only hold valid values, instead of re-checking raw data everywhere.
-- **Apply:** Pydantic models at the edge, `Literal`, enums and `NewType`s inside. A `status: str` that can only be three values should be a `StrEnum`.
-
-**Principle of Least Privilege**
-
-- **Means:** Give code, services, and credentials only the access they need.
-- **Apply:** Scoped API tokens, read-only DB roles for query paths, and no god-object `Context` passed everywhere.
-
-**Explicit is better than implicit (Zen of Python)**
-
-- **Means:** Behavior should be visible at the call site, not hidden in magic.
-- **Apply:** Prefer explicit dependency injection over global registries, and avoid import-time side effects and monkey-patching.
-
-### Readability and tests
-
-**Principle of Least Astonishment (POLA)**
-
-- **Means:** Code should behave the way a reader expects from its name and shape.
-- **Apply:** A function named `get_user` shouldn't create one. In review, a surprised reviewer is a finding.
-
-**Boy Scout Rule**
-
-- **Means:** Leave the code a bit cleaner than you found it.
-- **Apply:** Small adjacent cleanups are fine. Keep them in separate commits from behavior changes so review stays legible.
-
-**Chesterton's Fence**
-
-- **Means:** Don't remove something until you know why it was put there.
-- **Apply:** Before deleting a weird guard or "pointless" retry, check `git blame` and the linked issue. This is the counterweight to over-eager simplification.
-
-**Hyrum's Law**
-
-- **Means:** With enough users, every observable behavior of your API becomes something someone depends on.
-- **Apply:** Treat output ordering, error message text, and timing as part of the contract once they're public. In review, flag "harmless" behavior changes to widely used interfaces.
-
-**Conway's Law**
-
-- **Means:** System structure mirrors the communication structure of the organization that built it.
-- **Apply:** If service boundaries don't match team boundaries, expect friction. Use it deliberately when drawing bounded contexts.
-
-## 1. Simplicity and scope
 
 The first review question is whether the change should be this big. KISS limits how complex the solution is. YAGNI limits whether it should exist at all. DRY and the Rule of Three decide when repetition should become an abstraction. Over-engineering survives review because the author can usually name a principle they were following, most often reuse or DRY, applied past the point where it helps. This section is about catching that.
 
@@ -199,7 +106,49 @@ These are YAGNI violations. Each adds code to read, test and keep consistent, bu
 - **Configuration for everything.** Every value is an environment variable, including ones that never differ between environments. Configuration has no tests or types, and each setting multiplies the states the system can be in. Make something configurable only when it actually varies between deployments.
 - **The golden hammer.** Every problem gets the familiar tool: everything is a microservice, an event, a Redis key, a CQRS command. Ask what the simplest thing that fits this case would be.
 
+---
+
 ## 2. Design and structure
+
+### The principles
+
+**SOLID** (five principles, one line each; the design and structure section applies each one in review)
+
+- **SRP (Single Responsibility):** A module has one reason to change. Split a handler that validates, persists, and sends email.
+- **OCP (Open/Closed):** Extend behavior without editing existing code. Add a new strategy or handler instead of another `elif`.
+- **LSP (Liskov Substitution):** Subtypes must be usable wherever the base type is. A subclass that raises on an inherited method is a violation.
+- **ISP (Interface Segregation):** Don't force consumers to depend on methods they don't use. In Python, small `Protocol`s over one fat interface.
+- **DIP (Dependency Inversion):** High-level policy depends on abstractions, not concrete details. Inject the repository protocol; don't import the SQLAlchemy session in domain code.
+
+**Separation of Concerns**
+
+- **Means:** Each part of the system addresses one distinct concern (transport, domain logic, persistence).
+- **Apply:** No SQL in route handlers, no HTTP types in domain services. In review, flag layer-crossing imports.
+
+**High Cohesion, Low Coupling**
+
+- **Means:** Things that change together live together. Things that don't shouldn't know about each other.
+- **Apply:** If a change to one feature touches six modules, coupling is too high. If a module's contents have nothing in common, cohesion is too low.
+
+**Law of Demeter (Principle of Least Knowledge)**
+
+- **Means:** Talk to your direct collaborators, not their internals.
+- **Apply:** `order.customer.address.city` chains mean the caller knows too much. Expose `order.shipping_city` or pass what's needed.
+
+**Tell, Don't Ask**
+
+- **Means:** Tell objects what to do instead of pulling their state out and deciding for them.
+- **Apply:** Replace `if account.balance >= amt: account.balance -= amt` in the caller with `account.withdraw(amt)`, where the invariant lives.
+
+**Composition over Inheritance**
+
+- **Means:** Assemble behavior from small collaborators instead of deep class hierarchies.
+- **Apply:** Reach for injected dependencies or `Protocol`s before a base class. Be wary of any inheritance chain deeper than two.
+
+**Command-Query Separation (CQS)**
+
+- **Means:** A method either changes state or returns data, not both.
+- **Apply:** It's the seed of CQRS. In review, flag `get_*` functions with side effects.
 
 After scope, design is the most expensive thing to get wrong, because it is the hardest to change once other code depends on it. The design principles all ask the same question from different angles: does each piece have one job, know as little as possible about the others, and offer a contract that a second implementation could satisfy? When new objects, classes or hierarchies appear, review the shape of the model before the code inside it.
 
@@ -468,9 +417,33 @@ KISS catches designs that are too elaborate. Tell, Don't Ask and cohesion catch 
 - **Too complex.** A base class that exists to share three lines. Metaclasses, descriptors or dynamic attribute magic without a concrete need. A constructor with many parameters. Mode flags that turn one class into several.
 - **Too simple.** Anemic models: data bags with all the logic in a separate service, so invariants live nowhere. Wrapper classes that only forward calls. A class with `__init__` and one method, which should be a function. Plain `dict` where a `TypedDict`, dataclass or model would make the shape checkable.
 
+---
+
 ## 3. Correctness and safety
 
-Fail Fast and Parse, Don't Validate together say where errors belong: caught once, at the boundary, as early as possible, and then never checked again inside. Least privilege limits the damage when something goes wrong anyway, and explicit is better than implicit keeps I/O and concurrency where a reader can see them. Hyrum's Law reminds the reviewer that "correct" includes not breaking whoever already depends on the current behavior.
+### The principles
+
+**Fail Fast**
+
+- **Means:** Surface errors at the earliest point, close to the cause.
+- **Apply:** Validate at boundaries, raise on invalid state, and don't swallow exceptions or return `None` to defer the problem. In review, flag bare `except` and silent fallbacks.
+
+**Parse, Don't Validate / Make Illegal States Unrepresentable**
+
+- **Means:** Convert untrusted input into a type that can only hold valid values, instead of re-checking raw data everywhere.
+- **Apply:** Pydantic models at the edge, `Literal`, enums and `NewType`s inside. A `status: str` that can only be three values should be a `StrEnum`.
+
+**Principle of Least Privilege**
+
+- **Means:** Give code, services, and credentials only the access they need.
+- **Apply:** Scoped API tokens, read-only DB roles for query paths, and no god-object `Context` passed everywhere.
+
+**Hyrum's Law**
+
+- **Means:** With enough users, every observable behavior of your API becomes something someone depends on.
+- **Apply:** Treat output ordering, error message text, and timing as part of the contract once they're public. In review, flag "harmless" behavior changes to widely used interfaces.
+
+Fail Fast and Parse, Don't Validate together say where errors belong: caught once, at the boundary, as early as possible, and then never checked again inside. Least privilege limits the damage when something goes wrong anyway. Hyrum's Law reminds the reviewer that "correct" includes not breaking whoever already depends on the current behavior.
 
 ### Parse at the boundary, trust the types inside
 
@@ -535,7 +508,36 @@ Risky changes go behind a flag, and rollback stays possible.
 
 Knuth's rule cuts both ways in review. Ask for a measurement before accepting an optimization that costs readability, and still flag work clearly in the wrong place: queries in loops, unbounded result sets without pagination, repeated parsing, large objects held in memory. Fail Fast extends to production too: failures produce a log line or metric someone will see, with enough structured context to diagnose without a debugger.
 
+---
+
 ## 4. Readability and tests
+
+### The principles
+
+**Principle of Least Astonishment (POLA)**
+
+- **Means:** Code should behave the way a reader expects from its name and shape.
+- **Apply:** A function named `get_user` shouldn't create one. In review, a surprised reviewer is a finding.
+
+**Boy Scout Rule**
+
+- **Means:** Leave the code a bit cleaner than you found it.
+- **Apply:** Small adjacent cleanups are fine. Keep them in separate commits from behavior changes so review stays legible.
+
+**Chesterton's Fence**
+
+- **Means:** Don't remove something until you know why it was put there.
+- **Apply:** Before deleting a weird guard or "pointless" retry, check `git blame` and the linked issue. This is the counterweight to over-eager simplification.
+
+**Explicit is better than implicit (Zen of Python)**
+
+- **Means:** Behavior should be visible at the call site, not hidden in magic.
+- **Apply:** Prefer explicit dependency injection over global registries, and avoid import-time side effects and monkey-patching.
+
+**Conway's Law**
+
+- **Means:** System structure mirrors the communication structure of the organization that built it.
+- **Apply:** If service boundaries don't match team boundaries, expect friction. Use it deliberately when drawing bounded contexts.
 
 The principle of least astonishment is readability in one line: code should behave the way its name and shape suggest. In practice that means writing the idiom a developer in that language expects, keeping behavior visible at the call site, and treating tests as the executable statement of intent.
 

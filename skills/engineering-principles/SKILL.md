@@ -11,33 +11,61 @@ description: >-
   implementing a named pattern (use design-patterns). Not for system-level
   layering, CQRS, sagas, event-driven design or service splits (use code-architectures).
 metadata:
-  last_updated: "2026-11-11"
+  last_updated: "2026-11-17"
 ---
 
 # Engineering Principles
 
-A small set of principles covers most of what makes code good. Apply them while you write, in this order, because an early mistake is expensive to fix later:
+Good code mostly comes from a few decisions made in the right order. Is this needed? Where does it belong? What happens when it fails? Can the next person read it? These principles answer those four questions, in that order, and the sections below point to the full answer for each.
 
-1. **Scope.** Do what was asked and nothing more. KISS, YAGNI, DRY with the Rule of Three, Gall's Law (grow a working simple system, don't design a complex one). Delete before you add.
-2. **Design.** Separate concerns, give each unit one reason to change, depend on abstractions at real seams, prefer composition, tell objects what to do instead of pulling their state apart (Law of Demeter, Tell Don't Ask), keep queries and commands separate.
-3. **Correctness.** Parse at the boundary and trust the types inside, fail fast on every path, make illegal states unrepresentable, grant the least privilege, remember that any observable behavior becomes a contract (Hyrum's Law).
-4. **Readability and tests.** Least astonishment, explicit over implicit, the idiom the language expects, and a test that fails when the behavior breaks.
+You already know most of the names: KISS, YAGNI, DRY, SOLID, fail fast, least astonishment. The names alone help little. The working version of each one helps more: what it means when you are staring at a real function, what a violation looks like in a diff, and what to do about it. Take DRY. Most people remember "don't repeat yourself", and few remember when merging two similar functions makes the code worse.
 
-Get scope and design right before polishing lines. Hand anything a rule can state (formatting, imports, types) to a tool, not to judgment.
+This page only touches on the principles, to keep things light. You can read them in full in [references/principles.md](references/principles.md), which gives the definition of each one, how to apply it, what a violation looks like, and what to do when you see one.
 
-## What to load
+## When to activate
 
-Open only what the task needs.
+Use this skill when you are writing, designing, refactoring or extending code and need to decide:
 
-| You are... | Read |
-|---|---|
-| Deciding what to build, or how much | [principles.md](references/principles.md), "1. Simplicity and scope" |
-| Structuring modules, classes, interfaces, dependencies | [principles.md](references/principles.md), "2. Design and structure" |
-| Handling input, errors, concurrency, data models, permissions, performance | [principles.md](references/principles.md), "3. Correctness and safety" |
-| Naming, clarity, idioms, writing tests | [principles.md](references/principles.md), "4. Readability and tests" |
-| Writing Python, TypeScript or JavaScript, Rust, shell or SQL | [language-notes/index.md](references/language-notes/index.md), then the one file for that language |
+- what to build, and how much of it
+- where logic belongs, and how modules, classes and interfaces should fit together
+- how input, errors and failure should be handled
+- how to name things, which idiom to use, and what a test should prove
 
-The one-paragraph summaries at the top of `principles.md` ("Principles") are enough for a quick decision. Read the detailed section when the summary doesn't settle it.
+It also answers questions like "how should I structure this?", "is this too complex?" and "should I abstract this?".
+
+Don't use it to check a finished diff before a PR (use `reviewing-code`), or for deep SOLID, TDD, DDD, named patterns or system-level architecture (see Related skills at the bottom).
+
+## How to use this skill
+
+1. Find your task in the table of groups below and open that section of `principles.md`.
+2. If the code is in one of the languages listed under "Language notes" further down, open that file too and read it alongside the section. The principles say what to aim for, and the language file says what it looks like in Python, TypeScript, Rust, shell or SQL.
+3. Work in the order of the groups. Scope first, then design, then correctness, then readability. An early mistake is expensive to fix later, so don't polish lines before the shape is right.
+4. Hand anything a rule can state (formatting, imports, types) to a tool, not to your judgment.
+
+## The four groups
+
+| Group | Principles | Read when you are | Section in principles.md |
+|---|---|---|---|
+| 1. Simplicity and scope | KISS, YAGNI, DRY, Rule of Three, premature optimization, make it work then right then fast, Gall's Law | Deciding what to build, or how much | "1. Simplicity and scope" |
+| 2. Design and structure | SOLID, separation of concerns, high cohesion and low coupling, Law of Demeter, Tell Don't Ask, composition over inheritance, command-query separation | Structuring modules, classes, interfaces and dependencies | "2. Design and structure" |
+| 3. Correctness and safety | Fail fast, parse don't validate, illegal states unrepresentable, least privilege, concurrency and I/O, Hyrum's Law, performance and observability | Handling input, errors, concurrency, data models, permissions or performance | "3. Correctness and safety" |
+| 4. Readability and tests | Least astonishment, explicit over implicit, idiomatic code, Boy Scout Rule, Chesterton's Fence, Conway's Law, tests that fail when behavior breaks | Naming, clarity, idioms and writing tests | "4. Readability and tests" |
+
+Each section of principles.md opens with the group's principles in short form (what it means, how to apply it), then goes deeper on the ones that need it, with a Wrong and Right example. Read the short form to settle a quick decision. Read the rest when you suspect a violation.
+
+## Language notes
+
+The principles are language-neutral. The language notes hold what differs: the toolchain that enforces the mechanical rules, how packages are managed, how the principles show up in that language, and its idioms and smells. When you write or review code in one of these languages, read its file together with the principles section for your task.
+
+| Language | File | Sections |
+|---|---|---|
+| Python | [python.md](references/language-notes/python.md) | Tooling and settings; Packages and environments (pip, uv, PyPI); Idioms; Python-specific smells |
+| TypeScript and JavaScript | [typescript.md](references/language-notes/typescript.md) | Tooling and settings; Packages (npm, pnpm, Bun); How the principles show up; Idioms; TypeScript-specific smells |
+| Rust | [rust.md](references/language-notes/rust.md) | Tooling and settings; Packages (Cargo, crates.io); How the principles show up; Idioms; Rust-specific smells |
+| Shell (Bash and zsh) | [shell.md](references/language-notes/shell.md) | Tooling; Bash and zsh differences; Idioms; Shell-specific smells |
+| SQL | [sql.md](references/language-notes/sql.md) | Tooling; Idioms; SQL-specific smells |
+
+[language-notes/index.md](references/language-notes/index.md) has a side-by-side table of the tools each language uses for formatting, linting, type checking, tests, parsing at the boundary and the rest. Open it to compare languages or to find the equivalent of a principle in a language you know less well.
 
 ## Related skills
 
