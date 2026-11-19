@@ -51,7 +51,7 @@ Don't use it to check a finished diff before a PR (use `reviewing-code`), or for
 | 3. Correctness and safety | Fail fast, parse don't validate, illegal states unrepresentable, least privilege, concurrency and I/O, Hyrum's Law, performance and observability | Handling input, errors, concurrency, data models, permissions or performance | "3. Correctness and safety" |
 | 4. Readability and tests | Least astonishment, explicit over implicit, idiomatic code, Boy Scout Rule, Chesterton's Fence, Conway's Law, tests that fail when behavior breaks | Naming, clarity, idioms and writing tests | "4. Readability and tests" |
 
-Each section of principles.md opens with the group's headline principles in short form (what it means, how to apply it). The rest of the section goes deeper, as a checklist of what to look for, and covers the table items that have no short form of their own. Code examples appear only in section 2. Read the short form to settle a quick decision. Read the rest when you suspect a violation.
+Each section of principles.md opens with the group's headline principles in short form (what it means, how to apply it). The rest of the section goes deeper, as a checklist of what to look for, and covers the table items that have no short form of their own. Code examples are mainly in section 2. Read the short form to settle a quick decision. Read the rest when you suspect a violation.
 
 ## Language notes
 
