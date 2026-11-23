@@ -17,8 +17,8 @@ summary: Build low-latency, speech-to-speech voice agents with the AI SDK throug
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/modalities/realtime.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "39cee1bd06cabd9d7cdb7df228cd6157ae8ed7e02c7a4f416b86b1ed1b81ad2c"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "1098c7f5b8167b17214f14cf59ff1b6dcfb465f8b2238b94e24969ba85c10b4f"
 ---
 
 # Realtime Voice with AI Gateway
@@ -37,7 +37,6 @@ Build voice agents that listen and respond in real time. With the AI SDK, you st
 - [WebSocket support is now generally available](https://vercel.com/changelog/websocket-support-is-now-generally-available)
 - [ElevenLabs on AI Gateway](https://vercel.com/blog/elevenlabs-on-ai-gateway)
 - [xAI Grok audio models now available on Vercel AI Gateway](https://vercel.com/changelog/xai-grok-audio-models-now-available-on-vercel-ai-gateway)
-- [GPT-Live 1 now available on AI Gateway](https://vercel.com/changelog/gpt-live-1-now-available-on-ai-gateway)
 - [Realtime](https://ai-sdk.dev/docs/ai-sdk-core/realtime) — Learn how to build realtime voice conversations with the AI SDK.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/realtime.graph.md](/docs/ai-gateway/modalities/realtime.graph.md)

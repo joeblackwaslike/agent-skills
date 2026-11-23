@@ -18,8 +18,8 @@ summary: Incoming webhooks from third-party services, verified by Vercel Connect
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/connect/concepts/triggers.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "de143c49525896b8c6e6ec0fb29c3c4083c20d054d9d2f7b4d74111b5cd4a7d8"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "68be2b5782f7504b10682437b9d21116b612796f0ad82cfc02ec19cd2e268200"
 ---
 
 # Webhook triggers for Vercel Connect
@@ -38,11 +38,11 @@ A **trigger** is an incoming webhook from a third-party service that Vercel Conn
 - [Vercel Connect now supports Microsoft Teams](https://vercel.com/changelog/vercel-connect-microsoft-teams)
 - [Call third-party APIs from Python with Vercel Connect](https://vercel.com/kb/guide/python-and-vercel-connect) — Call Slack and Linear APIs from Python with Vercel Connect. Request app and user tokens, handle consent, and verify prov
 - [How to set up a staging environment on Vercel](https://vercel.com/kb/guide/set-up-a-staging-environment-on-vercel) — Set up a staging environment on Vercel with custom environments, staged production deployments, or a branch-based previe
-- [Vercel Connect now supports Custom Environments](https://vercel.com/changelog/vercel-connect-now-supports-custom-environments)
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
 - [Observability](https://vercel.com/docs/connect/observability) — Monitor token requests, authorizations, revocations, and trigger deliveries for your connectors.
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
 - [Setting Up Webhooks](https://vercel.com/docs/webhooks) — Learn how to set up webhooks and use them with Vercel Integrations.
+- [Creating & Triggering Deploy Hooks](https://vercel.com/docs/deploy-hooks) — Learn how to create and trigger deploy hooks to integrate Vercel deployments with other systems.
 
 Full cross-link map for this page: [/docs/connect/concepts/triggers.graph.md](/docs/connect/concepts/triggers.graph.md)
 <!-- /docsgraph:related -->

@@ -17,8 +17,8 @@ summary: Control processing priority and cost for OpenAI, Google AI Studio, Goog
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/service-tiers.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "23cd1ef8b814dcf2917be45d10a2daa2091b8a91ea9c347b3f6bcf0e7e7de0e5"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "5e6140eff74cccf644303fbd36266001050e276e542cb006c75fdf30188f82bb"
 ---
 
 # AI Gateway Service Tiers
@@ -31,11 +31,11 @@ OpenAI, Google AI Studio, Google Vertex AI, and SpaceXAI offer different process
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [GPT-6.2 Astra and Sol now available on AI Gateway](https://vercel.com/changelog/gpt-6-2-astra-and-sol-now-available-on-ai-gateway)
 - [OpenAI Ultrafast mode now available on AI Gateway](https://vercel.com/changelog/openai-ultrafast-mode-now-available-on-ai-gateway)
 - [Service tiers now available on AI Gateway](https://vercel.com/changelog/service-tiers-now-available-on-ai-gateway)
 - [Cost-aware model routing with Vercel AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Send easy requests to a lower-cost model and escalate only the complex ones to a frontier model through AI Gateway, with
 - [Azure OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/azure) — Learn how to use Azure OpenAI with AI Gateway and the direct provider.
-- [AI Gateway](https://ai-sdk.dev/providers/ai-sdk-providers/ai-gateway) — Learn how to use the AI Gateway provider with the AI SDK.
 - [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai) — Learn how to use OpenAI with AI Gateway and the direct provider.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/service-tiers.graph.md](/docs/ai-gateway/models-and-providers/service-tiers.graph.md)

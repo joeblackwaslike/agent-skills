@@ -18,8 +18,8 @@ summary: Keep the Vercel Git integration and use GitHub Actions to build, provis
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/networking/bring-your-own-cloud/deploy-with-github-actions.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "7d2bc83ad73ba284a50add0855173e8011ec14ad71c0e251e6b2119e8f897721"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "370b6467ce3c068b96ca1ea206b3d8dd4d4244e8ed63fd489ff6af1d7e57096f"
 ---
 
 # Deploying with BYOC from GitHub Actions
@@ -35,12 +35,11 @@ Keep the [Vercel Git integration](/docs/git) for a [Bring Your Own Cloud (BYOC)]
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Complete Guide to Bring Your Own Cloud](https://vercel.com/kb/guide/byoc) — Use Bring Your Own Cloud \\(BYOC\\) to run Vercel Functions as AWS Lambda functions in your own AWS account, from setup to
-- [Can I use GitHub Enterprise Server with Vercel?](https://vercel.com/kb/guide/can-i-use-github-enterprise-server-with-vercel) — You can use GitHub Enterprise Server and GitHub Actions to deploy your application to Vercel.
-- [Block Vercel deployment promotions with GitHub Actions](https://vercel.com/changelog/block-vercel-deployment-promotions-with-github-actions)
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
-- [How can I use the Vercel CLI for custom workflows?](https://vercel.com/kb/guide/using-vercel-cli-for-custom-workflows) — You can use the Vercel CLI to deploy any application, including custom git providers and restricted source code.
-- [How can I run end-to-end tests after my Vercel Preview Deployment?](https://vercel.com/kb/guide/how-can-i-run-end-to-end-tests-after-my-vercel-preview-deployment) — Learn how to use the Vercel CLI in combination with your CI/CD provider to run end-to-end tests for every code change.
+- [Implementing Blue-Green Deployments on Vercel](https://vercel.com/kb/guide/blue_green_deployments_on_vercel) — This guide outlines how to implement blue-green deployments on Vercel, leveraging GitHub Actions for seamless and contro
 - [Connecting an AWS Account for BYOC](https://vercel.com/docs/networking/bring-your-own-cloud/connect-aws-account) — Connect an AWS account to your Vercel team so Bring Your Own Cloud \\(BYOC\\) can invoke Lambda functions in your account.
+- [Deploying from an External CI/CD Pipeline](https://vercel.com/docs/git/external-pipelines) — Build your project in GitHub Actions, CircleCI, Bitbucket Pipelines, or another CI/CD provider, then deploy the build ou
+- [Deploying GitHub Projects with Vercel](https://vercel.com/docs/git/vercel-for-github) — Vercel for GitHub automatically deploys your GitHub projects with Vercel, providing Preview Deployment URLs, and automat
+- [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 
 Full cross-link map for this page: [/docs/networking/bring-your-own-cloud/deploy-with-github-actions.graph.md](/docs/networking/bring-your-own-cloud/deploy-with-github-actions.graph.md)

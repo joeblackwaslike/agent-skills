@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/checkpointing.md"
-fetched_at: "2026-11-16T12:28:44.823Z"
-sha256: "f0f66aca749347801ad55fec8ee669c162152458eaf1e5f11f56dfe05d21d0e6"
+fetched_at: "2026-11-23T14:04:20.448Z"
+sha256: "3252beadf277a5e944e0525b8c81958df1bab7158c2ad38f4c4b7db15ae3cfa1"
 ---
 
 > ## Documentation Index
@@ -33,7 +33,7 @@ Run `/rewind`, or press `Esc` twice when the prompt input is empty, to open the 
 
 > [!NOTE]
 >
-> If the prompt input contains text, double `Esc` clears it instead of opening the menu. The cleared text is saved to your input history, so press `Up` to recall it after you finish in the rewind menu.
+> In [vim mode](https://code.claude.com/docs/en/interactive-mode.md#vim-editor-mode), press `Esc` twice from NORMAL mode. Outside vim mode, if the prompt input contains text, double `Esc` clears it instead of opening the menu. The cleared text is saved to your input history, so press `Up` to recall it after you finish in the rewind menu.
 
 The rewind menu lists the prompts you sent during the session. Select the point you want to act on, then choose an action:
 

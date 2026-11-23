@@ -11,12 +11,13 @@ prerequisites:
 related:
   - /docs/integrations/create-integration/native-integration
   - /docs/integrations/create-integration/marketplace-api/reference/vercel/update-resource-secrets-by-id
+  - /docs/integrations/create-integration/short-lived-access-tokens
 summary: Learn how to implement secrets rotation in your integration to allow users to rotate credentials securely.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/secrets-rotation.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "ca4eaed810009b962ff73e717f7d96246eab7ecdddd7104d3f3c1cb1e53b0711"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "332c8f28d4a3f68ce63de8b09f1d18190bcec1893af8173baa157e3d0972738b"
 ---
 
 # Implementing secrets rotation
@@ -30,12 +31,9 @@ When your integration provisions resources with credentials (like API keys, data
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Rotating Secrets for Vercel Marketplace Integrations](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-supabase-integration) — Rotate the Supabase service role key, JWT secret, and database password from your Vercel integration, then apply the new
-- [How to rotate the secrets of your Hypertune integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-hypertune-integration) — Rotate Hypertune API keys with zero-downtime.
-- [How to rotate the secrets of your Clerk integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-clerk-integration) — Rotate Clerk API keys
-- [How to rotate the secrets of your Neon integration](https://vercel.com/kb/guide/how-to-reset-a-secret-for-a-neon-integration) — This will guide you how to update the password for a Neon project.
-- [How to rotate the secrets of your MongoDB Atlas integration](https://vercel.com/kb/guide/how-to-reset-the-secret-for-your-mongodb-atlas-integration) — This will guide you how to update the password for a MongoDB Atlas databse.
 - [Rotating environment variables](https://vercel.com/docs/environment-variables/rotating-secrets) — Safely rotate API keys, tokens, and other secrets in your Vercel environment variables.
 - [Rotate Installation Credential](https://vercel.com/docs/rest-api/marketplace/rotate-installation-credential) — POST /v1/installations/{integrationConfigurationId}/credentials/rotate — Issues a replacement access token for an instal
+- [Death to long-lived static credentials](https://vercel.com/blog/death-to-long-lived-static-credentials)
 - [Update Resource Secrets](https://vercel.com/docs/rest-api/marketplace/update-resource-secrets) — PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId}/secrets — This endpoint updates the secrets of
 - [Vercel KMS Key Rotation](https://vercel.com/docs/kms/concepts/key-rotation) — How Vercel KMS stages a pending signing key, schedules its activation, and retires the previous key so already-issued to
 - [Revoke Installation Credential](https://vercel.com/docs/rest-api/marketplace/revoke-installation-credential) — POST /v1/installations/{integrationConfigurationId}/credentials/revoke — Retires a superseded installation credential, s
@@ -154,7 +152,7 @@ PUT https://api.vercel.com/v1/installations/{installationId}/resources/{resource
 }
 ```
 
-Use the access token you received during installation to authenticate this request.
+Authenticate this request with a [short-lived access token](/docs/integrations/create-integration/short-lived-access-tokens#request-a-short-lived-token) for the installation. Long-lived access tokens are deprecated. If your integration still stores the token it received during installation, [migrate to short-lived access tokens](/docs/integrations/create-integration/short-lived-access-tokens).
 
 ## Implementation example
 

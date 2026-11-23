@@ -17,8 +17,8 @@ summary: "Learn how to track and analyze your team members' activities."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/audit-log.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "c4c444bb638761cbd8869d155b402d2b9e1de1afd7e8dda8261c1378bf547771"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "f25ec4f08a3619a8c46288eb2597bb64465cffad50a425aec934105b60b37cea"
 ---
 
 # Audit Logs
@@ -45,11 +45,13 @@ Audit logs help you track and analyze your [team members'](/docs/rbac/managing-t
 - [Vercel for Enterprise](https://vercel.com/blog/vercel-for-enterprise)
 - [Encryption](https://workflow-sdk.dev/docs/how-it-works/encryption) — Understand how workflow and step data is encrypted at rest.
 - [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
-- [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments)
-- [June 2020](https://vercel.com/blog/changelog-june-2020)
+- [July 2020](https://vercel.com/blog/changelog-july-2020)
+- [Vercel CLI Overview](https://vercel.com/docs/cli) — Learn how to use the Vercel command-line interface \\(CLI\\) to manage and configure your Vercel Projects from the command
 
 Full cross-link map for this page: [/docs/audit-log.graph.md](/docs/audit-log.graph.md)
 <!-- /docsgraph:related -->
+
+If your team isn't on the Enterprise plan, [contact our sales team](/contact/sales) to get access to audit logs.
 
 ![Select a timeframe to export audit logs for your team.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/teams/audit-logs-section-light.png)
 
@@ -358,11 +360,17 @@ Refers to actions performed by any [team member](/docs/rbac).
 
 ### `vercel-agent-security`
 
-Refers to findings recorded by [Security Review](/docs/agent/security-review). These action names aren't scoped to a resource like the ones above, so match them exactly when you filter your audit log.
+Refers to [Security Review](/docs/agent/security-review) findings and policy changes. These action names aren't scoped to a resource like the ones above, so match them exactly when you filter your audit log.
 
-| **Action Name**                             | **Description**                                           |
-| ------------------------------------------- | --------------------------------------------------------- |
-| **`vercel-agent-security-finding-created`** | Indicates that a security review recorded a new finding    |
+| **Action Name**                                   | **Description**                                                                                                                                                         |
+| ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`vercel-agent-security-finding-closed`**        | Indicates that a team member closed a finding as resolved, a false positive, or an accepted risk                                                                        |
+| **`vercel-agent-security-finding-created`**       | Indicates that a security review recorded a new finding                                                                                                                 |
+| **`vercel-agent-security-finding-dismissed`**     | Legacy action that Vercel no longer records. Indicates that a team member dismissed a finding, in events from before `vercel-agent-security-finding-closed` replaced it |
+| **`vercel-agent-security-finding-reopened`**      | Indicates that a team member reopened a closed finding                                                                                                                  |
+| **`vercel-agent-security-finding-resolved`**      | Indicates that Vercel closed a finding because a later security review no longer detects the issue                                                                      |
+| **`vercel-agent-security-review-policy-deleted`** | Indicates that a team member deleted a team or project security review policy                                                                                           |
+| **`vercel-agent-security-review-policy-updated`** | Indicates that a team member added or edited a team or project security review policy                                                                                   |
 
 ## Search the docs from your terminal
 

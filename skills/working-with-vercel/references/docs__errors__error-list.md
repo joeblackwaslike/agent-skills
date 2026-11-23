@@ -17,8 +17,8 @@ summary: You may encounter a variety of errors when you interact with the Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/error-list.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "7309a7b261db08dc8c12fa1ae3bd9d626053877bd392bde00135009e548564f0"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "c81d43607991a453374f6d149e40d8af7e089825c1ea586fc8d13c31ef587665"
 ---
 
 # Error List
@@ -452,6 +452,33 @@ To prevent this error, consider the following options:
 
 - Remove `"type": "module"` from the project's `package.json`
 - Install yarn into the project instead of using corepack with `yarn set version [desired-version] --yarn-path`
+
+## Corepack cannot find matching keyid
+
+An install step that uses [Corepack](/docs/builds/configure-a-build#corepack) to run pnpm or Yarn can fail with this error:
+
+```text
+Error: Cannot find matching keyid: {"signatures":[...],"keys":[...]}
+```
+
+Corepack verifies the signature of each package manager release against a list of npm registry keys that ships inside Corepack. The npm registry started signing releases with a new key in January 2025, so Corepack versions older than `0.31.0` can't verify package manager releases published since then, such as pnpm `10.1.0`. The error appears wherever an older Corepack runs, including CI workflows that run `vercel build` in GitHub Actions or GitLab CI/CD, and Docker images.
+
+To fix the error:
+
+1. Check the Corepack version in the failing environment with `corepack --version`
+
+2. If the version is older than `0.31.0`, install the latest Corepack before the step that installs your dependencies:
+
+   ```bash filename="terminal"
+   npm install --global corepack@latest
+   corepack enable
+   ```
+
+3. If the workflow only updates Corepack under a condition, such as a specific Node.js version, make sure the update also runs for the Node.js version you build with
+
+> **💡 Note:** Setting `COREPACK_INTEGRITY_KEYS=0` also removes the error, but it turns off
+> Corepack's signature checks for every package manager download. Update
+> Corepack instead.
 
 ## Invalid Global Config connection string
 

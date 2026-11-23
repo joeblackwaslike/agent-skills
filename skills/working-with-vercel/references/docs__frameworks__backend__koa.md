@@ -18,8 +18,8 @@ summary: Deploy Koa applications to Vercel with zero configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/backend/koa.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "caad0810858a9c9f9d969c71fc6ad8f55917ca37f0dae69987b345f63990df00"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "c35400d9540d690bfef727aa907af7da17b6f78df8b392c5763a8902b0545fe0"
 ---
 
 # Koa on Vercel
@@ -37,7 +37,6 @@ Koa is an expressive HTTP middleware framework for building web applications and
 - [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
 - [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
 - [How to ship a NestJS app on Vercel](https://vercel.com/kb/guide/ship-a-nestjs-app-on-vercel) — Deploy a NestJS app to Vercel with zero configuration. Learn how to ship from a template, the Nest CLI, or Git, and conf
-- [How to ship an Elysia app on Vercel](https://vercel.com/kb/guide/ship-a-elysia-app-on-vercel) — Deploy a Elysia app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and co
 - [Express on Vercel](https://vercel.com/docs/frameworks/backend/express) — Deploy Express applications to Vercel with zero configuration. Learn about middleware and Vercel Functions.
 - [Hono on Vercel](https://vercel.com/docs/frameworks/backend/hono) — Deploy Hono applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurati
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti

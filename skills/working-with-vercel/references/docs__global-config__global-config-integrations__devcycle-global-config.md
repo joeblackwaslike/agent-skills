@@ -18,8 +18,8 @@ summary: "Learn how to use Global Config with Vercel's DevCycle integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/global-config/global-config-integrations/devcycle-global-config.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "c3444b93b2f29eeabe8a3aef2ef82fc0eacef5d47263eebd6d70b0742cf94327"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "a1a9a2d7efbe1a49ba5e69e3ca72b12a585d35e8607b121b62736592946dc1df"
 ---
 
 # Using Global Config with DevCycle
@@ -117,7 +117,7 @@ bunx create-next-app@latest
    ```
 
 - ### Set up the DevCycle integration
-  Visit [the DevCycle page in the Integration Marketplace](/marketplace/devcycle) and select the **Add Integration** button. From the modal that opens:
+  Visit [the DevCycle page in the Integration Marketplace](/marketplace/devcycle) and select the **Connect Account** button. From the modal that opens:
   1. Select your Vercel team and project.
   2. Continue and log into DevCycle.
   3. Select the DevCycle Organization and Project you want to use with Vercel Global Config.

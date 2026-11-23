@@ -9,16 +9,16 @@ prerequisites:
   - /docs/observability
 related:
   - /docs/functions
+  - /docs/observability/observability-plus
+  - /docs/functions/usage-and-pricing
   - /docs/cli/metrics
   - /docs/manage-cdn-usage
-  - /docs/image-optimization
-  - /docs/incremental-static-regeneration
 summary: List of available data sources that you can view and monitor with Observability on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/observability/insights.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "8179fed6959cabbb7f8042888ea5c9ddc71a344811f15ab28149b1df54a32b01"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "4e271b933a3ec1c7f51d0b9c0c123c0ac2cb7f83bb8aa7ef4f3d7ff6fea9b283"
 ---
 
 # Observability Insights
@@ -35,11 +35,10 @@ Vercel organizes Observability through sections that correspond to different fea
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
 - [Troubleshoot and optimize Function Invocations on Vercel](https://vercel.com/kb/guide/optimize-function-invocations) — Diagnose which routes drive Function Invocations and learn to optimize them. Separate necessary dynamic traffic from div
 - [Anyone can build agents, but it takes a platform to run them](https://vercel.com/blog/anyone-can-build-agents-but-it-takes-a-platform-to-run-them)
-- [Vercel Observability is now generally available](https://vercel.com/changelog/vercel-observability-is-now-generally-available)
-- [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
-- [Observability](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability) — Vercel MCP tools for observability.
+- [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
 - [Runtime Logs](https://vercel.com/docs/logs/runtime) — Learn how to search, inspect, and share your runtime logs with the Logs tab.
+- [Observability](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability) — Vercel MCP tools for observability.
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 
 Full cross-link map for this page: [/docs/observability/insights.graph.md](/docs/observability/insights.graph.md)
@@ -49,7 +48,20 @@ Full cross-link map for this page: [/docs/observability/insights.graph.md](/docs
 
 The **Vercel Functions** tab provides a detailed view of the performance of your Vercel Functions. You can see the number of invocations and the error rate of your functions. You can also see the performance of your functions broken down by route.
 
-For more information, see [Vercel Functions](/docs/functions). See [understand the cost impact of function invocations](/kb/guide/understand-cost-impact-of-function-invocations) for more information on how to optimize your functions.
+For more information, see [Vercel Functions](/docs/functions).
+
+### Find the routes that drive function usage
+
+When your function usage is higher than you expect, use the **Functions** section to find the routes responsible:
+
+1. From your project dashboard, open **Observability** in the sidebar, then select **Functions**.
+2. Set the time range to the period you want to investigate, such as **Last 24 hours**.
+3. Sort the routes table by **Invocations** to find the routes that run most often. Sort by **Active CPU** or **GB-Hours**, whichever column your project shows, to find the routes that use the most compute.
+4. Select a route to see its **Invocations**, **Error Rate**, and **Duration** charts.
+5. Expand **Advanced metrics** to see **Active CPU**, **Memory Usage**, **CPU Throttle**, **Time to First Byte**, and **Start Type** for the route. A high share of cold starts or frequent CPU throttling makes each invocation take longer.
+6. Select the route's **External APIs** tab to see the requests it sends to other services. A slow upstream API keeps the function running while it waits for a response.
+
+The **P75 Duration** column, the **Duration** chart, and the **Time to First Byte** chart require [Observability Plus](/docs/observability/observability-plus). To learn how Vercel bills function usage, see [Vercel Functions usage and pricing](/docs/functions/usage-and-pricing).
 
 ### CPU Throttling
 
@@ -63,9 +75,17 @@ To reduce throttling, optimize heavy computations, add caching, or increase the 
 
 You can use the **External APIs** tab to understand more information about requests from your functions to external APIs. You can organize by number of requests, p75 (latency), and error rate to help you understand potential causes for slow upstream times or timeouts.
 
-### External APIs Recipes
+### Find slow external APIs
 
-- [Investigate Latency Issues and Slowness on Vercel](/kb/guide/investigate-latency-issues-and-slowness)
+When a function times out or responds slowly, check whether it's waiting on an external API:
+
+1. From your project dashboard, open **Observability** in the sidebar, then select **External APIs**.
+2. Set the time range to the period you want to investigate, such as **Last 6 hours**.
+3. Review the hostnames your functions call. The table shows **API Calls**, **Cached Calls**, **Latency**, and **Error Rate** for each hostname. Sort by **Latency** to bring the slowest hostnames to the top.
+4. Select a hostname to see its **API Calls** and **Latency** charts over the time range.
+5. Select the **Functions** tab to see which of your routes sent the requests, with **API Calls**, **P75 Duration**, and **Error Rate** for each route. The **Endpoints** tab lists the endpoints requested on that hostname.
+
+Without [Observability Plus](/docs/observability/observability-plus), you can see request totals for each hostname. Latency, error rate, and the hostname detail views require Observability Plus.
 
 ## Middleware
 

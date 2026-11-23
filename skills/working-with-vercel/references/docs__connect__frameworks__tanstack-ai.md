@@ -18,8 +18,8 @@ summary: Connect a TanStack AI app to OAuth-protected MCP servers with Vercel Co
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/connect/frameworks/tanstack-ai.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "f9adfc0b8b2d80a4b56379c1bcf9d61940c411c4186e8687e9d4bfe225346b25"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "138d0415f581c64e562ed0945ed8b0cbd36f21537639644c0b024e4baeda84f9"
 ---
 
 # TanStack AI with Vercel Connect
@@ -36,10 +36,10 @@ Connect a TanStack AI chat route to Linear's Model Context Protocol (MCP) server
 
 - [Vercel Connect now supports TanStack AI](https://vercel.com/changelog/vercel-connect-tanstack-ai)
 - [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
-- [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
 - [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
 - [AI SDK with MCP](https://vercel.com/docs/mcp/integrations/ai-sdk) — Connect the AI SDK to an MCP server on Vercel, discover its tools, and call them with models served through AI Gateway.
 - [Chat SDK with AI Gateway](https://vercel.com/docs/chat-sdk/integrations/ai-gateway) — Stream AI Gateway model responses into Chat SDK conversations with AI SDK and message history.
+- [Chat SDK with Vercel Connect](https://vercel.com/docs/chat-sdk/integrations/connect) — Use Vercel Connect for Chat SDK platform credentials, verified webhooks, and separate per-user tool access.
 
 Full cross-link map for this page: [/docs/connect/frameworks/tanstack-ai.graph.md](/docs/connect/frameworks/tanstack-ai.graph.md)
 <!-- /docsgraph:related -->

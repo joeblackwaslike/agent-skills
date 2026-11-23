@@ -10,15 +10,16 @@ prerequisites:
   - /docs/vercel-firewall
 related:
   - /docs/vercel-firewall/vercel-waf/custom-rules
+  - /docs/routing/redirects
+  - /docs/vercel-firewall/vercel-waf/rate-limiting
   - /docs/vercel-firewall/vercel-waf/managed-rulesets
   - /docs/vercel-firewall/vercel-waf/ip-blocking
-  - /docs/rest-api/security/update-attack-challenge-mode
 summary: Learn how to use Vercel WAF to protect your site in specific situations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/examples.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "4a0421414e3278376ab5fb61fcd740f31b5f0f57f91fab1317aeb8fd115405a6"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "02a17b561e2f88e6fc41c35fe73522cdbabf4de3a1d7dbdde4505253846b241d"
 ---
 
 # WAF Examples
@@ -26,10 +27,10 @@ sha256: "4a0421414e3278376ab5fb61fcd740f31b5f0f57f91fab1317aeb8fd115405a6"
 | Example                                                                                                        | Category                                                         | Template                                  |
 | -------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | ----------------------------------------- |
 | [Suspicious traffic in specific countries](/kb/guide/suspicious-traffic-in-specific-countries)                 | [Custom Rule](/docs/vercel-firewall/vercel-waf/custom-rules)            |  |
-| [Emergency redirect](/kb/guide/emergency-redirect)                                                             | [Custom Rule](/docs/vercel-firewall/vercel-waf/custom-rules)            |  |
-| [Limit abuse with rate limiting](/kb/guide/limit-abuse-with-rate-limiting)                                     | [Custom Rule](/docs/vercel-firewall/vercel-waf/custom-rules)            |  |
+| [Emergency redirect](/docs/routing/redirects#firewall-redirects)                                               | [Custom Rule](/docs/vercel-firewall/vercel-waf/custom-rules)            |  |
+| [Limit abuse with rate limiting](/docs/vercel-firewall/vercel-waf/rate-limiting)                           | [Custom Rule](/docs/vercel-firewall/vercel-waf/custom-rules)            |  |
 | [Block AI bots](/docs/vercel-firewall/vercel-waf/managed-rulesets#configure-ai-bots-managed-ruleset)                           | [Managed Ruleset](/docs/vercel-firewall/vercel-waf/managed-rulesets)             |                                           |
-| [Block `.php` requests](/kb/guide/block-php-requests)                                                          | [Custom Rule](/docs/vercel-firewall/vercel-waf/custom-rules)            |  |
+| [Block `.php` requests](/kb/guide/suspicious-traffic-in-specific-countries)                                    | [Custom Rule](/docs/vercel-firewall/vercel-waf/custom-rules)            |  |
 | [Block traffic from a specific IP address](/kb/guide/traffic-spikes)                                           | [IP Blocking](/docs/vercel-firewall/vercel-waf/ip-blocking)             |                                           |
 | [Challenge `cURL` requests](/kb/guide/challenge-curl-requests)                                                 | [Firewall REST API](/docs/rest-api/security/update-attack-challenge-mode) |                                           |
 | [Challenge cookieless requests on a specific path](/kb/guide/challenge-cookieless-requests-on-a-specific-path) | [Firewall REST API](/docs/rest-api/security/update-attack-challenge-mode) |                                           |
@@ -43,12 +44,11 @@ sha256: "4a0421414e3278376ab5fb61fcd740f31b5f0f57f91fab1317aeb8fd115405a6"
 
 - [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf) — Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in secur
 - [Create Vercel Firewall rules with natural language](https://vercel.com/changelog/create-vercel-waf-custom-rules-using-natural-language)
-- [Create custom WAF rules directly from the Vercel Firewall tab](https://vercel.com/changelog/create-custom-waf-rules-directly-from-the-vercel-firewall-tab)
-- [Using the REST API with the Firewall](https://vercel.com/docs/vercel-firewall/firewall-api) — Learn how to interact with the security endpoints of the Vercel REST API programmatically.
-- [Returns activated WAF config](https://vercel.com/docs/rest-api/security/returns-activated-waf-config) — GET /v1/security/firewall/config — Lists WAF configs for a project
+- [Rule Configuration Reference](https://vercel.com/docs/vercel-firewall/vercel-waf/rule-configuration) — List of configurable options with the Vercel WAF
+- [Returns activated WAF config](https://vercel.com/docs/rest-api/security/returns-activated-waf-config-2) — POST /v1/security/firewall/config/{configVersion}/activate — Promotes a draft WAF config to an active config
 - [Usage & Pricing for Vercel WAF](https://vercel.com/docs/vercel-firewall/vercel-waf/usage-and-pricing) — Learn how the Vercel WAF can affect your usage and how specific features are priced.
-- [Firewall and Security](https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall) — Vercel MCP tools for firewall and security.
-- [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
+- [Returns activated WAF config](https://vercel.com/docs/rest-api/security/returns-activated-waf-config) — GET /v1/security/firewall/config — Lists WAF configs for a project
+- [Using the REST API with the Firewall](https://vercel.com/docs/vercel-firewall/firewall-api) — Learn how to interact with the security endpoints of the Vercel REST API programmatically.
 
 Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/examples.graph.md](/docs/vercel-firewall/vercel-waf/examples.graph.md)
 <!-- /docsgraph:related -->

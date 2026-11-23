@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/01-about/020_programming-languages.md"
-fetched_at: "2026-11-02T12:06:22.105Z"
-sha256: "53770e8377ded3d2b8a3ef667fbb7a26240b1b8553a4af7dba19b8044a42cbf3"
+fetched_at: "2026-11-23T14:15:48.900Z"
+sha256: "f73bf96a54e1c9ddf1a1f958dec6c0a995eb394add1f81bcad60a7fdeb41dd96"
 ---
 
 # Language Support
@@ -56,7 +56,7 @@ Some languages require additional installations or setup steps, as noted.
   (requires Node.js v18+ and npm; supports `.astro` files plus TypeScript/JavaScript files via `@astrojs/language-server`; a companion `typescript-language-server` + `@astrojs/ts-plugin` is spawned automatically for cross-file rename, go-to-definition, and references across `.ts`/`.js` and `.astro` files; use language `astro` for Astro projects instead of also enabling `typescript`)
 * **Bash**
 * **BSL** (1C:Enterprise / OneScript)  
-  (requires Java 21+ on PATH; uses [bsl-language-server](https://github.com/1c-syntax/bsl-language-server) by 1c-syntax; the JAR is auto-downloaded and SHA-256-verified for the bundled default version; supports `.bsl` and `.os` files; configure optional `ls_path` or `bsl_ls_version` under `ls_specific_settings.bsl`)
+  (requires Java 21+ on PATH; uses [bsl-language-server](https://github.com/1c-syntax/bsl-language-server) 1.0.7 by 1c-syntax; the JAR is auto-downloaded and SHA-256-verified for the bundled default version; supports `.bsl` and `.os` files; configure `ls_path`, `bsl_ls_version`, or `jvm_options` (a list of JVM arguments, default `[]`) under `ls_specific_settings.bsl`)
 * **C#**  
   (by default, uses the Roslyn language server (language `csharp`), requiring [.NET v10+](https://dotnet.microsoft.com/en-us/download/dotnet) and, on Windows, `pwsh` ([PowerShell 7+](https://learn.microsoft.com/en-us/powershell/scripting/install/install-powershell-on-windows?view=powershell-7.5));
   set language to `csharp_omnisharp` to use OmniSharp instead)
@@ -169,7 +169,7 @@ Some languages require additional installations or setup steps, as noted.
   [Jedi](https://github.com/pappasam/jedi-language-server) (language `python_jedi`);
   Pyright, BasedPyright, ty, and pyrefly require `uv`/`uvx` in PATH)
 * **QML**
-  (requires Qt 6, provides `qmlls` or `qmlls6` on PATH; see the [Qt qmlls documentation](https://doc.qt.io/qt-6/qtqml-tool-qmlls.html))
+  (requires Qt 6, provides `qmlls` or `qmlls6` on PATH; see the [Qt qmlls documentation](https://doc.qt.io/qt-6/qtqml-tooling-qmlls.html))
 * **R**  
   (requires installation of the `languageserver` R package)
 * **Rego**  

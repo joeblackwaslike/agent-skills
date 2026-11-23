@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/enterprise.md"
-fetched_at: "2026-06-22T05:57:43.917Z"
-sha256: "2632ef8a3a7017d12aad83581437404c095e38080c844e45d0bdc82ed4ce57ca"
+fetched_at: "2026-11-23T14:13:22.579Z"
+sha256: "7746f5b5fe388abc17c83e2d54a04102120ca0969d775fdd7578f013b9cb386c"
 ---
 
 # Gemini CLI for the enterprise
@@ -375,16 +375,22 @@ third-party MCP server, even if the server offers other tools like
 
 #### More secure pattern: Define and add to allowlist in system settings
 
-To create a secure, centrally-managed catalog of tools, the system administrator
-**must** do both of the following in the system-level `settings.json` file:
+To create a secure, centrally-managed catalog of tools, you **must** complete
+all of the following steps when configuring the system-level `settings.json`
+file:
 
 1.  **Define the full configuration** for every approved server in the
     `mcpServers` object. This ensures that even if a user defines a server with
-    the same name, the secure system-level definition will take precedence.
+    the same name, the secure system-level definition takes precedence.
 2.  **Add the names** of those servers to an allowlist using the `mcp.allowed`
     setting. This is a critical security step that prevents users from running
-    any servers that are not on this list. If this setting is omitted, the CLI
-    will merge and allow any server defined by the user.
+    any servers that aren't on this list. If you omit this setting, Gemini CLI
+    merges and runs any server defined by the user.
+3.  **Lock down executable and directory permissions** for every local command
+    referenced in `mcpServers`. Each executable script or binary, its parent
+    directories, and any scripts or dependencies it invokes **must** be owned by
+    `root` (or `SYSTEM` or `Administrators` on Windows) and **must not** be
+    writable by non-administrative users or shared user groups.
 
 **Example system `settings.json`:**
 
@@ -414,6 +420,18 @@ This pattern is more secure because it uses both definition and an allowlist.
 Any server a user defines will either be overridden by the system definition (if
 it has the same name) or blocked because its name is not in the `mcp.allowed`
 list.
+
+<!-- prettier-ignore -->
+> [!WARNING]
+> Gemini CLI skips system-configured MCP servers whose local command or script
+> path fails ownership or write-permission checks and logs a startup security
+> warning. Ensure any secondary scripts, binaries, and dependencies invoked
+> inside wrapper scripts are also locked down. Because `mcp.allowed`
+> automatically approves tool calls from listed servers, we recommend
+> restricting exposed tools with `includeTools`, pinning absolute binary paths
+> inside wrapper scripts, or enforcing remote (`sse` or `http`) server
+> allowlists with
+> [Enterprise Admin Controls](../admin/enterprise-controls.md).
 
 ### Less secure pattern: Omitting the allowlist
 

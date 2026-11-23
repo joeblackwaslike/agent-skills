@@ -17,8 +17,8 @@ summary: Learn how to deploy your Vercel projects using the vercel deploy CLI co
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/deploy.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "0300a085b7f5477bd2cdd4257e228e9a24a6555c75ef93c29fad86d74f4b07d2"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "83c7ab82d8cabe1d73409b40ef5e882ddd6b24d25f21a04acf55bb4014f425d0"
 ---
 
 # vercel deploy
@@ -35,14 +35,14 @@ The `vercel deploy` command deploys Vercel projects, executable from the project
 - [Deploy without an account using Vercel CLI](https://vercel.com/changelog/deploy-without-an-account-using-vercel-cli)
 - [Dry-run deployments with Vercel CLI](https://vercel.com/changelog/dry-run-deployments-with-vercel-cli)
 - [Improvements to command line logs](https://vercel.com/changelog/improvements-to-command-line-logs)
-- [Split-tgz is now the default CLI archive deployment behavior](https://vercel.com/changelog/split-tgz-is-now-the-default-cli-archive-deployment-behavior)
+- [Single-second static deployments now support more assets](https://vercel.com/changelog/single-second-static-deployments-now-support-more-assets)
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
 - [Migrate a Python API from Railway to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-railway-to-vercel) — Move a FastAPI, Flask, or Django API from Railway to Vercel Functions. Replace railway.json start commands, volumes, Cel
 - [Migrate a Python API from Render to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-render-to-vercel) — Move a FastAPI, Flask, or Django API from Render to Vercel Functions. Translate render.yaml and replace persistent disks
 - [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues)
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [vercel curl](https://vercel.com/docs/cli/curl) — Learn how to make HTTP requests to your Vercel deployments with automatic deployment protection bypass using the vercel
+- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
 
 Full cross-link map for this page: [/docs/cli/deploy.graph.md](/docs/cli/deploy.graph.md)
 <!-- /docsgraph:related -->
@@ -70,9 +70,17 @@ project directory.*
 
 ### Fast static deployments
 
-Vercel automatically detects eligible static deployments and makes them ready without a build step. This optimization supports deployments containing only HTML (`.html`, `.htm`) or Markdown (`.md`) files, with up to 100 files and a total size of up to 25 MB.
+Vercel automatically detects eligible static deployments and makes them ready without a build step, with no configuration required. This optimization supports deployments containing HTML, Markdown, and other static assets, with up to 100 files and a total size of up to 25 MB.
 
-Eligibility also depends on your project's build settings and deployment configuration. Other deployments automatically use the standard deployment flow.
+Supported file types include:
+
+- **Pages:** HTML (`.html`, `.htm`) and Markdown (`.md`)
+- **Styles and data:** CSS, JSON, XML, plain text, and web manifests
+- **Images:** SVG, PNG, JPEG, GIF, WebP, AVIF, and ICO
+- **Fonts:** WOFF, WOFF2, TTF, OTF, and EOT
+- **Documents and media:** PDF, MP4, WebM, MP3, WAV, and OGG
+
+Eligibility also depends on your project's build settings and deployment configuration. Deployments that exceed these limits, include JavaScript or other unsupported files, or are triggered by Git use the standard deployment flow. The same applies to projects with a framework preset, custom build settings, a root-level `package.json` or Vercel configuration file such as `vercel.json`, or a `public/` directory.
 
 ### Single-file deployments
 

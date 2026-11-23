@@ -17,8 +17,8 @@ summary: Learn about fluid compute, an execution model for Vercel Functions that
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/fluid-compute.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "601d66933ea289901b0066204dc28e24f83d1297b1df7e21f4291e17ef5893b4"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "807741120280886b2002a4036f0f505cccd8605139d7cee869cb9be0bf468c0c"
 ---
 
 # Fluid compute
@@ -31,18 +31,18 @@ Fluid compute offers a blend of serverless flexibility and server-like capabilit
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Introducing Fluid compute](https://vercel.com/blog/introducing-fluid-compute)
 - [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
-- [How Fluid compute works on Vercel](https://vercel.com/blog/how-fluid-compute-works-on-vercel)
 - [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
 - [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis) — Learn how to build and scale performant APIs on Vercel.
-- [How can I improve function cold start performance on Vercel?](https://vercel.com/kb/guide/improve-function-cold-start-performance-on-vercel) — Learn how to confirm whether cold starts cause function latency on Vercel, and how Fluid compute reduces how often they
-- [Vercel Functions can now run on Fluid compute](https://vercel.com/changelog/vercel-functions-can-now-run-on-fluid-compute)
-- [Fluid: How we built serverless servers](https://vercel.com/blog/fluid-how-we-built-serverless-servers)
+- [How Fluid compute works on Vercel](https://vercel.com/blog/how-fluid-compute-works-on-vercel)
+- [Introducing Fluid compute](https://vercel.com/blog/introducing-fluid-compute)
 - [Getting Timeouts When Deploying on Vercel](https://ai-sdk.dev/docs/troubleshooting/timeout-on-vercel) — Learn how to fix timeouts and cut off responses when deploying to Vercel.
 - [Advanced Remix integration with streaming SSR and multi-runtime support](https://vercel.com/changelog/advanced-remix-integration-with-streaming-ssr-and-multi-runtime-support)
 - [Bun runtime now supports large functions and extended max duration](https://vercel.com/changelog/bun-runtime-now-supports-large-functions-and-extended-max-duration)
 - [Bun runtime for Vercel Functions now accepts Bun.serve as an entrypoint](https://vercel.com/changelog/bun-serve-entrypoint-for-vercel-functions)
+- [Deploy Hono backends with zero configuration](https://vercel.com/changelog/deploy-hono-backends-with-zero-configuration)
+- [Deployment-level configuration for Fluid compute](https://vercel.com/changelog/deployment-level-configuration-for-fluid-compute)
+- [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
 
 Full cross-link map for this page: [/docs/fluid-compute.graph.md](/docs/fluid-compute.graph.md)
 <!-- /docsgraph:related -->
@@ -145,8 +145,7 @@ Fluid Compute includes default settings that vary by plan:
 > **💡 Note:** The 800 second maximum is generally available for Pro and Enterprise teams.
 > The 30 minute extended maximum is in beta for supported Node.js, Bun, and
 > Python runtime versions. To set values above 800 seconds, configure
-> `maxDuration` on each Function rather than as a project default. Secure Compute does not
-> support durations above 800 seconds during the beta. See [configuring maximum
+> `maxDuration` on each Function rather than as a project default. See [configuring maximum
 > duration](/docs/functions/configuring-functions/duration#extended-max-duration-beta)
 > for the supported runtimes and examples.
 

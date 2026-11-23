@@ -17,8 +17,8 @@ summary: Give your agents and services secure, short-lived access to third-party
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/connect.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "73bac155dbe24bb4d6b76e14df34f7e8377bff5f38b15c87018d25cc60dc6fc2"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "14fe135b9c221a03153afbf5f9c36d2e89d2aa585384cb94697157b2d6a724f5"
 ---
 
 # Vercel Connect
@@ -36,15 +36,15 @@ Give your agents and services short-lived access to Slack, GitHub, Microsoft, Sn
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
 - [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect)
-- [Vercel Connect: Secure access to external services for your agents](https://vercel.com/changelog/vercel-connect-secure-access-to-external-services-for-your-agents)
 - [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens
+- [Vercel Connect: Secure access to external services for your agents](https://vercel.com/changelog/vercel-connect-secure-access-to-external-services-for-your-agents)
 - [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
 - [Telegram](https://eve.dev/docs/channels/telegram) — Reach your agent from a Telegram bot in private chats, groups, and forum topics.
 - [Telegram Reference](https://eve.dev/docs/channels/telegram/reference) — Telegram channel options, credentials, dispatch rules, delivery, human-in-the-loop, proactive sessions, and attachments.
 - [Connections](https://eve.dev/docs/connections) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
 - [Control who can manage connectors in Vercel Connect](https://vercel.com/changelog/control-who-can-manage-connectors-in-vercel-connect)
 - [Discover 1000+ services on Vercel Connect from the CLI](https://vercel.com/changelog/discover-1000-services-on-vercel-connect-from-the-cli)
-- [Vercel Connect adds managed Stripe API keys](https://vercel.com/changelog/vercel-connect-adds-managed-stripe-api-keys)
+- [Vercel Board is now available](https://vercel.com/changelog/vercel-board-is-now-available)
 
 Full cross-link map for this page: [/docs/connect.graph.md](/docs/connect.graph.md)
 <!-- /docsgraph:related -->

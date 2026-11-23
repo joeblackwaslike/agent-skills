@@ -17,8 +17,8 @@ summary: Learn how to use Notifications to view and manage important alerts abou
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/notifications.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "0280a8fd6477698ce43d62795f33fbe100c40c60c0e58ec26674befa243f87fc"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "7ed2227de042cb21d68105ddd402430195f3cb30eaab6d5c482691f07f53168c"
 ---
 
 # Notifications
@@ -34,16 +34,17 @@ Vercel sends configurable notifications to you through the [dashboard](https://v
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Push notifications support on desktop and mobile](https://vercel.com/changelog/push-notifications-support-on-desktop-and-mobile)
-- [Building a powerful notification system for Vercel with Knock](https://vercel.com/blog/building-a-powerful-notification-system-for-vercel-with-knock-app)
 - [Get notified on build failures and more with new notification controls](https://vercel.com/changelog/new-notification-controls-available-in-public-beta)
+- [Building a powerful notification system for Vercel with Knock](https://vercel.com/blog/building-a-powerful-notification-system-for-vercel-with-knock-app)
+- [September 2020](https://vercel.com/blog/changelog-september-2020)
 - [Usage notification settings is now generally available](https://vercel.com/changelog/usage-notification-settings-is-now-generally-available)
 - [Introducing Spend Management](https://vercel.com/blog/introducing-spend-management-realtime-usage-alerts-sms-notifications)
-- [Monitor uptime for AI-native apps with Vercel Alerts](https://vercel.com/kb/guide/monitor-uptime-for-ai-native-apps-with-vercel-alerts) — Learn how to use Vercel Anomaly Alerts as an early-warning system for AI-powered apps, helping you catch 5xx spikes and
+- [Improved web notifications are now generally available](https://vercel.com/changelog/improved-web-notifications-now-generally-available)
+- [July 2020](https://vercel.com/blog/changelog-july-2020)
 - [Configure alerts](https://vercel.com/docs/alerts/configure-alerts) — Configure alert rules and notification destinations for Vercel Observability alerts.
 - [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
-- [Audit Logs](https://vercel.com/docs/audit-log) — Learn how to track and analyze your team members' activities.
+- [Alerts](https://vercel.com/docs/alerts) — Get notified when something's wrong with your Vercel projects. Set up alerts through Slack, webhooks, or email so you ca
 - [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
-- [Pricing for Web Analytics](https://vercel.com/docs/analytics/limits-and-pricing) — Learn about pricing for Vercel Web Analytics.
 
 Full cross-link map for this page: [/docs/notifications.graph.md](/docs/notifications.graph.md)
 <!-- /docsgraph:related -->

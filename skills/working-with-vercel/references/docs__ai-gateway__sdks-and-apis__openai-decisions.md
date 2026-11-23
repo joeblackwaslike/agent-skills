@@ -16,8 +16,8 @@ summary: Ask predicate, choice, and score questions with the OpenAI-compatible /
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-decisions.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "f574da879e18dbd1e8a1733ed301ff4b3ba76bedf67813cbac04dd232a502007"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "3ee3abd13e3c5c4c07be33af0423484fa0222322991fc4c31d389c0b7edac400"
 ---
 
 # OpenAI-Compatible Decisions API with AI Gateway
@@ -31,11 +31,11 @@ Ask typed questions about shared input and get back probabilities, choices, and 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [OpenAI Decisions API now available on AI Gateway](https://vercel.com/changelog/openai-decisions-api-now-available-on-ai-gateway)
+- [Decision-1.1 now available on AI Gateway](https://vercel.com/changelog/decision-1-1-now-available-on-ai-gateway)
+- [Liquid AI's d1.2 and d1.2-ultra are now available on AI Gateway](https://vercel.com/changelog/liquid-ais-d1-2-and-d1-2-ultra-are-now-available-on-ai-gateway)
 - [Microsoft Decision-1 now available on AI Gateway](https://vercel.com/changelog/microsoft-decision-1-now-available-on-ai-gateway)
 - [Perplexity's Decider V1.2 models now available on AI Gateway](https://vercel.com/changelog/perplexity-decider-v1-2-models-now-available-on-ai-gateway)
 - [OpenAI Responses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses) — Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported
-- [TypeSafe API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/typesafe) — Point an existing TypeSafe client at AI Gateway by changing its base URL to route System One decision requests through i
-- [OpenResponses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses) — Use the OpenResponses API specification with AI Gateway for a unified, provider-agnostic interface.
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openai-decisions.graph.md](/docs/ai-gateway/sdks-and-apis/openai-decisions.graph.md)

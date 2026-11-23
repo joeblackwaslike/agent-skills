@@ -17,8 +17,8 @@ summary: "Learn how to use Speed Insights to analyze your application's performa
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/speed-insights/using-speed-insights.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "010ed2fca42e91ab3b16bd2c355c8162ebba214f78366619900a0e9bf2003c25"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "b66f3f3a087feb3309564cfb004da818f6d3d9bf29d9f6d513cfebacb6a487a6"
 ---
 
 # Using Speed Insights
@@ -40,11 +40,10 @@ To access Speed Insights:
 - [Speed Insights now has a free tier](https://vercel.com/changelog/speed-insights-free-tier)
 - [A/B testing on ecommerce storefronts without hurting Core Web Vitals](https://vercel.com/kb/guide/ecommerce-ab-testing-core-web-vitals) — Client-side A/B tools can worsen LCP and CLS on the pages you're testing. Run ecommerce A/B tests at the edge with Routi
 - [Improved Speed Insights experience](https://vercel.com/changelog/improved-speed-insights-experience)
-- [Query Speed Insights from the Vercel CLI](https://vercel.com/changelog/query-speed-insights-from-the-vercel-cli)
 - [Getting started with Speed Insights](https://vercel.com/docs/speed-insights/quickstart) — Vercel Speed Insights provides you detailed insights into your website's performance. This quickstart guide will help yo
 - [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
+- [Speed Insights Configuration with @vercel/speed-insights](https://vercel.com/docs/speed-insights/package) — Learn how to configure your application to capture and send web performance metrics to Vercel using the @vercel/speed-in
 - [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
-- [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 
 Full cross-link map for this page: [/docs/speed-insights/using-speed-insights.graph.md](/docs/speed-insights/using-speed-insights.graph.md)
@@ -68,7 +67,7 @@ To view metrics for a specific route or path:
 1. Select a project from your [dashboard](/dashboard) and open [**Speed Insights**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fspeed-insights\&title=Go+to+Speed+Insights) in the sidebar.
 2. From the left-hand panel, select the [metric](/docs/speed-insights/metrics) you want to view data for.
 3. From the URL view, select the corresponding tab to view by the **Route** (the actual pages you built), or by **Path** (the URLs requested by the visitor).
-4. The information is organized by performance score and sorted by data points. Scroll the list to view more all paths or routes, or click the **View all** button to view and filter all data.
+4. The information is organized by performance score and sorted by data points. Scroll the list to view more paths or routes, or click the **View all** button to view and filter all data.
 5. You can also edit the [timeframe](/docs/analytics/using-web-analytics#specifying-a-timeframe) and [environment](/docs/analytics/using-web-analytics#viewing-environment-specific-data) you want to view data for.
 
 ![Speed Insights URL view for routes and paths of your project.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/speed-insights/v2/kanban-light.png)
@@ -85,7 +84,7 @@ To view a detailed breakdown of the performance of individual HTML elements on y
    - **Cumulative Layout Shift** (CLS)
    - **Largest Contentful Paint** (LCP)
 3. From the URL view, open **Selectors** in the sidebar.
-4. The information is organized by performance score and sorted by data points. Scroll the list to view more all elements, or click the **View all** button to view and filter all data.
+4. The information is organized by performance score and sorted by data points. Scroll the list to view more elements, or click the **View all** button to view and filter all data.
 5. You can also edit the [timeframe](/docs/analytics/using-web-analytics#specifying-a-timeframe) and [environment](/docs/analytics/using-web-analytics#viewing-environment-specific-data) you want to view data for.
 
 This view is particularly useful for identifying specific elements that may be causing performance issues.

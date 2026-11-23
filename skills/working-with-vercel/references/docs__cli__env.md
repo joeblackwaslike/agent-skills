@@ -17,8 +17,8 @@ summary: Learn how to manage your environment variables in your Vercel Projects 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/env.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "aa6bddaf7eb3c6b2c8df002cfc7b671f57ae3ed52b6078eae6e9889e0ac51353"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "d80d1fd31b65ecbe676de4231a78631390b2bc608d6856f678ac0feef15ebe46"
 ---
 
 # vercel env
@@ -31,14 +31,13 @@ The `vercel env` command is used to manage [Environment Variables](/docs/environ
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Deploy a Go backend on Vercel with AI Gateway](https://vercel.com/kb/guide/deploy-a-go-backend-on-vercel-with-ai-gateway) — Build and deploy a Go HTTP server that calls AI Gateway using the standard library, with no SDK dependencies.
 - [Route form submissions with Jev and AI SDK](https://vercel.com/kb/guide/jev-ai-sdk-form-router) — Route form submissions to the right team with the Jev x AI SDK Form Router template. Jev routes clear cases and a fallba
 - [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
-- [How do I use private dependencies with Vercel?](https://vercel.com/kb/guide/using-private-dependencies-with-vercel) — Information on how to use private dependencies with a Vercel deployment.
-- [Environment Variables UI](https://vercel.com/blog/environment-variables-ui)
 - [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
 - [vercel pull](https://vercel.com/docs/cli/pull) — Learn how to update your local project with remote environment variables using the vercel pull CLI command.
 - [vercel environments](https://vercel.com/docs/cli/target) — Work with custom environments using the --environment option in Vercel CLI.
-- [System environment variables](https://vercel.com/docs/environment-variables/system-environment-variables) — System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the
+- [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables) — Learn how to create and manage environment variables for Vercel.
 - [Edit an environment variable](https://vercel.com/docs/rest-api/projects/edit-an-environment-variable) — PATCH /v9/projects/{idOrName}/env/{id} — Edit a specific environment variable for a given project by passing the environ
 
 Full cross-link map for this page: [/docs/cli/env.graph.md](/docs/cli/env.graph.md)

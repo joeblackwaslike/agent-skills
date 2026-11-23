@@ -15,8 +15,8 @@ summary: Learn how to configure Directory Sync for your Vercel Team.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/directory-sync.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "74abbdf19532fa7e9893441f580e49b7cfc3c7b55a6397ae45d7aee6479e834d"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "3a5cc0c7bf03257a5b3aa33cd3165c103987755bf8b2c758b530d719c3450d0d"
 ---
 
 # Directory Sync (SCIM)
@@ -37,7 +37,7 @@ Directory Sync uses the System for Cross-domain Identity Management (SCIM) proto
 - [SAML Single Sign-On and Directory Sync now fully available](https://vercel.com/changelog/saml-single-sign-on-and-directory-sync-now-fully-available)
 - [Request access to Teams right from the Dashboard](https://vercel.com/changelog/request-access-to-teams-right-from-the-dashboard)
 - [Update Team Directory Sync Role Mappings](https://vercel.com/docs/rest-api/teams/update-team-directory-sync-role-mappings) — POST /v1/teams/{teamId}/dsync-roles — Update the Directory Sync role mappings for a Team. This endpoint allows updating
-- [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
+- [Update Organization Team Directory Sync Mode](https://vercel.com/docs/rest-api/organizations/update-organization-team-directory-sync-mode) — PUT /v1/organizations/{organizationId}/teams/{targetTeamId}/dsync — Select whether one Organization team's memberships a
 - [Access Groups](https://vercel.com/docs/rbac/access-groups) — Learn how to configure access groups for team members on a Vercel account.
 - [Scopes and Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions) — Learn how to manage scopes and permissions for Sign in with Vercel
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,

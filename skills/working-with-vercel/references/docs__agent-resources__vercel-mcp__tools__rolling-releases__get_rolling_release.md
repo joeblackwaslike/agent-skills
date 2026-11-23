@@ -14,8 +14,8 @@ summary: Use get_rolling_release with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/get_rolling_release.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "9105c49f1f7987602b46799fdb8d4761ec7716b98dbf54a092fe1249acc1e9fb"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "c9bad28044545589ef575a97f3d206ee979cdb3248ed49abeef9a35e5d819c2c"
 ---
 
 # get_rolling_release
@@ -32,7 +32,7 @@ Get the active rolling release information for a project.
 - [get_rolling_release_billing_status](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/get_rolling_release_billing_status) — Use get_rolling_release_billing_status with Vercel MCP.
 - [complete_rolling_release](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/complete_rolling_release) — Use complete_rolling_release with Vercel MCP.
 - [start_rolling_release](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/start_rolling_release) — Use start_rolling_release with Vercel MCP.
-- [update_rolling_release_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases/update_rolling_release_config) — Use update_rolling_release_config with Vercel MCP.
+- [Get rolling release configuration](https://vercel.com/docs/rest-api/rolling-release/get-rolling-release-configuration) — GET /v1/projects/{idOrName}/rolling-release/config — Get the Rolling Releases configuration for a project. The project-l
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/rolling-releases/get_rolling_release.graph.md](/docs/agent-resources/vercel-mcp/tools/rolling-releases/get_rolling_release.graph.md)
 <!-- /docsgraph:related -->

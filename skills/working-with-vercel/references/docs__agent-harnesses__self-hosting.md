@@ -17,8 +17,8 @@ summary: Keep durable agent harness sessions in another World, such as Postgres,
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-harnesses/self-hosting.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "c8690849e5d674aee55f855122a7d00efb7fb3d192c747676a5eefef5446de00"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "095ad896c1a5160d2e8d90ba6b12ae1255ec0f3c26ef2f5795217ea4578bf75a"
 ---
 
 # Self-Hosting Durable Agent Harnesses
@@ -32,9 +32,8 @@ A durable harness keeps its sessions behind a World, the storage and queue inter
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
-- [Workflow SDK 5: built for production](https://vercel.com/blog/workflow-sdk-5)
 - [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
-- [Built-in durability: Introducing Workflow Development Kit](https://vercel.com/blog/introducing-workflow)
+- [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
 - [Running Codex Durably on Vercel](https://vercel.com/docs/agent-harnesses/codex) — Run Codex in a Vercel Sandbox, driven by a Vercel Function, with its session in a durable log, so a crashed turn resumes
 - [Running OpenCode Durably on Vercel](https://vercel.com/docs/agent-harnesses/opencode) — Run OpenCode v2 inside a Vercel Function with its session in a durable log, so a crashed turn resumes in a new function.
 - [Running fx Durably on Vercel](https://vercel.com/docs/agent-harnesses/fx) — Deploy an fx agent with libfx so its sessions survive crashes, function timeouts, and redeploys on Vercel.

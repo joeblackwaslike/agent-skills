@@ -14,8 +14,8 @@ summary: Use list_teams with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_teams.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "21ef5b6fd33d00c76a2323ddc40629e8c6afd847faf1b2deaad4ca1730fb1c60"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "e7aaf8f84144a9cce15349c86c3f6adbf80ba43d44a5614c51897b016c63f438"
 ---
 
 # list_teams
@@ -29,8 +29,8 @@ List the [teams](/docs/accounts) you belong to.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [list_team_members](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_team_members) — Use list_team_members with Vercel MCP.
-- [List all teams](https://vercel.com/docs/rest-api/teams/list-all-teams) — GET /v2/teams — Get a paginated list of all the Teams the authenticated User is a member of.
 - [vercel teams](https://vercel.com/docs/cli/teams) — Learn how to list, create, switch, invite, and manage your teams with the vercel teams CLI command.
+- [List all teams](https://vercel.com/docs/rest-api/teams/list-all-teams) — GET /v2/teams — Get a paginated list of all the Teams the authenticated User is a member of. An app-principal token need
 - [get_team](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/get_team) — Use get_team with Vercel MCP.
 - [List Organization Teams](https://vercel.com/docs/rest-api/organizations/list-organization-teams) — GET /v1/organizations/{organizationId}/teams — List up to 100 teams in an organization, each enriched with the team's sl
 

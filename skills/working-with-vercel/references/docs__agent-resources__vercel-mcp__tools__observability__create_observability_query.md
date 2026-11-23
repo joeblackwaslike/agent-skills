@@ -14,8 +14,8 @@ summary: Use create_observability_query with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/create_observability_query.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "ae5a070ace888ca791215f86e4bd577ddcf828ee2201a5766db0d8e37cbf1e11"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "36d34414e905064d65212add6042a9dd02bb95164b859f52ad9c205ad527b6f6"
 ---
 
 # create_observability_query
@@ -28,11 +28,12 @@ Query observability data.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Run and share custom queries in Observability Plus](https://vercel.com/changelog/run-and-share-custom-queries-in-observability-plus)
 - [artifact_query](https://vercel.com/docs/agent-resources/vercel-mcp/tools/caching/artifact_query) — Use artifact_query with Vercel MCP.
+- [POST /v2/observability/query](https://vercel.com/docs/rest-api/untagged/createobservabilityquery) — POST /v2/observability/query — POST /v2/observability/query
 - [get_observability_schema](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_observability_schema) — Use get_observability_schema with Vercel MCP.
 - [Query](https://vercel.com/docs/query) — Query and visualize your Vercel usage, traffic, and more in observability.
 - [create_project](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/create_project) — Use create_project with Vercel MCP.
-- [search_repo](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/search_repo) — Use search_repo with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/observability/create_observability_query.graph.md](/docs/agent-resources/vercel-mcp/tools/observability/create_observability_query.graph.md)
 <!-- /docsgraph:related -->

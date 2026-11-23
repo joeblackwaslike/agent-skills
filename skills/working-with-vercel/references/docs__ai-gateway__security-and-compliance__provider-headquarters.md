@@ -17,8 +17,8 @@ summary: Limit AI Gateway routing to providers whose parent company is headquart
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/provider-headquarters.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "457ba6d15bb533624291e8eb39dce14b646a61277fa1b9cc59f8f11e277001a4"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "698424c60a1e6ae393c957bbd090a0337d0c10521c948a2bddc889f6cde55369"
 ---
 
 # AI Gateway Provider Headquarters
@@ -31,7 +31,6 @@ Provider headquarters lets you choose the countries that the providers serving y
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Team-wide provider allowlist on AI Gateway](https://vercel.com/changelog/team-wide-provider-allowlist-on-ai-gateway)
 - [AI Gateway Provider Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/provider-allowlist) — Restrict which AI providers your team can route through AI Gateway. Available on Pro and Enterprise.
 - [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
 - [AI Gateway Regional Hosting](https://vercel.com/docs/ai-gateway/security-and-compliance/regional-hosting) — Regional hosting lets you choose the region where AI Gateway receives your requests, by sending them to a regional endpo
@@ -161,7 +160,7 @@ United States
 
 \`US\`
 
-Anthropic, Azure, Baseten, Bedrock, Boundless, Browserbase, Cerebras, Claude Platform on AWS, Crusoe, DeepInfra, DigitalOcean, Elorian, Exa, Fireworks, Fish Audio, FriendliAI, GMICloud, Google, Google Vertex AI, Groq, HeyGen, Humans&, Inception, Inference.net, Interfaze, Liquid AI, Meta, Modal, Morph, Nace AI, NVIDIA, OpenAI, Parallel AI, Parasail, Pareto Inference, Particle.AI, Perplexity, Prodia, QuiverAI, Reflection, Relace, RightNow AI, Sail Research, ScaleDown, Subconscious, Tako, Telnyx, Thinking Machines, Together AI, Topaz Labs, TypeSafe AI, Voyage AI by MongoDB, Wafer, xAI
+Anthropic, Azure, Baseten, Bedrock, Boundless, Browserbase, Cerebras, Claude Platform on AWS, Crusoe, DeepInfra, DigitalOcean, Elorian, Exa, Fireworks, Fish Audio, FriendliAI, Google, Google Vertex AI, Groq, HeyGen, Humans&, Inception, Inference.net, Interfaze, Liquid AI, Meta, Modaic, Modal, Morph, Nace AI, NVIDIA, OpenAI, Parallel AI, Parasail, Pareto Inference, Particle.AI, Perplexity, Prodia, QuiverAI, Recursive, Reflection, Relace, RightNow AI, Sail Research, ScaleDown, Subconscious, Tako, Telnyx, Thinking Machines, Together AI, Topaz Labs, TypeSafe AI, Voyage AI by MongoDB, Wafer, xAI
 
 ## Set it per request
 
@@ -456,7 +455,7 @@ On Pro and Enterprise teams (not Pro trial), owners and members with permission 
 
 Once a list is saved, the other option is turned off. To change from allowing countries to excluding them, or back, click **Switch to an exclusion list** or **Switch to an allow list** and confirm. Your saved list keeps applying until you save the new one, which replaces it.
 
-Each country in the list shows the providers based there. The card also lists providers that don't have a headquarters country on record yet, which the setting always excludes while it's on. The team list only accepts assigned country codes, so a code like `XX` is rejected.
+Each country in the list shows how many providers are based there. To see which providers those are, use the [provider countries](#provider-countries) table. The team list only accepts assigned country codes, so a code like `XX` is rejected.
 
 To remove the restriction, toggle the setting off and confirm. You can always remove it, even after your team moves off Pro or Enterprise.
 

@@ -17,8 +17,8 @@ summary: Find guides and reference documentation for building, deploying, and ma
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "e1cadf63456f55ab524e3706e5e498b331c077b3bbddf5af9354c3d863a1640d"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "2cc82b5af0cbc8644cbdba346658c07aa39b6d990436f4bc5d602322e2ccecdf"
 ---
 
 # Vercel Documentation
@@ -97,10 +97,10 @@ Set up Vercel for me. Fetch https://vercel.com/get-started.md and follow it.
 
 The latest changes across the Vercel platform. Browse the full [changelog](https://vercel.com/changelog) for everything that shipped.
 
-- Nov 15, 2026: [Qwen4-Max now available on AI Gateway](https://vercel.com/changelog/qwen4-max-now-available-on-ai-gateway). Call Alibaba's Qwen4-Max through Vercel AI Gateway with one API key: no provider account, automatic fallbacks, spend tracking, and traces on every request.
-- Nov 13, 2026: [Daemons can now send traces to Vercel Tracing](https://vercel.com/changelog/vercel-daemons-can-now-send-traces-to-vercel-tracing). Find slow operations and debug errors in your background workers with OpenTelemetry traces.
-- Nov 13, 2026: [Token Pass now includes $150 in tokens for $30/month](https://vercel.com/changelog/vercel-token-pass-now-includes-one-hundred-fifty-dollars-of-monthly-tokens). Token Pass now includes $150 in monthly tokens for featured models at the same $30 per team per month.
-- Nov 13, 2026: [Vercel Security Review no longer requires a linked Vercel project](https://vercel.com/changelog/vercel-security-review-no-longer-requires-a-linked-vercel-project). Scan GitHub code changes for vulnerabilities, with control over which repositories are reviewed.
+- Nov 23, 2026: [AI Gateway now runs canary ZDR audits](https://vercel.com/changelog/ai-gateway-now-runs-canary-zdr-audits). Vercel now runs Zero Data Retention canary audits on AI Gateway.&#x20;
+- Nov 23, 2026: [Catch missing feature flags before they reach production](https://vercel.com/changelog/catch-missing-feature-flags-before-they-reach-production). A new deployment check finds flags declared in code but missing from your Vercel project.
+- Nov 23, 2026: [Choose AI Gateway providers by headquarters country](https://vercel.com/changelog/choose-ai-gateway-providers-by-headquarters-country). Vercel AI Gateway now lets you limit providers by headquarters country.&#x20;
+- Nov 20, 2026: [Vercel Functions now support request bodies up to 20MiB](https://vercel.com/changelog/vercel-functions-now-support-request-bodies-up-to-20mib). Vercel Functions now accept request bodies up to 20MiB in Public Beta, up from 4.5MB, for larger uploads, webhooks, and API payloads.
 
 View the latest Vercel updates from your terminal:
 

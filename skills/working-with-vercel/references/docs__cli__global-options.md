@@ -12,13 +12,13 @@ related:
   - /docs/cli/switch
   - /docs/cli/login
   - /docs/cli/link
-  - /docs/cli/deploy
+  - /docs/cli/deploying-from-cli
 summary: "Global options are commonly available to use with multiple Vercel CLI commands. Learn about Vercel CLI's global options here."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/global-options.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "04e9bfbad7c5ef0529b6b4cae2729bca8366a03ae28087f4b9bad8b6b58802e7"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "b00558d7dd9d429c8d54ca2cdae5a582f760f85b8942f2e53a9ea1aa9e19f9d6"
 ---
 
 # Vercel CLI Global Options
@@ -142,7 +142,7 @@ VERCEL_ORG_ID=team_abc123 VERCEL_PROJECT_ID=prj_abc123 vercel deploy
 
 *Different ways to specify the project for a Vercel CLI command.*
 
-The `--project` flag and `VERCEL_PROJECT_ID` both accept a project name or project ID. When using CI/CD pipelines or non-interactive environments, set `VERCEL_ORG_ID` and `VERCEL_PROJECT_ID` as environment variables to skip project linking. If you set only one of them and don't pass `--project`, commands that need a project, such as `vercel deploy`, exit with an error. See [using Vercel CLI for custom workflows](/kb/guide/using-vercel-cli-for-custom-workflows) for more details.
+The `--project` flag and `VERCEL_PROJECT_ID` both accept a project name or project ID. When using CI/CD pipelines or non-interactive environments, set `VERCEL_ORG_ID` and `VERCEL_PROJECT_ID` as environment variables to skip project linking. If you set only one of them and don't pass `--project`, commands that need a project, such as `vercel deploy`, exit with an error. See [deploying from a CI/CD pipeline](/docs/cli/deploying-from-cli#deploying-from-a-ci/cd-pipeline) for more details.
 
 ## Token
 

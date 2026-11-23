@@ -17,8 +17,8 @@ summary: Consume messages from Vercel Queues by polling on your own schedule, fr
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/queues/poll-mode.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "0cff74b98e706afad8a280166b05c27acea2f89ab46fb17e144cf3f2a97ceadb"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "096a1307cfe05319e6b785fdad3e414d94604be0aaca6e344a1297382cafc650"
 ---
 
 # Poll Mode
@@ -39,7 +39,6 @@ In poll mode, your application polls for messages from a queue on its own schedu
 - [Process background jobs in Python with Vercel Queues](https://vercel.com/kb/guide/python-and-vercel-queues) — Move slow and failure-prone work out of your Python request handlers, with typed topics, consumer groups, and built-in r
 - [Vercel Queues is now in Limited Beta](https://vercel.com/changelog/vercel-queues-is-now-in-limited-beta)
 - [Vercel Queues now in public beta](https://vercel.com/changelog/vercel-queues-now-in-public-beta)
-- [Vercel Python Queues SDK is now available in beta](https://vercel.com/changelog/vercel-python-queues-sdk-is-now-available-in-beta)
 - [Queues Observability](https://vercel.com/docs/queues/observability) — Monitor queue throughput, message age, retries, and consumer performance to optimize your queue-based workflows.
 - [Chat SDK with Vercel Daemons](https://vercel.com/docs/chat-sdk/integrations/daemons) — Process Chat SDK jobs with Vercel Queues and Daemons, using Vercel Connect for Slack credentials and event delivery.
 - [Run background tasks with Celery on Vercel](https://vercel.com/docs/frameworks/backend/celery) — Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and Vercel Functions to run background tasks without

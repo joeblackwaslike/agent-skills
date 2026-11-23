@@ -17,8 +17,8 @@ summary: Compare Deployment Protection feature availability and pricing across H
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployment-protection/usage-and-pricing.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "c7ac4c7f530c5cb1ef1b7edc133dfcaa7db22a86ebb51b5504181db0e9319e32"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "166b64f0ead78053ee5e62fea2378493d1202a02472a35a9501de6c6bc4d0448"
 ---
 
 # Usage & Pricing for Deployment Protection
@@ -34,7 +34,6 @@ Most Deployment Protection features are available on all plans at no additional 
 - [Password Protection is now available per project on Pro](https://vercel.com/changelog/password-protection-now-costs-20-per-project-per-month-on-pro)
 - [Choose between Vercel Passport and other Deployment Protection methods](https://vercel.com/kb/guide/vercel-passport-vs-deployment-protection) — Compare Vercel Passport with Vercel Authentication, Password Protection, and Trusted IPs to choose the right Deployment
 - [Protect production deployments for free on every plan](https://vercel.com/changelog/protect-production-deployments-for-free-on-every-plan)
-- [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments)
 - [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [get_project_deployment_protection](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project_deployment_protection) — Use get_project_deployment_protection with Vercel MCP.

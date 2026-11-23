@@ -13,8 +13,8 @@ summary: Fine-grained control over BotID detection levels and backend domain con
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/botid/advanced-configuration.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "6df85b2d31c7fb05e5b149a503af6760e0ed372920d7d7780f435be3dfb1bff1"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "7a72f59a4bd0b29ed33553f5efab549bffe9a0caf225c026ef07a06c90ace1c4"
 ---
 
 # Advanced BotID Configuration
@@ -31,13 +31,12 @@ When you need fine-grained control over BotID's detection levels, you can specif
 
 - [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\\(\\) so inference runs only for verified callers
 - [Deploying and testing BotID](https://vercel.com/kb/guide/deploying-and-testing-botid) — This guide gives an overview on Vercel BotID and how to deploy and test it in production
-- [Vercel BotID is now generally available](https://vercel.com/changelog/vercel-botid-is-now-generally-available)
 - [​Introducing BotID, invisible bot filtering for critical routes](https://vercel.com/blog/introducing-botid)
+- [Vercel BotID is now generally available](https://vercel.com/changelog/vercel-botid-is-now-generally-available)
 - [Vercel BotID now leverages Vercel's verified bot directory](https://vercel.com/changelog/vercel-botid-now-leverages-vercels-verified-bot-directory)
 - [Vercel BotID now  available for all frameworks](https://vercel.com/changelog/botid-now-available-for-all-frameworks)
 - [How to use Vercel’s Bot Management features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
-- [Free Vercel BotID Deep Analysis through January 15](https://vercel.com/changelog/free-botid-deep-analysis)
-- [Vercel's bot verification now supports Web Bot Auth](https://vercel.com/changelog/vercels-bot-verification-now-supports-web-bot-auth)
+- [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
 
 Full cross-link map for this page: [/docs/botid/advanced-configuration.graph.md](/docs/botid/advanced-configuration.graph.md)
 <!-- /docsgraph:related -->

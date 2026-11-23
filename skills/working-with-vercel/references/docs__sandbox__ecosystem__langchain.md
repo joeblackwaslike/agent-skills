@@ -18,8 +18,8 @@ summary: Give a LangChain agent a tool that executes model-generated code in an 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/ecosystem/langchain.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "eb6d270a4142e5439c09eb4e842626a53ad53aeed6cda5e1a23553f73189443e"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "f28222840d6091c7cfa4d2d4bb177c04468662b0ce1f3b07a3af75c1b7524b46"
 ---
 
 # LangChain
@@ -35,7 +35,7 @@ through [AI Gateway](/docs/ai-gateway).
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Run Python code securely with AI SDK and Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox) — Add an \\`executeCode\\` tool to your AI SDK agent with the \\`ai-sdk-tool-code-execution\\` package to run Python 3.13 insi
+- [Add Python code execution to a TypeScript AI agent with Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox) — Add an \\`executeCode\\` tool to your TypeScript AI SDK agent with the \\`ai-sdk-tool-code-execution\\` package to run Pytho
 - [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
 - [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
@@ -56,13 +56,13 @@ Full cross-link map for this page: [/docs/sandbox/ecosystem/langchain.graph.md](
   Create a new directory for your project and initialize it:
 
   **terminal**
-  ```bash filename="terminal" framework=node
+  ```bash filename="terminal" language=ts
   mkdir langchain-sandbox
   cd langchain-sandbox
   npm init -y
   ```
   **terminal**
-  ```bash filename="terminal" framework=py
+  ```bash filename="terminal" language=py
   mkdir langchain-sandbox
   cd langchain-sandbox
   uv init
@@ -73,23 +73,23 @@ Full cross-link map for this page: [/docs/sandbox/ecosystem/langchain.graph.md](
   Sandbox SDK:
 
   **terminal**
-  ```bash filename="terminal" framework=node package-manager="npm"
+  ```bash filename="terminal" language=ts package-manager="npm"
   npm install langchain @langchain/core @langchain/anthropic @langchain/openai @vercel/sandbox zod
   ```
   **terminal**
-  ```bash filename="terminal" framework=node package-manager="yarn"
+  ```bash filename="terminal" language=ts package-manager="yarn"
   yarn add langchain @langchain/core @langchain/anthropic @langchain/openai @vercel/sandbox zod
   ```
   **terminal**
-  ```bash filename="terminal" framework=node package-manager="pnpm"
+  ```bash filename="terminal" language=ts package-manager="pnpm"
   pnpm add langchain @langchain/core @langchain/anthropic @langchain/openai @vercel/sandbox zod
   ```
   **terminal**
-  ```bash filename="terminal" framework=node package-manager="bun"
+  ```bash filename="terminal" language=ts package-manager="bun"
   bun add langchain @langchain/core @langchain/anthropic @langchain/openai @vercel/sandbox zod
   ```
   **terminal**
-  ```bash filename="terminal" framework=py
+  ```bash filename="terminal" language=py
   uv add langchain langchain-anthropic langchain-openai vercel-sandbox
   ```
 
@@ -259,11 +259,11 @@ Full cross-link map for this page: [/docs/sandbox/ecosystem/langchain.graph.md](
   Run your agent with the environment variables from `.env.local`:
 
   **terminal**
-  ```bash filename="terminal" framework=node
+  ```bash filename="terminal" language=ts
   npx tsx --env-file=.env.local index.ts
   ```
   **terminal**
-  ```bash filename="terminal" framework=py
+  ```bash filename="terminal" language=py
   uv run --env-file .env.local main.py
   ```
   The agent writes the code, executes it in the sandbox, and reports the

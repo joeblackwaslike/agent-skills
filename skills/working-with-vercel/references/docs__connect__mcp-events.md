@@ -17,8 +17,8 @@ summary: Use MCP events with Vercel Connect to react to changes, receive verifie
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/connect/mcp-events.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "8705d9f8723fe3186d2486c9152dce7deb44d8db908f3e4fbaca9b90db884cfb"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "011e3c885c5d6d2a08290d6e3375557c90bdebab8415ba1dddee0ec779332edc"
 ---
 
 # MCP Events
@@ -38,11 +38,12 @@ polling for updates.
 - [MCP Events support in Vercel Connect is now in public beta](https://vercel.com/changelog/mcp-events-support-in-vercel-connect-is-now-in-public-beta)
 - [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
 - [MCP Events](https://ai-sdk.dev/docs/ai-sdk-core/mcp-events) — Understand the MCP webhook events contract and the AI SDK APIs for subscribing, verifying, and receiving events.
-- [Deploy MCP servers to Vercel](https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel) — Learn how to deploy Model Context Protocol \\(MCP\\) servers on Vercel with OAuth authentication and efficient scaling.
-- [AI SDK with MCP](https://vercel.com/docs/mcp/integrations/ai-sdk) — Connect the AI SDK to an MCP server on Vercel, discover its tools, and call them with models served through AI Gateway.
+- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
 - [Model Context Protocol](https://vercel.com/docs/mcp) — Learn more about MCP and how you can use it on Vercel.
+- [AI SDK with MCP](https://vercel.com/docs/mcp/integrations/ai-sdk) — Connect the AI SDK to an MCP server on Vercel, discover its tools, and call them with models served through AI Gateway.
 - [Use Vercel](https://vercel.com/docs/agent-resources/vercel-mcp) — Vercel MCP has tools available for searching docs, managing teams, projects, and deployments, and querying Web Analytics
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
+- [Observability](https://vercel.com/docs/connect/observability) — Monitor token requests, authorizations, revocations, and trigger deliveries for your connectors.
 
 Full cross-link map for this page: [/docs/connect/mcp-events.graph.md](/docs/connect/mcp-events.graph.md)
 <!-- /docsgraph:related -->

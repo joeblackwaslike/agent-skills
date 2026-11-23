@@ -14,8 +14,8 @@ summary: "Discover how Vercel's Edit Mode enhances content management for headle
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/edit-mode.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "db631befa5267f0eaf688762eda9c79599a9f1e1d75862e9bb6a9f9b332f007d"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "b9b2ae4094224fba0fd4b941ad627259e189cba9e6b2e776446542de90d9906f"
 ---
 
 # Edit Mode
@@ -41,7 +41,7 @@ Content editing in CMSs usually occurs separately from the website's layout and 
 - [Visual Editing can now be used with DatoCMS](https://vercel.com/changelog/visual-editing-can-now-be-used-with-datocms)
 - [Visual Editing can now be used with TinaCMS](https://vercel.com/changelog/visual-editing-can-now-be-used-with-tinacms)
 - [Visual Editing can now be used with Builder.io ](https://vercel.com/changelog/visual-editing-can-now-be-used-with-builder-io)
-- [Vercel DatoCMS Integration](https://vercel.com/docs/integrations/cms/dato-cms) — Learn how to integrate DatoCMS with Vercel. Follow our step-by-step tutorial to set up and manage your digital content s
+- [Vercel and Contentful Integration](https://vercel.com/docs/integrations/cms/contentful) — Integrate Vercel with Contentful to deploy your content.
 
 Full cross-link map for this page: [/docs/edit-mode.graph.md](/docs/edit-mode.graph.md)
 <!-- /docsgraph:related -->
@@ -78,6 +78,73 @@ The following CMS integrations support Content Link:
 - [Strapi](https://strapi.io/blog/announcing-visual-editing-for-strapi-powered-by-vercel)
 
 See the [CMS integration documentation](/docs/integrations/cms) for information on how to use Content Link with your chosen CMS.
+
+## Troubleshooting Content Link
+
+CMS integrations that support Content Link add invisible, encoded characters to the text fields they return. Vercel reads that encoded data to connect each element on the page to its field in the CMS. The encoded characters can change how text is laid out, break code that parses the text, or attach the edit link to the wrong element.
+
+The fixes below use the [`@vercel/stega`](https://www.npmjs.com/package/@vercel/stega) package, which separates the encoded data from the original text. Install it in your project:
+
+```bash filename="terminal"
+npm i @vercel/stega
+```
+
+### Editable text breaks out of its container
+
+Text that contains encoded data can overflow or wrap incorrectly when the element sets `letter-spacing` in CSS or renders inside a `<ReactWrapBalancer>` component.
+
+To fix the layout, split the field with `vercelStegaSplit`. Render the `cleaned` text as the visible content, and put the `encoded` data in a hidden element so Content Link can still find it. Add the `data-vercel-edit-target` attribute to the element that Content Link should highlight:
+
+```tsx filename="components/heading.tsx"
+import { vercelStegaSplit } from '@vercel/stega';
+
+export function Heading({ text }: { text: string }) {
+  const { cleaned, encoded } = vercelStegaSplit(text);
+
+  return (
+    <h1 data-vercel-edit-target>
+      {cleaned}
+      <span style={{ display: 'none' }}>{encoded}</span>
+    </h1>
+  );
+}
+```
+
+### Formatting a date throws an error
+
+Code that parses a CMS field, such as `new Date(value)`, can fail or return `Invalid Date` when the value contains encoded data.
+
+To fix the error, parse the `cleaned` value, then append the `encoded` data to the formatted result so the date stays editable:
+
+```ts filename="lib/format-date.ts"
+import { vercelStegaSplit } from '@vercel/stega';
+
+export function formatDate(value: string) {
+  const { cleaned, encoded } = vercelStegaSplit(value);
+  const formatted = new Date(cleaned).toLocaleDateString('en-US', {
+    dateStyle: 'long',
+  });
+
+  return `${formatted}${encoded}`;
+}
+```
+
+### The wrong element is highlighted
+
+By default, Content Link highlights the element that contains the encoded text. To highlight a different element, such as a parent that wraps the text, add the `data-vercel-edit-target` attribute to that element.
+
+In this example, Content Link highlights the whole `<section>` instead of the `<h1>`:
+
+```tsx filename="components/hero.tsx"
+export function Hero({ title }: { title: string }) {
+  return (
+    <section data-vercel-edit-target>
+      <h1>{title}</h1>
+      <p>Build and deploy on Vercel.</p>
+    </section>
+  );
+}
+```
 
 ## Search the docs from your terminal
 

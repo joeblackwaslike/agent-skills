@@ -17,8 +17,8 @@ summary: Configure supported coding agents to use Vercel Token Pass through AI G
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/token-pass.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "23f10ca95bcbe86b20bc2b48e178acf4a480fd3ebeb0241c1e087cabebc30230"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "49ea76e1f376215394954960e7bcc01f818b2268a340393ff010f0ba445d321a"
 ---
 
 # vercel token-pass
@@ -31,16 +31,13 @@ The `vercel token-pass` command connects supported coding agents to [Token Pass]
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Token Pass now includes $150 in tokens for $30/month](https://vercel.com/changelog/vercel-token-pass-now-includes-one-hundred-fifty-dollars-of-monthly-tokens)
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
-- [Introducing Token Pass](https://vercel.com/changelog/introducing-token-pass)
-- [Token Pass credit now applies automatically across AI Gateway](https://vercel.com/changelog/token-pass-credit-now-applies-automatically-across-ai-gateway)
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
 - [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code, Codex, and OpenCode, and co
 - [vercel tokens](https://vercel.com/docs/cli/tokens) — Manage your personal Vercel authentication tokens from the CLI: list, create, and revoke access tokens for use with the
+- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel kms](https://vercel.com/docs/cli/kms) — Manage Vercel KMS issuers, rotate signing keys, and control which projects can sign tokens from the command line.
 - [vercel agent-runs](https://vercel.com/docs/cli/agent-runs) — Find projects with Agent Runs, list recent runs, and inspect run metadata and conversation traces from the command line.
-- [Coding Agents and Chat Platforms with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents) — Connect coding agents and chat platforms to AI Gateway. Configure Claude Code, Codex, Chatbox, Open WebUI, and more.
 
 Full cross-link map for this page: [/docs/cli/token-pass.graph.md](/docs/cli/token-pass.graph.md)
 <!-- /docsgraph:related -->
@@ -65,7 +62,7 @@ vercel token-pass setup --agent opencode
 
 Running `vercel token-pass` without a subcommand runs `setup`. Both forms accept the same options. The older `tokenpass` alias still works but prints a deprecation warning.
 
-[Sign in to the CLI](/docs/cli/login) before running setup, including dry runs. For scripts, use a [Vercel access token](/docs/cli#using-in-a-cicd-environment). This CLI credential is separate from the Token Pass API key that the command gives your coding agent.
+[Sign in to the CLI](/docs/cli/login) before running setup, including dry runs. For scripts, use a [Vercel access token](/docs/cli#using-in-a-ci/cd-environment). This CLI credential is separate from the Token Pass API key that the command gives your coding agent.
 
 For subscription requirements and available models, see [Token Pass](/docs/ai-gateway/token-pass). To configure agents outside the supported set below, use the [manual coding-agent instructions](/docs/ai-gateway/token-pass/coding-agents).
 
@@ -117,6 +114,14 @@ vercel token-pass --agent opencode --key your_token_pass_api_key --yes
 *Configure OpenCode with an existing Token Pass API key.*
 
 The supplied key must be a Token Pass API key. Setup warns about this requirement but doesn't convert a general AI Gateway key into one. With `--key`, setup skips new-key creation and its name, team, quota, and expiration prompts.
+
+To create a Token Pass key without configuring any agent, for example for a script or a tool this command doesn't support, use [`vercel ai-gateway api-keys create --token-pass`](/docs/cli/ai-gateway#create):
+
+```bash filename="terminal"
+vercel ai-gateway api-keys create --name token-pass --token-pass
+```
+
+*Create a Token Pass API key and print it once.*
 
 ## Options
 

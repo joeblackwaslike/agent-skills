@@ -18,8 +18,8 @@ summary: Deploy SvelteKit applications to Vercel and configure the adapter, rend
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/full-stack/sveltekit.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "49555e0952f02e56ad2dc003e5b86f3b54289e9d8f525a5c336708617b8749a2"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "088e11e5a3c3b9de8263bc15d6a529528ed3d9649d037958bd8704c2fc376c6a"
 ---
 
 # SvelteKit on Vercel
@@ -34,10 +34,9 @@ SvelteKit is a frontend framework that enables you to build Svelte applications 
 
 - [New features for SvelteKit: Optimize your application with ease](https://vercel.com/blog/feature-complete-sveltekit)
 - [How to optimize Next.js and Sitecore Content SDK apps](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-content-sdk) — Learn how to choose a rendering strategy, configure proxy middleware, and optimize costs for Next.js and Sitecore Conten
-- [What's new in Svelte 5](https://vercel.com/blog/whats-new-in-svelte-5)
 - [Using SvelteKit 1.0 on Vercel](https://vercel.com/blog/using-sveltekit-1-0-on-vercel)
+- [What's new in Svelte 5](https://vercel.com/blog/whats-new-in-svelte-5)
 - [How to reduce ISR Writes by shrinking cached output](https://vercel.com/kb/guide/how-to-reduce-isr-writes) — Reduce ISR Write units by finding large changed routes and removing unnecessary data from their cached output.
-- [ISR: A flexible way to cache dynamic content](https://vercel.com/blog/isr-a-flexible-way-to-cache-dynamic-content)
 - [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
 - [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
 - [Vite + Nitro on Vercel](https://vercel.com/docs/frameworks/full-stack/vite-with-nitro) — Add a backend to any Vite app with Nitro and deploy to Vercel with zero configuration.
@@ -564,7 +563,7 @@ Use an `img` or any other image component with an optimized `srcset` generated b
 
 Vercel's Web Analytics features enable you to visualize and monitor your application's performance over time. **Analytics** in your project sidebar's dashboard offers detailed insights into your website's visitors, with metrics like top pages, top referrers, and user demographics.
 
-To use Web Analytics, open **Analytics** in your project sidebar on Vercel and select **Enable** in the modal that appears.
+To use Web Analytics, open **Analytics** in your project sidebar on Vercel, then select the **Enable** button in the header.
 
 To track visitors and page views, we recommend first installing our `@vercel/analytics` package by running the terminal command below in the root directory of your SvelteKit project:
 

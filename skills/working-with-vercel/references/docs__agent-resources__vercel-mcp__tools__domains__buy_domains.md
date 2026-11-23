@@ -15,8 +15,8 @@ summary: Use buy_domains with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/buy_domains.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "fe0a3bccc99c95597d5c88f13dd0aee1acc39fc869c312a648177941e5857c25"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "2d825afa6d89fe99f23f97e2fefe1781d99fcc5f207a257c8c0a91f40853318d"
 ---
 
 # buy_domains
@@ -31,8 +31,8 @@ Register domains individually with [`get_purchase_quote`](/docs/agent-resources/
 - [buy_single_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/buy_single_domain) — Use buy_single_domain with Vercel MCP.
 - [search_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/search_domains) — Use search_domains with Vercel MCP.
 - [get_domain_price](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_price) — Use get_domain_price with Vercel MCP.
-- [check_domain_availability_and_price](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/check_domain_availability_and_price) — Use check_domain_availability_and_price with Vercel MCP.
 - [Billing and Purchases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing) — Vercel MCP tools for billing and purchases.
+- [check_domain_availability_and_price](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/check_domain_availability_and_price) — Use check_domain_availability_and_price with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/buy_domains.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/buy_domains.graph.md)
 <!-- /docsgraph:related -->

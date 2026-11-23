@@ -17,8 +17,8 @@ summary: Use a deployment policy to control which Git sources and deployment mec
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployments/deployment-policy.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "fc9acfb7c4736715317d28c2eccca2ab6c21ca149dcc0c9ba79eed5b539ebd12"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "1681f73551769b7815b9e8b07bc93f6129044135ac6b7a339d113824086bcfa5"
 ---
 
 # Deployment Policies
@@ -41,8 +41,8 @@ Deployment Policies are a set of rules that control which Git sources and deploy
 - [Deployment Retention](https://vercel.com/docs/deployment-retention) — Learn how Deployment Retention policies affect a deployment's lifecycle
 - [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 - [Deploying Git Repositories with Vercel](https://vercel.com/docs/git) — Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production
+- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Vercel Support Code Visibility, Git Fork Protection, and
-- [Deployment Checks](https://vercel.com/docs/deployment-checks) — Set conditions that must be met before proceeding to the next phase of the deployment lifecycle.
 
 Full cross-link map for this page: [/docs/deployments/deployment-policy.graph.md](/docs/deployments/deployment-policy.graph.md)
 <!-- /docsgraph:related -->

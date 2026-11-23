@@ -3,7 +3,7 @@ title: submit-prepayment-balances
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/submit-prepayment-balances
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/submit-prepayment-balances"
-last_updated: 2026-11-16
+last_updated: 2026-11-23
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ summary: Learn about submit-prepayment-balances on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/submit-prepayment-balances.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "a36ef87517df17370f2d45b08a47764a881a038269587f8e284c4d259ec41e93"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "39548b934c7a53d3d0eea0cb1739d680859a7edcc79d3ffbddd203b9b0383a1d"
 ---
 
 # Submit Prepayment Balances

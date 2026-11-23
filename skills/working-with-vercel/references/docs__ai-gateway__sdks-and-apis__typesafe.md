@@ -18,8 +18,8 @@ summary: Point an existing TypeSafe client at AI Gateway by changing its base UR
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/typesafe.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "91a7280785011b56cfbbe35a26a26cfe1283ed2ec27b63f8820467822d2678c6"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "60518e4afc3694fdf4422a758c863349da6618cc69baea2766ef8270bd4149d4"
 ---
 
 # TypeSafe API with AI Gateway
@@ -39,6 +39,9 @@ Keep using the [TypeSafe SDK](https://docs.typesafe.ai/introduction) and route r
 - [Perplexity's Decider V1.2 models now available on AI Gateway](https://vercel.com/changelog/perplexity-decider-v1-2-models-now-available-on-ai-gateway)
 - [Moderate product reviews with Jev, TanStack AI, and AI Gateway](https://vercel.com/kb/guide/moderate-product-reviews-jev-tanstack-ai) — Moderate product reviews for an e-commerce storefront with Jev from TypeSafe AI and TanStack AI's \\`decide\\(\\)\\` functio
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
+- [Get virtual model config](https://vercel.com/docs/rest-api/ai-gateway/get-virtual-model-config-1) — GET /ai-gateway/virtual-model-configs/{vmcSlug} — Get a virtual model config by path slug
+- [Get virtual model config](https://vercel.com/docs/rest-api/ai-gateway/get-virtual-model-config) — GET /ai-gateway/virtual-model-configs — Get a virtual model config
+- [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/typesafe.graph.md](/docs/ai-gateway/sdks-and-apis/typesafe.graph.md)
 <!-- /docsgraph:related -->

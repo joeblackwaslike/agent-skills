@@ -17,8 +17,8 @@ summary: Vercel for GitHub automatically deploys your GitHub projects with Verce
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/git/vercel-for-github.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "cac5cb24ef2e7bd15ca46297ecc2e8f7c93dde69269dafb617e6acf5674a911b"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "f2fad2699a338cb1c6e9ede49daec8fedd0e40774619a1bbe87095ab9255b4ad"
 ---
 
 # Deploying GitHub Projects with Vercel
@@ -38,10 +38,10 @@ Vercel for GitHub automatically deploys your GitHub projects with [Vercel](/), p
 - [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
 - [Introducing `vercel dev`: Serverless, on localhost](https://vercel.com/blog/vercel-dev)
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
-- [Can I use GitHub Enterprise Server with Vercel?](https://vercel.com/kb/guide/can-i-use-github-enterprise-server-with-vercel) — You can use GitHub Enterprise Server and GitHub Actions to deploy your application to Vercel.
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
 - [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
-- [September 2020](https://vercel.com/blog/changelog-september-2020)
+- [Migrate from GitHub Actions to Vercel CI](https://vercel.com/kb/guide/github-actions-to-vercel-ci) — Move Turborepo tasks from GitHub Actions workflows to Vercel CI, migrate secrets to CI environment variables, and switch
+- [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
+- [GitHub](https://v0.app/docs/github) — Connect GitHub repositories to v0 and ship changes through branches, previews, pull requests, and CI.
 - [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
 
 Full cross-link map for this page: [/docs/git/vercel-for-github.graph.md](/docs/git/vercel-for-github.graph.md)
@@ -342,6 +342,16 @@ You can use GitHub Actions to build and deploy your Vercel Application. This app
 
 You'll need separate GitHub Actions for preview (non-`main` pushes) and production (`main` pushes) deployments. The preview workflow uses `vercel build` and `vercel deploy --prebuilt`; the production workflow uses `vercel build --prod` and `vercel deploy --prebuilt --prod`. [Learn more about how to configure GitHub Actions and Vercel](/kb/guide/how-can-i-use-github-actions-with-vercel) for custom CI/CD workflows.
 
+To deploy to production when you push a Git tag or publish a release, or to deploy hotfixes from a dedicated branch, see the [GitHub Actions workflows for release-based deployments](/docs/git/external-pipelines#github-actions).
+
+### Deploying with a GitHub IP allow list
+
+If your GitHub organization or enterprise uses an [IP allow list](https://docs.github.com/en/enterprise-cloud@latest/admin/configuring-settings/hardening-security-for-your-enterprise/restricting-network-traffic-to-your-enterprise-with-an-ip-allow-list), GitHub rejects API requests from IP addresses that aren't on the list. Vercel for GitHub uses the GitHub API to create projects, connect repositories, and fetch your source code for each build. Those requests come from Vercel's infrastructure, which uses dynamic IP addresses, so you can't add them to the allow list. The Git integration doesn't connect through your project's [Static IPs](/docs/networking/static-ips) either.
+
+To keep the IP allow list on, build and deploy from GitHub Actions, as described above, instead of the Git integration. The workflow runs `vercel build` on your runner and uploads the result with `vercel deploy --prebuilt`, so Vercel doesn't need to call the GitHub API and you don't need to allow any Vercel IP addresses. GitHub requires [self-hosted runners or larger runners with static IP address ranges](https://docs.github.com/en/enterprise-cloud@latest/admin/configuring-settings/hardening-security-for-your-enterprise/restricting-network-traffic-to-your-enterprise-with-an-ip-allow-list#using-github-actions-with-an-ip-allow-list) for GitHub Actions when an IP allow list is on, so add your runners' IP addresses to the list.
+
+On Enterprise plans, contact your Vercel account representative to discuss options for using the Git integration with an IP allow list.
+
 ### Repository dispatch events
 
 > **💡 Note:** This event will only trigger a workflow run if the workflow file exists on the
@@ -372,7 +382,45 @@ on:
 
 `repository_dispatch` events contain a JSON payload with information about the deployment, such as deployment `url` and deployment `environment`. GitHub Actions can access this payload through `github.event.client_payload`. For example, accessing the URL of your triggering deployment through `github.event.client_payload.url`.
 
-Read more and see the [full schema](https://github.com/vercel/repository-dispatch/blob/main/packages/repository-dispatch/src/types.ts) in [our `repository-dispatch` package](https://github.com/vercel/repository-dispatch), and see the [how can I run end-to-end tests after my Vercel preview deployment?](/kb/guide/how-can-i-run-end-to-end-tests-after-my-vercel-preview-deployment) guide for a practical example.
+Read more and see the [full schema](https://github.com/vercel/repository-dispatch/blob/main/packages/repository-dispatch/src/types.ts) in [our `repository-dispatch` package](https://github.com/vercel/repository-dispatch).
+
+#### Run end-to-end tests after a deployment
+
+To test every deployment, trigger a workflow on the `vercel.deployment.success` event and point your test runner at the deployment URL from the payload. This example runs a [Playwright](https://playwright.dev/) test suite:
+
+```yaml filename=".github/workflows/e2e.yml"
+name: End to End Tests
+
+on:
+  repository_dispatch:
+    types:
+      - 'vercel.deployment.success'
+
+jobs:
+  run-e2es:
+    if: github.event_name == 'repository_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.client_payload.git.sha }}
+      - name: Install dependencies
+        run: npm ci && npx playwright install --with-deps
+      - name: Run tests
+        run: npx playwright test
+        env:
+          BASE_URL: ${{ github.event.client_payload.url }}
+```
+
+GitHub runs `repository_dispatch` workflows against the last commit on the default branch. The `ref` input checks out the commit that Vercel deployed instead, so your tests come from the same commit as the deployment. Your Playwright configuration needs to read `BASE_URL` and use it as the [`baseURL`](https://playwright.dev/docs/api/class-testoptions#test-options-base-url).
+
+The event fires for both preview and production deployments. To test only one of them, check `github.event.client_payload.environment` in the job's `if` condition.
+
+If your project uses [Deployment Protection](/docs/deployment-protection), your tests need [Protection Bypass for Automation](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation) to reach the deployment. See [end-to-end tests with Playwright](/docs/deployment-protection/automated-agent-access#end-to-end-tests-with-playwright) for the configuration.
+
+If you use another CI provider, [configure a webhook](/docs/webhooks#configure-a-webhook) for the [`deployment.succeeded`](/docs/webhooks/webhooks-api#deployment.succeeded) event and start your test job when your CI provider receives it.
+
+To run the tests on Vercel instead of GitHub Actions, see [running end-to-end tests in Vercel CI](/docs/ci/guides/end-to-end-tests).
 
 #### Migrating from `deployment_status`
 

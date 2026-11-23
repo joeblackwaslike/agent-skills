@@ -16,8 +16,8 @@ summary: "The interaction timing tool allows you to inspect in detail each inter
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-toolbar/interaction-timing-tool.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "b040b9d215807d481ec5e17b7398ca2789275a271958e976c32ea598961811dd"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "a6cb083fb55f2216d4ec011b7f18d965046fd818e875e817bc821d93999e25e1"
 ---
 
 # Interaction Timing Tool
@@ -34,13 +34,11 @@ As you navigate your site, the interaction timing tool allows you to inspect in 
 
 - [Understand Interaction to Next Paint (INP) with the Vercel Toolbar](https://vercel.com/changelog/interaction-timing-tool)
 - [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar)
-- [Investigate latency issues and slowness on Vercel](https://vercel.com/kb/guide/investigate-latency-issues-and-slowness) — Learn how to use Observability to investigate latency issues and slowness on Vercel.
-- [Demystifying INP: New tools and actionable insights](https://vercel.com/blog/demystifying-inp-new-tools-and-actionable-insights)
 - [Toolbar](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar) — Vercel MCP tools for toolbar.
 - [Accessibility Audit Tool](https://vercel.com/docs/vercel-toolbar/accessibility-audit-tool) — Learn how to use the Accessibility Audit Tool to automatically check the Web Content Accessibility Guidelines 2.0 level
+- [Managing the visibility of the Vercel Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
 - [Layout Shift Tool](https://vercel.com/docs/vercel-toolbar/layout-shift-tool) — The layout shift tool gives you insight into any elements that may cause layout shifts on the page.
 - [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights) — Learn how to use Speed Insights to analyze your application's performance data.
-- [Interact with Integrations using Agent Tools](https://vercel.com/docs/integrations/install-an-integration/agent-tools) — Use Agent Tools to query, debug, and manage your installed integrations through a chat interface with natural language.
 
 Full cross-link map for this page: [/docs/vercel-toolbar/interaction-timing-tool.graph.md](/docs/vercel-toolbar/interaction-timing-tool.graph.md)
 <!-- /docsgraph:related -->

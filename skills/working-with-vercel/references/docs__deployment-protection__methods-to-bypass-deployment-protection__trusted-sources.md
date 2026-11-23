@@ -18,8 +18,8 @@ summary: Let other Vercel projects and external services reach your protected de
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "2eddf873b9c06292e982d138972e0f8b37dd362b5cd54cfed2246fada6c2dd91"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "8c89b5e75dfae32f6f0b0131a3266435c9ed529f0e2039565e3e99b3ef6b5e8a"
 ---
 
 # Trusted Sources
@@ -29,6 +29,26 @@ sha256: "2eddf873b9c06292e982d138972e0f8b37dd362b5cd54cfed2246fada6c2dd91"
 > Those with the owner, member and admin roles can manage Trusted Sources
 
 Trusted Sources control which workloads can reach this project's protected deployments: this project itself, other Vercel projects in the same team, and external services like GitHub Actions or GitLab CI. Every authorized caller authenticates with a short-lived OIDC token signed by its own identity provider, so you don't share a static secret or open the deployment to the public internet.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Trusted Sources for Deployment Protection](https://vercel.com/changelog/trusted-sources-for-deployment-protection)
+- [Targets](https://eve.dev/docs/evals/targets) — Point evals at a local dev server or a deployment with the same eval files.
+- [Remote Agents](https://eve.dev/docs/guides/remote-agents) — Call another eve deployment as a subagent with defineRemoteAgent: the same tool call as a local subagent, with outbound
+- [Deploy a Go backend on Vercel with AI Gateway](https://vercel.com/kb/guide/deploy-a-go-backend-on-vercel-with-ai-gateway) — Build and deploy a Go HTTP server that calls AI Gateway using the standard library, with no SDK dependencies.
+- [How to choose the right Vercel networking option](https://vercel.com/kb/guide/how-to-choose-the-right-vercel-networking-option) — Decide whether your project needs a networking option at all, then choose between Static IPs, AWS PrivateLink, Secure Co
+- [Access Other Clouds and APIs](https://vercel.com/docs/oidc/access-other-services) — Use the short-lived OpenID Connect \\(OIDC\\) tokens that Vercel issues to your builds and functions to access AWS, Google
+- [Restrict access to deployments with Vercel Authentication](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/vercel-authentication) — Vercel Authentication restricts access to your deployments so only authorized users can view and comment on your site.
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
+- [Deploying from an External CI/CD Pipeline](https://vercel.com/docs/git/external-pipelines) — Build your project in GitHub Actions, CircleCI, Bitbucket Pipelines, or another CI/CD provider, then deploy the build ou
+
+Full cross-link map for this page: [/docs/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources.graph.md](/docs/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources.graph.md)
+<!-- /docsgraph:related -->
 
 Use Trusted Sources for service-to-service traffic when you want to keep [Vercel Authentication](/docs/security/deployment-protection/methods-to-protect-deployments/vercel-authentication), [Password Protection](/docs/security/deployment-protection/methods-to-protect-deployments/password-protection), or [Trusted IPs](/docs/security/deployment-protection/methods-to-protect-deployments/trusted-ips) on for everyone else.
 

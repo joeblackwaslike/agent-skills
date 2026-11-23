@@ -17,8 +17,8 @@ summary: Learn how Vercel uses SSL certification to keep your site secure.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains/working-with-ssl.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "3a383a6811073dd4eb74e08d64c476e25350c7a98b4935ee6634a009a8d670a0"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "5ce4d4d8d6aefe86053384e9095bfa4c5c903d37bef9d4f4124797953994c195"
 ---
 
 # Working with SSL Certificates
@@ -31,7 +31,6 @@ An SSL certificate enables encrypted communication between user's browser and yo
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Automatic SSL with Vercel and Let's Encrypt](https://vercel.com/blog/automatic-ssl-with-vercel-lets-encrypt)
 - [Uploading Custom SSL Certificates](https://vercel.com/docs/domains/custom-ssl-certificate) — By default, Vercel provides all domains with a custom SSL certificates. However, Enterprise teams can upload their own c
 - [Pre-Generate SSL Certificates](https://vercel.com/docs/domains/pre-generating-ssl-certs) — test
 - [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption) — Learn how Vercel encrypts data in transit and at rest.

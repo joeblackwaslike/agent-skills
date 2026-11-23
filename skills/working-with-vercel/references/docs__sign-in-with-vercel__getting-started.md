@@ -17,8 +17,8 @@ summary: Learn how to get started with Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sign-in-with-vercel/getting-started.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "0fa779d7079f6653fcc318e61cd834ff9a43bff2ccfdac89879b1fb38c811e9a"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "d7eaef66950e90dfbd709eb495334e76b965bea1a82a21fe743cdb5c191578a3"
 ---
 
 # Getting started with Sign in with Vercel
@@ -35,11 +35,12 @@ This guide uses Next.js App Router. You'll create a Sign in with Vercel button t
 - [Build a Claude Managed Agent with Vercel Workflow](https://vercel.com/kb/guide/claude-managed-agent-vercel) — Learn how to build a Claude Managed Agent on Vercel with auth, credential vaults, durable polling, and a chat UI.
 - [Build a fullstack app with Next.js 16 and Prisma Postgres](https://vercel.com/kb/guide/nextjs-prisma-postgres) — Create a fullstack blog with the Next.js App Router, Prisma, Sign in with Vercel, Prisma Postgres from the Vercel Market
 - [Encrypting parameters](https://vercel.com/kb/guide/encrypting-parameters) — Learn how to encrypt parameters so that only certain values can be passed to generate your image.
+- [How to implement authentication in Next.js](https://nextjs.org/docs/app/guides/authentication) — Learn how to implement authentication in your Next.js application.
 - [Verify Visitors on Page Load](https://vercel.com/docs/botid/verify-on-page-load) — Run BotID on page load and reuse the result with a short-lived, server-signed verification cookie.
-- [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 - [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 - [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
 - [Create an Auth Token](https://vercel.com/docs/rest-api/authentication/create-an-auth-token) — POST /v3/user/tokens — Creates and returns a new authentication token for the currently authenticated User. The \\`bearer
+- [SSO Token Exchange](https://vercel.com/docs/rest-api/authentication/sso-token-exchange) — POST /v1/integrations/sso/token — During the autorization process, Vercel sends the user to the provider \\\[redirectLogin
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/getting-started.graph.md](/docs/sign-in-with-vercel/getting-started.graph.md)
 <!-- /docsgraph:related -->

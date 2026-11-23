@@ -12,14 +12,14 @@ related:
   - /docs/ai-gateway/authentication-and-byok/byok
   - /docs/ai-gateway/authentication-and-byok
   - /docs/ai-gateway/models-and-providers
-  - /docs/ai-gateway/observability-and-spend/observability
-  - /docs/ai-gateway/security-and-compliance/zdr
+  - /docs/ai-gateway/sdks-and-apis/rest-api
+  - /docs/cli/ai-gateway
 summary: Register your own model endpoints behind a compatible API format and call them through AI Gateway, scoped to your team.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/private-inference.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "fc14e9a62705ebc842030806dbdbb9911ab4043f89f30bc8265f8592023c5af6"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "8af6fce1067e7088530e9c1aeb0664378736ca79284592c9e6d935762b606035"
 ---
 
 # AI Gateway Private Inference
@@ -45,7 +45,7 @@ Private inference has two building blocks:
 
 You call a private model by prefixing its slug with `private/`. A private model with the slug `glm-5.2-fine-tuned` is addressed as `private/glm-5.2-fine-tuned`.
 
-Private models are isolated to the team that owns them. They only resolve for that team's [authenticated requests](/docs/ai-gateway/authentication-and-byok) (including API Keys and OIDC), and they are intentionally excluded from the public [models list](/docs/ai-gateway/models-and-providers) and the `/v1/models` response.
+Private models are isolated to the team that owns them. They only resolve for that team's [authenticated requests](/docs/ai-gateway/authentication-and-byok) (including API Keys and OIDC). Private models don't appear in the public [models list](/docs/ai-gateway/models-and-providers) or in unauthenticated `/v1/models` responses. When your team sends an authenticated [`GET /v1/models`](/docs/ai-gateway/sdks-and-apis/rest-api#list-models) request, the response includes your private models as `private/<slug>`.
 
 ## Compatible API formats
 
@@ -103,6 +103,13 @@ Select a provider or a model on the Private Inference page to open its page. Fro
 - See a provider's models, and add more with **Add Model**.
 - Click **Open in Observability** to see that provider's or model's traffic on the AI Gateway overview. See [Pricing and observability](#pricing-and-observability).
 
+You can also add, discover, update, and delete private providers and models from your terminal with [`vercel ai-gateway private-inference`](/docs/cli/ai-gateway#private-inference). For example, connect a provider with its API key read from stdin, then add one of its models:
+
+```bash filename="terminal"
+cat key.txt | vercel ai-gateway private-inference providers create acme-vllm --base-url https://vllm.example.com/v1 --api-key -
+vercel ai-gateway private-inference models create --provider acme-vllm --api-model acme/llama-70b
+```
+
 ## Making requests
 
 Use your private model id (`private/<slug>`) anywhere you would use a public model id, when authenticated under the correct team.
@@ -153,6 +160,8 @@ curl -X POST "https://ai-gateway.vercel.sh/v1/chat/completions" \
 - The endpoint must use [a compatible API format](#compatible-api-formats).
 - Each team can register up to **25 private providers** and **100 private models**.
 
+* Private models need purchased [AI Gateway Credits](/docs/ai-gateway/pricing#top-up-your-ai-gateway-credits) and a positive credit balance. Without them, your private model requests fail.
+
 ## Supported model types
 
 A private model declares the modality it serves so AI Gateway routes and reports it correctly: `language`, `embedding`, and `image`. Set the type to match what your upstream endpoint returns.
@@ -164,13 +173,56 @@ A private model declares the modality it serves so AI Gateway routes and reports
 
 ## Pricing and observability
 
-Vercel does not bill you for inference on private models. The requests run against your own endpoint, and you pay your provider directly. The [observability](/docs/ai-gateway/observability-and-spend/observability) views show only what Vercel bills, so they show no inference spend for private models.
+Vercel doesn't bill you for tokens on private models, but private model requests incur a [per-request fee](#fees-for-private-models-without-a-fallback) unless they have a Vercel-provided fallback. The requests run against your own endpoint, and you pay your provider directly. The [observability](/docs/ai-gateway/observability-and-spend/observability) views show only what Vercel bills, so they show no inference spend for private models.
 
 Private model requests appear in observability alongside the rest of your AI Gateway traffic. They are attributed to the **private provider** that served them and flagged as private so you can filter for them.
 
 To see only this traffic, click **Observability** on the Private Inference page. To narrow it to one provider or model, click **Open in Observability** on that provider's or model's page. The usage charts break down time to first token, requests, and tokens by private model:
 
 ![AI Gateway usage charts filtered to Private Inference.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/ai-gateway/private-inference/observability-charts-2-light.png)
+
+### Fees for private models without a fallback
+
+By default, AI Gateway charges $0.20 per 1,000 private model requests, because a request that names only a private model has no Vercel-provided fallback. A Vercel-provided fallback is a model from the AI Gateway catalog that AI Gateway can serve with Vercel's provider keys. A private model request has no fee when its model chain includes a Vercel-provided fallback and [Fallback to Vercel Keys](/docs/ai-gateway/authentication-and-byok/byok#turn-off-fallback-to-vercel-keys) is on, which is the default.
+
+| Private model request                                                   | AI Gateway fee           |
+| ----------------------------------------------------------------------- | ------------------------ |
+| Vercel-provided fallback in the model chain, Fallback to Vercel Keys on | No additional cost       |
+| No Vercel-provided fallback in the model chain                          | $0.20 per 1,000 requests |
+| Any request while Fallback to Vercel Keys is off                        | $0.20 per 1,000 requests |
+
+The model chain has a Vercel-provided fallback when it includes either of the following:
+
+- A catalog model before or after the private model, as `model` or in [`models`](/docs/ai-gateway/models-and-providers/model-fallbacks), including inside a [virtual model's](/docs/ai-gateway/models-and-providers/virtual-models) chain
+- A [decision fallback](/docs/ai-gateway/models-and-providers/decision-fallbacks) to a catalog model
+
+For example, this request has a Vercel-provided fallback, so it incurs no fee:
+
+```typescript filename="private-model-fallback.ts" {7}
+import { generateText } from 'ai';
+
+const { text } = await generateText({
+  model: 'private/gpt-latest',
+  prompt: 'Why is the sky blue?',
+  providerOptions: {
+    gateway: { models: ['openai/gpt-5.4-mini'] },
+  },
+});
+```
+
+If your private model fails and `openai/gpt-5.4-mini` serves the request, AI Gateway bills that model's token price, as for any request on Vercel's provider keys, and doesn't charge the fee.
+
+While [Fallback to Vercel Keys](/docs/ai-gateway/authentication-and-byok/byok#turn-off-fallback-to-vercel-keys) is off, a catalog fallback can't run on Vercel's provider keys, so private model requests incur the fee.
+
+AI Gateway charges the fee as follows:
+
+- The fee applies to all inference requests that your private model serves, across all routes.
+- AI Gateway doesn't charge requests that fail, for example because of a provider error or rate limit.
+- AI Gateway deducts the fee from your AI Gateway Credits balance, and the fee counts toward your [budgets](/docs/ai-gateway/observability-and-spend/budgets).
+- The fee applies on every plan at list price. [Enterprise](/docs/plans/enterprise) teams can [contact sales](/contact/sales) for custom rates.
+- At list price, 1,000,000 requests that incur the fee cost $200.
+
+To stop the fee, add a Vercel-provided fallback to the model chain and keep Fallback to Vercel Keys on. For every AI Gateway fee, see [AI Gateway Pricing](/docs/ai-gateway/pricing#byok-without-fallback).
 
 ## Permissions
 
@@ -189,6 +241,7 @@ If your endpoint does not retain request data, anyone who can create a private p
 - [Authentication](/docs/ai-gateway/authentication-and-byok): Create an API key to call your private models
 - [Observability](/docs/ai-gateway/observability-and-spend/observability): Monitor usage and spend across your traffic
 - [Bring Your Own Key (BYOK)](/docs/ai-gateway/authentication-and-byok/byok): Use your own credentials with supported public providers
+- [`vercel ai-gateway private-inference`](/docs/cli/ai-gateway#private-inference): Manage private providers and models from the CLI
 
 ## Search the docs from your terminal
 

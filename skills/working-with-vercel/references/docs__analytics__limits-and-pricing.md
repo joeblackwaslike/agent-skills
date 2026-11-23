@@ -17,8 +17,8 @@ summary: Learn about pricing for Vercel Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/analytics/limits-and-pricing.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "292190d5f9b891eab0f4d9fa8f28f2533caccbc670cadd3bf870a3f4ec6b010d"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "432eac0bbb9a8234421c03456db2aa429445a4463be74a7138883a8949d52f13"
 ---
 
 # Pricing for Web Analytics
@@ -38,13 +38,13 @@ After you enable Vercel Web Analytics, your plan determines which features you c
 - [Up to 80% pricing reduction for Web Analytics](https://vercel.com/changelog/up-to-80-pricing-reduction-for-web-analytics)
 - [UTM parameter support in Web Analytics](https://vercel.com/changelog/utm-parameter-support-in-web-analytics)
 - [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
-- [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available)
 - [Web Analytics is now generally available](https://vercel.com/changelog/web-analytics-is-now-generally-available)
+- [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available)
 - [Observability Plus](https://vercel.com/docs/observability/observability-plus) — Learn about using Observability Plus and its limits.
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Limits and Pricing for Speed Insights](https://vercel.com/docs/speed-insights/limits-and-pricing) — Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your
-- [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
+- [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 
 Full cross-link map for this page: [/docs/analytics/limits-and-pricing.graph.md](/docs/analytics/limits-and-pricing.graph.md)
 <!-- /docsgraph:related -->

@@ -15,8 +15,8 @@ summary: Create and manage organizations and their child teams with the vercel o
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/organizations.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "f4bca5789bb2870e297673d5e14779d53f205e63407076a32bdfc97064f119b4"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "30907360b2096e5bc710fd9dad6ad82493e2566a7052a1b1195e5dee9beb3df5"
 ---
 
 # vercel organizations
@@ -31,9 +31,9 @@ Use the `vercel organizations` command to create and manage [organizations](/doc
 
 - [Create or Add Team to Organization](https://vercel.com/docs/rest-api/organizations/create-or-add-team-to-organization) — POST /v1/organizations/{organizationId}/teams — Create a new team under an organization, or add an existing team. \\`mode
 - [List Organization Teams](https://vercel.com/docs/rest-api/organizations/list-organization-teams) — GET /v1/organizations/{organizationId}/teams — List up to 100 teams in an organization, each enriched with the team's sl
-- [vercel billing](https://vercel.com/docs/cli/billing) — Learn how to view your billing overview, usage, contracts, budgets, and invoices for your Vercel team using the vercel b
 - [Create an Organization](https://vercel.com/docs/rest-api/organizations/create-an-organization) — POST /v1/organizations — Create a new Organization. This endpoint is in private beta. Contact your Vercel account team f
 - [List Organizations](https://vercel.com/docs/rest-api/organizations/list-organizations) — GET /v1/organizations — List the organizations where the authenticated user holds the OrgAdmin or OrgViewer permission o
+- [vercel billing](https://vercel.com/docs/cli/billing) — Learn how to view your billing overview, usage, budgets, and invoices for your Vercel team using the vercel billing CLI
 
 Full cross-link map for this page: [/docs/cli/organizations.graph.md](/docs/cli/organizations.graph.md)
 <!-- /docsgraph:related -->

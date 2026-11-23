@@ -17,8 +17,8 @@ summary: Learn about advanced configurations for Vercel functions on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/runtimes/node-js/advanced-node-configuration.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "d353627ed7220f8b5b12a4785ce2384cbcc083de4a47a7c6c202eae137010ede"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "78d02d1b1506aa8b8c16e0be3e6828eb358cdf2cbbfa7381b8c30873c3bda2f0"
 ---
 
 # Advanced Node.js Usage
@@ -32,14 +32,12 @@ To use Node.js, create a file inside your project's `api` directory. No addition
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Node.js 26 LTS is now Generally Available on Vercel](https://vercel.com/changelog/node-js-26-lts-is-now-generally-available-on-vercel)
-- [Node.js 22 LTS is now generally available for builds and functions](https://vercel.com/changelog/node-js-22-lts-is-now-available)
-- [Node.js v20 LTS is now available in beta](https://vercel.com/changelog/nodejs-20)
-- [Node.js 10 is Now Available](https://vercel.com/blog/node-10)
+- [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions) — Learn how to import files inside Serverless Functions on Vercel.
 - [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
 - [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
+- [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart) — Build your first Vercel Function in a few steps.
 - [Supported Node.js versions](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions) — Learn about the supported Node.js versions on Vercel.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
 
 Full cross-link map for this page: [/docs/functions/runtimes/node-js/advanced-node-configuration.graph.md](/docs/functions/runtimes/node-js/advanced-node-configuration.graph.md)
 <!-- /docsgraph:related -->

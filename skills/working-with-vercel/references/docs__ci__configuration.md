@@ -16,8 +16,8 @@ summary: Reference for the turbo.json tags and vercel.json keys that configure V
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ci/configuration.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "93316263ec7d836b130a64a3ea08952583e2286977e78293ef6784bf60b84697"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "7c6c3ff085e376ace9e0ba31789799378cc68dbf62cc54d56fe36e310d810000"
 ---
 
 # Vercel CI Configuration Reference
@@ -34,10 +34,10 @@ Tasks that are tagged to run in CI will have their dependencies run in CI, too.
 
 - [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel) — Deploy your Turborepo on Vercel and run tasks with Vercel CI using zero-config Remote Caching.
 - [Deploying Turborepo to Vercel](https://vercel.com/docs/monorepos/turborepo) — Learn about Turborepo, a build system for monorepos that allows you to have faster incremental builds, content-aware has
-- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
+- [Deploying from an External CI/CD Pipeline](https://vercel.com/docs/git/external-pipelines) — Build your project in GitHub Actions, CircleCI, Bitbucket Pipelines, or another CI/CD provider, then deploy the build ou
 - [Builds](https://vercel.com/docs/builds) — Understand how the build step works when creating a Vercel Deployment.
-- [Use Remote Caching from External CI/CD](https://vercel.com/docs/monorepos/remote-caching/external-ci-cd) — Authenticate the Turborepo CLI to Vercel Remote Cache from your CI/CD provider using OpenID Connect \\(OIDC\\) or a Person
-- [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
+- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 
 Full cross-link map for this page: [/docs/ci/configuration.graph.md](/docs/ci/configuration.graph.md)
 <!-- /docsgraph:related -->

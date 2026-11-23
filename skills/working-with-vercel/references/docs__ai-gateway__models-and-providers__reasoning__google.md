@@ -15,8 +15,8 @@ summary: Configure thinking for Google Gemini and Gemma models with the AI SDK a
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/google.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "af354f926b617c1ea3b7cd5322f3c675554eb324921140d9708c69d6742e2fab"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "5076272887ba87f8ef60659ecf5aa1282e029f87a8239cfb6cc60585b30b0a67"
 ---
 
 # AI Gateway Google and Vertex Reasoning
@@ -29,12 +29,12 @@ Gemini 2.5 and later models use an internal "thinking process" that improves the
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Gemini 4 Argon now available on AI Gateway](https://vercel.com/changelog/gemini-4-argon-now-available-on-ai-gateway)
 - [Gemini 3.5 Flash on AI Gateway](https://vercel.com/changelog/gemini-3-5-flash-on-ai-gateway)
 - [Gemini 3.8 Live models now available on AI Gateway](https://vercel.com/changelog/gemini-3-8-live-models-now-available-on-ai-gateway)
+- [Gemini 4 Argon now available on AI Gateway](https://vercel.com/changelog/gemini-4-argon-now-available-on-ai-gateway)
 - [Gemini 3 Pro now available in Vercel AI Gateway](https://vercel.com/changelog/gemini-3-pro-now-available-in-vercel-ai-gateway)
-- [Gemini 3 Flash is now available on the Vercel AI Gateway](https://vercel.com/changelog/gemini-3-flash-is-now-available-on-the-vercel-ai-gateway)
 - [AI Gateway OpenAI Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/openai) — Configure reasoning and thinking for OpenAI models with the AI SDK and AI Gateway.
+- [OpenAI Chat Completions Reasoning with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/reasoning) — Control how much a model thinks before answering with the OpenAI Chat Completions API through AI Gateway.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/reasoning/google.graph.md](/docs/ai-gateway/models-and-providers/reasoning/google.graph.md)
 <!-- /docsgraph:related -->

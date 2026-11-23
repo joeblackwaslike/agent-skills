@@ -4,8 +4,8 @@ description: Learn how to use Azure OpenAI with AI Gateway and the direct provid
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/azure"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/azure.md"
-fetched_at: "2026-11-16T12:32:31.917Z"
-sha256: "97bb0fda0eb655efb721bb800520016ceb469a10119f62a34119a91d05650afd"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "98b267ac3d94f3475619c7639dc0d3a4d2ef8fc8beb6df5b6b5d757f2971a911"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -1505,6 +1505,8 @@ The table lists supported DALL-E backing models and Azure MAI image IDs. For Ope
 | `mai-image-2.5-pro`   | Sides must be multiples of 16 and at least 768 pixels. |
 | `mai-image-2.6`       | Sides must be multiples of 16 and at least 768 pixels. |
 | `mai-image-2.6-flash` | Sides must be multiples of 16 and at least 768 pixels. |
+| `mai-image-2.7`       | Sides must be multiples of 16 and at least 768 pixels. |
+| `mai-image-2.7-flash` | Sides must be multiples of 16 and at least 768 pixels. |
 
 Azure deployment names are user-defined and do not identify the backing model.
 Consequently, `supportsFileInputs` and `supportsMaskInputs` are `undefined`
@@ -1521,8 +1523,9 @@ version you want to use.
 
 ### MAI-Image
 
-MAI-Image models (`MAI-Image-2.6`, `MAI-Image-2.6-Flash`, `MAI-Image-2.5`,
-`MAI-Image-2.5-Flash`, `MAI-Image-2.5-Pro`) use the MAI image API at
+MAI-Image models (`MAI-Image-2.7`, `MAI-Image-2.7-Flash`, `MAI-Image-2.6`,
+`MAI-Image-2.6-Flash`, `MAI-Image-2.5`, `MAI-Image-2.5-Flash`,
+`MAI-Image-2.5-Pro`) use the MAI image API at
 `https://{resourceName}.services.ai.azure.com/mai/v1` (override with
 `maiBaseURL`). Deployments named after the model are detected automatically,
 case-insensitively. For other deployment names, set
@@ -1544,6 +1547,18 @@ const { image, usage } = await generateImage({
 });
 ```
 
+MAI-Image-2.7 models can return an image with a transparent background:
+
+```ts
+const { image } = await generateImage({
+  model: azure.image('MAI-Image-2.7'),
+  prompt: 'A red apple sticker',
+  providerOptions: {
+    azure: { background: 'transparent' } satisfies AzureImageModelOptions,
+  },
+});
+```
+
 Pass reference images to edit or combine them (up to five JPEG or PNG
 images). Masks are not supported.
 
@@ -1559,8 +1574,8 @@ const { image } = await generateImage({
 
 Each request returns one PNG image; `generateImage` sends one request per image.
 `size` is sent as `width` and `height`. Each side must be at least 768 pixels,
-and the total pixel count at most 2,359,296 for MAI-Image-2.6 models and
-1,048,576 for MAI-Image-2.5 models. Without `size`, `aspectRatio` is mapped to
+and each output is at most 2048x2048 for MAI-Image-2.7 models, 2,359,296 pixels
+for MAI-Image-2.6 models, and 1,048,576 pixels for MAI-Image-2.5 models. Without `size`, `aspectRatio` is mapped to
 dimensions of about one megapixel; without either, the model returns 1024x1024.
 `seed` is not supported. Token usage is returned in `usage`, with the input
 text and image token split in `providerMetadata.azure.images`.
@@ -1574,11 +1589,20 @@ The following provider options are available:
 - **autoAspectRatio** *boolean*
 
   Let the model choose the output aspect ratio from the prompt and reference
-  images. MAI-Image-2.6 models only.
+  images. MAI-Image-2.6 and MAI-Image-2.7 models only.
 
 - **webGrounding** *boolean*
 
-  Ground generation in Bing web search results. MAI-Image-2.6 models only.
+  Ground generation in Bing web search results. MAI-Image-2.6 and
+  MAI-Image-2.7 models only.
+
+- **background** *'transparent' | 'opaque'*
+
+  Image background for generations and edits. `transparent` returns a PNG with
+  an alpha channel; the API defaults to `opaque`. MAI-Image-2.7 models only.
+  The same option is passed through to OpenAI image deployments, which also
+  accept `'auto'`; on the MAI image API, `'auto'` is not sent and produces a
+  warning.
 
 ## Transcription Models
 
@@ -1996,6 +2020,7 @@ The following option definitions are generated from the provider catalog.
 | image         | `api`             | Select the OpenAI or MAI image API.             |
 | image         | `autoAspectRatio` | Choose the aspect ratio automatically.          |
 | image         | `webGrounding`    | Ground image generation in web search.          |
+| image         | `background`      | Transparent or opaque image background.         |
 | speech        | `api`             | Select the OpenAI or Azure Speech API.          |
 | speech        | `style`           | Speaking style supported by the selected voice. |
 | speech        | `styleDegree`     | Intensity of the speaking style.                |

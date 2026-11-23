@@ -18,8 +18,8 @@ summary: Build a project, provision its functions in your AWS account, and compl
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/networking/bring-your-own-cloud/deploy-with-cli.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "0f44c6b5370d344e2ef883c0d4a8ace302e5f666cce85466c5e322b07af2786c"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "60c9cbb01e5651e90e1c619d32e819c2ee41dcf40a22cfba086bc456586a52bf"
 ---
 
 # Deploying with BYOC Using the Vercel CLI
@@ -37,9 +37,9 @@ Create a [Bring Your Own Cloud (BYOC)](/docs/networking/bring-your-own-cloud) de
 - [The Complete Guide to Bring Your Own Cloud](https://vercel.com/kb/guide/byoc) — Use Bring Your Own Cloud \\(BYOC\\) to run Vercel Functions as AWS Lambda functions in your own AWS account, from setup to
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 
 Full cross-link map for this page: [/docs/networking/bring-your-own-cloud/deploy-with-cli.graph.md](/docs/networking/bring-your-own-cloud/deploy-with-cli.graph.md)
 <!-- /docsgraph:related -->

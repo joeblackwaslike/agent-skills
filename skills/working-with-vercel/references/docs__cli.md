@@ -17,8 +17,8 @@ summary: Learn how to use the Vercel command-line interface (CLI) to manage and 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "cdf7e2454138233cc3d473efc573f59b3bee2b1b35b9889dd5f3e3ac97a5b178"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "a374d1fbd972f132279d5710db9a31976abb8af197bcc05b81fa06a063e57763"
 ---
 
 # Vercel CLI Overview
@@ -217,12 +217,11 @@ vercel api /v9/projects -X POST -F name=my-project
 
 ### billing
 
-View your plan and balance due, usage and costs, contract commitments, [Spend Management](/docs/spend-management) budgets, and invoices for your team.
+View your plan and balance due, usage and costs, [Spend Management](/docs/spend-management) budgets, and invoices for your team.
 
 ```bash
 vercel billing overview
 vercel billing usage
-vercel billing contract
 vercel billing budgets set --amount 200 --pause --webhook https://example.com/spend
 vercel billing invoices list
 vercel billing invoices download [invoice-id]
@@ -254,6 +253,19 @@ vercel blob copy [from-url] [to-pathname] --access private
 ```
 
 [Learn more about the blob command](/docs/cli/blob)
+
+### board
+
+Read and write your team's Board: read channels and threads, post and reply, label and react to messages, hand tasks to agents, and wait for replies.
+
+```bash
+vercel board read dev
+vercel board post dev "deploys are green again"
+vercel board tasks create work "fix the flaky deploy test"
+vercel board wait dev --mentions --timeout 10m
+```
+
+[Learn more about the board command](/docs/cli/board)
 
 ### build
 
@@ -494,6 +506,17 @@ vercel drains create --name app-logs --type logs --url https://example.com/drain
 ```
 
 [Learn more about the drains command](/docs/cli/drains)
+
+### drives
+
+Create, list, fork, and delete [Vercel Drives](/docs/drives) for a project.
+
+```bash
+vercel drives list
+vercel drives get-or-create workspace-cache
+```
+
+[Learn more about the drives command](/docs/drives/cli-reference)
 
 ### env
 
@@ -839,6 +862,19 @@ vercel organizations teams create acme --slug acme-web --name "Acme Web"
 ```
 
 [Learn more about the organizations command](/docs/cli/organizations)
+
+### page-integrity
+
+Turn [Page Integrity](/docs/vercel-firewall/page-integrity) monitoring on and off, check its status, and review the scripts, headers, and connections your pages load.
+
+```bash
+vercel page-integrity
+vercel page-integrity enable --path "/checkout/:path*"
+vercel page-integrity disable
+vercel page-integrity scripts list
+```
+
+[Learn more about the page-integrity command](/docs/cli/page-integrity)
 
 ### pricing
 

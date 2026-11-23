@@ -17,8 +17,8 @@ summary: "Perform the following commands from the terminal for your Vercel Proje
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/project.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "ef897f87aefc7dc218d536385a0c6508321727ed86432cd10feddc1d1c408dd3"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "5ed7973ea5f26dcac4124fdec4e23b27733a2079e1ec5a119fbcb0543b82b87a"
 ---
 
 # vercel project
@@ -35,11 +35,11 @@ The `vercel project` command manages your Vercel Projects from the terminal: lis
 - [Update Project Settings from the Vercel CLI](https://vercel.com/changelog/update-project-settings-from-the-vercel-cli)
 - [Vercel CLI can now set new projects to expire](https://vercel.com/changelog/vercel-cli-can-now-set-new-projects-to-expire)
 - [How do I change the name of my Vercel Project?](https://vercel.com/kb/guide/how-do-i-change-the-name-of-my-vercel-project) — Change your Vercel project name in the dashboard, CLI, or REST API, then update the environment variables, callbacks, an
-- [Audit Logs](https://vercel.com/docs/audit-log) — Learn how to track and analyze your team members' activities.
+- [Access Groups](https://vercel.com/docs/agent-resources/vercel-mcp/tools/access-groups) — Vercel MCP tools for access groups.
+- [Access Groups](https://vercel.com/docs/rbac/access-groups) — Learn how to configure access groups for team members on a Vercel account.
+- [List project members](https://vercel.com/docs/rest-api/projectmembers/list-project-members) — GET /v1/projects/{idOrName}/members — Lists all members of a project.
+- [List access groups for a team, project or member](https://vercel.com/docs/rest-api/access-groups/list-access-groups-for-a-team-project-or-member) — GET /v1/access-groups — List access groups
 - [vercel security](https://vercel.com/docs/cli/security) — Inspect the security posture of your Vercel team from the terminal: run every security check, list findings, and triage
-- [Managing projects](https://vercel.com/docs/projects/managing-projects) — Learn how to manage your projects through the Vercel Dashboard.
-- [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
-- [vercel curl](https://vercel.com/docs/cli/curl) — Learn how to make HTTP requests to your Vercel deployments with automatic deployment protection bypass using the vercel
 
 Full cross-link map for this page: [/docs/cli/project.graph.md](/docs/cli/project.graph.md)
 <!-- /docsgraph:related -->
@@ -331,6 +331,21 @@ vercel project protection enable my-app --git-fork-protection
 vercel project protection enable my-app --protection-bypass
 vercel project protection disable my-app --protection-bypass --protection-bypass-secret <secret>
 ```
+
+### `priority`
+
+Enable or disable [Priority](/docs/vercel-firewall/priority-projects) for a project. Priority adds paid bot-protection features. Both actions require confirmation from a person in an interactive terminal; scripts and agents can't confirm them.
+
+```bash filename="terminal"
+vercel project priority enable [name] --scope my-team
+vercel project priority disable [name] --scope my-team
+```
+
+Omit `[name]` to use the linked project. The confirmation identifies the project and its team. `priority-project` is an alias for `priority`.
+
+Enabling Priority requires a Pro or Enterprise team outside a Pro trial. On Hobby, the CLI directs you to `vercel buy pro --scope my-team` first. After upgrading, rerun your original Priority command with the same project and team scope. To remove Priority, run `vercel project priority disable [name] --scope my-team` and confirm.
+
+Pass `--json` or `--format json` for structured output. Without an interactive terminal, the command exits with a non-zero status and reports the required action instead of changing the project. With `--json`, failures return a structured error document.
 
 ### `members`
 

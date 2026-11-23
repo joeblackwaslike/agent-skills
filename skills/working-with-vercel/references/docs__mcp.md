@@ -17,8 +17,8 @@ summary: Learn more about MCP and how you can use it on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/mcp.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "b7e0f2753ffaa725c150887b8115c805daef8631a66985e3b8b82cd3efc3347b"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "6a7828cd119f1d7865ffb107c49df4ceddd6ff39e002a9df1e41c0d6224d8765"
 ---
 
 # Model Context Protocol
@@ -36,13 +36,13 @@ Deploy Model Context Protocol (MCP) servers on Vercel with mcp-handler, then cal
 - [Introducing Vercel MCP: Connect Vercel to your AI tools](https://vercel.com/blog/introducing-vercel-mcp-connect-vercel-to-your-ai-tools)
 - [MCP server support on Vercel](https://vercel.com/changelog/mcp-server-support-on-vercel)
 - [Model Context Protocol (MCP) explained: An FAQ](https://vercel.com/blog/model-context-protocol-mcp-explained)
-- [Build an MCP Server with Weather tools using Express and Vercel](https://vercel.com/kb/guide/mcp-server-with-weather-tool-express) — Make your Express weather API accessible to AI assistants through the Model Context Protocol.
-- [Building efficient MCP servers](https://vercel.com/blog/building-efficient-mcp-servers)
 - [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
+- [Build an MCP Server with Weather tools using Express and Vercel](https://vercel.com/kb/guide/mcp-server-with-weather-tool-express) — Make your Express weather API accessible to AI assistants through the Model Context Protocol.
 - [OAuth support added to MCP Adapter](https://vercel.com/changelog/oauth-support-added-to-mcp-adapter)
 - [How to create a contentful asset on Vercel](https://vercel.com/kb/guide/how-to-create-a-contentful-asset-on-vercel) — This is my wonderful
 - [The second wave of MCP: Building for LLMs, not developers](https://vercel.com/blog/the-second-wave-of-mcp-building-for-llms-not-developers)
-- [Addressing security and quality issues with MCP tools in AI Agent](https://vercel.com/blog/generate-static-ai-sdk-tools-from-mcp-servers-with-mcp-to-ai-sdk)
+- [Using xmcp with Next.js](https://vercel.com/kb/guide/using-xmcp-with-nextjs) — Add an MCP server to an existing Next.js app with xmcp. Create typed tools, add authentication, and deploy to Vercel as
+- [Add MCP Apps to your AI SDK application](https://vercel.com/kb/guide/ai-sdk-mcp-apps) — Build an MCP Apps host with the AI SDK using @ai-sdk/mcp and @ai-sdk/react to filter model-visible tools, read ui:// res
 - [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 
@@ -97,7 +97,7 @@ try {
 
 [Model Context Protocol](https://modelcontextprotocol.io/) (MCP) is a standard interface that lets large language models (LLMs) communicate with external tools and data sources. It allows developers and tool providers to integrate once and interoperate with any MCP-compatible system.
 
-The **Create a server** example uses [`mcp-handler`](https://github.com/vercel/mcp-handler) to expose a `roll_dice` tool at `/api/mcp`. The **Call tools from an agent** example connects to that route with the [AI SDK](/docs/mcp/integrations/ai-sdk), and the model calls the tool. Replace `https://my-mcp-server.vercel.app` with your deployment's URL.
+The **Create a server** example uses [`mcp-handler`](https://github.com/vercel-labs/mcp-handler) to expose a `roll_dice` tool at `/api/mcp`. The **Call tools from an agent** example connects to that route with the [AI SDK](/docs/mcp/integrations/ai-sdk), and the model calls the tool. Replace `https://my-mcp-server.vercel.app` with your deployment's URL.
 
 - [Get started with deploying MCP servers on Vercel](/docs/mcp/deploy-mcp-servers-to-vercel)
 - Try out [Vercel's MCP server](/docs/agent-resources/vercel-mcp)
@@ -123,9 +123,20 @@ MCP uses a client-server architecture for the AI model to external system commun
 
 ## Build an MCP server with mcp-handler
 
-Use [`mcp-handler`](https://github.com/vercel/mcp-handler) to expose your application's tools, resources, and prompts to MCP clients. The package builds on the MCP TypeScript SDK and turns your server definition into a Web-standard HTTP request handler.
+Use [`mcp-handler`](https://github.com/vercel-labs/mcp-handler) to expose your application's tools, resources, and prompts to MCP clients. The package builds on the MCP TypeScript SDK and turns your server definition into a Web-standard HTTP request handler.
 
 You can use `mcp-handler` with Next.js, Nuxt, SvelteKit, Hono, and other frameworks that support Web-standard `Request` and `Response` APIs. Follow the [deployment guide](/docs/mcp/deploy-mcp-servers-to-vercel) to create a tool, test your MCP server, and deploy it on Vercel.
+
+## UI with MCP Apps
+
+[MCP Apps](https://modelcontextprotocol.io/extensions/apps/overview) is an MCP extension that lets a tool return an interactive user interface, such as a chart, form, or dashboard. Hosts that support MCP Apps, such as Claude and ChatGPT, render the app inside the conversation, next to the tool call that produced it.
+
+An MCP App has two parts on your MCP server:
+
+- A tool that sets `_meta.ui.resourceUri` to a `ui://` resource.
+- An HTML resource with the `text/html;profile=mcp-app` MIME type. The host renders it in a sandboxed iframe, and the app talks to the host through the `App` class from [`@modelcontextprotocol/ext-apps`](https://github.com/modelcontextprotocol/ext-apps).
+
+To start from working code, deploy the [MCP Apps Next.js Starter](/templates/next.js/mcp-apps-next-js-starter). The template runs its MCP server with `mcp-handler` and uses a Next.js page as the app's UI.
 
 ## Frequently asked questions
 
@@ -154,6 +165,7 @@ MCP authorization builds on OAuth 2.1. A protected MCP server verifies access to
 Learn more about Model Context Protocol and explore available MCP servers.
 
 - [Deploy your own MCP servers on Vercel](/docs/mcp/deploy-mcp-servers-to-vercel)
+- [Build an MCP App with the MCP Apps Next.js Starter](/templates/next.js/mcp-apps-next-js-starter)
 - [Explore MCP integrations for eve, AI SDK, and TanStack AI](/docs/mcp/integrations)
 - [Authorize access to OAuth-protected MCP servers with Vercel Connect](/docs/connect/frameworks/ai-sdk-and-mcp)
 - [Use the AI SDK to initialize an MCP client on your MCP host to connect to an MCP server](https://ai-sdk.dev/docs/ai-sdk-core/mcp-tools#initializing-an-mcp-client)

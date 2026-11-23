@@ -15,8 +15,8 @@ summary: "Understand how Vercel Queues billing works, what's included, and which
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/queues/pricing.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "50b8fca99c0007ae9effe64655cf2ead3e96dacfa71a562d20718298afe39661"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "11c8794606c064134c2b38f141ec0f01b8205ff187df2f5e54ffd17732afdf21"
 ---
 
 # Pricing and Limits
@@ -33,10 +33,10 @@ Vercel Queues is billed per API operation. Every API call counts as at least one
 - [ Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel) — Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflo
 - [Process background jobs in Python with Vercel Queues](https://vercel.com/kb/guide/python-and-vercel-queues) — Move slow and failure-prone work out of your Python request handlers, with typed topics, consumer groups, and built-in r
 - [Services Pricing and Limits](https://vercel.com/docs/services/pricing) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
+- [Pricing and Limits](https://vercel.com/docs/drives/pricing) — Check Vercel Drives regional rates, plan allotments, and storage and mount limits.
 - [Portland, USA \\(pdx1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/pdx1) — Vercel pricing for the Portland, USA \\(pdx1\\) region.
 - [Montréal, Canada \\(yul1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/yul1) — Vercel pricing for the Montréal, Canada \\(yul1\\) region.
 - [Dublin, Ireland \\(dub1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/dub1) — Vercel pricing for the Dublin, Ireland \\(dub1\\) region.
-- [Cleveland, USA \\(cle1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cle1) — Vercel pricing for the Cleveland, USA \\(cle1\\) region.
 
 Full cross-link map for this page: [/docs/queues/pricing.graph.md](/docs/queues/pricing.graph.md)
 <!-- /docsgraph:related -->

@@ -17,8 +17,8 @@ summary: Learn how to protect deployments with Passport, read visitor identity, 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/passport.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "7fac611cce3712525163a9b74db1f57573c93630b679ca836b5a5634c983981c"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "232877667c200001e8027ad8fba6368932f2ae7bd3db69f834d8a071d191f39a"
 ---
 
 # Restrict access to deployments with Passport
@@ -38,8 +38,8 @@ Vercel Passport signs visitors in with your identity provider before they can vi
 - [Vercel for Enterprise](https://vercel.com/blog/vercel-for-enterprise)
 - [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
 - [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
+- [Trusted Sources](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources) — Let other Vercel projects and external services reach your protected deployments by presenting a verified OIDC token.
 - [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
-- [Bypass Deployment Protection for testing, sharing, and automation](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection) — Learn how to bypass Deployment Protection for specific domains, or for all deployments in a project.
 - [Agent Checklist for Launch](https://vercel.com/docs/agent-checklist) — Prepare an eve, Mastra, or Flue agent for launch on Vercel. Check who can call the agent, what its tools can change, how
 - [Flue with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/flue) — Route Flue agent requests through Vercel AI Gateway with the built-in provider, using an API key or Vercel OIDC authenti
 - [Frameworks and Adapters for Vercel Connect](https://vercel.com/docs/connect/frameworks) — Use Vercel Connect with AI SDK, TanStack AI, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.

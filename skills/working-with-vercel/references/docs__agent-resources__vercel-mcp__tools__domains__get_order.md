@@ -14,8 +14,8 @@ summary: Use get_order with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_order.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "81541288d766bbfa2c90f46117fb698fac1a90300fb8f0aeefe1e6389cff7499"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "19789a0122e11829eec522cf41342675fe80e603c0bdfcaa04b56ca8e79e38ec"
 ---
 
 # get_order
@@ -32,7 +32,7 @@ Get a domain order.
 - [Get a domain order](https://vercel.com/docs/rest-api/domains-registrar/get-a-domain-order) — GET /v1/registrar/orders/{orderId} — Get information about a domain order by its ID
 - [get_team](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/get_team) — Use get_team with Vercel MCP.
 - [get_domain_price](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_price) — Use get_domain_price with Vercel MCP.
-- [get_purchase_quote](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing/get_purchase_quote) — Use get_purchase_quote with Vercel MCP.
+- [Billing and Purchases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing) — Vercel MCP tools for billing and purchases.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/get_order.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/get_order.graph.md)
 <!-- /docsgraph:related -->

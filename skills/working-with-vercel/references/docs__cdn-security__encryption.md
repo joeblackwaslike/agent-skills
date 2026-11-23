@@ -13,8 +13,8 @@ summary: Learn how Vercel encrypts data in transit and at rest.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cdn-security/encryption.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "98ede27a03d61926f2cbb020b1500ef50886e8a655f713209de506c43ab47b55"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "c10713afb689ae317949057468719b5dee3def3cd1bb4a4263f1f7112623cd04"
 ---
 
 # Encryption and TLS
@@ -34,7 +34,7 @@ Every **deployment** on Vercel is served over an HTTPS connection. Vercel automa
 - [Working with SSL Certificates](https://vercel.com/docs/domains/working-with-ssl) — Learn how Vercel uses SSL certification to keep your site secure.
 - [Vercel security overview](https://vercel.com/docs/security) — Vercel provides built-in and customizable features to ensure that your site is secure.
 - [Security & Compliance Measures](https://vercel.com/docs/security/compliance) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
-- [How Vercel CDN Works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
+- [Vercel CDN overview](https://vercel.com/docs/cdn) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 
 Full cross-link map for this page: [/docs/cdn-security/encryption.graph.md](/docs/cdn-security/encryption.graph.md)

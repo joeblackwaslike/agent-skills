@@ -1,8 +1,8 @@
 ---
 title: "Available features index"
 source: "https://containers.dev/features"
-fetched_at: "2026-11-16T12:27:35.191Z"
-sha256: "53e2476920d524ae3f276a9e7a15e09a22c08e82efed0f49c9fb468341ffb422"
+fetched_at: "2026-11-23T14:03:28.686Z"
+sha256: "9006aef630fff184b709c78a0c1310e30b4da8fcd23b3af73aa46e169784f03a"
 ---
 
 # Available features index
@@ -78,6 +78,17 @@ Features
             
     
         
+            .third-party-content-note {
+                max-width: calc(100vw - 30px);
+                padding: 12px 16px;
+                background-color: #f6f8fa;
+                border-left: 3px solid #d0d7de;
+            }
+
+            .third-party-content-note p {
+                margin-bottom: 0;
+            }
+
             .tg {
                 border-collapse: collapse;
                 border-spacing: 0;
@@ -125,7 +136,7 @@ Features
 | GitHub Copilot CLI | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/copilot-cli:1` | `1.1.4` |
 | Light-weight Desktop | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/desktop-lite:1` | `1.2.10` |
 | Docker (Docker-in-Docker) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/docker-in-docker:4` | `4.1.3` |
-| Docker (docker-outside-of-docker) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/docker-outside-of-docker:1` | `1.10.2` |
+| Docker (docker-outside-of-docker) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/docker-outside-of-docker:1` | `1.10.3` |
 | Dotnet CLI | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/dotnet:2` | `2.5.0` |
 | Git (from source) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/git:1` | `1.3.8` |
 | Git Large File Support (LFS) | Dev Container Spec Maintainers | `ghcr.io/devcontainers/features/git-lfs:1` | `1.2.6` |
@@ -543,29 +554,7 @@ Features
 | alpine-starship | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-starship:0` | `0.0.3` |
 | alpine-sudo | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-sudo:0` | `0.0.2` |
 | alpine-user | cirolosapio | `ghcr.io/cirolosapio/devcontainers-features/alpine-user:0` | `0.0.4` |
-| Argo Workflows and CD CLI | audacioustux | `ghcr.io/audacioustux/devcontainers/argo:1` | `1.0.1` |
-| AWS SAM CLI | audacioustux | `ghcr.io/audacioustux/devcontainers/aws-sam-cli:1` | `1.0.1` |
-| Bazel | audacioustux | `ghcr.io/audacioustux/devcontainers/bazel:1` | `1.0.0` |
-| Bun | audacioustux | `ghcr.io/audacioustux/devcontainers/bun:1` | `1.0.0` |
-| Cilium | audacioustux | `ghcr.io/audacioustux/devcontainers/cilium:1` | `1.0.0` |
-| Common Utilities Extras | audacioustux | `ghcr.io/audacioustux/devcontainers/common-utils-extras:1` | `1.2.1` |
-| Ebort | audacioustux | `ghcr.io/audacioustux/devcontainers/ebort:1` | `1.0.0` |
-| Fly.io CLI | audacioustux | `ghcr.io/audacioustux/devcontainers/flyctl:1` | `1.0.0` |
-| Graal VM | audacioustux | `ghcr.io/audacioustux/devcontainers/graalvm:1` | `1.1.0` |
-| K9s (Kubernetes CLI To Manage Your Clusters In Style!) | audacioustux | `ghcr.io/audacioustux/devcontainers/k9s:1` | `1.0.1` |
-| Knative | audacioustux | `ghcr.io/audacioustux/devcontainers/knative:1` | `1.0.1` |
-| Kubebuilder | audacioustux | `ghcr.io/audacioustux/devcontainers/kubebuilder:1` | `1.0.0` |
-| Kustomize | audacioustux | `ghcr.io/audacioustux/devcontainers/kustomize:1` | `1.0.0` |
-| Localstack | audacioustux | `ghcr.io/audacioustux/devcontainers/localstack:1` | `1.0.1` |
-| Mirrord | audacioustux | `ghcr.io/audacioustux/devcontainers/mirrord:1` | `1.0.0` |
-| Operator SDK | audacioustux | `ghcr.io/audacioustux/devcontainers/operator-sdk:1` | `1.0.1` |
-| Buildpacks Pack CLI | audacioustux | `ghcr.io/audacioustux/devcontainers/pack-cli:1` | `1.0.0` |
-| Pulumi | audacioustux | `ghcr.io/audacioustux/devcontainers/pulumi:1` | `1.0.3` |
-| Scala Toolchain | audacioustux | `ghcr.io/audacioustux/devcontainers/scala-toolchain:1` | `1.0.2` |
-| Taskfile | audacioustux | `ghcr.io/audacioustux/devcontainers/taskfile:1` | `1.0.1` |
-| Tilt | audacioustux | `ghcr.io/audacioustux/devcontainers/tilt:1` | `1.0.1` |
-| Vegeta - HTTP load testing tool and library | audacioustux | `ghcr.io/audacioustux/devcontainers/vegeta:1` | `1.0.1` |
-| WASM Toolchain | audacioustux | `ghcr.io/audacioustux/devcontainers/wasm-toolchain:1` | `1.0.1` |
+| Buildpacks Pack CLI | audacioustux | `ghcr.io/audacioustux/devcontainers/pack-cli:1` | `1.1.0` |
 | Velero (via Github Releases) | xfrancois | `ghcr.io/xfrancois/devcontainers-features/velero:1` | `1.0.0` |
 | ctlptl | nucleuscloud | `ghcr.io/nucleuscloud/devcontainer-features/ctlptl:0` | `0.1.1` |
 | helmfile | nucleuscloud | `ghcr.io/nucleuscloud/devcontainer-features/helmfile:0` | `0.1.0` |
@@ -632,10 +621,10 @@ Features
 | uv | Valentin Heiligers | `ghcr.io/va-h/devcontainers-features/uv:1` | `1.1.4` |
 | AWS CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/aws-cli:1` | `1.6.30` |
 | Azure CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/azure-cli:1` | `1.0.23` |
-| Common Utilities | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/common-utils:1` | `1.4.152` |
-| Docker (Docker-in-Docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-in-docker:1` | `1.3.45` |
-| Docker (docker-outside-of-docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-outside-of-docker:1` | `1.3.45` |
-| Google Cloud CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/gcloud-cli:1` | `1.0.86` |
+| Common Utilities | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/common-utils:1` | `1.4.154` |
+| Docker (Docker-in-Docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-in-docker:1` | `1.3.46` |
+| Docker (docker-outside-of-docker) | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/docker-outside-of-docker:1` | `1.3.46` |
+| Google Cloud CLI | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/gcloud-cli:1` | `1.0.87` |
 | Go | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/go:1` | `1.7.44` |
 | Terraform, tflint, and TFGrunt | Bart Venter | `ghcr.io/bartventer/arch-devcontainer-features/terraform:1` | `1.3.28` |
 | bpmnlint | Waqqas Jabbar | `ghcr.io/waqqas/feature/bpmnlint:1` | `1.0.1` |
@@ -684,8 +673,6 @@ Features
 | pre-commit(via pip) | gvatsal60 (Vatsal Gupta) | `ghcr.io/gvatsal60/dev-container-features/pre-commit:1` | `1.0.6` |
 | SonarLint | gvatsal60 (Vatsal Gupta) | `ghcr.io/gvatsal60/dev-container-features/sonarlint:1` | `1.0.1` |
 | uv | gvatsal60 (Vatsal Gupta) | `ghcr.io/gvatsal60/dev-container-features/uv:0` | `0.0.2` |
-| My Favorite Color | git-saj | `ghcr.io/git-saj/devcontainer-features/color:1` | `1.0.3` |
-| Hello, World! | git-saj | `ghcr.io/git-saj/devcontainer-features/hello:1` | `1.0.2` |
 | Dokku Remote CLI | Codefabrik GmbH | `ghcr.io/code-fabrik/features/dokku-cli:1` | `1.0.0` |
 | gdal | Codefabrik GmbH | `ghcr.io/code-fabrik/features/gdal:1` | `1.0.3` |
 | lazydocker | Codefabrik GmbH | `ghcr.io/code-fabrik/features/lazydocker:1` | `1.0.3` |
@@ -1322,16 +1309,17 @@ Features
 | AWS SAM CLI | John Ajera | `ghcr.io/jajera/features/aws-sam-cli:1` | `1.0.0` |
 | Google Cloud CLI | John Ajera | `ghcr.io/jajera/features/gcloud-cli:1` | `1.0.1` |
 | Zip Utility | John Ajera | `ghcr.io/jajera/features/zip:1` | `1.0.0` |
-| Air | MrSimonEmms | `ghcr.io/mrsimonemms/devcontainers/air:1` | `1.0.0` |
-| Buf CLI (via Github Releases) | MrSimonEmms | `ghcr.io/mrsimonemms/devcontainers/buf:1` | `1.0.1` |
-| Butane | MrSimonEmms | `ghcr.io/mrsimonemms/devcontainers/butane:1` | `1.0.0` |
-| Cobra CLI | MrSimonEmms | `ghcr.io/mrsimonemms/devcontainers/cobra-cli:1` | `1.0.0` |
-| diff-so-fancy | MrSimonEmms | `ghcr.io/mrsimonemms/devcontainers/diff-so-fancy:1` | `1.0.0` |
-| Dingo | MrSimonEmms | `ghcr.io/mrsimonemms/devcontainers/dingo:1` | `1.0.0` |
-| Floci | MrSimonEmms | `ghcr.io/mrsimonemms/devcontainers/floci:1` | `1.0.0` |
-| Temporal Cloud CLI (tcld) | MrSimonEmms | `ghcr.io/mrsimonemms/devcontainers/tcld:1` | `1.0.2` |
-| Temporal NexGen | MrSimonEmms | `ghcr.io/mrsimonemms/devcontainers/temporal-nexgen:1` | `1.0.0` |
-| Zigflow | MrSimonEmms | `ghcr.io/mrsimonemms/devcontainers/zigflow:1` | `1.0.1` |
+| Air | MrSimonEmms | `ghcr.io/mrsimonemms/devcontainers/air:1` | `1.1.0` |
+| Buf CLI (via Github Releases) | MrSimonEmms | `ghcr.io/mrsimonemms/devcontainers/buf:1` | `1.1.0` |
+| Butane | MrSimonEmms | `ghcr.io/mrsimonemms/devcontainers/butane:1` | `1.1.0` |
+| Cobra CLI | MrSimonEmms | `ghcr.io/mrsimonemms/devcontainers/cobra-cli:1` | `1.1.0` |
+| diff-so-fancy | MrSimonEmms | `ghcr.io/mrsimonemms/devcontainers/diff-so-fancy:1` | `1.1.0` |
+| Dingo | MrSimonEmms | `ghcr.io/mrsimonemms/devcontainers/dingo:1` | `1.1.0` |
+| Floci | MrSimonEmms | `ghcr.io/mrsimonemms/devcontainers/floci:1` | `1.1.0` |
+| Temporal Cloud CLI (tcld) | MrSimonEmms | `ghcr.io/mrsimonemms/devcontainers/tcld:1` | `1.1.0` |
+| Temporal MCP | MrSimonEmms | `ghcr.io/mrsimonemms/devcontainers/temporal-mcp:1` | `1.0.0` |
+| Temporal NexGen | MrSimonEmms | `ghcr.io/mrsimonemms/devcontainers/temporal-nexgen:1` | `1.1.0` |
+| Zigflow | MrSimonEmms | `ghcr.io/mrsimonemms/devcontainers/zigflow:1` | `1.1.0` |
 | Rojo | Ryan Luu | `ghcr.io/ryanlua/features/rojo:0` | `0.2.1` |
 | .NET User Secrets Persistence | Daniel Lindemann | `ghcr.io/daniellindemann/dev-container-features/dotnet-usersecrets-persistence:0` | `0.0.1` |
 | Starship Plugin | Tobias Chavarria | `ghcr.io/tobiaschc/devcontainer-features/starship:1` | `1.0.0` |
@@ -1402,7 +1390,7 @@ Features
 | Bundler cache | Rails Core Team | `ghcr.io/rails/devcontainer/features/bundler-cache:1` | `1.0.1` |
 | MySQL Client | Rails Core Team | `ghcr.io/rails/devcontainer/features/mysql-client:1` | `1.1.1` |
 | Postgres Client | Rails Core Team | `ghcr.io/rails/devcontainer/features/postgres-client:1` | `1.2.0` |
-| Ruby | Rails Core Team | `ghcr.io/rails/devcontainer/features/ruby:2` | `2.2.6` |
+| Ruby | Rails Core Team | `ghcr.io/rails/devcontainer/features/ruby:2` | `2.2.7` |
 | SQLite3 | Rails Core Team | `ghcr.io/rails/devcontainer/features/sqlite3:1` | `1.0.0` |
 | Go Air | NLstn | `ghcr.io/nlstn/devcontainer-features/go-air:1` | `1.0.0` |
 | PostgreSQL Client (psql) | NLstn | `ghcr.io/nlstn/devcontainer-features/psql:1` | `1.0.0` |
@@ -1529,7 +1517,7 @@ Features
 | LaTeX - TeX Live | nkaaf | `ghcr.io/nkaaf/devcontainer-features/latex-texlive:0` | `0.1.1` |
 | Package Manager | nkaaf | `ghcr.io/nkaaf/devcontainer-features/package-manager:2` | `2.0.0` |
 | Package Manager - apt | nkaaf | `ghcr.io/nkaaf/devcontainer-features/package-manager-apt:0` | `0.1.0` |
-| Package Manager - tlmgr | nkaaf | `ghcr.io/nkaaf/devcontainer-features/package-manager-tlmgr:0` | `0.1.4` |
+| Package Manager - tlmgr | nkaaf | `ghcr.io/nkaaf/devcontainer-features/package-manager-tlmgr:0` | `0.1.5` |
 | Pi Coding Agent | RodriBus | `ghcr.io/rodribus/devcontainer-features/pi-coding-agent:0` | `0.1.0` |
 | Antigravity CLI | aqua | `ghcr.io/aqua/devcontainer-antigravity-cli/antigravity-cli:1` | `1.0.2` |
 | Claude Code | cjcrobin | `ghcr.io/cjcrobin/devcontainer-features/claudecode:1` | `1.1.1` |
@@ -1551,7 +1539,7 @@ Features
 | prek | Stephen Mott | `ghcr.io/srzstephen/devcontainer-features/prek:1` | `1.0.1` |
 | LazyVim | XavierBeheydt | `ghcr.io/xavierbeheydt/devcontainer-extras/lazyvim:0` | `0.1.0` |
 | Tectonic | sjp | `ghcr.io/sjp/tectonic-feature/tectonic:1` | `1.0.0` |
-| Dev Container Development Certificates | dnegstad | `ghcr.io/dnegstad/devcontainer-dev-certs/devcontainer-dev-certs:1` | `1.4.3` |
+| Dev Container Development Certificates | dnegstad | `ghcr.io/dnegstad/devcontainer-dev-certs/devcontainer-dev-certs:1` | `1.4.4` |
 | Crush | jrussellsmyth | `ghcr.io/jrussellsmyth/devcontainer-features/crush:1` | `1.0.0` |
 | OpenSpec | jrussellsmyth | `ghcr.io/jrussellsmyth/devcontainer-features/openspec:1` | `1.0.0` |
 | Yarn APT Public Key Update | jrussellsmyth | `ghcr.io/jrussellsmyth/devcontainer-features/yarn-apt-publickey:1` | `1.0.0` |
@@ -1568,7 +1556,7 @@ Features
 | Muse Code CLI | HarjjotSinghh | `ghcr.io/harjjotsinghh/devcontainer-features/muse-code:1` | `1.0.0` |
 | Bun | Raineworks | `ghcr.io/raine-works/devcontainer-features/bun:1` | `1.0.0` |
 | Deno | Raineworks | `ghcr.io/raine-works/devcontainer-features/deno:1` | `1.0.0` |
-| Node.js with package managers | Raineworks | `ghcr.io/raine-works/devcontainer-features/node:1` | `1.0.0` |
+| Node.js with package managers | Raineworks | `ghcr.io/raine-works/devcontainer-features/node:1` | `1.0.1` |
 | Claude Code | Jartan LLC | `ghcr.io/jartan-llc/enchantments/claude-code:1` | `1.1.0` |
 | codebase-memory-mcp | Jartan LLC | `ghcr.io/jartan-llc/enchantments/codebase-memory-mcp:1` | `1.1.1` |
 | Per-device environment variables | Jartan LLC | `ghcr.io/jartan-llc/enchantments/container-env:1` | `1.2.0` |

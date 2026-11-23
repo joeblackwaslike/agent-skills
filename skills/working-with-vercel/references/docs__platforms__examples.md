@@ -15,8 +15,8 @@ summary: Clone working multi-tenant and multi-project starters to begin your pla
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/platforms/examples.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "838b33931e3cf1bbea0f272a1b2dd1a6a8cfc88ba95556f6fbd62934e118db0c"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "3501a87e5c50b768e83db89eee266339e2800a91708eda596f9d0b739506eb6b"
 ---
 
 # Examples
@@ -49,8 +49,6 @@ Full cross-link map for this page: [/docs/platforms/examples.graph.md](/docs/pla
 Try a deployed example in the browser before you clone anything.
 
 **Multi-tenant preview URLs**: Tenant subdomains served by one deployment, each with its own preview URL prefix. [Learn more →](https://multi-tenant-preview-urls-k6oodlv4w.vercel.rocks/all)
-
-**Claim deployments**: Deploy an app on a user's behalf, then let them claim it into their Vercel account. [Learn more →](https://claim-deployments-demo.vercel.app/)
 
 ## Search the docs from your terminal
 

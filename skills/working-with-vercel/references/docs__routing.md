@@ -17,8 +17,8 @@ summary: "Learn how Vercel's CDN routes requests through firewall, project route
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/routing.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "8fffb59602c4ef42f37e2b6d5e801be8992e898f9e9dac08154421cfa6de043a"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "0bdebf77d6abe31ff15179e7c7baa897860b2bb6f6ff44ce2bfcc716eee076e6"
 ---
 
 # Routing
@@ -33,11 +33,11 @@ Vercel's CDN evaluates routing rules on every request before checking any cache 
 
 - [Python projects now support routing rules](https://vercel.com/changelog/python-projects-now-support-routing-rules)
 - [Vercel's CDN now supports updating routing rules without a new deployment](https://vercel.com/changelog/vercels-cdn-now-supports-updating-routing-rules-without-a-new-deployment)
-- [Services routing](https://vercel.com/docs/services/routing) — Learn how Vercel routes public requests to services and how each service handles its own routes.
 - [vercel routes](https://vercel.com/docs/cli/routes) — Learn how to manage project-level routing rules using the vercel routes CLI command.
+- [Getting Started with Routing Middleware](https://vercel.com/docs/routing-middleware/getting-started) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
 - [Get project routing rules](https://vercel.com/docs/rest-api/project-routes/get-project-routing-rules) — GET /v1/projects/{projectId}/routes — Get the routing rules for a project. Supports searching by name/ID/pattern, filter
-- [Routing Middleware](https://vercel.com/docs/routing-middleware) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
-- [Routing](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing) — Vercel MCP tools for routing.
+- [Services routing](https://vercel.com/docs/services/routing) — Learn how Vercel routes public requests to services and how each service handles its own routes.
+- [Add a routing rule](https://vercel.com/docs/rest-api/project-routes/add-a-routing-rule) — POST /v1/projects/{projectId}/routes — Add a single routing rule to a project at a specified position. Defaults to the e
 
 Full cross-link map for this page: [/docs/routing.graph.md](/docs/routing.graph.md)
 <!-- /docsgraph:related -->
@@ -98,6 +98,26 @@ Use external rewrites when you need to:
 ```
 
 Vercel can also [cache responses from external origins](/docs/caching/cdn-cache) to reduce load on your backend.
+
+## Replacing `.htaccess` rules
+
+Vercel doesn't run [Apache HTTP Server](https://httpd.apache.org/), so it ignores [`.htaccess`](https://httpd.apache.org/docs/2.4/howto/htaccess.html) files. When you move a site from Apache, recreate each rule with the Vercel feature that does the same job:
+
+| `.htaccess` rule                                                   | Vercel equivalent                                                                                                                                                    |
+| ------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Redirect`, `RedirectMatch`, or `RewriteRule` with the `[R]` flag  | [`redirects`](/docs/project-configuration/vercel-json#redirects) in `vercel.json`, or [bulk redirects](/docs/routing/redirects/bulk-redirects) for thousands of URLs |
+| `RewriteRule` that serves a different path or proxies to an origin | [`rewrites`](/docs/project-configuration/vercel-json#rewrites) in `vercel.json`                                                                                      |
+| `RewriteCond` that checks a header, cookie, query string, or host  | [`has` and `missing` conditions](/docs/project-configuration/vercel-json#conditional-matching-with-has-and-missing) on a redirect, rewrite, or header                |
+| `Header set`                                                       | [`headers`](/docs/project-configuration/vercel-json#headers) in `vercel.json`                                                                                        |
+| `ExpiresByType` or a `Cache-Control` header                        | [`Cache-Control` headers](/docs/caching/cache-control-headers)                                                                                                       |
+| A rewrite that forces HTTPS                                        | Nothing to configure. The CDN [forwards HTTP requests to HTTPS](/docs/cdn-security/encryption) with a `308` status code                                              |
+| Rewrites that remove `.html` extensions or change trailing slashes | [`cleanUrls`](/docs/project-configuration/vercel-json#cleanurls) and [`trailingSlash`](/docs/project-configuration/vercel-json#trailingslash) in `vercel.json`       |
+| `Options -Indexes`                                                 | The [Directory Listing](/docs/directory-listing) project setting                                                                                                     |
+| `AuthType Basic` with a `.htpasswd` file                           | [Password Protection](/docs/deployment-protection/methods-to-protect-deployments/password-protection)                                                                |
+| `Deny from` or `Require not ip`                                    | [IP blocking](/docs/vercel-firewall/vercel-waf/ip-blocking) with the Vercel WAF                                                                                      |
+| `mod_deflate` compression rules                                    | Nothing to configure. The CDN [compresses responses](/docs/how-vercel-cdn-works/compression) with Brotli or Gzip                                                     |
+
+If you use a framework such as Next.js, you can define redirects, rewrites, and headers in the framework's configuration instead of `vercel.json`. To change rules without a new deployment, use [project-level routing rules](/docs/routing/project-routing-rules). For rules that need custom logic, use [Routing Middleware](/docs/routing-middleware).
 
 ## Learn more
 

@@ -17,8 +17,8 @@ summary: Create reusable user segments for targeting feature flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/segments.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "ba851bf842b99f992ef3592eeaec3b7468ebef927d7f3a2378fc0c0b055768bb"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "70a56752b48d62db04768c8e8a2f6bb531c840ddf5754688ecdd76a49a16c23f"
 ---
 
 # Segments
@@ -60,8 +60,9 @@ When you update a segment's rules, every flag using that segment updates automat
 1. Open **Flags** in your project
 2. Click **Segments** in the sidebar
 3. Click **Create Segment**
-4. Enter a name and description
-5. Define the targeting rules
+4. Enter a **Slug**. It can contain letters, numbers, `_`, and `-`. The **Label** and **Description** fields are optional
+5. Click **Create**
+6. Select the new segment in the list, then define its targeting rules
 
 ### Defining segment rules
 

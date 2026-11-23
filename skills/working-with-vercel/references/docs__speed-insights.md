@@ -17,8 +17,8 @@ summary: "This page lists out and explains all the performance metrics provided 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/speed-insights.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "65ef2ea3dfd230e14b1eee6d9f9dabfbaabf65651c9104b64183c8eaf44918d8"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "ae248c7df9cfe866dc87854673372830b918000278623b950aab25d3410fecd6"
 ---
 
 # Speed Insights Overview
@@ -42,7 +42,7 @@ Vercel **Speed Insights** provides you with a detailed view of your website's pe
 - [Improved data collection for Web Analytics and Speed Insights with resilient intake](https://vercel.com/changelog/improved-data-collection-for-web-analytics-and-speed-insights-with-resilient)
 - [Improved Speed Insights experience](https://vercel.com/changelog/improved-speed-insights-experience)
 - [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
-- [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
+- [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation) — Set baselines and cut backend load. Make your catalog readable to agents and keep orders and AI features reliable. Then
 - [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
 - [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
 - [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
@@ -84,6 +84,7 @@ The Speed Insights dashboard displays data that you can sort and inspect based o
   - **Geographical map** showing the experience metric by country. Requires Speed Insights Plus:
 
     ![Geographic map of the P75 score where the color intensity indicates the relative amount of data points per country](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/speed-insights/v2/country-map-light.png)
+- **Navigation type**: Filter the selected metric to show **All**, **Hard**, or **Soft** navigations. The filter is available for all Core Web Vitals except TTFB, which is not captured on soft navigations. Soft navigation measurement requires a modern web framework such as Next.js, SvelteKit, or Nuxt, and a Chromium-based browser. See [understanding data points](/docs/speed-insights/metrics#understanding-data-points) for details.
 
 The data in the Kanban and map views is selectable so that you can filter by
 country, route, path and HTML element. The red, orange and green colors in the

@@ -17,8 +17,8 @@ summary: Vercel automatically deploys supported Git repositories on every branch
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/git.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "fdd12681cfefa93aea44a4b5fd6402670a3be5eebe19746c4f0077bdb985d3e1"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "ed9b8a3a112312e4b19364bc30443713d49e6fc7c4cb8c557f46125bb07ffe21"
 ---
 
 # Deploying Git Repositories with Vercel
@@ -31,18 +31,18 @@ Vercel allows for **automatic deployments on every branch push** and merges onto
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
 - [Git repositories can now be searched for and imported easily](https://vercel.com/changelog/git-repositories-can-now-be-searched-for-and-imported-easily)
 - [Projects can now be renamed](https://vercel.com/changelog/projects-can-now-be-renamed)
 - [Repository checkout and Git LFS downloads are now faster](https://vercel.com/changelog/repository-checkout-and-git-lfs-downloads-are-now-faster)
 - [Deploy a Bolt.new app with Vercel Drop](https://vercel.com/kb/guide/bolt-vercel-drop) — Export your Bolt.new project as a .zip and deploy it to Vercel with Vercel Drop. Vercel detects the framework and builds
 - [Build commission-free iOS checkouts with Vercel and Paddle](https://vercel.com/kb/guide/build-commission-free-ios-checkouts-with-vercel-and-paddle) — A new ruling allows iOS apps to use external checkouts. Learn how to deploy a secure, high-performance external checkout
-- [Can I use Vercel to deploy to a private cloud?](https://vercel.com/kb/guide/can-i-use-vercel-to-deploy-to-a-private-cloud) — Learn about if it's possible to deploy to a private cloud with Vercel.
+- [Deploy a Claude Design project to Vercel](https://vercel.com/kb/guide/claude-design) — Publish a Claude Design project to Vercel for a live production URL with the Vercel connector, or by exporting a .zip to
 - [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
+- [How to deploy a Python backend with Vercel Services ](https://vercel.com/kb/guide/python-backend-on-vercel) — Deploy a Python backend with a Next.js frontend on Vercel. Learn how to configure both apps with Vercel Services, use a
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure)
-- [September 2020](https://vercel.com/blog/changelog-september-2020)
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
+- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
 
 Full cross-link map for this page: [/docs/git.graph.md](/docs/git.graph.md)
 <!-- /docsgraph:related -->
@@ -102,9 +102,9 @@ Before disabling GitHub `deployment_status` events, check whether any GitHub Act
 
 - [GitHub Enterprise Server](/kb/guide/how-can-i-use-github-actions-with-vercel)
 - [Self-Managed GitLab](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel)
-- [Bitbucket Data Center (Self-Hosted)](/kb/guide/how-can-i-use-bitbucket-pipelines-with-vercel)
+- [Bitbucket Data Center (Self-Hosted)](/docs/git/external-pipelines)
 
-If your provider is not listed here, you can also use the [Vercel CLI to deploy](/kb/guide/using-vercel-cli-for-custom-workflows) with any git provider.
+If your provider is not listed here, you can also use the [Vercel CLI to deploy](/docs/cli/deploying-from-cli#deploying-from-a-ci/cd-pipeline) with any git provider.
 
 ## Deploying a Git repository
 
@@ -186,6 +186,55 @@ After transferring the project to a Pro team, commit authors can be added as mem
 When a public repository is forked, commits from it will usually deploy automatically. However, when you receive a pull request from a fork of your repository, Vercel will require authorization from you or a [team member](/docs/accounts#team-membership) to deploy the pull request. This is a security measure that protects you from leaking sensitive project information. A link to authorize the deployment will be posted as a comment on the pull request.
 
 The authorization step will be skipped if the commit author is already a [team member](/docs/accounts#team-membership) on Vercel.
+
+## Protected Git Scopes
+
+> Protected Git Scopes are available on Enterprise plans
+>
+> Those with the owner role can access this feature
+
+Teams often need control over who can deploy their repositories to which teams or accounts. For example, a user on your team may accidentally try to deploy your project on their personal Vercel Account. To control this, you can add a Protected Git Scope.
+
+Protected Git Scopes restrict Vercel account and team access to Organization-level Git repositories. This ensures that only authorized Vercel teams can deploy your repositories.
+
+If your team isn't on the Enterprise plan, [contact our sales team](/contact/sales) to get access to Protected Git Scopes.
+
+### Managing Protected Git Scopes
+
+You can [add](#adding-a-protected-git-scope) up to five Protected Git Scopes to your Vercel Team. Protected Git Scopes are configured at the team level, not per project. Multiple teams can specify the same scope, allowing both teams access.
+
+To add a Protected Git Scope to your Vercel Team, you must be an [Owner](/docs/rbac/access-roles#owner-role) of the Vercel Team, and have the required permission in the Git namespace.
+
+For GitHub you must be an `admin`, for GitLab you must be an `owner`, and for Bitbucket you must be an `owner`.
+
+### Adding a Protected Git Scope
+
+To add a Protected Git Scope:
+
+1. Go to your Team's dashboard and open **Settings** in the sidebar.
+2. In the **Security & Privacy** section, go to **Protected Git Scopes**.
+
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/security/protected-git-scopes-light.png)
+
+3. Select **Add Scope** to add a new Protected Git Scope.
+4. In the modal, select the Git provider you wish to add:
+
+   ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/security/protected-git-scopes-modal-1-light.png)
+5. In the modal, select the Git namespace you wish to add:
+
+   ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/security/protected-git-scopes-modal-2-light.png)
+6. Select **Save**.
+
+### Removing a Protected Git Scope
+
+To remove a Protected Git Scope:
+
+1. Go to your Team's dashboard and open **Settings** in the sidebar.
+2. In the **Security & Privacy** section, go to **Protected Git Scopes**.
+
+![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/security/protected-git-scopes-light.png)
+
+3. Select **Remove** to remove the Protected Git Scope.
 
 ## Production branch
 

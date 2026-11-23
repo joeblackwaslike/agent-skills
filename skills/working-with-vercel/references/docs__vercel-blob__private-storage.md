@@ -17,8 +17,8 @@ summary: Learn how to use private Vercel Blob storage to serve files with authen
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-blob/private-storage.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "04ac20964b11c36e6ce3e1893c29d8bead20b39ed5fbc97d0f562f8545fcbe86"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "4873e7cf135bc54b5bb95a69fdf98ab76876cc70183716e728daac19f5686274"
 ---
 
 # Private Storage
@@ -44,6 +44,7 @@ Private Blob stores require authentication for all read and write operations, en
 - [Run a research workspace on Vercel](https://vercel.com/kb/guide/run-research-workspace-vercel) — Plan a durable research workspace on Vercel's Agentic Infrastructure with Workflows, internal API tools, Vercel Sandbox
 - [Vercel Blob vs Netlify Blobs](https://vercel.com/kb/guide/vercel-blob-vs-netlify-blobs) — Compare Vercel Blob and Netlify Blobs on storage model, public URLs, delivery, limits, and pricing to choose the right o
 - [Use Vercel Daemons with eve agents](https://vercel.com/kb/guide/vercel-daemons-eve-agents) — Connect eve agents to Vercel Daemons to process queued jobs, offload heavy work, and react to events. Includes code, aut
+- [Introducing eve 1.0](https://vercel.com/blog/eve-is-now-generally-available)
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
 - [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
 - [Flue with Vercel](https://vercel.com/docs/frameworks/agents/flue) — Create a Flue agent that uses Vercel AI Gateway for model requests, then add Vercel Sandbox for isolated code execution.

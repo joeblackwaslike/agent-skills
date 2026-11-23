@@ -18,8 +18,8 @@ summary: Connect OpenAI Agents API sessions to Vercel Sandbox for isolated code 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/ecosystem/openai-agents-api.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "e365aeed2e0e6f805c4cf63a27824de96f39229d2248531815e469edbc2806d1"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "4c5e1c15b6495b521b796313764453a3540c7901c81cfe100e54026f4374afa0"
 ---
 
 # OpenAI Agents API
@@ -37,10 +37,10 @@ session an isolated workspace to run commands and read and write files.
 
 - [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
 - [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
-- [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available)
 - [Build with OpenAI Agents API on Vercel](https://vercel.com/changelog/build-with-openai-agents-api-on-vercel)
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
-- [Vercel Sandbox vs CodeSandbox](https://vercel.com/kb/guide/vercel-sandbox-vs-codesandbox) — A detailed guide to Vercel Sandbox vs CodeSandbox: compute isolation, credential brokering, Active CPU billing, Docker s
+- [How to build an on-demand voice agent with Vercel Sandbox](https://vercel.com/kb/guide/how-to-build-an-on-demand-voice-agent-with-vercel-sandbox) — Build a voice AI application that creates isolated LiveKit agent environments using Vercel Sandbox, enabling real-time c
+- [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available)
 - [Gemini API Managed Agents](https://vercel.com/docs/sandbox/ecosystem/gemini-api) — Connect a Gemini API self-hosted environment to Vercel Sandbox so agent file and shell tools run in your own microVM.
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/openai-agents-api.graph.md](/docs/sandbox/ecosystem/openai-agents-api.graph.md)

@@ -17,8 +17,8 @@ summary: Store files with Vercel Blob, runtime configuration with Global Config,
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/storage.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "e56993bb81f1496f9255cd3aaf6eb094befb2ff64ccca4f908e551338f4edb53"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "ddea8147a5a3a2202936962aeb284d933193938610c25e67646e6257fdb784b0"
 ---
 
 # Vercel Storage overview
@@ -43,8 +43,8 @@ Upload generated files with Vercel Blob, read low-latency configuration with Glo
 - [Introducing storage on Vercel](https://vercel.com/blog/vercel-storage)
 - [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [How can I use AWS S3 with Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-s3-with-vercel) — Example how to use AWS S3 library on Vercel
-- [Introducing the Vercel Marketplace](https://vercel.com/blog/introducing-the-vercel-marketplace)
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
+- [vercel storage](https://vercel.com/docs/cli/storage) — List, create, inspect, and delete storage resources, and manage their project connections with the Vercel CLI.
 
 Full cross-link map for this page: [/docs/storage.graph.md](/docs/storage.graph.md)
 <!-- /docsgraph:related -->

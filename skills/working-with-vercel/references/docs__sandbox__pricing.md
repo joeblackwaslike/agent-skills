@@ -17,8 +17,8 @@ summary: "Understand how Vercel Sandbox billing works, what's included in each p
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/pricing.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "d3925c58806c9e5f4d9bc7af3f96b5a5cfd14b04e6ff99b182278d91903de243"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "9eabcc2675fefabafd6a9219adb2128eeb08986406a7bdfd9722a9a7863a504d"
 ---
 
 # Vercel Sandbox pricing and quotas
@@ -41,8 +41,8 @@ Vercel Sandbox usage is metered across several dimensions. This page explains ho
 - [Run a research workspace on Vercel](https://vercel.com/kb/guide/run-research-workspace-vercel) — Plan a durable research workspace on Vercel's Agentic Infrastructure with Workflows, internal API tools, Vercel Sandbox
 - [Run Terminal-Bench and any Harbor benchmark on Vercel Sandbox](https://vercel.com/kb/guide/run-terminal-bench-harbor-benchmarks-vercel-sandbox) — Run Terminal-Bench, SWE-bench, and any Harbor benchmark on Vercel Sandbox. Each trial executes in an isolated Firecracke
 - [How to test a container image in Vercel Sandbox before deploying](https://vercel.com/kb/guide/test-container-image-vercel-sandbox) — Validate a container image before deploying by booting it as a custom Sandbox image from Vercel Container Registry \\(VCR
+- [Agents are users, so your software needs evals](https://vercel.com/blog/agent-evals)
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
-- [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 
 Full cross-link map for this page: [/docs/sandbox/pricing.graph.md](/docs/sandbox/pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -176,7 +176,7 @@ A sandbox can mount up to 4 [drives](/docs/sandbox/concepts/drives) per run. A d
 
 ### Runtime limits
 
-The default timeout is 5 minutes. You can configure this using the `timeout` option when creating a sandbox, and extend it using `sandbox.extendTimeout()`. See [Working with Sandbox](/docs/sandbox/working-with-sandbox#execute-long-running-tasks) for details.
+The default timeout is 5 minutes. You can configure this using the `timeout` option when creating a sandbox, and extend it using `sandbox.extendTimeout()`. See [Execute long-running tasks](/docs/sandbox/examples/execute-long-running-tasks) for details.
 
 The maximum duration applies to a single [session](/docs/sandbox/concepts/persistent-sandboxes#sandboxes-and-sessions), not to the sandbox itself. The limit resets every time a sandbox stops and resumes, so the total lifetime of a [persistent sandbox](/docs/sandbox/concepts/persistent-sandboxes) is effectively unbounded.
 
@@ -241,7 +241,7 @@ To optimize your Sandbox costs:
 - **Stop sandboxes promptly**: Call `sandbox.stop()` when done rather than waiting for timeout
 - **Monitor usage**: Check the [Usage dashboard](https://vercel.com/d?to=%2Fdashboard%2F%5Bteam%5D%2Fusage\&title=Show+Usage+Page) to track your sandbox consumption
 
-For more details on sandbox lifecycle management, see [Working with Sandbox](/docs/sandbox/working-with-sandbox).
+For more details on sandbox lifecycle management, see the [Sandbox examples](/docs/sandbox/examples).
 
 ## Search the docs from your terminal
 

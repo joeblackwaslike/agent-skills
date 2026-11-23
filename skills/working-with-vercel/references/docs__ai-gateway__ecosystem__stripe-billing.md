@@ -14,8 +14,8 @@ summary: Send AI Gateway token usage to Stripe Billing Meters with an existing c
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/ecosystem/stripe-billing.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "be7ac6e112d6f2be2816a4c57f97f029030ae2561890bc2e8144cf54a8345f0d"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "12858f6afae96a484e085632360e711dfe50bae574108bbb051d274a3432ba52"
 ---
 
 # Stripe Usage-Based Billing with AI Gateway
@@ -28,9 +28,8 @@ Send AI Gateway token usage to an existing [Stripe Billing Meters integration](h
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [From idea to secure checkout in minutes with Stripe](https://vercel.com/blog/from-idea-to-secure-checkout-in-minutes-with-stripe)
 - [How to deploy a Next.js online store with Stripe](https://vercel.com/kb/guide/how-to-deploy-a-next-js-online-store-with-stripe) — Learn how to build and deploy a Next.js e-commerce store with Stripe payments on Vercel. This step-by-step guide covers
-- [Access billing usage and cost data via API](https://vercel.com/changelog/access-billing-usage-cost-data-api)
+- [From idea to secure checkout in minutes with Stripe](https://vercel.com/blog/from-idea-to-secure-checkout-in-minutes-with-stripe)
 - [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
 - [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit
 - [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, caching, SDK and API compati

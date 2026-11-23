@@ -4,8 +4,8 @@ description: Learn how to use the Cursor harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/cursor"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/cursor.md"
-fetched_at: "2026-11-16T12:32:31.917Z"
-sha256: "d086c71832f98cc371cd5637ff0b94bbe2931099ff6b5dd08fce5e02b1e79310"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "2df8958bb1fdfa0a8f9fa69879826c15062f8abcc5f211a34ddc1c198704cdaf"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -108,6 +108,10 @@ Settings:
   not aborted. When unset, a turn keeps running in the sandbox after its host
   disconnects, including when the host process is gone for good, until the
   turn finishes or the sandbox stops.
+- `keepAliveMs`: WebSocket ping interval in milliseconds (default `20_000`).
+  Keeps silent bridge connections alive. After two unanswered pings, the socket
+  is terminated and the configured reconnect policy takes over. Set to `0` to
+  disable. Sockets without ping support are left unchanged.
 - `reconnect`: reconnect timing after an established bridge WebSocket
   connection drops. `maxElapsedMs` controls the total retry window, including
   connection establishment and backoff delays, and defaults to 30 seconds.

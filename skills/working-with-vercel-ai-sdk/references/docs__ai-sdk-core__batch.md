@@ -4,8 +4,8 @@ description: Learn how to process asynchronous batches with the AI SDK.
 url: "https://ai-sdk.dev/docs/ai-sdk-core/batch"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/batch.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "497a73ec087299942a9f64c8379d4d07a279868e8279613daeecd1a4da8ce796"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "9466f72d8c366fd98e5741c095cf77ad8cd851f5312928225d1260a728d92d2d"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -226,6 +226,60 @@ Provider-defined tools, such as web search or code execution, can execute on
 the provider when supported by that provider's batch API. Their tool calls and
 results are returned as normalized `content` parts. See the provider
 documentation for the tools and models available in batches.
+
+## Structured output
+
+`startBatch` accepts an `output` option for structured output. It is used by every
+text request in the batch. Other batch formats, like image requests, ignore it.
+
+```ts
+import {
+  experimental_getBatchResults as getBatchResults,
+  experimental_startBatch as startBatch,
+  Output,
+} from 'ai';
+import { z } from 'zod';
+
+const output = Output.object({
+  schema: z.object({ translation: z.string() }),
+});
+
+const batch = await startBatch({
+  output,
+  requests: [
+    {
+      id: 'translate-1',
+      type: 'text',
+      model: 'openai/gpt-5-mini',
+      prompt: 'Translate to English: Directeur commercial',
+    },
+  ],
+});
+```
+
+Results are retrieved separately, so the AI SDK cannot carry the output type
+across the two calls. Pass the same `output` to `getBatchResults` to parse and
+validate each successful item:
+
+```ts
+for await (const item of getBatchResults({ batch, output })) {
+  if (item.type === 'text' && item.status === 'succeeded') {
+    if (item.outputError == null) {
+      console.log(item.id, item.output); // typed from the schema
+    } else {
+      console.error(item.id, item.outputError.message, item.text);
+    }
+  }
+}
+```
+
+Parsing or validation failures don't fail the entire item. Instead, items get
+an `outputError` instead of `output`. This lets you resubmit only the
+requests whose response was not valid. Without `output`, the raw JSON is
+available in `text`.
+
+Because `output` applies to the whole batch, all text items are parsed with the
+same specification. To use different schemas, start separate batches.
 
 ## Checking batch status
 

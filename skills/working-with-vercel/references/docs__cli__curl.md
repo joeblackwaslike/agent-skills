@@ -17,8 +17,8 @@ summary: Learn how to make HTTP requests to your Vercel deployments with automat
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/curl.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "a7b26092e599b51a76a42f288d3fc6d7ed05bd2f311e3221c4f553d1a9760e81"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "911c2752dad67c39e7512eff4c2ba4e06f042d189c89e3b2d32c888a50dfb7bf"
 ---
 
 # vercel curl
@@ -33,12 +33,13 @@ The `vercel curl` command works like `curl`, but automatically handles deploymen
 
 - [Trace any Vercel request from the CLI](https://vercel.com/changelog/trace-any-vercel-request-from-the-cli)
 - [Use native curl syntax with Vercel CLI](https://vercel.com/changelog/use-native-curl-syntax-with-vercel-cli)
+- [How to stop traffic to an old deployment on Vercel](https://vercel.com/kb/guide/how-to-stop-traffic-to-an-old-deployment-on-vercel) — Move production traffic to the new deployment, restrict access to the old deployment, and check remaining function activ
 - [How to deploy a Python backend with Vercel Services ](https://vercel.com/kb/guide/python-backend-on-vercel) — Deploy a Python backend with a Next.js frontend on Vercel. Learn how to configure both apps with Vercel Services, use a
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel httpstat](https://vercel.com/docs/cli/httpstat) — Learn how to visualize HTTP request timing statistics for your Vercel deployments using the vercel httpstat CLI command.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 
 Full cross-link map for this page: [/docs/cli/curl.graph.md](/docs/cli/curl.graph.md)
 <!-- /docsgraph:related -->

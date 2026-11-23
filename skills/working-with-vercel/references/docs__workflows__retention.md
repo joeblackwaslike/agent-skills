@@ -17,8 +17,8 @@ summary: Learn how long Vercel Workflows keeps run data, when Vercel deletes it,
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/workflows/retention.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "7ba16d005573777747e0de84e78e5370a6e389b3b92d1735ff13d4b36e72389d"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "e114772a7e700911ea065b30863d97a177e734b346227c135f52447c3bd59e6f"
 ---
 
 # Workflow Data Retention
@@ -36,11 +36,10 @@ Vercel Workflows stores the inputs, outputs, event log, and streams of every wor
 - [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
 - [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution)
 - [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
-- [Built-in durability: Introducing Workflow Development Kit](https://vercel.com/blog/introducing-workflow)
-- [How to choose between Functions, containers, and Daemons on Vercel](https://vercel.com/kb/guide/vercel-functions-containers-daemons) — Choose Vercel Functions for HTTP requests, container images for custom runtimes, and Daemons for continuous background w
+- [Usage](https://workflow-sdk.dev/docs/observability/usage) — See a run's events, by step and hook, and its storage, counted the way Vercel bills them.
 - [Versioning](https://workflow-sdk.dev/docs/foundations/versioning) — Keep in-flight runs stable by default, then choose explicit upgrade boundaries when you need them.
+- [Observability](https://workflow-sdk.dev/docs/observability) — Inspect and debug workflow runs using the CLI and web UI.
 - [Workflow Concepts](https://vercel.com/docs/workflows/concepts) — Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
-- [Optimize Deployment Storage](https://vercel.com/docs/deployment-storage/optimize) — Set retention periods, review remaining usage, and reduce deployment output size.
 
 Full cross-link map for this page: [/docs/workflows/retention.graph.md](/docs/workflows/retention.graph.md)
 <!-- /docsgraph:related -->

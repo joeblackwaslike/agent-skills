@@ -1,7 +1,7 @@
 ---
 source: "https://opencode.ai/docs/config/"
-fetched_at: "2026-11-16T12:32:19.624Z"
-sha256: "6d4d8e0ecc7466b15c434737883545527fbce7041aec0fee75bf22ffe2b00eed"
+fetched_at: "2026-11-23T14:15:43.627Z"
+sha256: "991db3dd5558f1651c48d62c5b3f13c4ed1ee7916056baf6ee232cd56f018cdf"
 ---
 
 # Config
@@ -633,7 +633,6 @@ All experimental settings live under the `experimental` key:
   "experimental": {
     "todo": true,
     "subagent_depth": 2,
-    "background_compaction": true,
     "image_generate": { "model": "openai/gpt-image-2" },
     "location_idle_timeout": "4 hours",
   },
@@ -649,23 +648,9 @@ Set `todo` to `true` to give agents a `todowrite` tool for tracking multi-step w
 `subagent_depth` sets how deeply subagents can start their own subagents. Defaults to `1`, so a subagent cannot
 start another subagent.
 
-### Background compaction
-
-Set `background_compaction` to `true` to write the compaction summary in the background before it is needed, so
-automatic compaction doesn't pause the session. Defaults to `false`. See
-[Compaction](/compaction#background-compaction) for how it works.
-
-```jsonc
-{
-  "experimental": {
-    "background_compaction": true,
-  },
-}
-```
-
 ### Image generation
 
-`image_generate` sets the default model for the [`experimental_image_generate`](/tools#image-generate) tool, as
+`image_generate` sets the default model for the [`generate_image`](/tools#image-generate) tool, as
 `providerID/modelID`, optionally with `#variant`. When that model isn't available or can't handle a request, OpenCode
 picks another image model automatically.
 

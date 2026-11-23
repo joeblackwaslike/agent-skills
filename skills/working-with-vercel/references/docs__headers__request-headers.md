@@ -10,15 +10,15 @@ prerequisites:
 related:
   - /docs/functions
   - /docs/regions
+  - /docs/vercel-firewall/priority-projects
   - /docs/webhooks
   - /docs/drains
-  - /docs/drains/security
 summary: Learn about the request headers sent to each Vercel deployment and how to use them to process requests before sending a response.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/headers/request-headers.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "b1bfb07ad0e8dd886926206f68ce8026a9e8d60a73e12418ed618aa9c6ea2ab7"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "d750371a3594a435f7aa18f16884fae0afaf4ca6403e5ec1a7c8ac09665ddbb3"
 ---
 
 # Request headers
@@ -35,11 +35,12 @@ The following headers are sent to each Vercel deployment and can be used to proc
 - [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
 - [Requester's public IP postal code now available in Vercel Functions](https://vercel.com/changelog/requesters-public-ip-postal-code-now-available-in-vercel-functions)
 - [IP Geolocation for Serverless Functions](https://vercel.com/changelog/ip-geolocation-for-serverless-functions)
+- [Enhanced geolocation information for Vercel Functions](https://vercel.com/changelog/enhanced-geolocation-information-available-for-vercel-functions)
 - [Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache) — Learn how Vercel's CDN cache stores your content across a global network to reduce latency and origin load.
 - [Programmatic Configuration with vercel.ts](https://vercel.com/docs/project-configuration/vercel-ts) — Define your Vercel configuration in vercel.ts with @vercel/config for type-safe routing and build settings.
-- [Static Configuration with vercel.json](https://vercel.com/docs/project-configuration/vercel-json) — Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project.
 - [Response headers](https://vercel.com/docs/headers/response-headers) — Learn about the response headers sent to each Vercel deployment and how to use them to process responses before sending
-- [Framework environment variables](https://vercel.com/docs/environment-variables/framework-environment-variables) — Framework environment variables are automatically populated by the Vercel, based on your project's framework.
+- [Static Configuration with vercel.json](https://vercel.com/docs/project-configuration/vercel-json) — Learn how to use vercel.json to configure and override the default behavior of Vercel from within your project.
+- [Functions API Reference](https://vercel.com/docs/functions/functions-api-reference) — Learn about available APIs when working with Vercel Functions.
 
 Full cross-link map for this page: [/docs/headers/request-headers.graph.md](/docs/headers/request-headers.graph.md)
 <!-- /docsgraph:related -->
@@ -879,6 +880,29 @@ export function GET(request: Request) {
 export function GET(request) {
   const postalCode = request.headers.get('x-vercel-ip-postal-code');
   return new Response(`Postal Code: ${postalCode}`);
+}
+```
+
+## `x-vercel-waf-source`
+
+The traffic source classification of the requester's public IP address, available in [Priority projects](/docs/vercel-firewall/priority-projects). The header contains one or more of these values:
+
+| Value       | Description                                                    |
+| ----------- | -------------------------------------------------------------- |
+| `tor`       | A known Tor exit node.                                         |
+| `vpn`       | The egress IP address of a commercial VPN.                     |
+| `proxy`     | A known open or anonymizing proxy.                             |
+| `res-proxy` | An IP address offered through a residential proxy network.     |
+| `abuse`     | An IP address with a high-confidence history of abuse.         |
+
+When the IP address has more than one classification, the header contains each value separated by a comma, such as `vpn, res-proxy`.
+
+Vercel sets `x-vercel-waf-source` on requests to Vercel Functions and Routing Middleware in Priority projects. The header is absent when the IP address has no traffic source or the project isn't a Priority project, and Vercel removes any `x-vercel-waf-source` header that the client sends.
+
+```ts filename="api/header.ts"
+export function GET(request: Request) {
+  const trafficSource = request.headers.get('x-vercel-waf-source');
+  return new Response(`Traffic source: ${trafficSource ?? 'none'}`);
 }
 ```
 

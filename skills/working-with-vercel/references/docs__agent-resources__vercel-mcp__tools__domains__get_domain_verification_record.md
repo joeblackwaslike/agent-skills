@@ -14,8 +14,8 @@ summary: Use get_domain_verification_record with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_verification_record.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "1f9c3d209143f3e42915706156642c7b983aeebd3cf9b7d095ec6e0f726f8c17"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "e6a9b82198147a416dd3286dfd94241e78ba6186ee1bb46ebc76f6756ae3a42b"
 ---
 
 # get_domain_verification_record
@@ -31,8 +31,8 @@ Get the TXT verification record needed to claim ownership of a domain for the au
 - [Get Domain Verification Record](https://vercel.com/docs/rest-api/domains/get-domain-verification-record) — GET /v9/domains/{domain}/verification — Get the TXT verification record needed to claim ownership of a domain for the au
 - [get_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain) — Use get_domain with Vercel MCP.
 - [get_domain_contact_verification](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_contact_verification) — Use get_domain_contact_verification with Vercel MCP.
+- [GET /domains/records/{recordId}](https://vercel.com/docs/rest-api/untagged/getdomainsrecordsbyrecordid) — GET /domains/records/{recordId} — GET /domains/records/{recordId}
 - [get_domains_records_by_record_id](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domains_records_by_record_id) — Use get_domains_records_by_record_id with Vercel MCP.
-- [create_record](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/create_record) — Use create_record with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/get_domain_verification_record.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/get_domain_verification_record.graph.md)
 <!-- /docsgraph:related -->

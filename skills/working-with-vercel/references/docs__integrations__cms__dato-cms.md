@@ -15,8 +15,8 @@ summary: Learn how to integrate DatoCMS with Vercel. Follow our step-by-step tut
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/cms/dato-cms.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "96e948462ffca3166c3e0ca9d49cd4114697fe1ebce8379b957931656042806b"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "3e4e752c16a06d28ac90c0039935554a138016b7a3a186b24a24a3a9421b7a5c"
 ---
 
 # Vercel DatoCMS Integration
@@ -33,8 +33,8 @@ DatoCMS is a headless content management system designed for creating and managi
 - [Vercel Agility CMS Integration](https://vercel.com/docs/integrations/cms/agility-cms) — Learn how to integrate Agility CMS with Vercel. Follow our tutorial to deploy the Agility CMS template or install the in
 - [Vercel ButterCMS Integration](https://vercel.com/docs/integrations/cms/butter-cms) — Learn how to integrate ButterCMS with Vercel. Follow our tutorial to set up the ButterCMS template on Vercel and manage
 - [Vercel and Contentful Integration](https://vercel.com/docs/integrations/cms/contentful) — Integrate Vercel with Contentful to deploy your content.
-- [Vercel Makeswift Integration](https://vercel.com/docs/integrations/cms/makeswift) — Learn how to integrate Makeswift with Vercel. Makeswift is a no-code website builder designed for creating and managing
 - [Edit Mode](https://vercel.com/docs/edit-mode) — Discover how Vercel's Edit Mode enhances content management for headless CMSs, enabling real-time editing, and seamless
+- [Vercel Makeswift Integration](https://vercel.com/docs/integrations/cms/makeswift) — Learn how to integrate Makeswift with Vercel. Makeswift is a no-code website builder designed for creating and managing
 
 Full cross-link map for this page: [/docs/integrations/cms/dato-cms.graph.md](/docs/integrations/cms/dato-cms.graph.md)
 <!-- /docsgraph:related -->

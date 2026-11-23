@@ -15,8 +15,8 @@ summary: Understand how AI Gateway measures throughput and latency per provider.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/metrics.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "e6689e0008ff032e01ae4eae9a1bf923f2c4adfab93cba50ccf2e0de192f319a"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "bad6cbbfe9c2d9fdc69657f3f11c26dea4b7b5ff37c0a08d31deecafd5e68666"
 ---
 
 # AI Gateway Provider Latency and Throughput Metrics
@@ -30,11 +30,11 @@ AI Gateway tracks **throughput** and **latency** for each model and provider, me
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Live model performance metrics accessible via AI Gateway](https://vercel.com/changelog/live-model-performance-metrics-accessible-via-ai-gateway)
-- [Sort providers by cost, latency, or throughput on AI Gateway](https://vercel.com/changelog/sort-providers-by-cost-latency-or-throughput-on-ai-gateway)
 - [Access and share AI Gateway leaderboard data](https://vercel.com/changelog/open-data-and-shareable-charts-for-ai-gateway-leaderboards)
-- [AI Gateway production index](https://vercel.com/blog/ai-gateway-production-index)
+- [Observability added to AI Gateway alpha](https://vercel.com/changelog/observability-added-to-ai-gateway-alpha)
 - [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, caching, SDK and API compati
 - [AI Gateway Leaderboards](https://vercel.com/docs/ai-gateway/leaderboards) — See which AI models, labs, apps, and providers are most used on AI Gateway, share a chart as an image, and download the
+- [AI Gateway Provider Timeouts](https://vercel.com/docs/ai-gateway/models-and-providers/provider-timeouts) — Configure AI Gateway timeouts for BYOK providers. Fail over to the next provider when a request takes too long to start
 - [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/metrics.graph.md](/docs/ai-gateway/models-and-providers/metrics.graph.md)

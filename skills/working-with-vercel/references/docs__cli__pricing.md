@@ -14,8 +14,8 @@ summary: Look up Hobby, Pro, and Enterprise features from the public Vercel pric
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/pricing.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "5b83ab789c69cefefa8b0135763ec4985b59d2df1d076739e59cbea44b1fcda6"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "cb6e0817d9f64c3cec7fb89d32d4571eb7c584d28889d44a01dbc2744ce672d9"
 ---
 
 # vercel pricing
@@ -30,8 +30,8 @@ The `vercel pricing` command reads the public pricing table and lists features g
 
 - [Vercel CI Pricing](https://vercel.com/docs/ci/pricing) — Understand how Vercel CI usage is billed.
 - [vercel billing usage](https://vercel.com/docs/cli/usage) — Learn how to view billing usage and costs, for your Vercel account using the vercel billing usage CLI command.
-- [vercel billing](https://vercel.com/docs/cli/billing) — Learn how to view your billing overview, usage, contracts, budgets, and invoices for your Vercel team using the vercel b
 - [Cleveland, USA \\(cle1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cle1) — Vercel pricing for the Cleveland, USA \\(cle1\\) region.
+- [vercel billing](https://vercel.com/docs/cli/billing) — Learn how to view your billing overview, usage, budgets, and invoices for your Vercel team using the vercel billing CLI
 - [vercel buy](https://vercel.com/docs/cli/buy) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
 
 Full cross-link map for this page: [/docs/cli/pricing.graph.md](/docs/cli/pricing.graph.md)

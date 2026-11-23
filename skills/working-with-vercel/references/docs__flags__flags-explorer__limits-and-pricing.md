@@ -14,8 +14,8 @@ summary: Compare monthly Flags Explorer override limits and the price of unlimit
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/flags-explorer/limits-and-pricing.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "79c14dfd0b050dcaec639953a8989504bc006ab6f35ca3617ed4ddb4f50921cf"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "78a7a2d4c47bbfb83a010c0e6f904c799b00dc8304417c32f35a0fbf9147084e"
 ---
 
 # Pricing for Flags Explorer
@@ -36,8 +36,8 @@ The following table outlines the price for each resource according to the plan y
 - [Limits and Pricing for Vercel Flags](https://vercel.com/docs/flags/vercel-flags/limits-and-pricing) — Review Vercel Flags request pricing and limits for flags, segments, configuration size, and connected projects.
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Setting up Flags Explorer](https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer) — Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting ot
+- [Pricing and Limits](https://vercel.com/docs/drives/pricing) — Check Vercel Drives regional rates, plan allotments, and storage and mount limits.
 - [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
-- [Vercel Flags](https://vercel.com/docs/flags/vercel-flags) — Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directl
 
 Full cross-link map for this page: [/docs/flags/flags-explorer/limits-and-pricing.graph.md](/docs/flags/flags-explorer/limits-and-pricing.graph.md)
 <!-- /docsgraph:related -->

@@ -15,8 +15,8 @@ summary: See how uptime and status track AI Gateway provider health and end-to-e
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/uptime.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "74b184b48952f5826900e34f360da833e5853003856c8b79dd7c8748888acb2b"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "e07ea4ad5562c43a5e41370653e2927f9bd95c94b4fd4eeffd94cee0685e3c03"
 ---
 
 # AI Gateway Uptime and Provider Status
@@ -61,7 +61,7 @@ You can open the uptime view from:
 - The [AI Gateway model catalog](/ai-gateway/models). Select a model, then choose **Uptime**.
 - The [**AI Gateway** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) in your project. Go to **Model List**, select a model, then choose **Uptime**.
 
-You can also link directly at `vercel.com/ai-gateway/models/<model-id>#uptime`, replacing `<model-id>` with the model you want to inspect. For example, see [uptime for Claude Opus 4.7](/ai-gateway/models/claude-opus-4.7#uptime).
+You can also link directly at `vercel.com/ai-gateway/models/<model-id>#uptime`, replacing `<model-id>` with the model you want to inspect. For example, see [uptime for Claude Opus 4.7](/ai-gateway/models/anthropic/claude-opus-4.7#uptime).
 
 ### Accessing uptime via the API
 
@@ -128,7 +128,7 @@ You can open the status view from:
 - The [AI Gateway model catalog](/ai-gateway/models). Select a model, then choose **Status**.
 - The [**AI Gateway** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway\&title=Go+to+AI+Gateway) in your project. Go to **Model List**, select a model, then choose **Status**.
 
-You can also link directly at `vercel.com/ai-gateway/models/<model-id>#status`, replacing `<model-id>` with the model you want to inspect. For example, see [status for Claude Opus 4.7](/ai-gateway/models/claude-opus-4.7#status).
+You can also link directly at `vercel.com/ai-gateway/models/<model-id>#status`, replacing `<model-id>` with the model you want to inspect. For example, see [status for Claude Opus 4.7](/ai-gateway/models/anthropic/claude-opus-4.7#status).
 
 ## Sharing a snapshot
 

@@ -17,8 +17,8 @@ summary: Turn tracing on or off and control sampling for production and preview 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/tracing/configure-tracing.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "17fb1636055d067a7399ddcdd227502064f16bffac3efa325bb1d0f4a864e5e6"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "4b48d9ce011cac03dc4d97db586034d128469253726073642280f51240deabfd"
 ---
 
 # Configuring Tracing
@@ -35,13 +35,11 @@ With tracing turned on, Vercel continuously collects traces from your production
 - [Trace and debug eve agent runs](https://vercel.com/kb/guide/trace-and-debug-eve-agent-runs) — Inspect eve traces in Vercel Agent Runs, control captured content, export OpenTelemetry spans, and test fixes with regre
 - [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
 - [Always-on tracing for production and preview traffic](https://vercel.com/changelog/always-on-tracing-for-production-and-preview-traffic)
-- [Search trace spans from the Vercel CLI](https://vercel.com/changelog/search-trace-spans-from-the-vercel-cli)
-- [Track a request's full lifecycle with session tracing](https://vercel.com/changelog/session-tracing-now-available)
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
+- [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
 - [Tracing in Daemons](https://vercel.com/docs/daemons/tracing) — Instrument a daemon using OpenTelemetry traces.
 - [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
-- [Agent Checklist for Launch](https://vercel.com/docs/agent-checklist) — Prepare an eve, Mastra, or Flue agent for launch on Vercel. Check who can call the agent, what its tools can change, how
-- [Running eve Agents Durably on Vercel](https://vercel.com/docs/agent-harnesses/eve) — eve agents are durable out of the box on Vercel, with no extra configuration.
+- [Runtime Logs](https://vercel.com/docs/logs/runtime) — Learn how to search, inspect, and share your runtime logs with the Logs tab.
 
 Full cross-link map for this page: [/docs/tracing/configure-tracing.graph.md](/docs/tracing/configure-tracing.graph.md)
 <!-- /docsgraph:related -->

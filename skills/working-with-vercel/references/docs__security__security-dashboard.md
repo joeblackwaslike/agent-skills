@@ -17,8 +17,8 @@ summary: The Security Dashboard aggregates the security posture of every account
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/security/security-dashboard.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "eee59eccc8ae84a94ed6845ed7da697328312cec51eb7d3b1f52702e917380aa"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "9bee4bde17a397de7466b4c1c9d777912970c55434231f6d2a572d4bdd2eb1f3"
 ---
 
 # Security Dashboard
@@ -34,10 +34,8 @@ The Security Dashboard aggregates the security posture of every account and proj
 - [Vercel Security Dashboard is now generally available](https://vercel.com/changelog/vercel-security-dashboard-is-now-generally-available)
 - [Vercel for Enterprise](https://vercel.com/blog/vercel-for-enterprise)
 - [Unified security actions dashboard](https://vercel.com/changelog/unified-security-actions-dashboard)
-- [Introducing Vercel Security Review](https://vercel.com/blog/vercel-security-review)
-- [Vercel Security Dashboard is in private beta](https://vercel.com/changelog/vercel-security-dashboard-is-in-private-beta)
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
+- [Trusted Sources](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources) — Let other Vercel projects and external services reach your protected deployments by presenting a verified OIDC token.
 - [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
 - [Create a check](https://vercel.com/docs/rest-api/checks-v2/create-a-check) — POST /v2/projects/{projectIdOrName}/checks — Creates a new check for a project.
 - [List all checks for a project](https://vercel.com/docs/rest-api/checks-v2/list-all-checks-for-a-project) — GET /v2/projects/{projectIdOrName}/checks — List all checks for a project, optionally filtered by target.

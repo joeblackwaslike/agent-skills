@@ -17,8 +17,8 @@ summary: Vercel supports a wide range of the most popular backend frameworks, op
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/full-stack.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "c18ee761e2e38db2a842f4c7a53ee5020addaa806af4d67700b3b9ad5f8f6377"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "413015237ce8bc79a7082524ad000fef0e56dc0471bbb418a0891b15e424b97f"
 ---
 
 # Full-stack frameworks on Vercel
@@ -34,9 +34,6 @@ The following full-stack frameworks are supported with zero-configuration.
 - [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
 - [Announcing the Build Output API](https://vercel.com/blog/build-output-api)
 - [Run multiple frameworks in one project with Vercel Services](https://vercel.com/changelog/run-multiple-frameworks-in-one-project-with-vercel-services)
-- [Optimized CDN caching and deploying of immutable static assets](https://vercel.com/changelog/optimized-cdn-caching-and-deploying-of-immutable-static-assets)
-- [Next.js 14 on Vercel](https://vercel.com/changelog/next-js-14)
-- [Improvements and Fixes](https://vercel.com/changelog/march-2023)
 - [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
 - [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti

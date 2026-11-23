@@ -17,8 +17,8 @@ summary: "Control feature visibility, run experiments, and ship with confidence 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "6b0203e500e285b36c6dbb20e3017e8a2efdb55beb0237d7096e7f796ea5e3ed"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "ee79b60362eed07e74c8db8823a19c4d008c1e7244dd5d31e42824465ec029a0"
 ---
 
 # Flags
@@ -40,9 +40,9 @@ Vercel provides a complete feature flags platform. Use Vercel as your feature fl
 - [Manage Vercel Flags targeting rules from the CLI](https://vercel.com/changelog/manage-vercel-flags-targeting-rules-from-the-cli)
 - [Automate progressive rollouts with Vercel Flags](https://vercel.com/changelog/progressive-rollouts-in-vercel-flags)
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
+- [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation) — Set baselines and cut backend load. Make your catalog readable to agents and keep orders and AI features reliable. Then
+- [How to keep your storefront running through Black Friday](https://vercel.com/kb/guide/black-friday-reliability) — Learn how to tune alerts, bot rules, and spend limits. Rehearse rollback so your team can recover quickly from checkout
 - [Vercel Web Analytics](https://vercel.com/docs/analytics) — With Web Analytics, you can get detailed insights into your website's visitors with new metrics like top pages, top refe
-- [Filtering Analytics](https://vercel.com/docs/analytics/filtering) — Learn how filters allow you to explore insights about your website's visitors.
-- [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 
 Full cross-link map for this page: [/docs/flags.graph.md](/docs/flags.graph.md)
 <!-- /docsgraph:related -->

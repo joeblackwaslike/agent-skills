@@ -17,8 +17,8 @@ summary: Build agents and applications that retry failed steps, wait for externa
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/workflows.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "22319666082d4b343215f82e6ee7eb6e70ca7a354c9751e8db67b309827ec2b0"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "53933c1b6c29f1203f9ff9f4a7e329ddab743fbab710468ffc23d8281d32415a"
 ---
 
 # Vercel Workflows
@@ -37,14 +37,14 @@ Vercel Workflows runs multi-step logic as durable code that can retry failed ste
 - [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution)
 - [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
 - [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
-- [Workflow SDK 5: built for production](https://vercel.com/blog/workflow-sdk-5)
-- [Built-in durability: Introducing Workflow Development Kit](https://vercel.com/blog/introducing-workflow)
 - [What is WorkflowAgent?](https://vercel.com/kb/guide/what-is-workflowagent) — Build durable AI agents with WorkflowAgent: tool calls that retry as workflow steps, suspend for human approval, and res
-- [The best workflow engine is a programming language](https://vercel.com/blog/the-best-workflow-engine-is-a-programming-language)
+- [Built-in durability: Introducing Workflow Development Kit](https://vercel.com/blog/introducing-workflow)
 - [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation)
 - [Configure where run state lives in Vercel Workflows](https://vercel.com/changelog/configure-where-run-state-lives-in-vercel-workflows)
 - [Expanded search for workflow runs in Vercel Observability](https://vercel.com/changelog/expanded-search-for-workflow-runs-in-vercel-observability)
 - [Measure time between steps in Vercel Workflows](https://vercel.com/changelog/measure-time-between-steps-in-vercel-workflows)
+- [Redesigned trace viewer for Vercel Workflows](https://vercel.com/changelog/redesigned-trace-viewer-for-vercel-workflows)
+- [Durable agent approval workflows on Vercel](https://vercel.com/kb/guide/agent-approval-workflow-stack-guide) — How enterprise architects choose a stack and decide where to run durable, human-in-the-loop agent approval workflows on
 
 Full cross-link map for this page: [/docs/workflows.graph.md](/docs/workflows.graph.md)
 <!-- /docsgraph:related -->

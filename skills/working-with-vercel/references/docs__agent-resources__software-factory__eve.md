@@ -16,8 +16,8 @@ summary: Customize an eve software factory on Vercel with GitHub access, sandbox
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/software-factory/eve.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "0b535c59f8d1822c47b4f8727a85afcbb433240315d54e3c6d4573a8743b1ed3"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "3bb42e0c1dc5fc8c33335b3760b630e7d26fde8a2f25e5502ff4ba17d7df3345"
 ---
 
 # Build a Software Factory with eve
@@ -31,14 +31,15 @@ Use [eve on Vercel](/docs/frameworks/agents/eve) to coordinate a software factor
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
-- [GitHub tools are now an installable eve extension](https://vercel.com/changelog/github-tools-eve-extension)
 - [How to add tools to your eve agent](https://vercel.com/kb/guide/how-to-add-eve-tools) — Add tools to an eve agent by creating a TypeScript file under agent/tools/ with defineTool, and gate sensitive ones on h
-- [Give your eve agent GitHub tools](https://vercel.com/changelog/github-tools-eve)
-- [Give your eve agent secure access to your private AWS RDS database](https://vercel.com/kb/guide/give-eve-agent-secure-access-to-aws-rds-database) — Connect an eve agent to a private AWS RDS database using Vercel Secure Compute and VPC peering, with a read-only query t
 - [Choosing between eve, AI SDK agents, and \\`WorkflowAgent\\`](https://vercel.com/kb/guide/eve-vs-ai-sdk-agents-vs-workflowagent) — Compare eve, \\`ToolLoopAgent\\`, and \\`WorkflowAgent\\` by durability, approvals, channels, and setup to choose an agent f
-- [Introducing eve, an open-source agent framework](https://vercel.com/changelog/introducing-eve-an-open-source-agent-framework)
+- [Give your eve agent secure access to your private AWS RDS database](https://vercel.com/kb/guide/give-eve-agent-secure-access-to-aws-rds-database) — Connect an eve agent to a private AWS RDS database using Vercel Secure Compute and VPC peering, with a read-only query t
+- [How to build a browser agent that works behind a login](https://vercel.com/kb/guide/build-a-browser-agent) — Build a browser agent with eve, Vercel Connect, and KERNEL managed auth that signs a user in through a human-in-the-loop
+- [Give your eve agent GitHub tools](https://vercel.com/changelog/github-tools-eve)
 - [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel) — Deploy an eve agent with Vercel Workflow, Sandbox, Schedules, and project credentials.
+- [GitHub tools are now an installable eve extension](https://vercel.com/changelog/github-tools-eve-extension)
 - [Build a Software Factory with Flue](https://vercel.com/docs/agent-resources/software-factory/flue) — Use Flue with AI Gateway, Vercel Sandbox, and explicit GitHub tool adapters for investigated and reviewed code changes.
+- [Vercel Sandbox](https://vercel.com/docs/sandbox) — Run untrusted or agent-generated code in isolated Linux microVMs with Vercel Sandbox, an AI agent sandbox with network c
 
 Full cross-link map for this page: [/docs/agent-resources/software-factory/eve.graph.md](/docs/agent-resources/software-factory/eve.graph.md)
 <!-- /docsgraph:related -->

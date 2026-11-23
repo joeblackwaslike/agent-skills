@@ -17,8 +17,8 @@ summary: Secure Compute provides dedicated private networks with VPC peering for
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/networking/secure-compute.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "524bb2ca40e41f0fdda0bce2c0fb4b02c5c671775a6cfcb7639f1ef0cfda8093"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "4fff80e774ff2379ba10bdfd31bb7a932a43f3602c4184c80a74f3b78e229f01"
 ---
 
 # Secure Compute
@@ -56,6 +56,8 @@ When you enable Secure Compute on your [project](/docs/projects), your deploymen
 You can provision and manage your own Secure Compute networks directly from the Vercel dashboard. Create networks for different teams, projects, or environments, all through self-service.
 
 > **💡 Note:** If you don't need dedicated infrastructure, VPC peering, VPN, or complete network isolation, consider [**Static IPs**](/docs/networking/static-ips) for IP allowlisting or [**AWS PrivateLink**](/docs/networking/privatelink) in **Advanced Networking** for private access to AWS-hosted services.
+
+If your team isn't on the Enterprise plan, [contact our sales team](/contact/sales) to get access to Secure Compute.
 
 ## How Secure Compute works
 
@@ -198,7 +200,7 @@ Because Secure Compute gives you a dedicated network that Vercel runs on your be
 - **Google Cloud**: connect to a Google Cloud VPC network and the services running inside it.
 - **On-premises and other environments**: connect to a data center or any other network that terminates a standard site-to-site VPN.
 
-If your current security and compliance obligations require more than dedicated IP addresses, contact us for guidance related to your specific needs.
+If your current security and compliance obligations require more than dedicated IP addresses, [contact our sales team](/contact/sales) for guidance related to your specific needs.
 
 ## Pricing
 

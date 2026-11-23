@@ -13,8 +13,8 @@ summary: Vercel MCP has tools available for searching docs, managing teams, proj
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "192c75fac750bbbe94a638053b875b6ed2cebe35dc11867c4b94baa6c823e08f"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "8fca12a19addfb0c7bcd4e75c965942d1577aaec848013962179fefbd3bb3199"
 ---
 
 # Use Vercel
@@ -193,7 +193,7 @@ When adding the MCP server, Codex will detect OAuth support and open your browse
 Click the button above to open Cursor and automatically add Vercel MCP. You can
 also add the snippet below to your project-specific or global `.cursor/mcp.json`
 file manually. For more details, see the [Cursor
-documentation](https://docs.cursor.com/en/context/mcp).
+documentation](https://cursor.com/docs/mcp).
 
 ```json
 {

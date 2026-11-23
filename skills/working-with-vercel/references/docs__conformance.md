@@ -16,8 +16,8 @@ summary: Learn how Conformance improves collaboration, productivity, and softwar
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "30b530df301b3df00c2f48fff27574d34d591dd93464556245a47b4d18a5788c"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "a81ffa84913b17744d62f6f7430c73cbdb0f2a6507744e8d88061be23a08819f"
 ---
 
 # Introduction to Conformance
@@ -34,6 +34,8 @@ Conformance provides tools that run automated checks on your code for product cr
 
 To get started with Conformance, follow the instructions on the
 [Getting Started](/docs/conformance/getting-started) page.
+
+If your team isn't on the Enterprise plan, [contact our sales team](/contact/sales) to get access to Conformance.
 
 ## Conformance Rules
 

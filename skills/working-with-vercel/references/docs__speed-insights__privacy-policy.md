@@ -15,8 +15,8 @@ summary: Learn how Vercel follows the latest privacy and data compliance standar
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/speed-insights/privacy-policy.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "a7017303ab31357d40e4e10d1e78707458e908c05d91f306684973b9b92c0cdb"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "5d2574fad07dbf1256623632587317f7d872e7971a3b94fbd7c91679eb546677"
 ---
 
 # Vercel Speed Insights Privacy & Compliance
@@ -34,11 +34,12 @@ To ensure that the Speed Insights feature can be used despite many different reg
 - [Speed Insights now has a free tier](https://vercel.com/changelog/speed-insights-free-tier)
 - [Improved Speed Insights experience](https://vercel.com/changelog/improved-speed-insights-experience)
 - [Query Speed Insights from the Vercel CLI](https://vercel.com/changelog/query-speed-insights-from-the-vercel-cli)
+- [Improved data collection for Web Analytics and Speed Insights with resilient intake](https://vercel.com/changelog/improved-data-collection-for-web-analytics-and-speed-insights-with-resilient)
 - [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights) — Learn how to use Speed Insights to analyze your application's performance data.
 - [Troubleshooting Vercel Speed Insights](https://vercel.com/docs/speed-insights/troubleshooting) — Learn about common issues and how to troubleshoot Vercel Speed Insights.
-- [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
 - [Privacy and Compliance](https://vercel.com/docs/analytics/privacy-policy) — Learn how Vercel supports privacy and data compliance standards with Vercel Web Analytics.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
+- [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
 
 Full cross-link map for this page: [/docs/speed-insights/privacy-policy.graph.md](/docs/speed-insights/privacy-policy.graph.md)
 <!-- /docsgraph:related -->

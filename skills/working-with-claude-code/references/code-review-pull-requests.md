@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/code-review-pull-requests.md"
-fetched_at: "2026-10-26T09:47:04.845Z"
-sha256: "7c0c18aa147fc07b840d41e2bb25cd9bbb72b7ebf7c83c27105b41c54e4e77d5"
+fetched_at: "2026-11-23T14:04:20.448Z"
+sha256: "10443e3e651b5ae3d7dcc4bbc3ccb687de4848ead0084510be5bc37d7e4a32a7"
 ---
 
 > ## Documentation Index
@@ -22,7 +22,7 @@ An Owner controls [when reviews run](https://code.claude.com/docs/en/code-review
 
 ## Severity levels
 
-Claude posts each finding as an inline comment on the lines concerned and marks it with one of three severity levels:
+Claude marks each finding with one of three severity levels:
 
 | Marker | Severity | Meaning |
 | :- | :- | :- |
@@ -30,7 +30,7 @@ Claude posts each finding as an inline comment on the lines concerned and marks 
 | 🟡 | Nit | A minor issue, worth fixing but not blocking |
 | 🟣 | Pre-existing | A bug that exists in the codebase but wasn't introduced by this PR |
 
-When the review recorded its reasoning, the finding has a collapsed **Why this was flagged** section. Expand it to read why Claude flagged the issue and how it verified the problem.
+When the review recorded its reasoning, a finding has a collapsed **Why this was flagged** section. Expand it to read why Claude flagged the issue and how it verified the problem.
 
 To change what Claude flags in your repository or how it ranks severity, see [Customize Code Review](https://code.claude.com/docs/en/code-review-customize.md).
 

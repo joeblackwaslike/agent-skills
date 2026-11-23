@@ -16,8 +16,8 @@ summary: Options available for service configuration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/services/config-reference.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "4b4a69bda0aa195cab0fc02e8619fd679b21333a610160bf901d430dd25d8569"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "934be9ef7c8959242ca2895456ffb6f194c0c44bc6ca0d8942674bc16cbad262"
 ---
 
 # Service configuration reference
@@ -35,7 +35,6 @@ A service is configured like any standalone Vercel project, using the same build
 - [Migrate from Railway to Vercel](https://vercel.com/kb/guide/migrate-railway-to-vercel) — Migrate an app from Railway to Vercel. Choose a deployment path, configure services, plan for stored data, and test befo
 - [The Complete Guide to Vercel Services](https://vercel.com/kb/guide/vercel-services) — Vercel Services let you deploy multiple frontends and backends in one project on a shared domain. Learn how to define se
 - [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
-- [Secure internal communication between services (beta)](https://vercel.com/changelog/secure-internal-communication-between-services)
 - [Services](https://vercel.com/docs/build-output-api/services) — Learn how a deployment with multiple services is structured in the Build Output API.
 - [Project Configuration](https://vercel.com/docs/project-configuration) — Learn how to configure your Vercel projects using vercel.json, vercel.toml, vercel.ts, or the dashboard to control build
 - [Daemon Configuration Reference](https://vercel.com/docs/daemons/config-reference) — Every field you can set on a daemon in the daemons key of vercel.json.

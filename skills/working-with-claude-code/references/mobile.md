@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/mobile.md"
-fetched_at: "2026-11-09T12:34:10.263Z"
-sha256: "e00443dc8375a6021527e0c3a0ef465738c627e325d85409f84449b3337d07f7"
+fetched_at: "2026-11-23T14:04:20.448Z"
+sha256: "c58cd96c297d33d9168bac3cabc45857b38c9570b06ac12789fcefbd91825e0f"
 ---
 
 > ## Documentation Index
@@ -45,7 +45,7 @@ From the app you can start cloud sessions, open a project, drive a Claude Code s
 | [Cloud sessions](https://code.claude.com/docs/en/claude-code-on-the-web.md) | A session on cloud infrastructure, Anthropic-managed by default | Your repository is on GitHub and the task should keep running after you put your phone away. See the [cloud quickstart](https://code.claude.com/docs/en/web-quickstart.md) to set up. |
 | [Projects](https://code.claude.com/docs/en/claude-projects.md) | A conversation where Claude coordinates parallel threads of work and reports back | You have a stream of related work rather than one task and want to see which threads finished or need you. |
 | [Remote Control](https://code.claude.com/docs/en/remote-control.md) | A Claude Code session running on your computer | The work needs your local filesystem, tools, or MCP servers. |
-| [Dispatch](https://code.claude.com/docs/en/desktop.md#sessions-from-dispatch) | The Desktop app on your computer | You want to message a task and let Dispatch decide how to run it. Requires a Pro, Max, or Ultra plan. |
+| [Dispatch](https://code.claude.com/docs/en/desktop.md#sessions-from-dispatch) | The Desktop app on your computer | You want to message a task and let Dispatch decide how to run it. Not available to new users. Requires a Pro, Max, or Ultra plan. |
 
 If your computer will be off, use cloud sessions or a project, which run in the cloud and continue with your laptop closed. Remote Control and Dispatch drive your own machine, so it needs to stay on with Claude Code or the Desktop app running. If your machine sleeps during a Remote Control session, Claude Code reconnects when the machine comes back online.
 

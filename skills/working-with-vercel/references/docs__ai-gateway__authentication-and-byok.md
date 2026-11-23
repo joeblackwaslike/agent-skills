@@ -17,8 +17,8 @@ summary: Authenticate AI Gateway requests with API keys or OIDC tokens, and conf
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "9f681d3af4946f6e4966819b8dffda44f58349929d82c4c611c634b053dac83a"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "c1b588c9118b5250afdc8f35fb7990fd9ad81e5a9662038a862533b40f926335"
 ---
 
 # AI Gateway Authentication and BYOK
@@ -33,10 +33,10 @@ Every request to AI Gateway requires Vercel authentication. Use an AI Gateway AP
 
 - [Get started with eve: durable AI agents in TypeScript](https://eve.dev/docs/getting-started) — Create an eve project, configure model credentials, and run your first agent.
 - [DeepSeek models now available via Azure on AI Gateway](https://vercel.com/changelog/deepseek-models-now-available-via-azure-on-ai-gateway)
+- [Liquid AI's d1.2 and d1.2-ultra are now available on AI Gateway](https://vercel.com/changelog/liquid-ais-d1-2-and-d1-2-ultra-are-now-available-on-ai-gateway)
 - [Vercel token scanning expands to more public sources](https://vercel.com/changelog/vercel-token-scanning-expands-to-more-public-sources)
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
-- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
 - [Death to long-lived static credentials](https://vercel.com/blog/death-to-long-lived-static-credentials)
 - [Jev for Python engineers](https://vercel.com/blog/jev-for-python-engineers)
@@ -290,11 +290,28 @@ curl --fail-with-body https://ai-gateway.vercel.sh/v1/responses \
 
 ### OIDC tokens
 
-Vercel deployments receive an OIDC token as `VERCEL_OIDC_TOKEN`, so you can authenticate without creating an API key. See [OIDC](/docs/ai-gateway/authentication-and-byok/oidc) for setup.
+On Vercel deployments, you can authenticate with your project's OIDC token without creating an API key. The AI SDK sends the OIDC token for you when `AI_GATEWAY_API_KEY` isn't set.
 
-```typescript {2}
-// An explicit API key takes precedence over the OIDC token.
-const apiKey = process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN;
+Other clients don't discover the OIDC token, so pass it yourself. Vercel sends the token to each Vercel Function invocation in the `x-vercel-oidc-token` request header. In Node.js, call `getVercelOidcToken()` from `@vercel/oidc` inside your request handler. On Vercel, `getVercelOidcToken()` reads that header, and locally it reads the `VERCEL_OIDC_TOKEN` value that `vercel env pull` writes. See [OIDC](/docs/ai-gateway/authentication-and-byok/oidc) for setup.
+
+```typescript filename="app/api/chat/route.ts" {6}
+import OpenAI from 'openai';
+import { getVercelOidcToken } from '@vercel/oidc';
+
+export async function POST(request: Request) {
+  const client = new OpenAI({
+    apiKey: await getVercelOidcToken(),
+    baseURL: 'https://ai-gateway.vercel.sh/v1',
+  });
+
+  const { messages } = await request.json();
+  const response = await client.chat.completions.create({
+    model: 'anthropic/claude-sonnet-5',
+    messages,
+  });
+
+  return Response.json(response);
+}
 ```
 
 ## Bring Your Own Key (BYOK)
@@ -302,7 +319,7 @@ const apiKey = process.env.AI_GATEWAY_API_KEY || process.env.VERCEL_OIDC_TOKEN;
 BYOK lets you use your own provider credentials. This is useful when you:
 
 - **Have existing agreements**: Use enterprise pricing or credits from providers
-- **Need zero markup**: BYOK requests have no additional fee
+- **Need zero markup**: BYOK requests have no additional fee unless you turn off [Fallback to Vercel Keys](/docs/ai-gateway/authentication-and-byok/byok#turn-off-fallback-to-vercel-keys)
 - **Require private access**: Access provider features that need your own credentials
 - **Want automatic fallback**: If your credentials fail, requests can retry with Vercel's provider keys
 

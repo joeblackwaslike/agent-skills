@@ -18,8 +18,8 @@ summary: Use AI Gateway from any Python application with the OpenAI or Anthropic
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/python.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "5a50967d40533ac18a91934ad7a17ec7f11c099c84dfcae02f42cfc3ddc973fa"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "e63c68bc8eca7be3c249cf1e0e203dea29f2548b6a7e51d0ccc8e9a6ac41352b"
 ---
 
 # Python with AI Gateway: OpenAI and Anthropic SDKs
@@ -36,12 +36,11 @@ which are covered below.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Build AI agents in Python with the AI SDK](https://vercel.com/kb/guide/python-and-ai-sdk) — Stream model responses, get typed output, and build tool-using agents in Python on Vercel.
-- [Claude Fable 5.2 now available on AI Gateway](https://vercel.com/changelog/claude-fable-5-2-now-available-on-ai-gateway)
-- [Elorian AI's Glimpse now available on AI Gateway](https://vercel.com/changelog/elorian-ai-glimpse-now-available-on-ai-gateway)
-- [Muse Ember now available on AI Gateway](https://vercel.com/changelog/muse-ember-now-available-on-ai-gateway)
+- [AI SDK 4.2](https://vercel.com/blog/ai-sdk-4-2)
 - [Go with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/go) — Use AI Gateway from any Go application with the OpenAI or Anthropic Go SDKs, including model fallbacks, cost tracking, a
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
 - [AI Gateway Ecosystem and Integrations](https://vercel.com/docs/ai-gateway/ecosystem) — Connect frameworks, coding tools, and billing integrations to AI Gateway. Configure app attribution and explore integrat
+- [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/python.graph.md](/docs/ai-gateway/sdks-and-apis/python.graph.md)
 <!-- /docsgraph:related -->

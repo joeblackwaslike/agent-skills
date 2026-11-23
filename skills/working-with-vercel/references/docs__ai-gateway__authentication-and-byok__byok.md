@@ -18,15 +18,15 @@ summary: Learn how to configure your own provider keys with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok/byok.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "1865c909a7ebd8b2493c1302e2479d41d0948b8b559a9701f1b70ef56910bcb0"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "656fbcdff2d9ae1aa3185571c4fd544d65585b280525fd1411ed4902ae305247"
 ---
 
 # Bring Your Own Key (BYOK) to AI Gateway
 
 Using your own credentials with an external AI provider allows AI Gateway to authenticate requests on your behalf with [no added markup](/docs/ai-gateway/pricing#bring-your-own-key-byok).
 This approach is useful for using credits provided by the AI provider or executing AI queries that access private cloud data.
-If a query using your credentials fails, AI Gateway will retry the query with Vercel's provider keys, the credentials Vercel holds with each provider, to improve service availability. When [ZDR](#zero-data-retention-zdr) is enabled, this fallback is limited to Vercel's ZDR-eligible provider keys.
+If a query using your credentials fails, AI Gateway will retry the query with Vercel's provider keys, the credentials Vercel holds with each provider, to improve service availability. When [ZDR](#zero-data-retention-zdr) is enabled, this fallback is limited to Vercel's ZDR-eligible provider keys. This fallback is on by default. To keep requests on your own credentials, turn off [Fallback to Vercel Keys](#turn-off-fallback-to-vercel-keys).
 
 
 <!-- docsgraph:related -->
@@ -55,17 +55,21 @@ Provider credentials are scoped to be available throughout your Vercel team, so 
 
 > **💡 Note:** BYOK is available on the paid tier. When a request with your credentials
 > fails, AI Gateway keeps it running by falling back to Vercel's provider keys,
-> and that fallback usage is billed against your credits balance. To use
+> and that fallback usage is billed against your credits balance. If you
+> turn off [Fallback to Vercel Keys](#turn-off-fallback-to-vercel-keys),
+> failed requests don't fall back to Vercel's provider keys, and AI Gateway charges
+> a [per-request fee](#pricing-without-fallback) on requests your credentials
+> serve. To use
 > BYOK, your team needs purchased [AI Gateway
 > credits](/docs/ai-gateway/pricing) and a positive credit balance. Without a
 > positive balance, AI Gateway rejects BYOK requests with a `402`.
 
-Spend through your own credentials isn't counted in [budgets](/docs/ai-gateway/observability-and-spend/budgets). It's metered separately and doesn't count toward a team, project, or API key limit, so a budget can't be used to cap BYOK spend. After a budget is exceeded, AI Gateway rejects every request in that budget's scope, including BYOK requests.
+Spend through your own credentials isn't counted in [budgets](/docs/ai-gateway/observability-and-spend/budgets). It's metered separately and doesn't count toward a team, project, or API key limit, so a budget can't be used to cap BYOK spend. The [BYOK without fallback fee](#pricing-without-fallback) is the exception: AI Gateway deducts it from your AI Gateway Credits, and it counts toward budgets. After a budget is exceeded, AI Gateway rejects every request in that budget's scope, including BYOK requests.
 
 ## Getting started
 
 - ### Retrieve credentials from your AI provider
-  First, retrieve credentials from your AI provider. AI Gateway uses these credentials first to authenticate requests to that provider. If a query made with your credentials fails, AI Gateway will re-attempt with Vercel's provider keys, aiming to provide improved availability.
+  First, retrieve credentials from your AI provider. AI Gateway uses these credentials first to authenticate requests to that provider. If a query made with your credentials fails, AI Gateway will re-attempt with Vercel's provider keys, aiming to provide improved availability. To turn off this fallback, see [Fallback to Vercel Keys](#turn-off-fallback-to-vercel-keys).
 
 - ### Add the credentials to your Vercel team
   1. Go to the [AI Gateway Bring Your Own Key (BYOK) page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbyok\&title=AI+Gateway+BYOK) in your Vercel dashboard.
@@ -89,7 +93,7 @@ After claiming the grant:
 
 1. Add the organization's OpenAI or Anthropic key using the steps above. For dashboard credentials, confirm that the key is enabled. If the provider has more than one key, also confirm that the dashboard marks this key **In Use**.
 2. Authenticate your application to AI Gateway with an [AI Gateway API key](/docs/ai-gateway/authentication-and-byok/api-keys) or [OIDC](/docs/ai-gateway/authentication-and-byok/oidc). These credentials authenticate to AI Gateway; the provider key authenticates to OpenAI or Anthropic.
-3. [Restrict the serving provider](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering#restrict-providers-with-the-only-filter) to `openai` or `anthropic`, respectively. A provider restriction doesn't disable fallback to Vercel's provider keys if your key fails.
+3. [Restrict the serving provider](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering#restrict-providers-with-the-only-filter) to `openai` or `anthropic`, respectively. A provider restriction doesn't disable fallback to Vercel's provider keys if your key fails. To prevent that fallback, turn off [Fallback to Vercel Keys](#turn-off-fallback-to-vercel-keys), which adds a per-request fee.
 4. Check the request's provider and credential source in [AI Gateway Logs](/docs/ai-gateway/observability-and-spend/logs), then confirm grant usage in the provider's billing dashboard. A successful response or key test doesn't establish that the grant funded the request.
 
 ## Manage keys in the dashboard
@@ -100,11 +104,11 @@ You can add up to 10 keys per provider. Each key has its own name, **Enabled** s
 
 AI Gateway uses the oldest enabled key for a provider, which the dashboard marks **In Use**. Requests that require [Zero Data Retention (ZDR)](#zero-data-retention-zdr) can use another enabled key that's marked ZDR-compliant.
 
-Other enabled keys are on standby. If the key in use fails, requests fall back to Vercel's provider keys, not to your next key. To switch to a standby key, disable the key in use.
+Other enabled keys are on standby. If the key in use fails, requests fall back to Vercel's provider keys, not to your next key. With [Fallback to Vercel Keys](#turn-off-fallback-to-vercel-keys) off, the request fails unless another provider's BYOK credential or a fallback model serves it. To switch to a standby key, disable the key in use.
 
 ### Replace a key
 
-Replace a key when you rotate it at the provider. Replacing a key changes only the stored credential, so the key keeps its name, **Enabled** state, ZDR setting, and [model mappings](#model-mappings). Your BYOK traffic keeps using your own credentials during the swap. If you delete a key and add a new one instead, requests use Vercel's provider keys in between.
+Replace a key when you rotate it at the provider. Replacing a key changes only the stored credential, so the key keeps its name, **Enabled** state, ZDR setting, and [model mappings](#model-mappings). Your BYOK traffic keeps using your own credentials during the swap. If you delete a key and add a new one instead, requests use Vercel's provider keys in between, or fail if [Fallback to Vercel Keys](#turn-off-fallback-to-vercel-keys) is off.
 
 1. In the [AI Gateway Bring Your Own Key (BYOK) page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbyok\&title=AI+Gateway+BYOK), click the menu for the key you want to replace.
 2. Select **Replace Key**.
@@ -124,11 +128,78 @@ AI Gateway tests the new credentials before saving them. If the test fails, the 
 | Member    | Yes       | Yes                                          | No                          |
 | Developer | Yes       | No                                           | No                          |
 
+## Turn off Fallback to Vercel Keys
+
+**Fallback to Vercel Keys** is on by default: when a request fails on your credentials, AI Gateway retries it on Vercel's provider keys and bills that usage to your AI Gateway Credits. Turn it off to stop falling back to these keys, for example to stay within a provider agreement or to keep provider usage on your own account.
+
+To turn off Fallback to Vercel Keys:
+
+1. Open the [AI Gateway **Settings** tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fsettings\&title=AI+Gateway+Settings).
+2. Turn off **Fallback to Vercel Keys**.
+3. Click **Disable Fallback** to confirm.
+
+![The System Credential Fallback setting, on by default.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/ai-gateway/byok/system-credential-fallback-light.png)
+
+Before the setting turns off, a confirmation lists what changes and the fee:
+
+![The confirmation shown when you turn off System Credential Fallback.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/ai-gateway/byok/system-credential-fallback-confirm-light.png)
+
+To restore fallback, turn the setting back on. A setting change reaches new requests within about two minutes. Open WebSocket sessions keep their credentials until they close.
+
+The setting is available on every plan. Team owners can change it. With role-based access, members with the AI Gateway settings permission can too.
+
+### What changes when fallback is off
+
+With the setting off:
+
+- AI Gateway doesn't fall back to Vercel's provider keys. Requests use your BYOK credentials, including [request-scoped credentials](#request-scoped-byok), and your [private models](/docs/ai-gateway/security-and-compliance/private-inference).
+
+- BYOK credentials and private models need purchased [AI Gateway Credits](/docs/ai-gateway/pricing#top-up-your-ai-gateway-credits) and a positive credit balance. Without them, your BYOK and private model requests fail.
+
+- If a credential fails, AI Gateway tries your BYOK credentials for the model's other providers, then the next model in your [`models`](/docs/ai-gateway/models-and-providers/model-fallbacks) list, which can be a private model. If nothing succeeds, the request fails instead of retrying on Vercel's provider keys.
+
+- If none of a model's providers has a usable BYOK credential, AI Gateway skips the model with a `403` error that names those providers, and tries the next model in your `models` list. If no model is left, the request returns that error. For example:
+
+  ```text
+  No usable BYOK credential for provider 'openai'; fallback to Vercel-provided inference is disabled for this team. Add a BYOK credential for this provider, or re-enable fallback in your AI Gateway settings.
+  ```
+
+  For a model that only Vercel-provided inference serves, the message starts with "This model is only available on Vercel-provided inference".
+
+- AI Gateway refuses requests that use gateway tools, such as [web search](/docs/ai-gateway/models-and-providers/web-search), with a `400` error, because those tools run on Vercel credentials.
+
+- `/v1/moderations` requires an OpenAI BYOK key.
+
+- AI Gateway refuses realtime models that only Vercel's provider keys serve.
+
+- `/v1/messages/count_tokens` returns a local estimate of the token count.
+
+- With [ZDR](#zero-data-retention-zdr) on, team-wide or per request, only BYOK keys marked ZDR-compliant can serve the request. Without one, the request fails.
+
+### Pricing without fallback
+
+Fallback to Vercel Keys is on by default, and BYOK requests have no fee while it's on. With the setting off, AI Gateway charges $0.20 per 1,000 BYOK requests.
+
+| Fallback to Vercel Keys | Fee for BYOK requests    |
+| ----------------------- | ------------------------ |
+| On (default)            | No additional cost       |
+| Off                     | $0.20 per 1,000 requests |
+
+AI Gateway charges the fee as follows:
+
+- While the setting is off, the fee applies to all inference requests that your BYOK credentials or private models serve, across all routes.
+- AI Gateway doesn't charge requests that fail, for example because of a provider error or rate limit.
+- AI Gateway deducts the fee from your AI Gateway Credits balance, and the fee counts toward your [budgets](/docs/ai-gateway/observability-and-spend/budgets), even when a budget excludes BYOK spend. Fees alone can exceed a budget, and AI Gateway then rejects your BYOK requests with a `402`.
+- The fee applies on every plan at list price. [Enterprise](/docs/plans/enterprise) teams can [contact sales](/contact/sales) for custom rates.
+- At list price, 1,000,000 requests that incur the fee cost $200. Your provider bills you directly for tokens, and AI Gateway adds no markup on them.
+
+To stop the fee, turn Fallback to Vercel Keys back on, and give private model requests a Vercel-provided fallback. For every AI Gateway fee, see [AI Gateway Pricing](/docs/ai-gateway/pricing#byok-without-fallback).
+
 ## Request-scoped BYOK
 
 In addition to configuring credentials in the dashboard, you can pass provider credentials on a per-request basis using the `byok` option in `providerOptions.gateway`. This is useful when you need to use different credentials for specific requests without changing your team-wide configuration.
 
-When request-scoped BYOK credentials are provided, AI Gateway doesn't consider any cached BYOK credentials configured in the dashboard for that request. Requests may still fall back to Vercel's provider keys if the provided credentials fail.
+When request-scoped BYOK credentials are provided, AI Gateway doesn't consider any cached BYOK credentials configured in the dashboard for that request. Requests may still fall back to Vercel's provider keys if the provided credentials fail, unless your team turned off [Fallback to Vercel Keys](#turn-off-fallback-to-vercel-keys).
 
 ### Request examples
 
@@ -533,7 +604,7 @@ If you have your own ZDR agreement with a provider, mark an individual BYOK key 
 
 Marking a key as ZDR-compliant makes it eligible for ZDR routing; it does not enable ZDR. ZDR is enforced only when team-wide ZDR is on or the request sets `zeroDataRetention: true`. Without team-wide or request-level ZDR enabled, normal routing and fallback apply. Marking a BYOK key as ZDR-compliant does not enforce ZDR for the request.
 
-ZDR also changes fallback. With ZDR enabled, a ZDR-marked BYOK key is tried first, and a failed request falls back only to Vercel's provider keys for providers with ZDR agreements. If none are available for the model, the request fails instead of routing through a non-ZDR provider.
+ZDR also changes fallback. With ZDR enabled, a ZDR-marked BYOK key is tried first, and a failed request falls back only to Vercel's provider keys for providers with ZDR agreements. If none are available for the model, the request fails instead of routing through a non-ZDR provider. With [Fallback to Vercel Keys](#turn-off-fallback-to-vercel-keys) off, a failed request doesn't fall back to Vercel's provider keys at all.
 
 > **💡 Note:** For the full behavior and configuration steps, see [ZDR and
 > BYOK](/docs/ai-gateway/security-and-compliance/zdr#byok).

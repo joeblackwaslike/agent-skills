@@ -16,8 +16,8 @@ summary: "Learn how filters allow you to explore insights about your website's v
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/analytics/filtering.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "65ebe469c8f6ae7cf2237d0bf4cbd7211e1a24dd7d00b1170fa5039771924209"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "5203b37565add7f57ed96d2e854e499cbbcc961272ab0ecfe0775c27419a4d28"
 ---
 
 # Filtering Analytics
@@ -37,12 +37,11 @@ to use it to answer specific questions.
 - [Hostname support in Web Analytics](https://vercel.com/changelog/hostname-support-in-web-analytics)
 - [Web Analytics now has route support](https://vercel.com/changelog/web-analytics-now-has-route-support)
 - [Filter Analytics traffic data](https://vercel.com/changelog/filter-analytics-traffic-data)
-- [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available)
+- [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [get_web_analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/get_web_analytics) — Use get_web_analytics with Vercel MCP.
 - [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views) — GET /v1/query/web-analytics/visits/aggregate — Counts pageviews on a project, within the requested date range. Results a
-- [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
 
 Full cross-link map for this page: [/docs/analytics/filtering.graph.md](/docs/analytics/filtering.graph.md)
 <!-- /docsgraph:related -->

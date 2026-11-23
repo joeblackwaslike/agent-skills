@@ -1,7 +1,7 @@
 ---
 source: "https://opencode.ai/docs/models/"
-fetched_at: "2026-11-16T12:32:19.624Z"
-sha256: "533ec23167b445fec082f5e24d7621d9977d01f0eabc35dc37868797c642bd17"
+fetched_at: "2026-11-23T14:15:43.627Z"
+sha256: "0325313a84aa50d57e1de0a9a9f1d8fb086f00a3a2738b79d418f50a1f423ef0"
 ---
 
 # Models
@@ -78,6 +78,8 @@ opencode service set env OPENCODE_DISABLE_FREE_MODELS 1
 Free means an `opencode` or `opencode-go` model with no input price. These models disappear from the catalog and defaults;
 explicitly selecting one fails with `Model unavailable`. Signed out, the `opencode` provider is absent until you connect
 an OpenCode Console account or set `OPENCODE_API_KEY`, which restores its paid models.
+
+To block free models for everyone in an organization, use a policy instead. See [Enterprise](/enterprise#block-free-models).
 
 ## Variants
 

@@ -17,8 +17,8 @@ summary: Learn how to optimize social media image generation through the Open Gr
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/og-image-generation.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "804a8dc078bcf9f0667019028ecdf5d87500ae1e41cc9c6fe3c0648fdbf78556"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "21fab3989d7097735102d5fdf37c7f20e07701a92dd3b668f202089a68345cc7"
 ---
 
 # Open Graph (OG) Image Generation
@@ -37,12 +37,12 @@ To assist with generating dynamic [Open Graph (OG)](https://ogp.me/ "Open Graph 
 - [Metadata and OG images](https://nextjs.org/docs/app/getting-started/metadata-and-og-images) — Learn how to add metadata to your pages and create dynamic OG images.
 - [Vercel Edge Functions are now generally available](https://vercel.com/blog/edge-functions-generally-available)
 - [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit)
-- [Images on the web](https://vercel.com/blog/images-on-the-web)
-- [Building a fast, animated image gallery with Next.js](https://vercel.com/blog/building-a-fast-animated-image-gallery-with-next-js)
 - [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image) — API Reference for the Open Graph Image and Twitter Image file conventions.
-- [Inspect and validate Open Graph metadata for enhanced link sharing](https://vercel.com/changelog/open-graph-link-sharing-inspector)
 - [Getting started with Image Optimization](https://vercel.com/docs/image-optimization/quickstart) — Learn how you can leverage Vercel Image Optimization in your projects.
 - [AI Gateway Image Generation with AI SDK](https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk) — Generate and edit images using AI models through Vercel AI Gateway with the AI SDK.
+- [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
+- [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
+- [Server Uploads with Vercel Blob](https://vercel.com/docs/vercel-blob/server-upload) — Learn how to upload files to Vercel Blob from server routes and Server Actions
 
 Full cross-link map for this page: [/docs/og-image-generation.graph.md](/docs/og-image-generation.graph.md)
 <!-- /docsgraph:related -->

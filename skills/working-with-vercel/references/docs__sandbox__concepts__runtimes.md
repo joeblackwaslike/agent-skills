@@ -10,14 +10,14 @@ prerequisites:
   - /docs/sandbox
 related:
   - /docs/sandbox/concepts/images
-  - /docs/sandbox/working-with-sandbox
+  - /docs/sandbox/examples/install-system-packages
   - /docs/sandbox/concepts/firewall
 summary: Detailed specifications for the Vercel Sandbox environment.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/concepts/runtimes.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "eebac43a25fc98d2f7a4f4549a142f3cb3fa509757074773e5408fb4f9ce1785"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "f63a9f84f02c9a2ed83fcd9a521d344dae2a9b63c8209c244136d0b02b7ef7f9"
 ---
 
 # Runtimes
@@ -32,13 +32,12 @@ Vercel Sandbox provides a secure, isolated environment for running your code. Th
 
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
 - [Build an agent with OpenAI Agents API on Vercel](https://vercel.com/kb/guide/openai-agents-api-vercel) — Build and deploy an agent with OpenAI Agents API, Vercel Functions, Queues, and Sandbox for isolated code execution.
-- [Vercel Sandbox now runs on Vercel Managed Images](https://vercel.com/changelog/vercel-sandbox-managed-images)
 - [Run Docker containers inside Vercel Sandbox](https://vercel.com/changelog/run-docker-containers-inside-vercel-sandbox)
-- [A sandbox without a network boundary is only half a sandbox](https://vercel.com/blog/a-sandbox-without-a-network-boundary-is-only-half-a-sandbox)
-- [Vercel Sandboxes are now generally available](https://vercel.com/changelog/vercel-sandboxes-ga)
+- [Sandbox security model](https://vercel.com/docs/sandbox/concepts/security) — Understand the Vercel Sandbox security model: microVM isolation, hardware side channels, resource limits, network access
+- [Running commands in a Vercel Sandbox](https://vercel.com/docs/sandbox/examples/run-commands-in-sandbox) — Create isolated sandbox environments to run builds, tests, and commands safely.
+- [Sandbox Examples](https://vercel.com/docs/sandbox/examples) — Task-oriented examples for common Vercel Sandbox operations in TypeScript, Python, and the Sandbox CLI.
+- [Vercel Sandbox SDK](https://vercel.com/docs/sandbox/sdk) — Use the Vercel Sandbox SDK for JavaScript, TypeScript, and Python, or the Sandbox CLI, to create and manage isolated Lin
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
-- [Delete a sandbox](https://vercel.com/docs/rest-api/sandboxes/delete-a-sandbox) — DELETE /v2/sandboxes/{name} — Deletes a sandbox by name. If sandboxes are currently running, they will be stopped first.
-- [Hermes](https://vercel.com/docs/sandbox/ecosystem/hermes) — Run Hermes Agent terminal commands in isolated Vercel Sandbox microVMs, with models served through Vercel AI Gateway.
 
 Full cross-link map for this page: [/docs/sandbox/concepts/runtimes.graph.md](/docs/sandbox/concepts/runtimes.graph.md)
 <!-- /docsgraph:related -->
@@ -85,7 +84,7 @@ The base system for legacy runtimes is Amazon Linux 2023 with the following addi
 - `whois`
 - `zstd`
 
-In legacy runtimes, you can install additional packages using `dnf`. Managed images use their own package managers instead, such as `apt-get` on the Ubuntu-based images. See [Install system packages](/docs/sandbox/working-with-sandbox#install-system-packages) for examples.
+In legacy runtimes, you can install additional packages using `dnf`. Managed images use their own package managers instead, such as `apt-get` on the Ubuntu-based images. See [Install system packages](/docs/sandbox/examples/install-system-packages) for examples.
 
 You can find the [list of available packages](https://docs.aws.amazon.com/linux/al2023/release-notes/all-packages-AL2023.7.html) on the Amazon Linux documentation.
 

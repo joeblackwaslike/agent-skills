@@ -17,8 +17,8 @@ summary: API reference for @vercel/connect, the TypeScript SDK for requesting ru
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/connect/ts-sdk-reference.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "dd45450e66013162063fa4b6b0df8e4dd6e0158870d18212bd3d5c3a67fbeea4"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "c8e20745c74899a59d1b8cfd10ce8e37f2db85a488a57ada17235fab99703e49"
 ---
 
 # TypeScript SDK Reference
@@ -41,8 +41,8 @@ sha256: "dd45450e66013162063fa4b6b0df8e4dd6e0158870d18212bd3d5c3a67fbeea4"
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
 - [MCP Events](https://ai-sdk.dev/docs/reference/ai-sdk-core/mcp-events) — Reference for experimental MCP event methods, the webhook handler, and subscription and storage types.
 - [experimental_useRealtime](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-realtime) — API reference for the experimental_useRealtime hook.
-- [Connections](https://eve.dev/docs/connections) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
 - [MCP Events support in Vercel Connect is now in public beta](https://vercel.com/changelog/mcp-events-support-in-vercel-connect-is-now-in-public-beta)
+- [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
 
 Full cross-link map for this page: [/docs/connect/ts-sdk-reference.graph.md](/docs/connect/ts-sdk-reference.graph.md)
 <!-- /docsgraph:related -->

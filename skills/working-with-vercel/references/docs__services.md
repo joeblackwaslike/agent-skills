@@ -17,8 +17,8 @@ summary: Deploy multiple backends and frontends within a single Vercel project u
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/services.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "f9e5f651a070f9beee0dd7e51595fadf7d976f6b5db38a06ac04c817c4bab43a"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "9c68c7c49deb9226be923e88d17f77b0746e62374d7c378de86ecbb50bee9437"
 ---
 
 # Services
@@ -35,9 +35,8 @@ replacing the need to split monorepos into separate Vercel projects.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Services: Run full stack on Vercel](https://vercel.com/blog/vercel-services-run-full-stack-on-vercel)
-- [Run multiple frameworks in one project with Vercel Services](https://vercel.com/changelog/run-multiple-frameworks-in-one-project-with-vercel-services)
 - [Full-stack previews on Vercel](https://vercel.com/kb/guide/full-stack-preview-deployments-on-vercel) — Learn how to use full-stack previews for your Vercel projects. Deploy Next.js, FastAPI, and a containerized Go service t
-- [How Vercel Services run on Fluid compute](https://vercel.com/kb/guide/vercel-services-fluid-compute) — The backends in a Vercel Services project run as Vercel Functions on Fluid compute by default. Learn how optimized concu
+- [Run multiple frameworks in one project with Vercel Services](https://vercel.com/changelog/run-multiple-frameworks-in-one-project-with-vercel-services)
 - [Nuxt](https://eve.dev/docs/guides/frontend/nuxt) — Run an eve agent and a Nuxt app as one project with the eve/nuxt module.
 - [SvelteKit](https://eve.dev/docs/guides/frontend/sveltekit) — Run an eve agent and a SvelteKit app as one project with the eveSvelteKit Vite plugin.
 - [TanStack Start](https://eve.dev/docs/guides/frontend/tanstack) — Run an eve agent and a TanStack Start app as one project with the eveTanStack Vite plugin.
@@ -46,6 +45,7 @@ replacing the need to split monorepos into separate Vercel projects.
 - [Python on Vercel is now generally available](https://vercel.com/changelog/python-on-vercel-is-now-generally-available)
 - [Vercel Daemons can now call services with bindings](https://vercel.com/changelog/vercel-daemons-can-now-call-services-with-bindings)
 - [Build Claude Managed Agents with Vercel Services](https://vercel.com/kb/guide/claude-managed-agents-vercel-services) — Deploy Claude Managed Agents with Vercel Services to run a streaming research analyst in a browser chat, using Anthropic
+- [Deploy Go apps on Vercel using Docker](https://vercel.com/kb/guide/deploy-go-using-docker-vercel) — Deploy an existing Dockerized Go app to Vercel using Memos as a real-world example, with Neon Postgres for durable data.
 
 Full cross-link map for this page: [/docs/services.graph.md](/docs/services.graph.md)
 <!-- /docsgraph:related -->

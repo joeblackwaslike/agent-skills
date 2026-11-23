@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/02-usage/020_running.md"
-fetched_at: "2026-07-20T06:52:31.491Z"
-sha256: "a9598a2baeda92fcd0e050a848261b2c6a209a5e11f289bd1fefc658d0ee06fa"
+fetched_at: "2026-11-23T14:15:48.900Z"
+sha256: "748841f0fc680912b0e5632769da6d5381c3e906e50b3ed704d55121c7a71998"
 ---
 
 # Running Serena
@@ -210,7 +210,13 @@ If, however, the synchronisation is fast enough for you, this is still a good op
    cd serena
    ```
 
-2. Run Serena via
+2. Create the virtual environment and install dependencies using Python 3.13.
+
+   ```shell
+   uv sync -p 3.13
+   ```
+
+3. Run Serena via
 
    ```shell
    uv run serena 

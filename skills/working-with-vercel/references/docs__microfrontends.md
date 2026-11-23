@@ -17,8 +17,8 @@ summary: Learn how to use microfrontends on Vercel to split apart large applicat
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/microfrontends.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "6459cc3659f1c7461df0be5deb7f679aa74a5a320bde36db60a1db9d74d404a5"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "fdd2117cc71ef779f892e3a1f54bc55c5a7ae1014921f423fcb6a0ce072e04cd"
 ---
 
 # Microfrontends
@@ -83,6 +83,8 @@ Choose the layout that fits how your teams already work. For the setup steps in 
 - [Test your microfrontends locally](/docs/microfrontends/local-development) before merging the code to preview and production
 
 To make the most of your microfrontend experience, [install the Vercel Toolbar](/docs/vercel-toolbar/in-production-and-localhost).
+
+If you're planning microfrontends for a large organization, [contact our sales team](/contact/sales) to discuss your setup.
 
 ## Managing microfrontends
 

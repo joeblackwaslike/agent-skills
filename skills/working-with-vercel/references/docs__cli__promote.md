@@ -14,8 +14,8 @@ summary: Learn how to promote an existing deployment using the vercel promote CL
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/promote.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "3a335c86d4c286a5573a76750746a636ee8f0da26ef63ec184c3d8f50c26d8f5"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "279ebb4bbe2b9379c5e81240ec0d57e2f493be82dce9b7b32fb616dcb604631c"
 ---
 
 # vercel promote
@@ -28,6 +28,8 @@ The `vercel promote` command is used to promote an existing deployment to be the
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to keep your storefront running through Black Friday](https://vercel.com/kb/guide/black-friday-reliability) — Learn how to tune alerts, bot rules, and spend limits. Rehearse rollback so your team can recover quickly from checkout
+- [How to stop traffic to an old deployment on Vercel](https://vercel.com/kb/guide/how-to-stop-traffic-to-an-old-deployment-on-vercel) — Move production traffic to the new deployment, restrict access to the old deployment, and check remaining function activ
 - [New deployment promotion event](https://vercel.com/changelog/new-webhook-for-promotion-events)
 - [Promoting a preview deployment to production](https://vercel.com/docs/deployments/promote-preview-to-production) — Test a preview deployment and promote it to production using the CLI.
 - [Promoting Deployments](https://vercel.com/docs/deployments/promoting-a-deployment) — Learn how to promote deployments to production on Vercel.

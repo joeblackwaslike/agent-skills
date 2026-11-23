@@ -17,8 +17,8 @@ summary: Use Vercel Agent to investigate production issues, review code, and tak
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "9f760218e4c4efa23f5c9586d30cd978c7ea04f54a270aa119f4569c9e6f9052"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "4edde059771790fa7de4ecfaa4ce6fa3f0547e6aa1bf0de2efcd7ecda15fcdf4"
 ---
 
 # Vercel Agent
@@ -39,11 +39,11 @@ Vercel Agent is an AI assistant built into Vercel. Use it to understand your pro
 - [Automatic build fix suggestions with Vercel Agent](https://vercel.com/changelog/automatic-build-fix-suggestions-with-vercel-agent)
 - [Native Deployment Checks are now available](https://vercel.com/changelog/native-deployment-checks)
 - [On-demand Vercel Agent code reviews](https://vercel.com/changelog/on-demand-vercel-agent-code-reviews)
+- [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation) — Set baselines and cut backend load. Make your catalog readable to agents and keep orders and AI features reliable. Then
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, container image functions, security defaults,
-- [Vercel vs Railway](https://vercel.com/kb/guide/vercel-vs-railway) — A detailed guide to Vercel vs Railway: serverless vs always-on containers, container images from a Dockerfile, framework
 - [Introducing Vercel Security Review](https://vercel.com/blog/vercel-security-review)
 
 Full cross-link map for this page: [/docs/agent.graph.md](/docs/agent.graph.md)
@@ -67,7 +67,7 @@ Learn more in the [Chat overview](/docs/agent/chat).
 
 ### Code Review
 
-Get Sandbox-validated suggestions on your pull requests. Code Review can identify security vulnerabilities, logic errors, and performance issues, then validate proposed fixes with your builds, tests, and linters.
+Review GitHub pull requests for security vulnerabilities, logic errors, and performance issues. Code Review inspects your repository in a secure sandbox and prepares suggested fixes.
 
 Learn more in the [Code Review docs](/docs/agent/pr-review).
 
@@ -91,7 +91,7 @@ Learn more in the [Installation docs](/docs/agent/installation).
 
 ## Approved actions
 
-Vercel Agent is read-only by default. When a task requires write access, it presents a scoped plan and waits for your approval. With your approval, Vercel Agent can make changes directly or open a pull request, depending on the task.
+Vercel Agent is read-only by default. When a task requires changes to Vercel resources, it presents a scoped plan and waits for your approval, with one exception described in [Vercel Agent permissions](/docs/agent/chat/permissions#authorization-levels). In [Chat](/docs/agent/chat), GitHub pull requests need no plan approval. Vercel Agent is designed to create or update a pull request only when you ask for a fix or a pull request, or accept its offer to open one.
 
 Learn more about [Vercel Agent Permissions](/docs/agent/chat/permissions) and [GitHub Operations](/docs/agent/chat/github).
 

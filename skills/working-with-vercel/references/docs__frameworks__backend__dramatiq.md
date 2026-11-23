@@ -18,8 +18,8 @@ summary: Deploy Dramatiq workers on Vercel. Learn how Dramatiq actors use Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/backend/dramatiq.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "fc956cab5a56f60aed252bd6fa0c5ced6293fdd9a9eefba79b56a18369ba50e5"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "23f93aa2e007d433b65275146b69858ad35fc242311093e0ab41e4294dda4f03"
 ---
 
 # Deploy Dramatiq workers on Vercel
@@ -41,8 +41,7 @@ them in the background.
 - [Migrate a Python API from Heroku to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-heroku-to-vercel) — Move a FastAPI, Flask, or Django API from Heroku to Vercel Functions. Replace your Procfile, worker dynos, Heroku Schedu
 - [Migrate a Python API from Railway to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-railway-to-vercel) — Move a FastAPI, Flask, or Django API from Railway to Vercel Functions. Replace railway.json start commands, volumes, Cel
 - [Migrate a Python API from Render to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-render-to-vercel) — Move a FastAPI, Flask, or Django API from Render to Vercel Functions. Translate render.yaml and replace persistent disks
-- [Run background tasks with Celery on Vercel](https://vercel.com/changelog/run-background-tasks-with-celery-on-vercel)
-- [Vercel Daemons is now in public beta](https://vercel.com/changelog/vercel-daemons-is-now-in-public-beta)
+- [Background Workers on Vercel](https://vercel.com/docs/background-workers) — Run background jobs on Vercel, from continuous workers with Daemons to queued tasks, scheduled jobs, and durable workflo
 
 Full cross-link map for this page: [/docs/frameworks/backend/dramatiq.graph.md](/docs/frameworks/backend/dramatiq.graph.md)
 <!-- /docsgraph:related -->

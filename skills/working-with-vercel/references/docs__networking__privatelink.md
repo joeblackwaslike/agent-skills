@@ -17,8 +17,8 @@ summary: Connect Vercel deployments to AWS-hosted backends through AWS PrivateLi
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/networking/privatelink.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "1fe354317d8008b92773f39e69dfe36108618f21ac8a69460ac7bc376d2035a4"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "1a68bb3159d19c2b8a01c01954f38e4143708e5fc9453739ae6a5ce006909b72"
 ---
 
 # AWS PrivateLink
@@ -34,12 +34,11 @@ With PrivateLink, you can connect your Vercel deployments to AWS-hosted backend 
 - [AWS PrivateLink is now available on Pro and Enterprise](https://vercel.com/changelog/aws-privatelink-is-now-available-on-pro-and-enterprise)
 - [How to choose the right Vercel networking option](https://vercel.com/kb/guide/how-to-choose-the-right-vercel-networking-option) — Decide whether your project needs a networking option at all, then choose between Static IPs, AWS PrivateLink, Secure Co
 - [Private enterprise agents on Vercel](https://vercel.com/kb/guide/private-enterprise-agents-vercel) — Design private enterprise agents that call internal APIs and databases with Vercel Functions, Secure Compute, AI Gateway
-- [Can I use Vercel to deploy to a private cloud?](https://vercel.com/kb/guide/can-i-use-vercel-to-deploy-to-a-private-cloud) — Learn about if it's possible to deploy to a private cloud with Vercel.
+- [List PrivateLink endpoints](https://vercel.com/docs/rest-api/networking/list-privatelink-endpoints) — GET /v1/networking/privatelink/endpoints — Lists all PrivateLink endpoints for a project.
+- [Read a PrivateLink endpoint](https://vercel.com/docs/rest-api/networking/read-a-privatelink-endpoint) — GET /v1/networking/privatelink/endpoints/{endpointId} — Reads a single PrivateLink endpoint.
+- [Create a PrivateLink endpoint](https://vercel.com/docs/rest-api/networking/create-a-privatelink-endpoint) — POST /v1/networking/privatelink/endpoints — Creates a PrivateLink endpoint for a project. Changes to endpoints of the sa
 - [Connecting an AWS Account for BYOC](https://vercel.com/docs/networking/bring-your-own-cloud/connect-aws-account) — Connect an AWS account to your Vercel team so Bring Your Own Cloud \\(BYOC\\) can invoke Lambda functions in your account.
 - [Using Vercel with Microsoft Azure](https://vercel.com/docs/integrations/external-platforms/azure) — Run your frontend on Vercel alongside backends hosted in Microsoft Azure, with private network connectivity, keyless aut
-- [Connect to Amazon Web Services \\(AWS\\)](https://vercel.com/docs/oidc/aws) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
-- [vercel link](https://vercel.com/docs/cli/link) — Learn how to link a local directory to a Vercel Project using the vercel link CLI command.
-- [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 
 Full cross-link map for this page: [/docs/networking/privatelink.graph.md](/docs/networking/privatelink.graph.md)
 <!-- /docsgraph:related -->

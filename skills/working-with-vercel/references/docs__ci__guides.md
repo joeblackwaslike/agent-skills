@@ -17,8 +17,8 @@ summary: Follow complete examples of common Vercel CI workflows, from end-to-end
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ci/guides.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "96da6b7cdcb75351c9fefa9534e136ebe524c1ad8977624752ffdaa2b84d7b7f"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "a59383a144e28d4e2d74fcc8daaaff8a026ca7939ea955b67d2e483048f825a6"
 ---
 
 # Vercel CI Guides
@@ -31,12 +31,10 @@ These guides walk you through complete Vercel CI setups that you can copy into y
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How can I run end-to-end tests after my Vercel Preview Deployment?](https://vercel.com/kb/guide/how-can-i-run-end-to-end-tests-after-my-vercel-preview-deployment) — Learn how to use the Vercel CLI in combination with your CI/CD provider to run end-to-end tests for every code change.
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
-- [How can I use CircleCI with Vercel?](https://vercel.com/kb/guide/how-can-i-use-circleci-with-vercel) — Learn how to use CircleCI to deploy to Vercel with custom CI/CD.
+- [Vercel CI is now in beta](https://vercel.com/changelog/vercel-ci-is-now-in-beta)
 - [vercel ci](https://vercel.com/docs/cli/ci) — Enable or disable Vercel CI for repositories, inspect runs, search logs, and rerun jobs from the command line.
-- [Get Vercel CI settings for a connected repository](https://vercel.com/docs/rest-api/vercel-ci/get-vercel-ci-settings-for-a-connected-repository) — GET /v1/vercel-ci/repository-settings — Get Repository Settings
 - [Enable or disable Vercel CI for a connected repository](https://vercel.com/docs/rest-api/vercel-ci/enable-or-disable-vercel-ci-for-a-connected-repository) — PATCH /v1/vercel-ci/repository-settings — Update Repository Settings
+- [Get Vercel CI settings for a connected repository](https://vercel.com/docs/rest-api/vercel-ci/get-vercel-ci-settings-for-a-connected-repository) — GET /v1/vercel-ci/repository-settings — Get Repository Settings
 - [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
 - [List Vercel CI branch suggestions for a team](https://vercel.com/docs/rest-api/vercel-ci/list-vercel-ci-branch-suggestions-for-a-team) — GET /v2/vercel-ci/branches — List branches
 

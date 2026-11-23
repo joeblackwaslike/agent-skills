@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/tools/shell.md"
-fetched_at: "2026-06-15T05:55:14.234Z"
-sha256: "7e9649ff91274b23cc05c0af8e4aec31f2d832439d448e61e5b47f964c2de5dd"
+fetched_at: "2026-11-23T14:13:22.579Z"
+sha256: "21fd8bb33ccbdb7ea149f4aa53505df343fce8a07eaf1cd7edccafc32d9d70e9"
 ---
 
 # Shell tool (`run_shell_command`)
@@ -32,7 +32,8 @@ fields for writing rules that target shell commands:
 
 - `commandPrefix`: Matches if the `command` argument starts with a given string.
 - `commandRegex`: Matches if the `command` argument matches a given regular
-  expression.
+  expression. Patterns use RE2 syntax, which is described in
+  [Arguments pattern](../reference/policy-engine.md#arguments-pattern).
 
 These are syntactic sugar for combining `toolName = "run_shell_command"` with an
 `argsPattern` in a policy TOML file. They are **not** arguments of

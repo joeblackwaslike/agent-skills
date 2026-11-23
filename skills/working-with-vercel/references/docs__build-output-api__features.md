@@ -17,8 +17,8 @@ summary: Learn how to implement common Vercel platform features through the Buil
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/build-output-api/features.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "cad900e3c0807ef063affcb1a10c96e7d8afab985235f6da42516274d3782a1f"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "ab5f41fb7122f45db89e8da4ecc9db29f9bc79497f438cec8cdfd7032a4bc1b6"
 ---
 
 # Features
@@ -34,9 +34,9 @@ helper functions.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
+- [Routing](https://vercel.com/docs/routing) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
 - [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
 - [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
-- [Routing](https://vercel.com/docs/routing) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
 - [Advanced Node.js Usage](https://vercel.com/docs/functions/runtimes/node-js/advanced-node-configuration) — Learn about advanced configurations for Vercel functions on Vercel.
 
 Full cross-link map for this page: [/docs/build-output-api/features.graph.md](/docs/build-output-api/features.graph.md)

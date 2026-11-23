@@ -18,8 +18,8 @@ summary: Learn how to use the Node.js runtime to create Vercel Functions in Java
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/runtimes/node-js.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "4a67618e8582c72dc26e527415e64902b1f9f2cde5ecf4be8fcd9a34d1594d6b"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "afc35d52b381f510380f31592f61538374e8fb13acf47d2362d3eeb2195c2784"
 ---
 
 # Using the Node.js Runtime with Vercel Functions
@@ -203,6 +203,8 @@ try {
 
 *Catching the error thrown by \`request.body\` with
 \`try...catch\`.*
+
+The `request.body` helper returns the parsed body. If you need the unparsed body, for example to verify a webhook signature, write your function with the web-standard `Request` signature and [read the raw request body](/docs/functions/functions-api-reference#read-the-raw-request-body).
 
 ### Cancelled Requests
 

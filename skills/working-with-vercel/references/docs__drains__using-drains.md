@@ -17,8 +17,8 @@ summary: Learn how to configure drains to forward observability data to custom H
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/drains/using-drains.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "e52ad13bc64e8296a68661d91746042c0a4d35229a7040d3f128006af0aa0e7d"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "90742c9c84e8afd9a722d8f6f2d49d2e6ea5e2578ab4077717ba0801fd5e7755"
 ---
 
 # Using Drains
@@ -38,8 +38,8 @@ You can add drains to your project by following the configuration steps below. W
 - [vercel drains](https://vercel.com/docs/cli/drains) — List, inspect, create, update, pause, resume, and delete Vercel Drains from your terminal.
 - [Migrating from Custom SIEM Log Streaming to Audit Log Drains](https://vercel.com/docs/audit-log/migrating-to-drains) — Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event
 - [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
-- [Creates a new Integration Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-new-integration-log-drain-deprecated) — POST /v2/integrations/log-drains — Creates an Integration log drain. This endpoint must be called with an OAuth2 client
 - [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
+- [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby) — Learn about the Hobby plan and how it compares to the Pro plan.
 
 Full cross-link map for this page: [/docs/drains/using-drains.graph.md](/docs/drains/using-drains.graph.md)
 <!-- /docsgraph:related -->

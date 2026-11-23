@@ -4,8 +4,8 @@ description: Registry for managing multiple providers and models (API Reference)
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/provider-registry"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/provider-registry.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "43090cf8f97ba17083a112ebe7c31509d3ee8530670e25e172c8ca8eed1cb9f1"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "b1a1371104e9954b1c000896a609d7f9c9886790fb736c88441a5588f43dc30f"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -182,6 +182,20 @@ added to the stable `ProviderV4` contract. Direct decision string IDs default
 to Gateway when no default provider is configured.
 See [Decisions](/docs/ai-sdk-core/decisions#model-aliases-and-registries)
 for runnable usage patterns.
+
+## Experimental extraction models
+
+The inferred return type also exposes `extractionModel('providerId:modelId')`,
+returning `Experimental_ExtractionModelV4`. The provider must expose an
+`extractionModel` factory. Custom separators and model ID inference work as they
+do for decision models, and middleware does not wrap extraction models. Use the
+inferred return type or `Experimental_ExtractionProviderRegistry`, which also
+includes decision access, to retain experimental extraction access.
+
+Unavailable extraction capabilities or models throw `NoSuchModelError` with
+`modelType: 'extractionModel'`; unknown registry providers throw
+`NoSuchProviderError`. See
+[Extractions](/docs/ai-sdk-core/extractions#model-aliases-and-registries).
 
 ---
 

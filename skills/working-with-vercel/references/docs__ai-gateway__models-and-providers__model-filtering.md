@@ -18,8 +18,8 @@ summary: Restrict AI Gateway routing to models that have specific capabilities u
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/model-filtering.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "91725862724ed3c311439279eea97d7ac365acc731feef0b00dc2003beb4a4f6"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "95f7e1a20bc345a7a9c22f2afd7106a60ebc84bbfed9fa4a24dc79fdd6515d62"
 ---
 
 # AI Gateway Model Filtering
@@ -36,8 +36,8 @@ sha256: "91725862724ed3c311439279eea97d7ac365acc731feef0b00dc2003beb4a4f6"
 - [AI Gateway Model Fallbacks](https://vercel.com/docs/ai-gateway/models-and-providers/model-fallbacks) — Configure AI Gateway model fallbacks to try backup models when the primary model is unavailable. Set fallback order and
 - [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
 - [AI Gateway Disallow Prompt Training](https://vercel.com/docs/ai-gateway/security-and-compliance/disallow-prompt-training) — Learn how to prevent AI providers from using your prompts and responses for model training through AI Gateway.
-- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, caching, SDK and API compati
 - [AI Gateway Model Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist) — Restrict which AI models your team can use through AI Gateway. Available on Pro and Enterprise.
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, caching, SDK and API compati
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/model-filtering.graph.md](/docs/ai-gateway/models-and-providers/model-filtering.graph.md)
 <!-- /docsgraph:related -->

@@ -15,8 +15,8 @@ summary: Manage microfrontends groups from the CLI. Learn how to create groups, 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/microfrontends.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "2f301b0a2013d0c023449d0e7a6071eae17abed9820f691d3277ca5f418cc6ea"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "fee995df35a75ffbff4a57b8ae6aa0ba8230c0cc22f7c3fd61e52cfcee2fe647"
 ---
 
 # vercel microfrontends
@@ -33,8 +33,8 @@ The `vercel microfrontends` command provides utilities for managing Vercel Micro
 - [Managing microfrontends](https://vercel.com/docs/microfrontends/managing-microfrontends) — Learn how to manage your microfrontends on Vercel.
 - [Create a microfrontends group with applications](https://vercel.com/docs/rest-api/microfrontends/create-a-microfrontends-group-with-applications) — POST /v1/microfrontends/group — Creates a microfrontends group and attaches multiple projects in a single request.
 - [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart) — Learn how to get started with microfrontends on Vercel.
-- [Microfrontends Configuration](https://vercel.com/docs/microfrontends/configuration) — Configure your microfrontends.json.
 - [Microfrontends](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends) — Vercel MCP tools for microfrontends.
+- [Microfrontends Configuration](https://vercel.com/docs/microfrontends/configuration) — Configure your microfrontends.json.
 
 Full cross-link map for this page: [/docs/cli/microfrontends.graph.md](/docs/cli/microfrontends.graph.md)
 <!-- /docsgraph:related -->

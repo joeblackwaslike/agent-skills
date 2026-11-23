@@ -17,8 +17,8 @@ summary: A project is where you deploy and operate frontend apps, APIs, backends
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/projects.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "00154abb87931bfdbe536bd534c439d85015e3f956cff0085a0e4d84e4b801c6"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "02b2743421babbdf51cc240c5c5c7d2405d580ae8eedab9aa1e45a14c1ff900d"
 ---
 
 # Projects overview
@@ -37,8 +37,8 @@ Everything you deploy on Vercel lives in a project: a frontend, backend APIs, ba
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
 - [Multi-Project Platforms Concepts](https://vercel.com/docs/platforms/multi-project-platforms/concepts) — Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
 - [Multi-Project Platforms Reference](https://vercel.com/docs/platforms/multi-project-platforms/reference) — API reference, error codes, troubleshooting, and FAQ for multi-project platforms on Vercel.
-- [Project Configuration](https://vercel.com/docs/project-configuration) — Learn how to configure your Vercel projects using vercel.json, vercel.toml, vercel.ts, or the dashboard to control build
-- [Builds](https://vercel.com/docs/builds) — Understand how the build step works when creating a Vercel Deployment.
+- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Integrating Vercel and Kubernetes](https://vercel.com/docs/integrations/external-platforms/kubernetes) — Deploy your frontend on Vercel alongside your existing Kubernetes infrastructure.
 
 Full cross-link map for this page: [/docs/projects.graph.md](/docs/projects.graph.md)

@@ -13,8 +13,8 @@ summary: Configure shared npm credentials so Vercel Agent can install private de
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent/private-dependencies.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "4cdd11097babf60fff38ae401573f0ced144096c52ea369d16f425eacce5dd7f"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "bea3c743a5835b59d7b4dce608f0125212975cdb57545edb4ab6d938bc41c40c"
 ---
 
 # Private Dependencies
@@ -28,16 +28,14 @@ Vercel Agent installs private npm packages using your repository's existing pack
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Agent now installs private packages from npm and custom registries](https://vercel.com/changelog/vercel-agent-now-installs-private-packages-from-npm-and-custom-registries)
-- [How do I use private dependencies with Vercel?](https://vercel.com/kb/guide/using-private-dependencies-with-vercel) — Information on how to use private dependencies with a Vercel deployment.
 - [Private Dependencies](https://v0.app/docs/private-dependencies) — Install private npm packages in v0 by configuring NPM_TOKEN or NPM_RC as environment variables.
-- [Dependencies from package.json are missing after install](https://vercel.com/kb/guide/dependencies-from-package-json-missing-after-install) — Understand why dependencies may not being installed during a build and how to fix.
-- [Vercel Sandbox now supports managed npm credentials](https://vercel.com/changelog/vercel-sandbox-now-supports-managed-npm-credentials)
 - [v0 now reads npm credentials from shared environment variables](https://vercel.com/changelog/v0-now-reads-npm-credentials-from-shared-environment-variables)
-- [npm Credentials](https://vercel.com/docs/sandbox/credentials/npm) — Install your team's private npm packages in Vercel Sandbox with no setup.
+- [Vercel Sandbox now supports managed npm credentials](https://vercel.com/changelog/vercel-sandbox-now-supports-managed-npm-credentials)
+- [Sandbox Credentials](https://vercel.com/docs/sandbox/concepts/credentials) — Give Vercel Sandbox access to your team's private services with credentials Vercel sets up for you.
 - [Vercel CI Environment Variables](https://vercel.com/docs/ci/environment-variables) — Manage environment variables and secrets for Vercel CI runs.
 - [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
-- [Advanced Node.js Usage](https://vercel.com/docs/functions/runtimes/node-js/advanced-node-configuration) — Learn about advanced configurations for Vercel functions on Vercel.
 - [Package Managers](https://vercel.com/docs/package-managers) — Discover the package managers supported by Vercel for dependency management. Learn how Vercel detects and uses npm, Yarn
+- [Advanced Node.js Usage](https://vercel.com/docs/functions/runtimes/node-js/advanced-node-configuration) — Learn about advanced configurations for Vercel functions on Vercel.
 
 Full cross-link map for this page: [/docs/agent/private-dependencies.graph.md](/docs/agent/private-dependencies.graph.md)
 <!-- /docsgraph:related -->

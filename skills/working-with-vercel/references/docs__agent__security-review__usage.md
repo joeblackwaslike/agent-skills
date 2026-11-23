@@ -18,8 +18,8 @@ summary: "Triage findings, fix them with Vercel Agent, and give reviews the cont
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent/security-review/usage.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "955cb38d587548f8e6b4ac657518c600d9a8c918cdb31d20ae1033e87ca14ff6"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "78a81cddee9c73ad754e18877c4d11246b813aa0c77e44490af7f40d5fa778d8"
 ---
 
 # Managing Security Reviews
@@ -32,17 +32,16 @@ To shape what future reviews look for, write a [security policy](#set-a-security
 
 ## Triage findings
 
-The list shows open findings by default. You can search it, and filter by status, severity, environment, and branch. Each project also has its own Vulnerabilities page. Findings from [repository reviews](/docs/agent/security-review#projects-and-repositories) appear under their repository in the team's dashboard. You can also list, inspect, dismiss, and reopen findings from the terminal with [`vercel security vulnerabilities`](/docs/cli/security#vulnerabilities).
+The list shows open findings by default. You can search it, and filter by status, severity, environment, and branch. Each project also has its own Vulnerabilities page. Findings from [repository reviews](/docs/agent/security-review#projects-and-repositories) appear under their repository in the team's dashboard. You can also list, inspect, close, and reopen findings from the terminal with [`vercel security vulnerabilities`](/docs/cli/security#vulnerabilities).
 
 Click a finding to open its detail page, which shows the project, environment, branch, commit, and the deployments where the finding was first seen and closed. **Summary**, **Details**, and **Suggested Fix** explain the issue, and you can copy the whole finding as Markdown or JSON.
 
 Severity is one of **Critical**, **High**, **Medium**, or **Low**. Severity ratings are AI-generated estimates rather than scores against a fixed rubric, so review each finding against your own application.
 
-A finding stays open until you fix or dismiss it:
+A finding is either open or closed:
 
-- **Open**: Security Review reported the finding, and nobody has fixed or dismissed it.
-- **Dismissed**: You decided the finding doesn't need a fix.
-- **Closed**: A later review no longer detects the issue. Vercel sets this itself, and it doesn't confirm that the issue is fixed.
+- **Open**: Security Review reported the finding, and nobody has closed it.
+- **Closed**: A team member closed the finding with a reason, or a later review no longer detects the issue and Vercel Security Review closed it. A closed finding's **Closed by** section shows who closed it, when, and why. When Vercel Security Review closes a finding, it doesn't confirm that the issue is fixed.
 
 ## Fix a finding with Vercel Agent
 
@@ -57,19 +56,31 @@ Vercel Agent opens the pull request against the branch the finding is on, and no
 
 When the merged change deploys, the next review checks whether the issue still appears and closes the finding if it doesn't.
 
-## Dismiss or reopen a finding
+## Close or reopen a finding
 
-Dismiss a finding when it isn't exploitable in your application, when it's an accepted risk, or when it's a false positive.
+Close a finding when you've fixed it, when it's a false positive, or when you accept the risk and won't fix it:
 
 1. In the Vulnerabilities dashboard, click the finding.
-2. Click **Dismiss Vulnerability**.
-3. Confirm in the dialog.
+2. Click **Close Vulnerability**.
+3. Choose a **Reason**:
+   - **Resolved**: You fixed the vulnerability.
+   - **False Positive**: The finding is incorrect or doesn't apply to your code.
+   - **Accepted Risk**: The finding is valid, but you're choosing not to fix it.
+4. Optionally, add a comment of up to 500 characters, then click **Close Vulnerability**.
 
-Dismissed findings stay in the dashboard so you can review them later. To reopen one, filter by **Dismissed**, click the finding, and click **Reopen Vulnerability**. It returns to open, and the next review treats it like any other open finding.
+Closed findings stay in the dashboard so you can review them later. To reopen one, filter by **Closed**, click the finding, and click **Reopen Vulnerability**. You can reopen any closed finding, including one that Vercel Security Review closed. It returns to open, and the next review treats it like any other open finding.
 
 ## Track findings in your audit log
 
-When Security Review reports a new vulnerability, Vercel records a `vercel-agent-security-finding-created` event in your team's [audit log](/docs/audit-log), naming the severity, the vulnerability class, and the project. Enterprise teams can read it in the audit log CSV export, or send it to a SIEM with an [Audit Log Drain](/docs/drains/reference/audit-logs). The event doesn't appear in your team's [Activity log](/docs/activity-log).
+When Security Review reports a new vulnerability, Vercel records a `vercel-agent-security-finding-created` event in your team's [audit log](/docs/audit-log), naming the severity, the vulnerability class, and the project. Vercel also records an event each time a finding changes status:
+
+- `vercel-agent-security-finding-closed`: a team member closed the finding as resolved, a false positive, or an accepted risk
+- `vercel-agent-security-finding-reopened`: a team member reopened a closed finding
+- `vercel-agent-security-finding-resolved`: Vercel closed the finding because a later review no longer detects the issue
+
+Closing and reopening events name the team member who made the change. Enterprise teams can read these events in the audit log CSV export, or send them to a SIEM with an [Audit Log Drain](/docs/drains/reference/audit-logs). Finding events don't appear in your team's [Activity log](/docs/activity-log).
+
+Vercel records Security Review policy changes as separate events. To learn more, see [Track policy changes](#track-policy-changes).
 
 ## Review findings in GitHub
 
@@ -105,6 +116,10 @@ Policies are treated as context, not as commands. Security Review's core behavio
 
 Security Review applies both policies, with the project policy adding context on top of what the team policy already says. A repository review has no project, so it applies only the team policy. Policy changes apply to reviews that start after you save them.
 
+### Track policy changes
+
+Vercel records each Security Review policy change in your team's [Activity log](/docs/activity-log), naming the team member who made it and, for a project policy, the project. Saving a policy records a `vercel-agent-security-review-policy-updated` event, and clearing one records a `vercel-agent-security-review-policy-deleted` event. Enterprise teams also get these events in the [audit log](/docs/audit-log) CSV export and [Audit Log Drains](/docs/drains/reference/audit-logs). The events don't include the policy text.
+
 ### Security is a shared responsibility
 
 Security is a shared responsibility between Vercel and you. Security Review is a tool to help you find vulnerabilities, and it can miss issues. Policies change what reviews look for, so changing a policy can cause Security Review to miss vulnerabilities it would otherwise report, and you're responsible for that effect.
@@ -118,7 +133,7 @@ What you can do with Security Review depends on your [team role](/docs/rbac/acce
 | Action                                                                        | Roles                                                                        |
 | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
 | View findings                                                                 | Owner, Member, Developer, Security; Contributors for their assigned projects |
-| Dismiss or reopen a finding                                                   | Owner, Member, Developer, Security                                           |
+| Close or reopen a finding                                                     | Owner, Member, Developer, Security                                           |
 | Fix a finding with Vercel Agent                                               | Any role that can use [Vercel Agent](/docs/agent) chat                       |
 | Add or edit a team or project policy                                          | Owner, Member                                                                |
 | Turn reviews on and set **Projects to Review** and **Repositories to Review** | Owner                                                                        |

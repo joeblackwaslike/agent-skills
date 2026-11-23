@@ -14,8 +14,8 @@ summary: Use git_namespaces with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/git_namespaces.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "7b824ee45f4e2379ffddaf977fc2d3dd03d698c87fbb1dac6d67ed59d30253b8"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "bfd4ee3b9278ff589d355175aaa1fe23d021a6ccd9082f27996dfe4c065191a2"
 ---
 
 # git_namespaces
@@ -29,7 +29,6 @@ Lists git namespaces for a supported provider. Supported providers are `github`,
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [List git namespaces by provider](https://vercel.com/docs/rest-api/integrations/list-git-namespaces-by-provider) — GET /v1/integrations/git-namespaces — Lists git namespaces for a supported provider. Supported providers are \\`github\\`,
-- [Multiple Git namespaces per Personal Account and Team](https://vercel.com/changelog/multiple-git-namespaces-per-personal-account-and-team)
 - [List git repositories linked to namespace by provider](https://vercel.com/docs/rest-api/integrations/list-git-repositories-linked-to-namespace-by-provider) — GET /v1/integrations/search-repo — Lists git repositories linked to a namespace \\`id\\` for a supported provider. A speci
 - [search_repo](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/search_repo) — Use search_repo with Vercel MCP.
 - [vercel git](https://vercel.com/docs/cli/git) — Learn how to manage your Git provider connections using the vercel git CLI command.

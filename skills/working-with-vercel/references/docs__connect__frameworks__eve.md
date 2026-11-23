@@ -18,8 +18,8 @@ summary: Use Vercel Connect to configure eve channel credentials, including Micr
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/connect/frameworks/eve.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "e75061d7a4734a2baf6d32cf457a3f18e6e8a6562917d578a882c7fc1aa4e720"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "509793762005d7bc9120869b724ee41d0b92209faf1c2b521472aed55674cd9c"
 ---
 
 # eve with Vercel Connect
@@ -39,9 +39,10 @@ tokens, so your app doesn't store provider refresh tokens.
 
 - [Vercel Connect now supports Microsoft Teams](https://vercel.com/changelog/vercel-connect-microsoft-teams)
 - [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
-- [Connections](https://eve.dev/docs/connections) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
 - [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect)
+- [Connections](https://eve.dev/docs/connections) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
+- [Manage Vercel projects with a software factory](https://vercel.com/kb/guide/software-factory-vercel-mcp) — Add Vercel's hosted MCP to the eve software factory template so Foreman can read build logs, runtime errors, and deploym
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
 - [eve (HTTP & web)](https://eve.dev/docs/channels/eve) — The default HTTP API for an agent, covering session routes, auth, and customization.
 - [Give your software factory a browser](https://vercel.com/kb/guide/software-factory-browser) — Add a KERNEL cloud browser to the eve software factory template so Foreman can reproduce flow bugs, sign in through mana

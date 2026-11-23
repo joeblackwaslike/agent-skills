@@ -17,8 +17,8 @@ summary: Read and verify Vercel Passport identities in Python with asynchronous 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/passport/python-sdk-reference.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "915e8b30fc4a500a9751ca57fb00519c1d4f72a63042f97b22e8c58b3092331e"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "a8df304fa21cbab5e47edea08b734420f4d5936b48713e22ef7b92cffcc8bad2"
 ---
 
 # Python SDK Reference
@@ -31,8 +31,8 @@ sha256: "915e8b30fc4a500a9751ca57fb00519c1d4f72a63042f97b22e8c58b3092331e"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Passport is now generally available](https://vercel.com/changelog/vercel-passport-generally-available)
 - [Protect internal apps with Vercel Passport and your identity provider](https://vercel.com/kb/guide/vercel-passport) — Vercel Passport protects internal apps behind your own identity provider, such as Okta or Microsoft Entra ID. Learn how
+- [Vercel Passport is now generally available](https://vercel.com/changelog/vercel-passport-generally-available)
 - [Vercel Passport is now in Public Beta](https://vercel.com/changelog/vercel-passport-is-now-in-public-beta)
 - [Authentication in Vercel Connect](https://vercel.com/docs/connect/concepts/authentication) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
 - [Set up Passport with an identity provider](https://vercel.com/docs/passport/set-up-identity-provider) — Configure Passport with Okta, Microsoft Entra ID, or another OpenID Connect provider.

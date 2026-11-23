@@ -15,8 +15,8 @@ summary: Send bugs, friction, and feature requests to the Vercel team using the 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/feedback.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "165512ab51c1e75fcae0fab8b88dadd084b7bd6f5f501b35eed8c3132cb959e1"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "ac74e0d0084b19d7557644ca5b67b528232fd2ddae2bd3c7e8e5b7ca7e10943e"
 ---
 
 # vercel feedback
@@ -30,6 +30,7 @@ Use `vercel feedback` to report bugs, friction, and feature requests to the Verc
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Send feedback from the Vercel CLI](https://vercel.com/changelog/send-feedback-from-vercel-cli)
+- [Send feedback from the Vercel MCP](https://vercel.com/changelog/send-feedback-from-vercel-mcp)
 - [submit_feedback](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation/submit_feedback) — Send feedback about Vercel or its MCP tools.
 - [Documentation, CLI, and Feedback](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation) — Find documentation, use the CLI, and share feedback with Vercel.
 - [vercel comments](https://vercel.com/docs/cli/comments) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.

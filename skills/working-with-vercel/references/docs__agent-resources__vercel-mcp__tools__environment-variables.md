@@ -14,8 +14,8 @@ summary: Vercel MCP tools for environment variables.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "61c15b1555af78234edabc5345110ed311016c196f8345100a0e6b2bbb7ba192"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "495e4c66ab9542e4f718d4e0aa8f9edec41a3e30ec27778656e74d1e4e370713"
 ---
 
 # Environment Variables
@@ -31,8 +31,8 @@ Read and update project environment variables, inspect custom environments, and 
 - [Environment variables](https://vercel.com/docs/environment-variables) — Learn more about environment variables on Vercel.
 - [Shared environment variables](https://vercel.com/docs/environment-variables/shared-environment-variables) — Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can
 - [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
-- [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables) — Learn how to create and manage environment variables for Vercel.
 - [Retrieve the environment variables of a project by id or name](https://vercel.com/docs/rest-api/projects/retrieve-the-environment-variables-of-a-project-by-id-or-name) — GET /v10/projects/{idOrName}/env — Retrieve the environment variables for a given project by passing either the project
+- [Retrieve a custom environment](https://vercel.com/docs/rest-api/environment/retrieve-a-custom-environment) — GET /v9/projects/{idOrName}/custom-environments/{environmentSlugOrId} — Retrieve a custom environment for the project. M
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/environment-variables.graph.md](/docs/agent-resources/vercel-mcp/tools/environment-variables.graph.md)
 <!-- /docsgraph:related -->

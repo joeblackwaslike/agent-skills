@@ -13,12 +13,13 @@ related:
   - /docs/flags/vercel-flags/sdks/openfeature
   - /docs/flags/vercel-flags/sdks/core
   - /docs/flags/vercel-flags/dashboard/sdk-keys
+  - /docs/flags/flags-explorer/reference
 summary: Learn how to integrate Vercel Flags into your application using the Flags SDK, OpenFeature, or the core library.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/vercel-flags/sdks.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "e199dd3b046eba6ca3a0ca19a2adbf1db8972effd500a586dcf7d975b899ae3b"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "84abf084d17a0c05c7cd3fe8f0c9661ffa14340dfe520b0edebe35aa7e62eb83"
 ---
 
 # SDKs
@@ -35,8 +36,9 @@ There are multiple ways to use Vercel Flags, depending on your framework and how
 - [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
-- [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference) — API reference for the Flags SDK for Next.js and SvelteKit.
+- [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
+- [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/sdks.graph.md](/docs/flags/vercel-flags/sdks.graph.md)
 <!-- /docsgraph:related -->
@@ -87,7 +89,7 @@ All integration methods authenticate with Vercel OpenID Connect (OIDC) by defaul
 
 For manual credentials, such as reading flags from another project or running outside Vercel, create an [SDK Key](/docs/flags/vercel-flags/dashboard/sdk-keys) and store it in an environment variable such as `FLAGS`.
 
-Set the separate `FLAGS_SECRET` environment variable when you use Flags Explorer for secure overrides.
+On Vercel, Flags Explorer overrides and precompute work without a `FLAGS_SECRET` environment variable when you use `flags` version 4.5.0 or later. See [when you need a `FLAGS_SECRET`](/docs/flags/flags-explorer/reference#flags_secret-environment-variable) for the cases that still require one, such as apps outside Vercel.
 
 ## Next steps
 

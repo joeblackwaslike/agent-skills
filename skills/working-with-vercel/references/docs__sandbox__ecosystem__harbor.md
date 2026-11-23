@@ -18,8 +18,8 @@ summary: Run Terminal-Bench and any other Harbor Hub dataset on Vercel Sandbox, 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/ecosystem/harbor.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "0d73926e359e202b21c0d57d9944157439d5d68d9e054118fee783ce92043044"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "f7780e2a810503b7e91113862ae540eb36cc5a92e4551d68f812ad90b6eef695"
 ---
 
 # Harbor and Terminal-Bench
@@ -45,9 +45,9 @@ parallel than on your local machine.
 - [Run Terminal-Bench and any Harbor benchmark on Vercel Sandbox](https://vercel.com/kb/guide/run-terminal-bench-harbor-benchmarks-vercel-sandbox) — Run Terminal-Bench, SWE-bench, and any Harbor benchmark on Vercel Sandbox. Each trial executes in an isolated Firecracke
 - [Run Terminal-Bench and other Harbor evals on Vercel Sandbox](https://vercel.com/changelog/run-terminal-bench-and-other-harbor-evals-on-vercel-sandbox)
 - [How to run Herdr coding agents in isolated Vercel Sandboxes](https://vercel.com/kb/guide/run-herdr-coding-agents-isolated-vercel-sandboxes) — Install the vercel.sandbox plugin for Herdr, approve an upload manifest, run each AI coding agent in its own isolated Ve
-- [Vercel Sandbox vs CodeSandbox](https://vercel.com/kb/guide/vercel-sandbox-vs-codesandbox) — A detailed guide to Vercel Sandbox vs CodeSandbox: compute isolation, credential brokering, Active CPU billing, Docker s
-- [How to run Devin Outposts sessions on Vercel](https://vercel.com/kb/guide/devin-outposts-vercel-sandbox) — Run Devin Outposts sessions in isolated Vercel Sandbox microVMs. One browser authorization to set up, then sessions star
+- [Agents are users, so your software needs evals](https://vercel.com/blog/agent-evals)
 - [Harbor with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/harbor) — Evaluate coding-agent harnesses with Harbor and AI Gateway. Choose a harness, configure its connection, and pass separat
+- [Hermes](https://vercel.com/docs/sandbox/ecosystem/hermes) — Run Hermes Agent terminal commands in isolated Vercel Sandbox microVMs, with models served through Vercel AI Gateway.
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/harbor.graph.md](/docs/sandbox/ecosystem/harbor.graph.md)

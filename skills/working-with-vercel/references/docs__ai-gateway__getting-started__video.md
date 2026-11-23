@@ -18,8 +18,8 @@ summary: Generate a video from a text prompt using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/getting-started/video.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "55784012c5cb606f398e539f3750a31ad175b8b8987ef92b1680836371952abd"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "a7329f263c68a6248a245bd10cdf6c22a38778f79e5dd4526509b916950db6b2"
 ---
 
 # Video Generation Quickstart
@@ -34,11 +34,11 @@ Generate a video through AI Gateway and save it to a file. Video generation can 
 
 - [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway)
 - [Kling video models on AI Gateway](https://vercel.com/changelog/kling-video-models-on-ai-gateway)
+- [Seedance 2.5 Flash now available on AI Gateway](https://vercel.com/changelog/seedance-2-5-flash-now-available-on-ai-gateway)
 - [Veo video models on AI Gateway](https://vercel.com/changelog/veo-video-models-on-ai-gateway)
 - [Wan models on AI Gateway](https://vercel.com/changelog/wan-models-on-ai-gateway)
 - [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
 - [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
-- [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation)
 
 Full cross-link map for this page: [/docs/ai-gateway/getting-started/video.graph.md](/docs/ai-gateway/getting-started/video.graph.md)
 <!-- /docsgraph:related -->
@@ -57,7 +57,7 @@ Add video generation through AI Gateway in the current environment. Use the AI G
 
 ### Run the Node.js example
 
-Use [Node.js 22.18 or later](https://nodejs.org/) and a team with available [AI Gateway Credits](/docs/ai-gateway/pricing). Export `AI_GATEWAY_API_KEY` in your current shell. If you need a key, open the [Create API Key dialog](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fapi-keys%3FshowCreateKeyModal%3Dtrue\&title=AI+Gateway+API+Keys).
+Use [Node.js 22.18 or later](https://nodejs.org/). Video generation requires a minimum [AI Gateway Credits](/docs/ai-gateway/pricing) balance of $10. Export `AI_GATEWAY_API_KEY` in your current shell. If you need a key, open the [Create API Key dialog](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fapi-keys%3FshowCreateKeyModal%3Dtrue\&title=AI+Gateway+API+Keys).
 
 ```bash filename="Terminal"
 export AI_GATEWAY_API_KEY="your_ai_gateway_api_key"

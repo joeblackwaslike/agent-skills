@@ -14,8 +14,8 @@ summary: A content moderation interface for reporting abuse with categorization,
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/report-abuse.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "36300d278690c31c4ed1ff726651f9547528c92fe594f265e5173c53a008ac85"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "0677fe96e51edcd12db3a093ee59f18fb8382bc371878fd031077501e8327ca5"
 ---
 
 # Report Abuse
@@ -30,13 +30,13 @@ The Report Abuse block provides platforms with a professional content moderation
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Introducing Platform Elements](https://vercel.com/changelog/introducing-platform-elements)
 - [Error Reports for Your Projects with URIports and Vercel](https://vercel.com/kb/guide/client-side-error-reports-with-uriports-vercel) — Enable error reporting for your websites deployed with Vercel and act fast on issues.
-- [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
+- [Introducing Platform Elements](https://vercel.com/changelog/introducing-platform-elements)
 - [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
+- [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
 - [Redacting Sensitive Data from Web Analytics Events](https://vercel.com/docs/analytics/redacting-sensitive-data) — Learn how to redact sensitive data from your Web Analytics events.
+- [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Get Started with BotID](https://vercel.com/docs/botid/get-started) — Step-by-step guide to setting up BotID protection in your Vercel project
-- [Aggregates page views](https://vercel.com/docs/rest-api/web-analytics/aggregates-page-views) — GET /v1/query/web-analytics/visits/aggregate — Counts pageviews on a project, within the requested date range. Results a
 
 Full cross-link map for this page: [/docs/platforms/platform-elements/blocks/report-abuse.graph.md](/docs/platforms/platform-elements/blocks/report-abuse.graph.md)
 <!-- /docsgraph:related -->

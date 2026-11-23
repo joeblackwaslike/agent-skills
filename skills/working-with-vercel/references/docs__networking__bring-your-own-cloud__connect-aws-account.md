@@ -16,8 +16,8 @@ summary: Connect an AWS account to your Vercel team so Bring Your Own Cloud (BYO
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/networking/bring-your-own-cloud/connect-aws-account.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "0b87ccd3ae043e89ee46d97eab14d035a26c8cfd1eaf601f4b0e364adbdde62d"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "88590374e41bdb0ab159e50c4dba0de59e9f91a3377c65c50cec5ab184585e74"
 ---
 
 # Connecting an AWS Account for BYOC
@@ -37,8 +37,8 @@ Connect an AWS account to your Vercel team so [Bring Your Own Cloud (BYOC)](/doc
 - [Operating BYOC Deployments](https://vercel.com/docs/networking/bring-your-own-cloud/operations) — Retry failed Bring Your Own Cloud \\(BYOC\\) deployments, clean up AWS resources, monitor logs, and rotate credentials.
 - [Connect to Amazon Web Services \\(AWS\\)](https://vercel.com/docs/oidc/aws) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 - [Deploying with BYOC from GitHub Actions](https://vercel.com/docs/networking/bring-your-own-cloud/deploy-with-github-actions) — Keep the Vercel Git integration and use GitHub Actions to build, provision, and complete Bring Your Own Cloud \\(BYOC\\) d
-- [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
-- [OpenID Connect \\(OIDC\\) Federation](https://vercel.com/docs/oidc) — Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent creden
+- [Access Other Clouds and APIs](https://vercel.com/docs/oidc/access-other-services) — Use the short-lived OpenID Connect \\(OIDC\\) tokens that Vercel issues to your builds and functions to access AWS, Google
+- [AI Gateway Authentication and BYOK](https://vercel.com/docs/ai-gateway/authentication-and-byok) — Authenticate AI Gateway requests with API keys or OIDC tokens, and configure bring your own key \\(BYOK\\) credentials for
 
 Full cross-link map for this page: [/docs/networking/bring-your-own-cloud/connect-aws-account.graph.md](/docs/networking/bring-your-own-cloud/connect-aws-account.graph.md)
 <!-- /docsgraph:related -->

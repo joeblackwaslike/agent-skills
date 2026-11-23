@@ -9,16 +9,16 @@ prerequisites:
   - /docs/functions
 related:
   - /docs/functions/runtimes/python
-  - /docs/functions/concurrency-scaling
   - /docs/functions/runtimes
   - /docs/functions/configuring-functions/region
   - /docs/functions/runtimes/node-js
+  - /docs/project-configuration/vercel-json
 summary: Learn about the limits and restrictions of using Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/limitations.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "974d0b3d8ab17fec3d669bbe924fa2490177aa08b7b0bdbc8def7ccdbc6abd4d"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "f0c33976480c5396ba0870589d6f805add2909223c9be1c62bf9375ae2967542"
 ---
 
 # Vercel Functions Limits
@@ -35,14 +35,14 @@ The table below outlines the limits and restrictions of using Vercel Functions w
 - [Higher defaults and limits for Vercel Functions running Fluid compute](https://vercel.com/changelog/higher-defaults-and-limits-for-vercel-functions-running-fluid-compute)
 - [Python Vercel Functions bundle size limit increased to 500MB](https://vercel.com/changelog/python-vercel-functions-bundle-size-limit-increased-to-500mb)
 - [Vercel Functions can now be up to 5GB in package size](https://vercel.com/changelog/vercel-functions-can-now-be-up-to-5-gb-in-package-size)
-- [WebSocket support is now in Public Beta](https://vercel.com/changelog/websocket-support-is-now-in-public-beta)
+- [Vercel Functions now support request bodies up to 20MiB](https://vercel.com/changelog/vercel-functions-now-support-request-bodies-up-to-20mib)
 - [Deploy Go apps on Vercel using Docker](https://vercel.com/kb/guide/deploy-go-using-docker-vercel) — Deploy an existing Dockerized Go app to Vercel using Memos as a real-world example, with Neon Postgres for durable data.
 - [How to deploy Medusa on Vercel](https://vercel.com/kb/guide/deploy-medusa-on-vercel) — Deploy a Medusa storefront on Vercel, including where the backend runs, which environment variables the current starter
 - [Do Vercel Functions support WebSocket connections?](https://vercel.com/kb/guide/do-vercel-serverless-functions-support-websocket-connections) — Vercel Functions serve WebSocket connections natively, in public beta on all plans. Learn how connections pin to instanc
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
 - [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
+- [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
 - [Running Agent Harnesses Durably on Vercel](https://vercel.com/docs/agent-harnesses) — Run Pi, fx, OpenCode, eve, Claude Code, and Codex on Vercel so a crash, a function timeout, or a redeploy resumes the ag
-- [Running fx Durably on Vercel](https://vercel.com/docs/agent-harnesses/fx) — Deploy an fx agent with libfx so its sessions survive crashes, function timeouts, and redeploys on Vercel.
 
 Full cross-link map for this page: [/docs/functions/limitations.graph.md](/docs/functions/limitations.graph.md)
 <!-- /docsgraph:related -->
@@ -52,7 +52,7 @@ Full cross-link map for this page: [/docs/functions/limitations.graph.md](/docs/
 | [Maximum memory](/docs/functions/limitations#memory-size-limits)                 | Hobby: 2 GB, Pro and Ent: 4 GB                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | [Maximum duration](/docs/functions/limitations#max-duration)                     | Hobby: 300s default and maximum. Pro and Enterprise: 300s default, 800s maximum, and 1800s extended maximum Beta. See [max duration](/docs/functions/limitations#max-duration) for requirements and configuration.                                                                                                                                                                                                        |
 | [Size](/docs/functions/limitations#bundle-size-limits) (uncompressed)            | 250 MB, or 500 MB for [Python](/docs/functions/runtimes/python). [Large functions](/docs/functions/limitations#large-functions-beta) support up to 5 GB Beta.                                                                                                                                                                                                                                                        |
-| [Concurrency](/docs/functions/concurrency-scaling#automatic-concurrency-scaling) | Auto-scales up to 30,000 (Hobby and Pro) or 100,000+ (Enterprise) concurrency                                                                                                                                                                                                                                                                                                                                                                                                         |
+| Concurrency                                                                      | Scales automatically based on demand                                                                                                                                                                                                                                                                                                                                                                                                         |
 | [Cost](/docs/functions/runtimes)                                                 | Pay for active CPU time and provisioned memory time                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | [Regions](/docs/functions/runtimes#location)                                     | Runs in a single region by default (`iad1`), which you can [change](/docs/functions/configuring-functions/region#setting-your-default-region).<br /> Pro and Enterprise teams can set [multiple regions](/docs/functions/configuring-functions/region#limits)                                                                                                                                                                                                                                                               |
 | [API Coverage](/docs/functions/limitations#api-support)                          | Full Node.js coverage                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
@@ -93,7 +93,7 @@ Size     : 1991.54 MB
 
 Common causes of large functions include:
 
-- **Heavy dependencies:** Packages that ship binaries, such as Puppeteer with its bundled Chromium, or machine learning libraries. Duplicate copies of the same package also add size. Run `npm ls <package>` to see why a package is installed, and `npm dedupe` to remove duplicates.
+- **Heavy dependencies:** Packages that ship binaries, such as [Puppeteer with its bundled Chromium](#running-puppeteer-and-headless-chromium), or machine learning libraries. Duplicate copies of the same package also add size. Run `npm ls <package>` to see why a package is installed, and `npm dedupe` to remove duplicates.
 - **Static assets traced into the function:** Images, videos, or large JSON files that server code imports or reads are packaged with the function. Serve them from the `public` directory or external storage instead.
 - **Dynamic imports with variable paths:** An import or `require` with a path built at runtime can make the bundler include every file in a directory. Use static import paths where you can.
 
@@ -111,6 +111,42 @@ To exclude files a function doesn't need, use `excludeFiles` in `vercel.json`. T
 ```
 
 In Next.js, use [`outputFileTracingExcludes`](https://nextjs.org/docs/app/api-reference/config/next-config-js/output) in `next.config.js` instead.
+
+### Running Puppeteer and headless Chromium
+
+The `puppeteer` package downloads a Chrome build of about 280 MB for Linux when you install it, which is larger than the standard bundle size limit. To take screenshots, generate PDFs, or automate a browser in a function, install [`puppeteer-core`](https://pptr.dev/guides/installation), which doesn't download a browser, and pair it with [`@sparticuz/chromium`](https://github.com/Sparticuz/chromium), a Chromium build for serverless environments.
+
+`@sparticuz/chromium` ships a compressed Chromium binary inside the package, so the binary counts toward the function's bundle size. If the function exceeds the 250 MB limit, enable [large functions](#large-functions-beta).
+
+```ts filename="app/api/title/route.ts"
+import chromium from '@sparticuz/chromium';
+import puppeteer from 'puppeteer-core';
+
+export async function GET() {
+  const browser = await puppeteer.launch({
+    args: await puppeteer.defaultArgs({
+      args: chromium.args,
+      headless: 'shell',
+    }),
+    executablePath: await chromium.executablePath(),
+    headless: 'shell',
+  });
+
+  try {
+    const page = await browser.newPage();
+    await page.goto('https://example.com', { waitUntil: 'networkidle2' });
+    return Response.json({ title: await page.title() });
+  } finally {
+    await browser.close();
+  }
+}
+```
+
+Next.js keeps `puppeteer-core` and `@sparticuz/chromium` out of the server bundle by default. If your Next.js version bundles them, add both packages to [`serverExternalPackages`](https://nextjs.org/docs/app/api-reference/config/next-config-js/serverExternalPackages) in `next.config.js`.
+
+If you can't use large functions, install `@sparticuz/chromium-min` instead. It leaves the binary out of the package, and you pass `chromium.executablePath()` the URL of a Chromium archive that you host. The function downloads the archive when it starts, which makes the first request to a new function instance slower. The [Puppeteer on Vercel template](https://vercel.com/templates/next.js/puppeteer-on-vercel) shows this setup.
+
+Chromium uses more memory than most functions need. The `@sparticuz/chromium` documentation recommends 1,600 MB or more. If the function runs out of memory or times out, raise its [memory](/docs/functions/configuring-functions/memory) or [maximum duration](/docs/functions/configuring-functions/duration).
 
 ## Large functions Beta
 
@@ -194,9 +230,23 @@ check the size of a package and search for a smaller alternative.
 
 ## Request body size
 
-In Vercel, the request body size is the maximum amount of data that can be included in the body of a request to a function.
+Vercel Functions accept request bodies up to **4.5 MB** by default (see [How do I bypass the 4.5MB body size limit of Vercel Functions](/kb/guide/how-to-bypass-vercel-body-size-limit-serverless-functions)). Request bodies up to **20 MiB** are available in **Public Beta** for the Node.js, Python, and Bun runtimes.
 
-The maximum payload size for the request body or the response body of a Vercel Function is **4.5 MB**. The response body limit doesn't apply to [streamed responses](/docs/functions/streaming-functions). If a Vercel Function receives a payload in excess of the limit it will return an error [413: `FUNCTION_PAYLOAD_TOO_LARGE`](/docs/errors/function_payload_too_large). See [How do I bypass the 4.5MB body size limit of Vercel Functions](/kb/guide/how-to-bypass-vercel-body-size-limit-serverless-functions) for more information.
+To enable the 20 MiB limit:
+
+1. Enable [fluid compute](/docs/fluid-compute#enabling-fluid-compute) for your project.
+2. Set your project's [function memory](/docs/functions/configuring-functions/memory#setting-your-default-function-memory-/-cpu-size) to **Performance (4 GB)**, available on Pro and Enterprise plans.
+3. Set `VERCEL_SUPPORT_LARGE_REQUEST_BODY=1` in your project's [environment variables](/docs/environment-variables) for the environments you want to enable, then redeploy.
+
+The opt-in applies to the whole project in each selected environment, so you can test it in Preview before enabling it in Production.
+
+When enabled, Routing Middleware receives headers and metadata but cannot access request bodies. Functions and Routing Middleware using the [Edge runtime](/docs/functions/runtimes/edge) keep the **4.5 MB** limit. Switch to the Node.js runtime to use larger bodies.
+
+For larger requests, start reading the body as soon as it arrives. Where possible, process the data in smaller chunks to keep uploads moving and reduce memory use.
+
+Requests exceeding the applicable limit return [413: `FUNCTION_PAYLOAD_TOO_LARGE`](/docs/errors/function_payload_too_large).
+
+The response body size limit is **4.5 MB**, except for [streamed responses](/docs/functions/streaming-functions).
 
 ## File descriptors
 

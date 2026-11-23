@@ -17,8 +17,8 @@ summary: Learn how to manage your microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/microfrontends/managing-microfrontends.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "d6c4f05f46d140434dc9b6c44395e811015a239b7994a1b62f45226e6d940d33"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "fdc03a1b68f0da3196826ab20ed1a8d502bf310b2f70bc6faf77c8c4ee770250"
 ---
 
 # Managing microfrontends
@@ -33,12 +33,11 @@ With a project's **Microfrontends** settings of the Vercel dashboard, you can:
 
 - [Microfrontends support is now in Public Beta](https://vercel.com/changelog/microfrontends-support-is-now-in-public-beta)
 - [Preview links between microfrontends projects now serve all paths](https://vercel.com/changelog/preview-links-between-microfrontends-projects-now-serve-all-paths)
-- [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends)
-- [Microfrontends Routing](https://vercel.com/docs/microfrontends/routing) — Configure which microfrontend handles each path and understand how Vercel selects deployments.
 - [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart) — Learn how to get started with microfrontends on Vercel.
+- [Microfrontends Routing](https://vercel.com/docs/microfrontends/routing) — Configure which microfrontend handles each path and understand how Vercel selects deployments.
 - [Testing & troubleshooting microfrontends](https://vercel.com/docs/microfrontends/troubleshooting) — Learn about testing, common issues, and how to troubleshoot microfrontends on Vercel.
+- [Microfrontends Configuration](https://vercel.com/docs/microfrontends/configuration) — Configure your microfrontends.json.
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/microfrontends/managing-microfrontends.graph.md](/docs/microfrontends/managing-microfrontends.graph.md)
 <!-- /docsgraph:related -->
@@ -144,7 +143,8 @@ There are three options for the fallback environment setting:
 
 - `Same Environment` - Requests to microfrontends not built for that commit will fall back to a deployment for the other microfrontend project in the same environment.
   - For example, in the `Preview` environment, requests to a microfrontend that was not built for that commit would fallback to the `Preview` environment of that other microfrontend. If in a custom environment, the request would instead fallback to the custom environment with the same name in the other microfrontend project.
-  - When this setting is used, Vercel will generate `Preview` deployments on the production branch for each microfrontend project automatically.
+  - When this setting is used, Vercel will generate `Preview` deployments on the production branch for each Git-connected microfrontend project automatically. For projects without a Git connection, create a `Preview` deployment manually.
+  - This is the default for new microfrontends groups.
 - `Production` - Requests to microfrontends not built for this commit will fall back to the promoted Production deployment for that other microfrontend project. In a custom environment, requests fall back to Production only when the other project has no custom environment with the same name.
 - A specific [custom environment](/docs/deployments/environments#custom-environments) - Requests to microfrontends not built for this commit will fall back to a deployment in a custom environment with the specified name.
 
@@ -169,7 +169,7 @@ If the current environment is `Production`, requests will always be routed to th
 > [MICROFRONTENDS\_MISSING\_FALLBACK\_ERROR](/docs/errors/microfrontends_missing_fallback_error)
 > on the request.
 
-To configure this setting, visit the **Settings** tab for the microfrontends group and configure the **Fallback Environment** setting.
+To configure this setting, open the default application's project, select **Settings**, then **Microfrontends**, and configure the **Fallback Environment** setting.
 
 ### Project domains for git branches
 

@@ -17,8 +17,8 @@ summary: List and inspect production daemons, override regional instance counts,
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/daemons.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "734b5d4cb7ba5d1c3e1e52b0c4b40003ec0585289154d6abd1fc8db7f7132dea"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "db1144cdf7e4a49b57fc80e02f3741587ddaa76c44c4d761565c8d81bfda2187"
 ---
 
 # vercel daemons
@@ -40,7 +40,7 @@ The `vercel daemons` command manages [Daemons](/docs/daemons) for a project.
 Full cross-link map for this page: [/docs/cli/daemons.graph.md](/docs/cli/daemons.graph.md)
 <!-- /docsgraph:related -->
 
-All daemon commands target **production**. They use your [linked project](/docs/cli/link) by default. To select another project, pass `--project <name-or-id>` and use [`--scope`](/docs/cli/global-options#scope) to select its team. Sign in with [`vercel login`](/docs/cli/login), or [authenticate in CI/CD](/docs/cli#using-in-a-cicd-environment).
+All daemon commands target **production**. They use your [linked project](/docs/cli/link) by default. To select another project, pass `--project <name-or-id>` and use [`--scope`](/docs/cli/global-options#scope) to select its team. Sign in with [`vercel login`](/docs/cli/login), or [authenticate in CI/CD](/docs/cli#using-in-a-ci/cd-environment).
 
 For deployment, scaling, and shutdown behavior, see [Managing Daemons](/docs/daemons/managing-daemons).
 

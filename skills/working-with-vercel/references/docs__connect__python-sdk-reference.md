@@ -17,8 +17,8 @@ summary: API reference for vercel-connect, the Python SDK for requesting runtime
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/connect/python-sdk-reference.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "39184c4eed60fd945d1de8dc6d7d86ca90b17dfb2f28b9de8abb2610090a3556"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "868aa1873d698cb75eecaf9e64e3aad104d9f80da19c1c084cb205b5c3c21920"
 ---
 
 # Python SDK Reference
@@ -34,9 +34,9 @@ sha256: "39184c4eed60fd945d1de8dc6d7d86ca90b17dfb2f28b9de8abb2610090a3556"
 - [Python on Vercel is now generally available](https://vercel.com/changelog/python-on-vercel-is-now-generally-available)
 - [Python on Vercel is now generally available](https://vercel.com/blog/python-on-vercel-is-now-generally-available)
 - [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
-- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
 - [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect)
+- [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
 - [Frameworks and Adapters for Vercel Connect](https://vercel.com/docs/connect/frameworks) — Use Vercel Connect with AI SDK, TanStack AI, MCP clients, eve, Chat SDK, Better Auth, and Auth.js.

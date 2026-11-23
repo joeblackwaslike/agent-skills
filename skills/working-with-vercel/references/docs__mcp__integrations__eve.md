@@ -18,8 +18,8 @@ summary: Give eve agents access to MCP tools through filesystem connections and 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/mcp/integrations/eve.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "50797f002ab17b3923c14b76b2df9c98c1d04f8e0e171b508a31eca8e7eed3b7"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "6924c7eb9b60e38bcf6d93ded65ed3b4b66b9edb006795728ab27f8ebc65899d"
 ---
 
 # eve with MCP
@@ -39,8 +39,8 @@ Connect an [eve](/docs/frameworks/agents/eve) agent to a [Model Context Protocol
 - [Use Vercel](https://vercel.com/docs/agent-resources/vercel-mcp) — Vercel MCP has tools available for searching docs, managing teams, projects, and deployments, and querying Web Analytics
 - [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
 - [AI SDK with MCP](https://vercel.com/docs/mcp/integrations/ai-sdk) — Connect the AI SDK to an MCP server on Vercel, discover its tools, and call them with models served through AI Gateway.
-- [Deploy MCP servers to Vercel](https://vercel.com/docs/mcp/deploy-mcp-servers-to-vercel) — Learn how to deploy Model Context Protocol \\(MCP\\) servers on Vercel with OAuth authentication and efficient scaling.
 - [Using eve with Chat SDK](https://vercel.com/docs/chat-sdk/eve) — Send Chat SDK messages to an eve agent with a channel, persistent state, and Vercel Connect.
+- [Agent Resources](https://vercel.com/docs/agent-resources) — Set up AI coding tools with Vercel documentation, reusable skills, and secure access to projects, deployments, and logs.
 
 Full cross-link map for this page: [/docs/mcp/integrations/eve.graph.md](/docs/mcp/integrations/eve.graph.md)
 <!-- /docsgraph:related -->

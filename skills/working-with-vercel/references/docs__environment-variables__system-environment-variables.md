@@ -9,12 +9,14 @@ prerequisites:
   - /docs/environment-variables
 related:
   - /docs/skew-protection
+  - /docs/deployments/managing-deployments
+  - /docs/deployments/logs
 summary: System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the Git branch deployed.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/environment-variables/system-environment-variables.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "1570e8ee9d0f6c3870a7d6860a962a788ebdc9ff546efaf32bef4e61e199764a"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "93e68d2d3a3059899e3468d8469ff898936caefa6909d0c93410a9869d4080c1"
 ---
 
 # System environment variables
@@ -27,16 +29,18 @@ Vercel provides a set of environment variables that are automatically populated 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [flags](https://flags-sdk.dev/docs/api-reference/core/core) — The `flags` package provides the core functionality for integrating with Vercel.
+- [flags/next](https://flags-sdk.dev/docs/api-reference/frameworks/next) — APIs for working with feature flags in Next.js.
+- [flags/sveltekit](https://flags-sdk.dev/docs/api-reference/frameworks/sveltekit) — APIs for working with feature flags in SvelteKit.
+- [Write end-to-end tests with flag overrides](https://flags-sdk.dev/docs/frameworks/next/guides/e2e-tests) — Test Next.js application behavior with the Flags SDK and Playwright.
+- [Precompute](https://flags-sdk.dev/docs/frameworks/next/precompute) — Using the precompute pattern in Next.js
 - [How to deploy a Shopify App to Vercel](https://vercel.com/kb/guide/deploy-shopify-app-to-vercel) — Deploy the official Shopify CLI React Router app template to Vercel with the @vercel/react-router preset and Postgres se
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
-- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
 - [How to deploy a Saleor storefront on Vercel](https://vercel.com/kb/guide/how-to-deploy-a-saleor-storefront-on-vercel) — Deploy Saleor's Paper storefront template on Vercel, including environment variables, GraphQL caching, checkout, and pro
+- [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
+- [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables) — Learn how to create and manage environment variables for Vercel.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
-- [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
-- [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
-- [vercel env](https://vercel.com/docs/cli/env) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
 
 Full cross-link map for this page: [/docs/environment-variables/system-environment-variables.graph.md](/docs/environment-variables/system-environment-variables.graph.md)
 <!-- /docsgraph:related -->
@@ -55,11 +59,9 @@ To enable these environment variables to your deployments:
 
 If you are using a framework for your project, Vercel provides the following prefixed environment variables:
 
-> **💡 Note:** When you choose to enable system environment variables, some
-> React warnings, such as those in a `create-react-app` will display as build
-> errors. For more information on this error, see [How do I resolve a
-> `process.env.CI = true`
-> error?](/kb/guide/how-do-i-resolve-a-process-env-ci-true-error)
+> **💡 Note:** When you enable system environment variables, Create React App builds can
+> fail on warnings. See [Create React App treats warnings as
+> errors](#create-react-app-treats-warnings-as-errors) for the fix.
 
 ### `VERCEL`
 
@@ -326,6 +328,23 @@ The pull request id the deployment was triggered by. If a deployment is created 
 ```bash
 VERCEL_GIT_PULL_REQUEST_ID=23
 ```
+
+## Create React App treats warnings as errors
+
+When system environment variables are enabled, Vercel sets the `CI` environment variable during the build. [Create React App](https://create-react-app.dev/) treats warnings as errors when `CI` is set to any value other than `false`, so a build that only has warnings fails with this message:
+
+```text
+Treating warnings as errors because process.env.CI = true.
+```
+
+To let the build pass with warnings, override `CI` for your project:
+
+1. Navigate to your project on your [dashboard](/dashboard).
+2. Select [**Environment Variables**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fenvironment-variables\&title=Go+to+Environment+Variables) in the sidebar.
+3. Add an environment variable with the **Key** `CI` and the **Value** `false`.
+4. [Redeploy](/docs/deployments/managing-deployments#redeploy-a-project) your project.
+
+Your value replaces the one Vercel sets, and Create React App reports warnings without failing the build. To keep treating warnings as errors, fix the warnings listed in the [build logs](/docs/deployments/logs) instead.
 
 ## Search the docs from your terminal
 

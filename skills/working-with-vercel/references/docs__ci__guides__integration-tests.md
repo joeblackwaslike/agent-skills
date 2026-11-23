@@ -18,8 +18,8 @@ summary: Start a Postgres container next to your tests in Vercel CI with Turbore
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ci/guides/integration-tests.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "339a5bf6d93b9c84049ca3a24f44e3abfe86ba437f9554d249cf64dc7693fbf7"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "342f427d734a25e72e41fed182246e01251a219672863d7d81113288bd3e62b4"
 ---
 
 # Running Integration Tests with a Database in Vercel CI
@@ -33,9 +33,9 @@ In this tutorial, you'll run integration tests against a real Postgres database 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel) — Deploy your Turborepo on Vercel and run tasks with Vercel CI using zero-config Remote Caching.
+- [Deploy Go apps on Vercel using Docker](https://vercel.com/kb/guide/deploy-go-using-docker-vercel) — Deploy an existing Dockerized Go app to Vercel using Memos as a real-world example, with Neon Postgres for durable data.
 - [Introducing Vercel CI](https://vercel.com/blog/introducing-vercel-ci)
 - [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
-- [Deploy Go apps on Vercel using Docker](https://vercel.com/kb/guide/deploy-go-using-docker-vercel) — Deploy an existing Dockerized Go app to Vercel using Memos as a real-world example, with Neon Postgres for durable data.
 - [Vercel CI Configuration Reference](https://vercel.com/docs/ci/configuration) — Reference for the turbo.json tags and vercel.json keys that configure Vercel CI.
 - [Use Remote Caching from External CI/CD](https://vercel.com/docs/monorepos/remote-caching/external-ci-cd) — Authenticate the Turborepo CLI to Vercel Remote Cache from your CI/CD provider using OpenID Connect \\(OIDC\\) or a Person
 - [Vercel Container Registry](https://vercel.com/docs/container-registry) — Store and manage Docker container images on Vercel. Build and push images with the Vercel CLI, then run them on Vercel F

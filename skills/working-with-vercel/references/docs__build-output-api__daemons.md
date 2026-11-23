@@ -16,8 +16,8 @@ summary: Learn how Vercel Daemons are represented in the Build Output API.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/build-output-api/daemons.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "321e6f8a3afcce1579bbfbdad9e9dad1962810f853894eeed6caf6219d43a083"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "5d4f39d6df2ab6c15068508e163947a32a584ab2505de354d30602cf818a77d4"
 ---
 
 # Daemons
@@ -32,10 +32,10 @@ A deployment can declare [daemons](/docs/daemons), which are long-running contai
 
 - [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
 - [Vercel Daemons is now in public beta](https://vercel.com/changelog/vercel-daemons-is-now-in-public-beta)
-- [Add liveness checks to your Daemons](https://vercel.com/changelog/add-liveness-checks-to-your-daemons)
-- [Vercel Daemons can now call services with bindings](https://vercel.com/changelog/vercel-daemons-can-now-call-services-with-bindings)
 - [How to choose between Functions, containers, and Daemons on Vercel](https://vercel.com/kb/guide/vercel-functions-containers-daemons) — Choose Vercel Functions for HTTP requests, container images for custom runtimes, and Daemons for continuous background w
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
+- [Add liveness checks to your Daemons](https://vercel.com/changelog/add-liveness-checks-to-your-daemons)
+- [Managing Daemons](https://vercel.com/docs/daemons/managing-daemons) — Deploy, scale, stop, and monitor Vercel Daemons with vercel.json and the dashboard.
 - [vercel daemons](https://vercel.com/docs/cli/daemons) — List and inspect production daemons, override regional instance counts, and inspect or restart individual instances with
 - [Get project daemons](https://vercel.com/docs/rest-api/daemons/get-project-daemons) — GET /v1/projects/{idOrName}/daemons — List the daemons of a project.
 - [Builds](https://vercel.com/docs/builds) — Understand how the build step works when creating a Vercel Deployment.

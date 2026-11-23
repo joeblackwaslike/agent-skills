@@ -4,8 +4,8 @@ description: Learn how to use the GitHub Copilot harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/github-copilot"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/github-copilot.md"
-fetched_at: "2026-11-16T12:32:31.917Z"
-sha256: "874d9e13ac761fcbe8c260cd3159c1590e4026edef62694812d5e446eb9ac100"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "460eea08413971ade9145fed04cd78c811700c9d085a7fd768fb23981b860161"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -132,6 +132,10 @@ Settings:
   not aborted. When unset, a turn keeps running in the sandbox after its host
   disconnects, including when the host process is gone for good, until the
   turn finishes or the sandbox stops.
+- `keepAliveMs`: WebSocket ping interval in milliseconds (default `20_000`).
+  Keeps silent bridge connections alive. After two unanswered pings, the socket
+  is terminated and the configured reconnect policy takes over. Set to `0` to
+  disable. Sockets without ping support are left unchanged.
 - `reconnect`: reconnect timing after an established bridge WebSocket
   connection drops. `maxElapsedMs` controls the total retry window, including
   connection establishment and backoff delays, and defaults to 30 seconds.

@@ -11,14 +11,14 @@ related:
   - /docs/sign-in-with-vercel/authorization-server-api
   - /docs/rest-api
   - /docs/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources
-  - /docs/kms
-  - /docs/deployment-protection/methods-to-protect-deployments/vercel-authentication
+  - /docs/oidc/policies
+  - /docs/oidc
 summary: Learn how to manage Sign in with Vercel from the Dashboard
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "a7a0fb4556fea794ca7447a1e4b39c93af08525e6992d4ffe67d94750958596d"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "b9f2979a1756e927095017e93ecdc7b337a2fd58e663da14b2237475cc4b9f90"
 ---
 
 # Manage Sign in with Vercel from the Dashboard
@@ -34,12 +34,11 @@ To manage any third-party apps, or create a new one yourself, you need to create
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The complete guide to authentication on Vercel](https://vercel.com/kb/guide/complete-guide-authentication-vercel) — Learn how to implement authentication in your Vercel applications. Covers NextAuth/Auth.js setup, environment variable c
-- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
 - [Troubleshooting Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/troubleshooting) — Learn how to troubleshoot common errors with Sign in with Vercel
-- [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
 - [Access tokens](https://vercel.com/docs/accounts/access-tokens) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
-- [SAML Single Sign-On](https://vercel.com/docs/saml) — Learn how to configure SAML SSO for your organization on Vercel.
 - [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
+- [SAML Single Sign-On](https://vercel.com/docs/saml) — Learn how to configure SAML SSO for your organization on Vercel.
+- [Vercel KMS Authentication](https://vercel.com/docs/kms/concepts/authentication) — How Vercel KMS authorizes signing requests with a deployment OIDC token, authorizes management requests with a Vercel ac
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/manage-from-dashboard.graph.md](/docs/sign-in-with-vercel/manage-from-dashboard.graph.md)
 <!-- /docsgraph:related -->
@@ -88,6 +87,8 @@ You must configure at least one complete issuer before saving. If no issuer is c
 Each issuer entry is an issuer URL plus claims, where claims map a claim name to a list of allowed values. Within one entry, Vercel ANDs the claim names and ORs the allowed values for each claim. Matching uses exact string equality, so `*` is a literal character rather than a wildcard, the same semantics as [Deployment Protection trusted sources](/docs/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources). Multiple entries may share an issuer URL to express alternatives, and any one matching entry authenticates. You can configure up to 10 issuer entries per app. The issuer URL must be a valid URL up to 2048 characters. Each entry has 1 to 20 claim names, each claim has 1 to 20 allowed values, claim names can be up to 64 characters, and claim values can be up to 256 characters.
 
 Learn how to present an OIDC token when requesting a token in [Authenticate with an OIDC token](/docs/sign-in-with-vercel/authorization-server-api#authenticate-with-an-oidc-token).
+
+You configure trusted issuers on each custom app. Vercel's built-in apps, such as Turborepo CLI, use [OIDC policies](/docs/oidc/policies) instead. To compare the two, see [Authenticate to Vercel with OIDC](/docs/oidc#authenticate-to-vercel-with-oidc).
 
 ## Configure private key-based authentication
 

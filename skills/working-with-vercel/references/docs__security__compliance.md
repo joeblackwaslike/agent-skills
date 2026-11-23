@@ -17,8 +17,8 @@ summary: Learn about the protection and compliance measures Vercel takes to ensu
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/security/compliance.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "61b960f966c87256686b4c8a46411b4db9ea815f4543f0a19fde87e5db8ad811"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "52cc2ad8ae68c5984b19c38ca3909d67e7b77987defd145078f1f611cb623fcb"
 ---
 
 # Security & Compliance Measures
@@ -40,9 +40,9 @@ This page covers the protection and compliance measures Vercel takes to ensure t
 - [How to build and maintain HIPAA-compliant applications on Vercel](https://vercel.com/kb/guide/hipaa-compliance-guide-vercel) — Deploy HIPAA-compliant healthcare apps on Vercel with built-in security, BAAs, and scalable serverless infrastructure.
 - [Does Vercel have a SOC 2 Type 2 attestation?](https://vercel.com/kb/guide/is-vercel-soc-2-compliant) — Vercel holds a SOC 2 Type 2 attestation for Security, Confidentiality, and Availability. See what the report covers, how
 - [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel) — Migrate Next.js apps and HTTP containers from AWS to Vercel. Configure AWS access, assess background workers, and plan t
-- [Vercel supports HIPAA compliance](https://vercel.com/blog/vercel-supports-hipaa-compliance)
-- [Introducing Vercel Firewall and Vercel Secure Compute](https://vercel.com/blog/vercel-security)
-- [Vercel security roundup: improved bot defenses, DoS mitigations, and insights](https://vercel.com/blog/vercel-security-roundup-improved-bot-defenses-dos-mitigations-and-insights)
+- [Vercel completes ISO/IEC 42001:2023 certification](https://vercel.com/blog/vercel-completes-iso-iec-42001-2023-certification)
+- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
+- [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
 
 Full cross-link map for this page: [/docs/security/compliance.graph.md](/docs/security/compliance.graph.md)
 <!-- /docsgraph:related -->
@@ -64,6 +64,12 @@ More information is available at [security.vercel.com](https://security.vercel.c
 ISO 27001 is an internationally recognized standard, developed by the International Organization for Standardization (ISO) and International Electrotechnical Commission (IEC), that provides organizations with a systematic approach to securing confidential company and customer information.
 
 **Vercel is ISO 27001:2022 certified**. Our certificate is available [here](https://www.schellman.com/certificate-directory?certificateNumber=1868222-4).
+
+### ISO 42001:2023
+
+ISO 42001 is the world's first AI management system standard that specifies requirements for establishing, implementing, maintaining, and continually improving an Artificial Intelligence Management System (AIMS) within organizations. It is designed for entities providing or using AI-based products or services, ensuring responsible development and use of AI systems.
+
+**Vercel is ISO 42001:2023 certified**. Our certificate is available at [www.schellman.com](https://www.schellman.com/certificate-directory?certificateNumber=1929712-1).
 
 ### GDPR
 

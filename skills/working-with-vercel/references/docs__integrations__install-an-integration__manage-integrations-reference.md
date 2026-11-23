@@ -17,8 +17,8 @@ summary: Learn how to manage project access and added products for your integrat
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "ace0e783da3c29293edcfebc871b3629b2c790d4979d1dbb0ef2fe3852a83941"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "463db03ff76287ae2da3facfe85c322c44601bcc3680afdc9c6f86e5c4a3f632"
 ---
 
 # Permissions and Access
@@ -33,8 +33,8 @@ To view an integration's permissions:
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
 - [Scopes and Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions) — Learn how to manage scopes and permissions for Sign in with Vercel
+- [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
 - [Extended permissions](https://vercel.com/docs/rbac/access-roles/extended-permissions) — Learn about extended permissions in Vercel's RBAC system. Understand how to combine roles and permissions for precise ac
 - [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
@@ -67,7 +67,7 @@ Integration permissions restrict how much of the API the integration is allowed 
 ## Confirming Permission Changes
 
 Integrations can request more permissions over time.
-Individual users and team owners are [notified](/docs/notifications#notification-details) by Vercel when an integration installation has pending permission changes. You'll also be alerted to any new permissions on the [dashboard](/dashboard/marketplace). The permission request contains information on which permissions are changing and the reasoning behind the changes.
+Individual users and team owners are [notified](/docs/notifications#notification-details) by Vercel when an integration installation has pending permission changes. You'll also be alerted to any new permissions on the [**Integrations**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fintegrations\&title=Go+to+Integrations) page of your dashboard. The permission request contains information on which permissions are changing and the reasoning behind the changes.
 
 ![Changed Permissions on Integration.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/integrations/dashboard/action-required-for-changed-permissions-light.png)
 

@@ -16,8 +16,8 @@ summary: Configure alert rules and notification destinations for Vercel Observab
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/alerts/configure-alerts.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "dec999cb56a75a63ce2fb74a67a670f2d263e69b6fb53c6e0c404c252c46b2ad"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "62199f6ed839919671c5bdc757599728f683552668dc5793963f790d1c045f34"
 ---
 
 # Configure alerts
@@ -34,12 +34,12 @@ Use monitors to notify your team when Vercel detects error or usage anomalies.
 
 - [Create custom monitors in Vercel Observability](https://vercel.com/changelog/create-custom-monitors-in-vercel-observability)
 - [Vercel Agent can now validate alerts before paging](https://vercel.com/changelog/vercel-agent-can-now-validate-alerts-before-paging-you)
+- [How to keep your storefront running through Black Friday](https://vercel.com/kb/guide/black-friday-reliability) — Learn how to tune alerts, bot rules, and spend limits. Rehearse rollback so your team can recover quickly from checkout
 - [Monitor uptime for AI-native apps with Vercel Alerts](https://vercel.com/kb/guide/monitor-uptime-for-ai-native-apps-with-vercel-alerts) — Learn how to use Vercel Anomaly Alerts as an early-warning system for AI-powered apps, helping you catch 5xx spikes and
-- [Introducing Vercel Monitoring](https://vercel.com/blog/introducing-monitoring)
 - [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
-- [Monitoring](https://vercel.com/docs/query/monitoring) — Query and visualize your Vercel usage, traffic, and more with Monitoring.
 - [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
+- [Monitoring](https://vercel.com/docs/query/monitoring) — Query and visualize your Vercel usage, traffic, and more with Monitoring.
 - [Observability](https://vercel.com/docs/connect/observability) — Monitor token requests, authorizations, revocations, and trigger deliveries for your connectors.
 
 Full cross-link map for this page: [/docs/alerts/configure-alerts.graph.md](/docs/alerts/configure-alerts.graph.md)
@@ -69,9 +69,7 @@ Create a built-in monitor from the dashboard or the Vercel CLI.
 6. In **Configure monitor**, enter a monitor name. This name appears in the **Monitors** table and notifications.
 7. Choose the project scope for the monitor. You can apply the monitor to all projects, specific projects, or all projects except selected projects.
 8. Click **Create Monitor**.
-
-9) In **Configure notifications**, under **Notification Severity**, select the least-severe of Low, Medium, or High that should trigger notifications. Vercel always includes Critical alerts in addition to your selection.
-
+9. In **Configure notifications**, under **Notification Severity**, select the least-severe of Low, Medium, or High that should trigger notifications. Vercel always includes Critical alerts in addition to your selection.
 10. In **Configure notifications**, choose the notification destinations for the rule.
 11. Click **Done**.
 

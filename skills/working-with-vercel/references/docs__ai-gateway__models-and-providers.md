@@ -17,8 +17,8 @@ summary: Choose AI Gateway models and providers. Configure routing, fallbacks, t
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "d333ea734d3bf03faaa5d8eb63f6112b99be52c3a0c81ffd94de51d582428f9c"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "162042f633a1fd208a0d5ed3368d10b0e4f987089f06e026a1896b94c95229e8"
 ---
 
 # AI Gateway Models and Providers
@@ -31,17 +31,15 @@ The AI Gateway's unified API provides flexibility, allowing you to switch betwee
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available)
-- [Introducing the AI Gateway](https://vercel.com/blog/ai-gateway)
-- [Model fallbacks now available in Vercel AI Gateway](https://vercel.com/changelog/model-fallbacks-now-available-in-vercel-ai-gateway)
 - [Customize timeouts for faster automatic failover on Vercel AI Gateway](https://vercel.com/changelog/provider-level-custom-timeouts-for-faster-fail-over-on-ai-gateway)
 - [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
 - [How to run a multi-step research agent on Vercel](https://vercel.com/kb/guide/how-to-run-a-multi-step-research-agent-on-vercel) — An end-to-end architecture for production research agents on Vercel using Sandbox, Workflows, and AI Gateway with isolat
+- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, caching, SDK and API compati
+- [OpenResponses Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/advanced) — Configure provider routing, fallbacks, and restrictions using the OpenResponses API through AI Gateway.
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 - [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model) — Learn how to add a new AI model to your Vercel projects
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
-- [Chat SDK](https://vercel.com/docs/chat-sdk) — Build bots for Slack and other chat platforms with Chat SDK, and deploy them on Vercel.
-- [Chat SDK with Vercel Passport](https://vercel.com/docs/chat-sdk/integrations/passport) — Use a verified Vercel Passport identity to store and retrieve per-user conversation history in a Chat SDK bot.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers.graph.md](/docs/ai-gateway/models-and-providers.graph.md)
 <!-- /docsgraph:related -->
@@ -55,18 +53,20 @@ Configure how AI Gateway selects providers and routes requests, and apply capabi
 
 - **Routing and selection**: [Provider options](/docs/ai-gateway/models-and-providers/provider-options), [provider filtering and ordering](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering), [model fallbacks](/docs/ai-gateway/models-and-providers/model-fallbacks), [decision fallbacks](/docs/ai-gateway/models-and-providers/decision-fallbacks), [provider timeouts](/docs/ai-gateway/models-and-providers/provider-timeouts), [routing rules](/docs/ai-gateway/models-and-providers/routing-rules), and [virtual models](/docs/ai-gateway/models-and-providers/virtual-models)
 
-* **Performance and cost**: [Prompt and response caching](/docs/ai-gateway/models-and-providers/automatic-caching), [service tiers](/docs/ai-gateway/models-and-providers/service-tiers), [batch processing](/docs/ai-gateway/models-and-providers/batch-processing), [uptime and status](/docs/ai-gateway/models-and-providers/uptime), and [metrics](/docs/ai-gateway/models-and-providers/metrics)
-* **Model capabilities**: [Reasoning](/docs/ai-gateway/models-and-providers/reasoning) and [web search](/docs/ai-gateway/models-and-providers/web-search)
+* **Reusable cross-model routing**: [Custom Routing](/docs/ai-gateway/models-and-providers/custom-routing) (beta) selects from an ordered set of models, virtual models, and nested routers
+
+- **Performance and cost**: [Prompt and response caching](/docs/ai-gateway/models-and-providers/automatic-caching), [service tiers](/docs/ai-gateway/models-and-providers/service-tiers), [batch processing](/docs/ai-gateway/models-and-providers/batch-processing), [uptime and status](/docs/ai-gateway/models-and-providers/uptime), and [metrics](/docs/ai-gateway/models-and-providers/metrics)
+- **Model capabilities**: [Reasoning](/docs/ai-gateway/models-and-providers/reasoning) and [web search](/docs/ai-gateway/models-and-providers/web-search)
 
 ### What are models and providers?
 
-Models are AI algorithms that process your input data to generate responses, such as [Grok 4.3](/ai-gateway/models/grok-4.3), [GPT-5.5](/ai-gateway/models/gpt-5.5), or [Claude Opus 4.7](/ai-gateway/models/claude-opus-4.7). Providers are the companies or services that host these models, such as SpaceXAI, OpenAI, or Anthropic.
+Models are AI algorithms that process your input data to generate responses, such as [Grok 4.3](/ai-gateway/models/spacexai/grok-4.3), [GPT-5.5](/ai-gateway/models/openai/gpt-5.5), or [Claude Opus 4.7](/ai-gateway/models/anthropic/claude-opus-4.7). Providers are the companies or services that host these models, such as SpaceXAI, OpenAI, or Anthropic.
 
 In some cases, multiple providers, including the model creator, host the same model. For example, you can use the `spacexai/grok-4.5` model from SpaceXAI or the `openai/gpt-6-astra` model from OpenAI, following the format `creator/model-name`.
 
 Different providers may have different specifications for the same model such as different pricing and performance. You can choose the one that best fits your needs, and compare options on the [AI Gateway leaderboards](/docs/ai-gateway/leaderboards) to see which models and providers developers use most.
 
-You can view the list of supported models and providers in three ways:
+You can view the list of supported models and providers in four ways:
 
 **Through the AI Gateway dashboard:**
 
@@ -88,6 +88,17 @@ https://ai-gateway.vercel.sh/v1/models
 This endpoint requires no authentication and returns model IDs, context windows, pricing, and reasoning controls. Use `reasoning_options` to discover effort levels, thinking budgets, or toggles. See [reasoning model discovery](/docs/ai-gateway/models-and-providers/reasoning#discover-model-reasoning-support) for TypeScript, Python, and cURL examples, or [Dynamic model discovery](#dynamic-model-discovery) for SDK usage.
 
 Authenticated requests can pass `include_availability` to annotate each model with its eligibility under your team's configuration. See [team availability annotations](/docs/ai-gateway/sdks-and-apis/rest-api#team-availability-annotations) in the REST API reference.
+
+**Through the Vercel CLI:**
+
+List models, or compare the providers that serve one model with their pricing, latency, and uptime:
+
+```bash filename="terminal"
+vercel ai-gateway models list --query claude
+vercel ai-gateway models endpoints anthropic/claude-opus-5
+```
+
+See [`vercel ai-gateway models`](/docs/cli/ai-gateway#models) for every option.
 
 ### Specifying the model
 

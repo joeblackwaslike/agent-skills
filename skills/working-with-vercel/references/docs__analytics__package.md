@@ -15,8 +15,8 @@ summary: With the @vercel/analytics npm package, you are able to configure your 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/analytics/package.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "53992851697909c935b259e391d4149ab17d5e221fa3b012813c3e5bf6f34a78"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "bd111de56f89f275905851989ebdd9873802e5aad84a3a2b38760de5ca06a53d"
 ---
 
 # Advanced Web Analytics Config with @vercel/analytics
@@ -36,7 +36,7 @@ To get started with analytics, follow our [Quickstart](/docs/analytics/quickstar
 - [How to prevent flash before hydration](https://nextjs.org/docs/app/guides/preventing-flash-before-hydration) — Learn how to prevent a flash of unstyled content (FOUC) by correcting server-rendered HTML, such as a dark mode theme, b
 - [How to build single-page applications with Next.js](https://nextjs.org/docs/app/guides/single-page-applications) — Next.js fully supports building Single-Page Applications (SPAs).
 - [Adopting Partial Prefetching](https://nextjs.org/docs/app/guides/adopting-partial-prefetching) — Learn how to enable Partial Prefetching and what changes for `\<Link\>`.
-- [Codemods](https://nextjs.org/docs/pages/guides/upgrading/codemods) — Use codemods to upgrade your Next.js codebase when new features are released.
+- [generateMetadata](https://nextjs.org/docs/app/api-reference/functions/generate-metadata) — Learn how to add Metadata to your Next.js application for improved search engine optimization (SEO) and web shareability
 - [Build a fullstack app with Next.js 16 and Prisma Postgres](https://vercel.com/kb/guide/nextjs-prisma-postgres) — Create a fullstack blog with the Next.js App Router, Prisma, Sign in with Vercel, Prisma Postgres from the Vercel Market
 - [Web Analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics) — Vercel MCP tools for web analytics.
 - [OG Image Generation Examples](https://vercel.com/docs/og-image-generation/examples) — Learn how to use the @vercel/og library with examples.

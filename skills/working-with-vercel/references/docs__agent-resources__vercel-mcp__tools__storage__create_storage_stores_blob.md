@@ -14,8 +14,8 @@ summary: Use create_storage_stores_blob with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/storage/create_storage_stores_blob.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "82ec643715f5b0c28513dfd9d546a7a8117aceda9bc74260bf71718ee54c6dcc"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "d231bb70d447ae4cd3421d3803faa9cd1fbef0a5c608ca2a08b386b7be197ba0"
 ---
 
 # create_storage_stores_blob
@@ -30,7 +30,6 @@ Create a Blob store.
 
 - [Create private blob stores with a single click in v0](https://vercel.com/changelog/create-private-blob-stores-with-a-single-click-in-v0)
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
-- [Unlimited Vercel Blob stores on every plan](https://vercel.com/changelog/unlimited-vercel-blob-stores-on-every-plan)
 - [Delete a Blob store](https://vercel.com/docs/rest-api/storage/delete-a-blob-store) — DELETE /storage/stores/blob/{id} — Delete a Blob store
 - [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store) — POST /storage/stores/blob — Create a Blob store
 - [Managing Vercel Blob storage from the CLI](https://vercel.com/docs/vercel-blob/manage-blob-storage) — Create blob stores, upload files, list contents, and manage storage using the CLI.

@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/cli/trusted-folders.md"
-fetched_at: "2026-06-15T05:55:14.234Z"
-sha256: "a9d986314ad4806d356eeca678a9ea0f838851372c84979471d1ba6e0250e44d"
+fetched_at: "2026-11-23T14:13:22.579Z"
+sha256: "11e98654dc371c1fe79625c7b330b9b366992c6f957f32e059d8292d42afd87a"
 ---
 
 # Trusted Folders
@@ -43,6 +43,19 @@ dialog will automatically appear, prompting you to make a choice:
 
 Your choice is saved in a central file (`~/.gemini/trustedFolders.json`), so you
 will only be asked once per folder.
+
+### Trust prompt in the macOS Seatbelt sandbox
+
+When you run Gemini CLI in the [macOS Seatbelt sandbox](./sandbox.md), Gemini
+CLI can't read or write `~/.gemini/trustedFolders.json` from inside the sandbox.
+Instead, it resolves folder trust before it starts the sandbox:
+
+- If the folder already has a trust decision, Gemini CLI applies it to the
+  sandboxed session without asking again.
+- If the folder doesn't have a trust decision yet, Gemini CLI asks you in the
+  terminal before the sandbox starts. The prompt offers the same choices and
+  discovery results as the trust dialog, and it saves your choice to
+  `~/.gemini/trustedFolders.json`.
 
 ## Understanding folder contents: The discovery phase
 

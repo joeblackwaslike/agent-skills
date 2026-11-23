@@ -18,8 +18,8 @@ summary: "Reference for AI Gateway REST endpoints: models, usage, generations, a
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/rest-api.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "36ab300e787a4f1cc635ce44cefe620831cb7469a825c967be60478a5983f456"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "1c73ea0e9840a74a5af32fbaa57f0cb7d6877e31fc9b07f27891cff6f01a4218"
 ---
 
 # AI Gateway REST API Reference
@@ -33,13 +33,11 @@ For sending inference requests, the [AI SDK](/docs/ai-gateway/sdks-and-apis/ai-s
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [AI Gateway production index](https://vercel.com/blog/ai-gateway-production-index)
-- [Decision models take 26% of requests; Anthropic now wins new teams 2:1](https://vercel.com/blog/ai-gateway-production-index-november-2026)
-- [DeepSeek enters the fight for token volume, Anthropic continues to dominate spend](https://vercel.com/blog/ai-gateway-production-index-june-2026)
 - [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit
 - [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, caching, SDK and API compati
 - [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
-- [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
-- [AI Gateway Amazon Bedrock Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/amazon-bedrock) — Configure reasoning for models hosted on Amazon Bedrock with the AI SDK and AI Gateway.
+- [Bring Your Own Key \\(BYOK\\) to AI Gateway](https://vercel.com/docs/ai-gateway/authentication-and-byok/byok) — Learn how to configure your own provider keys with AI Gateway.
+- [AI Gateway Observability](https://vercel.com/docs/ai-gateway/observability-and-spend/observability) — Monitor AI Gateway requests in the Vercel dashboard. Inspect token usage, latency, spend, and logs at team, project, and
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/rest-api.graph.md](/docs/ai-gateway/sdks-and-apis/rest-api.graph.md)
 <!-- /docsgraph:related -->
@@ -212,7 +210,7 @@ A model can serve a request when its status is `eligible` and the matching `requ
 
 | Request | Response |
 | ------- | -------- |
-| No query parameter | Public catalog, edge-cached. Authenticated requests also include the team's virtual models. No annotations. |
+| No query parameter | Public catalog, edge-cached. Authenticated requests also include the team's virtual models and private models. No annotations. |
 | `include_availability` with authentication | The same catalog with annotations. `Cache-Control: private, no-store`. |
 | `include_availability` without authentication | `401` |
 
@@ -609,6 +607,7 @@ Errors return a JSON body with an `error` field. Some endpoints additionally inc
 | ------ | -------------------------------------------------------------------------------------------------------- |
 | `400`  | Invalid request body, missing required fields, or validation error.                                      |
 | `401`  | Authentication failed (invalid API key or OIDC token).                                                   |
+| `402`  | No positive credit balance (for example, a paid `/v1/report` query).                                     |
 | `403`  | Endpoint requires a paid plan (for example, Hobby and Pro-trial cannot query `/v1/report`).              |
 | `404`  | Resource not found (for example, a generation that doesn't exist).                                       |
 | `500`  | Internal server error.                                                                                   |

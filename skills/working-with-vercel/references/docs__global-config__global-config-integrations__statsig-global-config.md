@@ -18,8 +18,8 @@ summary: "Learn how to use Global Config with Vercel's Statsig integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/global-config/global-config-integrations/statsig-global-config.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "bcf4d0debaf5bf0458dab078fcc296cc0e1874e9cf1cda708fe35efa4815a576"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "1ba3102acaba4ffd75f089f8ba68ff73dbd8939d5c5239d49e778fffe07e5627"
 ---
 
 # Using Global Config with Statsig
@@ -113,7 +113,7 @@ bunx create-next-app@latest
    ```
 
 - ### Set up the Statsig integration
-  Visit [the Statsig page in the Integration Marketplace](/marketplace/statsig) and select the **Add Integration** button. Then:
+  Visit [the Statsig page in the Integration Marketplace](/marketplace/statsig) and select the **Install** button. Then:
   1. Select a Vercel team and Vercel project for your integration to be applied to
   2. Log into Statsig
   3. Select or create a new Global Config to connect to Statsig

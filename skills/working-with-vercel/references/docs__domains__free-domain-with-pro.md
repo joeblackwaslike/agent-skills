@@ -17,8 +17,8 @@ summary: Every paid Pro team gets one free first-year custom domain on an eligib
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains/free-domain-with-pro.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "35ffc5f62f02d137bee3450041f7be859f62409315960ba72c8469fbb98042ea"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "9d074bf973b1e3a8c15f608a4feba6da1e1c261a10a31b7baf3492e26082f764"
 ---
 
 # Free Domain with Pro
@@ -31,9 +31,9 @@ Every paid Pro team gets one free first-year custom domain. You choose an [eligi
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Free domain for one year, now for all Pro teams](https://vercel.com/changelog/free-domain-for-one-year-now-for-all-pro-teams)
 - [Free domain with Pro offer now includes .app and .dev](https://vercel.com/changelog/app-and-dev-domains-included-with-free-domain-for-pro)
 - [Eight more TLDs now eligible for a free domain with Pro](https://vercel.com/changelog/eight-more-tlds-now-eligible-for-a-free-domain-with-pro)
-- [Free domain for one year, now for all Pro teams](https://vercel.com/changelog/free-domain-for-one-year-now-for-all-pro-teams)
 - [Free domain now included with new Pro subscriptions](https://vercel.com/changelog/free-domain-now-included-with-new-pro-subscriptions)
 - [Search domains without authentication](https://vercel.com/changelog/search-domains-without-authentication)
 - [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby) — Learn about the Hobby plan and how it compares to the Pro plan.

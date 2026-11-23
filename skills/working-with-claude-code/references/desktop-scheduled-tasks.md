@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/desktop-scheduled-tasks.md"
-fetched_at: "2026-11-16T12:28:44.823Z"
-sha256: "4be49e3ab68ebefddb5a5583f26947edbd0005d64dbf1537aa3b66ed39984a59"
+fetched_at: "2026-11-23T14:04:20.448Z"
+sha256: "10648ce06fa1ea4d2bd190a7c1d19e7686b17f28ba8c513233287d5a61ec155d"
 ---
 
 > ## Documentation Index
@@ -158,7 +158,7 @@ To open the session a run started, go to the task's [detail page](#manage-schedu
 
 The sidebar's session list can show a **Scheduled** group as well, with one row per task. To open the session of a task's latest run, click the task's row in that group. To show the group, [check which layout you have](https://code.claude.com/docs/en/desktop.md#check-which-layout-you-have):
 
-* **Current layout**: open the [**Group and sort** menu](https://code.claude.com/docs/en/desktop.md#organize-and-find-sessions), select **Show**, then select **Scheduled**. The group starts collapsed, so click its heading to expand it. **Show** lists **Scheduled** when at least one of your tasks is **Active**, the **Status** a task's detail page shows. If it isn't listed, use the **History** list, which works whether or not the group shows.
+* **Current layout**: open the [**Group and sort** menu](https://code.claude.com/docs/en/desktop.md#organize-and-find-sessions), select **Show**, then select **Scheduled**. The group starts collapsed, so click its heading to expand it.
 * **Earlier layout**: the group is in the session list with nothing to turn on
 
 In a run's session, whichever way you reached it, you can see what Claude did, review changes, and respond to permission prompts. Claude can edit files, run commands, create commits, and open pull requests, the same as in a session you start yourself.
@@ -193,6 +193,8 @@ You can also manage tasks by asking Claude, letting a task update itself, or edi
 * **Ask Claude**: list, create, edit, and pause tasks by asking Claude in any Desktop session. For example, "pause my dependency-audit task" or "show me my scheduled tasks." To delete a task, use the **Delete** button on its detail page.
 * **Let a task update itself**: for a task to change its own schedule or prompt with the `update_scheduled_task` MCP tool, click **Run now** and approve the call each time
 * **Edit the prompt on disk**: open `~/.claude/scheduled-tasks/<task-name>/SKILL.md`, or `scheduled-tasks/<task-name>/SKILL.md` under [`CLAUDE_CONFIG_DIR`](https://code.claude.com/docs/en/env-vars) if you set that variable. The file uses YAML frontmatter for `name` and `description`, with the prompt as the body. Changes take effect on the next run. Schedule, folder, and enabled state are not in this file: change them through the Edit form or ask Claude.
+
+If a local one-time task that has already run isn't on the **Scheduled tasks** page, click the sort icon above the list and select **Include completed**.
 
 ## Related resources
 

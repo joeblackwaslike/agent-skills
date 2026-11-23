@@ -16,8 +16,8 @@ summary: Request the faster serving path for supported models through AI Gateway
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/fast-mode.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "28543775a2bd536ea1843c233277a422190031ebd6c6078f09a0905088ec1af7"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "a3816f216d69a3bdcc88e83f35ee1069b61d20bc38fca741c3533e88f58a91d3"
 ---
 
 # AI Gateway Fast Mode
@@ -33,8 +33,8 @@ Some models expose a faster serving path that trades a higher per-token cost for
 - [AI Gateway adds unified fast mode support](https://vercel.com/changelog/ai-gateway-adds-unified-fast-mode-support)
 - [Claude Opus 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-5-now-available-on-ai-gateway)
 - [GPT-6.1 Terra now available on AI Gateway](https://vercel.com/changelog/gpt-6-1-terra-now-available-on-ai-gateway)
+- [GPT-6.2 Astra and Sol now available on AI Gateway](https://vercel.com/changelog/gpt-6-2-astra-and-sol-now-available-on-ai-gateway)
 - [Opus 4.6 Fast Mode available on AI Gateway](https://vercel.com/changelog/opus-4-6-fast-mode-available-on-ai-gateway)
-- [Fast mode for Opus 4.7 available on AI Gateway](https://vercel.com/changelog/fast-mode-for-opus-4-7-available-on-ai-gateway)
 - [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, caching, SDK and API compati
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 
@@ -624,7 +624,7 @@ console.log('Usage:', usage);
 
 ### Claude Code
 
-For models native to Claude Code (Anthropic Opus), you can toggle fast mode interactively with `/fast` after completing the setup in [Claude Code](/docs/ai-gateway/coding-agents/claude-code#enabling-fast-mode).
+For Claude models with a fast tier, you can toggle fast mode interactively with `/fast` after completing the setup in [Claude Code](/docs/ai-gateway/coding-agents/claude-code#enabling-fast-mode).
 
 ### Other coding agents
 

@@ -18,8 +18,8 @@ summary: Save a model with its provider routing, fallbacks, regional inference, 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/virtual-models.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "3419b4efabe7caaca4e97bc576ac5b0306f9106eef47598a3fdec798c0f88388"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "e31777c3ab6d50c846c4ca989e1a3e29466ef9c754a40f6ec1772aa94f94d44f"
 ---
 
 # AI Gateway Virtual Models for Reusable Model Configurations
@@ -348,6 +348,33 @@ curl --fail-with-body https://ai-gateway.vercel.sh/v1/responses \
 
 Click the `vmc/<slug>` pill on any row in the Virtual Models list to copy the full identifier to your clipboard.
 
+## Finding virtual models in model lists
+
+AI Gateway adds your team's virtual models to the model list it serves, next to the catalog models. Coding agents and other tools that read that list show `vmc/<slug>` in their model pickers, so your team can choose the slug without typing it. To see the list a tool gets, request `/v1/models` with your AI Gateway API key or an OIDC token:
+
+```bash filename="terminal"
+curl --fail-with-body https://ai-gateway.vercel.sh/v1/models \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY"
+```
+
+Each virtual model appears as an entry with `type` set to `virtual` and the model it points at in `model_slug`. This example shows the main fields:
+
+```json filename="response"
+{
+  "id": "vmc/coding-agent-eu",
+  "object": "model",
+  "owned_by": "virtual",
+  "name": "Coding agent (EU)",
+  "type": "virtual",
+  "model_slug": "anthropic/claude-opus-5.5"
+}
+```
+
+- **`name` and `description`** come from the virtual model's **Display Name** and **Description**, when you set them.
+- **Credentials are required.** Without an `Authorization` header, `/v1/models` returns only the public catalog.
+- **Archived virtual models aren't listed.** Restore one to bring it back to the list.
+- **Coding agent pickers list only language models.** See [Using a virtual model with Claude Code, Codex, and other coding agents](#using-a-virtual-model-with-claude-code-codex-and-other-coding-agents).
+
 ## Using a virtual model with other model types
 
 Virtual models work with every model type in the AI Gateway catalog, including embedding, image, video, speech, transcription, reranking, and decision models. Pass the `vmc/` slug to the AI SDK function for that model type, the same way you would pass the underlying model:
@@ -595,10 +622,12 @@ Any member of your team can use a virtual model in their application. Team **Own
 
 ## Related
 
-- [`vercel ai-gateway virtual-models` CLI reference](/docs/cli/ai-gateway#virtual-models)
-- [AI Gateway overview](/docs/ai-gateway)
-- [Provider filtering, ordering, and sorting](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering)
-- [Decision Fallbacks](/docs/ai-gateway/models-and-providers/decision-fallbacks)
+- [Route across models with Custom Routing](/docs/ai-gateway/models-and-providers/custom-routing)
+
+* [`vercel ai-gateway virtual-models` CLI reference](/docs/cli/ai-gateway#virtual-models)
+* [AI Gateway overview](/docs/ai-gateway)
+* [Provider filtering, ordering, and sorting](/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering)
+* [Decision Fallbacks](/docs/ai-gateway/models-and-providers/decision-fallbacks)
 
 ## Search the docs from your terminal
 

@@ -8,8 +8,8 @@ keywords:
   - gemini flash
   - gemini pro
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/google.md"
-fetched_at: "2026-11-16T12:32:31.917Z"
-sha256: "3b5163aa5a8efa1f5a5f99cdd04524edeed1c8783533739f900121619db26bd5"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "e013322f7d48ff6b1b2cd99a69e69c44268aa5d9edc4af6d3ad8bc28acd059ef"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -248,7 +248,7 @@ The following optional provider options are available for Google models:
   - **thinkingLevel** *'minimal' | 'low' | 'medium' | 'high' | 'xhigh'*
 
     Optional. Controls the thinking depth for Gemini 3 and later models. Gemini 3.1 Pro supports 'low', 'medium', and 'high', Gemini 3 Pro supports 'low' and 'high', while Gemini 3 Flash supports all four levels: 'minimal', 'low', 'medium', and 'high'.
-    Gemini 4 Hydrogen supports 'low', 'medium', 'high', and 'xhigh'. The 'xhigh' level is only supported by Hydrogen.
+    Gemini 4 Hydrogen and Gemini 4 Neon support 'low', 'medium', 'high', and 'xhigh'. The 'xhigh' level is only supported by Hydrogen and Neon.
 
   - **thinkingBudget** *number*
 
@@ -372,6 +372,9 @@ Following the November 11, 2026 update, `xhigh` matches the previous `high`,
 `high` matches the previous `medium`, and `medium` sits between `low` and the
 new `high`. The `low` level is unchanged. Re-run prompts tuned before that
 update to check their reasoning quality.
+
+`gemini-4-neon` also supports `reasoning: 'xhigh'` and
+`thinkingConfig: { thinkingLevel: 'xhigh' }`.
 
 #### Gemini 2.5 Models
 
@@ -1294,6 +1297,7 @@ will still validate the response against the schema in `Output.object`.
 | `gemini-4-argon`                      | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
 | `gemini-4-carbon`                     | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
 | `gemini-4-hydrogen`                   | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
+| `gemini-4-neon`                       | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
 | `gemini-3.8-flash`                    | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
 | `gemini-3.7-flash`                    | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
 | `gemini-3.6-flash`                    | ✓           | ✓                 | ✓          | ✓              | ✓             | ✓           |
@@ -1592,7 +1596,7 @@ const { text } = await generateText({
 ```
 
 The provider maps `reasoning` to `generation_config.thinking_level` using the
-model's supported levels. `xhigh` is supported only by Gemini 4 Hydrogen.
+model's supported levels. `xhigh` is supported only by Gemini 4 Hydrogen and Gemini 4 Neon.
 Unsupported levels fall back to a supported level with a compatibility warning;
 `none` maps to the lowest supported level. Models without thinking-level
 support and agent calls emit a warning and omit the setting. Omitting `reasoning`
@@ -1664,8 +1668,8 @@ The following optional provider options are available:
   Controls reasoning depth for thinking-enabled models. Mapped onto the
   Interactions request's `thinking_level`.
   Overrides the top-level `reasoning` option when set.
-  The `xhigh` level is only supported by Gemini 4 Hydrogen and requests its
-  maximum reasoning depth.
+  The `xhigh` level is only supported by Gemini 4 Hydrogen and Gemini 4 Neon,
+  where it requests the model's maximum reasoning depth.
 
 - **thinkingSummaries** *'auto' | 'none'*
 
@@ -1957,8 +1961,8 @@ tools under `google.tools.*` map onto Interactions tool descriptors:
 | `google.tools.urlContext`             | `url_context`          | Fetch URLs referenced in the prompt.      |
 | `google.tools.fileSearch`             | `file_search`          | Retrieval from File Search stores.        |
 | `google.tools.googleMaps`             | `google_maps`          | Maps grounding for nearby-places queries. |
+| `google.tools.mcpServer`              | `mcp_server`           | Remote MCP server passthrough.            |
 | *provider tool* `google.computer_use` | `computer_use`         | Computer use (browser environment).       |
-| *provider tool* `google.mcp_server`   | `mcp_server`           | Remote MCP server passthrough.            |
 | *provider tool* `google.retrieval`    | `retrieval`            | Vertex AI Search retrieval.               |
 
 Function tools (`type: 'function'`) defined with the AI SDK `tool(...)`
@@ -1997,6 +2001,33 @@ const { text, toolCalls } = await generateText({
   model: google.interactions('gemini-4-argon'),
   tools: { getWeather: weatherTool },
   stopWhen: isStepCount(5),
+  prompt: 'What is the weather in San Francisco right now?',
+});
+```
+
+### Remote MCP servers
+
+`google.tools.mcpServer` connects a remote MCP server so the model can call its
+tools. Header values are sent to the Gemini API and redacted from telemetry at
+the same time. Tool definitions that are built by hand instead of with this
+factory do not carry the provider's telemetry redaction. Google Vertex
+Interactions models use the same tool as `googleVertex.tools.mcpServer`, see
+[Remote MCP Server](/providers/ai-sdk-providers/google-vertex#remote-mcp-server).
+
+```ts
+import { google } from '@ai-sdk/google';
+import { generateText } from 'ai';
+
+const { text } = await generateText({
+  model: google.interactions('gemini-4-argon'),
+  tools: {
+    mcp_server: google.tools.mcpServer({
+      name: 'local-mcp',
+      url: 'https://example.com/mcp',
+      headers: { Authorization: `Bearer ${process.env.MCP_TOKEN}` },
+      allowedTools: ['getWeather'],
+    }),
+  },
   prompt: 'What is the weather in San Francisco right now?',
 });
 ```
@@ -2665,6 +2696,116 @@ to `result.warnings`.
 | `gemini-3.1-flash-tts-preview` | ✓             | ✓                      |
 | `gemini-3.8-flash-tts`         | ✓             | ✓                      |
 | `gemini-3.8-flash-lite-tts`    | ✓             | ✓                      |
+
+## Transcription Models
+
+You can create models that call the [Gemini transcription API](https://ai.google.dev/gemini-api/docs/transcribe)
+using the `.transcription()` factory method. `gemini-3.5-transcribe` transcribes
+recorded audio with [`transcribe()`](/docs/reference/ai-sdk-core/transcribe), and
+`gemini-3.5-transcribe-live` transcribes live audio with
+[`experimental_streamTranscribe`](/docs/ai-sdk-core/transcription#streaming-transcription)
+over the [Live API](https://ai.google.dev/gemini-api/docs/live-api/live-transcribe).
+
+```ts
+import { google } from '@ai-sdk/google';
+import { transcribe } from 'ai';
+import { readFile } from 'node:fs/promises';
+
+const result = await transcribe({
+  model: google.transcription('gemini-3.5-transcribe'),
+  audio: await readFile('audio.mp3'),
+});
+```
+
+The following provider options are available under `providerOptions.google`:
+
+- **languageCodes** *string\[]*
+
+  BCP-47 language codes that hint at the languages in the audio. Defaults to
+  automatic language detection.
+
+- **customVocabulary** *string\[]*
+
+  Phrases that bias recognition toward specific terms.
+
+- **wordTimestamp** *boolean*
+
+  Enables word-level timestamps.
+
+- **diarization** *boolean*
+
+  Enables speaker diarization.
+
+- **mode** *'VERBATIM' | 'SMART'*
+
+  `VERBATIM` (default) returns the literal transcript, including filler words
+  and false starts. `SMART` removes disfluencies, applies inline
+  self-corrections, and formats lists, numbers, and dates.
+
+- **streaming** *object*
+
+  Options for live transcription with `gemini-3.5-transcribe-live`.
+
+  - **automaticActivityDetection** *object*
+    - **disabled** *boolean*
+
+      Disables server-side voice activity detection, so the whole audio stream
+      is transcribed as a single turn. See [Push-to-talk](#push-to-talk).
+
+### Live Transcription
+
+```ts
+import { google } from '@ai-sdk/google';
+import { experimental_streamTranscribe as streamTranscribe } from 'ai';
+
+const result = streamTranscribe({
+  model: google.transcription('gemini-3.5-transcribe-live'),
+  audio: audioStream, // ReadableStream<Uint8Array | string>
+  inputAudioFormat: { type: 'audio/pcm', rate: 16000 },
+});
+
+for await (const part of result.fullStream) {
+  if (part.type === 'transcript-final') {
+    console.log(part.text);
+  }
+}
+
+console.log(await result.text);
+```
+
+Input chunks contain raw 16kHz 16-bit little-endian mono PCM. Strings contain
+base64-encoded audio. The Live API authenticates with the API key in the
+WebSocket URL, so native WebSockets work; keep the API key on the server.
+
+By default, server-side voice activity detection splits the audio into segments
+at pauses, and each segment is emitted as a `transcript-final` part while audio
+is still streaming. Closing the audio input transcribes any remaining speech
+before the result finishes. If the audio ends in silence after the last
+segment, the Live API sends no further messages, and the result finishes after
+a 3-second grace period.
+
+### Push-to-talk
+
+When the start and end of speech are known, for example while a push-to-talk
+button is held, disable automatic activity detection. The whole audio stream is
+then transcribed as a single turn: pauses do not split it, and the transcript is
+finalized as soon as the audio input closes, regardless of trailing silence.
+
+```ts {5-9}
+const result = streamTranscribe({
+  model: google.transcription('gemini-3.5-transcribe-live'),
+  audio: audioStream,
+  inputAudioFormat: { type: 'audio/pcm', rate: 16000 },
+  providerOptions: {
+    google: {
+      streaming: { automaticActivityDetection: { disabled: true } },
+    },
+  },
+});
+```
+
+`transcript-partial` parts still arrive while audio streams, but there is a
+single `transcript-final` part for the whole stream.
 
 ## Decision Models
 

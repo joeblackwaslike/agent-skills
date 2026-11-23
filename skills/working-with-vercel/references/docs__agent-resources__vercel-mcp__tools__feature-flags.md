@@ -14,8 +14,8 @@ summary: Vercel MCP tools for feature flags.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "fd595f87a0a767a18d677412ec4efa7e9d003626722cfdc02e647a0f98315eb5"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "e67a9ba938cfb2fe2c384947672f112791e81ddec752e29f97d7ea79be1a24ee"
 ---
 
 # Feature Flags
@@ -28,11 +28,11 @@ Read and update feature flags and their settings. Create SDK keys and list the k
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Managing flags in the dashboard](https://vercel.com/docs/flags/vercel-flags/dashboard) — Learn how to manage your feature flags using the Vercel Dashboard.
+- [List flags](https://vercel.com/docs/rest-api/feature-flags/list-flags-1) — GET /v1/projects/{projectIdOrName}/feature-flags/flags — Retrieve feature flags for a project. The list can be filtered
+- [List all flags for a team](https://vercel.com/docs/rest-api/feature-flags/list-all-flags-for-a-team-1) — GET /v1/teams/{teamId}/feature-flags/flags — Retrieve all feature flags for a team across all projects. The list can be
 - [List team project flag settings](https://vercel.com/docs/rest-api/feature-flags/list-team-project-flag-settings) — GET /v1/teams/{teamId}/feature-flags/settings — Retrieve feature flag settings for projects in a team.
+- [Managing flags in the dashboard](https://vercel.com/docs/flags/vercel-flags/dashboard) — Learn how to manage your feature flags using the Vercel Dashboard.
 - [List flags](https://vercel.com/docs/rest-api/feature-flags/list-flags) — GET /v2/projects/{projectIdOrName}/feature-flags/flags — Retrieve feature flags for a project. Returns an opaque cursor
-- [List all flags for a team](https://vercel.com/docs/rest-api/feature-flags/list-all-flags-for-a-team) — GET /v2/teams/{teamId}/feature-flags/flags — Retrieve all feature flags for a team across all projects. Returns an opaqu
-- [Vercel Flags](https://vercel.com/docs/flags/vercel-flags) — Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directl
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/feature-flags.graph.md](/docs/agent-resources/vercel-mcp/tools/feature-flags.graph.md)
 <!-- /docsgraph:related -->

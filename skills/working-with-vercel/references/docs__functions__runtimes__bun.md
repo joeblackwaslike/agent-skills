@@ -18,8 +18,8 @@ summary: Learn how to use the Bun runtime with Vercel Functions to create fast, 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/runtimes/bun.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "85e4cbeb0a9627214b3465bbc45eb3460003f806e1bfbac9337e27cf06f26bc8"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "5c69fa1bcb3ae75cd8143a19c124cda4611ceb56b8521bc94995a36d07ecb7a1"
 ---
 
 # Using the Bun Runtime with Vercel Functions
@@ -35,8 +35,8 @@ Bun is a fast, all-in-one JavaScript runtime that serves as an alternative to No
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Bun runtime now in Public Beta for Vercel Functions](https://vercel.com/changelog/bun-runtime-now-in-public-beta-for-vercel-functions)
-- [Bun runtime for Vercel Functions now accepts Bun.serve as an entrypoint](https://vercel.com/changelog/bun-serve-entrypoint-for-vercel-functions)
 - [Bun runtime on Vercel Functions](https://vercel.com/blog/bun-runtime-on-vercel-functions)
+- [Bun runtime for Vercel Functions now accepts Bun.serve as an entrypoint](https://vercel.com/changelog/bun-serve-entrypoint-for-vercel-functions)
 - [Bun 1.4 is now available in Vercel Functions](https://vercel.com/changelog/bun-1-4-is-now-available-in-vercel-functions)
 - [Bun runtime now supports large functions and extended max duration](https://vercel.com/changelog/bun-runtime-now-supports-large-functions-and-extended-max-duration)
 - [Elysia can now be automatically deployed on Vercel](https://vercel.com/changelog/support-for-elysia)

@@ -17,8 +17,8 @@ summary: "With Web Analytics, you can get detailed insights into your website's 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/analytics.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "b579b2c568e6f70cd24bf15577a2dd2aca2920bfa8dbc61a328b04827176ef67"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "493e64efb26641ba8658336b0804f21eb5fd2fa6e39cd64d020f5f1f4466d3d9"
 ---
 
 # Vercel Web Analytics
@@ -43,7 +43,7 @@ sha256: "b579b2c568e6f70cd24bf15577a2dd2aca2920bfa8dbc61a328b04827176ef67"
 - [Improved data collection for Web Analytics and Speed Insights with resilient intake](https://vercel.com/changelog/improved-data-collection-for-web-analytics-and-speed-insights-with-resilient)
 - [Nuxt analytics available on Vercel Analytics](https://vercel.com/changelog/nuxt-analytics-available-on-vercel-analytics)
 - [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
-- [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
+- [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation) — Set baselines and cut backend load. Make your catalog readable to agents and keep orders and AI features reliable. Then
 - [Deploy a headless BigCommerce storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-bigcommerce-storefront-with-vercel) — Deploy a headless BigCommerce storefront using Catalyst and Next.js on Vercel
 - [How Splits Work in Vercel Flags](https://vercel.com/kb/guide/how-splits-work-in-vercel-flags) — Use weighted splits in Vercel Flags to deterministically bucket users into variants by percentage for gradual rollouts a
 - [How to use Vercel’s Bot Management features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
@@ -90,7 +90,7 @@ The higher the bounce rate, the less engaging the page is.
 
 > **💡 Note:** Bounce Rate (%) = (Single-Page Sessions / Total Sessions) × 100
 
-Web Analytics defines a session as a group or page views by the same visitor. Custom events don't count towards the bounce rate.
+Web Analytics defines a session as a group of page views by the same visitor. Custom events don't count towards the bounce rate.
 
 For that reason, when filtering the dashboard for a given custom event, the bounce rate will always be 0%.
 

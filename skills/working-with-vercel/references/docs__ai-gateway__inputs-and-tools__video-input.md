@@ -18,8 +18,8 @@ summary: Analyze video clips with AI Gateway using AI SDK 7, Python, Chat Comple
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/inputs-and-tools/video-input.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "dcbe97220ff8e99a95ef85360561c0e6dbb95cc77021f8ee4c70849d5c7f55e6"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "b11296d97fa8a7b8ab1ac8f4a304187d61d4c3454c965fa8b6990b620d70a8cb"
 ---
 
 # AI Gateway Video Input
@@ -35,8 +35,8 @@ Send a video clip and a question to a video-capable model to summarize events or
 - [AI Gateway Audio Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/audio-input) — Analyze recorded audio with AI Gateway, compare audio input with transcription and realtime voice, and choose a supporte
 - [AI Gateway File and PDF Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/file-input) — Send PDFs and documents to AI Gateway models with examples for each supported SDK and API format.
 - [OpenAI Responses Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/images) — Send images and PDF documents for analysis using the OpenAI Responses API through AI Gateway.
+- [AI Gateway Video Editing](https://vercel.com/docs/ai-gateway/modalities/video-generation/video-editing) — Edit existing videos using text prompts with Grok Imagine Video or ByteDance Seedance, and enhance videos with Topaz, th
 - [OpenResponses Images and PDFs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/images) — Send images and PDF documents for analysis using the OpenResponses API through AI Gateway.
-- [OpenAI Chat Completions API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions) — Use OpenAI SDKs with the AI Gateway Chat Completions API. Configure the base URL and authentication for chat, streaming,
 
 Full cross-link map for this page: [/docs/ai-gateway/inputs-and-tools/video-input.graph.md](/docs/ai-gateway/inputs-and-tools/video-input.graph.md)
 <!-- /docsgraph:related -->

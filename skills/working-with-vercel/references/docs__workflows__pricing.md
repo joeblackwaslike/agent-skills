@@ -12,13 +12,13 @@ related:
   - /docs/fluid-compute
   - /docs/queues/pricing
   - /docs/workflows/retention
-  - /docs/functions/limitations
+  - /docs/workflows/concepts
 summary: Understand how Vercel Workflows billing works and the limits that apply to runs, streams, and platform resources.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/workflows/pricing.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "f6aeda0874cd179c861160ad499638c6081e5c200c994f4c7fb183750db85c0d"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "3676d79fb0a7f714e7adf1ef3a166b8b643b67cfbcbbaf491e746da6289150e7"
 ---
 
 # Workflow Pricing and Limits
@@ -36,13 +36,13 @@ Vercel bills Workflows usage across three resources:
 - [Choosing between eve, AI SDK agents, and \\`WorkflowAgent\\`](https://vercel.com/kb/guide/eve-vs-ai-sdk-agents-vs-workflowagent) — Compare eve, \\`ToolLoopAgent\\`, and \\`WorkflowAgent\\` by durability, approvals, channels, and setup to choose an agent f
 - [How to migrate from Cloudflare Workflows to Vercel Workflows](https://vercel.com/kb/guide/migrate-cloudflare-workflows-to-vercel-workflows) — Migrate from Cloudflare Workflows to Vercel Workflows by mapping WorkflowEntrypoint, step.do, and waitForEvent to workfl
 - [Private enterprise agents on Vercel](https://vercel.com/kb/guide/private-enterprise-agents-vercel) — Design private enterprise agents that call internal APIs and databases with Vercel Functions, Secure Compute, AI Gateway
+- [Introducing eve 1.0](https://vercel.com/blog/eve-is-now-generally-available)
 - [Workflow SDK vs AWS Bedrock AgentCore](https://workflow-sdk.dev/docs/comparisons/workflow-sdk-vs-aws-agentcore) — AgentCore hosts and operates AI agents in isolated microVMs but is not a durable-execution engine. The Workflow SDK prov
+- [Runtime tuning](https://workflow-sdk.dev/docs/configuration/runtime-tuning) — Tune Workflow runtime behavior where workflows execute.
 - [max-events-exceeded](https://workflow-sdk.dev/docs/errors/max-events-exceeded) — Run long-running workflows on the QuickJS VM with snapshotting, which is exempt from the default event limit, or split t
 - [Errors & Retrying](https://workflow-sdk.dev/docs/foundations/errors-and-retries) — Control how steps handle failures and customize retry behavior.
+- [Usage](https://workflow-sdk.dev/docs/observability/usage) — See a run's events, by step and hook, and its storage, counted the way Vercel bills them.
 - [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution)
-- [Workflow Concepts](https://vercel.com/docs/workflows/concepts) — Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
-- [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Vercel Functions](https://vercel.com/docs/functions) — Build API routes, webhooks, and agent request handlers with Vercel Functions, then test and debug them with Vercel CLI.
 
 Full cross-link map for this page: [/docs/workflows/pricing.graph.md](/docs/workflows/pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -80,13 +80,13 @@ Vercel bills a run's full retention period when the run finishes. If you later [
 
 ## Workflow run limits
 
-The following limits apply to all Workflow runs. **Events per run** and **Steps per run** are the defaults for the Node.js runtime, and the [QuickJS runtime](#quickjs-runtime) lifts both.
+The following limits apply to all Workflow runs. **Events per run** and **Steps per run** are the defaults for the Node.js runtime, and the [QuickJS runtime](/docs/workflows/concepts#quickjs-runtime) lifts both. Every other limit on this page still applies to QuickJS runs, including payload size, entity storage, replay duration, and the rate limits.
 
 | Limit                                   | Value                                                      | Details                                                                                                                                                                                                              |
 | --------------------------------------- | ---------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Run creations per second                          | 1,000 |                                                                                                                                                         |
-| Events per run                          | 25,000 limit                                               | Applies to the default Node.js runtime. [QuickJS](#quickjs-runtime) runs with snapshotting enabled are exempt from this cap.                                                                                        |
-| Steps per run                           | 10,000                                                     | Applies to the default Node.js runtime. Steps write events, so [QuickJS](#quickjs-runtime) runs that are exempt from the event cap can execute more steps.                                                          |
+| Events per run                          | 25,000 limit                                               | Applies to the default Node.js runtime. [QuickJS](/docs/workflows/concepts#quickjs-runtime) runs with snapshotting enabled are exempt from this cap.                                                                                        |
+| Steps per run                           | 10,000                                                     | Applies to the default Node.js runtime. Steps write events, so [QuickJS](/docs/workflows/concepts#quickjs-runtime) runs that are exempt from the event cap can execute more steps.                                                          |
 | Event creations per run per second      | 200                                                        | (Throttled and re-tried when exceeded)                                                                                                                                                         |
 | Hook creations per second               | 200                                                        | (Throttled and re-tried when exceeded)                                                                                                                                                         |
 | Max payload size                        | 50 MB                                                      | (Maximum size of any run/step/hook input/output. Streams passed into a run or step do not count towards this limit and have their own limits.)                                                 |
@@ -105,27 +105,13 @@ The following limits apply to all Workflow runs. **Events per run** and **Steps 
 | Step name                               | 255 bytes                                                  | (Step names are derived from the file path and function name.)                                                                                                                                 |
 | Dynamic workflow source size            | 128 KiB                                                    | Dynamic workflows only. Experimental. (Maximum size of the source passed to start(). Its step aliases must also fit the 2,048-byte run execution context, which allows roughly 30 aliases.)    |
 
-> **💡 Note:** On the default runtime, runs that exceed 2,000 events or 1 GB of total entity storage can have slower replay times. To keep replay fast, split independent work into [child workflows](https://workflow-sdk.dev/cookbook/advanced/child-workflows), [bundle several items into each step](https://workflow-sdk.dev/cookbook/common-patterns/batching) so a run writes fewer events, or switch to the [QuickJS runtime](#quickjs-runtime), which replays only the events recorded since its last snapshot. Snapshots don't speed up the work inside individual steps.
-
-### QuickJS runtime
-
-Workflow runs your workflow function on the Node.js runtime by default, which caps each run at 25,000 events. Runs that start on the experimental QuickJS runtime with snapshotting enabled are exempt from that cap, so a run can record more events and execute more steps than the table above lists. Every other limit on this page still applies, including payload size, entity storage, replay duration, and the rate limits below.
-
-To opt in:
-
-1. Set the `WORKFLOW_VM` [environment variable](/docs/environment-variables) to `quickjs` for your project.
-2. Leave `WORKFLOW_SNAPSHOT_THRESHOLD` unset, or set it to a positive integer. QuickJS snapshots workflow state every 1,000 events by default. A value of `0` turns snapshotting off, and those runs keep the 25,000 event cap.
-3. Redeploy your project.
-
-A run records its runtime and snapshot policy when it starts, so the exemption covers only runs that start after you redeploy. Runs already in progress keep the limits they started with, and runs that already failed with `MAX_EVENTS_EXCEEDED` don't resume on their own. Start those runs again.
-
-QuickJS is experimental, and your workflow function sees a different set of globals: `Intl`, `WebAssembly`, and `Atomics` are unavailable, and `crypto.subtle` methods throw. Your step functions are unaffected and keep full Node.js access. For the complete list of differences, see the [QuickJS runtime documentation](https://workflow-sdk.dev/docs/configuration/runtime-tuning#workflow_vm).
+> **💡 Note:** On the default runtime, runs that exceed 2,000 events or 1 GB of total entity storage can have slower replay times. To keep replay fast, split independent work into [child workflows](https://workflow-sdk.dev/cookbook/advanced/child-workflows), [bundle several items into each step](https://workflow-sdk.dev/cookbook/common-patterns/batching) so a run writes fewer events, or switch to the [QuickJS runtime](/docs/workflows/concepts#quickjs-runtime), which replays only the events recorded since its last snapshot. Snapshots don't speed up the work inside individual steps.
 
 ### Vercel platform limits
 
 | Limit                     | Value                                                               | Details                                                                                                                                       |
 | ------------------------- | ------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| Concurrency               | up to 100,000, see [Vercel Functions limits](/docs/functions/limitations) |                                                                                                                                               |
+| Concurrency               | Scales automatically based on demand                                |                                                                                                                                               |
 | Queued runs               | No limit, see [Vercel Queues limits](/docs/queues/pricing#limits)   |                                                                                                                                               |
 | Schedules/cron            | No limit                                                            |                                                                                                                                               |
 | Projects                  | Unlimited                                                           |                                                                                                                                               |
@@ -163,7 +149,7 @@ No. A suspended run doesn't invoke any functions, so it uses no compute while it
 
 ### What happens when a run reaches the event limit?
 
-On the default Node.js runtime, a run that reaches 25,000 events fails with the `MAX_EVENTS_EXCEEDED` error code and doesn't resume on its own. Reduce the events per run, then start it again. You can split independent work into [child workflows](https://workflow-sdk.dev/cookbook/advanced/child-workflows), [bundle several items into each step](https://workflow-sdk.dev/cookbook/common-patterns/batching), or switch to the [QuickJS runtime](#quickjs-runtime) with snapshotting, which is exempt from the cap. Replay can slow down past 2,000 events, so split long runs well before they reach the limit.
+On the default Node.js runtime, a run that reaches 25,000 events fails with the `MAX_EVENTS_EXCEEDED` error code and doesn't resume on its own. Reduce the events per run, then start it again. You can split independent work into [child workflows](https://workflow-sdk.dev/cookbook/advanced/child-workflows), [bundle several items into each step](https://workflow-sdk.dev/cookbook/common-patterns/batching), or switch to the [QuickJS runtime](/docs/workflows/concepts#quickjs-runtime) with snapshotting, which is exempt from the cap. Replay can slow down past 2,000 events, so split long runs well before they reach the limit.
 
 ### How are eve agents and Chat SDK bots that use Workflows billed?
 

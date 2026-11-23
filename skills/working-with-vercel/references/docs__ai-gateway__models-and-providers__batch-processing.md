@@ -18,8 +18,8 @@ summary: Process large volumes of text generation requests asynchronously throug
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/batch-processing.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "1f99998cfb49eda8f3de0f989c2f9cac195c37d403d543c44a9ae581f61a6b2e"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "6ccc9c4026d483df62356123a677ec38d70a357bbf9ede3974680fa2fe7da160"
 ---
 
 # AI Gateway Batch Processing
@@ -673,8 +673,8 @@ The Files API follows these rules for batch files:
 - An upload takes exactly one file and `purpose: "batch"`. Other upload options, such as `expires_after`, aren't supported. Every upload requires an `Idempotency-Key` header.
 - Listing returns the newest files first. It accepts `limit` (1 to 100), `after`, `order=desc`, and `purpose` set to `batch` for inputs or `batch_output` for output and error files.
 - Downloading an input file returns the validated JSONL that AI Gateway sends to the provider, which can differ from the bytes you uploaded. For example, model IDs can appear in the provider's format.
-- You can delete an input file until a batch uses it. After that, AI Gateway keeps the file until the provider's retention deadline.
-- You can't delete output and error files before the provider's retention deadline, because AI Gateway needs them for usage accounting. They expire on their own.
+- You can delete an input file until a batch uses it. A batch consumes its input file: once the batch has ended at OpenAI and AI Gateway has recorded its usage, AI Gateway deletes the file. Retrieving it or its content then returns a 404 error, and listing no longer returns it, but the batch still names it in `input_file_id`. If the batch doesn't meet those conditions, the input file expires at the provider's retention deadline instead. This doesn't apply to batches on [your own provider keys](#byok).
+- You can't delete output and error files before the provider's retention deadline, because AI Gateway needs them for usage accounting. They expire on their own. After the deadline, AI Gateway removes expired output and error files from batches on its credentials, on a best-effort basis. Once AI Gateway removes a file, retrieving it or its content returns a 404 error, and listing no longer returns it.
 - When a batch runs on [your own provider keys](#byok), its files live in your OpenAI account. AI Gateway can't delete them, so delete them in your OpenAI account.
 
 ## Webhooks

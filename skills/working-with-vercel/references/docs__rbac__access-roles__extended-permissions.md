@@ -15,8 +15,8 @@ summary: "Learn about extended permissions in Vercel's RBAC system. Understand h
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/rbac/access-roles/extended-permissions.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "1245bbd962ed6babdfc4511173d59ab0f348cca211d2784101ef99e16692004d"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "f7f5a762d0465f1834146668ad4423bf0683f6838c47c04852c76d2eea141d89"
 ---
 
 # Extended permissions
@@ -33,8 +33,8 @@ Vercel's Role-Based Access Control (RBAC) system consists of three main componen
 - [Expanded Role-Based Access Control (RBAC) for Enterprise teams](https://vercel.com/changelog/expanded-role-based-access-control-rbac-for-enterprise-teams)
 - [Project Level Roles](https://vercel.com/docs/rbac/access-roles/project-level-roles) — Learn about the project level roles and their permissions.
 - [Scopes and Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions) — Learn how to manage scopes and permissions for Sign in with Vercel
-- [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference) — Learn how to manage project access and added products for your integrations.
 - [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
+- [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference) — Learn how to manage project access and added products for your integrations.
 - [Access Groups](https://vercel.com/docs/rbac/access-groups) — Learn how to configure access groups for team members on a Vercel account.
 
 Full cross-link map for this page: [/docs/rbac/access-roles/extended-permissions.graph.md](/docs/rbac/access-roles/extended-permissions.graph.md)

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/plugins/components.md"
-fetched_at: "2026-11-16T12:28:44.823Z"
-sha256: "1ea4367112bf1ab73bd954ed6ee6bebb411d4a4dde3081f89bed44ba55a21a04"
+fetched_at: "2026-11-23T14:04:20.448Z"
+sha256: "1737d81c9c68f055970b0b78cf621946644daf940bda65a8c3125d4b35ae5d1b"
 ---
 
 > ## Documentation Index
@@ -426,7 +426,7 @@ A bundle's own manifest can declare settings the server needs from the user in a
 
 Users supply the values in one of two ways:
 
-* **In `/plugin`**: select the plugin on the **Installed** tab and choose **Configure**
+* **In `/plugin`**: for a plugin from a marketplace, select it on the **Installed** tab and choose **Configure**
 * **At install, from the shell**: pass [`--config <server>.<key>=<value>`](https://code.claude.com/docs/en/plugins/cli-reference#plugin-install) to `claude plugin install`. Requires Claude Code v2.1.285 or later, and works only for a bundle packaged inside the plugin.
 
 For transports and authentication, see [MCP](https://code.claude.com/docs/en/mcp.md#plugin-provided-mcp-servers).

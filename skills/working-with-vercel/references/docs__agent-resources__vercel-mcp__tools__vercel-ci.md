@@ -14,8 +14,8 @@ summary: Vercel MCP tools for CI invocations, jobs, tasks, and logs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/vercel-ci.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "9bea8908fcf964c3cdba77e13f938afb135d4ab14766f6e515740c7759ce7f6b"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "c2248520214717eedcc4ffbae54c6163d4ce221caa7ea89d7dd0fd311683ec36"
 ---
 
 # Vercel CI
@@ -30,7 +30,6 @@ Inspect Vercel CI invocations, attempts, jobs, tasks, and logs for your team. Us
 
 - [Get log lines for a specific task run attempt](https://vercel.com/docs/rest-api/vercel-ci/get-log-lines-for-a-specific-task-run-attempt) — GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task
 - [Get log lines for the tasks of an invocation attempt](https://vercel.com/docs/rest-api/vercel-ci/get-log-lines-for-the-tasks-of-an-invocation-attempt) — GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/task-logs — Returns log lines for the tasks of an invoca
-- [Search the task logs of several invocation attempts](https://vercel.com/docs/rest-api/vercel-ci/search-the-task-logs-of-several-invocation-attempts) — GET /v1/vercel-ci/log-search — Searches the task logs of up to 50 invocation attempts at once, for example the most rece
 - [Get an invocation with its jobs and tasks](https://vercel.com/docs/rest-api/vercel-ci/get-an-invocation-with-its-jobs-and-tasks) — GET /v1/vercel-ci/invocations/{invocationId}/tree — Returns an invocation attempt together with every job definition, it
 - [List task runs for a job run](https://vercel.com/docs/rest-api/vercel-ci/list-task-runs-for-a-job-run) — GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task
 

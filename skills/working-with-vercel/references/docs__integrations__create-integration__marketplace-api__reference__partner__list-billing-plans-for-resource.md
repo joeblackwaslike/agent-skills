@@ -3,7 +3,7 @@ title: list-billing-plans-for-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/list-billing-plans-for-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/list-billing-plans-for-resource"
-last_updated: 2026-11-16
+last_updated: 2026-11-23
 type: conceptual
 prerequisites:
   []
@@ -15,8 +15,8 @@ summary: Learn about list-billing-plans-for-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/list-billing-plans-for-resource.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "388ccdc814ef20f6312adf8f7620be338e768b0a45ef0fd00377beb9a749243f"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "698198d742c5736396eca9a7f951b7bad52e8b2e8ef3cbea12dc5f4dec0d445c"
 ---
 
 # List Billing Plans For Resource
@@ -149,7 +149,8 @@ Return a list of billing plans for a resource
       "amount": "string" // required
     ],
     "effectiveDate": "string" // Date/time when the plan becomes effective. Important for billing plan changes.,
-    "disabled": "boolean" // If true, the plan is disabled and cannot be selected. Example: "disabled": true` for "Hobby" plan.
+    "disabled": "boolean" // If true, the plan is disabled and cannot be selected. Example: "disabled": true` for "Hobby" plan.,
+    "disabledReason": "string" // Shown to the user when `disabled` is true, explaining why they cannot select this plan. Ignored when `disabled` is not true. Example: "Delete your read replicas before downgrading to Hobby."
   ]
 }
 ```

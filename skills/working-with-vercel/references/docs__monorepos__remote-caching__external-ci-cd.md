@@ -11,12 +11,13 @@ prerequisites:
 related:
   - /docs/monorepos/remote-caching
   - /docs/ci
+  - /docs/oidc/policies
 summary: Authenticate the Turborepo CLI to Vercel Remote Cache from your CI/CD provider using OpenID Connect (OIDC) or a Personal Access Token (PAT).
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/monorepos/remote-caching/external-ci-cd.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "3c64825fc3def7c975e32a6154242586bf19c5e36c7ec99ea75e04b8d12ce8c9"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "d9c91826a91903e0ad8e91fb580da9dc4cd9be2aad866f89a43cd76b572903c9"
 ---
 
 # Use Remote Caching from External CI/CD
@@ -31,12 +32,13 @@ You can use [Vercel Remote Cache](/docs/monorepos/remote-caching) with Turborepo
 
 - [GitHub Actions](https://turborepo.dev/docs/guides/ci-vendors/github-actions) — Configure GitHub Actions workflows to run Turborepo tasks with Remote Caching.
 - [Turborepo and Vercel Remote Cache now support OpenID Connect (OIDC)](https://vercel.com/changelog/turborepo-and-remote-cache-now-support-openid-connect-oidc)
-- [Faster iteration with Turborepo and Vercel Remote Cache](https://vercel.com/blog/vercel-remote-cache-turbo)
 - [CircleCI](https://turborepo.dev/docs/guides/ci-vendors/circleci) — Configure CircleCI workflows to run Turborepo tasks with Remote Caching.
+- [Faster iteration with Turborepo and Vercel Remote Cache](https://vercel.com/blog/vercel-remote-cache-turbo)
 - [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) — Share a single Turborepo cache across your team and CI to avoid duplicated work.
 - [GitLab CI](https://turborepo.dev/docs/guides/ci-vendors/gitlab-ci) — Configure GitLab CI pipelines to run Turborepo tasks with Remote Caching.
 - [Vercel CI Configuration Reference](https://vercel.com/docs/ci/configuration) — Reference for the turbo.json tags and vercel.json keys that configure Vercel CI.
 - [Enable or disable Vercel CI for a connected repository](https://vercel.com/docs/rest-api/vercel-ci/enable-or-disable-vercel-ci-for-a-connected-repository) — PATCH /v1/vercel-ci/repository-settings — Update Repository Settings
+- [OpenID Connect \\(OIDC\\) Federation](https://vercel.com/docs/oidc) — Replace long-lived credentials with short-lived OpenID Connect \\(OIDC\\) tokens, both when your Vercel deployments access
 
 Full cross-link map for this page: [/docs/monorepos/remote-caching/external-ci-cd.graph.md](/docs/monorepos/remote-caching/external-ci-cd.graph.md)
 <!-- /docsgraph:related -->
@@ -61,12 +63,14 @@ Unlike a Personal Access Token (PAT), the Turborepo access token
 Follow the steps below to set it up.
 
 - ### Create an OIDC policy
-  On the Vercel dashboard, go to your team's **Settings → Build and Deployment →** [**OIDC Policies for CLI Access**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbuild-and-deployment%23oidc-cli-policies\&title=OIDC+Policies+for+CLI+Access), then click **Add** next to **Turborepo CLI Policies**.
+  On the Vercel dashboard, go to your team's **Settings → Build and Deployment →** [**OIDC Policies**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbuild-and-deployment%23oidc-cli-policies\&title=OIDC+Policies), then click **Add** next to **Turborepo CLI Policies**.
 
 - ### Configure the OIDC policy
   Clicking **Add** opens a form to [add a Turborepo CLI policy](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbuild-and-deployment%3FaddOidcPolicy%3Dturborepo-cli\&title=Add+a+Turborepo+CLI+OIDC+Policy). Fill out the form with a policy name. If your CI/CD provider is listed, select it; otherwise, you can configure specific OIDC issuer and claims to match on.
 
   For example, if you are using GitHub, select your GitHub account and repository that hosts the CI/CD workflows you want to grant access to. You can optionally restrict the policy to a specific workflow or branch, and customize the audience.
+
+  To learn how Vercel matches tokens to policies, see [OIDC Policies](/docs/oidc/policies).
 
 - ### Add the `TURBO_TEAM` repository variable
   Create a repository variable named `TURBO_TEAM` set to your team slug, which is the part after `vercel.com/` in your [team URL](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings\&title=Find+Team+URL). For example, the slug for `vercel.com/acme` is `acme`.

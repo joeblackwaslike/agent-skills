@@ -15,8 +15,8 @@ summary: "Learn how to configure your Microsoft Azure account to trust Vercel's 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/oidc/azure.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "ce7227cc41552902256e2f65b9cadc12527b7d43ea68678523b65e718fc26b96"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "8171cbe72529b69a009f25dda79a43adf122e63caac2bb5319542b56185ccd22"
 ---
 
 # Connect to Microsoft Azure
@@ -32,12 +32,11 @@ Connect your Vercel deployments to Microsoft Azure without storing long-lived cr
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Death to long-lived static credentials](https://vercel.com/blog/death-to-long-lived-static-credentials)
-- [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect)
 - [Connect to Amazon Web Services \\(AWS\\)](https://vercel.com/docs/oidc/aws) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
+- [Access Other Clouds and APIs](https://vercel.com/docs/oidc/access-other-services) — Use the short-lived OpenID Connect \\(OIDC\\) tokens that Vercel issues to your builds and functions to access AWS, Google
 - [Connect to your own API](https://vercel.com/docs/oidc/api) — Learn how to configure your own API to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\)
 - [Connect to Google Cloud Platform \\(GCP\\)](https://vercel.com/docs/oidc/gcp) — Learn how to configure your GCP project to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 - [OIDC Federation Reference](https://vercel.com/docs/oidc/reference) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
-- [AI Gateway OIDC Authentication](https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc) — Authenticate AI Gateway requests from Vercel deployments with OIDC tokens. Configure the AI SDK or send bearer tokens di
 
 Full cross-link map for this page: [/docs/oidc/azure.graph.md](/docs/oidc/azure.graph.md)
 <!-- /docsgraph:related -->

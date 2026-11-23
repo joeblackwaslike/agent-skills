@@ -3,7 +3,7 @@ title: update-installation
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/update-installation
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/update-installation"
-last_updated: 2026-11-16
+last_updated: 2026-11-23
 type: conceptual
 prerequisites:
   []
@@ -15,8 +15,8 @@ summary: Learn about update-installation on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/update-installation.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "111f9d91e5be9abf2c10f9a5af78e6b1e7dd667c0360f04fb0d34db704bdd91d"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "f00c1bfd51f57ed7b4b66a34a19d35bdc92197447cf1eebfe19d8608c96efa8a"
 ---
 
 # Update Installation
@@ -181,7 +181,8 @@ The installation was updated successfully
       "amount": "string" // required
     ],
     "effectiveDate": "string" // Date/time when the plan becomes effective. Important for billing plan changes.,
-    "disabled": "boolean" // If true, the plan is disabled and cannot be selected. Example: "disabled": true` for "Hobby" plan.
+    "disabled": "boolean" // If true, the plan is disabled and cannot be selected. Example: "disabled": true` for "Hobby" plan.,
+    "disabledReason": "string" // Shown to the user when `disabled` is true, explaining why they cannot select this plan. Ignored when `disabled` is not true. Example: "Delete your read replicas before downgrading to Hobby."
   },
   "notification": {
     "level": "string" // required,

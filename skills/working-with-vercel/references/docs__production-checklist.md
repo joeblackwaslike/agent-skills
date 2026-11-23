@@ -17,8 +17,8 @@ summary: Ensure your application is ready for launch with this comprehensive pro
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/production-checklist.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "f0f7c9a217f63c8c997f057b157e25068199d3d02a365c50a0d9183de6aef86c"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "d42f0aac6ee6df478bbf860fcf55b8dfadc8c82177a1a1c073dc3a6115157f61"
 ---
 
 # Production checklist for launch
@@ -32,6 +32,7 @@ When launching your application on Vercel, it is important to ensure that it's r
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to choose a Salesforce Commerce Cloud storefront: PWA Kit, Storefront Next, or Next.js](https://vercel.com/kb/guide/salesforce-pwa-kit-vs-storefront-next-vs-nextjs) — Compare PWA Kit, Storefront Next, and a Next.js storefront on Vercel for Salesforce Commerce Cloud. Learn how caching, p
+- [Making your catalog discoverable to AI agents](https://vercel.com/kb/guide/agentic-commerce-readiness) — Agentic commerce readiness starts with the initial HTML response. Server-render your product catalog, ship JSON-LD, and
 - [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
 - [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
@@ -105,7 +106,7 @@ If you're launching an agent built with eve, Mastra, or Flue, also work through 
 
 ## Enterprise support
 
-Need help with your production rollout?
+For help with your production rollout, [contact our sales team](/contact/sales).
 
 ## Search the docs from your terminal
 

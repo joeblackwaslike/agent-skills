@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/computer-use.md"
-fetched_at: "2026-11-02T12:02:15.109Z"
-sha256: "4fa1d0f508f25f32a9e7f0687dbb5bde26c939cf3c6d834ad41b264ac32212e4"
+fetched_at: "2026-11-23T14:04:20.448Z"
+sha256: "ed52560ef42cf02ab079f0ccd50953084520bc2f34d9e91980cee8366cfb4431"
 ---
 
 > ## Documentation Index
@@ -88,15 +88,13 @@ Apps with broad reach show an extra warning in the prompt so you know what appro
 
 | Warning | Applies to |
 | :- | :- |
-| Equivalent to shell access | Terminal, iTerm, VS Code, Warp, and other terminals and IDEs |
-| Can read or write any file | Finder |
+| Can run commands on your computer | Terminal, iTerm, VS Code, Warp, and other terminals and IDEs |
+| Can open, change, or delete any file, and run apps and scripts | Finder |
 | Can change system settings | System Settings |
 
-These apps aren't blocked. The warning lets you decide whether the task warrants that level of access.
+These apps aren't blocked. The warning lets you decide whether the task warrants that level of access. Approve Finder to let Claude click the desktop, the Dock, or a Finder window.
 
-Approve Finder to let Claude click the desktop, the Dock, or a Finder window.
-
-Claude's level of control also varies by app category: browsers and trading platforms are view-only, terminals and IDEs are click-only, and everything else gets full control. See [app permissions in Desktop](https://code.claude.com/docs/en/desktop.md#app-permissions) for the complete tier breakdown.
+Claude's level of control also varies by app category: view only for browsers and trading platforms, click only for terminals and IDEs, and full access for most other apps. See [app permissions in Desktop](https://code.claude.com/docs/en/desktop.md#app-permissions) for what each level lets Claude do.
 
 ## How Claude works on your screen
 

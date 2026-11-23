@@ -15,8 +15,8 @@ summary: Trace and monitor AI Gateway requests with Langfuse. Configure an OpenA
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langfuse.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "d8eebb1d0ec5ee596beb469962f019e7d366cf755edf6ccf0e31eac08f78f6ff"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "49a8c5d65dda8f8f3d946034c37db02469dd200b923db9e3345d737d9a86e449"
 ---
 
 # Langfuse with AI Gateway
@@ -33,13 +33,11 @@ with Langfuse to access various AI models and providers.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Langfuse](https://ai-sdk.dev/providers/observability/langfuse) — Monitor, evaluate and debug your AI SDK application with Langfuse
-- [Ling 3.1 Flash 1019 now available on AI Gateway for free](https://vercel.com/changelog/ling-3-1-flash-1019-now-available-on-ai-gateway-for-free)
-- [Muse Spark Open now available on AI Gateway](https://vercel.com/changelog/muse-spark-open-now-available-on-ai-gateway)
 - [LangChain with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/langchain) — Learn how to integrate Vercel AI Gateway with LangChain to access multiple AI models through a unified interface.
 - [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
-- [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
-- [Vercel & OpenAI Integration](https://vercel.com/docs/agent-resources/integrations-for-models/openai) — Integrate your Vercel project with OpenAI's powerful suite of models.
+- [LiteLLM with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/litellm) — Learn how to integrate Vercel AI Gateway with LiteLLM to access multiple AI models through a unified interface.
+- [LlamaIndex with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/llamaindex) — Learn how to integrate Vercel AI Gateway with LlamaIndex to access multiple AI models through a unified interface.
 
 Full cross-link map for this page: [/docs/ai-gateway/ecosystem/framework-integrations/langfuse.graph.md](/docs/ai-gateway/ecosystem/framework-integrations/langfuse.graph.md)
 <!-- /docsgraph:related -->

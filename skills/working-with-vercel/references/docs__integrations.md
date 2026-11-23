@@ -17,8 +17,8 @@ summary: "Learn how to extend Vercel's capabilities by integrating with your pre
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "691f2bf4a2f37f44c32c29096362b96ea3d027fc5092cea4ee133c9be26dce8b"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "6bebabdc3cb32619dd671fc1ba859412ae610071a97cd8c87be42ad559dfc6ea"
 ---
 
 # Vercel Integrations
@@ -37,12 +37,12 @@ Integrations allow you to extend the capabilities of Vercel by connecting with t
 - [Integration Webhooks are now easier to configure](https://vercel.com/changelog/integration-webhooks-are-now-easier-to-configure)
 - [Integrations can now be managed more efficiently](https://vercel.com/changelog/integrations-can-now-be-managed-more-efficiently)
 - [Improvements and fixes](https://vercel.com/changelog/may-2022-papercuts)
-- [Build a Claude Managed Agent with Vercel Workflow](https://vercel.com/kb/guide/claude-managed-agent-vercel) — Learn how to build a Claude Managed Agent on Vercel with auth, credential vaults, durable polling, and a chat UI.
-- [Debug and Troubleshoot Logs with Vercel and Sematext](https://vercel.com/kb/guide/debugging-and-troubleshooting-vercel-logs-with-sematext) — Automatically send all Vercel logs to Sematext to understand how your application is running.
-- [How to deploy a Next.js online store with Stripe](https://vercel.com/kb/guide/how-to-deploy-a-next-js-online-store-with-stripe) — Learn how to build and deploy a Next.js e-commerce store with Stripe payments on Vercel. This step-by-step guide covers
-- [Integrate Vercel and Contentstack for your Headless CMS](https://vercel.com/kb/guide/integrate-vercel-and-contentstack) — Integrate Vercel with Contentstack, a headless CMS, to build and deploy dynamic, high-performance websites.
+- [The Complete Guide to Vercel Connect](https://vercel.com/kb/guide/vercel-connect) — Use Vercel Connect to call provider APIs like Slack, GitHub, Linear, Microsoft, Discord, Snowflake, and Salesforce from
 - [Expanding observability on Vercel](https://vercel.com/blog/expanding-observability-on-vercel)
 - [Supercharge your Vercel Projects with Integrations](https://vercel.com/blog/integrations-marketplace)
+- [Log Drains](https://vercel.com/blog/log-drains)
+- [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 
 Full cross-link map for this page: [/docs/integrations.graph.md](/docs/integrations.graph.md)
 <!-- /docsgraph:related -->

@@ -17,13 +17,15 @@ summary: Run code on a recurring cron schedule or once at a specific time, and c
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/schedules.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "a567222c245f21b891d5ad626cc42d048e296e0bb338da4f09d991ab1d5f6a74"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "cef1320ef2d6a1e8783839e2ea50321057a8bf94e5c8e3ebf74af359664482ea"
 ---
 
 # Schedules
 
-With Vercel Schedules, you can run code on a recurring [cron](/docs/schedules/configuration#cron-expressions) cadence or once at a specific time. A schedule can call a route, run a private function, or send a message to a [Vercel Queue](/docs/queues). You can also create schedules at runtime, so each of your users can get their own reminder, report, or cleanup job.
+## Run code on a schedule (Beta)
+
+Run a function, route, or queue consumer on a recurring cron cadence or once at a specific time, in any timezone. Create schedules at runtime so each of your users gets their own.
 
 
 <!-- docsgraph:related -->
@@ -40,6 +42,57 @@ With Vercel Schedules, you can run code on a recurring [cron](/docs/schedules/co
 
 Full cross-link map for this page: [/docs/schedules.graph.md](/docs/schedules.graph.md)
 <!-- /docsgraph:related -->
+
+#### Create a schedule
+
+```typescript filename="create-reminder.ts"
+import { Schedules } from '@vercel/schedules';
+
+await Schedules.create({
+  name: 'send-reminder',
+  namespace: 'tenant_abc123',
+  target: { topic: 'reminders' },
+  expression: { type: 'single', at: '2027-11-01T09:00' },
+  timezone: 'America/New_York',
+  payload: { userId: 'user_123' },
+});
+```
+
+#### Handle runs
+
+```typescript filename="api/reminders.ts"
+import { handleCallback } from '@vercel/queue';
+import type { ScheduleQueueMessage } from '@vercel/schedules';
+
+export const POST = handleCallback<ScheduleQueueMessage<{ userId: string }>>(
+  async (message) => {
+    console.log('Running', message.name, message.scheduledAt);
+    await sendReminders(message.payload?.userId);
+  },
+);
+```
+
+#### Declare in vercel.json
+
+```json filename="vercel.json"
+{
+  "schedules": {
+    "cleanup": {
+      "schedule": "0 * * * *",
+      "function": "api/cleanup"
+    }
+  },
+  "functions": {
+    "api/cleanup.ts": {
+      "experimentalTriggers": [{ "type": "schedule/v1beta" }]
+    }
+  }
+}
+```
+
+> Vercel Schedules are available in Beta on all plans
+
+With Vercel Schedules, you can run code on a recurring [cron](/docs/schedules/configuration#cron-expressions) cadence or once at a specific time. A schedule can call a route, run a private function, or send a message to a [Vercel Queue](/docs/queues). You can also create schedules at runtime, so each of your users can get their own reminder, report, or cleanup job.
 
 Schedules replace [Cron Jobs](/docs/cron-jobs). They add timezones, private targets, one-time runs, execution history, and a way to pause or run a schedule without redeploying.
 
@@ -102,8 +155,15 @@ If you use Cron Jobs today, you can [migrate to Schedules](/docs/schedules/migra
 | **Execution history** | Function logs only | Per schedule, in the dashboard and CLI |
 | **Timing** | Pro and Enterprise: the scheduled minute. Hobby: once per day, any time within the scheduled hour. | Within a [jitter window](/docs/schedules/concepts#jitter) of 1 to 15 minutes. Hobby can run every 15 minutes. |
 
-> **💡 Note:** Schedules are in beta. Behavior, APIs, and limits may change before general
-> availability.
+## Features
+
+- [**Recurring and one-time runs**](/docs/schedules/configuration): Run on a cron expression, or once at a specific date and time.
+- [**Timezones and jitter**](/docs/schedules/concepts#timezones): Run each schedule in its own IANA timezone, spread across a jitter window.
+- [**Private functions**](/docs/schedules/handle-runs#function-targets): Run a function that has no public URL, so only the scheduler can invoke it.
+- [**Runtime schedules**](/docs/schedules/sdk): Create, update, and delete schedules from your app without redeploying.
+- [**Multi-tenant namespaces**](/docs/schedules/multi-tenant): Group each customer's schedules so you can list and manage them together.
+- [**Run, pause, and history**](/docs/schedules/manage): Run a schedule now, disable it, and review each run's outcome and duration.
+- [**Local development**](/docs/schedules/local-development): Run schedules on your machine with `vercel dev` and trigger them on demand.
 
 ## Use Schedules with a coding agent
 
@@ -127,7 +187,11 @@ The skill is also included in the [Vercel Plugin](/docs/agent-resources/vercel-p
 
 **Starting workflows**: Start a durable workflow each time a schedule fires. [Learn more →](/docs/schedules/workflows)
 
+**Scheduling work for agents**: Give an agent a tool that schedules work for a user. [Learn more →](/docs/schedules/agents)
+
 **Multi-tenant schedules**: Give each customer their own schedules with namespaces. [Learn more →](/docs/schedules/multi-tenant)
+
+**Testing schedules locally**: Run and trigger schedules on your machine with vercel dev. [Learn more →](/docs/schedules/local-development)
 
 **Configuration reference**: Look up every static schedule property and cron syntax. [Learn more →](/docs/schedules/configuration)
 
@@ -138,6 +202,8 @@ The skill is also included in the [Vercel Plugin](/docs/agent-resources/vercel-p
 **CLI reference**: Manage schedules from the terminal with vercel schedules. [Learn more →](/docs/cli/schedules)
 
 **Limits**: Check schedule counts, frequency, and jitter limits by plan. [Learn more →](/docs/schedules/limits)
+
+**Migrate from Cron Jobs**: Move Cron Jobs to Schedules without changing your route code. [Learn more →](/docs/schedules/migrate-from-cron-jobs)
 
 **Cron Jobs (legacy)**: Reference for Cron Jobs, which will be migrated to Schedules. [Learn more →](/docs/schedules/cron-jobs)
 

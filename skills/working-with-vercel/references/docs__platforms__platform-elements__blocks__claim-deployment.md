@@ -15,8 +15,8 @@ summary: A component for users to claim ownership of Vercel deployments created 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/claim-deployment.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "63a33755f0c645d3479f90bddf545e03583ecc8d63ace25df3b6d3830bbfed85"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "6c7be8a43941cafd26a0588888460ca624de5a285222a462780cf1a89330cfb3"
 ---
 
 # Claim Deployment
@@ -32,8 +32,8 @@ The Claim Deployment block provides a polished interface for platforms that depl
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Claim Deployments now available for fast and secure deployment transfers](https://vercel.com/changelog/claim-deployments)
-- [Claimed deployments now include third-party resources](https://vercel.com/changelog/claimed-deployments-now-include-third-party-resources)
 - [Introducing Platform Elements](https://vercel.com/changelog/introducing-platform-elements)
+- [Claimed deployments now include third-party resources](https://vercel.com/changelog/claimed-deployments-now-include-third-party-resources)
 - [Claim Deployments](https://vercel.com/docs/deployments/claim-deployments) — Learn how to take ownership of deployments on Vercel with the Claim Deployments feature.
 - [Deploying to Vercel Without Logging In](https://vercel.com/docs/deployments/deploy-without-logging-in) — Deploy to Vercel without an account using Vercel Drop or the CLI, then claim the project to keep it.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.

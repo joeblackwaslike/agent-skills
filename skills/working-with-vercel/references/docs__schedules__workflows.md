@@ -17,8 +17,8 @@ summary: Start a durable Vercel Workflow each time a schedule fires, so long or 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/schedules/workflows.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "35bafd07373dcd8f182a6d38e7b524dc9893506cecd2059f3fd6cf4076201f18"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "8e4f06394306c591c5421c86493540f2298b0aec9871611d7f66d71cc773ac4e"
 ---
 
 # Starting Workflows from Schedules
@@ -31,6 +31,7 @@ Start a [Vercel Workflow](/docs/workflows) each time a schedule fires. The sched
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Workflow SDK vs Inngest](https://workflow-sdk.dev/docs/comparisons/workflow-sdk-vs-inngest) — Inngest is an event-driven durable-functions platform that invokes your code over HTTP and memoizes step results. The Wo
 - [How to migrate from Cloudflare Workflows to Vercel Workflows](https://vercel.com/kb/guide/migrate-cloudflare-workflows-to-vercel-workflows) — Migrate from Cloudflare Workflows to Vercel Workflows by mapping WorkflowEntrypoint, step.do, and waitForEvent to workfl
 - [Schedules Configuration Reference](https://vercel.com/docs/schedules/configuration) — Reference for static schedules in vercel.json and the Build Output API, including targets, function identifiers, cron sy
 - [Vercel Schedules: API Reference](https://vercel.com/docs/schedules/http-api) — Reference for the Vercel Schedules HTTP API: authenticate, choose an environment, and create, list, update, enable, disa

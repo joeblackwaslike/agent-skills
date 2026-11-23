@@ -13,8 +13,8 @@ summary: Review helper libraries to help you connect with your backend and under
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/oidc/reference.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "ce3364422a015f12667765b39833673dd5661280c3076c14b6aafe1dc5ad870a"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "cc6c75bf33726a54fc52661e3d6674e2197a62ec22b692534020041d69dbdfd1"
 ---
 
 # OIDC Federation Reference
@@ -34,13 +34,11 @@ They are available from the [@vercel/oidc](https://www.npmjs.com/package/@vercel
 
 - [Trusted Sources for Deployment Protection](https://vercel.com/changelog/trusted-sources-for-deployment-protection)
 - [Death to long-lived static credentials](https://vercel.com/blog/death-to-long-lived-static-credentials)
-- [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect)
-- [OpenID Connect (OIDC) Federation now generally available](https://vercel.com/changelog/openid-connect-federation-now-generally-available)
+- [Access Other Clouds and APIs](https://vercel.com/docs/oidc/access-other-services) — Use the short-lived OpenID Connect \\(OIDC\\) tokens that Vercel issues to your builds and functions to access AWS, Google
+- [Trusted Sources](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources) — Let other Vercel projects and external services reach your protected deployments by presenting a verified OIDC token.
 - [Connect to your own API](https://vercel.com/docs/oidc/api) — Learn how to configure your own API to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\)
 - [Connect to Microsoft Azure](https://vercel.com/docs/oidc/azure) — Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
 - [AI Gateway OIDC Authentication](https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc) — Authenticate AI Gateway requests from Vercel deployments with OIDC tokens. Configure the AI SDK or send bearer tokens di
-- [Create an issuer](https://vercel.com/docs/rest-api/kms/create-an-issuer) — POST /v1/kms/issuers — Create a new KMS issuer for the authenticated team, or for the team or organization identified by
-- [Troubleshooting Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/troubleshooting) — Learn how to troubleshoot common errors with Sign in with Vercel
 
 Full cross-link map for this page: [/docs/oidc/reference.graph.md](/docs/oidc/reference.graph.md)
 <!-- /docsgraph:related -->

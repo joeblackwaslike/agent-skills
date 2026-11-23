@@ -18,8 +18,8 @@ summary: Define network policies on sandboxes, preventing data exfiltration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/concepts/firewall.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "c80aee796f6a45b22e98e9975bf49a7aaf998fe19ae76da2a7d84d8d4aaff40c"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "478df0e2951d326d3c01a7c37afa55f88bb6f4d6bea263fe30ea48e6d8ee6403"
 ---
 
 # Sandbox firewall
@@ -39,11 +39,11 @@ Network firewall allows users to restrict egress traffic from their sandbox. It 
 - [Private enterprise agents on Vercel](https://vercel.com/kb/guide/private-enterprise-agents-vercel) — Design private enterprise agents that call internal APIs and databases with Vercel Functions, Secure Compute, AI Gateway
 - [Run a research workspace on Vercel](https://vercel.com/kb/guide/run-research-workspace-vercel) — Plan a durable research workspace on Vercel's Agentic Infrastructure with Workflows, internal API tools, Vercel Sandbox
 - [A sandbox without a network boundary is only half a sandbox](https://vercel.com/blog/a-sandbox-without-a-network-boundary-is-only-half-a-sandbox)
+- [Agents are users, so your software needs evals](https://vercel.com/blog/agent-evals)
 - [How v0 authenticates to Snowflake without exposing the user's OAuth token](https://vercel.com/blog/how-v0-authenticates-to-snowflake-without-exposing-the-users-oauth-token)
 - [Advanced egress firewall filtering for Vercel Sandbox](https://vercel.com/changelog/advanced-egress-firewall-filtering-for-vercel-sandbox)
 - [Vercel Sandbox firewall now supports request proxying and filtering](https://vercel.com/changelog/vercel-sandbox-firewall-now-supports-request-proxying-and-filtering)
 - [Safely inject credentials in HTTP headers with Vercel Sandbox](https://vercel.com/changelog/safely-inject-credentials-in-http-headers-with-vercel-sandbox)
-- [Update network policy](https://vercel.com/docs/rest-api/sandboxes/update-network-policy) — POST /v2/sandboxes/sessions/{sessionId}/network-policy — Replaces the network access policy of a running session. Use th
 
 Full cross-link map for this page: [/docs/sandbox/concepts/firewall.graph.md](/docs/sandbox/concepts/firewall.graph.md)
 <!-- /docsgraph:related -->

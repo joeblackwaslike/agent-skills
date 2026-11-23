@@ -18,8 +18,8 @@ summary: "Learn how to use Global Config with Vercel's LaunchDarkly integration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/global-config/global-config-integrations/launchdarkly-global-config.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "a1e874001a167fd3af25988e14404fccefb114b56a101db455a2449cb6867c97"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "52b3e927e549ac847ddc0086608d9f6c2eafbb5b797c5aa7287fca3642a103b3"
 ---
 
 # Using Global Config with LaunchDarkly
@@ -117,7 +117,7 @@ bunx create-next-app@latest
    ```
 
 - ### Set up the LaunchDarkly integration
-  Visit [the LaunchDarkly page in the Integration Marketplace](/marketplace/launchdarkly) and select the **Add Integration** button. From the Integration dialog:
+  Visit [the LaunchDarkly page in the Integration Marketplace](/marketplace/launchdarkly) and select the **Install** button. From the Integration dialog:
   1. Select a Vercel team and project to connect the integration to
   2. Log into LaunchDarkly
   3. Select the **Authorize** button to allow the integration to access your LaunchDarkly account data

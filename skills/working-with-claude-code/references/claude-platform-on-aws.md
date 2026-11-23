@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/claude-platform-on-aws.md"
-fetched_at: "2026-11-16T12:28:44.823Z"
-sha256: "69a072a212cf41756ca453651124dc9858559b5b71ddef67e441f6376866862f"
+fetched_at: "2026-11-23T14:04:20.448Z"
+sha256: "3e63703ac9281cb9c3f8b8f9fa4d6d472f6e1aac059d6d990c54fb0947a422f5"
 ---
 
 > ## Documentation Index
@@ -61,7 +61,7 @@ If your SSO credentials expire mid-session, configure [`awsAuthRefresh`](https:/
 }
 ```
 
-Claude Code also runs this command at startup when it can't validate your existing AWS credentials, and shows the command's output in an `Authentication` panel until the login completes.
+Claude Code also runs this command at startup when it can't validate your existing AWS credentials.
 
 With `awsAuthRefresh` configured, run `/login`, select **3rd-party platform**, then select **Claude Platform on AWS · refresh credentials** under **Using 3rd-party platforms**. Claude Code runs the configured command and re-reads your AWS credentials without a restart.
 

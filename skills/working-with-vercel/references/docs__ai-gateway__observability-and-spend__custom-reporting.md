@@ -18,8 +18,8 @@ summary: Query AI Gateway usage data grouped by model, user, tag, provider, or c
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "d3e2ce2ff2a4a85627f20490f958dcd12d285fd6f4dec09ad1f71df7f9467232"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "fca124cb7adebf2c5ffb3b43fe77d796667e62a6e73c53872a0702c2a014d19d"
 ---
 
 # AI Gateway Custom Reporting API
@@ -32,16 +32,16 @@ The Custom Reporting API gives you detailed visibility into your AI Gateway usag
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [AI Gateway now supports Private Inference](https://vercel.com/changelog/ai-gateway-now-supports-private-inference)
 - [TypeSafe AI's Jev now available on AI Gateway](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway)
 - [TypeSafe AI's Jev 1.14 is now available on AI Gateway](https://vercel.com/changelog/typesafe-ais-jev-1-14-is-now-available-on-ai-gateway)
 - [Virtual models now available on AI Gateway](https://vercel.com/changelog/virtual-models-now-available-on-ai-gateway)
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
-- [Unified reporting for all AI Gateway usage](https://vercel.com/blog/unified-reporting-for-your-ai-spend)
 - [Custom reporting now available on AI Gateway](https://vercel.com/changelog/custom-reporting-ai-gateway)
 - [Query Reference](https://vercel.com/docs/query/reference) — Use this reference to find the event types, metrics, aggregations, dimensions, and operators available in Query.
-- [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [vercel metrics](https://vercel.com/docs/cli/metrics) — Discover and query observability metrics, and inspect available dimensions and aggregations using the Vercel CLI.
+- [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Monitoring Reference](https://vercel.com/docs/query/monitoring/monitoring-reference) — This reference covers the clauses, fields, and variables used to create a Monitoring query.
 - [AI Gateway Request Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
 

@@ -17,8 +17,8 @@ summary: "Learn how to use Vercel's build logs to monitor the progress of buildi
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployments/logs.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "9f94d2edabeccd05fa51a8167f7a6aca1d8939e4da06fff349fcf170f0b1a3c8"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "fa5e54778c7dd3bfa2b923e39d0a22ec9d568dd4bf56510217664d772cfbb97a"
 ---
 
 # Accessing Build Logs
@@ -41,7 +41,7 @@ When you deploy your website to Vercel, the platform generates build logs that s
 - [How Vercel Agent accesses production safely](https://vercel.com/blog/how-vercel-agent-accesses-production-safely)
 - [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
 - [Logs](https://vercel.com/docs/logs) — Use logs to find information on deployment builds, function executions, and more.
-- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
+- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
 - [Get logs for a deployment](https://vercel.com/docs/rest-api/logs/get-logs-for-a-deployment) — GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs — Returns a stream of logs for a given deployment.
 
 Full cross-link map for this page: [/docs/deployments/logs.graph.md](/docs/deployments/logs.graph.md)

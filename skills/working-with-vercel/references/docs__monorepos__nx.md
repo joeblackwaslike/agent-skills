@@ -17,8 +17,8 @@ summary: Nx is an extensible build system with support for monorepos, integratio
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/monorepos/nx.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "79b4e4523c6291168ecc4fabf7d395668cea346469552e1df049a4f62259ebdb"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "0ac928abd28d351e2a1b224a8fe906b1465e9c5a5770bf54053364377752eef0"
 ---
 
 # Deploying Nx to Vercel
@@ -31,16 +31,13 @@ Nx is an extensible build system with support for monorepos, integrations, and R
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Missing routes-manifest.json file or No Output Directory when using Turborepo or NX](https://vercel.com/kb/guide/missing-routes-manifest-or-output-turborepo-nx) — How to solve the error \\`The file "/vercel/path0/apps/web/.next/routes-manifest.json" couldn't be found\\` or \\`No Output
-- [Vercel Remote Cache is now free](https://vercel.com/changelog/free-vercel-remote-cache)
-- [Import Turborepo, Nx, and Rush monorepos with zero configuration](https://vercel.com/changelog/import-turborepo-nx-and-rush-monorepos-with-zero-configuration)
-- [s1ngularity: supply chain attack in Nx packages](https://vercel.com/changelog/s1ngularity-supply-chain-attack-in-nx-packages)
-- [Improved support for Nuxt on Vercel](https://vercel.com/blog/nuxt-on-vercel)
+- [How to ship a Nitro app on Vercel](https://vercel.com/kb/guide/ship-a-nitro-app-on-vercel) — Deploy a Nitro app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
+- [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify) — Migrate your website's configuration from Netlify to Vercel
 - [Monorepos FAQ](https://vercel.com/docs/monorepos/monorepo-faq) — Learn the answer to common questions about deploying monorepos on Vercel.
-- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
-- [Nitro on Vercel](https://vercel.com/docs/frameworks/backend/nitro) — Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurat
 - [Builds](https://vercel.com/docs/builds) — Understand how the build step works when creating a Vercel Deployment.
-- [NestJS on Vercel](https://vercel.com/docs/frameworks/backend/nestjs) — Deploy NestJS applications to Vercel with zero configuration.
+- [Nitro on Vercel](https://vercel.com/docs/frameworks/backend/nitro) — Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurat
+- [Remote Caching](https://vercel.com/docs/monorepos/remote-caching) — Vercel Remote Cache allows you to share build outputs and artifacts across distributed teams.
+- [Diagnosing and fixing cache issues](https://vercel.com/docs/caching/cdn-cache/debug-cache-issues) — Diagnose stale content and fix CDN cache, data cache, and build cache issues using the CLI.
 
 Full cross-link map for this page: [/docs/monorepos/nx.graph.md](/docs/monorepos/nx.graph.md)
 <!-- /docsgraph:related -->
@@ -166,6 +163,36 @@ For remote caching on Nx 20+, consider the following options:
 
 - **[Turborepo](/docs/monorepos/turborepo)**: Vercel's build system with built-in remote caching support. If you're evaluating build tools, Turborepo offers the most seamless experience on Vercel.
 - **[Self-hosted remote cache](https://nx.dev/docs/guides/tasks--caching/self-hosted-caching#self-hosted-cache)**: Build a custom cache server using the Nx OpenAPI specification (Nx 20.8+)
+
+## Troubleshooting
+
+### Build outputs cannot be found on cache hit
+
+When Nx restores a build task from its cache, it restores only the files listed in that task's `outputs`. If the framework's build directory isn't listed, the deployment fails with one of these errors:
+
+```txt
+The file "/vercel/path0/apps/web/.next/routes-manifest.json" couldn't be found.
+```
+
+```txt
+No Output Directory named "dist" found after the Build completed.
+```
+
+The path and directory name in the error depend on your project. To confirm that the cache is the cause, [redeploy without the Build Cache](/docs/deployments/troubleshoot-a-build#managing-build-cache), which also skips the Remote Cache. If that deployment succeeds, the cached task is missing its outputs.
+
+To fix it, add the directory your framework builds into to the `outputs` of the build target. For a Next.js app, that's the `.next` directory:
+
+```json filename="apps/web/project.json"
+{
+  "targets": {
+    "build": {
+      "outputs": ["{projectRoot}/.next"]
+    }
+  }
+}
+```
+
+Make sure the directory matches the [Output Directory](/docs/builds/configure-a-build#output-directory) in your project settings. See [Configure outputs](https://nx.dev/docs/kb/configure-outputs) in the Nx documentation for the full `outputs` syntax.
 
 ## Search the docs from your terminal
 

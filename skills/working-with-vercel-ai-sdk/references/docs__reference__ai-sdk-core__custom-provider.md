@@ -4,8 +4,8 @@ description: Custom provider that uses models from a different provider (API Ref
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/custom-provider"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/custom-provider.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "3cab4ef609b7fdcbb75c6174a44a4d228f10f2a90c9a179a427558faa64b24b3"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "06c735f79de388c57e96eea29061b8a3cb604ced0f1b8fca31e98eb8c7a584aa"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -111,6 +111,19 @@ added to the stable `ProviderV4` contract. Direct decision string IDs default
 to Gateway when no default provider is configured.
 See [Decisions](/docs/ai-sdk-core/decisions#model-aliases-and-registries)
 for runnable usage patterns.
+
+## Experimental extraction models
+
+Pass `extractionModels: Record<string, Experimental_ExtractionModel>` to define
+aliases for extraction model instances or string IDs. The returned provider adds
+`extractionModel(alias): Experimental_ExtractionModelV4`. String aliases resolve
+through an explicitly configured default provider with an `extractionModel`
+method. Unknown aliases use the fallback provider's extraction factory when
+available.
+
+Unavailable extraction capabilities or models throw `NoSuchModelError` with
+`modelType: 'extractionModel'`. See
+[Extractions](/docs/ai-sdk-core/extractions#model-aliases-and-registries).
 
 ---
 

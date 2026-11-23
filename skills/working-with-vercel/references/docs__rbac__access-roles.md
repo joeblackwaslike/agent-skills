@@ -17,8 +17,8 @@ summary: Learn about the different roles available for team members on a Vercel 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/rbac/access-roles.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "90afc94af9e161d30bc845ba0ffbef9221bfa7af394025c317c1387b08f31a8e"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "2acbf22ac9a6611c672ebd09eb888c4420588cc0ff8ab3d150de509a36a71e50"
 ---
 
 # Access Roles
@@ -36,13 +36,13 @@ Vercel distinguishes between different roles to help manage team members' access
 - [GitHub](https://v0.app/docs/github) — Connect GitHub repositories to v0 and ship changes through branches, previews, pull requests, and CI.
 - [Private Dependencies](https://v0.app/docs/private-dependencies) — Install private npm packages in v0 by configuring NPM_TOKEN or NPM_RC as environment variables.
 - [Teams](https://v0.app/docs/teams) — Collaborate with your team on projects with shared resources.
-- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
+- [How to keep your storefront running through Black Friday](https://vercel.com/kb/guide/black-friday-reliability) — Learn how to tune alerts, bot rules, and spend limits. Rehearse rollback so your team can recover quickly from checkout
 - [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
+- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-to-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
 - [Protect internal apps with Vercel Passport and your identity provider](https://vercel.com/kb/guide/vercel-passport) — Vercel Passport protects internal apps behind your own identity provider, such as Okta or Microsoft Entra ID. Learn how
 - [New project access controls for Enterprise customers](https://vercel.com/changelog/new-project-access-controls-for-enterprise-customers)
 - [Developer role now available for Pro teams](https://vercel.com/changelog/developer-role-now-available-for-pro-teams)
 - [Expanded Role-Based Access Control (RBAC) for Enterprise teams](https://vercel.com/changelog/expanded-role-based-access-control-rbac-for-enterprise-teams)
-- [Access Groups](https://vercel.com/docs/rbac/access-groups) — Learn how to configure access groups for team members on a Vercel account.
 
 Full cross-link map for this page: [/docs/rbac/access-roles.graph.md](/docs/rbac/access-roles.graph.md)
 <!-- /docsgraph:related -->

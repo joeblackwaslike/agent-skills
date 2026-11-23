@@ -8,6 +8,8 @@ type: reference
 prerequisites:
   []
 related:
+  - /docs/flags/flags-sdk-reference
+  - /docs/flags/vercel-flags
   - /docs/git/vercel-for-github
   - /docs/deployments/promoting-a-deployment
   - /docs/rolling-releases
@@ -15,8 +17,8 @@ summary: Set conditions that must be met before proceeding to the next phase of 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployment-checks.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "c4697a9ccf43f7868057321c1e06b5d112f9b294e4f44ac45866b9f41a49583b"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "137997c1fe308c6a200de56491f65b393366b1bbbd73cf0278d6315a5bb4146d"
 ---
 
 # Deployment Checks
@@ -71,7 +73,7 @@ With Deployment Checks, you introduce a new step that ensures the safety of the 
 
 You can add Deployment Checks from multiple sources:
 
-- **Native Deployment Checks (Vercel)**: Vercel runs built-in checks for your deployment, including script-based lint and typecheck jobs, and Vercel-provided checks such as Microfrontends Config Present.
+- **Native Deployment Checks (Vercel)**: Vercel runs built-in checks for your deployment, including script-based lint and typecheck jobs, and Vercel-provided checks such as Microfrontends Config Present and Flag Definitions Present.
 
 * **GitHub Checks**: Import GitHub Actions workflow results as Deployment Checks. Vercel reads commit statuses and check run results to determine if a deployment should be promoted.
 * **Integration Checks**: Third-party integrations from the [Vercel Marketplace](/marketplace) can provide checks for testing, monitoring, and observability.
@@ -93,6 +95,8 @@ Native Deployment Checks let Vercel run checks directly on your deployment, with
 - Script-based checks require a `package.json` with a matching script for each check you enable. If no matching script is found, the check is automatically skipped.
 - Supported package managers: npm, pnpm, yarn, and bun (detected from your lock file).
 
+* Flag Definitions Present requires the [Flags SDK](/docs/flags/flags-sdk-reference) with a `FLAGS_SECRET` configured. It does not use `package.json` scripts.
+
 ### Adding Native Deployment Checks
 
 - ### Navigate to Deployment Checks settings
@@ -102,7 +106,7 @@ Native Deployment Checks let Vercel run checks directly on your deployment, with
   In the provider selection step, choose **Vercel**, then select **Next**.
 
 - ### Choose which checks to enable
-  Select **Lint**, **Typecheck**, or both. Each check corresponds to a script in your `package.json`. Then select **Add**.
+  Select **Lint**, **Typecheck**, or both. Each check corresponds to a script in your `package.json`. **Flag Definitions Present** also appears when it is available for your project. Then select **Add**.
 
 - ### Checks run on your next deployment
   After adding, the selected checks will run on each new deployment. You can view check status, logs, and results directly in the deployment detail view.
@@ -114,6 +118,21 @@ By default, Native Deployment Checks run on all deployment environments. You can
 ### Viewing logs
 
 When a Native Deployment Check runs, you can view its real-time logs directly in the deployment detail view by selecting the **Logs** button next to the check. This streams output from the lint or typecheck command as it runs.
+
+### Flag Definitions Present
+
+The Flag Definitions Present check verifies that every feature flag your code declares with [Vercel Flags](/docs/flags/vercel-flags) has a definition in your project. This catches flags that were declared in code but never created in the dashboard before the deployment is promoted to production.
+
+When a deployment is ready, Vercel reads the deployment's [flags discovery endpoint](/docs/flags/flags-sdk-reference) (`/.well-known/vercel/flags`) and checks each flag declared with the Vercel provider against the project's flag definitions.
+
+The check passes when every declared Vercel flag has a definition in the project, including when the deployment declares no Vercel flags at all. Flags from other providers are ignored, as are flags whose SDK key belongs to a different project. If your project does not use Vercel Flags, the check also passes when the deployment has no `FLAGS_SECRET` or does not serve the discovery endpoint, because there is nothing to verify.
+
+The check fails when:
+
+- One or more declared flags have no definition in the project. The check output lists each missing flag with an action to create it.
+- Your project uses Vercel Flags, but flags cannot be discovered. For example, when `FLAGS_SECRET` is missing or invalid, the discovery endpoint is missing or returns an error, or the response is invalid.
+
+To resolve a failure, create the missing flag definitions or fix the discovery setup, then trigger a new deployment.
 
 ## GitHub Checks
 
@@ -162,6 +181,11 @@ You can bypass Deployment Checks by selecting [Force Promote](/docs/deployments/
 
 - Script-based Native Deployment Checks only run if your project has a compatible script in `package.json`. If no matching script is found, the check is automatically skipped.
 - The supported scripts are `lint` for lint checks, and `typecheck`, `type-check`, or `check-types` for typecheck.
+
+### Flag Definitions Present
+
+- Flag Definitions Present only verifies flags declared with the Vercel provider. Flags from other providers are not checked.
+- When a project uses Vercel Flags, a failed flag discovery (such as a missing or invalid `FLAGS_SECRET`) fails the Flag Definitions Present check rather than skipping it.
 
 ### GitHub Checks
 

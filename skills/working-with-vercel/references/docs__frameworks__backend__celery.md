@@ -18,8 +18,8 @@ summary: Deploy Celery on Vercel. Learn how Celery workers use Vercel Queues and
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/backend/celery.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "7eafc35230667110eb494f426e5289cbf33de6e95890cea2989d4a6f9904893c"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "c1eb62861123533f61dff38d79f145c9d888050534a2c127f0d25fad81ab12cc"
 ---
 
 # Run background tasks with Celery on Vercel
@@ -42,7 +42,6 @@ Vercel Function, so you don't need to run a long-lived worker process.
 - [Migrate a Python API from Heroku to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-heroku-to-vercel) — Move a FastAPI, Flask, or Django API from Heroku to Vercel Functions. Replace your Procfile, worker dynos, Heroku Schedu
 - [Migrate a Python API from Railway to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-railway-to-vercel) — Move a FastAPI, Flask, or Django API from Railway to Vercel Functions. Replace railway.json start commands, volumes, Cel
 - [Migrate a Python API from Render to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-render-to-vercel) — Move a FastAPI, Flask, or Django API from Render to Vercel Functions. Translate render.yaml and replace persistent disks
-- [Vercel Daemons is now in public beta](https://vercel.com/changelog/vercel-daemons-is-now-in-public-beta)
 
 Full cross-link map for this page: [/docs/frameworks/backend/celery.graph.md](/docs/frameworks/backend/celery.graph.md)
 <!-- /docsgraph:related -->

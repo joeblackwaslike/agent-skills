@@ -4,8 +4,8 @@ description: Learn how to use the Codex harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/codex"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/codex.md"
-fetched_at: "2026-11-16T12:32:31.917Z"
-sha256: "94f92e3336cfec82692d320a460a0d8d66fca502fee572a4d6f7783a1d03c07d"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "c91396dabd6fe7bec015e3df06d7b164ae00e1cca42cbe8c37968c49d5986cc3"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -118,6 +118,10 @@ Settings:
   not aborted. When unset, a turn keeps running in the sandbox after its host
   disconnects, including when the host process is gone for good, until the
   turn finishes or the sandbox stops.
+- `keepAliveMs`: WebSocket ping interval in milliseconds (default `20_000`).
+  Keeps silent bridge connections alive. After two unanswered pings, the socket
+  is terminated and the configured reconnect policy takes over. Set to `0` to
+  disable. Sockets without ping support are left unchanged.
 - `reconnect`: reconnect timing after an established bridge WebSocket
   connection drops. `maxElapsedMs` controls the total retry window, including
   connection establishment and backoff delays, and defaults to 30 seconds.

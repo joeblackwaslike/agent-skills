@@ -15,8 +15,8 @@ summary: Learn about our limits and pricing when using Monitoring. Different lim
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/query/monitoring/limits-and-pricing.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "72746d6888a5e992bd5e6fdd3fb026d3298f3e8254bb89bcee7338aa82029477"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "38467ade39cce1fb6d0eeeb9d7f73af2e55cbb7e7740410c2ae033abf8e2ece5"
 ---
 
 # Limits and Pricing for Monitoring
@@ -34,7 +34,7 @@ Monitoring is now
 - [Pricing and Limits](https://vercel.com/docs/queues/pricing) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
 - [Limits and Pricing for Speed Insights](https://vercel.com/docs/speed-insights/limits-and-pricing) — Learn about our limits and pricing when using Vercel Speed Insights. Different limitations are applied depending on your
 - [Pricing for Web Analytics](https://vercel.com/docs/analytics/limits-and-pricing) — Learn about pricing for Vercel Web Analytics.
-- [Services Pricing and Limits](https://vercel.com/docs/services/pricing) — Understand how billing works for Vercel Services, what's charged, and which limits apply.
+- [Pricing and Limits](https://vercel.com/docs/drives/pricing) — Check Vercel Drives regional rates, plan allotments, and storage and mount limits.
 
 Full cross-link map for this page: [/docs/query/monitoring/limits-and-pricing.graph.md](/docs/query/monitoring/limits-and-pricing.graph.md)
 <!-- /docsgraph:related -->

@@ -16,8 +16,8 @@ summary: Use Vercel Agent from your dashboard or Slack
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent/chat.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "fe1a94eb64d3fa65cf915cc1998200690f63d836513531f059398187d811d6d4"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "e61603da9fac19b6b4e86521a7ec34e17133c764317f707d3793079d6a8fe211"
 ---
 
 # Chat
@@ -31,7 +31,7 @@ Use Vercel Agent to ask questions, investigate production issues, and take actio
 - [Dashboard](/docs/agent/chat/dashboard): Start a private session with project and dashboard context. You can review session history, attach files, and approve plans in the dashboard.
 - [Slack](/docs/agent/chat/slack): Mention `@Vercel` in a supported Slack conversation to work with Vercel Agent in the context of your team's discussion.
 
-Both surfaces use the same team-scoped authorization model. Vercel Agent operates within your existing permissions and asks for approval before it reads sensitive resources or performs a write. See [Vercel Agent permissions](/docs/agent/chat/permissions) for details.
+Both surfaces use the same team-scoped authorization model. Vercel Agent operates within your existing Vercel permissions. It reads Vercel data, including environment variables, without approval, and asks for approval before it changes Vercel resources, with one exception. GitHub pull requests need no plan approval. Vercel Agent is designed to create or update a pull request only when you ask for a fix or a pull request, or accept its offer to open one. See [Vercel Agent permissions](/docs/agent/chat/permissions) for details.
 
 ## What Vercel Agent can do
 

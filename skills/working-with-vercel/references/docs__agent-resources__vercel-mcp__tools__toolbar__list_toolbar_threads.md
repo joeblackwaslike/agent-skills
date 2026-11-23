@@ -14,8 +14,8 @@ summary: Use list_toolbar_threads with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/list_toolbar_threads.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "d3e928c54a04ce82fc1c6da55934fdcafbfdcf75cddcdc1d469ac936d370ef86"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "67a70d1a69bf7e9f7db82983c1fd6f6c73eb8cb710e8d0aef2fd3980825ad430"
 ---
 
 # list_toolbar_threads
@@ -28,6 +28,7 @@ List [Vercel Toolbar](/docs/vercel-toolbar) comment threads for a team. Returns 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Manage Vercel Toolbar comments from the CLI](https://vercel.com/changelog/manage-vercel-toolbar-comments-from-the-cli)
 - [get_toolbar_thread](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/get_toolbar_thread) — Use get_toolbar_thread with Vercel MCP.
 - [reply_to_toolbar_thread](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/reply_to_toolbar_thread) — Use reply_to_toolbar_thread with Vercel MCP.
 - [change_toolbar_thread_resolve_status](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar/change_toolbar_thread_resolve_status) — Use change_toolbar_thread_resolve_status with Vercel MCP.

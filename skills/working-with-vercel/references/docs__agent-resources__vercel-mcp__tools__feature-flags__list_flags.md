@@ -14,8 +14,8 @@ summary: Use list_flags with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flags.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "b2ea52091ac12caa7174c9caf5c046cefbf576ed39d6dec3ccc868d694f0e358"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "0e944c968e2eabf0d295ffd0b156c8a8338465aa43b5e4515d383dad6f376ee3"
 ---
 
 # list_flags
@@ -31,8 +31,8 @@ List flags.
 - [list_flags_v2](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flags_v2) — Use list_flags_v2 with Vercel MCP.
 - [list_team_flags](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_team_flags) — Use list_team_flags with Vercel MCP.
 - [list_team_flags_v2](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_team_flags_v2) — Use list_team_flags_v2 with Vercel MCP.
+- [List flags](https://vercel.com/docs/rest-api/feature-flags/list-flags-1) — GET /v1/projects/{projectIdOrName}/feature-flags/flags — Retrieve feature flags for a project. The list can be filtered
 - [get_flag](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/get_flag) — Use get_flag with Vercel MCP.
-- [list_flag_versions](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flag_versions) — Use list_flag_versions with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flags.graph.md](/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flags.graph.md)
 <!-- /docsgraph:related -->

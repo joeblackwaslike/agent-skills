@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/plugins/mods/troubleshoot.md"
-fetched_at: "2026-11-16T12:28:44.823Z"
-sha256: "76682d9a66531d08e301ddfea796be619d38fd4e9b1f8f40959791d206888458"
+fetched_at: "2026-11-23T14:04:20.448Z"
+sha256: "782ac923e4f73ee0bdb3a5512852310618c2666d6655dc230d953b5a543c12a4"
 ---
 
 > ## Documentation Index
@@ -90,7 +90,7 @@ Add `"modules": ["./register.js"]`.
 
 ### `hooks module did not load`
 
-The line starts with the mod's name, then `hooks module did not load:` and a reason, which gives the file and line when the problem is in your code. Claude Code couldn't load the module, for example because its top-level code threw.
+The line starts with the mod's name, then `hooks module did not load:` and a reason, which gives the file and line for a syntax error. Claude Code couldn't load the module, for example because its top-level code threw.
 
 Fix the error the reason names.
 
@@ -224,7 +224,7 @@ Look them up in [Messages from the built-in guard](#messages-from-the-built-in-g
 
 ## A toast appears after a turn is stopped
 
-### `Stopped: type a message to continue; a mod cannot resume work after Stop`
+### `stopped · type a message to continue`
 
 This toast means that after you stopped the turn, for example with Esc, a mod tried to start work on its own and Claude Code didn't let it. Nothing needs fixing. After your next message, mods can start work again and [some of that work comes back](https://code.claude.com/docs/en/plugins/mods/api.md#work-your-mod-started-before-the-interruption) on its own. If what you expected from the mod doesn't come back, ask for it again or run the mod's command again.
 

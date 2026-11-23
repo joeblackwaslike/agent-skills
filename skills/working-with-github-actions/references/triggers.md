@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/github/docs/main/content/actions/reference/workflows-and-actions/events-that-trigger-workflows.md"
-fetched_at: "2026-09-28T10:42:29.141Z"
-sha256: "d0f123cf3774b30467a190b62a5c91aaa730b1c30cdb64a387f6b924d5a4d167"
+fetched_at: "2026-11-23T14:14:54.057Z"
+sha256: "02c0d1e2ad3e50111713d8e9c70b22610fed097d9146b08b41e6a828331ef599"
 ---
 
 ## About events that trigger workflows
@@ -307,7 +307,7 @@ jobs:
 
 | Webhook event payload | Activity types | `GITHUB_SHA` | `GITHUB_REF` |
 | --------------------- | -------------- | ------------ | -------------|
-| [`issues`](/webhooks/webhook-events-and-payloads#issues) | - `opened`<br/>- `edited`<br/>- `deleted`<br/>- `transferred`<br/>- `pinned`<br/>- `unpinned`<br/>- `closed`<br/>- `reopened`<br/>- `assigned`<br/>- `unassigned`<br/>- `labeled`<br/>- `unlabeled`<br/>- `locked`<br/>- `unlocked`<br/>- `milestoned`<br/> - `demilestoned`<br/> - `typed`<br/> - `untyped`{% ifversion issue-fields %}<br/> - `field_added`<br/> - `field_removed`{% endif %} | Last commit on default branch | Default branch |
+| [`issues`](/webhooks/webhook-events-and-payloads#issues) | - `opened`<br/>- `edited`<br/>- `deleted`<br/>- `transferred`<br/>- `pinned`<br/>- `unpinned`<br/>- `closed`<br/>- `reopened`<br/>- `assigned`<br/>- `unassigned`<br/>- `labeled`<br/>- `unlabeled`<br/>- `locked`<br/>- `unlocked`<br/>- `milestoned`<br/> - `demilestoned`<br/> - `typed`<br/> - `untyped`{% ifversion issue-fields %}<br/> - `field_added`<br/> - `field_removed`{% endif %}{% ifversion issue-status-webhooks %}<br/> - `status_changed`{% endif %} | Last commit on default branch | Default branch |
 
 > [!NOTE]
 > * {% data reusables.developer-site.multiple_activity_types %} For information about each activity type, see [AUTOTITLE](/webhooks/webhook-events-and-payloads#issues). {% data reusables.developer-site.limit_workflow_to_activity_types %}
@@ -331,6 +331,66 @@ You can also run a workflow when an issue field value is set, changed, or cleare
 on:
   issues:
     types: [field_added, field_removed]
+```
+
+{% endif %}
+
+{% ifversion issue-status-webhooks %}
+
+> [!NOTE]
+> {% data reusables.issues.issue-statuses-preview %}
+
+You can also run a workflow when the status of an issue changes. A workflow that uses the `status_changed` activity type runs whenever an issue's status changes, including when an issue is created, closed, or reopened. In the workflow, the following properties of the `github.event` context describe the change.
+
+* `github.event.status` contains the status the issue changed to.
+* `github.event.changes.status.from` contains the previous status, or `null` if the issue didn't have one.
+* `github.event.issue.status` contains the status of the issue when the payload was built. Payloads for every `issues` activity type include this property.
+
+For more information, see [AUTOTITLE](/issues/tracking-your-work-with-issues/using-issues/issue-status-webhooks-and-workflows).
+
+> [!IMPORTANT]
+> {% data reusables.issues.status-changed-workflows-without-types %}
+
+{% data reusables.issues.status-changed-editor-validation %}
+
+To match one status, use its ID. You can find the ID of a status in the `status` object of a `status_changed` payload. For example, if the ID of the In review status is `8`, the following workflow runs when an issue moves to In review.
+
+```yaml
+on:
+  issues:
+    types: [status_changed]
+
+jobs:
+  in-review:
+    if: {% raw %}${{ github.event.status.id == 8 }}{% endraw %}
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Issue #$NUMBER moved to $STATUS"
+        env:
+          NUMBER: {% raw %}${{ github.event.issue.number }}{% endraw %}
+          STATUS: {% raw %}${{ github.event.status.name }}{% endraw %}
+```
+
+To match every status in a category, use the status's `category`. For example, the following workflow runs when an issue moves into the `started` category from a status in another category, or from no status. It doesn't run again when the issue moves between two statuses in the `started` category, such as from In progress to In review.
+
+```yaml
+on:
+  issues:
+    types: [status_changed]
+
+jobs:
+  work-started:
+    if: >-
+      {% raw %}${{ github.event.status.category == 'started' &&
+      (github.event.changes.status.from == null ||
+      github.event.changes.status.from.category != 'started') }}{% endraw %}
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Work started on issue #$NUMBER"
+        env:
+          NUMBER: {% raw %}${{ github.event.issue.number }}{% endraw %}
 ```
 
 {% endif %}

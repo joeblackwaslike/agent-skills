@@ -17,8 +17,8 @@ summary: Understand Vercel Agent pricing and how to track costs
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent/pricing.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "e9d15afcb95ca16cd683b880742ebbd68975c77aa0f82cf9b9ef029375facfb5"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "ce88f7a3a1120e17645c0a0c586bd8fc2db5c87bb0c09cfe7e2159f2e50dfb26"
 ---
 
 # Vercel Agent Pricing
@@ -32,15 +32,17 @@ Vercel Agent charges the underlying provider inference rate with no markup, plus
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
-- [Vercel Agent has updated pricing](https://vercel.com/changelog/vercel-agent-has-updated-pricing)
 - [Vercel Agent can now validate alerts before paging](https://vercel.com/changelog/vercel-agent-can-now-validate-alerts-before-paging-you)
 - [Vercel Agent investigations now included in Observability Plus](https://vercel.com/changelog/vercel-agent-investigations-now-included-in-observability-plus)
 - [Vercel Agent sessions now cost 67% less](https://vercel.com/changelog/vercel-agent-sessions-now-cost-67-percent-less)
 - [Vercel for Slack now in public beta](https://vercel.com/changelog/vercel-for-slack-now-in-public-beta)
+- [Vercel Security Review now in public beta](https://vercel.com/changelog/vercel-security-review-public-beta)
 - [Introducing Vercel Security Review](https://vercel.com/blog/vercel-security-review)
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
+- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
+- [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
 
 Full cross-link map for this page: [/docs/agent/pricing.graph.md](/docs/agent/pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -91,7 +93,7 @@ Reviews run per Git push event rather than per pull request, so cost scales with
 
 Fixes made with Vercel Agent from Security Review findings are separate work, billed as Vercel Agent usage at the same rate.
 
-If the team isn't already on Vercel Agent usage-based billing, enabling Security Review consents the team to it, and that first save requires a team Owner or Billing member role. Teams on a flexible commitment are billed against that commitment instead.
+If your team hasn't enabled Vercel Agent usage-based billing, only a team Owner can turn on Security Review. The Owner accepts usage-based billing when they save the setting. If your team has a flexible commitment, Security Review usage counts toward that commitment instead.
 
 ## Vercel Agent Investigation
 
@@ -118,7 +120,7 @@ An Owner or Billing member can manage Vercel Agent billing from the team's [Bill
 To reduce new Vercel Agent usage, manage each source of automatic usage separately:
 
 - Disable [Dashboard chat](/docs/agent/chat/dashboard#enable-or-disable-dashboard-chat) to prevent new dashboard conversations.
-- Turn off [automatic Code Reviews](/docs/agent/pr-review/usage#turn-off-automatic-code-reviews) to stop automatic pull request reviews. Manual reviews and explicit `@vercel` requests remain available and can create paid usage.
+- Turn off [automatic Code Reviews](/docs/agent/pr-review/usage#turn-off-automatic-code-reviews) to stop automatic pull request reviews.
 - Turn off Security Review in the team's [Agent settings](/docs/agent/security-review) to stop automatic security reviews of new pushes.
 - Disable [Vercel Agent Investigation](/docs/agent/investigation#disable-vercel-agent-investigation) to stop automatic alert investigations.
 

@@ -17,8 +17,8 @@ summary: Create your first connector in Vercel Connect, install the SDK, and req
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/connect/quickstart.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "6adcd0055462eaa35d756cf3dab2c9a0694b775ab199bebd6bde223dc8947a9c"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "6ff43f03e00eca4046a9e1f5c89bfc0f994d56b2c63a06ebfb6b8dbdbc0736fa"
 ---
 
 # Quickstart
@@ -58,13 +58,13 @@ Full cross-link map for this page: [/docs/connect/quickstart.graph.md](/docs/con
   Create a new directory and connect it to a Vercel project. Linking the directory to a project is the recommended way to authenticate, because the project handles secure [OIDC token authentication](/docs/connect/concepts/authentication) for you.
 
   **Terminal**
-  ```bash filename="Terminal" framework=node
+  ```bash filename="Terminal" language=ts
   mkdir my-connect-app && cd my-connect-app
   pnpm init
   vercel link
   ```
   **Terminal**
-  ```bash filename="Terminal" framework=py
+  ```bash filename="Terminal" language=py
   mkdir my-connect-app && cd my-connect-app
   uv init --bare
   vercel link
@@ -104,23 +104,23 @@ Full cross-link map for this page: [/docs/connect/quickstart.graph.md](/docs/con
   Install the Vercel Connect SDK along with the dependencies you need to run a script locally.
 
   **Terminal**
-  ```bash filename="Terminal" framework=node package-manager="npm"
+  ```bash filename="Terminal" language=ts package-manager="npm"
   npm install @vercel/connect dotenv @types/node tsx typescript
   ```
   **Terminal**
-  ```bash filename="Terminal" framework=node package-manager="yarn"
+  ```bash filename="Terminal" language=ts package-manager="yarn"
   yarn add @vercel/connect dotenv @types/node tsx typescript
   ```
   **Terminal**
-  ```bash filename="Terminal" framework=node package-manager="pnpm"
+  ```bash filename="Terminal" language=ts package-manager="pnpm"
   pnpm add @vercel/connect dotenv @types/node tsx typescript
   ```
   **Terminal**
-  ```bash filename="Terminal" framework=node package-manager="bun"
+  ```bash filename="Terminal" language=ts package-manager="bun"
   bun add @vercel/connect dotenv @types/node tsx typescript
   ```
   **Terminal**
-  ```bash filename="Terminal" framework=py
+  ```bash filename="Terminal" language=py
   uv add vercel-connect python-dotenv
   ```
   `dotenv` and `python-dotenv` load `.env.local` so the SDK can read `VERCEL_OIDC_TOKEN`.
@@ -237,11 +237,11 @@ Full cross-link map for this page: [/docs/connect/quickstart.graph.md](/docs/con
 
 - ### Run it
   **Terminal**
-  ```bash filename="Terminal" framework=node
+  ```bash filename="Terminal" language=ts
   pnpm tsx index.ts
   ```
   **Terminal**
-  ```bash filename="Terminal" framework=py
+  ```bash filename="Terminal" language=py
   uv run python main.py
   ```
   The first time you run this for a new user ID, you'll see:
@@ -256,12 +256,12 @@ Full cross-link map for this page: [/docs/connect/quickstart.graph.md](/docs/con
   After you approve access, re-run the script and you'll see:
 
   **Terminal**
-  ```text filename="Terminal" framework=node
+  ```text filename="Terminal" language=ts
   Got token for user_demo_123 on mcp.linear.app/linear
   Expires at: 2026-06-03T22:42:00.000Z
   ```
   **Terminal**
-  ```text filename="Terminal" framework=py
+  ```text filename="Terminal" language=py
   Got token for user_demo_123 on mcp.linear.app/linear
   Expires at: 2026-06-03T22:42:00+00:00
   ```

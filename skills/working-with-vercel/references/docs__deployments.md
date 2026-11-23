@@ -17,8 +17,8 @@ summary: Create, verify, and manage preview and production deployments on Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployments.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "7645760317d180ffaf833dd8e6a1cf026d9c8a217b4e75680a63dd29bb10103c"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "afd7d406b6b74662ae6042384b5e203aa6595d4652ff4188052d70a6c42ee352"
 ---
 
 # Deploying to Vercel
@@ -33,7 +33,6 @@ Create preview and production deployments from Git, Vercel CLI, or the REST API.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
 - [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) — Share a single Turborepo cache across your team and CI to avoid duplicated work.
 - [Resources tab allows instant searching and filtering of functions, middleware, and static assets](https://vercel.com/changelog/resources-tab-allows-instant-searching-and-filtering-of-functions-middleware)
 - [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
@@ -43,7 +42,7 @@ Create preview and production deployments from Git, Vercel CLI, or the REST API.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
-- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
+- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
 - [Audit Logs](https://vercel.com/docs/audit-log) — Learn how to track and analyze your team members' activities.
 
 Full cross-link map for this page: [/docs/deployments.graph.md](/docs/deployments.graph.md)

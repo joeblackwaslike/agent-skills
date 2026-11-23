@@ -14,8 +14,8 @@ summary: Use web_fetch_vercel_url with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/web_fetch_vercel_url.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "019ae8790b623790ce447c7f23675a25f1010b5e281bd487a0d5c06ac2d497fc"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "896da4a96a705a4ea84e45d007179337f8f46c88a7c9dc271df841581c4e81b2"
 ---
 
 # web_fetch_vercel_url
@@ -28,6 +28,7 @@ Fetch content directly from a Vercel deployment URL (with [authentication](/docs
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Agents can now access protected deployments via Vercel’s MCP server](https://vercel.com/changelog/give-agents-access-to-protected-deployments-via-vercels-mcp-server)
 - [get_access_to_vercel_url](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_access_to_vercel_url) — Use get_access_to_vercel_url with Vercel MCP.
 - [Get Deployment File Contents](https://vercel.com/docs/rest-api/deployments/get-deployment-file-contents) — GET /v8/deployments/{id}/files/{fileId} — Allows to retrieve the content of a file by supplying the file identifier and
 - [get_deployment_file_contents](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_file_contents) — Use get_deployment_file_contents with Vercel MCP.

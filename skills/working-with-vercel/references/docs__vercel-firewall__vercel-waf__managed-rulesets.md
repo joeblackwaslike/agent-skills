@@ -10,16 +10,16 @@ prerequisites:
   - /docs/vercel-firewall
 related:
   - /docs/rbac/access-roles
+  - /docs/vercel-firewall/priority-projects
   - /docs/vercel-firewall/vercel-waf/usage-and-pricing
-  - /docs/bot-management
   - /docs/cli/firewall
-  - /docs/vercel-firewall/firewall-concepts
+  - /docs/bot-management
 summary: Learn how to use WAF Managed Rulesets with the Vercel Web Application Firewall (WAF)
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/managed-rulesets.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "7614a5dba4fb682d73caf4fece8249d9f07ad4c0d8ebc7136b64ab1c69eaaec6"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "63dacb40de02c0670b2af5fd229dec84dd5a308fcb5e7333814cec91fe6ad904"
 ---
 
 # WAF Managed Rulesets
@@ -35,14 +35,14 @@ WAF Managed Rulesets are collections of predefined WAF rules based on standards 
 - [Control AI crawlers and assistants separately in Vercel Firewall](https://vercel.com/changelog/block-ai-crawlers-and-assistants-independently-with-managed-rules)
 - [New firewall challenge metrics now available](https://vercel.com/changelog/new-firewall-challenge-metrics-now-available)
 - [New one-click AI bot managed ruleset](https://vercel.com/changelog/new-one-click-ai-bot-managed-ruleset)
+- [Priority Projects now in public beta](https://vercel.com/changelog/priority-projects-now-in-public-beta)
 - [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
+- [How to effectively load test your application on Vercel](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
 - [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
 - [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf) — Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in secur
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Security through design: Creating the improved Firewall experience](https://vercel.com/blog/security-through-design-creating-the-improved-firewall-experience)
-- [Create Vercel Firewall rules with natural language](https://vercel.com/changelog/create-vercel-waf-custom-rules-using-natural-language)
-- [Firewall Terraform Configuration](https://vercel.com/kb/guide/firewall-terraform-configuration) — Learn how to create scalable firewall configurations with Terraform
-- [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
+- [Returns activated WAF config](https://vercel.com/docs/rest-api/security/returns-activated-waf-config-2) — POST /v1/security/firewall/config/{configVersion}/activate — Promotes a draft WAF config to an active config
 - [CDN security](https://vercel.com/docs/cdn-security) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
 
 Full cross-link map for this page: [/docs/vercel-firewall/vercel-waf/managed-rulesets.graph.md](/docs/vercel-firewall/vercel-waf/managed-rulesets.graph.md)
@@ -53,6 +53,7 @@ The following ruleset(s) are currently available:
 - [OWASP core ruleset](#configure-owasp-core-ruleset)
 - [Bot Protection Managed Ruleset](#configure-bot-protection-managed-ruleset)
 - [AI Bots Managed Ruleset](#configure-ai-bots-managed-ruleset)
+- [Traffic Sources Managed Ruleset](#configure-traffic-sources-managed-ruleset)
 
 ## Access roles
 
@@ -61,9 +62,13 @@ The following ruleset(s) are currently available:
 
 ## Configure OWASP core ruleset
 
-> OWASP core ruleset is available on Enterprise plans . [Review pricing information here](/docs/vercel-firewall/vercel-waf/usage-and-pricing#managed-ruleset-pricing).
+> OWASP core ruleset is available on Enterprise and Pro plans (on Pro, the project must be a [Priority project](/docs/vercel-firewall/priority-projects)). [Review pricing information here](/docs/vercel-firewall/vercel-waf/usage-and-pricing#managed-ruleset-pricing).
 
-To enable and configure [OWASP Core Ruleset](https://owasp.org/www-project-top-ten/) for your project, follow these steps:
+On Enterprise, the OWASP core ruleset is available on every project. On Pro, [upgrade the project to Priority](/docs/vercel-firewall/priority-projects#getting-started) to use it. OWASP inspection is billed per inspected request and per GB of inspected payload, at the same rates on both plans.
+
+To enable and configure [OWASP Core Ruleset](https://owasp.org/www-project-top-ten/) for your project from the dashboard or the Vercel CLI.
+
+#### Dashboard
 
 1. From your project's [dashboard](/dashboard), open [**Firewall**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Ffirewall\&title=Go+to+Firewall) in the sidebar
 2. Open **Rules** in the sidebar
@@ -79,13 +84,27 @@ To enable and configure [OWASP Core Ruleset](https://owasp.org/www-project-top-t
 8. Apply the changes
 9. Monitor the live traffic on the **Firewall** overview page
 
+#### CLI
+
+Run [`vercel firewall managed-rulesets`](/docs/cli/firewall) to turn on the OWASP core ruleset and set an action for a rule group, then publish the changes:
+
+```bash filename="terminal"
+vercel firewall managed-rulesets enable owasp --yes
+vercel firewall managed-rulesets update owasp --group sqli --action deny --yes
+vercel firewall publish
+```
+
+This example turns on the OWASP core ruleset and denies SQL injection attempts. Run `vercel firewall managed-rulesets list` to see each rule group and its current action. [`vercel firewall publish`](/docs/cli/firewall#publish) shows the staged changes and asks you to confirm before they go live.
+
 ## Configure Bot Protection Managed Ruleset
 
 > Bot Protection Managed Ruleset is available on all plans
 
 The ruleset is **inactive by default**. In the dashboard this is labeled **Off**. Matching traffic is not evaluated and reaches your application.
 
-To enable and configure [bot protection](/docs/bot-management#bot-protection-managed-ruleset) for your project, follow these steps:
+To enable and configure [bot protection](/docs/bot-management#bot-protection-managed-ruleset) for your project from the dashboard or the Vercel CLI:
+
+#### Dashboard
 
 1. From your project's dashboard, open [**Firewall**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Ffirewall\&title=Open+Firewall) in the sidebar.
 2. Open **Rules** in the sidebar.
@@ -95,6 +114,17 @@ To enable and configure [bot protection](/docs/bot-management#bot-protection-man
    - When you make any change, you will see a **Review Changes** button appear or update on the top right with the number of changes requested
    - Select **Review Changes** and review the changes to be applied
    - Select **Publish** to apply the changes to your production deployment
+
+#### CLI
+
+Run [`vercel firewall managed-rulesets update`](/docs/cli/firewall#managed-rulesets-update) to set the Bot Protection action, then publish the changes:
+
+```bash filename="terminal"
+vercel firewall managed-rulesets update bot-protection --action challenge --yes
+vercel firewall publish
+```
+
+The `--action` flag accepts `off`, `log`, or `challenge`. [`vercel firewall publish`](/docs/cli/firewall#publish) shows the staged changes and asks you to confirm before they go live.
 
 ## Configure AI Bots Managed Ruleset
 
@@ -126,15 +156,61 @@ To enable and configure AI bots:
 
 #### CLI
 
-Run [`vercel firewall rules`](/docs/cli/firewall#custom-rules) to set an action for each category, then publish the changes:
+Run [`vercel firewall managed-rulesets update`](/docs/cli/firewall#managed-rulesets-update) to set an action for each category, then publish the changes:
 
 ```bash filename="terminal"
-vercel firewall rules update ai-bots --category ai-crawlers --action deny --yes
-vercel firewall rules update ai-bots --category ai-assistants --action allow --yes
+vercel firewall managed-rulesets update ai-bots --group ai-crawlers --action deny --yes
+vercel firewall managed-rulesets update ai-bots --group ai-assistants --action off --yes
 vercel firewall publish
 ```
 
-This example blocks AI Crawlers and allows AI Assistants. Each category accepts `allow`, `log`, or `deny`. [`vercel firewall publish`](/docs/cli/firewall#publish) shows the staged changes and asks you to confirm before they go live.
+This example blocks AI Crawlers and allows AI Assistants. Each category accepts `off`, `log`, or `deny`, where `off` is **Allow** in the dashboard. [`vercel firewall publish`](/docs/cli/firewall#publish) shows the staged changes and asks you to confirm before they go live.
+
+## Configure Traffic Sources Managed Ruleset
+
+> Traffic Sources Managed Ruleset is available in Beta on Enterprise and Pro plans for [Priority projects](/docs/vercel-firewall/priority-projects).
+
+The Traffic Sources Managed Ruleset allows you to enforce an action based on the originating source of a request, such as Tor or a commercial VPN. The ruleset is **inactive by default**, and each rule group starts with the **Log** action when you enable it.
+
+The ruleset has the following rule groups:
+
+| Rule group          | Matches requests from                                      |
+| ------------------- | ---------------------------------------------------------- |
+| Tor                 | A known Tor exit node.                                     |
+| Proxies             | A known open or anonymizing proxy.                         |
+| Residential Proxies | An IP address offered through a residential proxy network. |
+| VPN                 | The egress IP address of a commercial VPN.                 |
+| Abuse               | An IP address with a high-confidence history of abuse.     |
+
+Each rule group can use the **Log**, **Challenge**, or **Deny** action. Any rule group can match legitimate traffic, so enable it with **Log** first and review the matched requests on the Firewall [**Traffic**](/docs/vercel-firewall/firewall-observability#traffic) page before you switch it to **Challenge** or **Deny**. To combine a traffic source with other conditions, such as a path or country, use the `traffic_source` condition in a [WAF Custom Rule](/docs/vercel-firewall/vercel-waf/custom-rules) instead.
+
+To enable and configure the Traffic Sources Managed Ruleset for your project from the dashboard or the Vercel CLI:
+
+#### Dashboard
+
+1. From your project's dashboard, open [**Firewall**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Ffirewall\&title=Open+Firewall) in the sidebar.
+2. Open **Rules** in the sidebar.
+3. From the **WAF Managed Rulesets** section, enable **Traffic Sources**. If the project isn't a Priority project, select **Upgrade to Priority** first.
+4. Select the Configure icon on the **Traffic Sources** list item.
+5. Enable the rule groups you want to act on, and select **Log**, **Challenge**, or **Deny** for each one.
+6. You can then apply as follows:
+   - When you make any change, you will see a **Review Changes** button appear or update on the top right with the number of changes requested
+   - Select **Review Changes** and review the changes to be applied
+   - Select **Publish** to apply the changes to your production deployment
+
+#### CLI
+
+Run [`vercel firewall managed-rulesets`](/docs/cli/firewall) to turn on the Traffic Sources Managed Ruleset and set an action for a rule group, then publish the changes:
+
+```bash filename="terminal"
+vercel firewall managed-rulesets enable traffic-sources --yes
+vercel firewall managed-rulesets update traffic-sources --group traffic-source-vpn --action log --yes
+vercel firewall publish
+```
+
+This example turns on the ruleset and logs requests from VPNs. The `--group` flag accepts `traffic-source-tor`, `traffic-source-proxies`, `traffic-source-res-proxies`, `traffic-source-vpn`, or `traffic-source-abuse`, and the `--action` flag accepts `log`, `challenge`, `deny`, or `off`. [`vercel firewall publish`](/docs/cli/firewall#publish) shows the staged changes and asks you to confirm before they go live.
+
+If you downgrade the project off Priority, Vercel turns off the Traffic Sources Managed Ruleset for that project.
 
 ## Bypassing rulesets
 

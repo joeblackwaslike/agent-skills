@@ -16,8 +16,8 @@ summary: A DNS record display component with one-click copying for guiding users
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/platforms/platform-elements/blocks/dns-table.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "ef014bc5e4aac32b2db0d3dc338bb9ba2de1386c3e91b20e2250ce1a6e8c7eca"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "ab1680ac032204c9f2313cf6fa390244548951af737b49a6129bc870d59e3320"
 ---
 
 # DNS Table
@@ -32,7 +32,6 @@ The DNS Table block provides a clean, user-friendly interface for displaying DNS
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [DNS Records UI](https://vercel.com/blog/dns-records-ui)
 - [Working with DNS](https://vercel.com/docs/domains/working-with-dns) — Learn how DNS works to properly configure your domain.
 - [vercel dns](https://vercel.com/docs/cli/dns) — Learn how to manage your DNS records for your domains using the vercel dns CLI command.
 - [Update an existing DNS record](https://vercel.com/docs/rest-api/dns/update-an-existing-dns-record) — PATCH /v1/domains/records/{recordId} — Updates an existing DNS record for a domain name.

@@ -17,8 +17,8 @@ summary: Learn how to migrate your app or website to Vercel with minimal risk an
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/incremental-migration.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "8a937225cf992301ac5abb521b9bc541cb54b3fb65dea49c37d8bb9b6d4660d2"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "b8660a63b5a06336f51777542c7066ad6e4b487a4a9ffb141c1bb1df02dc2fe8"
 ---
 
 # Incremental Migration to Vercel
@@ -31,17 +31,15 @@ When migrating to Vercel you should use an incremental migration strategy. This 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Why all application migrations should be incremental ](https://vercel.com/blog/incremental-migrations)
 - [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends) — Learn how to migrate legacy applications using microfrontends
-- [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
+- [Why all application migrations should be incremental ](https://vercel.com/blog/incremental-migrations)
 - [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify) — Migrate your website's configuration from Netlify to Vercel
 - [Migrate from Fly.io to Vercel](https://vercel.com/kb/guide/migrate-fly-io-to-vercel) — Move an app from Fly.io to Vercel. Map configuration, choose Functions or Daemons, plan persistent storage, and verify t
 - [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
-- [Headless Salesforce: An incremental migration from monolith to composable](https://vercel.com/blog/salesforce-incremental-migration)
-- [Life of a Vercel request: Application-aware routing](https://vercel.com/blog/life-of-a-request-application-aware-routing)
-- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
+- [How to effectively load test your application on Vercel](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
 - [Integrating Vercel and Kubernetes](https://vercel.com/docs/integrations/external-platforms/kubernetes) — Deploy your frontend on Vercel alongside your existing Kubernetes infrastructure.
 - [Redirects](https://vercel.com/docs/routing/redirects) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
+- [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
 
 Full cross-link map for this page: [/docs/incremental-migration.graph.md](/docs/incremental-migration.graph.md)
 <!-- /docsgraph:related -->
@@ -310,7 +308,7 @@ Learn more about [connecting Redis databases through the Marketplace](/docs/redi
 
 Minimize risk and perform A/B testing by combining your migration by feature with a user group strategy. You can use [Global Config](/docs/global-config) to store user group information and [Routing Middleware](/docs/routing-middleware) to direct traffic appropriately.
 
-- You can also consult our [guide on A/B Testing on Vercel](/kb/guide/ab-testing-on-vercel) for implementing this strategy
+- You can also consult our [guide on A/B Testing on Vercel](/docs/flags/vercel-flags/cli/run-ab-test) for implementing this strategy
 
 ## Using functions
 

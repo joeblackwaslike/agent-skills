@@ -10,15 +10,15 @@ prerequisites:
 related:
   - /docs/vercel-firewall
   - /docs/vercel-firewall/firewall-concepts
+  - /docs/vercel-firewall/priority-projects
+  - /docs/drains/using-drains
   - /docs/vercel-firewall/ddos-mitigation
-  - /docs/webhooks
-  - /docs/comments/integrations
 summary: Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-firewall/firewall-observability.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "171d2be5cfd874ac3f07959d2317d76d5f76b4ccf226cbfbdf6515d1f7e87bff"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "cf68a6bc45a09801770d602c60806a25b78c7dbf9e40d57971c5f43cd18ecfe3"
 ---
 
 # Firewall Observability
@@ -31,14 +31,14 @@ The project **Firewall** page of your Vercel dashboard provides a consolidated v
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Priority Projects now in public beta](https://vercel.com/changelog/priority-projects-now-in-public-beta)
 - [Making your catalog discoverable to AI agents](https://vercel.com/kb/guide/agentic-commerce-readiness) — Agentic commerce readiness starts with the initial HTML response. Server-render your product catalog, ship JSON-LD, and
 - [How to use Vercel’s Bot Management features](https://vercel.com/kb/guide/how-to-utilize-vercels-bot-management-features) — A practical, step-by-step guide to identifying unwanted automated traffic and securing your Vercel apps with Bot Protect
 - [Security through design: Creating the improved Firewall experience](https://vercel.com/blog/security-through-design-creating-the-improved-firewall-experience)
 - [Improved traffic visibility on Firewall overview page](https://vercel.com/changelog/improved-traffic-visibility-on-firewall-overview-page)
-- [Preventing infrastructure abuse with Vercel Firewall](https://vercel.com/blog/preventing-infrastructure-abuse-with-vercel-firewall)
+- [Preview your site's Firewall status and Web Analytics from the Project Overview](https://vercel.com/changelog/preview-firewall-status-and-web-analytics-from-project-overview)
 - [Improved analytics experience now available on the Vercel Firewall](https://vercel.com/changelog/improved-analytics-experience-now-available-on-the-vercel-firewall)
-- [Block, rate limit, and challenge traffic with the Vercel Firewall](https://vercel.com/changelog/block-rate-limit-and-challenge-traffic-with-the-vercel-firewall)
-- [Introducing Vercel Firewall DDoS mitigation notifications](https://vercel.com/changelog/introducing-vercel-firewall-notifications)
+- [Preventing infrastructure abuse with Vercel Firewall](https://vercel.com/blog/preventing-infrastructure-abuse-with-vercel-firewall)
 - [Vercel WAF](https://vercel.com/docs/vercel-firewall/vercel-waf) — Learn how to secure your website with the Vercel Web Application Firewall \\(WAF\\)
 - [Firewall and Security](https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall) — Vercel MCP tools for firewall and security.
 - [Read Firewall Actions Summary by Project](https://vercel.com/docs/rest-api/security/read-firewall-actions-summary-by-project) — GET /v1/security/firewall/events/summary — Aggregate counts over the firewall actions matched by the same filters as \\`G
@@ -84,6 +84,18 @@ You can also review incoming requests grouped by the following dimensions:
 - **Country**: Geographic distribution of traffic by country
 
 ![Incoming web traffic view with popular filter breakdowns](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/security/vercel-waf-traffic-tab-light.png)
+
+## Deeper observability with Priority projects
+
+[Priority projects](/docs/vercel-firewall/priority-projects) add deeper visibility into your firewall traffic.
+
+### Query builder fields
+
+Priority projects unlock additional fields in the firewall query builder so you can filter events by bot classification. On all plans, you can query verified bots by `botName` and `botVerified`. Priority projects also reveal `botCategory` for unverified traffic. For example, you can find all requests blocked by a specific rule from a given bot category in the last 24 hours.
+
+### Log drains for security events
+
+With Priority projects, request logs sent to [Log Drains](/docs/drains/using-drains) include bot classification data in `botName`, `botCategory`, and `botStatus`, and the client's ASN, country, and region.
 
 ## Firewall Alerts
 

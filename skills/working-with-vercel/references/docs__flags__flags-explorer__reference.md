@@ -10,15 +10,15 @@ prerequisites:
   - /docs/flags
 related:
   - /docs/flags/observability/web-analytics
-  - /docs/flags/flags-explorer/getting-started
-  - /docs/microfrontends
   - /docs/environment-variables/system-environment-variables
+  - /docs/cli/flags
+  - /docs/microfrontends
 summary: In-depth reference for configuring the Flags Explorer
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/flags-explorer/reference.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "991e4453d1ec6317a731972df89ba01921d6ef8791e22f02af157dde1078d2e2"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "2553bdb35835afb4e68e93244d269c7228e33e216701ae8c32be3e80831ef251"
 ---
 
 # Reference
@@ -33,12 +33,14 @@ The Flags Explorer has five main concepts: the [Discovery Endpoint](/docs/flags/
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
-- [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit) — Using the Flags SDK in SvelteKit
 - [Flags as code in Next.js](https://vercel.com/blog/flags-as-code-in-next-js)
-- [Quickstart](https://flags-sdk.dev/docs/frameworks/next) — Learn how to start using the Flags SDK in your Next.js project.
+- [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit) — Using the Flags SDK in SvelteKit
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
 - [flags/next](https://flags-sdk.dev/docs/api-reference/frameworks/next) — APIs for working with feature flags in Next.js.
+- [Quickstart](https://flags-sdk.dev/docs/frameworks/next) — Learn how to start using the Flags SDK in your Next.js project.
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
+- [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
+- [Setting up Flags Explorer](https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer) — Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting ot
 
 Full cross-link map for this page: [/docs/flags/flags-explorer/reference.graph.md](/docs/flags/flags-explorer/reference.graph.md)
 <!-- /docsgraph:related -->
@@ -121,7 +123,7 @@ This example shows how to communicate a feature flag definition through the DOM:
 </script>
 ```
 
-You can also encrypt the definitions before emitting them to prevent leaking your feature flags through the DOM.
+You can also encrypt the definitions before emitting them to prevent leaking your feature flags through the DOM. `encryptFlagDefinitions` requires a [`FLAGS_SECRET`](/docs/flags/flags-explorer/reference#flags_secret-environment-variable) and throws without one.
 
 ```js
 import { encryptFlagDefinitions, safeJsonStringify } from 'flags';
@@ -373,7 +375,7 @@ The expected shape is:
 type FlagValues = Record<string, any>;
 ```
 
-To prevent disclosing feature flag names and values to the client, the information can be encrypted. This keeps the feature flags confidential. Use the Flags SDK's `encryptFlagValues` function together with the `FLAGS_SECRET` environment variable to encrypt your flag values on the server before rendering them on the client. The Flags Explorer will then read these encrypted values and use the `FLAGS_SECRET` from your project to decrypt them.
+To prevent disclosing feature flag names and values to the client, the information can be encrypted. This keeps the feature flags confidential. Use the Flags SDK's `encryptFlagValues` function to encrypt your flag values on the server before rendering them on the client. On Vercel, `encryptFlagValues` uses Vercel's public key, so only Flags Explorer can read the values. If your project has a `FLAGS_SECRET` environment variable, `encryptFlagValues` uses that secret instead, and Flags Explorer decrypts the values with the `FLAGS_SECRET` from your project.
 
 ```tsx
 import { encryptFlagValues, safeJsonStringify } from 'flags';
@@ -395,9 +397,27 @@ const encryptedFlagValues = await encryptFlagValues({
 
 ## `FLAGS_SECRET` environment variable
 
-This secret gates access to the Flags Discovery Endpoint, and optionally enables signing and encrypting feature flag overrides set by Vercel Toolbar. As described below, you can ensure that the request is authenticated in your [Flags Discovery Endpoint](/docs/flags/flags-explorer/reference#discovery-endpoint) by using [`verifyAccess`](https://flags-sdk.dev/docs/api-reference/core/core#verifyaccess).
+On Vercel, Flags Explorer works without a `FLAGS_SECRET` when you use `flags` version 4.5.0 or later:
 
-You can create this secret by following the instructions in the [Flags Explorer Quickstart](/docs/flags/flags-explorer/getting-started#adding-a-flags_secret). Alternatively, you can create the `FLAGS_SECRET` manually by following the instructions below. If using [microfrontends](/docs/microfrontends), you should use the same `FLAGS_SECRET` as the other projects in the microfrontends group, and enable [Automatically expose System Environment Variables](/docs/environment-variables/system-environment-variables) in each project's settings. Without them, Flags Explorer can't load the flags of child apps.
+- Vercel signs the requests to your [Flags Discovery Endpoint](/docs/flags/flags-explorer/reference#discovery-endpoint), and [`verifyAccess`](https://flags-sdk.dev/docs/api-reference/core/core#verifyaccess) verifies them.
+- Vercel signs the overrides that Vercel Toolbar stores, and the Flags SDK verifies them.
+- `encryptFlagValues` encrypts flag values with Vercel's public key.
+
+For this to work, your project must [expose the system environment variables](/docs/environment-variables/system-environment-variables), which is the default. For local development, run `vercel env pull` so the Flags SDK can identify your project.
+
+Projects that already have a `FLAGS_SECRET` keep working without changes. When the secret is set, it gates access to the Flags Discovery Endpoint, and Vercel Toolbar uses it to encrypt overrides.
+
+### When you need a `FLAGS_SECRET`
+
+Set a `FLAGS_SECRET` in these cases:
+
+- Your application runs outside Vercel, or you run it locally without `vercel env pull`.
+- Your project doesn't expose the system environment variables.
+- You create your own encrypted overrides with `encryptOverrides`, for example in end-to-end tests or with [`vercel flags override`](/docs/cli/flags).
+- You encrypt flag definitions with `encryptFlagDefinitions` to [embed them through script tags](/docs/flags/flags-explorer/reference#embedding-definitions-through-script-tags).
+- You [precompute](https://flags-sdk.dev/docs/core-concepts/precompute) flags in a prebuilt deployment (`vercel build` and `vercel deploy --prebuilt`), or a precomputed code must be valid in another deployment or project.
+
+Create the secret by following the instructions below. If you use [microfrontends](/docs/microfrontends) and set a `FLAGS_SECRET`, use the same value in every project of the microfrontends group, and enable [Automatically expose System Environment Variables](/docs/environment-variables/system-environment-variables) in each project's settings. Without them, Flags Explorer can't load the flags of child apps.
 
 **Manually creating the `FLAGS_SECRET`**
 
@@ -411,18 +431,17 @@ Add each value to your project's environment variables in the Vercel dashboard, 
 
 Then pull your environment variables locally with `vercel env pull` to make them available to your project.
 
-> **💡 Note:** The `FLAGS_SECRET` environment variable must be defined in your project
-> settings on the Vercel dashboard. Defining the environment variable locally is
-> not enough as Flags Explorer reads the environment variable from your project
-> settings.
+> **💡 Note:** When you use a `FLAGS_SECRET`, define it in your project settings on the
+> Vercel dashboard. Defining the environment variable locally is not enough as
+> Flags Explorer reads the environment variable from your project settings.
 
 ## Discovery Endpoint
 
-When you have set the [`FLAGS_SECRET`](/docs/flags/flags-explorer/reference#flags_secret-environment-variable) environment variable in your project, Flags Explorer will request your application's [Flags Discovery Endpoint](/docs/flags/flags-explorer/reference#discovery-endpoint). This endpoint should return a configuration for the Flags Explorer that includes the flag definitions.
+Flags Explorer requests your application's [Flags Discovery Endpoint](/docs/flags/flags-explorer/reference#discovery-endpoint). This endpoint returns a configuration for the Flags Explorer that includes the flag definitions.
 
 ### Verifying a request to the Discovery Endpoint
 
-Your endpoint should call `verifyAccess` to ensure the request to load flags originates from Vercel Toolbar. This prevents your feature flag definitions from being exposed publicly through the Discovery Endpoint. The `Authorization` header sent by Vercel Toolbar contains proof that whoever made this request has access to `FLAGS_SECRET`. The secret itself is not sent over the network.
+Your endpoint should call `verifyAccess` to ensure the request to load flags originates from Vercel Toolbar. This prevents your feature flag definitions from being exposed publicly through the Discovery Endpoint. The `Authorization` header sent by Vercel Toolbar contains a short-lived token that Vercel signs for your project. On Vercel, or locally after `vercel env pull`, `verifyAccess` accepts this token without a `FLAGS_SECRET`. If your project has a `FLAGS_SECRET`, the header contains proof that whoever made this request has access to the secret instead. The secret itself is not sent over the network.
 
 If the `verifyAccess` check fails, you should return status code `401` with a `null` JSON body and no flag definitions. When the `verifyAccess` check is successful, return the feature flag definitions and other configuration as JSON:
 
@@ -610,7 +629,7 @@ When you create an override, Vercel Toolbar will set a cookie called `vercel-fla
 The `overrideEncryptionMode` setting controls the value of the cookie:
 
 - `plaintext`: The cookie will contain the overrides as plain JSON. Be careful not to trust those overrides as users can manipulate the value easily.
-- `encrypted`: Vercel Toolbar will encrypt overrides using the `FLAGS_SECRET` before storing them in the cookie. This prevents manipulation, but requires decrypting them on your end before usage.
+- `encrypted`: Vercel Toolbar protects the overrides before storing them in the cookie. With a `FLAGS_SECRET`, it encrypts them with the secret. Without one, it stores overrides that Vercel signs for your project. This prevents manipulation, but requires decrypting or verifying them on your end before usage.
 
 We highly recommend using `encrypted` mode as it protects against manipulation.
 
@@ -624,7 +643,7 @@ If you use the Flags SDK for Next.js or SvelteKit, the SDK will automatically ha
 
 **Manual setup**
 
-Read this cookie and use the `decryptOverrides` function to decrypt the overrides and use them in your application. The decrypted value is a JSON object containing the name and override value of each overridden flag.
+Read this cookie and use the `decryptOverrides` function to decrypt the overrides and use them in your application. On Vercel, or locally after `vercel env pull`, `decryptOverrides` also verifies overrides that Vercel signs, so it works without a `FLAGS_SECRET`. The decrypted value is a JSON object containing the name and override value of each overridden flag.
 
 ```ts filename="app/getFlags.ts" framework=nextjs
 import { decryptOverrides } from 'flags';

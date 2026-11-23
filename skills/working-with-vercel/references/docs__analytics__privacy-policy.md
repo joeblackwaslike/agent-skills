@@ -16,8 +16,8 @@ summary: Learn how Vercel supports privacy and data compliance standards with Ve
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/analytics/privacy-policy.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "bb949c0079af758d56550c834695b85eb76cc91fd892c08a634a2b743384b5b5"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "e983d600ce5e55491efe9d7b2bf3c3c6d60d82e091e2a73c5405a5c5f06486e8"
 ---
 
 # Privacy and Compliance
@@ -32,7 +32,6 @@ Vercel takes a privacy-focused approach to our products and strives to enable ou
 
 - [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available)
 - [Web Analytics is now generally available](https://vercel.com/changelog/web-analytics-is-now-generally-available)
-- [Vercel acquires Splitbee to expand first-party analytics](https://vercel.com/blog/vercel-acquires-splitbee)
 - [Vercel Speed Insights Privacy & Compliance](https://vercel.com/docs/speed-insights/privacy-policy) — Learn how Vercel follows the latest privacy and data compliance standards with its Speed Insights feature.
 - [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
 - [Vercel Web Analytics Troubleshooting](https://vercel.com/docs/analytics/troubleshooting) — Learn how to troubleshoot common issues with Vercel Web Analytics.

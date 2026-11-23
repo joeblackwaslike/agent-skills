@@ -18,8 +18,8 @@ summary: Deploy Vite projects to Vercel and configure environment variables, Ver
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/frontend/vite.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "b6b3a41968e1bb2e0f9ceb13ede2210050c26ac84b1f074be4306db6f5c574ae"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "26973c62d95771376ca9acc8adeda1de90c33093744244d455a3977fcf4aa228"
 ---
 
 # Vite on Vercel
@@ -41,7 +41,7 @@ Vite is an opinionated build tool that aims to provide a faster and leaner devel
 - [Nitro on Vercel](https://vercel.com/docs/frameworks/backend/nitro) — Deploy Nitro applications to Vercel with zero configuration. Learn about observability, ISR, and custom build configurat
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart) — Learn how to get started with microfrontends on Vercel.
 
 Full cross-link map for this page: [/docs/frameworks/frontend/vite.graph.md](/docs/frameworks/frontend/vite.graph.md)
 <!-- /docsgraph:related -->

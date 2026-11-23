@@ -17,8 +17,8 @@ summary: Give an agent a tool that creates dynamic schedules, so it can do work 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/schedules/agents.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "fd03c16e8a7c4f08a6e5dc2ae84d8574ba4c315e12b37dc1c39c284e2571c4a4"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "7a8e30bc5e7855d34d439b8f8cc0c6e12f4f052b6e507960762e9808e3c86990"
 ---
 
 # Scheduling Work for Agents
@@ -32,7 +32,6 @@ An agent can promise to do something later, like "every weekday at 9am, summariz
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing Vercel Schedules](https://vercel.com/blog/introducing-vercel-schedules)
-- [Vercel Schedules is now in public beta](https://vercel.com/changelog/vercel-schedules-is-now-in-public-beta)
 - [Schedules](https://eve.dev/docs/schedules) — Run an agent on a cron cadence, either a fire-and-forget prompt or a handler that hands work off to a channel.
 - [Schedules Concepts](https://vercel.com/docs/schedules/concepts) — Learn how Vercel Schedules handles environments, deployments, jitter, one-time schedules, late runs, and duplicate deliv
 - [Managing Schedules](https://vercel.com/docs/schedules/manage) — View, enable, disable, and run schedules across environments, and check their execution history from the dashboard, CLI,

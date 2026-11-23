@@ -15,8 +15,8 @@ summary: API reference for the Flags SDK for Next.js and SvelteKit.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/flags-sdk-reference.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "ee34787229ffa23da27bc86dd8803f55d3be2999e4344831d66722703414ab05"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "fc9f34cb38c8c494693294b956021c70b92a226db272a640a364a9d1d43e4632"
 ---
 
 # Flags SDK Reference
@@ -30,9 +30,8 @@ The Flags SDK is a free, open-source library that gives you the tools you need t
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
-- [npm i flags](https://vercel.com/changelog/npm-i-flags)
-- [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
-- [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta)
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
+- [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit) — Using the Flags SDK in SvelteKit
 - [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga)
 - [Cost-aware model routing with Vercel AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Send easy requests to a lower-cost model and escalate only the complex ones to a frontier model through AI Gateway, with
 - [Using the Flags SDK with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
@@ -117,6 +116,8 @@ export const layoutVariant = flag({
 export const precompute = [layoutVariant];
 ```
 
+On Vercel, precompute works without a `FLAGS_SECRET` when you use `flags` version 4.5.0 or later. The Flags SDK signs each code with a key that Vercel provides for the deployment, so a code is only valid inside the deployment that created it. Set a `FLAGS_SECRET` for apps outside Vercel, for prebuilt deployments (`vercel build` and `vercel deploy --prebuilt`), or when a code must be valid in another deployment.
+
 Learn more about [precompute on flags-sdk.dev](https://flags-sdk.dev/docs/core-concepts/precompute).
 
 ## Key APIs
@@ -142,9 +143,9 @@ reportValue('my-flag', true);
 
 ### Overrides
 
-Flags Explorer stores overrides in the encrypted `vercel-flag-overrides` cookie. The `flag()` function reads this cookie and applies overrides automatically: when an override is present, the `decide` function is not called and the override value is returned instead. No extra code is needed.
+Flags Explorer stores overrides in the `vercel-flag-overrides` cookie. Vercel signs them for your project. If your project has a `FLAGS_SECRET`, Vercel Toolbar encrypts them with the secret instead. The `flag()` function reads this cookie and applies overrides automatically: when an override is present, the `decide` function is not called and the override value is returned instead. No extra code is needed.
 
-To read overrides manually in Next.js App Router, use the following example. `decryptOverrides` uses `FLAGS_SECRET`, which must match the secret used by Flags Explorer:
+To read overrides manually in Next.js App Router, use the following example. On Vercel, or locally after `vercel env pull`, `decryptOverrides` verifies signed overrides without a `FLAGS_SECRET`. If your project has a `FLAGS_SECRET`, `decryptOverrides` uses it to decrypt the overrides:
 
 ```ts filename="app/read-overrides.ts" framework=nextjs-app
 import { decryptOverrides } from 'flags';

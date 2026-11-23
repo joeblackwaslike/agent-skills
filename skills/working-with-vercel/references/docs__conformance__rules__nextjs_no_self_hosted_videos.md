@@ -15,8 +15,8 @@ summary: Prevent video files from being added to Next.js applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/rules/nextjs_no_self_hosted_videos.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "a18d379559f7f6effc5a3f839c545201d1b9d8d92ffcc39239079973da4374e6"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "532c4cd5483d30af0e0d8ab86874554f759e5a72fd1110101f8e6b348fcf334a"
 ---
 
 # NEXTJS_NO_SELF_HOSTED_VIDEOS
@@ -34,7 +34,7 @@ You can use either [server uploads or client uploads](/docs/storage/vercel-blob#
 - [Server uploads](/docs/storage/vercel-blob/server-upload) are suitable for files up to **4.5 MB**
 - [Client uploads](/docs/storage/vercel-blob/client-upload) allow for uploading larger files directly from the browser to Vercel Blob, supporting files up to **5 TB (5,000 GB)**
 
-See the [best practices for hosting videos on Vercel](/kb/guide/best-practices-for-hosting-videos-on-vercel-nextjs-mp4-gif) guide to learn more about various other options for hosting videos.
+If you need transcoding or adaptive streaming, use a dedicated video platform such as [Mux](https://vercel.com/marketplace/mux), which is available on the Vercel Marketplace.
 
 ## Search the docs from your terminal
 

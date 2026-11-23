@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/skills/src/assets/samples/openai-docs/references/model-migration.md"
-fetched_at: "2026-11-02T12:02:43.686Z"
-sha256: "b0c21d509bd03f3fbc90b64a206437923a0c6b8433059274b45384513c01676c"
+fetched_at: "2026-11-23T14:04:53.528Z"
+sha256: "55d44c50193c4d99d8418b580fd05a738db89f8d53165675fc23ae357347d32c"
 ---
 
 # Model migration and prompting
@@ -38,7 +38,8 @@ Treat returned guide URLs as opaque: fetch those exact URLs without deriving, su
 - Fetch `migrationGuideUrl` for a requested migration or upgrade plan.
 - Fetch `promptingGuideUrl` only when the user asks for prompting guidance or the migration requires a prompt change. Extract only `## Prompting best practices` through the next H2 heading.
 - For explicitly named-model prompting, fetch that model's official prompting guidance and extract only `## Prompting best practices` through the next H2 heading. Do not load a migration reference or run the resolver.
-- For an actual GPT-6 migration or implementation plan, fetch `https://developers.openai.com/api/docs/guides/latest-model/gpt-6-astra.md#migration-quickstart`. For specifically requested GPT-6 prompting, fetch `https://developers.openai.com/api/docs/guides/latest-model/gpt-6-astra.md#prompting-best-practices`. Read `references/upgrading-to-gpt-6-astra.md` only when fetched official guidance does not resolve needed compatibility gates, scoped code changes, tier-aware routing, validation, or other migration-specific judgment. Never load it for documentation-only questions about model tiers, the family alias, Pro mode, reasoning effort, or current guidance when the fetched official documentation already answers them.
+- For an explicit GPT-6.2 Astra or Sol target, use the [GPT-6.2 migration quickstart](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-6.2-astra#gpt-6.2-astra-migration-quickstart). Both models support Responses and Chat Completions. Tool calling requires Responses.
+- For a migration or implementation plan covered by the earlier GPT-6 Astra guide, fetch `https://developers.openai.com/api/docs/guides/latest-model/gpt-6-astra.md#migration-quickstart`. For specifically requested GPT-6 prompting, fetch `https://developers.openai.com/api/docs/guides/latest-model/gpt-6-astra.md#prompting-best-practices`. Read `references/upgrading-to-gpt-6-astra.md` only when fetched official guidance does not resolve needed compatibility gates, scoped code changes, tier-aware routing, validation, or other migration-specific judgment. Never load it for documentation-only questions about model tiers, the family alias, Pro mode, reasoning effort, or current guidance when the fetched official documentation already answers them.
 - Verify current official guidance and account availability before recommending or selecting a model. Preserve the selected model and apply its own compatibility rules; do not copy a sibling's reasoning defaults, tool support, or regional availability. A newer family member does not change the model returned by the latest-model resolver. For an explicitly requested model whose public guidance is not yet available, keep the requested target and state the unresolved compatibility facts instead of silently substituting another model.
 - Read `references/prompting-guide.md` only when prompting guidance or prompt changes are actually needed and current official guidance is unavailable.
 - Read `references/upgrade-guide.md` only when current official migration guidance is unavailable. Disclose when a bundled fallback was used.

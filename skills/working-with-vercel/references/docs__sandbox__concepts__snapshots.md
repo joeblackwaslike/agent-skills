@@ -18,8 +18,8 @@ summary: Save and restore sandbox state with snapshots for faster startups and e
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/concepts/snapshots.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "25473686ddc0d6f18bad96c18f98a0e5e3b74c7984dfe409ac4556b742fd9ae5"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "f7a868fcd92849dbcd95b970fbcf62eeea77623cd741d6081e15af7cd115023e"
 ---
 
 # Snapshots
@@ -37,12 +37,13 @@ Snapshots capture the state of a running sandbox, including the filesystem and i
 - [Vercel Sandbox snapshot creation is now up to 10x faster](https://vercel.com/changelog/vercel-sandbox-snapshot-creation-is-now-up-to-10x-faster)
 - [How Vercel Drives work and how to use them](https://vercel.com/kb/guide/vercel-drives) — Learn how Vercel Drives give Vercel Sandbox persistent, shareable storage, and how to create, mount, snapshot, fork, lis
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
+- [Introducing eve 1.0](https://vercel.com/blog/eve-is-now-generally-available)
 - [Filesystem snapshots supported on Vercel Sandboxes](https://vercel.com/changelog/filesystem-snapshots-supported-on-vercel-sandboxes)
+- [Create a snapshot](https://vercel.com/docs/rest-api/sandboxes/create-a-snapshot-1) — POST /v3/sandboxes/sessions/{sessionId}/snapshot — Creates a point-in-time snapshot of a running session's filesystem. S
 - [Create a snapshot](https://vercel.com/docs/rest-api/sandboxes/create-a-snapshot) — POST /v2/sandboxes/sessions/{sessionId}/snapshot — Creates a point-in-time snapshot of a running session's filesystem. S
 - [List snapshots](https://vercel.com/docs/rest-api/sandboxes/list-snapshots) — GET /v2/sandboxes/snapshots — Retrieves a paginated list of snapshots for a specific project.
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Get a snapshot](https://vercel.com/docs/rest-api/sandboxes/get-a-snapshot) — GET /v2/sandboxes/snapshots/{snapshotId} — Retrieves detailed information about a specific snapshot, including its creat
-- [Images](https://vercel.com/docs/sandbox/concepts/images) — Start sandboxes from Vercel's Managed Images, or custom OCI images stored in Vercel Container Registry to ship your own
 
 Full cross-link map for this page: [/docs/sandbox/concepts/snapshots.graph.md](/docs/sandbox/concepts/snapshots.graph.md)
 <!-- /docsgraph:related -->

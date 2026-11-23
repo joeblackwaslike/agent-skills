@@ -4,8 +4,8 @@ description: API reference for the experimental_useRealtime hook.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-realtime"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-realtime.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "c20cc91e67ca2c1dc1224e17cad9ce974f930b7d56e04fd952eafa5238027692"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "ffa0327c278f99606a3bba4b747927d65be03e5b69e2280514e7da86bc48bf4a"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -86,8 +86,12 @@ function LiveConversation() {
 }
 ```
 
-The current continuous browser runtime supports a JSON/PCM16 WebSocket relay media
-profile. Continuous conversation semantics alone do not guarantee support for every
+The current continuous browser runtime supports a JSON/PCM16 WebSocket media
+profile, through an application relay (`api.websocket`) or, for models that declare
+the `client-secret-websocket` connection, straight to the provider with a
+short-lived token (`api.token`). AI Gateway Live models support the token flow; see
+[AI Gateway Live models](/providers/ai-sdk-providers/ai-gateway#live-models).
+Continuous conversation semantics alone do not guarantee support for every
 codec or transport. Applications with their own audio pipeline can use the low-level
 provider for other supported codecs. OpenAI-specific settings
 live under `providerOptions.openai` and use camelCase fields; the provider converts

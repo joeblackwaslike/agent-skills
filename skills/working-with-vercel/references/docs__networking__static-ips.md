@@ -17,8 +17,8 @@ summary: Access IP-restricted backend services through shared static egress IPs 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/networking/static-ips.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "5109cfad91f4ea23bbbfd2bc08e4b65675a26a10312b86164aa1a9ed620c04ff"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "f6489f71995006630f8644415d8140724ecd07d729b5e5149e66c5f49be3d7be"
 ---
 
 # Static IPs
@@ -42,9 +42,9 @@ With Static IPs (shared pool), you can access backend services that require IP a
 - [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
 - [Static IPs are now available for more secure connectivity](https://vercel.com/changelog/static-ips-are-now-available-for-more-secure-connectivity)
 - [Route build traffic through Static IPs](https://vercel.com/changelog/route-build-traffic-through-static-ips)
+- [Configures Static IPs for a project](https://vercel.com/docs/rest-api/networking/configures-static-ips-for-a-project) — PATCH /v1/projects/{idOrName}/shared-connect-links — Allows configuring Static IPs for a project
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 - [Restrict deployment access by IP address](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/trusted-ips) — Trusted IPs let you restrict access to your deployments to a list of allowed IP addresses.
-- [Using Vercel with Microsoft Azure](https://vercel.com/docs/integrations/external-platforms/azure) — Run your frontend on Vercel alongside backends hosted in Microsoft Azure, with private network connectivity, keyless aut
 
 Full cross-link map for this page: [/docs/networking/static-ips.graph.md](/docs/networking/static-ips.graph.md)
 <!-- /docsgraph:related -->
@@ -152,7 +152,7 @@ If you've added the static IPs to your backend's allowlist but requests are stil
 | Functions reach the backend, but builds fail against the same allowlist | Build traffic uses dynamic IP addresses unless you route it through Static IPs. This affects anything that runs during the build, such as database migrations or content fetches. | Turn on **Use for builds** in your project's **Settings** > **Networking**. See [Routing build traffic](#routing-build-traffic). |
 | No requests come from the static IPs | The project also uses [Secure Compute](/docs/networking/secure-compute), which takes precedence over Static IPs. | Allowlist the Secure Compute network's IP addresses, or remove the project from the Secure Compute network. |
 | Requests from Routing Middleware are rejected | [Routing Middleware](#routing-middleware-support) doesn't use static IPs. | Move the IP-restricted call into a Vercel Function and call that function from your middleware. |
-| Vercel can't access a GitHub repository after your organization enabled an IP allowlist | Vercel's Git integration connects from Vercel's infrastructure, not your project's static IPs. | Build and deploy from GitHub Actions with `vercel build` and `vercel deploy --prebuilt`. See [Using Vercel with GitHub IP restrictions](/kb/guide/use-vercel-with-github-ip-restrictions). |
+| Vercel can't access a GitHub repository after your organization enabled an IP allowlist | Vercel's Git integration connects from Vercel's infrastructure, not your project's static IPs. | Build and deploy from GitHub Actions with `vercel build` and `vercel deploy --prebuilt`. See [Deploying with a GitHub IP allow list](/docs/git/vercel-for-github#deploying-with-a-github-ip-allow-list). |
 
 ## Limits and pricing
 

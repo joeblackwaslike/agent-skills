@@ -15,8 +15,8 @@ summary: Install skills to enhance AI coding agents with specialized capabilitie
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/skills.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "88591e91354b753f411bb64690f9c3189617e18618a04852d7acb3180a8338ef"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "d76d5940e0054b35acc990efe41c17a4cc024dd6cbee5f53cbc3d0c4057ca628"
 ---
 
 # Agent Skills
@@ -30,17 +30,17 @@ An agent skill is a packaged capability that extends an AI agent with a specific
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Agent Skills: Creating, Installing, and Sharing Reusable Agent Context](https://vercel.com/kb/guide/agent-skills-creating-installing-and-sharing-reusable-agent-context) — This guide will cover what skills are, how to create custom skills for yourself and your team, and how to publish them t
-- [Agent skills explained: An FAQ](https://vercel.com/blog/agent-skills-explained-an-faq)
 - [Add skills to your AI SDK agents](https://vercel.com/kb/guide/ai-sdk-skill-uploads) — Use uploadSkill and provider references in the AI SDK to bundle a SKILL.md and supporting files, then attach the skill t
+- [Agent skills explained: An FAQ](https://vercel.com/blog/agent-skills-explained-an-faq)
 - [Introducing skills, the open agent skills ecosystem](https://vercel.com/changelog/introducing-skills-the-open-agent-skills-ecosystem)
-- [Skills Night: 69,000+ ways agents are getting smarter](https://vercel.com/blog/skills-night-69000-ways-agents-are-getting-smarter)
 - [Skills v1.1.1: Interactive discovery, open source release, and agent support](https://vercel.com/changelog/skills-v1-1-1-interactive-discovery-open-source-release-and-agent-support)
-- [The skills.sh API is now available](https://vercel.com/changelog/the-skills-sh-api-is-now-available)
-- [The skills CLI now supports Notion hosted skills](https://vercel.com/changelog/skills-cli-notion-skills)
-- [Use skills in your AI SDK agents via bash-tool](https://vercel.com/changelog/use-skills-in-your-ai-sdk-agents-via-bash-tool)
-- [Building Slack agents can be easy](https://vercel.com/blog/building-slack-agents-can-be-easy)
+- [Build your first Slack agent with eve](https://vercel.com/kb/guide/eve-slack-agent-starter) — Deploy the eve Slack agent template: a starter Slack bot built on the eve framework with an example tool and skill.
+- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
 - [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code, Codex, and OpenCode, and co
+- [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
+- [Schedules](https://vercel.com/docs/schedules) — Run code on a recurring cron schedule or once at a specific time, and create schedules at runtime for each of your users
 
 Full cross-link map for this page: [/docs/agent-resources/skills.graph.md](/docs/agent-resources/skills.graph.md)
 <!-- /docsgraph:related -->

@@ -13,8 +13,8 @@ summary: Upgrade the Vercel CLI to the latest version and manage automatic updat
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/upgrade.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "d6051688021d52c57b91610dd40c0615484b28754aaebe2fe8a1b5f4e8812269"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "dc62af36c43192f671a10992ec5ef05540641635e945a9d92518884a87723089"
 ---
 
 # vercel upgrade
@@ -27,6 +27,7 @@ The `vercel upgrade` command upgrades the Vercel CLI on your machine to the late
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Billing CLI is now available](https://vercel.com/changelog/vercel-billing-cli-is-now-available)
 - [vercel changelog](https://vercel.com/docs/cli/changelog) — Read recent Vercel product updates and search the changelog from your terminal using the Vercel CLI.
 - [vercel ci](https://vercel.com/docs/cli/ci) — Enable or disable Vercel CI for repositories, inspect runs, search logs, and rerun jobs from the command line.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.

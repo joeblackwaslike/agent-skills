@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-skills/main/README.md"
-fetched_at: "2026-11-09T12:36:42.699Z"
-sha256: "aabef86e1198feb424d2cda1d93dd87d6cc5209f2fa792d96442fb53c20547a9"
+fetched_at: "2026-11-23T14:13:22.579Z"
+sha256: "13c6e553961f32b255206c966aa9c7397cc44c50da75a4ec33a92777b8cabb10"
 ---
 
 # Gemini API skills
@@ -39,7 +39,7 @@ and 96% with Gemini 3.1 Pro. For more details, see our blog post:
 
 | Skill | Description |
 | :--- | :--- |
-| [`gemini-api-dev`](skills/gemini-api-dev) | Skill for building apps with the [Gemini API](https://aistudio.google.com/docs/interactions-overview) (Interactions API). Covers text generation, multi-turn chat, streaming, function calling, structured output, image generation, speech generation (TTS), Voice Design, Voice Replication, managed agents, Deep Research, deprecated model guardrails, and both Python and TypeScript SDKs. |
+| [`gemini-api-dev`](skills/gemini-api-dev) | Skill for building apps with the [Gemini API](https://aistudio.google.com/docs/interactions-overview) (Interactions API and Decisions API). Covers text generation, multi-turn chat, streaming, function calling, structured output, calibrated decisions (`gemini-decision-1`), image generation, speech generation (TTS), Voice Design, Voice Replication, managed agents, Deep Research, deprecated model guardrails, and both Python and TypeScript SDKs. |
 | [`gemini-api-cli`](skills/gemini-api-cli) | Skill for calling the Gemini API from the shell with [`gemini-api`](https://github.com/google-gemini/gemini-api-cli). Covers text and media generation (`image`, `tts`, `music`, `video`), file and YouTube analysis, transcription, Deep Research, Antigravity sandboxes, and `--jq` / `--body` scripting. |
 | [`gemini-live-api-dev`](skills/gemini-live-api-dev) | Skill for building real-time, bidirectional streaming apps with the Gemini Live API. Covers WebSocket-based audio/video/text streaming, voice activity detection, native audio features, function calling, and session management. |
 | [`gemini-omni-flash-api`](skills/gemini-omni-flash-api) | Specialized generative AI video skill focused on Gemini Omni 1.2 Flash (`gemini-omni-1.2-flash`), video editing, image and video referenced generation, first and last frame transitions, and video extensions (3s–15s per turn, up to 40s total) using the Interactions API. |

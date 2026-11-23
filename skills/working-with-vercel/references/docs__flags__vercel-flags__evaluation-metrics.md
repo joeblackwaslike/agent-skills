@@ -17,8 +17,8 @@ summary: Track Vercel Flags evaluations and see which variant each evaluation re
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/vercel-flags/evaluation-metrics.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "0b3c19f328a7614ae3464a8e9942cba4067b63699d90ce17c600b61cc63e7959"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "b5ae543781d1d05baca94f45c531a9b877ccbf315c301517ab35219028715cb4"
 ---
 
 # Flag Evaluation Metrics
@@ -61,15 +61,16 @@ The full view lets you adjust the time range, granularity, grouping, filters, an
 
 By default, evaluations are grouped by variant. You can group and filter by these dimensions:
 
-| Dimension             | Description                                                                  |
-| --------------------- | ---------------------------------------------------------------------------- |
-| **Variant**           | The variant the evaluation resolved to                                       |
-| **Environment**       | The environment the flag was evaluated in (Production, Preview, Development) |
-| **Reason**            | Why the evaluation resolved to its variant                                   |
-| **Client**            | The client that evaluated the flag                                           |
-| **SDK Environment**   | The environment of the SDK key used for the evaluation                       |
-| **SDK Key**           | The SDK key used for the evaluation                                          |
-| **Reporting Project** | The project that reported the evaluation                                     |
+| Dimension               | Description                                                                  |
+| ----------------------- | ---------------------------------------------------------------------------- |
+| **Variant**             | The variant the evaluation resolved to                                       |
+| **Environment**         | The environment the flag was evaluated in (Production, Preview, Development) |
+| **Reason**              | Why the evaluation resolved to its variant                                   |
+| **Client Name**         | The client that evaluated the flag                                           |
+| **SDK Key Environment** | The environment of the SDK key used for the evaluation                       |
+| **SDK Key**             | The SDK key used for the evaluation                                          |
+| **Datafile Revision**   | The revision of the flag configuration used for the evaluation               |
+| **Reporting Project**   | The project that reported the evaluation                                     |
 
 ## Required SDK version
 

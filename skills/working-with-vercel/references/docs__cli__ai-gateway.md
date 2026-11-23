@@ -13,17 +13,17 @@ related:
   - /docs/ai-gateway/models-and-providers/routing-rules
   - /docs/ai-gateway/models-and-providers/virtual-models
   - /docs/ai-gateway/models-and-providers
-summary: "Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, virtual models, models, leaderboards, and coding agent setup."
+summary: "Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, virtual models, models, leaderboards, requests, sessions, and..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/ai-gateway.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "d152a2a091b31d1719a6a2f4d290c7e154b4b7772e80572cc87a25a7d6084084"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "b7606590ea029c5a59db31dc456ff9ce976172a68aca2b500e94b6913773c202"
 ---
 
 # vercel ai-gateway
 
-The `vercel ai-gateway` command manages [AI Gateway](/docs/ai-gateway) resources from the Vercel CLI, including API keys, [budgets](/docs/ai-gateway/observability-and-spend), [routing rules](/docs/ai-gateway/models-and-providers/routing-rules), [virtual models](/docs/ai-gateway/models-and-providers/virtual-models), [models](/docs/ai-gateway/models-and-providers), leaderboards, and [coding agents](/docs/ai-gateway/coding-agents).
+The `vercel ai-gateway` command manages [AI Gateway](/docs/ai-gateway) resources from the Vercel CLI, including API keys, [budgets](/docs/ai-gateway/observability-and-spend), [routing rules](/docs/ai-gateway/models-and-providers/routing-rules), [virtual models](/docs/ai-gateway/models-and-providers/virtual-models), [models](/docs/ai-gateway/models-and-providers), leaderboards, [requests and sessions](/docs/ai-gateway/observability-and-spend/logs), and [coding agents](/docs/ai-gateway/coding-agents).
 
 
 <!-- docsgraph:related -->
@@ -31,17 +31,16 @@ The `vercel ai-gateway` command manages [AI Gateway](/docs/ai-gateway) resources
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [AI Gateway now supports Private Inference](https://vercel.com/changelog/ai-gateway-now-supports-private-inference)
 - [Ember-1 from Fireworks now available on AI Gateway](https://vercel.com/changelog/ember-1-from-fireworks-now-available-on-ai-gateway)
 - [Kimi K3 and Kimi K3 Fast with ZDR and US-based providers now on AI Gateway](https://vercel.com/changelog/kimi-k3-and-kimi-k3-fast-on-ai-gateway)
 - [Pixel Canary is now available in stealth for free on AI Gateway](https://vercel.com/changelog/pixel-canary-is-now-available-in-stealth-for-free-on-ai-gateway)
 - [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
-- [Virtual models now available on AI Gateway](https://vercel.com/changelog/virtual-models-now-available-on-ai-gateway)
 - [Introducing Virtual Models on AI Gateway](https://vercel.com/blog/ai-gateway-virtual-models)
-- [Amp with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/amp) — Connect Amp to AI Gateway through Amp's Model Routing settings. Add an AI Gateway API key, choose models for Amp's modes
+- [Command Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/command-code) — Connect Command Code to AI Gateway with your own API key and a custom base URL. Configure models, switch between them, a
 - [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
 - [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis) — Connect to AI Gateway with the AI SDK, Python, Go, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Co
 - [vercel setup](https://vercel.com/docs/cli/setup) — Set up coding agents for Vercel with one command: install the Vercel plugin for Claude Code, Codex, and OpenCode, and co
-- [vercel token-pass](https://vercel.com/docs/cli/token-pass) — Configure supported coding agents to use Vercel Token Pass through AI Gateway from your terminal.
 
 Full cross-link map for this page: [/docs/cli/ai-gateway.graph.md](/docs/cli/ai-gateway.graph.md)
 <!-- /docsgraph:related -->
@@ -87,6 +86,12 @@ vercel ai-gateway api-keys create --name my-key --amount 500 --refresh-period mo
 
 *Create an API key with a human-readable name and a monthly $500 quota.*
 
+```bash filename="terminal"
+vercel ai-gateway api-keys create --name token-pass --token-pass
+```
+
+*Create a key that spends only your team's Token Pass credit.*
+
 ##### Options
 
 | Option | Type | Description |
@@ -94,19 +99,30 @@ vercel ai-gateway api-keys create --name my-key --amount 500 --refresh-period mo
 | `--name <NAME>` | String | Human-readable name for the API key |
 | `--amount <USD>` | Number | Quota budget limit in dollars (minimum 1) |
 | `--refresh-period <PERIOD>` | String | Quota refresh cadence: `daily`, `weekly`, `monthly`, or `none` (default `none`) |
+| `--include-byok` | Boolean | Include [BYOK](/docs/ai-gateway/authentication-and-byok/byok) usage in the key's quota (default off) |
 | `--alert-thresholds <LIST>` | String | Comma-separated spend percentages to alert at, a subset of `50`, `75`, and `100`, for example `75,100` |
 | `--expiration <PERIOD>` | String | Expiry for the key: `7d`, `30d`, `60d`, `90d`, `1y`, or `none` (default `none`) |
+| `--token-pass` | Boolean | Scope the key to [Token Pass](/docs/ai-gateway/token-pass). The key spends only your team's Token Pass credit, on Token Pass models only. You can't change this after creation, and you can't combine it with `--zdr-exempt` or `--bypass-all-settings` |
 | `--zdr-exempt` | Boolean | Exempt the key from the team's [zero data retention](/docs/ai-gateway/security-and-compliance/zdr) (ZDR) only model restriction. Team owners only |
+| `--bypass-all-settings` | Boolean | Exempt the key from all of the team's restrictions: ZDR-only models, the [provider allowlist](/docs/ai-gateway/security-and-compliance/provider-allowlist) and [model allowlist](/docs/ai-gateway/security-and-compliance/model-allowlist), and the HIPAA and [prompt-training](/docs/ai-gateway/security-and-compliance/disallow-prompt-training) filters. Team owners only |
 
 > **⚠️ Warning:** A ZDR-exempt key can reach models that don't offer zero data retention, which
-> is why only team owners can create one. Pair it with `--expiration` so the
-> exemption doesn't outlive the work that needed it.
+> is why only team owners can create one. A key created with
+> `--bypass-all-settings` skips every team restriction, so the same rule
+> applies. Pair either option with `--expiration` so the exemption doesn't
+> outlive the work that needed it.
 
 ```bash filename="terminal"
 vercel ai-gateway api-keys create --name escape-hatch --zdr-exempt --expiration 7d
 ```
 
 *Create a ZDR-exempt key that expires in seven days.*
+
+```bash filename="terminal"
+vercel ai-gateway api-keys create --name escape-hatch --bypass-all-settings --expiration 7d
+```
+
+*Create a key that bypasses all team restrictions and expires in seven days.*
 
 #### list
 
@@ -215,12 +231,19 @@ vercel ai-gateway budgets set user --default --amount 50 --refresh-period monthl
 
 *Give every team member without their own budget a $50 monthly limit.*
 
+```bash filename="terminal"
+vercel ai-gateway budgets set user teammate@example.com --amount 100 --message "Eval run for the launch"
+```
+
+*Record why the budget changed in the team's activity log.*
+
 ##### Options
 
 | Option | Type | Description |
 | --- | --- | --- |
 | `--amount <USD>` | Number | Budget limit in dollars (minimum 1) |
 | `--refresh-period <PERIOD>` | String | Budget refresh cadence: `daily`, `weekly`, `monthly`, or `none` (default `monthly`) |
+| `--message <TEXT>` | String | The [reason for the change](/docs/ai-gateway/observability-and-spend/budgets#reasons-for-budget-changes), recorded in the team's [activity log](/docs/activity-log) and shown as `Reason` in the output. Optional, up to 500 characters |
 | `--default` | Boolean | Target the scope's default budget, applied to resources of that scope without their own budget |
 | `--json` | Boolean | Print the machine-readable payload as JSON |
 
@@ -294,7 +317,7 @@ vercel ai-gateway budgets remove api-key my-key
 ```
 
 ```bash filename="terminal"
-vercel ai-gateway budgets remove user teammate@example.com
+vercel ai-gateway budgets remove user teammate@example.com --message "Left the team"
 ```
 
 ```bash filename="terminal"
@@ -308,6 +331,7 @@ vercel ai-gateway budgets remove user --default
 | Option | Type | Description |
 | --- | --- | --- |
 | `--yes`, `-y` | Boolean | Skip the confirmation prompt |
+| `--message <TEXT>` | String | The reason for the change, recorded in the team's [activity log](/docs/activity-log). Optional, up to 500 characters |
 | `--default` | Boolean | Remove the scope's default budget |
 | `--json` | Boolean | Print the machine-readable payload as JSON |
 
@@ -489,6 +513,8 @@ vercel ai-gateway setup --agent cursor --agent kilo
 
 *Connect specific agents by naming each one with \`--agent\`.*
 
+With `--token-pass`, setup creates a [Token Pass](/docs/ai-gateway/token-pass) key instead and only offers the agents that [`vercel token-pass`](/docs/cli/token-pass) supports: fx, OpenCode, and Pi.
+
 #### Gateway URLs the command writes
 
 AI Gateway serves several compatibility surfaces, and each agent gets the one its client speaks. The command picks these for you, which is the main reason to prefer it over hand-editing a config file:
@@ -640,9 +666,11 @@ Re-running the command against an already-configured setup doesn't mint a second
 | `--agent <NAME>` | String | Coding agent to configure. Repeatable. See [supported coding agents](#supported-coding-agents) for values. In runs without prompts, also grants consent for that agent's warnings |
 | `--all` | Boolean | Configure every [supported coding agent](#supported-coding-agents), whether or not it's detected on this machine |
 | `--key <KEY>` | String | Use an existing AI Gateway API key instead of creating one. Skips key creation and the name, team, budget, and expiry prompts |
+| `--token-pass` | Boolean | Create a [Token Pass](/docs/ai-gateway/token-pass) key, which spends only your team's Token Pass credit. Limits setup to fx, OpenCode, and Pi. See [`vercel token-pass`](/docs/cli/token-pass) |
 | `--name <NAME>` | String | Name for a newly created API key |
 | `--amount <USD>` | Number | Spend limit for a new key, in US dollars (minimum 1) |
 | `--refresh-period <PERIOD>` | String | Quota reset cadence for a new key: `daily`, `weekly`, `monthly`, or `none` |
+| `--include-byok` | Boolean | Include [BYOK](/docs/ai-gateway/authentication-and-byok/byok) usage in a new key's quota |
 | `--expiration <PERIOD>` | String | Expiry for a new key: `7d`, `30d`, `60d`, `90d`, `1y`, or `none` (default `none`) |
 | `--reconfigure` | Boolean | Run setup again when agents are already configured, for example to rotate the key or switch teams |
 | `--agent-config <AGENT=PATH>` | String | Override an agent's config file path, for example `claude-code=/path/settings.json`. Repeatable |
@@ -797,6 +825,218 @@ Restore a deleted virtual model by its slug. Requests to `vmc/<slug>` resolve ag
 vercel ai-gateway virtual-models restore my-model
 ```
 
+### private-inference
+
+Manage [private inference](/docs/ai-gateway/security-and-compliance/private-inference) for the current team. A private provider is an inference endpoint of your own that you connect to AI Gateway, and a private model is a model that provider serves. Requests call a private model as `private/<slug>`.
+
+```bash filename="terminal"
+vercel ai-gateway private-inference [subcommand]
+```
+
+Run it without a subcommand to show each private provider with its private models nested under it, like the dashboard's **Private Inference** page:
+
+```bash filename="terminal"
+vercel ai-gateway private-inference
+```
+
+With `--json`, the output is `{ "privateProviders": [...] }`. Each provider includes its `privateModels`, and each model includes its `gatewayModelId`. A model whose provider isn't listed appears under `privateModelsWithoutProvider`. Every `private-inference` subcommand accepts `--json`.
+
+#### providers list
+
+List the team's private providers, sorted by slug, with each provider's slug, name, connection type, base URL, and status. Alias: `ls`. Running `vercel ai-gateway private-inference providers` on its own runs the same list. A team can have up to 25 private providers.
+
+```bash filename="terminal"
+vercel ai-gateway private-inference providers list
+```
+
+With `--json`, the output is `{ "privateProviders": [...] }`.
+
+#### providers inspect
+
+Show one private provider and the private models that use it. The output shows only the last four characters of the provider's API key.
+
+```bash filename="terminal"
+vercel ai-gateway private-inference providers inspect acme-vllm
+```
+
+#### providers discover
+
+List the models a private provider's endpoint serves, and mark the ones you've already added as private models. The command asks the endpoint for up to 1,000 models with the provider's stored API key, changes nothing, and suggests the command that adds the rest. It needs permission to update private providers, which the Developer role doesn't have.
+
+```bash filename="terminal"
+vercel ai-gateway private-inference providers discover acme-vllm --query llama
+```
+
+*Find the Llama models a private provider serves.*
+
+| Option | Type | Description |
+| --- | --- | --- |
+| `--query <TEXT>`, `-q` | String | Only show models whose ID or name contains this text. The match ignores case |
+
+#### providers create
+
+Connect an inference endpoint to AI Gateway as a private provider. In a terminal, the command asks for a missing base URL, connection type, or API key, with the key masked, then prints the command to run it again without prompts. Without a terminal, a missing option fails and names the option.
+
+```bash filename="terminal"
+vercel ai-gateway private-inference providers create acme-vllm --base-url https://vllm.example.com/v1
+```
+
+*Create a provider and enter its API key at a masked prompt.*
+
+`--api-key` takes only `-`, which reads the key from stdin, so the key never appears in your shell history. The CLI never prints the key:
+
+```bash filename="terminal"
+cat key.txt | vercel ai-gateway private-inference providers create acme-vllm --base-url https://vllm.example.com --connection-type anthropic --api-key - --json
+```
+
+*Create an Anthropic Messages provider in a script, with the API key on stdin.*
+
+The connection types match the [compatible API formats](/docs/ai-gateway/security-and-compliance/private-inference#compatible-api-formats): `openai` is OpenAI Chat Completions, `openai-responses` is OpenAI Responses, `open-responses` is Open Responses, and `anthropic` is Anthropic Messages.
+
+##### Options
+
+| Option | Type | Description |
+| --- | --- | --- |
+| `--base-url <URL>` | String | Base URL of the provider's API, such as `https://vllm.example.com/v1`. Must use HTTPS on port 443 |
+| `--connection-type <TYPE>` | String | API format the endpoint accepts: `openai` (default), `openai-responses`, `open-responses`, or `anthropic` |
+| `--api-key -` | String | Read the provider's API key from stdin. Takes only `-`, never the key itself |
+| `--name <NAME>` | String | Display name (default: the slug) |
+| `--icon-url <URL>` | String | HTTPS URL of an icon for the dashboard |
+| `--zdr` | Boolean | Mark the provider as retaining no request data. See [zero data retention](/docs/ai-gateway/security-and-compliance/zdr) |
+| `--no-enable` | Boolean | Create the provider turned off, so its models serve no requests |
+| `--json` | Boolean | Print `{ "outcome": "created", "privateProvider": { ... } }` |
+
+#### providers update
+
+Change a private provider's settings. Settings you leave out stay as they are. The command takes the same options as [`providers create`](#providers-create), plus `--no-zdr` to mark the provider as one that may retain request data and `--enable` to turn it back on. The receipt shows only the last four characters of a replaced API key, and a key passed as the option's value is refused.
+
+```bash filename="terminal"
+cat key.txt | vercel ai-gateway private-inference providers update acme-vllm --api-key -
+```
+
+*Replace a provider's API key, reading it from stdin.*
+
+```bash filename="terminal"
+vercel ai-gateway private-inference providers update acme-vllm --no-enable
+```
+
+*Turn a provider off.*
+
+With `--json`, the output is `{ "outcome": "updated", "privateProvider": { ... } }`.
+
+#### providers delete
+
+Delete a private provider. Aliases: `rm` and `del`. The command shows what it deletes and asks first. Without a terminal, approve the delete with `--confirm-name <slug>`. A provider that private models still use isn't deleted unless you pass `--with-models`, which deletes those models first under the same approval.
+
+```bash filename="terminal"
+vercel ai-gateway private-inference providers delete my-vllm --with-models --confirm-name my-vllm
+```
+
+| Option | Type | Description |
+| --- | --- | --- |
+| `--with-models` | Boolean | Delete the private models that use the provider first |
+| `--confirm-name <SLUG>` | String | Approve the delete by naming the provider's slug |
+| `--yes`, `-y` | Boolean | Deprecated. Use `--confirm-name`. Coding agents can't approve a delete with `--yes` |
+
+#### models list
+
+List the team's private models, sorted by slug, by the model ID requests call them with (`private/<slug>`), with their provider, API model, type, and status. Alias: `ls`. Running `vercel ai-gateway private-inference models` on its own runs the same list. A team can have up to 100 private models.
+
+```bash filename="terminal"
+vercel ai-gateway private-inference models list --provider acme-vllm --json
+```
+
+*List one provider's models as JSON.*
+
+`--provider <PROVIDER>` shows only the models of one private provider, by slug, and fails when the team has no provider with that slug. With `--json`, the output is `{ "privateModels": [...] }`, and each model includes its `gatewayModelId`.
+
+#### models inspect
+
+Show a private model's model ID, provider, limits, and status. Pass the slug or the model ID `private/<slug>`.
+
+```bash filename="terminal"
+vercel ai-gateway private-inference models inspect acme-llama
+```
+
+#### models create
+
+Create private models from the models a private provider serves, one or several at a time. Pass `--api-model` more than once to create several. In a terminal, leave out `--provider` or `--api-model` to pick from the models the provider lists, with the ones you already added marked.
+
+```bash filename="terminal"
+vercel ai-gateway private-inference models create --provider acme-vllm --api-model acme/llama-70b
+```
+
+*Create one private model.*
+
+```bash filename="terminal"
+vercel ai-gateway private-inference models create --provider acme-vllm --api-model acme/small --api-model acme/large --json
+```
+
+*Create two private models and read the result.*
+
+The slug defaults to one derived from the API model ID. When the CLI can read the provider's model list, it takes slugs, names, and token limits from it. An `--api-model` you already added on the provider is skipped with a warning. The CLI creates models one at a time. If one fails, it lists what it created, what failed, and what it didn't attempt, and exits `1`.
+
+##### Options
+
+| Option | Type | Description |
+| --- | --- | --- |
+| `--provider <PROVIDER>` | String | Private provider that serves the models |
+| `--api-model <MODEL>` | String | Model ID the provider's API expects. Repeatable, to create a private model for each |
+| `--type <TYPE>` | String | Model type: `language` (default), `embedding`, or `image`. See [supported model types](/docs/ai-gateway/security-and-compliance/private-inference#supported-model-types) |
+| `--name <NAME>` | String | Display name, for one model (default: the API model ID) |
+| `--description <TEXT>` | String | Description, for one model |
+| `--context-window <NUMBER>` | Number | Context window in tokens, for one model |
+| `--max-tokens <NUMBER>` | Number | Maximum output tokens, for one model |
+| `--label <LABEL>` | String | Label shown with the models. Repeatable up to 20 times |
+| `--no-enable` | Boolean | Create the models turned off |
+| `--json` | Boolean | Print the machine-readable result as JSON |
+
+#### models update
+
+Update a private model. Only the options you pass change, and the model keeps its `private/<slug>` ID, even when you move it to another provider.
+
+```bash filename="terminal"
+vercel ai-gateway private-inference models update my-llama --provider acme-vllm-2
+```
+
+*Serve a private model from another provider.*
+
+```bash filename="terminal"
+vercel ai-gateway private-inference models update my-llama --no-enable
+```
+
+*Turn a private model off. Requests to it fail until you turn it back on.*
+
+##### Options
+
+| Option | Type | Description |
+| --- | --- | --- |
+| `--provider <PROVIDER>` | String | Private provider to serve the model |
+| `--api-model <MODEL>` | String | Model ID the provider is called with |
+| `--name <NAME>` | String | Display name |
+| `--type <TYPE>` | String | Model type, such as `language` or `embedding` |
+| `--description <TEXT>` | String | Description of the model. An empty value clears it |
+| `--context-window <NUMBER>` | Number | Context window in tokens |
+| `--max-tokens <NUMBER>` | Number | Maximum output tokens |
+| `--label <LABEL>` | String | Label shown with the model. Repeatable up to 20 times. Replaces every label |
+| `--no-label` | Boolean | Remove every label |
+| `--enable` | Boolean | Turn the model on |
+| `--no-enable` | Boolean | Turn the model off |
+| `--json` | Boolean | Print the machine-readable result as JSON |
+
+#### models delete
+
+Delete a private model by its slug or model ID. Aliases: `rm` and `del`. The command shows what it deletes and asks first. Without a terminal, approve the delete with `--confirm-name <slug>`.
+
+```bash filename="terminal"
+vercel ai-gateway private-inference models delete my-model --confirm-name my-model
+```
+
+| Option | Type | Description |
+| --- | --- | --- |
+| `--confirm-name <SLUG>` | String | Approve the delete by naming the private model's slug |
+| `--yes`, `-y` | Boolean | Deprecated. Use `--confirm-name`. Coding agents can't approve a delete with `--yes` |
+
 ### models
 
 Browse the [models](/docs/ai-gateway/models-and-providers) available through AI Gateway and compare the providers that serve them. Both commands are read-only. Add `--json` to either command for the full, machine-readable payload.
@@ -816,6 +1056,12 @@ vercel ai-gateway models list
 *List every model available through AI Gateway.*
 
 ```bash filename="terminal"
+vercel ai-gateway models list --query claude
+```
+
+*Find models by ID or name.*
+
+```bash filename="terminal"
 vercel ai-gateway models list --virtual
 ```
 
@@ -825,6 +1071,7 @@ vercel ai-gateway models list --virtual
 
 | Option | Type | Description |
 | --- | --- | --- |
+| `--query <TEXT>`, `-q` | String | Only list models whose ID or name contains this text. The match ignores case |
 | `--virtual`, `--no-virtual` | Boolean | Narrow the list. `--virtual` shows only your team's virtual models, and `--no-virtual` hides them. By default, the list shows catalog models and virtual models |
 | `--json` | Boolean | Output the full model payload as JSON |
 
@@ -841,6 +1088,8 @@ vercel ai-gateway models endpoints anthropic/claude-opus-5
 ```
 
 *Compare the providers that serve a model, with pricing, latency, and uptime.*
+
+An unknown model ID fails with a not-found error. When the name matches a model, such as `glm-5.3`, the error suggests the full ID, such as `zai/glm-5.3`.
 
 ##### Options
 
@@ -891,6 +1140,144 @@ vercel ai-gateway leaderboard models --format csv --output models.csv
 | `--format <FORMAT>` | String | Output format: `table`, `json`, or `csv` (default: `table` in a terminal, `json` otherwise) |
 | `--output <PATH>`, `-o` | String | Write the payload to a file instead of stdout. Defaults to JSON; use `--format csv` for CSV |
 
+### requests
+
+List and inspect your team's AI Gateway requests from the terminal. These are the requests the [Logs](/docs/ai-gateway/observability-and-spend/logs) page shows, one row per generation.
+
+```bash filename="terminal"
+vercel ai-gateway requests [subcommand]
+```
+
+Running `vercel ai-gateway requests` without a subcommand runs `requests list` and takes the same options.
+
+#### list
+
+List requests, newest first. Alias: `ls`. Each row shows the request's time, generation ID, model, provider, HTTP status, tokens, cost, duration, auth method, and spend attribution. In a terminal, the team appears above the table.
+
+```bash filename="terminal"
+vercel ai-gateway requests list
+```
+
+*List the requests of the last hour.*
+
+```bash filename="terminal"
+vercel ai-gateway requests list --since 24h --user me --model openai/gpt-5.6-sol --status 4xx --status 5xx --json
+```
+
+*List your own failed requests to one model in the last day as JSON.*
+
+```bash filename="terminal"
+vercel ai-gateway requests list --session <session-id> --since 7d --order asc
+```
+
+*List a session's requests, oldest first.*
+
+Without `--since`, the list covers the hour before `--until`, which defaults to now. Pass an ISO 8601 time with its zone, such as `2026-11-15T18:00:00Z`, or a relative duration, such as `24h` or `7d`. The range can start at most 32 days ago, and an older `--since` is a usage error. The output shows times in UTC.
+
+Filters run on the server and match exact values. Repeat a repeatable option, or separate its values with commas, to match any of them. Different options must all match. `--session` takes one ID, commas included.
+
+##### Options
+
+| Option | Type | Description |
+| --- | --- | --- |
+| `--since <TIME>`, `-s` | String | Start of the time range (default: 1 hour before `--until`) |
+| `--until <TIME>`, `-u` | String | End of the time range (default: now) |
+| `--project <NAME_OR_ID>` | String | Filter by project name or ID |
+| `--environment <ENVIRONMENT>` | String | Filter by environment, such as `production`. Repeatable |
+| `--model <MODEL>` | String | Filter by model, such as `openai/gpt-5.6-sol`. Repeatable |
+| `--provider <PROVIDER>` | String | Filter by provider, such as `anthropic`. Repeatable |
+| `--key <KEY_ID>` | String | Filter by API key ID. Repeatable |
+| `--status <STATUS>` | String | Filter by HTTP status, such as `429` or `5xx`. Repeatable |
+| `--session <SESSION>` | String | Filter by client session ID |
+| `--agent <AGENT>` | String | Filter by coding agent, such as `Codex`. Repeatable |
+| `--auth-method <METHOD>` | String | Filter by auth method: `api_key`, `oidc`, `app_token`, `personal_access_token`, or `client_secret`. Repeatable |
+| `--user <USER>` | String | Filter by user: `me`, a team member's email or username, or a user ID. Repeatable |
+| `--order <ORDER>` | String | Sort by time: `asc` or `desc` (default `desc`) |
+| `--limit <NUMBER>` | Number | Number of requests to return (default 100, maximum 1000) |
+| `--next <CURSOR>` | String | Continue the previous list from its cursor |
+| `--json` | Boolean | Print the result as JSON |
+
+`--user` matches the user of a request, meaning the owner of its credential. That's the user behind a personal access token or an app token, or the user an API key's spend is [attributed](/docs/ai-gateway/authentication-and-byok/api-keys#spend-attribution) to. It never matches a request made with a project's OIDC token, a request made with a key whose spend is attributed to the team, or a request that cost nothing, like most failed requests. An email or username matches a team member in any letter case. A user ID doesn't have to belong to a current member, so it also finds a user who left the team.
+
+The spend attribution column shows whose spend a request is: `user` with the username, `team`, `project` with the project's name for a project's OIDC token, or nothing when AI Gateway recorded none.
+
+`--limit` is the total number of rows to return. The CLI fetches them in pages of up to 100, and `--next` continues the same query after the last row. The cursor keeps the filters, sort order, and time range, so you can only pass `--limit` and `--json` with `--next`. With `--json`, the output is `{ "requests": [...], "pagination": { "next": "<cursor>" } }`, and `next` holds the command for the next page.
+
+When request logs are temporarily unavailable, the CLI suggests a shorter time range or a retry after the wait the API gives, which `--json` reports as `retryAfter` in seconds. When a later page fails, the output keeps the rows already fetched, says that it's incomplete, and gives the command that continues after the last row. With `--json`, the error reports `data.rowsFetched` and the cursor to restart from in `data.pagination.next`.
+
+#### inspect
+
+Show one request by its generation ID, as `requests list` shows it. The output includes the model, provider, HTTP status, token counts, cost, and timing, and the project, API key, session, coding agent, and user the request came from.
+
+```bash filename="terminal"
+vercel ai-gateway requests inspect gen_01KA0Z5V7M3QK8T2N9X4B6C1DE
+```
+
+With `--json`, the output is `{ "request": { ... } }` with the fields the API returns.
+
+### sessions
+
+List and inspect your team's AI Gateway sessions. A session is the requests that share a client session ID, which the caller or a coding agent sends, or which AI Gateway derives from the conversation.
+
+```bash filename="terminal"
+vercel ai-gateway sessions [subcommand]
+```
+
+Running `vercel ai-gateway sessions` without a subcommand runs `sessions list` and takes the same options.
+
+#### list
+
+List sessions by their last request, newest first. Alias: `ls`. Each row shows the session ID, last request, request and failure counts, tokens, cost, coding agent, last model, auth method, and spend attribution.
+
+```bash filename="terminal"
+vercel ai-gateway sessions list
+```
+
+*List the sessions of today and yesterday in UTC.*
+
+```bash filename="terminal"
+vercel ai-gateway sessions list --since 7d --user me --agent "Claude Code"
+```
+
+*List your own sessions with one coding agent in the last 7 days.*
+
+`--since` and `--until` pick whole UTC days, not exact times. The list holds every session with a request in the days the time range touches. Without `--since`, the range starts 24 hours before `--until`, and it can start at most 7 days ago. Totals cover only those days, so a session that began before the first of them shows only its part.
+
+Every filter matches only the session's last request. Filters run on the server and match exact values. Repeat `--key`, `--agent`, `--auth-method`, or `--user`, or separate values with commas, to match any of them. `--user` and spend attribution work as they do for [`requests list`](#requests).
+
+##### Options
+
+| Option | Type | Description |
+| --- | --- | --- |
+| `--since <TIME>`, `-s` | String | Start of the time range (default: 24 hours before `--until`, at most 7 days ago) |
+| `--until <TIME>`, `-u` | String | End of the time range (default: now) |
+| `--project <NAME_OR_ID>` | String | Only sessions whose last request was in this project |
+| `--key <KEY_ID>` | String | Only sessions whose last request used this API key, by ID. Repeatable |
+| `--agent <AGENT>` | String | Only sessions whose last request came from this coding agent, such as `Cursor`. Repeatable |
+| `--auth-method <METHOD>` | String | Only sessions whose last request used this auth method: `api_key`, `oidc`, `app_token`, `personal_access_token`, or `client_secret`. Repeatable |
+| `--user <USER>` | String | Only sessions whose last request belongs to this user: `me`, a team member's email or username, or a user ID. Repeatable |
+| `--limit <NUMBER>` | Number | Number of sessions to return (default 100, maximum 1000) |
+| `--next <CURSOR>` | String | Continue the previous list from its cursor |
+| `--json` | Boolean | Print the result as JSON |
+
+`--limit` and `--next` work as they do for `requests list`. With `--json`, the output is `{ "sessions": [...], "pagination": { "next": "<cursor>" } }`, where `next` is `null` on the last page.
+
+#### inspect
+
+Show one session: its request and failure counts, first and last request, cost, tokens, cache hit rate, models, providers, and the details of its last request.
+
+```bash filename="terminal"
+vercel ai-gateway sessions inspect <session-id>
+```
+
+The command looks at the last 7 days, which is as far back as sessions go, or at `--since` and `--until` within them. Like `sessions list`, the range picks whole UTC days, and totals cover only those days. The output ends with the command that lists the session's requests from the first one:
+
+```bash filename="terminal"
+vercel ai-gateway requests list --session <session-id> --since <first-request-time> --order asc
+```
+
+A session ID that starts with `-` goes after `--`, for example `vercel ai-gateway sessions inspect -- -abc123`. With `--json`, the output is `{ "session": { ... }, "next": [...] }`, with every field and up to 50 models and providers.
+
 ## Examples
 
 ### Create an API key with a monthly budget
@@ -909,6 +1296,15 @@ vercel ai-gateway budgets set project --default --amount 200 --refresh-period mo
 ```
 
 *Apply a $200 monthly budget to any project that has no budget of its own.*
+
+### Find the last day's failed requests
+
+```bash filename="terminal"
+vercel ai-gateway requests --since 24h --status 4xx --status 5xx
+```
+
+*List the team's requests from the last 24 hours that returned a 4xx or 5xx
+status.*
 
 ### Connect detected coding agents
 
@@ -984,6 +1380,9 @@ vercel ai-gateway setup --agent codex --base-url https://preview.ai-gateway.verc
 - [AI Gateway routing rules](/docs/ai-gateway/models-and-providers/routing-rules)
 - [AI Gateway authentication](/docs/ai-gateway/authentication-and-byok)
 - [AI Gateway API keys](/docs/ai-gateway/authentication-and-byok/api-keys)
+- [AI Gateway budgets](/docs/ai-gateway/observability-and-spend/budgets)
+- [AI Gateway request logs](/docs/ai-gateway/observability-and-spend/logs)
+- [`vercel token-pass`](/docs/cli/token-pass)
 
 ## Global Options
 

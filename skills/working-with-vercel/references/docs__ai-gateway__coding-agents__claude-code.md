@@ -18,8 +18,8 @@ summary: Connect Claude Code to AI Gateway with one CLI command, or configure it
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/claude-code.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "b106828a76320268cc32dbd33cb598dff8c2d827d0213b864bc78864d7744da1"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "e802dd68058f7b886207f3d08fe1bf8b90ef522a3a215934a9d4e0590028dbfe"
 ---
 
 # Claude Code and Claude Agent SDK with AI Gateway
@@ -32,14 +32,16 @@ AI Gateway provides [Anthropic-compatible API endpoints](/docs/ai-gateway/sdks-a
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Claude Haiku 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-haiku-5-5-now-available-on-ai-gateway)
+- [AI Gateway adds unified fast mode support](https://vercel.com/changelog/ai-gateway-adds-unified-fast-mode-support)
 - [Claude Code Max via AI Gateway, available now for Claude Code](https://vercel.com/changelog/claude-code-max-via-ai-gateway-available-now-for-claude-code)
-- [AI Gateway support for Claude Code](https://vercel.com/changelog/ai-gateway-support-for-claude-code)
-- [Claude Opus 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-5-now-available-on-ai-gateway)
-- [Claude Fable 5.2 now available on AI Gateway](https://vercel.com/changelog/claude-fable-5-2-now-available-on-ai-gateway)
+- [Claude Opus 5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-now-available-on-ai-gateway)
+- [Agents are users, so your software needs evals](https://vercel.com/blog/agent-evals)
 - [Introducing Virtual Models on AI Gateway](https://vercel.com/blog/ai-gateway-virtual-models)
-- [Collaborating with Anthropic on Claude Sonnet 4.5 to power intelligent coding agents](https://vercel.com/blog/collaborating-with-anthropic-on-claude-sonnet-4-5)
+- [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
+- [AI Gateway support for Claude Code](https://vercel.com/changelog/ai-gateway-support-for-claude-code)
+- [Claude Haiku 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-haiku-5-5-now-available-on-ai-gateway)
 - [Linear Cloud Coding Agent with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/linear) — Connect Linear's cloud coding agent to AI Gateway with bring your own key \\(BYOK\\). Bill Claude Code and Codex model usa
+- [Security for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/security) — What a durable agent harness may run in your Vercel Function, where the commands and files a model picks run instead, an
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/claude-code.graph.md](/docs/ai-gateway/coding-agents/claude-code.graph.md)
 <!-- /docsgraph:related -->
@@ -170,7 +172,9 @@ Your requests will now be routed through Vercel AI Gateway using your Claude sub
 
 ## Enabling fast mode
 
-[Fast mode](https://code.claude.com/docs/en/fast-mode) makes Claude Opus 4.6 and Opus 4.7 responses up to 2.5x faster at a higher per-token cost. It uses the same model with a configuration that prioritizes speed.
+[Fast mode](https://code.claude.com/docs/en/fast-mode) makes responses from supported Claude models faster at a higher per-token cost. It uses the same model with a configuration that prioritizes speed.
+
+To find the Claude models that support fast mode, filter the [AI Gateway models list](/ai-gateway/models?features=fast\&providers=anthropic) by **Has Fast Mode**, then open a model's page for details. Requests to a model without a fast tier run at standard speed.
 
 To use fast mode with AI Gateway, set `CLAUDE_CODE_SKIP_FAST_MODE_ORG_CHECK`. You can either add it to your shell configuration file (e.g., `~/.zshrc` or `~/.bashrc`):
 
@@ -188,25 +192,9 @@ Or add it to `~/.claude/settings.json`:
 }
 ```
 
-For Opus 4.7, also set `CLAUDE_CODE_ENABLE_OPUS_4_7_FAST_MODE`:
-
-```bash
-export CLAUDE_CODE_ENABLE_OPUS_4_7_FAST_MODE=1
-export CLAUDE_CODE_SKIP_FAST_MODE_ORG_CHECK=1
-```
-
-```json filename="~/.claude/settings.json"
-{
-  "env": {
-    "CLAUDE_CODE_SKIP_FAST_MODE_ORG_CHECK": "1",
-    "CLAUDE_CODE_ENABLE_OPUS_4_7_FAST_MODE": "1"
-  }
-}
-```
-
 Then toggle fast mode on or off inside Claude Code by typing `/fast`.
 
-Fast mode usage is billed at the fast tier rate for the model that was served. When you hit the fast mode rate limit, Claude Code automatically falls back to standard Opus speed and pricing. For current rates, see [Fast Mode](/docs/ai-gateway/models-and-providers/fast-mode#pricing).
+Fast mode usage is billed at the fast tier rate for the model that was served. When you hit the fast mode rate limit, Claude Code automatically falls back to standard speed and pricing. For current rates, see [Fast Mode](/docs/ai-gateway/models-and-providers/fast-mode#pricing).
 
 ## With the Claude Desktop app
 

@@ -14,8 +14,8 @@ summary: "Learn how to forward Vercel Audit Log Drain events to Panther using Pa
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/drains/audit-logs-to-panther.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "cfb557dc336b2d6bbd705834355fdfcf6a1dab23c0e2eabc593dace72740523b"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "b0856aef23638438d261119580d794538227435319ec35e6a7e8a634831c60a6"
 ---
 
 # Drain Audit Logs to Panther
@@ -32,6 +32,7 @@ Audit Log Drains can forward team activity events to [Panther](https://panther.c
 
 - [Audit Log Drains now support Datadog, Splunk, and Panther](https://vercel.com/changelog/audit-log-drains-now-support-datadog-splunk-and-panther)
 - [Expanded Audit Log coverage, now delivered through Vercel Drains](https://vercel.com/changelog/expanded-audit-log-coverage-now-delivered-through-vercel-drains)
+- [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains)
 - [Drain Audit Logs to Datadog](https://vercel.com/docs/drains/audit-logs-to-datadog) — Learn how to forward Vercel Audit Log Drain events to Datadog using the Datadog Logs API.
 - [Drain Audit Logs to Splunk](https://vercel.com/docs/drains/audit-logs-to-splunk) — Learn how to forward Vercel Audit Log Drain events to Splunk using the HTTP Event Collector \\(HEC\\).
 - [Migrating from Custom SIEM Log Streaming to Audit Log Drains](https://vercel.com/docs/audit-log/migrating-to-drains) — Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event

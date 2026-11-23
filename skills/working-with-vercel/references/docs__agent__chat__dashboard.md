@@ -17,13 +17,13 @@ summary: Use Vercel Agent from your Vercel dashboard
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent/chat/dashboard.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "946c2dd6995b35afc130f92204791572800a045db460901968d8622b4a6a7152"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "cebbbbd4e03f0bf2e458aea3f7c253c6307e5353bf1d2a9995ef8fc2c0444328"
 ---
 
 # Dashboard
 
-Vercel Agent can answer questions about your projects, investigate production issues, and take approved actions from the dashboard. Vercel Agent operates within your existing permissions and the currently selected team.
+Vercel Agent can answer questions about your projects, investigate production issues, and take approved actions from the dashboard. Vercel Agent operates within your existing Vercel permissions and the currently selected team.
 
 ## Start a conversation
 
@@ -57,7 +57,7 @@ When you paste more than 10,000 characters into the composer, Vercel Agent adds 
 
 ## Approve an action
 
-Vercel Agent is read-only by default. When a request requires sensitive access or a write operation, Vercel Agent presents a plan describing the tasks and requested permissions.
+Vercel Agent is read-only by default. When a request requires a change to Vercel resources or access beyond read access, Vercel Agent presents a plan describing the tasks and requested permissions, with one exception described in [Vercel Agent permissions](/docs/agent/chat/permissions#authorization-levels).
 
 1. Review the tasks and permissions in the plan.
 2. Select **Approve** to authorize the plan or **Cancel** to stop it.
@@ -66,7 +66,7 @@ Approval applies only to that plan's targets and scopes. A new plan requires new
 
 Only the session owner can approve a plan. Other viewers see **Read-only session** and can read the conversation without authorizing the proposed work.
 
-For repository writes, Vercel Agent can create or update a pull request after approval. See [GitHub operations](/docs/agent/chat/github) for requirements and attribution.
+Repository writes need no plan approval. Vercel Agent is designed to create or update a pull request only when you ask for a fix or a pull request, or accept its offer to open one. See [GitHub operations](/docs/agent/chat/github) for requirements and attribution.
 
 ## View previous conversations
 
@@ -76,7 +76,7 @@ Open the **New Chat** menu in the Vercel Agent panel, then select a conversation
 
 > Managing Vercel Agent chat is available on Enterprise and Pro plans
 >
-> Those with the owner and billing roles can access this feature
+> Those with the owner role can access this feature
 
 Dashboard chat is available to eligible Pro and Enterprise teams. Hobby and Pro trial teams are not eligible.
 
@@ -86,15 +86,15 @@ To change the team setting:
 2. Select **Agent**.
 3. Turn **Enable Chat** on or off.
 
-Only a team Owner or Billing member can change this setting. Other members can ask one of those roles to enable Vercel Agent.
+If you don't have the Owner role, ask a team Owner to change this setting.
 
 ## Troubleshoot dashboard chat
 
 - **Read-only session**: Only the session owner can send messages or approve a plan. Start your own conversation to work with Vercel Agent.
 - **Failed to generate a response**: Send a new message to continue.
 - **Failed to load session messages**: Reload the page or reopen the conversation from the **New Chat** menu.
-- **Vercel Agent is not enabled**: Ask a team Owner or Billing member to enable it from the team settings.
-- **Paid usage is unavailable**: Ask a team Owner or Billing member to enable Vercel Agent billing.
+- **Vercel Agent is not enabled**: Ask a team Owner to enable it from the team settings.
+- **Paid usage is unavailable**: Ask a team Owner to enable Vercel Agent usage-based billing.
 
 ## Related documentation
 

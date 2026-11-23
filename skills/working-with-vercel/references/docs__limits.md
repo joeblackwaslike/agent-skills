@@ -17,8 +17,8 @@ summary: Look up account limits, usage summaries, rate limits, and resource cons
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/limits.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "926ee256fe33d73c90affd38717216a5d5bc58da8a1280919198b459a2bb0e20"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "d783eabb21c477225695cacdb6f7d61ee13de22e7abab1c58b8a86352cfd1d7f"
 ---
 
 # Limits
@@ -40,8 +40,8 @@ You can raise many of the limits on this page. The process depends on your plan:
 - [Increased limit for projects per Git repo](https://vercel.com/changelog/increased-limit-for-projects-per-git-repo)
 - [Skipped monorepo deployments no longer count against limits](https://vercel.com/changelog/skipped-monorepo-deployments-no-longer-count-against-limits)
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
-- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
 - [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
+- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-to-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
 - [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
 - [Why has my account or deployment been paused?](https://vercel.com/kb/guide/why-is-my-account-deployment-blocked) — Learn why a Vercel account or deployment gets paused, from budget and usage limits to policy violations, and how to resu
 - [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
@@ -381,7 +381,6 @@ The following table lists all API rate limits that apply when using the [Vercel 
 | Web Analytics updates per ten minutes. | `billing-invoices-update-web-analytics` | 10 | 600 | `owner` |
 | Preview Deployment Suffix updates per ten minutes. | `billing-invoices-update-preview-deployment-suffix` | 10 | 600 | `owner` |
 | Team Level Password Protection updates per ten minutes. | `billing-invoices-update-password-protection` | 10 | 600 | `owner` |
-| Retry payment per ten minutes. | `billing-invoices-retry-payment` | 25 | 600 | `owner` |
 | Alias retrieval per ten minutes. | `now-alias-get` | 300 | 600 | `user` |
 | Alias creation per ten minutes. | `now-alias-post` | 120 | 600 | `owner` |
 | Aliases list per minute. | `now-aliases-get` | 500 | 60 | `user` |

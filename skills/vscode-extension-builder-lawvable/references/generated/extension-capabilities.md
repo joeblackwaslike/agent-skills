@@ -1,8 +1,8 @@
 ---
 title: "Extension Capabilities"
 source: "https://code.visualstudio.com/api/extension-capabilities/overview"
-fetched_at: "2026-11-16T12:28:04.438Z"
-sha256: "1534548dce517ce4b7d9fd038e3eda11d98287d909150396f8b32b40f59b27c6"
+fetched_at: "2026-11-23T14:03:48.286Z"
+sha256: "8760a332b28227b16aa14a1f4a9df406a45b0bbfef7142074d6e66de0bc7d933"
 ---
 
 # Extension Capabilities
@@ -188,4 +188,4 @@ A custom style sheet provided by users or extensions would work against the DOM 
 Instead, VS Code aims to provide a well-designed extension API supporting UI customizations. The API is documented, comes with tooling and samples, and is kept stable across all upcoming releases of VS Code.
 
  
- 11/11/2026
+ 11/18/2026

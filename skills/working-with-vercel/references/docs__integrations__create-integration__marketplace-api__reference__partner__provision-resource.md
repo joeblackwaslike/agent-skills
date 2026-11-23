@@ -3,7 +3,7 @@ title: provision-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/provision-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/provision-resource"
-last_updated: 2026-11-16
+last_updated: 2026-11-23
 type: conceptual
 prerequisites:
   []
@@ -15,8 +15,8 @@ summary: Learn about provision-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/provision-resource.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "13c6f765770e9e09fee88f87fbfba8cd630ef088b5c463278f1f641639e583f0"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "c68a683c1d202d5aaf7ebaaece9a9cc6ffef516dbd25fb03de83133322e06304"
 ---
 
 # Provision Resource
@@ -217,7 +217,8 @@ Return the newly provisioned resource
       "amount": "string" // required
     ],
     "effectiveDate": "string" // Date/time when the plan becomes effective. Important for billing plan changes.,
-    "disabled": "boolean" // If true, the plan is disabled and cannot be selected. Example: "disabled": true` for "Hobby" plan.
+    "disabled": "boolean" // If true, the plan is disabled and cannot be selected. Example: "disabled": true` for "Hobby" plan.,
+    "disabledReason": "string" // Shown to the user when `disabled` is true, explaining why they cannot select this plan. Ignored when `disabled` is not true. Example: "Delete your read replicas before downgrading to Hobby."
   },
   "name": "string" // required // User-inputted name for the resource.,
   "metadata": "object" // required // User-inputted metadata based on the registered metadata schema.,

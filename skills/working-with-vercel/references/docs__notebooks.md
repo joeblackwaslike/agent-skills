@@ -14,8 +14,8 @@ summary: Learn more about Notebooks and how they allow you to organize and save 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/notebooks.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "32a9bd25c075b47f79fe9ae2769d3c3e240f7c1a717d58ab87a3feb2ebcd3092"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "d9056fb69be895ffca9e3aa7d1c2b0570f42d574b072aae6c5834b6e7e1fa208"
 ---
 
 # Notebooks
@@ -32,8 +32,6 @@ sha256: "32a9bd25c075b47f79fe9ae2769d3c3e240f7c1a717d58ab87a3feb2ebcd3092"
 
 - [Create and share queries with notebooks in Vercel Observability](https://vercel.com/changelog/create-and-share-queries-with-notebooks-in-vercel-observability)
 - [Run and share custom queries in Observability Plus](https://vercel.com/changelog/run-and-share-custom-queries-in-observability-plus)
-- [Observability Plus replacing legacy Monitoring](https://vercel.com/changelog/observability-plus-replacing-legacy-monitoring)
-- [Query and visualize workflow data in Vercel Observability](https://vercel.com/changelog/query-and-visualize-workflow-data-in-vercel-observability)
 - [Query](https://vercel.com/docs/query) — Query and visualize your Vercel usage, traffic, and more in observability.
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Observability Plus](https://vercel.com/docs/observability/observability-plus) — Learn about using Observability Plus and its limits.

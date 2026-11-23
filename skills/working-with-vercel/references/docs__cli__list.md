@@ -15,8 +15,8 @@ summary: Learn how to list out all recent deployments for the current Vercel Pro
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/list.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "b13fd49c0f0f6f6b0e6b3acd1d741a04593b6dfb29f0385f30afabc8a204e112"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "f019c8e652bd0d0ef997263566e425800c1183bffe10ab851cd26f8260f3263d"
 ---
 
 # vercel list
@@ -30,8 +30,8 @@ The `vercel list` command provides a list of recent deployments for the currentl
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 

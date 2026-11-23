@@ -17,8 +17,8 @@ summary: Add, sync, and verify environment variables across development, preview
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/environment-variables/manage-across-environments.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "5b5f80593a44627a3a5d82bd6f532e6af21bb2766b30f971c8dd4cc07c5a3c9f"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "f7583976cc557fdb0c1a81ed05f126036099ce5a737cbad366e44cb2f868436d"
 ---
 
 # Managing environment variables across environments
@@ -32,7 +32,6 @@ Use this guide to manage environment variables across multiple environments. You
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Full-stack previews on Vercel](https://vercel.com/kb/guide/full-stack-preview-deployments-on-vercel) — Learn how to use full-stack previews for your Vercel projects. Deploy Next.js, FastAPI, and a containerized Go service t
-- [Environment Variables UI](https://vercel.com/blog/environment-variables-ui)
 - [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables) — Learn how to create and manage environment variables for Vercel.
 - [Environment Variables](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables) — Vercel MCP tools for environment variables.
 - [Environments](https://vercel.com/docs/deployments/environments) — Environments are for developing locally, testing changes in a pre-production environment, and serving end-users in produ

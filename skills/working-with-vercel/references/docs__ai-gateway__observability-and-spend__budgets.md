@@ -18,8 +18,8 @@ summary: Cap AI Gateway spend for your team, a project, an individual API key, o
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/budgets.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "dc7f29edde92f658794f611dadb26372dde767887bc1bfc8afb3fa3bd396a708"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "256eb3f4725902b3ccbd658c573ee252f0ddc0ad1554301ed153615bf316c2f1"
 ---
 
 # AI Gateway Budgets and Spend Limits
@@ -34,15 +34,15 @@ A budget caps AI Gateway spend at one of four scopes:
 
 - [AI Gateway now supports team and project spend budgets](https://vercel.com/changelog/ai-gateway-spend-budgets-and-alerts)
 - [Baseten's Mammoth-1 and Elephant-1 now available on AI Gateway for free](https://vercel.com/changelog/basetens-mammoth-1-and-elephant-1-now-available-on-ai-gateway-for-free)
+- [Decision-1.1 now available on AI Gateway](https://vercel.com/changelog/decision-1-1-now-available-on-ai-gateway)
 - [Gemini Decision 1 now available on AI Gateway](https://vercel.com/changelog/gemini-decision-1-now-available-on-ai-gateway)
 - [Liquid AI's d1 is available on AI Gateway](https://vercel.com/changelog/liquid-ai-d1-is-available-on-ai-gateway)
-- [Liquid AI's d1-ultra now available on AI Gateway](https://vercel.com/changelog/liquid-ais-d1-ultra-now-available-on-ai-gateway)
+- [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation) — Set baselines and cut backend load. Make your catalog readable to agents and keep orders and AI features reliable. Then
+- [How to keep your storefront running through Black Friday](https://vercel.com/kb/guide/black-friday-reliability) — Learn how to tune alerts, bot rules, and spend limits. Rehearse rollback so your team can recover quickly from checkout
 - [Cost-aware model routing with Vercel AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Send easy requests to a lower-cost model and escalate only the complex ones to a frontier model through AI Gateway, with
 - [Run recurring security reviews with deepsec on Vercel](https://vercel.com/kb/guide/deepsec-reviews-on-vercel) — Learn how to run periodic security scans on your code with deepsec. Set up deepsec to review GitHub repositories and del
 - [Deploy a Shopify storefront with an AI assistant](https://vercel.com/kb/guide/deploy-shopify-ai-storefront) — Deploy an eve shopping agent with Vercel Shop to find Shopify products, manage carts, and answer store questions.
-- [How to classify, route, and score with Jev and AI SDK](https://vercel.com/kb/guide/typesafe-jev-and-ai-sdk) — Use Jev from TypeSafe AI with AI SDK's experimental \\`evaluate\\` API to classify, route, score, and verify inside your a
 - [Vercel for Enterprise](https://vercel.com/blog/vercel-for-enterprise)
-- [Spend Management](https://vercel.com/docs/spend-management) — Set budgets for your team, projects, products, or organization, and get notified, trigger a webhook, or pause deployment
 - [vercel billing budgets](https://vercel.com/docs/cli/budgets) — View and manage Spend Management budgets for your team, projects, products, and organization from the Vercel CLI.
 
 Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/budgets.graph.md](/docs/ai-gateway/observability-and-spend/budgets.graph.md)
@@ -51,7 +51,7 @@ Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/bud
 - **[Team](#team-and-project-budgets)**: everything your team spends, across every project and key.
 - **[Project](#team-and-project-budgets)**: what one project's deployments spend through their OIDC tokens, plus what API keys scoped to that project spend.
 - **[API key](#api-key-budgets)**: what one API key spends.
-- **[User](#user-budgets)**: what one team member spends, across every API key attributed to them.
+- **[User](#user-budgets)**: what one team member spends, across their attributed API keys, personal access tokens, and Sign in with Vercel tokens.
 
 AI Gateway checks every budget in scope before each request and rejects further requests once a limit is exceeded, until the budget resets or you raise it. Budgets are optional, and a team, project, key, or member without one has unlimited spend.
 
@@ -88,12 +88,14 @@ Each budget counts a specific set of authentication types:
 - **Team budget**: [API keys](/docs/ai-gateway/authentication-and-byok/api-keys), [OIDC tokens](/docs/ai-gateway/authentication-and-byok/oidc), [app tokens](/docs/sign-in-with-vercel/tokens), and [personal access tokens](/docs/cli/tokens)
 - **Project budget**: [OIDC tokens](/docs/ai-gateway/authentication-and-byok/oidc) from that project's deployments, and [API keys](/docs/ai-gateway/authentication-and-byok/api-keys) scoped to that project
 - **API key budget**: that one [API key](/docs/ai-gateway/authentication-and-byok/api-keys)
-- **User budget**: [API keys](/docs/ai-gateway/authentication-and-byok/api-keys) attributed to that team member
-- **No budget**: [BYOK](/docs/ai-gateway/authentication-and-byok/byok) provider keys
+- **User budget**: [API keys](/docs/ai-gateway/authentication-and-byok/api-keys) attributed to that team member, their [personal access tokens](/docs/cli/tokens), and [app tokens](/docs/sign-in-with-vercel/tokens) issued to them through Sign in with Vercel
+- **No budget**: [BYOK](/docs/ai-gateway/authentication-and-byok/byok) provider keys. The [BYOK without fallback fee](/docs/ai-gateway/pricing#byok-without-fallback) still counts toward the budgets of the API key or token that made the request.
 
 An API key's spend counts toward a project budget only when you scope the key to that project. To scope a key, set the `projectId` field when you [create the key](/docs/ai-gateway/authentication-and-byok/api-keys#create-a-key). Using an unscoped key in a project's deployment doesn't count toward that project's budget. Without a scoped key, spending down a project budget requires an OIDC token from that project's deployments.
 
-Each API key is also attributed to either your team or the member who created it. A key attributed to a member counts its spend toward both the team budget and that member's user budget; a key attributed to the team counts toward the team budget only. Only API keys carry this attribution, so OIDC tokens, personal access tokens, and app tokens never count toward a user budget. See [Spend attribution](/docs/ai-gateway/authentication-and-byok/api-keys#spend-attribution) to set it.
+Each API key is also attributed to either your team or the member who created it. A key attributed to a member counts its spend toward both the team budget and that member's user budget; a key attributed to the team counts toward the team budget only. See [Spend attribution](/docs/ai-gateway/authentication-and-byok/api-keys#spend-attribution) to set it.
+
+Personal access tokens and app tokens issued to a signed-in user always act as that user, so their spend counts toward the team budget and that user's budget. OIDC tokens and app tokens that act as the app itself have no user, so they never count toward a user budget.
 
 ### Default budgets
 
@@ -155,9 +157,16 @@ An API key budget:
 }
 ```
 
-A user budget rejects the same way once a member's user-attributed keys exceed it, with the `message` naming the user scope.
+A user budget rejects the same way once the member's spend exceeds it, with the `message` naming the user scope.
 
 Handle a `402` in your client by backing off until the budget resets, or raise the limit.
+
+> **💡 Note:** The [BYOK without fallback fee](/docs/ai-gateway/pricing#byok-without-fallback)
+> counts toward budgets even when a budget excludes BYOK spend. If your team
+> turned off [Fallback to Vercel
+> Keys](/docs/ai-gateway/authentication-and-byok/byok#turn-off-fallback-to-vercel-keys),
+> accumulated fees alone can exceed a budget, and AI Gateway then rejects your
+> BYOK requests with a `402`.
 
 SDK error classes can differ from the HTTP status. A budget rejection can surface as `GatewayInternalServerError` in AI SDK 7 or `ProviderInternalServerError` in the Python beta. Check the quota details before retrying. See [AI SDK error handling](https://ai-sdk.dev/docs/ai-sdk-core/error-handling) for handling SDK exceptions and streaming errors.
 
@@ -200,6 +209,12 @@ These rules apply the same way whether you use the dashboard, the [CLI](/docs/cl
 The dashboard asks for a **Reason for Change** whenever you set, change, or remove a team, project, user, or API key budget, or a default budget. The reason is recorded in your team's [activity log](/docs/activity-log) and [audit log drains](/docs/drains/reference/audit-logs) with the change, alongside who made it and the previous and new limits.
 
 In the Vercel API the reason is the optional `justification` field: in the request body for `PUT` and `PATCH` requests, and as a query parameter for `DELETE` requests. It can be up to 500 characters and is stored as a single line.
+
+In the Vercel CLI, pass the optional `--message <TEXT>` option to [`budgets set`](/docs/cli/ai-gateway#set) or [`budgets remove`](/docs/cli/ai-gateway#remove). It takes up to 500 characters, works for every scope and with `--default`, and appears as `Reason` in the command's output:
+
+```bash filename="terminal"
+vercel ai-gateway budgets set user teammate@example.com --amount 100 --message "Eval run for the launch"
+```
 
 ## Team and project budgets
 
@@ -651,9 +666,15 @@ curl -X DELETE "https://api.vercel.com/ai-gateway/budgets/defaults?teamId=$VERCE
 
 ## User budgets
 
-A user budget caps how much a single team member can spend, across every API key attributed to that member. It stacks with the team budget, so a member's request has to pass both their user budget and the team budget.
+A user budget caps how much a single team member can spend, across every API key attributed to that member, their personal access tokens, and app tokens issued to them. It stacks with the team budget, so a member's request has to pass both their user budget and the team budget.
 
-Only API keys attributed to a member count toward their user budget. [OIDC tokens](/docs/ai-gateway/authentication-and-byok/oidc), [personal access tokens](/docs/cli/tokens), and [app tokens](/docs/sign-in-with-vercel/tokens) carry no member attribution, so their spend never counts toward a user budget. See [Spend attribution](/docs/ai-gateway/authentication-and-byok/api-keys#spend-attribution) for how a key is attributed to a member or the team.
+These credentials count toward a member's user budget:
+
+- [API keys](/docs/ai-gateway/authentication-and-byok/api-keys) attributed to the member. See [Spend attribution](/docs/ai-gateway/authentication-and-byok/api-keys#spend-attribution) for how a key is attributed to a member or the team.
+- The member's [personal access tokens](/docs/cli/tokens).
+- [App tokens](/docs/sign-in-with-vercel/tokens) issued to the member when they sign in to an app with Sign in with Vercel.
+
+[OIDC tokens](/docs/ai-gateway/authentication-and-byok/oidc) and app tokens that act as the app itself have no user, so their spend never counts toward a user budget.
 
 ### Set a user budget
 
@@ -702,7 +723,9 @@ curl -X PUT "https://api.vercel.com/ai-gateway/budgets?teamId=$VERCEL_TEAM_ID" \
 
 #### Dashboard
 
-On the AI Gateway Budgets page, the [**Users**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets%3Fdimension%3Duser\&title=AI+Gateway+User+Budgets) view groups spend by the team member who owns the key used for each request, showing each member's spend against their limit with a usage bar.
+On the AI Gateway Budgets page, the [**Users**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fbudgets%3Fdimension%3Duser\&title=AI+Gateway+User+Budgets) view shows each member's spend against their limit with a usage bar. A member's spend includes their attributed API keys, personal access tokens, and app tokens.
+
+A member's detail page includes their personal access token and app token spend in **Total spend** and the charts. Its **Keys** list shows API keys only, with a line above it stating how much came from OAuth apps and personal access tokens. For some date ranges, such as ranges that start before October 30, 2026, token spend can't be credited to members, and the page shows a note instead.
 
 #### CLI
 
@@ -816,7 +839,10 @@ Budgets limit usage; they do not reserve or purchase capacity. Your team still n
 
 > **💡 Note:** [BYOK](/docs/ai-gateway/authentication-and-byok/byok) spend isn't counted in
 > budgets. Spend that draws on your own provider keys is metered separately and
-> doesn't count toward any limit. An exceeded budget still rejects BYOK
+> doesn't count toward any limit. The [BYOK without fallback
+> fee](/docs/ai-gateway/pricing#byok-without-fallback) is the exception: AI
+> Gateway deducts it from your AI Gateway Credits, and it counts toward
+> budgets. An exceeded budget still rejects BYOK
 > requests in its scope with an HTTP `402` response.
 
 ## Search the docs from your terminal

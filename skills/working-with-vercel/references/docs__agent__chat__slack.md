@@ -18,15 +18,15 @@ summary: Use Vercel Agent in Slack by mentioning @Vercel in a supported channel 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent/chat/slack.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "de0b2705a46caae23e2b558c4a12c743375acf382ee2f5b134d5fa698e7d6a19"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "4bf2f8c935afe582054baa3a72f6473b809d833b70600f415ca74a5675c66eda"
 ---
 
 # Slack
 
 > Vercel Agent in Slack is available in Public Beta on Enterprise and Pro plans
 
-Mention `@Vercel` in a Slack channel or thread to investigate deployments, review pull requests, or turn a discussion into code changes and open a pull request after you approve the proposed work. Vercel Agent uses the surrounding discussion to understand your request and provide relevant context.
+Mention `@Vercel` in a Slack channel or thread to investigate deployments, review pull requests, or turn a discussion into code changes and open a pull request. Vercel Agent uses the surrounding discussion to understand your request and provide relevant context.
 
 Vercel Agent in Slack is available in public beta on [Pro](/docs/plans/pro) and [Enterprise](/docs/plans/enterprise) plans. See [Vercel Agent pricing](/docs/agent/pricing) for details.
 
@@ -63,7 +63,7 @@ To start a request, send a new message that mentions `@Vercel`. The thread you'r
 
 Vercel Agent reads the context of the Slack thread it's mentioned in. A discussion about a failing deploy, a customer report, or a pull request gives Vercel Agent the background it needs, so you can move from conversation to investigation and a fix within the same thread.
 
-Slack thread context can include messages from multiple people. Vercel Agent treats those messages as context, not authorization. Only the person who started the request or another member of the selected Vercel team can approve a plan for sensitive reads or writes.
+Slack thread context can include messages from multiple people. Vercel Agent treats those messages as context, not authorization. Only the person who started the request or another member of the selected Vercel team can approve a plan.
 
 **Team selection rules:**
 
@@ -118,21 +118,22 @@ The originating conversation shows a card linking to the Code Channel. Vercel Ag
 
 ## Authorization and permissions
 
-Vercel Agent in Slack uses the same authorization model as [Dashboard chat](/docs/agent/chat/dashboard). It operates within your existing permissions and asks for approval before it reads sensitive resources or performs any write.
+Vercel Agent in Slack uses the same authorization model as [Dashboard chat](/docs/agent/chat/dashboard). It operates within your existing Vercel permissions and asks for approval before it changes Vercel resources, with one exception described in [Vercel Agent permissions](/docs/agent/chat/permissions#authorization-levels).
 
 ### Authorization model
 
-Vercel Agent accesses only data you can access on the currently selected team. See [Vercel Agent permissions](/docs/agent/chat/permissions) for the complete model.
+Vercel Agent starts with your Vercel access on the currently selected team. When another team member approves a plan, the approved work runs with the approver's Vercel access. See [Vercel Agent permissions](/docs/agent/chat/permissions) for the complete model.
 
 | Operation                                                      | Authorization |
 | -------------------------------------------------------------- | ------------- |
-| Reads on non-sensitive resources (projects, deployments, logs, domains) | Auto-approved |
-| Reads on sensitive resources (environment variables, tokens)   | Requires approval |
-| All write operations                                           | Requires approval |
+| Reads (projects, deployments, logs, domains, environment variables) | Auto-approved |
+| Reads that need more than read access                          | Requires approval |
+| Changes to Vercel resources, except protected preview share links | Requires approval |
+| Creating or updating a GitHub pull request                     | No plan approval  |
 
 ### Approval process
 
-Before performing sensitive reads or any write, Vercel Agent presents a plan listing the tasks it intends to perform and the permissions it requests. You review the plan and the requested permissions before any action is taken.
+Before changing Vercel resources or using access beyond read access, Vercel Agent presents a plan listing the tasks it intends to perform and the permissions it requests. Creating a protected preview share link is the exception and needs no plan. You review the plan and the requested permissions before any action is taken.
 
 - Approval requests expire. If you do not approve or cancel a plan before it expires, Vercel Agent cancels the plan and posts a timeout message.
 - You can approve or cancel a plan only once. After a decision is made, its approval controls are disabled.
@@ -142,7 +143,7 @@ Before performing sensitive reads or any write, Vercel Agent presents a plan lis
 
 ### GitHub operations
 
-GitHub write operations require explicit authorization. Commits and pull requests are created and signed by the Vercel Agent GitHub App, with you added as a git co-author. For the permissions that back these operations, see [repository permissions](/docs/git/vercel-for-github#repository-permissions).
+GitHub write operations do not require plan approval. Vercel Agent is designed to create or update a pull request only when you ask for a fix or a pull request, or accept its offer to open one. The Vercel Agent GitHub App creates each commit, and GitHub signs it. When you have connected GitHub as a Vercel login connection, Vercel Agent tries to add you as a git co-author and to open the pull request as you. If the co-author step fails, Vercel Agent publishes the commit without adding you as a co-author. If it can't open the pull request as you, it tries to open it with the Vercel Agent GitHub App instead, and if that also fails, the published branch can remain without a pull request. For the permissions that back these operations, see [repository permissions](/docs/git/vercel-for-github#repository-permissions).
 
 ## Troubleshooting
 

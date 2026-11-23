@@ -18,8 +18,8 @@ summary: Create and deploy an eve agent on Vercel with AI Gateway model access, 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/agents/eve.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "5ae7a6bc2707aa8440bd70942a4baa7ad5c6acdda1be6646c49c345abfbf2100"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "b845761b265bd636d209ab4dce62578f497f4fc77645294da944ec409b273619"
 ---
 
 # eve on Vercel
@@ -33,15 +33,15 @@ Deploy an [eve](/eve) agent to Vercel to run conversations that persist across i
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to use Vercel Drives with an eve agent](https://vercel.com/kb/guide/vercel-drives-eve-agent) — Mount Vercel Drives in an eve agent's sandbox to give each user a persistent workspace and share read-only reference dat
+- [Introducing eve 1.0](https://vercel.com/blog/eve-is-now-generally-available)
 - [How to use subagents with eve](https://vercel.com/kb/guide/how-to-use-eve-subagents) — Learn how to use subagents with eve, including the built-in agent tool, declared specialist subagents, the isolation bou
 - [Introducing eve](https://vercel.com/blog/introducing-eve)
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
-- [Draft documentation fixes from reader feedback with Sanity and eve](https://vercel.com/kb/guide/sanity-eve-agent) — Build an autonomous agent that drafts fixes in Sanity, stages them for human review, and calls the model through AI Gate
 - [Deployment](https://eve.dev/docs/guides/deployment) — How an eve agent runs in production, and the backends you choose on Vercel or your own infrastructure.
+- [Give your eve agent secure access to your private AWS RDS database](https://vercel.com/kb/guide/give-eve-agent-secure-access-to-aws-rds-database) — Connect an eve agent to a private AWS RDS database using Vercel Secure Compute and VPC peering, with a read-only query t
 - [Give your software factory a browser](https://vercel.com/kb/guide/software-factory-browser) — Add a KERNEL cloud browser to the eve software factory template so Foreman can reproduce flow bugs, sign in through mana
 - [Next.js](https://eve.dev/docs/guides/frontend/nextjs) — Add an eve chat to a Next.js app, from setup and authentication to saved conversations and deployment.
 - [eve (HTTP & web)](https://eve.dev/docs/channels/eve) — The default HTTP API for an agent, covering session routes, auth, and customization.
-- [Introducing eve, an open-source agent framework](https://vercel.com/changelog/introducing-eve-an-open-source-agent-framework)
 - [Security for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/security) — What a durable agent harness may run in your Vercel Function, where the commands and files a model picks run instead, an
 - [Agent Skills](https://vercel.com/docs/agent-resources/skills) — Install skills to enhance AI coding agents with specialized capabilities for React, Next.js, deployment, and more.
 
@@ -322,7 +322,7 @@ During `eve dev`, the default memory backend keeps data in the development proce
 
 Use [Vercel Drives](/docs/sandbox/concepts/drives) when an agent needs datasets or working files that persist independently of its sandbox. For concurrent sessions reading the same dataset, mount a read-only drive snapshot.
 
-First, [create a drive](/docs/sandbox/concepts/drives#creating-or-retrieving-a-drive) named `agent-data` in `iad1`, in the same Vercel project as your agent. Mount it read-write in a separate sandbox, write your dataset, and stop that sandbox. The drive must contain at least one file before you can mount a snapshot.
+First, [create a drive](/docs/drives/quickstart#create-a-drive) named `agent-data` in `iad1`, in the same Vercel project as your agent. Mount it read-write in a separate sandbox, write your dataset, and stop that sandbox. The drive must contain at least one file before you can mount a snapshot.
 
 Add this sandbox definition to mount the prepared dataset at `/data`:
 

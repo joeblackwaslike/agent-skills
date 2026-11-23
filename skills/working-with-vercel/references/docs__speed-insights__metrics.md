@@ -10,13 +10,14 @@ prerequisites:
 related:
   - /docs/speed-insights/limits-and-pricing
   - /docs/speed-insights/migrating-from-legacy
+  - /docs/speed-insights/package
   - /docs/speed-insights/using-speed-insights
 summary: Learn what each performance metric on Speed Insights means and how the scores are calculated.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/speed-insights/metrics.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "bfb2406e21703c086f62bf7002bc4c565c3bab4470fcb5c3350c97beb187f7c7"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "106f76d4e18062f0413695f8542c8a310adf2d979c212d7f3bd0c0db88b424f1"
 ---
 
 # Speed Insights Metrics
@@ -37,15 +38,15 @@ While many performance measurement tools, like [Lighthouse](https://web.dev/meas
 
 - [How Core Web Vitals affect SEO](https://vercel.com/blog/how-core-web-vitals-affect-seo)
 - [Speed Insights deprecates First Input Delay on November 1st](https://vercel.com/changelog/speed-insights-deprecates-first-input-delay-on-november-first)
+- [Speed Insights now measures soft navigations](https://vercel.com/changelog/speed-insights-now-measures-soft-navigations)
 - [Improve Cumulative Layout Shift \\(CLS\\) on Vercel](https://vercel.com/kb/guide/cls-on-vercel) — Read, diagnose, and fix Cumulative Layout Shift on Vercel using Speed Insights and Next.js best practices.
 - [A/B testing on ecommerce storefronts without hurting Core Web Vitals](https://vercel.com/kb/guide/ecommerce-ab-testing-core-web-vitals) — Client-side A/B tools can worsen LCP and CLS on the pages you're testing. Run ecommerce A/B tests at the edge with Routi
 - [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
 - [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
 - [Latency numbers every frontend developer should know](https://vercel.com/blog/latency-numbers-every-web-developer-should-know)
+- [Improved Speed Insights experience](https://vercel.com/changelog/improved-speed-insights-experience)
 - [How Core Web Vitals Will Impact Google Rankings in 2021](https://vercel.com/blog/core-web-vitals)
 - [Why site performance matters](https://vercel.com/kb/guide/why-site-performance-matters) — How site speed, Core Web Vitals, and SEO combine to drive user retention, conversion rates, and revenue growth.
-- [First Input Delay (FID) vs. Interaction to Next Paint (INP)](https://vercel.com/blog/first-input-delay-vs-interaction-to-next-paint)
-- [Improved Speed Insights experience](https://vercel.com/changelog/improved-speed-insights-experience)
 - [Query Speed Insights from the Vercel CLI](https://vercel.com/changelog/query-speed-insights-from-the-vercel-cli)
 
 Full cross-link map for this page: [/docs/speed-insights/metrics.graph.md](/docs/speed-insights/metrics.graph.md)
@@ -60,6 +61,8 @@ You can use these insights to see how new deployments affect performance, helpin
 *An example of a Real Experience Score over time.*
 
 > **💡 Note:** The timestamps in the Speed Insights view are in local time (not UTC).
+
+To compare hard and soft navigations, use the **Navigation Type** switch in the Speed Insights view. See [Navigation types](#navigation-types).
 
 ## Core Web Vitals explained
 
@@ -128,11 +131,25 @@ For instance, if [HTTP Archive](https://httparchive.org/) data shows that the to
 
 The Real Experience Score is a weighted average of all individual metric scores. Vercel has assigned each metric a specific weighting, which best represents user's perceived performance on mobile and desktop devices.
 
+## Navigation types
+
+Speed Insights splits data points into two navigation types, hard and soft. A hard navigation is a full page load, where the browser requests a new document from the server.
+
+A soft navigation is a client-side route change, where the framework updates the page content without a full page load. Frameworks such as Next.js, SvelteKit, and Nuxt use soft navigations for links inside your app.
+
+Speed Insights captures soft navigations only in Chromium-based browsers, and records [LCP](#largest-contentful-paint-lcp), [FCP](#first-contentful-paint-fcp), [INP](#interaction-to-next-paint-inp), and [CLS](#cumulative-layout-shift-cls) for them. Soft navigations have no [TTFB](#time-to-first-byte-ttfb) data, because a soft navigation doesn't request a new document.
+
+To compare navigation types, use the **Navigation Type** switch in the Speed Insights view. The switch shows **All**, **Hard**, or **Soft** data for RES, LCP, CLS, INP, and FCP. Projects without [Speed Insights Plus](/docs/speed-insights/limits-and-pricing) can use the switch for RES only.
+
 ## Understanding data points
 
 In the context of Vercel's Speed Insights, a data point is a single unit of information that represents a measurement of a specific Web Vital metric during a user's visit to your website.
 
-Data points are collected on hard navigations, which in the case of Next.js apps, are only the first-page view in a session. During a user's visit, data points are gathered during the initial page load, user interaction, and upon leaving the page.
+Speed Insights collects data points on hard navigations and, where supported, on soft navigations (see [Navigation types](#navigation-types)). During a user's visit, data points are gathered during the initial page load, on each soft navigation, on user interaction, and upon leaving the page.
+
+Soft navigation data points count toward your Speed Insights usage like any other data points.
+
+Soft navigation measurement is enabled by default, so no action is required. To disable it, set the `softNavs` option when you add Speed Insights to your app. See [Speed Insights package](/docs/speed-insights/package) for configuration.
 
 As of now, up to 5 data points can be potentially tracked per visit:
 

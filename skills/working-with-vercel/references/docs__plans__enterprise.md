@@ -17,8 +17,8 @@ summary: Learn about the Enterprise plan for Vercel, including features, pricing
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/plans/enterprise.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "092ec63de1b3d11a41a96b0f5fdc42503766cb94280f6e00d3c33bf105f29fa9"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "311f2c69b9d3be1964b349f7d798b82bacc166170a8dbfc83994e1f3ef4e0f13"
 ---
 
 # Vercel Enterprise Plan
@@ -37,14 +37,16 @@ Vercel offers an Enterprise plan for organizations and enterprises that need hig
 - [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
 - [Protect internal apps with Vercel Passport and your identity provider](https://vercel.com/kb/guide/vercel-passport) — Vercel Passport protects internal apps behind your own identity provider, such as Okta or Microsoft Entra ID. Learn how
 - [Using Vercel Passport with Microsoft Entra ID](https://vercel.com/kb/guide/vercel-passport-microsoft-entra-id) — Configure Microsoft Entra ID and Vercel Passport to protect a Next.js app, limit access to assigned users, and read veri
-- [Security & Compliance Measures](https://vercel.com/docs/security/compliance) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Security & Compliance Measures](https://vercel.com/docs/security/compliance) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Vercel Pro Plan](https://vercel.com/docs/plans/pro-plan) — Learn about the Vercel Pro plan with credit-based billing, one free first-year domain, free viewer seats, and self-serve
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Multi-tenant Limits](https://vercel.com/docs/platforms/multi-tenant-platforms/limits) — Understand the limits and features available for Vercel for Platforms.
 
 Full cross-link map for this page: [/docs/plans/enterprise.graph.md](/docs/plans/enterprise.graph.md)
 <!-- /docsgraph:related -->
+
+To get started with the Enterprise plan, [contact our sales team](/contact/sales).
 
 ## Performance and reliability
 
@@ -56,7 +58,7 @@ The Enterprise plan uses isolated build infrastructure on high-grade hardware wi
 - Greater memory and duration limits for [Vercel Functions](/docs/functions/limitations)
 - Unlimited [domains](/docs/domains) per project
 - [Custom SSL Certificates](/docs/domains/custom-ssl-certificate)
-- Automatic concurrency scaling up to 100,000 for [Vercel Functions](/docs/functions/concurrency-scaling#automatic-concurrency-scaling)
+- Automatic concurrency scaling for [Vercel Functions](/docs/functions)
 - [Isolated
   build infrastructure](/docs/plans/enterprise#performance-and-reliability),
   with the ability to have [larger memory and storage](/docs/deployments/troubleshoot-a-build#build-container-resources)

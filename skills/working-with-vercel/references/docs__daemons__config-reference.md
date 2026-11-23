@@ -17,8 +17,8 @@ summary: Every field you can set on a daemon in the daemons key of vercel.json.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/daemons/config-reference.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "65b25cdd260efd71e6e71295a7d580c75b7373a2dc1b5c1fb8ea30e41d4d7e57"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "f6e554bf8ddccb8c9091b00abc807356937a2cdb55caf8553804fca50f7db0bf"
 ---
 
 # Daemon Configuration Reference
@@ -38,11 +38,11 @@ You declare daemons with the top-level `daemons` key in `vercel.json`. The key i
 - [Migrate Render background workers to Vercel Daemons](https://vercel.com/kb/guide/migrate-render-workers-to-vercel-daemons) — Migrate Render workers to Vercel Daemons. Translate render.yaml, package Celery in Docker, prepare the broker, and verif
 - [Vercel Daemons can now call services with bindings](https://vercel.com/changelog/vercel-daemons-can-now-call-services-with-bindings)
 - [Vercel Daemons is now in public beta](https://vercel.com/changelog/vercel-daemons-is-now-in-public-beta)
-- [Add liveness checks to your Daemons](https://vercel.com/changelog/add-liveness-checks-to-your-daemons)
 - [Daemons](https://vercel.com/docs/build-output-api/daemons) — Learn how Vercel Daemons are represented in the Build Output API.
 - [vercel daemons](https://vercel.com/docs/cli/daemons) — List and inspect production daemons, override regional instance counts, and inspect or restart individual instances with
 - [Get project daemons](https://vercel.com/docs/rest-api/daemons/get-project-daemons) — GET /v1/projects/{idOrName}/daemons — List the daemons of a project.
 - [Service configuration reference](https://vercel.com/docs/services/config-reference) — Options available for service configuration.
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 
 Full cross-link map for this page: [/docs/daemons/config-reference.graph.md](/docs/daemons/config-reference.graph.md)
 <!-- /docsgraph:related -->

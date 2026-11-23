@@ -18,8 +18,8 @@ summary: Give an AI SDK agent a tool that creates schedules, and run each schedu
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/schedules/agents/ai-sdk.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "2e3f168fb4cecd03e6d3a55fc85f0b5a4bc6a6d320adafb50c5fd1a50257006e"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "02b61d0fc9d9748df9b8757102c37a3c16accca056ba71e8ca44f5e56fa34d0d"
 ---
 
 # Scheduling Work with the AI SDK
@@ -33,7 +33,7 @@ With the [AI SDK](https://ai-sdk.dev), add a tool that creates a schedule, and r
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing Vercel Schedules](https://vercel.com/blog/introducing-vercel-schedules)
-- [Vercel Schedules is now in public beta](https://vercel.com/changelog/vercel-schedules-is-now-in-public-beta)
+- [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
 - [Scheduling Work with eve](https://vercel.com/docs/schedules/agents/eve) — Let an eve agent create recurring and one-time schedules for its users with defineDynamicSchedules.
 - [AI SDK](https://vercel.com/docs/ai-sdk) — Build TypeScript agents and AI applications with a unified API for models, tools, structured output, and streaming.
 - [Chat SDK with AI Gateway](https://vercel.com/docs/chat-sdk/integrations/ai-gateway) — Stream AI Gateway model responses into Chat SDK conversations with AI SDK and message history.

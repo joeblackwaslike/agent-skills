@@ -10,22 +10,22 @@ prerequisites:
 related:
   - /docs/agent
   - /docs/sandbox
-  - /docs/git
-  - /docs/agent/pr-review/usage
-  - /docs/agent/pricing
+  - /docs/agent/chat
+  - /docs/agent/chat/github
+  - /docs/rbac/access-roles
 summary: Get automatic AI-powered code reviews on your pull requests
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent/pr-review.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "a4e206bba1e9a3c9cf77248ef8db6e76bbdc3efce902a2b605fda8314796c14b"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "9514184c5ec3e315adc2a3e72b9288ce2ba640eae037bd3efc0f2ab40f060fee"
 ---
 
 # Code Review
 
 > Vercel Agent Code Review is available in Public Beta on Enterprise and Pro plans
 
-Code Review is part of [Vercel Agent](/docs/agent). It provides Sandbox-validated suggestions on your pull requests as one capability within the broader Vercel Agent.
+Code Review is part of [Vercel Agent](/docs/agent). It reviews GitHub pull requests for bugs, security vulnerabilities, and performance issues.
 
 
 <!-- docsgraph:related -->
@@ -34,109 +34,65 @@ Code Review is part of [Vercel Agent](/docs/agent). It provides Sandbox-validate
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
-- [AI code reviews by Vercel Agent now in Public Beta](https://vercel.com/changelog/ai-code-reviews-by-vercel-agent-now-in-beta)
-- [Introducing Vercel Security Review](https://vercel.com/blog/vercel-security-review)
 - [Vercel Agent code reviews now follow your code guidelines](https://vercel.com/changelog/vercel-agent-code-reviews-now-follow-your-code-guidelines)
+- [How to keep your storefront running through Black Friday](https://vercel.com/kb/guide/black-friday-reliability) — Learn how to tune alerts, bot rules, and spend limits. Rehearse rollback so your team can recover quickly from checkout
 - [The Complete Guide to Vercel Agent](https://vercel.com/kb/guide/vercel-agent) — Learn what Vercel Agent does, how to set up Code Review, Investigation, Chat, and Installation, and what each feature co
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
-- [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
+- [Introducing Vercel Security Review](https://vercel.com/blog/vercel-security-review)
 - [Vercel Security Review now in public beta](https://vercel.com/changelog/vercel-security-review-public-beta)
+- [AI code reviews by Vercel Agent now in Public Beta](https://vercel.com/changelog/ai-code-reviews-by-vercel-agent-now-in-beta)
 - [On-demand Vercel Agent code reviews](https://vercel.com/changelog/on-demand-vercel-agent-code-reviews)
 - [Apply code suggestions from Vercel Agent with one click](https://vercel.com/changelog/apply-code-suggestions-from-vercel-agent-with-one-click)
-- [Introducing Vercel CI](https://vercel.com/blog/introducing-vercel-ci)
+- [Vercel CI](https://vercel.com/docs/ci) — Configure Vercel CI to run Turborepo tasks with custom CPU allocations and environment variables.
 
 Full cross-link map for this page: [/docs/agent/pr-review.graph.md](/docs/agent/pr-review.graph.md)
 <!-- /docsgraph:related -->
 
-It generates patches and runs them in [secure sandboxes](/docs/sandbox) with your real builds, tests, and linters to validate fixes before suggesting them. Only validated suggestions that pass these checks appear in your PR, allowing you to apply specific code changes with one click.
+Vercel Agent inspects code and prepares suggested fixes in [secure sandboxes](/docs/sandbox). Review comments link to suggested fixes in the Vercel dashboard.
 
 ## How to set up Code Review
 
-To enable code reviews for your [repositories](/docs/git#supported-git-providers), navigate to the
-[**Agent**](/d?to=%2F%5Bteam%5D%2F%7E%2Fagent%2Ftasks\&title=Open+Vercel+Agent) of the dashboard.
+To enable code reviews for GitHub repositories connected to your Vercel projects:
 
-1. Click **Enable** to turn on Vercel Agent.
-2. Under **Repositories**, choose which repositories to review:
-   - All repositories (default)
-   - Public repositories only
-   - Private repositories only
-3. Under **Include Draft PRs**, select whether to:
-   - Skip draft PRs (default)
-   - Review draft PRs
-4. Click **Save** to confirm your settings.
+1. Open your team's **Settings**, then select **Agent**.
+2. Under **Code Reviews**, turn on **Review PRs and build failures automatically**.
+3. Under **Repositories to Review**, choose which repositories to review:
+   - **All repositories** (default)
+   - **Public repositories only**
+   - **Private repositories only**
+4. Under **Include Draft PRs**, select whether to:
+   - **Skip draft PRs** (default)
+   - **Review draft PRs**
+5. Click **Save** to confirm your settings.
 
-Once you've set up Code Review, it will automatically review pull requests in repositories connected to your Vercel projects.
+Once you've set up Code Review, it automatically reviews eligible pull requests in connected GitHub repositories that match your settings.
 
 ## How it works
 
 Code Review runs automatically when:
 
-- A pull request is created
-- A batch of commits is pushed to an open PR
-- A draft PR is created, if you've enabled draft reviews in your settings
+- You open or reopen a pull request
+- You push commits to an open pull request
+- You mark a draft pull request ready for review, if draft reviews are disabled
 
-When triggered, Code Review analyzes all human-readable files in your codebase, including:
+If you enable draft reviews, Code Review also reviews draft pull requests when you open them or push commits. Code Review skips pull requests authored by Dependabot and Renovate.
 
-- Source code files (JavaScript, TypeScript, Python, etc.)
-- Test files
-- Configuration files (`package.json`, YAML files, etc.)
-- Documentation (markdown files, README files)
-- Comments within code
+Code Review starts from the pull request diff and reads relevant surrounding code to understand the changes. Reviews can cover source code, tests, configuration, and documentation.
 
-The AI uses your entire codebase as context to understand how your changes fit into the larger system.
+Vercel Agent can run focused tests and type checks in the sandbox to investigate issues and validate suggested fixes.
 
-Code Review then generates patches, runs them in [secure sandboxes](/docs/sandbox), and executes your real builds, tests, and linters. Only validated suggestions that pass these checks appear in your PR.
+Findings appear as GitHub review comments with links to suggested fixes in the Vercel dashboard. Review the proposed changes before applying them.
 
 ## Using Vercel Agent in GitHub
 
-Beyond automatic reviews, you can interact with Vercel Agent on demand by mentioning `@vercel` in any pull request comment. Vercel Agent will read your comment and either generate a suggested fix (which you can review and apply) or reply to your question in the same thread.
-
-Comment `@vercel` followed by your request:
-
-- `@vercel run a review` runs a full code review
-- `@vercel fix the type errors` implements and commits a fix
-- `@vercel why is this failing?` investigates the issue
-
-Replies appear in the same comment thread.
+To ask questions about a repository or request a code change, use [Vercel Agent Chat](/docs/agent/chat). See [GitHub Operations](/docs/agent/chat/github) for supported repository actions.
 
 ## Code guidelines
 
-Code Review automatically detects and applies coding guidelines from your repository. When guidelines are found, they're used during review to ensure feedback aligns with your project's conventions.
+Code Review uses your repository's conventions as context when evaluating changes. The reviewer reads relevant contributor guidance, such as `AGENTS.md`, `CLAUDE.md`, and `CONTRIBUTING.md`, for areas affected by the diff.
 
-### Supported guideline files
-
-Code Review looks for these files in priority order (highest to lowest):
-
-| File                                     | Description                       |
-| ---------------------------------------- | --------------------------------- |
-| `AGENTS.md`                              | OpenAI Codex / universal standard |
-| `CLAUDE.md`                              | Claude Code instructions          |
-| `.github/copilot-instructions.md`        | GitHub Copilot                    |
-| `.cursor/rules/*.mdc`                    | Cursor rules                      |
-| `.cursorrules`                           | Cursor (legacy)                   |
-| `.windsurfrules`                         | Windsurf                          |
-| `.windsurf/rules/*.md`                   | Windsurf (directory)              |
-| `.clinerules`                            | Cline                             |
-| `.github/instructions/*.instructions.md` | GitHub Copilot workspace          |
-| `.roo/rules/*.md`                        | Roo Code                          |
-| `.aiassistant/rules/*.md`                | JetBrains AI Assistant            |
-| `CONVENTIONS.md`                         | Aider                             |
-| `.rules/*.md`                            | Generic rules                     |
-| `agent.md`                               | Generic agent file                |
-
-When multiple guideline files exist in the same directory, the highest-priority file is used.
-
-### How guidelines are applied
-
-- **Hierarchical**: Guidelines from parent directories are inherited. A `CLAUDE.md` at the root applies to all files, while a `src/components/CLAUDE.md` adds additional context for that directory.
-- **Scoped**: Guidelines only affect files within their directory subtree. A guideline in `src/` won't apply to files in `lib/`.
-- **Nested references**: Guidelines can reference other files using `@import "file.md"` or relative markdown links. Referenced files are automatically included as context.
-- **Size limit**: Guidelines are capped at 50 KB total.
-
-### Writing effective guidelines
-
-Guidelines should focus on project-specific conventions that help the reviewer understand your codebase:
+Focus your guidelines on project-specific conventions:
 
 - Code style preferences not enforced by linters
 - Architecture patterns and design decisions
@@ -144,6 +100,17 @@ Guidelines should focus on project-specific conventions that help the reviewer u
 - Testing requirements and patterns
 
 Guidelines are treated as context, not instructions. The reviewer's core behavior (identifying bugs, security issues, and performance problems) takes precedence over any conflicting guideline content.
+
+## Roles and permissions
+
+What you can do with Code Review suggestions in the Vercel dashboard depends on your [team role](/docs/rbac/access-roles).
+
+| Action                      | Roles                                                 |
+| --------------------------- | ----------------------------------------------------- |
+| View suggestions            | Any team role with access to all projects in the team |
+| Apply or ignore suggestions | Owner, Member, Developer                              |
+
+For Contributors, viewing suggestions requires access to every project in the team.
 
 ## Managing reviews
 
@@ -157,7 +124,15 @@ See [Vercel Agent pricing](/docs/agent/pricing) for complete rates and cost-trac
 
 ## Privacy
 
+Code Review suggestions can include snippets of your source code, including any confidential, personal, or sensitive data those snippets contain.
+
+In the Vercel dashboard, access to suggestions follows the [roles and permissions](#roles-and-permissions) above. Anyone with access to the GitHub repository can read review comments, which can be a wider audience than the dashboard. On public repositories, those comments are public.
+
 Code Review never trains on customer code if your Vercel team's [data preferences setting](https://vercel.fyi/team-data-preferences) is "off" or you are on an [Enterprise plan](/docs/plans/enterprise).
+
+## Limitations
+
+Code Review can miss issues or suggest incorrect changes. Review suggested fixes before applying them, and test the changes before merging. Code Review complements human review and testing.
 
 ## Search the docs from your terminal
 

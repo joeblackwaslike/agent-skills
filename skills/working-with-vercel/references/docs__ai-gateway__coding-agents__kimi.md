@@ -16,8 +16,8 @@ summary: Connect Kimi CLI to AI Gateway with the Vercel CLI or a TOML provider a
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/kimi.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "3252844203b24d9262c8a230f0e658f527e7028779998bc7272d92abd9ce9e44"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "7750cf91be2abbd6cf9cec24167bcfb32bea00c9702108f03b95663a7d9d69c4"
 ---
 
 # Kimi CLI with AI Gateway
@@ -32,8 +32,8 @@ sha256: "3252844203b24d9262c8a230f0e658f527e7028779998bc7272d92abd9ce9e44"
 
 - [Kimi K3.1 Pro and Kimi K3.1 Pro Highspeed are available now in AI Gateway](https://vercel.com/changelog/kimi-k3-1-pro-and-kimi-k3-1-pro-highspeed-are-available-now-in-ai-gateway)
 - [Kimi K3.1 Pro now has more ZDR providers on AI Gateway](https://vercel.com/changelog/kimi-k3-1-pro-now-has-more-zdr-providers-on-ai-gateway)
-- [Kimi K3 and Kimi K3 Fast with ZDR and US-based providers now on AI Gateway](https://vercel.com/changelog/kimi-k3-and-kimi-k3-fast-on-ai-gateway)
 - [Kimi K3 is now available on AI Gateway](https://vercel.com/changelog/kimi-k3-is-now-available-on-ai-gateway)
+- [Kimi K2.6 on AI Gateway](https://vercel.com/changelog/kimi-k2.6-on-ai-gateway)
 - [Moonshot AI's Kimi K2 model is now supported in Vercel AI Gateway](https://vercel.com/changelog/moonshot-ai-kimi-k2-model-is-now-supported-in-vercel-ai-gateway)
 - [Kilo Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/kilo-code) — Connect Kilo Code to AI Gateway with the Vercel CLI or an OpenAI-compatible provider configuration. Set your API key and
 

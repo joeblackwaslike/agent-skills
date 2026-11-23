@@ -18,8 +18,8 @@ summary: "Learn how to use Global Config with Vercel's Split integration."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/global-config/global-config-integrations/split-global-config.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "0cb673d2fac4dcd049831309e051820c87b7c3e115d5ae93bdd556113a425f87"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "e9c216e132ea0aeaa009bbc5efbe4aadd54049318f8ad7e6328977900f8ee627"
 ---
 
 # Using Global Config with Split
@@ -35,8 +35,8 @@ This guide will help you get started with using Vercel's Split integration with 
 - [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
 - [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
 - [How to use Next.js as a backend for your frontend](https://nextjs.org/docs/app/guides/backend-for-frontend) — Learn how to use Next.js as a backend framework
-- [How to build zero-CLS A/B tests with Next.js and Vercel Edge Config](https://vercel.com/blog/zero-cls-experiments-nextjs-edge-config)
 - [Build a Claude Managed Agent with Vercel Sandbox](https://vercel.com/kb/guide/run-claude-managed-agent-tools-with-vercel-sandbox) — Build a Claude Managed Agent with Vercel Sandbox: each session runs in a fresh microVM with credential brokering and a w
+- [A/B testing on ecommerce storefronts without hurting Core Web Vitals](https://vercel.com/kb/guide/ecommerce-ab-testing-core-web-vitals) — Client-side A/B tools can worsen LCP and CLS on the pages you're testing. Run ecommerce A/B tests at the edge with Routi
 - [OG Image Generation Examples](https://vercel.com/docs/og-image-generation/examples) — Learn how to use the @vercel/og library with examples.
 - [Client Uploads with Vercel Blob](https://vercel.com/docs/vercel-blob/client-upload) — Learn how to upload files larger than 4.5 MB directly from the browser to Vercel Blob
 - [Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache) — Learn how Vercel's CDN cache stores your content across a global network to reduce latency and origin load.
@@ -123,7 +123,7 @@ bunx create-next-app@latest
 > feature flags and segments, and edit them at will) is required.
 
 - ### Set up the Split integration
-  Visit [the Split page in the Vercel Integration Marketplace](/marketplace/split) and select the **Add Integration** button. From the Integration dialog:
+  Visit [the Split page in the Vercel Integration Marketplace](/marketplace/split) and select the **Connect Account** button. From the Integration dialog:
   1. Select a Vercel team and project to connect the integration to
   2. Log into Split
   3. Select the **[Split Environment](https://developer.harness.io/feature-management-experimentation/management-and-administration/integrations/vercel)** you want to use

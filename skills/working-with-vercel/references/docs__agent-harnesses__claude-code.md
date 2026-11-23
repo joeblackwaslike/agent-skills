@@ -17,8 +17,8 @@ summary: Run Claude Code in a Vercel Sandbox, driven by a Vercel Function, with 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-harnesses/claude-code.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "1b498ad1433cb855d96f7fd40973e25e0038bf017ae5e674ec0dbfcdb3768dc2"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "da01d6a95c4c6b09ec0a1c6c9381f7c2ea584231906c691159b9a4bedeaf0e55"
 ---
 
 # Running Claude Code Durably on Vercel
@@ -40,9 +40,9 @@ Each session of [Claude Code](https://docs.claude.com/en/docs/claude-code/overvi
 - [Workflow SDK 5: built for production](https://vercel.com/blog/workflow-sdk-5)
 - [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
 - [Build Claude Managed Agents with Vercel Services](https://vercel.com/kb/guide/claude-managed-agents-vercel-services) — Deploy Claude Managed Agents with Vercel Services to run a streaming research analyst in a browser chat, using Anthropic
+- [Claude Code](https://ai-sdk.dev/providers/ai-sdk-harnesses/claude-code) — Learn how to use the Claude Code harness adapter.
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
-- [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
-- [How to give agents persistent storage with Vercel Drives](https://vercel.com/kb/guide/persistent-storage-with-vercel-drives) — Give AI SDK and TanStack AI agents persistent storage with Vercel Drives so they can save and reuse research notes acros
+- [HarnessAgent](https://ai-sdk.dev/docs/ai-sdk-harnesses/harness-agent) — Create and run AI SDK HarnessAgent sessions.
 - [Running OpenCode Durably on Vercel](https://vercel.com/docs/agent-harnesses/opencode) — Run OpenCode v2 inside a Vercel Function with its session in a durable log, so a crashed turn resumes in a new function.
 - [Running fx Durably on Vercel](https://vercel.com/docs/agent-harnesses/fx) — Deploy an fx agent with libfx so its sessions survive crashes, function timeouts, and redeploys on Vercel.
 - [Running Pi Durably on Vercel](https://vercel.com/docs/agent-harnesses/pi) — Make a Pi agent durable on Vercel so a crashed turn resumes in a new function instead of starting over.

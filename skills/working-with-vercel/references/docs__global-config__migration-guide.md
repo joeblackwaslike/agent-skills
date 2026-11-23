@@ -17,8 +17,8 @@ summary: Learn what changed when Edge Config was renamed to Global Config, and h
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/global-config/migration-guide.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "f56969d71496af05071f320bc3de3275c3999fb483c52418af9a05f95825422a"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "dda1df01eecf1d15f844fedae23737dc9e3842d1b04e959dda39b8c0fef78716"
 ---
 
 # Migrating from Edge Config to Global Config
@@ -35,8 +35,8 @@ Edge Config is now **Global Config**. This rename better reflects that it is a g
 - [Implementing Blue-Green Deployments on Vercel](https://vercel.com/kb/guide/blue_green_deployments_on_vercel) — This guide outlines how to implement blue-green deployments on Vercel, leveraging GitHub Actions for seamless and contro
 - [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
 - [Implementing Canary Deployments on Vercel](https://vercel.com/kb/guide/implementing_canary_deployments_on_vercel) — This guide explains how to set up canary deployments on Vercel, enabling developers to gradually roll out new versions t
-- [Edge Config is now generally available ](https://vercel.com/changelog/edge-config-is-now-generally-available)
-- [Introducing Edge Config: Globally distributed, instant configuration](https://vercel.com/blog/edge-config-public-beta)
+- [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
+- [Update a Global Config](https://vercel.com/docs/rest-api/global-config/update-a-global-config) — PUT /v1/global-config/{edgeConfigId} — Updates a Global Config.
 - [Global Config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config) — Vercel MCP tools for Global Config.
 - [Managing Global Configs with Vercel REST API](https://vercel.com/docs/global-config/vercel-api) — Learn how to use the Vercel REST API to create and update Global Configs. You can also read data stored in Global Config
 

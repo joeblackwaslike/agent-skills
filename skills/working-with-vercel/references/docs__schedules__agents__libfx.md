@@ -18,8 +18,8 @@ summary: Give an fx agent a tool that creates schedules, and send each run back 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/schedules/agents/libfx.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "135341e58b7a326eb8fe5b5110dee8719bf0b426f9f103501dc79f4872161151"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "462cdb3c3ea194f99eb8a93ade98047ee37327fdecd6e57c33f77225edf2bf20"
 ---
 
 # Scheduling Work with libfx
@@ -33,7 +33,6 @@ An [fx agent](/docs/agent-harnesses/fx) keeps each session in a durable log, so 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing Vercel Schedules](https://vercel.com/blog/introducing-vercel-schedules)
-- [Vercel Schedules is now in public beta](https://vercel.com/changelog/vercel-schedules-is-now-in-public-beta)
 - [Schedules](https://eve.dev/docs/schedules) — Run an agent on a cron cadence, either a fire-and-forget prompt or a handler that hands work off to a channel.
 - [Scheduling Work with the AI SDK](https://vercel.com/docs/schedules/agents/ai-sdk) — Give an AI SDK agent a tool that creates schedules, and run each scheduled task as a new agent turn.
 - [Scheduling Work with Pi](https://vercel.com/docs/schedules/agents/pi) — Give a Pi agent on durable-harness a tool that creates schedules, and send each run back into the session that created i

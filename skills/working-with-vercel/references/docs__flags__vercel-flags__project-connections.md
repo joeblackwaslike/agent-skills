@@ -18,13 +18,31 @@ summary: "Read another project's Vercel Flags using your project's identity, wit
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/vercel-flags/project-connections.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "0fe80155d896ca2b34e747166b9fd0e4420df2a897a6249c44a0862188007e3f"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "8ea0b83a61031cf9ca46b066438b1d99bb1abd19839b3317304360aa22bed66c"
 ---
 
 # Connecting Projects to Share Flags
 
 Project Connections let applications in the same Vercel team share flags. For example, multiple microfrontends can use one project's release flags. Connections are available on all plans.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Evaluate Vercel Flags from another project without sharing SDK keys.](https://vercel.com/changelog/evaluate-vercel-flags-from-another-project-without-sharing-sdk-keys)
+- [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
+- [Connect a project to the flags of this project](https://vercel.com/docs/rest-api/feature-flags/connect-a-project-to-the-flags-of-this-project) — PUT /v1/projects/{projectIdOrName}/feature-flags/connections — Connects a project in the same team to the flags of this
+- [List flags project connections](https://vercel.com/docs/rest-api/feature-flags/list-flags-project-connections) — GET /v1/projects/{projectIdOrName}/feature-flags/connections — Lists the flags project connections of a project. By defa
+- [Using the Flags SDK with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
+- [Disconnect a project from the flags of this project](https://vercel.com/docs/rest-api/feature-flags/disconnect-a-project-from-the-flags-of-this-project) — DELETE /v1/projects/{projectIdOrName}/feature-flags/connections/{consumerProjectId} — Disconnects a project from the fla
+- [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
+
+Full cross-link map for this page: [/docs/flags/vercel-flags/project-connections.graph.md](/docs/flags/vercel-flags/project-connections.graph.md)
+<!-- /docsgraph:related -->
 
 The **source project** owns the flags. The **consumer project** reads and evaluates them using its own [OpenID Connect (OIDC) token](/docs/oidc). You don't need to create or rotate an SDK key.
 

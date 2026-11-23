@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/channels-reference.md"
-fetched_at: "2026-10-26T09:47:04.845Z"
-sha256: "adf652f0f8a65c1895b02259add675e7e9ea461501815c49ebd0655daa65eccc"
+fetched_at: "2026-11-23T14:04:20.448Z"
+sha256: "2c6cbe1b96d8ec5a67704e573772100938706e55ac8b47eede2ac4ef1d7a0568"
 ---
 
 > ## Documentation Index
@@ -437,7 +437,7 @@ await mcp.notification({ ... })
 
 Gate on the sender's identity, not the chat or room identity: `message.from.id` in the example, not `message.chat.id`. In group chats, these differ, and gating on the room would let anyone in an allowlisted group inject messages into the session.
 
-The [Telegram](https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/telegram) and [Discord](https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/discord) channels gate on a sender allowlist the same way. They bootstrap the list by [pairing](https://code.claude.com/docs/en/channels.md#security). See either implementation for the full pairing flow. The [iMessage](https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/imessage) channel takes a different approach: it detects the user's own addresses from the Messages database at startup and lets them through automatically, with other senders added by handle.
+The [Telegram](https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/telegram) and [Discord](https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/discord) channels gate direct messages on a sender allowlist the same way. They bootstrap the list by [pairing](https://code.claude.com/docs/en/channels.md#security). See either implementation for the full pairing flow. The [iMessage](https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/imessage) channel takes a different approach: it detects the user's own addresses from the Messages database at startup and lets them through automatically, with other senders added by handle.
 
 ## Relay permission prompts
 

@@ -17,8 +17,8 @@ summary: Learn how to resolve common scenarios you may encounter during the Buil
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployments/troubleshoot-a-build.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "5c04b2f32373e3698345ce9cd3e69e12f4f3eee956ed8878ae5af79db13b705c"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "d123bf0047be8a2356da1dbe177ee9dc0aaa4d456cb3e2aa76210d3445fb9cf1"
 ---
 
 # Troubleshooting Build Errors
@@ -31,17 +31,17 @@ You can troubleshoot build errors that occur during the Build step of your deplo
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
-- [Troubleshooting Builds Failing with SIGKILL or Out of Memory Errors](https://vercel.com/kb/guide/troubleshooting-sigkill-out-of-memory-errors) — Learn how to troubleshoot builds failing with SIGKILL or Out of Memory errors on a Vercel Deployment.
 - [Build cache size limit on Vercel increased to 5 GB](https://vercel.com/changelog/build-cache-size-limit-on-vercel-increased-to-five-gb)
 - [Build cache storage increased for larger build machines](https://vercel.com/changelog/build-cache-storage-increased-for-larger-build-machines)
 - [Enhanced Builds now have double the compute](https://vercel.com/changelog/enhanced-builds-now-have-double-the-compute)
 - [Improved error messages for failed or canceled builds](https://vercel.com/changelog/improved-error-messages-for-failed-or-canceled-builds)
 - [More detailed report on out of memory or disk space errors on builds](https://vercel.com/changelog/report-on-out-of-memory-or-disk-space)
 - [Does Vercel Support Yarn? \\(Versions 2, 3, and 4\\)](https://vercel.com/kb/guide/does-vercel-support-yarn-4) — Vercel supports Yarn 1, 2, 3, and 4. Learn which version your build uses by default, and how to pin Yarn 4 with Corepack
-- [How can I share my Vercel cache across deployments?](https://vercel.com/kb/guide/share-vercel-cache-across-deployments-nextjs) — Learn how to reuse cached responses across deployments with the Next.js App Router and the Vercel Data Cache.
+- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-to-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
+- [Troubleshooting Build Error: "Build step did not complete within the maximum of 45 minutes"](https://vercel.com/kb/guide/troubleshooting-build-error-build-step-did-not-complete-within-45-minutes) — Learn common reasons Vercel builds hit the 45-minute limit and how to reduce build times so your deployments stay fast a
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
-- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
+- [Fixing deployments that hang after the build step succeeds](https://vercel.com/kb/guide/fixing-deployments-that-hang-after-the-build-step-succeeds) — Vercel deployment stuck in "Building" after the build succeeds, with checks and domain assignment pending? The cause is
+- [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.
 - [Deploying Turborepo to Vercel](https://vercel.com/docs/monorepos/turborepo) — Learn about Turborepo, a build system for monorepos that allows you to have faster incremental builds, content-aware has
 
 Full cross-link map for this page: [/docs/deployments/troubleshoot-a-build.graph.md](/docs/deployments/troubleshoot-a-build.graph.md)
@@ -105,6 +105,23 @@ In this case, you cannot access the **Building** accordion described above, and 
 
 ![Build logs not available for a deployment.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/concepts/deployments/build-error-no-logs-v2-light.png)
 
+### Build logs keep loading
+
+If the build logs for a deployment show a loading state and never appear, security software on your computer or network is the most likely cause. Vercel streams build logs to the dashboard. Antivirus and network security products that inspect HTTPS traffic can hold a response until it finishes so they can scan it, which prevents a streamed response from reaching your browser.
+
+To confirm the cause, open the same deployment on a device or network that doesn't use the security software. If the build logs load there, change the software's configuration in one of these ways:
+
+- Add `vercel.com` to the software's list of exceptions or allowed websites
+- Turn off the feature that inspects HTTPS traffic. Depending on the product, the setting has a name such as "Encrypted web scan", "Web inspection", "HTTPS inspection", or "Deep packet inspection"
+
+For example, Bitdefender on Windows blocks streamed build logs with its **Encrypted web scan** feature. To allow the logs to load:
+
+1. Open Bitdefender and select **Protection**
+2. In the **Online Threat Prevention** card, select **Settings**
+3. Select **Manage exceptions** and add `vercel.com` as an exception. Alternatively, turn off **Encrypted web scan**
+
+If you can't find a matching setting, contact the software's vendor. If the build logs keep loading on a device without security software, contact [Vercel Support](/help).
+
 ### Integration resource provisioning failures
 
 If your project is connected to a [Marketplace integration](/docs/integrations) resource, Vercel provisions integration resources and runs any configured [deployment integration actions](/docs/integrations/create-integration/deployment-integration-action) before the Build step starts. While this happens, the deployment is held in a provisioning state and the build does not begin.
@@ -123,6 +140,31 @@ To resolve the failure:
 2. [Redeploy](/docs/deployments/managing-deployments#redeploy-a-project) the project. Provisioning runs again on the new deployment
 
 While the **Provisioning Integrations** step is still pending, you can also select **Skip** to let the deployment continue without waiting for the integration. Only skip provisioning if your build does not depend on the resource, since the resource may not be ready when the build runs.
+
+### Missing development dependencies
+
+If a build fails because a package from `devDependencies` in your `package.json` isn't installed, check whether the project sets the `NODE_ENV` environment variable to `production`. For example, a TypeScript project can fail with this error even though `typescript` is listed in `devDependencies`:
+
+```text filename="Build log"
+It looks like you're trying to use TypeScript but do not have the required package(s) installed.
+
+Please install typescript and @types/node by running:
+npm install --save-dev typescript @types/node
+```
+
+Vercel installs `devDependencies` by default. However, your project's [environment variables](/docs/environment-variables) are available when Vercel installs dependencies, and some package managers skip `devDependencies` when `NODE_ENV` is `production`:
+
+| Package manager | Skips `devDependencies` when `NODE_ENV=production` | Install Command that installs `devDependencies` |
+| --- | --- | --- |
+| npm | Yes | `npm install --include=dev` |
+| pnpm 9 and earlier | Yes | `pnpm install --prod=false` |
+| pnpm 10 and later | No | Not needed |
+| Yarn 1 | Yes | `yarn install --production=false` |
+
+To fix the build, use one of these options:
+
+- **Remove the variable**: Delete `NODE_ENV` from your project's [environment variables](/docs/environment-variables/managing-environment-variables#viewing-editing-or-deleting-an-environment-variable), then redeploy. Frameworks such as Next.js set `NODE_ENV` to `production` on their own when they build, so most projects don't need the variable.
+- **Keep the variable and change the install command**: In your project's [Build and Deployment settings](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fsettings%2Fbuild-and-deployment\&title=Go+to+Build+Settings), turn on **Override** for the [Install Command](/docs/builds/configure-a-build#install-command), enter the command for your package manager from the table, and redeploy.
 
 ## Cancelled Builds due to limits
 
@@ -169,8 +211,19 @@ You may come across the following Build-specific errors when deploying your Proj
 - [Missing Build script](/docs/errors/error-list#missing-build-script)
 - [Recursive invocation of commands](/docs/errors/error-list#recursive-invocation-of-commands)
 - [Pnpm engine unsupported](/docs/errors/error-list#pnpm-engine-unsupported)
+- [Corepack cannot find matching keyid](/docs/errors/error-list#corepack-cannot-find-matching-keyid)
 
 A 'module not found' error is a syntax error that will appear at build time. This error appears when the static import statement cannot find the file at the declared path. For more information, see [How do I resolve a 'module not found' error?](/kb/guide/how-do-i-resolve-a-module-not-found-error)
+
+### Bundler platform errors in Ruby projects
+
+A Ruby project, such as a [Jekyll](https://jekyllrb.com/) site, can fail while installing gems when its `Gemfile.lock` was generated on macOS or Windows. Vercel builds run on Linux, and Bundler stops when the lockfile doesn't list the Linux platform.
+
+To fix the error, add the Linux platform to the lockfile on your local machine, then commit the updated `Gemfile.lock`:
+
+```bash filename="terminal"
+bundle lock --add-platform x86_64-linux
+```
 
 ## Troubleshoot Build time
 
@@ -217,7 +270,9 @@ At the end of each Build step, successful builds will update the cache and faile
 
 ### Excluding development dependencies
 
-Since development dependencies (for example, packages such as `webpack` or `Babel`) are not needed in production, you may want to prevent them from being installed when deploying to Vercel to reduce the Build time. To skip development dependencies, customize the [Install Command](/docs/builds/configure-a-build#install-command) to be `npm install --only=production` or `yarn install --production`.
+Since development dependencies (for example, packages such as `webpack` or `Babel`) are not needed in production, you may want to prevent them from being installed when deploying to Vercel to reduce the Build time. To skip development dependencies, customize the [Install Command](/docs/builds/configure-a-build#install-command) to be `npm install --omit=dev` or `yarn install --production`.
+
+Only skip development dependencies when the build doesn't use them. If the build needs a package from `devDependencies`, such as `typescript`, it fails with the error described in [Missing development dependencies](#missing-development-dependencies).
 
 ## Managing Build cache
 

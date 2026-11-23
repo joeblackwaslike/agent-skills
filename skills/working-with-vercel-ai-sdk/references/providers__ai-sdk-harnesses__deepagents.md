@@ -4,8 +4,8 @@ description: Learn how to use the Deep Agents harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/deepagents"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/deepagents.md"
-fetched_at: "2026-11-16T12:32:31.917Z"
-sha256: "7f50dcc01382da68bac14a746d3c47988cb74d41fd5ab73a30c373a51ae4dfbc"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "542895a7a703722612739b08718d55d6d734882ae338254e974fc07b7d992014"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -112,6 +112,10 @@ Settings:
   not aborted. When unset, a turn keeps running in the sandbox after its host
   disconnects, including when the host process is gone for good, until the
   turn finishes or the sandbox stops.
+- `keepAliveMs`: WebSocket ping interval in milliseconds (default `20_000`).
+  Keeps silent bridge connections alive. After two unanswered pings, the socket
+  is terminated and the configured reconnect policy takes over. Set to `0` to
+  disable. Sockets without ping support are left unchanged.
 - `reconnect`: reconnect timing after an established bridge WebSocket
   connection drops. `maxElapsedMs` controls the total retry window, including
   connection establishment and backoff delays, and defaults to 30 seconds.

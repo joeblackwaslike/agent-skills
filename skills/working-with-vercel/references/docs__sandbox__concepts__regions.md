@@ -18,8 +18,8 @@ summary: Choose the regions where Vercel Sandbox runs your sandboxes, set a proj
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/concepts/regions.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "7020fd9cab5cb2c3f290a7648083f448b58761e2887fb9a294b544b01eac77ef"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "ac33822fafb8f95081a42702a311c130aa6956e8ae480e6be1c53e36fc5abea4"
 ---
 
 # Sandbox Regions
@@ -37,10 +37,9 @@ Sandboxes use your project's default sandbox region unless the creation request 
 - [Drives for Vercel Sandbox are now in public beta](https://vercel.com/changelog/drives-for-vercel-sandbox-are-now-in-public-beta)
 - [How Vercel Drives work and how to use them](https://vercel.com/kb/guide/vercel-drives) — Learn how Vercel Drives give Vercel Sandbox persistent, shareable storage, and how to create, mount, snapshot, fork, lis
 - [How to use Vercel Drives with an eve agent](https://vercel.com/kb/guide/vercel-drives-eve-agent) — Mount Vercel Drives in an eve agent's sandbox to give each user a persistent workspace and share read-only reference dat
-- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
-- [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
+- [Vercel Sandbox vs Upstash Box](https://vercel.com/kb/guide/vercel-sandbox-vs-upstash-box) — Compare Vercel Sandbox and Upstash Box as AI agent sandboxes, including isolation, persistence, network controls, SDKs,
 - [Delete a sandbox](https://vercel.com/docs/rest-api/sandboxes/delete-a-sandbox) — DELETE /v2/sandboxes/{name} — Deletes a sandbox by name. If sandboxes are currently running, they will be stopped first.
-- [Images](https://vercel.com/docs/sandbox/concepts/images) — Start sandboxes from Vercel's Managed Images, or custom OCI images stored in Vercel Container Registry to ship your own
+- [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 
 Full cross-link map for this page: [/docs/sandbox/concepts/regions.graph.md](/docs/sandbox/concepts/regions.graph.md)
 <!-- /docsgraph:related -->
@@ -219,23 +218,23 @@ Read the regions where a snapshot is available with the `snapshot.regions` acces
 
 ## Regions and drives
 
-A [drive](/docs/sandbox/concepts/drives) stores its data in a single region. The Sandbox API creates new drives in `iad1` when the request doesn't specify a region. The project's default sandbox region doesn't set a drive's region.
+A [drive](/docs/drives) stores its data in a single region. Vercel creates new drives in `iad1` when you don't specify a region. The project's default sandbox region doesn't set a drive's region.
 
 To create a drive in another region, pass `region` when you create it:
 
 **terminal.sh**
 
 ```bash filename="terminal.sh"
-sandbox drives get-or-create workspace-cache --region sfo1
+vercel drives get-or-create regional-cache --region sfo1
 ```
 
 **index.ts**
 
 ```ts filename="index.ts"
-import { Drive } from '@vercel/sandbox';
+import { Drive } from '@vercel/drives';
 
 const drive = await Drive.getOrCreate({
-  name: 'workspace-cache',
+  name: 'regional-cache',
   region: 'sfo1',
 });
 
@@ -249,14 +248,12 @@ import asyncio
 
 from vercel import sandbox
 
-
 async def main() -> None:
     drive, _ = await sandbox.get_or_create_drive(
-        name="workspace-cache",
+        name="regional-cache",
         region="sfo1",
     )
     print(drive.region)  # "sfo1"
-
 
 asyncio.run(main())
 ```
@@ -267,7 +264,7 @@ A sandbox's main region must match a drive's region. Otherwise, creation will fa
 
 The project default region is not applied to sandboxes that mount drives. Set the sandbox's `region` to match the drive's region when it's not `iad1`.
 
-Read the region of an existing drive with the `drive.region` accessor in the SDK, or from the `REGION` column of `sandbox drives list` in the CLI.
+Read the region of an existing drive with the `drive.region` accessor in the SDK, or from the `REGION` column of `vercel drives list` in the CLI.
 
 ## Pricing
 

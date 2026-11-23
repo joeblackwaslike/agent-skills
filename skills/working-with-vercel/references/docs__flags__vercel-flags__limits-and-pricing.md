@@ -14,8 +14,8 @@ summary: Review Vercel Flags request pricing and limits for flags, segments, con
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/vercel-flags/limits-and-pricing.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "cd6b29dbd5271d7fbb76a6d4e9da8ea97a3ed9c20d580b85bf1c1cd962122571"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "a3755ed040c34f2dd6f5c798d6c04e8e35e7bdffd2894225d4dd2f7fa5a84c89"
 ---
 
 # Limits and Pricing for Vercel Flags
@@ -35,9 +35,9 @@ A flag request is an application request that reads a source project's flag conf
 - [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta)
 - [Pricing for Flags Explorer](https://vercel.com/docs/flags/flags-explorer/limits-and-pricing) — Compare monthly Flags Explorer override limits and the price of unlimited overrides across Vercel plans.
 - [Feature Flag Configuration](https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag) — Learn how to configure individual feature flags in the Vercel Dashboard.
+- [List flags](https://vercel.com/docs/rest-api/feature-flags/list-flags-1) — GET /v1/projects/{projectIdOrName}/feature-flags/flags — Retrieve feature flags for a project. The list can be filtered
 - [List flags](https://vercel.com/docs/rest-api/feature-flags/list-flags) — GET /v2/projects/{projectIdOrName}/feature-flags/flags — Retrieve feature flags for a project. Returns an opaque cursor
 - [Get a flag](https://vercel.com/docs/rest-api/feature-flags/get-a-flag) — GET /v1/projects/{projectIdOrName}/feature-flags/flags/{flagIdOrSlug} — Retrieve a specific feature flag by its ID or sl
-- [Managing flags in the dashboard](https://vercel.com/docs/flags/vercel-flags/dashboard) — Learn how to manage your feature flags using the Vercel Dashboard.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags/limits-and-pricing.graph.md](/docs/flags/vercel-flags/limits-and-pricing.graph.md)
 <!-- /docsgraph:related -->

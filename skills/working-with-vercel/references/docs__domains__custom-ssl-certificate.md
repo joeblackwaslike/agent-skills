@@ -14,8 +14,8 @@ summary: By default, Vercel provides all domains with a custom SSL certificates.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains/custom-ssl-certificate.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "cd399e80c59e3414d2ac88d24d10faae7706b159d4833574d63c289c905bce99"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "5fc799ebb6fd8c48bd8c24eb22946c4a3500cc0c584cd7d9bec7dde45cf029cd"
 ---
 
 # Uploading Custom SSL Certificates
@@ -23,6 +23,8 @@ sha256: "cd399e80c59e3414d2ac88d24d10faae7706b159d4833574d63c289c905bce99"
 > Uploading Custom SSL Certificates are available on Enterprise plans
 
 By default, Vercel provides all domains with custom SSL certificates. However, Enterprise teams can upload a custom SSL certificate. This allows for Enterprise teams to serve their own SSL certificate on a **Custom Domain** on Vercel's global network, rather than the automatically generated certificate.
+
+If your team isn't on the Enterprise plan, [contact our sales team](/contact/sales) to get access to custom SSL certificates.
 
 Custom SSL certificates can be uploaded through the [**Domains** section in the sidebar on your team's dashboard](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fdomains\&title=Go+to+team%27s+domains+page), or by using the [Vercel REST API](/docs/rest-api/certs/upload-a-cert#upload-a-cert).
 

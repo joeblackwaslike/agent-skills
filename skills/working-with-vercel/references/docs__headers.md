@@ -17,8 +17,8 @@ summary: This reference covers the list of request, response, cache-control, and
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/headers.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "77a567a94b39cf80610690f221633e0222e18808ab1e6cd31876904ee2f2ec57"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "088718f4a827fa1c109ca69171feaa8574ee333d147f73fa1f33f369952dd97f"
 ---
 
 # System Headers
@@ -38,11 +38,11 @@ Headers are small pieces of information that are sent between the client (usuall
 - [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
 - [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
 - [How to ship a Flask app on Vercel](https://vercel.com/kb/guide/ship-a-flask-app-on-vercel) — Deploy a Flask app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
-- [Control CDN caching for shared and personalized pages on Vercel](https://vercel.com/kb/guide/cdn-cache-personalized-pages) — Control CDN caching for shared and personalized Next.js pages. Set cache headers, separate per-user content, and verify
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 - [Read System Bypass](https://vercel.com/docs/rest-api/security/read-system-bypass) — GET /v1/security/firewall/bypass — Retrieve the system bypass rules configured for the specified project
 - [Vercel CDN overview](https://vercel.com/docs/cdn) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
 - [Vercel fundamental concepts](https://vercel.com/docs/fundamentals) — Learn about the core concepts of Vercel
+- [Get supported TLDs](https://vercel.com/docs/rest-api/domains-registrar/get-supported-tlds) — GET /v1/registrar/tlds/supported — Get a list of TLDs supported by Vercel
 
 Full cross-link map for this page: [/docs/headers.graph.md](/docs/headers.graph.md)
 <!-- /docsgraph:related -->

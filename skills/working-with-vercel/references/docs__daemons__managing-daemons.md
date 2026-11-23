@@ -17,8 +17,8 @@ summary: Deploy, scale, stop, and monitor Vercel Daemons with vercel.json and th
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/daemons/managing-daemons.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "a4d836f6ad4148f7084397827df56b237c8c4af152e81578708503a16ed2568d"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "b43a42dd29f2d41d1771e0c143141c12f98272e6011e9857564231251b389ecc"
 ---
 
 # Managing Daemons
@@ -31,6 +31,7 @@ You declare daemons with the `daemons` key in `vercel.json`. Changes to daemon c
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to stop traffic to an old deployment on Vercel](https://vercel.com/kb/guide/how-to-stop-traffic-to-an-old-deployment-on-vercel) — Move production traffic to the new deployment, restrict access to the old deployment, and check remaining function activ
 - [Migrate from Google Cloud Run to Vercel](https://vercel.com/kb/guide/migrate-cloud-run-to-vercel) — Move a Cloud Run service or worker to Vercel. Compare runtimes, preserve Google Cloud access, and plan jobs, validation,
 - [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel) — Migrate Next.js apps and HTTP containers from AWS to Vercel. Configure AWS access, assess background workers, and plan t
 - [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,

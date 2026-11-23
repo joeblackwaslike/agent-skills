@@ -15,8 +15,8 @@ summary: Discover and query observability metrics, and inspect available dimensi
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/metrics.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "20d951fc406fe22d8d21768f54a818be50575e0a72e6f222c04127a4e305cd2a"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "ba7cd63b4039e7bcdde98bc806c32e190d2b4440d57381ddaef1b1e8aacb1da0"
 ---
 
 # vercel metrics
@@ -36,7 +36,7 @@ The `vercel metrics` command, also available as `vc metrics`, lets you discover 
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
 - [Query Reference](https://vercel.com/docs/query/reference) — Use this reference to find the event types, metrics, aggregations, dimensions, and operators available in Query.
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
-- [vercel billing usage](https://vercel.com/docs/cli/usage) — Learn how to view billing usage and costs, for your Vercel account using the vercel billing usage CLI command.
+- [vercel flags](https://vercel.com/docs/cli/flags) — Learn how to manage feature flags for your Vercel project using the vercel flags CLI command.
 
 Full cross-link map for this page: [/docs/cli/metrics.graph.md](/docs/cli/metrics.graph.md)
 <!-- /docsgraph:related -->
@@ -339,18 +339,84 @@ vercel metrics database.duration_ms --query 'plan:pro'
 
 By default, `vercel metrics` prints a human-readable table or time series summary. Use `--json` to output structured JSON for scripts, agents, and continuous integration checks.
 
+## Query multiple metrics and formulas
+
+Use the `--data` option to compute ratios such as an error rate, return several aggregations side by side, and express queries that a single-metric flag query can't.
+
+Pass the query as JSON, or pass `-` to read it from stdin:
+
+```bash filename="terminal"
+vercel metrics --since 24h --data '<JSON>'
+cat query.json | vercel metrics --since 24h --data -
+```
+
+The query replaces the `<metric_name>` argument, so set the aggregation, grouping, and filters in the query instead of through options.
+
+`--project`, `--all`, or the linked project sets the query's `scope`, and `--since` and `--until` set its `timeRange`, when the query doesn't include those fields. Setting the same field in both the query and an option is an error.
+
+### Query fields
+
+| Field | Description |
+| - | - |
+| `metrics.<alias>` | Required. A metric selection of the form `{ metric, aggregation, filter? }`, where `filter` is a KQL string. Also accepts `per`, `normalize`, and `dimensions`. |
+| `formulas.<alias>` | Arithmetic over metric aliases using `+`, `-`, `*`, `/`, parentheses, and numbers, such as `errors / total`. Division by zero yields `null`. |
+| `outputs` | The aliases to return. Defaults to all metrics, then all formulas. |
+| `groupBy` | Dimensions to split results by. |
+| `filter` | A KQL filter applied to every metric. |
+| `bucketSeconds` | Bucket width, in seconds, for a time series. Omit it to return totals only. |
+| `orderBy` | Order a totals-only query: `[{ metric, direction }]`, where `metric` is a metric or formula alias and `direction` is `asc` or `desc`. |
+| `rowLimit` | Limit the number of rows in a totals-only query. |
+| `seriesSelection` | Top-N groups: `{ limit, rankBy: [{ metric, direction }], mode?, remainder? }`, where `rankBy` references metric aliases. Requires `groupBy` and can't be combined with `orderBy` or `rowLimit`. A totals-only query must set `"remainder": "aggregate"`. A grouped time series on a busy project needs it, or the API returns `result_too_large`. |
+| `timeRange` | `{ start, end }` in RFC 3339. Defaults from `--since` and `--until`. |
+| `scope` | `{ ownerId, projectIds? }`. Defaults to the linked project, `--project`, or `--all`, in the `--scope` team. |
+
+A single query accepts up to 30 metrics, 10 formulas, and 40 outputs.
+
+Aliases use letters, numbers, and underscores. An output alias must not equal a `groupBy` dimension, `timestamp`, or `isRemainder`.
+
+### Example: error rate by route
+
+This query counts failed and total function invocations by route, computes the error rate as a formula, and returns the top five routes as an hourly time series:
+
+```bash filename="terminal"
+vercel metrics --since 24h --data '{
+  "metrics": {
+    "errors": {"metric": "vercel.function_invocation.count", "aggregation": "count", "filter": "httpStatus >= 500"},
+    "total":  {"metric": "vercel.function_invocation.count", "aggregation": "count"}
+  },
+  "formulas": {"errorRate": "errors / total * 100"},
+  "groupBy": ["route"],
+  "bucketSeconds": 3600,
+  "seriesSelection": {"limit": 5, "mode": "exact", "rankBy": [{"metric": "total", "direction": "desc"}]}
+}'
+```
+
+### Example: latency percentiles by route
+
+This query returns the invocation count, average, p95, and p99 function duration side by side for the 10 routes with the highest p95 in the last hour:
+
+```bash filename="terminal"
+vercel metrics --since 1h --data '{
+  "metrics": {
+    "invocations": {"metric": "vercel.function_invocation.count", "aggregation": "count"},
+    "avgMs": {"metric": "vercel.function_invocation.function_duration_ms", "aggregation": "avg"},
+    "p95Ms": {"metric": "vercel.function_invocation.function_duration_ms", "aggregation": "p95"},
+    "p99Ms": {"metric": "vercel.function_invocation.function_duration_ms", "aggregation": "p99"}
+  },
+  "groupBy": ["route"],
+  "orderBy": [{"metric": "p95Ms", "direction": "desc"}],
+  "rowLimit": 10
+}'
+```
+
 ## Feature access
 
-Web Analytics metrics are available through `vercel metrics` without Observability Plus.
-
-Speed Insights metrics are available through `vercel metrics` without Observability Plus.
-
-Metrics other than Web Analytics and Speed Insights metrics require [Observability Plus](/docs/observability/observability-plus).
+Web Analytics and Speed Insights metrics are available through `vercel metrics` without Observability Plus. Other metrics require [Observability Plus](/docs/observability/observability-plus).
 
 The dashboard and CLI are complementary:
 
 - Use product dashboards for curated views.
-- Use `vercel metrics` for custom filtering, grouping, aggregations, JSON output, and agent workflows.
+- Use `vercel metrics` for custom filtering, grouping, aggregations, [querying multiple metrics and formulas in one command](#query-multiple-metrics-and-formulas), JSON output, and agent workflows.
 - Use `--all` to query across every project in the current team when you need team-wide comparisons.
 
 ## Unique options
@@ -376,6 +442,15 @@ vercel metrics schema <metric-or-prefix>
 ```
 
 Use `--json` when you are building scripts or agent workflows that need to validate available fields before querying.
+
+### Data
+
+The `--data` option runs a query with multiple metrics and formulas, passed as JSON or read from stdin with `-`. It replaces the `<metric_name>` argument. See [Query multiple metrics and formulas](#query-multiple-metrics-and-formulas) for the query fields.
+
+```bash filename="terminal"
+vercel metrics --since 24h --data '<JSON>'
+cat query.json | vercel metrics --since 24h --data -
+```
 
 ### Aggregation
 

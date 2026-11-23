@@ -17,8 +17,8 @@ summary: Vercel supports a wide range of the most popular frontend frameworks, o
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/frontend.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "6fedfc0c705540d4b1c5bb97ef88ada0f7b0c4f6f84480a86b3de2966d319332"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "2f5be77f0d9f55f5792e67bae17928e8af21207cb5c67caed32de898f1020a84"
 ---
 
 # Frontends on Vercel
@@ -33,8 +33,7 @@ Deploy Vite, Astro, React Router, and other frontend frameworks without configur
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Announcing the Build Output API](https://vercel.com/blog/build-output-api)
-- [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
+- [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify) — Migrate your website's configuration from Netlify to Vercel
 - [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
 - [Full-stack frameworks on Vercel](https://vercel.com/docs/frameworks/full-stack) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
 - [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.

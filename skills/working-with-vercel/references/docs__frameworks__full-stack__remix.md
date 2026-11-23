@@ -18,8 +18,8 @@ summary: Deploy Remix applications to Vercel and configure the Vercel Vite prese
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/full-stack/remix.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "3470e2efb60b227271e6f9cb2a4bdc679b4df2620e6878989e8be219836dcff5"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "cce61cffde94c188de305dae0b3c1f9449ddc928396e05bf3ee2a4b0559a10ae"
 ---
 
 # Remix on Vercel
@@ -34,10 +34,10 @@ Remix is a fullstack, [server-rendered](#server-side-rendering-ssr) React framew
 
 - [Remix without limits (historical)](https://vercel.com/blog/vercel-remix-integration-with-edge-functions-support)
 - [Support for Remix with Vite](https://vercel.com/changelog/support-for-remix-with-vite)
-- [Support for Remix v2](https://vercel.com/changelog/support-for-remix-v2)
-- [Remix projects can now be deployed with zero configuration](https://vercel.com/changelog/remix-projects-can-now-be-deployed-with-zero-configuration)
-- [Advanced Remix integration with streaming SSR and multi-runtime support](https://vercel.com/changelog/advanced-remix-integration-with-streaming-ssr-and-multi-runtime-support)
 - [How to ship an Elysia app on Vercel](https://vercel.com/kb/guide/ship-a-elysia-app-on-vercel) — Deploy a Elysia app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and co
+- [Support for Remix v2](https://vercel.com/changelog/support-for-remix-v2)
+- [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
+- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
 - [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
@@ -321,7 +321,7 @@ See [our docs on cache limits](/docs/cdn-cache#limits) to learn the max size and
 
 Vercel's Analytics features enable you to visualize and monitor your application's performance over time. The Analytics section in your project's dashboard offers detailed insights into your website's visitors, with metrics like top pages, top referrers, and user demographics.
 
-To use Analytics, navigate to the Analytics section in your project dashboard sidebar on Vercel and select **Enable** in the modal that appears.
+To use Analytics, open **Analytics** in your project sidebar on Vercel, then select the **Enable** button in the header.
 
 To track visitors and page views, we recommend first installing our `@vercel/analytics` package by running the terminal command below in the root directory of your Remix project:
 

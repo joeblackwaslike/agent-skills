@@ -13,8 +13,8 @@ summary: This reference provides information on how the @vercel/og package works
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/og-image-generation/og-image-api.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "1d11931e792a5ad1c0ef4c7af0a7fe45ca84e09f7b2df4510057c07bbaf1da8e"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "61de227d82931c8e271a3337373dfdde977b41ddcb4ebbd34e0323188e5f6f3b"
 ---
 
 # @vercel/og Reference
@@ -28,8 +28,8 @@ The package exposes an `ImageResponse` constructor, with the following parameter
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Encrypting parameters](https://vercel.com/kb/guide/encrypting-parameters) — Learn how to encrypt parameters so that only certain values can be passed to generate your image.
-- [Introducing OG Image Generation: Fast, dynamic social card images at the Edge](https://vercel.com/blog/introducing-vercel-og-image-generation-fast-dynamic-social-card-images)
 - [ImageResponse](https://nextjs.org/docs/app/api-reference/functions/image-response) — API Reference for the ImageResponse constructor.
+- [Introducing OG Image Generation: Fast, dynamic social card images at the Edge](https://vercel.com/blog/introducing-vercel-og-image-generation-fast-dynamic-social-card-images)
 - [Inspecting your Open Graph metadata](https://vercel.com/docs/deployments/og-preview) — Learn how to inspect and validate your Open Graph metadata through the Open Graph deployment tab.
 - [Get a repository image](https://vercel.com/docs/rest-api/vcr/get-a-repository-image) — GET /v1/vcr/repository/{idOrName}/images/{imageIdOrDigest} — Fetch an individual image from a repository, including its
 - [Image Optimization with Vercel](https://vercel.com/docs/image-optimization) — Transform and optimize images to improve page load performance.

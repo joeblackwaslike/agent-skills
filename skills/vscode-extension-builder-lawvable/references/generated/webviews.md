@@ -1,8 +1,8 @@
 ---
 title: "Webviews"
 source: "https://code.visualstudio.com/api/extension-guides/webview"
-fetched_at: "2026-11-16T12:28:04.438Z"
-sha256: "b037af41269a37f9988b871b7a3818bccd717abca38086dfa58132a5fa73fea1"
+fetched_at: "2026-11-23T14:03:48.286Z"
+sha256: "6525b71a18dd21b94d907c66d79aa07a44fefa7a1fbf34b8ee66ea305f56a96e"
 ---
 
 # Webviews
@@ -253,7 +253,7 @@ function getWebviewContent(cat: keyof typeof cats) {
     &#x3C;title>Cat Coding&#x3C;/title>
 &#x3C;/head>
 &#x3C;body>
-    &#x3C;img src="${cats[cat]}" width="300" />
+    &#x3C;img src="/assets/api/extension-guides/${cats[cat]}" width="300" />
 &#x3C;/body>
 &#x3C;/html>`;
 }
@@ -507,7 +507,7 @@ function getWebviewContent(catGifSrc: vscode.Uri) {
     &#x3C;title>Cat Coding&#x3C;/title>
 &#x3C;/head>
 &#x3C;body>
-    &#x3C;img src="${catGifSrc}" width="300" />
+    &#x3C;img src="/assets/api/extension-guides/${catGifSrc}" width="300" />
 &#x3C;/body>
 &#x3C;/html>`;
 }
@@ -1204,4 +1204,4 @@ If you'd like to learn more about VS Code extensibility, try these topics:
 - [Extension Capabilities](https://code.visualstudio.com/api/extension-capabilities/overview) - Take a look at other ways to extend VS Code.
 
  
- 11/11/2026
+ 11/18/2026

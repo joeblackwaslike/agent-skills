@@ -15,8 +15,8 @@ summary: Server actions you can install to run common platform tasks against the
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/platforms/platform-elements/actions.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "5e01f8eff8c2abda4add5b9d3d797a3abb130349312c16f2f34a5bfd09cce99f"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "7191c34ab3e0dfdd56e49d25e74596cf57d634a96f0f341873d24424eecfb53d"
 ---
 
 # Actions
@@ -29,7 +29,6 @@ Actions are server-side functions that wrap common Vercel API calls so you can a
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Can I use GitHub Enterprise Server with Vercel?](https://vercel.com/kb/guide/can-i-use-github-enterprise-server-with-vercel) — You can use GitHub Enterprise Server and GitHub Actions to deploy your application to Vercel.
 - [Deployment integration actions](https://vercel.com/docs/integrations/create-integration/deployment-integration-action) — These actions allow integration providers to set up automated tasks with Vercel deployments.
 - [Update deployment integration action](https://vercel.com/docs/rest-api/deployments/update-deployment-integration-action) — PATCH /v1/deployments/{deploymentId}/integrations/{integrationConfigurationId}/resources/{resourceId}/actions/{action} —
 - [Invoice Actions](https://vercel.com/docs/rest-api/marketplace/invoice-actions) — POST /v1/installations/{integrationConfigurationId}/billing/invoices/{invoiceId}/actions — This endpoint allows the part

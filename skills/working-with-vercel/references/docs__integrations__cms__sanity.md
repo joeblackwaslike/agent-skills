@@ -18,8 +18,8 @@ summary: Learn how to integrate Sanity with Vercel. Follow our tutorial to deplo
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/cms/sanity.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "35193c9fd9df6772cdf18da0912d8c2bd41978f2e65b126d6cca3ed047ea6fb5"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "ea805a95f31c7dfff01314114bde273250727bc00a8f942be8ad96caec6a6f5d"
 ---
 
 # Vercel Sanity Integration
@@ -35,9 +35,6 @@ Sanity is a headless content management system that provides real-time collabora
 - [Sanity is now available on the Vercel Marketplace](https://vercel.com/changelog/sanity-vercel-marketplace)
 - [Vercel + Sanity: Innovating on a faster, more collaborative Web](https://vercel.com/blog/vercel-sanity-innovating-on-a-faster-collaborative-web)
 - [Draft documentation fixes from reader feedback with Sanity and eve](https://vercel.com/kb/guide/sanity-eve-agent) — Build an autonomous agent that drafts fixes in Sanity, stages them for human review, and calls the model through AI Gate
-- [Visual Editing: Click-to-edit content for headless CMSes](https://vercel.com/blog/visual-editing)
-- [Enhanced content management for your headless CMS](https://vercel.com/blog/enhanced-content-management-for-headless-cmses)
-- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Vercel and Contentful Integration](https://vercel.com/docs/integrations/cms/contentful) — Integrate Vercel with Contentful to deploy your content.
 - [Vercel Agility CMS Integration](https://vercel.com/docs/integrations/cms/agility-cms) — Learn how to integrate Agility CMS with Vercel. Follow our tutorial to deploy the Agility CMS template or install the in
 - [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.

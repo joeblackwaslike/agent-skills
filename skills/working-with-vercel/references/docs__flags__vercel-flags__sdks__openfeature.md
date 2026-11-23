@@ -17,8 +17,8 @@ summary: Use the vendor-neutral OpenFeature API with Vercel Flags as your provid
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/vercel-flags/sdks/openfeature.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "40d28568acf385b37a53a82f7e91f63b56b0fd85368410e986339efde085f9fd"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "22ac507cfce369ce2b277196fa3343973310dd23054d9343bd7b93524409e654"
 ---
 
 # Using OpenFeature with Vercel Flags
@@ -36,7 +36,7 @@ sha256: "40d28568acf385b37a53a82f7e91f63b56b0fd85368410e986339efde085f9fd"
 - [Flags SDK now supports OpenFeature](https://vercel.com/changelog/flags-sdk-now-supports-openfeature)
 - [OpenFeature](https://flags-sdk.dev/docs/providers/openfeature)
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
-- [Using the Core Library](https://vercel.com/docs/flags/vercel-flags/sdks/core) — Use the Vercel Flags core evaluation library directly for custom setups.
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
 - [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference) — API reference for the Flags SDK for Next.js and SvelteKit.
 

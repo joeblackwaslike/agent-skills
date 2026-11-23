@@ -17,8 +17,8 @@ summary: Configure which microfrontend handles each path and understand how Verc
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/microfrontends/routing.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "4386aae6a49d7f9dc7391ec41ecd0944a9032694c58b82cdc2ef481c5c7e7534"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "24762c794be0095d9148ac458dd66054b283cd957a7d26045b228ed8065a9496"
 ---
 
 # Microfrontends Routing
@@ -35,12 +35,13 @@ Microfrontends routing determines which application handles a path and which dep
 - [Microfrontends Routing is now free for Firewall-mitigated traffic](https://vercel.com/changelog/microfrontends-routing-is-now-free-for-firewall-mitigated-traffic)
 - [withWorkflow](https://workflow-sdk.dev/docs/api-reference/workflow-next/with-workflow) — Wrap your Next.js config with withWorkflow to enable workflow directive transformation.
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
-- [Preview links between microfrontends projects now serve all paths](https://vercel.com/changelog/preview-links-between-microfrontends-projects-now-serve-all-paths)
+- [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends) — Learn how to migrate legacy applications using microfrontends
+- [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify) — Migrate your website's configuration from Netlify to Vercel
 - [Getting started with microfrontends](https://vercel.com/docs/microfrontends/quickstart) — Learn how to get started with microfrontends on Vercel.
-- [Microfrontends Configuration](https://vercel.com/docs/microfrontends/configuration) — Configure your microfrontends.json.
-- [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
-- [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Managing with the Vercel Toolbar](https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar) — Learn how to use the Vercel Toolbar to make it easier to manage microfrontends.
+- [Microfrontends](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends) — Vercel MCP tools for microfrontends.
+- [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
+- [Routing](https://vercel.com/docs/routing) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
 
 Full cross-link map for this page: [/docs/microfrontends/routing.graph.md](/docs/microfrontends/routing.graph.md)
 <!-- /docsgraph:related -->
@@ -222,12 +223,29 @@ Domains that use this microfrontends routing will have an M icon next to the nam
 
 ![The M icon on the deployment page indicates that the domain has microfrontends routing.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/microfrontends/mfe-domain-icon-light.png)
 
-Vercel sets microfrontends routing for a domain when the domain is created or updated, such as when a deployment is built, promoted, or rolled back. For each project in the microfrontends group, the domain or URL type determines which deployment Vercel selects:
+### Domains that use microfrontends routing
+
+Every domain in a microfrontends group routes requests by the default application's `microfrontends.json`, whichever project it belongs to. This includes a child application's production domains, branch URLs, and deployment URLs. A request to any of these domains can serve any path in the group, and the default application's [security settings](/docs/microfrontends/managing-microfrontends/security) apply.
+
+### Disable microfrontends routing for a child application
+
+To make a child application's domains serve every path from that child application only:
+
+1. Open the child application's project and select **Settings**.
+2. Select **Microfrontends**.
+3. Disable **Microfrontends Routing** and save.
+4. Redeploy the child application.
+
+Existing deployment URLs keep the routing they had when Vercel created them.
+
+### Which deployment each domain routes to
+
+Vercel sets microfrontends routing for a domain when the domain is created or updated, such as when a deployment is built, promoted, or rolled back. For each project in the microfrontends group, the type of domain or URL that received the request determines which deployment Vercel selects. This applies to every domain in the group, whether it belongs to the default application or a child application:
 
 | Domain or URL                                                                                                     | Routing order for each microfrontend                                                                                                                                                               | When routing changes                                                                 |
 | ----------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
 | Production domain                                                                                                 | The project's current production deployment.                                                                                                                                                       | When you promote or roll back the project's production deployment.                   |
-| Custom environment domain                                                                                         | A deployment in the custom environment with the same name. If one is unavailable, Vercel uses the group's configured [fallback environment](/docs/microfrontends/managing-microfrontends#fallback-environment). | When the matching custom environment or fallback environment receives a deployment. |
+| Custom environment domain                                                                                         | A deployment in the custom environment with the same name. Vercel uses the group's configured [fallback environment](/docs/microfrontends/managing-microfrontends#fallback-environment) only when the project has no custom environment with that name. | When the matching custom environment or fallback environment receives a deployment. |
 | Branch URL or [domain assigned to a Git branch](/docs/domains/working-with-domains/assign-domain-to-a-git-branch) | The latest deployment for the matching Git branch. If one is unavailable, Vercel uses the group's configured fallback environment.                                                                | When the branch or fallback environment receives a deployment.                       |
 | Deployment URL                                                                                                    | A deployment from the same commit. If one is unavailable, Vercel uses the branch deployment captured when the URL was created, followed by the fallback deployment captured at the same time.      | The routing targets remain fixed to the point in time when Vercel created the URL.    |
 
@@ -236,30 +254,25 @@ Vercel sets microfrontends routing for a domain when the domain is created or up
 Domains assigned to the [production environment](/docs/deployments/environments#production-environment) always route to each project's current production deployment.
 This is the same deployment available through the project's production domain. If you [roll back](/docs/instant-rollback) a microfrontend project, microfrontends routing uses the rollback deployment.
 
-Domains assigned to a [custom environment](/docs/deployments/environments#custom-environments) route requests to other microfrontends in custom environments with the same name. If a matching deployment is unavailable, Vercel uses the [fallback environment](/docs/microfrontends/managing-microfrontends#fallback-environment) configuration.
+Domains assigned to a [custom environment](/docs/deployments/environments#custom-environments) route requests to other microfrontends in custom environments with the same name. If the other project has a custom environment with that name, Vercel always routes to it, and the request fails with [MICROFRONTENDS\_MISSING\_FALLBACK\_ERROR](/docs/errors/microfrontends_missing_fallback_error) when that environment has no deployment. Vercel uses the [fallback environment](/docs/microfrontends/managing-microfrontends#fallback-environment) configuration only when the other project has no custom environment with that name.
 
 ### Branch URL routing
 
-Automatically generated branch URLs and domains assigned to a Git branch route to the latest deployment for each project on that branch.
+Automatically generated branch URLs and domains assigned to a Git branch route to the latest deployment for each project on that branch. This requires every project to be connected to Git.
 
-Projects in a monorepo share a Git repository, commits, and branches, so
-Vercel links their Preview Deployments using the shared commit. For
-Git-connected projects in separate repositories, open the default
-application's **Settings**, select **Microfrontends**, enable
-**Cross-Repository Branch Routing**, and save. Vercel then links the latest
-Preview Deployments whose branch names match.
+Projects in a monorepo share a Git repository, commits, and branches, so Vercel links their Preview Deployments by branch automatically. For Git-connected projects in separate repositories, open the default application's **Settings**, select **Microfrontends**, enable **Cross-Repository Branch Routing**, and save. Vercel then links the latest Preview Deployments whose branch names match.
 
-For example, when you preview the `new-checkout` branch of one project,
-requests to other projects in the microfrontends group use their latest
-`new-checkout` Preview Deployments when available.
+For example, when you preview the `new-checkout` branch of one project, requests to other projects in the microfrontends group use their latest `new-checkout` Preview Deployments when available.
 
-If no deployment exists for the project on the branch, Vercel routes requests using the [fallback environment](/docs/microfrontends/managing-microfrontends#fallback-environment) configuration.
+If no deployment exists for the project on the branch, or the projects aren't linked by branch, Vercel routes requests using the [fallback environment](/docs/microfrontends/managing-microfrontends#fallback-environment) configuration.
 
 ### Deployment URL routing
 
-Automatically generated deployment URLs preserve the state of the microfrontends group when Vercel creates the URL. For each project, Vercel first routes to a deployment from the same commit. If that deployment is unavailable, Vercel routes to the branch deployment captured when the URL was created, then to the [fallback environment](/docs/microfrontends/managing-microfrontends#fallback-environment) deployment captured at the same time.
+Automatically generated deployment URLs preserve the state of the microfrontends group when Vercel creates the URL. For each project, Vercel first routes to a deployment from the same commit and environment that exists when the URL is created. If there's no such deployment, Vercel routes to the branch deployment captured when the URL was created, then to the [fallback environment](/docs/microfrontends/managing-microfrontends#fallback-environment) deployment captured at the same time.
 
-Future deployments do not change these targets, so the deployment URL continues to represent the same point in time across the microfrontends group.
+Future deployments do not change these targets, so the deployment URL continues to represent the same point in time across the microfrontends group. This includes deployments of other projects on the same commit that finish after the URL was created.
+
+Because [every domain in the group uses microfrontends routing](#domains-that-use-microfrontends-routing), the deployment URL of any project that built a commit is a fixed snapshot of the group at that commit. You don't need a default application deployment on every commit. For example, if [Skip Unaffected Projects](/docs/monorepos#skipping-unaffected-projects) skips the default application on a commit, a child application's deployment URL for that commit serves the default application's paths from the branch deployment captured when the URL was created.
 
 ## Identify the microfrontend for a path
 

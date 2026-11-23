@@ -14,13 +14,29 @@ summary: List the projects that share flags with a project.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flags_project_connections.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "e73248d8e9c8b84265b3f31a2939684da0473c69e37e950943a2fea4fe6199ae"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "130cfacb2f6a0f5f70835146db1b285e1a8607f36b5d4e32f0b76d7464b2e235"
 ---
 
 # list_flags_project_connections
 
 List the flag connections for a project within one team.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [Evaluate Vercel Flags from another project without sharing SDK keys.](https://vercel.com/changelog/evaluate-vercel-flags-from-another-project-without-sharing-sdk-keys)
+- [create_flags_project_connection](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/create_flags_project_connection) — Grant another project access to a project's flags.
+- [List flags project connections](https://vercel.com/docs/rest-api/feature-flags/list-flags-project-connections) — GET /v1/projects/{projectIdOrName}/feature-flags/connections — Lists the flags project connections of a project. By defa
+- [get_flags_project_disconnection_link](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/get_flags_project_disconnection_link) — Open the dashboard to disconnect a project's flags.
+- [Connect a project to the flags of this project](https://vercel.com/docs/rest-api/feature-flags/connect-a-project-to-the-flags-of-this-project) — PUT /v1/projects/{projectIdOrName}/feature-flags/connections — Connects a project in the same team to the flags of this
+- [Connecting Projects to Share Flags](https://vercel.com/docs/flags/vercel-flags/project-connections) — Read another project's Vercel Flags using your project's identity, without copying SDK keys.
+
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flags_project_connections.graph.md](/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flags_project_connections.graph.md)
+<!-- /docsgraph:related -->
 
 Use `role: "source"` (the default) to list projects that can read this project's flags. Use `role: "consumer"` to list projects whose flags it can read. Connections apply across environments.
 

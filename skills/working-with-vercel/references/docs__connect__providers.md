@@ -16,8 +16,8 @@ summary: What your service needs to declare so Vercel Connect can discover, regi
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/connect/providers.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "27fa6631c9407e8b2c1a2a2c6e2a40c90a857c418a9059ecfbde8509a6e54353"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "b1f76a80a3211f3b22337ffceeb40a3137ee0fa745aea464ed745a52cfb76371"
 ---
 
 # For Service Providers
@@ -35,9 +35,9 @@ If you are a service owner, this page covers what your service needs to support 
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
 - [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect)
-- [Vercel Connect: Secure access to external services for your agents](https://vercel.com/changelog/vercel-connect-secure-access-to-external-services-for-your-agents)
 - [Better Auth with Vercel Connect](https://vercel.com/docs/connect/frameworks/better-auth) — Use Vercel Connect as a generic OAuth provider for Better Auth in a Next.js application.
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
+- [AI SDK and MCP with Vercel Connect](https://vercel.com/docs/connect/frameworks/ai-sdk-and-mcp) — Connect an AI SDK app to an OAuth-protected MCP server with Vercel Connect, then handle user consent and tool approval.
 
 Full cross-link map for this page: [/docs/connect/providers.graph.md](/docs/connect/providers.graph.md)
 <!-- /docsgraph:related -->

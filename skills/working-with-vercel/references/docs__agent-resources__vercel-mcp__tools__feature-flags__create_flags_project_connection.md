@@ -14,13 +14,29 @@ summary: "Grant another project access to a project's flags."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/create_flags_project_connection.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "3f24511e5a12bc0085cc9962e72b5fec6f531e30cc0b9e33f237deb82b90b5f9"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "047138ef9d90b32f56c65cc12122a5086f96db43456d62bbdfa5e5ebd22bfae8"
 ---
 
 # create_flags_project_connection
 
 Connect two projects in the same team. The source owns the flags; the consumer receives read and evaluate access across environments. Your consumer project's OIDC token selects the environment. Connections do not permit flag changes.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [list_flags_project_connections](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flags_project_connections) — List the projects that share flags with a project.
+- [Evaluate Vercel Flags from another project without sharing SDK keys.](https://vercel.com/changelog/evaluate-vercel-flags-from-another-project-without-sharing-sdk-keys)
+- [get_flags_project_disconnection_link](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/get_flags_project_disconnection_link) — Open the dashboard to disconnect a project's flags.
+- [Connect a project to the flags of this project](https://vercel.com/docs/rest-api/feature-flags/connect-a-project-to-the-flags-of-this-project) — PUT /v1/projects/{projectIdOrName}/feature-flags/connections — Connects a project in the same team to the flags of this
+- [List flags project connections](https://vercel.com/docs/rest-api/feature-flags/list-flags-project-connections) — GET /v1/projects/{projectIdOrName}/feature-flags/connections — Lists the flags project connections of a project. By defa
+- [Disconnect a project from the flags of this project](https://vercel.com/docs/rest-api/feature-flags/disconnect-a-project-from-the-flags-of-this-project) — DELETE /v1/projects/{projectIdOrName}/feature-flags/connections/{consumerProjectId} — Disconnects a project from the fla
+
+Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/feature-flags/create_flags_project_connection.graph.md](/docs/agent-resources/vercel-mcp/tools/feature-flags/create_flags_project_connection.graph.md)
+<!-- /docsgraph:related -->
 
 Set `projectIdOrName` to the source and `requestBody.consumerProjectId` to the consumer. Confirm both projects before creating the connection. On a project-scoped MCP connection, connect to the source project.
 

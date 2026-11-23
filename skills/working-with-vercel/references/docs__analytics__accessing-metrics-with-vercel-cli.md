@@ -15,8 +15,8 @@ summary: Use the Vercel CLI to query Web Analytics metrics from your terminal.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "8f6e7bfb00b55c243e1b172f317dd696a29a238e7aa487c4c40de28f90ce5b9a"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "1d4514d61a24c31746caa07c4cd4648186e24cbe040825852164cb97c162f290"
 ---
 
 # Accessing Metrics with Vercel CLI
@@ -31,8 +31,8 @@ Use `vercel metrics` to query Web Analytics data from your terminal. You can rep
 
 - [Query Web Analytics from the Vercel CLI](https://vercel.com/changelog/query-web-analytics-from-the-vercel-cli)
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
-- [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
+- [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
 - [Query](https://vercel.com/docs/query) — Query and visualize your Vercel usage, traffic, and more in observability.
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 
@@ -78,8 +78,23 @@ List the most common custom event names:
 vercel metrics vercel.analytics.event.count --group-by eventName --since 7d --limit 20 --project project-name --environment production
 ```
 
-> **💡 Note:** Bounce Rate is not available through `vercel metrics`; use the Web Analytics
-> dashboard to view Bounce Rate.
+### Estimate bounce rate with --data
+
+The `--data` option runs a query with [multiple metrics and formulas](/docs/cli/metrics#query-multiple-metrics-and-formulas), letting you compute ratios such as bounce rate that a single-metric flag query cannot express. The following query counts visitors with exactly one page view with the `singleton` aggregation on `vercel.analytics.page_view.count` over `visitorId`, counts total visitors with the `unique` aggregation over `visitorId`, and divides the two to compute a bounce rate from page-view data:
+
+```bash filename="terminal"
+vercel metrics --since 7d --project project-name --data '{
+  "filter": "environment:production",
+  "metrics": {
+    "bounced": {"metric": "vercel.analytics.page_view.count", "aggregation": "singleton", "dimensions": ["visitorId"]},
+    "visitors": {"metric": "vercel.analytics.page_view.count", "aggregation": "unique", "dimensions": ["visitorId"]}
+  },
+  "formulas": {"bounceRate": "bounced / visitors * 100"},
+  "outputs": ["bounceRate"]
+}'
+```
+
+This value is a bounce rate computed from page-view data and may differ from the Bounce Rate shown in the Web Analytics dashboard.
 
 ## Query capabilities beyond the dashboard
 

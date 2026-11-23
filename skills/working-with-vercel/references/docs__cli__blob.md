@@ -17,8 +17,8 @@ summary: Learn how to interact with Vercel Blob storage using the vercel blob CL
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/blob.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "2afe52a0da65e8fbfc694f71612687a0ce7fa1ceb56eb694cc17f33bfa053d63"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "98a44296f733111b8bceb3847fea214adb48d562ff7d46f65f6229378369ec6d"
 ---
 
 # vercel blob
@@ -34,12 +34,11 @@ The `vercel blob` command is used to interact with [Vercel Blob](/docs/vercel-bl
 - [Vercel Blob CLI is now available](https://vercel.com/changelog/vercel-blob-cli-is-now-available)
 - [Vercel Blob now available in all Vercel Regions](https://vercel.com/changelog/vercel-blob-now-available-in-all-vercel-regions)
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
-- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [Managing Vercel Blob storage from the CLI](https://vercel.com/docs/vercel-blob/manage-blob-storage) — Create blob stores, upload files, list contents, and manage storage using the CLI.
 - [vercel storage](https://vercel.com/docs/cli/storage) — List, create, inspect, and delete storage resources, and manage their project connections with the Vercel CLI.
+- [Vercel Blob examples](https://vercel.com/docs/vercel-blob/examples) — Examples on how to use Vercel Blob in your applications
 - [vercel global-config](https://vercel.com/docs/cli/global-config) — Manage Global Config stores from the Vercel CLI: list, create, inspect, update, delete, and manage items, read tokens, a
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
-- [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store) — POST /storage/stores/blob — Create a Blob store
 
 Full cross-link map for this page: [/docs/cli/blob.graph.md](/docs/cli/blob.graph.md)
 <!-- /docsgraph:related -->
@@ -55,6 +54,7 @@ The `vercel blob` command supports the following operations:
 - [`put-image`](#put-image) - Optimize an image and store the result in the Blob store
 - [`delete`](#delete) - Delete a file from the Blob store
 - [`copy`](#copy) - Copy a file in the Blob store
+- [`set-ttl`](#set-ttl) - Set or clear the TTL of existing blobs
 - [`get`](#get) - Download a blob from the Blob store
 - `signed-token` - Issue a short-lived signed token for Blob operations. See [Vercel Signed URLs](/docs/vercel-blob/vercel-signed-urls)
 - `presign` - Generate a presigned URL for a Blob operation. See [Vercel Signed URLs](/docs/vercel-blob/vercel-signed-urls)
@@ -140,6 +140,28 @@ vercel blob copy [from-url-or-pathname] [to-pathname] --access private
 
 *Using the \`vercel blob copy\` command to copy a file in
 the Blob store.*
+
+### set-ttl
+
+> **💡 Note:** A TTL counts from the original upload date. Blobs already older than the TTL
+> you set are deleted within a day.
+
+```bash filename="terminal"
+vercel blob set-ttl [url-or-pathname...] --ttl-days 7 [--yes]
+```
+
+*Using the \`vercel blob set-ttl\` command to delete one or more existing blobs
+7 days after they were uploaded. In a terminal, the command lists the blobs
+and asks you to confirm. Use \`--yes\` to skip the prompt, and pass it in
+scripts, CI environments, and with \`--json\`.*
+
+```bash filename="terminal"
+vercel blob set-ttl [url-or-pathname...] --clear-ttl
+```
+
+*Using the \`vercel blob set-ttl\` command with the \`--clear-ttl\` option to
+remove the TTL so the blobs are kept indefinitely. Clearing a TTL does not
+ask for confirmation.*
 
 ### get
 
@@ -328,7 +350,7 @@ vercel blob put-image photo.png --pathname images/photo.webp --width 1200 --form
 
 ### JSON
 
-You can use the `--json` option to print the result as JSON. This option applies to the `list`, `put-image`, `signed-token`, `presign`, and `list-stores` commands. With `put-image`, the command prints the stored blob, including its `url`, `downloadUrl`, `pathname`, and `contentType`, instead of only the URL:
+You can use the `--json` option to print the result as JSON. This option applies to the `list`, `put-image`, `set-ttl`, `signed-token`, `presign`, and `list-stores` commands. With `set-ttl`, the command prints `{ results, summary }` with one entry per blob and requires `--yes`. With `put-image`, the command prints the stored blob, including its `url`, `downloadUrl`, `pathname`, and `contentType`, instead of only the URL:
 
 ```bash filename="terminal"
 vercel blob put-image photo.png --pathname images/photo.png --width 1200 --access public --json
@@ -358,6 +380,17 @@ vercel blob put image.jpg --access private --cache-control-max-age 86400
 
 *Using the \`vercel blob put\` command with the
 \`--cache-control-max-age\` option.*
+
+### TTL Days
+
+You can use the `--ttl-days` option to delete a blob automatically that many days after it was uploaded, from `1` to `730`. It applies to `put`, `put-image`, `copy`, `presign --operation put`, and `set-ttl`. Setting a TTL adds one [Advanced Operation](/docs/vercel-blob/usage-and-pricing#usage) per started 60 days of TTL on top of the write. Learn more in [Expire blobs automatically](/docs/vercel-blob/using-blob-sdk#expire-blobs-automatically).
+
+```bash filename="terminal"
+vercel blob put report.csv --access private --ttl-days 7
+```
+
+*Using the \`vercel blob put\` command with the
+\`--ttl-days\` option.*
 
 ### Force
 

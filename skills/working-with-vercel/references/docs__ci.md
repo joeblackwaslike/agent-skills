@@ -17,8 +17,8 @@ summary: Configure Vercel CI to run Turborepo tasks with custom CPU allocations 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ci.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "b0acc7dcc59bad1f957eb07096e5bcc83a657a1d4e2e8d24ba8a2dce9abd05ad"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "30b981cc550dc49c62b95846dcb98ef3fe54324821c2e3cc8135e2c659e2ffa1"
 ---
 
 # Vercel CI
@@ -35,7 +35,6 @@ Vercel CI intelligently schedules your tasks so that you do as little work as po
 - [Vercel CI is now in beta](https://vercel.com/changelog/vercel-ci-is-now-in-beta)
 - [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel) — Deploy your Turborepo on Vercel and run tasks with Vercel CI using zero-config Remote Caching.
 - [Vercel CI no longer requires a linked Vercel project](https://vercel.com/changelog/vercel-ci-no-longer-requires-a-linked-vercel-project)
-- [Faster iteration with Turborepo and Vercel Remote Cache](https://vercel.com/blog/vercel-remote-cache-turbo)
 - [Use Remote Caching from External CI/CD](https://vercel.com/docs/monorepos/remote-caching/external-ci-cd) — Authenticate the Turborepo CLI to Vercel Remote Cache from your CI/CD provider using OpenID Connect \\(OIDC\\) or a Person
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Enable or disable Vercel CI for a connected repository](https://vercel.com/docs/rest-api/vercel-ci/enable-or-disable-vercel-ci-for-a-connected-repository) — PATCH /v1/vercel-ci/repository-settings — Update Repository Settings

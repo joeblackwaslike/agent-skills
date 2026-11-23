@@ -17,8 +17,8 @@ summary: Connect Postgres, Redis, NoSQL, and other storage solutions through the
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/marketplace-storage.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "8e32b91bab33044b4147f3f4337996848ae514ad73d200998d56dcd32fa33aa2"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "61e6d52806eaab0356797de1f53645a93dd3c27a390f96a67e1ffae406644854"
 ---
 
 # Storage on Vercel Marketplace
@@ -33,7 +33,6 @@ The [Vercel Marketplace](https://vercel.com/marketplace?category=storage) provid
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Introducing the Vercel Marketplace](https://vercel.com/blog/introducing-the-vercel-marketplace)
 - [Native Marketplace integrations now support custom environments](https://vercel.com/changelog/custom-environments-support-for-marketplace-integrations)
 - [Vercel Marketplace database browser now supports Redis](https://vercel.com/changelog/vercel-marketplace-database-browser-now-supports-redis)
 - [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
@@ -41,10 +40,11 @@ The [Vercel Marketplace](https://vercel.com/marketplace?category=storage) provid
 - [How Docker Compose concepts map to Vercel](https://vercel.com/kb/guide/docker-compose-concepts-on-vercel) — Translate your Docker Compose file to Vercel: Compose services become Vercel Services, networks become bindings, and vol
 - [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
+- [Introducing the Vercel Marketplace](https://vercel.com/blog/introducing-the-vercel-marketplace)
 - [Integrated billing for Supabase, Redis, and EdgeDB](https://vercel.com/changelog/integrated-billing-for-supabase-redis-and-edgedb)
-- [Introducing storage on Vercel](https://vercel.com/blog/vercel-storage)
-- [Query and manage Marketplace databases from the dashboard](https://vercel.com/changelog/query-and-manage-marketplace-databases-from-the-dashboard)
 - [Vercel Storage overview](https://vercel.com/docs/storage) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
+- [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
+- [Marketplace Vercel API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel) — Learn how to call Vercel API endpoints to interact with Vercel resources
 
 Full cross-link map for this page: [/docs/marketplace-storage.graph.md](/docs/marketplace-storage.graph.md)
 <!-- /docsgraph:related -->

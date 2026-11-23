@@ -18,8 +18,8 @@ summary: Integrate Vercel Flags into your Next.js or SvelteKit application using
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "52eab780861bde20334b81eda46b361f835eb35eab888a8a6fa0225d999575ed"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "5cde91b534920c754c680c026909346e84f34eef1060168484aa69fa543b7a45"
 ---
 
 # Using the Flags SDK with Vercel Flags
@@ -35,8 +35,7 @@ The [Flags SDK](/docs/flags/flags-sdk-reference) is the recommended way to use V
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
 - [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
-- [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
-- [How Vercel Flags are evaluated](https://vercel.com/kb/guide/how-vercel-flags-are-evaluated) — Learn how Vercel Flags determines a flag’s value across environments using evaluation context, targeting, rules, and fal
+- [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit) — Using the Flags SDK in SvelteKit
 - [Flags SDK now evaluates flags 10x faster](https://vercel.com/changelog/flags-sdk-now-evaluates-flags-10x-faster)
 - [Vercel Flags starts 7x faster and no longer extends function duration](https://vercel.com/changelog/vercel-flags-starts-7x-faster-and-no-longer-extends-function-duration)
 

@@ -10,15 +10,15 @@ prerequisites:
 related:
   - /docs/project-configuration/vercel-json
   - /docs/routing/redirects/configuration-redirects
+  - /docs/domains/working-with-domains/add-a-domain
   - /docs/headers/request-headers
   - /docs/environment-variables
-  - /docs/caching/cache-control-headers
 summary: Learn how to use rewrites to send users to different URLs without modifying the visible URL.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/routing/rewrites.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "3c3f1bd239540dbce801eeb84d4535d4af941477068bcd7e47acf8a8abeb0499"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "85b6a14f7baa7c0d112679c652278643ff7cbc9ffb4cb3c470669e1a79f3ad51"
 ---
 
 # Rewrites on Vercel
@@ -31,17 +31,16 @@ A rewrite routes a request to a different destination without changing the URL i
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
 - [Vercel CDN now respects Cache-Control headers from external origins by default](https://vercel.com/changelog/vercels-cdn-now-respects-cache-control-headers-from-external-origins-by-default)
 - [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
-- [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
 - [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy) — Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading th
-- [Redirects and rewrites now available in Observability](https://vercel.com/changelog/redirects-and-rewrites-now-available-in-observability)
+- [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify) — Migrate your website's configuration from Netlify to Vercel
+- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
 - [Redirects](https://vercel.com/docs/routing/redirects) — Learn how to use redirects on Vercel to instruct Vercel's platform to redirect incoming requests to a new URL.
 - [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
-- [Incremental Migration to Vercel](https://vercel.com/docs/incremental-migration) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
 - [Reverse Proxy Servers and Vercel](https://vercel.com/docs/security/reverse-proxy) — Learn why reverse proxy servers are not recommended with Vercel's firewall.
+- [Incremental Migration to Vercel](https://vercel.com/docs/incremental-migration) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
 - [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 
 Full cross-link map for this page: [/docs/routing/rewrites.graph.md](/docs/routing/rewrites.graph.md)
@@ -180,6 +179,30 @@ Example: Forward API requests to an external endpoint:
 ```
 
 A request to `/api/users` will be forwarded to `https://api.example.com/users` without changing the URL in the browser.
+
+### Proxy an entire site or multiple origins
+
+To put Vercel in front of an entire external site, use a catch-all `source`. You can also send different paths to different origins from one project. Vercel applies the first rewrite that matches a request, so list specific paths before the catch-all:
+
+```json filename="vercel.json"
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://api.example.com/:path*"
+    },
+    {
+      "source": "/:path*",
+      "destination": "https://www.example.com/:path*"
+    }
+  ]
+}
+```
+
+A request to `/api/users` is forwarded to `https://api.example.com/users`, and every other request is forwarded to the same path on `https://www.example.com`.
+
+After you [add your domain](/docs/domains/working-with-domains/add-a-domain) to the project, requests to that domain pass through Vercel's CDN before they reach each origin. To cache the responses, see [Caching rewrites to external origins](#caching-rewrites-to-external-origins). To make sure your origin only accepts requests that come through Vercel, see [Restricting your origin to Vercel traffic](#restricting-your-origin-to-vercel-traffic).
 
 ### Identifying the visitor at your origin
 

@@ -18,8 +18,8 @@ summary: "In this quickstart guide, you'll discover how to create and execute a 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/query/monitoring/quickstart.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "2e6fbeeee5230cce5d7b20f33beae25a1707e7cda08912c4f65e9013722584ed"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "83eee2a140855ba125406dff84ed2ff46fa47fff2b43241ef1f9aa7fbee32172"
 ---
 
 # Monitoring Quickstart
@@ -34,13 +34,11 @@ Monitoring is now
 
 - [Introducing Vercel Monitoring](https://vercel.com/blog/introducing-monitoring)
 - [Run and share custom queries in Observability Plus](https://vercel.com/changelog/run-and-share-custom-queries-in-observability-plus)
-- [Create custom monitors in Vercel Observability](https://vercel.com/changelog/create-custom-monitors-in-vercel-observability)
-- [Monitoring is now available to view traffic and performance data for improved observability ](https://vercel.com/changelog/monitoring-is-now-available-to-view-traffic-and-performance-data-for)
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
+- [POST /v2/observability/query](https://vercel.com/docs/rest-api/untagged/createobservabilityquery) — POST /v2/observability/query — POST /v2/observability/query
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
-- [Observability](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability) — Vercel MCP tools for observability.
 
 Full cross-link map for this page: [/docs/query/monitoring/quickstart.graph.md](/docs/query/monitoring/quickstart.graph.md)
 <!-- /docsgraph:related -->

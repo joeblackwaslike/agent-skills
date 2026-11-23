@@ -17,8 +17,8 @@ summary: "View and override your application's feature flags from the Vercel Too
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/flags-explorer.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "a8d6272134410df3152d8b589b28081d440a48235e383622b723436fa7ff0b5d"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "f014323098ee571ca5edcaf88a3a98c6988c49880b7273cef7adcc9ecdf4bc71"
 ---
 
 # Flags Explorer
@@ -42,8 +42,8 @@ The Flags Explorer is a feature of the [Vercel Toolbar](/docs/vercel-toolbar) th
 - [LaunchDarkly is now available on the Vercel Marketplace](https://vercel.com/changelog/launchdarkly-is-now-available-on-the-vercel-marketplace)
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
-- [Flags Explorer is now generally available](https://vercel.com/changelog/flags-explorer-is-now-generally-available)
 - [Introducing feature flag management from the Vercel Toolbar](https://vercel.com/blog/toolbar-feature-flags)
+- [Flags Explorer is now generally available](https://vercel.com/changelog/flags-explorer-is-now-generally-available)
 - [View and override feature flags from the Vercel Toolbar](https://vercel.com/changelog/view-and-override-feature-flags-from-the-vercel-toolbar)
 
 Full cross-link map for this page: [/docs/flags/flags-explorer.graph.md](/docs/flags/flags-explorer.graph.md)
@@ -57,7 +57,7 @@ Team members can access the Flags Explorer once they have activated the toolbar.
 
 ## View and override flags in the toolbar
 
-Before you can use with the Flags Explorer, ensure that your team has set up both [feature flags](/docs/flags/flags-explorer/getting-started) and the [Vercel Toolbar](/docs/vercel-toolbar/in-production-and-localhost) in the environment you are using,
+Before you can use the Flags Explorer, ensure that your team has set up both [feature flags](/docs/flags/flags-explorer/getting-started) and the [Vercel Toolbar](/docs/vercel-toolbar/in-production-and-localhost) in the environment you are using.
 
 To see and override feature flags for your application:
 

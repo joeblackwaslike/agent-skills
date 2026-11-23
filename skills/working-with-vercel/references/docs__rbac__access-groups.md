@@ -15,8 +15,8 @@ summary: Learn how to configure access groups for team members on a Vercel accou
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/rbac/access-groups.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "59d3f5dc4fb57ae008f7bdfb0da596a6351ff2ba9b36f8793f90c54cc26afb6e"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "37adaba5281a9d6e9408366edd8ffdb3d5ea9493467450b141a5e08912d9b36d"
 ---
 
 # Access Groups
@@ -39,7 +39,7 @@ Access Groups provide a way to manage groups of Vercel users across projects on 
 - [List access groups for a team, project or member](https://vercel.com/docs/rest-api/access-groups/list-access-groups-for-a-team-project-or-member) — GET /v1/access-groups — List access groups
 - [Create an access group project](https://vercel.com/docs/rest-api/access-groups/create-an-access-group-project) — POST /v1/access-groups/{accessGroupIdOrName}/projects — Allows creation of an access group project
 - [Creates an access group](https://vercel.com/docs/rest-api/access-groups/creates-an-access-group) — POST /v1/access-groups — Allows to create an access group
-- [Reads an access group project](https://vercel.com/docs/rest-api/access-groups/reads-an-access-group-project) — GET /v1/access-groups/{accessGroupIdOrName}/projects/{projectId} — Allows reading an access group project
+- [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 
 Full cross-link map for this page: [/docs/rbac/access-groups.graph.md](/docs/rbac/access-groups.graph.md)
 <!-- /docsgraph:related -->
@@ -47,6 +47,8 @@ Full cross-link map for this page: [/docs/rbac/access-groups.graph.md](/docs/rba
 An Access Group consists of one or many projects in a team and assigns project roles to team members. Any team member included in an Access Group gets assigned the projects in that Access Group. They also get a default role.
 
 Team administrators can apply automatic role assignments for default roles. And for more restricted projects, you can ensure only a subset of users have access to those projects. This gets handled with project-level role-based access control (RBAC).
+
+If your team isn't on the Enterprise plan, [contact our sales team](/contact/sales) to get access to Access Groups.
 
 ![Example access group relationship diagram](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/rbac/access-groups-light.png?lightbox)
 

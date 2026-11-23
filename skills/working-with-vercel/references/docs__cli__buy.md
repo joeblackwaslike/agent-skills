@@ -16,8 +16,8 @@ summary: Learn how to purchase Vercel products like credits, addons, subscriptio
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/buy.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "ab9ff71748b51d92dbcab04060496eeba402096fb04e4d52a44b6dae8a112211"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "bb3ce0b44c83c292fd4c4d4a94ffc1eb1e9513f21959515d6d91033da0c5df5d"
 ---
 
 # vercel buy
@@ -31,8 +31,8 @@ The `vercel buy` command allows you to purchase Vercel products for your team di
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Inside the Vercel intern experience](https://vercel.com/blog/inside-the-vercel-intern-experience)
-- [vercel billing](https://vercel.com/docs/cli/billing) — Learn how to view your billing overview, usage, contracts, budgets, and invoices for your Vercel team using the vercel b
 - [Billing and Purchases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing) — Vercel MCP tools for billing and purchases.
+- [vercel billing](https://vercel.com/docs/cli/billing) — Learn how to view your billing overview, usage, budgets, and invoices for your Vercel team using the vercel billing CLI
 - [Purchase credits](https://vercel.com/docs/rest-api/billing/purchase-credits) — POST /v1/billing/buy — Purchases credits for a Vercel team using the default payment method on file. The purchase is cha
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [buy_domain](https://vercel.com/docs/agent-resources/vercel-mcp/tools/billing/buy_domain) — Use buy_domain with Vercel MCP.

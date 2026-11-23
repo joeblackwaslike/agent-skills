@@ -8,16 +8,17 @@ type: conceptual
 prerequisites:
   - /docs/workflows
 related:
-  - /docs/functions/limitations
   - /docs/workflows/pricing
+  - /docs/environment-variables
+  - /docs/functions/limitations
   - /docs/chat-sdk
   - /docs/frameworks/agents/eve
 summary: Learn how workflows, steps, sleeps, and hooks work together to build durable applications.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/workflows/concepts.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "c0ac7df4c4038401cd1375204d3bf055d4d923d369f1bc55104555efc4bd4086"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "687ceffdb3245d944ba49a7ed564e88cf3451ec2dcd7d3934592be586e20296c"
 ---
 
 # Workflow Concepts
@@ -35,10 +36,9 @@ You write async/await code as usual, and the framework handles queues, retry log
 - [Running background workers on Vercel](https://vercel.com/kb/guide/background-workers-on-vercel) — Run background jobs on Vercel with waitUntil, Cron Jobs, Queues, Workflows, Daemons, or Sandbox. Compare the options and
 - [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
 - [How to run a multi-step research agent on Vercel](https://vercel.com/kb/guide/how-to-run-a-multi-step-research-agent-on-vercel) — An end-to-end architecture for production research agents on Vercel using Sandbox, Workflows, and AI Gateway with isolat
-- [Run a research workspace on Vercel](https://vercel.com/kb/guide/run-research-workspace-vercel) — Plan a durable research workspace on Vercel's Agentic Infrastructure with Workflows, internal API tools, Vercel Sandbox
+- [How to stop traffic to an old deployment on Vercel](https://vercel.com/kb/guide/how-to-stop-traffic-to-an-old-deployment-on-vercel) — Move production traffic to the new deployment, restrict access to the old deployment, and check remaining function activ
 - [Python](https://workflow-sdk.dev/docs/getting-started/python) — Set up the Workflow Python SDK in your Python application.
 - [Built-in durability: Introducing Workflow Development Kit](https://vercel.com/blog/introducing-workflow)
-- [The best workflow engine is a programming language](https://vercel.com/blog/the-best-workflow-engine-is-a-programming-language)
 - [A new programming model for durable execution](https://vercel.com/blog/a-new-programming-model-for-durable-execution)
 - [Chat SDK with Vercel Workflows](https://vercel.com/docs/chat-sdk/integrations/workflows) — Use Vercel Workflows to pause Chat SDK tasks for human approval, resume after a decision, and inspect runs in the Vercel
 - [CLI Workflows](https://vercel.com/docs/agent-resources/workflows) — End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sess
@@ -220,6 +220,38 @@ The same pinning means a rollback does not stop runs on the deployment you rolle
 To stop runs on a deployment you no longer want executing, cancel them from the [Workflows observability tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fworkflows\&title=Vercel+Workflows) or the CLI. Deleting the deployment also stops its functions from being invoked, but runs pinned to a deleted deployment never complete or fail on their own, so cancel them as well. To see which deployments are consuming compute, open the Observability **Query** tab with [function duration grouped by deployment](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fquery%3Fmetric%3DserverlessFunctionInvocation.functionDurationGbhr%26aggregation%3Dsum%26by%3DdeploymentId\&title=Function+duration+by+deployment).
 
 To learn how to fix in-flight runs or move a run onto newer code, see [Versioning](https://workflow-sdk.dev/docs/foundations/versioning) in the Workflow SDK docs.
+
+## QuickJS runtime
+
+Workflow runs your workflow functions on the Node.js runtime by default. Each time a workflow resumes, it replays its event log from the start. For most runs, replay takes milliseconds. For a run with thousands of events, every resume gets slower, and the run fails with `MAX_EVENTS_EXCEEDED` when it reaches the [per-run limit of 25,000 events](/docs/workflows/pricing#workflow-run-limits).
+
+The QuickJS runtime removes that cost. It runs your workflow functions in a QuickJS sandbox and saves a snapshot of the sandbox's memory once a run has processed 1,000 events. Later resumes restore the snapshot and replay only the events recorded since. QuickJS runs with snapshotting are exempt from the events-per-run limit, so they can also execute more steps.
+
+To enable it, add this [environment variable](/docs/environment-variables) to your project, then redeploy:
+
+```bash filename=".env"
+WORKFLOW_VM=quickjs
+```
+
+When a run fails at the event limit, times out while replaying, or passes 20,000 events, its page in the [Workflows observability tab](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Fobservability%2Fworkflows\&title=Vercel+Workflows) shows an **Optimize Long Runs** button that adds the variable for you.
+
+Snapshotting is on by default, so you don't need to set anything else. To change how often a run snapshots, set `WORKFLOW_SNAPSHOT_THRESHOLD` to the number of events between snapshots:
+
+| Value              | Behavior                                                                  |
+| ------------------ | ------------------------------------------------------------------------- |
+| Unset              | Uses the default of 1,000 events.                                         |
+| A positive integer | Snapshots after that many events. Lower values snapshot more often.       |
+| `0`                | Turns snapshotting off. Those runs keep the event limit.                  |
+
+Before you enable the QuickJS runtime, check the following:
+
+- The variable applies to every workflow in the project.
+- The exemption from the event limit needs `workflow` 5.2.3 or later.
+- A run records its runtime when it starts, so only runs you start after the redeploy use QuickJS. Runs in progress keep their current runtime.
+- Runs that already failed with `MAX_EVENTS_EXCEEDED` don't resume on their own. Start those runs again.
+- Workflow functions can't use `Intl`, `crypto.subtle`, `WebAssembly`, or `Atomics` on this runtime. Move those calls into a step. Steps keep full Node.js access.
+
+To learn how snapshots work and how to tune them, see [QuickJS Runtime](https://workflow-sdk.dev/docs/advanced/quickjs-runtime) in the Workflow SDK docs.
 
 ## Frequently asked questions
 

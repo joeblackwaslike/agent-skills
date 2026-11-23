@@ -16,8 +16,8 @@ summary: Server action for programmatically deploying files to Vercel on behalf 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/platforms/platform-elements/actions/deploy-files.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "df92d5a25bda3b93a7dfeed7a46c7a9b9b302ad4903e264992ecbd0b34014763"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "980470c74e888dc40a0ad768683eeffc1a98d87530c62b76a278bf1a2930b4d4"
 ---
 
 # Deploy Files
@@ -34,9 +34,9 @@ The Deploy Files action is a server-side utility that allows platforms to progra
 
 - [List Deployment Files](https://vercel.com/docs/rest-api/deployments/list-deployment-files) — GET /v6/deployments/{id}/files — Allows to retrieve the file structure of the source code of a deployment by supplying t
 - [Upload Deployment Files](https://vercel.com/docs/rest-api/deployments/upload-deployment-files) — POST /v2/files — Before you create a deployment you need to upload the required files for that deployment. To do it, you
+- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [deploy_to_vercel](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/deploy_to_vercel) — Use deploy_to_vercel with Vercel MCP.
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
-- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 
 Full cross-link map for this page: [/docs/platforms/platform-elements/actions/deploy-files.graph.md](/docs/platforms/platform-elements/actions/deploy-files.graph.md)
 <!-- /docsgraph:related -->

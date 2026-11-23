@@ -13,13 +13,13 @@ related:
   - /docs/ai-gateway/models-and-providers/provider-options
   - /docs/ai-gateway/sdks-and-apis/rest-api
   - /docs/ai-gateway/sdks-and-apis
-  - /docs/ai-gateway/pricing
+  - /docs/ai-gateway/models-and-providers/session-affinity
 summary: Control AI Gateway provider routing with order, only, and sort. Set preferences, restrict providers, and rank them by cost, latency, or throughput.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "5b0ca813687b9de5de6d4d5aba3726257a234067435592d091d7bc1e6849d0a6"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "f950b3093fbd19433695c7ed5fbe74a95f8b116be5e21ddfb03a26e3b97012a9"
 ---
 
 # AI Gateway Provider Filtering, Ordering, and Sorting
@@ -61,7 +61,7 @@ You can also copy the provider slug using the copy button next to a provider's n
 
 **Through the AI Gateway site:**
 
-Visit a model's page on the [AI Gateway models page](/ai-gateway/models) (e.g., [Claude Sonnet 5](/ai-gateway/models/claude-sonnet-5)).
+Visit a model's page on the [AI Gateway models page](/ai-gateway/models) (e.g., [Claude Sonnet 5](/ai-gateway/models/anthropic/claude-sonnet-5)).
 
 The bottom section of the page lists the available providers for that model. The copy button next to a provider's name will copy their slug for pasting.
 
@@ -353,6 +353,7 @@ The bottom section of the page lists the available providers for that model. The
   - AI Gateway will first attempt to use Amazon Bedrock to serve the Claude Sonnet 5 model
   - If Amazon Bedrock is unavailable or fails, it will fall back to Anthropic
   - Other providers (like Vertex AI) are still available but will only be used after the specified providers
+  [Session affinity](/docs/ai-gateway/models-and-providers/session-affinity) can try a provider that holds the conversation's prompt cache ahead of your order. When it does, the response includes `routing.affinity` with `pinned: true` and the pinned provider. Set `sessionAffinity: false` to keep your order exactly.
 
 - ### Test the routing behavior
   Read `providerMetadata.gateway.routing.finalProvider` to print the provider that served the response:
@@ -468,7 +469,7 @@ The team [provider allowlist](/docs/ai-gateway/security-and-compliance/provider-
 
 Use the `only` array to restrict routing to a specific subset of providers. Providers are specified by their slug and are matched against the model's available providers.
 
-To use provider API credits through [BYOK](/docs/ai-gateway/authentication-and-byok/byok#use-api-credits-from-a-chatgpt-or-claude-subscription), set `only: ['openai']` for OpenAI credits or `only: ['anthropic']` for Anthropic credits. Selecting a Claude model alone doesn't ensure Anthropic serves it; credits in a Claude Console organization don't pay for requests through Bedrock or Vertex AI. The `only` filter restricts providers, but it doesn't prevent fallback from your key to Vercel's provider keys.
+To use provider API credits through [BYOK](/docs/ai-gateway/authentication-and-byok/byok#use-api-credits-from-a-chatgpt-or-claude-subscription), set `only: ['openai']` for OpenAI credits or `only: ['anthropic']` for Anthropic credits. Selecting a Claude model alone doesn't ensure Anthropic serves it; credits in a Claude Console organization don't pay for requests through Bedrock or Vertex AI. The `only` filter restricts providers, but it doesn't prevent fallback from your key to Vercel's provider keys. To prevent that fallback, turn off [Fallback to Vercel Keys](/docs/ai-gateway/authentication-and-byok/byok#turn-off-fallback-to-vercel-keys).
 
 These examples use AI SDK 7 and the AI SDK for Python beta. Set `AI_GATEWAY_API_KEY` before running them. See [API format differences](/docs/ai-gateway/sdks-and-apis#api-format-differences) for setup, request fields, and response handling.
 

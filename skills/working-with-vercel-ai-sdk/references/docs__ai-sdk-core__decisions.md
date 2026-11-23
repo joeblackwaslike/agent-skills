@@ -4,8 +4,8 @@ description: Decide answers to Choice, Score, and Boolean questions against shar
 url: "https://ai-sdk.dev/docs/ai-sdk-core/decisions"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/decisions.md"
-fetched_at: "2026-11-16T12:32:31.917Z"
-sha256: "e851f9dffec7a257790e5613ad18e226914d031c6bc3e4e9490e14389f956610"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "8571185e1a653c4d8d1c4566a3091fa5461b9a15a0bcf001e4bebed66ef78c01"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -115,6 +115,7 @@ Use a provider's `decisionModel` factory:
 | Anthropic   | `anthropic.decisionModel('claude-haiku-4-5-20251001')` |
 | Google      | `google.decisionModel('gemini-decision-1')`            |
 | HeyGen      | `heygen.decisionModel('heygen-decision-1')`            |
+| Liquid      | `liquid.decisionModel('d1.2')`                         |
 
 TypeSafe AI's [Jev](https://vercel.com/i/what-is-jev), OpenAI's
 [Decisions API](https://developers.openai.com/api/docs/guides/decisions),
@@ -305,6 +306,9 @@ Google exposes confidence for all three question types at
 HeyGen exposes Choice/Score confidence at
 `result.providerMetadata?.heygen?.confidence` and Score legends at
 `result.providerMetadata?.heygen?.legend`, also keyed by question ID.
+Liquid exposes Choice/Score/Box confidence at
+`result.providerMetadata?.liquid?.confidence` and Score legends at
+`result.providerMetadata?.liquid?.legend`, also keyed by question ID.
 
 Check for optional distributions before using them. For example, an application
 can route only when a provider supplies a sufficiently high selected-option

@@ -17,8 +17,8 @@ summary: Understand the cache status and reason shown for each request in Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/caching/cache-status.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "8a6b8557fee8095c6d857de9ca04e0dc320a56de70dd82799c70d8ac476b5b2b"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "0e7ac2c2f83e597003612a26819310e20e966466b25c202ee8d75724f795f3a4"
 ---
 
 # Cache Status and Reasons
@@ -40,6 +40,7 @@ Vercel records how each cacheable request resolves as a cache **status**, and wh
 - [Troubleshoot and optimize Function Invocations on Vercel](https://vercel.com/kb/guide/optimize-function-invocations) — Diagnose which routes drive Function Invocations and learn to optimize them. Separate necessary dynamic traffic from div
 - [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache)
 - [vercel cache](https://vercel.com/docs/cli/cache) — Learn how to manage cache for your project using the vercel cache CLI command.
+- [Vercel CDN overview](https://vercel.com/docs/cdn) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
 
 Full cross-link map for this page: [/docs/caching/cache-status.graph.md](/docs/caching/cache-status.graph.md)
 <!-- /docsgraph:related -->

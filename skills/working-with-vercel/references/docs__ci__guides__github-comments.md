@@ -17,8 +17,8 @@ summary: Post the deployment URL to the pull request for each commit from a Verc
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ci/guides/github-comments.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "57e04711363d83c40fa16b052336d9893608f6b89255242709aaa4995ae4bea1"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "4034bcd12690947b5b31203c95a6825de123025e8a22e618e3baeb157b52ede7"
 ---
 
 # Commenting on Pull Requests from Vercel CI
@@ -31,8 +31,6 @@ In this tutorial, you'll add a Vercel CI task that comments on your pull request
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Manage Vercel Toolbar comments from the CLI](https://vercel.com/changelog/manage-vercel-toolbar-comments-from-the-cli)
-- [Improved formatting for Pull Request comments](https://vercel.com/changelog/improved-formatting-for-pull-request-comments)
 - [Integrations for Comments](https://vercel.com/docs/comments/integrations) — Learn how Comments integrates with Git providers like GitHub, GitLab, and Bitbucket, as well as the Vercel app for Slack
 - [Managing Comments on Preview Deployments](https://vercel.com/docs/comments/managing-comments) — Learn how to manage Comments on your Preview Deployments from Team members and invited collaborators.
 - [Using Comments with Preview Deployments](https://vercel.com/docs/comments/using-comments) — This guide will help you get started with using Comments with your Vercel Preview Deployments.

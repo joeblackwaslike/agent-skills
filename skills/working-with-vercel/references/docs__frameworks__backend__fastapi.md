@@ -18,8 +18,8 @@ summary: Deploy a FastAPI app on Vercel. Learn how the Python runtime, ASGI, sta
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/backend/fastapi.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "ddb04c719c5c45f87b999a357201c9fb521e2941fd10112ae182ee594b32241f"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "04f3c0e53385993e2e64d0d7803de81be33e8bfce7c4447dee1989340ecc699f"
 ---
 
 # Deploy a FastAPI app on Vercel
@@ -36,8 +36,8 @@ your repository.
 
 - [How to ship a Fastify app on Vercel](https://vercel.com/kb/guide/ship-a-fastify-app-on-vercel) — Deploy a Fastify app to Vercel with zero configuration, then add streaming, lifecycle hooks, cron jobs, and observabilit
 - [How to ship a Flask app on Vercel](https://vercel.com/kb/guide/ship-a-flask-app-on-vercel) — Deploy a Flask app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
-- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
 - [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
+- [How to ship an Express app on Vercel](https://vercel.com/kb/guide/ship-a-express-app-on-vercel) — Deploy an Express app to Vercel with zero configuration. Configure response streaming, middleware, cron jobs, the Bun ru
 - [FastAPI frontends and static files served from the CDN](https://vercel.com/changelog/fastapi-frontends-and-static-files-served-from-the-cdn)
 - [FastAPI Lifespan Events are now supported on Vercel](https://vercel.com/changelog/fastapi-lifespan-events-are-now-supported-on-vercel)
 - [Vercel now supports Build Commands for FastAPI and Flask](https://vercel.com/changelog/vercel-now-supports-build-commands-for-fastapi-and-flask)

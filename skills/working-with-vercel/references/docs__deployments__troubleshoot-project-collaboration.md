@@ -17,8 +17,8 @@ summary: Learn about common reasons for deployment issues related to team member
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployments/troubleshoot-project-collaboration.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "479027c53997fa4ca964d71770a3d66a9aaf76436d78cc4e5decb207ba3af3e4"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "081e34fdc57bb0e6cd955e109cb73428c0cc347c604a2c3bde529600ebed3ffa"
 ---
 
 # Troubleshoot project collaboration
@@ -33,7 +33,6 @@ This guide will help you troubleshoot deployment failures related to project col
 
 - [Auto-add Git committers now available for Enterprise teams](https://vercel.com/changelog/auto-add-git-committers-now-available-for-enterprise-teams)
 - [Auto-add Git committers to your team](https://vercel.com/changelog/auto-add-git-committers-to-your-team)
-- [Can you deploy based on tags/releases on Vercel?](https://vercel.com/kb/guide/can-you-deploy-based-on-tags-releases-on-vercel) — Learn how to deploy based on tags/releases on Vercel.
 - [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
 - [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
 - [Deployments](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments) — Vercel MCP tools for deployments.

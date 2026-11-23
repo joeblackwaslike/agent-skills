@@ -16,8 +16,8 @@ summary: Configure security settings for your Vercel project, including Vercel S
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/project-configuration/security-settings.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "3faf0b2dfb970cf37ebab68d020a07ba5fbab7e26ab731fb09f75d24bfd97120"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "040b17b88eaf961fc8825869b3087ce12b43d7957dec9841f0c0cb8efecbc462"
 ---
 
 # Security settings
@@ -30,7 +30,6 @@ To adjust your project's security settings:
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments) — Protect who can see your deployments.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Vercel security overview](https://vercel.com/docs/security) — Vercel provides built-in and customizable features to ensure that your site is secure.
 - [Deployment Protection on Vercel](https://vercel.com/docs/deployment-protection) — Learn how to control access to your Vercel project's preview and production URLs with Deployment Protection. Configure p

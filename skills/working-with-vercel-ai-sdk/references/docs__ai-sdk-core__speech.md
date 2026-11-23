@@ -7,8 +7,8 @@ keywords:
   - text to speech
   - speech generation
 source: "https://ai-sdk.dev/docs/ai-sdk-core/speech.md"
-fetched_at: "2026-11-16T12:32:31.917Z"
-sha256: "8999378f429a69ea94ebc1e0e0cb0c2e8e399a6ffec43999c2877cfce76234d9"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "f94eb715e6c37d9739df8321eba241a001c0360124e9699c9ceb8e6a4a781e6b"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -260,6 +260,7 @@ try {
 | [Fish Audio](/providers/ai-sdk-providers/fish-audio#speech-models)       | `s1`                                |
 | [Fish Audio](/providers/ai-sdk-providers/fish-audio#speech-models)       | `s2-pro`                            |
 | [Fish Audio](/providers/ai-sdk-providers/fish-audio#speech-models)       | `s2.1-pro`                          |
+| [AssemblyAI](/providers/ai-sdk-providers/assemblyai#speech-models)       | `assemblyai-tts-1`                  |
 
 Above are a small subset of the speech models supported by the AI SDK providers. For more, see the respective provider documentation.
 

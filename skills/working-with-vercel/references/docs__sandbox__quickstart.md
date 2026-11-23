@@ -10,15 +10,15 @@ prerequisites:
 related:
   - /docs/cli
   - /docs/sandbox/concepts/authentication
-  - /docs/sandbox/working-with-sandbox
+  - /docs/sandbox/examples
   - /docs/sandbox/pricing
   - /docs/sandbox/concepts/persistent-sandboxes
 summary: Learn how to run your first code in a Vercel Sandbox.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/quickstart.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "79758ea9f016b68af243b6e0781ae94b4f512de8d928532d9eb63e9e67a9bfc8"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "ca67df1bd705738e92a2f321ea8f282e78c60bb25ee68bdf46616d0aa3c6665e"
 ---
 
 # Quickstart
@@ -32,16 +32,15 @@ This guide shows you how to run your first code in a Vercel Sandbox.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
-- [Safely running AI generated code in your Next.js application](https://vercel.com/kb/guide/running-ai-generated-code-sandbox) — How to execute untrusted, AI‑generated code from a Next.js app using Vercel Sandbox, an isolated, ephemeral environment.
 - [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
+- [Safely running AI generated code in your Next.js application](https://vercel.com/kb/guide/running-ai-generated-code-sandbox) — How to execute untrusted, AI‑generated code from a Next.js app using Vercel Sandbox, an isolated, ephemeral environment.
 - [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
-- [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available)
-- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
+- [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
+- [Running commands in a Vercel Sandbox](https://vercel.com/docs/sandbox/examples/run-commands-in-sandbox) — Create isolated sandbox environments to run builds, tests, and commands safely.
+- [Vercel Sandbox SDK](https://vercel.com/docs/sandbox/sdk) — Use the Vercel Sandbox SDK for JavaScript, TypeScript, and Python, or the Sandbox CLI, to create and manage isolated Lin
 - [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [OpenAI SDK](https://vercel.com/docs/sandbox/ecosystem/openai-sdk) — Use OpenAI function calling with AI Gateway to execute model-generated code in an isolated Vercel Sandbox.
-- [Agent Skills](https://vercel.com/docs/agent-resources/skills) — Install skills to enhance AI coding agents with specialized capabilities for React, Next.js, deployment, and more.
-- [Build a Software Factory with the AI SDK](https://vercel.com/docs/agent-resources/software-factory/ai-sdk) — Compose investigation, sandbox execution, review, and GitHub publication stages with the AI SDK on Vercel.
 
 Full cross-link map for this page: [/docs/sandbox/quickstart.graph.md](/docs/sandbox/quickstart.graph.md)
 <!-- /docsgraph:related -->
@@ -73,13 +72,13 @@ The plugin includes `vercel-sandbox` for SDK and CLI guidance, and `offload-to-s
   Create a new directory and connect it to a Vercel project. This is the recommended way to authenticate because the project handles secure [OIDC token authentication](/docs/sandbox/concepts/authentication) for you.
 
   **Terminal**
-  ```bash filename="Terminal" framework=node
+  ```bash filename="Terminal" language=ts
   mkdir my-sandbox-app && cd my-sandbox-app
   pnpm init
   vercel link
   ```
   **Terminal**
-  ```bash filename="Terminal" framework=py
+  ```bash filename="Terminal" language=py
   mkdir my-sandbox-app && cd my-sandbox-app
   uv init
   vercel link
@@ -94,23 +93,23 @@ The plugin includes `vercel-sandbox` for SDK and CLI guidance, and `offload-to-s
 
 - ### Install the SDK
   **Terminal**
-  ```bash filename="Terminal" framework=node package-manager="npm"
+  ```bash filename="Terminal" language=ts package-manager="npm"
   npm install @vercel/sandbox dotenv @types/node tsx typescript
   ```
   **Terminal**
-  ```bash filename="Terminal" framework=node package-manager="yarn"
+  ```bash filename="Terminal" language=ts package-manager="yarn"
   yarn add @vercel/sandbox dotenv @types/node tsx typescript
   ```
   **Terminal**
-  ```bash filename="Terminal" framework=node package-manager="pnpm"
+  ```bash filename="Terminal" language=ts package-manager="pnpm"
   pnpm add @vercel/sandbox dotenv @types/node tsx typescript
   ```
   **Terminal**
-  ```bash filename="Terminal" framework=node package-manager="bun"
+  ```bash filename="Terminal" language=ts package-manager="bun"
   bun add @vercel/sandbox dotenv @types/node tsx typescript
   ```
   **Terminal**
-  ```bash filename="Terminal" framework=py
+  ```bash filename="Terminal" language=py
   uv add vercel-sandbox python-dotenv
   ```
   For TypeScript, `dotenv` provides access to environment variables, `tsx` runs TypeScript code, `typescript` provides the compiler, and `@types/node` provides Node.js type definitions.
@@ -166,16 +165,16 @@ The plugin includes `vercel-sandbox` for SDK and CLI guidance, and `offload-to-s
 
 - ### Run it
   **Terminal**
-  ```bash filename="Terminal" framework=node
+  ```bash filename="Terminal" language=ts
   pnpm tsx index.ts
   ```
   **Terminal**
-  ```bash filename="Terminal" framework=py
+  ```bash filename="Terminal" language=py
   uv run python main.py
   ```
   You should see: `Hello from Vercel Sandbox!`
 
-  Sandboxes automatically stop after 5 minutes by default. They are also **persistent by default**: the filesystem is snapshotted on stop and restored the next time you resume the sandbox by name. To adjust the timeout, opt out of persistence, or manage running sandboxes, see [Working with Sandbox](/docs/sandbox/working-with-sandbox).
+  Sandboxes automatically stop after 5 minutes by default. They are also **persistent by default**: the filesystem is snapshotted on stop and restored the next time you resume the sandbox by name. To adjust the timeout, opt out of persistence, or manage running sandboxes, see the [Sandbox examples](/docs/sandbox/examples).
   > **💡 Note:** Automatic snapshots count toward [Snapshot Storage](/docs/sandbox/pricing#snapshot-storage). For one-off workloads, pass `persistent: false` (or `--non-persistent` in the CLI) to opt out. See [Persistent Sandboxes](/docs/sandbox/concepts/persistent-sandboxes) for details.
 
 ## What you just did
@@ -190,7 +189,7 @@ The plugin includes `vercel-sandbox` for SDK and CLI guidance, and `offload-to-s
 - [Python SDK Reference](/docs/sandbox/python-sdk-reference): Full API documentation for Python.
 - [CLI Reference](/docs/sandbox/cli-reference): Manage sandboxes from the terminal.
 - [Snapshots](/docs/sandbox/concepts/snapshots): Save sandbox state to skip setup on future runs.
-- [Examples](/docs/sandbox/working-with-sandbox#examples): See real-world use cases.
+- [Examples](/docs/sandbox/examples): See real-world use cases.
 
 ## Search the docs from your terminal
 

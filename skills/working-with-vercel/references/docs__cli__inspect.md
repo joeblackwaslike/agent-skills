@@ -13,8 +13,8 @@ summary: Learn how to retrieve information about your Vercel deployments using t
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/inspect.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "f6b067d567a7e49c3a435d580d985bd24dabb629d84a6c53007645f6884a54fd"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "049d82e51608882a5edc8a420155504a23b9229bdb6edbfc90901de357b043a2"
 ---
 
 # vercel inspect
@@ -31,8 +31,8 @@ The `vercel inspect` command is used to retrieve information about a deployment 
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel docs](https://vercel.com/docs/cli/docs) — Search and read the Vercel docs from your terminal using the Vercel CLI.
+- [vercel bisect](https://vercel.com/docs/cli/bisect) — Learn how to perform a binary search on your deployments to help surface issues using the vercel bisect CLI command.
 - [vercel ci](https://vercel.com/docs/cli/ci) — Enable or disable Vercel CI for repositories, inspect runs, search logs, and rerun jobs from the command line.
-- [vercel httpstat](https://vercel.com/docs/cli/httpstat) — Learn how to visualize HTTP request timing statistics for your Vercel deployments using the vercel httpstat CLI command.
 
 Full cross-link map for this page: [/docs/cli/inspect.graph.md](/docs/cli/inspect.graph.md)
 <!-- /docsgraph:related -->

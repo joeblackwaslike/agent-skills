@@ -17,8 +17,8 @@ summary: Learn how to use public Vercel Blob storage to serve files accessible t
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-blob/public-storage.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "069021e8e17e7198303502903f31019fbc65956debf29594a520e5dce3da8d50"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "e1089c43720461b4250cb4418464c1444c475de5fa5b004e544f5fb508f89f8d"
 ---
 
 # Public Storage
@@ -40,11 +40,11 @@ Public Blob stores make files accessible to anyone with the URL. Use public stor
 - [Store and serve files from Python with Vercel Blob](https://vercel.com/kb/guide/python-and-vercel-blob) — Upload, list, stream, and protect files from a Python app with Vercel Blob, including private per-user storage in FastAP
 - [Build Imgur-style image hosting with Nuxt and Vercel Blob](https://vercel.com/kb/guide/vercel-blob-nuxt-imgur-clone) — Learn how to build an Imgur-style paste-to-share image host using Nuxt and Vercel Blob, with direct-to-storage client up
 - [Build with Vercel Blob on Nuxt](https://vercel.com/kb/guide/vercel-blob-nuxt) — Set up Vercel Blob in a Nuxt application with NuxtHub, upload and serve files, and deliver optimized images with Nuxt Im
-- [Private storage for Vercel Blob, now available in public beta](https://vercel.com/changelog/private-storage-for-vercel-blob-now-available-in-public-beta)
 - [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
-- [Vercel Blob is now generally available](https://vercel.com/changelog/vercel-blob-is-now-generally-available)
+- [Private storage for Vercel Blob, now available in public beta](https://vercel.com/changelog/private-storage-for-vercel-blob-now-available-in-public-beta)
 - [Vercel Storage overview](https://vercel.com/docs/storage) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
 - [Create a Blob store](https://vercel.com/docs/rest-api/storage/create-a-blob-store) — POST /storage/stores/blob — Create a Blob store
+- [Delete a Blob store](https://vercel.com/docs/rest-api/storage/delete-a-blob-store) — DELETE /storage/stores/blob/{id} — Delete a Blob store
 
 Full cross-link map for this page: [/docs/vercel-blob/public-storage.graph.md](/docs/vercel-blob/public-storage.graph.md)
 <!-- /docsgraph:related -->

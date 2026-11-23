@@ -17,8 +17,8 @@ summary: Build TypeScript agents and AI applications with a unified API for mode
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-sdk.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "9c530c58affe3f74dffa456f46ac5a19287bd76a6ed97e3530c9f82ca5280867"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "be4e19c28e6e78bdc30f3f5576dc0ca0daab092664669334d5a12fd7d8f7029c"
 ---
 
 # AI SDK
@@ -33,18 +33,16 @@ Build TypeScript agents and AI applications with one API for models, tools, stru
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Introducing Vercel AI SDK 3.2](https://vercel.com/blog/introducing-vercel-ai-sdk-3-2)
 - [How to build an AI agent for Slack with Chat SDK and AI SDK](https://vercel.com/kb/guide/how-to-build-an-ai-agent-for-slack-with-chat-sdk-and-ai-sdk) — Build a Slack AI agent using Chat SDK, AI SDK's ToolLoopAgent, and Vercel AI Gateway. Covers project setup, tool definit
-- [AI SDK 4.0](https://vercel.com/blog/ai-sdk-4-0)
 - [Using TanStack AI with Vercel AI Gateway](https://vercel.com/kb/guide/tanstack-ai-vercel-ai-gateway) — Connect TanStack AI to Vercel AI Gateway with the @tanstack/ai-vercel-gateway adapter to stream chat, route across provi
-- [Introducing the Vercel AI SDK](https://vercel.com/blog/introducing-the-vercel-ai-sdk)
-- [Vercel Ship AI 2025 recap](https://vercel.com/blog/ship-ai-2025-recap)
-- [Run Python code securely with AI SDK and Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox) — Add an \\`executeCode\\` tool to your AI SDK agent with the \\`ai-sdk-tool-code-execution\\` package to run Python 3.13 insi
-- [Add skills to your AI SDK agents](https://vercel.com/kb/guide/ai-sdk-skill-uploads) — Use uploadSkill and provider references in the AI SDK to bundle a SKILL.md and supporting files, then attach the skill t
-- [An Introduction to Evals](https://vercel.com/kb/guide/an-introduction-to-evals) — Evaluations test model and agent outputs to ensure they meet the standards and requirements you specify.
+- [Add Python code execution to a TypeScript AI agent with Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox) — Add an \\`executeCode\\` tool to your TypeScript AI SDK agent with the \\`ai-sdk-tool-code-execution\\` package to run Pytho
+- [Build an AI Chat Agent with Weather API Tool Calling](https://vercel.com/kb/guide/build-ai-agent-weather-api) — Build an intelligent conversational agent that fetches real-time weather data using the AI SDK, tool calling, and a back
+- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
 - [Agentic Infrastructure](https://vercel.com/blog/agentic-infrastructure)
 - [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 - [Vercel Sanity Integration](https://vercel.com/docs/integrations/cms/sanity) — Learn how to integrate Sanity with Vercel. Follow our tutorial to deploy the Sanity template or install the integration
+- [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
+- [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 
 Full cross-link map for this page: [/docs/ai-sdk.graph.md](/docs/ai-sdk.graph.md)
 <!-- /docsgraph:related -->

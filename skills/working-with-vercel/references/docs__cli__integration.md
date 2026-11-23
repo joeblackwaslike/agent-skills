@@ -16,8 +16,8 @@ summary: Learn how to manage marketplace native integrations, provision resource
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/integration.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "a15166f8bbf5a4fab24632703935ce3d474b6c9a0cde4f76620b60a0ea293055"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "fdc21c91ce83e25a8d0f1e68eb33a4578180aac1384699fb449d139be86cbfe8"
 ---
 
 # vercel integration
@@ -40,8 +40,8 @@ The `vercel integration` command manages [marketplace integrations](/docs/integr
 - [Migrate a Python API from Heroku to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-heroku-to-vercel) — Move a FastAPI, Flask, or Django API from Heroku to Vercel Functions. Replace your Procfile, worker dynos, Heroku Schedu
 - [Migrate a Python API from Render to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-render-to-vercel) — Move a FastAPI, Flask, or Django API from Render to Vercel Functions. Translate render.yaml and replace persistent disks
 - [How to deploy a Python backend with Vercel Services ](https://vercel.com/kb/guide/python-backend-on-vercel) — Deploy a Python backend with a Next.js frontend on Vercel. Learn how to configure both apps with Vercel Services, use a
+- [vercel install](https://vercel.com/docs/cli/install) — Learn how to install marketplace native integrations and provision resources with the vercel install CLI command.
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
-- [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
 
 Full cross-link map for this page: [/docs/cli/integration.graph.md](/docs/cli/integration.graph.md)
 <!-- /docsgraph:related -->
@@ -204,7 +204,7 @@ vercel integration accept-terms neon --json
 
 ## vercel integration list
 
-This command lists installed resources with their associated integrations. By default, shows resources for the currently linked project.
+This command lists installed resources with their associated integrations. In a directory with a linked project, it lists the resources of that project. In a directory with no linked project, it lists every resource in the team.
 
 Alias: `vercel integration ls`
 
@@ -212,7 +212,8 @@ Alias: `vercel integration ls`
 vercel integration list [project]
 ```
 
-*List integration resources for the current project.*
+*List integration resources for the linked project, or for the team when no
+project is linked.*
 
 The output includes the name, status, product, integration, and connected projects for each resource. Unclaimed sandbox marketplace resources are marked with a yellow `[SANDBOX]` tag in the **Status** column. When the listing contains one or more sandbox resources, a hint below the table shows how many can be claimed and points to [`claim`](#vercel-integration-resource-claim).
 
@@ -220,9 +221,9 @@ When you pass `--json`, each sandbox resource includes a `claim_status: "sandbox
 
 ### Arguments
 
-| Argument  | Required | Description                                                                                                                                                |
-| --------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `project` | No       | Project name to filter resources by, for example `my-app` (the name shown in the dashboard and `vercel project list`). Uses the linked project if omitted. |
+| Argument  | Required | Description                                                                                                                                                                                                                       |
+| --------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `project` | No       | Project name to filter resources by, for example `my-app` (the name shown in the dashboard and `vercel project list`). Uses the linked project if omitted. If no project is linked, the command lists every resource in the team. |
 
 ### Options
 
@@ -235,8 +236,11 @@ When you pass `--json`, each sandbox resource includes a `claim_status: "sandbox
 ### Examples
 
 ```bash filename="terminal"
-# List resources for the current project
+# List resources for the linked project
 vercel integration list
+
+# List every resource in a team from a directory with no linked project
+vercel integration list --scope my-team
 
 # Filter to a specific project by name
 vercel integration list my-app

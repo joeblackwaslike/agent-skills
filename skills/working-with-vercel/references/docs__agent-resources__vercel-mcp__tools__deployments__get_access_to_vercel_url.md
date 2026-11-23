@@ -14,8 +14,8 @@ summary: Use get_access_to_vercel_url with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_access_to_vercel_url.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "1861e912388b6c0d3bc5e933e603daf26c4208db214f78829ffe5abdf769b063"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "0330540aceb48f27f3cc0da7e5a85e5f8b72dbb69cfb7a44675d6d53e7cec8a9"
 ---
 
 # get_access_to_vercel_url
@@ -28,6 +28,7 @@ Create a temporary [shareable link](/docs/deployment-protection/methods-to-bypas
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Agents can now access protected deployments via Vercel’s MCP server](https://vercel.com/changelog/give-agents-access-to-protected-deployments-via-vercels-mcp-server)
 - [web_fetch_vercel_url](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/web_fetch_vercel_url) — Use web_fetch_vercel_url with Vercel MCP.
 - [get_deployment_file_contents](https://vercel.com/docs/agent-resources/vercel-mcp/tools/deployments/get_deployment_file_contents) — Use get_deployment_file_contents with Vercel MCP.
 - [get_project_deployment_protection](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/get_project_deployment_protection) — Use get_project_deployment_protection with Vercel MCP.

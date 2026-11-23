@@ -14,8 +14,8 @@ summary: "Framework environment variables are automatically populated by the Ver
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/environment-variables/framework-environment-variables.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "6d97e0387ab1231f1cd70c6c4a6bad389401d636c5fbaa1fa2158e62766bd747"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "7f58bc083bec36165b424e0860fbfadaab7c5c131b6226c93abd663324214d51"
 ---
 
 # Framework environment variables
@@ -30,12 +30,11 @@ Frameworks typically use a prefix to expose environment variables to the browser
 
 - [Environment Variables](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables) — Vercel MCP tools for environment variables.
 - [Conditional Build Commands: Environment, Branch, and Custom Workflows](https://vercel.com/kb/guide/dynamic-build-commands) — Run a different Vercel build command for each environment or Git branch using a shell script, vercel.json, or vercel.ts,
-- [Environment Variables UI](https://vercel.com/blog/environment-variables-ui)
-- [Environments Variables per Git branch](https://vercel.com/changelog/environments-variables-per-git-branch)
+- [Deploying a Monorepo Using Yarn Workspaces to Vercel](https://vercel.com/kb/guide/deploying-yarn-monorepos-to-vercel) — In this guide, you will deploy a monorepo that includes two frontend applications and one shared library with Yarn works
 - [System environment variables](https://vercel.com/docs/environment-variables/system-environment-variables) — System environment variables are automatically populated by Vercel, such as the URL of the deployment or the name of the
 - [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
 - [vercel env](https://vercel.com/docs/cli/env) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
-- [Get a deployment by ID or URL](https://vercel.com/docs/rest-api/deployments/get-a-deployment-by-id-or-url) — GET /v13/deployments/{idOrUrl} — Retrieves information for a deployment either by supplying its ID \\(\\`id\\` property\\) o
+- [Retrieve a list of projects](https://vercel.com/docs/rest-api/projects/retrieve-a-list-of-projects) — GET /v10/projects — Allows to retrieve the list of projects of the authenticated user or team. The list will be paginate
 
 Full cross-link map for this page: [/docs/environment-variables/framework-environment-variables.graph.md](/docs/environment-variables/framework-environment-variables.graph.md)
 <!-- /docsgraph:related -->

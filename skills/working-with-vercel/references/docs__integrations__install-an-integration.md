@@ -17,8 +17,8 @@ summary: "Learn how to pair Vercel's functionality with a third-party service to
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/install-an-integration.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "ff9e0848bf95f026ca6d49ab38f7b8086bc9d3a437b6bad4f793d64d97fbe28a"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "d34b7a7c572a090797aa3807dd2a594f29fb51c7464411f38352c837224cf1c0"
 ---
 
 # Install an Integration
@@ -33,7 +33,6 @@ Using Vercel doesn't stop at the products and features that we provide. Through 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
 - [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.
 - [vercel install](https://vercel.com/docs/cli/install) — Learn how to install marketplace native integrations and provision resources with the vercel install CLI command.
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt

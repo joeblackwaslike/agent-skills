@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/starship/starship/main/docs/config/README.md"
-fetched_at: "2026-11-16T12:43:25.539Z"
-sha256: "b8a2e7a1f10bf2ea256d9831e54ea0cc15bcd973f4a71cbbee6932cc90df64cd"
+fetched_at: "2026-11-23T14:25:26.981Z"
+sha256: "a491fb4383b627047b36fed2530ff4e6722fef635656e5a2d92eeac622ae2236"
 ---
 
 # Configuration
@@ -3190,7 +3190,7 @@ The `maven` module indicates the presence of a Maven project in the current dire
 By default the module will be shown if any of the following conditions are met:
 
 - The current directory contains a `pom.xml` file.
-- The current directory contains a `.mvn/wrapper/maven-wrapper.properties` file.
+- The current directory contains a `.mvn` directory.
 
 If you use an alternate POM syntax (for example `pom.hocon`), add its filename to `detect_files`.
 
@@ -3203,7 +3203,7 @@ If you use an alternate POM syntax (for example `pom.hocon`), add its filename t
 | `symbol`            | `'🅼 '`                               | A format string representing the symbol of Maven.                         |
 | `detect_extensions` | `[]`                                 | Which extensions should trigger this module.                              |
 | `detect_files`      | `['pom.xml']`                        | Which filenames should trigger this module.                               |
-| `detect_folders`    | `[]`                                 | Which folders should trigger this module.                                 |
+| `detect_folders`    | `['.mvn']`                           | Which folders should trigger this module.                                 |
 | `style`             | `'bold bright-cyan'`                 | The style for the module.                                                 |
 | `disabled`          | `false`                              | Disables the `maven` module.                                              |
 | `recursive`         | `false`                              | Enables recursive finding for the `.mvn` directory.                       |
@@ -3419,7 +3419,8 @@ The `mise` module shows the current mise health as reported by running `mise doc
 # ~/.config/starship.toml
 
 [mise]
-health = 'ready'
+disabled = false
+healthy_symbol = 'ready'
 ```
 
 ## Mojo

@@ -17,8 +17,8 @@ summary: ISR serves cached static pages while regenerating content in the backgr
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/incremental-static-regeneration.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "394d7ddcff113f1d81b5b6449ad960c6938b61815dbe15fafa707b954ae9a168"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "c27a33a66bafed82b3f6e8c722e93215442f9562bf9eb25888058df2d39f7e99"
 ---
 
 # Incremental Static Regeneration (ISR)
@@ -35,7 +35,6 @@ Incremental Static Regeneration (ISR) is a caching strategy that combines the sp
 
 - [ISR: A flexible way to cache dynamic content](https://vercel.com/blog/isr-a-flexible-way-to-cache-dynamic-content)
 - [How to reduce ISR revalidation costs](https://vercel.com/kb/guide/how-to-reduce-isr-revalidation-costs) — Reduce ISR costs by analyzing Incremental Static Regeneration \\(ISR\\) behavior to find pages and tags that revalidate to
-- [ISR on Vercel is now faster and more cost-efficient](https://vercel.com/blog/isr-on-vercel-is-now-faster-and-more-cost-efficient)
 - [Deploys are now up to 33% faster for apps with many ISR pages](https://vercel.com/changelog/deploys-are-now-up-to-33-faster-for-apps-with-many-isr-pages)
 - [Flags SDK 3.2](https://vercel.com/changelog/flags-sdk-3-2)
 - [Fluid compute now supports ISR background and on-demand revalidation](https://vercel.com/changelog/fluid-compute-now-supports-isr-background-and-on-demand-revalidation)
@@ -43,8 +42,9 @@ Incremental Static Regeneration (ISR) is a caching strategy that combines the sp
 - [Request collapsing for ISR cache misses](https://vercel.com/changelog/request-collapsing-for-isr-cache-misses)
 - [Making your catalog discoverable to AI agents](https://vercel.com/kb/guide/agentic-commerce-readiness) — Agentic commerce readiness starts with the initial HTML response. Server-render your product catalog, ship JSON-LD, and
 - [Astro on Vercel vs Webflow Cloud](https://vercel.com/kb/guide/astro-on-vercel-vs-webflow-cloud) — Compare running Astro on Vercel Functions with Fluid compute against Webflow Cloud on Cloudflare Workers. Learn how Astr
+- [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation) — Set baselines and cut backend load. Make your catalog readable to agents and keep orders and AI features reliable. Then
 - [Build with a Nitro starter template](https://vercel.com/kb/guide/build-with-a-nitro-starter-template) — Deploy a Nitro app to Vercel from a starter template. Compare the Nitro Starter, route rules, cached HTTP handler, plugi
-- [Caching audits: Five antipatterns that cost you performance and money](https://vercel.com/kb/guide/caching-antipatterns) — Five caching antipatterns from hundreds of Vercel technical audits: write amplification, deploy-wiped caches, spinner sh
+- [Preventing the stampede: Request collapsing in the Vercel CDN ](https://vercel.com/blog/cdn-request-collapsing)
 
 Full cross-link map for this page: [/docs/incremental-static-regeneration.graph.md](/docs/incremental-static-regeneration.graph.md)
 <!-- /docsgraph:related -->

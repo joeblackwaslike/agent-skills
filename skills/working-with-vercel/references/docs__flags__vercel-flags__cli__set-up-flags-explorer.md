@@ -11,13 +11,14 @@ prerequisites:
 related:
   - /docs/flags/flags-explorer
   - /docs/vercel-toolbar
+  - /docs/flags/flags-explorer/reference
   - /docs/flags/flags-explorer/getting-started
 summary: Add the Flags Explorer to the Vercel Toolbar so you can override flag values on preview deployments without affecting other users.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/vercel-flags/cli/set-up-flags-explorer.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "c95a23d8d46565f3c9f29e39c73e73067513bca1fe0698cbc29a9801236227cd"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "c5b59c5141544d23bff0e3af27c5d47753e367169fdb2c384cc0132f165fe891"
 ---
 
 # Setting up Flags Explorer
@@ -32,8 +33,8 @@ The [Flags Explorer](/docs/flags/flags-explorer) adds a panel to the [Vercel Too
 
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
 - [Flags Explorer redesigned for easier override sharing](https://vercel.com/changelog/flags-explorer-redesigned-for-easier-override-sharing)
-- [Flags Explorer is now generally available](https://vercel.com/changelog/flags-explorer-is-now-generally-available)
 - [Quickstart](https://flags-sdk.dev/docs/frameworks/sveltekit) — Using the Flags SDK in SvelteKit
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [Using the Flags SDK with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
 - [Managing flags in the dashboard](https://vercel.com/docs/flags/vercel-flags/dashboard) — Learn how to manage your feature flags using the Vercel Dashboard.
 - [CLI Workflows](https://vercel.com/docs/agent-resources/workflows) — End-to-end workflows that show how to compose Vercel CLI commands into complete debugging, deployment, and recovery sess
@@ -54,7 +55,7 @@ export const GET = createFlagsDiscoveryEndpoint(async () => {
 });
 ```
 
-This endpoint uses the `FLAGS_SECRET` environment variable to authenticate requests. Make sure you've pulled it with `vercel env pull`.
+With `flags` version 4.5.0 or later, this endpoint answers requests that Vercel signs for your project, so you don't need a `FLAGS_SECRET` environment variable. Run `vercel env pull` so the endpoint can verify requests locally. If your project has a `FLAGS_SECRET`, the endpoint also accepts requests authenticated with that secret. See [when you need a `FLAGS_SECRET`](/docs/flags/flags-explorer/reference#flags_secret-environment-variable).
 
 ## 2. Deploy to preview
 

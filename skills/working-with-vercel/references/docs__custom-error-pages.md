@@ -10,14 +10,15 @@ prerequisites:
 related:
   - /docs/errors/function_invocation_timeout
   - /docs/errors/function_throttled
+  - /docs/routing/custom-404-pages
   - /docs/headers/request-headers
   - /docs/errors
 summary: Learn how to configure custom error pages for 5xx server errors on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/custom-error-pages.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "673157b60b063d4bbae8ab0843843cd54616aa4c39bcf6f429cf5973d186a06f"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "5653bc65e213cbb9c2cbd66e66d6c993c63731b860fa90be2cdbb56ac98929ef"
 ---
 
 # Custom error pages
@@ -33,15 +34,16 @@ Custom error pages let you replace Vercel's platform error pages with your own b
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel now supports customizing platform error pages](https://vercel.com/changelog/vercel-now-supports-customizing-platform-error-pages)
-- [Custom 404 Page](https://vercel.com/kb/guide/custom-404-page) — Create a custom 404 page and deploy with Vercel.
-- [Configuring Custom Subpaths](https://vercel.com/docs/platforms/multi-tenant-platforms/custom-subpaths) — Host platform content on custom subpaths of customer domains while maintaining a single Next.js application.
-- [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
 - [Add a routing rule](https://vercel.com/docs/rest-api/project-routes/add-a-routing-rule) — POST /v1/projects/{projectId}/routes — Add a single routing rule to a project at a specified position. Defaults to the e
+- [Configuring Custom Subpaths](https://vercel.com/docs/platforms/multi-tenant-platforms/custom-subpaths) — Host platform content on custom subpaths of customer domains while maintaining a single Next.js application.
 - [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
 - [Debugging production 500 errors](https://vercel.com/docs/observability/debug-production-errors) — Find, fix, and verify production 500 errors using the Vercel CLI.
+- [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
 
 Full cross-link map for this page: [/docs/custom-error-pages.graph.md](/docs/custom-error-pages.graph.md)
 <!-- /docsgraph:related -->
+
+These pages cover platform errors with `5xx` status codes. To show your own page when a visitor requests a URL that doesn't exist, see [custom 404 pages](/docs/routing/custom-404-pages), which work on all plans.
 
 Custom error pages help you:
 

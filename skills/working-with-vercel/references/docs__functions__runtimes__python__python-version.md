@@ -14,8 +14,8 @@ summary: Set the Python version for your Vercel project with pyproject.toml, .py
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/runtimes/python/python-version.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "93ff2dd200b3e53e2e838d33b0141336e54640f810fb5f672f932af75cd5ddcc"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "6964cf779c4b0a12ab9d04b408c19e9669c1d6e80eac5eccc07a7b422d623b68"
 ---
 
 # Set the Python version for your Vercel project
@@ -37,8 +37,8 @@ the default Python version.
 - [Python 3.13 and 3.14 are now available ](https://vercel.com/changelog/python-3-13-and-3-14-are-now-available)
 - [Python on Vercel is now generally available](https://vercel.com/changelog/python-on-vercel-is-now-generally-available)
 - [Python 3.9 is now available](https://vercel.com/changelog/python-3-9-is-now-available)
-- [Python 3.6 is being deprecated](https://vercel.com/changelog/python-3-6-is-being-deprecated)
 - [Python 3.12 and Ruby 3.3 are now available](https://vercel.com/changelog/python-3-12-and-ruby-3-3-are-now-available)
+- [Python 3.6 is being deprecated](https://vercel.com/changelog/python-3-6-is-being-deprecated)
 - [Supported Node.js versions](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions) — Learn about the supported Node.js versions on Vercel.
 - [General settings](https://vercel.com/docs/project-configuration/general-settings) — Configure basic settings for your Vercel project, including the project name, build and development settings, root direc
 - [Package Managers](https://vercel.com/docs/package-managers) — Discover the package managers supported by Vercel for dependency management. Learn how Vercel detects and uses npm, Yarn

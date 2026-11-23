@@ -17,8 +17,8 @@ summary: Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML pro
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/deepagents.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "ee455095fc2ffc2f017ad78c0d078164616e6f2a4b498c0a94e770fc39a77904"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "631ab5bcb8e6b8d69d8a0496afd86933e20a8d5be6acb52de13a8ad3cb85981b"
 ---
 
 # Deep Agents CLI with AI Gateway
@@ -32,11 +32,11 @@ sha256: "ee455095fc2ffc2f017ad78c0d078164616e6f2a4b498c0a94e770fc39a77904"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
-- [Set up coding agents in one command with AI Gateway](https://vercel.com/changelog/set-up-coding-agents-in-one-command-with-ai-gateway)
 - [Continue CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/continue) — Connect Continue CLI to AI Gateway with the Vercel CLI or a YAML model configuration that reads your API key from the en
 - [DeepSeek Harness with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepseek) — Connect DeepSeek Harness to AI Gateway with the Vercel CLI or a YAML provider and model shortlist.
 - [GitHub Copilot CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/copilot) — Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
+- [gptme with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/gptme) — Connect gptme to AI Gateway with the Vercel CLI or a TOML provider configuration.
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/deepagents.graph.md](/docs/ai-gateway/coding-agents/deepagents.graph.md)
 <!-- /docsgraph:related -->

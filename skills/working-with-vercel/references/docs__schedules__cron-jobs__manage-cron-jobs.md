@@ -18,8 +18,8 @@ summary: Learn how to manage Cron Jobs effectively in Vercel. Explore cron job d
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/schedules/cron-jobs/manage-cron-jobs.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "8382fd631cc65b91e6840b595d820d769697cc21d8e6ca1099f99187b3a91585"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "f8be160342d7a564b69506f7e6f0b7b1c2fb0b2d4782581a3f125a6ff90d162f"
 ---
 
 # Managing Cron Jobs
@@ -32,16 +32,15 @@ Cron Jobs are a legacy feature and will be migrated to
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to stop traffic to an old deployment on Vercel](https://vercel.com/kb/guide/how-to-stop-traffic-to-an-old-deployment-on-vercel) — Move production traffic to the new deployment, restrict access to the old deployment, and check remaining function activ
 - [Introducing Vercel Cron Jobs](https://vercel.com/blog/cron-jobs)
 - [Vercel Cron Jobs are now generally available](https://vercel.com/changelog/vercel-cron-jobs-are-now-generally-available)
-- [Cron jobs now support 100 per project on every plan](https://vercel.com/changelog/cron-jobs-now-support-100-per-project-on-every-plan)
 - [ Run a Docker monolith with workers on Vercel](https://vercel.com/kb/guide/docker-monolith-workers-vercel) — Run a Dockerized monolith on Vercel with Container Images, move long-running workers to Vercel Queues and Vercel Workflo
 - [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
-- [Migrate from Google Cloud Run to Vercel](https://vercel.com/kb/guide/migrate-cloud-run-to-vercel) — Move a Cloud Run service or worker to Vercel. Compare runtimes, preserve Google Cloud access, and plan jobs, validation,
+- [Cron jobs now support 100 per project on every plan](https://vercel.com/changelog/cron-jobs-now-support-100-per-project-on-every-plan)
 - [vercel crons](https://vercel.com/docs/cli/crons) — Manage Cron Jobs from the Vercel CLI: add cron entries to your vercel.json, list them, and trigger them on demand.
 - [Rolling Releases](https://vercel.com/docs/rolling-releases) — Learn how to use Rolling Releases for more cautious deployments.
 - [Handling Scheduled Runs](https://vercel.com/docs/schedules/handle-runs) — Write the private function, route, or queue consumer that a schedule runs, and make it safe to run more than once.
-- [Limits](https://vercel.com/docs/limits) — Look up account limits, usage summaries, rate limits, and resource constraints for every Vercel plan.
 
 Full cross-link map for this page: [/docs/schedules/cron-jobs/manage-cron-jobs.graph.md](/docs/schedules/cron-jobs/manage-cron-jobs.graph.md)
 <!-- /docsgraph:related -->

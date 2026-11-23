@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/large-codebases.md"
-fetched_at: "2026-11-16T12:28:44.823Z"
-sha256: "5764008ddd893fa5177b2e6239155b0a8796fd594c53e5071927ad748cc6790e"
+fetched_at: "2026-11-23T14:04:20.448Z"
+sha256: "f5d723ccd1962a060db8f6b5991b4e98d8d0623bfbd75ff9dab2d1d62870d8d9"
 ---
 
 > ## Documentation Index
@@ -359,7 +359,7 @@ Each route file has a corresponding `.test.ts` file.
 
 A different subdirectory holds different skills the same way: `packages/web/.claude/skills/component-patterns/` describes the frontend's component conventions instead of testing. When Claude works on a file in `packages/api/`, it loads the api-testing skill. When it works in `packages/web/`, it loads component-patterns.
 
-You can also scope a skill by file pattern instead of by placement. The [`paths` frontmatter field](https://code.claude.com/docs/en/skills#frontmatter-reference) takes glob patterns, and Claude loads the skill automatically only when it works with matching files. Use this for a skill that lives in the repository root's `.claude/skills/` but applies only to certain files, such as a database-migration skill scoped to `**/migrations/**`.
+You can also scope a skill by file pattern instead of by placement. The [`paths` frontmatter field](https://code.claude.com/docs/en/skills#frontmatter-reference) takes glob patterns, and Claude loads the skill automatically when it works with matching files. Use this for a skill that lives in the repository root's `.claude/skills/` but applies only to certain files, such as a database-migration skill scoped to `**/migrations/**`.
 
 For more on creating and organizing skills, see [Skills](https://code.claude.com/docs/en/skills.md).
 

@@ -13,12 +13,12 @@ related:
   - /docs/vercel-blob
   - /docs/ai-gateway/modalities/video-generation/video-extension
   - /docs/ai-gateway/modalities/video-generation
-summary: Animate static images into videos using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI Gateway.
+summary: Animate static images into videos using Google Veo, KlingAI, Wan, Grok Imagine Video, ByteDance Seedance, MiniMax H3, FLUX 3, or HeyGen Video through...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/image-to-video.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "758b9b1cd95a89475f009198239de0c662c848330bbd410d56a96e2c00a148d8"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "81dd1c0e2e14c71a5fae15e59a52812c315e9556ba6d6f14e0c7a63c6d627c3f"
 ---
 
 # AI Gateway Image-to-Video Generation
@@ -33,10 +33,11 @@ Animate a static image into a video. The image you provide becomes the video con
 
 - [Kling AI](https://ai-sdk.dev/providers/ai-sdk-providers/klingai) — Learn how to use Kling AI with AI Gateway and the direct provider.
 - [Kling video models on AI Gateway](https://vercel.com/changelog/kling-video-models-on-ai-gateway)
+- [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
 - [Tencent Cloud](https://ai-sdk.dev/providers/ai-sdk-providers/tencent) — Learn how to use Tencent Cloud TokenHub and VOD models with the AI SDK.
-- [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba) — Learn how to use Alibaba with AI Gateway and the direct provider.
-- [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance) — Learn how to use ByteDance with AI Gateway and the direct provider.
 - [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation) — Learn how to generate videos with the AI SDK.
+- [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance) — Learn how to use ByteDance with AI Gateway and the direct provider.
+- [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway)
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/image-to-video.graph.md](/docs/ai-gateway/modalities/video-generation/image-to-video.graph.md)
 <!-- /docsgraph:related -->
@@ -50,7 +51,7 @@ This is different from [reference-to-video](/docs/ai-gateway/modalities/video-ge
 The provider-agnostic `frameImages` field is the recommended way to pass frames. Each entry pairs an image with a `frameType`:
 
 - One `first_frame` entry animates from that image. This is equivalent to `prompt.image`, and a `first_frame` takes priority if you pass both.
-- Adding a `last_frame` entry transitions between the two frames. Veo, KlingAI, and Seedance honor `last_frame`; Grok Imagine Video and Wan ignore it with a warning.
+- Adding a `last_frame` entry transitions between the two frames. Veo, KlingAI, Seedance, MiniMax H3, FLUX 3, Wan 3.0, and Grok Imagine Video 1.5 honor `last_frame`. Wan 2.6 and the other Grok Imagine Video models ignore it with a warning, and HeyGen Video rejects the request.
 
 ```typescript
 frameImages: [
@@ -63,7 +64,7 @@ Each provider below also documents its own `providerOptions` keys (like `imageTa
 
 ## Google Veo
 
-Google's Veo models support image-to-video generation, animating a starting image into a video.
+Google's Veo models support image-to-video generation, animating a starting image into a video. Use `google/veo-3.1-generate-001` or `google/veo-3.1-fast-generate-001`. Veo 3.1 Lite supports text-to-video only.
 
 [Browse the latest Veo video models](/ai-gateway/models?capabilities=video-generation\&providers=vertex) on the AI Gateway Models page.
 
@@ -74,7 +75,7 @@ Google's Veo models support image-to-video generation, animating a starting imag
 | `prompt.image`                            | `string`                                           | Yes      | URL or base64-encoded image to animate                               |
 | `prompt.text`                             | `string`                                           | No       | Description of the motion or animation                               |
 | `duration`                                | `4` \| `6` \| `8`                                  | No       | Video length in seconds. Defaults to 8                               |
-| `resolution`                              | `string`                                           | No       | Resolution (`'1280x720'` for 720p, `'1920x1080'` for 1080p). Defaults to 720p               |
+| `resolution`                              | `string`                                           | No       | Resolution (`'1280x720'` for 720p, `'1920x1080'` for 1080p, `'3840x2160'` for 4K). Defaults to 720p |
 | `generateAudio`                           | `boolean`                                          | No       | Generate audio alongside the video                                   |
 | `providerOptions.vertex.resizeMode`       | `'pad'` \| `'crop'`                                | No       | How to resize the image to fit video dimensions. Defaults to `'pad'` |
 | `providerOptions.vertex.enhancePrompt`    | `boolean`                                          | No       | Use Gemini to enhance prompts. Defaults to `true`                    |
@@ -134,7 +135,7 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 ## KlingAI
 
-KlingAI's image-to-video models animate images with standard or professional quality modes.
+KlingAI's image-to-video models animate images with standard or professional quality modes. Three models support image-to-video, including first and last frames: `klingai/kling-v3.0-i2v`, `klingai/kling-v2.6-i2v`, and `klingai/kling-v2.5-turbo-i2v`.
 
 [Browse the latest KlingAI video models](/ai-gateway/models?capabilities=video-generation\&providers=klingai) on the AI Gateway Models page.
 
@@ -433,23 +434,27 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 ## Wan
 
-Wan offers image-to-video with standard and flash variants. Both support audio generation. Wan requires image URLs (not buffers). Use [Vercel Blob](/docs/vercel-blob) to host local images.
+Wan (by Alibaba) animates images into videos with audio. The current models are `alibaba/wan-v3.0-video` and `alibaba/wan-v3.0-video-prime`. A Wan 3.0 model runs image-to-video when you pass a frame image, and it supports a first frame, a last frame, and images as URLs, base64 strings, or Buffers.
+
+The earlier image-to-video models are `alibaba/wan-v2.6-i2v` and its lower-cost flash variant, `alibaba/wan-v2.6-i2v-flash`. Wan 2.6 requires image URLs (not buffers). Use [Vercel Blob](/docs/vercel-blob) to host local images.
 
 [Browse the latest Wan video models](/ai-gateway/models?capabilities=video-generation\&providers=alibaba) on the AI Gateway Models page.
 
-> **💡 Note:** Wan does not support first-last-frame interpolation. A `last_frame` entry in
-> `frameImages` is ignored with a warning.
+> **💡 Note:** Wan 2.6 does not support first-last-frame interpolation. A `last_frame` entry
+> in `frameImages` is ignored with a warning. Use a Wan 3.0 model to transition
+> between two frames.
 
 ### Wan parameters
 
 | Parameter                                | Type                          | Required | Description                                                                        |
 | ---------------------------------------- | ----------------------------- | -------- | ---------------------------------------------------------------------------------- |
 | `prompt`                                 | `string` or `{ image, text }` | Yes      | Text description of the motion or animation                                        |
-| `frameImages`                            | `Array<{ image, frameType }>` | No       | Pass a `first_frame` entry to animate from an image. URLs only. Takes priority over `prompt.image` |
-| `prompt.image`                           | `string`                      | No       | URL of the image to animate (URLs only, not buffers). Used when `frameImages` is omitted |
-| `resolution`                             | `string`                      | No       | `'1280x720'` or `'1920x1080'`                                                      |
-| `duration`                               | `number`                      | No       | 2-15 seconds                                                                       |
-| `generateAudio`                          | `boolean`                     | No       | Generate audio. Standard models default to `true`, flash models default to `false` |
+| `frameImages`                            | `Array<{ image, frameType }>` | No       | Pass a `first_frame` entry to animate from an image. Wan 3.0 also accepts a `last_frame` entry. Wan 2.6 accepts URLs only. Takes priority over `prompt.image` |
+| `prompt.image`                           | `string \| Buffer`            | No       | The image to animate. Wan 2.6 accepts URLs only. Used when `frameImages` is omitted |
+| `aspectRatio`                            | `string`                      | No       | Aspect ratio (`'16:9'`, `'9:16'`, `'1:1'`, `'4:3'`, `'3:4'`). Wan 3.0 only         |
+| `resolution`                             | `string`                      | No       | `'1280x720'` or `'1920x1080'`. Wan 3.0 also supports `'832x480'`                   |
+| `duration`                               | `number`                      | No       | Wan 3.0: 2 to 30 seconds. Wan 2.6: 2 to 15 seconds                                 |
+| `generateAudio`                          | `boolean`                     | No       | Generate audio. Wan 3.0 and standard Wan 2.6 models default to `true`, flash models default to `false` |
 | `providerOptions.alibaba.negativePrompt` | `string`                      | No       | What to avoid in the video. Max 500 characters                                     |
 | `providerOptions.alibaba.audioUrl`       | `string`                      | No       | URL to audio file for audio-video sync (WAV/MP3, 3-30s, max 15MB)                  |
 | `providerOptions.alibaba.watermark`      | `boolean`                     | No       | Add watermark to the video. Defaults to `false`                                    |
@@ -463,7 +468,7 @@ import { experimental_generateVideo as generateVideo } from 'ai';
 import fs from 'node:fs';
 
 const result = await generateVideo({
-  model: 'alibaba/wan-v2.6-i2v-flash',
+  model: 'alibaba/wan-v3.0-video',
   prompt: 'The cat waves hello and smiles',
   frameImages: [
     { image: 'https://example.com/cat.png', frameType: 'first_frame' },
@@ -477,29 +482,52 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 If you omit `frameImages`, you can still pass the first frame through `prompt.image` with `prompt.text`.
 
+### Wan first and last frame
+
+Wan 3.0 can transition between a starting and ending image. Pass both frames through `frameImages`, tagging one `first_frame` and one `last_frame`. Don't combine `frameImages` with `inputReferences` on Wan 3.0, because the model rejects a request that mixes frames and references.
+
+```typescript filename="wan-first-last-frame.ts"
+import { experimental_generateVideo as generateVideo } from 'ai';
+import fs from 'node:fs';
+
+const result = await generateVideo({
+  model: 'alibaba/wan-v3.0-video',
+  prompt: 'Smooth transition between the two scenes',
+  frameImages: [
+    { image: 'https://example.com/start.png', frameType: 'first_frame' },
+    { image: 'https://example.com/end.png', frameType: 'last_frame' },
+  ],
+  resolution: '1280x720',
+  duration: 5,
+});
+
+fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
+```
+
 ***
 
 ## Grok Imagine Video
 
-Grok Imagine Video (by SpaceXAI) can animate images into videos. The output defaults to the input image's aspect ratio. If you specify `aspectRatio`, it will override this and stretch the image to the desired ratio.
+Grok Imagine Video (by SpaceXAI) can animate images into videos. Three models support image-to-video: `spacexai/grok-imagine-video-1.5`, `spacexai/grok-imagine-video-1.5-lite`, and `spacexai/grok-imagine-video`. The 1.5 models add 1080p output. The output defaults to the input image's aspect ratio. If you specify `aspectRatio`, it will override this and stretch the image to the desired ratio.
 
 [Browse the latest Grok video models](/ai-gateway/models?capabilities=video-generation\&providers=spacexai) on the AI Gateway Models page.
 
-> **💡 Note:** Grok Imagine Video does not support first-last-frame interpolation. A
-> `last_frame` entry in `frameImages` is ignored with a warning. To continue
-> from a video's last frame, use [video extension](/docs/ai-gateway/modalities/video-generation/video-extension)
-> mode instead.
+> **💡 Note:** Only `spacexai/grok-imagine-video-1.5` honors a `last_frame` entry in
+> `frameImages`. The other Grok Imagine Video models ignore it with a warning.
+> To continue from a video's last frame, use [video
+> extension](/docs/ai-gateway/modalities/video-generation/video-extension) mode
+> instead.
 
 ### Grok parameters
 
 | Parameter                                 | Type                          | Required | Description                                                                             |
 | ----------------------------------------- | ----------------------------- | -------- | --------------------------------------------------------------------------------------- |
 | `prompt`                                  | `string` or `{ image, text }` | Yes      | Text description of the motion or animation                                             |
-| `frameImages`                             | `Array<{ image, frameType }>` | No       | Pass a `first_frame` entry to animate from an image. Takes priority over `prompt.image` |
+| `frameImages`                             | `Array<{ image, frameType }>` | No       | Pass a `first_frame` entry to animate from an image. `spacexai/grok-imagine-video-1.5` also accepts a `last_frame` entry. Takes priority over `prompt.image` |
 | `prompt.image`                            | `string`                      | No       | URL of the image to animate. Used when `frameImages` is omitted                         |
 | `duration`                                | `number`                      | No       | Video length in seconds (1-15)                                                          |
 | `aspectRatio`                             | `string`                      | No       | Override the input image's aspect ratio (stretches the image)                           |
-| `providerOptions.xai.resolution`          | `'480p'` \| `'720p'`          | No       | Video resolution. Defaults to 480p                                                      |
+| `providerOptions.xai.resolution`          | `'480p'` \| `'720p'` \| `'1080p'` | No       | Video resolution. `'1080p'` requires a 1.5 model. Defaults to 480p                 |
 | `providerOptions.xai.pollIntervalMs`      | `number`                      | No       | How often to check task status. Defaults to `5000`                                      |
 | `providerOptions.xai.pollTimeoutMs`       | `number`                      | No       | Maximum wait time. Defaults to `600000` (10 minutes)                                    |
 
@@ -510,7 +538,7 @@ import { experimental_generateVideo as generateVideo } from 'ai';
 import fs from 'node:fs';
 
 const result = await generateVideo({
-  model: 'spacexai/grok-imagine-video',
+  model: 'spacexai/grok-imagine-video-1.5',
   prompt: 'The cat slowly turns its head and blinks',
   frameImages: [
     { image: 'https://example.com/cat.png', frameType: 'first_frame' },
@@ -528,11 +556,39 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 If you omit `frameImages`, you can still pass the first frame through `prompt.image` with optional `prompt.text`.
 
+### Grok first and last frame
+
+`spacexai/grok-imagine-video-1.5` can transition between a starting and ending image. Pass both frames through `frameImages`, tagging one `first_frame` and one `last_frame`.
+
+```typescript filename="grok-first-last-frame.ts"
+import { experimental_generateVideo as generateVideo } from 'ai';
+import fs from 'node:fs';
+
+const result = await generateVideo({
+  model: 'spacexai/grok-imagine-video-1.5',
+  prompt: 'Smooth transition between the two scenes',
+  frameImages: [
+    { image: 'https://example.com/start.png', frameType: 'first_frame' },
+    { image: 'https://example.com/end.png', frameType: 'last_frame' },
+  ],
+  duration: 5,
+  providerOptions: {
+    xai: {
+      pollTimeoutMs: 600000,
+    },
+  },
+});
+
+fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
+```
+
 ***
 
 ## ByteDance Seedance
 
 ByteDance's Seedance models animate images into videos with support for first-and-last-frame control, multi-reference images, and optional audio generation. All models output MP4 at 24fps. Seedance requires image URLs (not buffers). Use [Vercel Blob](/docs/vercel-blob) to host local images.
+
+The current models are `bytedance/seedance-2.5` and its lower-cost variant, `bytedance/seedance-2.5-flash`. The Seedance 2.0 family (`bytedance/seedance-2.0`, `bytedance/seedance-2.0-fast`, and `bytedance/seedance-2.0-mini`) and the v1.0 models (`bytedance/seedance-v1.0-pro` and `bytedance/seedance-v1.0-pro-fast`) also support image-to-video. Every model except Seedance v1.0 Pro Fast supports first and last frames.
 
 [Browse the latest Seedance video models](/ai-gateway/models?capabilities=video-generation\&providers=bytedance) on the AI Gateway Models page.
 
@@ -548,16 +604,15 @@ ByteDance's Seedance models animate images into videos with support for first-an
 | `prompt.image`                              | `string`                | No       | URL of the image to animate. You can pass the first frame through `frameImages` instead                                               |
 | `prompt.text`                               | `string`                | No       | Description of the motion or animation                                                                                                 |
 | `aspectRatio`                               | `string`                | No       | Aspect ratio (`'16:9'`, `'4:3'`, `'1:1'`, `'3:4'`, `'9:16'`, `'21:9'`, `'adaptive'`). `'adaptive'` uses the input image's aspect ratio |
-| `resolution`                                | `string`                | No       | Resolution (`'854x480'`, `'1280x720'`, `'1920x1080'`). Seedance 2.5 supports up to 1080p. Lite I2V supports up to 720p                  |
-| `duration`                                  | `number`                | No       | Video length in seconds. Seedance 2.5: 4 to 30 seconds. v1.5: 4 to 12 seconds. v1.0: 2 to 12 seconds                                   |
+| `resolution`                                | `string`                | No       | Resolution (`'864x480'`, `'1280x720'`, `'1920x1080'`). Seedance 2.5 Flash, 2.0 Fast, and 2.0 Mini support up to `'1280x720'`           |
+| `duration`                                  | `number`                | No       | Video length in seconds. Seedance 2.5 and 2.5 Flash: 4 to 30 seconds. Seedance 2.0 family: 4 to 15 seconds. v1.0: 2 to 12 seconds      |
 | `providerOptions.bytedance.lastFrameImage`  | `string`                | No       | URL of the last frame image. Enables first+last frame mode. See [first and last frame](#seedance-first-and-last-frame)                 |
-| `inputReferences`                           | `Array<{ data: string; mediaType: string }>` | No       | Reference images and videos. Seedance 2.5 accepts up to 30 images and 10 videos across the request. See [multi-reference images](#seedance-multi-reference-images) |
-| `providerOptions.bytedance.referenceImages` | `string[]`              | No       | Legacy alternative to `inputReferences` for image URLs. Lite I2V supports one to four images                                          |
-| `generateAudio`                             | `boolean`               | No       | Generate synchronized audio. Seedance v1.5 Pro and the Seedance 2.x series only                                                                                    |
+| `inputReferences`                           | `Array<{ data: string; mediaType: string }>` | No       | Reference images and videos. Seedance 2.5 accepts up to 30 images and 10 videos across the request, and Seedance 2.5 Flash up to 10 images and 5 videos. See [multi-reference images](#seedance-multi-reference-images) |
+| `providerOptions.bytedance.referenceImages` | `string[]`              | No       | Legacy alternative to `inputReferences` for image URLs                                                                                 |
+| `generateAudio`                             | `boolean`               | No       | Generate synchronized audio. Seedance 2.x series only                                                                                  |
 | `providerOptions.bytedance.watermark`       | `boolean`               | No       | Add a watermark to the video. v1.x only                                                                                                |
 | `providerOptions.bytedance.cameraFixed`     | `boolean`               | No       | Fix the camera position during generation. v1.x only                                                                                   |
 | `providerOptions.bytedance.returnLastFrame` | `boolean`               | No       | Return the last frame of the generated video. v1.x only                                                                                |
-| `providerOptions.bytedance.serviceTier`     | `'default'` \| `'flex'` | No       | `'default'` for online inference. `'flex'` for offline at 50% cost and higher latency. v1.x only                                       |
 | `providerOptions.bytedance.pollIntervalMs`  | `number`                | No       | How often to check task status. Defaults to `3000`                                                                                     |
 | `providerOptions.bytedance.pollTimeoutMs`   | `number`                | No       | Maximum wait time. Defaults to `300000` (5 minutes)                                                                                    |
 
@@ -618,7 +673,7 @@ If you omit `frameImages`, you can still set the first frame via `prompt.image` 
 
 ### Seedance multi-reference images
 
-Provide reference images that Seedance 2.5 uses to reproduce object shapes, colors, and textures. Seedance 2.5 accepts up to 30 image inputs across the request. Use `[Image 1]`, `[Image 2]`, and so on in your prompt to reference each image.
+Provide reference images that Seedance 2.5 uses to reproduce object shapes, colors, and textures. Seedance 2.5 accepts up to 30 image inputs across the request, and Seedance 2.5 Flash accepts up to 10. Use `[Image 1]`, `[Image 2]`, and so on in your prompt to reference each image.
 
 Pass references through the provider-agnostic `inputReferences` field, as shown below. The legacy `providerOptions.bytedance.referenceImages` key also works when you omit `inputReferences`. Either way, refer to each image with `[Image 1]`, `[Image 2]`, and so on in your prompt. When using `inputReferences` with URLs, tag each entry with an explicit media type (for example, `{ data: url, mediaType: 'image/png' }`). Seedance treats untyped URL references as images and emits a warning.
 
@@ -655,6 +710,134 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 > **💡 Note:** Video generation can take several minutes. Set `pollTimeoutMs` to at least 10
 > minutes (600000ms) for reliable operation.
+
+***
+
+## MiniMax
+
+MiniMax H3 models animate a starting image into a video, and both `minimax/minimax-h3` and `minimax/minimax-h3-max` can transition between a first and last frame. Pass images as URLs. The output follows the frame image's aspect ratio, so MiniMax H3 models ignore `aspectRatio` with a warning when you pass a frame.
+
+[Browse the latest MiniMax video models](/ai-gateway/models?capabilities=video-generation\&providers=minimax) on the AI Gateway Models page.
+
+### MiniMax parameters
+
+| Parameter                                | Type                           | Required | Description                                                                                                                                                 |
+| ---------------------------------------- | ------------------------------ | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `prompt`                                 | `string` or `{ image, text }`  | Yes      | Text description of the motion or animation                                                                                                                 |
+| `frameImages`                            | `Array<{ image, frameType }>`  | No       | Pass a `first_frame` entry to animate from an image, and add a `last_frame` entry to transition between two. A `last_frame` without a `first_frame` is ignored with a warning |
+| `prompt.image`                           | `string`                       | No       | URL of the image to animate. Used when `frameImages` is omitted                                                                                             |
+| `duration`                               | `number`                       | No       | Video length in whole seconds. 4 to 15 for MiniMax H3, 5 to 15 for MiniMax H3 Max. Defaults to 5                                                            |
+| `providerOptions.minimax.resolution`     | `'480P'` \| `'768P'` \| `'2K'` | No       | Resolution tier. MiniMax H3 supports `'768P'` and `'2K'` (default). MiniMax H3 Max supports `'480P'` and `'768P'` (default)                                 |
+| `providerOptions.minimax.pollIntervalMs` | `number`                       | No       | How often to check task status. Defaults to `10000`                                                                                                         |
+| `providerOptions.minimax.pollTimeoutMs`  | `number`                       | No       | Maximum wait time. Defaults to `600000` (10 minutes)                                                                                                        |
+
+### MiniMax example
+
+```typescript filename="minimax-first-last-frame.ts"
+import { experimental_generateVideo as generateVideo } from 'ai';
+import fs from 'node:fs';
+
+const result = await generateVideo({
+  model: 'minimax/minimax-h3',
+  prompt: 'Smooth transition between the two scenes',
+  frameImages: [
+    { image: 'https://example.com/start.png', frameType: 'first_frame' },
+    { image: 'https://example.com/end.png', frameType: 'last_frame' },
+  ],
+  duration: 5,
+});
+
+fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
+```
+
+To animate from one image, pass only the `first_frame` entry. MiniMax H3 can't combine frame images with `inputReferences`, and ignores the references with a warning if you pass both.
+
+***
+
+## Black Forest Labs FLUX 3
+
+FLUX 3 (by Black Forest Labs) animates images into 5 to 20 second videos. Use the `bfl/flux-3-video` model. FLUX 3 treats frame images as keyframes: one image opens the video, and two images open and close it. Pass images as URLs or base64 strings.
+
+[Browse the latest Black Forest Labs video models](/ai-gateway/models?capabilities=video-generation\&providers=bfl) on the AI Gateway Models page.
+
+### FLUX 3 parameters
+
+| Parameter                                    | Type                                  | Required | Description                                                                                                                                                                   |
+| -------------------------------------------- | ------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `prompt`                                     | `string` or `{ image, text }`         | Yes      | Text description of the motion or animation                                                                                                                                   |
+| `frameImages`                                | `Array<{ image, frameType }>`         | No       | Pass a `first_frame` entry to animate from an image, and add a `last_frame` entry to transition between two. A `last_frame` without a `first_frame` is ignored with a warning |
+| `prompt.image`                               | `string`                              | No       | The image to animate. Used when `frameImages` is omitted                                                                                                                      |
+| `duration`                                   | `number`                              | No       | Video length in whole seconds, from 5 to 20                                                                                                                                   |
+| `providerOptions.blackForestLabs.keyframes`  | `string[]` or `Array<[number, string]>` | No       | Up to 10 keyframe images, for more than two images or images pinned to a specific second (`[seconds, image]`). Takes priority over `prompt.image` and `frameImages`. Three or more images without timestamps require an explicit `duration` |
+| `providerOptions.blackForestLabs.resolution` | `'hd'` \| `'fhd'`                     | No       | Resolution tier                                                                                                                                                               |
+
+### FLUX 3 example
+
+```typescript filename="flux-3-first-last-frame.ts"
+import { experimental_generateVideo as generateVideo } from 'ai';
+import fs from 'node:fs';
+
+const result = await generateVideo({
+  model: 'bfl/flux-3-video',
+  prompt: 'Smooth transition between the two scenes',
+  frameImages: [
+    { image: 'https://example.com/start.png', frameType: 'first_frame' },
+    { image: 'https://example.com/end.png', frameType: 'last_frame' },
+  ],
+  duration: 5,
+  providerOptions: {
+    blackForestLabs: {
+      resolution: 'hd',
+    },
+  },
+});
+
+fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
+```
+
+***
+
+## HeyGen
+
+HeyGen Video animates a single starting image into a 5 to 15 second video with audio. Use the `heygen/heygen-video-1` model and pass the image through `prompt.image` as an HTTPS URL, a base64 string, or a Buffer. The output follows the image's aspect ratio, so HeyGen Video ignores `aspectRatio` with a warning.
+
+[Browse the latest HeyGen video models](/ai-gateway/models?capabilities=video-generation\&providers=heygen) on the AI Gateway Models page.
+
+> **💡 Note:** HeyGen Video does not support first-last-frame interpolation. A request with
+> a `last_frame` entry in `frameImages` fails with an error.
+
+### HeyGen parameters
+
+| Parameter                                  | Type                                                         | Required | Description                                                                                                   |
+| ------------------------------------------ | ------------------------------------------------------------ | -------- | ------------------------------------------------------------------------------------------------------------- |
+| `prompt.image`                             | `string \| Buffer`                                           | Yes      | The image to animate                                                                                          |
+| `prompt.text`                              | `string`                                                     | Yes      | Description of the motion or animation. 1 to 32,000 characters                                                |
+| `duration`                                 | `number`                                                     | No       | Video length in whole seconds, from 5 to 15. Defaults to 5                                                    |
+| `providerOptions.heygen.resolution`        | `'480p'` \| `'768p'` \| `'1080p'` \| `'2k'`                  | No       | Output size class. Defaults to `'768p'`                                                                       |
+| `providerOptions.heygen.promptEnhancement` | `'turbo'` \| `'quality'` \| `'ultraquality'` \| `'disabled'` | No       | How HeyGen rewrites your prompt. Defaults to `'quality'`. Use `'disabled'` to keep the prompt as you wrote it |
+
+### HeyGen example
+
+```typescript filename="heygen-image-to-video.ts"
+import { experimental_generateVideo as generateVideo } from 'ai';
+import fs from 'node:fs';
+
+const result = await generateVideo({
+  model: 'heygen/heygen-video-1',
+  prompt: {
+    image: 'https://example.com/cat.png',
+    text: 'The cat slowly turns its head and blinks',
+  },
+  duration: 5,
+  providerOptions: {
+    heygen: {
+      resolution: '768p',
+    },
+  },
+});
+
+fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
+```
 
 ## Asynchronous generation
 

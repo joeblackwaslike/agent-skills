@@ -14,8 +14,8 @@ summary: Vercel MCP tools for web analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "14231b711eb65ce8f3eb970d66a2c94bf5f8d29115384063711131c62e23b4b4"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "58f70406270b1318d675c0300e111e99888fa6ddc8636e381767082100902e81"
 ---
 
 # Web Analytics
@@ -28,6 +28,7 @@ Explore traffic and custom events for projects with Web Analytics enabled. You c
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Public Web Analytics API now available](https://vercel.com/changelog/web-analytics-api)
 - [Counts custom events](https://vercel.com/docs/rest-api/web-analytics/counts-custom-events) — GET /v1/query/web-analytics/events/count — Counts the number of custom events on a project \\(production only\\), since We
 - [Aggregates custom events](https://vercel.com/docs/rest-api/web-analytics/aggregates-custom-events) — GET /v1/query/web-analytics/events/aggregate — Counts custom events on a project, within the requested date range. Resul
 - [Counts page views](https://vercel.com/docs/rest-api/web-analytics/counts-page-views) — GET /v1/query/web-analytics/visits/count — Counts the number of page views on a project \\(production only\\), since Web A

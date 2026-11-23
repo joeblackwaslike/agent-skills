@@ -18,8 +18,8 @@ summary: Learn how billing works for native integrations, including invoice life
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/billing.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "3c82389722d5f9f86c08ccd991d4774b28e947a550b05fd06832f2fcc25537ee"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "0aea95bfbdb27081112b5beed207daf5e4e33dc931faacf0a4c98986d8250957"
 ---
 
 # Manage Billing and Refunds for Integrations
@@ -34,9 +34,9 @@ When a Vercel user installs your native integration, you manage billing through 
 
 - [Billing & Invoices](https://vercel.com/docs/pricing/understanding-my-invoice) — Learn how Vercel invoices are structured for Pro and Enterprise plans, including plan charges, credits, and usage-based
 - [Submit Invoice](https://vercel.com/docs/rest-api/marketplace/submit-invoice) — POST /v1/installations/{integrationConfigurationId}/billing/invoices — This endpoint allows the partner to submit an inv
-- [Get Invoice](https://vercel.com/docs/rest-api/marketplace/get-invoice) — GET /v1/installations/{integrationConfigurationId}/billing/invoices/{invoiceId} — Get Invoice details and status for a g
+- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 - [Billing FAQ for Enterprise Plan](https://vercel.com/docs/plans/enterprise/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
-- [Submit Billing Data](https://vercel.com/docs/rest-api/marketplace/submit-billing-data) — POST /v1/installations/{integrationConfigurationId}/billing — Sends the billing and usage data. The partner should do th
+- [Invoice Actions](https://vercel.com/docs/rest-api/marketplace/invoice-actions) — POST /v1/installations/{integrationConfigurationId}/billing/invoices/{invoiceId}/actions — This endpoint allows the part
 
 Full cross-link map for this page: [/docs/integrations/create-integration/billing.graph.md](/docs/integrations/create-integration/billing.graph.md)
 <!-- /docsgraph:related -->
@@ -158,7 +158,9 @@ Billing customers involves two separate steps:
 1. **Send interim billing data** throughout the billing period to show expected charges in the Vercel dashboard. This is for display only and does not charge customers.
 2. **Submit an invoice** at the end of the billing period to create and send the actual invoice, which triggers payment collection.
 
-To bill customers, call the [Vercel billing API endpoints](/docs/integrations/create-integration/marketplace-api/reference/vercel). All requests require the `access_token` from the Upsert Installation request body for authorization.
+To bill customers, call the [Vercel billing API endpoints](/docs/integrations/create-integration/marketplace-api/reference/vercel).
+
+Authenticate each request with a [short-lived access token](/docs/integrations/create-integration/short-lived-access-tokens#request-a-short-lived-token) for the installation. Long-lived access tokens, including a stored `access_token` from the Upsert Installation request, are deprecated. If your integration uses them today, [migrate to short-lived access tokens](/docs/integrations/create-integration/short-lived-access-tokens).
 
 ### Send interim billing data
 
@@ -262,8 +264,8 @@ The response includes an `invoiceId` you can use to track status or request refu
 To check invoice status, call the [Get Invoice endpoint](/docs/integrations/create-integration/marketplace-api/reference/vercel/get-invoice) (`GET /v1/installations/{integrationConfigurationId}/billing/invoices/{invoiceId}`). You can also subscribe to [billing event webhooks](/docs/integrations/create-integration/marketplace-api#working-with-billing-events-through-webhooks) to receive real-time updates when invoice states change.
 
 > **💡 Note:** You can't retrieve invoices for installations that have been deleted. Once an
-> installation is finalized, the `access_token` for that installation becomes
-> invalid, and API calls to retrieve invoice data will fail. To maintain invoice
+> installation is finalized, its access tokens stop working and you can't
+> request new ones, so API calls to retrieve invoice data fail. To maintain invoice
 > records, store invoice data in your own system when you receive billing
 > webhooks, or query invoice status before the installation is deleted.
 

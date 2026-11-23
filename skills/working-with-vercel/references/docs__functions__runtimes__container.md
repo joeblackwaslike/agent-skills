@@ -18,8 +18,8 @@ summary: Run any code and library on Vercel Functions with an OCI container imag
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/runtimes/container.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "f849721f359136446c123a2e948f1431112663d792bfcf12aac731f67f488c6a"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "53190f500bc746a815a9e230d0fa58fd64ecb54779c3814b18e752c7cc4b757a"
 ---
 
 # Container Runtime
@@ -38,10 +38,10 @@ Vercel Functions can run any code and library using Open Container Initiative (O
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
 - [Run any Dockerfile on Vercel](https://vercel.com/blog/dockerfile-on-vercel)
 - [Deploy Go apps on Vercel using Docker](https://vercel.com/kb/guide/deploy-go-using-docker-vercel) — Deploy an existing Dockerized Go app to Vercel using Memos as a real-world example, with Neon Postgres for durable data.
-- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
-- [Deploy Rust on Vercel with Docker](https://vercel.com/kb/guide/deploy-rust-on-vercel-with-docker) — Build a Rust application with Axum and Docker, then deploy it to Vercel Functions. Learn how to configure environment va
-- [Bring your Dockerfile to Vercel Functions](https://vercel.com/changelog/bring-your-dockerfile-to-vercel-functions)
 - [Deploy a container from a plain Dockerfile](https://vercel.com/changelog/deploy-a-container-from-a-plain-dockerfile)
+- [Deploy PHP on Vercel with Docker](https://vercel.com/kb/guide/deploy-php-on-vercel-with-docker) — Build a PHP application with FrankenPHP and Docker, then deploy it to Vercel Functions with managed configuration, stora
+- [Running Docker on Vercel vs Render](https://vercel.com/kb/guide/docker-on-vercel-vs-render) — Compare how Vercel and Render run Docker workloads, including deployment model, scaling, image sources, state, and netwo
+- [Bring your Dockerfile to Vercel Functions](https://vercel.com/changelog/bring-your-dockerfile-to-vercel-functions)
 - [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
 
 Full cross-link map for this page: [/docs/functions/runtimes/container.graph.md](/docs/functions/runtimes/container.graph.md)

@@ -4,8 +4,8 @@ description: API Reference for experimental_getBatchResults.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/get-batch-results"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/get-batch-results.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "836668ef681594fdfbb1282748fdb3261ba0f431c7a6d46de73a6804e4fafe2b"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "c07533cff67c7a93d2d86dfb194c6ca92f5571c5539a7adc481f93791750a6aa"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -42,6 +42,7 @@ import { experimental_getBatchResults } from "ai"
 - `provider?` (`Experimental_BatchProvider`): The provider used to access the batch. Defaults to the global provider, or the AI Gateway when no global provider is configured.
 - `batch` (`Experimental_BatchReference`): The serializable reference returned by experimental\_startBatch.
 - `tools?` (`ToolSet`): The client-defined tools provided on requests in the batch. Used to validate and normalize returned tool calls; execute functions are never invoked.
+- `output?` (`Output`): The output specification that was provided on requests in the batch. When set, the text of each successful item is parsed and validated. Items have either an \`output\` or an \`outputError\`; a parsing failure does not fail the item.
 - `providerOptions?` (`ProviderOptions`): Additional provider-specific options for result retrieval.
 - `maxRetries?` (`number`): Maximum number of retries for result retrieval. Set to 0 to disable retries. Default: 2.
 - `abortSignal?` (`AbortSignal`): An optional abort signal to cancel result retrieval.

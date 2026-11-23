@@ -13,8 +13,8 @@ summary: Learn how to manage scopes and permissions for Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "aa944b4815dff251fe62d149595116940fc8a17f99cb6e17c985f6b7236ad6fe"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "3b00f2cb15ff2ac75362369e4be375d0bdc387a8b18af5369d487de4e30dd540"
 ---
 
 # Scopes and Permissions
@@ -31,8 +31,8 @@ Scopes define what data is included in the [ID Token](/docs/sign-in-with-vercel/
 - [Extended permissions](https://vercel.com/docs/rbac/access-roles/extended-permissions) — Learn about extended permissions in Vercel's RBAC system. Understand how to combine roles and permissions for precise ac
 - [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference) — Learn how to manage project access and added products for your integrations.
 - [Access tokens](https://vercel.com/docs/accounts/access-tokens) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
-- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/scopes-and-permissions.graph.md](/docs/sign-in-with-vercel/scopes-and-permissions.graph.md)
 <!-- /docsgraph:related -->
@@ -99,6 +99,7 @@ The following permissions are available:
 | Remote Cache | Read Only, Read and Write | Manage Remote Cache. |
 | Team | Read Only | Read your Vercel team data. |
 | Team Members | Read and Write | Invite, remove, and change the roles of team members. |
+| Vercel CI | Read and Write | Disable Vercel CI and Vercel-hosted GitHub runners for any repository connected to the team. |
 | Webhooks | Read Only, Read and Write | List available events and create, read, update, and delete webhooks. |
 
 
@@ -107,6 +108,7 @@ The following permissions are available:
 | Permission | Access | Description |
 | --- | --- | --- |
 | CDN Cache | Read and Write | Manage CDN Cache. |
+| Deployment Checks | Read Only | Read deployment checks, check runs, and check run logs. |
 | Deployments | Read Only, Read and Write | Read and make changes to deployments. |
 | Domain Registrar | Read and Write | Buy or transfer-in new domains. |
 | Drives | Read Only, Read and Write | Read and manage drives. |

@@ -3,7 +3,7 @@ title: Vercel REST API Reference
 product: vercel
 url: /docs/rest-api
 canonical_url: "https://vercel.com/docs/rest-api"
-last_updated: 2026-11-16
+last_updated: 2026-11-23
 type: reference
 prerequisites:
   []
@@ -17,8 +17,8 @@ summary: Interact programmatically with your Vercel account using the SDK or dir
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/rest-api.md"
-fetched_at: "2026-11-16T12:35:06.708Z"
-sha256: "eec0ac313b5bc7e80a83d89c1cc440d589eb59ed2ecefa2e55fe15b278971104"
+fetched_at: "2026-11-23T14:17:54.731Z"
+sha256: "da6d642737a48f225594afc54d9247d4a89927a90d6e63fb6c7c75dc1cc686f1"
 ---
 
 # Vercel REST API Reference
@@ -88,7 +88,6 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | Method | Endpoint | Description |
 |---|---|---|
 | **GET** | [`/v1/billing/charges`](/docs/rest-api/billing/list-focus-billing-charges.md) | List FOCUS billing charges |
-| **GET** | [`/v1/billing/contract-commitments`](/docs/rest-api/billing/list-focus-contract-commitments.md) | List FOCUS contract commitments |
 | **POST** | [`/v1/billing/buy`](/docs/rest-api/billing/purchase-credits.md) | Purchase credits |
 
 ## Bulk Redirects
@@ -319,6 +318,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 
 | Method | Endpoint | Description |
 |---|---|---|
+| **POST** | [`/v1/projects/{projectIdOrName}/feature-flags/overrides/sign`](/docs/rest-api/feature-flags/sign-flag-overrides.md) | Sign flag overrides |
 | **GET** | [`/v2/projects/{projectIdOrName}/feature-flags/flags`](/docs/rest-api/feature-flags/list-flags.md) | List flags |
 | **GET** | [`/v1/projects/{projectIdOrName}/feature-flags/flags`](/docs/rest-api/feature-flags/list-flags-1.md) | List flags |
 | **PUT** | [`/v1/projects/{projectIdOrName}/feature-flags/flags`](/docs/rest-api/feature-flags/create-a-flag.md) | Create a flag |
@@ -452,6 +452,11 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v1/organizations/{organizationId}/teams`](/docs/rest-api/organizations/list-organization-teams.md) | List Organization Teams |
 | **POST** | [`/v1/organizations/{organizationId}/teams`](/docs/rest-api/organizations/create-or-add-team-to-organization.md) | Create or Add Team to Organization |
 | **DELETE** | [`/v1/organizations/{organizationId}/teams/{targetTeamId}`](/docs/rest-api/organizations/delete-team-from-organization.md) | Delete Team from Organization |
+| **PUT** | [`/v1/organizations/{organizationId}/teams/{targetTeamId}/dsync`](/docs/rest-api/organizations/update-organization-team-directory-sync-mode.md) | Update Organization Team Directory Sync Mode |
+| **GET** | [`/v1/organizations/{organizationId}/dsync/groups`](/docs/rest-api/organizations/list-organization-directory-sync-groups.md) | List Organization Directory Sync Groups |
+| **GET** | [`/v1/organizations/{organizationId}/dsync/groups/{groupId}`](/docs/rest-api/organizations/get-organization-directory-sync-group.md) | Get Organization Directory Sync Group |
+| **PUT** | [`/v1/organizations/{organizationId}/dsync/groups/{groupId}`](/docs/rest-api/organizations/create-or-replace-organization-directory-sync-group-configuration.md) | Create or Replace Organization Directory Sync Group Configuration |
+| **DELETE** | [`/v1/organizations/{organizationId}/dsync/groups/{groupId}`](/docs/rest-api/organizations/delete-organization-directory-sync-group-configuration.md) | Delete Organization Directory Sync Group Configuration |
 
 ## Projectmembers
 
@@ -666,7 +671,7 @@ Vercel combines the best developer experience with an obsessive focus on end-use
 | **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task-runs`](/docs/rest-api/vercel-ci/list-task-runs-for-a-job-run.md) | List task runs for a job run |
 | **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/logs`](/docs/rest-api/vercel-ci/get-log-lines-for-an-invocation-attempt.md) | Get log lines for an invocation attempt |
 | **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/task-logs`](/docs/rest-api/vercel-ci/get-log-lines-for-the-tasks-of-an-invocation-attempt.md) | Get log lines for the tasks of an invocation attempt |
-| **GET** | [`/v1/vercel-ci/log-search`](/docs/rest-api/vercel-ci/search-the-task-logs-of-several-invocation-attempts.md) | Search the task logs of several invocation attempts |
+| **GET** | [`/v1/vercel-ci/log-search`](/docs/rest-api/vercel-ci/search-the-setup-and-task-logs-of-several-invocation-attempts.md) | Search the setup and task logs of several invocation attempts |
 | **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/logs`](/docs/rest-api/vercel-ci/get-log-lines-for-a-specific-job-run-attempt.md) | Get log lines for a specific job run attempt |
 | **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task-definitions/{taskDefinitionId}/runs/{taskRunAttempt}/logs`](/docs/rest-api/vercel-ci/get-log-lines-for-a-specific-task-run-attempt.md) | Get log lines for a specific task run attempt |
 

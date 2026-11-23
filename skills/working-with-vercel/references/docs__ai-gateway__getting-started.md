@@ -17,8 +17,8 @@ summary: Set up AI Gateway with a coding agent, route the agent through AI Gatew
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/getting-started.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "c8a8fe21e03b103a216fa5a648a9ff908c7c792ba0bbc0be89a583dfc3961d20"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "6be63e782da8b191beecff726d7fd520acec81d3d44f113f7ab91ef92f49676c"
 ---
 
 # Getting Started with AI Gateway
@@ -201,6 +201,7 @@ Use a [supported SDK or API](/docs/ai-gateway/sdks-and-apis) to connect an exist
 - [Troubleshoot request errors](/docs/ai-gateway/faq#why-did-my-ai-gateway-request-fail) by status code, type, and message
 - Generate [text](/docs/ai-gateway/getting-started/text), [images](/docs/ai-gateway/getting-started/image), [video](/docs/ai-gateway/getting-started/video), [realtime audio](/docs/ai-gateway/getting-started/realtime), or [speech](/docs/ai-gateway/getting-started/speech)
 - Answer typed questions about application state in the [Decision quickstart](/docs/ai-gateway/getting-started/decision)
+- Extract typed field values from text in the [Extraction quickstart](/docs/ai-gateway/getting-started/extraction)
 - [Browse models](/ai-gateway/models) by capability, provider, price, and free-tier availability, or query [`GET /v1/models`](/docs/ai-gateway/sdks-and-apis/rest-api#list-models)
 - Configure [provider routing](/docs/ai-gateway/models-and-providers/provider-options) and [model fallbacks](/docs/ai-gateway/models-and-providers/model-fallbacks)
 - [Build an agent application](https://ai-sdk.dev/docs/agents/building-agents)

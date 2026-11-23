@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/tui/styles.md"
-fetched_at: "2026-10-12T11:42:58.685Z"
-sha256: "f85ff5a55881d0c1f7b0b53b1ad6da69e7f543fc4cf0e76cf42d99cb1c97fbad"
+fetched_at: "2026-11-23T14:04:53.528Z"
+sha256: "9c5e735fa7b93fd299a679dd9b972840946b3ba87b95b25bd6d4d1614f696f02"
 ---
 
 # Headers, primary, and secondary text
@@ -16,6 +16,8 @@ sha256: "f85ff5a55881d0c1f7b0b53b1ad6da69e7f543fc4cf0e76cf42d99cb1c97fbad"
   and readable secondary descriptions. Include `+`, `/`, and chord separators in the label's
   emphasis. The `?` shortcut reference uses readable accent-colored keys
   without bold. Separate composer footer actions with `·`.
+  For example, build `esc close` from the Escape binding's display label and the action
+  `close`. Don't type `Esc` or choose a separate key color in a view or mockup.
 
 # Foreground colors
 

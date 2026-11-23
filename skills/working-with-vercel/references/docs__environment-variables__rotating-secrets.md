@@ -17,13 +17,11 @@ summary: Safely rotate API keys, tokens, and other secrets in your Vercel enviro
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/environment-variables/rotating-secrets.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "54b5e2c53b8a581ed97480f3f7b82a8f7a85e22202fa163a2319e6612a54b3a1"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "ebd85bf2a854052decc377432048f07225f59996d8b771f37621c562137750c1"
 ---
 
 # Rotating environment variables
-
-> **💡 Note:** Find guides for rotating secrets for our Marketplace providers in [Vercel's Knowledge Base](https://vercel.com/kb/integrations).
 
 When you need to rotate API keys, tokens, or other credentials stored in your [environment variables](/docs/environment-variables), you'll need to update both your third-party service and your Vercel projects. This ensures your applications continue to work without downtime.
 
@@ -34,16 +32,12 @@ When you need to rotate API keys, tokens, or other credentials stored in your [e
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Rotating Secrets for Vercel Marketplace Integrations](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-supabase-integration) — Rotate the Supabase service role key, JWT secret, and database password from your Vercel integration, then apply the new
-- [How to rotate the secrets of your Hypertune integration](https://vercel.com/kb/guide/how-to-reset-the-secrets-of-your-hypertune-integration) — Rotate Hypertune API keys with zero-downtime.
-- [How to rotate the secrets of your Neon integration](https://vercel.com/kb/guide/how-to-reset-a-secret-for-a-neon-integration) — This will guide you how to update the password for a Neon project.
-- [Legacy environment variable secrets are being sunset](https://vercel.com/changelog/legacy-environment-variable-secrets-are-being-sunset)
-- [How to rotate the secrets of your Redis integration](https://vercel.com/kb/guide/how-to-reset-the-secret-for-your-redis-integration) — This will guide you how to update the password for a Redis databse.
-- [Reminder of legacy environment variable secrets sunset](https://vercel.com/changelog/legacy-environment-variable-secrets-sunset-reminder)
+- [How do I change the name of my Vercel Project?](https://vercel.com/kb/guide/how-do-i-change-the-name-of-my-vercel-project) — Change your Vercel project name in the dashboard, CLI, or REST API, then update the environment variables, callbacks, an
 - [Implementing secrets rotation](https://vercel.com/docs/integrations/create-integration/secrets-rotation) — Learn how to implement secrets rotation in your integration to allow users to rotate credentials securely.
-- [Config and Secret environment variables](https://vercel.com/docs/environment-variables/sensitive-environment-variables) — Choose Config or Secret environment variables based on whether their values should remain readable after saving.
 - [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables) — Learn how to create and manage environment variables for Vercel.
+- [Config and Secret environment variables](https://vercel.com/docs/environment-variables/sensitive-environment-variables) — Choose Config or Secret environment variables based on whether their values should remain readable after saving.
 - [Rotate Installation Credential](https://vercel.com/docs/rest-api/marketplace/rotate-installation-credential) — POST /v1/installations/{integrationConfigurationId}/credentials/rotate — Issues a replacement access token for an instal
-- [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
+- [Environment Variables](https://vercel.com/docs/agent-resources/vercel-mcp/tools/environment-variables) — Vercel MCP tools for environment variables.
 
 Full cross-link map for this page: [/docs/environment-variables/rotating-secrets.graph.md](/docs/environment-variables/rotating-secrets.graph.md)
 <!-- /docsgraph:related -->
@@ -100,7 +94,7 @@ If your secret is configured at the [team level](/docs/environment-variables/sha
 
 ## Rotating credentials for integrations
 
-> **💡 Note:** Find guides for rotating secrets for our Marketplace providers in [Vercel's Knowledge Base](https://vercel.com/kb/integrations).
+> **💡 Note:** For providers that aren't listed under [Provider-specific steps](#provider-specific-steps), check the integration guides in [Vercel's Knowledge Base](/kb/integrations).
 
 When rotating credentials for [integrations](/docs/integrations) (like database providers or third-party services installed from the Vercel Marketplace):
 
@@ -120,6 +114,62 @@ Alternatively, rotate secrets from the provider's dashboard:
 6. Return to your integration's dashboard and revoke or delete the old credential (if the provider supports this).
 
 > **💡 Note:** If the integration allows for provisioning resources, you will have to repeat this process for each resource that you've provisioned. These resources are listed on the integration page.
+
+### Provider-specific steps
+
+When a provider doesn't support **Rotate Secrets** from the Vercel dashboard, reset the credential in the provider's console. What happens to the old credential depends on the provider:
+
+- **The old credential stops working immediately:** Resetting a database password for Neon, MongoDB Atlas, or Redis invalidates the current password as soon as you confirm. Projects that use it can't connect to the database until you redeploy them, so redeploy right after the reset.
+- **The old and new credentials work at the same time:** Hypertune lets you create a new token before you delete the old one. You can redeploy first, then delete the old token, and avoid downtime.
+
+Each set of steps starts in the provider's console. To open it from Vercel, select **Integrations** in the dashboard sidebar, select **Manage** next to the provider, open the installed product, and select the button that opens the provider, such as **Open in Neon**.
+
+After you reset a credential, the provider syncs the new value to your Vercel team. [Redeploy](/docs/deployments/managing-deployments#redeploy-a-project) every project connected to the resource so that it uses the new value.
+
+#### Neon
+
+Resetting a role's password in Neon invalidates the current password immediately.
+
+1. In the Neon console, select the project you want to update.
+2. On the project dashboard, select **Connect**.
+3. In the connection details, select **Reset password**, then select **Reset** to confirm.
+4. In Vercel, confirm that the integration shows the new secret, then redeploy every connected project.
+
+See [Reset a password](https://neon.com/docs/manage/roles#reset-a-password) in the Neon documentation.
+
+#### MongoDB Atlas
+
+Changing a database user's password in MongoDB Atlas invalidates the current password immediately.
+
+1. In MongoDB Atlas, under **Security**, select **Database & Network**.
+2. Select **Edit** next to the database user.
+3. Select **Edit Password**, then **Autogenerate Secure Password**.
+4. Select **Update User**.
+5. In Vercel, confirm that the integration shows the new environment variables, then redeploy every connected project.
+
+See [Configure database users](https://www.mongodb.com/docs/atlas/security-add-mongodb-users/) in the MongoDB Atlas documentation.
+
+#### Redis
+
+Changing a database password in Redis invalidates the current credentials immediately and restarts the database instance.
+
+1. In the Redis console, select the database you want to update.
+2. Select **Edit**.
+3. In the **Security** section, enter a new password.
+4. Select **Save Database**.
+5. In Vercel, confirm that the integration shows the new secret, then redeploy every connected project.
+
+See [Default user](https://redis.io/docs/latest/operate/rc/security/access-control/data-access-control/default-user/) in the Redis Cloud documentation.
+
+#### Hypertune
+
+Hypertune tokens can overlap, so create the new token, redeploy, and then delete the old token.
+
+1. In Hypertune, select the project with the same name as your Vercel installed product.
+2. Open the project's **Settings** page and select **New token**.
+3. Enter a **Token name** and select **Create token**.
+4. In Vercel, redeploy every connected project.
+5. After the new deployments are live, return to the project's **Settings** page in Hypertune and delete the previous token.
 
 ## Troubleshooting
 

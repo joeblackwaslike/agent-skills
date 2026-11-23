@@ -14,8 +14,8 @@ summary: Vercel MCP tools for toolbar.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "1f3f24b8c89e0bec72e84deac89c4180449402c271a8f544ad84742f2c249481"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "5a16e92b6298d3475ac629b0f68ef912df07c2463ad8f30b3c9184a9af2421b0"
 ---
 
 # Toolbar
@@ -29,11 +29,11 @@ Review feedback on your deployments through Vercel Toolbar comment threads. You 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production)
-- [Improvements to Vercel Toolbar: Shrinking when inactive, removal of avatars, and more](https://vercel.com/changelog/improvements-to-vercel-toolbar)
 - [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar)
-- [Easier toolbar setup for SvelteKit and other Vite-based frameworks](https://vercel.com/changelog/easier-toolbar-setup-for-sveltekit-and-other-vite-based-frameworks)
+- [Improvements to Vercel Toolbar: Shrinking when inactive, removal of avatars, and more](https://vercel.com/changelog/improvements-to-vercel-toolbar)
 - [Managing the visibility of the Vercel Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
 - [Add the Vercel Toolbar to local and production environments](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost) — Learn how to use the Vercel Toolbar in production and local environments.
+- [Add the Vercel Toolbar to your production environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production) — Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access t
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/toolbar.graph.md](/docs/agent-resources/vercel-mcp/tools/toolbar.graph.md)
 <!-- /docsgraph:related -->

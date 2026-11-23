@@ -13,8 +13,8 @@ summary: Configure Passport with Okta, Microsoft Entra ID, or another OpenID Con
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/passport/set-up-identity-provider.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "ff14e80d45127747016b2ef1906a7bea24a751993dabee8c53814e3b0b38672a"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "d0a360f3768091e28d7637c8509f9e581cad3e8d69c432bada56a52c0e328c1c"
 ---
 
 # Set up Passport with an identity provider
@@ -39,7 +39,7 @@ This guide covers the common Passport setup flow for OpenID Connect providers, i
 - [Identify users and control access in Next.js with Vercel Passport](https://vercel.com/kb/guide/vercel-passport-nextjs) — Use \\`getIdentity\\(\\)\\` to read a visitor’s verified Vercel Passport identity in Next.js, then personalize pages, restri
 - [Vercel Passport is now in Public Beta](https://vercel.com/changelog/vercel-passport-is-now-in-public-beta)
 - [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
-- [OpenID Connect \\(OIDC\\) Federation](https://vercel.com/docs/oidc) — Secure the access to your backend using OIDC Federation to enable auto-generated, short-lived, and non-persistent creden
+- [Trusted Sources](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources) — Let other Vercel projects and external services reach your protected deployments by presenting a verified OIDC token.
 - [Chat SDK with Vercel Passport](https://vercel.com/docs/chat-sdk/integrations/passport) — Use a verified Vercel Passport identity to store and retrieve per-user conversation history in a Chat SDK bot.
 - [eve on Vercel](https://vercel.com/docs/frameworks/agents/eve) — Create and deploy an eve agent on Vercel with AI Gateway model access, durable sessions, and authenticated requests.
 

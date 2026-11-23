@@ -17,8 +17,8 @@ summary: Define your Vercel configuration in vercel.ts with @vercel/config for t
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/project-configuration/vercel-ts.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "ea33dcf763984bc161d2548e91ae35aa692d5d25ed2ab5c1973b279d1fc0f47b"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "6d3bbb6559fb6367307ba2c5309ad4d7580ded7c23c6c53d783593733c86dd9d"
 ---
 
 # Programmatic Configuration with vercel.ts
@@ -989,6 +989,8 @@ These regions serve as a fallback to any regions specified in the [`regions` con
 To learn more about automatic failover for Vercel Functions, see [Automatic failover](/docs/functions/configuring-functions/region#automatic-failover). Vercel Functions using the Edge runtime will [automatically failover](/docs/functions/configuring-functions/region#automatic-failover) with no configuration required.
 
 Region failover is supported with Secure Compute, see [Region Failover](/docs/networking/secure-compute#region-failover) to learn more.
+
+If your team isn't on the Enterprise plan, [contact our sales team](/contact/sales) to get access to function failover regions.
 
 ## rewrites
 

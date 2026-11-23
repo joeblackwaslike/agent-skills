@@ -1,12 +1,17 @@
 ---
 source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/exec-server/src/sandbox_integrity/AGENTS.md"
-fetched_at: "2026-11-09T12:34:38.952Z"
-sha256: "aec4b1853be64e9851409330122bb161e123dd973445c7530b773d5e7375cd83"
+fetched_at: "2026-11-23T14:04:53.528Z"
+sha256: "90ab8684662a65b8d82225b0154eaeba29cfa712e6a11fa3a33a29da30f0380f"
 ---
 
 # Sandbox integrity: scope and review contract
 
-These checks currently emit telemetry only. Findings and preparation errors must
+Runtime integrity checks are paused at the shared runner entry point. Do not
+perform dependency discovery, policy preparation, checks, or telemetry during
+command execution. The checker implementation and isolated tests remain for now;
+the command-launch failure/timeout integration test is ignored while paused.
+
+When enabled, these checks emit telemetry only. Findings and preparation errors must
 not change sandbox construction, permissions, approvals, or command execution.
 Supported backends are Seatbelt, bubblewrap, and MXC; legacy Windows is out of scope.
 

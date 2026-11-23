@@ -15,8 +15,8 @@ summary: Learn how to secure native integration resources by choosing where they
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/install-an-integration/secure-your-resource.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "fa18a4bb601040684528283482b98d1f40b4397365fa30f3fa1a8d3ed3aa7dde"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "a05f1a1e6b61d5d0cd2e7f72ea33a0c662b012c102eefcc2898d6cf76e54a54c"
 ---
 
 # Secure Your Resource
@@ -34,8 +34,8 @@ Secure a native integration resource by controlling where projects can connect t
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Vercel Support Code Visibility, Git Fork Protection, and
 - [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
-- [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference) — Learn how to manage project access and added products for your integrations.
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
+- [Permissions and Access](https://vercel.com/docs/integrations/install-an-integration/manage-integrations-reference) — Learn how to manage project access and added products for your integrations.
 
 Full cross-link map for this page: [/docs/integrations/install-an-integration/secure-your-resource.graph.md](/docs/integrations/install-an-integration/secure-your-resource.graph.md)
 <!-- /docsgraph:related -->

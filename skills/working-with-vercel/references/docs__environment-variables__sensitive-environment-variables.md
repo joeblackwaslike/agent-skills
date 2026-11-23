@@ -17,8 +17,8 @@ summary: Choose Config or Secret environment variables based on whether their va
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/environment-variables/sensitive-environment-variables.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "926ad474dcc6e34394c4fd34c92d3ec754a2bf28c60534dce6e6d6b04d76dad5"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "ccc6e6e3bf53cbbe97630c623766f341142ab230836b28040fdf162123258fa2"
 ---
 
 # Config and Secret environment variables
@@ -32,7 +32,6 @@ When you add or edit [environment variables](/docs/environment-variables "Enviro
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Environment variables now use Config and Secret types](https://vercel.com/changelog/environment-variables-now-use-config-and-secret-types)
-- [Legacy environment variable secrets are being sunset](https://vercel.com/changelog/legacy-environment-variable-secrets-are-being-sunset)
 - [Vercel Integration](https://v0.app/docs/vercel-integration) — How v0 and Vercel work in tandem.
 - [Build logs now redact Sensitive Environment Variable values](https://vercel.com/changelog/build-logs-now-redact-sensitive-environment-variable-values)
 - [Secure Marketplace credentials with Production-only access](https://vercel.com/changelog/secure-marketplace-credentials-with-production-only-access)
@@ -42,7 +41,8 @@ When you add or edit [environment variables](/docs/environment-variables "Enviro
 - [Migrate from Google Cloud Run to Vercel](https://vercel.com/kb/guide/migrate-cloud-run-to-vercel) — Move a Cloud Run service or worker to Vercel. Compare runtimes, preserve Google Cloud access, and plan jobs, validation,
 - [Migrate from Render to Vercel](https://vercel.com/kb/guide/migrate-render-to-vercel) — Migrate from Render to Vercel: map web services, cron jobs, and containers to their equivalents, and handle what doesn't
 - [Sensitive environment variables are now available](https://vercel.com/changelog/sensitive-environment-variables-are-now-available)
-- [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
+- [Legacy environment variable secrets are being sunset](https://vercel.com/changelog/legacy-environment-variable-secrets-are-being-sunset)
+- [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables) — Learn how to create and manage environment variables for Vercel.
 
 Full cross-link map for this page: [/docs/environment-variables/sensitive-environment-variables.graph.md](/docs/environment-variables/sensitive-environment-variables.graph.md)
 <!-- /docsgraph:related -->

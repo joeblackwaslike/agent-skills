@@ -17,8 +17,8 @@ summary: "Learn about the terms and concepts used in Vercel's products and docum
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/glossary.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "8390309d59a4096a03b99a73bd58470dff8ad0f4135d03a38dea9cbc7a07a374"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "2430d640f645db7fe63e825d40a0a6d812b0267a260e39d32e77d77e4abbf99e"
 ---
 
 # Glossary
@@ -38,11 +38,11 @@ A full glossary of terms used in Vercel's products and documentation.
 - [Recursive `turbo` invocations](https://turborepo.dev/docs/messages/recursive-turbo-invocations) — How to fix infinite loops caused by package.json scripts that recursively invoke `turbo`.
 - [s1ngularity: supply chain attack in Nx packages](https://vercel.com/changelog/s1ngularity-supply-chain-attack-in-nx-packages)
 - [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
-- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis) — Learn how to build and scale performant APIs on Vercel.
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
-- [Life of a Vercel request: What happens when a user presses enter](https://vercel.com/blog/life-of-a-vercel-request-what-happens-when-a-user-presses-enter)
+- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis) — Learn how to build and scale performant APIs on Vercel.
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
+- [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
 
 Full cross-link map for this page: [/docs/glossary.graph.md](/docs/glossary.graph.md)
 <!-- /docsgraph:related -->
@@ -152,6 +152,10 @@ Development practices where code changes are automatically built, tested, and de
 ### CLI (Command Line Interface)
 
 The Vercel CLI is a command-line tool for deploying projects, managing deployments, and configuring Vercel from your terminal. See [Vercel CLI](/docs/cli).
+
+### Client-Side Rendering (CSR)
+
+A rendering strategy where the server sends a minimal HTML document and JavaScript builds the page in the browser. Visitors and crawlers see no content until the JavaScript loads and runs. Compare with [prerendering](#prerendering) and [Server-Side Rendering](#server-side-rendering-ssr).
 
 ### Code Owners
 
@@ -343,6 +347,10 @@ HTTP headers you configure to modify request and response behavior, improving se
 
 Secure HTTP protocol that encrypts communication between clients and servers. All Vercel deployments automatically use HTTPS with SSL certificates.
 
+### Hydration
+
+The step where a framework's JavaScript runs in the browser and attaches event handlers and state to HTML that was rendered ahead of time. Hydration makes a [prerendered](#prerendering) page interactive.
+
 ## I
 
 ### I/O-bound
@@ -499,6 +507,10 @@ A local development proxy that gives apps stable, named `.localhost` URLs instea
 
 A relational database connected to your Vercel project through the [Vercel Marketplace](#vercel-marketplace) which provisions instances from providers such as Neon, Supabase, or AWS Aurora and enables Vercel to inject credentials as environment variables. See [Postgres on Vercel](/docs/postgres).
 
+### Prerendering
+
+Generating the HTML for a page before it reaches the browser, instead of building the page with JavaScript in the browser. [Frameworks](/docs/frameworks) such as Next.js, SvelteKit, and Nuxt prerender pages at build time with [Static Site Generation](#static-site-generation-ssg) or on each request with [Server-Side Rendering](#server-side-rendering-ssr). A prerendered page shows its content before JavaScript loads, and search engine crawlers can read the content without running JavaScript. See also [Partial Prerendering](/docs/partial-prerendering).
+
 ### Preview Deployment
 
 A deployment created from non-production branches that allows you to test changes in a live environment before merging to production.
@@ -529,7 +541,7 @@ The set of overrides for build, routing, function, cron, and image-optimization 
 
 ### Protected Git Scopes
 
-An Enterprise feature that restricts deployments of an organization's Git repositories to authorized Vercel teams, preventing accidental deployments to personal accounts. Up to five scopes per team. See [Protected Git Scopes](/docs/protected-git-scopes).
+An Enterprise feature that restricts deployments of an organization's Git repositories to authorized Vercel teams, preventing accidental deployments to personal accounts. Up to five scopes per team. See [Protected Git Scopes](/docs/git#protected-git-scopes).
 
 ## Q
 
@@ -565,7 +577,7 @@ Geographic locations where Vercel can run your functions and store data. Vercel 
 
 ### Release Phases
 
-The stages a Vercel product passes through before becoming generally available: Alpha (under development), Beta (pre-GA without an SLA), Private Beta (under NDA), Limited Beta (publicly announced with gated access), Public Beta (available without special invitation), and General Availability (GA). See [Release Phases](/docs/release-phases).
+The stages a Vercel product passes through before becoming generally available: Experimental (under development), Beta (pre-GA without an SLA), Private Beta (under NDA), Limited Beta (publicly announced with gated access), Public Beta (available without special invitation), and General Availability (GA). See [Release Phases](/docs/release-phases).
 
 ### Remote Cache
 
@@ -621,6 +633,10 @@ See [Vercel Sandbox](#vercel-sandbox).
 
 An Enterprise add-on that creates private connections between Vercel Functions or [Vercel Sandbox](#vercel-sandbox) and backend infrastructure using dedicated static IP addresses, VPC peering, and isolated networks. See [Secure Compute](/docs/networking/secure-compute).
 
+### Server-Side Rendering (SSR)
+
+A rendering strategy where a [function](#functions) generates the HTML for a page on each request. Use it for pages with content that differs between requests, such as pages that depend on authentication or the visitor's location. Compare with [Static Site Generation](#static-site-generation-ssg).
+
 ### Serverless
 
 A cloud computing model where code runs without managing servers, automatically scaling based on demand and charging only for actual usage.
@@ -652,6 +668,10 @@ A Pro and Enterprise feature that notifies you, triggers a webhook, or pauses pr
 ### Static IPs
 
 Shared static egress IP addresses that let Pro and Enterprise projects reach backend services that require IP allowlisting. Static IPs apply to outbound traffic only. For dedicated networks and VPC peering, use [Secure Compute](#secure-compute). See [Static IPs](/docs/networking/static-ips).
+
+### Static Site Generation (SSG)
+
+A rendering strategy where a framework generates the HTML for each page once, during the [build](#build). Vercel serves the generated files from the [CDN](#cdn-content-delivery-network) without running a function. To update statically generated pages without a new deployment, use [Incremental Static Regeneration](#incremental-static-regeneration-isr).
 
 ### Storage
 

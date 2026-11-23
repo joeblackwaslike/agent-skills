@@ -17,8 +17,8 @@ summary: Build platforms where agents and users deploy apps with isolated projec
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/platforms.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "2970889dca7134ea9fa621bb549119473f5b0fac11c211cd859b752358020641"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "0c8736d40e78811b9e849ab5e94be53da8a9b73cd3bf7dac69195871b78799a2"
 ---
 
 # Vercel for Platforms
@@ -34,9 +34,9 @@ Vercel for Platforms gives generated apps isolated projects and deployments. Mul
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing Vercel for Platforms](https://vercel.com/changelog/introducing-vercel-for-platforms)
-- [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit)
 - [Vercel for Platforms can now deploy from your users' GitHub repositories](https://vercel.com/changelog/vercel-for-platforms-can-now-deploy-from-your-users-github-repositories)
-- [Introducing Platform Elements](https://vercel.com/changelog/introducing-platform-elements)
+- [Introducing the Vercel Platforms Starter Kit](https://vercel.com/blog/platforms-starter-kit)
+- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Next.js on Vercel](https://vercel.com/docs/frameworks/full-stack/nextjs) — Vercel is the native Next.js platform, designed to enhance the Next.js experience.
 - [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.

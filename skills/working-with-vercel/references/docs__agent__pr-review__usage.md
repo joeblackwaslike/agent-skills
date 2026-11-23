@@ -4,7 +4,7 @@ product: vercel
 url: /docs/agent/pr-review/usage
 canonical_url: "https://vercel.com/docs/agent/pr-review/usage"
 last_updated: 2026-08-28
-type: integration
+type: how-to
 prerequisites:
   - /docs/agent/pr-review
   - /docs/agent
@@ -15,8 +15,8 @@ summary: Customize which repositories get reviewed and track your review metrics
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent/pr-review/usage.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "629e09500a3e16b28f70a2125edebfca89602286aa3f99dd309be52c1e16733e"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "894e9a4d6ef1cd1b3ab4385f06a81898c78ce01740544e6753b29d49aa6589b0"
 ---
 
 # Managing Code Reviews
@@ -32,11 +32,13 @@ Once you've [set up Code Review](/docs/agent/pr-review#how-to-set-up-code-review
 - [Using Vercel Agent to review pull requests](https://vercel.com/kb/guide/vercel-agent-code-review) — Set up Vercel Agent Code Review to automatically review pull requests, apply validated fixes, request reviews with @verc
 - [On-demand Vercel Agent code reviews](https://vercel.com/changelog/on-demand-vercel-agent-code-reviews)
 - [Introducing Vercel Security Review](https://vercel.com/blog/vercel-security-review)
-- [Vercel Security Review now in public beta](https://vercel.com/changelog/vercel-security-review-public-beta)
 - [Apply code suggestions from Vercel Agent with one click](https://vercel.com/changelog/apply-code-suggestions-from-vercel-agent-with-one-click)
 - [AI code reviews by Vercel Agent now in Public Beta](https://vercel.com/changelog/ai-code-reviews-by-vercel-agent-now-in-beta)
-- [Vercel Security Review no longer requires a linked Vercel project](https://vercel.com/changelog/vercel-security-review-no-longer-requires-a-linked-vercel-project)
+- [Vercel Security Review now in public beta](https://vercel.com/changelog/vercel-security-review-public-beta)
+- [Automatic build fix suggestions with Vercel Agent](https://vercel.com/changelog/automatic-build-fix-suggestions-with-vercel-agent)
 - [Vercel CI](https://vercel.com/docs/ci) — Configure Vercel CI to run Turborepo tasks with custom CPU allocations and environment variables.
+- [Deploying Git Repositories with Vercel](https://vercel.com/docs/git) — Vercel automatically deploys supported Git repositories on every branch push and when changes merge into the production
+- [Enable or disable Vercel CI for a connected repository](https://vercel.com/docs/rest-api/vercel-ci/enable-or-disable-vercel-ci-for-a-connected-repository) — PATCH /v1/vercel-ci/repository-settings — Update Repository Settings
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 
 Full cross-link map for this page: [/docs/agent/pr-review/usage.graph.md](/docs/agent/pr-review/usage.graph.md)
@@ -46,17 +48,16 @@ Full cross-link map for this page: [/docs/agent/pr-review/usage.graph.md](/docs/
 
 You might want to control which repositories receive automatic reviews, especially when you're testing Code Review for the first time or managing costs across a large organization.
 
-To choose which repositories get reviewed:
+To choose which GitHub repositories get reviewed:
 
-1. Select [**Agent**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fagent%2Ftasks\&title=Open+Vercel+Agent) in the top-right corner of the dashboard.
-2. Click the **…** button, and then select **Settings** to view the Vercel Agent settings.
-3. Under **Repositories to Review**, choose which repositories to review:
-   - **All repositories** (default): Reviews every repository connected to your Vercel projects
-   - **Public repositories only**: Only reviews publicly accessible repositories
-   - **Private repositories only**: Only reviews private repositories
-4. Click **Save** to apply your changes.
+1. Open your team's **Settings**, then select **Agent**.
+2. Under **Code Reviews**, find **Repositories to Review** and choose:
+   - **All repositories** (default): Reviews every GitHub repository connected to your Vercel projects
+   - **Public repositories only**: Only reviews public GitHub repositories
+   - **Private repositories only**: Only reviews private GitHub repositories
+3. Click **Save** to apply your changes.
 
-These settings help you start small with specific repos or focus on the repositories that matter most to your team.
+These settings filter repositories by visibility, not by individual repository.
 
 ## Allow reviews on draft PRs
 
@@ -64,68 +65,60 @@ By default, Code Review skips draft pull requests since they're often work-in-pr
 
 To enable reviews on draft PRs:
 
-1. Select [**Agent**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fagent%2Ftasks\&title=Open+Vercel+Agent) in the top-right corner of the dashboard.
-2. Click the **…** button, and then select **Settings** to view the Vercel Agent settings.
-3. Under **Include Draft PRs**, select **Review draft PRs**.
-4. Click **Save** to apply your changes.
+1. Open your team's **Settings**, then select **Agent**.
+2. Under **Code Reviews**, find **Include Draft PRs** and select **Review draft PRs**.
+3. Click **Save** to apply your changes.
 
 Draft reviews contribute to your Vercel Agent usage, but provide feedback earlier in your development process.
 
 ## Track spending and costs
 
-You can monitor your spending in real time to manage your budget. The **Agent** page shows the cost of each review and your total spending over a given period.
+Open **Agent**, then **Usage**, and find **Code Reviews** to view review costs for the selected date range. Recent reviews may take time to appear.
 
 For detailed information about tracking usage and understanding cost breakdowns, see [Track costs and usage](/docs/agent/pricing#track-costs-and-usage).
 
 ## Track the suggestions
 
-The **Agent** page also shows you the total number of suggestions over a given period, as well as the number of suggestions for each individual review.
+The **Code Reviews** section on **Agent** > **Usage** shows suggestion totals for the selected period and a **Suggestions** column for each review.
 
-To view suggestions:
+To view suggestion counts:
 
-1. Select [**Agent**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fagent%2Ftasks\&title=Open+Vercel+Agent) in the top-right corner of the dashboard.
-2. Check the **Suggestions** column for each review.
-
-A high number of suggestions might indicate complex changes or code that needs more attention. A low number might mean your code is already following best practices, or the changes are straightforward.
+1. Select **Agent** in the dashboard, then open **Usage**.
+2. Select a date range.
+3. Under **Code Reviews**, check the **Suggestions** column for each review.
 
 ## Review Vercel Agent efficiency
 
 Understanding how Code Review performs helps you optimize your setup and control usage.
 
-The **Agent** page provides several metrics for each review:
+The **Code Reviews** usage table shows:
 
-- **Repository**: Which repository was reviewed
-- **PR**: The pull request identifier (click to view the PR)
-- **Suggestions**: Number of code changes recommended
-- **Review time**: How long the review took to complete
-- **Cost**: Total cost for that review
-- **Time**: When the review occurred
+| Column          | Description                                                                 |
+| --------------- | --------------------------------------------------------------------------- |
+| **Review**      | Repository, pull request number, and commit SHA, linked to the pull request |
+| **Suggestions** | Number of suggestions for the review                                        |
+| **Review Time** | How long the review took to complete                                        |
+| **Cost**        | Total cost for the review                                                   |
+| **Time**        | When the review occurred                                                    |
 
-Use this data to identify patterns:
-
-- **Expensive reviews**: If certain repositories consistently have high costs, consider whether they need special handling or different review settings
-- **Long review times**: Reviews taking longer than expected might indicate complex codebases or large PRs that could benefit from smaller, incremental changes
+Use costs and review times to identify repositories or large pull requests that may benefit from different review settings or smaller, incremental changes.
 
 ## Export review metrics
 
-You can export all your review data to CSV for deeper analysis, reporting, or tracking trends over time.
+You can export review usage for the selected period to CSV for analysis or reporting.
 
 To export your data:
 
-1. Select [**Agent**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fagent%2Ftasks\&title=Open+Vercel+Agent) in the top-right corner of the dashboard.
-2. Click the **Export CSV** button.
-3. Save the CSV file to your computer.
+1. Select **Agent** in the dashboard, then open **Usage**.
+2. Select a date range.
+3. Under **Code Reviews**, click **Export CSV**.
+4. Save the CSV file to your computer.
 
-The exported data includes all metrics from the dashboard, letting you:
-
-- Create custom reports for your team or stakeholders
-- Analyze trends across multiple repositories
-- Calculate ROI by comparing review costs to time saved
-- Track adoption and usage patterns over time
+The CSV includes the time, repository, pull request, commit SHA, suggestions, cost, and review time in milliseconds. If the export reports too many reviews, select a shorter date range and try again.
 
 ## Turn off automatic Code Reviews
 
-You can stop automatic reviews from the **Agent** page. Manual reviews and explicit `@vercel` requests remain available and can create paid usage.
+You can stop automatic reviews from the **Agent** page.
 
 To turn off automatic Code Reviews:
 
@@ -133,7 +126,7 @@ To turn off automatic Code Reviews:
 2. Click the **…** button, and then select **Turn off automatic Code Reviews…**.
 3. Confirm the action in the prompt that appears.
 
-Once disabled, Code Review won't run automatically on new pull requests. You can re-enable automatic reviews at any time from the same menu.
+Once disabled, Code Review won't run automatically on new pull requests or new commits. To re-enable automatic reviews, open your team's **Settings** > **Agent**, turn on **Review PRs and build failures automatically**, and click **Save**.
 
 ## Search the docs from your terminal
 

@@ -11,14 +11,14 @@ related:
   - /docs/vercel-blob/python-sdk-reference
   - /docs/cli/blob
   - /docs/cli/env
-  - /docs/oidc
+  - /docs/oidc/access-other-services
   - /docs/vercel-blob/vercel-signed-urls
 summary: Reference for the Vercel Blob JavaScript SDK, @vercel/blob, which lets you access your blob store from your apps.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-blob/using-blob-sdk.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "1d1cdf5f3aec7b9a235f31574e5435905b5bb5aa5ceeb33b38c92a2f192eaea2"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "e8804ce5efa95cdd1629b43c3213ccf2678ccfdfd97e4284ce88989f4cd15397"
 ---
 
 # JS SDK Reference
@@ -36,12 +36,14 @@ Use the `@vercel/blob` package to upload, download, list, copy, and delete blobs
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Blob now supports OIDC authentication](https://vercel.com/changelog/vercel-blob-now-supports-oidc-authentication)
+- [Vercel Blob now supports TTLs for automatic deletion](https://vercel.com/changelog/vercel-blob-now-supports-ttls-for-automatic-deletion)
 - [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
 - [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
 - [Migrate an Astro app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-an-astro-app-from-webflow-cloud-to-vercel) — Move your Astro app from Webflow Cloud to Vercel: swap the @astrojs/cloudflare adapter for @astrojs/vercel, drop the bas
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
+- [Complete a blob upload](https://vercel.com/docs/rest-api/vcr/complete-a-blob-upload) — PUT /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} — PUT /v2/:teamSlug/:projectSlug/:repositoryName/
 - [Flue with Vercel](https://vercel.com/docs/frameworks/agents/flue) — Create a Flue agent that uses Vercel AI Gateway for model requests, then add Vercel Sandbox for isolated code execution.
 
 Full cross-link map for this page: [/docs/vercel-blob/using-blob-sdk.graph.md](/docs/vercel-blob/using-blob-sdk.graph.md)
@@ -108,7 +110,7 @@ bun add @vercel/blob
   ```
 
 - ### Connect to a project (highly recommended)
-  OpenID Connect (OIDC) is the default authentication on Vercel and is more secure than the long-lived `BLOB_READ_WRITE_TOKEN`. OIDC tokens rotate automatically, which removes the risk that a static secret leaks from your codebase or environment. Learn more about [how OIDC token federation works](/docs/oidc#how-oidc-token-federation-works).
+  OpenID Connect (OIDC) is the default authentication on Vercel and is more secure than the long-lived `BLOB_READ_WRITE_TOKEN`. OIDC tokens rotate automatically, which removes the risk that a static secret leaks from your codebase or environment. Learn more about [how OIDC token federation works](/docs/oidc/access-other-services#how-oidc-token-federation-works).
 
   When you connect your Blob store to a project, Vercel adds three environment variables to that project:
   - `BLOB_STORE_ID`: the id of your Blob store. The SDK pairs this with `VERCEL_OIDC_TOKEN` to authenticate requests.

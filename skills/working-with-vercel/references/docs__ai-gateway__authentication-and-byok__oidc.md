@@ -14,8 +14,8 @@ summary: Authenticate AI Gateway requests from Vercel deployments with OIDC toke
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "97535a0c1cfc0c353cb45e276dc359f41b62539bdd710f2a655b9eacd9c323f0"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "dd649210594ff2fb883fb865524b0e48d65274d7c8ac9d676b1216c2833264e2"
 ---
 
 # AI Gateway OIDC Authentication
@@ -32,11 +32,12 @@ The [Vercel OIDC token](/docs/oidc) is a way to authenticate your requests to th
 - [Run recurring security reviews with deepsec on Vercel](https://vercel.com/kb/guide/deepsec-reviews-on-vercel) — Learn how to run periodic security scans on your code with deepsec. Set up deepsec to review GitHub repositories and del
 - [Deploy a Shopify storefront with an AI assistant](https://vercel.com/kb/guide/deploy-shopify-ai-storefront) — Deploy an eve shopping agent with Vercel Shop to find Shopify products, manage carts, and answer store questions.
 - [Route form submissions with Jev and AI SDK](https://vercel.com/kb/guide/jev-ai-sdk-form-router) — Route form submissions to the right team with the Jev x AI SDK Form Router template. Jev routes clear cases and a fallba
+- [Agents are users, so your software needs evals](https://vercel.com/blog/agent-evals)
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
-- [Go with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/go) — Use AI Gateway from any Go application with the OpenAI or Anthropic Go SDKs, including model fallbacks, cost tracking, a
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
 - [Create a BYOK credential](https://vercel.com/docs/rest-api/ai-gateway/create-a-byok-credential) — POST /ai-gateway/byok-credentials — Create a new BYOK credential
 - [OIDC Federation Reference](https://vercel.com/docs/oidc/reference) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
+- [Agent Checklist for Launch](https://vercel.com/docs/agent-checklist) — Prepare an eve, Mastra, or Flue agent for launch on Vercel. Check who can call the agent, what its tools can change, how
 
 Full cross-link map for this page: [/docs/ai-gateway/authentication-and-byok/oidc.graph.md](/docs/ai-gateway/authentication-and-byok/oidc.graph.md)
 <!-- /docsgraph:related -->

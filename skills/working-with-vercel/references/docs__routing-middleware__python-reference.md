@@ -17,8 +17,8 @@ summary: Reference for writing Routing Middleware in Python with the vercel-prox
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/routing-middleware/python-reference.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "f91cf72646f88ab34efa9d0aba86edb75f000665426b39c7009a7fd07f600d81"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "1be18957c516623a76ecdad2ca81f562af51386cabd13db7926425c3f00ad1d6"
 ---
 
 # Routing Middleware: Python Reference
@@ -35,8 +35,8 @@ Use the [`vercel-proxy`](https://pypi.org/project/vercel-proxy/) package to writ
 - [Routing](https://vercel.com/docs/routing) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
 - [Add a routing rule](https://vercel.com/docs/rest-api/project-routes/add-a-routing-rule) — POST /v1/projects/{projectId}/routes — Add a single routing rule to a project at a specified position. Defaults to the e
 - [Get project routing rules](https://vercel.com/docs/rest-api/project-routes/get-project-routing-rules) — GET /v1/projects/{projectId}/routes — Get the routing rules for a project. Supports searching by name/ID/pattern, filter
-- [Edit a routing rule](https://vercel.com/docs/rest-api/project-routes/edit-a-routing-rule) — PATCH /v1/projects/{projectId}/routes/{routeId} — Replace a routing rule identified by its ID, or restore it from the cu
 - [Rewrites on Vercel](https://vercel.com/docs/routing/rewrites) — Learn how to use rewrites to send users to different URLs without modifying the visible URL.
+- [Edit a routing rule](https://vercel.com/docs/rest-api/project-routes/edit-a-routing-rule) — PATCH /v1/projects/{projectId}/routes/{routeId} — Replace a routing rule identified by its ID, or restore it from the cu
 
 Full cross-link map for this page: [/docs/routing-middleware/python-reference.graph.md](/docs/routing-middleware/python-reference.graph.md)
 <!-- /docsgraph:related -->

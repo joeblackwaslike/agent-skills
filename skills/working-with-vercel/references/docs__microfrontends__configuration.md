@@ -15,8 +15,8 @@ summary: Configure your microfrontends.json.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/microfrontends/configuration.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "003055e9e78d7ce84ecdcd5d223c339e01926a5d64360693f1211f6c276c3613"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "bcc367757295fd5ceee9e11ae29487ea3f8755a47167292b074c88140ebaa6f8"
 ---
 
 # Microfrontends Configuration
@@ -33,8 +33,8 @@ The `microfrontends.json` file is used to configure your microfrontends. If this
 - [Managing microfrontends](https://vercel.com/docs/microfrontends/managing-microfrontends) — Learn how to manage your microfrontends on Vercel.
 - [Testing & troubleshooting microfrontends](https://vercel.com/docs/microfrontends/troubleshooting) — Learn about testing, common issues, and how to troubleshoot microfrontends on Vercel.
 - [Microfrontends Routing](https://vercel.com/docs/microfrontends/routing) — Configure which microfrontend handles each path and understand how Vercel selects deployments.
-- [vercel microfrontends](https://vercel.com/docs/cli/microfrontends) — Manage microfrontends groups from the CLI. Learn how to create groups, inspect group metadata, add and remove projects,
 - [Microfrontends local development](https://vercel.com/docs/microfrontends/local-development) — Learn how to run and test your microfrontends locally.
+- [vercel microfrontends](https://vercel.com/docs/cli/microfrontends) — Manage microfrontends groups from the CLI. Learn how to create groups, inspect group metadata, add and remove projects,
 
 Full cross-link map for this page: [/docs/microfrontends/configuration.graph.md](/docs/microfrontends/configuration.graph.md)
 <!-- /docsgraph:related -->

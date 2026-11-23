@@ -17,8 +17,8 @@ summary: Serve multiple customers from a single codebase and deployment, routing
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/platforms/multi-tenant-platforms.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "4607a57dfc97d08ef5116e6747e2b34014bd5cf52d48890a93e999add45bcb3f"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "2e1701dc6850f80ebbbe6a63f7752d119acfb629c22a2eb156b74d11c74ccc5f"
 ---
 
 # Multi-Tenant Platforms
@@ -31,6 +31,7 @@ A multi-tenant platform serves every customer from one codebase and one Vercel d
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Introducing Vercel for Platforms](https://vercel.com/changelog/introducing-vercel-for-platforms)
 - [Multi-Tenant Template](https://vercel.com/docs/platforms/examples/multi-tenant-template) — Build SaaS applications that serve multiple domains from a single Next.js codebase.
 - [Multi-Project Platforms Concepts](https://vercel.com/docs/platforms/multi-project-platforms/concepts) — Understand projects, deployments, domains, and architecture for multi-project platforms on Vercel.
 - [Multi-Project Platforms](https://vercel.com/docs/platforms/multi-project-platforms) — Give each customer its own Vercel project and deployment, created and managed programmatically with the Vercel SDK.

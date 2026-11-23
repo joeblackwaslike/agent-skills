@@ -18,8 +18,8 @@ summary: "Start sandboxes from Vercel's Managed Images, or custom OCI images sto
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/concepts/images.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "895f417296358b857d56ff20c146cf83eb1581382860ba86e6f67cca946c5432"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "ea1d31549c869112a7d53f56e9267f1d32ccaead647d826a8cc038ca74190279"
 ---
 
 # Images
@@ -41,7 +41,7 @@ Custom images give you full control over the sandbox environment. Define the Lin
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
 - [How to migrate from GHCR to Vercel Container Registry](https://vercel.com/kb/guide/migrate-ghcr-to-vcr) — Migrate container images from GitHub Container Registry \\(GHCR\\) to Vercel Container Registry \\(VCR\\), including authent
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
-- [Drives](https://vercel.com/docs/sandbox/concepts/drives) — Persistent storage that can be mounted into sandboxes and shared across runs.
+- [Drives](https://vercel.com/docs/sandbox/concepts/drives) — Mount Vercel Drives into sandboxes for persistent storage that survives stops and is shared across runs.
 - [Gemini API Managed Agents](https://vercel.com/docs/sandbox/ecosystem/gemini-api) — Connect a Gemini API self-hosted environment to Vercel Sandbox so agent file and shell tools run in your own microVM.
 - [Hermes](https://vercel.com/docs/sandbox/ecosystem/hermes) — Run Hermes Agent terminal commands in isolated Vercel Sandbox microVMs, with models served through Vercel AI Gateway.
 

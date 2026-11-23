@@ -13,12 +13,13 @@ related:
   - /docs/ai-gateway/models-and-providers/virtual-models
   - /docs/ai-gateway/security-and-compliance/private-inference
   - /docs/ai-gateway/authentication-and-byok/byok
+  - /docs/cli/ai-gateway
 summary: Restrict which AI models your team can use through AI Gateway. Available on Pro and Enterprise.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "87d222987d85d1f5d34a483f0b44a00f6e8a68c77c85164f46dbe05e31c9380b"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "e180b7093f1ac5d28a69b4d406ef188084050d7243f44d14dcbb72bade34ca40"
 ---
 
 # AI Gateway Model Allowlist
@@ -36,8 +37,8 @@ The model allowlist lets team owners restrict which models can be used through A
 - [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
 - [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, caching, SDK and API compati
 - [AI Gateway Pricing](https://vercel.com/docs/ai-gateway/pricing) — Understand AI Gateway token pricing, free and paid credits, BYOK costs, add-on charges, and payment fees. Manage credit
-- [AI Gateway Rate Limits](https://vercel.com/docs/ai-gateway/rate-limits) — Learn how AI Gateway rate limits work on the free and paid tiers, what the 429 response looks like, and how to retry a r
-- [Adding a Model](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model) — Learn how to add a new AI model to your Vercel projects
+- [AI Gateway Disallow Prompt Training](https://vercel.com/docs/ai-gateway/security-and-compliance/disallow-prompt-training) — Learn how to prevent AI providers from using your prompts and responses for model training through AI Gateway.
+- [List virtual model configs](https://vercel.com/docs/rest-api/ai-gateway/list-virtual-model-configs) — GET /ai-gateway/virtual-model-configs/list — List virtual model configs. For a team, returns all of its VMCs, or with \\`
 
 Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/model-allowlist.graph.md](/docs/ai-gateway/security-and-compliance/model-allowlist.graph.md)
 <!-- /docsgraph:related -->
@@ -105,6 +106,16 @@ If both allowlists are enabled, you are charged a single restriction surcharge p
 ## BYOK
 
 The allowlist applies to [BYOK](/docs/ai-gateway/authentication-and-byok/byok) requests too. Disabling a model means your team does not want any traffic to that model through AI Gateway, even with your own credentials. The [surcharge](#pricing) applies to BYOK requests too, charged to your AI Gateway Credits.
+
+## API keys that bypass the allowlist
+
+Team owners can create an API key that's exempt from all of the team's restrictions: this allowlist, the provider allowlist, ZDR-only models, and the HIPAA and prompt-training filters. Create it with the Vercel CLI, and give it an expiration so the exemption doesn't outlive the work that needed it:
+
+```bash filename="terminal"
+vercel ai-gateway api-keys create --name escape-hatch --bypass-all-settings --expiration 7d
+```
+
+See [`api-keys create`](/docs/cli/ai-gateway#create) for every option.
 
 ## Plan and role requirements
 

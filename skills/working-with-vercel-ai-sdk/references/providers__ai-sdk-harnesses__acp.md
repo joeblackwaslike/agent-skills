@@ -4,8 +4,8 @@ description: Learn how to use Agent Client Protocol implementations through the 
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/acp"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/acp.md"
-fetched_at: "2026-11-16T12:32:31.917Z"
-sha256: "7f9632cf8ce03f0bbda15447839c139daa1d1afdad02239023cb0653468a10a8"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "c44f783ba56b3cb913320a9a007a936696e8d50eed6606055f6d34f6b3ce50bd"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -176,6 +176,10 @@ try {
   not aborted. When unset, a turn keeps running in the sandbox after its host
   disconnects, including when the host process is gone for good, until the
   turn finishes or the sandbox stops.
+- `keepAliveMs`: WebSocket ping interval in milliseconds (default `20_000`).
+  Keeps silent bridge connections alive. After two unanswered pings, the socket
+  is terminated and the configured reconnect policy takes over. Set to `0` to
+  disable. Sockets without ping support are left unchanged.
 - `reconnect`: reconnect timing after an established bridge WebSocket
   connection drops. `maxElapsedMs` controls the total retry window, including
   connection establishment and backoff delays, and defaults to 30 seconds.

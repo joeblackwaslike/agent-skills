@@ -17,8 +17,8 @@ summary: Learn how Comments integrates with Git providers like GitHub, GitLab, a
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/comments/integrations.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "866b1ecd50743b0238b64abc924c942739ec00c4a320a2fb9415b707b2ed5a9b"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "a866c16d81803acfad437706c5c649375eea4cbe7a4eeb09f3b48cba26104bf8"
 ---
 
 # Integrations for Comments
@@ -35,12 +35,11 @@ Comments are available for projects using **any** Git provider. GitHub, Bitbucke
 
 - [Comments now available in Vercel's Slack integration](https://vercel.com/changelog/comments-now-available-in-vercels-slack-integration)
 - [Manage Vercel Toolbar comments from the CLI](https://vercel.com/changelog/manage-vercel-toolbar-comments-from-the-cli)
-- [Convert comments to GitHub Issues](https://vercel.com/changelog/convert-comments-to-github-issues)
 - [Managing Comments on Preview Deployments](https://vercel.com/docs/comments/managing-comments) — Learn how to manage Comments on your Preview Deployments from Team members and invited collaborators.
 - [vercel comments](https://vercel.com/docs/cli/comments) — Review and manage Vercel Toolbar comment threads from the terminal with the vercel comments CLI command.
 - [Deploying GitLab Projects with Vercel](https://vercel.com/docs/git/vercel-for-gitlab) — ​Vercel for GitLab automatically deploys your GitLab projects with Vercel, providing Preview Deployment URLs, and automa
+- [Deploying Bitbucket Projects with Vercel](https://vercel.com/docs/git/vercel-for-bitbucket) — ​Vercel for Bitbucket automatically deploys your Bitbucket projects with Vercel, providing Preview Deployment URLs, and
 - [Commenting on Pull Requests from Vercel CI](https://vercel.com/docs/ci/guides/github-comments) — Post the deployment URL to the pull request for each commit from a Vercel CI task.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 
 Full cross-link map for this page: [/docs/comments/integrations.graph.md](/docs/comments/integrations.graph.md)
 <!-- /docsgraph:related -->

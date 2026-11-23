@@ -16,8 +16,8 @@ summary: Enterprise Managed Users (EMU) lets your Vercel team manage the sign-in
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/security/enterprise-managed-users.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "58189c8d6a0127e60b5fd7082b60c7870702b5d62e62e3879b13cf882058f2ee"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "35a20c1cccef6f06ee6eff723c6c75c54d668140546711cb4e2562ae7a85fcc2"
 ---
 
 # Enterprise Managed Users (EMU)
@@ -33,14 +33,15 @@ Enterprise Managed Users (EMU) lets your team own and control each member's Verc
 - [Enterprise Managed Users is now generally available](https://vercel.com/changelog/enterprise-managed-users)
 - [Vercel for Enterprise](https://vercel.com/blog/vercel-for-enterprise)
 - [Enterprise](https://v0.app/docs/enterprise) — Learn how to manage v0 seats, access, and more in your Vercel Enterprise account.
+- [Easier transitions between hobby and pro](https://vercel.com/changelog/2024-01-account-changes)
 - [Teams](https://v0.app/docs/teams) — Collaborate with your team on projects with shared resources.
 - [Migrate self-hosted Next.js and containers from AWS to Vercel](https://vercel.com/kb/guide/migrate-containers-from-aws-to-vercel) — Migrate Next.js apps and HTTP containers from AWS to Vercel. Configure AWS access, assess background workers, and plan t
+- [Projects can now be transferred without downtime](https://vercel.com/changelog/projects-can-now-be-transferred-without-downtime)
 - [Migrate from GitHub Actions to Vercel CI](https://vercel.com/kb/guide/github-actions-to-vercel-ci) — Move Turborepo tasks from GitHub Actions workflows to Vercel CI, migrate secrets to CI environment variables, and switch
 - [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
+- [Organizations](https://vercel.com/docs/organizations) — Learn how organizations let you group multiple Vercel teams under a single entity with consolidated billing and central
 - [Managing Team Members](https://vercel.com/docs/rbac/managing-team-members) — Learn how to manage team members on Vercel, and how to assign roles to each member with role-based access control \\(RBAC
 - [Troubleshooting domains](https://vercel.com/docs/domains/troubleshooting) — Learn about common reasons for domain misconfigurations and how to troubleshoot your domain on Vercel.
-- [Organizations](https://vercel.com/docs/organizations) — Learn how organizations let you group multiple Vercel teams under a single entity with consolidated billing and central
-- [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t
 
 Full cross-link map for this page: [/docs/security/enterprise-managed-users.graph.md](/docs/security/enterprise-managed-users.graph.md)
 <!-- /docsgraph:related -->

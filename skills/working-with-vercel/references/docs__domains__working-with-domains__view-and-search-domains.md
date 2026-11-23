@@ -14,8 +14,8 @@ summary: Learn how to view and search all registered domains that are assigned t
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains/working-with-domains/view-and-search-domains.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "4f988de7c30857839f5efdfde85f3d0935f378b96d9523e60a484123afbb3ce6"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "a72718552f3e9a0a3c93301b9cc0825e2e541d6170cf08df379517e875423c16"
 ---
 
 # Viewing & Searching Domains
@@ -30,6 +30,7 @@ To view all your registered domains, open [**Domains**](https://vercel.com/d?to=
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Search domains on the Vercel dashboard](https://vercel.com/changelog/search-domains-on-the-vercel-dashboard)
 - [search_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/search_domains) — Use search_domains with Vercel MCP.
 - [List all the domains](https://vercel.com/docs/rest-api/domains/list-all-the-domains) — GET /v5/domains — Retrieves a list of domains registered for the authenticated user or team. By default it returns the l
 - [list_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/list_domains) — Use list_domains with Vercel MCP.

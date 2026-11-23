@@ -17,8 +17,8 @@ summary: Learn more about environment variables on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/environment-variables.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "7f7bf62477f4626ebc543da645bb15a20770ea7f5e04d8242debd6bc8aaed7a4"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "00c241a698bc55ae2a0cb9967721cb23974f284a1a3117d4b0f6041e748b4ee3"
 ---
 
 # Environment variables
@@ -31,7 +31,6 @@ Environment variables are key-value pairs configured outside your source code so
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Environment Variables UI](https://vercel.com/blog/environment-variables-ui)
 - [Using environment variables](https://turborepo.dev/docs/crafting-your-repository/using-environment-variables) — Account for environment variables in task hashing, configure environment modes, and handle .env files.
 - [Deployments](https://v0.app/docs/deployments) — Preview and publish v0 projects on Vercel, then manage domains, visibility, and production updates.
 - [External APIs](https://v0.app/docs/external-apis) — Build full-stack applications by calling external APIs with environment variables.
@@ -43,6 +42,7 @@ Environment variables are key-value pairs configured outside your source code so
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [Deploy a Bolt.new app with Vercel Drop](https://vercel.com/kb/guide/bolt-vercel-drop) — Export your Bolt.new project as a .zip and deploy it to Vercel with Vercel Drop. Vercel detects the framework and builds
+- [Build a daily digest bot with Chat SDK and Workflow SDK](https://vercel.com/kb/guide/daily-digest-bot-with-chat-sdk-and-workflow-sdk) — Build a daily digest bot that posts a daily digest of GitHub stats to Slack. Learn how to use Vercel Connect to set up S
 
 Full cross-link map for this page: [/docs/environment-variables.graph.md](/docs/environment-variables.graph.md)
 <!-- /docsgraph:related -->

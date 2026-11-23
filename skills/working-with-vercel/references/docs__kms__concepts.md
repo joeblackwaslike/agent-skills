@@ -17,8 +17,8 @@ summary: Understand how Vercel KMS rotates signing keys and how it authorizes si
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/kms/concepts.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "c34e77c273c43dcafb12d9982c91d965eadd7e79facd0d5f45af3d5307896ee9"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "1472b4657ca72bc5a87976edc8c6d0dff76bd598a9229ec2af2c4df100a048c7"
 ---
 
 # Vercel KMS Concepts
@@ -31,7 +31,6 @@ These pages explain the parts of Vercel KMS you configure once and rely on over 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Sign JWTs from your Functions without managing private keys](https://vercel.com/changelog/sign-jwts-from-your-functions-without-managing-private-keys)
 - [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys — Create a new signing key for a KMS issuer. Depending on the activation mode, the
 - [vercel kms](https://vercel.com/docs/cli/kms) — Manage Vercel KMS issuers, rotate signing keys, and control which projects can sign tokens from the command line.
 - [Vercel Connect Concepts](https://vercel.com/docs/connect/concepts) — Understand the core building blocks of Vercel Connect: connectors, installations, tokens, project links, triggers, and a

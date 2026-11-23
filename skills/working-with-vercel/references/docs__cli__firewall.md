@@ -12,18 +12,18 @@ related:
   - /docs/vercel-firewall/vercel-waf/custom-rules
   - /docs/bot-management
   - /docs/botid
-  - /docs/observability/observability-plus
-summary: "Learn how to explore firewall traffic and manage your project's custom firewall rules, managed bot rules, IP blocks, system bypass rules, attack..."
+  - /docs/vercel-firewall/priority-projects
+summary: "Learn how to explore firewall traffic and manage your project's custom firewall rules, managed bot rules, WAF managed rulesets, IP blocks, system..."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/firewall.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "0c6fb13f27d272aca2b8db5c7ff258ed347e86a91d0a2eaacc03c8f2e6d3e7dc"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "dbb474967dfe6e7dbcf34e20a9eee79f0872b3e6be8476e23a8aeb0c5c5a702f"
 ---
 
 # vercel firewall
 
-The `vercel firewall` command is used to inspect and configure the [Vercel Firewall](/docs/vercel-firewall) from the command line, including traffic, custom rules, managed bot rules, IP blocks, system bypass rules, attack challenge mode, and system mitigations. You can match traffic with [condition parameters](#condition-types) and [actions](#actions), stage updates to rules and IP blocks as drafts, and publish them when you are ready.
+The `vercel firewall` command is used to inspect and configure the [Vercel Firewall](/docs/vercel-firewall) from the command line, including traffic, custom rules, managed bot rules, WAF managed rulesets, IP blocks, system bypass rules, attack challenge mode, and system mitigations. You can match traffic with [condition parameters](#condition-types) and [actions](#actions), stage updates to rules and IP blocks as drafts, and publish them when you are ready.
 
 
 <!-- docsgraph:related -->
@@ -32,14 +32,15 @@ The `vercel firewall` command is used to inspect and configure the [Vercel Firew
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Manage Vercel Firewall in the CLI](https://vercel.com/changelog/manage-vercel-firewall-in-the-cli)
+- [Priority Projects now in public beta](https://vercel.com/changelog/priority-projects-now-in-public-beta)
 - [Protect Sensitive Routes with Vercel WAF: Challenge and Deny Rule Recipes](https://vercel.com/kb/guide/suspicious-traffic-in-specific-countries) — Use Vercel WAF custom rules to block or challenge unwanted traffic by country, ASN, IP address, user agent, path, or coo
 - [Firewall Terraform Configuration](https://vercel.com/kb/guide/firewall-terraform-configuration) — Learn how to create scalable firewall configurations with Terraform
 - [Create Vercel Firewall rules with natural language](https://vercel.com/changelog/create-vercel-waf-custom-rules-using-natural-language)
 - [vercel traces](https://vercel.com/docs/cli/traces) — Search spans across a team, inspect a trace by trace ID or request ID, capture session traces, or manage project trace s
-- [Rate Limiting SDK](https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting-sdk) — Learn how to configure a custom rule with rate limit in your code.
 - [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
+- [Rate Limiting SDK](https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting-sdk) — Learn how to configure a custom rule with rate limit in your code.
 - [Generate a firewall rule from natural language](https://vercel.com/docs/rest-api/security/generate-a-firewall-rule-from-natural-language) — POST /v1/security/firewall/config/generate-rule — Generate a firewall rule from a natural language description.
-- [AI Gateway Routing Rules](https://vercel.com/docs/ai-gateway/models-and-providers/routing-rules) — Define team-wide rules that rewrite requests from one model to another or deny specific models in AI Gateway.
+- [Create rule](https://vercel.com/docs/rest-api/ai-gateway/create-rule) — POST /ai-gateway/rules — Create a routing rule
 
 Full cross-link map for this page: [/docs/cli/firewall.graph.md](/docs/cli/firewall.graph.md)
 <!-- /docsgraph:related -->
@@ -57,13 +58,14 @@ The `vercel firewall` command supports the following operations:
 - [`persistent-actions`](#persistent-actions) - List and inspect actions applied to specific clients
 - [`rules`](#custom-rules) - Manage custom firewall rules and managed bot rules
 - [`bot-management`](#bot-management) - List managed bot rules and unknown bot traffic
+- [`managed-rulesets`](#managed-rulesets) - Manage WAF managed rulesets, such as Bot Protection, AI Bots, and the OWASP Core Ruleset
 - [`ip-blocks`](#ip-blocks) - Manage IP blocks
 - [`system-bypass`](#system-bypass) - Manage system bypass rules
 - [`attack-mode`](#attack-mode) - Enable or disable Attack Mode
 - [`system-mitigations`](#system-mitigations) - Pause or resume automatic DDoS mitigation
 - [Staging and publishing](#staging-and-publishing-workflow) - Review, publish, or discard staged changes with `diff`, `publish`, and `discard`
 
-Custom rule, managed bot rule, and IP block changes are staged until you run [`publish`](#publish). System bypass, attack challenge mode, and system mitigations apply immediately.
+Custom rule, managed bot rule, managed ruleset, and IP block changes are staged until you run [`publish`](#publish). System bypass, attack challenge mode, and system mitigations apply immediately.
 
 ## Overview
 
@@ -680,7 +682,7 @@ vercel firewall rules move "My Rule" --position 3 --yes
 
 [Bot Protection](/docs/bot-management#bot-protection-managed-ruleset), [AI Bots](/docs/bot-management#ai-bots-managed-ruleset), and [BotID](/docs/botid) are reserved managed rules. They appear at the top of [`rules list`](#rules-list) and in `bot-management`. They are project-only. `--team-level` has no managed bot settings.
 
-Action changes are [staged as drafts and require publishing](#staging-and-publishing-workflow). `rules add`, `remove`, `enable`, `disable`, and `move` refuse these slugs. Change the action with [`rules update --action`](#rules-update) instead.
+Action changes are [staged as drafts and require publishing](#staging-and-publishing-workflow). `rules add`, `remove`, `enable`, `disable`, and `move` refuse these slugs. Change Bot Protection and AI Bots with [`managed-rulesets update`](#managed-rulesets-update), and BotID with [`rules update --action`](#rules-update).
 
 ### `bot-management`
 
@@ -708,16 +710,16 @@ The command prints the current action for each rule, then unknown bot traffic:
 
   Next steps:
   Change Bot Protection
-  vercel firewall rules update bot-protection --action log
+  vercel firewall managed-rulesets update bot-protection --action log
   Change AI Bots
-  vercel firewall rules update ai-bots
+  vercel firewall managed-rulesets update ai-bots
   Change BotID
   vercel firewall rules update bot-id --action deep-analysis
   Break unknown bot traffic down further
   vercel firewall traffic inspect unknown-bot <category>
 ```
 
-Unknown bot traffic is team-scoped and reads request counts rather than the firewall metric, so it needs [Observability Plus](/docs/observability/observability-plus). Without it, the managed rules still print and the unknown-bot panel notes that Observability Plus is required. Without a team scope, the command reports the managed rules on their own.
+Unknown bot traffic is team-scoped and reads request counts rather than the firewall metric, so it needs a [Priority project](/docs/vercel-firewall/priority-projects). Without it, the managed rules still print and the unknown-bot panel notes that a Priority project is required. Without a team scope, the command reports the managed rules on their own.
 
 Drill into a category with `vercel firewall traffic inspect unknown-bot <category>`.
 
@@ -736,7 +738,7 @@ vercel firewall bot-management
 vercel firewall bot-management --json
 
 # Change AI Bots to deny, then publish (my-app is the project name)
-vercel firewall rules update ai-bots --category ai-crawlers --action deny --yes
+vercel firewall managed-rulesets update ai-bots --group ai-crawlers --action deny --yes
 vercel firewall publish --confirm-name my-app
 ```
 
@@ -747,6 +749,108 @@ vercel firewall publish --confirm-name my-app
 | BotID | `bot-id` | `basic`, `deep-analysis` |
 
 Inspect also accepts the WAF id that traffic reports, such as `managed_bot_protection`. BotID Deep Analysis is not available on Hobby.
+
+## Managed rulesets
+
+[WAF managed rulesets](/docs/vercel-firewall/vercel-waf/managed-rulesets) are rule sets that Vercel maintains, such as Bot Protection, AI Bots, and the OWASP Core Ruleset. The `vercel firewall managed-rulesets` command turns them on and off and changes their actions. Changes are [staged as drafts and require publishing](#staging-and-publishing-workflow).
+
+The commands take the ruleset ID as their argument:
+
+| Ruleset | ID | Actions |
+| --- | --- | --- |
+| Bot Protection | `bot-protection` | `off`, `log`, `challenge` |
+| AI Bots | `ai-bots` | `off`, `log`, `deny`, per category with `--group` if your team has categories |
+| OWASP Core Ruleset | `owasp` or `crs` | Per rule group: `log`, `deny`, `off` |
+
+If OWASP isn't on the team's plan yet, the CLI asks you to add it from the project's **Firewall** page in the dashboard first.
+
+On Pro, the OWASP Core Ruleset requires a [Priority project](/docs/vercel-firewall/priority-projects). If the project isn't one, `enable`, `update`, and `publish` fail with `OWASP Core Ruleset requires a Priority project for <project>` and suggest [`vercel project priority enable`](/docs/cli/project#priority).
+
+### `managed-rulesets list`
+
+List the managed rulesets for the project, whether each one is on, and the action of each rule group.
+
+```bash filename="terminal"
+vercel firewall managed-rulesets list
+```
+
+*Using the \`vercel firewall managed-rulesets list\` command to show managed
+rulesets and their rule groups.*
+
+**Options:**
+
+- `--json`: Output as JSON
+- `--project <name-or-id>`: Project name or ID, defaulting to the linked project
+
+### `managed-rulesets enable`
+
+Turn on a managed ruleset. The OWASP Core Ruleset starts with its default rule groups. The CLI shows the ruleset and asks you to confirm before staging the change.
+
+```bash filename="terminal"
+vercel firewall managed-rulesets enable owasp
+```
+
+*Using the \`vercel firewall managed-rulesets enable\` command to turn on the
+OWASP Core Ruleset.*
+
+**Options:**
+
+- `-y, --yes`: Skip the confirmation prompt
+- `--json`: Output as JSON
+- `--project <name-or-id>`: Project name or ID, defaulting to the linked project
+
+### `managed-rulesets disable`
+
+Turn off a managed ruleset. Turning a ruleset off resets any rule groups you changed to their defaults, and the confirmation prompt lists them.
+
+```bash filename="terminal"
+vercel firewall managed-rulesets disable owasp
+```
+
+*Using the \`vercel firewall managed-rulesets disable\` command to turn off the
+OWASP Core Ruleset.*
+
+**Options:**
+
+- `-y, --yes`: Skip the confirmation prompt
+- `--json`: Output as JSON
+- `--project <name-or-id>`: Project name or ID, defaulting to the linked project
+
+### `managed-rulesets update`
+
+Change a ruleset's action, or a rule group's action with `--group`. To change a rule group, the ruleset must be on, except for AI Bots, which a category change turns on. In a terminal, the CLI prompts for the rule group and action when you omit them. Before you confirm, it warns when publishing would start blocking or challenging requests.
+
+```bash filename="terminal"
+vercel firewall managed-rulesets update owasp --group sqli --action deny
+```
+
+*Using the \`vercel firewall managed-rulesets update\` command to deny SQL
+injection attempts.*
+
+**Options:**
+
+- `--group <group>`: Rule group ID, such as `sqli` or `ai-crawlers`. Omit it for a ruleset without groups, such as Bot Protection. Run `managed-rulesets list` to see them
+- `--action <action>`: One of the ruleset's actions from the table above
+- `-y, --yes`: Skip the confirmation prompt
+- `--json`: Output as JSON
+- `--project <name-or-id>`: Project name or ID, defaulting to the linked project
+
+**Examples:**
+
+```bash filename="terminal"
+# Challenge traffic that Bot Protection flags
+vercel firewall managed-rulesets update bot-protection --action challenge --yes
+
+# Block AI crawlers
+vercel firewall managed-rulesets update ai-bots --group ai-crawlers --action deny --yes
+
+# Deny SQL injection attempts, then publish (my-app is the project name)
+vercel firewall managed-rulesets update owasp --group sqli --action deny --yes
+vercel firewall publish --confirm-name my-app
+
+# Turn off one OWASP rule group
+vercel firewall managed-rulesets update owasp --group php --action off
+```
 
 ## IP blocks
 
@@ -969,7 +1073,7 @@ vercel firewall system-mitigations resume --yes
 
 ## Staging and publishing workflow
 
-When you add, edit, or remove custom rules and IP blocks, the CLI stages those updates as drafts first. Drafts do not affect production traffic until you publish them.
+When you add, edit, or remove custom rules and IP blocks, or change [managed rulesets](#managed-rulesets), the CLI stages those updates as drafts first. Drafts do not affect production traffic until you publish them.
 
 ```bash filename="terminal"
 # Make changes (they are staged automatically)
@@ -1070,6 +1174,17 @@ Each condition specifies a `type`, an `op` (operator), and usually a `value`.
 | `ja4_digest` | JA4 TLS fingerprint | No |
 | `ja3_digest` | JA3 TLS fingerprint (Enterprise only) | No |
 | `rate_limit_api_id` | Rate limit API grouping ID | No |
+
+If the CLI refuses a rule because the project doesn't have Priority, enable it with [`vercel project priority enable --scope <team>`](/docs/cli/project#priority). This paid feature requires a person to confirm in an interactive terminal. On Hobby, upgrade the team to Pro first.
+
+The refusal can come when you stage the rule or later, when you run [`publish`](#publish). For example, a staged rule that uses `bot_name` fails to publish if the project was downgraded from Priority in the meantime. Both refusals start with `This rule requires a Priority project`.
+
+[Priority projects](/docs/vercel-firewall/priority-projects) also add:
+
+| Type | Description | Needs `key` |
+| --- | --- | --- |
+| `bot_name` | Verified bot name | No |
+| `bot_category` | Bot category, for verified and unverified bots | No |
 
 ### Operators
 

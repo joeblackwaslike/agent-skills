@@ -14,8 +14,8 @@ summary: Use get_web_analytics with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/get_web_analytics.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "5444af576280a1eec6530b25da834a7cb089a43aaf4060028ec2a32dd1313de5"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "50041917ee16b30c17d6d62361070cbb1bda5fe8e8c9bd84d5f0e4bcb8cb4e14"
 ---
 
 # get_web_analytics
@@ -28,6 +28,7 @@ Query Web Analytics for a Vercel project. Count mode returns total visitors and 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Query Web Analytics from the Vercel CLI](https://vercel.com/changelog/query-web-analytics-from-the-vercel-cli)
 - [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
 - [aggregate_pageviews](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/aggregate_pageviews) — Use aggregate_pageviews with Vercel MCP.
 - [Query Web Analytics with the API](https://vercel.com/docs/analytics/web-analytics-api) — Learn how Web Analytics concepts map to API queries for custom reports, dashboards, and insights.

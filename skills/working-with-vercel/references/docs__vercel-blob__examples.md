@@ -15,8 +15,8 @@ summary: Examples on how to use Vercel Blob in your applications
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-blob/examples.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "dd7e16a7ce4372b81a9cff1a4d08ed3efe68c367dd8035ab21260eb5f720baa3"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "a64363ee1a104ba098a06b01571d30f292eda3f71335f6a06dad9deeee532ec9"
 ---
 
 # Vercel Blob examples
@@ -36,13 +36,12 @@ Vercel Blob supports [range requests](https://developer.mozilla.org/docs/Web/HTT
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
-- [Vercel Blob is now generally available: Cost-efficient, durable storage](https://vercel.com/blog/vercel-blob-now-generally-available)
-- [Introducing Vercel Blob](https://vercel.com/changelog/vercel-blob)
+- [Build with Vercel Blob on Next.js](https://vercel.com/kb/guide/vercel-blob-nextjs) — Deploy the Vercel Blob Next.js Starter and learn how client uploads store images securely in a private Blob store.
 - [Public Storage](https://vercel.com/docs/vercel-blob/public-storage) — Learn how to use public Vercel Blob storage to serve files accessible to anyone with the URL
 - [Server Uploads with Vercel Blob](https://vercel.com/docs/vercel-blob/server-upload) — Learn how to upload files to Vercel Blob from server routes and Server Actions
 - [Vercel Blob Pricing](https://vercel.com/docs/vercel-blob/usage-and-pricing) — Learn about the pricing for Vercel Blob.
+- [Managing Vercel Blob storage from the CLI](https://vercel.com/docs/vercel-blob/manage-blob-storage) — Create blob stores, upload files, list contents, and manage storage using the CLI.
 - [Delete a blob](https://vercel.com/docs/rest-api/vcr/delete-a-blob) — DELETE /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/{digest} — DELETE /v2/:teamSlug/:projectSlug/:repositoryName/
-- [Cancel a blob upload](https://vercel.com/docs/rest-api/vcr/cancel-a-blob-upload) — DELETE /v2/{teamSlug}/{projectSlug}/{repositoryName}/blobs/uploads/{uuid} — DELETE /v2/:teamSlug/:projectSlug/:repositor
 
 Full cross-link map for this page: [/docs/vercel-blob/examples.graph.md](/docs/vercel-blob/examples.graph.md)
 <!-- /docsgraph:related -->

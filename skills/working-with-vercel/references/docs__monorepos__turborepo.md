@@ -17,8 +17,8 @@ summary: Learn about Turborepo, a build system for monorepos that allows you to 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/monorepos/turborepo.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "8a4fa844e2888ecb2618436d81180a8e1bb72ee472c9b4e9fe8fce0dece534c9"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "d40ea66916e8d1c85c6b6c142f6d56f1e748f5f0d08ad6d9329a1b8eb2000d04"
 ---
 
 # Deploying Turborepo to Vercel
@@ -36,13 +36,13 @@ Turborepo is a high-performance build system for JavaScript and TypeScript codeb
 - [How to configure Continuous Integration (CI) build caching](https://nextjs.org/docs/pages/guides/ci-build-caching) — Learn how to configure CI to cache Next.js builds
 - [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) — Share a single Turborepo cache across your team and CI to avoid duplicated work.
 - [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel) — Deploy your Turborepo on Vercel and run tasks with Vercel CI using zero-config Remote Caching.
-- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
-- [Technical audits: Finding the bottlenecks that cost performance, money, and velocity](https://vercel.com/kb/guide/technical-audits) — How Vercel's Forward Deployed Engineering team runs code review, web performance, and usage audits, the recurring patter
+- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-to-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
 - [Monorepos are changing how teams build software](https://vercel.com/blog/monorepos)
-- [Turborepo Run Summary is now available](https://vercel.com/changelog/turborepo-run-summary-is-now-available)
-- [Visualize time saved using Turborepo with Remote Caching](https://vercel.com/changelog/visualize-time-saved-using-turborepo-with-remote-caching)
+- [Caching](https://turborepo.dev/docs/crafting-your-repository/caching) — Configure task caching to avoid repeating work, using fingerprinting for inputs and restoring outputs from cache.
 - [Turborepo Open-Source CLI and Remote Caching on Vercel](https://vercel.com/changelog/turborepo-open-source-cli-and-remote-caching-on-vercel)
 - [Use Remote Caching from External CI/CD](https://vercel.com/docs/monorepos/remote-caching/external-ci-cd) — Authenticate the Turborepo CLI to Vercel Remote Cache from your CI/CD provider using OpenID Connect \\(OIDC\\) or a Person
+- [Vercel CI Configuration Reference](https://vercel.com/docs/ci/configuration) — Reference for the turbo.json tags and vercel.json keys that configure Vercel CI.
+- [Builds](https://vercel.com/docs/builds) — Understand how the build step works when creating a Vercel Deployment.
 
 Full cross-link map for this page: [/docs/monorepos/turborepo.graph.md](/docs/monorepos/turborepo.graph.md)
 <!-- /docsgraph:related -->
@@ -215,7 +215,19 @@ You do not need to host your project on Vercel to use Vercel Remote Caching. For
 
 ### Build outputs cannot be found on cache hit
 
-For Vercel to deploy your application, the outputs need to be present for your [Framework Preset](/docs/builds/configure-a-build#framework-preset) after your application builds. If you're getting an error that the outputs from your build don't exist after a cache hit:
+For Vercel to deploy your application, the outputs need to be present for your [Framework Preset](/docs/builds/configure-a-build#framework-preset) after your application builds. When a cached build task doesn't restore those outputs, the deployment fails with one of these errors:
+
+```txt
+The file "/vercel/path0/apps/web/.next/routes-manifest.json" couldn't be found.
+```
+
+```txt
+No Output Directory named "dist" found after the Build completed.
+```
+
+The path and directory name in the error depend on your project. To confirm that the cache is the cause, [redeploy without the Build Cache](/docs/deployments/troubleshoot-a-build#managing-build-cache), which also skips the Remote Cache. If that deployment succeeds, the cached task is missing its outputs.
+
+To fix it:
 
 - Confirm that your outputs match [the expected Output Directory for your Framework Preset](/docs/monorepos/turborepo#import-your-turborepo-to-vercel). Run `turbo build` locally and check for the directory where you expect to see the outputs from your build
 - Make sure the application outputs defined in the `outputs` key of your `turbo.json` for your build task are aligned with your Framework Preset. A few examples are below:

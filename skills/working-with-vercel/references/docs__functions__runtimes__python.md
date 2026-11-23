@@ -18,8 +18,8 @@ summary: Learn how to use the Python runtime to run Python applications on Verce
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/runtimes/python.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "87e482d080f3fe04dfb775fbb039d463d002c4b67748aed20095e62570aec4cb"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "6ad8a6c61f39641c0cde38d63c2c04c5db24a25ad135eddcc39a0ff1828a25fe"
 ---
 
 # Using the Python Runtime with Vercel Functions
@@ -36,9 +36,9 @@ supported Python frameworks and runs your application as Vercel Functions.
 
 - [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
 - [How to ship a Flask app on Vercel](https://vercel.com/kb/guide/ship-a-flask-app-on-vercel) — Deploy a Flask app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
-- [Python on Vercel is now generally available](https://vercel.com/changelog/python-on-vercel-is-now-generally-available)
 - [Python 3.13 and 3.14 are now available ](https://vercel.com/changelog/python-3-13-and-3-14-are-now-available)
 - [Python function bundles now include precompiled bytecode](https://vercel.com/changelog/python-function-bundles-now-include-precompiled-bytecode)
+- [Python on Vercel is now generally available](https://vercel.com/changelog/python-on-vercel-is-now-generally-available)
 - [Python package manager uv is now available for builds with zero configuration](https://vercel.com/changelog/python-package-manager-uv-is-now-available-for-builds-with-zero)
 - [Python support added to in-function concurrency beta](https://vercel.com/changelog/python-support-added-to-in-function-concurrency-beta)
 - [Build with a FastAPI starter template](https://vercel.com/kb/guide/build-with-a-fastapi-starter-template) — Browse FastAPI starter templates for Vercel and deploy one in a few steps. Compare minimal, AI, agent, and full-stack Fa

@@ -14,8 +14,8 @@ summary: Use replace_domain_dns_records with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/replace_domain_dns_records.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "62e821e582d01605e247495d03b9998ac12db26a9156fac226be24d1b0a3ccd4"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "1b1fabec72d9098a5d80cf882c5a55d22a1c7e7d14dbcf1526e80afab79ed77c"
 ---
 
 # replace_domain_dns_records
@@ -28,11 +28,11 @@ Replace DNS records for a domain.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [PUT /domains/{domain}/records](https://vercel.com/docs/rest-api/untagged/replacedomainsbydomainrecords) — PUT /domains/{domain}/records — PUT /domains/{domain}/records
 - [create_record](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/create_record) — Use create_record with Vercel MCP.
 - [search_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/search_domains) — Use search_domains with Vercel MCP.
 - [update_record](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/update_record) — Use update_record with Vercel MCP.
 - [Delete a DNS record](https://vercel.com/docs/rest-api/dns/delete-a-dns-record) — DELETE /v2/domains/{domain}/records/{recordId} — Removes an existing DNS record from a domain name.
-- [get_domain_verification_record](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_verification_record) — Use get_domain_verification_record with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/replace_domain_dns_records.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/replace_domain_dns_records.graph.md)
 <!-- /docsgraph:related -->

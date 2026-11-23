@@ -18,8 +18,8 @@ summary: Learn how to configure individual feature flags in the Vercel Dashboard
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/feature-flag.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "1bd3d0cafa0a765c293eea7fe7d321bb07cfcd83be931c3f3e3caa4fcdebfb63"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "5ff978fc4aa581cd81b37c6ee00bc29a071e6e360ba4c13ada977305d2a66c70"
 ---
 
 # Feature Flag Configuration
@@ -37,6 +37,7 @@ When you select a flag from the Flags overview, you can configure how it behaves
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
 - [How Splits Work in Vercel Flags](https://vercel.com/kb/guide/how-splits-work-in-vercel-flags) — Use weighted splits in Vercel Flags to deterministically bucket users into variants by percentage for gradual rollouts a
 - [How to use Vercel Flags across projects](https://vercel.com/kb/guide/how-to-use-vercel-flags-across-projects) — Evaluate flags across projects using a source project SDK Key in the consumer project via a custom adapter
+- [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference) — API reference for the Flags SDK for Next.js and SvelteKit.
@@ -258,7 +259,7 @@ To add or update maintainers:
 
 ### Activity and change history
 
-The **Activity** section in the sidebar shows the complete history of changes to a flag:
+The **Recent Revisions** section in the sidebar shows the latest changes to a flag. Click **View All** to see the complete history of changes:
 
 - Who made each change
 - When the change was made
@@ -270,8 +271,8 @@ You can add a change message when modifying a flag to document the reason for th
 
 To restore a previous configuration:
 
-1. Open **Activity** in the sidebar
-2. Find the configuration you want to restore
+1. In the **Recent Revisions** section of the sidebar, click **View All**
+2. Select the revision you want to restore
 3. Click **Restore** to apply that configuration
 
 This creates a new change in the history, so you can always see what was restored and when.

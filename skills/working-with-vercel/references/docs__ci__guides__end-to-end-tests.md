@@ -18,8 +18,8 @@ summary: Run Playwright tests against the Vercel deployment of every commit with
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ci/guides/end-to-end-tests.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "62d0e376a39ec9f0e77f7e133aaec9dee7b4785d8454e392471a376d1d03d615"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "54c124ccb32cc327e8218143594f7131f054fc8067363f5ed6fdf76d90c644bc"
 ---
 
 # Running End-to-End Tests in Vercel CI
@@ -32,15 +32,12 @@ In this tutorial, you'll set up Vercel CI to run [Playwright](https://playwright
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How can I run end-to-end tests after my Vercel Preview Deployment?](https://vercel.com/kb/guide/how-can-i-run-end-to-end-tests-after-my-vercel-preview-deployment) — Learn how to use the Vercel CLI in combination with your CI/CD provider to run end-to-end tests for every code change.
-- [How can I use CircleCI with Vercel?](https://vercel.com/kb/guide/how-can-i-use-circleci-with-vercel) — Learn how to use CircleCI to deploy to Vercel with custom CI/CD.
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
-- [Deploy a Node.js Fastify app on Vercel with Docker](https://vercel.com/kb/guide/deploy-nodejs-on-vercel-with-docker) — Build a Node.js application with Fastify and Docker, then deploy it to Vercel Functions. Learn how to configure environm
 - [Running Integration Tests with a Database in Vercel CI](https://vercel.com/docs/ci/guides/integration-tests) — Start a Postgres container next to your tests in Vercel CI with Turborepo\\\\
+- [Deploying from an External CI/CD Pipeline](https://vercel.com/docs/git/external-pipelines) — Build your project in GitHub Actions, CircleCI, Bitbucket Pipelines, or another CI/CD provider, then deploy the build ou
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Commenting on Pull Requests from Vercel CI](https://vercel.com/docs/ci/guides/github-comments) — Post the deployment URL to the pull request for each commit from a Vercel CI task.
-- [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
+- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 
 Full cross-link map for this page: [/docs/ci/guides/end-to-end-tests.graph.md](/docs/ci/guides/end-to-end-tests.graph.md)
 <!-- /docsgraph:related -->

@@ -9,14 +9,16 @@ prerequisites:
   []
 related:
   - /docs/pricing/regional-pricing
+  - /docs/domains/working-with-domains/add-a-domain
+  - /docs/frameworks/full-stack/nextjs
+  - /docs/security/reverse-proxy
   - /docs/cli/dev
-  - /docs/functions/configuring-functions/region
 summary: "View the list of regions supported by Vercel's CDN and learn about our global infrastructure."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/regions.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "37d7ab485ddfd80e9dda27f4c803532666abe8f7e5778e75e590bf6fd97299cf"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "1564987576f8c653c39c4fa4573313f3d8577cf59e0bb066b45e3f5047bc5bf3"
 ---
 
 # Global network and regions
@@ -33,13 +35,13 @@ sha256: "37d7ab485ddfd80e9dda27f4c803532666abe8f7e5778e75e590bf6fd97299cf"
 - [Expanded search for workflow runs in Vercel Observability](https://vercel.com/changelog/expanded-search-for-workflow-runs-in-vercel-observability)
 - [Introducing the Montréal, Canada region (yul1) ](https://vercel.com/changelog/introducing-the-montreal-canada-vercel-region-yul1)
 - [Vercel Sandbox is now available in all regions](https://vercel.com/changelog/vercel-sandbox-is-now-available-in-all-regions)
-- [How can I use AWS SDK Environment Variables on Vercel?](https://vercel.com/kb/guide/how-can-i-use-aws-sdk-environment-variables-on-vercel) — How to use AWS SDK Environment Variables on Vercel
 - [How to improve Core Web Vitals](https://vercel.com/kb/guide/how-to-improve-core-web-vitals) — Improve Core Web Vitals \\(INP, LCP, CLS\\) with metric-specific fixes, field-data measurement, and Next.js/Vercel perform
 - [Managing Redirects from your CMS using Vercel Bulk Redirects](https://vercel.com/kb/guide/managing-redirects-from-your-cms-using-vercel-bulk-redirects) — Learn how to sync redirect rules from your CMS to Vercel at build time with vercel.ts, allowing non-technical teams to m
 - [Migrate Fly.io worker processes to Vercel Daemons](https://vercel.com/kb/guide/migrate-fly-io-workers-to-vercel-daemons) — Migrate Fly.io workers to Vercel Daemons with your existing Dockerfile. Map process settings, preserve queue state, and
 - [The Complete Guide to Vercel Daemons](https://vercel.com/kb/guide/vercel-daemons) — Run background workers with Vercel Daemons. Learn how to deploy container images, configure resources, handle shutdowns,
 - [Update regarding Vercel service disruption on October 20, 2025](https://vercel.com/blog/update-regarding-vercel-service-disruption-on-october-20-2025)
 - [Vercel CDN overview](https://vercel.com/docs/cdn) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
+- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 - [Security & Compliance Measures](https://vercel.com/docs/security/compliance) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 
 Full cross-link map for this page: [/docs/regions.graph.md](/docs/regions.graph.md)
@@ -101,6 +103,36 @@ In addition to our 19 compute-capable regions, Vercel's CDN includes 126 PoPs di
 3. TLS termination: The Vercel region the request is routed to handles TLS encryption and decryption.
 
 The extensive PoP network ensures that users worldwide can access your content with minimal latency, even if compute resources are concentrated in fewer regions.
+
+## Access from mainland China
+
+Vercel has no regions or Points of Presence in mainland China. Sites hosted on Vercel can load slowly or fail to load for visitors there, and Vercel can't guarantee availability or performance in mainland China.
+
+Three factors limit access:
+
+| Cause | What it means for your site |
+| --- | --- |
+| No infrastructure in mainland China | Requests from mainland China travel to Vercel infrastructure outside it, which adds latency |
+| Network controls | China's network controls, often called the Great Firewall, can block or throttle traffic to domains hosted outside the country, including `.vercel.app` domains. Traffic that isn't blocked still passes through international gateways, which slows connections. Blocking applies per domain, can differ between internet service providers, and can change without notice |
+| Licensing | Hosting a site in mainland China requires an Internet Content Provider (ICP) license. Vercel doesn't offer hosting in mainland China or support for ICP licensing |
+
+### Improve access for visitors in mainland China
+
+A site hosted outside mainland China can't be made reliably reachable there, but these approaches reduce slow and blocked requests. They are listed from least to most effort:
+
+| Approach | Infrastructure changes | ICP license required | Trade-offs |
+| --- | --- | --- | --- |
+| Use a custom domain | None | No | Least effort, but the domain can still be blocked |
+| Self-host third-party resources | Minimal | No | Removes dependencies on services that are blocked in mainland China |
+| Deploy a static mirror outside mainland China | A second deployment target | No | Routing can improve, but you maintain two builds |
+| Deploy a separate version in mainland China | Hosting in mainland China | Yes | Most reliable access, with the most compliance and maintenance work |
+
+- **Use a custom domain**: [Add a custom domain](/docs/domains/working-with-domains/add-a-domain) to your project and share that domain instead of the `.vercel.app` domain. A custom domain is less likely to be blocked than a `.vercel.app` domain.
+- **Self-host third-party resources**: Fonts, analytics scripts, and other resources loaded from services that are blocked in mainland China can stall a page that is otherwise reachable. Serve those files from your own domain. In Next.js, [`next/font`](/docs/frameworks/full-stack/nextjs#font-optimization) downloads font files at build time and serves them with your deployment.
+- **Deploy a static mirror outside mainland China**: Deploy a static copy of your site to infrastructure with more reliable routing into mainland China. Vercel [doesn't recommend placing a reverse proxy](/docs/security/reverse-proxy) in front of your Vercel project to do this.
+- **Deploy a separate version in mainland China**: Run a separate version of the site on hosting infrastructure in mainland China. This gives visitors there the most reliable access, but requires an ICP license and a second site to maintain.
+
+Start with a custom domain and self-hosted resources, because neither needs new infrastructure. Consider a mirror or a deployment in mainland China when reliable access there is a business requirement.
 
 ## Local development regions
 

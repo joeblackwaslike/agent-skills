@@ -17,8 +17,8 @@ summary: Run your frontend on Vercel alongside backends hosted in Microsoft Azur
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/external-platforms/azure.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "f0ca045c16625783eb4193438d9e27c21827bbc5ede4a85c481b81dd13c60bf5"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "c2ebd23c5c20ac542442ddfd18f880c0c382a0cddf7deca01c134cf3263afb90"
 ---
 
 # Using Vercel with Microsoft Azure
@@ -32,12 +32,11 @@ You can run your frontend on Vercel while your APIs, databases, and internal ser
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Connect now supports Microsoft](https://vercel.com/changelog/vercel-connect-supports-microsoft)
-- [Can I use Vercel to deploy to a private cloud?](https://vercel.com/kb/guide/can-i-use-vercel-to-deploy-to-a-private-cloud) — Learn about if it's possible to deploy to a private cloud with Vercel.
+- [Access Other Clouds and APIs](https://vercel.com/docs/oidc/access-other-services) — Use the short-lived OpenID Connect \\(OIDC\\) tokens that Vercel issues to your builds and functions to access AWS, Google
 - [Bring Your Own Cloud](https://vercel.com/docs/networking/bring-your-own-cloud) — Bring Your Own Cloud \\(BYOC\\) lets you run Vercel Functions behind your project in your own AWS account while Vercel rou
 - [Networking](https://vercel.com/docs/networking) — Connect your Vercel projects to backend services with static IPs and secure networking options.
 - [Integrating Vercel and Kubernetes](https://vercel.com/docs/integrations/external-platforms/kubernetes) — Deploy your frontend on Vercel alongside your existing Kubernetes infrastructure.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 
 Full cross-link map for this page: [/docs/integrations/external-platforms/azure.graph.md](/docs/integrations/external-platforms/azure.graph.md)
 <!-- /docsgraph:related -->
@@ -65,7 +64,7 @@ When your Azure resources have no public endpoint, connect your Secure Compute n
 
 Once the connection is established, your [Vercel Functions](/docs/functions) route traffic to private addresses in your Virtual Network. This includes Virtual Machines or Kubernetes clusters deployed in the network. It also includes any Azure service exposed through a [private endpoint from Azure Private Link](https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview): Azure Cosmos DB, Azure SQL Database, Azure Storage, Azure Key Vault, and apps on App Service or Container Apps can all be reached this way.
 
-To scope a connection to your topology and bandwidth requirements, get in touch with our team.
+To scope a connection to your topology and bandwidth requirements, [contact our sales team](/contact/sales).
 
 ## Authenticate to Azure without stored credentials
 

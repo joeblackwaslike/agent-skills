@@ -15,8 +15,8 @@ summary: Learn what Deployment Storage includes, how Vercel measures it, and how
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployment-storage.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "edfbfcf9cf15730326860791ed0026aee709efee33b0cd72f501baa9783c9fba"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "571996cc380007ce81e514dc271e74b273ce3f518fd2c2cf9c969a565f45ab43"
 ---
 
 # Deployment Storage
@@ -29,10 +29,9 @@ Deployment Storage is cloud storage for the build output and Vercel Function bun
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Deployment Storage keeps your deployments rollback-ready](https://vercel.com/changelog/deployment-storage-keeps-your-deployments-rollback-ready)
 - [Deployment Storage billing begins for existing Pro teams](https://vercel.com/changelog/deployment-storage-pricing-expands-to-existing-teams)
 - [Hobby projects now retain fewer deployments to free up storage](https://vercel.com/changelog/hobby-projects-now-retain-fewer-deployments-to-free-up-storage)
-- [Deployment Storage keeps your deployments rollback-ready](https://vercel.com/changelog/deployment-storage-keeps-your-deployments-rollback-ready)
-- [Updated defaults for deployment retention](https://vercel.com/changelog/updated-defaults-for-deployment-retention)
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Vercel Storage overview](https://vercel.com/docs/storage) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.

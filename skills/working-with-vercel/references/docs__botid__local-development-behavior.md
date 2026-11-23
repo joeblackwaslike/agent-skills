@@ -13,8 +13,8 @@ summary: How BotID behaves in local development environments and testing options
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/botid/local-development-behavior.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "38b3f1ea3f6fb4d1c71c1ebc4bc9dbd5c73c76358e1aadf4b6db4550e1b98540"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "caf58c5fd850b7399077916147f2675c60d8eca530ef1dbacb5577ba4c627935"
 ---
 
 # Local Development Behavior
@@ -29,14 +29,11 @@ During local development, BotID behaves differently than in production to facili
 
 - [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\\(\\) so inference runs only for verified callers
 - [Deploying and testing BotID](https://vercel.com/kb/guide/deploying-and-testing-botid) — This guide gives an overview on Vercel BotID and how to deploy and test it in production
-- [Vercel BotID is now generally available](https://vercel.com/changelog/vercel-botid-is-now-generally-available)
-- [Vercel BotID now leverages Vercel's verified bot directory](https://vercel.com/changelog/vercel-botid-now-leverages-vercels-verified-bot-directory)
-- [Why does my Serverless Function work locally but not when deployed?](https://vercel.com/kb/guide/why-does-my-serverless-function-work-locally-but-not-when-deployed) — Learn how to troubleshoot your Serverless Functions.
 - [Advanced BotID Configuration](https://vercel.com/docs/botid/advanced-configuration) — Fine-grained control over BotID detection levels and backend domain configuration
 - [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
+- [Verify Visitors on Page Load](https://vercel.com/docs/botid/verify-on-page-load) — Run BotID on page load and reuse the result with a short-lived, server-signed verification cookie.
+- [Get Started with BotID](https://vercel.com/docs/botid/get-started) — Step-by-step guide to setting up BotID protection in your Vercel project
 - [Testing Schedules Locally](https://vercel.com/docs/schedules/local-development) — Run static and dynamic schedules on your machine with vercel dev, trigger runs on demand, and learn what differs from pr
-- [Add the Vercel Toolbar to local and production environments](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost) — Learn how to use the Vercel Toolbar in production and local environments.
-- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 
 Full cross-link map for this page: [/docs/botid/local-development-behavior.graph.md](/docs/botid/local-development-behavior.graph.md)
 <!-- /docsgraph:related -->

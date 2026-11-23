@@ -13,13 +13,13 @@ related:
   - /docs/vercel-toolbar/in-production-and-localhost
   - /docs/cli
   - /docs/cli/link
-  - /docs/flags/flags-explorer/reference
+  - /docs/environment-variables/system-environment-variables
 summary: "Learn how to set up the Flags Explorer so you can see and override your application's feature flags"
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/flags-explorer/getting-started.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "c0fdddf94508693d00582dc955c9440ae5cae6de5ef28956c4db7cacf76652c0"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "8a8c73daaf8ffb0ef3ac2d6313af09a950f025d864a397e150a8ca3105f291be"
 ---
 
 # Getting started with Flags Explorer
@@ -35,9 +35,9 @@ This guide walks you through connecting your application to the Flags Explorer, 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
-- [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
-- [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta)
+- [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
+- [How Vercel Flags resolves environments](https://vercel.com/kb/guide/how-vercel-flags-resolves-environments) — Configure Vercel Flags per environment by using environment-scoped SDK Keys that map your Vercel deployment environment
 - [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 - [Vercel Flags](https://vercel.com/docs/flags/vercel-flags) — Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directl
 - [Using the Flags SDK with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/sdks/flags-sdk) — Integrate Vercel Flags into your Next.js or SvelteKit application using the Flags SDK.
@@ -101,18 +101,14 @@ Help me set up Flags Explorer for this project. First, make sure the Vercel CLI 
   bun add flags
   ```
 
-- ### Adding a `FLAGS_SECRET`
-  This secret is used to encrypt and sign overrides, and so Flags Explorer can make authenticated requests to the `/.well-known/vercel/flags` Discovery Endpoint we'll create in the next step.
-
-  Run your application locally with Vercel Toolbar enabled and open Flags Explorer from the toolbar. Click on "Start setup" to begin the onboarding flow, then click on "Create secret" to automatically generate and add a new `FLAGS_SECRET` environment variable to your project.
-
-  This generates a separate value for each environment (Development, Preview, and Production) and stores the Preview and Production values as **Secret**.
-
-  Pull your environment variables to make them available to your project locally.
+- ### Pull your environment variables
+  Pull your environment variables so the Flags SDK can identify your project locally:
   ```bash filename="Terminal"
   vercel env pull
   ```
-  If you prefer to create the secret manually, see the instructions in the [Flags Explorer Reference](/docs/flags/flags-explorer/reference#flags_secret-environment-variable).
+  On Vercel, Flags Explorer works without a `FLAGS_SECRET` environment variable when you use `flags` version 4.5.0 or later. Vercel signs the overrides and the requests to the `/.well-known/vercel/flags` Discovery Endpoint you'll create in the next step, and the Flags SDK verifies them. Your project must [expose the system environment variables](/docs/environment-variables/system-environment-variables), which is the default.
+
+  You still need a `FLAGS_SECRET` when your application runs outside Vercel, or when you run it locally without `vercel env pull`. See [when you need a `FLAGS_SECRET`](/docs/flags/flags-explorer/reference#flags_secret-environment-variable) to create one.
 
 - ### Creating the Flags Discovery Endpoint
   Your application needs to expose an endpoint that Flags Explorer queries to get your feature flags. Flags Explorer will make an authenticated request to this Discovery Endpoint to receive your application's feature flag definitions. This endpoint can communicate the name, origin, description, and available options of your feature flags.

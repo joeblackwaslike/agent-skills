@@ -13,8 +13,8 @@ summary: Use this guide to find specific solutions and insights for common Verce
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "23ce2cf22883f1a5ae0e1fc0aa1d6529badd40dbd7c0eb95e91eae2c85edcc0e"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "d1c3d5ab9379a552510d56c092cf4e1e5c5d03f77f48df86fbd86b0faed39fe7"
 ---
 
 # Error Codes
@@ -29,12 +29,11 @@ When developing your application with Vercel, you may encounter a variety of err
 
 - [Vercel now supports customizing platform error pages](https://vercel.com/changelog/vercel-now-supports-customizing-platform-error-pages)
 - [View specific error codes in runtime logs](https://vercel.com/changelog/view-specific-error-codes-in-runtime-logs)
-- [Troubleshooting request ECONNRESET errors](https://vercel.com/kb/guide/troubleshooting-request-econnreset-errors) — Understand what ECONNRESET means in Vercel runtime logs, why it happens when calling external APIs, how to diagnose it,
-- [Custom error pages](https://vercel.com/docs/custom-error-pages) — Learn how to configure custom error pages for 5xx server errors on Vercel.
 - [REST API Errors](https://vercel.com/docs/rest-api/errors) — General and specific errors you may encounter when using the Vercel REST API.
+- [Custom error pages](https://vercel.com/docs/custom-error-pages) — Learn how to configure custom error pages for 5xx server errors on Vercel.
+- [Troubleshooting Vercel Functions](https://vercel.com/docs/functions/troubleshooting) — Diagnose errors in Vercel Functions, including ECONNRESET errors when a function calls an external API or database.
 - [Troubleshooting Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/troubleshooting) — Learn how to troubleshoot common errors with Sign in with Vercel
 - [get_runtime_errors](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_errors) — Use get_runtime_errors with Vercel MCP.
-- [Get the auth code for a domain](https://vercel.com/docs/rest-api/domains-registrar/get-the-auth-code-for-a-domain) — GET /v1/registrar/domains/{domain}/auth-code — Get the auth code for a domain. This is required to transfer a domain fro
 
 Full cross-link map for this page: [/docs/errors.graph.md](/docs/errors.graph.md)
 <!-- /docsgraph:related -->

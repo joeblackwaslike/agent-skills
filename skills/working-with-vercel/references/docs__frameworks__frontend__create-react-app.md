@@ -18,8 +18,8 @@ summary: Deploy Create React App projects to Vercel and add Preview Deployments,
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/frontend/create-react-app.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "eee2aa301f5de06eff204283af4ec3514613283dfeceaab3015c905bb0124d9e"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "1e665ecd6b0875ad1c1a92904ee92562fa70ae13a71390ed30e516958848fde4"
 ---
 
 # Create React App on Vercel
@@ -103,7 +103,7 @@ Comments allow you to start discussion threads, share screenshots, send notifica
 
 Vercel's Web Analytics features enable you to visualize and monitor your application's performance over time. The Analytics section in your project's dashboard offers detailed insights into your website's visitors, with metrics like top pages, top referrers, and user demographics.
 
-To use Web Analytics, navigate to the Analytics section in your project dashboard sidebar on Vercel and select **Enable** in the modal that appears.
+To use Web Analytics, open **Analytics** in your project sidebar on Vercel, then select the **Enable** button in the header.
 
 To track visitors and page views, we recommend first installing our `@vercel/analytics` package.
 

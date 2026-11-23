@@ -15,8 +15,8 @@ summary: Learn about Trace Drains - OpenTelemetry-compliant distributed tracing 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/drains/reference/traces.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "a1579371e1233b3df81b807b0b39494ee014ce84648f60d2d807250f43dc0736"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "96047f56d04052fffe6a1aff2b37af7c37465d9f343af4a050d15f4de5e47f99"
 ---
 
 # Trace Drains Reference
@@ -31,6 +31,7 @@ Trace Drains forward distributed tracing data from your deployments to external 
 
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains)
+- [Export traces, web analytics events, and speed insights datapoints to any destination](https://vercel.com/changelog/export-more-data-with-vercel-drains)
 - [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
 - [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics) — Learn about Web Analytics Drains - data formats and custom events configuration.
 - [vercel drains](https://vercel.com/docs/cli/drains) — List, inspect, create, update, pause, resume, and delete Vercel Drains from your terminal.

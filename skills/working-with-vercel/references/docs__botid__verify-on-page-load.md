@@ -16,8 +16,8 @@ summary: Run BotID on page load and reuse the result with a short-lived, server-
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/botid/verify-on-page-load.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "e79b8c51149891e9a604033a967835a7c8032cb58d49860e8a8a79c1c165d29b"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "7eb9892774806c472e3be3d2bc6e212f8746dd943b47b8d1347d5a7fbbfce95a"
 ---
 
 # Verify Visitors on Page Load
@@ -33,12 +33,12 @@ Verify a browser with BotID on page load, then issue a signed **verification coo
 - [Deploying and testing BotID](https://vercel.com/kb/guide/deploying-and-testing-botid) — This guide gives an overview on Vercel BotID and how to deploy and test it in production
 - [How to protect your AI endpoints with Vercel BotID](https://vercel.com/kb/guide/protect-ai-endpoints-with-vercel-botid) — Gate every request to your AI endpoints with Vercel BotID and checkBotId\\(\\) so inference runs only for verified callers
 - [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
-- [Vercel BotID is now generally available](https://vercel.com/changelog/vercel-botid-is-now-generally-available)
-- [​Introducing BotID, invisible bot filtering for critical routes](https://vercel.com/blog/introducing-botid)
-- [Vercel BotID now leverages Vercel's verified bot directory](https://vercel.com/changelog/vercel-botid-now-leverages-vercels-verified-bot-directory)
+- [How to effectively load test your application on Vercel](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
+- [Handling Verified Bots](https://vercel.com/docs/botid/verified-bots) — Information about verified bots and their handling in BotID
 - [Troubleshooting Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/troubleshooting) — Learn how to troubleshoot common errors with Sign in with Vercel
 - [Production checklist for launch](https://vercel.com/docs/production-checklist) — Ensure your application is ready for launch with this comprehensive production checklist by the Vercel engineering team.
 - [Automated & Agent Access](https://vercel.com/docs/deployment-protection/automated-agent-access) — Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Prote
+- [AI Gateway OIDC Authentication](https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc) — Authenticate AI Gateway requests from Vercel deployments with OIDC tokens. Configure the AI SDK or send bearer tokens di
 
 Full cross-link map for this page: [/docs/botid/verify-on-page-load.graph.md](/docs/botid/verify-on-page-load.graph.md)
 <!-- /docsgraph:related -->

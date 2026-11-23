@@ -11,15 +11,15 @@ prerequisites:
 related:
   - /docs/ai-gateway/models-and-providers/session-affinity
   - /docs/ai-gateway/sdks-and-apis/responses
+  - /docs/ai-gateway/sdks-and-apis/rest-api
   - /docs/ai-gateway/models-and-providers/model-filtering
   - /docs/ai-gateway/sdks-and-apis
-  - /docs/ai-gateway/sdks-and-apis/openai-chat-completions/advanced
 summary: Reduce cost and latency with AI Gateway caching. Enable automatic prompt caching across providers with one option, and cache full responses in your...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/automatic-caching.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "a3da6f89ce126b2a011bda92e21f238f2f007974393b650b6295de73573958da"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "91fa09c785eee0feb41a2027115742466890fcfd6460dd47ae6067b274eb93f5"
 ---
 
 # AI Gateway Caching: Prompt Caching and Response Caching
@@ -37,14 +37,15 @@ Use prompt caching with AI Gateway to lower the cost of requests that repeat par
 - [GPT-6.1 Terra now available on AI Gateway](https://vercel.com/changelog/gpt-6-1-terra-now-available-on-ai-gateway)
 - [Cost-aware model routing with Vercel AI Gateway](https://vercel.com/kb/guide/cost-aware-model-routing-with-ai-gateway) — Send easy requests to a lower-cost model and escalate only the complex ones to a frontier model through AI Gateway, with
 - [Dynamic Prompt Caching](https://ai-sdk.dev/cookbook/node/dynamic-prompt-caching) — Learn how to reduce API costs by implementing dynamic prompt caching for Anthropic models using cache control directives
-- [Anthropic Messages API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api) — Use the Anthropic Messages API with AI Gateway. Configure authentication and send requests with streaming, tools, images
+- [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
+- [Agent configuration (agent.ts)](https://eve.dev/docs/agent-config) — Configure an eve agent's model, reasoning effort, compaction, limits, and runtime behavior in agent.ts.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/automatic-caching.graph.md](/docs/ai-gateway/models-and-providers/automatic-caching.graph.md)
 <!-- /docsgraph:related -->
 
 | Caching type     | What it does                                                                                                                                                                                                         | How to use it                                                                                                                                                             |
 | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Prompt caching   | The provider stores a repeated prompt prefix, such as a system prompt, a document, or earlier conversation turns. Requests that reuse the prefix pay the provider's reduced cache-read rate for those input tokens, such as 0.1× the base input rate on Anthropic. Some providers charge more than the base input rate to write a cache entry. See [Cost tradeoff](#cost-tradeoff). | Set `caching: 'auto'`. AI Gateway applies the right strategy for each provider. See [How it works](#how-it-works).                                                         |
+| Prompt caching   | The provider stores a repeated prompt prefix, such as a system prompt, a document, or earlier conversation turns. Requests that reuse the prefix pay the provider's reduced cache-read rate for those input tokens. Some providers charge more than the base input rate to write a cache entry. See [Cost tradeoff](#cost-tradeoff). | Set `caching: 'auto'`. AI Gateway applies the right strategy for each provider. See [How it works](#how-it-works).                                                         |
 | Response caching | Your application stores a full response and returns it for an identical request without calling the model.                                                                                                           | AI Gateway doesn't store prompts or responses, so the cache lives in your application. See [Cache responses in your application](#cache-responses-in-your-application). |
 
 Prompt caching applies when requests share a prefix, even when the rest of the prompt differs, as long as the prefix meets the provider's minimum length and the cache entry hasn't expired. That covers multi-turn chat, agents, and repeated questions about the same document. Response caching applies only when the entire request repeats.
@@ -84,14 +85,9 @@ body: JSON.stringify({
 
 The field accepts `5m` (five minutes) or `1h` (one hour). AI Gateway applies the selected lifetime to every automatic breakpoint, including a breakpoint created by `cache_anchor_items`. The field has no effect unless you also set `caching: 'auto'` at the top level of the same request, as in the example above. AI Gateway ignores `cache_ttl` when you set caching only through `providerOptions.gateway.caching`.
 
-Anthropic charges different cache-write rates for each lifetime:
+Anthropic charges a higher cache-write rate for the one-hour lifetime than for the five-minute default, and the cache-read rate is the same for both. Cache rates vary by model. For a model's current cache-read and cache-write prices, open the model in the [AI Gateway models list](/ai-gateway/models), or read `pricing.input_cache_read` and `pricing.input_cache_write` from the [`GET /v1/models` endpoint](/docs/ai-gateway/sdks-and-apis/rest-api#list-models).
 
-| `cache_ttl` value | Lifetime     | Cache write price | Cache read price |
-| ----------------- | ------------ | ----------------- | ---------------- |
-| Omitted or `5m`   | Five minutes | 1.25× base input  | 0.1× base input  |
-| `1h`              | One hour     | 2× base input     | 0.1× base input  |
-
-A one-hour entry costs an additional 0.75× base input to write. One read after the five-minute entry would have expired saves 0.9× base input and repays that premium. Use one hour for long-running agents and conversations that commonly pause for more than five minutes. Keep the five-minute default when requests normally continue within five minutes.
+Use one hour for long-running agents and conversations that commonly pause for more than five minutes. Keep the five-minute default when requests normally continue within five minutes.
 
 `cache_ttl` is advisory. AI Gateway uses the default lifetime for unsupported values and never rejects the request because of the hint. The response includes an `unsupported` warning in `provider_metadata.gateway.warnings`:
 
@@ -245,7 +241,9 @@ const response = await fetch('https://ai-gateway.vercel.sh/v1/responses', {
 
 ## Cost tradeoff
 
-On Anthropic, cache writes cost 1.25× the base input rate and cache reads cost 0.1×. The break-even is a single read: one follow-up request that reuses the cached prompt saves 0.9× per token read, more than offsetting the 0.25× write premium. Multi-turn conversations, agents, and tool-use loops re-read everything the previous turn wrote on every turn, so they come out well ahead. For true one-shot requests, where no follow-up ever reads the cache entry, the write premium is a small net cost. If your traffic is strictly one-shot, prefer manual cache markers (or no caching) over `caching: 'auto'`.
+On Anthropic, a cache write costs more than the base input rate and a cache read costs a fraction of it. Cache rates vary by model, so check a model's cache-read and cache-write prices in the [AI Gateway models list](/ai-gateway/models) or in the `pricing` object from the [`GET /v1/models` endpoint](/docs/ai-gateway/sdks-and-apis/rest-api#list-models).
+
+The break-even is a single read, because one follow-up request that reuses the cached prompt saves more per token than the write premium costs. Multi-turn conversations, agents, and tool-use loops re-read everything the previous turn wrote on every turn, so they come out well ahead. For true one-shot requests, where no follow-up ever reads the cache entry, the write premium is a small net cost. If your traffic is strictly one-shot, prefer manual cache markers (or no caching) over `caching: 'auto'`.
 
 > **💡 Note:** To restrict routing to only models that cache automatically (implicit
 > caching), use `has: ['implicit-caching']`. See [Model

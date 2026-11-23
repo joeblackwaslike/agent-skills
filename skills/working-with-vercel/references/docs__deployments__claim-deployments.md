@@ -17,8 +17,8 @@ summary: Learn how to take ownership of deployments on Vercel with the Claim Dep
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployments/claim-deployments.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "91c582a44aae947d08365a464ec1c08b1a98306f014c940cef444db6580bfb36"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "05448c9b2ccd7cf2da3da22fefafc0773f24a563663acb22ef6a3d86c481538a"
 ---
 
 # Claim Deployments
@@ -61,12 +61,6 @@ Claim the deployment before it expires. After it expires, you can't claim it, an
 
 The rest of this page covers building claim flows into your own platform.
 
-## Get started
-
-- [Claim deployments template](https://github.com/vercel/claim-deployments-demo)
-- [Demo](https://claim-deployments-demo.vercel.app)
-- [Demo with resource claims](https://claim-deployments-demo-with-resource.vercel.app/)
-
 ## Associated resources
 
 When a user claims a deployment, Vercel also transfers any associated resources (limited to specific providers) to the new owner's account. These resources maintain their connections to the project, ensuring a seamless transition of both the deployment and its dependencies.
@@ -105,8 +99,6 @@ For more details on the transfer process, see [Resources with Claim Deployments 
 
 6. **Project transfer completion:**
    - After the user clicks **Transfer**, the Vercel API ([PUT /projects/transfer-request/:code](/docs/rest-api/projects/accept-project-transfer-request)) completes the project transfer, assigning it to the user’s selected team. This step is not necessary if you are using the Claim Deployments Flow.
-
-Get started with [this template](https://github.com/vercel/claim-deployments-demo) of claiming deployments ([demo](https://claim-deployments-demo.vercel.app)).
 
 ## Team restructuring
 

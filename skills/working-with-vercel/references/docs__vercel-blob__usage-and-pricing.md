@@ -17,8 +17,8 @@ summary: Learn about the pricing for Vercel Blob.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-blob/usage-and-pricing.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "51de82729367367ca58c129f2e78d700d94770c238ef6299bec5855ff67b56b7"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "a1d58caee8a4c9670ad3bd46274ff01117f9ec3670cccca435da2ae4bcdfd682"
 ---
 
 # Vercel Blob Pricing
@@ -41,8 +41,8 @@ Vercel Blob usage is measured based on the following:
 - [Vercel Blob is now generally available: Cost-efficient, durable storage](https://vercel.com/blog/vercel-blob-now-generally-available)
 - [Increased Blob store limit for Hobby users](https://vercel.com/changelog/increased-blob-store-limit-for-hobby-users)
 - [Unlimited Vercel Blob stores on every plan](https://vercel.com/changelog/unlimited-vercel-blob-stores-on-every-plan)
+- [Vercel Blob now supports TTLs for automatic deletion](https://vercel.com/changelog/vercel-blob-now-supports-ttls-for-automatic-deletion)
 - [Store and serve files from Python with Vercel Blob](https://vercel.com/kb/guide/python-and-vercel-blob) — Upload, list, stream, and protect files from a Python app with Vercel Blob, including private per-user storage in FastAP
-- [Vercel Blob vs Netlify Blobs](https://vercel.com/kb/guide/vercel-blob-vs-netlify-blobs) — Compare Vercel Blob and Netlify Blobs on storage model, public URLs, delivery, limits, and pricing to choose the right o
 - [Vercel Blob is now generally available](https://vercel.com/changelog/vercel-blob-is-now-generally-available)
 - [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.

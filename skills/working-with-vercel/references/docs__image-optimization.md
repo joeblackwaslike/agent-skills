@@ -17,8 +17,8 @@ summary: Transform and optimize images to improve page load performance.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/image-optimization.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "bed00b7fe12c36407000a362bcbbc36471b34ef8edb6ab3f0e824a530375166c"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "e4f9a290e7c97de1973b65ade9a949e3d4a5440f104e795332ca1eb2d3f0dc3c"
 ---
 
 # Image Optimization with Vercel
@@ -43,8 +43,8 @@ Vercel supports dynamically transforming unoptimized images to reduce the file s
 - [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
 - [Life of a Vercel request: Navigating the Edge Network](https://vercel.com/blog/life-of-a-vercel-request-navigating-the-edge-network)
 - [The foundations of the Frontend Cloud](https://vercel.com/blog/the-foundations-of-the-frontend-cloud)
-- [Images on the web](https://vercel.com/blog/images-on-the-web)
 - [Faster transformations and reduced pricing for Image Optimization](https://vercel.com/changelog/faster-transformations-and-reduced-pricing-for-image-optimization)
+- [Open Graph \\(OG\\) Image Generation](https://vercel.com/docs/og-image-generation) — Learn how to optimize social media image generation through the Open Graph Protocol and @vercel/og library.
 
 Full cross-link map for this page: [/docs/image-optimization.graph.md](/docs/image-optimization.graph.md)
 <!-- /docsgraph:related -->

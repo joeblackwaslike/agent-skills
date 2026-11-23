@@ -14,8 +14,8 @@ summary: Generate structured JSON responses that conform to a specific schema us
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/structured-outputs.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "5a0164eb15a26b08958f3eb25210a910b1f4339f4fce8c1ebb170381ddef7afc"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "c2b85a2e8b0842f264b8f3a49ecbfe9f87274f7b2a57032f842880791f7c7104"
 ---
 
 # OpenAI Chat Completions Structured Outputs with AI Gateway
@@ -32,8 +32,8 @@ Generate structured JSON responses that conform to a specific schema, ensuring p
 - [GPT-6.1 Terra now available on AI Gateway](https://vercel.com/changelog/gpt-6-1-terra-now-available-on-ai-gateway)
 - [Reflection AI's Beam now available on AI Gateway for free](https://vercel.com/changelog/reflection-ai-beam-now-available-on-ai-gateway-for-free)
 - [Tencent Hy4 now available on AI Gateway](https://vercel.com/changelog/tencent-hy4-now-available-on-ai-gateway)
+- [Deploy a Go backend on Vercel with AI Gateway](https://vercel.com/kb/guide/deploy-a-go-backend-on-vercel-with-ai-gateway) — Build and deploy a Go HTTP server that calls AI Gateway using the standard library, with no SDK dependencies.
 - [Anthropic Messages Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs) — Get JSON responses conforming to a JSON Schema from Anthropic models through AI Gateway.
-- [OpenResponses Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses/structured-outputs) — Request schema-constrained JSON with OpenResponses through AI Gateway, and handle provider support and response validati
 - [Streaming](https://vercel.com/docs/functions/streaming-functions) — Learn how to stream responses from Vercel Functions.
 - [AI Gateway Video Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/video-input) — Analyze video clips with AI Gateway using AI SDK 7, Python, Chat Completions, and Responses / OpenResponses.
 

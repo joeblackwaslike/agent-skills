@@ -15,8 +15,8 @@ summary: Keep AI Gateway conversations on the provider that holds their prompt c
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/session-affinity.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "b8ff64c4188cf2b1bfaf3d9b88758a1a14bbf0a2ef1f35dcf31648cab671bf03"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "0f92887e1b657d6aeea19caa8209fd386eb2a36e71a80a3d445b57540266e6ec"
 ---
 
 # AI Gateway Session Affinity
@@ -33,8 +33,8 @@ A provider's prompt cache lives on the provider account that served your request
 - [OpenTelemetry](https://eve.dev/docs/observability/otel) — Configure OpenTelemetry destinations, content capture, and third-party exports.
 - [AI Gateway logs now show session affinity](https://vercel.com/changelog/ai-gateway-logs-now-show-session-affinity)
 - [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
-- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
-- [Anthropic Messages Configuration with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced) — Advanced Anthropic API features including web search, provider timeouts, and automatic caching through AI Gateway.
+- [AI Gateway App Attribution](https://vercel.com/docs/ai-gateway/ecosystem/app-attribution) — Attribute your requests so Vercel can identify and feature your app on AI Gateway pages.
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, caching, SDK and API compati
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/session-affinity.graph.md](/docs/ai-gateway/models-and-providers/session-affinity.graph.md)
 <!-- /docsgraph:related -->
@@ -58,13 +58,13 @@ If the pinned provider fails, AI Gateway tries the next provider as usual. A req
 
 Session affinity runs after AI Gateway applies your filters, so it only reorders providers you already allow.
 
-| Setting                                                     | Behavior with session affinity                                                                                                   |
-| ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `only` and compliance settings, such as zero data retention | Filters apply first. AI Gateway ignores a pinned provider that the filters removed.                                              |
-| `order`                                                     | The pinned provider goes first, ahead of your order. Set `sessionAffinity: false` to keep your order exactly.                    |
-| `sort`                                                      | The pinned provider goes ahead of the sort winner. A warm cache usually lowers latency and cost, which is what sorting aims for. |
-| Provider health                                             | AI Gateway never promotes a provider that it treats as down.                                                                     |
-| BYOK credentials                                            | A pin reorders only within its own group. It never moves a Vercel provider key ahead of your BYOK credentials, or the reverse.   |
+| Setting                                                     | Behavior with session affinity                                                                                                                                                      |
+| ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `only` and compliance settings, such as zero data retention | Filters apply first. AI Gateway ignores a pinned provider that the filters removed.                                                                                                 |
+| `order`                                                     | The pinned provider goes first, ahead of your order. The response [reports the pin](#read-session-details-from-responses). Set `sessionAffinity: false` to keep your order exactly. |
+| `sort`                                                      | The pinned provider goes ahead of the sort winner. A warm cache usually lowers latency and cost, which is what sorting aims for.                                                    |
+| Provider health                                             | AI Gateway never promotes a provider that it treats as down.                                                                                                                        |
+| BYOK credentials                                            | A pin reorders only within its own group. It never moves a Vercel provider key ahead of your BYOK credentials, or the reverse.                                                      |
 
 ## Identify a session
 
@@ -294,10 +294,12 @@ The request can still carry a session ID, but AI Gateway doesn't write pins or r
 
 AI Gateway reports the session it used in `providerMetadata.gateway.routing` in the AI SDK, or in `provider_metadata.gateway.routing` on Chat Completions, OpenAI Responses, and Anthropic Messages responses.
 
-| Field                   | Description                                                                                                                             |
-| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| `clientSessionId`       | The session ID AI Gateway used.                                                                                                         |
-| `clientSessionIdSource` | `explicit` for IDs you send, including `prompt_cache_key`. `agent` for the Claude Code header. `fingerprint` for IDs AI Gateway derived. |
+| Field                     | Description                                                                                                                             |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `clientSessionId`         | The session ID AI Gateway used.                                                                                                         |
+| `clientSessionIdSource`   | `explicit` for IDs you send, including `prompt_cache_key`. `agent` for the Claude Code header. `fingerprint` for IDs AI Gateway derived. |
+| `affinity.pinned`         | `true` when AI Gateway tried the session's pinned provider first for this request.                                                      |
+| `affinity.pinnedProvider` | The provider the session's pin named.                                                                                                   |
 
 ```json
 {
@@ -306,7 +308,11 @@ AI Gateway reports the session it used in `providerMetadata.gateway.routing` in 
       "routing": {
         "clientSessionId": "sess_8f3KQ2vXr9mT",
         "clientSessionIdSource": "explicit",
-        "finalProvider": "anthropic"
+        "finalProvider": "anthropic",
+        "affinity": {
+          "pinned": true,
+          "pinnedProvider": "anthropic"
+        }
       }
     }
   }
@@ -314,6 +320,8 @@ AI Gateway reports the session it used in `providerMetadata.gateway.routing` in 
 ```
 
 `finalProvider` names the provider that served the request. To check that a session stays on one provider, compare `finalProvider` across responses that share a `clientSessionId`.
+
+The `affinity` object appears only when the pin went first, which can be ahead of the providers in your `order`. When a response has no `affinity` object, the session has no usable pin for this request, and AI Gateway used your routing settings as usual. If the pinned provider fails, AI Gateway falls back as usual, so `finalProvider` can differ from `affinity.pinnedProvider`.
 
 ## Search the docs from your terminal
 

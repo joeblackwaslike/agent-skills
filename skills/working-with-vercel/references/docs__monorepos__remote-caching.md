@@ -17,8 +17,8 @@ summary: Vercel Remote Cache allows you to share build outputs and artifacts acr
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/monorepos/remote-caching.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "d303f5791a31158e84a975b4cf0c41857b8ff083a92a4b9a8993db25043d5bb3"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "d464888cc60cc9915b6ce49e4b8fbf07aef6244b65bcc61d38044d8d6e565f4c"
 ---
 
 # Remote Caching
@@ -33,8 +33,8 @@ Remote Caching saves you time by ensuring you never repeat the same task twice, 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Faster iteration with Turborepo and Vercel Remote Cache](https://vercel.com/blog/vercel-remote-cache-turbo)
 - [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) — Share a single Turborepo cache across your team and CI to avoid duplicated work.
+- [Faster iteration with Turborepo and Vercel Remote Cache](https://vercel.com/blog/vercel-remote-cache-turbo)
 - [Constructing CI](https://turborepo.dev/docs/crafting-your-repository/constructing-ci) — Set up CI pipelines with Remote Caching, task filtering, Docker support, and affected package detection for maximum spee
 - [Buildkite](https://turborepo.dev/docs/guides/ci-vendors/buildkite) — Configure Buildkite pipelines to run Turborepo tasks with Remote Caching.
 - [CircleCI](https://turborepo.dev/docs/guides/ci-vendors/circleci) — Configure CircleCI workflows to run Turborepo tasks with Remote Caching.
@@ -44,7 +44,7 @@ Remote Caching saves you time by ensuring you never repeat the same task twice, 
 - [Turborepo and Vercel Remote Cache now support OpenID Connect (OIDC)](https://vercel.com/changelog/turborepo-and-remote-cache-now-support-openid-connect-oidc)
 - [Vercel CI is now in beta](https://vercel.com/changelog/vercel-ci-is-now-in-beta)
 - [Deploy a headless BigCommerce storefront with Vercel](https://vercel.com/kb/guide/deploy-headless-bigcommerce-storefront-with-vercel) — Deploy a headless BigCommerce storefront using Catalyst and Next.js on Vercel
-- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
+- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-to-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
 
 Full cross-link map for this page: [/docs/monorepos/remote-caching.graph.md](/docs/monorepos/remote-caching.graph.md)
 <!-- /docsgraph:related -->

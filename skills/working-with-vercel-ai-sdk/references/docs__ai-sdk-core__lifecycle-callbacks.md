@@ -1,17 +1,17 @@
 ---
 title: Lifecycle Callbacks
-description: Observe AI SDK lifecycle events in generateText, streamText, embed, embedMany, rerank, and experimental_decide calls
+description: Observe AI SDK lifecycle events in generateText, streamText, embed, embedMany, rerank, experimental_decide, and experimental_extract calls
 url: "https://ai-sdk.dev/docs/ai-sdk-core/lifecycle-callbacks"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/lifecycle-callbacks.md"
-fetched_at: "2026-11-02T12:06:29.726Z"
-sha256: "aa285f763ceb3ce84c54964312040731186e5cfcfd54deba46d6f2e8ba9b9abd"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "e69380abfa2e6a80e507f715118098433ec84861151577695ac8ba359cd9e3b2"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
 
 Event callbacks let you run your own code at important points in an AI SDK call.
-You can attach them directly to `generateText`, `streamText`, `embed`, `embedMany`, `rerank`, and `experimental_decide` calls to observe what happened, record usage, debug multi-step generations, and monitor tool execution.
+You can attach them directly to `generateText`, `streamText`, `embed`, `embedMany`, `rerank`, `experimental_decide`, and `experimental_extract` calls to observe what happened, record usage, debug multi-step generations, and monitor tool execution.
 
 They are especially useful when you want application-specific logic close to the call site:
 
@@ -394,6 +394,11 @@ for new code.
 - `onStart` (`(event: Experimental_DecideStartEvent) => void | Promise<void>`): Called when the decision operation begins, before the decision model is called.
 - `onEnd` (`(event: Experimental_DecideEndEvent) => void | Promise<void>`): Called when the decision operation completes successfully.
 
+### `experimental_extract`
+
+- `onStart` (`(event: Experimental_ExtractStartEvent) => void | Promise<void>`): Called when the extraction operation begins, before the extraction model is called.
+- `onEnd` (`(event: Experimental_ExtractEndEvent) => void | Promise<void>`): Called when the extraction operation completes successfully.
+
 ## Event Data Reference
 
 The exact event data depends on the callback. The tables below summarize the fields you will most commonly use.
@@ -601,6 +606,35 @@ Includes every `onStart` field plus:
 - `usage` (`{ inputTokens: number | undefined; outputTokens: number | undefined; totalTokens: number | undefined }`): Token usage for the decision operation.
 - `warnings` (`Array<Warning>`): Warnings from the decision model.
 - `rounding` (`{ probabilityDecimals?: number; scoreDecimals?: number } | undefined`): Provider-declared decimal precision for probabilities and scores.
+- `providerMetadata` (`ProviderMetadata | undefined`): Optional provider-specific metadata.
+- `response` (`{ id?: string; timestamp: Date; modelId: string; headers?: Record<string, string>; body?: unknown }`): Response metadata including the resolved model and timestamp.
+
+### Extraction Events
+
+Extraction callbacks are experimental. Their exported types are
+`Experimental_ExtractStartEvent` and `Experimental_ExtractEndEvent`.
+
+#### onStart
+
+- `callId` (`string`): Unique identifier for this extraction call.
+- `operationId` (`'ai.extract'`): Extraction operation identifier.
+- `runtimeContext` (`RUNTIME_CONTEXT`): Full user-defined runtime context.
+- `provider` (`string`): Provider identifier for the extraction model.
+- `modelId` (`string`): Extraction model identifier.
+- `state` (`string | object | array`): Shared state to extract field values from.
+- `fields` (`Readonly<Record<string, Experimental_ExtractionField>>`): Fields to extract from the shared state.
+- `referenceDate` (`string | undefined`): YYYY-MM-DD date that anchors relative dates and dates without a year.
+- `maxRetries` (`number`): Maximum number of retries for the model call.
+- `headers` (`Record<string, string> | undefined`): Additional HTTP headers sent with the request.
+- `providerOptions` (`ProviderOptions`): Provider-specific options.
+
+#### onEnd
+
+Includes every `onStart` field plus:
+
+- `answers` (`Record<string, Experimental_ExtractionAnswer>`): Exactly one typed answer per field ID.
+- `usage` (`{ inputTokens: number | undefined; outputTokens: number | undefined; totalTokens: number | undefined }`): Token usage for the extraction operation.
+- `warnings` (`Array<Warning>`): Warnings from the extraction model.
 - `providerMetadata` (`ProviderMetadata | undefined`): Optional provider-specific metadata.
 - `response` (`{ id?: string; timestamp: Date; modelId: string; headers?: Record<string, string>; body?: unknown }`): Response metadata including the resolved model and timestamp.
 

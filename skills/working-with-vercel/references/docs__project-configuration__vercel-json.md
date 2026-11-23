@@ -17,8 +17,8 @@ summary: Learn how to use vercel.json to configure and override the default beha
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/project-configuration/vercel-json.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "23c062888ef4a20c05d67fa25cc447c0807e5cd668466552ab0689203e3c59c7"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "502f2f8c666d8798fb8fe4eeb6e4702e28beea1356965264b82ee37650030b4f"
 ---
 
 # Static Configuration with vercel.json
@@ -978,6 +978,8 @@ These regions serve as a fallback to any regions specified in the [`regions` con
 To learn more about automatic failover for Vercel Functions, see [Automatic failover](/docs/functions/configuring-functions/region#automatic-failover). Vercel Functions using the Edge runtime will [automatically failover](/docs/functions/configuring-functions/region#automatic-failover) with no configuration required.
 
 Region failover is supported with Secure Compute, see [Region Failover](/docs/networking/secure-compute#region-failover) to learn more.
+
+If your team isn't on the Enterprise plan, [contact our sales team](/contact/sales) to get access to the `functionFailoverRegions` property.
 
 ## rewrites
 

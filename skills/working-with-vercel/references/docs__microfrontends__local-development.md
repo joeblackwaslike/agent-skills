@@ -16,8 +16,8 @@ summary: Learn how to run and test your microfrontends locally.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/microfrontends/local-development.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "065660a986b7ca0982a170e4e0d0a50612413b76e5db1bc9bfa7a3dc2e6796e0"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "959e45f93c312d044240afb76e57878657935d1c7e07ebbb4f03017abd33216e"
 ---
 
 # Microfrontends local development
@@ -119,6 +119,8 @@ Therefore, the microfrontends proxy allows developers to run only the microfront
   }
   ```
   The `local` field may also contain a host or protocol (for example, `my.special.localhost.com:3001` or `https://my.localhost.com:3030`).
+
+  To override the port for one run, such as when you work in several Git worktrees at once, set the `MFE_APP_PORT` environment variable. `microfrontends port` returns that value instead. The proxy rejects `MFE_APP_PORT` when you pass more than one application to `--local-apps`.
 
   If the name of the application in `microfrontends.json` (such as `web` or `docs`) does not match the name used in `package.json`, you can also set the `packageName` field for the application so that the local development proxy knows if the application is running locally.
   ```json {11} filename="microfrontends.json"
@@ -256,7 +258,7 @@ In a polyrepo setup, you'll need to start each microfrontend application separat
   ```bash
   microfrontends proxy --local-apps your-app-name
   ```
-  Make sure to specify the correct application name that matches your `microfrontends.json` configuration.
+  Make sure to specify the application name from your `microfrontends.json` configuration. The proxy rejects names that aren't listed under `applications`, including `packageName` values.
 
   To test several microfrontends together, start each one in its own repository, then pass all of them to a single proxy as a space-separated list:
   ```bash
@@ -277,7 +279,9 @@ When setting up your monorepo without turborepo, the `proxy` command used inside
   - You can also run it with a command like `npm exec microfrontends ...` (or the equivalent for your package manager), as long as it's from a context where the `@vercel/microfrontends` package is installed.
 - `proxy` is a sub-command to run the local proxy.
 - `microfrontends.json` is the path to your microfrontends configuration file. If you have a monorepo, you may also leave this out and the script will attempt to locate the file automatically.
-- `--local-apps` is followed by a space separated list of the applications running locally. For the applications provided in this list, the local proxy will route requests to those local applications. Requests for other applications will be routed to the `fallback` URL specified in your microfrontends configuration for that app.
+- `--local-apps` is followed by a space separated list of the applications running locally. Use the application names from `microfrontends.json`, not the `package.json` names. For the applications provided in this list, the local proxy will route requests to those local applications. Requests for other applications will be routed to the `fallback` URL specified in your microfrontends configuration for that app. If an application has no `fallback`, the proxy uses the default application's `fallback`.
+- `--port` sets the port the proxy listens on. It overrides `options.localProxyPort` in `microfrontends.json`.
+- `--origin` sets the origin browsers use to reach the proxy, for example when you access it through a tunnel or a custom local hostname. You can also set it with the `MFE_LOCAL_PROXY_ORIGIN` environment variable.
 
 For example, if you are running the **Web** and **Docs** microfrontends locally, this command would set up the local proxy to route requests locally for those applications, and requests for the remaining applications to their fallbacks:
 

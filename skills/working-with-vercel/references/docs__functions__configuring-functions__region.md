@@ -18,8 +18,8 @@ summary: Learn how to configure regions for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/configuring-functions/region.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "a4e8a95b6aefd858d6393b5560f7b9cb6a702eca85713f1947fba6cfcef4b583"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "3e434319c96f3efd6211512103510beb336a43307e248654b8012fd59ff9b98f"
 ---
 
 # Configuring regions for Vercel Functions
@@ -38,11 +38,11 @@ The Vercel platform caches all static content in [the CDN](/docs/caching/cdn-cac
 - [OpenAI will not support the Hong Kong region (hkg1) for Functions](https://vercel.com/changelog/openai-will-not-support-the-hong-kong-region-hkg1-for-functions)
 - [Pro customers can now configure up to 3 regions for Vercel Functions](https://vercel.com/changelog/pro-customers-can-now-configure-up-to-3-regions-for-vercel-functions)
 - [Vercel Edge Functions can now be regional or global](https://vercel.com/changelog/regional-edge-functions-are-now-available)
+- [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation) — Set baselines and cut backend load. Make your catalog readable to agents and keep orders and AI features reliable. Then
 - [How to deploy Medusa on Vercel](https://vercel.com/kb/guide/deploy-medusa-on-vercel) — Deploy a Medusa storefront on Vercel, including where the backend runs, which environment variables the current starter
 - [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis) — Learn how to build and scale performant APIs on Vercel.
 - [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
 - [How can I improve function cold start performance on Vercel?](https://vercel.com/kb/guide/improve-function-cold-start-performance-on-vercel) — Learn how to confirm whether cold starts cause function latency on Vercel, and how Fluid compute reduces how often they
-- [Migrate a Python API from Heroku to Vercel](https://vercel.com/kb/guide/migrate-a-python-api-from-heroku-to-vercel) — Move a FastAPI, Flask, or Django API from Heroku to Vercel Functions. Replace your Procfile, worker dynos, Heroku Schedu
 - [Deploying AI-driven apps on Vercel](https://vercel.com/blog/deploying-ai-applications)
 
 Full cross-link map for this page: [/docs/functions/configuring-functions/region.graph.md](/docs/functions/configuring-functions/region.graph.md)

@@ -17,8 +17,8 @@ summary: Learn how to add, verify, and remove DNS records for your domains on Ve
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains/managing-dns-records.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "305379a22bada4c3ff4a98007850d0431036af5f5bd7af03ab30975059e60269"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "90f778b45c84d79775fcea52f84efd6503cde41938ede85a7a0ae7deadeb522b"
 ---
 
 # Managing DNS Records
@@ -302,7 +302,7 @@ $ dig A api.example.com +short @ns1.vercel-dns.com
 
 *Checking the DNS configuration of the A record under "api" served by Vercel.*
 
-Then, check the DNS records from the existing provider to make sure they match. If you were moving your DNS from [Cloudflare](https://vercel.com/kb/guide/cloudflare-with-vercel), for example, the correct command would be:
+Then, check the DNS records from the existing provider to make sure they match. If you were moving your DNS from [Cloudflare](/kb/guide/can-i-use-a-proxy-on-top-of-my-vercel-deployment), for example, the correct command would be:
 
 ```bash filename="terminal"
 $ dig A api.example.com +short @example.ns.cloudflare.com

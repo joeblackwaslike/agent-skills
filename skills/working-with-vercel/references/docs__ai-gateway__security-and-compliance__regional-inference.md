@@ -18,8 +18,8 @@ summary: Route AI Gateway inference to the region you choose, team-wide or per r
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/regional-inference.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "fdda142fbead7559da7592723f01cd37de006bfbd125a9935a449be9331bc6bc"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "ff9d5569c7b5e6db0473d3a00bfa2c67f957962a9b0b15e1ca937b0fe3931ae0"
 ---
 
 # AI Gateway Regional Inference
@@ -630,8 +630,8 @@ so check the provider's terms.
 To limit retention, add [zero data retention (ZDR)](/docs/ai-gateway/security-and-compliance/zdr),
 where available. With ZDR, the provider deletes your prompts and responses after
 the request rather than retaining them. Some provider models do not have ZDR. For
-example, Anthropic's `fable-5` is ineligible for ZDR on every provider, so a
-request with ZDR configured fails rather than route to it.
+example, Anthropic's Claude Fable models are ineligible for ZDR on every
+provider, so a request with ZDR configured fails rather than route to them.
 
 Not every provider serves every region, so coverage varies by provider and model
 (see [Current limits](#current-limits)). Don't assume a request ran where you

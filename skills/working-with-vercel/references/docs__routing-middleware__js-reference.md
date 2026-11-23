@@ -17,8 +17,8 @@ summary: Reference for writing Routing Middleware in TypeScript and JavaScript, 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/routing-middleware/js-reference.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "3b32682a8c99713f735a646e6e1618625b380ec1f3875c7e93d296c9a4952528"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "6705c9e6fb6cff95e0752d0de6f2664d6e505926321384b449c696b2a992ce0e"
 ---
 
 # Routing Middleware: JS Reference
@@ -31,12 +31,12 @@ Use this reference to write [Routing Middleware](/docs/routing-middleware) in Ty
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
-- [Filtering query parameters](https://vercel.com/kb/guide/filter-query-parameters) — Learn how to filter query parameters in your Middleware.
 - [How to use Next.js as a backend for your frontend](https://nextjs.org/docs/app/guides/backend-for-frontend) — Learn how to use Next.js as a backend framework
+- [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
 - [Vercel Edge Middleware: Dynamic at the speed of static (historical)](https://vercel.com/blog/vercel-edge-middleware-dynamic-at-the-speed-of-static)
-- [Middleware now supports Node.js](https://vercel.com/changelog/middleware-now-supports-node-js)
-- [Rendering content based on device](https://vercel.com/kb/guide/rendering-content-based-on-device) — Learn how to render different content based on the user agent in your Middleware.
+- [route.js](https://nextjs.org/docs/app/api-reference/file-conventions/route) — API reference for the route.js special file.
+- [Proxy](https://nextjs.org/docs/pages/api-reference/file-conventions/proxy) — Learn how to use Proxy to run code before a request is completed.
+- [Getting Started with Routing Middleware](https://vercel.com/docs/routing-middleware/getting-started) — Learn how you can use Routing Middleware, code that executes before a request is processed on a site, to provide speed a
 - [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 - [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart) — Build your first Vercel Function in a few steps.
 - [Astro on Vercel](https://vercel.com/docs/frameworks/frontend/astro) — Deploy Astro sites to Vercel and configure server-side rendering, ISR, Web Analytics, Image Optimization, and Routing Mi
@@ -899,9 +899,403 @@ export default function middleware() {
 }
 ```
 
-## More resources
+## Examples
 
-- [Redirect with unique tokens](/kb/guide/use-crypto-web-api)
+These examples use the helpers described above. Each one sets a [`matcher`](#match-paths-based-on-custom-matcher-config) so the Routing Middleware only runs on the paths it needs to handle.
+
+### Redirect with a unique token
+
+Routing Middleware can use the [Web Crypto API](https://developer.mozilla.org/docs/Web/API/Web_Crypto_API) without an import. This example generates a token with `crypto.randomUUID()` and redirects requests for `/` to `/api/token` with the token as a query parameter:
+
+```ts filename="middleware.ts" framework=nextjs-app
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
+
+export const config = {
+  matcher: '/',
+};
+
+export default function middleware(request: NextRequest) {
+  const url = request.nextUrl.clone();
+
+  url.pathname = '/api/token';
+  url.searchParams.set('token', crypto.randomUUID());
+
+  return NextResponse.redirect(url);
+}
+```
+
+```js filename="middleware.js" framework=nextjs-app
+import { NextResponse } from 'next/server';
+
+export const config = {
+  matcher: '/',
+};
+
+export default function middleware(request) {
+  const url = request.nextUrl.clone();
+
+  url.pathname = '/api/token';
+  url.searchParams.set('token', crypto.randomUUID());
+
+  return NextResponse.redirect(url);
+}
+```
+
+```ts filename="middleware.ts" framework=nextjs
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
+
+export const config = {
+  matcher: '/',
+};
+
+export default function middleware(request: NextRequest) {
+  const url = request.nextUrl.clone();
+
+  url.pathname = '/api/token';
+  url.searchParams.set('token', crypto.randomUUID());
+
+  return NextResponse.redirect(url);
+}
+```
+
+```js filename="middleware.js" framework=nextjs
+import { NextResponse } from 'next/server';
+
+export const config = {
+  matcher: '/',
+};
+
+export default function middleware(request) {
+  const url = request.nextUrl.clone();
+
+  url.pathname = '/api/token';
+  url.searchParams.set('token', crypto.randomUUID());
+
+  return NextResponse.redirect(url);
+}
+```
+
+```ts filename="middleware.ts" framework=other
+export const config = {
+  matcher: '/',
+};
+
+export default function middleware(request: Request) {
+  const url = new URL(request.url);
+
+  url.pathname = '/api/token';
+  url.searchParams.set('token', crypto.randomUUID());
+
+  return Response.redirect(url);
+}
+```
+
+```js filename="middleware.js" framework=other
+export const config = {
+  matcher: '/',
+};
+
+export default function middleware(request) {
+  const url = new URL(request.url);
+
+  url.pathname = '/api/token';
+  url.searchParams.set('token', crypto.randomUUID());
+
+  return Response.redirect(url);
+}
+```
+
+### Filter query parameters
+
+To pass only the query parameters your application expects, delete the others and [rewrite](#rewrites) the request to the cleaned URL. This example keeps `page` and `sort` on `/products` and drops every other parameter, so a request for `/products?page=2&ref=newsletter` reaches your application as `/products?page=2`. The visitor's browser keeps the original URL:
+
+```ts filename="middleware.ts" framework=nextjs-app
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
+
+const allowedParams = ['page', 'sort'];
+
+export const config = {
+  matcher: '/products',
+};
+
+export default function middleware(request: NextRequest) {
+  const url = request.nextUrl.clone();
+  let changed = false;
+
+  // Copy the keys first, because deleting while iterating skips entries
+  for (const key of [...url.searchParams.keys()]) {
+    if (!allowedParams.includes(key)) {
+      url.searchParams.delete(key);
+      changed = true;
+    }
+  }
+
+  // Only rewrite when a parameter was removed
+  if (changed) {
+    return NextResponse.rewrite(url);
+  }
+}
+```
+
+```js filename="middleware.js" framework=nextjs-app
+import { NextResponse } from 'next/server';
+
+const allowedParams = ['page', 'sort'];
+
+export const config = {
+  matcher: '/products',
+};
+
+export default function middleware(request) {
+  const url = request.nextUrl.clone();
+  let changed = false;
+
+  // Copy the keys first, because deleting while iterating skips entries
+  for (const key of [...url.searchParams.keys()]) {
+    if (!allowedParams.includes(key)) {
+      url.searchParams.delete(key);
+      changed = true;
+    }
+  }
+
+  // Only rewrite when a parameter was removed
+  if (changed) {
+    return NextResponse.rewrite(url);
+  }
+}
+```
+
+```ts filename="middleware.ts" framework=nextjs
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
+
+const allowedParams = ['page', 'sort'];
+
+export const config = {
+  matcher: '/products',
+};
+
+export default function middleware(request: NextRequest) {
+  const url = request.nextUrl.clone();
+  let changed = false;
+
+  // Copy the keys first, because deleting while iterating skips entries
+  for (const key of [...url.searchParams.keys()]) {
+    if (!allowedParams.includes(key)) {
+      url.searchParams.delete(key);
+      changed = true;
+    }
+  }
+
+  // Only rewrite when a parameter was removed
+  if (changed) {
+    return NextResponse.rewrite(url);
+  }
+}
+```
+
+```js filename="middleware.js" framework=nextjs
+import { NextResponse } from 'next/server';
+
+const allowedParams = ['page', 'sort'];
+
+export const config = {
+  matcher: '/products',
+};
+
+export default function middleware(request) {
+  const url = request.nextUrl.clone();
+  let changed = false;
+
+  // Copy the keys first, because deleting while iterating skips entries
+  for (const key of [...url.searchParams.keys()]) {
+    if (!allowedParams.includes(key)) {
+      url.searchParams.delete(key);
+      changed = true;
+    }
+  }
+
+  // Only rewrite when a parameter was removed
+  if (changed) {
+    return NextResponse.rewrite(url);
+  }
+}
+```
+
+```ts filename="middleware.ts" framework=other
+import { rewrite } from '@vercel/functions';
+
+const allowedParams = ['page', 'sort'];
+
+export const config = {
+  matcher: '/products',
+};
+
+export default function middleware(request: Request) {
+  const url = new URL(request.url);
+  let changed = false;
+
+  // Copy the keys first, because deleting while iterating skips entries
+  for (const key of [...url.searchParams.keys()]) {
+    if (!allowedParams.includes(key)) {
+      url.searchParams.delete(key);
+      changed = true;
+    }
+  }
+
+  // Only rewrite when a parameter was removed
+  if (changed) {
+    return rewrite(url);
+  }
+}
+```
+
+```js filename="middleware.js" framework=other
+import { rewrite } from '@vercel/functions';
+
+const allowedParams = ['page', 'sort'];
+
+export const config = {
+  matcher: '/products',
+};
+
+export default function middleware(request) {
+  const url = new URL(request.url);
+  let changed = false;
+
+  // Copy the keys first, because deleting while iterating skips entries
+  for (const key of [...url.searchParams.keys()]) {
+    if (!allowedParams.includes(key)) {
+      url.searchParams.delete(key);
+      changed = true;
+    }
+  }
+
+  // Only rewrite when a parameter was removed
+  if (changed) {
+    return rewrite(url);
+  }
+}
+```
+
+### Serve different content by device
+
+To serve a different page to mobile and desktop visitors at the same URL, read the `User-Agent` request header and rewrite the request. This example rewrites `/` to `/mobile` or `/desktop`:
+
+```ts filename="middleware.ts" framework=nextjs-app
+import { NextResponse, userAgent } from 'next/server';
+import type { NextRequest } from 'next/server';
+
+export const config = {
+  matcher: '/',
+};
+
+export default function middleware(request: NextRequest) {
+  const { device } = userAgent(request);
+  const viewport = device.type === 'mobile' ? 'mobile' : 'desktop';
+
+  const url = request.nextUrl.clone();
+  url.pathname = `/${viewport}`;
+
+  return NextResponse.rewrite(url);
+}
+```
+
+```js filename="middleware.js" framework=nextjs-app
+import { NextResponse, userAgent } from 'next/server';
+
+export const config = {
+  matcher: '/',
+};
+
+export default function middleware(request) {
+  const { device } = userAgent(request);
+  const viewport = device.type === 'mobile' ? 'mobile' : 'desktop';
+
+  const url = request.nextUrl.clone();
+  url.pathname = `/${viewport}`;
+
+  return NextResponse.rewrite(url);
+}
+```
+
+```ts filename="middleware.ts" framework=nextjs
+import { NextResponse, userAgent } from 'next/server';
+import type { NextRequest } from 'next/server';
+
+export const config = {
+  matcher: '/',
+};
+
+export default function middleware(request: NextRequest) {
+  const { device } = userAgent(request);
+  const viewport = device.type === 'mobile' ? 'mobile' : 'desktop';
+
+  const url = request.nextUrl.clone();
+  url.pathname = `/${viewport}`;
+
+  return NextResponse.rewrite(url);
+}
+```
+
+```js filename="middleware.js" framework=nextjs
+import { NextResponse, userAgent } from 'next/server';
+
+export const config = {
+  matcher: '/',
+};
+
+export default function middleware(request) {
+  const { device } = userAgent(request);
+  const viewport = device.type === 'mobile' ? 'mobile' : 'desktop';
+
+  const url = request.nextUrl.clone();
+  url.pathname = `/${viewport}`;
+
+  return NextResponse.rewrite(url);
+}
+```
+
+```ts filename="middleware.ts" framework=other
+import { rewrite } from '@vercel/functions';
+
+export const config = {
+  matcher: '/',
+};
+
+export default function middleware(request: Request) {
+  const userAgent = request.headers.get('user-agent') ?? '';
+  const viewport = /Mobi/i.test(userAgent) ? 'mobile' : 'desktop';
+
+  return rewrite(new URL(`/${viewport}`, request.url));
+}
+```
+
+```js filename="middleware.js" framework=other
+import { rewrite } from '@vercel/functions';
+
+export const config = {
+  matcher: '/',
+};
+
+export default function middleware(request) {
+  const userAgent = request.headers.get('user-agent') ?? '';
+  const viewport = /Mobi/i.test(userAgent) ? 'mobile' : 'desktop';
+
+  return rewrite(new URL(`/${viewport}`, request.url));
+}
+```
+
+> For \['nextjs', 'nextjs-app']:
+
+The Next.js [`userAgent()`](https://nextjs.org/docs/app/api-reference/functions/userAgent) helper parses the header and returns the device type.
+
+> For \['other']:
+
+The example treats any `User-Agent` value that contains `Mobi` as a mobile device. MDN suggests this check when you need to [detect mobile devices from the user agent string](https://developer.mozilla.org/docs/Web/HTTP/Guides/Browser_detection_using_the_user_agent#mobile_tablet_or_desktop).
 
 ## Search the docs from your terminal
 

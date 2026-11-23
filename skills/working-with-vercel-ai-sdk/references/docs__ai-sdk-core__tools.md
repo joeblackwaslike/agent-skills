@@ -4,8 +4,8 @@ description: Use first-party AI SDK tools to add capabilities to agents and appl
 url: "https://ai-sdk.dev/docs/ai-sdk-core/tools"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/tools.md"
-fetched_at: "2026-11-16T12:32:31.917Z"
-sha256: "e17563c562ba5b0fde2834e57c2386f66aa3730a6d41ba0c392706b0e2566be1"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "f38bccc64f4d769b1538bafcf36b5e7e7fecf5b6ae734376051c1ff49f26485b"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -115,8 +115,13 @@ Raw runtime instances need their respective adapters; a custom
 The model calls the tool with `{ command: string }` and receives
 `{ stdout, stderr, exitCode }`. Nonzero exit codes are returned so the model can
 inspect failures and recover. AI SDK cancellation is forwarded to the session.
-Output truncation happens after execution and does not limit execution memory or
-duration.
+The tool keeps the first `maxOutputLength` characters from stdout and stderr and
+reports how many characters it omitted. The command still runs to completion.
+
+Vercel Sandbox discards extra output as it arrives. just-bash buffers output
+within its own limits, and custom sandboxes may return full output before the
+tool truncates it. This setting does not limit command duration or memory used
+inside the sandbox.
 
 ### Command timeout
 

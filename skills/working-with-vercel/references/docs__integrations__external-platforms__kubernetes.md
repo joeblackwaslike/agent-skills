@@ -17,8 +17,8 @@ summary: Deploy your frontend on Vercel alongside your existing Kubernetes infra
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/external-platforms/kubernetes.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "d74df65fc48c9637df7587095151eeb9c0efd9b134a13b781ac44105e44ed779"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "ba0cf51f1704239bc24247a05c48945186cff159d03137df70f989e81c18d9ad"
 ---
 
 # Integrating Vercel and Kubernetes
@@ -33,16 +33,16 @@ Kubernetes (K8s) is an open-source system for automating deployment, scaling, an
 
 - [Vercel vs Kubernetes](https://vercel.com/kb/guide/vercel-vs-kubernetes) — Compare Vercel and Kubernetes on operational ownership, deployment workflow, scaling, and cost model to decide which pla
 - [Does Vercel support Kubernetes?](https://vercel.com/kb/guide/vercel-kubernetes-support) — Vercel doesn't run Kubernetes clusters. Learn how Kubernetes workloads like Deployments, Ingress, ConfigMaps, and CronJo
-- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
 - [Translate Kubernetes manifests to vercel.json](https://vercel.com/kb/guide/kubernetes-manifests-to-vercel-json) — Translate Kubernetes Deployments, Services, Ingress, ConfigMaps, and CronJobs into vercel.json configuration and Vercel
+- [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
 - [Building secure and performant web applications on Vercel](https://vercel.com/blog/building-secure-and-performant-web-applications-on-vercel)
-- [Does Vercel support Ruby on Rails applications?](https://vercel.com/kb/guide/does-vercel-support-ruby-on-rails-applications) — Learn how to deploy a Ruby on Rails application on Vercel — either as a container image on Vercel Functions or as a head
+- [Migrate from Fly.io to Vercel](https://vercel.com/kb/guide/migrate-fly-io-to-vercel) — Move an app from Fly.io to Vercel. Map configuration, choose Functions or Daemons, plan persistent storage, and verify t
 - [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify) — Migrate your website's configuration from Netlify to Vercel
-- [Iterating from design to deploy: the shape of future builders](https://vercel.com/blog/iterating-from-design-to-deploy)
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Backends on Vercel](https://vercel.com/docs/frameworks/backend) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Builds](https://vercel.com/docs/builds) — Understand how the build step works when creating a Vercel Deployment.
+- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 
 Full cross-link map for this page: [/docs/integrations/external-platforms/kubernetes.graph.md](/docs/integrations/external-platforms/kubernetes.graph.md)
 <!-- /docsgraph:related -->
@@ -160,7 +160,7 @@ To incrementally move your frontend applications to Vercel:
 
   Some other tools or strategies you may want to use:
   - [Feature Flags on Vercel](/docs/flags)
-  - [A/B Testing on Vercel](/kb/guide/ab-testing-on-vercel)
+  - [A/B Testing on Vercel](/docs/flags/vercel-flags/cli/run-ab-test)
   - [Implementing Blue-Green Deployments on Vercel](/kb/guide/blue_green_deployments_on_vercel)
   - [Transferring Domains to Vercel](/kb/guide/transferring-domains-to-vercel)
   - [Pre-generating SSL certificates for a migration without downtime](/docs/domains/pre-generating-ssl-certs)

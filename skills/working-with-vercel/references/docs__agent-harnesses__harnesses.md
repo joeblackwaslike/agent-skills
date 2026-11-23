@@ -17,8 +17,8 @@ summary: Guides for running Pi, fx, OpenCode, eve, Claude Code, and Codex durabl
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-harnesses/harnesses.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "4b3e2938990267bf9f88129da87e524d07a254b37bdd1f10d0e02b7c7e6796ad"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "3b14babce03e23f05cccea0a1d7a4f725412d82c8e8432f5a9e8a05aa03c7aff"
 ---
 
 # Agent Harnesses You Can Run Durably on Vercel
@@ -33,10 +33,10 @@ Each guide gets one harness running durably on Vercel: the agent, a chat route, 
 
 - [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
 - [Program Claude Code, Codex, Pi and other agent harnesses with AI SDK](https://vercel.com/changelog/program-agent-harnesses-with-ai-sdk)
-- [Use ACP-compatible harnesses with the AI SDK harness layer](https://vercel.com/changelog/use-acp-compatible-harnesses-with-the-ai-sdk-harness-layer)
 - [Scheduling Work for Agents](https://vercel.com/docs/schedules/agents) — Give an agent a tool that creates dynamic schedules, so it can do work for a user later or on a recurring basis.
-- [Ecosystem](https://vercel.com/docs/sandbox/ecosystem) — Use Vercel Sandbox with the agent frameworks, model SDKs, and agents you already work with.
 - [Scheduling Work with Pi](https://vercel.com/docs/schedules/agents/pi) — Give a Pi agent on durable-harness a tool that creates schedules, and send each run back into the session that created i
+- [Coding Agents and Chat Platforms with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents) — Connect coding agents and chat platforms to AI Gateway. Configure Claude Code, Codex, Chatbox, Open WebUI, and more.
+- [Agent Frameworks on Vercel](https://vercel.com/docs/frameworks/agents) — Build AI agents with eve, Mastra, Flue, and Vercel. Learn how each framework connects to Vercel compute, models, and sto
 
 Full cross-link map for this page: [/docs/agent-harnesses/harnesses.graph.md](/docs/agent-harnesses/harnesses.graph.md)
 <!-- /docsgraph:related -->

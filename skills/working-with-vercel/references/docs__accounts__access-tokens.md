@@ -17,8 +17,8 @@ summary: Create and scope Vercel access tokens to your full account, a team, or 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/accounts/access-tokens.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "4ec402d1e4f48a958400d1bb38df64ddbe985e6d8529b1827e739228c1b31502"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "e60372a4a2a3c648ce9ec3b3ba468945fcc239f31b2d53abf6b3198ef43e4edc"
 ---
 
 # Access tokens
@@ -32,12 +32,11 @@ Vercel access tokens authenticate requests to the [Vercel REST API](/docs/rest-a
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel token scanning expands to more public sources](https://vercel.com/changelog/vercel-token-scanning-expands-to-more-public-sources)
-- [Project-scoped Tokens](https://vercel.com/changelog/project-scoped-tokens)
 - [Make Your First Vercel API Request](https://vercel.com/docs/rest-api/getting-started) — Create a scoped Vercel access token, make a read-only REST API request, and call the same operation with the Vercel SDK.
 - [Tokens](https://vercel.com/docs/sign-in-with-vercel/tokens) — Learn how to Sign in with Vercel
 - [Scopes and Permissions](https://vercel.com/docs/sign-in-with-vercel/scopes-and-permissions) — Learn how to manage scopes and permissions for Sign in with Vercel
 - [Authentication in Vercel Connect](https://vercel.com/docs/connect/concepts/authentication) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
-- [Generate a project OIDC token](https://vercel.com/docs/rest-api/projects/generate-a-project-oidc-token) — POST /v1/projects/{idOrName}/token — Generates an OIDC token for the project and returns it.
+- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
 
 Full cross-link map for this page: [/docs/accounts/access-tokens.graph.md](/docs/accounts/access-tokens.graph.md)
 <!-- /docsgraph:related -->

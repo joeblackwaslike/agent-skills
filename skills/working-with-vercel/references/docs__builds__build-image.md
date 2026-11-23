@@ -17,8 +17,8 @@ summary: Learn about the container image used for Vercel builds.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/builds/build-image.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "377fb4f8b65206854a2d44890965399e386d482605addca2b0323da4c801464c"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "b55a62c1a7d751a93a8343985b19b758662c970beaaa9f4e28f25d0cc8d33a80"
 ---
 
 # Build image overview
@@ -35,12 +35,13 @@ Vercel supports [multiple runtimes](/docs/functions/runtimes).
 - [vlt is now available in builds via zero configuration](https://vercel.com/changelog/vlt-is-now-available-in-builds-via-zero-configuration)
 - [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
+- [Deploy Rust on Vercel with Docker](https://vercel.com/kb/guide/deploy-rust-on-vercel-with-docker) — Build a Rust application with Axum and Docker, then deploy it to Vercel Functions. Learn how to configure environment va
 - [Run any Dockerfile on Vercel](https://vercel.com/blog/dockerfile-on-vercel)
 - [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
-- [Images](https://vercel.com/docs/ci/image) — Learn about the container images Vercel CI uses to run your tasks, and how to choose one.
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
-- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
 - [Vercel Container Registry](https://vercel.com/docs/container-registry) — Store and manage Docker container images on Vercel. Build and push images with the Vercel CLI, then run them on Vercel F
+- [Build Output API](https://vercel.com/docs/build-output-api) — The Build Output API is a file-system-based specification for a directory structure that can produce a Vercel deployment
+- [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 
 Full cross-link map for this page: [/docs/builds/build-image.graph.md](/docs/builds/build-image.graph.md)
 <!-- /docsgraph:related -->

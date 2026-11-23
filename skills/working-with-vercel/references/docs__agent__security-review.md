@@ -16,8 +16,8 @@ summary: Scan your code for security vulnerabilities and track findings in the V
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent/security-review.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "4c9d01f64d83fe3bf5195fcc28440984d1d5e22267bb9ef4a2077431222feaf9"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "8704f7da4d421a5d9d7f56fcfc3792b70bad7bfce264d7d1fc634e00335a885d"
 ---
 
 # Security Review
@@ -108,7 +108,7 @@ Security Review reports its findings to the [Vulnerabilities](/d?to=%2F%5Bteam%5
 
 Check out [Managing Security Reviews](/docs/agent/security-review/usage) for details on triaging findings, fixing them with Vercel Agent, writing security policies, and the roles and permissions required.
 
-To triage findings from your terminal or an agent, use [`vercel security vulnerabilities`](/docs/cli/security#vulnerabilities) to list, inspect, dismiss, and reopen them.
+To triage findings from your terminal or an agent, use [`vercel security vulnerabilities`](/docs/cli/security#vulnerabilities) to list, inspect, close, and reopen them.
 
 ## Pricing
 

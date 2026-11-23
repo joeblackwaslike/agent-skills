@@ -17,8 +17,8 @@ summary: Instrument a daemon using OpenTelemetry traces.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/daemons/tracing.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "041bc471d192d7422350bb280c831620886c0f3667706b716a3c9793bc37c15e"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "cf711893c4f53153668e860fbabfdb8c07390037aeda5d8ae4e07e47577f4944"
 ---
 
 # Tracing in Daemons
@@ -32,8 +32,7 @@ Every daemon runs an [OpenTelemetry](https://opentelemetry.io/) OTLP trace colle
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Daemons can now send traces to Vercel Tracing](https://vercel.com/changelog/vercel-daemons-can-now-send-traces-to-vercel-tracing)
-- [Always-on tracing for production and preview traffic](https://vercel.com/changelog/always-on-tracing-for-production-and-preview-traffic)
-- [Vercel Tracing is now generally available](https://vercel.com/changelog/vercel-tracing-is-now-generally-available)
+- [Vercel Daemons is now in public beta](https://vercel.com/changelog/vercel-daemons-is-now-in-public-beta)
 - [Session Tracing](https://vercel.com/docs/tracing/session-tracing) — Learn how to trace your sessions to understand performance and infrastructure details.
 - [Managing Daemons](https://vercel.com/docs/daemons/managing-daemons) — Deploy, scale, stop, and monitor Vercel Daemons with vercel.json and the dashboard.
 - [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and

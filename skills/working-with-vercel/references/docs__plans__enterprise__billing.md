@@ -18,8 +18,8 @@ summary: This page covers frequently asked questions around payments, invoices, 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/plans/enterprise/billing.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "0a91273ef68f6b7198b6d9f70a2cc8f4c401dea3f36d02738911d5a8708f1e09"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "c74b6aa8d5fee8bc68c7bb5e3aa9cb63edb1fe5e1804bf9ae4780e7c9f0b31b0"
 ---
 
 # Billing FAQ for Enterprise Plan
@@ -32,14 +32,17 @@ The Vercel Enterprise plan is perfect for [teams](/docs/accounts#creating-a-team
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Billing CLI is now available](https://vercel.com/changelog/vercel-billing-cli-is-now-available)
 - [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 - [Billing & Invoices](https://vercel.com/docs/pricing/understanding-my-invoice) — Learn how Vercel invoices are structured for Pro and Enterprise plans, including plan charges, credits, and usage-based
-- [vercel billing](https://vercel.com/docs/cli/billing) — Learn how to view your billing overview, usage, contracts, budgets, and invoices for your Vercel team using the vercel b
+- [vercel billing](https://vercel.com/docs/cli/billing) — Learn how to view your billing overview, usage, budgets, and invoices for your Vercel team using the vercel billing CLI
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Manage Billing and Refunds for Integrations](https://vercel.com/docs/integrations/create-integration/billing) — Learn how billing works for native integrations, including invoice lifecycle, pricing models, and refunds.
+- [List FOCUS billing charges](https://vercel.com/docs/rest-api/billing/list-focus-billing-charges) — GET /v1/billing/charges — Returns the billing charge data in FOCUS v1.3 JSONL format for a specified Vercel team, within
 
 Full cross-link map for this page: [/docs/plans/enterprise/billing.graph.md](/docs/plans/enterprise/billing.graph.md)
 <!-- /docsgraph:related -->
+
+To discuss Enterprise pricing or contract terms, [contact our sales team](/contact/sales).
 
 ## Payments
 

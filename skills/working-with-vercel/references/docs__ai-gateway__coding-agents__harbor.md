@@ -18,8 +18,8 @@ summary: Evaluate coding-agent harnesses with Harbor and AI Gateway. Choose a ha
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/harbor.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "d1722381dfbf45f98da1ef18b3f7e33ce7d86f8fb92f21845e945f6d95a643ce"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "8dab0ca962696a52ef64a5ba75f7b590f1dde8d66e54768b1cd8870349c2dfc4"
 ---
 
 # Harbor with AI Gateway
@@ -33,8 +33,8 @@ sha256: "d1722381dfbf45f98da1ef18b3f7e33ce7d86f8fb92f21845e945f6d95a643ce"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Run Terminal-Bench and any Harbor benchmark on Vercel Sandbox](https://vercel.com/kb/guide/run-terminal-bench-harbor-benchmarks-vercel-sandbox) — Run Terminal-Bench, SWE-bench, and any Harbor benchmark on Vercel Sandbox. Each trial executes in an isolated Firecracke
-- [Run Terminal-Bench and other Harbor evals on Vercel Sandbox](https://vercel.com/changelog/run-terminal-bench-and-other-harbor-evals-on-vercel-sandbox)
 - [How to route your coding agent spend through AI Gateway](https://vercel.com/kb/guide/route-coding-agent-spend-through-ai-gateway) — Point Claude Code, Codex, Cursor, and every other harness on your machine at AI Gateway with one CLI command, on a budge
+- [Run Terminal-Bench and other Harbor evals on Vercel Sandbox](https://vercel.com/changelog/run-terminal-bench-and-other-harbor-evals-on-vercel-sandbox)
 - [Harbor and Terminal-Bench](https://vercel.com/docs/sandbox/ecosystem/harbor) — Run Terminal-Bench and any other Harbor Hub dataset on Vercel Sandbox, with each trial in its own isolated Firecracker m
 - [Hermes with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/hermes) — Connect Hermes to AI Gateway with the Vercel CLI or manual provider configuration. Set your API key, discover models, an
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr

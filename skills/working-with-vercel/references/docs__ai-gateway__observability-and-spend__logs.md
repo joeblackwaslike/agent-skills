@@ -13,13 +13,13 @@ related:
   - /docs/ai-gateway/observability-and-spend/custom-reporting
   - /docs/ai-gateway/sdks-and-apis/rest-api
   - /docs/ai-gateway/observability-and-spend/usage
-  - /docs/ai-gateway/observability-and-spend/trace-drains
+  - /docs/cli/ai-gateway
 summary: Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the results as CSV or JSON.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/logs.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "c2f0068f2dda8f1850e4438a6fc5cb72a44c7e38d43023aeb5e27a1c5413c051"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "57a11a32db60b45f2a6a5c81f3314f83fa69a3993c5e02b646713d93b4f9161c"
 ---
 
 # AI Gateway Request Logs
@@ -34,14 +34,14 @@ The Logs page lists every request and asynchronous job your team sends through A
 
 - [AI Gateway logs now have a dedicated page](https://vercel.com/changelog/ai-gateway-logs)
 - [AI Gateway logs now show session affinity](https://vercel.com/changelog/ai-gateway-logs-now-show-session-affinity)
+- [AI Gateway now supports Private Inference](https://vercel.com/changelog/ai-gateway-now-supports-private-inference)
 - [Baseten's Mammoth-1 and Elephant-1 now available on AI Gateway for free](https://vercel.com/changelog/basetens-mammoth-1-and-elephant-1-now-available-on-ai-gateway-for-free)
-- [Gemini Decision 1 now available on AI Gateway](https://vercel.com/changelog/gemini-decision-1-now-available-on-ai-gateway)
-- [Liquid AI's d1 is available on AI Gateway](https://vercel.com/changelog/liquid-ai-d1-is-available-on-ai-gateway)
+- [Decision-1.1 now available on AI Gateway](https://vercel.com/changelog/decision-1-1-now-available-on-ai-gateway)
 - [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
 - [How to classify, route, and score with Jev and AI SDK](https://vercel.com/kb/guide/typesafe-jev-and-ai-sdk) — Use Jev from TypeSafe AI with AI SDK's experimental \\`evaluate\\` API to classify, route, score, and verify inside your a
 - [Runtime Logs](https://vercel.com/docs/logs/runtime) — Learn how to search, inspect, and share your runtime logs with the Logs tab.
-- [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
+- [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 - [Amp with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/amp) — Connect Amp to AI Gateway through Amp's Model Routing settings. Add an AI Gateway API key, choose models for Amp's modes
 
 Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/logs.graph.md](/docs/ai-gateway/observability-and-spend/logs.graph.md)
@@ -52,6 +52,8 @@ For aggregate charts and spend totals, see [Observability](/docs/ai-gateway/obse
 ## Programmatic access
 
 The public REST API does not expose the Logs page's list and filter query. To look up one completed generation by ID, use [`GET /v1/generation`](/docs/ai-gateway/sdks-and-apis/rest-api#look-up-a-generation) or the AI SDK's [`getGenerationInfo()` workflow](/docs/ai-gateway/observability-and-spend/usage#look-up-a-generation-with-the-ai-sdk). Generation lookup returns provider, latency, token usage, cost, and finish reason.
+
+To list and filter requests from your terminal, use [`vercel ai-gateway requests`](/docs/cli/ai-gateway#requests). It filters by model, provider, status, project, environment, API key, session, coding agent, auth method, and user, looks back up to 32 days, and prints a table or JSON. To group requests by client session ID, such as one coding agent conversation, use [`vercel ai-gateway sessions`](/docs/cli/ai-gateway#sessions).
 
 To send routing attempts and error fields for every request to an observability backend, configure [AI Gateway Trace Drains](/docs/ai-gateway/observability-and-spend/trace-drains). Use the [dashboard export](#export-logs) for an ad hoc CSV or JSON file of the request rows currently loaded under your filters.
 

@@ -17,8 +17,8 @@ summary: "Learn how to control access to your Vercel project's preview and produ
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployment-protection.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "ec6d873ebf82885ad6cbaf0c1207240761f0458f158ef63a25c16eed5a934599"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "782492b04084595c269570633311f2fce84c495314e10cf2225299bfca09a45b"
 ---
 
 # Deployment Protection on Vercel
@@ -31,18 +31,18 @@ Deployment Protection lets you control who can access your preview and productio
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments) — Protect who can see your deployments.
 - [Choose between Vercel Passport and other Deployment Protection methods](https://vercel.com/kb/guide/vercel-passport-vs-deployment-protection) — Compare Vercel Passport with Vercel Authentication, Password Protection, and Trusted IPs to choose the right Deployment
 - [Protect production deployments for free on every plan](https://vercel.com/changelog/protect-production-deployments-for-free-on-every-plan)
-- [Deployment Protection: Added security controls now available on all plans](https://vercel.com/blog/protecting-deployments)
 - [Recall.ai](https://eve.dev/docs/channels/recall) — Put your agent in Zoom, Google Meet, and Microsoft Teams meetings through Recall.ai meeting bots.
 - [Connections](https://eve.dev/docs/connections) — Expose external MCP and OpenAPI servers to the model, with connection tokens the model never sees.
 - [Remote Agents](https://eve.dev/docs/guides/remote-agents) — Call another eve deployment as a subagent with defineRemoteAgent: the same tool call as a local subagent, with outbound
+- [Write end-to-end tests with flag overrides](https://flags-sdk.dev/docs/frameworks/next/guides/e2e-tests) — Test Next.js application behavior with the Flags SDK and Playwright.
 - [More Secure Deployment Protection](https://vercel.com/changelog/more-secure-deployment-protection)
 - [Protection bypass for automation now supports multiple secrets](https://vercel.com/changelog/protection-bypass-for-automation-multiple-secrets)
 - [Set team-wide defaults for Deployment Protection](https://vercel.com/changelog/set-team-wide-defaults-for-deployment-protection)
 - [Use native curl syntax with Vercel CLI](https://vercel.com/changelog/use-native-curl-syntax-with-vercel-cli)
 - [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
+- [The Complete Guide to Bring Your Own Cloud](https://vercel.com/kb/guide/byoc) — Use Bring Your Own Cloud \\(BYOC\\) to run Vercel Functions as AWS Lambda functions in your own AWS account, from setup to
 
 Full cross-link map for this page: [/docs/deployment-protection.graph.md](/docs/deployment-protection.graph.md)
 <!-- /docsgraph:related -->
@@ -162,7 +162,7 @@ You can combine All Deployments protection with any of the following methods:
 
 Use [Trusted IPs](/docs/deployment-protection/methods-to-protect-deployments/trusted-ips) to restrict access to production deployments to a specific list of IPv4 addresses.
 
-Preview deployment URLs remain publicly accessible. This feature is **only available on the Enterprise plan**.
+Preview deployment URLs remain publicly accessible. This feature is **only available on the Enterprise plan**. To get access, [contact our sales team](/contact/sales).
 
 ![Selecting Only Production Deployments in the Vercel Dashboard.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/security/prod-deployments-light.png)
 

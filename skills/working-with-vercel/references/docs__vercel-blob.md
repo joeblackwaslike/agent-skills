@@ -17,8 +17,8 @@ summary: Vercel Blob is a scalable, cost-effective object storage service with p
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-blob.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "2fb00a09f1b82abac7b4fb742c406a27b1c08b260870f330af8927e501d25ff9"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "5a65cbd08ef37596cd321b1fa4619a99e404f7055ba212eceae17701b063e968"
 ---
 
 # Vercel Blob
@@ -34,8 +34,8 @@ Upload images, videos, documents, and other files up to 5 TB. Keep them private 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to upload and store files with Vercel](https://vercel.com/kb/guide/how-to-upload-and-store-files-with-vercel) — Vercel file uploads done right cover Server Actions, client-direct upload, and multipart for 5 TB files, with auth and c
-- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
 - [Vercel Blob is now generally available: Cost-efficient, durable storage](https://vercel.com/blog/vercel-blob-now-generally-available)
+- [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
 - [How to use and optimize videos](https://nextjs.org/docs/app/guides/videos) — Recommendations and best practices for optimizing videos in your Next.js application.
 - [Databases](https://v0.app/docs/databases) — Build full-stack applications with v0's database integrations.
 - [Amazon S3 joins the Vercel Marketplace](https://vercel.com/changelog/amazon-s3-joins-the-vercel-marketplace)
@@ -224,7 +224,7 @@ Connected projects authenticate with OpenID Connect (OIDC) by default. When you 
 | `VERCEL_OIDC_TOKEN`       | A short-lived OIDC token that Vercel issues and rotates automatically. You never handle it directly.                        |
 | `BLOB_WEBHOOK_PUBLIC_KEY` | The public key the SDK uses to verify webhook callbacks signed by Vercel Blob. It's a public value, not a secret.           |
 
-The SDK reads these variables automatically, and you never need to read or pass the OIDC token yourself. Code running in [Vercel Functions](/docs/functions) and builds works out of the box. Local development works after you run `vercel env pull` once: when the token expires, the SDK refreshes it automatically using your Vercel CLI credentials. Because OIDC tokens rotate automatically, no long-lived secret can leak from your codebase or environment. Learn more about [how OIDC token federation works](/docs/oidc#how-oidc-token-federation-works).
+The SDK reads these variables automatically, and you never need to read or pass the OIDC token yourself. Code running in [Vercel Functions](/docs/functions) and builds works out of the box. Local development works after you run `vercel env pull` once: when the token expires, the SDK refreshes it automatically using your Vercel CLI credentials. Because OIDC tokens rotate automatically, no long-lived secret can leak from your codebase or environment. Learn more about [how OIDC token federation works](/docs/oidc/access-other-services#how-oidc-token-federation-works).
 
 ### When to use a read-write token
 

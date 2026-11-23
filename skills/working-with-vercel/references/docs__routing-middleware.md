@@ -17,8 +17,8 @@ summary: Learn how you can use Routing Middleware, code that executes before a r
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/routing-middleware.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "f9d4f3d391c02e04fcef4fcf6ac0fe5b53b404741d5b8ed7515cedbac7f6c23e"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "c7dc226547e76d44f570675cea107aefd77610255c94d527e637a7cac572b196"
 ---
 
 # Routing Middleware
@@ -33,7 +33,6 @@ Routing Middleware **executes code *before* a request is processed on a site**, 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Edge Middleware: Dynamic at the speed of static (historical)](https://vercel.com/blog/vercel-edge-middleware-dynamic-at-the-speed-of-static)
 - [Advanced Remix integration with streaming SSR and multi-runtime support](https://vercel.com/changelog/advanced-remix-integration-with-streaming-ssr-and-multi-runtime-support)
 - [Edge Config is now generally available ](https://vercel.com/changelog/edge-config-is-now-generally-available)
 - [Edge Function metrics now available in Monitoring](https://vercel.com/changelog/edge-function-metrics-now-available-in-monitoring)
@@ -45,6 +44,7 @@ Routing Middleware **executes code *before* a request is processed on a site**, 
 - [Build with a Hono starter template](https://vercel.com/kb/guide/build-with-a-hono-starter-template) — Deploy a Hono app to Vercel from a starter template. Compare the Hono API starter, MCP server, AI SDK, Slack Bolt, Next.
 - [How to add per-request CSP nonces to CDN-cached HTML on Vercel](https://vercel.com/kb/guide/csp-nonces-with-cdn-cache) — Use Routing Middleware and a self-fetch to add a fresh CSP nonce to cached HTML without rendering the page again on ever
 - [Behind the scenes of Vercel's infrastructure: Achieving optimal scalability and performance](https://vercel.com/blog/behind-the-scenes-of-vercels-infrastructure)
+- [Billions of dollars, billions of requests: Black Friday-Cyber Monday 2024](https://vercel.com/blog/black-friday-cyber-monday-2024-recap)
 
 Full cross-link map for this page: [/docs/routing-middleware.graph.md](/docs/routing-middleware.graph.md)
 <!-- /docsgraph:related -->
@@ -290,7 +290,7 @@ Learn more about Routing Middleware by exploring the following resources:
 - [How to Fix Sitecore JSS Middleware Performance](https://vercel.com/kb/guide/how-to-fix-sitecore-jss-middleware-performance): Learn how to troubleshoot and resolve Vercel Middleware timeouts and memory errors in your Sitecore JSS application caused by URLs with many query parameters.
 - [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare): Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
 - [How to Optimize Next.js + Sitecore JSS](https://vercel.com/kb/guide/how-to-optimize-next.js-sitecore-jss): This guide covers performance and usage considerations when building and deploying your Next.js and Sitecore JSS application.
-- [A/B Testing on Vercel](https://vercel.com/kb/guide/ab-testing-on-vercel): Learn best practices for A/B testing on Vercel
+- [Dynamic redirects with Global Config and Next.js proxy](https://vercel.com/kb/guide/dynamic-redirects-with-global-config-and-next-js-proxy): Learn how to create redirects that update instantly without redeploying by storing rules in Global Config and reading them from your Next.js proxy.
 
 ## Search the docs from your terminal
 

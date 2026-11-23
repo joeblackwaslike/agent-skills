@@ -17,8 +17,8 @@ summary: Learn how to create your own Checks with Vercel Integrations. You can b
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/checks/creating-checks.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "5cc383cd9e1415aec1174c3dd1238c840036bb968ff3b0159044fff43a07b036"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "d504e0c92ab52565d7ee73a12df79b311d1c9ebd31691e6fcc393c68aad29b49"
 ---
 
 # Anatomy of the Checks API
@@ -31,7 +31,6 @@ Checks API extends the build and deploy process once your deployment is ready. E
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Checks API support added for Marketplace integration providers](https://vercel.com/changelog/checks-api-support-added-for-marketplace-integration-providers)
 - [Checks API Reference](https://vercel.com/docs/checks/checks-api) — The Vercel Checks API lets you create tests and assertions that run after each deployment has been built, and are powere
 - [Get a check](https://vercel.com/docs/rest-api/checks-v2/get-a-check) — GET /v2/projects/{projectIdOrName}/checks/{checkId} — Return a detailed response for a single check.
 - [Create a check](https://vercel.com/docs/rest-api/checks-v2/create-a-check) — POST /v2/projects/{projectIdOrName}/checks — Creates a new check for a project.

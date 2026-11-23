@@ -17,8 +17,8 @@ summary: Understand how Vercel measures and calculates your resource usage based
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/pricing/how-does-vercel-calculate-usage-of-resources.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "1deefcde82773401d17d9a789c0e9f2ae7f2d0d959ffa33afae60dd9d5151619"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "f2358be5afd0ec0e97471bf38e4b3ee95fa8437b7eb1267bfaea2186eaaefe3f"
 ---
 
 # Calculating usage of resources
@@ -32,11 +32,10 @@ Understanding how usage and accrual happen on Vercel helps you make the best cho
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to effectively load test your application on Vercel](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
-- [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
 - [Managing Usage & Costs](https://vercel.com/docs/image-optimization/managing-image-optimization-costs) — Learn how to measure and manage Image Optimization usage with this guide to avoid any unexpected costs.
 - [Regional Pricing](https://vercel.com/docs/pricing/regional-pricing) — Vercel pricing for Managed Infrastructure resources in different regions.
-- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 - [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
+- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
 - [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 
 Full cross-link map for this page: [/docs/pricing/how-does-vercel-calculate-usage-of-resources.graph.md](/docs/pricing/how-does-vercel-calculate-usage-of-resources.graph.md)
@@ -146,6 +145,8 @@ Having added an item to the cart, the user decides to continue browsing the site
 Throughout the user journey through the site, a variety of resources are used from Vercel's [managed infrastructure](/docs/pricing#managed-infrastructure). When thinking about how to optimize resource consumption, it's important to consider how each resource is triggered and how it accrues usage over time and across different user interactions.
 
 To learn more about each of the resources used in this guide, see the [managed infrastructure billable resources](/docs/pricing#managed-infrastructure-billable-resources) documentation. To learn about how to optimize resource consumption, see the [Manage and optimize usage](/docs/pricing/manage-and-optimize-usage) guide.
+
+To learn more about the [Enterprise plan](/docs/plans/enterprise), [contact our sales team](/contact/sales).
 
 ## More resources
 

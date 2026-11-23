@@ -10,15 +10,15 @@ prerequisites:
 related:
   - /docs/functions/functions-api-reference/vercel-functions-package
   - /docs/project-configuration/vercel-json
+  - /docs/headers/request-headers
   - /docs/functions/configuring-functions
   - /docs/functions/configuring-functions/runtime
-  - /docs/functions/configuring-functions/region
 summary: Learn about available APIs when working with Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/functions-api-reference.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "b8d5b1cbf39917616f2ab3e52833f2d015ae39692a94aa4bb2df5ee9cc30fc5e"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "6ba9fa705d904b509487c24a875daba0eae915d0cb1baaaa7ba5d8cb893ed176"
 ---
 
 # Functions API Reference
@@ -41,10 +41,10 @@ Functions are defined similar to a [Route Handler](https://nextjs.org/docs/app/a
 - [Vercel Functions now support graceful shutdown](https://vercel.com/changelog/vercel-functions-now-support-graceful-shutdown)
 - [waitUntil is now available for Vercel Functions](https://vercel.com/changelog/waituntil-is-now-available-for-vercel-functions)
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
+- [How to stop traffic to an old deployment on Vercel](https://vercel.com/kb/guide/how-to-stop-traffic-to-an-old-deployment-on-vercel) — Move production traffic to the new deployment, restrict access to the old deployment, and check remaining function activ
 - [Streaming](https://workflow-sdk.dev/docs/foundations/streaming) — Stream data to clients in real time without waiting for workflow completion.
-- [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect)
-- [Death to long-lived static credentials](https://vercel.com/blog/death-to-long-lived-static-credentials)
-- [Connect to Amazon Web Services \\(AWS\\)](https://vercel.com/docs/oidc/aws) — Learn how to configure your AWS account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
+- [Troubleshooting Inconsistent Logs in Vercel Functions](https://vercel.com/kb/guide/troubleshooting-inconsistent-logs-in-vercel-functions) — Learn how to troubleshoot and resolve logs that appear mixed in Vercel Functions. This guide explains why logs from diff
+- [Routing Middleware: JS Reference](https://vercel.com/docs/routing-middleware/js-reference) — Reference for writing Routing Middleware in TypeScript and JavaScript, including entrypoints, the config object, the mid
 
 Full cross-link map for this page: [/docs/functions/functions-api-reference.graph.md](/docs/functions/functions-api-reference.graph.md)
 <!-- /docsgraph:related -->
@@ -250,6 +250,88 @@ async function abortPendingTask() {
   });
 }
 ```
+
+### Read the raw request body
+
+Webhook providers such as Stripe sign the exact bytes they send, so you need the unparsed request body to verify a signature. The `request` parameter is a standard [`Request`](https://developer.mozilla.org/docs/Web/API/Request), and its body stays unparsed until you call one of its body methods. Call `request.text()` to read the body as a string, or `request.arrayBuffer()` to read it as bytes:
+
+```ts filename="app/api/webhook/route.ts" framework=nextjs-app
+export async function POST(request: Request) {
+  const rawBody = await request.text();
+
+  // Verify the provider's signature against rawBody here, before you parse it
+
+  const payload = JSON.parse(rawBody);
+  return Response.json({ received: true });
+}
+```
+
+```js filename="app/api/webhook/route.js" framework=nextjs-app
+export async function POST(request) {
+  const rawBody = await request.text();
+
+  // Verify the provider's signature against rawBody here, before you parse it
+
+  const payload = JSON.parse(rawBody);
+  return Response.json({ received: true });
+}
+```
+
+```ts filename="app/api/webhook/route.ts" framework=nextjs
+export async function POST(request: Request) {
+  const rawBody = await request.text();
+
+  // Verify the provider's signature against rawBody here, before you parse it
+
+  const payload = JSON.parse(rawBody);
+  return Response.json({ received: true });
+}
+```
+
+```js filename="app/api/webhook/route.js" framework=nextjs
+export async function POST(request) {
+  const rawBody = await request.text();
+
+  // Verify the provider's signature against rawBody here, before you parse it
+
+  const payload = JSON.parse(rawBody);
+  return Response.json({ received: true });
+}
+```
+
+```ts filename="api/webhook.ts" framework=other
+export async function POST(request: Request) {
+  const rawBody = await request.text();
+
+  // Verify the provider's signature against rawBody here, before you parse it
+
+  const payload = JSON.parse(rawBody);
+  return Response.json({ received: true });
+}
+```
+
+```js filename="api/webhook.js" framework=other
+export async function POST(request) {
+  const rawBody = await request.text();
+
+  // Verify the provider's signature against rawBody here, before you parse it
+
+  const payload = JSON.parse(rawBody);
+  return Response.json({ received: true });
+}
+```
+
+You can read a request body only once. After you call `request.text()`, parse the string yourself instead of calling `request.json()`.
+
+To test the function, start your local development server and send a request with a JSON body:
+
+```bash filename="terminal"
+curl -X POST -H "Content-Type: application/json" --data '{"type":"test"}' http://localhost:3000/api/webhook
+```
+
+The function responds with `{"received":true}`.
+
+For a complete example that verifies a Hash-based Message Authentication Code (HMAC) signature of the raw body, see [verifying the signature](/docs/headers/request-headers#2.-verifying-the-signature).
 
 > For \["nextjs", "other"]:
 

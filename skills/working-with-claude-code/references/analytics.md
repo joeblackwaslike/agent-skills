@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/analytics.md"
-fetched_at: "2026-11-09T12:34:10.263Z"
-sha256: "c7e7b4dd3e00babb286ecea1eb9ca50e229f67ba0a4d8e643a93a81b0b9823ba"
+fetched_at: "2026-11-23T14:04:20.448Z"
+sha256: "7ce19a64912b5aaebc60b05bd1a258b925784648e125ae38cb98efa1b01f7682"
 ---
 
 > ## Documentation Index
@@ -77,11 +77,10 @@ Contribution metrics cover repositories hosted on github.com. For repositories o
 >
 > These metrics are deliberately conservative and represent an underestimate of Claude Code's actual impact. Only lines and PRs where there is high confidence in Claude Code's involvement are counted.
 
-The dashboard displays these summary metrics at the top:
+The dashboard displays these summary metrics:
 
-* **PRs with CC**: total count of merged pull requests that contain at least one line of code written with Claude Code
-* **Lines of code with CC**: total lines of code across all merged PRs that were written with Claude Code assistance. Only "effective lines" are counted: lines with more than 3 characters after normalization, excluding empty lines and lines with only brackets or trivial punctuation.
-* **PRs with Claude Code (%)**: percentage of all merged PRs that contain Claude Code-assisted code
+* **PRs with Claude Code**: merged pull requests that contain at least one line of code written with Claude Code. One card shows the count, and one shows the share of all merged PRs
+* **LOC with Claude Code**: total lines of code (LOC) across all merged PRs that were written with Claude Code assistance. Only "effective lines" are counted: lines with more than 3 characters after normalization.
 * **Suggestion accept rate**: percentage of times users accept Claude Code's code editing suggestions, including Edit, Write, and NotebookEdit tool usage
 * **Lines of code accepted**: total lines of code that Claude Code's Edit and Write tools added or removed in accepted edits. This excludes rejected suggestions, and lines deleted later don't reduce the total.
 
@@ -89,28 +88,15 @@ The dashboard displays these summary metrics at the top:
 
 The dashboard includes several charts to visualize trends over time.
 
-#### Track adoption
-
-The Adoption chart shows daily usage trends:
-
-* **users**: daily active users
-* **sessions**: number of active Claude Code sessions per day
-
 #### Measure PRs per user
 
-This chart displays individual developer activity over time:
-
-* **PRs per user**: total number of PRs merged per day divided by daily active users
-* **users**: daily active users
+**Total PRs per user** is the number of PRs merged per day divided by daily active users.
 
 Use this to understand how individual productivity changes as Claude Code adoption increases.
 
 #### View pull requests breakdown
 
-The Pull requests chart shows a daily breakdown of merged PRs:
-
-* **PRs with CC**: pull requests containing Claude Code-assisted code
-* **PRs without CC**: pull requests without Claude Code-assisted code
+The **PRs with Claude Code** chart compares each day's merged PRs with Claude Code to **All PRs**.
 
 Toggle to **Lines of code** view to see the same breakdown by lines of code rather than PR count.
 
@@ -168,7 +154,7 @@ Use contribution metrics to demonstrate ROI, identify adoption patterns, and fin
 
 #### Monitor adoption
 
-Track the Adoption chart and user counts to identify:
+Track the **Users** and **Sessions** charts to identify:
 
 * Active users who can share best practices
 * Overall adoption trends across your organization
@@ -179,7 +165,7 @@ Track the Adoption chart and user counts to identify:
 Contribution metrics help answer "Is this tool worth the investment?" with data from your own codebase:
 
 * Track changes in PRs per user over time as adoption increases
-* Compare PRs and lines of code shipped with vs. without Claude Code
+* Compare PRs and lines of code shipped with Claude Code to all PRs and lines of code
 * Use alongside [DORA metrics](https://dora.dev/), sprint velocity, or other engineering KPIs to understand changes from adopting Claude Code
 
 #### Identify power users

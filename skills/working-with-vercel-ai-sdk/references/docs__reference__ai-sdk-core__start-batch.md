@@ -4,8 +4,8 @@ description: API Reference for experimental_startBatch.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/start-batch"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/start-batch.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "0191f5c06d0cf3342a45996d8d4057d8ca7fd62e65c332aecf87b7b95f101134"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "84903d2633641af121011619716739232443f27fb056bb56999e68200306aebf"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -42,6 +42,7 @@ import { experimental_startBatch } from "ai"
 
 - `provider?` (`Experimental_BatchProvider`): The provider to use. Defaults to the global provider, or the AI Gateway when no global provider is configured.
 - `requests` (`Array<Experimental_BatchRequest>`): The independent requests to process. Each request must have a unique, non-empty id, a supported type, and type-specific properties such as model and prompt or messages for text requests.
+- `output?` (`Output`): Specification for structured data in text responses, as in generateText. Its response format is sent with every text request; image requests ignore it. Pass the same value to getBatchResults to parse and validate results.
 - `providerOptions?` (`ProviderOptions`): Additional provider-specific options for the batch.
 - `webhookUrl?` (`string`): URL to notify when the batch reaches a terminal state. Support and payloads are provider-specific.
 - `abortSignal?` (`AbortSignal`): An optional abort signal to cancel the request that starts the batch.

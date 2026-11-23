@@ -17,8 +17,8 @@ summary: Understand the fundamentals behind the Vercel Firewall.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-firewall/firewall-concepts.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "2c70aa168d47e6367f609875c96e1334da4f27de397ae9cfb52182cb3156e62c"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "600190c434ae7374b917657055c3580f6e968c61e1ca5b75c81fe8904e6d0b9c"
 ---
 
 # Firewall concepts
@@ -42,9 +42,9 @@ To safeguard your application against malicious activity, Vercel's platform-wide
 - [Protectd: Evolving Vercel’s always-on denial-of-service mitigations](https://vercel.com/blog/protectd-evolving-vercels-always-on-denial-of-service-mitigations)
 - [Preventing infrastructure abuse with Vercel Firewall](https://vercel.com/blog/preventing-infrastructure-abuse-with-vercel-firewall)
 - [Life of a Vercel request: Securing your app's traffic with Vercel](https://vercel.com/blog/life-of-a-request-securing-your-apps-traffic-with-vercel)
-- [Vercel security roundup: Faster defenses and better visibility for your apps](https://vercel.com/blog/vercel-security-roundup-faster-defenses-and-better-visibility-for-your-apps)
-- [Vercel security roundup: improved bot defenses, DoS mitigations, and insights](https://vercel.com/blog/vercel-security-roundup-improved-bot-defenses-dos-mitigations-and-insights)
+- [Protecting your app (and wallet) against malicious traffic](https://vercel.com/blog/protecting-your-app-and-wallet-against-malicious-traffic)
 - [DDoS Mitigation](https://vercel.com/docs/vercel-firewall/ddos-mitigation) — Learn how the Vercel Firewall mitigates against DoS and DDoS attacks
+- [CDN security](https://vercel.com/docs/cdn-security) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
 
 Full cross-link map for this page: [/docs/vercel-firewall/firewall-concepts.graph.md](/docs/vercel-firewall/firewall-concepts.graph.md)
 <!-- /docsgraph:related -->

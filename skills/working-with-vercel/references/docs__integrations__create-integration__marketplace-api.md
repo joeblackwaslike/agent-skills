@@ -12,14 +12,14 @@ related:
   - /docs/integrations/create-integration/marketplace-api/reference/partner
   - /docs/integrations/create-integration/marketplace-api/reference/vercel
   - /docs/integrations/create-integration/marketplace-flows
+  - /docs/integrations/create-integration/short-lived-access-tokens
   - /docs/integrations/create-integration/marketplace-api/reference/partner/upsert-installation
-  - /docs/integrations/create-integration/marketplace-api/reference/vercel/exchange-sso-token
 summary: Learn how to authenticate and use the Integrations REST API to build your integration server.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "0e4b1bb07a772c18bd5680a30abf85ab50664a5ad4f41a6df532ea6bcea993e9"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "0deb28383fff20b52e9f69d28fd181f842c76b7a670606bc760b821d3a3e2a14"
 ---
 
 # Using the Integrations REST API
@@ -33,11 +33,11 @@ Learn how to authenticate and use the Integrations REST API to build your native
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Native Marketplace integrations now support custom environments](https://vercel.com/changelog/custom-environments-support-for-marketplace-integrations)
-- [Finalize Installation](https://vercel.com/docs/rest-api/marketplace/finalize-installation) — POST /v1/installations/{integrationConfigurationId}/billing/finalize — This endpoint allows the partner to mark an insta
 - [Update Installation](https://vercel.com/docs/rest-api/marketplace/update-installation) — PATCH /v1/installations/{integrationConfigurationId} — This endpoint updates an integration installation.
-- [Revoke Installation Credential](https://vercel.com/docs/rest-api/marketplace/revoke-installation-credential) — POST /v1/installations/{integrationConfigurationId}/credentials/revoke — Retires a superseded installation credential, s
 - [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
-- [Rotate Installation Credential](https://vercel.com/docs/rest-api/marketplace/rotate-installation-credential) — POST /v1/installations/{integrationConfigurationId}/credentials/rotate — Issues a replacement access token for an instal
+- [Finalize Installation](https://vercel.com/docs/rest-api/marketplace/finalize-installation) — POST /v1/installations/{integrationConfigurationId}/billing/finalize — This endpoint allows the partner to mark an insta
+- [Get Member Information](https://vercel.com/docs/rest-api/marketplace/get-member-information) — GET /v1/installations/{integrationConfigurationId}/member/{memberId} — Returns the member role and other information for
+- [Upgrade an Integration](https://vercel.com/docs/integrations/create-integration/upgrade-integration) — Lean more about when you may need to upgrade your Integration.
 
 Full cross-link map for this page: [/docs/integrations/create-integration/marketplace-api.graph.md](/docs/integrations/create-integration/marketplace-api.graph.md)
 <!-- /docsgraph:related -->
@@ -93,7 +93,35 @@ Review the [user authentication](/docs/integrations/create-integration/marketpla
 
 ### Vercel API authentication
 
-When your integration calls Vercel's API, authenticate using an access token. During installation, Vercel calls your [Upsert Installation API](/docs/integrations/create-integration/marketplace-api/reference/partner/upsert-installation) and sends the token in the request body's `credentials.access_token` field. Use it as a bearer token for subsequent API calls.
+> **⚠️ Warning:** Long-lived access tokens are deprecated. Don't build new integrations that
+> store or reuse the access token from the Upsert Installation request. If your
+> integration uses long-lived tokens today, [migrate to short-lived access
+> tokens](/docs/integrations/create-integration/short-lived-access-tokens).
+
+#### Use short-lived access tokens
+
+Authenticate your integration's calls to the Vercel API with short-lived access tokens, which expire after one hour. To get and use one:
+
+1. When a call needs a token, request one with the `client_credentials` grant, using your integration's client ID and client secret.
+2. Set `installation_id` to the `installationId` from the [Upsert Installation](/docs/integrations/create-integration/marketplace-api/reference/partner/upsert-installation) request path.
+3. Cache the token per installation, reuse it until it's about to expire, and send it as a bearer token.
+
+For the full request and response format, see [Request a short-lived token](/docs/integrations/create-integration/short-lived-access-tokens#request-a-short-lived-token).
+
+If you're building a new integration, turn on **Issue Only Short-Lived Access Tokens** when you create it. That way every token is short-lived from the start, and there's nothing to migrate later.
+
+These tokens are only for your calls to Vercel. When Vercel calls your API, keep verifying Vercel's OIDC tokens as before.
+
+#### Long-lived access tokens (deprecated)
+
+The Upsert Installation request also includes an access token in `credentials.access_token`. Until you turn on **Expire Long-Lived Access Tokens**, that token is long-lived, so don't use it to call Vercel APIs, even during installation. Request a short-lived token with `client_credentials` instead.
+
+To update an integration that stores installation tokens today:
+
+1. Follow [Migrating to short-lived access tokens](/docs/integrations/create-integration/short-lived-access-tokens) to move every caller to short-lived tokens.
+2. Complete the [cutover checklist](/docs/integrations/create-integration/short-lived-access-tokens#cutover-checklist), then turn on **Expire Long-Lived Access Tokens**.
+
+An hour after you turn on the setting, every long-lived token for your integration stops working. From then on, the token in each Upsert Installation request expires within one hour, and `credentials.expires_in` gives its remaining lifetime.
 
 You can also use OAuth2 to obtain access tokens for user-specific operations.
 

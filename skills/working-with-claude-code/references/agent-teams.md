@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-teams.md"
-fetched_at: "2026-11-16T12:28:44.823Z"
-sha256: "287f52959e7553515b5b1b0fcfc0c8dd520bad8d5dac9823f5dfa80342693163"
+fetched_at: "2026-11-23T14:04:20.448Z"
+sha256: "365cf8cb849c719fd7bbfe7791183d58b88736b2d79b0c9b3af64290b55ef141"
 ---
 
 > ## Documentation Index
@@ -335,7 +335,7 @@ When one agent sends another a message over `SendMessage`, Claude Code tells the
 In [auto mode](https://code.claude.com/docs/en/permission-modes.md#eliminate-prompts-with-auto-mode), the classifier applies two checks to messages between agents:
 
 * It treats an approval claim relayed from another agent as untrusted input rather than confirmation from you.
-* It reviews each message before Claude Code delivers it, whether a plain message or a structured protocol message such as a shutdown request or plan approval response. A message it blocks never reaches the recipient.
+* It reviews `SendMessage` messages before Claude Code delivers them, including structured protocol messages such as a shutdown request. A message it blocks isn't delivered. Before you rely on this review, check [which messages skip it](https://code.claude.com/docs/en/permission-modes.md#how-the-classifier-evaluates-actions).
 
 ### Context and communication
 

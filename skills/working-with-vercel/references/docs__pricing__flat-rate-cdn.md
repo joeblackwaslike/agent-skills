@@ -16,8 +16,8 @@ summary: Flat Rate CDN gives you fixed monthly CDN pricing and protection agains
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/pricing/flat-rate-cdn.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "a60e57425ba9b6b09eb3cd416408d5f094ed91033f69bdbb446cffa43c326062"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "0a5df9255ec6ccd3e9b18dc9de8131df44008df5dd9d617e8dbe9beee33c4485"
 ---
 
 # Flat Rate CDN
@@ -35,9 +35,9 @@ Flat Rate CDN gives you fixed monthly CDN pricing and protection against usage s
 - [Introducing Flat Rate CDN](https://vercel.com/blog/introducing-flat-rate-cdn)
 - [Flat Rate CDN is now GA for Pro teams](https://vercel.com/changelog/flat-rate-cdn-is-now-ga-for-pro-teams)
 - [Flat Rate CDN in Limited Beta](https://vercel.com/changelog/flat-rate-cdn-in-limited-beta)
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 - [How Vercel CDN Works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
-- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 - [Cleveland, USA \\(cle1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cle1) — Vercel pricing for the Cleveland, USA \\(cle1\\) region.
 - [Cape Town, South Africa \\(cpt1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/cpt1) — Vercel pricing for the Cape Town, South Africa \\(cpt1\\) region.
 

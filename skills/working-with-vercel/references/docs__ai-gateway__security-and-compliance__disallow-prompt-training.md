@@ -17,8 +17,8 @@ summary: Learn how to prevent AI providers from using your prompts and responses
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/disallow-prompt-training.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "59545111ae3106434ff665e138ed27cdf4a75c3dcb9c82e512be922d86e10a5e"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "703ac668723e371f42fff757264cdcf6f7c701db67d9ab1dad23899f9cb5315f"
 ---
 
 # AI Gateway Disallow Prompt Training
@@ -32,14 +32,13 @@ No training on prompt data is available to all AI Gateway users at no extra char
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
-- [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway)
 - [Ember-1 from Fireworks now available on AI Gateway](https://vercel.com/changelog/ember-1-from-fireworks-now-available-on-ai-gateway)
 - [TypeSafe AI's Jev now available on AI Gateway](https://vercel.com/changelog/typesafe-ai-jev-now-available-on-ai-gateway)
 - [TypeSafe AI's Jev 1.14 is now available on AI Gateway](https://vercel.com/changelog/typesafe-ais-jev-1-14-is-now-available-on-ai-gateway)
 - [Moderate product reviews with Jev, TanStack AI, and AI Gateway](https://vercel.com/kb/guide/moderate-product-reviews-jev-tanstack-ai) — Moderate product reviews for an e-commerce storefront with Jev from TypeSafe AI and TanStack AI's \\`decide\\(\\)\\` functio
 - [How to classify, route, and score with Jev and AI SDK](https://vercel.com/kb/guide/typesafe-jev-and-ai-sdk) — Use Jev from TypeSafe AI with AI SDK's experimental \\`evaluate\\` API to classify, route, score, and verify inside your a
 - [Team-wide Zero Data Retention and prompt training controls now on AI Gateway](https://vercel.com/changelog/zero-data-retention-no-prompt-training-on-ai-gateway)
-- [Team-wide provider allowlist on AI Gateway](https://vercel.com/changelog/team-wide-provider-allowlist-on-ai-gateway)
+- [vercel ai-gateway](https://vercel.com/docs/cli/ai-gateway) — Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, virtual models, models, leaderboards,
 
 Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/disallow-prompt-training.graph.md](/docs/ai-gateway/security-and-compliance/disallow-prompt-training.graph.md)
 <!-- /docsgraph:related -->
@@ -49,7 +48,7 @@ Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/dis
 
 These two methods work as an OR: if either is enabled, disallow prompt training is enforced for that request. Neither method has an additional cost.
 
-Disallow prompt training is a subset of [Zero Data Retention (ZDR)](/docs/ai-gateway/security-and-compliance/zdr). All ZDR-compliant providers also disallow prompt training, but not all providers that disallow prompt training offer full zero data retention.
+Disallow prompt training and [Zero Data Retention (ZDR)](/docs/ai-gateway/security-and-compliance/zdr) are separate controls.
 
 > **💡 Note:** Disallow prompt training enforcement does not apply to [BYOK (Bring Your Own
 > Key)](/docs/ai-gateway/authentication-and-byok/byok) requests. When you use BYOK, this filter is not
@@ -453,6 +452,12 @@ DigitalOcean
 
 —
 
+Exa
+
+✓
+
+Custom Policy
+
 Fireworks
 
 ✓
@@ -547,7 +552,7 @@ Parallel AI
 
 ✓
 
-Customer terms
+Custom terms
 
 Parasail
 

@@ -13,8 +13,8 @@ summary: Learn how to integrate an iframe into your application to support PCI D
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/security/pci-dss.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "e368b2f138e2a207384e5c478955939a670981572d6b5773e2bf97687120f300"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "b3f774bc126e39f61042bb5bb28f81768f4429afe710186ea42d80d44fa8630c"
 ---
 
 # PCI DSS iframe Integration
@@ -32,7 +32,6 @@ When you use an [\`iframe\`](https://developer.mozilla.org/en-US/docs/Web/HTML/E
 - [PCI compliance for ecommerce](https://vercel.com/blog/pci-compliance-for-ecommerce-teams)
 - [How to conduct PCI scans on Vercel: A complete guide to IP safelisting](https://vercel.com/kb/guide/how-to-conduct-pci-scans-on-vercel-guide) — Scan and verify your Vercel deployments for secure, PCI-compliant payment processing.
 - [Upgraded PCI DSS version 3.2.1 to 4.0](https://vercel.com/changelog/upgraded-pci-dss-version-3-2-1-to-4-0)
-- [From idea to secure checkout in minutes with Stripe](https://vercel.com/blog/from-idea-to-secure-checkout-in-minutes-with-stripe)
 - [Vercel Commerce and Payments Integrations](https://vercel.com/docs/integrations/ecommerce) — Learn how to integrate Vercel with payment processors and ecommerce platforms, including Stripe, Shopify, BigCommerce, a
 - [Security & Compliance Measures](https://vercel.com/docs/security/compliance) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [CDN security](https://vercel.com/docs/cdn-security) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers

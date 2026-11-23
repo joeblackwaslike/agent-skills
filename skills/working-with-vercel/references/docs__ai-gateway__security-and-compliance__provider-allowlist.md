@@ -18,8 +18,8 @@ summary: Restrict which AI providers your team can route through AI Gateway. Ava
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/provider-allowlist.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "395ee223a16bfc4f3c245f80a0ab4107b4680dd447bcf2c3dcbf962227bd89ea"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "2c1164ea03b7470ab1348de5777921266884f39c2a288c24d5315f6448f1b63c"
 ---
 
 # AI Gateway Provider Allowlist
@@ -39,6 +39,7 @@ The provider allowlist lets team owners restrict which AI providers can serve re
 - [AI Gateway Model Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist) — Restrict which AI models your team can use through AI Gateway. Available on Pro and Enterprise.
 - [AI Gateway Provider Headquarters](https://vercel.com/docs/ai-gateway/security-and-compliance/provider-headquarters) — Limit AI Gateway routing to providers whose parent company is headquartered in the countries you choose.
 - [Adding a Provider](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider) — Learn how to add a new AI provider to your Vercel projects.
+- [vercel ai-gateway](https://vercel.com/docs/cli/ai-gateway) — Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, virtual models, models, leaderboards,
 
 Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/provider-allowlist.graph.md](/docs/ai-gateway/security-and-compliance/provider-allowlist.graph.md)
 <!-- /docsgraph:related -->

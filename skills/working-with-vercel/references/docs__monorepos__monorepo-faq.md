@@ -12,13 +12,13 @@ related:
   - /docs/project-configuration/vercel-json
   - /docs/cli/project-linking
   - /docs/cli/global-options
-  - /docs/environment-variables
+  - /docs/cli/deploying-from-cli
 summary: Learn the answer to common questions about deploying monorepos on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/monorepos/monorepo-faq.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "8bd654c2557ab39cabfbfbaec9ebadeb7c12f44f96bd7b9d65f931b3c4a531d2"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "d1780f881a7a8ffa137932043fc29a3e9f28e0376c2158d57f3a3550d852940a"
 ---
 
 # Monorepos FAQ
@@ -41,9 +41,9 @@ on the "Billing" page in the team settings.
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
 - [Builds](https://vercel.com/docs/builds) — Understand how the build step works when creating a Vercel Deployment.
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
-- [Deploying Turborepo to Vercel](https://vercel.com/docs/monorepos/turborepo) — Learn about Turborepo, a build system for monorepos that allows you to have faster incremental builds, content-aware has
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Deploying Nx to Vercel](https://vercel.com/docs/monorepos/nx) — Nx is an extensible build system with support for monorepos, integrations, and Remote Caching on Vercel. Learn how to de
 
 Full cross-link map for this page: [/docs/monorepos/monorepo-faq.graph.md](/docs/monorepos/monorepo-faq.graph.md)
 <!-- /docsgraph:related -->
@@ -90,7 +90,7 @@ VERCEL_ORG_ID=team_123 VERCEL_PROJECT_ID=prj_456 vercel
 
 You can also use the `--project` flag to specify a project name or ID directly. If both are provided, the `--project` flag takes precedence over `VERCEL_PROJECT_ID`. See [CLI Global Options](/docs/cli/global-options#project) for the full precedence order.
 
-Learn more about [Vercel CLI for custom workflows](/kb/guide/using-vercel-cli-for-custom-workflows).
+Learn more about [deploying from a CI/CD pipeline with Vercel CLI](/docs/cli/deploying-from-cli#deploying-from-a-ci/cd-pipeline).
 
 ## Can I use Turborepo on the Hobby plan?
 

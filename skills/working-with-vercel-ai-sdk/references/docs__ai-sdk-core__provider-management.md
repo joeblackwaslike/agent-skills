@@ -4,8 +4,8 @@ description: Learn how to work with multiple providers and models
 url: "https://ai-sdk.dev/docs/ai-sdk-core/provider-management"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/provider-management.md"
-fetched_at: "2026-10-12T11:48:49.587Z"
-sha256: "bc2934321ea84b4b2e7999f231c7b9806731db1da75b9a2cd43b53694d11ebd5"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "1e87f94563c143748b8d8d7f953171db3c4dd72ea44474b5330947366fc58fe7"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -482,6 +482,14 @@ explicitly configured default provider with a `decisionModel` method. Registry
 middleware for language and image models does not apply to decision.
 See [Decisions](/docs/ai-sdk-core/decisions#model-aliases-and-registries)
 for aliases, default-provider configuration, and capability differences.
+
+## Experimental extraction models
+
+Custom providers accept `extractionModels` aliases, and registries expose
+`extractionModel('provider:model')`. These methods return model instances for
+`experimental_extract`. Direct string IDs use an explicitly configured default
+provider with an `extractionModel` method. See
+[Extractions](/docs/ai-sdk-core/extractions#model-aliases-and-registries).
 
 ---
 

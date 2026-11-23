@@ -13,8 +13,8 @@ summary: Learn how to manage project-level routing rules using the vercel routes
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/routes.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "7c06a6f871676cb7db09e7c4c24a612837612dcbf648be5275a0ac1709dbc017"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "d7dc53d9867f5c33069c453acfaf8625ae6b3c604239701536451f28939eed16"
 ---
 
 # vercel routes
@@ -29,13 +29,12 @@ The `vercel routes` command lets you manage routing rules for a project. These r
 
 - [Python projects now support routing rules](https://vercel.com/changelog/python-projects-now-support-routing-rules)
 - [Manage cache tags for external origins](https://vercel.com/kb/guide/how-to-manage-cache-tags-for-external-origins) — Learn how to use cache tags to optimally serve fresh content on Vercel when content from your external origin changes
-- [Can I use Vercel as a reverse proxy?](https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external) — Learn how to use rewrites to proxy requests from Vercel to other deployments.
 - [Inside the Vercel intern experience](https://vercel.com/blog/inside-the-vercel-intern-experience)
+- [Routing](https://vercel.com/docs/routing) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
 - [Routing](https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing) — Vercel MCP tools for routing.
 - [Project-Level Routing Rules](https://vercel.com/docs/routing/project-routing-rules) — Add redirects, rewrites, headers, and status codes to your project from the dashboard or API, without deploying new code
 - [Edit a routing rule](https://vercel.com/docs/rest-api/project-routes/edit-a-routing-rule) — PATCH /v1/projects/{projectId}/routes/{routeId} — Replace a routing rule identified by its ID, or restore it from the cu
 - [Add a routing rule](https://vercel.com/docs/rest-api/project-routes/add-a-routing-rule) — POST /v1/projects/{projectId}/routes — Add a single routing rule to a project at a specified position. Defaults to the e
-- [Promote, restore, or discard a routing rule version](https://vercel.com/docs/rest-api/project-routes/promote-restore-or-discard-a-routing-rule-version) — POST /v1/projects/{projectId}/routes/versions — Promote staged routing rules to production, restore a previous productio
 
 Full cross-link map for this page: [/docs/cli/routes.graph.md](/docs/cli/routes.graph.md)
 <!-- /docsgraph:related -->

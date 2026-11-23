@@ -14,8 +14,8 @@ summary: Configure the Blackbox AI CLI to use AI Gateway for code generation and
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/blackbox.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "f2c836dc6dc8dc2e443abb1a1a0ef433ff832e92ab6aee8108414cfa2b0b1bb0"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "4836326f4d131790efbdbc0773bbc3b97c809e68bf5136f5a445026e978166a8"
 ---
 
 # Blackbox AI with AI Gateway
@@ -30,8 +30,8 @@ You can use the [Blackbox AI](https://blackbox.ai) CLI for AI-powered code gener
 
 - [Chatbox with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/chatbox) — Connect Chatbox to AI Gateway. Configure your API key, endpoint, and models to use multiple AI providers and monitor cha
 - [Command Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/command-code) — Connect Command Code to AI Gateway with your own API key and a custom base URL. Configure models, switch between them, a
-- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
+- [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/blackbox.graph.md](/docs/ai-gateway/coding-agents/blackbox.graph.md)

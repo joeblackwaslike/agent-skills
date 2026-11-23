@@ -15,8 +15,8 @@ summary: Vercel MCP tools for domains and dns.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "f7feff24cb1354fd1f260534cb63d327ef3b5498e10e66368297766fc1dc6715"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "e969eefb0a898af60667e990683256dd7f6657779f61de6873acc4d4e812486a"
 ---
 
 # Domains and DNS
@@ -30,9 +30,9 @@ Check domain availability and pricing, then manage domains connected to your acc
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Working with domains](https://vercel.com/docs/domains/working-with-domains) — Learn how domains work and the options Vercel provides for managing them.
+- [GET /domains/records/{recordId}](https://vercel.com/docs/rest-api/untagged/getdomainsrecordsbyrecordid) — GET /domains/records/{recordId} — GET /domains/records/{recordId}
 - [Get Domain Verification Record](https://vercel.com/docs/rest-api/domains/get-domain-verification-record) — GET /v9/domains/{domain}/verification — Get the TXT verification record needed to claim ownership of a domain for the au
 - [List all the domains](https://vercel.com/docs/rest-api/domains/list-all-the-domains) — GET /v5/domains — Retrieves a list of domains registered for the authenticated user or team. By default it returns the l
-- [Domains Overview](https://vercel.com/docs/domains) — Learn the fundamentals of how domains, DNS, and nameservers work on Vercel.
 - [Get Domain Availability and Pricing](https://vercel.com/docs/rest-api/domains-registrar/get-domain-availability-and-pricing) — POST /v1/registrar/domains/search — Start domain research here. Get registration availability and pricing for 1–200 exac
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains.graph.md](/docs/agent-resources/vercel-mcp/tools/domains.graph.md)

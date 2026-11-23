@@ -13,13 +13,13 @@ related:
   - /docs/ai-gateway/authentication-and-byok/byok
   - /docs/ai-gateway/pricing
   - /docs/ai-gateway/token-pass
-  - /docs/ai-gateway/sdks-and-apis
+  - /docs/ai-gateway/faq
 summary: Learn about zero data retention policies and how to enforce ZDR on a per-request basis with AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/security-and-compliance/zdr.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "07bcd537f25088948386fc6e63420e059bb92fe6c762b6e17b093a48791b7e5d"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "322521ae7aa314937d072dc7ae97ab9daa5b74d545942834e99eb28c28fea1c4"
 ---
 
 # AI Gateway Zero Data Retention (ZDR)
@@ -32,17 +32,16 @@ Zero data retention (ZDR) is available on AI Gateway for Pro and Enterprise team
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [AI Gateway now supports Private Inference](https://vercel.com/changelog/ai-gateway-now-supports-private-inference)
 - [ Routing rules now available on AI Gateway](https://vercel.com/changelog/ai-gateway-routing-rules)
 - [Cat Jam is now available in stealth for free on AI Gateway](https://vercel.com/changelog/cat-jam-is-now-available-in-stealth-for-free-on-ai-gateway)
 - [Claude Fable 5.2 now available on AI Gateway](https://vercel.com/changelog/claude-fable-5-2-now-available-on-ai-gateway)
 - [Claude Haiku 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-haiku-5-5-now-available-on-ai-gateway)
-- [Claude Opus 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-opus-5-5-now-available-on-ai-gateway)
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [How to classify, route, and score with Jev and AI SDK](https://vercel.com/kb/guide/typesafe-jev-and-ai-sdk) — Use Jev from TypeSafe AI with AI SDK's experimental \\`evaluate\\` API to classify, route, score, and verify inside your a
 - [Vercel Ship 2026 recap](https://vercel.com/blog/vercel-ship-2026-recap)
 - [GPT-Live](https://vercel.com/docs/ai-gateway/modalities/realtime/gpt-live) — Connect GPT-Live through AI Gateway to stream voice, handle client delegation, and track session duration.
 - [AI Gateway Trace Drains](https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains) — Forward an OpenTelemetry trace of every AI Gateway request to your own observability tool, and understand trace drain bi
-- [vercel ai-gateway](https://vercel.com/docs/cli/ai-gateway) — Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, virtual models, models, leaderboards,
 
 Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/zdr.graph.md](/docs/ai-gateway/security-and-compliance/zdr.graph.md)
 <!-- /docsgraph:related -->
@@ -52,7 +51,12 @@ Full cross-link map for this page: [/docs/ai-gateway/security-and-compliance/zdr
 
 These two methods work as an OR: if either is enabled, ZDR is enforced for that request.
 
-ZDR is a superset of [disallowing prompt training](/docs/ai-gateway/security-and-compliance/disallow-prompt-training). All ZDR-compliant providers also disallow prompt training, but not all providers that disallow prompt training offer full zero data retention.
+> **💡 Note:** A provider that offers ZDR may exclude specific models, tools, or request
+> types from it. AI Gateway rejects requests in some of these cases. ZDR doesn't
+> extend to others, such as tools that a provider runs. Check [what ZDR
+> covers](#what-zdr-covers) before you send data.
+
+ZDR and [disallowing prompt training](/docs/ai-gateway/security-and-compliance/disallow-prompt-training) are separate controls.
 
 > **💡 Note:** AI Gateway skips your [BYOK (Bring Your Own
 > Key)](/docs/ai-gateway/authentication-and-byok/byok) keys by default when ZDR
@@ -89,17 +93,51 @@ AI Gateway checks your payment status again before it returns this error, so a c
 
 ## Vercel
 
-AI Gateway has a ZDR policy and does not retain prompts, outputs, or sensitive data. User data is immediately and permanently deleted after requests are completed. No action is needed on the user side.
+AI Gateway has a ZDR policy and does not retain the prompts or responses in your requests. That content is immediately and permanently deleted after requests are completed. No action is needed on the user side.
+
+AI Gateway does record request metadata for billing, observability, and debugging, such as the model, provider, token usage, cost, and duration. For the full list, see [what AI Gateway logs about your requests](/docs/ai-gateway/faq#what-does-ai-gateway-log-about-my-requests).
 
 ## Providers
 
 AI Gateway has agreements in place to offer ZDR with specific providers. A provider's default policy may not match with the status that AI Gateway has in place due to these agreements.
+
+Provider ZDR on AI Gateway is self-reported. Each provider states its ZDR commitment in its own policy or in its agreement with Vercel, and AI Gateway routes ZDR requests based on that commitment.
 
 By default, AI Gateway does not route based on the data retention policy of providers.
 
 > **💡 Note:** If we do not know a provider's ZDR stance or have not yet established an
 > agreement with them, they are treated as not being ZDR-compliant. If ZDR is
 > enabled for a request, it will not be routed through this provider.
+
+## What ZDR covers
+
+ZDR applies per model and per provider. A provider in the [ZDR providers list](#zdr-providers-and-policies) can offer ZDR for some of its models and not for others, and some tools and request types fall outside a provider's ZDR policy.
+
+With ZDR enabled, AI Gateway handles each case as follows:
+
+| Case                                                                                                                                                                                                 | What AI Gateway does                                                                                                                             |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| A provider doesn't offer ZDR for the model you request                                                                                                                                               | Skips that provider and routes to one that does. If none remain, the request fails with a `no_zdr_providers_available` error.                    |
+| The model retains data on every provider, such as the Claude Fable models                                                                                                                            | Fails the request.                                                                                                                               |
+| Tools that AI Gateway runs, such as the [AI Gateway search and fetch tools](/docs/ai-gateway/models-and-providers/web-search)                                                                        | Fails the request with a `400` error when the tool's vendor has no ZDR commitment. The error names the tool and the vendor.                      |
+| [Batch jobs](/docs/ai-gateway/models-and-providers/batch-processing#zero-data-retention) | Rejects the batch at submission, because providers store batch inputs and results for the lifetime of the batch. Send synchronous requests instead. |
+| [Asynchronous video jobs](/docs/ai-gateway/modalities/video-generation#asynchronous-generation) | Rejects the job at submission. Asynchronous video jobs don't support ZDR yet. |
+| Tools that the provider runs, such as [provider-specific web search](/docs/ai-gateway/models-and-providers/web-search#provider-specific-search) or grounding                                         | **Doesn't block the request.** A separate service can process and retain the data you send to the tool, under its own terms.                     |
+| [Prompt caching](#caching-and-zero-data-retention)                                                                                                                                                   | **Doesn't block the request.** AI Gateway doesn't count a provider's short-lived prompt cache as retaining data. |
+
+These cases describe requests served with Vercel's provider keys. With a [BYOK](#byok) key that you marked as ZDR, your own agreement with the provider decides which models and tools are covered.
+
+> **💡 Note:** ZDR applies to which provider serves the model request. It doesn't extend to
+> tools that the provider runs, such as web search or grounding. A separate
+> service may run those tools and keep the data you send, under its own
+> retention policy. Review that policy if you have strict retention
+> requirements.
+
+> **💡 Note:** Providers keep repeated prompt data in a short-lived cache so they don't
+> process it again. AI Gateway doesn't count this as retaining data, so ZDR
+> requests can use models that cache prompts. If your definition of zero data
+> retention rules out cached data, review the provider's policy before you rely
+> on caching.
 
 ## Team-wide zero data retention
 
@@ -114,6 +152,16 @@ To enable team-wide ZDR:
 Once enabled, team-wide ZDR applies to all requests through the Vercel team you configured it for. For how team-wide ZDR interacts with [BYOK](/docs/ai-gateway/authentication-and-byok/byok) keys, see [BYOK](#byok).
 
 Team-wide ZDR and [team-wide disallow prompt training](/docs/ai-gateway/security-and-compliance/disallow-prompt-training#team-wide-disallow-prompt-training) are separate settings, and turning on one doesn't turn on the other. To enforce both for your team, turn on both the **Zero Data Retention** and **Disallow Prompt Training** toggles. Team-wide disallow prompt training has no additional cost.
+
+### Exempt an API key from team-wide ZDR
+
+Team owners can create an API key that's exempt from the team's ZDR-only model restriction, for work that needs a model without ZDR. Create it with the Vercel CLI, and give it an expiration so the exemption doesn't outlive that work:
+
+```bash filename="terminal"
+vercel ai-gateway api-keys create --name escape-hatch --zdr-exempt --expiration 7d
+```
+
+`vercel ai-gateway api-keys inspect` shows a `zdr exempt` row for these keys, so you can audit which keys carry the exemption. See [`api-keys create`](/docs/cli/ai-gateway#create) for every option.
 
 ## Per-request zero data retention
 
@@ -435,7 +483,7 @@ To mark a BYOK key as ZDR:
 When ZDR is enabled, AI Gateway filters the routing set for each model to ZDR-compliant providers only:
 
 1. If you have BYOK keys for a ZDR-compliant provider that you marked as ZDR, AI Gateway tries those keys first.
-2. If those BYOK keys fail or are unavailable, AI Gateway falls back to Vercel's provider keys for the ZDR-compliant providers in the routing set.
+2. If those BYOK keys fail or are unavailable, AI Gateway falls back to Vercel's provider keys for the ZDR-compliant providers in the routing set. If your team turned off [Fallback to Vercel Keys](/docs/ai-gateway/authentication-and-byok/byok#turn-off-fallback-to-vercel-keys), the request fails instead.
 3. If no ZDR-compliant providers are available for the model, the request fails with a `no_zdr_providers_available` error.
 
 ### Example
@@ -463,9 +511,9 @@ AI Gateway builds the ZDR routing set in two parts.
 **Final routing order:**
 
 1. Anthropic BYOK (ZDR-marked) is tried first.
-2. If that fails, AI Gateway falls back to Vercel's provider keys for Anthropic, Google Vertex, or Amazon Bedrock.
+2. If that fails, AI Gateway falls back to Vercel's provider keys for Anthropic, Google Vertex, or Amazon Bedrock. With Fallback to Vercel Keys off, the request fails instead.
 
-Your Google Vertex BYOK is filtered out because you didn't mark it as ZDR, but Google Vertex is still reachable through Vercel's provider keys. Your OpenAI BYOK is filtered out because OpenAI doesn't serve `anthropic/claude-sonnet-5`.
+Your Google Vertex BYOK is filtered out because you didn't mark it as ZDR, but Google Vertex is still reachable through Vercel's provider keys. With Fallback to Vercel Keys off, it isn't. Your OpenAI BYOK is filtered out because OpenAI doesn't serve `anthropic/claude-sonnet-5`.
 
 ## Using both account and request-level ZDR
 
@@ -473,22 +521,17 @@ Team-wide ZDR toggled to enabled overrides request-level `zeroDataRetention: fal
 
 ## Caching and zero data retention
 
-When you use [prompt caching](/docs/ai-gateway/models-and-providers/automatic-caching) through AI Gateway, caching happens at the provider level. Whether that caching is ZDR-compliant depends on the provider.
+When you use [prompt caching](/docs/ai-gateway/models-and-providers/automatic-caching) through AI Gateway, caching happens at the provider level. To serve a cache hit, the provider holds a representation of your prompt for the cache lifetime, which can be up to 24 hours.
+
+AI Gateway doesn't count this short-lived cache as retaining data, so ZDR requests can use models that cache prompts. If your definition of zero data retention rules out cached data, review the provider's policy for where it holds cached data and for how long.
 
 ## ZDR providers and policies
 
 The following providers currently offer ZDR on AI Gateway. Please review each provider's ZDR policy and terms carefully. A provider's default policy may not match with the status that AI Gateway has in place due to negotiated agreements. We are constantly coordinating and revising agreements to be able to enforce stricter retention policies for customers. The full terms of service are available for each provider on the [model pages](/ai-gateway/models).
 
-All ZDR-compliant providers also disallow prompt training, since ZDR is a superset of [disallowing prompt training](/docs/ai-gateway/security-and-compliance/disallow-prompt-training). In some cases, certain models or functionalities may be excluded from a provider's ZDR policy. AI Gateway will not fail these requests if zero data retention is enabled, so review the provider's policy in the table below to understand the nuances of specific tools and how they affect data retention. However, when a model is ineligible for ZDR on every provider, a request for that model with ZDR enabled fails.
+The table also shows whether each provider [disallows prompt training](/docs/ai-gateway/security-and-compliance/disallow-prompt-training), which is a separate control from ZDR.
 
-> **💡 Note:** Tool calls may not be covered by a provider's ZDR policy. When a model invokes
-> a provider-executed tool, such as a provider-side [web
-> search](/docs/ai-gateway/models-and-providers/web-search) or grounding tool,
-> the data sent to that tool can be processed and retained by a separate service
-> under its own terms. AI Gateway does not block or fail these requests when ZDR
-> is enabled. It is your responsibility to review the provider's and the tool's
-> terms to confirm whether tool calls are in scope of the ZDR policy before
-> using provider-side tools with sensitive data.
+A checkmark in the ZDR column means the provider offers self-reported ZDR on AI Gateway. It may still exclude specific models, tools, or request types. See [What ZDR covers](#what-zdr-covers) for how AI Gateway handles each exclusion, and review the provider's policy in the table for the details.
 
 Provider
 
@@ -577,6 +620,16 @@ DigitalOcean
 Data policy
 
 —
+
+Exa
+
+✓
+
+✓
+
+Custom Policy
+
+Covers the Exa search tool: Exa's own web crawl and search index are outside ZDR.
 
 Fireworks
 
@@ -683,6 +736,16 @@ Image, transcription, realtime, embedding, and speech models are not ZDR.
 OpenAI scans image and file inputs for CSAM and retains flagged images for manual review.
 Data sent to a remote MCP server follows that server's retention policy.
 
+Parallel AI
+
+✓
+
+✓
+
+Custom terms
+
+Covers the Parallel search tool only. The Parallel Decisions model is not ZDR.
+
 Parasail
 
 ✓
@@ -702,6 +765,16 @@ Particle.AI
 ZDR policy
 
 —
+
+Perplexity
+
+✓
+
+✓
+
+ZDR policy
+
+Covers the Perplexity search tool only. Sonar, embedding, and Decider models are not ZDR.
 
 Relace
 
@@ -763,7 +836,7 @@ ZDR policy
 
 Grok Imagine video models are not ZDR.
 
-\* `anthropic/claude-fable-5` does not support ZDR on any provider, including Anthropic, Google Vertex, and Amazon Bedrock. Anthropic has determined this is required because some misuse patterns only become visible across cumulative requests. Prompts and completions are retained for 30 days and are not used to train Claude.
+\* Claude Fable models do not support ZDR on any provider, including Anthropic, Google Vertex, and Amazon Bedrock. Anthropic has determined this is required because some misuse patterns only become visible across cumulative requests. Prompts and completions are retained for 30 days and are not used to train Claude.
 
 Vercel Token Pass models are served through the `token-pass` provider. Token Pass currently serves its models through Wafer and follows Wafer's zero data retention policy and terms.
 

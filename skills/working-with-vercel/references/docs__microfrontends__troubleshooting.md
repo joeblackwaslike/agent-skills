@@ -17,8 +17,8 @@ summary: Learn about testing, common issues, and how to troubleshoot microfronte
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/microfrontends/troubleshooting.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "b120d5ac06d3396346bfade46f1d09a33c77fb1a9ce421bb75afca45df8c9632"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "8402bf77364f54255250ed1597a79b51d639ba94f3cb501833ba3df3129933fb"
 ---
 
 # Testing & troubleshooting microfrontends
@@ -48,6 +48,14 @@ Full cross-link map for this page: [/docs/microfrontends/troubleshooting.graph.m
 The `validateMiddlewareConfig` test ensures Middleware is configured to work correctly with microfrontends. Passing this test does *not* guarantee Middleware is set up correctly, but it should find many common problems.
 
 Since Middleware only runs in the default application, you should only run this test on the default application. If it finds a configuration issue, it will throw an exception so that you can use it with any test framework.
+
+The test fails when:
+
+- The Middleware matcher doesn't match `/.well-known/vercel/microfrontends/client-config`.
+- The Middleware matcher doesn't match a flagged path of a child application.
+- The Middleware matcher matches a path that is always routed to a child application, including the child's `/<asset-prefix>/_next/:path+` assets. These requests never reach the default application's Middleware.
+
+If your Middleware intentionally matches a child application path, pass that path in the optional third argument, `extraProductionMatches`, for example `validateMiddlewareConfig(config, './microfrontends.json', ['/docs/:path*'])`. Paths in this list that never match also fail the test.
 
 ```ts filename="tests/middleware.test.ts"
 /* @jest-environment node */
@@ -132,6 +140,8 @@ Debug headers expose the internal reason for the microfrontend response. You can
 
 You can enable debug headers in the [Vercel Toolbar](/docs/microfrontends/managing-microfrontends/vercel-toolbar#enable-routing-debug-mode), or by setting a cookie `VERCEL_MFE_DEBUG` to `1` in your browser.
 
+Debug headers are only returned to users who are signed in to Vercel and have access to the project. If you aren't signed in, Vercel redirects you to sign in first.
+
 Requests to your domain will then return additional headers on every response:
 
 - `x-vercel-mfe-app`: The name of the microfrontend project that handled the request.
@@ -170,7 +180,7 @@ A build that ends with `Could not find a microfrontends.json file in the reposit
 In a monorepo, each application searches the repository for the configuration automatically and matches applications by name. The build fails when:
 
 - The application isn't listed under `applications` in `microfrontends.json`.
-- The application's name in `microfrontends.json` doesn't match its Vercel project name. If the `package.json` name differs from the Vercel project name, add a `packageName` field to the application in `microfrontends.json`. See [Configuration](/docs/microfrontends/configuration).
+- The application's name in `microfrontends.json` doesn't match its Vercel project name. On Vercel, the application is identified by its project name. Outside of Vercel, such as in local builds, it's identified by the `projectName` in `.vercel/project.json` or, if that's missing, the `package.json` name. If the `package.json` name differs, add a `packageName` field to the application in `microfrontends.json`. See [Configuration](/docs/microfrontends/configuration).
 
 In a [polyrepo](/docs/microfrontends/local-development#polyrepo-setup), the configuration lives in only one repository. When a child application builds on Vercel, Vercel provides the configuration from the default application's current production deployment. If the default application has no production deployment that includes `microfrontends.json`, deploy it to production first. For local development, and for builds that you run outside of Vercel, the other applications can't find the configuration unless you give them access:
 

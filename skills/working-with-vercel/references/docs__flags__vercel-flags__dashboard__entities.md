@@ -17,8 +17,8 @@ summary: Define entities and their attributes for precise feature flag targeting
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/vercel-flags/dashboard/entities.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "9c2bb1846b52972613ee645c87b60b8aaeca02098f90ee99e4b8adf3ce31106e"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "d764ef14c68062b1940b01e39f83899e1bb2f376287766051dd1cb7e3ecfeab4"
 ---
 
 # Entities
@@ -207,9 +207,9 @@ By default, the dashboard shows attribute values like IDs directly. Labels make 
 
 1. Go to the **Entities** page
 2. Select an entity
-3. Add a label mapping (e.g., ID `team-123` → Label "Acme Corp")
-4. Press **Continue**
-5. Save the entities page
+3. Next to the attribute, click the labels count (for example, **0 labels**)
+4. Click **New Label** and add a label mapping (e.g., ID `team-123` → Label "Acme Corp")
+5. Click **Save**. If the attribute or entity isn't saved yet, click **Add to Draft** instead. The labels are saved when you save the attribute or entity
 
 Labels make it easier to understand who is being targeted without needing to memorize IDs.
 

@@ -11,14 +11,14 @@ prerequisites:
 related:
   - /docs/sandbox/sdk-reference
   - /docs/sandbox/python-sdk-reference
-  - /docs/sandbox/working-with-sandbox
+  - /docs/sandbox/examples
   - /docs/sandbox/concepts
 summary: Give each AI agent an isolated Linux user in a Vercel Sandbox with the JS and Python SDKs, then share files between agents through groups.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/concepts/multi-agent.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "f7207da0e87ac14019ef8eb04ad62b5aa21d0635cec3d31f2d5d7fceda1b7410"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "f1ba0b23b36035c2d9cf21276aeea0b905af4639105ba2d484c08934ce02a8f1"
 ---
 
 # Run isolated AI agents in one sandbox
@@ -31,14 +31,13 @@ Run several AI agents in one sandbox, each as its own Linux user with a private 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available)
-- [Run multiple isolated agents in a single Sandbox](https://vercel.com/changelog/run-multiple-isolated-agents-in-a-single-sandbox)
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
+- [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available)
 - [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
 - [Run a research workspace on Vercel](https://vercel.com/kb/guide/run-research-workspace-vercel) — Plan a durable research workspace on Vercel's Agentic Infrastructure with Workflows, internal API tools, Vercel Sandbox
-- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
-- [Safely running AI generated code in your Next.js application](https://vercel.com/kb/guide/running-ai-generated-code-sandbox) — How to execute untrusted, AI‑generated code from a Next.js app using Vercel Sandbox, an isolated, ephemeral environment.
-- [OpenAI SDK](https://vercel.com/docs/sandbox/ecosystem/openai-sdk) — Use OpenAI function calling with AI Gateway to execute model-generated code in an isolated Vercel Sandbox.
+- [Vercel Sandbox vs Upstash Box](https://vercel.com/kb/guide/vercel-sandbox-vs-upstash-box) — Compare Vercel Sandbox and Upstash Box as AI agent sandboxes, including isolation, persistence, network controls, SDKs,
+- [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
+- [Run multiple isolated agents in a single Sandbox](https://vercel.com/changelog/run-multiple-isolated-agents-in-a-single-sandbox)
 
 Full cross-link map for this page: [/docs/sandbox/concepts/multi-agent.graph.md](/docs/sandbox/concepts/multi-agent.graph.md)
 <!-- /docsgraph:related -->
@@ -563,7 +562,7 @@ console.log(blocked.exitCode); // non-zero, isolation enforced
 
 - [JS SDK Reference](/docs/sandbox/sdk-reference#sandboxuser-class): Full reference for the `SandboxUser` class and the user and group methods on `Sandbox`.
 - [Python SDK Reference](/docs/sandbox/python-sdk-reference#run-commands-as-linux-users): User handles, their filesystem, and the synchronous API.
-- [Working with Sandbox](/docs/sandbox/working-with-sandbox): Task-oriented examples for running code, streaming output, and managing files.
+- [Examples](/docs/sandbox/examples): Task-oriented examples for running code, streaming output, and managing files.
 - [Understanding Sandboxes](/docs/sandbox/concepts): How sandbox isolation and the microVM model work.
 
 ## Search the docs from your terminal

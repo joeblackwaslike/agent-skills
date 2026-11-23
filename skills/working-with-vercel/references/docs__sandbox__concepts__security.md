@@ -10,15 +10,15 @@ prerequisites:
   - /docs/sandbox
 related:
   - /docs/sandbox/concepts/firewall
-  - /docs/sandbox/working-with-sandbox
+  - /docs/sandbox/examples/expose-a-port
   - /docs/sandbox/concepts/secure-compute
   - /docs/sandbox/concepts/persistent-sandboxes
 summary: "Understand the Vercel Sandbox security model: microVM isolation, hardware side channels, resource limits, network access, and data privacy."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/concepts/security.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "66bf9e9eefe5f88e3e349c2635153fa62b7a04f310d6c61834762f8df5804cad"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "36c40c6154cd4d08048808cabcc3b2da0c5a8d98c9b71261b892cbb53de41bbd"
 ---
 
 # Sandbox security model
@@ -32,13 +32,13 @@ Vercel Sandboxes are designed for running untrusted code safely. This page descr
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [A sandbox without a network boundary is only half a sandbox](https://vercel.com/blog/a-sandbox-without-a-network-boundary-is-only-half-a-sandbox)
+- [Vercel Sandbox vs Upstash Box](https://vercel.com/kb/guide/vercel-sandbox-vs-upstash-box) — Compare Vercel Sandbox and Upstash Box as AI agent sandboxes, including isolation, persistence, network controls, SDKs,
 - [Advanced egress firewall filtering for Vercel Sandbox](https://vercel.com/changelog/advanced-egress-firewall-filtering-for-vercel-sandbox)
-- [Vercel Sandbox now supports Secure Compute](https://vercel.com/changelog/vercel-sandbox-now-supports-secure-compute)
 - [Runtimes](https://vercel.com/docs/sandbox/concepts/runtimes) — Detailed specifications for the Vercel Sandbox environment.
-- [Running commands in a Vercel Sandbox](https://vercel.com/docs/sandbox/run-commands-in-sandbox) — Create isolated sandbox environments to run builds, tests, and commands safely.
+- [Running commands in a Vercel Sandbox](https://vercel.com/docs/sandbox/examples/run-commands-in-sandbox) — Create isolated sandbox environments to run builds, tests, and commands safely.
+- [Sandbox Examples](https://vercel.com/docs/sandbox/examples) — Task-oriented examples for common Vercel Sandbox operations in TypeScript, Python, and the Sandbox CLI.
+- [Vercel Sandbox SDK](https://vercel.com/docs/sandbox/sdk) — Use the Vercel Sandbox SDK for JavaScript, TypeScript, and Python, or the Sandbox CLI, to create and manage isolated Lin
 - [Delete a sandbox](https://vercel.com/docs/rest-api/sandboxes/delete-a-sandbox) — DELETE /v2/sandboxes/{name} — Deletes a sandbox by name. If sandboxes are currently running, they will be stopped first.
-- [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
-- [Images](https://vercel.com/docs/sandbox/concepts/images) — Start sandboxes from Vercel's Managed Images, or custom OCI images stored in Vercel Container Registry to ship your own
 
 Full cross-link map for this page: [/docs/sandbox/concepts/security.graph.md](/docs/sandbox/concepts/security.graph.md)
 <!-- /docsgraph:related -->
@@ -85,7 +85,7 @@ These limits prevent resource exhaustion and ensure fair usage across all sandbo
 
 ## Network access
 
-Sandboxes can make outbound HTTP requests by default, so you can install packages from public registries like npm or PyPI. Exposed ports are accessible via a public URL, so be mindful of what services you run. See [Expose a port](/docs/sandbox/working-with-sandbox#expose-a-port).
+Sandboxes can make outbound HTTP requests by default, so you can install packages from public registries like npm or PyPI. Exposed ports are accessible via a public URL, so be mindful of what services you run. See [Expose a port](/docs/sandbox/examples/expose-a-port).
 
 Internet access from the sandbox can be restricted through network policies defined by the users, as part of the [sandbox firewall](/docs/sandbox/concepts/firewall).
 

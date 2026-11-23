@@ -18,8 +18,8 @@ summary: Deploy React Router applications with SSR or SPA mode, then configure t
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/frontend/react-router.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "6b96f0be83d7332085205bd895e9313b93dcb60d5f4feff57e6cb1016d10ebaa"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "0a56f0e63e0c8bfb527cd6b7c0e95cc812754f166f3e3a39d7f5b7aeb4385517"
 ---
 
 # React Router on Vercel
@@ -33,7 +33,6 @@ React Router is a multi-strategy router for React. When used [as a framework](ht
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to deploy a Shopify App to Vercel](https://vercel.com/kb/guide/deploy-shopify-app-to-vercel) — Deploy the official Shopify CLI React Router app template to Vercel with the @vercel/react-router preset and Postgres se
-- [Support for React Router v7](https://vercel.com/changelog/support-for-react-router-v7)
 - [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
 - [How to ship a NestJS app on Vercel](https://vercel.com/kb/guide/ship-a-nestjs-app-on-vercel) — Deploy a NestJS app to Vercel with zero configuration. Learn how to ship from a template, the Nest CLI, or Git, and conf
 - [Remix on Vercel](https://vercel.com/docs/frameworks/full-stack/remix) — Deploy Remix applications to Vercel and configure the Vercel Vite preset, SSR, streaming, caching, and analytics.
@@ -245,7 +244,7 @@ See [our docs on cache limits](/docs/cdn-cache#limits) to learn the max size and
 
 [Vercel's Analytics](/docs/analytics) features enable you to visualize and monitor your application's performance over time. The Analytics section in your project's dashboard offers detailed insights into your website's visitors, with metrics like top pages, top referrers, and user demographics.
 
-To use Analytics, navigate to the Analytics section in your project dashboard sidebar on Vercel and select **Enable** in the modal that appears.
+To use Analytics, open **Analytics** in your project sidebar on Vercel, then select the **Enable** button in the header.
 
 To track visitors and page views, we recommend first installing our `@vercel/analytics` package by running the terminal command below in the root directory of your React Router project:
 

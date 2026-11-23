@@ -10,12 +10,14 @@ prerequisites:
 related:
   - /docs/speed-insights/quickstart
   - /docs/speed-insights/privacy-policy
+  - /docs/speed-insights/metrics
+  - /docs/speed-insights/limits-and-pricing
 summary: Learn how to configure your application to capture and send web performance metrics to Vercel using the @vercel/speed-insights npm package.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/speed-insights/package.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "f81a6063be8c0fa0d061614f09a6b8193b884c7ea070678af813e6519f3e7592"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "e2eeb2853fd2b193aca9bf21567fd4147853270ba939486d2283ecb9d66cc3c6"
 ---
 
 # Speed Insights Configuration with @vercel/speed-insights
@@ -29,14 +31,14 @@ With the `@vercel/speed-insights` npm package, you're able to configure your app
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Improved Speed Insights experience](https://vercel.com/changelog/improved-speed-insights-experience)
+- [Speed Insights now measures soft navigations](https://vercel.com/changelog/speed-insights-now-measures-soft-navigations)
 - [Speed Insights now has a free tier](https://vercel.com/changelog/speed-insights-free-tier)
 - [Improved data collection for Web Analytics and Speed Insights with resilient intake](https://vercel.com/changelog/improved-data-collection-for-web-analytics-and-speed-insights-with-resilient)
-- [Query Speed Insights from the Vercel CLI](https://vercel.com/changelog/query-speed-insights-from-the-vercel-cli)
-- [HTML element attribution in Speed Insights](https://vercel.com/changelog/html-element-attribution-in-speed-insights)
 - [Using Speed Insights](https://vercel.com/docs/speed-insights/using-speed-insights) — Learn how to use Speed Insights to analyze your application's performance data.
+- [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
 - [Accessing Metrics with Vercel CLI](https://vercel.com/docs/speed-insights/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Speed Insights metrics from your terminal.
+- [POST /speed-insights/toggle](https://vercel.com/docs/rest-api/untagged/createspeedinsightstoggle) — POST /speed-insights/toggle — POST /speed-insights/toggle
 - [Speed Insights Drains Reference](https://vercel.com/docs/drains/reference/speed-insights) — Learn about Speed Insights Drains - data formats and performance metrics configuration.
-- [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
 
 Full cross-link map for this page: [/docs/speed-insights/package.graph.md](/docs/speed-insights/package.graph.md)
 <!-- /docsgraph:related -->
@@ -50,6 +52,7 @@ To get started with Speed Insights, refer to our [Quickstart](/docs/speed-insigh
 - `@vercel/speed-insights` is now distributed under the MIT license.
 - It can use Vercel's [Resilient Intake](/docs/speed-insights/privacy-policy#resilient-intake) for script loading and data collection.
 - For Nuxt applications: install with the new module system.
+- It captures metrics on soft navigations through the [`softNavs`](#softnavs) option.
 
 ## `sampleRate`
 
@@ -59,6 +62,25 @@ To get started with Speed Insights, refer to our [Quickstart](/docs/speed-insigh
 This parameter determines the percentage of events that are sent to the server. By default, all events are sent. Lowering this parameter allows for cost savings but may result in a decrease in the overall accuracy of the data being sent. For example, a `sampleRate` of `0.5` would mean that only 50% of the events will be sent to the server.
 
 To learn more about how to configure the `sampleRate` option, see the [Sending a sample of events to Speed Insights](/kb/guide/sending-sample-to-speed-insights) recipe.
+
+## `softNavs`
+
+The `softNavs` option controls whether Speed Insights captures [data points](/docs/speed-insights/metrics#understanding-data-points) on soft navigations, which are client-side route changes that swap content without a full document reload. It is available in `@vercel/speed-insights@2.1.0` and later.
+
+Soft navigation tracking is **enabled by default**. It applies when your app uses a modern web framework such as Next.js, SvelteKit, or Nuxt, and the visitor uses a Chromium-based browser. On soft navigations, Speed Insights captures LCP, FCP, INP, and CLS. TTFB is not captured on soft navigations.
+
+To disable it, set `softNavs` to `false` and redeploy:
+
+```tsx
+<SpeedInsights softNavs={false} />
+
+// or, when using injectSpeedInsights()
+injectSpeedInsights({ softNavs: false });
+```
+
+In Vue and Nuxt templates, bind the prop as `<SpeedInsights :soft-navs="false" />`.
+
+Data points captured on soft navigations count toward your Speed Insights usage like any other data points. To learn more, see [Limits and pricing](/docs/speed-insights/limits-and-pricing).
 
 ## `beforeSend`
 

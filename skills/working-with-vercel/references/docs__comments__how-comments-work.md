@@ -16,8 +16,8 @@ summary: Learn when and where Comments are available, and how to enable and disa
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/comments/how-comments-work.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "b158461a598f31c17ce3f06cef1d50e86dc09cfa1d6d6b586bd9db42b44bbc95"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "dd17bc1ea1585907a20d844d7c461ea197b20a07cbb26c22fef7e0e1fae80cb2"
 ---
 
 # Enabling and Disabling Comments
@@ -32,12 +32,11 @@ Comments are enabled by default for all preview deployments on all new projects.
 
 - [Manage Vercel Toolbar comments from the CLI](https://vercel.com/changelog/manage-vercel-toolbar-comments-from-the-cli)
 - [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production)
-- [Introducing Commenting on Preview Deployments](https://vercel.com/blog/introducing-commenting-on-preview-deployments)
 - [Managing Comments on Preview Deployments](https://vercel.com/docs/comments/managing-comments) — Learn how to manage Comments on your Preview Deployments from Team members and invited collaborators.
 - [Using Comments with Preview Deployments](https://vercel.com/docs/comments/using-comments) — This guide will help you get started with using Comments with your Vercel Preview Deployments.
 - [Vercel Toolbar](https://vercel.com/docs/vercel-toolbar) — Learn how to use the Vercel Toolbar to leave feedback, navigate through important dashboard pages, share deployments, us
+- [Add the Vercel Toolbar to your production environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production) — Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access t
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Commenting on Pull Requests from Vercel CI](https://vercel.com/docs/ci/guides/github-comments) — Post the deployment URL to the pull request for each commit from a Vercel CI task.
 
 Full cross-link map for this page: [/docs/comments/how-comments-work.graph.md](/docs/comments/how-comments-work.graph.md)
 <!-- /docsgraph:related -->

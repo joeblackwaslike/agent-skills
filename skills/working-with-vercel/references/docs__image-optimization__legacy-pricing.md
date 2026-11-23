@@ -17,8 +17,8 @@ summary: This page outlines information on the pricing and limits for the source
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/image-optimization/legacy-pricing.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "d665afc09356c011a7c2c2c56f588931c3f11322245bc5abe78c7294a4fe2166"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "0016390d578254846a585818f41e90924f4414135919c90d6a713d339b7b6aa0"
 ---
 
 # Legacy Pricing for Image Optimization
@@ -40,8 +40,8 @@ Image Optimization pricing is dependent on your plan and how many unique [source
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Changes to Vercel Image Optimization](https://vercel.com/changelog/changes-to-vercel-image-optimizations)
 - [Faster transformations and reduced pricing for Image Optimization](https://vercel.com/changelog/faster-transformations-and-reduced-pricing-for-image-optimization)
+- [Changes to Vercel Image Optimization](https://vercel.com/changelog/changes-to-vercel-image-optimizations)
 - [Limits and Pricing for Image Optimization](https://vercel.com/docs/image-optimization/limits-and-pricing) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
 - [New Observability dashboard for Image Optimization](https://vercel.com/changelog/new-observability-dashboard-for-image-optimization)
 - [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y

@@ -16,8 +16,8 @@ summary: Learn how to set up Static IPs for your Vercel projects to connect to I
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/networking/static-ips/getting-started.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "f842b064fc7261941ffe7402d48ac2fe6160d5bedfaec1212c28aa7db77fbef8"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "7dc44abcae3282fbb435bbb9c95c3883c991bcc28f6e7ad50c785cbfb5b19a39"
 ---
 
 # Getting Started with Static IPs
@@ -36,12 +36,11 @@ This guide walks you through setting up Static IPs so you can access backend ser
 - [Static IPs are now available for more secure connectivity](https://vercel.com/changelog/static-ips-are-now-available-for-more-secure-connectivity)
 - [Route build traffic through Static IPs](https://vercel.com/changelog/route-build-traffic-through-static-ips)
 - [How to resolve IP blocking issues ](https://vercel.com/kb/guide/how-to-resolve-ip-blocking-issues) — Learn to troubleshoot IP blocking issues for both shared and personal networks.
-- [How can I use Vercel with GitHub IP restrictions?](https://vercel.com/kb/guide/use-vercel-with-github-ip-restrictions) — This guide will describe how you can use Vercel even when you have an IP allowlist configured in GitHub.
+- [Configures Static IPs for a project](https://vercel.com/docs/rest-api/networking/configures-static-ips-for-a-project) — PATCH /v1/projects/{idOrName}/shared-connect-links — Allows configuring Static IPs for a project
 - [Serving Static Files](https://vercel.com/docs/platforms/multi-tenant-platforms/serving-static-files) — Serve tenant-specific static files like robots.txt, sitemap.xml, and llms.txt dynamically using route handlers.
 - [Secure Compute](https://vercel.com/docs/networking/secure-compute) — Secure Compute provides dedicated private networks with VPC peering for Enterprise teams.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Using Vercel with Microsoft Azure](https://vercel.com/docs/integrations/external-platforms/azure) — Run your frontend on Vercel alongside backends hosted in Microsoft Azure, with private network connectivity, keyless aut
-- [Reverse Proxy Servers and Vercel](https://vercel.com/docs/security/reverse-proxy) — Learn why reverse proxy servers are not recommended with Vercel's firewall.
 
 Full cross-link map for this page: [/docs/networking/static-ips/getting-started.graph.md](/docs/networking/static-ips/getting-started.graph.md)
 <!-- /docsgraph:related -->

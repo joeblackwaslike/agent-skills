@@ -18,8 +18,8 @@ summary: Learn how to add a new AI model to your Vercel projects
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-model.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "8d6cb0adb7ff6a0ab3c1ca69038883b85711458f8dca336a8ccd7119550d2c3b"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "7d7031cf12063163ef26a9f7b6be13ea81e02bccce09388643beed8209e6795b"
 ---
 
 # Adding a Model
@@ -32,9 +32,8 @@ If you have integrations installed, scroll to the bottom to access the models ex
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Introducing AI Integrations on Vercel](https://vercel.com/blog/ai-integrations)
 - [Groq, fal, and DeepInfra join the Vercel Marketplace ](https://vercel.com/changelog/groq-fal-and-deepinfra-join-the-vercel-marketplace)
-- [AI Integrations and playground in the Vercel Dashboard](https://vercel.com/changelog/ai-integration-and-playground-in-the-vercel-dashboard)
+- [Introducing AI Integrations on Vercel](https://vercel.com/blog/ai-integrations)
 - [Adding a Provider](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider) — Learn how to add a new AI provider to your Vercel projects.
 - [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
 - [Vercel AI Gateway: Models, Routing, and Observability](https://vercel.com/docs/ai-gateway) — A hosted AI gateway for any cloud or language. Centralize credentials, request logs, cost tracking, budgets, prompt cach

@@ -16,13 +16,13 @@ summary: Learn how AI Gateway rate limits work on the free and paid tiers, what 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/rate-limits.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "fe7abc257f7c267085fbb22164472b77bf8f071903e188560e7beb1b3a5ceacd"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "e5fb821aa9f79681c6497ee4ba3b9fe241c714a041549eea37e5fce8a6bcc34d"
 ---
 
 # AI Gateway Rate Limits
 
-AI Gateway does not rate limit paid-tier requests. The free tier applies lower per-model limits, and a `429` on either tier may come from the upstream provider rather than from AI Gateway.
+The free tier applies lower per-model limits, and the paid tier removes them. A `429` on either tier may come from the upstream provider rather than from AI Gateway. If your workload needs a higher limit, [contact sales](/contact/sales) or email <ai-gateway@vercel.com>.
 
 
 <!-- docsgraph:related -->
@@ -32,7 +32,7 @@ AI Gateway does not rate limit paid-tier requests. The free tier applies lower p
 
 - [AI Gateway Model Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist) — Restrict which AI models your team can use through AI Gateway. Available on Pro and Enterprise.
 - [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
-- [List AI Gateway budgets](https://vercel.com/docs/rest-api/ai-gateway/list-ai-gateway-budgets) — GET /ai-gateway/budgets/list — List the team's AI Gateway budgets \\(team/project/user scopes, plus default-covered api-k
+- [List AI Gateway budgets](https://vercel.com/docs/rest-api/ai-gateway/list-ai-gateway-budgets) — GET /ai-gateway/budgets/list — List the team's AI Gateway budgets \\(team/project/user/app scopes, plus default-covered a
 - [Update an AI Gateway API key budget](https://vercel.com/docs/rest-api/ai-gateway/update-an-ai-gateway-api-key-budget) — PATCH /api-keys/{apiKeyID}/quota — Set, change, or remove the AI Gateway budget on an API key. Creates the budget if the
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 
@@ -41,7 +41,7 @@ Full cross-link map for this page: [/docs/ai-gateway/rate-limits.graph.md](/docs
 
 ## How rate limits work
 
-On the free tier, AI Gateway enforces a lower limit per model, and exceeding it rejects further requests to that model until your request rate drops. The paid tier removes AI Gateway's limits entirely, so the only limits left are the upstream provider's, whether the request uses AI Gateway credentials or your own provider keys.
+On the free tier, AI Gateway enforces a lower limit per model, and exceeding it rejects further requests to that model until your request rate drops. The paid tier removes the free tier's limits. Upstream provider limits still apply, whether the request uses AI Gateway credentials or your own provider keys.
 
 Whether a `429` comes from AI Gateway or the provider, the retry behavior below is the same. A provider's `429` can carry that provider's own error body instead of the AI Gateway error shape.
 
@@ -49,12 +49,12 @@ Limits can change, so this page describes behavior rather than fixed numbers. To
 
 ## Free tier and paid tier
 
-|               | Free tier                                                     | Paid tier                                         |
-| ------------- | ------------------------------------------------------------- | ------------------------------------------------- |
-| Model access  | [Free-tier-eligible models](/ai-gateway/models?freeTier=true) | All available models                              |
-| Rate limits   | Lower limit per model                                         | None from AI Gateway; provider limits still apply |
-| Custom limits | Not available                                                 | Available on request                              |
-| Credit basis  | Monthly included credit                                       | Purchased AI Gateway Credits                      |
+|               | Free tier                                                     | Paid tier                                                          |
+| ------------- | ------------------------------------------------------------- | ------------------------------------------------------------------ |
+| Model access  | [Free-tier-eligible models](/ai-gateway/models?freeTier=true) | All available models                                               |
+| Rate limits   | Lower limit per model                                         | Free tier limits removed; provider limits still apply              |
+| Higher limits | Not available                                                 | Available on request                                               |
+| Credit basis  | Monthly included credit                                       | Purchased AI Gateway Credits                                       |
 
 Purchasing AI Gateway Credits moves your team to the paid tier, which raises your rate limits. See [AI Gateway Pricing](/docs/ai-gateway/pricing) for tiers, credits, and model rates.
 
@@ -146,7 +146,7 @@ To cap spend instead of request rate, set a [budget](/docs/ai-gateway/observabil
 
 ## Raise a limit
 
-Purchase [AI Gateway Credits](/docs/ai-gateway/pricing#top-up-your-ai-gateway-credits) to move your team to the paid tier, which removes AI Gateway's rate limits. If a provider-side limit still constrains a workload, paid-tier teams can request custom arrangements. [Contact sales](/contact/sales) to discuss custom limits.
+Purchase [AI Gateway Credits](/docs/ai-gateway/pricing#top-up-your-ai-gateway-credits) to move your team to the paid tier, which removes the free tier's rate limits. If an AI Gateway or provider-side limit still constrains a paid-tier workload, [contact sales](/contact/sales) or email <ai-gateway@vercel.com> to request higher limits.
 
 ## Next steps
 

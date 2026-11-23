@@ -18,8 +18,8 @@ summary: Use the Anthropic Messages API with AI Gateway. Configure authenticatio
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "e4ebac296967433c93cc3429f9a45ca6d98756b32593da689fd228346f7edd9b"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "7e3b91664894efe62fd157c82f2c4c7b7035630d0c947f24695421afe35c3bde"
 ---
 
 # Anthropic Messages API with AI Gateway
@@ -39,8 +39,9 @@ AI Gateway provides Anthropic Messages API endpoints, so you can use the Anthrop
 - [Gemini 4 Argon now available on AI Gateway](https://vercel.com/changelog/gemini-4-argon-now-available-on-ai-gateway)
 - [Dynamic Prompt Caching](https://ai-sdk.dev/cookbook/node/dynamic-prompt-caching) — Learn how to reduce API costs by implementing dynamic prompt caching for Anthropic models using cache control directives
 - [Anthropic](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic) — Learn how to use Anthropic with AI Gateway and the direct provider.
+- [Agent configuration (agent.ts)](https://eve.dev/docs/agent-config) — Configure an eve agent's model, reasoning effort, compaction, limits, and runtime behavior in agent.ts.
 - [Claude Platform on AWS](https://ai-sdk.dev/providers/ai-sdk-providers/anthropic-aws) — Learn how to use Claude Platform on AWS with AI Gateway and the direct provider.
-- [Caching](https://ai-sdk.dev/docs/advanced/caching) — How to handle caching when working with the AI SDK
+- [AI Gateway Anthropic Reasoning](https://vercel.com/docs/ai-gateway/models-and-providers/reasoning/anthropic) — Configure adaptive and extended thinking for Anthropic Claude models with the AI SDK and AI Gateway.
 - [Conductor with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/conductor) — Connect Conductor to AI Gateway through its Claude Code configuration. Route parallel coding agents through the Anthropi
 - [Flue with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/flue) — Route Flue agent requests through Vercel AI Gateway with the built-in provider, using an API key or Vercel OIDC authenti
 
@@ -586,6 +587,7 @@ The API returns standard HTTP status codes and error responses:
 
 - `400 Bad Request`: Invalid request parameters
 - `401 Unauthorized`: Invalid or missing authentication
+- `402 Payment Required`: No positive credit balance, or a budget reached its limit
 - `403 Forbidden`: Insufficient permissions
 - `404 Not Found`: Model or endpoint not found
 - `429 Too Many Requests`: Rate limit exceeded

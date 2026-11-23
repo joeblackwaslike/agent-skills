@@ -4,8 +4,8 @@ description: Learn how to build realtime voice conversations with the AI SDK.
 url: "https://ai-sdk.dev/docs/ai-sdk-core/realtime"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/ai-sdk-core/realtime.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "de74f62a1aa763bc16be4d661c0e9ed73641260356758bffea9f7c863d219278"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "d9c8c803280844003b5e688614465117cb30d8278cb0aee08c9346651274569e"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -35,7 +35,9 @@ The typical flow is:
 5. Tool calls are handled by your application with `onToolCall`.
 
 For continuous **OpenAI Live** conversations, use an application-owned WebSocket
-relay or optional WebRTC via `api.session`. Live uses client delegation: your
+relay or optional WebRTC via `api.session`. With
+[AI Gateway](/providers/ai-sdk-providers/ai-gateway#live-models), the browser can
+also connect straight to the Gateway with a token from `api.token`. Live uses client delegation: your
 application handles delegated work and submits context rather than using the
 turn-based tool loop below. See the
 [`experimental_useRealtime` reference](/docs/reference/ai-sdk-ui/use-realtime)

@@ -4,8 +4,8 @@ description: Learn how to use the Claude Code harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/claude-code"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/claude-code.md"
-fetched_at: "2026-11-16T12:32:31.917Z"
-sha256: "d0324d654670ca9dc1c6914c1e7d76088e7ff3420c3dbbe115bd659f779301a1"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "152804b706408cdec97edbbf6d2dda6ba37d0ffa92ad0b707bdf19af2425194f"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -152,6 +152,10 @@ Settings:
   not aborted. When unset, a turn keeps running in the sandbox after its host
   disconnects, including when the host process is gone for good, until the
   turn finishes or the sandbox stops.
+- `keepAliveMs`: WebSocket ping interval in milliseconds (default `20_000`).
+  Keeps silent bridge connections alive. After two unanswered pings, the socket
+  is terminated and the configured reconnect policy takes over. Set to `0` to
+  disable. Sockets without ping support are left unchanged.
 - `reconnect`: reconnect timing after an established bridge WebSocket
   connection drops. `maxElapsedMs` controls the total retry window, including
   connection establishment and backoff delays, and defaults to 30 seconds.

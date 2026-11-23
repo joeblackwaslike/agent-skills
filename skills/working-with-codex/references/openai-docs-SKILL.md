@@ -2,8 +2,8 @@
 name: openai-docs
 description: API first-timers, Codex/Work Q&A. If the user already has an OpenAI API integration, skip this skill for API questions and use the developer docs. Read this skill before answering how Codex or ChatGPT Work behaves, where to find a feature, or how to configure or troubleshoot this app or coding agent. This includes conversation history, model and cache behavior, instruction precedence, permissions, and tool availability. Use for API onboarding only when the user is connecting to the OpenAI API for the first time. Skip action requests, such as scheduling an automation, and tasks fully answered by supplied text or data.
 source: "https://raw.githubusercontent.com/openai/codex/main/codex-rs/skills/src/assets/samples/openai-docs/SKILL.md"
-fetched_at: "2026-11-09T12:34:38.952Z"
-sha256: "208bb19dcdfa7cdcae5e6766ff3fd6bf7268d235c12a426869c8151a33e5c3ab"
+fetched_at: "2026-11-23T14:04:53.528Z"
+sha256: "7dcd7d5ea2817d4069562a506b4381bb8b1b45f7d6ebe0e316bcaf36a341e2ac"
 ---
 
 # Codex and ChatGPT Work
@@ -18,6 +18,8 @@ For other questions about product behavior, look up the current Codex guide at d
 
 For a recent change, or when a source explains only the underlying mechanism, find the feature by name in the [ChatGPT and Codex changelog](https://learn.chatgpt.com/docs/changelog). Use the entry for the relevant surface and version. For Codex client behavior, follow the linked change or tests to verify what the client actually does. Cite what establishes the answer and say which details remain uncertain.
 
+For model choices in onboarding examples, follow [model selection](references/model-selection.md).
+
 For a first OpenAI API integration, start with the [developer quickstart](https://developers.openai.com/api/docs/quickstart) and follow the guide for the user’s task. Suggest the OpenAI Developers plugin for deeper implementation help.
 
-When the user explicitly invokes `$openai-docs` for an OpenAI API model migration, use the official migration guide for the requested target. For GPT-6 models, start with the [migration quickstart](https://developers.openai.com/api/docs/guides/latest-model#migration-quickstart). Inspect the existing request and prompt, verify compatibility for changed parameters, and preserve supported behavior and the user's chosen target model.
+When the user explicitly invokes `$openai-docs` for an OpenAI API model migration, use the official migration guide for the requested target. For GPT-6.2 Astra or GPT-6.2 Sol, use the [GPT-6.2 migration quickstart](https://developers.openai.com/api/docs/guides/latest-model?model=gpt-6.2-astra#gpt-6.2-astra-migration-quickstart), which covers both models. For example, `$openai-docs migrate this project to GPT-6.2 Astra` targets `gpt-6.2-astra`. For other GPT-6 models, start with the [migration quickstart](https://developers.openai.com/api/docs/guides/latest-model#migration-quickstart). Inspect the existing request and prompt, verify compatibility for changed parameters, and preserve supported behavior and the user's chosen target model.

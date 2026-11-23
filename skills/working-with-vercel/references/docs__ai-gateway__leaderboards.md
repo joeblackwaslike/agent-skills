@@ -9,12 +9,13 @@ prerequisites:
   - /docs/ai-gateway
 related:
   - /docs/ai-gateway/ecosystem/app-attribution
+  - /docs/cli/ai-gateway
 summary: See which AI models, labs, apps, and providers are most used on AI Gateway, share a chart as an image, and download the underlying data.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/leaderboards.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "e2779c7f96421dbc2a0d828693a88c3e8b1d54aed8a7e8fbf77736b922ac3aca"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "aee31f15ead06e6931b17c52f09eb7c107e0ffe85c952b4f35a124915f2b0b35"
 ---
 
 # AI Gateway Leaderboards
@@ -28,14 +29,11 @@ The [AI Gateway leaderboards](/ai-gateway/leaderboards) show which models, labs,
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Access and share AI Gateway leaderboard data](https://vercel.com/changelog/open-data-and-shareable-charts-for-ai-gateway-leaderboards)
-- [AI Gateway production index](https://vercel.com/blog/ai-gateway-production-index)
-- [Open-weight models surge to 29% of volume, price per token flattens](https://vercel.com/blog/ai-gateway-production-index-july-2026)
-- [Live model performance metrics accessible via AI Gateway](https://vercel.com/changelog/live-model-performance-metrics-accessible-via-ai-gateway)
 - [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, caching, SDK and API compati
 - [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
 - [AI Gateway Request Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
-- [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
-- [AI Gateway Ecosystem and Integrations](https://vercel.com/docs/ai-gateway/ecosystem) — Connect frameworks, coding tools, and billing integrations to AI Gateway. Configure app attribution and explore integrat
+- [AI Gateway Uptime and Provider Status](https://vercel.com/docs/ai-gateway/models-and-providers/uptime) — See how uptime and status track AI Gateway provider health and end-to-end request success.
+- [Go with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/go) — Use AI Gateway from any Go application with the OpenAI or Anthropic Go SDKs, including model fallbacks, cost tracking, a
 
 Full cross-link map for this page: [/docs/ai-gateway/leaderboards.graph.md](/docs/ai-gateway/leaderboards.graph.md)
 <!-- /docsgraph:related -->
@@ -149,6 +147,15 @@ Field values:
 - `rank` and `ranked_by`: position (starting at `1`) and `Token Volume` or `Spend` (apps and providers only).
 
 The `csv` format returns the same columns as a `text/csv` attachment, with a final row carrying the CC BY 4.0 attribution notice.
+
+### Vercel CLI
+
+To read the leaderboards from your terminal, use [`vercel ai-gateway leaderboard`](/docs/cli/ai-gateway#leaderboard). It returns the same anonymized data as a table, JSON, or CSV:
+
+```bash filename="terminal"
+vercel ai-gateway leaderboard models --modality text
+vercel ai-gateway leaderboard providers --format csv --output providers.csv
+```
 
 ## Search the docs from your terminal
 

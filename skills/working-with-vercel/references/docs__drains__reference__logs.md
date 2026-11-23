@@ -17,8 +17,8 @@ summary: Learn about Log Drains - data formats, sources, environments, and secur
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/drains/reference/logs.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "6360f062b02875fe248bddd22a699b466f73ad4e67e9c9aeec3fe1e9bf247de5"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "13ad36303ea5bec6e6e71194415178f47ff4e1a9e7485c61248f7dd0a8336928"
 ---
 
 # Log Drains Reference
@@ -33,9 +33,10 @@ Log Drains forward logs from your deployments to external endpoints for storage 
 
 - [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
 - [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains)
-- [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
-- [Audit Log Drains now support Datadog, Splunk, and Panther](https://vercel.com/changelog/audit-log-drains-now-support-datadog-splunk-and-panther)
+- [Log drains now support log source selection](https://vercel.com/changelog/log-drains-now-support-log-source-selection)
 - [Log Drains](https://vercel.com/blog/log-drains)
+- [Audit Log Drains now support Datadog, Splunk, and Panther](https://vercel.com/changelog/audit-log-drains-now-support-datadog-splunk-and-panther)
+- [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
 - [Audit Log Drains Reference](https://vercel.com/docs/drains/reference/audit-logs) — Learn about Audit Log Drains - data formats, fields, and team activity events.
 - [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
 - [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics) — Learn about Web Analytics Drains - data formats and custom events configuration.

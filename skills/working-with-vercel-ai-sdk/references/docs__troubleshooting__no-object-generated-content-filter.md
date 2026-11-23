@@ -4,8 +4,8 @@ description: Troubleshooting NoObjectGeneratedError with finish-reason content-f
 url: "https://ai-sdk.dev/docs/troubleshooting/no-object-generated-content-filter"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/troubleshooting/no-object-generated-content-filter.md"
-fetched_at: "2026-11-16T12:32:31.917Z"
-sha256: "19d3a5d0dcf582737efe66bef4dd49e5ff4c73aaa5dfb79ded299bbe42b3c5ec"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "abeb6315be675153306c73e567c59587597f0a6ba771bd46284de040a2ed7803"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -73,7 +73,7 @@ console.log(result.output);
 | ------------- | ---------- | ------------------------------------------------------ |
 | `.nullable()` | ✅ Yes      | Allows `null` or the specified type                    |
 | `.optional()` | ❌ No       | Field can be omitted (not supported)                   |
-| `.nullish()`  | ❌ No       | Allows `null`, `undefined`, or omitted (not supported) |
+| `.nullish()`  | ��� No       | Allows `null`, `undefined`, or omitted (not supported) |
 
 ## Related Information
 

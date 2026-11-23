@@ -17,8 +17,8 @@ summary: Connect Goose to AI Gateway with the Vercel CLI or a custom OpenAI-comp
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/goose.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "e145c9a167ab1b589498bdb7b900534c1cd690474c8b4d834de37b9556123741"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "0bc9248fb37975d4cd194ddb9304b4d9c838eb40e8b864451cd4635326a9338c"
 ---
 
 # Goose with AI Gateway
@@ -35,7 +35,7 @@ sha256: "e145c9a167ab1b589498bdb7b900534c1cd690474c8b4d834de37b9556123741"
 - [gptme with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/gptme) — Connect gptme to AI Gateway with the Vercel CLI or a TOML provider configuration.
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
-- [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
+- [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/goose.graph.md](/docs/ai-gateway/coding-agents/goose.graph.md)
 <!-- /docsgraph:related -->

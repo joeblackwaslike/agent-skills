@@ -17,8 +17,8 @@ summary: Learn how to instrument your application to understand performance and 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/tracing/instrumentation.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "2eb7c5244bd98cb79f07919f86acbfabef5b214ff351fdbc4af55ce02aba4cf9"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "48b26a79972a8da00014186c87fb1bd4fe3a30276cc35085abed79ccdcd75dcc"
 ---
 
 # Instrumentation
@@ -38,11 +38,11 @@ Observability is crucial for understanding and optimizing the behavior and perfo
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [Tracing](https://workflow-sdk.dev/docs/observability/tracing) — Trace workflow execution end to end with OpenTelemetry.
 - [Instrument and trace applications with the OpenTelemetry collector](https://vercel.com/changelog/instrument-and-trace-applications-with-the-opentelemetry-collector)
-- [@vercel/otel 1.3.0](https://vercel.com/changelog/vercel-otel-1-3-0)
 - [OpenTelemetry](https://eve.dev/docs/observability/otel) — Configure OpenTelemetry destinations, content capture, and third-party exports.
-- [Always-on tracing for production and preview traffic](https://vercel.com/changelog/always-on-tracing-for-production-and-preview-traffic)
+- [@vercel/otel 1.3.0](https://vercel.com/changelog/vercel-otel-1-3-0)
 - [Tracing in Daemons](https://vercel.com/docs/daemons/tracing) — Instrument a daemon using OpenTelemetry traces.
 - [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
+- [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 
 Full cross-link map for this page: [/docs/tracing/instrumentation.graph.md](/docs/tracing/instrumentation.graph.md)
 <!-- /docsgraph:related -->

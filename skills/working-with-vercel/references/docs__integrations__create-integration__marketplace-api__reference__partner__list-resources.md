@@ -3,7 +3,7 @@ title: list-resources
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/list-resources
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/list-resources"
-last_updated: 2026-11-16
+last_updated: 2026-11-23
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ summary: Learn about list-resources on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/list-resources.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "b35f7c2b4de4e7440c7ac137b356a21a85df6bd20a7db930fe8a1c8b4954fc81"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "94e5d35a78c32ca2403d526152c1be3b249f79370c5fef2c23440da247d8a56c"
 ---
 
 # List Resources (Deprecated)
@@ -166,7 +166,8 @@ Return a list of Resources for a given Installation
         "amount": "string" // required
       ],
       "effectiveDate": "string" // Date/time when the plan becomes effective. Important for billing plan changes.,
-      "disabled": "boolean" // If true, the plan is disabled and cannot be selected. Example: "disabled": true` for "Hobby" plan.
+      "disabled": "boolean" // If true, the plan is disabled and cannot be selected. Example: "disabled": true` for "Hobby" plan.,
+      "disabledReason": "string" // Shown to the user when `disabled` is true, explaining why they cannot select this plan. Ignored when `disabled` is not true. Example: "Delete your read replicas before downgrading to Hobby."
     },
     "name": "string" // required // User-inputted name for the resource.,
     "metadata": "object" // required // User-inputted metadata based on the registered metadata schema.,

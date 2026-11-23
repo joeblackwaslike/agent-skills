@@ -18,8 +18,8 @@ summary: Use the OpenResponses API specification with AI Gateway for a unified, 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openresponses.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "eb37cbd2fc3237e8c55fe6061f88644df1ac4166e6fa22c307357fdb57c53c5d"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "0e369313af4a4b403f58ae4dc8502777b54816f7b397f91bc2b54ce918971084"
 ---
 
 # OpenResponses API with AI Gateway
@@ -33,11 +33,11 @@ AI Gateway supports the [OpenResponses API](https://openresponses.org) specifica
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [OpenResponses API now supported on Vercel AI Gateway](https://vercel.com/changelog/openresponses-api-now-supported-on-vercel-ai-gateway)
+- [AI Gateway supports OpenAI's Responses API](https://vercel.com/changelog/ai-gateway-supports-openais-responses-api)
 - [Open Responses](https://ai-sdk.dev/providers/ai-sdk-providers/open-responses) — Learn how to use Open Responses with AI Gateway and the direct provider.
 - [Service tiers now available on AI Gateway](https://vercel.com/changelog/service-tiers-now-available-on-ai-gateway)
 - [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway)
 - [OpenAI Responses API with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses) — Use the OpenAI Responses API with AI Gateway to generate text, call tools, stream tokens, and more across any supported
-- [OpenAI Responses Text Generation with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/responses/text-generation) — Generate text responses with the OpenAI Responses API through AI Gateway.
 - [AI Gateway Video Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/video-input) — Analyze video clips with AI Gateway using AI SDK 7, Python, Chat Completions, and Responses / OpenResponses.
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/openresponses.graph.md](/docs/ai-gateway/sdks-and-apis/openresponses.graph.md)
@@ -212,6 +212,7 @@ The API returns standard HTTP status codes and error responses.
 
 - `400 Bad Request` - Invalid request parameters
 - `401 Unauthorized` - Invalid or missing authentication
+- `402 Payment Required` - No positive credit balance, or a budget reached its limit
 - `403 Forbidden` - Insufficient permissions
 - `404 Not Found` - Model or endpoint not found
 - `429 Too Many Requests` - Rate limit exceeded

@@ -4,8 +4,8 @@ description: API Reference for streamText.
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-core/stream-text"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-core/stream-text.md"
-fetched_at: "2026-11-16T12:32:31.917Z"
-sha256: "8f63e864ba648d6d2aab133c50133a0131f8a100426ea42aed11c02877f4a9e2"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "6bbd28d3490dd4f45bc7f16f9454abe8c96a6aefed18d7310b97ee25a1eed6ee"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -188,7 +188,7 @@ import { streamText } from "ai"
 - `runtimeContext?` (`CONTEXT`): User-defined shared runtime context object passed to \`prepareStep\` and lifecycle callbacks.
 - `toolsContext` (`InferToolSetContext<TOOLS>`): Per-tool context map keyed by tool name. Required when at least one tool defines \`contextSchema\`; not accepted when no tools need context.
 - `experimental_sandbox?` (`Experimental_SandboxSession`): Experimental sandbox environment that is passed through to \`prepareStep\`, tool description functions, and tool execution. Tools can access it from their description function options and execution options.
-- `experimental_steering?` (`Experimental_Steering`): Experimental steering object created with \`experimental\_createSteering()\`. Messages sent with \`steering.steer()\` are added as user messages at the next step boundary, after the current step and its tool calls are done. Messages sent with \`steering.queue()\` wait until the model finishes its current task and are added one per task. A waiting message keeps the loop going for another step unless a stop condition is met. \`steer()\` and \`queue()\` resolve with \`\{ type: 'delivered', id, message, stepNumber }\` or \`\{ type: 'not-delivered', id, message, reason }\`. See \[Steering]\(/docs/agents/loop-control#steering).
+- `experimental_steering?` (`Experimental_Steering`): Experimental steering object created with \`experimental\_createSteering()\`. Messages sent with \`steering.steer()\` are added as user messages at the next step boundary, after the current step and its tool calls are done. Pass \`\{ interrupt: true }\` to \`steer()\` to cancel a model call that has not produced any output yet and make it again in the same step with the message. Messages sent with \`steering.queue()\` wait until the model finishes its current task and are added one per task. A waiting message keeps the loop going for another step unless a stop condition is met. \`steer()\` and \`queue()\` resolve with \`\{ type: 'delivered', id, message, stepNumber }\` or \`\{ type: 'not-delivered', id, message, reason }\`. See \[Steering]\(/docs/agents/loop-control#steering).
 - `experimental_download?` (`(requestedDownloads: Array<{ url: URL; isUrlSupportedByModel: boolean; abortSignal?: AbortSignal }>) => Promise<Array<null | { data: Uint8Array; mediaType?: string }>>`): Custom download function to control how URLs are fetched when they appear in prompts. By default, files are downloaded if the model does not support the URL for the given media type. Use \`createDownload(\{ fetch, maxBytes })\` from \`ai\` to keep the default behavior with a custom fetch transport (e.g. \`guarded-fetch\` on Node.js) or size limit. Experimental feature. Return null to pass the URL directly to the model (when supported), or return downloaded content with data and media type.
 - `include?` (`{ requestBody?: boolean; requestMessages?: boolean; rawChunks?: boolean }`): Controls inclusion of request body and request messages in step results, and raw provider chunks in the stream. By default, request body, request messages, and raw chunks are excluded to reduce memory usage. Set requestBody or requestMessages to true when you need access to the data. Set rawChunks to true when you need access to raw provider chunks.
   - `Object`

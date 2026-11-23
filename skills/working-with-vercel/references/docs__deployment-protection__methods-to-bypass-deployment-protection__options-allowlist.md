@@ -16,8 +16,8 @@ summary: Learn how to disable Deployment Protection for CORS preflight requests 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/options-allowlist.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "9bb1b29977f980da50e16c254700a008f2920a6ac9b4034dc34904f4f523514c"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "d18da9a6c65096112494375a8457958b549fce5256b40397e4b5b5552b246620"
 ---
 
 # OPTIONS Allowlist
@@ -34,7 +34,6 @@ You can use OPTIONS Allowlist to disable [Vercel Authentication](/docs/deploymen
 
 - [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
 - [OPTIONS Allowlist](https://vercel.com/changelog/options-allowlist)
-- [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments) — Protect who can see your deployments.
 - [Methods to Protect Deployments](https://vercel.com/docs/deployment-protection/methods-to-protect-deployments) — Vercel offers several methods to protect your deployments: Vercel Authentication, Passport, Password Protection, and Tru
 - [Deployment Protection Exceptions](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/deployment-protection-exceptions) — Disable Deployment Protection for a list of preview domains.
 - [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti

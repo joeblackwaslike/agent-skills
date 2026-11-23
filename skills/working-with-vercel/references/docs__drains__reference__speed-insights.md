@@ -15,8 +15,8 @@ summary: Learn about Speed Insights Drains - data formats and performance metric
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/drains/reference/speed-insights.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "66a473814c6ac870a78abbde9a1089620f0b911a0163692b54d14742dac56da1"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "c974b9fa3fda33095294ff4455646fabd1779551da41eb608909b9c42e441981"
 ---
 
 # Speed Insights Drains Reference
@@ -30,9 +30,10 @@ Speed Insights Drains send performance metrics and web vitals from your applicat
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains)
+- [Export traces, web analytics events, and speed insights datapoints to any destination](https://vercel.com/changelog/export-more-data-with-vercel-drains)
 - [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics) — Learn about Web Analytics Drains - data formats and custom events configuration.
-- [Speed Insights Overview](https://vercel.com/docs/speed-insights) — This page lists out and explains all the performance metrics provided by Vercel's Speed Insights feature.
 - [Trace Drains Reference](https://vercel.com/docs/drains/reference/traces) — Learn about Trace Drains - OpenTelemetry-compliant distributed tracing data formats and configuration.
+- [Speed Insights Overview](https://vercel.com/docs/speed-insights) — This page lists out and explains all the performance metrics provided by Vercel's Speed Insights feature.
 - [Retrieve a list of all Drains](https://vercel.com/docs/rest-api/drains/retrieve-a-list-of-all-drains) — GET /v1/drains — Allows to retrieve the list of Drains of the authenticated team.
 - [Find a Drain by id](https://vercel.com/docs/rest-api/drains/find-a-drain-by-id) — GET /v1/drains/{id} — Get the information for a specific Drain by passing the drain id in the URL.
 

@@ -18,8 +18,8 @@ summary: Use AI Gateway from any Go application with the OpenAI or Anthropic Go 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/go.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "d2022bf20a2ba10cfde12db8f63fb27f5a91d3ef3ca4908d344ef0ce2ff87458"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "0bbf25ce17a3be25d955852ad03c0e32927fa0b3d89020b449dfbb11a28c23a2"
 ---
 
 # Go with AI Gateway: OpenAI and Anthropic SDKs
@@ -35,8 +35,8 @@ Call AI Gateway from Go with the official [OpenAI](https://github.com/openai/ope
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
 - [AI Gateway OIDC Authentication](https://vercel.com/docs/ai-gateway/authentication-and-byok/oidc) — Authenticate AI Gateway requests from Vercel deployments with OIDC tokens. Configure the AI SDK or send bearer tokens di
+- [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
 - [AI Gateway Authentication and BYOK](https://vercel.com/docs/ai-gateway/authentication-and-byok) — Authenticate AI Gateway requests with API keys or OIDC tokens, and configure bring your own key \\(BYOK\\) credentials for
-- [AI Gateway Ecosystem and Integrations](https://vercel.com/docs/ai-gateway/ecosystem) — Connect frameworks, coding tools, and billing integrations to AI Gateway. Configure app attribution and explore integrat
 
 Full cross-link map for this page: [/docs/ai-gateway/sdks-and-apis/go.graph.md](/docs/ai-gateway/sdks-and-apis/go.graph.md)
 <!-- /docsgraph:related -->

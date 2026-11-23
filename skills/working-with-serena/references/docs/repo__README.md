@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/oraios/serena/main/README.md"
-fetched_at: "2026-11-02T12:06:22.105Z"
-sha256: "26c1db5a91658c4fb2d3bd43c4da5aa90fa0efb172a9175a959643c177a14823"
+fetched_at: "2026-11-23T14:15:48.900Z"
+sha256: "47f4105dd3c6a9eb84896bb50fb0d51189c27e2c3cb6e0ea0ff2e3c1916a3c00"
 ---
 
 <p align="center" style="text-align:center;">
@@ -263,6 +263,10 @@ Follow the link for specific instructions on how to set up Serena for Claude Cod
 ## User Guide
 
 Please refer to the [user guide](https://oraios.github.io/serena/02-usage/000_intro.html) for detailed instructions on how to use Serena effectively.
+
+## Partner Offerings
+
+<a href="https://infistar.cc/register?aff=SERENA&ref_source=link"><img src="resources/infistar.png" alt="Infistar"></a>
 
 ## Acknowledgements
 

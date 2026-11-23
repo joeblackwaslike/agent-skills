@@ -13,8 +13,8 @@ summary: Learn how to communicate securely with the Vercel support team
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/support-center.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "4d7eaec8e9ea77669463ba5547e07135f83d470568a2f45df3db1896ad5df3ac"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "f63451589f2c3b3996eeb689662076d793ed91389dde551da08e9060a4c7162f"
 ---
 
 # Support Center
@@ -29,16 +29,15 @@ The Vercel Support Center provides a secure and streamlined way for you to submi
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to keep your storefront running through Black Friday](https://vercel.com/kb/guide/black-friday-reliability) — Learn how to tune alerts, bot rules, and spend limits. Rehearse rollback so your team can recover quickly from checkout
 - [Create and view support cases on the Vercel dashboard](https://vercel.com/changelog/support-center)
 - [Support Center is now available for Pro customers](https://vercel.com/changelog/support-center-on-pro)
-- [Get support from the dashboard](https://vercel.com/blog/support-form)
 - [Improvements to Support Center](https://vercel.com/changelog/improvements-to-support-center)
-- [What is the best way to get support from Vercel?](https://vercel.com/kb/guide/how-to-get-vercel-support) — Information on how to get help from Vercel Support through the available channels.
-- [Documentation, CLI, and Feedback](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation) — Find documentation, use the CLI, and share feedback with Vercel.
-- [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Vercel Support Code Visibility, Git Fork Protection, and
-- [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
 - [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Shared Responsibility Model](https://vercel.com/docs/security/shared-responsibility) — Discover the essentials of our Shared Responsibility Model, outlining the key roles and responsibilities for customers,
+- [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
+- [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
+- [How requests flow through Vercel](https://vercel.com/docs/fundamentals/infrastructure) — Learn how Vercel routes, secures, and serves requests from your users to your application.
+- [Get supported TLDs](https://vercel.com/docs/rest-api/domains-registrar/get-supported-tlds) — GET /v1/registrar/tlds/supported — Get a list of TLDs supported by Vercel
 
 Full cross-link map for this page: [/docs/support-center.graph.md](/docs/support-center.graph.md)
 <!-- /docsgraph:related -->
@@ -55,6 +54,19 @@ To submit a ticket to Vercel Support, do the following:
 6. Once you are happy with the case, click **Submit Case**.
 
 The team aims to respond to tickets as described in the [Support Terms](/legal/support-terms#when).
+
+### Create a minimal reproducible example
+
+A minimal reproducible example is the smallest project that still shows your problem. Including one in your case helps Vercel Support find the cause sooner, and building it often shows whether the problem comes from your code or from the platform.
+
+Start from a basic starter template for your framework and add only the code needed to trigger the problem. Check that your example is:
+
+- **Minimal**: Use as little code as possible to show the problem.
+- **Self-contained**: Include everything needed to reproduce the problem.
+- **Public**: Share the example in a public Git repository, and leave out secrets, sensitive data, and proprietary code. A public repository lets Vercel Support escalate the issue to product engineers.
+- **Reproducible**: Confirm that the project builds locally without errors and that the problem appears when you deploy it to Vercel.
+
+Add the repository URL to your case.
 
 ## Manage tickets
 
@@ -79,6 +91,21 @@ The support team may request additional logs or other information from you that 
 1. From your team's dashboard, open **Support** in the sidebar
 2. Find the ticket from the list and click the ticket name to open it
 3. Click **Attach a File** to bring up your system file dialog. Select the relevant file and click **Upload**
+
+## Other ways to contact Vercel
+
+Some requests don't go through a support case, including requests from people who can't log in or don't have a Vercel account. Use the channel that matches your request:
+
+| Request | Where to go |
+| --- | --- |
+| You can't log in to your account with any login method | [Account Recovery](/accountrecovery) |
+| A site deployed on Vercel contains abusive, malicious, or illegal content | [Report abuse](/abuse) |
+| A site deployed on Vercel infringes your copyright or trademark | [Report abuse](/abuse), and select the copyright or trademark option |
+| You have a question about Vercel's security, or want to report a vulnerability | [Security support](/contact/security) |
+| You want to discuss an Enterprise plan | [Contact Sales](/contact/sales) |
+| You want help from other developers who build on Vercel | [Vercel Community](https://community.vercel.com) |
+
+For questions about Next.js or Turborepo, you can also ask in [Next.js GitHub Discussions](https://github.com/vercel/next.js/discussions) or [Turborepo GitHub Discussions](https://github.com/vercel/turborepo/discussions).
 
 ## Search the docs from your terminal
 

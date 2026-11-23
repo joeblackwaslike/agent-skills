@@ -10,12 +10,12 @@ prerequisites:
   - /docs/ai-gateway/modalities
 related:
   - /docs/ai-gateway/modalities/video-generation
-summary: Generate videos from text prompts using Google Veo, KlingAI, Wan, Grok Imagine Video, or ByteDance Seedance through AI Gateway.
+summary: Generate videos from text prompts using Google Veo, KlingAI, Wan, Grok Imagine Video, ByteDance Seedance, MiniMax H3, FLUX 3, or HeyGen Video through...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/text-to-video.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "517fdd9c6d51f57a427e78efead74de353a71486b55174a6c783fd85f66b9ea4"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "76b19e198dc4f29938a7a7b6069f217bf344a352a73847550c74e4fb5f97bdf4"
 ---
 
 # AI Gateway Text-to-Video Generation
@@ -28,16 +28,15 @@ Generate videos from text prompts. Describe what you want to see and the model c
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance) — Learn how to use ByteDance with AI Gateway and the direct provider.
-- [Tencent Cloud](https://ai-sdk.dev/providers/ai-sdk-providers/tencent) — Learn how to use Tencent Cloud TokenHub and VOD models with the AI SDK.
-- [Kling AI](https://ai-sdk.dev/providers/ai-sdk-providers/klingai) — Learn how to use Kling AI with AI Gateway and the direct provider.
-- [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba) — Learn how to use Alibaba with AI Gateway and the direct provider.
-- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation) — Learn how to generate videos with the AI SDK.
 - [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
+- [Alibaba](https://ai-sdk.dev/providers/ai-sdk-providers/alibaba) — Learn how to use Alibaba with AI Gateway and the direct provider.
 - [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway)
-- [Seedance 2.0 Video Generation on AI Gateway](https://vercel.com/changelog/seedance-2.0-video-now-available-on-ai-gateway)
 - [Wan models on AI Gateway](https://vercel.com/changelog/wan-models-on-ai-gateway)
+- [Video Generation](https://ai-sdk.dev/docs/ai-sdk-core/video-generation) — Learn how to generate videos with the AI SDK.
+- [Kling AI](https://ai-sdk.dev/providers/ai-sdk-providers/klingai) — Learn how to use Kling AI with AI Gateway and the direct provider.
 - [Kling video models on AI Gateway](https://vercel.com/changelog/kling-video-models-on-ai-gateway)
+- [Tencent Cloud](https://ai-sdk.dev/providers/ai-sdk-providers/tencent) — Learn how to use Tencent Cloud TokenHub and VOD models with the AI SDK.
+- [Grok Imagine Video 1.5 Lite on AI Gateway](https://vercel.com/changelog/grok-imagine-video-1-5-lite-on-ai-gateway)
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/text-to-video.graph.md](/docs/ai-gateway/modalities/video-generation/text-to-video.graph.md)
 <!-- /docsgraph:related -->
@@ -46,7 +45,11 @@ Every model here also runs as a background job instead of one long-lived request
 
 ## Google Veo
 
-Google's Veo models generate high-quality videos with optional audio.
+Google's Veo models generate high-quality videos with optional audio. Three Veo 3.1 models support text-to-video:
+
+- `google/veo-3.1-generate-001`
+- `google/veo-3.1-fast-generate-001`
+- `google/veo-3.1-lite-generate-001`, which supports text-to-video only and renders up to 1080p
 
 [Browse the latest Veo video models](/ai-gateway/models?capabilities=video-generation\&providers=vertex) on the AI Gateway Models page.
 
@@ -57,7 +60,7 @@ Google's Veo models generate high-quality videos with optional audio.
 | `prompt`                                    | `string`                                           | Yes      | Text description of the video to generate                       |
 | `aspectRatio`                               | `string`                                           | No       | Aspect ratio (`'16:9'`, `'9:16'`). Defaults to `'16:9'`         |
 | `duration`                                  | `4` \| `6` \| `8`                                  | No       | Video length in seconds. Defaults to 8                          |
-| `resolution`                                | `string`                                           | No       | Resolution (`'1280x720'` for 720p, `'1920x1080'` for 1080p). Defaults to 720p          |
+| `resolution`                                | `string`                                           | No       | Resolution (`'1280x720'` for 720p, `'1920x1080'` for 1080p). Veo 3.1 and Veo 3.1 Fast also accept `'3840x2160'` for 4K. Defaults to 720p |
 | `generateAudio`                             | `boolean`                                          | No       | Generate audio alongside the video.                             |
 | `providerOptions.vertex.enhancePrompt`      | `boolean`                                          | No       | Use Gemini to enhance prompts. Defaults to `true`               |
 | `providerOptions.vertex.negativePrompt`     | `string`                                           | No       | What to discourage in the generated video                       |
@@ -91,7 +94,7 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 ## KlingAI
 
-KlingAI offers text-to-video with standard and professional quality modes. Audio generation requires v2.6+ models. Duration is 5 or 10 seconds for v2.x models and 3 to 15 seconds for v3.0 models.
+KlingAI offers text-to-video with standard and professional quality modes. Three models support text-to-video: `klingai/kling-v3.0-t2v`, `klingai/kling-v2.6-t2v`, and `klingai/kling-v2.5-turbo-t2v`. Audio generation requires v2.6+ models. Duration is 5 or 10 seconds for v2.x models and 3 to 15 seconds for v3.0 models.
 
 [Browse the latest KlingAI video models](/ai-gateway/models?capabilities=video-generation\&providers=klingai) on the AI Gateway Models page.
 
@@ -248,7 +251,15 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 ## Wan
 
-Wan (by Alibaba) offers text-to-video with native audio generation and prompt enhancement. Use `resolution` parameter (e.g., `'1280x720'`), not `aspectRatio`.
+Wan (by Alibaba) offers text-to-video with native audio generation and prompt enhancement. The current models are `alibaba/wan-v3.0-video` and `alibaba/wan-v3.0-video-prime`. A Wan 3.0 model ID covers text-to-video, image-to-video, and reference-to-video, and the inputs you pass decide which one runs. A request with only a prompt runs text-to-video.
+
+The earlier text-to-video models are `alibaba/wan-v2.7-t2v`, `alibaba/wan-v2.6-t2v`, and `alibaba/wan-v2.5-t2v-preview`.
+
+Parameter support differs by version:
+
+- **Wan 3.0**: Accepts `aspectRatio` and `resolution` (480p, 720p, or 1080p) and generates 2 to 30 seconds.
+- **Wan 2.7**: Accepts `aspectRatio` and `resolution` (720p or 1080p) and generates 2 to 15 seconds. Wan 2.7 always generates audio.
+- **Wan 2.6 and 2.5**: Use `resolution` (for example, `'1280x720'`), not `aspectRatio`. These models ignore `aspectRatio` with a warning.
 
 [Browse the latest Wan video models](/ai-gateway/models?capabilities=video-generation\&providers=alibaba) on the AI Gateway Models page.
 
@@ -257,13 +268,14 @@ Wan (by Alibaba) offers text-to-video with native audio generation and prompt en
 | Parameter                                | Type                    | Required | Description                                                                  |
 | ---------------------------------------- | ----------------------- | -------- | ---------------------------------------------------------------------------- |
 | `prompt`                                 | `string`                | Yes      | Text description of the video to generate                                    |
-| `resolution`                             | `string`                | No       | v2.6: `'1280x720'` or `'1920x1080'`. v2.5: also supports `'832x480'`         |
-| `duration`                               | `number`                | No       | v2.6: 2-15s. v2.5: 5s or 10s only. Defaults to 5                             |
-| `generateAudio`                          | `boolean`               | No       | Generate audio. `wan-v2.6-t2v` generates native audio and defaults to `true` |
+| `aspectRatio`                            | `string`                | No       | Aspect ratio (`'16:9'`, `'9:16'`, `'1:1'`, `'4:3'`, `'3:4'`). Wan 3.0 and Wan 2.7 only |
+| `resolution`                             | `string`                | No       | `'1280x720'` or `'1920x1080'`. Wan 3.0 and Wan 2.5 also support `'832x480'` |
+| `duration`                               | `number`                | No       | Wan 3.0: 2 to 30 seconds. Wan 2.7 and 2.6: 2 to 15 seconds. Wan 2.5: 5 or 10 seconds only |
+| `generateAudio`                          | `boolean`               | No       | Generate audio. Wan 3.0 and `wan-v2.6-t2v` default to `true`. Wan 2.7 always generates audio and ignores this option with a warning |
 | `providerOptions.alibaba.promptExtend`   | `boolean`               | No       | Enhance prompt for better quality. Defaults to `true`                        |
 | `providerOptions.alibaba.negativePrompt` | `string`                | No       | What to avoid in the video. Max 500 characters                               |
 | `providerOptions.alibaba.audioUrl`       | `string`                | No       | URL to audio file for audio-video sync (WAV/MP3, 3-30s, max 15MB) |
-| `providerOptions.alibaba.shotType`       | `'single'` \| `'multi'` | No       | `'multi'` enables multi-shot cinematic narrative. v2.6 only                  |
+| `providerOptions.alibaba.shotType`       | `'single'` \| `'multi'` | No       | `'multi'` enables multi-shot cinematic narrative. Wan 2.6 only. Wan 2.7 and Wan 3.0 ignore it with a warning, so describe the shot structure in the prompt |
 | `providerOptions.alibaba.watermark`      | `boolean`               | No       | Add watermark to the video. Defaults to `false`                              |
 | `providerOptions.alibaba.pollIntervalMs` | `number`                | No       | How often to check task status. Defaults to `5000`                           |
 | `providerOptions.alibaba.pollTimeoutMs`  | `number`                | No       | Maximum wait time. Defaults to `600000` (10 minutes)                         |
@@ -275,8 +287,9 @@ import { experimental_generateVideo as generateVideo } from 'ai';
 import fs from 'node:fs';
 
 const result = await generateVideo({
-  model: 'alibaba/wan-v2.6-t2v',
+  model: 'alibaba/wan-v3.0-video',
   prompt: 'A chicken flying into the sunset in the style of 90s anime',
+  aspectRatio: '16:9',
   resolution: '1280x720',
   duration: 5,
   providerOptions: {
@@ -293,7 +306,7 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 ## Grok Imagine Video
 
-Grok Imagine Video (by SpaceXAI) generates videos from text prompts with support for multiple aspect ratios and resolutions. Duration ranges from 1-15 seconds.
+Grok Imagine Video (by SpaceXAI) generates videos from text prompts with support for multiple aspect ratios and resolutions. Duration ranges from 1-15 seconds. Three models support text-to-video: `spacexai/grok-imagine-video-1.5`, `spacexai/grok-imagine-video-1.5-lite`, and `spacexai/grok-imagine-video`. The 1.5 models add 1080p output.
 
 [Browse the latest Grok video models](/ai-gateway/models?capabilities=video-generation\&providers=spacexai) on the AI Gateway Models page.
 
@@ -304,8 +317,8 @@ Grok Imagine Video (by SpaceXAI) generates videos from text prompts with support
 | `prompt`                                  | `string`             | Yes      | Text description of the video to generate                                                            |
 | `aspectRatio`                             | `string`             | No       | Aspect ratio (`'16:9'`, `'9:16'`, `'1:1'`, `'4:3'`, `'3:4'`, `'3:2'`, `'2:3'`). Defaults to `'16:9'` |
 | `duration`                                | `number`             | No       | Video length in seconds (1-15)                                                                       |
-| `resolution`                              | `string`             | No       | Resolution (`'854x480'` for 480p, `'1280x720'` for 720p). Defaults to 480p                           |
-| `providerOptions.xai.resolution`          | `'480p'` \| `'720p'` | No       | Native resolution format. Alternative to standard `resolution` parameter                             |
+| `resolution`                              | `string`             | No       | Resolution (`'854x480'` for 480p, `'1280x720'` for 720p, `'1920x1080'` for 1080p). 1080p requires a 1.5 model. Defaults to 480p |
+| `providerOptions.xai.resolution`          | `'480p'` \| `'720p'` \| `'1080p'` | No       | Native resolution format. Alternative to standard `resolution` parameter                             |
 | `providerOptions.xai.pollIntervalMs`      | `number`             | No       | How often to check task status. Defaults to `5000`                                                   |
 | `providerOptions.xai.pollTimeoutMs`       | `number`             | No       | Maximum wait time. Defaults to `600000` (10 minutes)                                                 |
 
@@ -316,7 +329,7 @@ import { experimental_generateVideo as generateVideo } from 'ai';
 import fs from 'node:fs';
 
 const result = await generateVideo({
-  model: 'spacexai/grok-imagine-video',
+  model: 'spacexai/grok-imagine-video-1.5',
   prompt: 'A chicken flying into the sunset in the style of 90s anime',
   aspectRatio: '16:9',
   duration: 5,
@@ -338,7 +351,12 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 ## ByteDance Seedance
 
-ByteDance's Seedance models generate high-quality videos from text prompts with optional synchronized audio and a draft mode for low-cost previews. All models output MP4 at 24fps. Seedance 2.5 generates up to 30 seconds, where the v1.x models top out at 12.
+ByteDance's Seedance models generate high-quality videos from text prompts, and the Seedance 2.x series adds optional synchronized audio. All models output MP4 at 24fps.
+
+The current models are `bytedance/seedance-2.5` and `bytedance/seedance-2.5-flash`, which generate up to 30 seconds. Seedance 2.5 Flash is the lower-cost variant and renders up to 720p. Earlier models generate shorter clips:
+
+- **Seedance 2.0 family**: `bytedance/seedance-2.0`, `bytedance/seedance-2.0-fast`, and `bytedance/seedance-2.0-mini` generate 4 to 15 seconds. Seedance 2.0 Fast and Seedance 2.0 Mini render up to 720p.
+- **Seedance v1.0**: `bytedance/seedance-v1.0-pro` and `bytedance/seedance-v1.0-pro-fast` generate 2 to 12 seconds without audio.
 
 [Browse the latest Seedance video models](/ai-gateway/models?capabilities=video-generation\&providers=bytedance) on the AI Gateway Models page.
 
@@ -348,13 +366,11 @@ ByteDance's Seedance models generate high-quality videos from text prompts with 
 | ------------------------------------------ | ----------------------- | -------- | ---------------------------------------------------------------------------------- |
 | `prompt`                                   | `string`                | Yes      | Text description of the video to generate                                          |
 | `aspectRatio`                              | `string`                | No       | Aspect ratio (`'16:9'`, `'4:3'`, `'1:1'`, `'3:4'`, `'9:16'`, `'21:9'`)             |
-| `resolution`                               | `string`                | No       | Resolution (`'854x480'`, `'1280x720'`, `'1920x1080'`)                              |
-| `duration`                                 | `number`                | No       | Video length in seconds. 2.5: 4-30s. v1.5: 4-12s. v1.0: 2-12s                      |
+| `resolution`                               | `string`                | No       | Resolution (`'864x480'`, `'1280x720'`, `'1920x1080'`). Seedance 2.5 Flash, 2.0 Fast, and 2.0 Mini support up to `'1280x720'` |
+| `duration`                                 | `number`                | No       | Video length in seconds. Seedance 2.5 and 2.5 Flash: 4 to 30 seconds. Seedance 2.0 family: 4 to 15 seconds. v1.0: 2 to 12 seconds |
 | `providerOptions.bytedance.watermark`      | `boolean`               | No       | Add a watermark to the video                                                       |
-| `generateAudio`                            | `boolean`               | No       | Generate audio. Seedance v1.5 Pro and the Seedance 2.x series only                 |
+| `generateAudio`                            | `boolean`               | No       | Generate audio. Seedance 2.x series only                                           |
 | `providerOptions.bytedance.cameraFixed`    | `boolean`               | No       | Fix the camera position during generation                                          |
-| `providerOptions.bytedance.draft`          | `boolean`               | No       | Generate a 480p preview for fast iteration. Seedance v1.5 Pro only                 |
-| `providerOptions.bytedance.serviceTier`    | `'default'` \| `'flex'` | No       | `'default'` for online inference. `'flex'` for offline at 50% cost, higher latency |
 | `providerOptions.bytedance.pollIntervalMs` | `number`                | No       | How often to check task status. Defaults to `3000`                                 |
 | `providerOptions.bytedance.pollTimeoutMs`  | `number`                | No       | Maximum wait time. Defaults to `300000` (5 minutes)                                |
 
@@ -381,7 +397,7 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 ### Seedance text-to-video with audio
 
-Generate video with synchronized audio. Requires Seedance v1.5 Pro or a Seedance 2.x model.
+Generate video with synchronized audio. Requires a Seedance 2.x model.
 
 ```typescript filename="seedance-text-to-video-audio.ts"
 import { experimental_generateVideo as generateVideo } from 'ai';
@@ -406,6 +422,133 @@ fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
 
 > **💡 Note:** Video generation can take several minutes. Set `pollTimeoutMs` to at least 10
 > minutes (600000ms) for reliable operation.
+
+***
+
+## MiniMax
+
+MiniMax H3 models generate video from text prompts. `minimax/minimax-h3` renders at 768p or 2K and generates 4 to 15 seconds. `minimax/minimax-h3-max` renders at 480p or 768p and generates 5 to 15 seconds.
+
+[Browse the latest MiniMax video models](/ai-gateway/models?capabilities=video-generation\&providers=minimax) on the AI Gateway Models page.
+
+### MiniMax parameters
+
+| Parameter                               | Type                           | Required | Description                                                                                                                                                 |
+| --------------------------------------- | ------------------------------ | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `prompt`                                | `string`                       | Yes      | Text description of the video to generate                                                                                                                   |
+| `aspectRatio`                           | `string`                       | No       | Aspect ratio (`'21:9'`, `'16:9'`, `'4:3'`, `'1:1'`, `'3:4'`, `'9:16'`). Defaults to `'16:9'`                                                                |
+| `duration`                              | `number`                       | No       | Video length in whole seconds. 4 to 15 for MiniMax H3, 5 to 15 for MiniMax H3 Max. Defaults to 5. Out-of-range values are clamped with a warning            |
+| `resolution`                            | `string`                       | No       | A frame size that maps to a resolution tier, such as `'1366x768'` for 768p or `'2560x1440'` for 2K. An unrecognized size is ignored with a warning          |
+| `providerOptions.minimax.resolution`    | `'480P'` \| `'768P'` \| `'2K'` | No       | Resolution tier. Takes priority over `resolution`. MiniMax H3 supports `'768P'` and `'2K'` (default). MiniMax H3 Max supports `'480P'` and `'768P'` (default) |
+| `providerOptions.minimax.aigcWatermark` | `boolean`                      | No       | Embed an AI-generated content watermark in the output. Defaults to `false`                                                                                  |
+| `providerOptions.minimax.pollIntervalMs` | `number`                      | No       | How often to check task status. Defaults to `10000`                                                                                                         |
+| `providerOptions.minimax.pollTimeoutMs` | `number`                       | No       | Maximum wait time. Defaults to `600000` (10 minutes)                                                                                                        |
+
+The MiniMax API has no audio parameter, so MiniMax H3 models ignore `generateAudio` with a warning.
+
+### MiniMax example
+
+```typescript filename="minimax-text-to-video.ts"
+import { experimental_generateVideo as generateVideo } from 'ai';
+import fs from 'node:fs';
+
+const result = await generateVideo({
+  model: 'minimax/minimax-h3',
+  prompt: 'A chicken flying into the sunset in the style of 90s anime',
+  aspectRatio: '16:9',
+  duration: 5,
+  providerOptions: {
+    minimax: {
+      resolution: '768P',
+    },
+  },
+});
+
+fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
+```
+
+***
+
+## Black Forest Labs FLUX 3
+
+FLUX 3 (by Black Forest Labs) generates 5 to 20 second videos with audio from text prompts. Use the `bfl/flux-3-video` model. Set FLUX 3 options under `providerOptions.blackForestLabs`.
+
+[Browse the latest Black Forest Labs video models](/ai-gateway/models?capabilities=video-generation\&providers=bfl) on the AI Gateway Models page.
+
+### FLUX 3 parameters
+
+| Parameter                                         | Type              | Required | Description                                                                                                                             |
+| ------------------------------------------------- | ----------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `prompt`                                          | `string`          | Yes      | Text description of the video to generate                                                                                               |
+| `aspectRatio`                                     | `string`          | No       | Aspect ratio (`'21:9'`, `'2:1'`, `'16:9'`, `'4:3'`, `'1:1'`, `'3:4'`, `'9:16'`). When you omit it, FLUX 3 infers a ratio from the prompt |
+| `duration`                                        | `number`          | No       | Video length in whole seconds, from 5 to 20. Out-of-range values are clamped with a warning. When you omit it, FLUX 3 picks a length    |
+| `resolution`                                      | `string`          | No       | Resolution (`'1280x720'` for the `hd` tier, `'1920x1080'` for the `fhd` tier)                                                           |
+| `generateAudio`                                   | `boolean`         | No       | Generate audio alongside the video                                                                                                      |
+| `providerOptions.blackForestLabs.resolution`      | `'hd'` \| `'fhd'` | No       | Resolution tier. Takes priority over `resolution`                                                                                       |
+| `providerOptions.blackForestLabs.safetyTolerance` | `number`          | No       | Moderation strictness from 0 (strictest) to 4. Defaults to `2`                                                                          |
+| `providerOptions.blackForestLabs.draft`           | `boolean`         | No       | Render a fast, lower-quality preview instead of the finished video. Defaults to `false`                                                 |
+
+### FLUX 3 example
+
+```typescript filename="flux-3-text-to-video.ts"
+import { experimental_generateVideo as generateVideo } from 'ai';
+import fs from 'node:fs';
+
+const result = await generateVideo({
+  model: 'bfl/flux-3-video',
+  prompt:
+    'A white kitten chases a butterfly across a sunlit garden, gentle camera tracking',
+  aspectRatio: '16:9',
+  duration: 5,
+  providerOptions: {
+    blackForestLabs: {
+      resolution: 'hd',
+    },
+  },
+});
+
+fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
+```
+
+***
+
+## HeyGen
+
+HeyGen Video generates 5 to 15 second videos from text prompts. Use the `heygen/heygen-video-1` model. HeyGen Video always generates audio, so `generateAudio: false` is ignored with a warning.
+
+[Browse the latest HeyGen video models](/ai-gateway/models?capabilities=video-generation\&providers=heygen) on the AI Gateway Models page.
+
+### HeyGen parameters
+
+| Parameter                                 | Type                                                         | Required | Description                                                                                                       |
+| ----------------------------------------- | ------------------------------------------------------------ | -------- | ----------------------------------------------------------------------------------------------------------------- |
+| `prompt`                                  | `string`                                                     | Yes      | Text description of the video to generate. 1 to 32,000 characters                                                 |
+| `aspectRatio`                             | `string`                                                     | No       | Aspect ratio (`'21:9'`, `'16:9'`, `'4:3'`, `'1:1'`, `'3:4'`, `'9:16'`). Defaults to `'16:9'`                      |
+| `duration`                                | `number`                                                     | No       | Video length in whole seconds, from 5 to 15. Defaults to 5                                                        |
+| `providerOptions.heygen.resolution`       | `'480p'` \| `'768p'` \| `'1080p'` \| `'2k'`                  | No       | Output size class. Defaults to `'768p'`. `'1080p'` and `'2k'` require a `'16:9'` or `'9:16'` aspect ratio         |
+| `providerOptions.heygen.promptEnhancement` | `'turbo'` \| `'quality'` \| `'ultraquality'` \| `'disabled'` | No       | How HeyGen rewrites your prompt. Defaults to `'quality'`. Use `'disabled'` to keep the prompt as you wrote it     |
+
+### HeyGen example
+
+```typescript filename="heygen-text-to-video.ts"
+import { experimental_generateVideo as generateVideo } from 'ai';
+import fs from 'node:fs';
+
+const result = await generateVideo({
+  model: 'heygen/heygen-video-1',
+  prompt:
+    'A paper boat drifts across a quiet pond, with gentle ripples and birdsong',
+  aspectRatio: '16:9',
+  duration: 5,
+  providerOptions: {
+    heygen: {
+      resolution: '768p',
+    },
+  },
+});
+
+fs.writeFileSync('output.mp4', result.videos[0].uint8Array);
+```
 
 ## Asynchronous generation
 

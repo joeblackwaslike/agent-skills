@@ -17,8 +17,8 @@ summary: Learn how to stream responses from Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/streaming-functions.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "ccb98a34669734de469a21f3f1b54735cf000c80eb74cea9bb80496456616b4b"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "4c34550fdbf802a7740ce702e6df2dc3e17207ef2380c959c38d8fc607942b37"
 ---
 
 # Streaming
@@ -31,7 +31,6 @@ AI providers can be slow when producing responses, but many make their responses
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Function streaming to be framework-agnostic on Vercel](https://vercel.com/blog/vercel-functions-streaming-to-be-framework-agnostic)
 - [Python Vercel Functions now have streaming enabled by default](https://vercel.com/changelog/python-vercel-functions-now-have-streaming-enabled-by-default)
 - [Streaming is now supported in Vercel Functions for the Python runtime](https://vercel.com/changelog/streaming-is-now-supported-in-vercel-functions-for-the-python-runtime)
 - [Streaming now enabled by default for all Node.js Vercel Functions](https://vercel.com/changelog/streaming-now-enabled-by-default-for-all-node-js-vercel-functions)
@@ -41,6 +40,7 @@ AI providers can be slow when producing responses, but many make their responses
 - [Production architecture for a RAG chatbot on Vercel](https://vercel.com/kb/guide/rag-chatbot-production-architecture-on-vercel) — Architect a production RAG chatbot on Vercel Functions with Fluid compute, AI Gateway, and a region-pinned vector store.
 - [Deploying AI-driven apps on Vercel](https://vercel.com/blog/deploying-ai-applications)
 - [Building a GPT-3 app with Next.js and streaming (historical)](https://vercel.com/blog/gpt-3-app-next-js-vercel-edge-functions)
+- [Function streaming to be framework-agnostic on Vercel](https://vercel.com/blog/vercel-functions-streaming-to-be-framework-agnostic)
 - [An Introduction to Streaming on the Web](https://vercel.com/blog/an-introduction-to-streaming-on-the-web)
 - [How streaming helps build faster web applications](https://vercel.com/blog/how-streaming-helps-build-faster-web-applications)
 
@@ -233,7 +233,7 @@ When your function is streaming, it will be able to take advantage of the extend
 - [AI SDK](https://ai-sdk.dev/docs/getting-started)
 - [Vercel Functions](/docs/functions)
 - [Fluid compute](/docs/fluid-compute)
-- [Streaming and SEO: Does streaming affect SEO?](/kb/guide/does-streaming-affect-seo)
+- [Streaming and SEO: Does streaming affect SEO?](/docs/frameworks/full-stack/nextjs#streaming-and-seo)
 - [Processing data chunks: Learn how to process data chunks](/kb/guide/processing-data-chunks)
 - [Handling backpressure: Learn how to handle backpressure](/kb/guide/handling-backpressure)
 

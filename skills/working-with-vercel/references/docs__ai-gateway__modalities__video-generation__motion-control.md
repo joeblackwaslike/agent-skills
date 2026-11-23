@@ -15,8 +15,8 @@ summary: Transfer motion from a reference video to a character image using Kling
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation/motion-control.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "da4edea44785c369edaf1250dd46af2a9e895dbb19adc71452146e6a2bbd9921"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "758a63e137a025d66c5457806006ea95b30318c7869f3a9f19cb39a563e4f913"
 ---
 
 # AI Gateway Motion Control Video Generation
@@ -31,11 +31,10 @@ Transfer motion from a reference video to a character in an image. The model ana
 
 - [Kling video models on AI Gateway](https://vercel.com/changelog/kling-video-models-on-ai-gateway)
 - [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
-- [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation)
 - [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
+- [AI Gateway now supports asynchronous video generation](https://vercel.com/changelog/ai-gateway-now-supports-asynchronous-video-generation)
 - [Grok Imagine Video on AI Gateway](https://vercel.com/changelog/grok-imagine-video-on-ai-gateway)
-- [Wan models on AI Gateway](https://vercel.com/changelog/wan-models-on-ai-gateway)
-- [Veo video models on AI Gateway](https://vercel.com/changelog/veo-video-models-on-ai-gateway)
+- [AI Gateway Video Editing](https://vercel.com/docs/ai-gateway/modalities/video-generation/video-editing) — Edit existing videos using text prompts with Grok Imagine Video or ByteDance Seedance, and enhance videos with Topaz, th
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation/motion-control.graph.md](/docs/ai-gateway/modalities/video-generation/motion-control.graph.md)
 <!-- /docsgraph:related -->
@@ -44,7 +43,7 @@ Every model here also runs as a background job instead of one long-lived request
 
 ## KlingAI
 
-KlingAI's motion control models transfer motion from a reference video to a character image. The character image accepts buffers, URLs, or base64. The reference video must be a URL (use [Vercel Blob](/docs/vercel-blob) for local files).
+KlingAI's motion control models transfer motion from a reference video to a character image. Two models support motion control: `klingai/kling-v3.0-motion-control` and `klingai/kling-v2.6-motion-control`. The character image accepts buffers, URLs, or base64. The reference video must be a URL (use [Vercel Blob](/docs/vercel-blob) for local files).
 
 [Browse the latest KlingAI video models](/ai-gateway/models?capabilities=video-generation\&providers=klingai) on the AI Gateway Models page.
 

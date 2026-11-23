@@ -17,8 +17,8 @@ summary: Vercel provides support for monorepos. Learn how to deploy a monorepo h
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/monorepos.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "3027d7ffadf1c670787bbbe4fe610c31e2b26a710ecdbf1efee428a0ee9f75b6"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "a35be50b4613781e9a8cfc8d180e574d0724ee14ac49f88e9ab295b7c8b13af2"
 ---
 
 # Using Monorepos
@@ -31,7 +31,6 @@ Monorepos allow you to manage multiple projects in a single directory. They are 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Deploying a Monorepo Using Yarn Workspaces to Vercel](https://vercel.com/kb/guide/deploying-yarn-monorepos-to-vercel) — In this guide, you will deploy a monorepo that includes two frontend applications and one shared library with Yarn works
 - [Automatically skip unnecessary deployments in monorepos](https://vercel.com/changelog/automatically-skip-unnecessary-deployments-in-monorepos)
 - [Lockfile-aware deployment skipping for monorepos](https://vercel.com/changelog/lockfile-aware-deployment-skipping-for-monorepos)
 - [New monorepo projects now skip builds with unchanged code by default](https://vercel.com/changelog/new-monorepo-projects-now-skip-builds-with-unchanged-code-by-default)
@@ -41,6 +40,7 @@ Monorepos allow you to manage multiple projects in a single directory. They are 
 - [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions) — Learn how to import files inside Serverless Functions on Vercel.
 - [Deploy to Vercel with Self-Hosted Git Pipelines \\(GitLab & Bitbucket\\)](https://vercel.com/kb/guide/how-can-i-use-gitlab-pipelines-with-vercel) — Learn how to use GitLab Pipelines to deploy to Vercel including support for self-managed GitLab.
 - [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
+- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-to-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
 - [Deploying safely on Vercel without merge queues](https://vercel.com/blog/deploy-safely-on-vercel-without-merge-queues)
 - [How to scale a large codebase](https://vercel.com/blog/how-to-scale-a-large-codebase)
 

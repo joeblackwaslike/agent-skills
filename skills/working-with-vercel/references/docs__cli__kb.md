@@ -13,8 +13,8 @@ summary: Browse, search, and read Vercel Knowledge Base guides from your termina
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/kb.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "fb331f54d2676e3ccd3c6441e38714fb18c251725505572b01e286fde47c3468"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "015db456940e7a25e970a9728237f262710e6e3ba265f47b327381be49ac7b19"
 ---
 
 # vercel kb
@@ -27,6 +27,7 @@ The `vercel kb` command lists the latest [Vercel Knowledge Base](/kb) guides. Us
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Knowledge Base](https://vercel.com/changelog/vercel-knowledge-base)
 - [vercel docs](https://vercel.com/docs/cli/docs) — Search and read the Vercel docs from your terminal using the Vercel CLI.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel kms](https://vercel.com/docs/cli/kms) — Manage Vercel KMS issuers, rotate signing keys, and control which projects can sign tokens from the command line.
@@ -153,7 +154,7 @@ The output depends on the current guides, for example:
 
 ```text filename="output"
 https://vercel.com/kb/guide/enhancing-security-for-redirects-and-rewrites
-https://vercel.com/kb/guide/vercel-reverse-proxy-rewrites-external
+https://vercel.com/kb/guide/can-i-use-a-proxy-on-top-of-my-vercel-deployment
 ```
 
 ### Read the next page cursor

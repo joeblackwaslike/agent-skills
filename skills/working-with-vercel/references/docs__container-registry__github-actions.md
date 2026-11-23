@@ -8,6 +8,7 @@ type: how-to
 prerequisites:
   - /docs/container-registry
 related:
+  - /docs/oidc/policies
   - /docs/sandbox/concepts/images
   - /docs/functions/container-images
   - /docs/container-registry/cli-reference
@@ -15,8 +16,8 @@ summary: Authenticate GitHub Actions with Vercel Container Registry using OIDC, 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/container-registry/github-actions.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "a046ad6bcc9de9e5e8baec27c75f2d7a3c4fab9fae1e0155b0d36f1b633d34b5"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "36ee31460fc75a43e959fcd2619dddcb00e11f2ef41e0d605a775d3b53d6b31c"
 ---
 
 # Push Images from GitHub Actions
@@ -34,19 +35,19 @@ Push images to Vercel Container Registry (VCR) from GitHub Actions without stori
 - [Introducing VCR: Vercel Container Registry](https://vercel.com/changelog/introducing-vcr-vercel-container-registry)
 - [Manage Vercel Container Registry with Vercel CLI](https://vercel.com/changelog/manage-vercel-container-registry-with-vercel-cli)
 - [Running Docker on Vercel](https://vercel.com/kb/guide/docker) — Run Docker on Vercel for HTTP apps and background workers, store images in Vercel Container Registry, and test container
-- [Can I use GitHub Enterprise Server with Vercel?](https://vercel.com/kb/guide/can-i-use-github-enterprise-server-with-vercel) — You can use GitHub Enterprise Server and GitHub Actions to deploy your application to Vercel.
 - [Getting Started](https://vercel.com/docs/container-registry/getting-started) — Authenticate your container tool with Vercel Container Registry, then push and pull your first image with the Vercel CLI
 - [Deploying with BYOC from GitHub Actions](https://vercel.com/docs/networking/bring-your-own-cloud/deploy-with-github-actions) — Keep the Vercel Git integration and use GitHub Actions to build, provision, and complete Bring Your Own Cloud \\(BYOC\\) d
 - [Use Remote Caching from External CI/CD](https://vercel.com/docs/monorepos/remote-caching/external-ci-cd) — Authenticate the Turborepo CLI to Vercel Remote Cache from your CI/CD provider using OpenID Connect \\(OIDC\\) or a Person
 - [Push an image manifest](https://vercel.com/docs/rest-api/vcr/push-an-image-manifest) — PUT /v2/{teamSlug}/{projectSlug}/{repositoryName}/manifests/{reference} — PUT /v2/:teamSlug/:projectSlug/:repositoryName
+- [OpenID Connect \\(OIDC\\) Federation](https://vercel.com/docs/oidc) — Replace long-lived credentials with short-lived OpenID Connect \\(OIDC\\) tokens, both when your Vercel deployments access
 
 Full cross-link map for this page: [/docs/container-registry/github-actions.graph.md](/docs/container-registry/github-actions.graph.md)
 <!-- /docsgraph:related -->
 
 ## Prerequisites
 
-- [Create an OIDC policy](/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbuild-and-deployment%3FaddOidcPolicy%3Dvcr\&title=Add+a+VCR+OIDC+Policy) on your Vercel team that grants read-write access to Vercel Container Registry.
-- Store your Vercel team ID (`team_...`) as a repository variable, for example `VERCEL_TEAM_ID`.
+- [Create a VCR policy](/d?to=%2F%5Bteam%5D%2F%7E%2Fsettings%2Fbuild-and-deployment%3FaddOidcPolicy%3Dvcr\&title=Add+a+VCR+OIDC+Policy) on your Vercel team with **Read and write** access, so that the workflow can push images. A VCR policy is an [OIDC policy](/docs/oidc/policies) for Vercel Container Registry.
+- Store your Vercel team ID (`team_…`) as a repository variable, for example `VERCEL_TEAM_ID`.
 - Give the workflow or job the `id-token: write` permission.
 
 ## Log in and push
@@ -113,6 +114,14 @@ The `engines` input selects which container tools to authenticate. It accepts `d
 1. The action requests a GitHub OIDC token from the runner and exchanges it with Vercel for a short-lived access token scoped to your team. The exchange only succeeds when your team has an OIDC policy that matches the repository and workflow.
 2. The action logs in to `vcr.vercel.com` with the token. The username is your team ID.
 3. When the job completes, a post step logs out and revokes the token, even if a later step fails.
+
+## Push from another CI/CD provider
+
+To push from a provider other than GitHub Actions, exchange the provider's OIDC token for a VCR access token yourself. Follow [Exchange a token](/docs/oidc/policies#exchange-a-token) with the VCR client ID, `cl_inrfNy8noLlhRrGbPEm0z47woXNcJVZ0`, then log in with your team ID as the username:
+
+```bash filename="terminal"
+echo "$ACCESS_TOKEN" | docker login vcr.vercel.com --username "$VERCEL_TEAM_ID" --password-stdin
+```
 
 ## Next steps
 

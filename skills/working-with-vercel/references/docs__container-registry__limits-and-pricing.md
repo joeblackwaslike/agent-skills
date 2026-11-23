@@ -14,8 +14,8 @@ summary: Storage pricing, size limits, plan limits, and compatibility limits for
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/container-registry/limits-and-pricing.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "33653e0c736c36cfa49c469bd9b43e71c69f97eec6f1c7948e4c3d23fa4bdc5c"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "e09010257c33d30d9cd4e0001f608a31e7d06079c4764ff778def6a47fad2210"
 ---
 
 # Container Registry limits and pricing
@@ -39,10 +39,10 @@ sha256: "33653e0c736c36cfa49c469bd9b43e71c69f97eec6f1c7948e4c3d23fa4bdc5c"
 - [Does Vercel support Docker deployments?](https://vercel.com/kb/guide/does-vercel-support-docker-deployments) — Vercel supports deploying OCI-compatible container images through Vercel Functions and Vercel Container Registry, with A
 - [Introducing VCR: Vercel Container Registry](https://vercel.com/changelog/introducing-vcr-vercel-container-registry)
 - [Limits and Pricing for Image Optimization](https://vercel.com/docs/image-optimization/limits-and-pricing) — This page outlines information on the limits that are applicable when using Image Optimization, and the costs they can i
+- [Pricing and Limits](https://vercel.com/docs/drives/pricing) — Check Vercel Drives regional rates, plan allotments, and storage and mount limits.
 - [vercel vcr](https://vercel.com/docs/cli/vcr) — Manage Vercel Container Registry from the Vercel CLI: build and push images, manage repositories, tags, and images, and
 - [Limits and Pricing for Vercel Flags](https://vercel.com/docs/flags/vercel-flags/limits-and-pricing) — Review Vercel Flags request pricing and limits for flags, segments, configuration size, and connected projects.
 - [Pricing and Limits](https://vercel.com/docs/queues/pricing) — Understand how Vercel Queues billing works, what's included, and which service limits apply.
-- [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guidelines) — Learn how Vercel applies fair use guidelines across plans and usage-based resources.
 
 Full cross-link map for this page: [/docs/container-registry/limits-and-pricing.graph.md](/docs/container-registry/limits-and-pricing.graph.md)
 <!-- /docsgraph:related -->

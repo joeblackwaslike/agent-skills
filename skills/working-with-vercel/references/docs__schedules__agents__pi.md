@@ -17,8 +17,8 @@ summary: Give a Pi agent on durable-harness a tool that creates schedules, and s
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/schedules/agents/pi.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "6d4ecf1a83c56f2606042593a533ff9531780792e16adc3f52fef5891817fd87"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "e50f6488738eb2d6a43be584f190968f0a613bc1ef75d9694ecb1b21c4055e66"
 ---
 
 # Scheduling Work with Pi
@@ -33,7 +33,6 @@ sha256: "6d4ecf1a83c56f2606042593a533ff9531780792e16adc3f52fef5891817fd87"
 
 - [Introducing Vercel Schedules](https://vercel.com/blog/introducing-vercel-schedules)
 - [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
-- [Vercel Schedules is now in public beta](https://vercel.com/changelog/vercel-schedules-is-now-in-public-beta)
 - [Scheduling Work with the AI SDK](https://vercel.com/docs/schedules/agents/ai-sdk) — Give an AI SDK agent a tool that creates schedules, and run each scheduled task as a new agent turn.
 - [Scheduling Work with libfx](https://vercel.com/docs/schedules/agents/libfx) — Give an fx agent a tool that creates schedules, and send each run back into the session that created it.
 - [Running Agent Harnesses Durably on Vercel](https://vercel.com/docs/agent-harnesses) — Run Pi, fx, OpenCode, eve, Claude Code, and Codex on Vercel so a crash, a function timeout, or a redeploy resumes the ag

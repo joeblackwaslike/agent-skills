@@ -17,8 +17,8 @@ summary: Discover the package managers supported by Vercel for dependency manage
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/package-managers.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "b7831fc852e0eb56cbc8c631e41506e12d6af56be3173bd63370543fe3936180"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "480a477caedf9f46cf352df969ca4b31a01c245485efad30709ce3855986cdcd"
 ---
 
 # Package Managers
@@ -32,13 +32,11 @@ Vercel will automatically detect the package manager used in your project and in
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [vlt is now available in builds via zero configuration](https://vercel.com/changelog/vlt-is-now-available-in-builds-via-zero-configuration)
-- [Dependencies from package.json are missing after install](https://vercel.com/kb/guide/dependencies-from-package-json-missing-after-install) — Understand why dependencies may not being installed during a build and how to fix.
 - [Does Vercel Support Yarn? \\(Versions 2, 3, and 4\\)](https://vercel.com/kb/guide/does-vercel-support-yarn-4) — Vercel supports Yarn 1, 2, 3, and 4. Learn which version your build uses by default, and how to pin Yarn 4 with Corepack
 - [Projects using pnpm can now be deployed with zero configuration](https://vercel.com/changelog/projects-using-pnpm-can-now-be-deployed-with-zero-configuration)
-- [How do I use private dependencies with Vercel?](https://vercel.com/kb/guide/using-private-dependencies-with-vercel) — Information on how to use private dependencies with a Vercel deployment.
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
 - [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
-- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
+- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
+- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 
@@ -117,6 +115,23 @@ To specify a package manager for a deployment, use the [`installCommand`](/docs/
   "installCommand": "pnpm install"
 }
 ```
+
+### Pinning a Bun version
+
+When Vercel detects a `bun.lock` or `bun.lockb` file, it installs dependencies with the Bun 1 release in the build container. To install with a specific Bun release instead, run that release through `bunx` in your install command:
+
+```json filename="vercel.json"
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "bunx bun@1.3.1 install"
+}
+```
+
+You can set the same command as a [project override](#project-override). Replace `1.3.1` with the release you need.
+
+This pins Bun for the install step only. Your build command still runs with the Bun release in the build container, and the [`bunVersion`](/docs/project-configuration/vercel-json#bunversion) property selects the Bun version that runs your functions, not the one that installs your dependencies.
+
+To pin pnpm or Yarn, use [Corepack](/docs/builds/configure-a-build#corepack).
 
 ## Search the docs from your terminal
 

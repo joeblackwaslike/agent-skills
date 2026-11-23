@@ -18,8 +18,8 @@ summary: Generate and stream text from 300+ models through AI Gateway, with tool
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/modalities/text-generation.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "d5a89b8520d9e4359dd7b5ff54681c5d814fa3f5d689a325b0aa338d5214af86"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "aa13998212f851fac0485805b38081378388ad3b6294d7f5271ab7037e1fe9b1"
 ---
 
 # AI Gateway Text Generation
@@ -35,9 +35,9 @@ Text generation is the default modality in AI Gateway. You send a prompt and a m
 - [Migrate AI SDK 5.x to 6.0](https://ai-sdk.dev/docs/migration-guides/migration-guide-6-0) — Learn how to upgrade AI SDK 5.x to 6.0.
 - [Generating Text](https://ai-sdk.dev/docs/ai-sdk-core/generating-text) — Learn how to generate text with the AI SDK.
 - [Migrate AI SDK 3.4 to 4.0](https://ai-sdk.dev/docs/migration-guides/migration-guide-4-0) — Learn how to upgrade AI SDK 3.4 to 4.0.
-- [AI Gateway Provider Filtering, Ordering, and Sorting](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering) — Control AI Gateway provider routing with order, only, and sort. Set preferences, restrict providers, and rank them by co
+- [Bring Your Own Key \\(BYOK\\) to AI Gateway](https://vercel.com/docs/ai-gateway/authentication-and-byok/byok) — Learn how to configure your own provider keys with AI Gateway.
 - [Anthropic Messages Structured Outputs with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/anthropic-messages-api/structured-outputs) — Get JSON responses conforming to a JSON Schema from Anthropic models through AI Gateway.
-- [AI Gateway Caching: Prompt Caching and Response Caching](https://vercel.com/docs/ai-gateway/models-and-providers/automatic-caching) — Reduce cost and latency with AI Gateway caching. Enable automatic prompt caching across providers with one option, and c
+- [AI Gateway Provider Filtering, Ordering, and Sorting](https://vercel.com/docs/ai-gateway/models-and-providers/provider-filtering-and-ordering) — Control AI Gateway provider routing with order, only, and sort. Set preferences, restrict providers, and rank them by co
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/text-generation.graph.md](/docs/ai-gateway/modalities/text-generation.graph.md)
 <!-- /docsgraph:related -->

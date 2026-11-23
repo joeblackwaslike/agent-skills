@@ -17,8 +17,8 @@ summary: Learn how Web Analytics concepts map to API queries for custom reports,
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/analytics/web-analytics-api.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "63adc633b8cc353df5c62d31345f70a90dec704471d4793bccd6361b91ce3074"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "5f1e3b43d1c51f78978602e385945063f41a2fa7b7e7214cfc971e73e8f3d794"
 ---
 
 # Query Web Analytics with the API
@@ -32,10 +32,9 @@ Use the Web Analytics API to query page views, visitors, and custom events from 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Public Web Analytics API now available](https://vercel.com/changelog/web-analytics-api)
-- [Query Web Analytics from the Vercel CLI](https://vercel.com/changelog/query-web-analytics-from-the-vercel-cli)
+- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
 - [get_web_analytics](https://vercel.com/docs/agent-resources/vercel-mcp/tools/web-analytics/get_web_analytics) — Use get_web_analytics with Vercel MCP.
-- [Accessing Metrics with Vercel CLI](https://vercel.com/docs/analytics/accessing-metrics-with-vercel-cli) — Use the Vercel CLI to query Web Analytics metrics from your terminal.
 - [Query](https://vercel.com/docs/query) — Query and visualize your Vercel usage, traffic, and more in observability.
 - [Filtering Analytics](https://vercel.com/docs/analytics/filtering) — Learn how filters allow you to explore insights about your website's visitors.
 

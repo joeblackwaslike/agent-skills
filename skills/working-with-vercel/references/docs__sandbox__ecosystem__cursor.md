@@ -18,8 +18,8 @@ summary: Run Cursor Cloud Agents on Vercel Sandbox by backing a Cursor Self-Host
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/ecosystem/cursor.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "b924af21af7209775c22ee37ec613e39961b8efeb8775ab62e1fb3da46adc66f"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "85acf1f6cebcc053c864b89de2b0976a99aabafdb5b762a5e70b9d38d886d7db"
 ---
 
 # Cursor Cloud Agents
@@ -38,10 +38,9 @@ clones code, runs commands, edits files, and executes tests.
 - [Cursor Cloud Agents can now run in Vercel Sandbox](https://vercel.com/changelog/run-cursor-cloud-agents-vercel-sandbox)
 - [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
 - [How to run Herdr coding agents in isolated Vercel Sandboxes](https://vercel.com/kb/guide/run-herdr-coding-agents-isolated-vercel-sandboxes) — Install the vercel.sandbox plugin for Herdr, approve an upload manifest, run each AI coding agent in its own isolated Ve
-- [Vercel Sandbox vs CodeSandbox](https://vercel.com/kb/guide/vercel-sandbox-vs-codesandbox) — A detailed guide to Vercel Sandbox vs CodeSandbox: compute isolation, credential brokering, Active CPU billing, Docker s
 - [How to run Devin Outposts sessions on Vercel](https://vercel.com/kb/guide/devin-outposts-vercel-sandbox) — Run Devin Outposts sessions in isolated Vercel Sandbox microVMs. One browser authorization to set up, then sessions star
-- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
 - [Cursor with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/cursor) — Connect Cursor to AI Gateway with its OpenAI base URL override. Configure the Cursor compatibility endpoint, API key, an
+- [Gemini API Managed Agents](https://vercel.com/docs/sandbox/ecosystem/gemini-api) — Connect a Gemini API self-hosted environment to Vercel Sandbox so agent file and shell tools run in your own microVM.
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/cursor.graph.md](/docs/sandbox/ecosystem/cursor.graph.md)
 <!-- /docsgraph:related -->

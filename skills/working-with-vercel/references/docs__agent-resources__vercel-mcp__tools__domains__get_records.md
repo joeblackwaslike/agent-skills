@@ -14,8 +14,8 @@ summary: Use get_records with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_records.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "4f80eae4a6f73d569f0b37c3bcc11d44d1b3356d1d3d000ceba12f961a9ddd7e"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "9ef3b69f7bc9f04481c9784b3d4b21d687c6c4570cffce80ad5a93eb573e9c13"
 ---
 
 # get_records
@@ -28,11 +28,11 @@ Retrieves a list of DNS records created for a domain name. By default it returns
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [GET /domains/records/{recordId}](https://vercel.com/docs/rest-api/untagged/getdomainsrecordsbyrecordid) — GET /domains/records/{recordId} — GET /domains/records/{recordId}
 - [List existing DNS records](https://vercel.com/docs/rest-api/dns/list-existing-dns-records) — GET /v5/domains/{domain}/records — Retrieves a list of DNS records created for a domain name. By default it returns 20 r
 - [list_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/list_domains) — Use list_domains with Vercel MCP.
 - [get_domains_records_by_record_id](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domains_records_by_record_id) — Use get_domains_records_by_record_id with Vercel MCP.
-- [get_domain_project_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_project_domains) — Use get_domain_project_domains with Vercel MCP.
-- [get_domain_verification_record](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domain_verification_record) — Use get_domain_verification_record with Vercel MCP.
+- [PUT /domains/{domain}/records](https://vercel.com/docs/rest-api/untagged/replacedomainsbydomainrecords) — PUT /domains/{domain}/records — PUT /domains/{domain}/records
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/get_records.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/get_records.graph.md)
 <!-- /docsgraph:related -->

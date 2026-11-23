@@ -17,8 +17,8 @@ summary: Learn how Vercel serves documentation to AI agents as Markdown and help
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/markdown-access.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "be31cac5be8e79896cbbd117c737f8d2b46ea06fc1be0f8b703fb48cdd8e2bf4"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "ad9bdfe1fb6829cbd2e70c909f505e38296f1bdef3feefc9659fbcfd2d7d8ecf"
 ---
 
 # Markdown and Agent Discovery
@@ -31,17 +31,17 @@ Vercel documentation is available as HTML for humans and structured Markdown for
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to serve documentation for agents](https://vercel.com/kb/guide/how-to-serve-documentation-for-agents) — Learn how to serve markdown to agents and HTML for humans from the same URL
 - [Making agent-friendly pages with content negotiation](https://vercel.com/blog/making-agent-friendly-pages-with-content-negotiation)
 - [Docs pages support Markdown responses](https://vercel.com/changelog/docs-pages-support-markdown-responses)
-- [Open Vercel documentation pages in AI providers](https://vercel.com/changelog/open-vercel-documentation-pages-in-ai-providers)
+- [Making your catalog discoverable to AI agents](https://vercel.com/kb/guide/agentic-commerce-readiness) — Agentic commerce readiness starts with the initial HTML response. Server-render your product catalog, ship JSON-LD, and
 - [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify) — Migrate your website's configuration from Netlify to Vercel
 - [How to build an MCP server with Nuxt](https://vercel.com/kb/guide/how-to-build-an-mcp-server-with-nuxt) — Add an MCP server to your Nuxt app with the Nuxt MCP Toolkit. Create tools, resources, and prompt templates that AI assi
 - [How to create a contentful asset on Vercel](https://vercel.com/kb/guide/how-to-create-a-contentful-asset-on-vercel) — This is my wonderful
-- [Making your catalog discoverable to AI agents](https://vercel.com/kb/guide/agentic-commerce-readiness) — Agentic commerce readiness starts with the initial HTML response. Server-render your product catalog, ship JSON-LD, and
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [Call AI Gateway Chat Completions with REST](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api) — Use AI Gateway API directly without client libraries using curl and fetch.
 - [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
+- [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
+- [Call AI Gateway Chat Completions with REST](https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions/rest-api) — Use AI Gateway API directly without client libraries using curl and fetch.
+- [Getting started with Vercel Web Analytics](https://vercel.com/docs/analytics/quickstart) — Vercel Web Analytics provides you detailed insights into your website's visitors. This quickstart guide will help you ge
 
 Full cross-link map for this page: [/docs/agent-resources/markdown-access.graph.md](/docs/agent-resources/markdown-access.graph.md)
 <!-- /docsgraph:related -->
@@ -213,6 +213,89 @@ Help me set this up step by step.
 ### Project rules
 
 In tools like Cursor, add `.md` documentation URLs to your [project rules](https://cursor.com/docs/context/rules) so the AI can load the relevant Vercel documentation.
+
+## Serve Markdown to agents from your own site
+
+You can add the same content negotiation to your own documentation or content site, so that a page's canonical URL returns HTML to browsers and Markdown to agents. The examples use a Next.js app, and the same approach works in any framework that can return a Markdown response and rewrite requests based on a header.
+
+### Create a route that returns Markdown
+
+Add a route that returns the Markdown version of a page. This [Route Handler](https://nextjs.org/docs/app/getting-started/route-handlers) serves every page under `/md`. Replace `getMarkdownContent` with the function that loads or converts your content:
+
+```ts filename="app/md/[[...slug]]/route.ts"
+import { getMarkdownContent } from '@/lib/content';
+
+export async function GET(
+  _request: Request,
+  { params }: { params: Promise<{ slug?: string[] }> },
+) {
+  const { slug } = await params;
+  const path = slug ? `/docs/${slug.join('/')}` : '/docs';
+  const markdown = await getMarkdownContent(path);
+
+  if (!markdown) {
+    return new Response('Not found', { status: 404 });
+  }
+
+  return new Response(markdown, {
+    headers: {
+      'Content-Type': 'text/markdown; charset=utf-8',
+      Link: `<https://your-domain.com${path}>; rel="canonical"`,
+      Vary: 'Accept',
+    },
+  });
+}
+```
+
+The `Vary: Accept` header tells caches to store the HTML and Markdown versions of a URL separately. The `Link` header with `rel="canonical"` tells search engines to index the HTML page instead of the Markdown copy.
+
+### Rewrite requests that ask for Markdown
+
+Rewrite a request to the Markdown route when its `Accept` header contains `text/markdown`. Put the rewrite in `beforeFiles` so that it runs before Next.js matches the HTML page at the same path:
+
+```ts filename="next.config.ts"
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: '/docs/:path*',
+          has: [
+            {
+              type: 'header',
+              key: 'accept',
+              value: '(.*)text/markdown(.*)',
+            },
+          ],
+          destination: '/md/:path*',
+        },
+      ],
+    };
+  },
+};
+
+export default nextConfig;
+```
+
+This pattern matches any `Accept` header that mentions `text/markdown`. It doesn't compare quality values, so a request that ranks HTML higher, or rejects Markdown with `text/markdown;q=0`, also receives Markdown. For content negotiation that honors quality values, use the [`@vercel/agent-readability`](https://www.npmjs.com/package/@vercel/agent-readability) package instead of the rewrite. The package has adapters for Next.js, SvelteKit, and Nuxt, and for other frameworks deployed on Vercel. It also detects AI agents that don't ask for Markdown in the `Accept` header and serves them Markdown.
+
+### Add a discovery index
+
+Give agents a way to find your other pages. Publish an index that lists each page's title, URL, and a one-sentence summary as Markdown, such as the [`sitemap.md` index](#site-wide-discovery-files) for the Vercel docs, and link to it from every Markdown response. An agent that doesn't find its answer on the first page can then choose the next page to read.
+
+### Test the responses
+
+Request the same URL with and without the `Accept` header:
+
+```bash filename="terminal"
+# Returns HTML
+curl https://your-domain.com/docs/getting-started
+
+# Returns Markdown
+curl --header "Accept: text/markdown" https://your-domain.com/docs/getting-started
+```
 
 ## Search the docs from your terminal
 

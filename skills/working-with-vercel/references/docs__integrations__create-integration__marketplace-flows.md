@@ -11,15 +11,15 @@ prerequisites:
 related:
   - /docs/integrations/create-integration/marketplace-product
   - /docs/integrations/create-integration/marketplace-api
-  - /docs/integrations/create-integration/submit-integration
-  - /docs/integrations/create-integration/marketplace-api/reference/vercel/import-resource
-  - /docs/flags
+  - /docs/integrations/create-integration/short-lived-access-tokens
+  - /docs/integrations/create-integration/marketplace-api/reference/partner/list-billing-plans-for-resource
+  - /docs/integrations/create-integration/marketplace-api/reference/partner/update-resource
 summary: Learn how information flows between the integration user, Vercel, and the integration provider for Vercel native integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-flows.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "43f4bf9a0ac48c979cb6be4b9198ef4dbdadb713d78337d21adf254ee6fdf332"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "1be18a28ca18195589407281153bb097dd4dff458a3dbbce1aba641e76cb2df4"
 ---
 
 # Native Integration Flows
@@ -32,13 +32,11 @@ As a Vercel integration provider, when you [create a native product integration]
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
-- [How to Integrate Optimizely Feature Experimentation with Next.js and Vercel](https://vercel.com/kb/guide/how-to-integrate-optimizely-feature-experimentation-next-vercel) — This guide covers setting up feature flags, implementing A/B tests, and optimizing performance using React Server Compon
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
-- [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
-- [Marketplace](https://vercel.com/docs/flags/marketplace) — Connect your preferred feature flag provider through the Vercel Marketplace for a unified flags experience.
-- [Upgrade an Integration](https://vercel.com/docs/integrations/create-integration/upgrade-integration) — Lean more about when you may need to upgrade your Integration.
+- [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
+- [Import Resource](https://vercel.com/docs/rest-api/marketplace/import-resource) — PUT /v1/installations/{integrationConfigurationId}/resources/{resourceId} — This endpoint imports \\(upserts\\) a resource
+- [Storage on Vercel Marketplace](https://vercel.com/docs/marketplace-storage) — Connect Postgres, Redis, NoSQL, and other storage solutions through the Vercel Marketplace. Run SQL queries, edit data,
 
 Full cross-link map for this page: [/docs/integrations/create-integration/marketplace-flows.graph.md](/docs/integrations/create-integration/marketplace-flows.graph.md)
 <!-- /docsgraph:related -->
@@ -111,6 +109,8 @@ sequenceDiagram
     Provider Integration->>Vercel Dashboard: 201 response
 ```
 
+Don't use the access token in the Upsert Installation request to call Vercel APIs. [Request a short-lived token](/docs/integrations/create-integration/short-lived-access-tokens#request-tokens-when-you-need-them) whenever a call needs one, including your first call after installation.
+
 ### Select billing plan
 
 Using the installation id for this product and integration user, the Vercel dashboard presents available billing plans for the product. The integration user then selects a plan from the list which is updated on every user input change.
@@ -137,6 +137,49 @@ sequenceDiagram
     end
     User->>Vercel Dashboard: Select billing plan and click Continue
 ```
+
+#### Disable a billing plan
+
+To stop a user from choosing a plan, return it with `disabled: true` in any plans response. Add `disabledReason` to tell the user why. Vercel shows the reason on the disabled plan and ignores it when `disabled` isn't `true`.
+
+For example, this [List Billing Plans For Resource](/docs/integrations/create-integration/marketplace-api/reference/partner/list-billing-plans-for-resource) response blocks a downgrade while the resource still uses a feature of its current plan:
+
+```json
+{
+  "plans": [
+    {
+      "id": "hobby",
+      "type": "subscription",
+      "name": "Hobby",
+      "description": "Up to 20 GB of storage",
+      "disabled": true,
+      "disabledReason": "Delete your read replicas before downgrading to Hobby."
+    },
+    {
+      "id": "pro",
+      "type": "subscription",
+      "name": "Pro",
+      "description": "Up to 500 GB of storage"
+    }
+  ]
+}
+```
+
+Vercel caches plan responses for a short time, so a user can still select a plan you disabled after their plan picker loaded. Reject the change in your integration server too. When [Update Resource](/docs/integrations/create-integration/marketplace-api/reference/partner/update-resource) receives a plan the resource can't use, return `409` with `error.user.message`. Vercel shows that message to the user:
+
+```json
+{
+  "error": {
+    "code": "conflict",
+    "message": "Plan hobby is not available for resource res_123",
+    "user": {
+      "message": "Delete your read replicas before downgrading to Hobby."
+    }
+  }
+}
+```
+
+The [example integration](https://github.com/vercel/example-marketplace-integration#disabled-billing-plans) implements both.
 
 ### Submit store creation
 

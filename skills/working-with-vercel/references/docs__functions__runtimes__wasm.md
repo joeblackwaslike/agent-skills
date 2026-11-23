@@ -18,8 +18,8 @@ summary: Learn how to use WebAssembly (Wasm) to enable low-level languages to ru
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/runtimes/wasm.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "a5268ab3e36c674a208d3b97e9ec9d094dd322c02ca340741cb238cd6d4709e8"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "525fd49daeae4edcf919b2b92adb6df648103eb4bf4d3ffb941e25200a32ca8c"
 ---
 
 # Using WebAssembly (Wasm)
@@ -35,7 +35,7 @@ sha256: "a5268ab3e36c674a208d3b97e9ec9d094dd322c02ca340741cb238cd6d4709e8"
 - [How to stop Vercel Functions from timing out](https://vercel.com/kb/guide/what-can-i-do-about-vercel-serverless-functions-timing-out) — Vercel Functions that time out usually trace back to a few causes. Learn how Fluid Compute fixes most of them and how to
 - [Introducing support for WebAssembly at the Edge](https://vercel.com/blog/introducing-support-for-webassembly-at-the-edge)
 - [Do Vercel Functions support WebSocket connections?](https://vercel.com/kb/guide/do-vercel-serverless-functions-support-websocket-connections) — Vercel Functions serve WebSocket connections natively, in public beta on all plans. Learn how connections pin to instanc
-- [Vercel Edge Functions are now generally available](https://vercel.com/blog/edge-functions-generally-available)
+- [How can I use files in Vercel Functions?](https://vercel.com/kb/guide/how-can-i-use-files-in-serverless-functions) — Learn how to import files inside Serverless Functions on Vercel.
 - [Using the Rust Runtime with Vercel functions](https://vercel.com/docs/functions/runtimes/rust) — Build fast, memory-safe serverless functions with Rust on Vercel.
 - [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart) — Build your first Vercel Function in a few steps.
 - [Frameworks on Vercel](https://vercel.com/docs/frameworks) — Vercel supports a wide range of the most popular frameworks, optimizing how your application builds and runs no matter w

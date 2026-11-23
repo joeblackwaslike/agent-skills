@@ -18,8 +18,8 @@ summary: "Learn all about Vercel's Pro Plan free trial, including features, usag
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/plans/pro-plan/trials.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "bd93d783d227af1df5abf81f1bf2438dc4681310becae6240d0418f1a8421cc9"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "7ccc75e6a647674f42c34c1dbf5e914c07abc2334ff31737561d0c669747f803"
 ---
 
 # Understanding Vercel
@@ -32,12 +32,11 @@ Vercel offers three plan tiers: **Hobby**, **Pro**, and **Enterprise**.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [A more flexible Pro plan for modern teams](https://vercel.com/blog/new-pro-pricing-plan)
 - [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby) — Learn about the Hobby plan and how it compares to the Pro plan.
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
-- [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
 - [Pricing for Web Analytics](https://vercel.com/docs/analytics/limits-and-pricing) — Learn about pricing for Vercel Web Analytics.
 - [Free Domain with Pro](https://vercel.com/docs/domains/free-domain-with-pro) — Every paid Pro team gets one free first-year custom domain on an eligible TLD. Claim yours at checkout or from domain se
+- [Managing Builds](https://vercel.com/docs/builds/managing-builds) — Vercel allows you to increase the speed of your builds when needed in specific situations and workflows.
 
 Full cross-link map for this page: [/docs/plans/pro-plan/trials.graph.md](/docs/plans/pro-plan/trials.graph.md)
 <!-- /docsgraph:related -->

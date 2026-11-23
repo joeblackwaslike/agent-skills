@@ -16,14 +16,14 @@ summary: Learn how to add Pinecone connectable account integration with Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/integrations-for-models/pinecone.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "274a4d343a7a2091dd0c55004ff649e0770e718e828629a5f5ebaac0238b307a"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "0573bdf42fd4e3c5a5d382cc4262514bb122ebf9c58f3de0b75c572f2a9a0b72"
 ---
 
 # Vercel Pinecone Integration
 
 &#x20;is a [vector
-database](/kb/guide/vector-databases) service that handles the storage and search
+database](/kb/guide/understanding-vector-databases-for-ai-apps) service that handles the storage and search
 of complex data. With Pinecone, you can use machine-learning models for content
 recommendation systems, personalized search, image recognition, and more. The
 Vercel Pinecone integration allows you to deploy your models to Vercel and use

@@ -17,8 +17,8 @@ summary: Learn how to interact with the security endpoints of the Vercel REST AP
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-firewall/firewall-api.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "f42466f21e8bd5e3304cac70d0b90a8293d3369e43353a89b1232322b714cd2e"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "5d3f629867c6b86bdfc4278567a9db92be70107c58fb338e63210b8fd213422d"
 ---
 
 # Using the REST API with the Firewall
@@ -32,8 +32,8 @@ The security section of the [Vercel REST API](/docs/rest-api) allows you to prog
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [REST API for the Vercel Firewall](https://vercel.com/changelog/rest-api-for-the-vercel-firewall)
-- [WAF Examples](https://vercel.com/docs/vercel-firewall/vercel-waf/examples) — Learn how to use Vercel WAF to protect your site in specific situations.
 - [Firewall and Security](https://vercel.com/docs/agent-resources/vercel-mcp/tools/firewall) — Vercel MCP tools for firewall and security.
+- [WAF Examples](https://vercel.com/docs/vercel-firewall/vercel-waf/examples) — Learn how to use Vercel WAF to protect your site in specific situations.
 - [Vercel WAF](https://vercel.com/docs/vercel-firewall/vercel-waf) — Learn how to secure your website with the Vercel Web Application Firewall \\(WAF\\)
 - [Get conditional firewall bypasses](https://vercel.com/docs/rest-api/security/get-conditional-firewall-bypasses) — GET /v1/security/firewall/bypass/rules — Retrieve conditional firewall bypass rules for a project.
 - [Create conditional firewall bypass](https://vercel.com/docs/rest-api/security/create-conditional-firewall-bypass) — POST /v1/security/firewall/bypass/rules — Create a conditional firewall bypass rule for a project domain.

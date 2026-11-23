@@ -17,8 +17,8 @@ summary: Gradually roll out a production deployment using traffic stages, monito
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/rolling-releases/rolling-release-deployment.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "4e47916eb90329a7cc26613128e6968ef1bce9e0c44c35628d0061aedbdd16e4"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "b67e5c776f9858be9b1e23d2475879d56455d5b7c94edc9c7ca51b029035ffca"
 ---
 
 # Performing a rolling release deployment
@@ -31,12 +31,11 @@ Use this guide to gradually roll out a new production deployment using rolling r
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to gradually roll out new versions of your backend](https://vercel.com/kb/guide/how-to-gradually-roll-out-new-versions-of-your-backend) — Incrementally release updates to your backend to minimize impact of mistakes.
 - [Rolling Releases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases) — Vercel MCP tools for rolling releases.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Complete the rolling release for the project](https://vercel.com/docs/rest-api/rolling-release/complete-the-rolling-release-for-the-project) — POST /v1/projects/{idOrName}/rolling-release/complete — Force-complete a Rolling Release. The canary deployment will beg
-- [Start a rolling release for the project](https://vercel.com/docs/rest-api/rolling-release/start-a-rolling-release-for-the-project) — POST /v1/projects/{idOrName}/rolling-release/start — Start a rolling release for a deployment. If a rolling release is a
 
 Full cross-link map for this page: [/docs/rolling-releases/rolling-release-deployment.graph.md](/docs/rolling-releases/rolling-release-deployment.graph.md)
 <!-- /docsgraph:related -->

@@ -13,8 +13,8 @@ summary: How to properly handle form submissions with BotID protection
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/botid/form-submissions.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "f1d85e24e3777b81e996b65a1efd107cd3b6e032f58b459bf0325546e2cc930d"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "2d9866cd52002f4051b32dae76b7d7b7253b4d8dd651fe92df1aead38b865656"
 ---
 
 # Form Submissions
@@ -29,10 +29,10 @@ BotID does **not** support traditional HTML forms that use the `action` and `met
 
 - [Export your Webflow site and host it on Vercel](https://vercel.com/kb/guide/webflow-vercel-drop) — Learn how to export your Webflow site's code and host it on Vercel with Vercel Drop. Drag your .zip export into the brow
 - [Deploying and testing BotID](https://vercel.com/kb/guide/deploying-and-testing-botid) — This guide gives an overview on Vercel BotID and how to deploy and test it in production
-- [Vercel BotID now  available for all frameworks](https://vercel.com/changelog/botid-now-available-for-all-frameworks)
 - [Deploying React Forms Using Formspree with Vercel](https://vercel.com/kb/guide/deploying-react-forms-using-formspree-with-vercel) — Create and deploy a React form with the help of Formspree and Vercel.
-- [Vercel BotID is now generally available](https://vercel.com/changelog/vercel-botid-is-now-generally-available)
-- [Vercel BotID now leverages Vercel's verified bot directory](https://vercel.com/changelog/vercel-botid-now-leverages-vercels-verified-bot-directory)
+- [Vercel BotID now  available for all frameworks](https://vercel.com/changelog/botid-now-available-for-all-frameworks)
+- [Using SvelteKit Form Actions](https://vercel.com/kb/guide/using-sveltekit-form-actions) — This guide explains how to use form actions in SvelteKit to handle form submissions, process form data, and enhance form
+- [Get Started with BotID](https://vercel.com/docs/botid/get-started) — Step-by-step guide to setting up BotID protection in your Vercel project
 - [Documentation, CLI, and Feedback](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation) — Find documentation, use the CLI, and share feedback with Vercel.
 - [Submit Billing Data](https://vercel.com/docs/rest-api/marketplace/submit-billing-data) — POST /v1/installations/{integrationConfigurationId}/billing — Sends the billing and usage data. The partner should do th
 - [submit_feedback](https://vercel.com/docs/agent-resources/vercel-mcp/tools/documentation/submit_feedback) — Send feedback about Vercel or its MCP tools.

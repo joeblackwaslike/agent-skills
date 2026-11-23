@@ -17,8 +17,8 @@ summary: Connect Mistral Vibe to AI Gateway with the Vercel CLI or a TOML provid
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/vibe.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "341d1ec1f70fbd39b8b3bf89a5afc2694f72a09f98d3081175e841107457205d"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "314543a678a41062dd676514885f872e6277b88b269681f4ddec7528b20a6601"
 ---
 
 # Mistral Vibe with AI Gateway
@@ -31,12 +31,11 @@ sha256: "341d1ec1f70fbd39b8b3bf89a5afc2694f72a09f98d3081175e841107457205d"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Mistral Large 4 now available on AI Gateway](https://vercel.com/changelog/mistral-large-4-now-available-on-ai-gateway)
-- [Mistral Large 4 updated weights and lower pricing on AI Gateway](https://vercel.com/changelog/mistral-large-4-updated-weights-and-lower-pricing-on-ai-gateway)
-- [Mistral Large 3 now available on Vercel AI Gateway](https://vercel.com/changelog/mistral-large-3-now-available-on-vercel-ai-gateway)
 - [gptme with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/gptme) — Connect gptme to AI Gateway with the Vercel CLI or a TOML provider configuration.
 - [Deep Agents CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/deepagents) — Connect Deep Agents CLI to AI Gateway with the Vercel CLI or a TOML provider and model profiles.
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr
+- [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
+- [Aider with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/aider) — Connect Aider to AI Gateway with the Vercel CLI or an OpenAI-compatible base URL, API key, and model metadata.
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/vibe.graph.md](/docs/ai-gateway/coding-agents/vibe.graph.md)
 <!-- /docsgraph:related -->

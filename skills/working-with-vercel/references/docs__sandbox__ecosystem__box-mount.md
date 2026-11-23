@@ -16,8 +16,8 @@ summary: Run a contract review in Vercel Sandbox with Box files and sync the rev
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/ecosystem/box-mount.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "32b10ad54c7c5c9b2ab489e633e8950d2fed124cf38bd7755ac5b982c7398b59"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "e42ff208e469ef84e1e5dc690e528d2e649b2595ca36f61d7e12e57e5edc5cc1"
 ---
 
 # Box Mount
@@ -34,13 +34,11 @@ runs.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Box Mount now runs in Vercel Sandbox](https://vercel.com/changelog/box-mount-now-runs-in-vercel-sandbox)
-- [Vercel Sandbox now supports FUSE-based filesystems](https://vercel.com/changelog/vercel-sandbox-now-supports-fuse-based-filesystems)
-- [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
-- [Mount remote storage](https://vercel.com/docs/sandbox/mount-remote-storage) — Mount an external object store such as Amazon S3 into a Vercel Sandbox with a FUSE driver, so code reads and writes remo
+- [Mount remote storage](https://vercel.com/docs/sandbox/examples/mount-remote-storage) — Mount an external object store such as Amazon S3 into a Vercel Sandbox with a FUSE driver, so code reads and writes remo
+- [Sandbox Examples](https://vercel.com/docs/sandbox/examples) — Task-oriented examples for common Vercel Sandbox operations in TypeScript, Python, and the Sandbox CLI.
+- [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart) — Learn how to run your first code in a Vercel Sandbox.
 - [TanStack AI with Vercel Sandbox](https://vercel.com/docs/sandbox/ecosystem/tanstack-ai) — Run TanStack AI coding agents in isolated Vercel Sandbox microVMs with the dedicated provider, workspace configuration,
-- [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
-- [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/box-mount.graph.md](/docs/sandbox/ecosystem/box-mount.graph.md)
 <!-- /docsgraph:related -->

@@ -14,8 +14,8 @@ summary: Learn how to forward Vercel Audit Log Drain events to Datadog using the
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/drains/audit-logs-to-datadog.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "869ebeeebb6fa9527307a7880e439a09aeb67a7dc38789046141c56ec97099f9"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "2be0b33ed0c0f2a6192ffbd632c9ce6988684652d9f117437a263d39cd1f0303"
 ---
 
 # Drain Audit Logs to Datadog
@@ -32,11 +32,12 @@ Audit Log Drains can forward team activity events to [Datadog](https://www.datad
 
 - [Audit Log Drains now support Datadog, Splunk, and Panther](https://vercel.com/changelog/audit-log-drains-now-support-datadog-splunk-and-panther)
 - [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains)
+- [Expanded Audit Log coverage, now delivered through Vercel Drains](https://vercel.com/changelog/expanded-audit-log-coverage-now-delivered-through-vercel-drains)
 - [Drain Audit Logs to Splunk](https://vercel.com/docs/drains/audit-logs-to-splunk) — Learn how to forward Vercel Audit Log Drain events to Splunk using the HTTP Event Collector \\(HEC\\).
 - [Migrating from Custom SIEM Log Streaming to Audit Log Drains](https://vercel.com/docs/audit-log/migrating-to-drains) — Move your SIEM integration from Custom SIEM Log Streaming to Audit Log Drains, with wider event coverage and a new event
 - [Drain Audit Logs to Panther](https://vercel.com/docs/drains/audit-logs-to-panther) — Learn how to forward Vercel Audit Log Drain events to Panther using Panther's built-in Vercel source.
-- [Drain Audit Logs to S3](https://vercel.com/docs/drains/audit-logs-to-s3) — Learn how to configure AWS IAM and Amazon S3 so Vercel can write Audit Log Drain events to your S3 bucket.
 - [Web Analytics Drains Reference](https://vercel.com/docs/drains/reference/analytics) — Learn about Web Analytics Drains - data formats and custom events configuration.
+- [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
 
 Full cross-link map for this page: [/docs/drains/audit-logs-to-datadog.graph.md](/docs/drains/audit-logs-to-datadog.graph.md)
 <!-- /docsgraph:related -->

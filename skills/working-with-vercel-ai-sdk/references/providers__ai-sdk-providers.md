@@ -4,8 +4,8 @@ description: Learn how to use AI SDK providers.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers.md"
-fetched_at: "2026-11-16T12:32:31.917Z"
-sha256: "e31aff71dd88cd23963c0ba296866436012060a19ff95559fa57620438dc54dd"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "8c957b8ec53d3c5ba0e91578f51e233e31a9a15eb33277c2edb9aa7b65d30c19"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -26,6 +26,8 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
 | [xAI Grok](/providers/ai-sdk-providers/xai)                | `grok-4`                                            | ✗           | ✓                 | ✓          | ✓              |
 | [xAI Grok](/providers/ai-sdk-providers/xai)                | `grok-3`                                            | ✗           | ✓                 | ✓          | ✓              |
 | [xAI Grok](/providers/ai-sdk-providers/xai)                | `grok-3-mini`                                       | ✗           | ✓                 | ✓          | ✓              |
+| [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-6.2-astra`                                     | ✓           | ✓                 | ✓          | ✓              |
+| [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-6.2-sol`                                       | ✓           | ✓                 | ✓          | ✓              |
 | [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-6-astra`                                       | ✓           | ✓                 | ✓          | ✓              |
 | [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-6.1-sol`                                       | ✓           | ✓                 | ✓          | ✓              |
 | [OpenAI](/providers/ai-sdk-providers/openai)               | `gpt-6.1-terra`                                     | ✓           | ✓                 | ✓          | ✓              |
@@ -64,12 +66,14 @@ Not all providers support all AI SDK features. Here's a quick comparison of the 
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-haiku-4-5`                                  | ✓           | ✓                 | ✓          | ✓              |
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-opus-4-1`                                   | ✓           | ✓                 | ✓          | ✓              |
 | [Anthropic](/providers/ai-sdk-providers/anthropic)         | `claude-sonnet-4-0`                                 | ✓           | ✓                 | ✓          | ✓              |
+| [Google](/providers/ai-sdk-providers/google)               | `gemini-4-neon`                                     | ✓           | ✓                 | ✓          | ✓              |
 | [Google](/providers/ai-sdk-providers/google)               | `gemini-4-hydrogen`                                 | ✓           | ✓                 | ✓          | ✓              |
 | [Google](/providers/ai-sdk-providers/google)               | `gemini-3.8-flash`                                  | ✓           | ✓                 | ✓          | ✓              |
 | [Google](/providers/ai-sdk-providers/google)               | `gemini-3.1-pro-preview`                            | ✓           | ✓                 | ✓          | ✓              |
 | [Google](/providers/ai-sdk-providers/google)               | `gemini-3-pro-preview`                              | ✓           | ✓                 | ✓          | ✓              |
 | [Google](/providers/ai-sdk-providers/google)               | `gemini-2.5-pro`                                    | ✓           | ✓                 | ✓          | ✓              |
 | [Google](/providers/ai-sdk-providers/google)               | `gemini-2.5-flash`                                  | ✓           | ✓                 | ✓          | ✓              |
+| [Google Vertex](/providers/ai-sdk-providers/google-vertex) | `gemini-4-neon`                                     | ✓           | ✓                 | ✓          | ✓              |
 | [Google Vertex](/providers/ai-sdk-providers/google-vertex) | `gemini-4-hydrogen`                                 | ✓           | ✓                 | ✓          | ✓              |
 | [Google Vertex](/providers/ai-sdk-providers/google-vertex) | `gemini-3.8-flash`                                  | ✓           | ✓                 | ✓          | ✓              |
 | [Google Vertex](/providers/ai-sdk-providers/google-vertex) | `gemini-3.1-pro-preview`                            | ✓           | ✓                 | ✓          | ✓              |

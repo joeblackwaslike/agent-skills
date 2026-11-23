@@ -17,8 +17,8 @@ summary: Run Codex in a Vercel Sandbox, driven by a Vercel Function, with its se
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-harnesses/codex.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "cd1ef6801ff367f3ca3fdef082d38d9d37f439052304c396900ee08196287865"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "af7f6d424efe5a38392764a7b7f3a85ad470bcf50fa2595cf783902583617c2e"
 ---
 
 # Running Codex Durably on Vercel
@@ -37,10 +37,10 @@ Each session of [Codex](https://github.com/openai/codex) gets its own [Vercel Sa
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
 - [Workflow SDK 5: built for production](https://vercel.com/blog/workflow-sdk-5)
-- [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
+- [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
 - [How to give agents persistent storage with Vercel Drives](https://vercel.com/kb/guide/persistent-storage-with-vercel-drives) — Give AI SDK and TanStack AI agents persistent storage with Vercel Drives so they can save and reuse research notes acros
+- [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
 - [Running OpenCode Durably on Vercel](https://vercel.com/docs/agent-harnesses/opencode) — Run OpenCode v2 inside a Vercel Function with its session in a durable log, so a crashed turn resumes in a new function.
 - [Running fx Durably on Vercel](https://vercel.com/docs/agent-harnesses/fx) — Deploy an fx agent with libfx so its sessions survive crashes, function timeouts, and redeploys on Vercel.

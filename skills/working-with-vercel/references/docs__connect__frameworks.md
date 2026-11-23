@@ -17,8 +17,8 @@ summary: Use Vercel Connect with AI SDK, TanStack AI, MCP clients, eve, Chat SDK
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/connect/frameworks.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "20ebdd8d87bcd9698bca804fd70b574cce57460c0c3cdee98db8b6284c20cea5"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "accb21418cd91c0c03eceeddf7fda2e995862de154f00ec9b5a07a6ef82bc0fe"
 ---
 
 # Frameworks and Adapters for Vercel Connect
@@ -35,8 +35,8 @@ the task your application needs to perform.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
 - [Vercel Connect now supports TanStack AI](https://vercel.com/changelog/vercel-connect-tanstack-ai)
+- [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
 - [Vercel Connect](https://chat-sdk.dev/docs/vercel-connect) — Authenticate Slack, Microsoft Teams, GitHub, Linear, Discord, Notion, and Telegram adapters with Vercel Connect, using s
 - [Build an integrations hub with Nuxt and Vercel Connect](https://vercel.com/kb/guide/nuxt-and-vercel-connect) — Build an Integrations Hub with Nuxt and Vercel Connect. Connect GitHub and Linear over OAuth and mint short-lived tokens

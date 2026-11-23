@@ -4,8 +4,8 @@ description: Learn how to use OpenAI with AI Gateway and the direct provider.
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/openai"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/openai.md"
-fetched_at: "2026-11-16T12:32:31.917Z"
-sha256: "9d02b3e8e5794197980bbbd2111c073af9e6d33d018d76fcc70757541f3abcaf"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "2732fb3d1efdc96c4169c46d9051dba1c66958583bd78c94655af8905cf7900a"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -254,7 +254,8 @@ The following provider options are available:
 
 Supported reasoning efforts vary by model. GPT-5.6, GPT-6 Sol, GPT-6 Luna, and
 GPT-6.1 Terra support `'none'`, `'low'`, `'medium'`, `'high'`, `'xhigh'`, and
-`'max'`. GPT-6 Astra and GPT-6.1 Sol do not support `'none'`.
+`'max'`. GPT-6 Astra, GPT-6.1 Sol, GPT-6.2 Astra, and GPT-6.2 Sol do not
+support `'none'`.
 
 GPT-6 and later models do not support `temperature`, `topP`, `logprobs`, or
 the legacy `promptCacheRetention` option. The provider removes these settings
@@ -389,6 +390,10 @@ The following OpenAI-specific metadata may be returned:
   Cache comparison result. Contains `type` and, when supplied by OpenAI, `reason`,
   `cache_missed_tokens`, and `comparison_reusable_tokens`. Inner field names match
   the API response. Available on generation, streaming, and batch results.
+- **inputTransformations** *(optional)*
+  Input items that OpenAI changed before generation, such as dropped reasoning
+  items. Each entry contains `type`, `action`, `reason`, and, when supplied by
+  OpenAI, `id`. Available on generation, streaming, and batch results.
 
 #### Preserving Reasoning Across Turns
 
@@ -409,6 +414,24 @@ original request settings and history, and append changes where possible:
 - Prefer [OpenAI compaction](#compaction-1) when supported. With custom compaction,
   place summary items as late in the context as possible to limit reasoning loss.
   Configuration updates have the [compaction restrictions](#compaction) below.
+
+To check whether reasoning was dropped, read
+`providerMetadata.openai.inputTransformations`:
+
+```ts
+const result = await generateText({
+  model: openai.responses('gpt-6.2-astra'),
+  messages,
+});
+
+console.log(result.providerMetadata?.openai?.inputTransformations);
+// [{ id: 'rs_...', type: 'reasoning', action: 'removed', reason: 'prefix_mismatch' }]
+```
+
+Each removed reasoning item is listed with its `id` and a `reason`, for example
+`prefix_mismatch`, `model_mismatch`, or `end_user_mismatch`. OpenAI returns an
+empty array when nothing was removed. For streams, await
+`result.providerMetadata` after consuming the stream.
 
 See [OpenAI's preserved reasoning guide](https://developers.openai.com/api/docs/guides/preserved-reasoning).
 
@@ -1773,6 +1796,11 @@ When your own search function discovers tools, attach
 provider preserves the ordinary result and emits an `additional_tools` item
 immediately after it. Replaying the same messages preserves that insertion point.
 
+Because messages can contain replayed, client-supplied history, each entry only
+selects a tool that is registered in `tools`; the provider sends the definition
+it derives from that tool, including its description and input schema. Entries
+for tools that are not registered for the request are dropped with a warning.
+
 ```ts
 import {
   openai,
@@ -1830,6 +1858,7 @@ const messages: ModelMessage[] = [
 const tools = {
   search: tool({ inputSchema: z.object({}) }),
   list_issues: tool({
+    description: 'List Linear issues.',
     inputSchema: z.object({}),
     execute: async () => ({ issues: ['Example issue'] }),
     providerOptions: {
@@ -1864,8 +1893,20 @@ await generateText({
 - `type: 'namespace'` with `name`, `description`, and a non-empty `tools` list of
   function definitions
 
-An empty array emits no item. Keep the names and schemas aligned with the SDK tools
-used for local validation and execution.
+Entries only select registered tools; the `description`, `parameters`,
+`strict`, `defer_loading`, and `format` in an entry are not sent. The provider
+sends the definition derived from the registered tool instead: function and
+namespace entries use that tool's description, input schema, `strict` setting,
+and `deferLoading` option, and custom entries use its `description` and `format`.
+A namespace entry loads only the registered tools whose names it lists. An entry
+can also name a tool that is already part of the request tools; the provider then
+sends that tool's definition again at the named position. Tools that set
+`allowedCallers` cannot be loaded from history, because an inserted definition
+cannot carry that restriction; their entries are dropped with a warning. When the
+request sets `allowedTools`, history can only load tools in that set, and
+namespace entries are not loaded. Register every tool you load this way, usually
+with `omitFromRequestTools: true`, and keep its name aligned with the entry. An
+empty array emits no item.
 
 ##### Load tools at any point in the conversation
 
@@ -1873,6 +1914,8 @@ To add tools somewhere other than after a tool result, add an empty system messa
 with `providerOptions.openai.additionalTools` at that point. The Responses provider
 emits an `additional_tools` item in its place, so the earlier history and the
 top-level tool list stay unchanged. This requires `allowSystemInMessages: true`.
+The same registration check applies: every entry must refer to a tool in `tools`,
+and the provider sends the registered definition.
 
 ```ts
 import {
@@ -1907,7 +1950,7 @@ messages.push(
 
 await generateText({
   model: openai.responses('gpt-5.4'),
-  tools, // includes get_weather with omitFromRequestTools: true
+  tools, // includes get_weather with omitFromRequestTools: true and its description
   messages,
   allowSystemInMessages: true,
 });
@@ -1921,6 +1964,9 @@ the configuration update comes first.
 definition. Keep the function in `tools` and, if you use `activeTools`, include it
 there too: inactive tools cannot be executed. Use automatic tool choice for these
 functions; OpenAI cannot force or allow-list a tool absent from the top-level list.
+Omission only affects serialization: decide which tools a user may run with
+`activeTools` or by choosing which tools to register on the server, not by
+leaving them out of the request.
 
 Both `generateText` and `streamText` support this representation. For streaming,
 append `await result.responseMessages` when replaying the conversation. This
@@ -3384,6 +3430,8 @@ The following optional provider options are available for OpenAI completion mode
 
 | Model                 | Image Input | Audio Input | Object Generation | Tool Usage |
 | --------------------- | ----------- | ----------- | ----------------- | ---------- |
+| `gpt-6.2-astra`       | ✓           | ✗           | ✓                 | ✓          |
+| `gpt-6.2-sol`         | ✓           | ✗           | ✓                 | ✓          |
 | `gpt-6-astra`         | ✓           | ✗           | ✓                 | ✓          |
 | `gpt-6.1-sol`         | ✓           | ✗           | ✓                 | ✓          |
 | `gpt-6.1-terra`       | ✓           | ✗           | ✓                 | ✓          |
@@ -3432,6 +3480,8 @@ is supported.
 
 | Model                 | Reasoning | Reasoning Efforts                               | Temperature                                      | Top P                                            |
 | --------------------- | --------- | ----------------------------------------------- | ------------------------------------------------ | ------------------------------------------------ |
+| `gpt-6.2-astra`       | ✓         | `low`, `medium`, `high`, `xhigh`, `max`         | ✗                                                | ✗                                                |
+| `gpt-6.2-sol`         | ✓         | `low`, `medium`, `high`, `xhigh`, `max`         | ✗                                                | ✗                                                |
 | `gpt-6-astra`         | ✓         | `low`, `medium`, `high`, `xhigh`, `max`         | ✗                                                | ✗                                                |
 | `gpt-6.1-sol`         | ✓         | `low`, `medium`, `high`, `xhigh`, `max`         | ✗                                                | ✗                                                |
 | `gpt-6.1-terra`       | ✓         | `none`, `low`, `medium`, `high`, `xhigh`, `max` | Conditional: Only when reasoning effort is none. | Conditional: Only when reasoning effort is none. |

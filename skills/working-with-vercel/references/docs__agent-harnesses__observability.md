@@ -17,8 +17,8 @@ summary: See each durable agent session in Vercel Agent Runs, with its turns, mo
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-harnesses/observability.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "44eadcd4156c44ca870a9ddedc8e407557364475a986de75c27e7f69f382f080"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "ec050c9e61c404f65398edf09c16625b2e220f92fb3050dd53a3cd69d65ec7b2"
 ---
 
 # Observability for Durable Agent Harnesses
@@ -34,8 +34,8 @@ Agent Runs shows each session of a durable agent in the Vercel dashboard, with i
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
-- [Trace and debug eve agent sessions with Vercel Observability](https://vercel.com/changelog/eve-agent-observability)
 - [Agent Runs](https://eve.dev/docs/observability/agent-runs) — Inspect eve sessions in Vercel and configure the Agent Runs destination.
+- [Trace and debug eve agent sessions with Vercel Observability](https://vercel.com/changelog/eve-agent-observability)
 - [Tools, Files, and Documents in Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/tools) — What tools do when a durable agent harness resumes after a crash, where its files live, and how to keep typed state with
 - [Agent Runs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs) — Vercel MCP tools for agent runs.
 - [Security for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/security) — What a durable agent harness may run in your Vercel Function, where the commands and files a model picks run instead, an

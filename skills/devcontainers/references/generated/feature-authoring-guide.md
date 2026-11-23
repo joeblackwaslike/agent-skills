@@ -1,8 +1,8 @@
 ---
 title: "Feature authoring guide"
 source: "https://containers.dev/guide/author-a-feature"
-fetched_at: "2026-06-15T05:52:46.055Z"
-sha256: "d5dc214d8cbfbceafeb966ecc23f031d12a4695758cce7276fef6e31333325cb"
+fetched_at: "2026-11-23T14:03:28.686Z"
+sha256: "0004cae85b4185e50074a68a5dda5916e00c8eaf91b16d805f1bf1743ae938b2"
 ---
 
 # Feature authoring guide
@@ -147,6 +147,21 @@ If you’d like your Features to appear in our public index so that other commun
 
 
 > Note: Add a single entry per repository, regardless of how many Features it contains. The `ociReference` should be the collection namespace root — e.g., `ghcr.io//` — not a path to an individual Feature (e.g., avoid `ghcr.io///`). The site will automatically discover all Features in the collection from that one entry. The `ociReference` value must not include a URL scheme such as `http://` or `https://`.
+
+
+For collections published to `ghcr.io`, the entry must also include an `ownerId`: the numeric `id` of the GitHub user or organization ``, as returned by `https://api.github.com/users/`. Unlike the name, this ID doesn’t change when an account is renamed, so collections whose owner name now belongs to a different account are skipped. For example:
+
+
+```
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">My Features</span>
+  <span class="na">maintainer</span><span class="pi">:</span> <span class="s">My Name</span>
+  <span class="na">contact</span><span class="pi">:</span> <span class="s">https://github.com/<owner>/<repo>/issues</span>
+  <span class="na">repository</span><span class="pi">:</span> <span class="s">https://github.com/<owner>/<repo></span>
+  <span class="na">ociReference</span><span class="pi">:</span> <span class="s">ghcr.io/<owner>/<repo></span>
+  <span class="na">ownerId</span><span class="pi">:</span> <span class="m">12345678</span>
+```
+
+If you rename the account, update `ociReference` to the new name and keep the `ownerId`.
 
 
 Feature collections are scanned to populate a Feature index on the containers.dev site and allow them to appear in Dev Container creation UX in supporting tools like VS Code Dev Containers and GitHub Codespaces.

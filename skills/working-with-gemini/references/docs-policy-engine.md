@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/docs/reference/policy-engine.md"
-fetched_at: "2026-11-09T12:36:42.699Z"
-sha256: "ddebca37578716667552a06767bb7e4c23f52f4eca90732cf74310b20df4c7b2"
+fetched_at: "2026-11-23T14:13:22.579Z"
+sha256: "147bb923c0612db51e02f34b89aac4583efb291616903f80699fe07e226eae81"
 ---
 
 # Policy engine
@@ -98,6 +98,41 @@ JSON string, which is then tested against the provided regular expression. If
 the arguments don't match the pattern, the rule does not apply. For a list of
 argument keys available for each tool, see the **Parameters** in the
 [Tools reference](/docs/reference/tools#available-tools).
+
+In the stable JSON string, each top-level argument is delimited by the `\x00`
+character, while nested objects and array items aren't. To match only a
+top-level argument, start the pattern with `\x00`, for example
+`'\x00"command":"git '`.
+
+Patterns use [RE2 syntax](https://github.com/google/re2/wiki/Syntax). Gemini CLI
+matches them in time proportional to the length of the arguments, so evaluation
+time stays predictable for large arguments. RE2 differs from JavaScript regular
+expressions in the following ways:
+
+- Lookahead (`(?=...)`, `(?!...)`), lookbehind (`(?<=...)`, `(?<!...)`), and
+  backreferences (`\1`) aren't supported.
+- `\uXXXX` escapes aren't supported. Use `\x{XXXX}` instead.
+- A backslash in front of a non-ASCII character isn't supported. Write the
+  character itself.
+- A repetition count can't exceed 1,000. For example, `a{1001}` is rejected.
+- `\s` matches ASCII whitespace only. It doesn't match a no-break space or other
+  Unicode spaces.
+- `.` matches every character except a newline, including a carriage return.
+
+Gemini CLI also limits the compiled size of a pattern to 2,000 instructions.
+Repetition counts multiply the compiled size, so large counts are the usual
+reason a pattern exceeds this limit. For example, `.{1000}` is accepted, but
+`.{1000}.{1000}` and `.{0,1000}` aren't. We recommend keeping repetition counts
+small.
+
+If a pattern doesn't compile or exceeds the size limit, Gemini CLI skips that
+rule and reports the error when it starts.
+
+<!-- prettier-ignore -->
+> [!NOTE]
+> Earlier versions of Gemini CLI evaluated patterns as JavaScript regular
+> expressions. If a rule that used to load now reports an invalid pattern,
+> rewrite the pattern without the unsupported constructs.
 
 #### Execution environment
 
@@ -312,19 +347,22 @@ mcpName = "my-custom-server"
 # key-value pairs provided here are present in the tool's annotations.
 toolAnnotations = { readOnlyHint = true }
 
-# (Optional) A regex to match against the tool's arguments.
-argsPattern = '"command":"(git|npm)'
+# (Optional) A regular expression in RE2 syntax to match against the tool's
+# arguments.
+argsPattern = '\x00"command":"(?:git|npm)'
 
 # (Optional) A string or array of strings that a shell command must start with.
 # This is syntactic sugar for `toolName = "run_shell_command"` and an
 # `argsPattern`.
 commandPrefix = "git"
 
-# (Optional) A regex to match against the entire shell command.
+# (Optional) A regular expression in RE2 syntax to match against the entire
+# shell command.
 # This is also syntactic sugar for `toolName = "run_shell_command"`.
 # Note: This pattern is tested against the JSON representation of the arguments
-# (e.g., `{"command":"<your_command>"}`). Because it prepends `"command":"`,
-# it effectively matches from the start of the command.
+# (e.g., `{"command":"<your_command>"}`). It matches only the top-level
+# `command` argument and starts at the beginning of the command, so
+# alternatives such as `ls|pwd` also apply from the start of the command.
 # Anchors like `^` or `$` apply to the full JSON string,
 # so `^` should usually be avoided here.
 # You cannot use commandPrefix and commandRegex in the same rule.
@@ -392,7 +430,8 @@ and [Tools reference](/docs/reference/tools#available-tools).
 - `commandPrefix`: Matches if the `command` argument starts with the given
   string.
 - `commandRegex`: Matches if the `command` argument matches the given regular
-  expression.
+  expression. The pattern uses the same RE2 syntax as
+  [`argsPattern`](#arguments-pattern).
 
 **Example:**
 

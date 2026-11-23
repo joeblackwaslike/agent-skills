@@ -17,8 +17,8 @@ summary: Use Vercel Sandbox with the agent frameworks, model SDKs, and agents yo
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/ecosystem.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "e030bba481661be773760f1d3772d33c84329f87f45d218729f5bd76998a6db5"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "e4ade2db18c452836fae1a45c61e9cea534bee4447e1674dd928ec53c12f1378"
 ---
 
 # Ecosystem
@@ -35,20 +35,19 @@ agent you build. Choose an [agent](#agents), a
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
-- [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available)
 - [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
 - [How to run Herdr coding agents in isolated Vercel Sandboxes](https://vercel.com/kb/guide/run-herdr-coding-agents-isolated-vercel-sandboxes) — Install the vercel.sandbox plugin for Herdr, approve an upload manifest, run each AI coding agent in its own isolated Ve
 - [Run Paseo agents on Vercel Sandbox](https://vercel.com/changelog/run-paseo-agents-on-vercel-sandbox)
 - [Run Scale AI’s AgentEnv evals on Vercel Sandbox](https://vercel.com/changelog/run-scale-ais-agentenv-evals-on-vercel-sandbox)
-- [Agent Frameworks on Vercel](https://vercel.com/docs/frameworks/agents) — Build AI agents with eve, Mastra, Flue, and Vercel. Learn how each framework connects to Vercel compute, models, and sto
+- [Vercel Plugin for AI Coding Agents](https://vercel.com/docs/agent-resources/vercel-plugin) — Install the Vercel plugin to give supported AI coding tools Vercel context, skills, specialist agents, slash commands, a
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem.graph.md](/docs/sandbox/ecosystem.graph.md)
 <!-- /docsgraph:related -->
 
 ## Agents
 
-### Start from your terminal
+### Start an agent sandbox from your terminal
 
 Run OpenCode, Pi, Claude Code, or Codex inside a Vercel Sandbox while using its
 interactive interface in your local terminal. Commands, file edits, and tests
@@ -75,6 +74,20 @@ chosen agent separately. Your local project files aren't uploaded automatically.
 Exiting the agent leaves the sandbox running. Use the reconnect or stop command
 printed in your terminal. See [Run a coding agent](/docs/sandbox/cli-reference#run-a-coding-agent)
 for setup, authentication, and lifecycle details.
+
+### Agent skills
+
+Add Sandbox guidance to a coding agent you already use:
+
+| Skill                                                                           | Use case                                                 |
+| ------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| [sandbox](https://skills.sh/vercel/sandbox/sandbox)                             | SDK and CLI guidance for creating and managing sandboxes |
+| [offload-to-sandbox](https://skills.sh/vercel/vercel-plugin/offload-to-sandbox) | Heavy builds and long test suites in sandboxes           |
+
+```bash filename="Terminal"
+npx skills add vercel/sandbox
+npx skills add https://github.com/vercel/vercel-plugin --skill offload-to-sandbox
+```
 
 ### Agent integrations
 
@@ -114,7 +127,7 @@ through AI Gateway.
 
 | Integration                                            | Type            | Use case                                    |
 | ------------------------------------------------------ | --------------- | ------------------------------------------- |
-| [AI SDK](/docs/sandbox/working-with-sandbox)           | AI SDK          | Tool calling with the AI SDK                |
+| [AI SDK](/docs/sandbox/examples)                       | AI SDK          | Tool calling with the AI SDK                |
 | [Chat SDK](/docs/chat-sdk/integrations/sandbox) | Chat SDK | Analyze CSV attachments with the AI SDK Bash tool |
 | [Flue](/docs/sandbox/ecosystem/flue) | Agent framework | Agents with sandbox-backed file and command tools |
 | [LangChain](/docs/sandbox/ecosystem/langchain)         | Agent framework | Agents with a sandboxed code execution tool |

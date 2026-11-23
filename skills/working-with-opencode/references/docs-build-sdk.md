@@ -1,10 +1,10 @@
 ---
 source: "https://opencode.ai/docs/build/sdk/"
-fetched_at: "2026-11-09T12:39:24.590Z"
-sha256: "f07ef149e9fbe8571544d6761aa15581e208e44c8c082b2596cb51d9043194fc"
+fetched_at: "2026-11-23T14:15:43.627Z"
+sha256: "8db681218086895e8906cb3c0fb282f7a7439721a4f941417d61caf1bd52c705"
 ---
 
-# Overview
+# SDK overview
 
 `@opencode/sdk` hosts OpenCode directly inside your application. Unlike the
 [network client](/build/client), it assembles the OpenCode server and routes API

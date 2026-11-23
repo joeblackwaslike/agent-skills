@@ -17,8 +17,8 @@ summary: Learn how to replicate the Vercel deployment environment locally and te
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/dev.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "37c9cd91a486c8e7f3b36325b94a40ad676058088a31b4218dffa9ce3a20e2fa"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "942476002324e7af45b390179be1488c1b82b7c10fb7e9ef50e184d1af64e259"
 ---
 
 # vercel dev
@@ -38,8 +38,8 @@ The `vercel dev` command is used to replicate the Vercel deployment environment 
 - [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
+- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 
 Full cross-link map for this page: [/docs/cli/dev.graph.md](/docs/cli/dev.graph.md)
 <!-- /docsgraph:related -->

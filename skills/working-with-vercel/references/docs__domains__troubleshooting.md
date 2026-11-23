@@ -17,8 +17,8 @@ summary: Learn about common reasons for domain misconfigurations and how to trou
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains/troubleshooting.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "69d0554ba69f544a2196a50c44d35e981a48f60254a0ab550d4652417916b3d5"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "106c31843cf97c3a9f9af65f91089b395b74e77350d0bfd212f2c8c212efbabe"
 ---
 
 # Troubleshooting domains
@@ -33,7 +33,6 @@ There are many common reasons why your domain configuration may not be working. 
 
 - [Using Cloudflare and other reverse proxies with Vercel](https://vercel.com/kb/guide/can-i-use-a-proxy-on-top-of-my-vercel-deployment) — General information about using an external proxy to serve a Vercel Deployment.
 - [How to resolve IP blocking issues ](https://vercel.com/kb/guide/how-to-resolve-ip-blocking-issues) — Learn to troubleshoot IP blocking issues for both shared and personal networks.
-- [How to fix a domain suspended by serverHold or clientHold](https://vercel.com/kb/guide/how-to-fix-a-domain-suspended-by-serverhold-or-clienthold) — What serverHold and clientHold mean, why they happen, and how to resolve them.
 - [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 - [Claiming Domain Ownership](https://vercel.com/docs/domains/working-with-domains/claim-domain-ownership) — Learn how to claim ownership of a domain that is registered with another Vercel account by verifying DNS ownership.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
@@ -196,6 +195,8 @@ The `dig` commands should return the values shown in **Settings** > **Domains**.
 When you configure an apex domain (example.com) as a custom domain for your project on Vercel, Vercel will be give you an IP address to add as an A record in your DNS configuration. Although this IP address resolves to a specific geographic location, it does not mean that when your users point to your domain, they will be sent to this specific geographic location to resolve the domain.
 
 This is because Vercel uses [Anycast](https://en.wikipedia.org/wiki/Anycast) IP addresses, which are shared across all regions. That means even if your users access your domain resolving to the same IP addresses from different geographic locations, they will be routed to the closest CDN region relative to your users, based on the BGP (Border Gateway Protocol).
+
+Vercel has no infrastructure in mainland China, so a correctly configured domain can still load slowly or fail to load for visitors there. See [Access from mainland China](/docs/regions#access-from-mainland-china).
 
 ### Domain ownership errors
 

@@ -17,8 +17,8 @@ summary: Learn how to set up Conformance for your codebase.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/conformance/getting-started.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "062c58cf29b729a3f5482af0c6894f8097fda29c2837d908b5e985a2b4885528"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "18806aee48ab21dac33bfedd0ee71ea6c5ee7b3df2ae9dda384d39f7e1df22f1"
 ---
 
 # Getting Started with Conformance
@@ -43,6 +43,8 @@ Help me set up Conformance for this project. First, make sure the Vercel CLI is 
 ### Get access to Conformance
 
 To enable Conformance for your Enterprise team, you'll need to request access through your Vercel account administrator.
+
+If your team isn't on the Enterprise plan, [contact our sales team](/contact/sales) to get access to Conformance.
 
 ### Setting up Vercel's private npm registry
 

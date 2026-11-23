@@ -17,8 +17,8 @@ summary: Learn how to use the Vercel Toolbar to make it easier to manage microfr
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/microfrontends/managing-microfrontends/vercel-toolbar.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "5205b112d2f58fe63332adc8a61040868883f30c3ed1cb23b35bf9502e90821d"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "f0218e74a06192badc5fb6c854990735c46cddd18113c9938ebf2bc8e9d137b4"
 ---
 
 # Managing with the Vercel Toolbar
@@ -35,8 +35,8 @@ Using the [Vercel Toolbar](/docs/vercel-toolbar), you can visualize and independ
 - [Easier toolbar setup for SvelteKit and other Vite-based frameworks](https://vercel.com/changelog/easier-toolbar-setup-for-sveltekit-and-other-vite-based-frameworks)
 - [Managing the visibility of the Vercel Toolbar](https://vercel.com/docs/vercel-toolbar/managing-toolbar) — Learn how to enable or disable the Vercel Toolbar for your team, project, and session.
 - [Add the Vercel Toolbar to your production environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-production) — Learn how to add the Vercel Toolbar to your production environment and how your team members can use tooling to access t
-- [Microfrontends Routing](https://vercel.com/docs/microfrontends/routing) — Configure which microfrontend handles each path and understand how Vercel selects deployments.
 - [Add the Vercel Toolbar to your local environment](https://vercel.com/docs/vercel-toolbar/in-production-and-localhost/add-to-localhost) — Learn how to use the Vercel Toolbar in your local environment.
+- [Microfrontends Routing](https://vercel.com/docs/microfrontends/routing) — Configure which microfrontend handles each path and understand how Vercel selects deployments.
 - [Toolbar](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar) — Vercel MCP tools for toolbar.
 
 Full cross-link map for this page: [/docs/microfrontends/managing-microfrontends/vercel-toolbar.graph.md](/docs/microfrontends/managing-microfrontends/vercel-toolbar.graph.md)

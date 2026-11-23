@@ -17,8 +17,8 @@ summary: "Learn how to use redirects on Vercel to instruct Vercel's platform to 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/routing/redirects.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "8819834bdfa72236830b88d6ab7a322055663d3dcb5aab82b14c3fbaa292dcf8"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "53759a7fd5f7b8401cfc6500568431569af4db8a1c8a03495a24ebede40a0900"
 ---
 
 # Redirects
@@ -37,7 +37,7 @@ Redirects are rules that instruct Vercel to send users to a different URL than t
 - [Rewrites on Vercel](https://vercel.com/docs/routing/rewrites) — Learn how to use rewrites to send users to different URLs without modifying the visible URL.
 - [Edit a project-level redirect.](https://vercel.com/docs/rest-api/bulk-redirects/edit-a-project-level-redirect) — PATCH /v1/bulk-redirects — Edits a single redirect identified by its source path. Stages a new change with the modified
 - [Gets project-level redirects.](https://vercel.com/docs/rest-api/bulk-redirects/gets-project-level-redirects) — GET /v1/bulk-redirects — Get the version history for a project's bulk redirects
-- [Vercel CDN overview](https://vercel.com/docs/cdn) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
+- [Incremental Migration to Vercel](https://vercel.com/docs/incremental-migration) — Learn how to migrate your app or website to Vercel with minimal risk and high impact.
 
 Full cross-link map for this page: [/docs/routing/redirects.graph.md](/docs/routing/redirects.graph.md)
 <!-- /docsgraph:related -->
@@ -174,7 +174,22 @@ You can redirect a `www` subdomain to an apex domain, or other domain redirects,
 
 ### Firewall Redirects
 
-In emergency situations, you can also define redirects using [Firewall rules](/kb/guide/emergency-redirect) to redirect requests to a new page. Firewall redirects execute before CDN configuration redirects (e.g. `vercel.json` or `next.config.js`) are evaluated.
+In emergency situations, you can also define redirects using [Firewall rules](/docs/vercel-firewall/vercel-waf/custom-rules) to redirect requests to a new page. Firewall redirects execute before CDN configuration redirects (e.g. `vercel.json` or `next.config.js`) are evaluated.
+
+A firewall redirect takes effect when you publish the rule, without a new deployment. For example, if a release breaks your `/conference-login` page and you can't roll back, you can send visitors to another page while you ship a fix:
+
+1. From your [dashboard](/dashboard), select your project, then open [**Firewall**](https://vercel.com/d?to=%2F%5Bteam%5D%2F%5Bproject%5D%2Ffirewall\&title=Go+to+Firewall) in the sidebar.
+2. Select **⋯** > **Configure** on the top right of the Firewall overview page.
+3. Select **Add New...** > **Rule**, and enter a name such as `Emergency redirect`.
+4. In the **Configure** section, set the **If** condition to **Request Path** **Equals**, and enter the path of the broken page, such as `/conference-login`.
+5. For the **Then** action, select **Redirect** and enter the destination. Use a relative path when the destination is in the same project. The dashboard creates a temporary **307** redirect.
+6. Select **Save Rule**.
+7. Select **Review Changes**, review the pending changes, and select **Publish**.
+8. Request the path you matched and confirm that it redirects to the destination.
+
+After you deploy the fix, remove the rule and publish again so the page is reachable.
+
+To redirect a whole hostname instead of a path, see [Publish a firewall redirect](#publish-a-firewall-redirect).
 
 ## Choose a canonical production domain
 

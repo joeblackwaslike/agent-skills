@@ -13,8 +13,8 @@ summary: Manage environment variables and secrets for Vercel CI runs.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ci/environment-variables.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "fe15f9dadfe2b2c9e360a6d2b56a61a7024837553016cc1cde8fcd4cc8f79136"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "f2dffff05fe1027b2f6c9142021a70a2a0550de29cf764ce217359306a505ba5"
 ---
 
 # Vercel CI Environment Variables
@@ -28,8 +28,8 @@ Use repository CI environment variables for secrets and values scoped to one rep
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel](https://turborepo.dev/docs/guides/ci-vendors/vercel) — Deploy your Turborepo on Vercel and run tasks with Vercel CI using zero-config Remote Caching.
-- [Environment variables](https://vercel.com/docs/environment-variables) — Learn more about environment variables on Vercel.
 - [Managing environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables) — Learn how to create and manage environment variables for Vercel.
+- [Environment variables](https://vercel.com/docs/environment-variables) — Learn more about environment variables on Vercel.
 - [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
 - [Config and Secret environment variables](https://vercel.com/docs/environment-variables/sensitive-environment-variables) — Choose Config or Secret environment variables based on whether their values should remain readable after saving.
 - [Shared environment variables](https://vercel.com/docs/environment-variables/shared-environment-variables) — Learn how to use Shared environment variables, which are environment variables that you define at the Team level and can

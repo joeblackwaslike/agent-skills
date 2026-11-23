@@ -18,8 +18,8 @@ summary: Forward an OpenTelemetry trace of every AI Gateway request to your own 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/observability-and-spend/trace-drains.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "fbf80952a662188052da213087c39e8b66369e9ab7f4ae1c7fc677da1ffea50e"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "4cf76c971e15a542e4bf1b1dfbada41450b56b9299ee361035c365502dcf283a"
 ---
 
 # AI Gateway Trace Drains
@@ -32,12 +32,13 @@ AI Gateway produces an [OpenTelemetry](https://opentelemetry.io/docs/concepts/si
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [AI Gateway now supports Private Inference](https://vercel.com/changelog/ai-gateway-now-supports-private-inference)
 - [Export AI Gateway traces with Vercel Drains](https://vercel.com/changelog/export-ai-gateway-traces-with-vercel-drains)
 - [How to control AI provider data handling with AI Gateway](https://vercel.com/kb/guide/control-ai-provider-data) — Prevent AI providers from training on your prompts, enforce zero data retention, and restrict providers and models with
-- [Introducing Vercel Drains: Complete observability data, anywhere](https://vercel.com/blog/introducing-vercel-drains)
 - [Tracing](https://vercel.com/docs/tracing) — Learn how to trace your application to understand performance and infrastructure details.
-- [vercel drains](https://vercel.com/docs/cli/drains) — List, inspect, create, update, pause, resume, and delete Vercel Drains from your terminal.
+- [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, caching, SDK and API compati
 - [Find a Drain by id](https://vercel.com/docs/rest-api/drains/find-a-drain-by-id) — GET /v1/drains/{id} — Get the information for a specific Drain by passing the drain id in the URL.
+- [vercel drains](https://vercel.com/docs/cli/drains) — List, inspect, create, update, pause, resume, and delete Vercel Drains from your terminal.
 - [AI Gateway Request Logs](https://vercel.com/docs/ai-gateway/observability-and-spend/logs) — Search, filter, and follow individual AI Gateway requests, inspect provider routing for one request, and export the resu
 
 Full cross-link map for this page: [/docs/ai-gateway/observability-and-spend/trace-drains.graph.md](/docs/ai-gateway/observability-and-spend/trace-drains.graph.md)
@@ -158,8 +159,12 @@ AI Gateway records project and deployment IDs as span attributes named `vercel.p
 | `vercel.ai_gateway.provider`               | string  | The exact gateway provider slug (for example, `vertexAnthropic`)      |
 | `vercel.ai_gateway.request.id`             | string  | The gateway request ID                                                |
 | `vercel.ai_gateway.generation.id`          | string  | The generation ID shown in the AI Gateway dashboard                   |
-| `vercel.ai_gateway.api_key.id`             | string  | The API key that made the request                                     |
+| `vercel.ai_gateway.api_key.id`             | string  | The AI Gateway API key that made the request, if one was used          |
 | `vercel.ai_gateway.api_key.name`           | string  | The API key's display name                                            |
+| `vercel.ai_gateway.auth.method`            | string  | How the request authenticated: `api_key`, `personal_access_token`, `app_token`, `oidc`, or `client_secret` |
+| `vercel.ai_gateway.auth.credential.id`     | string  | The API key, personal access token, or app token that made the request. Absent for OIDC |
+| `vercel.ai_gateway.auth.app.id`            | string  | The OAuth app behind an app token                                     |
+| `vercel.ai_gateway.auth.app.name`          | string  | The OAuth app's name                                                  |
 | `vercel.ai_gateway.api_format`             | string  | The API format the client used (for example, the Chat Completions or Anthropic formats) |
 | `vercel.ai_gateway.credential.type`        | string  | `byok` or `system`                                                    |
 | `vercel.ai_gateway.byok.credential.id`     | string  | The BYOK credential used, if any                                      |

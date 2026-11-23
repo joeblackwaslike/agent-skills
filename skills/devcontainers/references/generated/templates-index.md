@@ -1,8 +1,8 @@
 ---
 title: "Available templates index"
 source: "https://containers.dev/templates"
-fetched_at: "2026-11-16T12:27:35.191Z"
-sha256: "5597e711ea3d9976cc1009a76d9c431d1e9e4935535f250b81856701cffe1b21"
+fetched_at: "2026-11-23T14:03:28.686Z"
+sha256: "cc56e71db3bba1c57065da1ab85c277532cd6e320caf7e0233cc5f2d2e013306"
 ---
 
 # Available templates index
@@ -78,6 +78,17 @@ Templates
             
     
         
+            .third-party-content-note {
+                max-width: calc(100vw - 30px);
+                padding: 12px 16px;
+                background-color: #f6f8fa;
+                border-left: 3px solid #d0d7de;
+            }
+
+            .third-party-content-note p {
+                margin-bottom: 0;
+            }
+
             .tg {
                 border-collapse: collapse;
                 border-spacing: 0;
@@ -246,9 +257,9 @@ Templates
 | SAP CAP | NickChecan | `ghcr.io/the-nefarious-developer/devcontainer-templates/sap-cap-javascript-node:1.0.0` | `1.0.0` |
 | SAP CAP | NickChecan | `ghcr.io/the-nefarious-developer/devcontainer-templates/sap-cap-typescript-node:1.0.0` | `1.0.0` |
 | Go Development Toolkit | irfansofyana | `ghcr.io/irfansofyana/devcontainer-templates/go-toolkit:1.0.3` | `1.0.3` |
-| Flutter | techiro | `ghcr.io/techiro/devcontainer-template/flutter:2.0.0` | `2.0.0` |
+| Flutter | techiro | `ghcr.io/techiro/devcontainer-template/flutter:2.0.2` | `2.0.2` |
 | Pixi | Austin Gregg-Smith | `ghcr.io/blooop/devcontainer-templates/pixi:1.0.4` | `1.0.4` |
-| Devcontainers Ziglang template | fardragon | `ghcr.io/fardragon/devcontainers-zig-template/ziglang:0.4.1` | `0.4.1` |
+| Devcontainers Ziglang template | fardragon | `ghcr.io/fardragon/devcontainers-zig-template/ziglang:0.4.2` | `0.4.2` |
 | Axon Ivy | axonivy | `ghcr.io/axonivy/devcontainer-templates/axonivy:1.0.2` | `1.0.2` |
 | AWS Lambda (.NET) | Yuji Masaoka | `ghcr.io/ymasaoka/devcontainer-templates/aws-lambda-dotnet:0.0.1` | `0.0.1` |
 | Roblox | Ryan Luu | `ghcr.io/ryanlua/templates/roblox:0.2.1` | `0.2.1` |
@@ -265,10 +276,10 @@ Templates
 | SAP BTP CAP Dev Stack | Navin Krishnan | `ghcr.io/navinkrishnan/devcontainer-templates-btp/btp-cap-dev-stack:1.0.2` | `1.0.2` |
 | EdgeActions Development Container | Azure EdgeActions Developer Experiences Team | `ghcr.io/Azure/edgeactions-devcontainers/edgeactions:0.0.7` | `0.0.7` |
 | Nevermore Roblox | EstebenR (Papabos) | `ghcr.io/estebenr/devcontainers/nevermore:1.1.0` | `1.1.0` |
-| C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/cpp:9.1.0` | `9.1.0` |
-| Embedded C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/embedded-cpp:9.1.0` | `9.1.0` |
-| Embedded Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/embedded-rust:9.1.0` | `9.1.0` |
-| Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/rust:9.1.0` | `9.1.0` |
+| C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/cpp:9.2.0` | `9.2.0` |
+| Embedded C++ | Philips Software | `ghcr.io/philips-software/amp-devcontainer/embedded-cpp:9.2.0` | `9.2.0` |
+| Embedded Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/embedded-rust:9.2.0` | `9.2.0` |
+| Rust | Philips Software | `ghcr.io/philips-software/amp-devcontainer/rust:9.2.0` | `9.2.0` |
 | Pretalx | Tjark | `ghcr.io/tjarbo/pretalx-devcontainer/pretalx:0.0.1` | `0.0.1` |
 | Pretalx Plugin | Tjark | `ghcr.io/tjarbo/pretalx-devcontainer/pretalx-plugin:0.0.1` | `0.0.1` |
 | Python | Metin Senturk | `ghcr.io/metinsenturk/devcontainer-templates/python:1.0.6` | `1.0.6` |
@@ -299,7 +310,7 @@ Templates
 | mise-devcontainer-debian | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/debian:2026.11.10-22.17.31` | `2026.11.10-22.17.31` |
 | mise-devcontainer-fedora | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/fedora:2026.11.10-22.17.31` | `2026.11.10-22.17.31` |
 | mise-devcontainer-ubuntu | mkvlrn | `ghcr.io/mkvlrn/mise-devcontainers/ubuntu:2026.11.10-22.17.31` | `2026.11.10-22.17.31` |
-| Blank ESP-IDF Environment | T0ng5 | `ghcr.io/t0ng5/esp-idf/esp-idf:0.0.1` | `0.0.1` |
+| Blank ESP-IDF Environment | T0ng5 | `ghcr.io/t0ng5/esp-idf/esp-idf:0.0.6` | `0.0.6` |
 
 
             

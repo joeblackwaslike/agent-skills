@@ -18,8 +18,8 @@ summary: Require visitors to enter a password before they can view your deployme
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/password-protection.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "838ef33d2f4ad9d811c87ca059983b75ada51d9f866f2b2376243f3c6d3ac841"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "bac45f0a5f633bc076d7448b06f981aa9d2a65afa2bee268d286cdff26281012"
 ---
 
 # Password Protection
@@ -41,7 +41,6 @@ Password Protection requires visitors to enter a pre-defined password before the
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Vercel vs Render](https://vercel.com/kb/guide/vercel-vs-render) — A detailed guide to Vercel vs Render: compute models, AI infrastructure, Docker and container image support, background
-- [How to lock down deployments on Vercel and v0](https://vercel.com/kb/guide/locking-down-deployments) — Protect who can see your deployments.
 - [Protect production deployments for free on every plan](https://vercel.com/changelog/protect-production-deployments-for-free-on-every-plan)
 - [Access Control](https://vercel.com/docs/security/access-control) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
 - [update_project_deployment_protection](https://vercel.com/docs/agent-resources/vercel-mcp/tools/projects/update_project_deployment_protection) — Use update_project_deployment_protection with Vercel MCP.

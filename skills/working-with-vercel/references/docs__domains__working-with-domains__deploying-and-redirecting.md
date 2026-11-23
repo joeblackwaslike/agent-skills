@@ -18,8 +18,8 @@ summary: Learn how to deploy your domains and set up domain redirects with this 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "9d17329986e833858b2ab1a0957ea8bacbf442771dfc7257730f1b4a585fa12d"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "f1d417b92f893dcdf450fca04bdde1f30c04f5722fd9b2eb6d41b316c6b9c980"
 ---
 
 # Deploying & Redirecting Domains
@@ -34,7 +34,6 @@ Once the domain has been added to your project and configured, it is **automatic
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
 - [Adding & Configuring a Custom Domain](https://vercel.com/docs/domains/working-with-domains/add-a-domain) — Learn how to add a custom domain to your Vercel project, verify it, and correctly set the DNS or Nameserver values.
 - [Setting up a custom domain](https://vercel.com/docs/domains/set-up-custom-domain) — Add and configure a custom domain for your Vercel project using the CLI.
 - [Transferring Domains to Another Team or Project](https://vercel.com/docs/domains/working-with-domains/transfer-your-domain) — Domains can be transferred to another team or project within Vercel, or to and from a third-party registrar. Learn how t

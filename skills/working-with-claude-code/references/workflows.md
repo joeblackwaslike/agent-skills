@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/workflows.md"
-fetched_at: "2026-11-16T12:28:44.823Z"
-sha256: "0854f460f06e03fd7edccc1cb277fd29b0535a10c03d2c5560fd449c0c7f4c52"
+fetched_at: "2026-11-23T14:04:20.448Z"
+sha256: "32be5aa90d74b56ad02197d8f40a2dda364d01aaece39c63d95c60ff245d8e8d"
 ---
 
 > ## Documentation Index
@@ -128,7 +128,11 @@ If the run does what you wanted, you can [save it as a command](#save-the-workfl
 
 #### Dismiss or turn off the keyword
 
-If you didn't mean to start a workflow, press `Option+W` on macOS or `Alt+W` on Windows and Linux to dismiss the highlight for this prompt, or press backspace while the cursor is right after the highlighted keyword. To stop the keyword from triggering at all, turn off Ultracode keyword trigger in `/config`.
+To use the word `ultracode` without asking for a workflow, skip the keyword for one prompt or turn the keyword off for every prompt:
+
+* **One prompt, as you type**: put the word in backticks.
+* **One prompt, already highlighted in your terminal**: press Backspace right after the word, or press `Alt+W`. On macOS, that key is `Option+W` with [Option as Meta](https://code.claude.com/docs/en/terminal-config.md#enable-option-key-shortcuts-on-macos).
+* **Every prompt**: turn off [**Ultracode keyword trigger**](https://code.claude.com/docs/en/settings-reference.md#workflowkeywordtriggerenabled) in `/config`.
 
 #### Where the keyword works
 
@@ -181,7 +185,7 @@ Whether you see this prompt depends on your [permission mode](https://code.claud
 | Bypass permissions | Claude Code doesn't prompt you. The run starts immediately |
 | `claude -p`, Agent SDK | Claude Code doesn't prompt you |
 
-In `claude -p` and the Agent SDK, Claude Code never shows this prompt. It runs the Workflow tool call through the same [permission evaluation](https://code.claude.com/docs/en/agent-sdk/permissions.md#how-permissions-are-evaluated) as the rest of the session, so deny rules, ask rules, and `dontAsk` mode apply to the launch as they apply to every tool call. To let the workflow start in these runs, use one of these:
+In `claude -p` and the Agent SDK, the Workflow tool call goes through the same [permission evaluation](https://code.claude.com/docs/en/agent-sdk/permissions.md#how-permissions-are-evaluated) as the rest of the session. Deny rules, ask rules, and `dontAsk` mode apply to the call. To let the workflow start in these runs, use one of these:
 
 * **Permission rule**: add `Workflow` to your allow rules to approve every workflow, or `Workflow(<name>)` to approve one saved workflow by name.
 * **Auto permission mode**: run in [auto mode](https://code.claude.com/docs/en/permission-modes.md#eliminate-prompts-with-auto-mode), where the classifier reviews the call and can approve it.
@@ -495,7 +499,7 @@ To turn workflows off for your whole organization, set `"disableWorkflows": true
 
 When workflows are disabled:
 
-* `/workflows`, the workflow commands, and the `/workflow-authoring` skill are unavailable
+* The `/workflows` progress view, the workflow commands, and the `/workflow-authoring` skill are unavailable
 * The `ultracode` keyword no longer triggers a run, and the **Ultracode** toggle is removed from `/effort`
 
 A run that was already in progress keeps going.

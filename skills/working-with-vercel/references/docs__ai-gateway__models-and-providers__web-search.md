@@ -11,13 +11,15 @@ prerequisites:
 related:
   - /docs/ai-gateway/sdks-and-apis/responses/tool-calling
   - /docs/ai-gateway/pricing
+  - /docs/ai-gateway/security-and-compliance/zdr
+  - /docs/ai-gateway/security-and-compliance/disallow-prompt-training
   - /docs/ai-gateway/sdks-and-apis/anthropic-messages-api/advanced
 summary: Enable AI models to search the web and retrieve source-grounded data using built-in tools through AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/web-search.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "733ee6fd158295391be7e8de9efaf6cafff678867db6362fd1af87b4ddc098b9"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "2cf2976ad92de85042c5786d58151122a44d2fcf0d9a94dba943b757f7a5e86d"
 ---
 
 # AI Gateway Web Search
@@ -34,12 +36,11 @@ AI Gateway provides built-in search tools that let AI models access current web 
 - [AI Gateway adds Browserbase Search and Fetch tools](https://vercel.com/changelog/ai-gateway-adds-browserbase-search-and-fetch-tools)
 - [AI Gateway adds DeepSeek Search and Fetch tools](https://vercel.com/changelog/ai-gateway-adds-deepseek-search-and-fetch-tools)
 - [Exa web search free through August 31 on AI Gateway and eve](https://vercel.com/changelog/exa-web-search-free-through-august-31-on-ai-gateway-and-eve)
+- [Parallel web search is free on AI Gateway and eve through January 31](https://vercel.com/changelog/parallel-web-search-is-free-on-ai-gateway-and-eve-through-january-31)
 - [Tako Search is free on AI Gateway through September 30](https://vercel.com/changelog/tako-search-is-free-on-ai-gateway-through-september-30th)
 - [Web Search Agent](https://ai-sdk.dev/cookbook/node/web-search-agent) — Learn how to build an agent that has access to web with the AI SDK and Node
-- [xAI Grok](https://ai-sdk.dev/providers/ai-sdk-providers/xai) — Learn how to use xAI with AI Gateway and the direct provider.
-- [Exa joins the Vercel AI Gateway and Agent Marketplace](https://vercel.com/changelog/exa-joins-vercel-ai-gateway-agent-marketplace)
-- [Tool Search](https://ai-sdk.dev/docs/ai-sdk-core/tool-search) — Let models discover tools on demand, with direct calling or cache-preserving code mode.
-- [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis) — Connect to AI Gateway with the AI SDK, Python, Go, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Co
+- [Use Perplexity Web Search with Vercel AI Gateway](https://vercel.com/blog/use-perplexity-web-search-with-vercel-ai-gateway)
+- [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/web-search.graph.md](/docs/ai-gateway/models-and-providers/web-search.graph.md)
 <!-- /docsgraph:related -->
@@ -1085,6 +1086,8 @@ AI Gateway executes server tools internally. The final Chat Completions response
 has `finish_reason: "stop"` and does not include client-facing `tool_calls` or raw
 search results. Inspect `choices[0].message.provider_metadata.gateway.gatewayToolCalls`
 for successful search-call counts and the gateway metadata for aggregate cost.
+[Free Parallel searches](#free-parallel-searches-in-fast-mode) aren't billable
+calls, so `gatewayToolCalls` doesn't count them.
 
 Use distinct names for your own function tools. Do not define a client function
 named `browserbase_fetch`, `browserbase_search`, `deepseek_fetch`,
@@ -1100,7 +1103,9 @@ To use Parallel Search, import `gateway` from `ai` and pass `gateway.tools.paral
 
 > **💡 Note:** Parallel web search requests are charged at $5 per 1,000 requests in every
 > search mode (includes up to 10 results per request). Additional results beyond
-> 10 are charged at $1 per 1,000 additional results.
+> 10 are charged at $1 per 1,000 additional results. Searches that you configure
+> to run in `fast` mode are [free through January 31,
+> 2027](#free-parallel-searches-in-fast-mode).
 
 #### streamText
 
@@ -1154,7 +1159,7 @@ export async function POST(request: Request) {
 
 ### Parallel parameters
 
-The `mode` parameter trades excerpt depth for latency. Every mode costs the same, $5 per 1,000 requests:
+The `mode` parameter trades excerpt depth for latency. Every mode costs the same, $5 per 1,000 requests. Through January 31, 2027, searches are [free when you set `mode: 'fast'`](#free-parallel-searches-in-fast-mode) in the tool configuration:
 
 | Mode         | Behavior                                                              |
 | ------------ | --------------------------------------------------------------------- |
@@ -1252,6 +1257,77 @@ export async function POST(request: Request) {
 ```
 
 For more details on search parameters and API options, see the [Parallel AI Search documentation](https://docs.parallel.ai/search/search-quickstart).
+
+### Free Parallel searches in fast mode
+
+Parallel searches through AI Gateway are free through January 31, 2027 when you configure them to run in Parallel's `fast` mode. AI Gateway bills a free search at $0, including results beyond 10, so there's no per-result charge.
+
+> **💡 Note:** Parallel doesn't retain data from free searches or use it for training, so
+> requests that use [Zero Data
+> Retention](/docs/ai-gateway/security-and-compliance/zdr) or [disallow prompt
+> training](/docs/ai-gateway/security-and-compliance/disallow-prompt-training),
+> per request or team-wide, can get free searches under the same mode rules as
+> other requests.
+
+To get a free search, set the mode in the Parallel tool configuration:
+
+- **AI SDK**: Pass `mode: 'fast'` to `gateway.tools.parallelSearch()`.
+- **Chat Completions**: Set `"mode": "fast"` in the `config` object of the `vercel:parallel_search` tool.
+- **eve**: No configuration needed. eve's default web search uses Parallel, and when you don't configure a mode, it runs in `fast` mode and is free.
+
+#### AI SDK
+
+```typescript filename="parallel-free-search.ts" {10}
+import { gateway, generateText } from 'ai';
+
+export async function POST(request: Request) {
+  const { prompt } = await request.json();
+
+  const { text } = await generateText({
+    model: 'anthropic/claude-opus-5',
+    prompt,
+    tools: {
+      parallel_search: gateway.tools.parallelSearch({ mode: 'fast' }),
+    },
+  });
+
+  return Response.json({ text });
+}
+```
+
+#### Chat Completions
+
+```bash filename="parallel-free-search.sh"
+curl https://ai-gateway.vercel.sh/v1/chat/completions \
+  -H "Authorization: Bearer $AI_GATEWAY_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-sonnet-5",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Summarize Vercel AI Gateway in one sentence."
+      }
+    ],
+    "tools": [
+      {
+        "type": "vercel:parallel_search",
+        "config": {
+          "mode": "fast"
+        }
+      }
+    ],
+    "tool_choice": "required"
+  }'
+```
+
+Only a mode that you set in the tool configuration makes a search free, and AI Gateway bills every mode other than `fast` at the regular price. Outside eve, a request that doesn't set a mode keeps the default, `'basic'`, and AI Gateway bills it as before. If the model chooses `'fast'` in its own tool call, the search runs in `fast` mode but isn't free.
+
+Free search capacity is shared, so AI Gateway can rate limit a free search. When that happens, the tool call returns a rate-limit error to the model and the request doesn't fail. AI Gateway doesn't retry a rate-limited free search as a billed search.
+
+Free searches don't count as billable calls in `gatewayToolCalls` (`providerMetadata.gateway.gatewayToolCalls` in the AI SDK, `provider_metadata.gateway.gatewayToolCalls` in Chat Completions). AI Gateway still charges for the model's tokens. See [AI Gateway pricing](/docs/ai-gateway/pricing).
+
+After January 31, 2027, AI Gateway bills `fast` mode searches at the regular price. Regular Parallel prices don't change.
 
 ## Provider-specific search
 

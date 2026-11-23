@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/github-actions-cloud-providers.md"
-fetched_at: "2026-11-16T12:28:44.823Z"
-sha256: "77564003566f66f8f8f81734883dc077284abd03431481e79e04b08b851fabf7"
+fetched_at: "2026-11-23T14:04:20.448Z"
+sha256: "d16a2f3e470216502b254e47b9cc6b9858eadc53f97563ee347da699d017d25a"
 ---
 
 > ## Documentation Index
@@ -45,7 +45,7 @@ Beyond the prerequisites, you create a GitHub identity for the Claude Code GitHu
 
 **1. Choose a GitHub identity**
 
-The Claude Code GitHub Action pushes commits and posts comments through a GitHub identity. The [quick setup](https://code.claude.com/docs/en/github-actions.md#quick-setup) installs the official Claude GitHub App for this. With a cloud provider, you choose the identity yourself:
+The Claude Code GitHub Action pushes commits and posts comments through a GitHub identity. With a cloud provider, you choose the identity:
 
 * **Official [Claude GitHub App](https://github.com/apps/claude)**: install it on the repository, or skip to the next step if it's already installed
 * **Custom GitHub App**: create your own app when you want only the three permissions the Claude Code GitHub Action uses rather than the [official app's full set](https://code.claude.com/docs/en/github-actions.md#github-app-permissions)

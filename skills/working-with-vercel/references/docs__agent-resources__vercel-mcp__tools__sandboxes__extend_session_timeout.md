@@ -14,8 +14,8 @@ summary: Use extend_session_timeout with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/extend_session_timeout.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "2784d79e8d4addb77cfe82c0d7f916afab864abcaa17e14edcd94f720fa38ec2"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "f4b7e61b269296f857a6162e920b31427be205d59e2b425404ce9e60b23cb54e"
 ---
 
 # extend_session_timeout
@@ -28,10 +28,10 @@ Extend session timeout.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Extend session timeout](https://vercel.com/docs/rest-api/sandboxes/extend-session-timeout) — POST /v2/sandboxes/sessions/{sessionId}/extend-timeout — Extends the maximum execution time of a running session. The se
 - [stop_session](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/stop_session) — Use stop_session with Vercel MCP.
 - [get_session](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/get_session) — Use get_session with Vercel MCP.
 - [update_session_network_policy](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/update_session_network_policy) — Use update_session_network_policy with Vercel MCP.
+- [Extend session timeout](https://vercel.com/docs/rest-api/sandboxes/extend-session-timeout) — POST /v2/sandboxes/sessions/{sessionId}/extend-timeout — Extends the maximum execution time of a running session. The se
 - [run_session_command](https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes/run_session_command) — Use run_session_command with Vercel MCP.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandboxes/extend_session_timeout.graph.md](/docs/agent-resources/vercel-mcp/tools/sandboxes/extend_session_timeout.graph.md)

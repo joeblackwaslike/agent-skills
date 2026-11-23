@@ -3,7 +3,7 @@ title: get-resource
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/partner/get-resource
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/get-resource"
-last_updated: 2026-11-16
+last_updated: 2026-11-23
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ summary: Learn about get-resource on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner/get-resource.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "d987ec84df7c8af514fd9ad27f9b4edb9182016fe19a5093db5ac80bdbb9b432"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "a8733ed617ab04bf89e5977332383d2a3a05d0b9c76e65ede381275352d1f13a"
 ---
 
 # Get Resource
@@ -159,7 +159,8 @@ Return the resource
       "amount": "string" // required
     ],
     "effectiveDate": "string" // Date/time when the plan becomes effective. Important for billing plan changes.,
-    "disabled": "boolean" // If true, the plan is disabled and cannot be selected. Example: "disabled": true` for "Hobby" plan.
+    "disabled": "boolean" // If true, the plan is disabled and cannot be selected. Example: "disabled": true` for "Hobby" plan.,
+    "disabledReason": "string" // Shown to the user when `disabled` is true, explaining why they cannot select this plan. Ignored when `disabled` is not true. Example: "Delete your read replicas before downgrading to Hobby."
   },
   "name": "string" // required // User-inputted name for the resource.,
   "metadata": "object" // required // User-inputted metadata based on the registered metadata schema.,

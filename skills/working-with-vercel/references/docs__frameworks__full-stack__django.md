@@ -18,8 +18,8 @@ summary: Deploy a Django app on Vercel. Learn how the Python runtime, WSGI, ASGI
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/full-stack/django.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "774a5d07c96f1e621e8609a6c90adb49f22678f2fb7112e0ac039dc2c37ab1b9"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "d04e8de420a4126cfe6aa5d8fe83fc53c7956ff6f619e4c2b8e3770521950527"
 ---
 
 # Deploy a Django app on Vercel
@@ -35,8 +35,8 @@ project settings.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to ship a Flask app on Vercel](https://vercel.com/kb/guide/ship-a-flask-app-on-vercel) — Deploy a Flask app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
-- [Zero-configuration Django support](https://vercel.com/changelog/zero-configuration-django-support)
 - [How to ship a FastAPI app on Vercel](https://vercel.com/kb/guide/ship-a-fastapi-app-on-vercel) — Deploy a FastAPI app to Vercel with zero configuration. Learn how the Python runtime, Vercel Functions, streaming, middl
+- [Zero-configuration Django support](https://vercel.com/changelog/zero-configuration-django-support)
 - [Deploy a Flask app on Vercel](https://vercel.com/docs/frameworks/backend/flask) — Deploy a Flask app on Vercel. Learn how the Python runtime, WSGI, static assets, and Vercel Functions work together.
 - [Using the Python Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/python) — Learn how to use the Python runtime to run Python applications on Vercel.
 - [Deploy a FastAPI app on Vercel](https://vercel.com/docs/frameworks/backend/fastapi) — Deploy a FastAPI app on Vercel. Learn how the Python runtime, ASGI, static assets, and Vercel Functions work together.

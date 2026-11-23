@@ -1,8 +1,8 @@
 ---
 title: "VS Code create dev container"
 source: "https://code.visualstudio.com/docs/devcontainers/create-dev-container"
-fetched_at: "2026-11-16T12:27:35.191Z"
-sha256: "ed757a40941ef09e8a3033d19e8498fe5db7d6949d52875f97326161ca6a76d6"
+fetched_at: "2026-11-23T14:03:28.686Z"
+sha256: "8d56b3f3406f651b264f285edaf56312c93723963426cbcaae8cbd9122d95b3a"
 ---
 
 # VS Code create dev container
@@ -205,6 +205,9 @@ See the Dev Container Features specification for more details.
 When editing the contents of the `.devcontainer` folder, you'll need to rebuild for changes to take effect. Use the Dev Containers: Rebuild Container command for your container to update.
 
 
+If you use agent chat in the container, review how to preserve chat sessions across rebuilds before rebuilding.
+
+
 However, if you rebuild the container, you will have to reinstall anything you've installed manually. To avoid this problem, you can use the `postCreateCommand` property in `devcontainer.json` or a custom `Dockerfile`.
 
 
@@ -239,6 +242,74 @@ There is also a `postStartCommand` that executes every time the container starts
 
 
 Rather than referencing an image directly in `devcontainer.json` or installing software via the `postCreateCommand` or `postStartCommand`, an even more efficient practice is to use a Dockerfile.
+
+
+#### Preserve chat sessions across rebuilds
+
+
+  Experimental
+  **Dev Container state volumes** is experimental and might change or be removed.
+
+Keep container-stored chat sessions, including Copilot CLI sessions, across rebuilds with a persistent state volume. The volume stores user and agent state separately from the container.
+
+
+To try this feature, use VS Code Insiders. For the editor workflow, also install the pre-release Dev Containers extension, version 0.474.0 or later.
+
+
+      
+        
+          Caution
+      Enabling this feature doesn't add a volume to an existing container. The first rebuild adds the volume but still loses session data stored only in the old container. Subsequent rebuilds preserve state saved on the volume. This feature doesn't recover sessions already lost.
+
+
+In User settings, enable the setting for the interface you use:
+
+
+Interface
+Setting
+
+
+Editor window with the Dev Containers extension
+
+    
+      
+      dev.containers.stateVolume.enabled
+      
+    
+    
+        
+        Open in VS Code
+      Open in VS Code Insiders
+    
+  
+
+
+Agents window
+
+    
+      
+      chat.agentHost.devContainer.stateVolume.enabled
+      
+    
+    
+        
+        
+        
+    
+    
+      Open in VS Code
+      Open in VS Code Insiders
+    
+  
+
+
+Both settings are off by default. Enable both if you create containers through both interfaces. These are user settings, not properties of `devcontainer.json`.
+
+
+Create a new container with the setting enabled, then start your chat sessions. When that container is rebuilt or replaced for the same project, open the sessions list to continue the saved conversations.
+
+
+The state volume remains when the container is removed. Don't delete it if you need the saved sessions. Turning the setting off doesn't move state back into the container, and a later rebuild with it off can leave the volume unused. The state volume isn't a backup of all container files.
 
 
 ## Dockerfile
@@ -299,7 +370,7 @@ Now that you have a `devcontainer.json` and Dockerfile, let's see the general pr
 ### Full configuration edit loop
 
 
-Editing your container configuration is easy. Since rebuilding a container will "reset" the container to its starting contents (with the exception of your local source code), VS Code does not automatically rebuild if you edit a container configuration file (`devcontainer.json`, `Dockerfile`, and `docker-compose.yml`). Instead, there are several commands that can be used to make editing your configuration easier.
+Editing your container configuration is easy. Since rebuilding a container will "reset" the container to its starting contents (except for data in bind mounts or volumes), VS Code does not automatically rebuild if you edit a container configuration file (`devcontainer.json`, `Dockerfile`, and `docker-compose.yml`). Instead, there are several commands that can be used to make editing your configuration easier.
 
 
 Here is the typical edit loop using these commands:
@@ -639,4 +710,4 @@ The path used for looking up the configuration is derived from the output of `gi
                 
                 
                 
-                11/11/2026
+                11/18/2026

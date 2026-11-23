@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/custom-tools.md"
-fetched_at: "2026-11-16T12:28:44.823Z"
-sha256: "8e7a4366e7a3cd133791a5fe9cc613cac922ba2557acd38f52b26a5e64c8fa65"
+fetched_at: "2026-11-23T14:04:20.448Z"
+sha256: "b07693fa054e2dfa05152f984f16332c405b2cba4c21f6318b5de68348eeb640"
 ---
 
 > ## Documentation Index
@@ -421,7 +421,7 @@ options: {
 
 To try the policy, replace the `options` in the [Call a custom tool](#call-a-custom-tool) script with this example's `options`, then run that script from your terminal. The script prints `Approval requested for mcp__weather__get_temperature`, followed by Claude's answer about the temperature. For a complete script, see the [TypeScript reference](https://code.claude.com/docs/en/agent-sdk/typescript.md#mcpsdkserverconfigwithinstance).
 
-If you use `auto` or `plan` [permission mode](https://code.claude.com/docs/en/agent-sdk/permissions.md#permission-modes), set `destructiveHint: true` in the tool's [annotations](#add-tool-annotations) so calls to the tool still reach your callback. Otherwise the [auto mode classifier](https://code.claude.com/docs/en/permission-modes.md#eliminate-prompts-with-auto-mode) can approve some `always_ask` calls, under [conditions listed in the TypeScript reference](https://code.claude.com/docs/en/agent-sdk/typescript.md#permission-modes-that-can-approve-an-always_ask-call), and a call it approves doesn't reach your callback. Set the hint explicitly, because an unset `destructiveHint` counts as `false` for `always_ask` calls rather than defaulting to `true`.
+If you use `auto` or `plan` [permission mode](https://code.claude.com/docs/en/agent-sdk/permissions.md#permission-modes), set `destructiveHint: true` in the tool's [annotations](#add-tool-annotations) to keep the [auto mode classifier](https://code.claude.com/docs/en/permission-modes.md#eliminate-prompts-with-auto-mode) from approving calls in place of your callback. Otherwise the classifier can approve some `always_ask` calls, under [conditions listed in the TypeScript reference](https://code.claude.com/docs/en/agent-sdk/typescript.md#permission-modes-that-can-approve-an-always_ask-call). Set the hint explicitly, because an unset `destructiveHint` counts as `false` for `always_ask` calls rather than defaulting to `true`.
 
 ## Handle errors
 

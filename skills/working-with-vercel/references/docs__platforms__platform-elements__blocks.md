@@ -18,8 +18,8 @@ summary: Prebuilt UI components for common platform flows like claiming deployme
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/platforms/platform-elements/blocks.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "2695881deda695e05040ccc81715d1db3514be2d151875f1b770375988eb9bf8"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "faaadf183ea03fee18cbcb388d67e336a5258e0b21c40b5ee563d5cd1a2911ff"
 ---
 
 # Blocks
@@ -34,10 +34,10 @@ Blocks are ready-to-use UI components for platform flows. Install a block and co
 
 - [Introducing Platform Elements](https://vercel.com/changelog/introducing-platform-elements)
 - [Products](https://vercel.com/docs/products) — Browse Vercel products for building, deploying, securing, observing, and scaling web applications.
-- [Domains Overview](https://vercel.com/docs/domains) — Learn the fundamentals of how domains, DNS, and nameservers work on Vercel.
 - [Actions](https://vercel.com/docs/platforms/platform-elements/actions) — Server actions you can install to run common platform tasks against the Vercel API.
 - [Vercel fundamental concepts](https://vercel.com/docs/fundamentals) — Learn about the core concepts of Vercel
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
+- [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 
 Full cross-link map for this page: [/docs/platforms/platform-elements/blocks.graph.md](/docs/platforms/platform-elements/blocks.graph.md)
 <!-- /docsgraph:related -->

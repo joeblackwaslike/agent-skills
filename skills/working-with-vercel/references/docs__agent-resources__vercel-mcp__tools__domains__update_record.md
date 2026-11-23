@@ -14,8 +14,8 @@ summary: Use update_record with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/update_record.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "365a0e721764a15586eaa796738d0d543b350a42472933d09723ae04f9819a97"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "919013593dbccbd76e7c94c705f054607d25ed8f79f96ffdf24fe8b04101218d"
 ---
 
 # update_record
@@ -31,8 +31,8 @@ Update an existing DNS record.
 - [create_record](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/create_record) — Use create_record with Vercel MCP.
 - [Update an existing DNS record](https://vercel.com/docs/rest-api/dns/update-an-existing-dns-record) — PATCH /v1/domains/records/{recordId} — Updates an existing DNS record for a domain name.
 - [replace_domain_dns_records](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/replace_domain_dns_records) — Use replace_domain_dns_records with Vercel MCP.
-- [Delete a DNS record](https://vercel.com/docs/rest-api/dns/delete-a-dns-record) — DELETE /v2/domains/{domain}/records/{recordId} — Removes an existing DNS record from a domain name.
 - [get_domains_records_by_record_id](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_domains_records_by_record_id) — Use get_domains_records_by_record_id with Vercel MCP.
+- [Delete a DNS record](https://vercel.com/docs/rest-api/dns/delete-a-dns-record) — DELETE /v2/domains/{domain}/records/{recordId} — Removes an existing DNS record from a domain name.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/update_record.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/update_record.graph.md)
 <!-- /docsgraph:related -->

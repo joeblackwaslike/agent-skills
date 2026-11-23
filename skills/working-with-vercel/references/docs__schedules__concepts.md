@@ -17,8 +17,8 @@ summary: Learn how Vercel Schedules handles environments, deployments, jitter, o
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/schedules/concepts.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "f10d66ba3fdcd1e51a305f0d09da1655d4f473f4967fce55edc85c5f19c165dd"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "cc7e3c913fe5194a74fc231a9a62b9e76b80b267b5d0d7d2a3041df7d86dad50"
 ---
 
 # Schedules Concepts
@@ -32,6 +32,7 @@ This page explains what happens between declaring a schedule and your code runni
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Schedules](https://eve.dev/docs/schedules) — Run an agent on a cron cadence, either a fire-and-forget prompt or a handler that hands work off to a channel.
+- [How to stop traffic to an old deployment on Vercel](https://vercel.com/kb/guide/how-to-stop-traffic-to-an-old-deployment-on-vercel) — Move production traffic to the new deployment, restrict access to the old deployment, and check remaining function activ
 - [Vercel Schedules is now in public beta](https://vercel.com/changelog/vercel-schedules-is-now-in-public-beta)
 - [Introducing Vercel Schedules](https://vercel.com/blog/introducing-vercel-schedules)
 - [Vercel Schedules: API Reference](https://vercel.com/docs/schedules/http-api) — Reference for the Vercel Schedules HTTP API: authenticate, choose an environment, and create, list, update, enable, disa

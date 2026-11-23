@@ -4,8 +4,8 @@ description: Learn how to use Google Vertex AI with AI Gateway and the direct pr
 url: "https://ai-sdk.dev/providers/ai-sdk-providers/google-vertex"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-providers/google-vertex.md"
-fetched_at: "2026-11-16T12:32:31.917Z"
-sha256: "53d9a546e0b9bf58ad473f41b6b93a133a325010080e6e481c0b28307c1c4837"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "c84372223b044f627b26abe601000343299b72aa7aba6c5d44b2ee496511f392"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -632,6 +632,30 @@ const result = await generateText({
 
 The optional `retrievalConfig.latLng` provider option provides location context for queries about nearby places. This configuration applies to any grounding tools that support location context.
 
+#### Remote MCP Server
+
+For Vertex Interactions models (`googleVertex.interactions(...)`), `googleVertex.tools.mcpServer` connects a remote MCP server so the model can call its tools. Header values are sent to the API and redacted from telemetry.
+
+```ts
+import { googleVertex } from '@ai-sdk/google-vertex';
+import { generateText } from 'ai';
+
+const { text } = await generateText({
+  model: googleVertex.interactions('gemini-4-hydrogen'),
+  tools: {
+    mcp_server: googleVertex.tools.mcpServer({
+      name: 'local-mcp',
+      url: 'https://example.com/mcp',
+      headers: { Authorization: `Bearer ${process.env.MCP_TOKEN}` },
+      allowedTools: ['getWeather'],
+    }),
+  },
+  prompt: 'What is the weather in San Francisco right now?',
+});
+```
+
+See [Remote MCP servers](/providers/ai-sdk-providers/google#remote-mcp-servers) for the Google provider equivalent.
+
 #### Streaming Function Call Arguments
 
 For Gemini 3 Pro and later models on Vertex AI, you can stream function call
@@ -1065,6 +1089,7 @@ The following Zod features are known to not work with Google Vertex:
 | `gemini-4-argon`                 | ✓           | ✓                 | ✓          | ✓              |
 | `gemini-4-carbon`                | ✓           | ✓                 | ✓          | ✓              |
 | `gemini-4-hydrogen`              | ✓           | ✓                 | ✓          | ✓              |
+| `gemini-4-neon`                  | ✓           | ✓                 | ✓          | ✓              |
 | `gemini-3.8-flash`               | ✓           | ✓                 | ✓          | ✓              |
 | `gemini-3.7-flash`               | ✓           | ✓                 | ✓          | ✓              |
 | `gemini-3.6-flash`               | ✓           | ✓                 | ✓          | ✓              |
@@ -1439,6 +1464,40 @@ compatibility, `result.segments` continues to contain the same word timings.
 Gemini does not provide separate caption segments and warns if `'segment'` is
 requested. These shared timing controls currently apply to Gemini transcription;
 Chirp and telephony use their provider settings below.
+
+`gemini-3.5-transcribe-live` transcribes live audio with
+[`experimental_streamTranscribe`](/docs/ai-sdk-core/transcription#streaming-transcription)
+over the Vertex Live API. It authenticates with an `Authorization` header, which
+native WebSockets cannot send, so pass a header-capable implementation such as
+the `ws` package:
+
+```ts
+import {
+  createVertex,
+  type GoogleVertexProviderSettings,
+} from '@ai-sdk/google-vertex';
+import { experimental_streamTranscribe as streamTranscribe } from 'ai';
+import { WebSocket } from 'ws';
+
+const vertex = createVertex({
+  // `ws`'s WebSocket type differs from the DOM-style WebSocketConstructor.
+  webSocket: WebSocket as unknown as GoogleVertexProviderSettings['webSocket'],
+});
+
+const result = streamTranscribe({
+  model: vertex.transcription('gemini-3.5-transcribe-live'),
+  audio, // ReadableStream of 16kHz 16-bit mono PCM chunks
+  inputAudioFormat: { type: 'audio/pcm', rate: 16000 },
+});
+```
+
+By default, server-side voice activity detection splits the audio into segments
+at pauses, and each segment is emitted as a `transcript-final` part. For
+push-to-talk input, set
+`providerOptions.googleVertex.streaming.automaticActivityDetection.disabled` to
+`true`: the whole audio stream is then transcribed as a single turn without
+splitting at pauses, and the transcript is finalized as soon as the audio input
+closes.
 
 #### Speech-to-Text transcription
 
@@ -2504,6 +2563,7 @@ The following option definitions are generated from the provider catalog.
 | transcription | `wordTimestamp`               | Include Gemini word timestamps.                       |
 | transcription | `diarization`                 | Enable Gemini speaker diarization.                    |
 | transcription | `mode`                        | Verbatim or smart Gemini transcription formatting.    |
+| transcription | `streaming`                   | Live Gemini voice activity detection.                 |
 | video         | `pollIntervalMs`              | Polling interval.                                     |
 | video         | `pollTimeoutMs`               | Polling timeout.                                      |
 | video         | `personGeneration`            | Policy for generating people.                         |

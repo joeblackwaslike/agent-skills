@@ -16,8 +16,8 @@ summary: Learn how to update your local project with remote environment variable
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/pull.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "0ebc5a9e134cac818272e2a459953e6219168c35dd26a81848d7d54a66cca719"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "0149e6dc7ddaa764e094c71aa52ea7c697e21aac8d635c186c5ad0dad58b786b"
 ---
 
 # vercel pull
@@ -30,11 +30,10 @@ The `vercel pull` command is used to store [Environment Variables](/docs/environ
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Environment Variables UI](https://vercel.com/blog/environment-variables-ui)
 - [vercel env](https://vercel.com/docs/cli/env) — Learn how to manage your environment variables in your Vercel Projects using the vercel env CLI command.
 - [Managing environment variables across environments](https://vercel.com/docs/environment-variables/manage-across-environments) — Add, sync, and verify environment variables across development, preview, production, and custom environments using the C
-- [vercel environments](https://vercel.com/docs/cli/target) — Work with custom environments using the --environment option in Vercel CLI.
 - [vercel build](https://vercel.com/docs/cli/build) — Learn how to build a Vercel Project locally or in your own CI environment using the vercel build CLI command.
+- [vercel environments](https://vercel.com/docs/cli/target) — Work with custom environments using the --environment option in Vercel CLI.
 - [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
 
 Full cross-link map for this page: [/docs/cli/pull.graph.md](/docs/cli/pull.graph.md)

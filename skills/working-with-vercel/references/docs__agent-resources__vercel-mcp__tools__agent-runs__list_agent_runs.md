@@ -14,8 +14,8 @@ summary: Use list_agent_runs with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_runs.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "05be0463751625099c104802ccbd330a67108910bd4e4410e848a0c666da89c7"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "850979f0d0c4c804bc81ba0c599873c08e41da3776ded47eb5db23d320642adc"
 ---
 
 # list_agent_runs
@@ -32,9 +32,10 @@ Use this tool with agents built with [eve](/docs/agent-runs#inspect-runs-with-ve
 - [list_agent_run_projects](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_run_projects) — Use list_agent_run_projects with Vercel MCP.
 - [get_agent_run](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/get_agent_run) — Use get_agent_run with Vercel MCP.
 - [Agent Runs now show subagent activity on eve projects](https://vercel.com/changelog/agent-runs-now-show-subagent-activity-on-eve-projects)
+- [Trace and debug eve agent sessions with Vercel Observability](https://vercel.com/changelog/eve-agent-observability)
 - [vercel agent-runs](https://vercel.com/docs/cli/agent-runs) — Find projects with Agent Runs, list recent runs, and inspect run metadata and conversation traces from the command line.
-- [get_agent_run_trace](https://vercel.com/docs/agent-resources/vercel-mcp/tools/agent-runs/get_agent_run_trace) — Use get_agent_run_trace with Vercel MCP.
 - [List task runs for a job run](https://vercel.com/docs/rest-api/vercel-ci/list-task-runs-for-a-job-run) — GET /v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task
+- [List runs for a check](https://vercel.com/docs/rest-api/checks-v2/list-runs-for-a-check) — GET /v2/projects/{projectIdOrName}/checks/{checkId}/runs — List all runs associated with a given check.
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_runs.graph.md](/docs/agent-resources/vercel-mcp/tools/agent-runs/list_agent_runs.graph.md)
 <!-- /docsgraph:related -->

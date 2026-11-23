@@ -17,8 +17,8 @@ summary: Learn how to get started with microfrontends on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/microfrontends/quickstart.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "1d4190f9dc17ec465bbdc730fdc8383c37d8f545320dd9c77167dabdb9dc71ad"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "26e63899bff4e29bae9014534ac34978f061f4f61c0b6d21c4469b5455d940e6"
 ---
 
 # Getting started with microfrontends
@@ -34,12 +34,11 @@ This quickstart guide will help you set up microfrontends on Vercel. Microfronte
 - [Microfrontends support is now in Public Beta](https://vercel.com/changelog/microfrontends-support-is-now-in-public-beta)
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
 - [Incremental Migrations with Microfrontends](https://vercel.com/kb/guide/incremental-migrations-with-microfrontends) — Learn how to migrate legacy applications using microfrontends
-- [How Vercel adopted microfrontends](https://vercel.com/blog/how-vercel-adopted-microfrontends)
 - [vercel microfrontends](https://vercel.com/docs/cli/microfrontends) — Manage microfrontends groups from the CLI. Learn how to create groups, inspect group metadata, add and remove projects,
 - [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
-- [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
 - [Create a microfrontends group with applications](https://vercel.com/docs/rest-api/microfrontends/create-a-microfrontends-group-with-applications) — POST /v1/microfrontends/group — Creates a microfrontends group and attaches multiple projects in a single request.
 - [Microfrontends](https://vercel.com/docs/agent-resources/vercel-mcp/tools/microfrontends) — Vercel MCP tools for microfrontends.
+- [Managing microfrontends security](https://vercel.com/docs/microfrontends/managing-microfrontends/security) — Learn how to manage your Deployment Protection and Firewall for your microfrontend on Vercel.
 
 Full cross-link map for this page: [/docs/microfrontends/quickstart.graph.md](/docs/microfrontends/quickstart.graph.md)
 <!-- /docsgraph:related -->
@@ -115,7 +114,7 @@ Before diving into implementation, it's helpful to understand these core concept
     }
   }
   ```
-  Application names in `microfrontends.json` should match the Vercel project names, see the [microfrontends configuration](/docs/microfrontends/configuration) documentation for more information.
+  Application names in `microfrontends.json` must match the Vercel project names, and the application without `routing` must be the group's default application. Otherwise, the default application's build fails. See the [microfrontends configuration](/docs/microfrontends/configuration) documentation for more information.
 
   See the [routing](/docs/microfrontends/routing) documentation for details on how to configure routing for your microfrontends.
 
@@ -298,6 +297,8 @@ Before diving into implementation, it's helpful to understand these core concept
     plugins: [microfrontends({ basePath: '/my-base-path' })],
   });
   ```
+  The `basePath` must start with `/` and must not end with `/`. You can't set a `basePath` on the default application or on SvelteKit applications.
+
   The specified `basePath` must then also be listed in the `microfrontends.json` file:
   ```json filename="microfrontends.json" framework=vite
   "applications": {

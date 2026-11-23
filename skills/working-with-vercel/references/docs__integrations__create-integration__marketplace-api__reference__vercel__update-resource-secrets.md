@@ -3,7 +3,7 @@ title: update-resource-secrets
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/update-resource-secrets
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/update-resource-secrets"
-last_updated: 2026-11-16
+last_updated: 2026-11-23
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ summary: Learn about update-resource-secrets on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/update-resource-secrets.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "31f48e1b00aa315de415f7c09767334ab20672137892c30e46711a2f7353ca84"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "c4515af54acd3c0a6f3ea59e7c923e8813b6b986259aab4e9250917a2cb0decf"
 ---
 
 # Deprecated: true. Update Resource Secrets (Deprecated)

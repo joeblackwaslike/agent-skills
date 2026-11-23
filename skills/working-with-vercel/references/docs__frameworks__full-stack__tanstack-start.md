@@ -18,8 +18,8 @@ summary: Deploy TanStack Start applications to Vercel with Nitro and configure V
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/full-stack/tanstack-start.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "5d5f0bc4d65e75c930cc7af8db3bde722ffe1ef2c7139c243b8062363cb1391f"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "826338e0f8a6e91b4aa2050dfb460c7aba612d595b0d5c47a0815a5bc499925d"
 ---
 
 # TanStack Start on Vercel
@@ -34,8 +34,8 @@ TanStack Start is a fullstack framework powered by TanStack Router for React and
 
 - [How to Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel) — Deploy a TanStack Start app to Vercel with the Nitro Vite plugin. Covers Git and CLI deployment, Fluid compute defaults,
 - [What is the Nitro Vite plugin?](https://vercel.com/kb/guide/nitro-vite-plugin) — The Nitro Vite plugin \\(nitro/vite\\) adds SSR, API routes, and deploy-anywhere server builds to any Vite app. Learn what
-- [Support for TanStack Start](https://vercel.com/changelog/support-for-tanstack-start)
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
+- [Support for TanStack Start](https://vercel.com/changelog/support-for-tanstack-start)
 - [How to ship a Nitro app on Vercel](https://vercel.com/kb/guide/ship-a-nitro-app-on-vercel) — Deploy a Nitro app to Vercel with zero configuration. Learn how to ship from a template, the Vercel CLI, or Git, and con
 - [Workflow SDK now supports TanStack Start](https://vercel.com/changelog/workflow-sdk-now-supports-tanstack-start)
 - [You can now deploy Lovable apps to Vercel](https://vercel.com/changelog/you-can-now-deploy-lovable-apps-to-vercel)

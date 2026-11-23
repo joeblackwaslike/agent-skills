@@ -18,8 +18,8 @@ summary: Learn about available APIs when working with Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/functions-api-reference/vercel-functions-package.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "e1e73c4fd52253851c113e55e16bd0b717a5c0917681295632ed216c9caa91d4"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "cbae91524f9aac64a3b06ee1c30ad98cc4baba1cc15f1a4a859b90bb49174506"
 ---
 
 # @vercel/functions API Reference (Node.js)
@@ -44,10 +44,10 @@ sha256: "e1e73c4fd52253851c113e55e16bd0b717a5c0917681295632ed216c9caa91d4"
 - [Tag-based cache invalidation now available for all responses](https://vercel.com/changelog/tag-based-cache-invalidation-now-available-for-all-responses)
 - [Vercel Flags starts 7x faster and no longer extends function duration](https://vercel.com/changelog/vercel-flags-starts-7x-faster-and-no-longer-extends-function-duration)
 - [Do Vercel Functions support WebSocket connections?](https://vercel.com/kb/guide/do-vercel-serverless-functions-support-websocket-connections) — Vercel Functions serve WebSocket connections natively, in public beta on all plans. Learn how connections pin to instanc
+- [How to stop traffic to an old deployment on Vercel](https://vercel.com/kb/guide/how-to-stop-traffic-to-an-old-deployment-on-vercel) — Move production traffic to the new deployment, restrict access to the old deployment, and check remaining function activ
 - [How to architect multi-location QSR menus on Vercel](https://vercel.com/kb/guide/multi-location-qsr-menus) — Multi-location QSR menus vary by price, hours, and availability. Learn how to model them on Vercel with ISR, Global Conf
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
 - [Optimize Runtime Cache on Vercel](https://vercel.com/kb/guide/optimize-runtime-cache-reads-on-vercel) — Diagnose rising Runtime Cache usage, trace reads to tags and code paths, and reduce avoidable reads while checking write
-- [Troubleshooting Inconsistent Logs in Vercel Functions](https://vercel.com/kb/guide/troubleshooting-inconsistent-logs-in-vercel-functions) — Learn how to troubleshoot and resolve logs that appear mixed in Vercel Functions. This guide explains why logs from diff
 
 Full cross-link map for this page: [/docs/functions/functions-api-reference/vercel-functions-package.graph.md](/docs/functions/functions-api-reference/vercel-functions-package.graph.md)
 <!-- /docsgraph:related -->
@@ -665,7 +665,7 @@ const s3Client = new s3.S3Client({
 
 > **💡 Note:** This function has moved from `@vercel/functions/oidc` to `@vercel/oidc`.
 
-**Description**: Returns the OIDC token from the request context, a token file, or the `VERCEL_OIDC_TOKEN` environment variable. This function first checks the request context headers for the OIDC token. If the token is not there, `@vercel/oidc` 4.0.0 and later reads the file at the path in the `VERCEL_OIDC_TOKEN_FILE` environment variable, when set. Otherwise, it reads the `VERCEL_OIDC_TOKEN` environment variable. You don't need to set `VERCEL_OIDC_TOKEN_FILE` for Vercel Functions. Vercel sets it on [Daemons](/docs/daemons#environment-variables-and-oidc), which receive the token in a [rotating token file](/docs/oidc#reading-a-rotated-token-file). For how the function reads each source, see the [OIDC reference](/docs/oidc/reference#other-cloud-providers).
+**Description**: Returns the OIDC token from the request context, a token file, or the `VERCEL_OIDC_TOKEN` environment variable. This function first checks the request context headers for the OIDC token. If the token is not there, `@vercel/oidc` 4.0.0 and later reads the file at the path in the `VERCEL_OIDC_TOKEN_FILE` environment variable, when set. Otherwise, it reads the `VERCEL_OIDC_TOKEN` environment variable. You don't need to set `VERCEL_OIDC_TOKEN_FILE` for Vercel Functions. Vercel sets it on [Daemons](/docs/daemons#environment-variables-and-oidc), which receive the token in a [rotating token file](/docs/oidc/access-other-services#reading-a-rotated-token-file). For how the function reads each source, see the [OIDC reference](/docs/oidc/reference#other-cloud-providers).
 
 ```ts filename="api/example.ts"
 import { ClientAssertionCredential } from '@azure/identity';

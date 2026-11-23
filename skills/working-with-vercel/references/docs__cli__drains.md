@@ -17,8 +17,8 @@ summary: List, inspect, create, update, pause, resume, and delete Vercel Drains 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/drains.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "a5e9daff8325bbb3cd4be6078f28bff7a92f0c98a375519008cbc078eb1fcbe2"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "615f55961774f8044256327151ad6cb40414ad9711e248705ba4fa41d677059c"
 ---
 
 # vercel drains
@@ -33,14 +33,14 @@ The `vercel drains` command manages [Drains](/docs/drains) that forward logs, tr
 
 - [Retrieve a list of all Drains](https://vercel.com/docs/rest-api/drains/retrieve-a-list-of-all-drains) — GET /v1/drains — Allows to retrieve the list of Drains of the authenticated team.
 - [Drains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/drains) — Vercel MCP tools for drains.
-- [Creates a new Integration Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-new-integration-log-drain-deprecated) — POST /v2/integrations/log-drains — Creates an Integration log drain. This endpoint must be called with an OAuth2 client
-- [Creates a Configurable Log Drain \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/creates-a-configurable-log-drain-deprecated) — POST /v1/log-drains — Creates a configurable log drain. This endpoint must be called with a team AccessToken \\(integrati
 - [Find a Drain by id](https://vercel.com/docs/rest-api/drains/find-a-drain-by-id) — GET /v1/drains/{id} — Get the information for a specific Drain by passing the drain id in the URL.
+- [Drain Audit Logs to S3](https://vercel.com/docs/drains/audit-logs-to-s3) — Learn how to configure AWS IAM and Amazon S3 so Vercel can write Audit Log Drain events to your S3 bucket.
+- [Delete a drain](https://vercel.com/docs/rest-api/drains/delete-a-drain) — DELETE /v1/drains/{id} — Delete a specific Drain by passing the drain id in the URL.
 
 Full cross-link map for this page: [/docs/cli/drains.graph.md](/docs/cli/drains.graph.md)
 <!-- /docsgraph:related -->
 
-Sign in with [`vercel login`](/docs/cli/login), or [authenticate with a token](/docs/cli#using-in-a-cicd-environment). Commands use your current team. Pass the global `--scope` option to select another team. Listing drains doesn't require a linked project; use `--project` to filter the results.
+Sign in with [`vercel login`](/docs/cli/login), or [authenticate with a token](/docs/cli#using-in-a-ci/cd-environment). Commands use your current team. Pass the global `--scope` option to select another team. Listing drains doesn't require a linked project; use `--project` to filter the results.
 
 ## Usage
 

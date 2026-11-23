@@ -17,8 +17,8 @@ summary: Learn how to manage bot traffic to your site.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/bot-management.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "74af747cf1d6a1d17ecf63b7799fd13078ebd517bad8c34e9a15a5fb8fd03640"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "fb4056a68990765d3b0e7439a0b9138894273552454ac666fb9856912d5e7dfd"
 ---
 
 # Bot Management
@@ -33,16 +33,16 @@ Bots generate nearly half of all internet traffic. While many bots serve legitim
 
 - [Bot Protection is now generally available](https://vercel.com/changelog/bot-protection-is-now-generally-available)
 - [Bot Protection is now in public beta](https://vercel.com/changelog/bot-protection-is-now-in-public-beta)
+- [Priority Projects now in public beta](https://vercel.com/changelog/priority-projects-now-in-public-beta)
 - [Vercel's bot verification now supports Web Bot Auth](https://vercel.com/changelog/vercels-bot-verification-now-supports-web-bot-auth)
 - [View & query bot verification data in Vercel Observability](https://vercel.com/changelog/view-and-query-bot-verification-data-in-vercel-observability)
 - [Making your catalog discoverable to AI agents](https://vercel.com/kb/guide/agentic-commerce-readiness) — Agentic commerce readiness starts with the initial HTML response. Server-render your product catalog, ship JSON-LD, and
-- [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation) — A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Mon
+- [How to keep your storefront running through Black Friday](https://vercel.com/kb/guide/black-friday-reliability) — Learn how to tune alerts, bot rules, and spend limits. Rehearse rollback so your team can recover quickly from checkout
 - [Using Cloudflare and other reverse proxies with Vercel](https://vercel.com/kb/guide/can-i-use-a-proxy-on-top-of-my-vercel-deployment) — General information about using an external proxy to serve a Vercel Deployment.
 - [How to effectively load test your application on Vercel](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
 - [How to protect your AI app from bots](https://vercel.com/kb/guide/how-to-protect-your-ai-app-from-bots) — Learn how to protect your AI app from bots, scrapers, and abuse using Firewall, BotID, and more.
 - [How we run Vercel's CDN in front of Discourse](https://vercel.com/blog/how-we-run-vercels-cdn-in-front-of-discourse)
 - [Bot Protection: One-click managed ruleset now in public beta](https://vercel.com/blog/one-click-bot-protection-now-in-public-beta)
-- [Security through design: Creating the improved Firewall experience](https://vercel.com/blog/security-through-design-creating-the-improved-firewall-experience)
 
 Full cross-link map for this page: [/docs/bot-management.graph.md](/docs/bot-management.graph.md)
 <!-- /docsgraph:related -->
@@ -1578,6 +1578,14 @@ System-initiated requests made from Vercel's build container during a build
 
 View
 
+vercel-drains
+
+webhook
+
+Deliveries of logs, traces and other observability data that Vercel Drains sends to a customer's endpoint
+
+View
+
 vercelflags
 
 monitor
@@ -1617,6 +1625,93 @@ search\_engine\_crawler
 YandexBot is a web crawler operated by Yandex, a major Russian search engine.
 
 View
+
+## Bot visibility and classification with Priority projects
+
+> bot management on Priority projects are available on Enterprise and Pro plans
+
+On all plans, you can see [verified bot](#verified-bots) traffic, such as Googlebot or Bingbot. [Priority projects](/docs/vercel-firewall/priority-projects) reveal unverified bot traffic and add tools to classify it, act on it in firewall rules, and use it in your application code.
+
+### Seeing unverified bots
+
+Without a Priority project, bot data is masked for any request where the bot hasn't been verified. Priority projects reveal the category of unverified traffic, and the identity a bot claimed when it can't prove it, such as a client claiming to be Googlebot from a non-Google IP address. The claimed name appears in [Logs](/docs/logs) and in the `x-vercel-claimed-bot-name` header.
+
+### Bot categories
+
+Vercel's classification engine produces the following categories for unverified traffic. These categories are only visible on Priority projects:
+
+Category
+
+Description
+
+agent
+
+AI agents that browse or act on behalf of a user, such as coding agents and AI assistant clients
+
+application
+
+Named applications that generate requests, such as Microsoft Outlook, Docker, or Netflix
+
+automated\_browser
+
+Headless or scripted browsers, such as Playwright, Cypress, or Selenium
+
+browser\_impersonation
+
+Requests with forged browser fingerprints that don't match actual browser behavior
+
+http\_client
+
+HTTP libraries, language clients, and command-line tools, such as curl, python-requests, or Node's
+
+fetch
+
+scanner
+
+Vulnerability scanners, reconnaissance tools, and port scanners
+
+web\_service
+
+Automated web services such as health checks and uptime or monitoring tools
+
+client\_anomaly
+
+Requests whose TLS or protocol characteristics are inconsistent with the client they claim to be
+
+uncategorized\_bot
+
+Automated traffic that Vercel identified as a bot but could not classify into another category
+
+### Bot Management dashboard
+
+The **Firewall > Bot Management** dashboard provides a comprehensive view of all bot traffic, verified and unverified. From this dashboard, you can:
+
+- View a traffic breakdown by bot and verification status.
+- Drill down into bot details by IP, ASN, or other signals.
+- Take action on bots, such as challenging or blocking them.
+
+### Bot signals in firewall rules
+
+Priority projects unlock new match conditions in the [WAF custom rule builder](/docs/vercel-firewall/vercel-waf/custom-rules):
+
+- `bot_name`: Match requests from a verified bot by name, such as allowing `Googlebot`. Unverified bots don't match `bot_name`, so use `bot_category` or `bot_status` for them.
+- `bot_category`: Match requests by bot category, such as rate-limiting all `automated_browser` traffic or denying all `scanner` requests.
+- `bot_status`: Match by verification status, one of `identified`, `verified`, `impersonation`, or `unknown`.
+- `bot_protection`: Match on whether bot protection was triggered.
+
+When you downgrade a project off Priority, rules that use bot conditions stop running. Their configuration is preserved, and upgrading the project again reactivates them.
+
+### Bot signals in middleware and functions
+
+Priority projects forward bot classification headers to your application code. Requests that Vercel identifies as bot traffic include the following headers:
+
+| Header                      | Sent when                     | Value                                                      |
+| --------------------------- | ----------------------------- | ---------------------------------------------------------- |
+| `x-vercel-bot-category`     | The request has a bot category | The bot's category                                        |
+| `x-vercel-bot-status`       | The request has a bot signal  | One of `verified`, `identified`, `impersonation`, or `unknown` |
+| `x-vercel-bot-name`         | The bot is verified           | The verified bot's name                                    |
+| `x-vercel-verified-bot`     | The bot is verified           | `true`                                                     |
+| `x-vercel-claimed-bot-name` | The bot failed verification   | The name the bot claimed                                   |
 
 ## Search the docs from your terminal
 

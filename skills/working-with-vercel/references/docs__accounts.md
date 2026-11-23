@@ -17,8 +17,8 @@ summary: Learn how to manage your Vercel account and team members.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/accounts.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "19fd1325d39459acf6d2558d7fe27d7f30f15d6870d36f93382728537de9552c"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "597c425f03ba857b572a7ba382744fed0e771c06eecc816fed6be53a812b4f52"
 ---
 
 # Account Management
@@ -38,11 +38,11 @@ When you first sign up for Vercel, you'll create an account. This account is use
 - [Tag-based cache invalidation now available for all responses](https://vercel.com/changelog/tag-based-cache-invalidation-now-available-for-all-responses)
 - [Firewall Terraform Configuration](https://vercel.com/kb/guide/firewall-terraform-configuration) — Learn how to create scalable firewall configurations with Terraform
 - [Using TanStack AI with Vercel Sandbox](https://vercel.com/kb/guide/tanstack-ai-vercel-sandbox) — Run coding agents in isolated Vercel Sandbox microVMs with the @tanstack/ai-sandbox-vercel provider, with durable resume
+- [September 2020](https://vercel.com/blog/changelog-september-2020)
 - [Transition your Hobby team after EMU enrollment](https://vercel.com/docs/security/enterprise-managed-users-account-update) — Explains the account update screen EMU members see at SSO sign-in and how to complete it.
-- [Project settings](https://vercel.com/docs/project-configuration/project-settings) — Use the project settings, to configure custom domains, environment variables, Git, integrations, deployment protection,
-- [Account Plans on Vercel](https://vercel.com/docs/plans) — Learn about the different plans available on Vercel.
 - [Troubleshoot project collaboration](https://vercel.com/docs/deployments/troubleshoot-project-collaboration) — Learn about common reasons for deployment issues related to team member requirements and how to resolve them.
-- [Manage Sign in with Vercel from the Dashboard](https://vercel.com/docs/sign-in-with-vercel/manage-from-dashboard) — Learn how to manage Sign in with Vercel from the Dashboard
+- [Organizations](https://vercel.com/docs/organizations) — Learn how organizations let you group multiple Vercel teams under a single entity with consolidated billing and central
+- [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 
 Full cross-link map for this page: [/docs/accounts.graph.md](/docs/accounts.graph.md)
 <!-- /docsgraph:related -->
@@ -242,9 +242,11 @@ To leave a team:
 
 ### Deleting a team
 
+Deleting a team permanently removes the team and all of its contents, including domains that the team bought through Vercel. Team [Owners](/docs/rbac/access-roles#owner-role) can delete a team. You can't delete your last Hobby team unless you're also a member of an Enterprise team.
+
 To delete a team:
 
-1. Remove all team domains
+1. Remove all team domains. Transfer the domains you want to keep before you delete the team
 2. Go to your team's dashboard and open **Settings** in the sidebar
 3. Scroll to the **Delete Team** section and select the **Delete Team** button
 4. Click **Confirm**
@@ -368,6 +370,38 @@ If you can't reach the email address you log in with but another login method st
 If you can't log in with any login method, use the [Account Recovery](/accountrecovery) form to request access to your account.
 
 If you're an [Enterprise Managed User](/docs/security/enterprise-managed-users), you log in through your organization's SAML SSO provider, so contact your team administrator to recover access.
+
+## Deleting your account
+
+> **💡 Note:** Deleting your account is permanent. Vercel deletes all of your projects,
+> along with their deployments, domains, SSL certificates, activity, and
+> every other resource that belongs to your account.
+
+Before you delete your account:
+
+- **Leave or delete your teams**: You can't delete your account while you belong to a team other than your own Hobby team. [Leave](#leaving-a-team) or [delete](#deleting-a-team) each of the other teams first
+- **Move your domains**: [Transfer the domains](/docs/domains/working-with-domains/transfer-your-domain) you want to keep, and remove Vercel's nameservers from your other domains
+- **Download your invoices**: Payments stop when you delete your account, and you can no longer access your invoices or billing history afterward
+
+To delete your account:
+
+1. Open your [Account Settings](/account/settings)
+2. Scroll to the **Delete Account** section and select **Delete Personal Account**
+3. In the dialog, enter your username and the phrase `delete my personal account`, then select **Delete**
+4. In the feedback dialog that opens next, submit your reasons for leaving or close the dialog. Vercel sends the confirmation email after this step
+5. Open the email that Vercel sends you and select the confirmation link
+
+Vercel starts deleting your account only after you select the link in the email. Until then, the **Delete Account** section shows an **Awaiting Confirmation** badge, which you can use to send the email again.
+
+### Troubleshooting account deletion
+
+| Problem | What to do |
+| --- | --- |
+| You can't log in to your account | Follow [Recovering access when you can't use your login email](#recovering-access-when-you-can't-use-your-login-email), then delete the account |
+| A dialog lists teams that you still have access to | Leave or delete each listed team, then select **Delete Personal Account** again |
+| An error says a team has integrations that need to be finalized | Uninstall the team's Marketplace integrations, then try again |
+| The **Delete Account** section says your team manages it | Your account is an [Enterprise Managed User](/docs/security/enterprise-managed-users). Ask your team administrator to remove the account |
+| The confirmation email doesn't arrive | Hover over the **Awaiting Confirmation** badge and select **Resend** |
 
 ## Search the docs from your terminal
 

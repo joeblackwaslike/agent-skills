@@ -13,8 +13,8 @@ summary: Find which top-level domains you can buy or transfer to Vercel and whet
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains/supported-domains.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "9cde8ab50211e1da37d6532f32395ff0dd2fad549fd51c928057fce9198eaea8"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "5a2f498e96a7a1eef3a4e14b183d44ffb2757faef6fe6012e822a13b226b4428"
 ---
 
 # Supported domains
@@ -176,6 +176,7 @@ Vercel supports the following top-level domains (TLDs) for [purchase](/docs/doma
 | `.domains` | Yes | Yes |
 | `.download` | Yes | Yes |
 | `.earth` | Yes | Yes |
+| `.eat` | Yes | Yes |
 | `.ec` | Yes | No |
 | `.education` | Yes | Yes |
 | `.email` | Yes | Yes |
@@ -212,6 +213,7 @@ Vercel supports the following top-level domains (TLDs) for [purchase](/docs/doma
 | `.flights` | Yes | Yes |
 | `.florist` | Yes | Yes |
 | `.flowers` | Yes | Yes |
+| `.fly` | Yes | Yes |
 | `.fm` | Yes | No |
 | `.foo` | Yes | Yes |
 | `.food` | Yes | Yes |
@@ -258,6 +260,7 @@ Vercel supports the following top-level domains (TLDs) for [purchase](/docs/doma
 | `.haus` | Yes | Yes |
 | `.healthcare` | Yes | Yes |
 | `.help` | Yes | Yes |
+| `.here` | Yes | Yes |
 | `.hiphop` | Yes | Yes |
 | `.hiv` | Yes | Yes |
 | `.hockey` | Yes | Yes |

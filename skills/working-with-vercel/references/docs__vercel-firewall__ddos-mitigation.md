@@ -12,13 +12,13 @@ related:
   - /docs/vercel-firewall/firewall-concepts
   - /docs/vercel-firewall/vercel-waf/ip-blocking
   - /docs/vercel-firewall/vercel-waf/custom-rules
-  - /docs/spend-management
+  - /docs/vercel-firewall/vercel-waf/rate-limiting-sdk
 summary: Learn how the Vercel Firewall mitigates against DoS and DDoS attacks
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-firewall/ddos-mitigation.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "2e83cc43dc1d624127413f3bfda4a663ffacc66652c5d06a1a608c4ea443fede"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "0ba8821b92821c13ea94487d5e7c2cc45c9fbdd951129adc4240456d5e3e83fe"
 ---
 
 # DDoS Mitigation
@@ -40,11 +40,11 @@ Vercel provides automatic DDoS mitigation for all deployments, regardless of you
 - [Bot Protection: One-click managed ruleset now in public beta](https://vercel.com/blog/one-click-bot-protection-now-in-public-beta)
 - [Temporarily disable Vercel Firewall system DDoS mitigations](https://vercel.com/changelog/temporarily-disable-vercel-firewall-system-ddos-mitigations)
 - [Preventing infrastructure abuse with Vercel Firewall](https://vercel.com/blog/preventing-infrastructure-abuse-with-vercel-firewall)
-- [Vercel Firewall now supports bypassing system mitigations for specific IPs](https://vercel.com/changelog/vercel-firewall-now-supports-bypassing-system-mitigations-for-specific-ips)
-- [Introducing Vercel Firewall DDoS mitigation notifications](https://vercel.com/changelog/introducing-vercel-firewall-notifications)
-- [Protectd: Evolving Vercel’s always-on denial-of-service mitigations](https://vercel.com/blog/protectd-evolving-vercels-always-on-denial-of-service-mitigations)
-- [Mitigating Denial of Wallet risks with Vercel](https://vercel.com/blog/mitigating-denial-of-wallet-risks-with-vercel)
 - [Vercel security roundup: improved bot defenses, DoS mitigations, and insights](https://vercel.com/blog/vercel-security-roundup-improved-bot-defenses-dos-mitigations-and-insights)
+- [Protectd: Evolving Vercel’s always-on denial-of-service mitigations](https://vercel.com/blog/protectd-evolving-vercels-always-on-denial-of-service-mitigations)
+- [Vercel WAF](https://vercel.com/docs/vercel-firewall/vercel-waf) — Learn how to secure your website with the Vercel Web Application Firewall \\(WAF\\)
+- [Firewall Observability](https://vercel.com/docs/vercel-firewall/firewall-observability) — Learn how firewall traffic monitoring and alerts help you react quickly to potential security threats.
+- [CDN security](https://vercel.com/docs/cdn-security) — Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mitigation, firewall protection, and security headers
 
 Full cross-link map for this page: [/docs/vercel-firewall/ddos-mitigation.graph.md](/docs/vercel-firewall/ddos-mitigation.graph.md)
 <!-- /docsgraph:related -->
@@ -71,7 +71,7 @@ However, there are other steps you can take to protect your site during DDoS att
 - Enable [Attack Mode](/docs/vercel-firewall/attack-mode) to challenge all visitors to your site. This is a temporary measure and provides another layer of security to ensure all traffic to your site is legitimate
 - You can set up [IP Blocking](/docs/vercel-firewall/vercel-waf/ip-blocking) to block specific IP addresses from accessing your projects. Enterprise teams can also receive dedicated DDoS support
 - You can add [Custom Rules](/docs/vercel-firewall/vercel-waf/custom-rules) to deny or challenge specific traffic to your site based on the conditions of the rules
-- You can also use Middleware to [block requests](https://github.com/vercel/examples/tree/main/edge-middleware/geolocation-country-block) based on specific criteria or to implement [rate limiting](/kb/guide/add-rate-limiting-vercel).
+- You can also use Middleware to [block requests](https://github.com/vercel/examples/tree/main/edge-middleware/geolocation-country-block) based on specific criteria or to implement [rate limiting](/docs/vercel-firewall/vercel-waf/rate-limiting-sdk). To rate limit requests without code, add a [WAF rate limiting rule](/docs/vercel-firewall/vercel-waf/rate-limiting).
 
 Pro teams can [set up Spend Management](/docs/spend-management#managing-your-spend-amount) to get notified or to automatically take action, such as [using a webhook](/docs/spend-management#configuring-a-webhook) or pausing your projects when your usage hits a set spend amount.
 
@@ -105,6 +105,8 @@ This feature is available for Pro and Enterprise customers. Learn how to [set up
 ## Dedicated DDoS support for Enterprise teams
 
 For larger, distributed attacks on Enterprise Teams, we collaborate with you to keep your site(s) online during an attack. Automated prevention and direct communication from your Vercel account representative will ensure your site remains resilient.
+
+If your team isn't on the Enterprise plan, [contact our sales team](/contact/sales) to get dedicated DDoS support.
 
 ## DDoS and billing
 

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/hooks-guide.md"
-fetched_at: "2026-11-16T12:28:44.823Z"
-sha256: "635c222faf54a3f58a8b8ee91c21cace31fa29f7f95d3d08e7dd0ab0f9f6520f"
+fetched_at: "2026-11-23T14:04:20.448Z"
+sha256: "b3139b7a8e1e8057122ee300f8e907667856b43dd97f5e8de862724be9cd19a1"
 ---
 
 > ## Documentation Index
@@ -694,7 +694,7 @@ Each event type matches on a specific field:
 | `SubagentStop` | agent type | same values as `SubagentStart` |
 | `ConfigChange` | configuration source | `user_settings`, `project_settings`, `local_settings`, `policy_settings`, `skills` |
 | `DirectoryAdded` | how the directory was added | `slash_command`, `register_repo_root` |
-| `StopFailure` | error type | `rate_limit`, `overloaded`, `authentication_failed`, `oauth_org_not_allowed`, `account_on_hold`, `billing_error`, `invalid_request`, `model_not_found`, `server_error`, `max_output_tokens`, `cloud_credential_error`, `unknown` |
+| `StopFailure` | error type | `rate_limit`, `authentication_failed`, `oauth_org_not_allowed`, `account_on_hold`, `billing_error`, `invalid_request`, `model_not_found`, `server_error`, `max_output_tokens`, `cloud_credential_error`, `unknown` |
 | `InstructionsLoaded` | load reason | `session_start`, `nested_traversal`, `path_glob_match`, `include`, `compact` |
 | `Elicitation` | MCP server name | your configured MCP server names |
 | `ElicitationResult` | MCP server name | same values as `Elicitation` |
@@ -774,7 +774,7 @@ The tabs below show a few more matchers on different event types.
 
 #### Filter by tool name and arguments with the `if` field
 
-The `if` field uses [permission rule syntax](https://code.claude.com/docs/en/permissions.md) to filter hooks by tool name and arguments together, so the hook process only spawns when the tool call matches. This goes beyond `matcher`, which filters at the group level by tool name only.
+The `if` field uses [permission rule syntax](https://code.claude.com/docs/en/permissions.md) to filter hooks by tool name and arguments together.
 
 For example, this configuration runs a hook only when Claude uses `git` commands rather than all Bash commands:
 
@@ -824,7 +824,7 @@ Where you add a hook determines its scope:
 | `.claude/settings.local.json` | Single project | No, gitignored when Claude Code saves a setting to it |
 | Managed policy settings | Organization-wide | Yes, admin-controlled |
 | [Plugin](https://code.claude.com/docs/en/plugins/overview.md) `hooks/hooks.json` | When plugin is enabled | Yes, bundled with the plugin |
-| [Skill](https://code.claude.com/docs/en/skills.md) frontmatter | The rest of the session once the skill is invoked. See [Hooks in skills and agents](https://code.claude.com/docs/en/hooks.md#hooks-in-skills-and-agents) | Yes, defined in the skill file |
+| [Skill](https://code.claude.com/docs/en/skills.md) frontmatter | See [Hooks in skills and agents](https://code.claude.com/docs/en/hooks.md#hooks-in-skills-and-agents) | Yes, defined in the skill file |
 | [Subagent](https://code.claude.com/docs/en/sub-agents.md) frontmatter | While that subagent is running | Yes, defined in the subagent file |
 
 Run [`/hooks`](https://code.claude.com/docs/en/hooks#the-%2Fhooks-menu) in Claude Code to browse all configured hooks grouped by event.
@@ -950,7 +950,7 @@ Keep these constraints in mind when designing hooks:
   * `agent`: 60 seconds.
   * [`SessionEnd`](https://code.claude.com/docs/en/hooks#sessionend) hooks of any type share a 1.5-second budget. If your settings set a longer per-hook `timeout`, Claude Code raises the budget to match, up to 60 seconds.
 * `PostToolUse` hooks can't undo actions since the tool has already executed.
-* [`PermissionRequest`](https://code.claude.com/docs/en/hooks#permissionrequest) hooks fire when Claude Code is about to ask you for permission, or when it would otherwise auto-deny a call that can't prompt. In [non-interactive mode](https://code.claude.com/docs/en/headless.md) with the `-p` flag, they still run outside [`dontAsk` mode](https://code.claude.com/docs/en/permission-modes#allow-only-pre-approved-tools-with-dontask-mode), and a call that no hook decides and nothing else can answer is denied.
+* [`PermissionRequest`](https://code.claude.com/docs/en/hooks#permissionrequest) hooks fire when Claude Code is about to ask you for permission. In a [`-p` run](https://code.claude.com/docs/en/headless) with no [permission host](https://code.claude.com/docs/en/headless.md#turn-off-permission-prompts-in-unattended-runs), outside [`dontAsk` mode](https://code.claude.com/docs/en/permission-modes#allow-only-pre-approved-tools-with-dontask-mode), a call that would prompt you is denied unless something approves it, such as one of these hooks.
 * `Stop` hooks fire whenever Claude finishes responding, not only at task completion. They don't fire on user interrupts. API errors fire [StopFailure](https://code.claude.com/docs/en/hooks.md#stopfailure) instead.
 * When multiple `PreToolUse` hooks return [`updatedInput`](https://code.claude.com/docs/en/hooks#pretooluse) to rewrite a tool's input, Claude Code doesn't merge the rewrites or guarantee which rewrite the tool runs with. Avoid having more than one hook rewrite the same tool's input.
 

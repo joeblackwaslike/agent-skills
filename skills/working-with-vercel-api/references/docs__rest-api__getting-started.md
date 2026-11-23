@@ -17,8 +17,8 @@ summary: Create a scoped Vercel access token, make a read-only REST API request,
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/rest-api/getting-started.md"
-fetched_at: "2026-11-16T12:35:06.708Z"
-sha256: "0d11acd9d4d290267a0ea478acccc6cafbec0f2d366185c1f9fa85ba03ae5cdd"
+fetched_at: "2026-11-23T14:17:54.731Z"
+sha256: "faf66327ce943d2b5f2c21189102877556fc0c0e636c631aae9ac4b03b50a1ba"
 ---
 
 # Make Your First Vercel API Request
@@ -32,8 +32,8 @@ Use a Vercel access token to call the Vercel REST API with `curl`, then make the
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [List projects of an access group](https://vercel.com/docs/rest-api/access-groups/list-projects-of-an-access-group) — GET /v1/access-groups/{idOrName}/projects — List projects of an access group
-- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [Create an access group project](https://vercel.com/docs/rest-api/access-groups/create-an-access-group-project) — POST /v1/access-groups/{accessGroupIdOrName}/projects — Allows creation of an access group project
+- [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [Get a project domain](https://vercel.com/docs/rest-api/projects/get-a-project-domain) — GET /v9/projects/{idOrName}/domains/{domain} — Get project domain by project id/name and domain name.
 - [Create an SDK key](https://vercel.com/docs/rest-api/feature-flags/create-an-sdk-key) — PUT /v1/projects/{projectIdOrName}/feature-flags/sdk-keys — Creates an SDK key.
 

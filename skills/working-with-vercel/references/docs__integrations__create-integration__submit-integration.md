@@ -18,8 +18,8 @@ summary: Learn about all the requirements and guidelines needed when creating yo
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/submit-integration.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "5cc8097d12b182208dadb9bfaa0b4d327197f5218d91ffd282b7c9c118046776"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "9c83d29e4747b1e508ddc418616d6ab5b6b4dd2624d711c0dcf5950489c79a10"
 ---
 
 # Requirements for listing an Integration
@@ -36,7 +36,7 @@ Defining the content specs helps you create the main cover page of your integrat
 - [Upgrade an Integration](https://vercel.com/docs/integrations/create-integration/upgrade-integration) — Lean more about when you may need to upgrade your Integration.
 - [Native integration concepts](https://vercel.com/docs/integrations/create-integration/native-integration) — As an integration provider, understanding how your service interacts with Vercel's platform will help you create and opt
 - [Add a Native Integration](https://vercel.com/docs/integrations/install-an-integration/product-integration) — Learn how you can add a product to your Vercel project through a native integration.
-- [vercel integration](https://vercel.com/docs/cli/integration) — Learn how to manage marketplace native integrations, provision resources, manage individual resources, and discover avai
+- [Marketplace Partner API Reference](https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/partner) — Learn how to implement Partner API endpoints for your Vercel integration
 
 Full cross-link map for this page: [/docs/integrations/create-integration/submit-integration.graph.md](/docs/integrations/create-integration/submit-integration.graph.md)
 <!-- /docsgraph:related -->
@@ -407,7 +407,7 @@ Before you can publish, you must accept the partner terms that match how custome
 
 If the integration is already installed in the selected scope during the deploy button flow, the redirect URL will be called with the most recent `configurationId`.
 
-Make sure to store `configurationId` along with an access token such that if an existing `configurationId` was passed, you could retrieve the corresponding access token.
+Store the `configurationId` so that, if an existing `configurationId` is passed, you can [request a short-lived access token](/docs/integrations/create-integration/short-lived-access-tokens#request-a-short-lived-token) for that installation. Don't store access tokens. Long-lived tokens are deprecated, and if your integration stores them today, [migrate to short-lived access tokens](/docs/integrations/create-integration/short-lived-access-tokens).
 
 ## Product form fields
 

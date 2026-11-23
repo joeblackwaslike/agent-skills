@@ -17,8 +17,8 @@ summary: Run Pi, fx, OpenCode, eve, Claude Code, and Codex on Vercel so a crash,
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-harnesses.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "1ff785841f8df0c48556a8b322333ae3b453120fc9bf6c4dae5f27c3d4c6eb54"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "637e730b001d041430c8dac5e19f937de1e24fdad56e40869078a98bb6470fd0"
 ---
 
 # Running Agent Harnesses Durably on Vercel
@@ -35,7 +35,6 @@ Run Pi, fx, OpenCode, eve, Claude Code, and Codex on Vercel. When a crash, a fun
 
 - [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
 - [Workflow SDK 5: built for production](https://vercel.com/blog/workflow-sdk-5)
-- [Program Claude Code, Codex, Pi and other agent harnesses with AI SDK](https://vercel.com/changelog/program-agent-harnesses-with-ai-sdk)
 - [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
 - [Scheduling Work for Agents](https://vercel.com/docs/schedules/agents) — Give an agent a tool that creates dynamic schedules, so it can do work for a user later or on a recurring basis.
 - [Scheduling Work with Pi](https://vercel.com/docs/schedules/agents/pi) — Give a Pi agent on durable-harness a tool that creates schedules, and send each run back into the session that created i

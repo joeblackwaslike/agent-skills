@@ -17,8 +17,8 @@ summary: Vercel Runtime Cache is a specialized cache that stores responses from 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/runtime-cache.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "cb288422ac59aa589096b43254d3fa87c251f48b43581bed0388ee594c80e86c"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "0dd8a58b78bbb9ca895e65568619164f8b36905f7b8ef0d7a8860e86693787e9"
 ---
 
 # Runtime Cache
@@ -33,15 +33,15 @@ Runtime cache is a regional, ephemeral cache you can use for storing and retriev
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation) — Set baselines and cut backend load. Make your catalog readable to agents and keep orders and AI features reliable. Then
+- [How to keep your storefront running through Black Friday](https://vercel.com/kb/guide/black-friday-reliability) — Learn how to tune alerts, bot rules, and spend limits. Rehearse rollback so your team can recover quickly from checkout
 - [use cache](https://nextjs.org/docs/app/api-reference/directives/use-cache) — Learn how to use the "use cache" directive to cache data in your Next.js application.
 - [Migrating to Cache Components](https://nextjs.org/docs/app/guides/migrating-to-cache-components) — Learn how to migrate from route segment configs to Cache Components in Next.js.
 - [cacheLife](https://nextjs.org/docs/app/api-reference/functions/cacheLife) — Learn how to use the cacheLife function to set the cache expiration time for a cached function or component.
-- [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache)
-- [Control CDN caching for shared and personalized pages on Vercel](https://vercel.com/kb/guide/cdn-cache-personalized-pages) — Control CDN caching for shared and personalized Next.js pages. Set cache headers, separate per-user content, and verify
-- [Simplifying runtime caching on Vercel](https://vercel.com/blog/simplifying-runtime-caching-on-vercel)
 - [Caching and Revalidating (Previous Model)](https://nextjs.org/docs/app/guides/caching-without-cache-components) — Learn how to cache and revalidate data using fetch options, unstable_cache, and route segment configs for projects not u
+- [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache)
+- [Revalidating](https://nextjs.org/docs/app/getting-started/revalidating) — Learn how to revalidate cached data using time-based and on-demand strategies.
 - [Purging Vercel CDN Cache](https://vercel.com/docs/caching/cdn-cache/purge) — Learn how to invalidate and delete cached content on Vercel's CDN, including cache keys and manual purging options.
-- [Cache-Control headers](https://vercel.com/docs/caching/cache-control-headers) — Learn about the cache-control headers sent to each Vercel deployment and how to use them to control the caching behavior
 - [Caching](https://vercel.com/docs/caching) — Learn how Vercel caches content across multiple layers to deliver fast responses and reduce load on your backend.
 - [Cache Status and Reasons](https://vercel.com/docs/caching/cache-status) — Understand the cache status and reason shown for each request in Vercel logs, and what causes a response to miss, bypass
 - [vercel cache](https://vercel.com/docs/cli/cache) — Learn how to manage cache for your project using the vercel cache CLI command.
@@ -110,7 +110,7 @@ Next.js includes the build ID in every `use cache: remote` cache key, or the `de
 
 Next.js does this on purpose. A cached function's identity hash or the shape of its return value can change between builds, so reusing an older entry risks serving stale or malformed data. Next.js is working on keeping `use cache: remote` entries readable across deployments, so treat the behavior in this section as how Next.js 16 works today rather than a permanent property of the directive. For the full key composition, see the Next.js [`use cache: remote`](https://nextjs.org/docs/app/api-reference/directives/use-cache-remote) reference.
 
-If your data must stay cached after a deployment, cache it with `fetch` and `cache: 'force-cache'` or with `unstable_cache`, which both store entries in [Data cache](/docs/runtime-cache/data-cache), or write entries yourself with [`getCache`](/docs/functions/functions-api-reference/vercel-functions-package#getcache) and a key you control. For a worked example with the Next.js App Router, see [How can I share my Vercel cache across deployments?](/kb/guide/share-vercel-cache-across-deployments-nextjs).
+If your data must stay cached after a deployment, cache it with `fetch` and `cache: 'force-cache'` or with `unstable_cache`, which both store entries in [Data cache](/docs/runtime-cache/data-cache), or write entries yourself with [`getCache`](/docs/functions/functions-api-reference/vercel-functions-package#getcache) and a key you control.
 
 ## Using runtime cache
 

@@ -18,8 +18,8 @@ summary: Learn about legacy usage and pricing for Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "61ea4b34c1456fe5de40ddbba3677b7986afe3b7ccbf230d611461d671c708fa"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "ebb0e404dd81e1412042abddb4f826af84ef7c3a5e39448be5755c72b6e8eec7"
 ---
 
 # Legacy Usage & Pricing for Functions
@@ -39,11 +39,13 @@ Functions using the Node.js runtime are measured in [GB-hours](/docs/pricing/man
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
+- [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
 - [How can I improve function cold start performance on Vercel?](https://vercel.com/kb/guide/improve-function-cold-start-performance-on-vercel) — Learn how to confirm whether cold starts cause function latency on Vercel, and how Fluid compute reduces how often they
-- [Hosting your API on Vercel](https://vercel.com/kb/guide/hosting-backend-apis) — Learn how to build and scale performant APIs on Vercel.
-- [Vercel Functions Limits](https://vercel.com/docs/functions/limitations) — Learn about the limits and restrictions of using Vercel Functions.
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
+- [Runtimes](https://vercel.com/docs/functions/runtimes) — Runtimes transform your source code into Functions, which are served by our CDN. Learn about the official runtimes suppo
 - [What is Compute?](https://vercel.com/docs/fundamentals/what-is-compute) — Learn how compute works on Vercel with Fluid compute, and how it compares to traditional server and serverless models.
+- [Calculating usage of resources](https://vercel.com/docs/pricing/how-does-vercel-calculate-usage-of-resources) — Understand how Vercel measures and calculates your resource usage based on a typical user journey.
+- [Legacy Metrics](https://vercel.com/docs/pricing/legacy) — Learn about legacy usage metrics, including Bandwidth, Requests, Vercel Function Invocations, and Vercel Function Execut
 
 Full cross-link map for this page: [/docs/functions/usage-and-pricing/legacy-pricing.graph.md](/docs/functions/usage-and-pricing/legacy-pricing.graph.md)
 <!-- /docsgraph:related -->
@@ -116,7 +118,7 @@ You can see the usage for **functions using the Node.js runtime** on the **Funct
 | -------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
 | Function Invocations | The number of times your Functions have been invoked                                            | \*\*Price:\*\* | [Learn More](#optimizing-function-invocations) |
 | Function Duration    | The time your Vercel Functions have spent responding to requests                                | \*\*Price:\*\*     | [Learn More](#optimizing-function-duration)    |
-| Throttling           | The number of instances where Functions did not execute due to concurrency limits being reached | No                                                                                                                                  | N/A                                            |
+| Throttling           | Requests that Vercel throttles when demand temporarily exceeds available capacity                | No                                                                                                                                  | N/A                                            |
 
 ## Managing function invocations
 
@@ -168,9 +170,9 @@ To see your current usage, open **Usage** in the sidebar on your team's [Dashboa
 
 ## Throttles
 
-This counts the number of times that a request to your Functions could not be served because the [concurrency limit](/docs/functions/concurrency-scaling#automatic-concurrency-scaling) was hit.
+This counts requests to your Functions that Vercel throttles when demand temporarily exceeds available capacity.
 
-While this is not a chargeable metric, it will cause a `503: FUNCTION_THROTTLED` error. To learn more, see [What should I do if I receive a 503 error on Vercel?](/kb/guide/what-should-i-do-if-i-receive-a-503-error-on-vercel).
+While this is not a chargeable metric, it will cause a `503: FUNCTION_THROTTLED` error. To learn more, see [`FUNCTION_THROTTLED`](/docs/errors/function_throttled).
 
 ## Search the docs from your terminal
 

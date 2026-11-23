@@ -17,8 +17,8 @@ summary: Vercel Drop lets you deploy a file or folder by dragging it into your b
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/drop.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "21b88e2f06d943baf6bca284c63d948b232f1080af2cd9f11134b52efc0c15c2"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "a0763b1bc9d1f61f43f36a66b5937edbaf1b585f4778c0a7e497891318c37397"
 ---
 
 # Deploying with Vercel Drop
@@ -36,10 +36,10 @@ Vercel Drop lets you deploy a file, folder, or `.zip` by dragging it into your b
 - [Deploy a Bolt.new app with Vercel Drop](https://vercel.com/kb/guide/bolt-vercel-drop) — Export your Bolt.new project as a .zip and deploy it to Vercel with Vercel Drop. Vercel detects the framework and builds
 - [Deploy a Google Stitch design with Vercel Drop](https://vercel.com/kb/guide/google-stitch-vercel-drop) — Download the HTML from your Google Stitch screens and deploy them to production with Vercel Drop, with no Git or CLI req
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
+- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [Claim Deployments](https://vercel.com/docs/deployments/claim-deployments) — Learn how to take ownership of deployments on Vercel with the Claim Deployments feature.
 
 Full cross-link map for this page: [/docs/drop.graph.md](/docs/drop.graph.md)
 <!-- /docsgraph:related -->

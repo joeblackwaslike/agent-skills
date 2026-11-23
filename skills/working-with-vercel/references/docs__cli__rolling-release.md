@@ -14,8 +14,8 @@ summary: "Learn how to manage your project's rolling releases using the vercel r
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/rolling-release.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "0a7eba30fa2e695b77c3bb585ac344f4b99f4c5a12be522077ebc835b91db0bb"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "300840e8afb61288ba2047459a6d88b70019820e8bee53be245eaab5c2e53930"
 ---
 
 # vercel rolling-release
@@ -28,7 +28,6 @@ Use the `vercel rolling-release` command to manage your project's rolling releas
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to gradually roll out new versions of your backend](https://vercel.com/kb/guide/how-to-gradually-roll-out-new-versions-of-your-backend) — Incrementally release updates to your backend to minimize impact of mistakes.
 - [Performing a rolling release deployment](https://vercel.com/docs/rolling-releases/rolling-release-deployment) — Gradually roll out a production deployment using traffic stages, monitoring, and automated abort.
 - [Rolling Releases](https://vercel.com/docs/agent-resources/vercel-mcp/tools/rolling-releases) — Vercel MCP tools for rolling releases.
 - [Update the rolling release settings for the project](https://vercel.com/docs/rest-api/rolling-release/update-the-rolling-release-settings-for-the-project) — PATCH /v1/projects/{idOrName}/rolling-release/config — Update \\(or disable\\) Rolling Releases for a project. When disabl

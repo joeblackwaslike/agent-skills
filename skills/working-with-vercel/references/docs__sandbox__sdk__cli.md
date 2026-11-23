@@ -1,0 +1,1412 @@
+---
+title: Sandbox CLI Reference
+product: vercel
+url: /docs/sandbox/sdk/cli
+canonical_url: "https://vercel.com/docs/sandbox/sdk/cli"
+last_updated: 2018-10-20
+type: reference
+prerequisites:
+  - /docs/sandbox/sdk
+  - /docs/sandbox
+related:
+  - /docs/sandbox/sdk/javascript
+  - /docs/sandbox/sdk/python
+  - /docs/drives/cli-reference
+  - /docs/accounts/access-tokens
+  - /docs/project-configuration/general-settings
+summary: Use the Sandbox CLI to run coding agents, manage sandboxes, execute commands, and copy files from your terminal.
+install_vercel_plugin: npx plugins add vercel/vercel-plugin
+search_with_vercel_cli: npx vercel@latest docs search "<query>"
+source: "https://vercel.com/docs/sandbox/sdk/cli.md"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "d68317cfb6cf9bd833d3adc07e1f3eecdf0a0c96d8e5e0e00d42b00e815289eb"
+---
+
+# Sandbox CLI Reference
+
+Use the Sandbox CLI to [run coding agents](#run-a-coding-agent), manage sandboxes, execute commands, and copy files from your terminal.
+
+
+<!-- docsgraph:related -->
+## Related pages
+
+> **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
+
+- [How Vercel Drives work and how to use them](https://vercel.com/kb/guide/vercel-drives) — Learn how Vercel Drives give Vercel Sandbox persistent, shareable storage, and how to create, mount, snapshot, fork, lis
+- [Vercel Sandbox supports forking](https://vercel.com/changelog/vercel-sandbox-supports-forking)
+- [Vercel Sandbox](https://eve.dev/docs/sandbox/vercel) — Create persistent sandboxes on Vercel, from a prepared snapshot when the environment has build-time setup.
+- [Run untrusted Python code safely with Vercel Sandbox](https://vercel.com/kb/guide/python-and-vercel-sandbox) — Execute untrusted and AI-generated code from Python in isolated microVMs, with files, processes, network policies, and s
+- [Vercel Sandbox vs Upstash Box](https://vercel.com/kb/guide/vercel-sandbox-vs-upstash-box) — Compare Vercel Sandbox and Upstash Box as AI agent sandboxes, including isolation, persistence, network controls, SDKs,
+- [Snapshot and restore a prepared environment](https://vercel.com/docs/sandbox/examples/snapshot-and-restore) — Snapshot a configured Vercel Sandbox so future sandboxes start from the same filesystem state, or fork a sandbox directl
+- [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
+- [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
+
+Full cross-link map for this page: [/docs/sandbox/sdk/cli.graph.md](/docs/sandbox/sdk/cli.graph.md)
+<!-- /docsgraph:related -->
+
+Use the CLI for manual testing and debugging, or use the [JS SDK](/docs/sandbox/sdk/javascript) or [Python SDK](/docs/sandbox/sdk/python) to automate sandbox workflows in your application.
+
+To create and manage drives, use [`vercel drives`](/docs/drives/cli-reference).
+
+Sandboxes are identified by **name** (unique within your project) and are **persistent by default**: when stopped, the filesystem is snapshotted and restored on the next resume. Use `sandbox remove` to delete a sandbox permanently, which keeps its snapshots unless you pass `--delete-orphan-snapshots`.
+
+## Installation
+
+Install the Sandbox CLI globally to run `sandbox` or `sbx` from any directory:
+
+**pnpm**
+
+```bash
+pnpm i -g sandbox
+```
+
+**yarn**
+
+```bash
+yarn global add sandbox
+```
+
+**npm**
+
+```bash
+npm i -g sandbox
+```
+
+**bun**
+
+```bash
+bun add -g sandbox
+```
+
+You can also run the CLI without a global installation:
+
+```bash filename="Terminal"
+npx sandbox@latest --help
+```
+
+## Authentication
+
+The CLI uses your saved Vercel credentials. If you aren't signed in, it starts
+the login flow when you run a command that requires authentication. Follow the
+verification link, or press Enter to open it in your browser.
+
+You can also sign in explicitly:
+
+```bash filename="Terminal"
+sandbox login
+```
+
+## `sandbox --help`
+
+Get help information for all available sandbox commands:
+
+```bash filename="terminal"
+sandbox <subcommand>
+```
+
+**Description:** Interfacing with Vercel Sandbox
+
+**Available subcommands:**
+
+- [`list`](#sandbox-list): List all sandboxes for the specified account and project. \[alias: `ls`]
+- [`create`](#sandbox-create): Create a sandbox in the specified account and project.
+- [`sh`](#sandbox-sh): Create a sandbox and open an interactive shell.
+- [`fork`](#sandbox-fork): Fork an existing sandbox into a new one, inheriting its config and current snapshot.
+- [`run`](#sandbox-run): Create or resume a sandbox and run a command in it.
+- [`exec`](#sandbox-exec): Execute a command in an existing sandbox.
+- [`connect`](#sandbox-connect): Start an interactive shell in an existing sandbox. \[aliases: `ssh`, `shell`]
+- [`copy`](#sandbox-copy): Copy files between your local filesystem and a remote sandbox. \[alias: `cp`]
+- [`stop`](#sandbox-stop): Stop the current session of one or more sandboxes.
+- [`extend`](#sandbox-extend): Add time to a running session without changing its default timeout.
+- [`remove`](#sandbox-remove): Permanently delete one or more sandboxes and all their sessions, keeping their snapshots unless you pass `--delete-orphan-snapshots`. \[alias: `rm`]
+- [`config`](#sandbox-config): View and update sandbox configuration (resources, timeout, persistence, snapshot retention, network policy, drive mounts, tags).
+- [`sessions`](#sandbox-sessions): Inspect VM sessions for a sandbox.
+- [`snapshot`](#sandbox-snapshot): Take a snapshot of the filesystem of a sandbox.
+- [`snapshots`](#sandbox-snapshots): Manage sandbox snapshots.
+- [`telemetry`](#sandbox-telemetry): View or change CLI telemetry collection.
+- [`login`](#sandbox-login): Log in to the Sandbox CLI.
+- [`logout`](#sandbox-logout): Log out of the Sandbox CLI.
+
+For more help, try running `sandbox &lt;subcommand&gt; --help`
+
+## `sandbox list`
+
+List all sandboxes for the specified account and project.
+
+```bash filename="terminal"
+sandbox list [OPTIONS]
+```
+
+### Sandbox list example
+
+```bash filename="terminal"
+# List all running sandboxes
+sandbox list
+
+# List all sandboxes (including stopped ones)
+sandbox list --all
+
+# List sandboxes for a specific project
+sandbox list --project my-nextjs-app
+
+# Filter by name prefix and sort
+sandbox list --name-prefix ci- --sort-by name --sort-order asc
+
+# Filter by tag
+sandbox list --tag env=staging --limit 20
+
+# Page through results using the cursor reported by the previous page
+sandbox list --cursor <token>
+```
+
+### Sandbox list options
+
+| Option                | Alias    | Description                                                                                                                                                      |
+| --------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--token <token>`     | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). If you don't provide it, we'll use a stored token or prompt you to log in. |
+| `--project <project>` | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
+| `--scope <team>`      | `--team` | The team you want to use with this command.                                                                                                                      |
+| `--name-prefix <p>`   | -        | Filter sandboxes whose name starts with this prefix. Forces `--sort-by name`.                                                                                    |
+| `--sort-by <field>`   | -        | Sort by `createdAt` (default), `name`, or `statusUpdatedAt`.                                                                                                     |
+| `--sort-order <ord>`  | -        | Sort direction. `asc` or `desc` (default).                                                                                                                       |
+| `--tag <key=value>`   | -        | Filter sandboxes by tag. You can filter on one tag only. If you repeat this option with different keys, the command fails.                                                                       |
+| `--limit <n>`         | -        | Maximum number of sandboxes per page. Default 50.                                                                                                                |
+| `--cursor <token>`    | -        | Pagination cursor from a previous page.                                                                                                                          |
+
+### Sandbox list flags
+
+| Flag     | Short | Description                                                                        |
+| -------- | ----- | ---------------------------------------------------------------------------------- |
+| `--all`  | `-a`  | Show all sandboxes, including stopped ones (we only show running ones by default). |
+| `--help` | `-h`  | Display help information.                                                          |
+
+## `sandbox create`
+
+Create a sandbox in the specified account and project.
+
+```bash filename="terminal"
+sandbox create [OPTIONS] [agent]
+```
+
+### Run a coding agent
+
+With Sandbox CLI 4.8.0 or later, use `sandbox create <agent>` in an interactive
+terminal to start a coding agent in a new sandbox:
+
+```bash filename="Terminal"
+sandbox create opencode
+```
+
+If you haven't installed the CLI globally, use `npx sandbox@latest create opencode`.
+The `sbx` alias also works with a global installation, for example `sbx create pi`.
+
+| Agent       | Command                   |
+| ----------- | ------------------------- |
+| OpenCode    | `sandbox create opencode` |
+| Pi          | `sandbox create pi`       |
+| Claude Code | `sandbox create claude`   |
+| Codex       | `sandbox create codex`    |
+
+The agent runs inside the sandbox, with its interactive interface in your local
+terminal. Its commands and file edits run remotely. Your local project files
+aren't uploaded automatically. Clone your repository inside the sandbox with
+appropriate credentials, or use [`sandbox copy`](#sandbox-copy) to copy files.
+
+Vercel login authenticates Sandbox access. Configure your chosen agent's
+credentials separately using its authentication flow or the `--env` option.
+The CLI tries to determine your team and project; set `--scope` and `--project`
+explicitly when needed:
+
+```bash filename="Terminal"
+sandbox create pi --name my-agent --scope my-team --project my-project
+```
+
+The CLI selects the [universal image](/docs/sandbox/concepts/images#vercel-managed-images)
+with the agents preinstalled. Omit `--image` and `--snapshot` when using an agent
+shortcut.
+
+Exiting the agent leaves the sandbox running. Unless you pass `--silent`, the
+CLI prints commands to reconnect to the agent or stop the sandbox. Use the
+printed reconnect command to continue your conversation; running
+`sandbox create <agent>` again creates another sandbox. Before reconnecting,
+follow any reminder to export environment variables.
+
+Stop the sandbox when you're finished. Normal
+[Sandbox persistence](/docs/sandbox/concepts/persistent-sandboxes) settings apply.
+
+### Sandbox create example
+
+```bash filename="terminal"
+# Create a basic Node.js sandbox
+sandbox create
+
+# Create a sandbox with an explicit name
+sandbox create --name my-sandbox
+
+# Create a sandbox on a Secure Compute network
+sandbox create --name my-sandbox --network-id 3k9x7m2p5q8w1z4n
+
+# Create a sandbox with 1 vCPU and open an interactive shell
+sandbox create --vcpus 1 --connect
+
+# Create a Python sandbox with custom timeout
+sandbox create --image vercel/sandbox/python --timeout 1h
+
+# Create sandbox with port forwarding
+sandbox create --publish-port 8080 --project my-project
+
+# Create sandbox silently (no output)
+sandbox create --silent
+
+# Create sandbox from a snapshot
+sandbox create --snapshot snap_abc123
+
+# Create a sandbox in a specific region, with failover regions
+sandbox create --region sfo1 --failover-regions iad1,cle1
+
+# Create a non-persistent (ephemeral) sandbox
+sandbox create --name ci-job --non-persistent
+
+# Tag a sandbox at creation time
+sandbox create --name my-sandbox --tag env=staging --tag team=infra
+
+# Set snapshot expiration and retention
+sandbox create --name my-sandbox --snapshot-expiration 7d --keep-last-snapshots 1
+
+# Create sandbox without Internet access
+sandbox create --network-policy deny-all
+
+# Create sandbox with restricted Internet access (limited to Vercel's AI gateway)
+sandbox create --allowed-domain ai-gateway.vercel.sh
+
+# Mount a drive with read-write access
+sandbox create --mount cache:/data
+
+# Mount a point-in-time, read-only snapshot of a drive
+sandbox create --mount cache:/data:snapshot
+```
+
+### Sandbox create options
+
+| Option                              | Alias    | Description                                                                                                                                                      |
+| ----------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--token <token>`                   | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). If you don't provide it, we'll use a stored token or prompt you to log in. |
+| `--project <project>`               | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
+| `--scope <team>`                    | `--team` | The team you want to use with this command.                                                                                                                      |
+| `--name <name>`                     | -        | Sandbox name (unique per project). Generated if omitted. Names cannot be changed after creation.                                                                 |
+| `--image <image>`                   | -        | A Vercel Container Registry (VCR) [image](/docs/sandbox/concepts/images) name and optional tag or sha to start the sandbox from (e.g. my-repo, my-repo:v1).      |
+| `--timeout <duration>`              | -        | How long the sandbox can run before we automatically stop it. Examples: '5m', '1h'. We'll stop it after 5 minutes by default.                                    |
+| `--vcpus <count>`                   | -        | Number of vCPUs to allocate. Each vCPU includes 2048 MB of memory. Defaults to 2.                                                                                |
+| `--publish-port <port>`             | `-p`     | Make a port from your sandbox accessible via a public URL. Repeatable.                                                                                           |
+| `--snapshot <snapshot_id>`          | `-s`     | Create the sandbox from a previously saved snapshot. To fork from another sandbox by name, use [`sandbox fork`](#sandbox-fork) instead.                          |
+| `--env <key=value>`                 | `-e`     | Default environment variables for sandbox commands. Repeatable.                                                                                                  |
+| `--credentials <provider,...>`      | -        | Comma-separated Vercel managed [credentials](/docs/sandbox/concepts/credentials) the sandbox can use. Supports `npm`.                              |
+| `--tag <key=value>`                 | `-t`     | Key-value tag. Up to five. Repeatable. See [Tags](/docs/sandbox/concepts/tags).                                                                                  |
+| `--mount <drive:path[:mode]>`       | -        | Mount a drive onto the sandbox. Repeatable. `mode` can be `read-write` (default) or `snapshot`. See [Drives](/docs/sandbox/concepts/drives).                 |
+| `--region <region>`                 | -        | [Region](/docs/sandbox/concepts/regions) to create the sandbox in. Defaults to the [project's default sandbox region](/docs/sandbox/concepts/regions#set-a-default-region-for-your-project), or `iad1`.                                  |
+| `--failover-regions <region,...>`   | -        | Comma-separated [regions](/docs/sandbox/concepts/regions#failover-regions) the sandbox can fail over to (e.g. `sfo1,cle1`). Must not include the main region. Available on Pro and Enterprise plans, excluding [Pro trials](/docs/plans/pro-plan/trials). |
+| `--snapshot-expiration <duration>`  | -        | Default snapshot TTL. Defaults to `30d`. Use `none` or `0` for no expiration.                                                                                    |
+| `--keep-last-snapshots <count>`     | -        | Retention policy: keep only the N (1–10) most recent snapshots of this sandbox.                                                                                  |
+| `--keep-last-snapshots-for <dur>`   | -        | Expiration applied to kept snapshots. Use `none` or `0` for no expiration.                                                                                       |
+| `--delete-evicted-snapshots <bool>` | -        | `true` (default) deletes evicted snapshots immediately; `false` keeps them until their existing expiration. See [Snapshot retention](#snapshot-retention).       |
+| `--network-policy <mode>`           | -        | Base network mode to start the sandbox with ('allow-all' - default or 'deny-all'). Leave unset if using more specific rules.                                     |
+| `--network-id <id>`                 | -        | [Secure Compute network ID](/docs/sandbox/concepts/secure-compute) to use from the first session.                                                               |
+| `--allowed-domain <domain>`         | -        | List of domains (or pattern) to allow access to (only applicable in 'custom' mode). Use wildcard `*` to match multiple domains or subdomains.                    |
+| `--allowed-cidr <cidr>`             | -        | List of address ranges to allow access to (only applicable in 'custom' mode). Traffic to those addresses will bypass domain matching.                            |
+| `--denied-cidr <cidr>`              | -        | List of address ranges to deny access to (only applicable in 'custom' mode). Those take precedence over allowed domains and addresses.                           |
+
+### Sandbox create flags
+
+| Flag               | Short | Description                                                                  |
+| ------------------ | ----- | ---------------------------------------------------------------------------- |
+| `--non-persistent` | -     | Disable filesystem persistence between sessions. The sandbox is ephemeral.   |
+| `--silent`         | -     | Create the sandbox without writing the sandbox name to stdout.               |
+| `--connect`        | -     | Start an interactive shell session after creating the sandbox.               |
+| `--help`           | `-h`  | Display help information.                                                    |
+
+### Snapshot retention
+
+A persistent sandbox snapshots its filesystem every time a session stops, so its snapshots accumulate over time. Use `--keep-last-snapshots` to keep only the N most recent. When a new snapshot brings the total above the limit, the oldest snapshots are no longer kept. The `--delete-evicted-snapshots` flag controls what happens to them: delete them immediately, or leave them to expire on their own.
+
+- `--keep-last-snapshots <count>`: keep only the N most recent snapshots. `count` must be an integer from 1 to 10. This flag enables the retention policy, and the two flags below require it.
+- `--keep-last-snapshots-for <duration>`: the expiration applied to the snapshots you keep, for example `7d` or `30d`. Use `none` or `0` for no expiration. When omitted, kept snapshots fall back to the sandbox's default snapshot expiration (`--snapshot-expiration`).
+- `--delete-evicted-snapshots <true|false>`: what happens to a snapshot once it is no longer among the most recent kept ones. `true` (the default) deletes it immediately; `false` keeps it until its existing expiration instead.
+
+## `sandbox fork`
+
+Fork an existing sandbox into a new one. The fork starts from the source sandbox's current saved snapshot and inherits its configuration, except for drive mounts. A fork doesn't capture unsaved changes from a running session. If the source has no current snapshot, the fork starts from the source's base environment and copied configuration.
+
+Any option you pass overrides the corresponding inherited value. The CLI doesn't attach the source's drives to the fork. Use the [SDK's `mounts` parameter](/docs/sandbox/sdk/javascript#sandbox.fork) to attach drives explicitly.
+
+Omitting `--env` inherits the source's environment variables. Passing `--env` replaces the entire inherited environment with the supplied variables, without merging keys. Tags passed via `--tag` also replace the entire inherited tag map.
+
+The fork runs in the source sandbox's [region](/docs/sandbox/concepts/regions) unless you pass `--region`. The fork also inherits the source's failover regions. Pass `--failover-regions` to replace them. If the source has a snapshot, that snapshot must be available in the target region.
+
+The fork inherits the source's [Secure Compute network](/docs/sandbox/concepts/secure-compute) unless you pass `--network-id`.
+
+```bash filename="terminal"
+sandbox fork [OPTIONS] <source>
+```
+
+### Sandbox fork example
+
+```bash filename="terminal"
+# Inherit configuration and saved state, without drive mounts
+sandbox fork my-source
+
+# Override the name and vCPUs; replace the entire environment with FOO=1
+sandbox fork my-source --name my-forked-sandbox --vcpus 4 --env FOO=1
+```
+
+### Sandbox fork options
+
+| Option                              | Alias    | Description                                                                                                                                                      |
+| ----------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--token <token>`                   | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). If you don't provide it, we'll use a stored token or prompt you to log in. |
+| `--project <project>`               | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
+| `--scope <team>`                    | `--team` | The team you want to use with this command.                                                                                                                      |
+| `--name <name>`                     | -        | Name for the forked sandbox. Must be unique per project. Generated if omitted.                                                                                   |
+| `--timeout <duration>`              | -        | Override the session timeout inherited from the source.                                                                                                          |
+| `--vcpus <count>`                   | -        | Override the vCPU count. Each vCPU includes 2048 MB of memory.                                                                                                   |
+| `--publish-port <port>`             | `-p`     | Publish a port. Repeatable. Replaces the inherited port list if provided.                                                                                        |
+| `--env <key=value>`                 | `-e`     | Environment variables for the fork. Repeatable. When provided, fully replaces the environment variables copied from the source.                                                                                      |
+| `--tag <key=value>`                 | `-t`     | Tag the fork. Repeatable. When provided, fully replaces the tags copied from the source.                                                                         |
+| `--region <region>`                 | -        | Override the [region](/docs/sandbox/concepts/regions) copied from the source. If the source has a snapshot, it must be available in this region.                 |
+| `--failover-regions <region,...>`   | -        | Comma-separated [regions](/docs/sandbox/concepts/regions#failover-regions) the fork can fail over to (e.g. `sfo1,cle1`). Must not include the main region. Available on Pro and Enterprise plans, excluding [Pro trials](/docs/plans/pro-plan/trials). |
+| `--network-id <id>`                 | -        | [Secure Compute network ID](/docs/sandbox/concepts/secure-compute) for the fork. Overrides the network inherited from the source.                                |
+| `--snapshot-expiration <duration>`  | -        | Override the default snapshot TTL (e.g. `7d`, `30d`). Use `none` or `0` for no expiration.                                                                       |
+| `--keep-last-snapshots <count>`     | -        | Override the retention policy (1–10).                                                                                                                            |
+| `--keep-last-snapshots-for <dur>`   | -        | Expiration applied to kept snapshots. Use `none` or `0` for no expiration.                                                                                       |
+| `--delete-evicted-snapshots <bool>` | -        | `true` (default) deletes evicted snapshots immediately; `false` keeps them until their existing expiration. See [Snapshot retention](#snapshot-retention).        |
+| `--network-policy <mode>`           | -        | Override the base network mode (`allow-all` or `deny-all`). Leave unset to use the inherited rules or `--allowed-domain` / `--allowed-cidr` / `--denied-cidr`.   |
+| `--allowed-domain <domain>`         | -        | Domain to allow traffic to (creates a custom network policy). Supports wildcards.                                                                                |
+| `--allowed-cidr <cidr>`             | -        | CIDR to allow traffic to. Takes precedence over `--allowed-domain`.                                                                                              |
+| `--denied-cidr <cidr>`              | -        | CIDR to deny traffic to. Takes precedence over allowed domains and CIDRs.                                                                                        |
+
+### Sandbox fork flags
+
+| Flag               | Short | Description                                                                  |
+| ------------------ | ----- | ---------------------------------------------------------------------------- |
+| `--non-persistent` | -     | Disable filesystem persistence between sessions on the fork.                 |
+| `--silent`         | -     | Create the fork without writing its name to stdout.                          |
+| `--connect`        | -     | Start an interactive shell session after creating the fork.                  |
+| `--help`           | `-h`  | Display help information.                                                    |
+
+### Sandbox fork arguments
+
+| Argument   | Description                                |
+| ---------- | ------------------------------------------ |
+| `<source>` | Name of the sandbox to fork from.          |
+
+## `sandbox config`
+
+View and update sandbox configuration. Each subcommand updates one parameter; all parameters are also available together through the SDK's [`sandbox.update()`](/docs/sandbox/sdk/javascript#sandbox.update).
+
+```bash filename="terminal"
+sandbox config <subcommand> <name> [VALUE | OPTIONS]
+```
+
+### Sandbox config subcommands
+
+| Subcommand                                                   | Description                                                                                                  |
+| :----------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------- |
+| `sandbox config list <name>`                                 | Print the current configuration of a sandbox.                                                                |
+| `sandbox config vcpus <name> <count>`                        | Update vCPU allocation. Each vCPU includes 2048 MB RAM.                                                      |
+| `sandbox config timeout <name> <duration>`                   | Set the saved timeout for future sessions (e.g. `5m`, `1h`). A higher value also extends a running session; a lower value leaves its deadline unchanged.                                                                |
+| `sandbox config persistent <name> <true\|false>`             | Enable or disable filesystem persistence between sessions.                                                   |
+| `sandbox config failover-regions <name> <region,...\|none>`  | Replace the [failover regions](/docs/sandbox/concepts/regions#failover-regions). Pass `none` to remove them. Available on Pro and Enterprise plans, excluding [Pro trials](/docs/plans/pro-plan/trials). |
+| `sandbox config snapshot-expiration <name> <duration\|none>` | Update the default snapshot TTL.                                                                             |
+| `sandbox config keep-last-snapshots <name> <count>`          | Keep only the N (1–10) most recent snapshots of this sandbox. Pass `0` to remove the retention policy.                                                |
+| `sandbox config keep-last-snapshots-for <name> <dur\|none>`  | Expiration applied to kept snapshots.                                                                        |
+| `sandbox config delete-evicted-snapshots <name> <bool>`      | Whether evicted snapshots are deleted immediately.                                                           |
+| `sandbox config current-snapshot <name> <snapshot-id>`       | Roll back the sandbox to a specific snapshot. New sessions resume from it.                                   |
+| `sandbox config network-policy <name> [OPTIONS]`             | Update the network firewall (see options below).                                                             |
+| `sandbox config network-id <name> <id\|none>`                | Assign a [Secure Compute network](/docs/sandbox/concepts/secure-compute) by ID, or pass `none` to remove it. Takes effect on the next session. |
+| `sandbox config ports <name> [-p PORT ...]`                  | Replace the exposed port list. Omit `-p` to clear all ports.                                                 |
+| `sandbox config mounts <name> [OPTIONS]`                     | Replace the mounted drives for new sessions. Omit `--mount` to remove all mounts.                           |
+| `sandbox config tags <name> [--tag key=value ...]`           | Replace the tag set. Omit `--tag` to clear all tags.                                                         |
+
+`sandbox config timeout` saves a default, while `sandbox extend` adds to the current deadline. If the configured value exceeds the running session's timeout, the SDK extends that session by the difference. Lowering the saved value doesn't shorten the live deadline. Configuration changes don't resume a stopped sandbox.
+
+### Sandbox config example
+
+```bash filename="terminal"
+# Inspect the current configuration of a sandbox
+sandbox config list my-sandbox
+
+# Attach a Secure Compute network, or remove it from the next session
+sandbox config network-id my-sandbox 3k9x7m2p5q8w1z4n
+sandbox config network-id my-sandbox none
+
+# Update vCPUs for future sessions
+sandbox config vcpus my-sandbox 4
+
+# Save a default for future sessions without resuming a stopped sandbox
+sandbox config timeout stopped-sandbox 10m
+
+# If the running session has a 5-minute timeout, add 25 minutes
+sandbox config timeout my-sandbox 30m
+
+# Toggle persistence
+sandbox config persistent my-sandbox false
+
+# Update the failover regions
+sandbox config failover-regions my-sandbox iad1,cle1
+sandbox config failover-regions my-sandbox none
+
+# Update snapshot retention
+sandbox config snapshot-expiration my-sandbox 14d
+sandbox config keep-last-snapshots my-sandbox 1
+
+# Replace the exposed port list
+sandbox config ports my-sandbox -p 3000 -p 8000
+
+# Clear all exposed ports
+sandbox config ports my-sandbox
+
+# Replace the mounted drives for new sessions
+sandbox config mounts my-sandbox --mount cache:/data --mount shared:/shared:snapshot
+
+# Remove all drive mounts from new sessions
+sandbox config mounts my-sandbox
+
+# Replace the tag set
+sandbox config tags my-sandbox --tag env=production --tag team=infra
+
+# Roll back to a previous snapshot
+sandbox config current-snapshot my-sandbox snap_abc123
+
+# Update the sandbox firewall to deny all egress traffic
+sandbox config network-policy my-sandbox --network-policy deny-all
+
+# Update the sandbox firewall to allow all egress traffic
+sandbox config network-policy my-sandbox --network-policy allow-all
+
+# Update the sandbox firewall to specific rules
+sandbox config network-policy my-sandbox --allowed-domain vercel.com --allowed-domain ai-gateway.vercel.sh
+```
+
+### Sandbox config network-policy options
+
+| Option                      | Alias    | Description                                                                                                                                   |
+| --------------------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--network-policy <mode>`   | `--mode` | Base network mode to update the sandbox to ('allow-all' or 'deny-all'). Leave unset if using more specific rules. You must set a mode or at least one rule option.                     |
+| `--allowed-domain <domain>` | -        | List of domains (or pattern) to allow access to (only applicable in 'custom' mode). Use wildcard `*` to match multiple domains or subdomains. |
+| `--allowed-cidr <cidr>`     | -        | List of address ranges to allow access to (only applicable in 'custom' mode). Traffic to those addresses will bypass domain matching.         |
+| `--denied-cidr <cidr>`      | -        | List of address ranges to deny access to (only applicable in 'custom' mode). Those take precedence over allowed domains and addresses.        |
+
+### Sandbox config network-policy flags
+
+| Flag     | Short | Description               |
+| -------- | ----- | ------------------------- |
+| `--help` | `-h`  | Display help information. |
+
+### Sandbox config network-policy arguments
+
+| Argument | Description                       |
+| -------- | --------------------------------- |
+| `<name>` | The sandbox to update (by name).  |
+
+### Sandbox config mounts options
+
+| Option                        | Alias | Description                                                                                                                                     |
+| ----------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `--mount <drive:path[:mode]>` | -     | Mount a drive for new sessions. Repeatable. `mode` can be `read-write` (default) or `snapshot`. Omit this option to remove all existing mounts. |
+
+### Sandbox config mounts flags
+
+| Flag     | Short | Description               |
+| -------- | ----- | ------------------------- |
+| `--help` | `-h`  | Display help information. |
+
+### Sandbox config mounts arguments
+
+| Argument | Description                        |
+| -------- | ---------------------------------- |
+| `<name>` | The name of the sandbox to update. |
+
+## `sandbox copy`
+
+Copy files between your local filesystem and a remote sandbox. By default, the command copies one file, and the destination is the full target path, not a directory. To copy a directory and everything in it, in either direction, pass `--recursive`. The contents of the source directory end up inside the destination directory.
+
+The command writes sandbox files as the sandbox's default user, so choose a destination that this user can write to. In [Vercel Managed Images](/docs/sandbox/concepts/images#vercel-managed-images), including the default image, use a path under `/vercel`, the default [working directory](/docs/sandbox/sdk/javascript#environment-defaults).
+
+```bash filename="terminal"
+sandbox copy [OPTIONS] <SOURCE> <DESTINATION>
+```
+
+### Sandbox copy example
+
+```bash filename="terminal"
+# Copy file from local to sandbox
+sandbox copy ./local-file.txt my-sandbox:/vercel/remote-file.txt
+
+# Copy file from sandbox to local
+sandbox copy my-sandbox:/vercel/output.log ./output.log
+
+# Copy a local directory and everything in it to the sandbox
+# ./my-project/package.json becomes /vercel/app/package.json
+sandbox copy --recursive ./my-project my-sandbox:/vercel/app
+```
+
+### Sandbox copy options
+
+| Option                | Alias    | Description                                                                                                                                                      |
+| --------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--token <token>`     | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). If you don't provide it, we'll use a stored token or prompt you to log in. |
+| `--project <project>` | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
+| `--scope <team>`      | `--team` | The team you want to use with this command.                                                                                                                      |
+
+### Sandbox copy flags
+
+| Flag          | Short | Description                            |
+| ------------- | ----- | -------------------------------------- |
+| `--recursive` | `-r`  | Copy a directory and everything in it. |
+| `--help`      | `-h`  | Display help information.              |
+
+### Sandbox copy arguments
+
+| Argument        | Description                                                                                                                                                                             |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `<SOURCE>`      | Source path. Either a local file, or `<name>:<path>` for a sandbox file. With `--recursive`, the source can also be a directory.                                                        |
+| `<DESTINATION>` | Destination path. Either a local file, or `<name>:<path>` for a sandbox file. When the source is a directory, the destination is a directory that receives the contents of the source. |
+
+## `sandbox exec`
+
+Execute a command in an existing sandbox.
+
+```bash filename="terminal"
+sandbox exec [OPTIONS] <name> -- <command> [...args]
+```
+
+### Sandbox exec example
+
+```bash filename="terminal"
+# Execute a simple command in a sandbox
+sandbox exec my-sandbox -- ls -la
+
+# Run with environment variables
+sandbox exec --env DEBUG=true my-sandbox -- npm test
+
+# Execute interactively with sudo
+sandbox exec --interactive --sudo my-sandbox -- sh
+
+# Run command in specific working directory
+sandbox exec --workdir /vercel/app my-sandbox -- python script.py
+
+# Kill the command if it runs longer than 30 seconds
+sandbox exec --timeout 30s my-sandbox -- npm test
+
+# Start the command detached and print its command ID without waiting
+sandbox exec --detach my-sandbox -- npm run dev
+
+# Pipe local input into a foreground command
+cat data.csv | sandbox exec --stdin my-sandbox -- wc -l
+
+# Start detached with stdin kept open for later writes
+sandbox exec --detach --stdin my-sandbox -- cat
+
+# Run a command, then stop the current session
+sandbox exec my-sandbox -- npm run build
+sandbox stop my-sandbox
+```
+
+### Sandbox exec options
+
+| Option                  | Alias    | Description                                                                                                                                                      |
+| ----------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--token <token>`       | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). If you don't provide it, we'll use a stored token or prompt you to log in. |
+| `--project <project>`   | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
+| `--scope <team>`        | `--team` | The team you want to use with this command.                                                                                                                      |
+| `--workdir <directory>` | `-w`     | Set the directory where you want the command to run.                                                                                                             |
+| `--env <key=value>`     | `-e`     | Set environment variables for your command.                                                                                                                      |
+| `--timeout <duration>`  | -        | Maximum duration to wait for the command (e.g. `30s`, `5m`). On expiry, the process is killed with `SIGKILL`. Cannot be combined with `--interactive`.           |
+
+### Sandbox exec flags
+
+| Flag            | Short | Description                                                                                                  |
+| --------------- | ----- | ------------------------------------------------------------------------------------------------------------ |
+| `--sudo`        | -     | Run the command with admin privileges.                                                                       |
+| `--interactive` | `-i`  | Run the command in an interactive shell.                                                                     |
+| `--detach`      | -     | Start the command and print its command ID without waiting for it to finish. Cannot be combined with `--interactive`. |
+| `--stdin`       | -     | Forward local stdin to the command, or keep a detached command's stdin open for later writes. Cannot be combined with `--interactive`. |
+| `--no-extend-timeout` | -     | Do not extend the sandbox timeout while running an interactive command. Only affects interactive executions. |
+| `--tty`         | `-t`  | Enable terminal features for interactive commands.                                                           |
+| `--help`        | `-h`  | Display help information.                                                                                    |
+
+### Sandbox exec arguments
+
+| Argument    | Description                                                |
+| ----------- | ---------------------------------------------------------- |
+| `<name>`    | The name of the sandbox where you want to run the command. |
+| `<command>` | The command you want to run.                               |
+| `[...args]` | Additional arguments for your command.                     |
+
+## `sandbox sh`
+
+Create a sandbox and open an interactive shell:
+
+```bash filename="terminal"
+sandbox sh [OPTIONS]
+```
+
+By default, exiting the shell leaves the sandbox running. The sandbox is persistent unless you pass `--non-persistent`. Reconnect with [`sandbox connect`](#sandbox-connect), stop its session with [`sandbox stop`](#sandbox-stop), or delete it with [`sandbox remove`](#sandbox-remove).
+
+Create a named shell sandbox:
+
+```bash filename="terminal"
+sandbox sh --name my-shell --image vercel/sandbox/node:24
+```
+
+To create a temporary sandbox that the CLI deletes when you exit the shell, pass `--rm`:
+
+```bash filename="terminal"
+sandbox sh --rm --image vercel/sandbox/node:24
+```
+
+### Sandbox sh options
+
+`sandbox sh` accepts the [`sandbox create` options](#sandbox-create-options) and [flags](#sandbox-create-flags), except `--connect`. It opens the shell automatically and does not accept the `agent` argument.
+
+| Flag          | Description                                                      |
+| ------------- | ---------------------------------------------------------------- |
+| `--rm`        | Create a nonpersistent sandbox and delete it when the shell exits. |
+| `--help`, `-h` | Display help information.                                        |
+
+`--rm` deletes the sandbox, but does not request deletion of all retained snapshots. Manage snapshots separately with [`sandbox snapshots`](#sandbox-snapshots).
+
+## `sandbox connect`
+
+Start an interactive shell in an existing sandbox.
+
+```bash filename="terminal"
+sandbox connect [OPTIONS] <name>
+```
+
+### Sandbox connect example
+
+```bash filename="terminal"
+# Connect to an existing sandbox
+sandbox connect my-sandbox
+
+# Connect with a specific working directory
+sandbox connect --workdir /vercel/app my-sandbox
+
+# Connect with environment variables and sudo
+sandbox connect --env DEBUG=true --sudo my-sandbox
+```
+
+### Sandbox connect options
+
+| Option                  | Alias    | Description                                                                                                                                                      |
+| ----------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--token <token>`       | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). If you don't provide it, we'll use a stored token or prompt you to log in. |
+| `--project <project>`   | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
+| `--scope <team>`        | `--team` | The team you want to use with this command.                                                                                                                      |
+| `--workdir <directory>` | `-w`     | Set the directory where you want the command to run.                                                                                                             |
+| `--env <key=value>`     | `-e`     | Set environment variables for your command.                                                                                                                      |
+
+### Sandbox connect flags
+
+| Flag                  | Short | Description                                                                                                  |
+| --------------------- | ----- | ------------------------------------------------------------------------------------------------------------ |
+| `--sudo`              | -     | Run the command with admin privileges.                                                                       |
+| `--no-extend-timeout` | -     | Do not extend the sandbox timeout while running an interactive command. Only affects interactive executions. |
+| `--help`              | `-h`  | Display help information.                                                                                    |
+
+### Sandbox connect arguments
+
+| Argument | Description                                              |
+| -------- | -------------------------------------------------------- |
+| `<name>` | The name of the sandbox where you want to start a shell. |
+
+## `sandbox stop`
+
+Stop the current session of one or more sandboxes. For persistent sandboxes (the default), the filesystem is snapshotted first so the sandbox can be resumed later with the same name. To delete a sandbox permanently, use [`sandbox remove`](#sandbox-remove). A snapshot keeps incurring [storage charges](/docs/sandbox/pricing#snapshot-storage) until it expires or you delete it, whether its sandbox is stopped or removed.
+
+```bash filename="terminal"
+sandbox stop [OPTIONS] <name> [...name]
+```
+
+### Sandbox stop example
+
+```bash filename="terminal"
+# Stop a single sandbox
+sandbox stop my-sandbox
+
+# Stop multiple sandboxes
+sandbox stop my-sandbox another-sandbox
+
+# Stop sandbox for a specific project
+sandbox stop --project my-project my-sandbox
+```
+
+### Sandbox stop options
+
+| Option                | Alias    | Description                                                                                                                                                      |
+| --------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--token <token>`     | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). If you don't provide it, we'll use a stored token or prompt you to log in. |
+| `--project <project>` | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
+| `--scope <team>`      | `--team` | The team you want to use with this command.                                                                                                                      |
+
+### Sandbox stop flags
+
+| Flag     | Short | Description               |
+| -------- | ----- | ------------------------- |
+| `--help` | `-h`  | Display help information. |
+
+### Sandbox stop arguments
+
+| Argument    | Description                               |
+| ----------- | ----------------------------------------- |
+| `<name>`    | The name of the sandbox you want to stop. |
+| `[...name]` | Additional sandbox names to stop.         |
+
+## `sandbox extend`
+
+Add time to the current running session of a sandbox without changing its saved default timeout. The duration is additive. The sandbox must have a running session; this command doesn't resume a stopped one. To change the saved timeout, use [`sandbox config timeout`](#sandbox-config). See [runtime limits](/docs/sandbox/pricing#runtime-limits) for plan maximums.
+
+```bash filename="terminal"
+sandbox extend [OPTIONS] <name> <duration>
+```
+
+### Sandbox extend example
+
+```bash filename="terminal"
+# Add 30 minutes to the running session
+sandbox extend my-sandbox 30m
+
+# Add one hour
+sandbox extend my-sandbox 1h
+```
+
+After a successful extension, the CLI prints `✔ Extended my-sandbox by 1h`. If the sandbox has stopped, the command fails with `Sandbox my-sandbox has no running session to extend.` Resume it before extending, or change its saved timeout for future sessions with `sandbox config timeout`.
+
+### Sandbox extend options
+
+| Option                | Alias    | Description                                                                                                                                                      |
+| --------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--token <token>`     | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). If you don't provide it, we'll use a stored token or prompt you to log in. |
+| `--project <project>` | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
+| `--scope <team>`      | `--team` | The team you want to use with this command.                                                                                                                      |
+
+### Sandbox extend flags
+
+| Flag     | Short | Description               |
+| -------- | ----- | ------------------------- |
+| `--help` | `-h`  | Display help information. |
+
+### Sandbox extend arguments
+
+| Argument     | Description                                     |
+| ------------ | ----------------------------------------------- |
+| `<name>`     | The name of the sandbox with a running session. |
+| `<duration>` | Time to add, for example `5m` or `1h`.          |
+
+## `sandbox remove`
+
+Permanently delete one or more sandboxes, along with all of their sessions. Once removed, a sandbox cannot be recovered. Use this instead of `sandbox stop` when you no longer need the sandbox at all.
+
+Removing a sandbox keeps its snapshots by default, because several sandboxes can start from the same snapshot. Pass `--delete-orphan-snapshots` to also request asynchronous deletion of the sandbox's snapshots that no other sandbox uses, or delete them separately with [`sandbox snapshots delete`](#sandbox-snapshots-delete). Snapshots referenced by another sandbox remain available, and command completion doesn't mean orphan deletion has finished.
+
+```bash filename="terminal"
+sandbox remove [OPTIONS] <name> [...name]
+```
+
+### Sandbox remove example
+
+```bash filename="terminal"
+# Delete a single sandbox
+sandbox remove my-sandbox
+
+# Delete multiple sandboxes
+sandbox remove my-sandbox another-sandbox
+
+# Delete a sandbox and its snapshots that no other sandbox uses
+sandbox remove my-sandbox --delete-orphan-snapshots
+```
+
+### Sandbox remove flags
+
+| Flag                        | Short | Description                                                                      |
+| --------------------------- | ----- | -------------------------------------------------------------------------------- |
+| `--delete-orphan-snapshots` | -     | Request asynchronous deletion of snapshots no other sandbox uses. Defaults to off. |
+| `--help`                    | `-h`  | Display help information.                                                        |
+
+### Sandbox remove arguments
+
+| Argument    | Description                                 |
+| ----------- | ------------------------------------------- |
+| `<name>`    | The name of the sandbox you want to delete. |
+| `[...name]` | Additional sandbox names to delete.         |
+
+## `sandbox run`
+
+Create (or resume) a sandbox and run a command in it. When `--name` matches an existing sandbox, the sandbox is resumed and any create-only flags are ignored.
+
+```bash filename="terminal"
+sandbox run [OPTIONS] -- <command> [...args]
+```
+
+### Sandbox run example
+
+```bash filename="terminal"
+# Run a simple Node.js script in a fresh sandbox
+sandbox run -- node --version
+
+# Run with custom environment and timeout
+sandbox run --env NODE_ENV=production --timeout 10m -- npm start
+
+# Run interactively with port forwarding
+sandbox run --interactive --publish-port 3000 --tty -- npm run dev
+
+# Resume an existing sandbox if it exists; otherwise create it
+sandbox run --name my-sandbox -- npm test
+
+# Stop the current session when the command exits
+sandbox run --name my-sandbox --stop -- npm run build
+
+# Permanently delete the sandbox after the command exits
+sandbox run --rm -- python3 script.py
+
+# Run a command with a drive mounted for read-write access
+sandbox run --mount cache:/data -- npm run build
+
+# Run a command with a point-in-time, read-only snapshot of a drive
+sandbox run --mount cache:/data:snapshot -- ls /data
+```
+
+### Sandbox run options
+
+`sandbox run` accepts every option from [`sandbox create`](#sandbox-create) plus every option from [`sandbox exec`](#sandbox-exec), except the `sandbox exec` options `--timeout`, `--detach`, and `--stdin`. In `sandbox run`, `--timeout` sets the sandbox timeout. The most common are repeated below.
+
+| Option                        | Alias    | Description                                                                                                                                                        |
+| ----------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `--project <project>`         | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                               |
+| `--scope <team>`              | `--team` | The team you want to use with this command.                                                                                                                        |
+| `--name <name>`               | -        | Resume an existing sandbox with this name, or create it if it doesn't exist.                                                                                       |
+| `--image <image>`             | -        | A Vercel Container Registry (VCR) [image](/docs/sandbox/concepts/images) name and optional tag or sha to start the sandbox from (e.g. my-repo, my-repo:v1). |
+| `--timeout <duration>`        | -        | How long the sandbox can run before we automatically stop it. Examples: '5m', '1h'. We'll stop it after 5 minutes by default.                                      |
+| `--publish-port <port>`       | `-p`     | Make a port from your sandbox accessible via a public URL.                                                                                                         |
+| `--workdir <directory>`       | `-w`     | Set the directory where you want the command to run.                                                                                                               |
+| `--env <key=value>`           | `-e`     | Set environment variables for your command.                                                                                                                        |
+| `--tag <key=value>`           | `-t`     | Key-value tag. Repeatable. See [Tags](/docs/sandbox/concepts/tags).                                                                                                |
+| `--region <region>`           | -        | [Region](/docs/sandbox/concepts/regions) to create the sandbox in (when creating a new sandbox).                                                                   |
+| `--failover-regions <region,...>` | -    | Comma-separated [regions](/docs/sandbox/concepts/regions#failover-regions) the sandbox can fail over to (e.g. `sfo1,cle1`). Must not include the main region. |
+| `--mount <drive:path[:mode]>` | -        | Mount a drive onto the sandbox. Repeatable. `mode` can be `read-write` (default) or `snapshot`. See [Drives](/docs/sandbox/concepts/drives).                     |
+| `--token <token>`             | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). If you don't provide it, we'll use a stored token or prompt you to log in. |
+
+### Sandbox run flags
+
+| Flag               | Short | Description                                                                              |
+| ------------------ | ----- | ---------------------------------------------------------------------------------------- |
+| `--sudo`           | -     | Run the command with admin privileges.                                                   |
+| `--interactive`    | `-i`  | Run the command in an interactive shell.                                                 |
+| `--tty`            | `-t`  | Enable terminal features for interactive commands.                                       |
+| `--non-persistent` | -     | Disable filesystem persistence between sessions (when creating a new sandbox).           |
+| `--stop`           | -     | Stop the current session when the command exits. Mutually exclusive with `--rm`.         |
+| `--rm`             | -     | Permanently delete the sandbox when the command exits. Mutually exclusive with `--stop`. |
+| `--help`           | `-h`  | Display help information.                                                                |
+
+### Sandbox run arguments
+
+| Argument    | Description                            |
+| ----------- | -------------------------------------- |
+| `<command>` | The command you want to run.           |
+| `[...args]` | Additional arguments for your command. |
+
+## `sandbox snapshot`
+
+Take a snapshot of the filesystem of a sandbox. Stops the sandbox automatically.
+
+```bash filename="terminal"
+sandbox snapshot [OPTIONS] <name>
+```
+
+### Sandbox snapshot example
+
+```bash filename="terminal"
+# Create a snapshot of a running sandbox
+sandbox snapshot my-sandbox --stop
+
+# Create a snapshot that expires 14 days after its last use
+sandbox snapshot my-sandbox --stop --expiration 14d
+
+# Create a snapshot that never expires
+sandbox snapshot my-sandbox --stop --expiration 0
+```
+
+### Sandbox snapshot options
+
+| Option                      | Alias    | Description                                                                                                                                                      |
+| --------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--token <token>`           | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). If you don't provide it, we'll use a stored token or prompt you to log in. |
+| `--project <project>`       | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
+| `--scope <team>`            | `--team` | The team you want to use with this command.                                                                                                                      |
+| `--expiration <expiration>` | -        | The snapshot [expiration period](/docs/sandbox/concepts/snapshots#snapshot-limits) since the snapshot was last used. Examples: `1d`, `14d`. The default is 30 days.                        |
+
+### Sandbox snapshot flags
+
+| Flag       | Short | Description                                                 |
+| ---------- | ----- | ----------------------------------------------------------- |
+| `--stop`   | -     | Confirm that the sandbox will be stopped when snapshotting. |
+| `--silent` | -     | Suppress the progress spinner and its `Snapshot <id> created` confirmation, which are written to stderr. The snapshot ID is never written to stdout. |
+| `--help`   | `-h`  | Display help information.                                   |
+
+### Sandbox snapshot arguments
+
+| Argument | Description                          |
+| -------- | ------------------------------------ |
+| `<name>` | The name of the sandbox to snapshot. |
+
+## `sandbox snapshots`
+
+Manage sandbox snapshots.
+
+```bash filename="terminal"
+sandbox snapshots <subcommand> [OPTIONS]
+```
+
+### Sandbox snapshots subcommands
+
+- `list`: List snapshots for the specified account and project. \[alias: `ls`]
+- `get`: Get details of a snapshot.
+- `delete`: Delete one or more snapshots. \[aliases: `rm`, `remove`]
+- `tree`: Walk the snapshot ancestry tree for a sandbox.
+
+## `sandbox snapshots list`
+
+List snapshots for the specified account and project.
+
+```bash filename="terminal"
+sandbox snapshots list [OPTIONS]
+```
+
+### Sandbox snapshots list example
+
+```bash filename="terminal"
+# List snapshots for the current project
+sandbox snapshots list
+
+# List snapshots for a specific project
+sandbox snapshots list --project my-project
+
+# Filter snapshots by sandbox name
+sandbox snapshots list --name my-sandbox
+
+# Page through results
+sandbox snapshots list --limit 50 --cursor <token>
+```
+
+### Sandbox snapshots list options
+
+| Option                | Alias    | Description                                                                                                                                                      |
+| --------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--token <token>`     | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). If you don't provide it, we'll use a stored token or prompt you to log in. |
+| `--project <project>` | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
+| `--scope <team>`      | `--team` | The team you want to use with this command.                                                                                                                      |
+| `--name <name>`       | -        | Filter snapshots by the sandbox they belong to.                                                                                                                  |
+| `--sort-order <ord>`  | -        | Sort direction. `asc` or `desc` (default).                                                                                                                       |
+| `--limit <n>`         | -        | Maximum number of snapshots per page. Default 50.                                                                                                                |
+| `--cursor <token>`    | -        | Pagination cursor from a previous page.                                                                                                                          |
+
+### Sandbox snapshots list flags
+
+| Flag     | Short | Description               |
+| -------- | ----- | ------------------------- |
+| `--help` | `-h`  | Display help information. |
+
+## `sandbox snapshots get`
+
+Get details of a snapshot.
+
+```bash filename="terminal"
+sandbox snapshots get [OPTIONS] <snapshot_id>
+```
+
+### Sandbox snapshots get example
+
+```bash filename="terminal"
+# Get details of a specific snapshot
+sandbox snapshots get snap_1234567890
+
+# Get snapshot details for a specific project
+sandbox snapshots get --project my-project snap_1234567890
+```
+
+### Sandbox snapshots get options
+
+| Option                | Alias    | Description                                                                                                                                                      |
+| --------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--token <token>`     | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). If you don't provide it, we'll use a stored token or prompt you to log in. |
+| `--project <project>` | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
+| `--scope <team>`      | `--team` | The team you want to use with this command.                                                                                                                      |
+
+### Sandbox snapshots get flags
+
+| Flag     | Short | Description               |
+| -------- | ----- | ------------------------- |
+| `--help` | `-h`  | Display help information. |
+
+### Sandbox snapshots get arguments
+
+| Argument        | Description                         |
+| --------------- | ----------------------------------- |
+| `<snapshot_id>` | The ID of the snapshot to retrieve. |
+
+## `sandbox snapshots delete`
+
+Delete one or more snapshots.
+
+```bash filename="terminal"
+sandbox snapshots delete [OPTIONS] <snapshot_id> [...snapshot_id]
+```
+
+### Sandbox snapshots delete example
+
+```bash filename="terminal"
+# Delete a single snapshot
+sandbox snapshots delete snap_1234567890
+
+# Delete multiple snapshots for a specific project
+sandbox snapshots delete --project my-project snap_1234567890 snap_0987654321
+```
+
+### Sandbox snapshots delete options
+
+| Option                | Alias    | Description                                                                                                                                                      |
+| --------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--token <token>`     | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). If you don't provide it, we'll use a stored token or prompt you to log in. |
+| `--project <project>` | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use with this command.                                             |
+| `--scope <team>`      | `--team` | The team you want to use with this command.                                                                                                                      |
+
+### Sandbox snapshots delete flags
+
+| Flag     | Short | Description               |
+| -------- | ----- | ------------------------- |
+| `--help` | `-h`  | Display help information. |
+
+### Sandbox snapshots delete arguments
+
+| Argument           | Description                        |
+| ------------------ | ---------------------------------- |
+| `<snapshot_id>`    | Snapshot ID to delete.             |
+| `[...snapshot_id]` | Additional snapshot IDs to delete. |
+
+## `sandbox snapshots tree`
+
+Walk the snapshot ancestry tree starting from a sandbox's current snapshot. Snapshots form a parent → child tree whenever you create a sandbox from another snapshot.
+
+```bash filename="terminal"
+sandbox snapshots tree [OPTIONS] <name>
+```
+
+### Sandbox snapshots tree example
+
+```bash filename="terminal"
+# Show the ancestors and descendants of the sandbox's current snapshot (default)
+sandbox snapshots tree my-sandbox
+
+# Walk descendants from a specific snapshot
+sandbox snapshots tree my-sandbox --sort-order asc --cursor snap_abc123
+
+# Continue from a specific snapshot
+sandbox snapshots tree my-sandbox --cursor snap_abc123
+```
+
+### Sandbox snapshots tree options
+
+| Option                | Alias    | Description                                                                                                |
+| --------------------- | -------- | ---------------------------------------------------------------------------------------------------------- |
+| `--sort-order <ord>`  | -        | Requires `--cursor`. `desc` (default) walks ancestors; `asc` walks descendants. Without `--cursor`, the command shows both directions from the sandbox's current snapshot.                                                 |
+| `--cursor <token>`    | -        | Snapshot ID to start walking from. Defaults to the sandbox's current snapshot.                             |
+| `--limit <n>`         | -        | Maximum number of nodes per page, from 1 to 10. Default 10.                                                                          |
+| `--token <token>`     | -        | Your [Vercel authentication token](/docs/accounts/access-tokens).                      |
+| `--project <project>` | -        | The [project name or ID](/docs/project-configuration/general-settings#project-id) you want to use.         |
+| `--scope <team>`      | `--team` | The team you want to use with this command.                                                                |
+
+### Sandbox snapshots tree arguments
+
+| Argument | Description                                  |
+| -------- | -------------------------------------------- |
+| `<name>` | The sandbox whose snapshot tree to walk.     |
+
+## `sandbox sessions`
+
+Inspect VM sessions for a sandbox. A session represents one running VM instance of a sandbox; persistent sandboxes can have many sessions over time, separated by snapshots.
+
+```bash filename="terminal"
+sandbox sessions <subcommand>
+```
+
+### Sandbox sessions subcommands
+
+- `list`: List sessions for a sandbox. \[alias: `ls`]
+
+## `sandbox sessions list`
+
+List sessions for a sandbox.
+
+```bash filename="terminal"
+sandbox sessions list [OPTIONS] <name>
+```
+
+### Sandbox sessions list example
+
+```bash filename="terminal"
+# List running sessions
+sandbox sessions list my-sandbox
+
+# List all sessions (including stopped ones)
+sandbox sessions list my-sandbox --all
+
+# Sort and paginate
+sandbox sessions list my-sandbox --sort-order asc --limit 20
+```
+
+### Sandbox sessions list options
+
+| Option                | Alias    | Description                                                                          |
+| --------------------- | -------- | ------------------------------------------------------------------------------------ |
+| `--sort-order <ord>`  | -        | Sort direction. `asc` or `desc` (default).                                           |
+| `--limit <n>`         | -        | Maximum number of sessions per page. Default 50.                                     |
+| `--cursor <token>`    | -        | Pagination cursor from a previous page.                                              |
+| `--token <token>`     | -        | Your [Vercel authentication token](/docs/accounts/access-tokens). |
+| `--project <project>` | -        | The project to use.                                                                  |
+| `--scope <team>`      | `--team` | The team to use with this command.                                                   |
+
+### Sandbox sessions list flags
+
+| Flag    | Short | Description                                                          |
+| ------- | ----- | -------------------------------------------------------------------- |
+| `--all` | `-a`  | Show all sessions, including stopped ones (default: running only).   |
+
+### Sandbox sessions list arguments
+
+| Argument | Description                                       |
+| -------- | ------------------------------------------------- |
+| `<name>` | The name of the sandbox whose sessions to list.   |
+
+## `sandbox telemetry`
+
+View or change whether the Sandbox CLI collects usage data:
+
+```bash filename="terminal"
+sandbox telemetry status
+sandbox telemetry enable
+sandbox telemetry disable
+```
+
+`status` prints whether telemetry is enabled. `enable` and `disable` save your preference locally and print the resulting status. Telemetry is enabled by default unless a saved preference or environment variable disables it.
+
+### Sandbox telemetry environment variables
+
+| Variable | Effect |
+| -------- | ------ |
+| `VERCEL_SANDBOX_TELEMETRY_DISABLED=1` | Disable Sandbox CLI telemetry. Overrides the saved preference. |
+| `VERCEL_TELEMETRY_DISABLED=1` | Disable telemetry, including when invoking Sandbox through the Vercel CLI. Overrides the saved preference. |
+| `VERCEL_TELEMETRY_DEBUG=1` | Print telemetry events to standard error instead of sending them. |
+
+When invoked as `vercel sandbox`, the Sandbox CLI also respects the Vercel CLI's saved telemetry preference. An environment override can keep telemetry disabled after `sandbox telemetry enable`.
+
+## `sandbox login`
+
+Log in to the Sandbox CLI.
+
+```bash filename="terminal"
+sandbox login
+```
+
+### Sandbox login example
+
+```bash filename="terminal"
+# Log in to the Sandbox CLI
+sandbox login
+```
+
+### Sandbox login flags
+
+| Flag     | Short | Description               |
+| -------- | ----- | ------------------------- |
+| `--help` | `-h`  | Display help information. |
+
+## `sandbox logout`
+
+Log out of the Sandbox CLI.
+
+```bash filename="terminal"
+sandbox logout
+```
+
+### Sandbox logout example
+
+```bash filename="terminal"
+# Log out of the Sandbox CLI
+sandbox logout
+```
+
+### Sandbox logout flags
+
+| Flag     | Short | Description               |
+| -------- | ----- | ------------------------- |
+| `--help` | `-h`  | Display help information. |
+
+## CLI examples
+
+### Your first sandbox
+
+Create a sandbox and run a command in one step:
+
+```bash
+sandbox run echo "Hello Sandbox!"
+```
+
+You'll see output like:
+
+```
+✅ Sandbox <name> created.
+   │ team: <team>
+   │ region: iad1
+   ╰ project: <project>
+$ echo Hello Sandbox!
+Hello Sandbox!
+```
+
+The sandbox keeps running until its timeout. To stop the session when the command exits, pass `--stop`. To delete the sandbox when the command exits, pass `--rm`.
+
+### Create a long-running sandbox
+
+For interactive work, create a sandbox that stays running:
+
+```bash
+sandbox create --name my-sandbox --timeout 30m
+```
+
+`sandbox create` prints the sandbox's `name`. Use that name to interact with the sandbox. Because persistent sandboxes can be resumed, you can also reconnect later by running `sandbox exec my-sandbox -- ...` or `sandbox connect my-sandbox`.
+
+### Execute commands in your sandbox
+
+Run commands using the sandbox name:
+
+```bash
+# Check the environment
+sandbox exec my-sandbox -- node --version
+
+# Install packages
+sandbox exec my-sandbox -- npm init -y
+sandbox exec my-sandbox -- npm install express
+
+# Create files
+sandbox exec my-sandbox -- touch server.js
+```
+
+### Copy files to/from sandbox
+
+Test local code in the sandbox:
+
+```bash
+# Copy your code to the sandbox
+sandbox copy ./my-app.js my-sandbox:/vercel/my-app.js
+
+# Run it
+sandbox exec my-sandbox -- node /vercel/my-app.js
+
+# Copy results back
+sandbox copy my-sandbox:/vercel/output.json ./results.json
+```
+
+### Interactive shell access
+
+Work inside the sandbox like it's your machine:
+
+```bash
+sandbox exec --interactive --tty my-sandbox -- bash
+```
+
+Now you're inside the sandbox! Try:
+
+```bash
+pwd                    # See where you are
+ls -la                 # List files
+node -e "console.log('Inside!')"  # Run Node.js
+exit                   # Leave when done
+```
+
+### Stop your sandbox
+
+When finished:
+
+```bash
+sandbox stop my-sandbox
+```
+
+### Test AI-generated code interactively
+
+```bash
+# Create a named sandbox
+NAME=$(sandbox create --name "ai-test-$(date +%s)" --timeout 15m)
+
+# Copy AI-generated code
+sandbox copy ./ai-generated.js $NAME:/vercel/ai-generated.js
+
+# Test it interactively
+sandbox exec --interactive --tty $NAME -- bash
+# Now inside: cd /vercel && node ai-generated.js
+
+# Clean up (remove permanently)
+sandbox remove $NAME
+```
+
+### Debug a failing build
+
+```bash
+# Create a sandbox with more time
+sandbox create --name debug-build --timeout 1h
+
+# Copy your project
+sandbox copy --recursive ./my-project debug-build:/vercel/app
+
+# Try building
+sandbox exec --workdir /vercel/app debug-build -- npm run build
+
+# If it fails, debug interactively
+sandbox exec -it debug-build -- bash
+```
+
+### Run a development server
+
+```bash
+# Create with port exposure
+sandbox create --name dev --timeout 30m --publish-port 3000
+
+# Copy your project
+sandbox copy --recursive ./my-project dev:/vercel/app
+
+# Start your dev server
+sandbox exec --workdir /vercel/app dev -- npm run dev
+
+# Access at the provided URL (printed by `sandbox create`)
+# Visit: https://<random-id>.vercel.run
+```
+
+For SDK examples and limits, see [Expose a port](/docs/sandbox/examples/expose-a-port).
+
+## Search the docs from your terminal
+
+Search the Vercel docs and read pages as Markdown with the Vercel CLI. No login required.
+
+```bash
+# Find docs pages by keyword
+npx vercel@latest docs search "environment variables"
+npx vercel@latest docs search "function timeout"
+
+# Print a docs page as Markdown, by path or URL
+npx vercel@latest docs inspect <page>
+```
+
+---
+
+[View full sitemap](/docs/sitemap)
+
+
+If you encounter incorrect information, can’t find what you need, need a capability Vercel doesn’t currently offer, or have any other feedback to report, please do it by following the instructions at https://vercel.com/feedback.md.

@@ -8,22 +8,22 @@ type: reference
 prerequisites:
   []
 related:
+  - /docs/functions/concurrency-scaling
   - /docs/deployments/build-features
   - /docs/observability
   - /docs/vercel-firewall
   - /docs/security/vercel-waf/rate-limiting
-  - /docs/cdn-cache
 summary: The function you are trying to call has exceeded the rate limit.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/function_throttled.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "d9664e72eee36b77090dd64bfb352df84795e02825e2f616bc15e6dd2ed6c408"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "a8ca089d7f4b0122defb884935b1b902e385d9dbe60449d97754e10da70bd017"
 ---
 
 # FUNCTION_THROTTLED
 
-The `FUNCTION_THROTTLED` error occurs when your Vercel Functions exceed the concurrent execution limit, often due to a sudden request spike or backend API issues. For more information, see [What should I do if I receive a 503 error on Vercel?](/kb/guide/what-should-i-do-if-i-receive-a-503-error-on-vercel).
+The `FUNCTION_THROTTLED` error occurs when your Vercel Functions exceed the concurrent execution limit, often due to a sudden request spike or backend API issues. Vercel returns it with a `503` status code. For the limits on each plan and how quickly Vercel adds capacity during a traffic burst, see [concurrency scaling](/docs/functions/concurrency-scaling).
 
 Although this is a rare scenario, this error can also occur when Vercel's infrastructure encounters an abnormal system load and tries to mitigate the impact autonomously.
 
@@ -34,6 +34,8 @@ To troubleshoot this error, follow these steps:
 1. **Check application logs**: Review the application logs to identify any specific errors related to the Vercel Function being invoked. For example, your function might be waiting for a slow backend API without a reasonable timeout. These information can be found at the host URL under [the `/_logs` path](/docs/deployments/build-features#logs-view), as well as the [Observability](/docs/observability) section in the sidebar in the Vercel dashboard.
 2. **Handle request spikes**: If you're experiencing a sudden spike in requests, consider using the [Vercel Firewall](/docs/vercel-firewall) to block unwanted traffic, or enabling [Rate Limiting](/docs/security/vercel-waf/rate-limiting) to limit the number of requests per second.
 3. **Optimize your function**: Review your function code to ensure it's optimized for performance. For example, you can use [Vercel's CDN Cache](/docs/cdn-cache) to cache responses and reduce the number of invocations. You can also enable [fluid compute](/docs/fluid-compute) to handle more requests concurrently on a single function instance.
+4. **Check the services your function calls**: When a database, API, or content management system (CMS) responds slowly, each invocation runs for longer and more invocations run at the same time. Confirm that the service scales with your traffic, because more concurrent functions also send it more requests.
+5. **Serve fewer requests from functions**: Use [Incremental Static Regeneration (ISR)](/docs/incremental-static-regeneration) for pages that don't need to render on every request, and set a [maximum duration](/docs/functions/configuring-functions/duration) so that a stalled invocation ends instead of holding capacity.
 
 ## Search the docs from your terminal
 

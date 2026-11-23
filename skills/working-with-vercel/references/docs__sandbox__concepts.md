@@ -10,15 +10,15 @@ prerequisites:
 related:
   - /docs/sandbox/concepts/images
   - /docs/container-registry
-  - /docs/sandbox/working-with-sandbox
+  - /docs/sandbox/examples/install-system-packages
   - /docs/sandbox/concepts/regions
   - /docs/sandbox/cli-reference
 summary: Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applications, and executing...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/concepts.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "4a5dc9c031ace666bbeee376607bbf4918869dc4d99921f19d34e0107055b44c"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "88256c1699167536b75bddc83a73e6f16fb7ffcdbe338f8155bc312e960c07cf"
 ---
 
 # Understanding Sandboxes
@@ -32,12 +32,13 @@ Vercel Sandboxes provide on-demand, isolated compute environments for running un
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
+- [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
+- [Vercel Sandbox vs CodeSandbox](https://vercel.com/kb/guide/vercel-sandbox-vs-codesandbox) — A detailed guide to Vercel Sandbox vs CodeSandbox: compute isolation, credential brokering, Active CPU billing, Docker s
 - [A sandbox without a network boundary is only half a sandbox](https://vercel.com/blog/a-sandbox-without-a-network-boundary-is-only-half-a-sandbox)
-- [Vercel Sandboxes are now generally available](https://vercel.com/changelog/vercel-sandboxes-ga)
-- [Running commands in a Vercel Sandbox](https://vercel.com/docs/sandbox/run-commands-in-sandbox) — Create isolated sandbox environments to run builds, tests, and commands safely.
+- [Running commands in a Vercel Sandbox](https://vercel.com/docs/sandbox/examples/run-commands-in-sandbox) — Create isolated sandbox environments to run builds, tests, and commands safely.
+- [Create a sandbox and run code](https://vercel.com/docs/sandbox/examples/create-a-sandbox-and-run-code) — Create a Vercel Sandbox, write a file into it, run the file, and inspect the command output in TypeScript, Python, or th
 - [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 - [Delete a sandbox](https://vercel.com/docs/rest-api/sandboxes/delete-a-sandbox) — DELETE /v2/sandboxes/{name} — Deletes a sandbox by name. If sandboxes are currently running, they will be stopped first.
-- [List sandboxes](https://vercel.com/docs/rest-api/sandboxes/list-sandboxes) — GET /v2/sandboxes — Retrieves a paginated list of named sandboxes belonging to a specific project. Results can be sorted
 - [Hermes](https://vercel.com/docs/sandbox/ecosystem/hermes) — Run Hermes Agent terminal commands in isolated Vercel Sandbox microVMs, with models served through Vercel AI Gateway.
 
 Full cross-link map for this page: [/docs/sandbox/concepts.graph.md](/docs/sandbox/concepts.graph.md)
@@ -59,6 +60,12 @@ Each sandbox includes configurable isolation:
 - **Process isolation**: Kernel-level isolation ensures code cannot see or access processes in other sandboxes.
 - **Network isolation**: Each sandbox has its own network namespace with controlled outbound access.
 
+### What is an AI agent sandbox?
+
+An AI agent sandbox isolates the code an agent writes and the commands it runs from your application and its credentials. Some agent sandboxes run one generated script, such as Python that analyzes a CSV file, and then stop. Others are workspaces where a coding agent clones a repository, edits files, and runs tests across many sessions.
+
+To learn why AI-generated code needs isolation and which controls belong around it, read [What is an AI sandbox?](/i/what-is-an-ai-sandbox).
+
 ## Sandboxes vs containers
 
 Unlike Docker containers, each sandbox runs in its own [Firecracker](https://firecracker-microvm.github.io/) microVM with a dedicated kernel. This provides stronger isolation than container-based solutions, which makes sandboxes ideal for running untrusted code.
@@ -70,7 +77,9 @@ Unlike Docker containers, each sandbox runs in its own [Firecracker](https://fir
 | **Startup time** | Sub-second                                                | Milliseconds (Firecracker optimized for fast boot)             |
 | **Use case**     | Packaging and deploying applications                      | Running arbitrary, untrusted code safely                       |
 
-If you already use Docker images to define your environment, store the image in [Vercel Container Registry (VCR)](/docs/container-registry) and create the sandbox with a custom image. See [Images](/docs/sandbox/concepts/images#custom-images). You can also install packages with [your system's package manager](/docs/sandbox/working-with-sandbox#install-system-packages), or take a snapshot after setup when a Docker image is not needed.
+If you already use Docker images to define your environment, store the image in [Vercel Container Registry (VCR)](/docs/container-registry) and create the sandbox with a custom image. See [Images](/docs/sandbox/concepts/images#custom-images). You can also install packages with [your system's package manager](/docs/sandbox/examples/install-system-packages), or take a snapshot after setup when a Docker image is not needed.
+
+To compare isolation, retained state, and network controls across sandbox providers, see [7 AI sandbox providers compared](/i/ai-sandbox-providers).
 
 ## How sandboxes work
 
@@ -270,6 +279,7 @@ Vercel Sandboxes are ideal for features that require secure, on-demand code exec
 | Pattern                         | Why use sandboxes?                                                              | Example                                                                          |
 | :------------------------------ | :------------------------------------------------------------------------------ | :------------------------------------------------------------------------------- |
 | **AI code interpreter**         | LLM-generated code can be unpredictable. Sandboxes ensure it runs in isolation. | An AI assistant that solves math problems by writing and running Python scripts. |
+| **Coding agent sandbox**        | A coding agent edits files, installs packages, and runs commands. A sandbox keeps that work away from your production systems. | A coding agent that clones a repository, fixes a failing test, and reruns the test suite. |
 | **Clean test environments**     | Start fresh for every test run to avoid "works on my machine" issues.           | Running unit tests against a clean OS for every commit.                          |
 | **Reproducible infrastructure** | Share identical snapshots of environments across teams.                         | A QA team spinning up an exact replica of a customer's environment.              |
 | **Temporary debugging**         | Spin up a throwaway environment to inspect issues without risk.                 | Investigating a production issue by replicating the environment.                 |
@@ -294,15 +304,15 @@ See [Sandbox security model](/docs/sandbox/concepts/security) for the full secur
 - [Drives](/docs/sandbox/concepts/drives): Attach persistent filesystem storage to sandboxes and reuse data across sandbox runs.
 - [Regions](/docs/sandbox/concepts/regions): Choose where your sandboxes run and configure failover regions.
 - [Secure Compute](/docs/sandbox/concepts/secure-compute): Send a sandbox's public-internet traffic through a network's static IPs, and reach your own VPC over VPC peering.
+- [Credentials](/docs/sandbox/concepts/credentials): Authenticate to private services with credentials Vercel sets up from your team's configuration.
 - [Security model](/docs/sandbox/concepts/security): How the sandbox boundary isolates untrusted code, and what it does and does not cover.
 - [Quickstart](/docs/sandbox/quickstart): Run your first sandbox.
-- [Working with Sandbox](/docs/sandbox/working-with-sandbox): Task-oriented guides for common operations.
+- [Examples](/docs/sandbox/examples): Task-oriented guides for common operations, with real-world use cases and code samples.
 - [Authentication](/docs/sandbox/concepts/authentication): Configure SDK authentication.
 - [Snapshots](/docs/sandbox/concepts/snapshots): Save and restore sandbox state.
 - [JS SDK Reference](/docs/sandbox/sdk-reference): Full API documentation for JavaScript and TypeScript.
 - [Python SDK Reference](/docs/sandbox/python-sdk-reference): Full API documentation for Python.
 - [CLI Reference](/docs/sandbox/cli-reference): Manage sandboxes from the terminal.
-- [Examples](/docs/sandbox/working-with-sandbox#examples): Real-world use cases and code samples.
 
 ## Search the docs from your terminal
 

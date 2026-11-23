@@ -14,8 +14,8 @@ summary: Vercel MCP tools for sandboxes.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/sandboxes.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "1c6a8acbab6fc3ffcc52053ef3a956d83617a359186cca712f4c1e16fa6f235d"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "d13ebe781df6cfa4b32bb926975045079fcfd33716205eddbe342cb489f95826"
 ---
 
 # Sandboxes
@@ -29,10 +29,10 @@ Create sandboxes to run commands and work with files in isolated environments. Y
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Persistence](https://vercel.com/docs/sandbox/concepts/persistent-sandboxes) — Sandboxes automatically save their filesystem state when stopped and restore it when resumed. No manual snapshot managem
-- [JS SDK Reference](https://vercel.com/docs/sandbox/sdk-reference) — A comprehensive reference for the Vercel Sandbox JavaScript SDK, which lets you run code in a secure, isolated environme
-- [Get a named sandbox](https://vercel.com/docs/rest-api/sandboxes/get-a-named-sandbox) — GET /v2/sandboxes/{name} — Retrieves a named sandbox by name, including its current sandbox and routes. If the sandbox i
+- [JS SDK Reference](https://vercel.com/docs/sandbox/sdk/javascript) — A comprehensive reference for the Vercel Sandbox JavaScript SDK, which lets you run code in a secure, isolated environme
 - [List sessions](https://vercel.com/docs/rest-api/sandboxes/list-sessions) — GET /v2/sandboxes/sessions — Retrieves a paginated list of sessions belonging to a specific sandbox. Results are sorted
 - [Snapshots](https://vercel.com/docs/sandbox/concepts/snapshots) — Save and restore sandbox state with snapshots for faster startups and environment sharing.
+- [Python SDK Reference](https://vercel.com/docs/sandbox/sdk/python) — Reference for the Vercel Sandbox Python SDK, including sandbox lifecycle, commands, files, drives, snapshots, persistenc
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/sandboxes.graph.md](/docs/agent-resources/vercel-mcp/tools/sandboxes.graph.md)
 <!-- /docsgraph:related -->

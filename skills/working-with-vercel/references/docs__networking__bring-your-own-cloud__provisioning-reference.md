@@ -18,8 +18,8 @@ summary: "Reference for Bring Your Own Cloud (BYOC) provisioning: the descriptor
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/networking/bring-your-own-cloud/provisioning-reference.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "de133ba3cb22984531d63a1896e3fcca6e1d1e3d164351efc82705cf38c67c91"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "95c09527dc75d59a14a9cfd6f613357ce62fbb811b3a61c97b4700b4d1761d37"
 ---
 
 # BYOC Provisioning Reference
@@ -37,9 +37,9 @@ A [Bring Your Own Cloud (BYOC)](/docs/networking/bring-your-own-cloud) provision
 - [The Complete Guide to Bring Your Own Cloud](https://vercel.com/kb/guide/byoc) — Use Bring Your Own Cloud \\(BYOC\\) to run Vercel Functions as AWS Lambda functions in your own AWS account, from setup to
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Connecting an AWS Account for BYOC](https://vercel.com/docs/networking/bring-your-own-cloud/connect-aws-account) — Connect an AWS account to your Vercel team so Bring Your Own Cloud \\(BYOC\\) can invoke Lambda functions in your account.
+- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [List deployments](https://vercel.com/docs/rest-api/deployments/list-deployments) — GET /v7/deployments — List deployments under the authenticated user or team. If a deployment hasn't finished uploading \\
-- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
 
 Full cross-link map for this page: [/docs/networking/bring-your-own-cloud/provisioning-reference.graph.md](/docs/networking/bring-your-own-cloud/provisioning-reference.graph.md)
 <!-- /docsgraph:related -->

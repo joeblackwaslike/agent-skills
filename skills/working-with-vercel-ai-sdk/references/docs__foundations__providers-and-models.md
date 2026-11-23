@@ -4,8 +4,8 @@ description: Learn about the providers and models available in the AI SDK.
 url: "https://ai-sdk.dev/docs/foundations/providers-and-models"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/foundations/providers-and-models.md"
-fetched_at: "2026-11-16T12:32:31.917Z"
-sha256: "bde312c1f93dff3bf12d25773e8ecd28072d2640df5d1118ab839e157b0f8993"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "34b43456767cef3a09e4325ecf28e1b8007713600f5df4d664107a3fc7836942"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -97,6 +97,7 @@ The open-source community has created the following providers:
 - [Interfaze Provider](/providers/community-providers/interfaze) (`@interfaze-ai/ai-sdk`)
 - [Telnyx Provider](/providers/community-providers/telnyx) (`@telnyx/ai-sdk-provider`)
 - [ZeroGPU Provider](/providers/community-providers/zerogpu) (`@zerogpu/ai-sdk-provider`)
+- [Upstash AgentKit Provider](/providers/community-providers/upstash-agentkit) (`@upstash/agentkit-ai-sdk`)
 
 ## Self-Hosted Models
 
@@ -130,6 +131,8 @@ Here are the capabilities of popular models:
 | [xAI Grok](/providers/ai-sdk-providers/xai)        | `grok-4`                                    | ✗           | ✓                 | ✓          | ✓              |
 | [xAI Grok](/providers/ai-sdk-providers/xai)        | `grok-3`                                    | ✗           | ✓                 | ✓          | ✓              |
 | [xAI Grok](/providers/ai-sdk-providers/xai)        | `grok-3-mini`                               | ✗           | ✓                 | ✓          | ✓              |
+| [OpenAI](/providers/ai-sdk-providers/openai)       | `gpt-6.2-astra`                             | ✓           | ✓                 | ✓          | ✓              |
+| [OpenAI](/providers/ai-sdk-providers/openai)       | `gpt-6.2-sol`                               | ✓           | ✓                 | ✓          | ✓              |
 | [OpenAI](/providers/ai-sdk-providers/openai)       | `gpt-6-astra`                               | ✓           | ✓                 | ✓          | ✓              |
 | [OpenAI](/providers/ai-sdk-providers/openai)       | `gpt-6.1-sol`                               | ✓           | ✓                 | ✓          | ✓              |
 | [OpenAI](/providers/ai-sdk-providers/openai)       | `gpt-6.1-terra`                             | ✓           | ✓                 | ✓          | ✓              |
@@ -185,6 +188,7 @@ Here are the capabilities of popular models:
 | [Google](/providers/ai-sdk-providers/google)       | `gemini-4-argon`                            | ✓           | ✓                 | ✓          | ✓              |
 | [Google](/providers/ai-sdk-providers/google)       | `gemini-4-carbon`                           | ✓           | ✓                 | ✓          | ✓              |
 | [Google](/providers/ai-sdk-providers/google)       | `gemini-4-hydrogen`                         | ✓           | ✓                 | ✓          | ✓              |
+| [Google](/providers/ai-sdk-providers/google)       | `gemini-4-neon`                             | ✓           | ✓                 | ✓          | ✓              |
 | [Google](/providers/ai-sdk-providers/google)       | `gemini-3.8-flash`                          | ✓           | ✓                 | ✓          | ✓              |
 | [Google](/providers/ai-sdk-providers/google)       | `gemini-3.7-flash`                          | ✓           | ✓                 | ✓          | ✓              |
 | [Google](/providers/ai-sdk-providers/google)       | `gemini-3.6-flash`                          | ✓           | ✓                 | ✓          | ✓              |

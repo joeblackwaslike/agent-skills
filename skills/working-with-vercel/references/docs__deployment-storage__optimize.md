@@ -17,8 +17,8 @@ summary: Set retention periods, review remaining usage, and reduce deployment ou
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployment-storage/optimize.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "b391e36a4370b9f9f3878bb01fe4d263a1d1304b4f47843f71ec7c4d6d7cbca1"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "eb5ef15ae9b3097411c191d630ca8ec63356ca1dec1a80563359591fa3af979d"
 ---
 
 # Optimize Deployment Storage
@@ -35,13 +35,13 @@ Start with deployment retention. It controls how long Vercel keeps deployment ou
 - [Deployment Storage billing begins for existing Pro teams](https://vercel.com/changelog/deployment-storage-pricing-expands-to-existing-teams)
 - [Hobby projects now retain fewer deployments to free up storage](https://vercel.com/changelog/hobby-projects-now-retain-fewer-deployments-to-free-up-storage)
 - [New Pro teams now default to 30-day deployment retention](https://vercel.com/changelog/new-pro-teams-now-default-to-30-day-deployment-retention)
-- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
-- [Updated defaults for deployment retention](https://vercel.com/changelog/updated-defaults-for-deployment-retention)
-- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
+- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-to-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
+- [Troubleshooting Builds Failing with SIGKILL or Out of Memory Errors](https://vercel.com/kb/guide/troubleshooting-sigkill-out-of-memory-errors) — Learn how to troubleshoot builds failing with SIGKILL or Out of Memory errors on a Vercel Deployment.
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 - [Debugging slow Vercel Functions](https://vercel.com/docs/functions/debug-slow-functions) — Diagnose and fix slow Vercel Functions using CLI tools, logs, and timing analysis.
 - [Vercel Storage overview](https://vercel.com/docs/storage) — Store files with Vercel Blob, runtime configuration with Global Config, and application data with Marketplace databases.
+- [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 
 Full cross-link map for this page: [/docs/deployment-storage/optimize.graph.md](/docs/deployment-storage/optimize.graph.md)
 <!-- /docsgraph:related -->

@@ -17,8 +17,8 @@ summary: "Learn how Vercel's CDN secures every request with HTTPS, TLS, DDoS mit
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cdn-security.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "1e8a2b315a01be42e6b92acc93d9c448adc7f3963995505c8573fa2f693b3053"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "43ed0b9cba4ed3e2834cbf2d6ad10f13241e519099d4e1eca6c6b32ab9d3047b"
 ---
 
 # CDN security
@@ -31,8 +31,6 @@ Vercel's CDN applies multiple layers of security to every incoming request befor
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Using Vercel as a Standalone CDN](https://vercel.com/kb/guide/using_vercel_as_a_cdn) — Use Vercel's external rewrites to proxy and cache content from external websites or APIs through Vercel's global edge ne
-- [Vercel security roundup: improved bot defenses, DoS mitigations, and insights](https://vercel.com/blog/vercel-security-roundup-improved-bot-defenses-dos-mitigations-and-insights)
 - [How Vercel CDN Works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
 - [Vercel CDN overview](https://vercel.com/docs/cdn) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
 - [Vercel security overview](https://vercel.com/docs/security) — Vercel provides built-in and customizable features to ensure that your site is secure.
@@ -101,7 +99,11 @@ Headers you can configure:
 
 - **X-Content-Type-Options**: Stop browsers from MIME-type sniffing responses.
 
+- **Cross-Origin-Opener-Policy and Cross-Origin-Embedder-Policy**: Isolate your pages from other origins so that they can use `SharedArrayBuffer`.
+
 - [Security headers](/docs/cdn-security/security-headers)
+
+- [Cross-origin isolation](/docs/cdn-security/cross-origin-isolation)
 
 ## HSTS
 

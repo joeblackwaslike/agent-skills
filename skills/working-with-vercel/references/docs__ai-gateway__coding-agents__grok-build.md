@@ -15,8 +15,8 @@ summary: Connect Grok Build to AI Gateway with environment variables. Populate t
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/grok-build.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "4b38bd57e551369a5d172361063daded64d5420e3e848a8e44277608eeae4743"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "121b11072b1a92d005c66e4a55701a5978ad1969314200085cacc02b9dfe73e2"
 ---
 
 # Grok Build with AI Gateway
@@ -31,9 +31,10 @@ sha256: "4b38bd57e551369a5d172361063daded64d5420e3e848a8e44277608eeae4743"
 
 - [Grok Build 0.1 now available on Vercel AI Gateway](https://vercel.com/changelog/grok-build-0-1-now-available-on-vercel-ai-gateway)
 - [Grok 4.6 now available on AI Gateway](https://vercel.com/changelog/grok-4-6-now-available-on-ai-gateway)
-- [Grok 4.5 now available on AI Gateway](https://vercel.com/changelog/grok-4-5-now-available-on-ai-gateway)
 - [Grok 4.7 now available on AI Gateway, fx, and eve](https://vercel.com/changelog/grok-4-7-now-available-and-40-off-on-ai-gateway-fx-eve)
-- [Grok 4.3 on AI Gateway](https://vercel.com/changelog/grok-4-3-on-ai-gateway)
+- [Grok 4.5 now available on AI Gateway](https://vercel.com/changelog/grok-4-5-now-available-on-ai-gateway)
+- [Try Grok 4.20 on AI Gateway](https://vercel.com/changelog/grok-4-20-on-ai-gateway)
+- [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [GitHub Copilot CLI with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/copilot) — Connect GitHub Copilot CLI to AI Gateway with the Vercel CLI or environment variables for the provider URL, API key, and
 - [Vercel Groq Integration](https://vercel.com/docs/agent-resources/integrations-for-models/groq) — Learn how to add the Groq native integration with Vercel.
 

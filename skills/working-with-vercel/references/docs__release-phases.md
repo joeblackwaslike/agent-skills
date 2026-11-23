@@ -13,8 +13,8 @@ summary: Learn about the different phases of the Vercel Product release cycle an
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/release-phases.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "7b581183428c05a3f1cbe5103316d004ebb60875510a0d431175de35d0f3abb4"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "509a1a601f6e16df195284b7066b1f9bbd27d6a4959ccc6a3177e27b2907d03d"
 ---
 
 # Release Phases for Vercel
@@ -23,13 +23,13 @@ This page outlines the different phases of the Vercel product release cycle. Eac
 
 Although a product doesn't have to pass through each stage in sequential order, there is a default flow to how products are released:
 
-- Alpha
+- Experimental
 - Beta
 - General Availability (GA).
 
-## Alpha
+## Experimental
 
-The Alpha phase is the first phase of the release cycle. A product in the Alpha phase lacks the essential features that are required to be ready for GA.
+The Experimental phase is the first phase of the release cycle. A product in the Experimental phase lacks the essential features that are required to be ready for GA.
 The product is considered to still be under development, and is being built to be ready for Beta phase.
 
 > **💡 Note:** The product is under development.

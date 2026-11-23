@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/feature-availability.md"
-fetched_at: "2026-11-16T12:28:44.823Z"
-sha256: "6f3dc109860fb4c9966271dd34dc125b4f9cb756c7a6478f02957ac4879e70d7"
+fetched_at: "2026-11-23T14:04:20.448Z"
+sha256: "46c5fbe9e3573e5d97f9ad20ad404a961bfc266498c040cfa7ec04e309fba0a0"
 ---
 
 > ## Documentation Index
@@ -252,7 +252,7 @@ Organization-level controls and usage visibility.
 
 > [!NOTE]
 >
-> If you authenticate through an [LLM gateway](https://code.claude.com/docs/en/llm-gateway), feature availability matches the underlying provider the gateway forwards to, except for the features Claude Code itself turns off. Whenever `ANTHROPIC_BASE_URL` points at a host other than `api.anthropic.com`, Claude Code turns off features such as [Remote Control](https://code.claude.com/docs/en/remote-control.md#requirements) and [server-managed settings](https://code.claude.com/docs/en/server-managed-settings.md#platform-availability), whatever the gateway forwards. Some features, such as the [Advisor](https://code.claude.com/docs/en/advisor.md#requirements), work only if the gateway forwards requests intact.
+> If you authenticate through an [LLM gateway](https://code.claude.com/docs/en/llm-gateway), feature availability matches the underlying provider the gateway forwards to, except for the features Claude Code itself turns off. Whenever `ANTHROPIC_BASE_URL` points at a host other than `api.anthropic.com`, Claude Code turns off features such as [Remote Control](https://code.claude.com/docs/en/remote-control.md#requirements), whatever the gateway forwards. Some features, such as the [Advisor](https://code.claude.com/docs/en/advisor.md#requirements), work only if the gateway forwards requests intact.
 >
 > For how the requests Claude Code sends differ between an Amazon Bedrock- or Agent Platform-format gateway, an `ANTHROPIC_BASE_URL` gateway, and a Claude apps gateway sign-in, see [client behavior by connection method](https://code.claude.com/docs/en/llm-gateway-protocol.md#how-the-connection-method-changes-client-behavior).
 
@@ -351,7 +351,7 @@ In Enterprise organizations with the [HIPAA configuration](https://code.claude.c
 | [Remote Control](https://code.claude.com/docs/en/remote-control.md) | ✓ | ✓ | ✓ | Admin-enabled | Admin-enabled |
 | [Channels](https://code.claude.com/docs/en/channels.md) | ✓ | ✓ | ✓ | Admin-enabled | Admin-enabled |
 | [Computer use](https://code.claude.com/docs/en/computer-use.md) | ✓ | ✓ | ✓ | ✗ | ✗ |
-| Dispatch ([Desktop](https://code.claude.com/docs/en/desktop.md#sessions-from-dispatch)) | ✓ | ✓ | ✓ | ✗ | ✗ |
+| Dispatch ([Desktop](https://code.claude.com/docs/en/desktop.md#sessions-from-dispatch)) | Not available to new users | Not available to new users | Not available to new users | ✗ | ✗ |
 | [Code Review](https://code.claude.com/docs/en/code-review.md) | ✗ | ✗ | ✗ | ✓ | ✓ |
 | [Artifacts](https://code.claude.com/docs/en/artifacts.md) | ✓ | ✓ | ✓ | ✓ | ✓ |
 | [Analytics dashboard and contribution metrics](https://code.claude.com/docs/en/analytics.md) | ✗ | ✗ | ✗ | ✓ | ✓ |

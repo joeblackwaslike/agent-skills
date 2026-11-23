@@ -9,17 +9,17 @@ prerequisites:
   - /docs/ai-gateway/modalities
   - /docs/ai-gateway
 related:
+  - /docs/ai-gateway/pricing
   - /docs/ai-gateway/modalities/video-generation/text-to-video
   - /docs/ai-gateway/modalities/video-generation/image-to-video
   - /docs/ai-gateway/modalities/video-generation/reference-to-video
   - /docs/ai-gateway/modalities/video-generation/motion-control
-  - /docs/ai-gateway/modalities/video-generation/video-editing
 summary: Generate videos from text prompts, images, or video input using AI models through Vercel AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/modalities/video-generation.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "53285f413182385ab7d4b83e3f165315f0154b87498b3f88043fa292d515f945"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "75a2528556f8680a1816d295526ad8ecee1d826812d3013cac93f3d1b99c2901"
 ---
 
 # AI Gateway Video Generation
@@ -41,13 +41,16 @@ AI Gateway supports video generation, letting you create videos from text prompt
 - [Wan 3.0 now available on AI Gateway](https://vercel.com/changelog/wan-3-0-now-available-on-ai-gateway)
 - [ByteDance](https://ai-sdk.dev/providers/ai-sdk-providers/bytedance) — Learn how to use ByteDance with AI Gateway and the direct provider.
 - [MiniMax](https://ai-sdk.dev/providers/ai-sdk-providers/minimax) — Learn how to use MiniMax with AI Gateway and the direct provider.
+- [Video Generation with AI Gateway](https://vercel.com/blog/video-generation-with-ai-gateway)
 - [generateVideo](https://ai-sdk.dev/docs/reference/ai-sdk-workflow/generate-video) — API Reference for durable video generation in workflows.
-- [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
+- [AI Gateway Video Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/video-input) — Analyze video clips with AI Gateway using AI SDK 7, Python, Chat Completions, and Responses / OpenResponses.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/video-generation.graph.md](/docs/ai-gateway/modalities/video-generation.graph.md)
 <!-- /docsgraph:related -->
 
 To see all supported video models, use the **Video** filter at the [AI Gateway Models page](/ai-gateway/models?capabilities=video-generation).
+
+Video generation requires a minimum [AI Gateway Credits](/docs/ai-gateway/pricing) balance of $10.
 
 ## Capabilities
 
@@ -65,6 +68,22 @@ Some video models are tagged by capability in their model name. You can also see
 | -                | [Video extension](/docs/ai-gateway/modalities/video-generation/video-extension)       | Continue a video from its last frame                                |
 
 For example, `klingai/kling-v3.0-t2v` is a text-to-video model, `alibaba/wan-v2.6-i2v` is an image-to-video model, and `bytedance/seedance-2.5` covers text-to-video, image-to-video, reference-to-video, editing, and extension.
+
+### Operations by model creator
+
+Each model creator covers a different set of operations. Support also varies by model within a creator, so check the mode page for the model you plan to use:
+
+| Creator                       | Operations                                                                                                         |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| Alibaba (Wan)                 | Text-to-video, image-to-video with first and last frames, reference-to-video                                       |
+| Black Forest Labs (FLUX 3)    | Text-to-video, image-to-video with first and last frames, video extension                                          |
+| ByteDance (Seedance)          | Text-to-video, image-to-video with first and last frames, reference-to-video, video editing, video extension       |
+| Google (Veo)                  | Text-to-video, image-to-video with first and last frames, reference-to-video                                       |
+| HeyGen (HeyGen Video)         | Text-to-video, image-to-video, reference-to-video                                                                  |
+| KlingAI (Kling)               | Text-to-video, image-to-video with first and last frames, reference-to-video, motion control                       |
+| MiniMax (H3)                  | Text-to-video, image-to-video with first and last frames, reference-to-video                                       |
+| SpaceXAI (Grok Imagine Video) | Text-to-video, image-to-video, reference-to-video, video editing, video extension                                  |
+| Topaz Labs                    | [Video enhancement](/docs/ai-gateway/modalities/video-generation/video-editing#topaz) of a video you already have |
 
 ## Common parameters
 
@@ -94,7 +113,7 @@ frameImages: [
 ];
 ```
 
-The `image` accepts the same forms as `prompt.image`: a URL, a base64-encoded string, or a `Buffer`. Pass a single `first_frame` to animate from one image, or add a `last_frame` to transition between two. Veo, KlingAI, and Seedance honor `last_frame`; Grok Imagine Video and Wan ignore it with a warning. See the [image-to-video](/docs/ai-gateway/modalities/video-generation/image-to-video) page for details.
+The `image` accepts the same forms as `prompt.image`: a URL, a base64-encoded string, or a `Buffer`. Pass a single `first_frame` to animate from one image, or add a `last_frame` to transition between two. Veo, KlingAI, Seedance, MiniMax H3, FLUX 3, Wan 3.0, and Grok Imagine Video 1.5 honor `last_frame`. Wan 2.6 and 2.7 models and the other Grok Imagine Video models ignore it with a warning, and HeyGen Video rejects the request. See the [image-to-video](/docs/ai-gateway/modalities/video-generation/image-to-video) page for details.
 
 Use `inputReferences` for [reference-to-video](/docs/ai-gateway/modalities/video-generation/reference-to-video), where reference images or videos tell the model what your characters or objects look like while the prompt describes a new scene:
 
@@ -113,14 +132,16 @@ inputReferences: [
 ];
 ```
 
-Providers route each reference by its media type and treat untyped references as images. Wan and Seedance 2.5 accept video references; Veo, KlingAI, and Grok Imagine Video accept image references only and ignore video references with a warning.
+Most providers route each reference by its media type and treat untyped references as images. Wan, the Seedance 2.x series, MiniMax H3, and HeyGen Video accept video references. Veo, KlingAI, and Grok Imagine Video accept image references only and ignore video references with a warning.
 
-The syntax you use in the prompt to refer to each reference stays provider-specific (for example, `character1` for Wan, `<IMAGE_1>` for Grok, or `[Image 1]` and `[Video 1]` for Seedance). KlingAI and Veo have no token syntax. Describe the scene directly. See the [reference-to-video](/docs/ai-gateway/modalities/video-generation/reference-to-video) page for details.
+Two creators read a video in `inputReferences` as the source video. FLUX 3 continues it ([video extension](/docs/ai-gateway/modalities/video-generation/video-extension)), and Topaz models [enhance it](/docs/ai-gateway/modalities/video-generation/video-editing#topaz).
+
+The syntax you use in the prompt to refer to each reference stays provider-specific (for example, `Image 1` for Wan 3.0, `<IMAGE_1>` for Grok, or `[Image 1]` and `[Video 1]` for Seedance). KlingAI and Veo have no token syntax. Describe the scene directly. See the [reference-to-video](/docs/ai-gateway/modalities/video-generation/reference-to-video) page for details.
 
 Two precedence rules apply when fields overlap:
 
 - A `first_frame` in `frameImages` takes priority over `prompt.image`.
-- `frameImages` takes priority over `inputReferences`. If you pass both, the model ignores `inputReferences` and emits a warning.
+- `frameImages` takes priority over `inputReferences`. If you pass both, the model ignores `inputReferences` and emits a warning. Wan 3.0 and HeyGen Video reject the request instead.
 
 Legacy `providerOptions` keys still work when you omit `frameImages` and `inputReferences`, so existing code keeps running unchanged.
 
@@ -291,7 +312,7 @@ import { writeFile } from 'node:fs/promises';
 
 const { videos, providerMetadata } = await generateVideo({
   // A 'creator/model' string is shorthand for gateway.videoModel('creator/model')
-  model: 'alibaba/wan-v2.5-t2v-preview',
+  model: 'alibaba/wan-v3.0-video',
   prompt: 'A corgi surfing a tiny wave, golden hour',
   duration: 5,
   resolution: '832x480',
@@ -305,7 +326,7 @@ Swapping in a byte-serving model changes nothing about the call or the result:
 
 ```typescript filename="byte-provider.ts"
 const { videos } = await generateVideo({
-  model: 'google/veo-3.0-fast-generate-001',
+  model: 'google/veo-3.1-fast-generate-001',
   prompt: 'A corgi surfing a tiny wave, golden hour',
   duration: 4,
   generateAudio: false,

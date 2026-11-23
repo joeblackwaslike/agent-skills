@@ -13,8 +13,8 @@ summary: Enable or disable guidance messages in the Vercel CLI using the vercel 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/guidance.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "39a7c5f4e7e4dfa14c533c6c802f4db519b5fd22da8f8b2e5081a4794a713639"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "a8e2cf33a13ff7730f44ced68a1c77de7afa1d30e811d896de891dfa449d924e"
 ---
 
 # vercel guidance
@@ -29,8 +29,8 @@ The `vercel guidance` command allows you to enable or disable guidance messages.
 
 - [vercel help](https://vercel.com/docs/cli/help) — Learn how to use the vercel help CLI command to get information about all available Vercel CLI commands.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
-- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel ci](https://vercel.com/docs/cli/ci) — Enable or disable Vercel CI for repositories, inspect runs, search logs, and rerun jobs from the command line.
+- [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 
 Full cross-link map for this page: [/docs/cli/guidance.graph.md](/docs/cli/guidance.graph.md)

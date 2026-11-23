@@ -16,13 +16,13 @@ summary: Generate spoken audio from text with speech models through Vercel AI Ga
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/modalities/text-to-speech.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "709e7c73deb28cbd37e6bb0911b006fbd5708b68b7ded11eca8b702539875337"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "a53adbe9e4ec93899b859e8661e94d5c99fba4be3fec338585b17ad79f41a2ed"
 ---
 
 # AI Gateway Text to Speech
 
-Generate spoken audio from text with ElevenLabs, Google, Microsoft, and OpenAI speech models. Use this for voiceovers, audio versions of written content, or spoken responses in your app.
+Generate spoken audio from text with speech models through AI Gateway. Use this for voiceovers, audio versions of written content, or spoken responses in your app. Browse available models on the [AI Gateway Models page](/ai-gateway/models?modality=audio:speech).
 
 
 <!-- docsgraph:related -->
@@ -35,40 +35,14 @@ Generate spoken audio from text with ElevenLabs, Google, Microsoft, and OpenAI s
 - [Realtime voice, speech, and transcription now supported on AI Gateway](https://vercel.com/changelog/realtime-voice-speech-and-transcription-now-supported-on-ai-gateway)
 - [ElevenLabs on AI Gateway](https://vercel.com/blog/elevenlabs-on-ai-gateway)
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway)
-- [Microsoft AI models are now available on AI Gateway](https://vercel.com/changelog/microsoft-ai-models-are-now-available-on-ai-gateway)
-- [xAI Grok audio models now available on Vercel AI Gateway](https://vercel.com/changelog/xai-grok-audio-models-now-available-on-vercel-ai-gateway)
+- [AI Gateway Audio Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/audio-input) — Analyze recorded audio with AI Gateway, compare audio input with transcription and realtime voice, and choose a supporte
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
+- [GPT-Live](https://vercel.com/docs/ai-gateway/modalities/realtime/gpt-live) — Connect GPT-Live through AI Gateway to stream voice, handle client delegation, and track session duration.
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/text-to-speech.graph.md](/docs/ai-gateway/modalities/text-to-speech.graph.md)
 <!-- /docsgraph:related -->
 
 Use this to turn text into spoken audio. For live, two-way voice, see [Realtime](/docs/ai-gateway/modalities/realtime); to transcribe recorded audio, see [Speech to Text](/docs/ai-gateway/modalities/speech-to-text).
-
-> **💡 Note:** Text to speech is in beta and access is rolling out gradually. Speech models
-> may not appear in the model catalog yet for your team.
-
-## Supported models
-
-| Provider | Model ID |
-| --- | --- |
-| ElevenLabs | `elevenlabs/eleven-flash-v2` |
-| ElevenLabs | `elevenlabs/eleven-flash-v2.5` |
-| ElevenLabs | `elevenlabs/eleven-multilingual-v2` |
-| ElevenLabs | `elevenlabs/eleven-v3` |
-| ElevenLabs | `elevenlabs/eleven-v3-conversational` |
-| ElevenLabs | `elevenlabs/eleven-v4` |
-| ElevenLabs | `elevenlabs/eleven-v4-turbo` |
-| ElevenLabs | `elevenlabs/music-v2` |
-| ElevenLabs | `elevenlabs/music-v2.5` |
-| ElevenLabs | `elevenlabs/sound-effects-v2` |
-| Google | `google/gemini-3.8-flash-lite-tts` |
-| Google | `google/gemini-3.8-flash-tts` |
-| Microsoft | `microsoft/mai-voice-2` |
-| Microsoft | `microsoft/mai-voice-2-flash` |
-| Microsoft | `microsoft/mai-voice-2.1` |
-| Microsoft | `microsoft/mai-voice-2.1-flash` |
-| OpenAI | `openai/tts-1` |
-| OpenAI | `openai/tts-1-hd` |
 
 ## Generate speech with the AI SDK
 

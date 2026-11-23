@@ -14,8 +14,8 @@ summary: Use get_edge_config_backup with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config_backup.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "f08e4c3dd3f3021b13a6796dd56e3e6da9d5d1fba9b03d56c0e864b0f617ddda"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "6a63ebf24c7826a9bad3d689b3c7fb1c0b5214d14f1b99e7f02925c8a3711355"
 ---
 
 # get_edge_config_backup
@@ -30,6 +30,7 @@ Retrieves a specific version of a Global Config from backup storage.
 
 - [get_edge_config_backups](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config_backups) — Use get_edge_config_backups with Vercel MCP.
 - [restore_edge_config_backup](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/restore_edge_config_backup) — Use restore_edge_config_backup with Vercel MCP.
+- [Backups now available for Vercel Edge Config](https://vercel.com/changelog/backups-now-available-for-vercel-edge-config)
 - [get_edge_config](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config) — Use get_edge_config with Vercel MCP.
 - [get_edge_configs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_configs) — Use get_edge_configs with Vercel MCP.
 - [get_edge_config_items](https://vercel.com/docs/agent-resources/vercel-mcp/tools/global-config/get_edge_config_items) — Use get_edge_config_items with Vercel MCP.

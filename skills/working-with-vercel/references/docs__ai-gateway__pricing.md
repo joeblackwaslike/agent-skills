@@ -17,8 +17,8 @@ summary: Understand AI Gateway token pricing, free and paid credits, BYOK costs,
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/pricing.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "dd897e19499f2b4d4cb4a0adfb22a749e8b64a534fda44d94c4948a6c81a83a4"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "3532551b0f5f5efef2758b6474b7f1e8d7b4ed0cb90734122240d0297bc3cac9"
 ---
 
 # AI Gateway Pricing
@@ -34,9 +34,9 @@ sha256: "dd897e19499f2b4d4cb4a0adfb22a749e8b64a534fda44d94c4948a6c81a83a4"
 - [GPT-5.6 Sol is now 50% off a lower price](https://vercel.com/changelog/gpt-5-6-sol-is-now-50-percent-off-a-lower-price)
 - [MiniMax H3 and H3 Max are 50% off on AI Gateway](https://vercel.com/changelog/minimax-h3-and-h3-max-are-50-off-on-ai-gateway)
 - [MiniMax H3 Image and Highspeed now available on AI Gateway](https://vercel.com/changelog/minimax-h3-image-and-highspeed-now-available-on-ai-gateway)
+- [Deploy a Go backend on Vercel with AI Gateway](https://vercel.com/kb/guide/deploy-a-go-backend-on-vercel-with-ai-gateway) — Build and deploy a Go HTTP server that calls AI Gateway using the standard library, with no SDK dependencies.
 - [How to build your own AI model router](https://vercel.com/kb/guide/how-to-build-your-own-ai-model-router) — Build an AI model router with Vercel AI Gateway. Keep routing, key, and retention decisions in your code while the gatew
 - [Use Vercel Daemons with eve agents](https://vercel.com/kb/guide/vercel-daemons-eve-agents) — Connect eve agents to Vercel Daemons to process queued jobs, offload heavy work, and react to events. Includes code, aut
-- [AI Gateway: Production-ready reliability for your AI apps](https://vercel.com/blog/ai-gateway-is-now-generally-available)
 - [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Running Agent Harnesses Durably on Vercel](https://vercel.com/docs/agent-harnesses) — Run Pi, fx, OpenCode, eve, Claude Code, and Codex on Vercel so a crash, a function timeout, or a redeploy resumes the ag
@@ -81,19 +81,19 @@ When you click on a model, you can see the full pricing breakdown including vari
 
 ## Bring Your Own Key (BYOK)
 
-AI Gateway also supports [Bring Your Own Key (BYOK)](/docs/ai-gateway/authentication-and-byok/byok) for any provider listed in our catalog. With BYOK, AI Gateway adds no markup to inference, and you pay the provider directly. Every [add-on surcharge](#add-on-surcharges) you have turned on still applies to BYOK requests and is charged to your AI Gateway Credits. That includes the team-wide provider and model allowlists, team-wide region pinning, and regional hosting.
+AI Gateway also supports [Bring Your Own Key (BYOK)](/docs/ai-gateway/authentication-and-byok/byok) for any provider listed in our catalog. With BYOK, AI Gateway adds no markup to inference, and you pay the provider directly. Every [add-on surcharge](#add-on-surcharges) you have turned on still applies to BYOK requests and is charged to your AI Gateway Credits. That includes the team-wide provider and model allowlists, team-wide region pinning, and regional hosting. [Fallback to Vercel Keys](/docs/ai-gateway/authentication-and-byok/byok#turn-off-fallback-to-vercel-keys) is on by default. If you turn it off, AI Gateway also charges a [BYOK without fallback](#byok-without-fallback) fee.
 
-BYOK is available on the paid tier. When a request with your credentials fails, AI Gateway retries it with Vercel's provider keys for reliability, and that fallback usage is charged against your credits balance. To use your own provider keys, you'll need purchased AI Gateway Credits and a positive credit balance.
+BYOK is available on the paid tier. When a request with your credentials fails, AI Gateway retries it with Vercel's provider keys for reliability, and that fallback usage is charged against your credits balance. With Fallback to Vercel Keys off, failed requests don't fall back to Vercel's provider keys. To use your own provider keys, you'll need purchased AI Gateway Credits and a positive credit balance.
 
 ### API credits from provider subscriptions
 
 API credits claimed through eligible [ChatGPT subscriptions](/i/chatgpt-api-credits-ai-gateway) or [Claude subscriptions](/i/claude-api-credits-ai-gateway) stay in the linked provider organization. Use that organization's key with BYOK for eligible provider-billed requests. These grants don't top up your AI Gateway Credits balance or replace the purchased-credit requirement for BYOK.
 
-Exhausting a grant doesn't necessarily stop requests. A provider's purchased balance or automatic recharge can fund further usage, and AI Gateway can charge its own balance after a fallback to Vercel's provider keys. [AI Gateway budgets](/docs/ai-gateway/observability-and-spend/budgets) exclude BYOK spend, so configure provider-side spending controls as well.
+Exhausting a grant doesn't necessarily stop requests. A provider's purchased balance or automatic recharge can fund further usage, and AI Gateway can charge its own balance after a fallback to Vercel's provider keys. [AI Gateway budgets](/docs/ai-gateway/observability-and-spend/budgets) exclude BYOK spend, so configure provider-side spending controls as well. The [BYOK without fallback](#byok-without-fallback) fee is the exception.
 
 ## Add-on surcharges
 
-Some AI Gateway capabilities are off by default. When you enable one, it incurs additional charges beyond the per-token rates, deducted from your AI Gateway Credits balance. Disable the capability in your team's AI Gateway settings to stop the charges.
+Some AI Gateway capabilities are off by default. When you enable one, it incurs additional charges beyond the per-token rates, deducted from your AI Gateway Credits balance. Disable the capability in your team's AI Gateway settings to stop the charges. The [BYOK without fallback](#byok-without-fallback) fee works the other way and applies while Fallback to Vercel Keys is off.
 
 Per-request surcharges apply to each request AI Gateway bills. That includes a request billed without completing normally, such as a response the provider blocks on safety grounds and still charges for. Requests that AI Gateway doesn't bill aren't charged a surcharge. Surcharges apply to [BYOK](#bring-your-own-key-byok) requests too.
 
@@ -140,6 +140,31 @@ With [Regional Hosting](/docs/ai-gateway/security-and-compliance/regional-hostin
 The 5% is of the request's inference cost at market rate. It applies to every request sent to a regional endpoint, wherever inference runs. That includes BYOK requests, embedding, image, and other non-language requests, WebSocket sessions, and async batch and video jobs submitted to the endpoint. For a BYOK request, the provider bills you for inference, and the 5% is of what the request would cost at AI Gateway's market rate, charged to your AI Gateway Credits. Hobby teams and teams on a Pro trial can't use regional endpoints, and their requests to one fail with HTTP 403.
 
 To stop the charge, send requests to `https://ai-gateway.vercel.sh`.
+
+### BYOK without fallback
+
+AI Gateway charges $0.20 per 1,000 [BYOK](/docs/ai-gateway/authentication-and-byok/byok) requests while [Fallback to Vercel Keys](/docs/ai-gateway/authentication-and-byok/byok#turn-off-fallback-to-vercel-keys) is off. The setting is on by default, so BYOK requests have no fee until you turn it off. With the setting off, requests that your credentials serve can't fall back to Vercel-provided inference, meaning a catalog model that AI Gateway serves with Vercel's provider keys. [Private model](/docs/ai-gateway/security-and-compliance/private-inference) requests incur the same fee by default, because a private model request has no Vercel-provided fallback unless you add one. To avoid the fee, add a Vercel-provided fallback to the request's model chain and keep Fallback to Vercel Keys on. See [Fees for private models without a fallback](/docs/ai-gateway/security-and-compliance/private-inference#fees-for-private-models-without-a-fallback).
+
+| BYOK request                         | Cost                     |
+| ------------------------------------ | ------------------------ |
+| Fallback to Vercel Keys on (default) | No additional cost       |
+| Fallback to Vercel Keys off          | $0.20 per 1,000 requests |
+
+| Private model request                                                   | Cost                     |
+| ----------------------------------------------------------------------- | ------------------------ |
+| Vercel-provided fallback in the model chain, Fallback to Vercel Keys on | No additional cost       |
+| No Vercel-provided fallback in the model chain                          | $0.20 per 1,000 requests |
+| Any request while Fallback to Vercel Keys is off                        | $0.20 per 1,000 requests |
+
+AI Gateway charges the fee as follows:
+
+- The fee applies to all inference requests that your BYOK credentials or private models serve, across all routes.
+- AI Gateway doesn't charge requests that fail, for example because of a provider error or rate limit.
+- AI Gateway deducts the fee from your AI Gateway Credits balance, and the fee counts toward your [budgets](/docs/ai-gateway/observability-and-spend/budgets), even though BYOK token spend doesn't.
+- The fee applies on every plan at list price. [Enterprise](/docs/plans/enterprise) teams can [contact sales](/contact/sales) for custom rates.
+- At list price, 1,000,000 requests that incur the fee cost $200. Your provider bills you directly for tokens.
+
+To stop the charges, turn Fallback to Vercel Keys back on in your team's [AI Gateway settings](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-gateway%2Fsettings\&title=AI+Gateway+Settings), and give private model requests a Vercel-provided fallback.
 
 ## Trace Drains
 

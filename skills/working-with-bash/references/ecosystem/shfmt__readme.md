@@ -1,7 +1,7 @@
 ---
 source: "https://raw.githubusercontent.com/mvdan/sh/master/README.md"
-fetched_at: "2026-11-16T12:28:22.643Z"
-sha256: "6002bd5a443ae239dd1a5c873dc4e31a44a151e51d0067eef1ad1f1e45c78cb1"
+fetched_at: "2026-11-23T14:04:02.669Z"
+sha256: "3633b83a4eff80536394a3313f0fbe1dabd83961b6c7eb7767c50daed4e3393e"
 ---
 
 # sh
@@ -37,6 +37,15 @@ quick look at its default style. For example:
 
 For more information, see [its manpage](cmd/shfmt/shfmt.1.scd), which can be
 viewed directly as Markdown or rendered with [scdoc].
+
+`shfmt --to-json` and `--from-json` convert between shell and a JSON syntax
+tree, also available in Go via the [typedjson package](https://pkg.go.dev/mvdan.cc/sh/v3/syntax/typedjson).
+The format is described by [schema.json](syntax/typedjson/schema.json),
+generated from the [CUE](https://cuelang.org/) schema in [schema.cue](syntax/typedjson/schema.cue),
+which is also published to the CUE Central Registry:
+
+	shfmt --to-json <script.sh |
+		cue vet -c -d '#Node' github.com/mvdan/sh/syntax/typedjson@latest json: -
 
 Packages are available on [Alpine], [Arch], [Debian], [Docker], [Fedora], [FreeBSD],
 [Homebrew], [MacPorts], [NixOS], [OpenSUSE], [PyPI], [Scoop], [Snapcraft], [Void] and [webi].

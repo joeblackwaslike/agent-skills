@@ -17,8 +17,8 @@ summary: Connect Qwen Code to AI Gateway with the Vercel CLI or OpenAI-compatibl
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/coding-agents/qwen.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "87b2ac84000c4975661aac160a6e7b8869cd526a2fb75cf70cfe07642b95659e"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "e8b7bf9fa9de534a8f5bcea18f62f7a66901dde747a061737762ef9b7333751a"
 ---
 
 # Qwen Code with AI Gateway
@@ -31,12 +31,12 @@ sha256: "87b2ac84000c4975661aac160a6e7b8869cd526a2fb75cf70cfe07642b95659e"
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Qwen4-Max now available on AI Gateway](https://vercel.com/changelog/qwen4-max-now-available-on-ai-gateway)
 - [Qwen3-Coder is now supported in Vercel AI Gateway](https://vercel.com/changelog/qwen3-coder-is-now-supported-in-vercel-ai-gateway)
-- [Qwen 3.8 Max 0902 now available on AI Gateway](https://vercel.com/changelog/qwen-3-8-max-0902-now-available-on-ai-gateway)
 - [ZCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/zcode) — Connect ZCode to AI Gateway with the Vercel CLI or an OpenAI-compatible custom provider.
 - [Xcode with AI Gateway](https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/xcode) — Connect Xcode's AI chat to AI Gateway through the Chat Completions API. Configure the provider, API key, and models in X
 - [Command Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/command-code) — Connect Command Code to AI Gateway with your own API key and a custom base URL. Configure models, switch between them, a
+- [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
+- [Kilo Code with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/kilo-code) — Connect Kilo Code to AI Gateway with the Vercel CLI or an OpenAI-compatible provider configuration. Set your API key and
 
 Full cross-link map for this page: [/docs/ai-gateway/coding-agents/qwen.graph.md](/docs/ai-gateway/coding-agents/qwen.graph.md)
 <!-- /docsgraph:related -->

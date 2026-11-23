@@ -17,8 +17,8 @@ summary: Integrate powerful AI services and models seamlessly into your Vercel p
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/integrations-for-models.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "b5c4b794adcc99cee46bdefa8a4cd16039e1f7cc7066c6f6528282061d78c2db"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "02adf2b23ad77442339d3d4361a1674c27a9dbac6fbbfd6791e23c592df6a934"
 ---
 
 # Build with AI on Vercel
@@ -34,7 +34,6 @@ AI services and models help enhance and automate the building and deployment of 
 - [Introducing AI Integrations on Vercel](https://vercel.com/blog/ai-integrations)
 - [xAI and Vercel partner to bring zero-friction AI to developers](https://vercel.com/blog/xai-and-vercel-partner-to-bring-zero-friction-ai-to-developers)
 - [AI Integrations and playground in the Vercel Dashboard](https://vercel.com/changelog/ai-integration-and-playground-in-the-vercel-dashboard)
-- [Groq, fal, and DeepInfra join the Vercel Marketplace ](https://vercel.com/changelog/groq-fal-and-deepinfra-join-the-vercel-marketplace)
 - [Introducing AI agents & services on the Vercel Marketplace](https://vercel.com/changelog/introducing-ai-agents-and-services-on-the-vercel-marketplace)
 - [Build with AI agents on Vercel](https://vercel.com/docs/agent-resources/integrations-for-agents) — Install AI agents and services through the Vercel Marketplace to automate workflows and build custom AI systems.
 - [Vercel Integrations](https://vercel.com/docs/integrations) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte

@@ -18,8 +18,8 @@ summary: Learn how to integrate Vercel AI Gateway with Mastra to access multiple
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/ecosystem/framework-integrations/mastra.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "a6a2341c6d138e468ef51662d11c194789c8f89ba6ce4fe12db33907ddef5f12"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "a7c4cb4e4407ee8eaf95bd0f39d0e3f6887e7ace6465be732d91f544b4e93211"
 ---
 
 # Mastra with AI Gateway
@@ -34,7 +34,6 @@ Integrating with AI Gateway provides unified model management and routing capabi
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Muse Ember now available on AI Gateway](https://vercel.com/changelog/muse-ember-now-available-on-ai-gateway)
 - [Build a Software Factory with Mastra](https://vercel.com/docs/agent-resources/software-factory/mastra) — Combine Mastra workflow stages with AI Gateway, Vercel Sandbox, and GitHub Tools to prepare reviewed changes.
 - [Agent Frameworks on Vercel](https://vercel.com/docs/frameworks/agents) — Build AI agents with eve, Mastra, Flue, and Vercel. Learn how each framework connects to Vercel compute, models, and sto
 - [Getting Started with AI Gateway](https://vercel.com/docs/ai-gateway/getting-started) — Set up AI Gateway with a coding agent, route the agent through AI Gateway, or make your first request with cURL, TypeScr

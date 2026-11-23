@@ -18,8 +18,8 @@ summary: Create a Flue agent that uses Vercel AI Gateway for model requests, the
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/agents/flue.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "d742ebf0687357a8f484d5d876eae4cd12ab4060f4674e04982d65227a20c120"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "504ccab1fcd5fc780f2a69685a92d727e7b3c1428b546c16b57e825f3663db7a"
 ---
 
 # Flue with Vercel
@@ -32,8 +32,8 @@ Use [Flue](https://flueframework.com) with [AI Gateway](/docs/ai-gateway) to rou
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [Build Claude Managed Agents with Vercel Services](https://vercel.com/kb/guide/claude-managed-agents-vercel-services) — Deploy Claude Managed Agents with Vercel Services to run a streaming research analyst in a browser chat, using Anthropic
+- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [Run a research workspace on Vercel](https://vercel.com/kb/guide/run-research-workspace-vercel) — Plan a durable research workspace on Vercel's Agentic Infrastructure with Workflows, internal API tools, Vercel Sandbox
 - [Build user-aware TanStack Start apps with Vercel Passport](https://vercel.com/kb/guide/vercel-passport-tanstack-start) — Use \\`getIdentity\\(\\)\\` to read a visitor’s verified Vercel Passport identity in TanStack Start server functions, then p
 - [Private enterprise agents on Vercel](https://vercel.com/kb/guide/private-enterprise-agents-vercel) — Design private enterprise agents that call internal APIs and databases with Vercel Functions, Secure Compute, AI Gateway
@@ -282,7 +282,7 @@ The factory derives stable resource names from Flue's conversation ID. Reuse `--
 
 Keep one active owner for each conversation and workspace. A drive permits one read-write mount at a time. `Sandbox.getOrCreate()` resumes the named sandbox, while its creation settings, including mounts, apply only when creating it. Use [`sandbox.update()`](/docs/sandbox/sdk-reference#sandboxupdate) to change existing mounts.
 
-[Stop the sandbox](/docs/sandbox/sdk-reference#sandboxstop) after its work settles to release compute while retaining the drive's files. Delete the sandbox and drive when you no longer need them. Drive storage persists until you delete it; see [deleting a drive](/docs/sandbox/concepts/drives#deleting-a-drive).
+[Stop the sandbox](/docs/sandbox/sdk/javascript#sandbox.stop) after its work settles to release compute while retaining the drive's files. Delete the sandbox and drive when you no longer need them. Drive storage persists until you delete it; see [deleting a drive](/docs/drives/cli-reference#vercel-drives-delete).
 
 To verify that the drive preserves files independently, write a file, then stop and remove the sandbox using its printed name. The removal keeps the drive. Run the same conversation again to create a new sandbox that mounts the existing drive:
 

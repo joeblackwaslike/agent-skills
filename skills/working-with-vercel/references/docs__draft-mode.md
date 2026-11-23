@@ -17,8 +17,8 @@ summary: "Vercel's Draft Mode enables you to view your unpublished headless CMS 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/draft-mode.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "0ba96febb19753d5b5585feb87265894ce2e3f77a1d8a31bf00985e18a0cec5e"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "99a826c521dc81ce317a6a85d75e741b71d8d449d889d1e5b1aa866aa6055968"
 ---
 
 # Draft Mode
@@ -36,13 +36,13 @@ Draft Mode lets you view your unpublished headless CMS content on your website r
 - [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Vercel vs Northflank](https://vercel.com/kb/guide/vercel-vs-northflank) — A detailed guide to Vercel vs Northflank: Fluid compute, CDN and caching, container image functions, security defaults,
 - [Vercel vs Railway](https://vercel.com/kb/guide/vercel-vs-railway) — A detailed guide to Vercel vs Railway: serverless vs always-on containers, container images from a Dockerfile, framework
-- [Enhanced content management for your headless CMS](https://vercel.com/blog/enhanced-content-management-for-headless-cmses)
 - [draftMode](https://nextjs.org/docs/app/api-reference/functions/draft-mode) — API Reference for the draftMode function.
+- [Enhanced content management for your headless CMS](https://vercel.com/blog/enhanced-content-management-for-headless-cmses)
 - [Features](https://vercel.com/docs/build-output-api/features) — Learn how to implement common Vercel platform features through the Build Output API.
 - [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
 - [Frontends on Vercel](https://vercel.com/docs/frameworks/frontend) — Vercel supports a wide range of the most popular frontend frameworks, optimizing how your application builds and runs no
 - [Redacting Sensitive Data from Web Analytics Events](https://vercel.com/docs/analytics/redacting-sensitive-data) — Learn how to redact sensitive data from your Web Analytics events.
-- [Draft Flags](https://vercel.com/docs/flags/vercel-flags/dashboard/drafts) — Learn how draft flags work and how to promote them to Vercel Flags.
+- [Edit Mode](https://vercel.com/docs/edit-mode) — Discover how Vercel's Edit Mode enhances content management for headless CMSs, enabling real-time editing, and seamless
 
 Full cross-link map for this page: [/docs/draft-mode.graph.md](/docs/draft-mode.graph.md)
 <!-- /docsgraph:related -->

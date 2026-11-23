@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/third-party-integrations.md"
-fetched_at: "2026-11-16T12:28:44.823Z"
-sha256: "4854ed8df1827317c61ac430199da957e45dcad784487cd888b00ce6155fc8dd"
+fetched_at: "2026-11-23T14:04:20.448Z"
+sha256: "a60563eaf4573847e02c1ac7dbccdc16e66d21b808dec33d668cc1abb90aa742"
 ---
 
 > ## Documentation Index
@@ -176,7 +176,7 @@ If you deploy through [Amazon Bedrock](https://code.claude.com/docs/en/amazon-be
 
 ### Configure security policies
 
-Security teams can configure managed permissions for what Claude Code is and is not allowed to do, which cannot be overwritten by local configuration. [Learn more](https://code.claude.com/docs/en/security.md).
+Security teams can configure managed permissions for what Claude Code is and is not allowed to do. [Learn more](https://code.claude.com/docs/en/security.md).
 
 To limit which of these deployment options a managed machine may use, set [`allowedProviders`](https://code.claude.com/docs/en/settings-reference#allowedproviders) in managed settings. For example, `["bedrock"]` allows Amazon Bedrock and nothing else; a Bedrock fleet that also enables the Mantle endpoint lists `"mantle"` too. The entry says which endpoint variables also need a managed `env` pin. Requires Claude Code v2.1.285 or later.
 

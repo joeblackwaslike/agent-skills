@@ -9,20 +9,20 @@ prerequisites:
   - /docs/cli
 related:
   - /docs/cli/budgets
-  - /docs/cli/contract
   - /docs/cli/usage
+  - /docs/rbac/access-roles
   - /docs/cli/global-options
-summary: Learn how to view your billing overview, usage, contracts, budgets, and invoices for your Vercel team using the vercel billing CLI command.
+summary: Learn how to view your billing overview, usage, budgets, and invoices for your Vercel team using the vercel billing CLI command.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/billing.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "719fb08837b55ef7ad024aee6eadfab922337a5b366e18b29cc41f8e80a4720b"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "5e512b934ae733e876d98cbcc74b0e002733e745a5059c7b5e8a4e7f94d9e328"
 ---
 
 # vercel billing
 
-The `vercel billing` command groups the commands for your team's billing. Use it to see your plan and balance due, check usage and costs, review contract commitments, manage your Spend Management budgets, list, inspect, or download invoices, and see an estimate of your next invoice.
+The `vercel billing` command groups the commands for your team's billing. Use it to see your plan and balance due, check usage and costs, manage your Spend Management budgets, list, inspect, or download invoices, and see an estimate of your next invoice.
 
 
 <!-- docsgraph:related -->
@@ -30,11 +30,12 @@ The `vercel billing` command groups the commands for your team's billing. Use it
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Vercel Billing CLI is now available](https://vercel.com/changelog/vercel-billing-cli-is-now-available)
 - [Billing & Invoices](https://vercel.com/docs/pricing/understanding-my-invoice) — Learn how Vercel invoices are structured for Pro and Enterprise plans, including plan charges, credits, and usage-based
-- [vercel organizations](https://vercel.com/docs/cli/organizations) — Create and manage organizations and their child teams with the vercel organizations CLI command.
 - [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
-- [vercel buy](https://vercel.com/docs/cli/buy) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
 - [Billing FAQ for Enterprise Plan](https://vercel.com/docs/plans/enterprise/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Enterprise plan.
+- [vercel organizations](https://vercel.com/docs/cli/organizations) — Create and manage organizations and their child teams with the vercel organizations CLI command.
+- [vercel buy](https://vercel.com/docs/cli/buy) — Learn how to purchase Vercel products like credits, addons, subscriptions, and domains using the vercel buy CLI command.
 
 Full cross-link map for this page: [/docs/cli/billing.graph.md](/docs/cli/billing.graph.md)
 <!-- /docsgraph:related -->
@@ -44,9 +45,8 @@ Running `vercel billing` with no subcommand lists these commands.
 | Command                                                       | Description                                                       |
 | ------------------------------------------------------------- | ----------------------------------------------------------------- |
 | [`vercel billing budgets`](/docs/cli/budgets)                 | View and manage Spend Management budgets                          |
-| [`vercel billing contract`](/docs/cli/contract)               | Show contract information for all billing periods                 |
 | [`vercel billing invoices`](#vercel-billing-invoices)         | List, inspect, and download invoices                              |
-| [`vercel billing overview`](#vercel-billing-overview)         | Show the plan, billing cycle, balance due, and overdue invoices   |
+| [`vercel billing overview`](#vercel-billing-overview)         | Show the plan, billing cycle, balance due, overdue invoices, and invoice details |
 | [`vercel billing usage`](/docs/cli/usage)                     | Show billing usage and costs                                      |
 
 You can place options before or after subcommands. For example, list budget alerts as JSON:
@@ -147,10 +147,11 @@ Upcoming invoices need a team with an active paid subscription and access to its
 Use `vercel billing invoices download <invoice>` to save an invoice as a PDF. By default, it writes `<INVOICE_NUMBER>.pdf` to the current directory. It never overwrites an existing file. Replace `<INVOICE_ID>` with the full invoice ID from `list`:
 
 ```bash filename="terminal"
-vercel billing invoices download <INVOICE_ID> --output invoice.pdf
+$ vercel billing invoices download <INVOICE_ID> --output invoices/september.pdf
+✓ Downloaded      invoices/september.pdf
 ```
 
-*Downloading an invoice to a specific file*
+*Downloading an invoice into an \`invoices\` folder in the current directory*
 
 | Option     | Required | Description                                                 |
 | ---------- | -------- | ----------------------------------------------------------- |
@@ -158,9 +159,9 @@ vercel billing invoices download <INVOICE_ID> --output invoice.pdf
 
 ## vercel billing overview
 
-Use `vercel billing overview` to see your team's plan, billing status, billing cycle, balance due, and overdue invoices in one command.
+Use `vercel billing overview` to see your team's plan, billing status, billing cycle, balance due, overdue invoices, and invoice details in one command.
 
-This subcommand is available in `vercel@65.15.0` and later.
+This subcommand is available in `vercel@65.15.0` and later. It shows invoice details in `vercel@65.17.0` and later.
 
 ```bash filename="terminal"
 $ vercel billing overview
@@ -172,6 +173,11 @@ $ vercel billing overview
   Balance Due     $35.30
   Overdue         $20.10 (1 invoice)
 
+  Invoice Email    invoices@example.com
+  Company Name     Example Inc.
+  Billing Address  340 S Lemon Ave, Walnut, CA 91789, US
+  Tax ID           12-3456789 (us_ein)
+
   See unpaid invoices:
     vercel billing invoices list --status open --status uncollectible
 ```
@@ -181,16 +187,24 @@ $ vercel billing overview
 | Row             | Description                                                                                                                                  |
 | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Plan`          | Your team's Vercel plan, such as Hobby, Pro, or Enterprise. The overview doesn't show v0 plans or add-ons.                                   |
-| `Status`        | Your team's billing status, such as `Active`. During a trial, it shows when the trial ends, for example `Trial, ends 2026-11-20`.            |
+| `Status`        | Your team's billing status, such as `Active`. During a trial, it shows when the trial ends, for example `Trial, ends 2026-11-20`, or `Trialing` if your role can't read the trial dates. |
 | `Billing Cycle` | The start and end dates of the current billing cycle, in UTC. It only appears for plans that show a billing cycle in the dashboard.          |
 | `Balance Due`   | The unpaid amount of your open and uncollectible invoices.                                                                                   |
 | `Overdue`       | The part of the balance due that's past its due date, with the number of overdue invoices, or `None`.                                        |
+| `Invoice Email` | The email address that receives your team's invoices. Without one, invoices go to the email address of the team's creator, or to your account's email address on a personal account.                  |
+| `Company Name`  | The name shown on your invoices instead of your team name.                                                                                   |
+| `Billing Address` | The billing address shown on your invoices, on one line.                                                                                   |
+| `Tax ID`        | The tax ID shown on your invoices, followed by its type, for example `12-3456789 (us_ein)`.                                                  |
+| `Purchase Order` | The purchase order line shown on your invoices.                                                                                             |
+| `Invoice Language` | The language code for your invoices, such as `en`.                                                                                       |
 
-`Balance Due` and `Overdue` count the same invoices as [`vercel billing invoices list`](#list), including v0 invoices, so both need access to your team's invoices. Without that access, the overview shows the `Plan`, `Status`, and `Billing Cycle` rows and a warning to ask a team owner for access, and the command still exits with `0`.
+`Balance Due` and `Overdue` count the same invoices as [`vercel billing invoices list`](#list), including v0 invoices, so both need access to your team's invoices. Without that access, the overview leaves out those two rows and shows a warning to ask a team owner for access, and the command still exits with `0`.
+
+The invoice details appear in a second block after `Overdue`, with one row for each detail that's set. The overview also leaves out any detail your role can't read, so a missing row doesn't mean the detail is empty. The Owner, Billing, and Member [roles](/docs/rbac/access-roles) can read all six details, and other roles can't read any. When no details show, the overview leaves out the block.
 
 | Option   | Required | Description                                                                                                                                                                                     |
 | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--json` | No       | Print the overview as JSON. The `billing` object holds `plan`, `status`, `period`, `trial`, and `balance`. Dates are millisecond timestamps and amounts are strings. Without access to invoices, `billing.balance` is `null` and a top-level `warnings` array explains why. |
+| `--json` | No       | Print the overview as JSON. The `billing` object holds `plan`, `status`, `period`, `trial`, and `balance`, plus the invoice details `email`, `name`, `address`, `tax`, `purchaseOrder`, and `language` with the API's names and shapes. `address` is an object with up to six fields (`line1`, `line2`, `city`, `state`, `postalCode`, and `country`), and `tax` is an object with `type` and `id`. An empty invoice detail is `null` or left out. The API also leaves out any detail your role can't read, so a missing field doesn't mean the detail is empty. Dates are millisecond timestamps and amounts are strings. Without access to invoices, `billing.balance` is `null` and a top-level `warnings` array explains why. |
 
 ## Global Options
 

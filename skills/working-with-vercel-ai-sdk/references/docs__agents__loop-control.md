@@ -4,8 +4,8 @@ description: Control agent execution with built-in loop management using stopWhe
 url: "https://ai-sdk.dev/docs/agents/loop-control"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/agents/loop-control.md"
-fetched_at: "2026-11-16T12:32:31.917Z"
-sha256: "a1d193a5a7e7ff87735f695070d662c924757d1e73ef6c04a0c4aae9676814ce"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "1e856c24edb2ab72b0851f2ef2a7718ee41007522b45e6db3677a9a9a471e4aa"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -467,6 +467,29 @@ prepareStep: ({ initialMessages, steps, experimental_steeringMessages }) => ({
   ],
 }),
 ```
+
+### Interrupting the Current Model Call
+
+A steering message waits for the current step by default. Pass `interrupt: true` to cut the current model call short when the model has not produced any output yet, e.g. for a correction like "stop, use the other file":
+
+```ts
+steering.steer('Stop, use the other file.', { interrupt: true });
+```
+
+- When the model call has not produced any text, reasoning, tool input, or tool call yet, it is cancelled and made again in the same step with the message. The step keeps its step number and does not count toward stop conditions.
+- `generateText` receives the output of a model call all at once, so the call can be cancelled until it returns. A response that is almost complete is discarded.
+- When output has already started, or tools are running, the message is added at the next step boundary like any other steering message. Running tools are never interrupted. Stop conditions apply to that next step: with the default of one step, the message is not delivered and `steer()` reports the reason `stop-condition`.
+- `prepareStep` runs again for the new model call and receives the message in `experimental_steeringMessages`. It gets the same `instructions`, `runtimeContext`, and `toolsContext` as its first call for the step.
+- `onStepStart` is called once per step, before the first model call, so its `messages` do not contain the interrupting message. `onLanguageModelCallStart` is called again for the new model call. `onLanguageModelCallEnd` is not called for the cancelled one.
+- `streamText` closes the text and reasoning parts of the cancelled call and streams the `steering-message` part before the new output. A part that was closed before it got any content stays in the UI message as an empty text or reasoning part.
+- A cancelled model call can still be billed by the provider. It is not included in `usage` and `totalUsage`.
+
+Stop conditions and usage do not limit interrupts. Each interrupt makes
+another model call in the same step, so a stop condition like `isStepCount`
+does not count it, and `totalUsage` leaves out the cancelled calls. If your
+users can send interrupting messages, limit how many you accept for one call
+and set a `timeout`. The step and total timeouts keep running when a step is
+redone.
 
 ### Queueing Messages
 

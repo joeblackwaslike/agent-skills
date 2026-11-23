@@ -18,8 +18,8 @@ summary: Trusted IPs let you restrict access to your deployments to a list of al
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployment-protection/methods-to-protect-deployments/trusted-ips.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "831e326f932e54bd81d6d6ab051052a591fa7a9900dc3073166754e9f098b708"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "25e54e60c2c9fa52abfd07e0c919c503ef04a8ec0e58d8aa7eb09d3e05950bbd"
 ---
 
 # Restrict deployment access by IP address
@@ -46,10 +46,10 @@ With Trusted IPs [enabled](/docs/deployment-protection/methods-to-protect-deploy
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to choose the right Vercel networking option](https://vercel.com/kb/guide/how-to-choose-the-right-vercel-networking-option) — Decide whether your project needs a networking option at all, then choose between Static IPs, AWS PrivateLink, Secure Co
-- [How to effectively load test your application on Vercel](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
 - [Choose between Vercel Passport and other Deployment Protection methods](https://vercel.com/kb/guide/vercel-passport-vs-deployment-protection) — Compare Vercel Passport with Vercel Authentication, Password Protection, and Trusted IPs to choose the right Deployment
 - [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Vercel vs Fastly](https://vercel.com/kb/guide/vercel-vs-fastly) — A detailed guide to Vercel vs Fastly: full-stack application platform vs CDN infrastructure layer, covering framework su
+- [Vercel vs Netlify](https://vercel.com/kb/guide/vercel-vs-netlify) — A detailed guide to Vercel vs Netlify: runtimes, compute architecture, AI infrastructure, security, and when to choose e
 - [Trusted IPs for Deployment Protection is now Generally Available](https://vercel.com/changelog/trusted-ips-is-now-generally-available-for-enterprise-customers)
 - [Trusted Sources for Deployment Protection](https://vercel.com/changelog/trusted-sources-for-deployment-protection)
 - [Automated & Agent Access](https://vercel.com/docs/deployment-protection/automated-agent-access) — Grant AI agents, CI/CD pipelines, MCP servers, and testing tools access to Vercel deployments that have Deployment Prote
@@ -60,6 +60,8 @@ Full cross-link map for this page: [/docs/deployment-protection/methods-to-prote
 <!-- /docsgraph:related -->
 
 Trusted IPs works well if you access Vercel deployments through a specific IP address. For example, you can limit preview deployment access to your VPN. You can also enable Trusted IPs in production to restrict incoming access to only requests through your external proxy.
+
+If your team isn't on the Enterprise plan, [contact our sales team](/contact/sales) to get access to Trusted IPs.
 
 ![Enabling Trusted IPs.](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/front/docs/security/trusted-ips-dash-light.png)
 

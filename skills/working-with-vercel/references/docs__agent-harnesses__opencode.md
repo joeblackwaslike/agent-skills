@@ -17,8 +17,8 @@ summary: Run OpenCode v2 inside a Vercel Function with its session in a durable 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-harnesses/opencode.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "74c377b41475e188e179f30f29276ee12002dd1b96ab0bc42aa9539ca93ca63a"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "8888b2bfbb2ab347a1b8795cb23eb5b4c57671809ad0a1a0df0d444b1ffc1906"
 ---
 
 # Running OpenCode Durably on Vercel
@@ -34,8 +34,8 @@ sha256: "74c377b41475e188e179f30f29276ee12002dd1b96ab0bc42aa9539ca93ca63a"
 - [Making every harness durable](https://vercel.com/blog/making-every-harness-durable)
 - [Workflow SDK 5: built for production](https://vercel.com/blog/workflow-sdk-5)
 - [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents) — Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment change
-- [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
 - [How to build a durable AI code agent on Vercel](https://vercel.com/kb/guide/how-to-build-a-durable-ai-code-agent-on-vercel) — Build an AI agent that generates code, writes its own tests, and executes them in an isolated microVM with automatic ret
+- [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
 - [Running Codex Durably on Vercel](https://vercel.com/docs/agent-harnesses/codex) — Run Codex in a Vercel Sandbox, driven by a Vercel Function, with its session in a durable log, so a crashed turn resumes
 - [Observability for Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/observability) — See each durable agent session in Vercel Agent Runs, with its turns, model and tool calls, timing, and token usage, and
 - [Running fx Durably on Vercel](https://vercel.com/docs/agent-harnesses/fx) — Deploy an fx agent with libfx so its sessions survive crashes, function timeouts, and redeploys on Vercel.

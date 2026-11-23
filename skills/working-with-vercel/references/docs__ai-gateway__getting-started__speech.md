@@ -17,8 +17,8 @@ summary: Generate speech and transcribe it using AI Gateway.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/getting-started/speech.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "0f7ad7e1769f59c260aa6d6dd91dd49fb18e03d9b2a6b02ff3e454dd80b9d0e0"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "565aba8a95b1e871ac49e4ade5c2901d60699ee44a6f43d0fa0005e00bf97ce7"
 ---
 
 # AI Gateway Speech Quickstart: Transcription and TTS
@@ -51,7 +51,7 @@ Paste this prompt into a coding agent with terminal access:
 **Agent prompt**
 
 ```text
-Add a text-to-speech and speech-to-text round trip through AI Gateway in the current environment. Use the AI Gateway skill for this task. If it is unavailable, run npx skills add vercel/vercel-plugin --skill ai-gateway, then find and read its SKILL.md before continuing. Reuse the environment's language, framework, package manager, and AI client when possible, choose AI Gateway SDKs or APIs that support speech generation and transcription, and add only required dependencies. Read AI_GATEWAY_API_KEY from the environment. If it is missing, run npx vercel@latest whoami and pause for login if needed. Determine the team, then run npx vercel@latest --scope <team-slug> ai-gateway api-keys create --name <descriptive-name>. Capture stdout directly into AI_GATEWAY_API_KEY for the request or existing ignored secret storage, and never expose the value. Use openai/tts-1 and openai/whisper-1, save the audio, print the transcript, run the result, and report the output.
+Add a text-to-speech and speech-to-text round trip through AI Gateway in the current environment. Use the AI Gateway skill for this task. If it is unavailable, run npx skills add vercel/vercel-plugin --skill ai-gateway, then find and read its SKILL.md before continuing. Reuse the environment's language, framework, package manager, and AI client when possible, choose AI Gateway SDKs or APIs that support speech generation and transcription, and add only required dependencies. Read AI_GATEWAY_API_KEY from the environment. If it is missing, run npx vercel@latest whoami and pause for login if needed. Determine the team, then run npx vercel@latest --scope <team-slug> ai-gateway api-keys create --name <descriptive-name>. Capture stdout directly into AI_GATEWAY_API_KEY for the request or existing ignored secret storage, and never expose the value. Use openai/tts-1 and openai/gpt-transcribe, save the audio, print the transcript, run the result, and report the output.
 ```
 
 ### Run the Node.js example
@@ -88,7 +88,7 @@ const speech = await generateSpeech({
 await writeFile('speech.mp3', speech.audio.uint8Array);
 
 const transcript = await transcribe({
-  model: 'openai/whisper-1',
+  model: 'openai/gpt-transcribe',
   audio: speech.audio.uint8Array,
 });
 

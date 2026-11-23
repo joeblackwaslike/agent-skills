@@ -1,8 +1,8 @@
 ---
 title: "Contribution Points"
 source: "https://code.visualstudio.com/api/references/contribution-points"
-fetched_at: "2026-11-16T12:28:04.438Z"
-sha256: "7fadaa0c194b7bd96b94177b84865f459e1cc77871e9979104400efc4e6687a7"
+fetched_at: "2026-11-23T14:03:48.286Z"
+sha256: "300c6f73aeaa5ee1c356999b362359d8245558178ba17bc94e817fe75eaf8880"
 ---
 
 # Contribution Points
@@ -84,6 +84,8 @@ Copy as Markdown
 - [languageModelChatProviders](https://code.visualstudio.com/api/references/contribution-points#contributes.languageModelChatProviders)
 
 - [languageModelTools](https://code.visualstudio.com/api/references/contribution-points#contributes.languageModelTools)
+
+- [localizations](https://code.visualstudio.com/api/references/contribution-points#contributes.localizations)
 
 - [menus](https://code.visualstudio.com/api/references/contribution-points#contributes.menus)
 
@@ -1313,6 +1315,47 @@ Tags used to categorize or group the tool.
 
 See the [Language Model Tool API guide](https://code.visualstudio.com/api/extension-guides/ai/tools) for implementation details, including how to handle confirmations, stream results, and define typed input parameters.
 
+## contributes.localizations
+
+Contribute display language translations for VS Code or other extensions (commonly used in Language Pack extensions).
+
+Here is an example `localizations` contribution:
+
+
+```
+{
+  "contributes": {
+    "localizations": [
+      {
+        "languageId": "es",
+        "languageName": "Spanish",
+        "localizedLanguageName": "Español",
+        "translations": [
+          {
+            "id": "vscode",
+            "path": "./translations/main.i18n.json"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+Each entry in the `localizations` array supports the following properties:
+
+- `languageId` - (required) Identifier of the language into which the display strings are translated (for example, `"es"` or `"zh-cn"`).
+
+- `languageName` - Name of the language in English.
+
+- `localizedLanguageName` - Name of the language in the contributed language.
+
+- `translations` - (required) Array of translation entries associated with the language. Each item requires:
+
+`id` - Identifier of VS Code or the extension that the translation targets. Use `"vscode"` for VS Code itself, or `publisherId.extensionName` for an extension.
+
+- `path` - Relative path to the JSON file containing the translations for the language.
+
 ## contributes.menus
 
 Contribute a menu item for a command to the editor or Explorer. The menu item definition contains the command that should be invoked when selected and the condition under which the item should show. The latter is defined with the `when` clause, which uses the key bindings [when clause contexts](https://code.visualstudio.com/api/references/when-clause-contexts).
@@ -2327,4 +2370,4 @@ Available completion events include:
 Once a step has been checked off, it will remain checked off until the user explicitly unchecks the step or resets their progress (via the **Getting Started: Reset Progress** command).
 
  
- 11/11/2026
+ 11/18/2026

@@ -17,8 +17,8 @@ summary: Use the project settings, to configure custom domains, environment vari
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/project-configuration/project-settings.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "541f5aa857cf880c7340066fd7fd3db381f9126dcf986146af7cb9868282d2e5"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "0013dc6a1e79008f6ec4ddd3751f21b274297b95221c5374f14893fcb7ad1b59"
 ---
 
 # Project settings
@@ -31,11 +31,13 @@ From the Vercel [dashboard](https://vercel.com/d?to=%2Fdashboard\&title=Open+Das
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Pull-request-only preset now available for preview builds](https://vercel.com/changelog/pull-request-only-preset-now-available-for-preview-builds)
+- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-to-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Managing projects](https://vercel.com/docs/projects/managing-projects) — Learn how to manage your projects through the Vercel Dashboard.
+- [Build Features for Customizing Deployments](https://vercel.com/docs/builds/build-features) — Learn how to customize your deployments using Vercel's build features.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Builds](https://vercel.com/docs/builds) — Understand how the build step works when creating a Vercel Deployment.
-- [Account Management](https://vercel.com/docs/accounts) — Learn how to manage your Vercel account and team members.
 
 Full cross-link map for this page: [/docs/project-configuration/project-settings.graph.md](/docs/project-configuration/project-settings.graph.md)
 <!-- /docsgraph:related -->

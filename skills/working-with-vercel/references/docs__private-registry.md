@@ -8,6 +8,7 @@ type: conceptual
 prerequisites:
   []
 related:
+  - /docs/builds/build-features
   - /docs/rest-api
   - /docs/environment-variables/sensitive-environment-variables
   - /docs/conformance
@@ -15,8 +16,8 @@ summary: "Learn how to set up Vercel's private registry for use locally, in Verc
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/private-registry.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "31a2e003c52628cdd9a826b64e6c3150763ff5a745806dbb96b757c9d065b630"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "53396d564542507601e7fdba9bdd2e994c4b24758c90c4c7c479fefb1a3d3091"
 ---
 
 # Working with Vercel
@@ -25,7 +26,7 @@ Vercel distributes packages with the `@vercel-private` scope through our
 private npm registry, requiring authentication through a Vercel account for
 each user.
 
-This guide covers Vercel's private registry packages. For information on using your own private npm packages with Vercel, see our guide on [using private dependencies with Vercel](/kb/guide/using-private-dependencies-with-vercel).
+This guide covers Vercel's private registry packages. For information on using your own private npm packages with Vercel, see [private npm packages](/docs/builds/build-features#private-npm-packages).
 
 > **💡 Note:** Access to `@vercel-private` packages is linked to access to products. If you
 > have trouble accessing a package, please check that you have access to the

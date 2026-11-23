@@ -17,8 +17,8 @@ summary: eve agents are durable out of the box on Vercel, with no extra configur
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-harnesses/eve.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "d479ac15006e6b8f6ed75e1deacf9e6e7550592b2a6f4092f8079a6bee7ed975"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "36ad1ef22ab3e0a1519df3e75ce192276cd23564fc837b560b3b2af85609c635"
 ---
 
 # Running eve Agents Durably on Vercel
@@ -36,7 +36,6 @@ sha256: "d479ac15006e6b8f6ed75e1deacf9e6e7550592b2a6f4092f8079a6bee7ed975"
 - [Deploy to Vercel](https://eve.dev/docs/guides/deployment/vercel) — Deploy an eve agent with Vercel Workflow, Sandbox, Schedules, and project credentials.
 - [Introducing eve, an open-source agent framework](https://vercel.com/changelog/introducing-eve-an-open-source-agent-framework)
 - [Deployment](https://eve.dev/docs/guides/deployment) — How an eve agent runs in production, and the backends you choose on Vercel or your own infrastructure.
-- [Trace and debug eve agent sessions with Vercel Observability](https://vercel.com/changelog/eve-agent-observability)
 - [Give your eve agent secure access to your private AWS RDS database](https://vercel.com/kb/guide/give-eve-agent-secure-access-to-aws-rds-database) — Connect an eve agent to a private AWS RDS database using Vercel Secure Compute and VPC peering, with a read-only query t
 - [Agent Harnesses You Can Run Durably on Vercel](https://vercel.com/docs/agent-harnesses/harnesses) — Guides for running Pi, fx, OpenCode, eve, Claude Code, and Codex durably on Vercel, so a crash or a timeout resumes the
 - [Agent Frameworks on Vercel](https://vercel.com/docs/frameworks/agents) — Build AI agents with eve, Mastra, Flue, and Vercel. Learn how each framework connects to Vercel compute, models, and sto

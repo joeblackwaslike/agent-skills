@@ -17,8 +17,8 @@ summary: Learn how Vercel Firewall helps protect your applications and websites 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-firewall.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "06be8ba01fb4f03234b0fa67fe92cc248e7f56540611ad93f31188c63cfc93ad"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "c22b0800a1e57f26498a065c0bce0027606c429140854698425a30eb5daac719"
 ---
 
 # Vercel Firewall
@@ -31,10 +31,6 @@ The Vercel Firewall is a robust, multi-layered security system designed to prote
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Preventing infrastructure abuse with Vercel Firewall](https://vercel.com/blog/preventing-infrastructure-abuse-with-vercel-firewall)
-- [Life of a Vercel request: Securing your app's traffic with Vercel](https://vercel.com/blog/life-of-a-request-securing-your-apps-traffic-with-vercel)
-- [Vercel WAF upgrade brings persistent actions, rate limiting, and API control](https://vercel.com/blog/vercel-waf-upgrade-brings-persistent-actions-rate-limiting-and-api-control)
-- [Introducing the Vercel Web Application Firewall](https://vercel.com/blog/introducing-the-vercel-waf)
 - [Control AI crawlers and assistants separately in Vercel Firewall](https://vercel.com/changelog/block-ai-crawlers-and-assistants-independently-with-managed-rules)
 - [Bot Protection is now generally available](https://vercel.com/changelog/bot-protection-is-now-generally-available)
 - [Bot Protection is now in public beta](https://vercel.com/changelog/bot-protection-is-now-in-public-beta)
@@ -42,7 +38,11 @@ The Vercel Firewall is a robust, multi-layered security system designed to prote
 - [Create Vercel Firewall rules with natural language](https://vercel.com/changelog/create-vercel-waf-custom-rules-using-natural-language)
 - [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
 - [Building an AI chat app with RAG and source citations on Vercel](https://vercel.com/kb/guide/building-ai-chat-app-with-rag-and-citations-on-vercel) — A production stack for AI chat with retrieval, reranking, source citations, and background ingestion on Vercel using Nex
-- [Using Cloudflare and other reverse proxies with Vercel](https://vercel.com/kb/guide/can-i-use-a-proxy-on-top-of-my-vercel-deployment) — General information about using an external proxy to serve a Vercel Deployment.
+- [Deploy a Go backend on Vercel with AI Gateway](https://vercel.com/kb/guide/deploy-a-go-backend-on-vercel-with-ai-gateway) — Build and deploy a Go HTTP server that calls AI Gateway using the standard library, with no SDK dependencies.
+- [How to build and maintain HIPAA-compliant applications on Vercel](https://vercel.com/kb/guide/hipaa-compliance-guide-vercel) — Deploy HIPAA-compliant healthcare apps on Vercel with built-in security, BAAs, and scalable serverless infrastructure.
+- [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
+- [How we run Vercel's CDN in front of Discourse](https://vercel.com/blog/how-we-run-vercels-cdn-in-front-of-discourse)
+- [Vercel for Enterprise](https://vercel.com/blog/vercel-for-enterprise)
 
 Full cross-link map for this page: [/docs/vercel-firewall.graph.md](/docs/vercel-firewall.graph.md)
 <!-- /docsgraph:related -->
@@ -100,12 +100,23 @@ You can use the following tools to [monitor the internet traffic](/docs/vercel-f
 - [Firewall alerts](/docs/vercel-firewall/firewall-observability#firewall-alerts) allow you to react quickly to potential security threats.
 - Use [Drains](/docs/drains/using-drains) to send your application logs to a Security Information and Event Management (SIEM) system.
 
+## Priority projects
+
+[Priority projects](/docs/vercel-firewall/priority-projects) are an add-on for Pro and Enterprise teams that you enable per project. Priority builds on the firewall with:
+
+- Visibility into unverified [bot traffic](/docs/bot-management) and richer bot categories.
+- Bot signals in [custom rules](/docs/vercel-firewall/vercel-waf/custom-rules) and in middleware and functions.
+- Advanced [security observability](/docs/vercel-firewall/firewall-observability) with additional query builder fields.
+- Firewall and BotID anomaly alerts, and [higher Firewall limits](/docs/vercel-firewall/priority-projects#higher-firewall-limits).
+- [Page Integrity](/docs/vercel-firewall/page-integrity) for script inventory, monitoring, and blocking.
+- The [OWASP core ruleset](/docs/vercel-firewall/vercel-waf/managed-rulesets#configure-owasp-core-ruleset) for protection against the OWASP Top 10 on Pro. Enterprise teams can use it on every project.
+
 ## Related guides
 
-- [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation): A practical checklist for keeping your storefront fast and your checkout path healthy through Black Friday and Cyber Monday traffic, from load testing to instant rollback.
+- [How to keep your storefront running through Black Friday](https://vercel.com/kb/guide/black-friday-reliability): Learn how to tune alerts, bot rules, and spend limits. Rehearse rollback so your team can recover quickly from checkout or order issues on Black Friday.
+- [How to prepare your storefront for Black Friday traffic](https://vercel.com/kb/guide/black-friday-preparation): Set baselines and cut backend load. Make your catalog readable to agents and keep orders and AI features reliable. Then load test checkout before traffic peaks.
 - [Supporting Compliance with Vercel WAF](https://vercel.com/kb/guide/supporting-compliance-with-vercel-waf): Vercel Firewall provides edge-based traffic filtering and monitoring to help teams meet compliance requirements in security and regulatory frameworks, including PCI DSS, ISO 27001, SOC 2, and HIPAA.
 - [How to conduct PCI scans on Vercel: A complete guide to IP safelisting](https://vercel.com/kb/guide/how-to-conduct-pci-scans-on-vercel-guide): Scan and verify your Vercel deployments for secure, PCI-compliant payment processing.
-- [How to block bots from OpenAI GPTBot](https://vercel.com/kb/guide/how-to-block-bots-openai-gptbot): Learn how to use the Vercel WAF to block, rate limit, or challenge traffic from OpenAI GPTBot.
 
 ## Search the docs from your terminal
 

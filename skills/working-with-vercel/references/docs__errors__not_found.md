@@ -11,12 +11,13 @@ related:
   - /docs/deployments/managing-deployments
   - /docs/deployments/logs
   - /docs/accounts/team-members-and-roles
+  - /docs/routing/custom-404-pages
 summary: The requested resource was not found. This is a deployment error.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/errors/not_found.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "0a543e4b78e765cc40a94ebd32d0a2fe5ddf8458151ad78d679e45200a97c8cd"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "581e216f59c96284a476cbf141bebd0a98ee2b6c9dba5fadf49011a891d78f8b"
 ---
 
 # NOT_FOUND
@@ -35,6 +36,8 @@ To troubleshoot this error, follow these steps:
 2. **Check deployment existence:** Verify that the [deployment exists](/docs/deployments/managing-deployments) and has not been deleted
 3. **Review deployment logs:** If the deployment exists, review the [deployment logs](/docs/deployments/logs) to identify any issues that might have caused the deployment to be unavailable
 4. **Verify permissions:** Ensure you have the necessary [permissions](/docs/accounts/team-members-and-roles) to access the deployment
+
+To show your own page when a visitor requests a URL that doesn't exist in your deployment, see [custom 404 pages](/docs/routing/custom-404-pages).
 
 ## Search the docs from your terminal
 

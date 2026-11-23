@@ -17,8 +17,8 @@ summary: Learn how to Sign in with Vercel
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sign-in-with-vercel.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "11167ffe2d8f41ffb1b80a4d67cc9c70357a893f26127a49036c10c68d6283a4"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "eec55816122a3bff5588117c7450d12bc8e6a6890e42c62924e01368e582da2f"
 ---
 
 # Sign in with Vercel
@@ -38,8 +38,8 @@ Sign in with Vercel lets people use their Vercel account to log in to your appli
 - [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
 - [Access tokens](https://vercel.com/docs/accounts/access-tokens) — Create and scope Vercel access tokens to your full account, a team, or a single project, then use them to authenticate A
 - [Auth.js with Vercel Connect](https://vercel.com/docs/connect/frameworks/authjs) — Add a Vercel Connect OAuth provider to Auth.js in a Next.js App Router application.
+- [vercel login](https://vercel.com/docs/cli/login) — Learn how to login into your Vercel account using the vercel login CLI command.
 - [vercel signup](https://vercel.com/docs/cli/signup) — Learn how to create a new Vercel account using the vercel signup CLI command.
-- [SAML Single Sign-On](https://vercel.com/docs/saml) — Learn how to configure SAML SSO for your organization on Vercel.
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel.graph.md](/docs/sign-in-with-vercel.graph.md)
 <!-- /docsgraph:related -->

@@ -18,8 +18,8 @@ summary: Use OpenAI SDKs with the AI Gateway Chat Completions API. Configure the
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/openai-chat-completions.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "ce9ef1ff52dcd21c2f334594599336bbefe7d926506ce98f105fe0ffcba42903"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "401d9db6cee768dce5b381bbbc4a011f0bd817b39ccd81c204264732cd910013"
 ---
 
 # OpenAI Chat Completions API with AI Gateway
@@ -37,7 +37,7 @@ AI Gateway provides OpenAI Chat Completions API endpoints, letting you use multi
 - [Claude Sonnet 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-sonnet-5-5-now-available-on-ai-gateway)
 - [Gemini 4 Argon now available on AI Gateway](https://vercel.com/changelog/gemini-4-argon-now-available-on-ai-gateway)
 - [Glyph Cluster is now available in stealth for free on AI Gateway](https://vercel.com/changelog/glyph-cluster-is-now-available-in-stealth-for-free-on-ai-gateway)
-- [Go with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/go) — Use AI Gateway from any Go application with the OpenAI or Anthropic Go SDKs, including model fallbacks, cost tracking, a
+- [Deploy a Go backend on Vercel with AI Gateway](https://vercel.com/kb/guide/deploy-a-go-backend-on-vercel-with-ai-gateway) — Build and deploy a Go HTTP server that calls AI Gateway using the standard library, with no SDK dependencies.
 - [AI SDK with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk) — Build AI-powered TypeScript applications using the AI SDK with AI Gateway for unified access to 400+ models.
 - [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
@@ -307,6 +307,7 @@ The API returns standard HTTP status codes and error responses:
 
 - `400 Bad Request`: Invalid request parameters
 - `401 Unauthorized`: Invalid or missing authentication
+- `402 Payment Required`: No positive credit balance, or a budget reached its limit
 - `403 Forbidden`: Insufficient permissions
 - `404 Not Found`: Model or endpoint not found
 - `429 Too Many Requests`: Rate limit exceeded

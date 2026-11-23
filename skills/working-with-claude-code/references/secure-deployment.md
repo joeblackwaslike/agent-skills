@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/agent-sdk/secure-deployment.md"
-fetched_at: "2026-11-16T12:28:44.823Z"
-sha256: "1b936fe42f59675835a1d243d37e2ef046d5a8e410591a67db03def030dc1c15"
+fetched_at: "2026-11-23T14:04:20.448Z"
+sha256: "1d1ad468499aa0fe108ba85c10f0be7697958d9287cb77d67d439f2ca880fa02"
 ---
 
 > ## Documentation Index
@@ -100,7 +100,7 @@ For the install, configuration, and launch steps, see [Set up and launch the run
 
 1. **Same-host kernel**: Unlike VMs, sandboxed processes share the host kernel. A kernel vulnerability could theoretically enable escape. For some threat models this is acceptable, but if you need kernel-level isolation, use gVisor or a separate VM.
 
-2. **No TLS inspection**: By default, the proxy allowlists domains based on the client-supplied hostname and doesn't terminate or inspect encrypted traffic. Code running inside the sandbox can potentially use [domain fronting](https://en.wikipedia.org/wiki/Domain_fronting) or similar techniques to reach hosts outside the allowlist. If your threat model requires stronger guarantees, use a TLS-terminating proxy that inspects traffic, as [Traffic forwarding](#traffic-forwarding) describes. For more information, see the [sandboxing security limitations](https://code.claude.com/docs/en/sandboxing.md#security-limitations).
+2. **No TLS inspection**: By default, the proxy enforces the allowlist based on the client-supplied hostname and doesn't terminate or inspect encrypted traffic. Code running inside the sandbox can potentially use [domain fronting](https://en.wikipedia.org/wiki/Domain_fronting) or similar techniques to reach hosts outside the allowlist. If your threat model requires stronger guarantees, use a TLS-terminating proxy that inspects traffic, as [Traffic forwarding](#traffic-forwarding) describes. For more information, see the [sandboxing security limitations](https://code.claude.com/docs/en/sandboxing.md#security-limitations).
 
 3. **Credentials for allowed domains**: If the agent has permissive credentials for an allowed domain, ensure it cannot use that domain to trigger other network requests or to exfiltrate data.
 

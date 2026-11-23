@@ -17,8 +17,8 @@ summary: Protect your applications from automated attacks with intelligent bot d
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/botid.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "2f745ee21bd93f63e5f0e522bbc57cc69fb255c34bcaa04d3fafea6d098cb847"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "abc9226850793fc9ed222be9996697e3d7a27150c5f29d9b46f9ddc6a558fd5f"
 ---
 
 # BotID
@@ -39,10 +39,10 @@ sha256: "2f745ee21bd93f63e5f0e522bbc57cc69fb255c34bcaa04d3fafea6d098cb847"
 - [Vercel BotID now  available for all frameworks](https://vercel.com/changelog/botid-now-available-for-all-frameworks)
 - [Vercel BotID now leverages Vercel's verified bot directory](https://vercel.com/changelog/vercel-botid-now-leverages-vercels-verified-bot-directory)
 - [Application authentication on Vercel](https://vercel.com/kb/guide/application-authentication-on-vercel) — Secure application authentication on Vercel across layers: proxy checks, the Data Access Layer, PPR-safe rendering, and
+- [How to keep your storefront running through Black Friday](https://vercel.com/kb/guide/black-friday-reliability) — Learn how to tune alerts, bot rules, and spend limits. Rehearse rollback so your team can recover quickly from checkout
 - [Deploy a Shopify storefront with an AI assistant](https://vercel.com/kb/guide/deploy-shopify-ai-storefront) — Deploy an eve shopping agent with Vercel Shop to find Shopify products, manage carts, and answer store questions.
 - [How to handle order-ahead traffic spikes on Vercel](https://vercel.com/kb/guide/handle-order-ahead-traffic-spikes-on-vercel) — Order-ahead traffic spikes hit the same routes every lunch hour. Learn how to scale, cache, queue, and test a restaurant
 - [How to effectively load test your application on Vercel](https://vercel.com/kb/guide/how-to-effectively-load-test-your-vercel-application) — Learn how to safely load test your Next.js app on Vercel. This guide covers realistic, policy-compliant testing of route
-- [Vercel vs Akamai](https://vercel.com/kb/guide/vercel-vs-akamai) — A detailed guide to Vercel vs Akamai: compute models, AI infrastructure, framework support, media streaming, CDN capabil
 - [Introduction](https://vercel.shop/docs) — What Vercel Shop is, what you get out of the box, and how it fits Shopify's new Hydrogen.
 - [Shop Configuration](https://vercel.shop/docs/reference/shop-config) — Choose optional storefront features and set your store's identity and locale.
 

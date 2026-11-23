@@ -17,8 +17,8 @@ summary: Learn how to create, view and update your Global Configs and the data i
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/global-config/global-config-dashboard.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "e45050d21029a5b9487e42c67595a35dd31b95e3f8f81d6418da84de65cc57e2"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "e9cb78c20c098e4bca51b570b2ae1eef64e4fec383ea55ce550c22ff34c49008"
 ---
 
 # Managing Global Configs with the Dashboard
@@ -86,7 +86,7 @@ To view a list of all Global Configs available in your account or team, go to [*
 
 *List of Global Configs in a team account*
 
-In the **Used by** column, you can see in which project(s) the Global Config is used. The right column shows the size of the data contained in the config. To manage the Global Config, its store and tokens, click on the Global Config's row to open the detail page.
+In the **Connected Projects** column, you can see in which project(s) the Global Config is used. To manage the Global Config, its store and tokens, click on the Global Config's row to open the detail page. The detail page also shows the **Storage Size** of the data in the config.
 
 ![Image](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/storage/global-config/config-details-light.png)
 

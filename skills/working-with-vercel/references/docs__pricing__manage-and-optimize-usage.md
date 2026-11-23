@@ -17,8 +17,8 @@ summary: Understand how to manage and optimize your usage on Vercel, learn how t
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/pricing/manage-and-optimize-usage.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "5cc00e84447645dbb7a4ef0e156ffee8a8b0c0c7600c6d7a9e83480711e8555c"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "171187c8ac684606175a42d7985831aedcb255efbf27e2be1e4ef59385a03de9"
 ---
 
 # Manage and optimize usage
@@ -37,14 +37,14 @@ There are three plans on Vercel: Hobby, Pro, and Enterprise. To see which plan y
 - [Lower pricing for Log Drains](https://vercel.com/changelog/lower-pricing-for-log-drains)
 - [One-click linking from Usage to Vercel Observability dashboards](https://vercel.com/changelog/one-click-linking-from-usage-to-vercel-observability-dashboards)
 - [Speed Insights usage can now be viewed by Project](https://vercel.com/changelog/speed-insights-usage-can-now-be-viewed-by-project)
+- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-to-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
 - [Troubleshoot and optimize Active CPU usage on Fluid compute](https://vercel.com/kb/guide/optimize-active-cpu-on-fluid-compute) — Diagnose which routes drive Active CPU usage and learn to optimize it. Separate traffic growth from per-request CPU work
 - [Optimize Runtime Cache on Vercel](https://vercel.com/kb/guide/optimize-runtime-cache-reads-on-vercel) — Diagnose rising Runtime Cache usage, trace reads to tags and code paths, and reduce avoidable reads while checking write
 - [Protecting your app (and wallet) against malicious traffic](https://vercel.com/blog/protecting-your-app-and-wallet-against-malicious-traffic)
 - [Vercel Pricing](https://vercel.com/pricing) — Choose a Vercel plan and compare features and usage pricing.
 - [CDN pricing and usage](https://vercel.com/docs/manage-cdn-usage) — Understand CDN pricing resources, monitor usage from your dashboard, and optimize Fast Data Transfer, Fast Origin Transf
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
-- [Managing Usage & Costs](https://vercel.com/docs/speed-insights/managing-usage) — Learn how to measure and manage Speed Insights usage with this guide to reduce events and avoid unexpected costs.
-- [Legacy Usage & Pricing for Functions](https://vercel.com/docs/functions/usage-and-pricing/legacy-pricing) — Learn about legacy usage and pricing for Vercel Functions.
+- [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
 
 Full cross-link map for this page: [/docs/pricing/manage-and-optimize-usage.graph.md](/docs/pricing/manage-and-optimize-usage.graph.md)
 <!-- /docsgraph:related -->
@@ -78,7 +78,7 @@ vercel billing usage --since 30d --group-by project
 
 The usage dashboard helps you understand and project your usage. You can also set up alerts to notify you when you're approaching usage limits. You can set up the following features:
 
-- **Spend Management**: Spend management is an opt-in feature. Pro teams and Enterprise teams on the [Flexible Commitment](/docs/pricing/flex-commit) plan can set up a spend amount for your team to trigger notifications or actions. For example a webhook or pausing your projects when you hit your set amount
+- **Spend Management**: New Pro teams start with a default spend amount of $200, or more if their recent usage is higher. It sends notifications and does not pause your projects. Pro teams and Enterprise teams on the [Flexible Commitment](/docs/pricing/flex-commit) plan can set or change a spend amount for your team to trigger notifications or actions. For example a webhook or pausing your projects when you hit your set amount
 - **Usage Notifications**: Usage notifications are set up automatically. Pro teams can also [configure the threshold](/docs/notifications#on-demand-usage-notifications) for usage alerts to notify you when you're approaching your usage limits
 
   **Interested in the Enterprise plan?**

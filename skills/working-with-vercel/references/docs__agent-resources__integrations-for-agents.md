@@ -16,8 +16,8 @@ summary: Install AI agents and services through the Vercel Marketplace to automa
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/integrations-for-agents.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "3bc70387c155f1b8d48b1d4314a6a65a42e4c59a3d97ae51d578d89e1e50a362"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "8b3ebac309bf63276a4432a2b2e6234cb6239969a5d3d033b7aad7d068a77774"
 ---
 
 # Build with AI agents on Vercel
@@ -33,8 +33,6 @@ Integrating AI agents in your application often means working with separate dash
 - [AI agents and services on the Vercel Marketplace](https://vercel.com/blog/ai-agents-and-services-on-the-vercel-marketplace)
 - [Introducing AI agents & services on the Vercel Marketplace](https://vercel.com/changelog/introducing-ai-agents-and-services-on-the-vercel-marketplace)
 - [Using coding agents to procure Vercel Marketplace integrations](https://vercel.com/kb/guide/using-coding-agents-to-procure-vercel-marketplace-integrations) — Coding agents can now discover, provision, and manage third-party services from the Vercel Marketplace using the Vercel
-- [Chat with Vercel Marketplace integrations using Vercel Agent](https://vercel.com/changelog/chat-with-vercel-marketplace-integrations-using-vercel-agent)
-- [Vercel Ship AI 2025 recap](https://vercel.com/blog/ship-ai-2025-recap)
 - [Build with AI on Vercel](https://vercel.com/docs/agent-resources/integrations-for-models) — Integrate powerful AI services and models seamlessly into your Vercel projects.
 - [Adding a Provider](https://vercel.com/docs/agent-resources/integrations-for-models/adding-a-provider) — Learn how to add a new AI provider to your Vercel projects.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.

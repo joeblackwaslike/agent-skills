@@ -17,8 +17,8 @@ summary: Reduce billed token requests and triggers by using the SDK cache effect
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/connect/optimizing-usage.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "694da385602a86c85176117dbae3497920065667e7e3b9d852a52649d690aafa"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "9d10897a194e57f19c6c4f1d295fac3838a1609664ab0387e27f679500251be0"
 ---
 
 # Optimizing Vercel Connect Usage
@@ -33,11 +33,11 @@ Vercel Connect bills two things: **token requests** (each call to Vercel Connect
 
 - [The end of credential sprawl for agents](https://vercel.com/blog/the-end-of-credential-sprawl-for-agents)
 - [Vercel Connect is now generally available](https://vercel.com/changelog/vercel-connect-ga)
-- [Vercel Connect: Secure access to external services for your agents](https://vercel.com/changelog/vercel-connect-secure-access-to-external-services-for-your-agents)
-- [Introducing Vercel Connect](https://vercel.com/blog/introducing-vercel-connect)
 - [Authentication in Vercel Connect](https://vercel.com/docs/connect/concepts/authentication) — Every Vercel Connect token request has two legs that both have to authenticate: the caller calling Vercel Connect, and V
 - [Quickstart](https://vercel.com/docs/connect/quickstart) — Create your first connector in Vercel Connect, install the SDK, and request a runtime provider token from your code.
+- [Vercel Connect Limits](https://vercel.com/docs/connect/limits) — Platform limits and per-minute rate limits for Vercel Connect SDK methods, CLI commands, and public endpoints.
 - [Chat SDK with Vercel Connect](https://vercel.com/docs/connect/frameworks/chat-sdk) — Use Vercel Connect credentials and trigger forwarding with Chat SDK adapters for Slack, Discord, Microsoft Teams, GitHub
+- [Manage and optimize usage](https://vercel.com/docs/pricing/manage-and-optimize-usage) — Understand how to manage and optimize your usage on Vercel, learn how to track your usage, set up alerts, and optimize y
 
 Full cross-link map for this page: [/docs/connect/optimizing-usage.graph.md](/docs/connect/optimizing-usage.graph.md)
 <!-- /docsgraph:related -->

@@ -17,8 +17,8 @@ summary: "Learn how Vercel's CDN cache stores your content across a global netwo
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/caching/cdn-cache.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "f7364401174034f2706cd8003707d899dd17038735817bbe721dd67cfd54d907"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "65272e0bc9142068c975b5cc5ee1b2a7059fb35c904ccf63f059279a6902a4de"
 ---
 
 # Vercel CDN Cache
@@ -42,7 +42,7 @@ Vercel's CDN caches your content (including pages, API responses, and static ass
 - [Migrating to Cache Components](https://nextjs.org/docs/app/guides/migrating-to-cache-components) — Learn how to migrate from route segment configs to Cache Components in Next.js.
 - [use cache: remote](https://nextjs.org/docs/app/api-reference/directives/use-cache-remote) — Learn how to use the "use cache: remote" directive for persistent, shared caching using remote cache handlers.
 - [cacheLife](https://nextjs.org/docs/app/api-reference/functions/cacheLife) — Learn how to use the cacheLife function to set the cache expiration time for a cached function or component.
-- [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache)
+- [Private Storage](https://vercel.com/docs/vercel-blob/private-storage) — Learn how to use private Vercel Blob storage to serve files with authentication
 
 Full cross-link map for this page: [/docs/caching/cdn-cache.graph.md](/docs/caching/cdn-cache.graph.md)
 <!-- /docsgraph:related -->

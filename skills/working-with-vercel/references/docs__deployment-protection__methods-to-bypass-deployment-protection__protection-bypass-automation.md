@@ -18,8 +18,8 @@ summary: Learn how to bypass Vercel Deployment Protection for automated tooling 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "004b218d525aeb44e71da9d08492c6500995c7b9822150efbdd8a15db6b632bc"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "216ca09ec8429bf73552e05eb8dabf5207208394b6aca9ff486056875ca48dda"
 ---
 
 # Protection Bypass for Automation
@@ -42,10 +42,10 @@ Protection Bypass for Automation enables you to run automated tests, CI/CD pipel
 - [Vercel Passport is now generally available](https://vercel.com/changelog/vercel-passport-generally-available)
 - [The Complete Guide to Bring Your Own Cloud](https://vercel.com/kb/guide/byoc) — Use Bring Your Own Cloud \\(BYOC\\) to run Vercel Functions as AWS Lambda functions in your own AWS account, from setup to
 - [Build an incident response sre agent with eve](https://vercel.com/kb/guide/eve-incident-sre-agent) — sre is an incident response agent for Slack. It investigates production issues using a hypothesis-driven approach and re
-- [How can I run end-to-end tests after my Vercel Preview Deployment?](https://vercel.com/kb/guide/how-can-i-run-end-to-end-tests-after-my-vercel-preview-deployment) — Learn how to use the Vercel CLI in combination with your CI/CD provider to run end-to-end tests for every code change.
 - [How to test a Slack bot with your Vercel preview deployment](https://vercel.com/kb/guide/test-slack-bot-with-vercel-preview-deployment) — Learn how to build and test a Slack bot using Vercel preview deployments. This guide covers setting up your Slack app, c
 - [Protect internal apps with Vercel Passport and your identity provider](https://vercel.com/kb/guide/vercel-passport) — Vercel Passport protects internal apps behind your own identity provider, such as Okta or Microsoft Entra ID. Learn how
 - [\<script type="text/llms.txt"\>](https://vercel.com/blog/a-proposal-for-inline-llm-instructions-in-html)
+- [Improved security with automation testing now available on all plans](https://vercel.com/changelog/improved-security-with-automation-testing-now-available-on-all-plans)
 
 Full cross-link map for this page: [/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation.graph.md](/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation.graph.md)
 <!-- /docsgraph:related -->

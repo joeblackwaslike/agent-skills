@@ -13,8 +13,8 @@ summary: Review the standard, deployment, and visitor identity claims in a Passp
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/passport/token-claims.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "e77bb108e012b06c1c33b73f067827b6173e165bee915126526e9ac827733414"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "7fa5f603d54bef57bacf87698ab6ba6c9fe54d6bf4989fbbaee2690160e56dc5"
 ---
 
 # Passport token claims
@@ -38,7 +38,7 @@ Passport issues a signed JSON Web Token (JWT) after a visitor authenticates. The
 - [OIDC Federation Reference](https://vercel.com/docs/oidc/reference) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
 - [Tokens](https://vercel.com/docs/sign-in-with-vercel/tokens) — Learn how to Sign in with Vercel
 - [Vercel KMS Claims](https://vercel.com/docs/kms/concepts/claims) — How a KMS grant sets KMS-owned token claims the caller cannot override, and how an issuer claims schema validates every
-- [Chat SDK with Vercel Passport](https://vercel.com/docs/chat-sdk/integrations/passport) — Use a verified Vercel Passport identity to store and retrieve per-user conversation history in a Chat SDK bot.
+- [Trusted Sources](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/trusted-sources) — Let other Vercel projects and external services reach your protected deployments by presenting a verified OIDC token.
 
 Full cross-link map for this page: [/docs/passport/token-claims.graph.md](/docs/passport/token-claims.graph.md)
 <!-- /docsgraph:related -->

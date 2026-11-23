@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/plugins/overview.md"
-fetched_at: "2026-11-16T12:28:44.823Z"
-sha256: "e5b255a52965b71be9d9583bb9b6707f65ce1f214f6afa4f614e1a492787e599"
+fetched_at: "2026-11-23T14:04:20.448Z"
+sha256: "3bd245136a86935c66f036c5565bdf175834916c686f44f583986dd60cf69b49"
 ---
 
 > ## Documentation Index
@@ -92,7 +92,7 @@ Read [Plugin loading reference](https://code.claude.com/docs/en/plugins/loading.
 
 ## Tell Anthropic's marketplaces from third-party ones
 
-A marketplace's name places it in one of three tiers. Claude Code accepts the official and community names only for marketplaces sourced from `github.com/anthropics/` repositories:
+A marketplace's name places it in one of three tiers. Claude Code accepts the official and community names for marketplaces sourced from `github.com/anthropics/` repositories:
 
 * **Official**: marketplaces with one of Anthropic's [official marketplace names](https://code.claude.com/docs/en/plugins/security.md#official-marketplace-names), including `claude-plugins-official` and `claude-code-plugins`.
 * **Community**: marketplaces with one of Anthropic's community names, such as `claude-community`. [Identify Anthropic's marketplaces by name](https://code.claude.com/docs/en/plugins/security.md#marketplace-tiers) lists them.

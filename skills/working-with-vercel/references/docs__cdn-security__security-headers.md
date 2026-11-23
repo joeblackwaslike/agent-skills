@@ -8,13 +8,14 @@ type: conceptual
 prerequisites:
   - /docs/cdn-security
 related:
-  []
+  - /docs/vercel-firewall/priority-projects
+  - /docs/vercel-firewall/page-integrity
 summary: Learn how the Content Security Policy (CSP) offers defense against web vulnerabilities, its key features, and best practices.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cdn-security/security-headers.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "6106da87ddef1230717a6225b6b387a427c6ce5731a8fa1d8c9c8e47e9c2a55f"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "674b75879dad9758488b66ba04041c2be79cee5de5755b9aab5c57b5edba139c"
 ---
 
 # Content Security Policy
@@ -27,11 +28,12 @@ Content Security Policy is a browser feature designed to prevent cross-site scri
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Security](https://vercel.com/docs/vercel-blob/security) — Learn how your Vercel Blob store is secured
+- [Priority Projects now in public beta](https://vercel.com/changelog/priority-projects-now-in-public-beta)
 - [Vercel security overview](https://vercel.com/docs/security) — Vercel provides built-in and customizable features to ensure that your site is secure.
-- [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption) — Learn how Vercel encrypts data in transit and at rest.
-- [Vercel CDN overview](https://vercel.com/docs/cdn) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
+- [Security](https://vercel.com/docs/vercel-blob/security) — Learn how your Vercel Blob store is secured
 - [Security settings](https://vercel.com/docs/project-configuration/security-settings) — Configure security settings for your Vercel project, including Vercel Support Code Visibility, Git Fork Protection, and
+- [Encryption and TLS](https://vercel.com/docs/cdn-security/encryption) — Learn how Vercel encrypts data in transit and at rest.
+- [Vercel Firewall](https://vercel.com/docs/vercel-firewall) — Learn how Vercel Firewall helps protect your applications and websites from malicious attacks and unauthorized access.
 
 Full cross-link map for this page: [/docs/cdn-security/security-headers.graph.md](/docs/cdn-security/security-headers.graph.md)
 <!-- /docsgraph:related -->
@@ -65,6 +67,8 @@ This policy permits:
 - Scripts to be loaded from the site's own origin and cdn.example.com.
 - Images from the site's own origin and img.example.com
 - Styles only from the site's origin.
+
+On [Priority projects](/docs/vercel-firewall/priority-projects), [Page Integrity](/docs/vercel-firewall/page-integrity) can build and enforce this policy for you. It reports the scripts and connections that your pages load, and when you enable blocking, Vercel sets the `script-src` and `connect-src` directives from the ones you approve.
 
 ## Best Practices
 

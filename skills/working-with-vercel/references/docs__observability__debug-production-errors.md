@@ -17,8 +17,8 @@ summary: Find, fix, and verify production 500 errors using the Vercel CLI.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/observability/debug-production-errors.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "2fec08d65ec8204e9ebb21aaf7ddf2da1aa5cc7a0ca2aba45919466e9ddbaf7c"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "65281a4722b5431952d96e2660d9481d9deb59bab7e984f49f1074ac313c4220"
 ---
 
 # Debugging production 500 errors
@@ -31,7 +31,6 @@ Use this guide to debug production 500 errors. You'll identify the problem, trac
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How to determine which Vercel Deployment introduced an issue?](https://vercel.com/kb/guide/how-to-determine-which-vercel-deployment-introduced-an-issue) — Process to quickly determine when a deployment issue was introduced using the Vercel CLI
 - [Rolling back a production deployment](https://vercel.com/docs/deployments/rollback-production-deployment) — Recover from a bad production deployment by rolling back, investigating the root cause, and redeploying a fix.
 - [Debugging slow Vercel Functions](https://vercel.com/docs/functions/debug-slow-functions) — Diagnose and fix slow Vercel Functions using CLI tools, logs, and timing analysis.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.

@@ -17,8 +17,8 @@ summary: Learn how to set up webhooks and use them with Vercel Integrations.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/webhooks.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "c34730f7fc768200541bdc6e32ba5f502b2c75176b0713473e294b7f909d2034"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "872b9d20871337dfb131c1808190427fc85f3a2f6c85780be52d168bf8410a9a"
 ---
 
 # Setting Up Webhooks
@@ -31,9 +31,8 @@ A webhook is a trigger-based HTTP endpoint configured to receive HTTP POST reque
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [How can I run end-to-end tests after my Vercel Preview Deployment?](https://vercel.com/kb/guide/how-can-i-run-end-to-end-tests-after-my-vercel-preview-deployment) — Learn how to use the Vercel CLI in combination with your CI/CD provider to run end-to-end tests for every code change.
-- [Integration Webhooks are now easier to configure](https://vercel.com/changelog/integration-webhooks-are-now-easier-to-configure)
 - [Webhooks are now generally available](https://vercel.com/changelog/webhooks-are-now-generally-available)
+- [Integration Webhooks are now easier to configure](https://vercel.com/changelog/integration-webhooks-are-now-easier-to-configure)
 - [Configurable webhooks ](https://vercel.com/changelog/configurable-webhooks)
 - [Creates a webhook](https://vercel.com/docs/rest-api/webhooks/creates-a-webhook) — POST /v1/webhooks — Creates a webhook
 - [Get a webhook](https://vercel.com/docs/rest-api/webhooks/get-a-webhook) — GET /v1/webhooks/{id} — Get a webhook

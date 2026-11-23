@@ -17,8 +17,8 @@ summary: Use logs to find information on deployment builds, function executions,
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/logs.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "e982cdf6d448b070214ab7c8827960850e8f003aa1984c10445b0218cbfdf512"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "d182375847dce5aab20464c79565b27d258bb5bbe0fd941f12f51b9d83bed6de"
 ---
 
 # Logs
@@ -42,7 +42,7 @@ When you deploy your website to Vercel, the platform generates build logs that s
 - [Get logs for a deployment](https://vercel.com/docs/rest-api/logs/get-logs-for-a-deployment) — GET /v1/projects/{projectId}/deployments/{deploymentId}/runtime-logs — Returns a stream of logs for a given deployment.
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
 - [get_runtime_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_logs) — Use get_runtime_logs with Vercel MCP.
-- [Retrieves a list of Integration log drains \\(deprecated\\)](https://vercel.com/docs/rest-api/logdrains/retrieves-a-list-of-integration-log-drains-deprecated) — GET /v2/integrations/log-drains — Retrieves a list of all Integration log drains that are defined for the authenticated
+- [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 
 Full cross-link map for this page: [/docs/logs.graph.md](/docs/logs.graph.md)
 <!-- /docsgraph:related -->

@@ -17,8 +17,8 @@ summary: "Get notified when something's wrong with your Vercel projects. Set up 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/alerts.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "9024fc46ba7db02fd7b52dff5041368ea25af56d3a0ff38cb6e0c5caf8a5b0b9"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "67864bc0d95be36fc5cac6b3d735f7c5af90ae40f3caf2894430a9ebd908b847"
 ---
 
 # Alerts
@@ -39,12 +39,12 @@ Alerts let you know when something's wrong with your Vercel projects, like a spi
 - [Anomaly alerts now available via email](https://vercel.com/changelog/anomaly-alerts-now-available-via-email)
 - [Anomaly alerts now in limited beta for Enterprise customers](https://vercel.com/changelog/anomaly-alerts-now-in-limited-beta-for-enterprise-customers)
 - [Anomaly alerts now in public beta](https://vercel.com/changelog/anomaly-alerts-now-in-public-beta)
+- [How to keep your storefront running through Black Friday](https://vercel.com/kb/guide/black-friday-reliability) — Learn how to tune alerts, bot rules, and spend limits. Rehearse rollback so your team can recover quickly from checkout
 - [Detect memory and OOM failures in Vercel Functions](https://vercel.com/kb/guide/detect-memory-and-oom-failures-in-serverless-functions) — Fix out-of-memory \\(OOM\\) errors and memory limit exceeded crashes in Vercel serverless functions. Debug 5xx errors, mon
 - [Vercel Agent can now run AI investigations](https://vercel.com/blog/vercel-agent-can-now-run-ai-investigations)
 - [vercel alerts](https://vercel.com/docs/cli/alerts) — List and inspect alerts, and manage alert rules for projects and teams with the Vercel CLI.
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
-- [Manage and optimize usage for Observability](https://vercel.com/docs/manage-and-optimize-observability) — Learn how to understand the different charts in the Vercel dashboard, how usage relates to billing, and how to optimize
-- [Glossary](https://vercel.com/docs/glossary) — Learn about the terms and concepts used in Vercel's products and documentation.
+- [Observability Insights](https://vercel.com/docs/observability/insights) — List of available data sources that you can view and monitor with Observability on Vercel.
 
 Full cross-link map for this page: [/docs/alerts.graph.md](/docs/alerts.graph.md)
 <!-- /docsgraph:related -->
@@ -80,6 +80,19 @@ Usage anomaly alerts support these metrics:
   - [Routing Middleware invocations](/docs/routing-middleware#observability)
 - [Fast Data Transfer](/docs/manage-cdn-usage#fast-data-transfer)
 - [CDN Requests](/docs/manage-cdn-usage#cdn-requests)
+
+### Firewall anomaly alerts
+
+[Priority projects](/docs/vercel-firewall/priority-projects) can also configure Firewall anomaly alerts. Firewall anomaly alerts that are configured for all projects will only fire for Priority projects.
+
+| Alert Type                       | Triggered when                                              |
+| -------------------------------- | ----------------------------------------------------------- |
+| **Firewall System Rule Anomaly** | Traffic matching Vercel's system Firewall rules spikes.     |
+| **Firewall Custom Rule Anomaly** | Traffic matching your custom Firewall rules spikes.         |
+| **Bot Traffic Anomaly**          | Bot traffic to your project spikes.                         |
+| **BotID Anomaly**                | BotID checks on your project spike.                         |
+
+Firewall anomaly alerts also appear in the **Alerts** section of the project's [**Firewall**](/docs/vercel-firewall/firewall-observability) tab.
 
 ## Observability Plus activation period
 

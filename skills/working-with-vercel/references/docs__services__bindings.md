@@ -16,8 +16,8 @@ summary: Call one service from another using caller-declared service bindings.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/services/bindings.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "f46543ae7e525b5a64a2db76ee92554454629c8d890b1d8856fa2371a2566369"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "dad722c98765ce86b1420de522df73dbe45cf273aebe64e7e4d92fc6e4f8102a"
 ---
 
 # Service bindings
@@ -41,7 +41,7 @@ A service binding lets server-side code in one service call another service dire
 - [Daemon Configuration Reference](https://vercel.com/docs/daemons/config-reference) — Every field you can set on a daemon in the daemons key of vercel.json.
 - [Service configuration reference](https://vercel.com/docs/services/config-reference) — Options available for service configuration.
 - [Services](https://vercel.com/docs/build-output-api/services) — Learn how a deployment with multiple services is structured in the Build Output API.
-- [Rewrites on Vercel](https://vercel.com/docs/routing/rewrites) — Learn how to use rewrites to send users to different URLs without modifying the visible URL.
+- [Build Output Configuration](https://vercel.com/docs/build-output-api/configuration) — Learn about the Build Output Configuration file, which is used to configure the behavior of a Deployment.
 
 Full cross-link map for this page: [/docs/services/bindings.graph.md](/docs/services/bindings.graph.md)
 <!-- /docsgraph:related -->

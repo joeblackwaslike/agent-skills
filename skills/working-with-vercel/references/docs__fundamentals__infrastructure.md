@@ -17,8 +17,8 @@ summary: Learn how Vercel routes, secures, and serves requests from your users t
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/fundamentals/infrastructure.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "f7663971c3b5eae9890c158fe920620515887011db3e7a93bfde8fff840f2be6"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "46147b5efac6706a4275b849c783ea18dfab00f1fd2ca893bc4a18e78fd38c5b"
 ---
 
 # How requests flow through Vercel
@@ -31,14 +31,11 @@ When you deploy to Vercel, your code runs on a global network of servers. This n
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Understanding Vercel Functions](https://vercel.com/blog/understanding-vercel-functions)
-- [How we run Vercel's CDN in front of Discourse](https://vercel.com/blog/how-we-run-vercels-cdn-in-front-of-discourse)
-- [Building secure and performant web applications on Vercel](https://vercel.com/blog/building-secure-and-performant-web-applications-on-vercel)
 - [How Vercel CDN Works](https://vercel.com/docs/how-vercel-cdn-works) — Learn how Vercel's CDN processes requests through routing, caching, and compute layers to deliver your content with low
 - [How Vercel builds your application](https://vercel.com/docs/fundamentals/builds) — Learn how Vercel transforms your source code into optimized assets ready to serve globally.
 - [Vercel CDN overview](https://vercel.com/docs/cdn) — Vercel's CDN is a globally distributed platform that handles routing, caching, security, and compression for every deplo
 - [Security & Compliance Measures](https://vercel.com/docs/security/compliance) — Learn about the protection and compliance measures Vercel takes to ensure the security of your data, including DDoS miti
-- [Backends on Vercel](https://vercel.com/docs/frameworks/backend) — Vercel supports a wide range of the most popular backend frameworks, optimizing how your application builds and runs no
+- [Routing](https://vercel.com/docs/routing) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
 
 Full cross-link map for this page: [/docs/fundamentals/infrastructure.graph.md](/docs/fundamentals/infrastructure.graph.md)
 <!-- /docsgraph:related -->

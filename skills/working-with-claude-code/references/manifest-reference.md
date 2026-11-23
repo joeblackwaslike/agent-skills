@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/plugins/manifest-reference.md"
-fetched_at: "2026-11-16T12:28:44.823Z"
-sha256: "f5d88a52b3bf6ef52b249dc230df025d4915701459a6947375e87740ffc75ffc"
+fetched_at: "2026-11-23T14:04:20.448Z"
+sha256: "6d2d7ad4b87c4af44ee5fa43ceeac553bca3cdab47e76fea5cfc0cc1e68c66d8"
 ---
 
 > ## Documentation Index
@@ -135,7 +135,7 @@ For component keys such as `commands` and `hooks`, [Component path forms](#compo
 | [`version`](#version) | String | Version string. Setting it keeps users on that version until you change it |
 | `description` | String | Short explanation of what the plugin provides |
 | `author` | Object | `name`, which is required, plus optional `email` and `url` |
-| `homepage` | String | Documentation URL. Must parse as a URL, or the plugin fails to load |
+| `homepage` | String | Documentation URL. Must parse as a URL |
 | `repository` | String | Source repository URL. Not validated |
 | `license` | String | SPDX identifier such as `MIT` or `Apache-2.0` |
 | `keywords` | Array of strings | Discovery tags |
@@ -146,7 +146,9 @@ For component keys such as `commands` and `hooks`, [Component path forms](#compo
 | [`privacyPolicyUrl`](#directory-listing-fields) | String | Privacy policy link for the plugin's listing in Anthropic's directory. Claude Code doesn't read it |
 | [`termsOfServiceUrl`](#directory-listing-fields) | String | Terms of service link for the plugin's listing in Anthropic's directory. Claude Code doesn't read it |
 | [`defaultEnabled`](#defaultenabled) | Boolean | Whether the plugin starts enabled when the user hasn't set it. Defaults to `true` |
+| `engines` | Object | The Claude Code versions that the plugin works on, as a [semver range](https://github.com/npm/node-semver#ranges) under the `claude-code` key, such as `"engines": { "claude-code": ">=2.1.400" }`. Requires Claude Code v2.1.323 or later. To keep the plugin working on v2.0.15 through v2.1.75, omit `engines`. Those versions reject the manifest with an `Unrecognized key` error when it has the field |
 | [`dependencies`](#dependencies) | Array of strings or objects | Plugins that must be enabled for this one to work |
+| `network` | Object | The hosts your plugin reaches, such as `"network": { "hosts": ["api.example.com"] }`, in [`sandbox.network.allowedDomains`](https://code.claude.com/docs/en/settings-reference#sandbox-network-alloweddomains) syntax. `claude plugin validate` lists them. The field doesn't allow or block any host. Requires Claude Code v2.1.328 or later |
 | [`userConfig`](#user-configuration) | Object | Values Claude Code prompts the user for when the plugin is enabled |
 | `types` | Path | A `.d.ts` file that declares the `$.state` values and `$` nouns of a [mod](https://code.claude.com/docs/en/plugins/mods/reference.md#files) |
 | [`channels`](#channels) | Array of objects | Message channels the plugin provides, each bound to one of its MCP servers |

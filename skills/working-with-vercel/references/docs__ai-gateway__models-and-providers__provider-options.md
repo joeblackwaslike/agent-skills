@@ -18,8 +18,8 @@ summary: Configure provider routing, ordering, and fallback behavior in Vercel A
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/models-and-providers/provider-options.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "86e7ceef014478d298381b10fe5eb3ee9cd9d04ee46c23cea8ecd40005733972"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "5ef8e1f20fc332674b6230d3d5ee15fe8c2fff592667c914634a31563a5a1caf"
 ---
 
 # AI Gateway Provider Routing and Fallbacks
@@ -42,8 +42,8 @@ AI Gateway can route your AI model requests across multiple AI providers. Each p
 - [MiniMax M3.1 Flash now available on AI Gateway for free](https://vercel.com/changelog/minimax-m3-1-flash-now-available-on-ai-gateway-for-free)
 - [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 - [Vercel Open Source Program: Fall 2025 cohort](https://vercel.com/blog/vercel-open-source-program-fall-2025-cohort)
-- [DeepSeek V4.1 Flash 1017 Ultrafast now available on AI Gateway](https://vercel.com/changelog/deepseek-v4-1-flash-1017-ultrafast-now-available-on-ai-gateway)
-- [Groq, fal, and DeepInfra join the Vercel Marketplace ](https://vercel.com/changelog/groq-fal-and-deepinfra-join-the-vercel-marketplace)
+- [vercel ai-gateway](https://vercel.com/docs/cli/ai-gateway) — Manage AI Gateway resources from the Vercel CLI: API keys, budgets, routing rules, virtual models, models, leaderboards,
+- [AI Gateway Custom Reporting API](https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting) — Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
 
 Full cross-link map for this page: [/docs/ai-gateway/models-and-providers/provider-options.graph.md](/docs/ai-gateway/models-and-providers/provider-options.graph.md)
 <!-- /docsgraph:related -->
@@ -671,12 +671,6 @@ FriendliAI
 
 friendli.ai
 
-gmicloud
-
-GMICloud
-
-gmicloud.ai
-
 google
 
 Google
@@ -766,6 +760,12 @@ mixedbread
 Mixedbread
 
 mixedbread.com
+
+modaic
+
+Modaic
+
+modaic.dev
 
 modal
 
@@ -862,6 +862,12 @@ recraft
 Recraft
 
 recraft.ai
+
+recursive
+
+Recursive
+
+recursive.com
 
 reflection
 

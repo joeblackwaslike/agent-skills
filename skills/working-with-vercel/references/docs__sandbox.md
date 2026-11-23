@@ -8,24 +8,24 @@ type: conceptual
 prerequisites:
   []
 related:
+  - /docs/agent-resources/software-factory/eve
+  - /docs/sandbox/quickstart
   - /docs/sandbox/pricing
   - /docs/sandbox/sdk-reference
   - /docs/sandbox/python-sdk-reference
-  - /docs/sandbox/cli-reference
-  - /docs/sandbox/concepts/authentication
-summary: Run untrusted or agent-generated code in isolated Linux microVMs with Vercel Sandbox.
+summary: Run untrusted or agent-generated code in isolated Linux microVMs with Vercel Sandbox, an AI agent sandbox with network controls, Drives, and Active...
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "9c3c27d3220cb0927b0a4fd0b0fbc8f4d3a36137d40d3b99d06acc50f50edd8b"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "080c0a0e7811d2bb14746c9ac0d0af7b5a055d95e50f1243ad0a76d1104d80a6"
 ---
 
 # Vercel Sandbox
 
-## Run agent-generated code in isolation
+## Run agent workloads in isolated sandboxes
 
-Run untrusted or agent-generated code in isolated Linux microVMs. Use Vercel Sandbox for agent workflows, debugging, and one-off commands.
+Vercel Sandbox is an AI sandbox that runs untrusted or agent-generated code in isolated Linux microVMs. Use it to execute code, run coding agents, persist state with Drives, and control network access.
 
 
 <!-- docsgraph:related -->
@@ -34,33 +34,54 @@ Run untrusted or agent-generated code in isolated Linux microVMs. Use Vercel San
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Sandbox vs CodeSandbox](https://vercel.com/kb/guide/vercel-sandbox-vs-codesandbox) — A detailed guide to Vercel Sandbox vs CodeSandbox: compute isolation, credential brokering, Active CPU billing, Docker s
-- [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available)
-- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
+- [How Vercel Sandbox duration and persistence work](https://vercel.com/kb/guide/vercel-sandbox-duration-and-persistence) — Session duration and persistence are two separate controls in Vercel Sandbox. The timeout option keeps a single run aliv
+- [Run untrusted code with Vercel Sandbox, now generally available](https://vercel.com/blog/vercel-sandbox-is-now-generally-available)
+- [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
+- [Building an agent with OpenAI Agents SDK and Vercel Sandbox](https://vercel.com/kb/guide/building-an-agent-with-openai-agents-sdk-and-vercel-sandbox) — Learn how to build an agent with with OpenAI Agents SDK and Vercel Sandbox
 - [Security Model](https://eve.dev/docs/concepts/security-model) — eve's trust boundaries, where secrets live, how credentials reach hosts, and what fails closed by default.
-- [Sandbox](https://eve.dev/docs/sandbox) — Configure the isolated filesystem and command environment used by an eve agent.
 - [Build with OpenAI Agents API on Vercel](https://vercel.com/changelog/build-with-openai-agents-api-on-vercel)
 - [Connect to and manage Sandboxes from the dashboard](https://vercel.com/changelog/connect-to-and-manage-sandboxes-from-the-dashboard)
 - [Custom tags available in beta on Vercel Sandbox](https://vercel.com/changelog/custom-tags-available-in-beta-on-vercel-sandbox)
 - [Data downloaded by Vercel Sandbox is now free](https://vercel.com/changelog/data-downloaded-by-vercel-sandbox-is-now-free)
 - [Drives for Vercel Sandbox in Private Beta](https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta)
-- [Build AI agents with AI Gateway and AI SDK](https://vercel.com/kb/guide/ai-gateway-and-ai-sdk) — Build AI agents on Vercel with AI Gateway and AI SDK, then make them reliable, capable, and durable with Sandbox, Chat S
 
 Full cross-link map for this page: [/docs/sandbox.graph.md](/docs/sandbox.graph.md)
 <!-- /docsgraph:related -->
 
-```bash filename="terminal"
-sandbox run echo "Hello Sandbox!"
-```
+Start from a template
+
+## Deploy an eve software factory
+
+Start with Foreman, an eve template that routes requests through intake,
+investigation, implementation, and review stages. Use Sandbox for isolated
+repository work.
+
+Start from the [eve software factory template](/templates/eve/eve-software-factory), then follow the [setup guide](/docs/agent-resources/software-factory/eve).
 
 Use sandboxes to:
 
-- **Execute untrusted code safely**: Run AI agent output, user uploads, or third-party scripts without exposing your production systems.
-- **Build interactive tools**: Create code playgrounds, AI-powered UI builders, or developer sandboxes.
-- **Test in isolation**: Preview how user-submitted or agent-generated code behaves in a self-contained environment with access to logs, file edits, and live previews.
-- **Run development servers**: Spin up and test applications with live previews.
+- **Run untrusted code safely**: Execute AI agent output, user uploads, or third-party scripts without exposing your production systems.
+- **Give agents a Linux workspace**: Run coding agents where they can edit files, install packages, execute shell commands, and expose previews.
+- **Keep persistent state with Drives**: Attach Drives when an agent needs files after a run ends, or use persistent sandboxes and snapshots for filesystem state.
+- **Control network access and credentials**: Restrict outbound traffic and request credentials that Vercel sets up from your team's configuration.
+- **Test applications in isolation**: Preview how user-submitted or agent-generated code behaves with access to logs, file edits, and live previews.
 
-## Active CPU pricing for agents
+## Add Sandbox skills to your coding agent
+
+Skills give a coding agent current Sandbox guidance, so it uses the right SDK and CLI commands when you ask it to work with sandboxes.
+
+- **[sandbox](https://skills.sh/vercel/sandbox/sandbox)**: SDK and CLI guidance for creating sandboxes, running commands, and managing files, snapshots, and network access.
+- **[offload-to-sandbox](https://skills.sh/vercel/vercel-plugin/offload-to-sandbox)**: Run heavy builds and long test suites in sandboxes and keep them off your computer.
+
+```bash filename="Terminal"
+npx skills add vercel/sandbox
+npx skills add https://github.com/vercel/vercel-plugin --skill offload-to-sandbox
+```
+
+Choose your coding agent when prompted. The [Vercel plugin](/docs/sandbox/quickstart) includes `offload-to-sandbox` and its own `vercel-sandbox` skill, so you don't need these if you installed the plugin.
+
+## Active CPU pricing for agent sandboxes
 
 In agentic workflows, active CPU time is often dwarfed by time spent waiting on LLM calls and external APIs. With [Active CPU pricing](/docs/sandbox/pricing#active-cpu), Vercel doesn't charge you for CPU while your code waits for those responses. You pay only for actively used CPU time.
 
@@ -135,8 +156,8 @@ Configure [custom monitors](/docs/alerts/configure-alerts#configure-custom-monit
 - **[Snapshotting](/docs/sandbox/concepts/snapshots)**: Save the state of a running sandbox to resume later. Skip dependency installation on subsequent runs.
 - **[Tags](/docs/sandbox/concepts/tags)**: Categorize sandboxes by environment, team, or any other criteria using key-value tags.
 - **[Drives](/docs/sandbox/concepts/drives)**: Attach persistent filesystem storage to sandboxes and reuse data across sandbox runs.
-- **[Credentials](/docs/sandbox/credentials)**: Authenticate to private services with credentials Vercel sets up from your team's configuration.
-- **[Mount remote storage](/docs/sandbox/mount-remote-storage)**: Mount an external object store such as Amazon S3 with a FUSE driver, and read and write remote files through the sandbox filesystem.
+- **[Credentials](/docs/sandbox/concepts/credentials)**: Authenticate to private services with credentials Vercel sets up from your team's configuration.
+- **[Mount remote storage](/docs/sandbox/examples/mount-remote-storage)**: Mount an external object store such as Amazon S3 with a FUSE driver, and read and write remote files through the sandbox filesystem.
 - **[CLI and SDKs](/docs/sandbox/sdk-reference)**: Manage sandboxes through the CLI, JS SDK, or Python SDK. Automate sandbox workflows in your application.
 - **[Ubuntu with Node.js, Python, coding agents and utilities](/docs/sandbox/concepts/images)**: By default, use Ubuntu with a large set of languages and tools available with full root access.
 
@@ -144,7 +165,7 @@ Configure [custom monitors](/docs/alerts/configure-alerts#configure-custom-monit
 
 **Quickstart**: Create your first sandbox step by step. [Learn more →](/docs/sandbox/quickstart)
 
-**Working with Sandbox**: Task-oriented guides for common operations. [Learn more →](/docs/sandbox/working-with-sandbox)
+**Examples**: Task-oriented guides for common operations. [Learn more →](/docs/sandbox/examples)
 
 **Concepts**: Understand how sandboxes work under the hood. [Learn more →](/docs/sandbox/concepts)
 
@@ -158,7 +179,7 @@ Configure [custom monitors](/docs/alerts/configure-alerts#configure-custom-monit
 
 **Ecosystem**: Use Sandbox with agent frameworks, model SDKs, and coding agents. [Learn more →](/docs/sandbox/ecosystem)
 
-**Credentials**: Authenticate to private services with no setup in the sandbox. [Learn more →](/docs/sandbox/credentials)
+**Credentials**: Authenticate to private services with no setup in the sandbox. [Learn more →](/docs/sandbox/concepts/credentials)
 
 **Pricing**: Review costs and resource limits. [Learn more →](/docs/sandbox/pricing)
 
@@ -167,6 +188,13 @@ Configure [custom monitors](/docs/alerts/configure-alerts#configure-custom-monit
 **Container Registry**: Store custom images for Sandbox in VCR. [Learn more →](/docs/container-registry)
 
 **Sandbox Repo**: View the Sandbox repository on GitHub contained the SDK and CLI codebase. [Learn more →](https://github.com/vercel/sandbox)
+
+## Related guides
+
+- [Vercel Sandbox vs Cloudflare Sandbox](https://vercel.com/kb/guide/vercel-sandbox-vs-cloudflare-sandbox): Compare Vercel Sandbox and Cloudflare Sandbox as AI agent sandboxes, including isolation, persistence, network controls, SDKs, and deployment options.
+- [Vercel Sandbox vs Modal Sandboxes](https://vercel.com/kb/guide/vercel-sandbox-vs-modal-sandboxes): Compare Vercel Sandbox and Modal Sandboxes as AI agent sandboxes, including isolation, persistence, network controls, GPUs, SDKs, and deployment regions.
+- [Vercel Sandbox vs Upstash Box](https://vercel.com/kb/guide/vercel-sandbox-vs-upstash-box): Compare Vercel Sandbox and Upstash Box as AI agent sandboxes, including isolation, persistence, network controls, SDKs, and deployment regions.
+- [Running Durable Agents on Vercel](https://vercel.com/kb/guide/durable-ai-agents): Design durable AI agents on Vercel with patterns for execution recovery, human approval, safe retries, deployment changes, and persistent files.
 
 ## Search the docs from your terminal
 

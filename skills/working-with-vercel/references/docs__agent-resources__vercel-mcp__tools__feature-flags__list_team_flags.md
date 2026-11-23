@@ -14,8 +14,8 @@ summary: Use list_team_flags with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_team_flags.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "29b6c05653d77ae7df03bb5a55775281b5ce9ad5135bff53a0f7cca9bfc69458"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "60e4fe6c257dfc4f342e019924e1fcf4ffd5e4363c912d0c4f72898e1b572e6f"
 ---
 
 # list_team_flags
@@ -32,7 +32,7 @@ Retrieve all feature flags for a team across all projects. The list can be filte
 - [list_flags](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flags) — Use list_flags with Vercel MCP.
 - [list_flags_v2](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_flags_v2) — Use list_flags_v2 with Vercel MCP.
 - [list_team_flag_settings](https://vercel.com/docs/agent-resources/vercel-mcp/tools/feature-flags/list_team_flag_settings) — Use list_team_flag_settings with Vercel MCP.
-- [List all flags for a team](https://vercel.com/docs/rest-api/feature-flags/list-all-flags-for-a-team) — GET /v2/teams/{teamId}/feature-flags/flags — Retrieve all feature flags for a team across all projects. Returns an opaqu
+- [List all flags for a team](https://vercel.com/docs/rest-api/feature-flags/list-all-flags-for-a-team-1) — GET /v1/teams/{teamId}/feature-flags/flags — Retrieve all feature flags for a team across all projects. The list can be
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/feature-flags/list_team_flags.graph.md](/docs/agent-resources/vercel-mcp/tools/feature-flags/list_team_flags.graph.md)
 <!-- /docsgraph:related -->

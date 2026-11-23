@@ -3,7 +3,7 @@ title: update-installation
 product: vercel
 url: /docs/integrations/create-integration/marketplace-api/reference/vercel/update-installation
 canonical_url: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/update-installation"
-last_updated: 2026-11-16
+last_updated: 2026-11-23
 type: conceptual
 prerequisites:
   []
@@ -14,8 +14,8 @@ summary: Learn about update-installation on Vercel.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/marketplace-api/reference/vercel/update-installation.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "f2c7a41d77573b3a53e6afa1d859c62863c8544250d230a3d41f70d021f58c27"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "b3d35f4fb39b29254ad57865be21d68a9ecc74b79213cb18d36f3f17db6eba25"
 ---
 
 # Update Installation

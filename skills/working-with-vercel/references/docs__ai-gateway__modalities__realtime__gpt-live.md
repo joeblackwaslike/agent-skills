@@ -16,8 +16,8 @@ summary: Connect GPT-Live through AI Gateway to stream voice, handle client dele
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/modalities/realtime/gpt-live.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "68f2f55b427fbccec6b5f285bbf60f2a3875136ab13166b10c780a8b71b8edd8"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "dc1f1438b151d2131d18f9a038ffa5239c70a740c7ff85703ac529a8ab1a9103"
 ---
 
 # GPT-Live
@@ -30,13 +30,12 @@ Build a voice conversation with `openai/gpt-live-1` through AI Gateway. GPT-Live
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [GPT-Live 1.1 now available on AI Gateway](https://vercel.com/changelog/gpt-live-1-1-now-available-on-ai-gateway)
 - [GPT-Live 1 now available on AI Gateway](https://vercel.com/changelog/gpt-live-1-now-available-on-ai-gateway)
 - [Build realtime voice agents on AI Gateway](https://vercel.com/blog/realtime-voice-agents-on-ai-gateway)
+- [Realtime](https://ai-sdk.dev/docs/ai-sdk-core/realtime) — Learn how to build realtime voice conversations with the AI SDK.
 - [ElevenLabs on AI Gateway](https://vercel.com/blog/elevenlabs-on-ai-gateway)
 - [Realtime voice, speech, and transcription now supported on AI Gateway](https://vercel.com/changelog/realtime-voice-speech-and-transcription-now-supported-on-ai-gateway)
-- [Realtime](https://ai-sdk.dev/docs/ai-sdk-core/realtime) — Learn how to build realtime voice conversations with the AI SDK.
-- [AI Gateway Speech to Text](https://vercel.com/docs/ai-gateway/modalities/speech-to-text) — Transcribe audio files into text with transcription models through Vercel AI Gateway.
-- [AI Gateway Ecosystem and Integrations](https://vercel.com/docs/ai-gateway/ecosystem) — Connect frameworks, coding tools, and billing integrations to AI Gateway. Configure app attribution and explore integrat
 
 Full cross-link map for this page: [/docs/ai-gateway/modalities/realtime/gpt-live.graph.md](/docs/ai-gateway/modalities/realtime/gpt-live.graph.md)
 <!-- /docsgraph:related -->

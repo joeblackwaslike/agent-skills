@@ -1,7 +1,7 @@
 ---
 source: "https://oraios.github.io/serena/_sources/02-usage/050_configuration.md"
-fetched_at: "2026-11-02T12:06:22.105Z"
-sha256: "9de81ed05da60e469f070975a78921d16d81cc8015adf576b4f719faeeb3dbb4"
+fetched_at: "2026-11-23T14:15:48.900Z"
+sha256: "d118e991df3b1e2c171ff38dec306954106d407187b1e42bb6db3f8b2ee3c130"
 ---
 
 # Configuration
@@ -186,7 +186,8 @@ Examples of built-in modes include:
 * `no-onboarding`: Skips the initial onboarding process if it's not needed for a particular session but retains the memory tools (assuming initial memories were created externally).
 * `onboarding`: Focuses on the project onboarding process.
 * `no-memories`: Disables all memory tools (and tools building on memories such as onboarding tools)
-* `query-projects`: Enables tools for querying other Serena projects (without activating them); see section [Reading from External Projects](query-projects) 
+* `ext-full` and `ext-readonly`: Enables [REPL functions](agent-interfaces) for accessing other Serena projects (full access vs. read-only access); see section [Accessing External Projects](query-projects)
+* `query-projects`: Equivalent to `ext-readonly` for users of the [tools interface](agent-interfaces)
 
 Find the concrete definitions of these modes [here](https://github.com/oraios/serena/tree/main/src/serena/resources/config/modes).
 
@@ -462,7 +463,7 @@ Supported settings:
 
 Serena uses [bsl-language-server](https://github.com/1c-syntax/bsl-language-server) by 1c-syntax
 for BSL support. The JAR is downloaded automatically on first use and SHA-256-verified for the
-bundled default version. **Requires Java 21+ on `PATH`** — bsl-language-server v0.29.0 is built
+bundled default version. **Requires Java 21+ on `PATH`** — bsl-language-server v1.0.7 is built
 with `targetCompatibility = JavaVersion.VERSION_21` and fails to launch under older JDKs.
 
 Supported settings:
@@ -470,15 +471,21 @@ Supported settings:
 | Setting | Default | Description |
 |---|---|---|
 | `ls_path` | managed download | Override the path to an existing `bsl-language-server-*-exec.jar`. When set, Serena does not download anything; the JAR is launched directly via `java -jar`. |
-| `bsl_ls_version` | `0.29.0` | Override the bsl-language-server release version Serena downloads when `ls_path` is not set. SHA-256 verification is performed only for the default version; user-overridden versions install without SHA verification. |
+| `bsl_ls_version` | `1.0.7` | Override the bsl-language-server release version Serena downloads when `ls_path` is not set. SHA-256 verification is performed only for the default version; user-overridden versions install without SHA verification. |
+| `jvm_options` | `[]` | List of strings passed to Java before `-jar`, e.g. `["-Xmx1g"]` to limit heap size. |
+
+Without `jvm_options`, the JVM uses its default heap size (usually a fraction of physical
+memory) and the process may use several GB; in memory-constrained environments, set `-Xmx`
+to limit the heap, not total process memory.
 
 Example:
 
 ```yaml
 ls_specific_settings:
   bsl:
-    bsl_ls_version: "0.29.0"
-    # ls_path: "/opt/bsl/bsl-language-server-0.29.0-exec.jar"  # optional
+    bsl_ls_version: "1.0.7"
+    jvm_options: ["-Xmx1g"]
+    # ls_path: "/opt/bsl/bsl-language-server-1.0.7-exec.jar"  # optional
 ```
 
 #### Clojure

@@ -10,15 +10,15 @@ prerequisites:
 related:
   - /docs/flags/vercel-flags/dashboard/segments
   - /docs/flags/observability
+  - /docs/deployment-checks
   - /docs/flags/vercel-flags/dashboard
   - /docs/flags/vercel-flags/sdks
-  - /docs/flags/vercel-flags/sdks/flags-sdk
 summary: Use Vercel as your feature flag provider to create and manage flags, define targeting rules, and run experiments directly from the dashboard.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/flags/vercel-flags.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "f09b6dac2091b8a169a998621e9d3b1f6e0d3b3a96145c2e0bb2d1c43920e84e"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "7599908c6bf2f04ceeb31fa44c8633dca221db90f47b1ea0558e12eed64803ad"
 ---
 
 # Vercel Flags
@@ -36,11 +36,11 @@ Vercel Flags is a feature flag provider built into the Vercel platform. Create f
 - [Vercel Flags: Platform-native feature flags](https://vercel.com/blog/vercel-flags-platform-native-feature-flags)
 - [Vercel Flags](https://flags-sdk.dev/docs/providers/vercel)
 - [Vercel Flags is now in public beta](https://vercel.com/changelog/vercel-flags-is-now-in-public-beta)
-- [Introducing the Flags Explorer, first-party integrations, and updates to the Flags SDK ](https://vercel.com/blog/introducing-the-flags-explorer-first-party-integrations-and-updates)
 - [Flags SDK now evaluates flags 10x faster](https://vercel.com/changelog/flags-sdk-now-evaluates-flags-10x-faster)
 - [Inspect feature flag history with Vercel CLI](https://vercel.com/changelog/inspect-feature-flag-history-with-vercel-cli)
 - [Vercel Flags is now generally available](https://vercel.com/changelog/vercel-flags-ga)
 - [Vercel Flags now supports JSON values](https://vercel.com/changelog/vercel-flags-now-supports-json-values)
+- [Getting started with Flags Explorer](https://vercel.com/docs/flags/flags-explorer/getting-started) — Learn how to set up the Flags Explorer so you can see and override your application's feature flags
 - [Flags SDK Reference](https://vercel.com/docs/flags/flags-sdk-reference) — API reference for the Flags SDK for Next.js and SvelteKit.
 
 Full cross-link map for this page: [/docs/flags/vercel-flags.graph.md](/docs/flags/vercel-flags.graph.md)
@@ -60,6 +60,8 @@ Flags can return boolean, string, number, or JSON values. This lets you use Verc
 - **No infrastructure to manage**: Feature flags live in your Vercel Dashboard alongside your deployments. There's no external service to set up.
 
 Beyond feature management, Vercel Flags also supports A/B testing and experimentation. Split users into buckets, then measure the results through [Web Analytics](/docs/flags/observability) or your own analytics platform and data warehouse.
+
+Vercel Flags also integrates with [Deployment Checks](/docs/deployment-checks): the Flag Definitions Present check verifies that every flag your code declares has a definition in your project before a deployment is promoted to production.
 
 ![Flags in Vercel Dashboard](https://7nyt0uhk7sse4zvn.public.blob.vercel-storage.com/docs-assets/static/docs/flags/flags-tab-light.png)
 

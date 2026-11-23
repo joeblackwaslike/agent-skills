@@ -17,8 +17,8 @@ summary: Learn how organizations let you group multiple Vercel teams under a sin
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/organizations.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "87b37bf532d6100b2282d78f6be3bccd574d8403875b59efca3b89055cfd5daf"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "4aebf75ba516a17898646f041dc84662e47fb184893fcaaea6370dc1777bac8c"
 ---
 
 # Organizations
@@ -31,11 +31,13 @@ An organization groups multiple Vercel [teams](/docs/accounts) under a single en
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Set budgets for projects and products in Spend Management](https://vercel.com/changelog/set-budgets-for-projects-and-products-in-spend-management)
+- [Organizations](https://v0.app/docs/api/v2/guides/organizations) — Learn how to use the v0 API with Vercel Organizations to offer v0-style chat experiences to your customers.
 - [Create or Add Team to Organization](https://vercel.com/docs/rest-api/organizations/create-or-add-team-to-organization) — POST /v1/organizations/{organizationId}/teams — Create a new team under an organization, or add an existing team. \\`mode
 - [List Organization Teams](https://vercel.com/docs/rest-api/organizations/list-organization-teams) — GET /v1/organizations/{organizationId}/teams — List up to 100 teams in an organization, each enriched with the team's sl
 - [List Organizations](https://vercel.com/docs/rest-api/organizations/list-organizations) — GET /v1/organizations — List the organizations where the authenticated user holds the OrgAdmin or OrgViewer permission o
 - [Create an Organization](https://vercel.com/docs/rest-api/organizations/create-an-organization) — POST /v1/organizations — Create a new Organization. This endpoint is in private beta. Contact your Vercel account team f
-- [Get an Organization](https://vercel.com/docs/rest-api/organizations/get-an-organization) — GET /v1/organizations/{organizationId} — Get a single organization by ID or slug. This endpoint is in private beta. Cont
+- [Delete Team from Organization](https://vercel.com/docs/rest-api/organizations/delete-team-from-organization) — DELETE /v1/organizations/{organizationId}/teams/{targetTeamId} — Delete a team from an organization. This endpoint is in
 
 Full cross-link map for this page: [/docs/organizations.graph.md](/docs/organizations.graph.md)
 <!-- /docsgraph:related -->
@@ -66,7 +68,8 @@ You can manage an organization from the Vercel dashboard as well as the API. To 
 - **Usage**: Compare usage and spend across the organization's teams, set a budget for each team, and download usage as a CSV file.
 - **Teams**: List the organization's teams. To create a team, click **Create Team** and choose `enterprise` or `platform` as its [billing plan](#choosing-a-billing-plan-for-a-child-team).
 - **Admins**: Grant or remove Organization Admin access for members of the billing team.
-- **Billing**: Review the organization's billing information and organization-wide budget.
+- **Billing**: Review the organization's billing information and follow the link to **Spend Management**.
+- **Spend Management**: Review the budget of each team and the organization-wide budget.
 - **Invoices**: Review the organization's current and upcoming invoices.
 - **Settings**: Configure the organization's details, identity and access, Enterprise Managed Users, Deployment Protection defaults, and audit log export.
 
@@ -76,13 +79,15 @@ An organization lets you configure Single Sign-On, Directory Sync, Enterprise Ma
 
 ### Share one SAML Single Sign-On connection across teams
 
-An organization can have one [SAML Single Sign-On](/docs/saml) connection that every team in the organization can use for sign-in. In the **Identity & Access** section, click **Configure** next to **Single Sign-On** to connect your identity provider. To require SAML sign-in for members of every team that uses the connection, turn on **SAML Enforcement**.
+An organization can have one [SAML Single Sign-On](/docs/saml) connection that every team in the organization can use for sign-in. In the **Identity & Access** section, click **Configure** next to **Single Sign-On** to connect your identity provider. To require SAML sign-in for members of every team that uses the connection, turn on **SAML Enforcement**. Turn on **Use for New Teams** so each team that you create in the organization starts on the organization's connection. By default, this toggle is off, and a new team doesn't use the organization's connection until you attach it.
 
 ### Manage team access with organization Directory Sync
 
 Organization Directory Sync maps groups in your identity provider to roles on your teams, so access on Vercel follows group membership in your directory. Configure it in the Identity & Access section. For each directory group, you can grant Organization access and choose a Default access role, which the group's members get on every team that uses organization Directory Sync, including teams created later. To give the group a different role on a specific team, set a team-level role. That role overrides the default for that team only.
 
-Teams that you create in the organization use organization Directory Sync from the start. A team that you [add to the organization](#adding-an-existing-team-to-an-organization) and the billing team keep managing their own [members](/docs/rbac/managing-team-members), so the organization's directory groups don't grant roles on those teams. When you select a directory group in the dashboard, each team that manages its own members shows **Doesn't use organization Directory Sync**.
+Teams that you create in the organization use organization Directory Sync from the start. By default, a team that you [add to the organization](#adding-an-existing-team-to-an-organization) and the billing team manage their own [members](/docs/rbac/managing-team-members). The organization's directory groups don't grant roles on a team that manages its own members.
+
+To change this setting for a team, open its actions menu in the teams table in the **Identity & Access** section. Select **Use Organization Directory Sync** so the organization's Directory Sync manages the team's members. Select **Unlink Directory Sync** so the team manages its own members again. Before you confirm, review the preview of which members get access or lose access. The team keeps its own directory connection in both modes.
 
 You must be an Organization Admin to configure organization Directory Sync. Vercel doesn't start syncing the directory until at least one directory group has the Organization Admin permission. Until then, the Directory Sync row shows **Setup Required** and notes that syncing starts once a group has Organization Admin.
 
@@ -203,6 +208,8 @@ The response is the organization-team link, including the new team's `teamId`:
   "updatedAt": "2026-06-01T12:00:00.000Z"
 }
 ```
+
+For a new team, `ssoMode` is `team` by default. When [**Use for New Teams**](#share-one-saml-single-sign-on-connection-across-teams) is on and the organization's SAML Single Sign-On connection is active, `ssoMode` is `organization`.
 
 ### Adding an existing team to an organization
 
@@ -336,7 +343,7 @@ To understand how Enterprise billing and invoicing work, see:
 
 Organizations are in private beta, and some capabilities aren't available yet:
 
-- **Marketplace integrations**: Child teams can use the Neon integration. To use it in a `platform` child team, install it on the billing team first. Other [Marketplace integrations](/docs/integrations) aren't available to child teams yet.
+- **Marketplace integrations**: An `enterprise` child team can use all [Marketplace integrations](/docs/integrations), while a `platform` child team can use only Neon. Install Neon on the billing team before you install it on a `platform` child team.
 - **Delayed billing for `platform` teams**: Vercel aggregates usage from `platform` child teams at the end of each team's billing cycle. Usage from `enterprise` child teams draws down the organization's Flex commit in real time.
 - **Enterprise add-ons**: Child teams, including `enterprise` child teams, can't use these Enterprise add-ons:
   - Observability Plus

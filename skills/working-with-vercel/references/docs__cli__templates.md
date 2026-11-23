@@ -16,8 +16,8 @@ summary: Search the template catalog, inspect deployment requirements, and deplo
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/templates.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "26d9dc164ea1c4822a7fa24c19164071b2ab72eec75513b417b0e98c37f6d5db"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "a9c77c5e2d6561951ca2056ced09b4a132d5e75e4cc026edfd02173834700185"
 ---
 
 # vercel templates
@@ -31,10 +31,10 @@ Use `vercel templates` to search for templates, inspect their requirements, and 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [vercel deploy](https://vercel.com/docs/cli/deploy) — Learn how to deploy your Vercel projects using the vercel deploy CLI command.
+- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
-- [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
 
 Full cross-link map for this page: [/docs/cli/templates.graph.md](/docs/cli/templates.graph.md)
 <!-- /docsgraph:related -->

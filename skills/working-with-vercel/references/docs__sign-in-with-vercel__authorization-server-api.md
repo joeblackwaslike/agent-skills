@@ -17,8 +17,8 @@ summary: Learn how to use the Authorization Server API
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sign-in-with-vercel/authorization-server-api.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "18ee4cbbfee167c663763f48ba37ba7443142dd1e8558afb5ae58302c2a41c53"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "799608c9d54cf9f08390d57ae5e56bd8b4d85716f8ab3098ec0147cd33fbd9ef"
 ---
 
 # Authorization Server API
@@ -34,9 +34,9 @@ The Authorization Server API exposes a set of endpoints which are used by your a
 - [Enhancing security of backend connectivity with OpenID Connect](https://vercel.com/blog/enhancing-security-of-backend-connectivity-with-openid-connect)
 - [Getting started with Sign in with Vercel](https://vercel.com/docs/sign-in-with-vercel/getting-started) — Learn how to get started with Sign in with Vercel
 - [Connect to Microsoft Azure](https://vercel.com/docs/oidc/azure) — Learn how to configure your Microsoft Azure account to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\).
+- [Access Other Clouds and APIs](https://vercel.com/docs/oidc/access-other-services) — Use the short-lived OpenID Connect \\(OIDC\\) tokens that Vercel issues to your builds and functions to access AWS, Google
 - [Connect to your own API](https://vercel.com/docs/oidc/api) — Learn how to configure your own API to trust Vercel's OpenID Connect \\(OIDC\\) Identity Provider \\(IdP\\)
 - [OIDC Federation Reference](https://vercel.com/docs/oidc/reference) — Review helper libraries to help you connect with your backend and understand the structure of an OIDC token.
-- [SSO Token Exchange](https://vercel.com/docs/rest-api/authentication/sso-token-exchange) — POST /v1/integrations/sso/token — During the autorization process, Vercel sends the user to the provider \\\[redirectLogin
 
 Full cross-link map for this page: [/docs/sign-in-with-vercel/authorization-server-api.graph.md](/docs/sign-in-with-vercel/authorization-server-api.graph.md)
 <!-- /docsgraph:related -->

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/plugins/measure.md"
-fetched_at: "2026-11-02T12:02:15.109Z"
-sha256: "1e0cf55fe11821a000881da313832b961ee7394ab5eea129d79647aa620a3ef9"
+fetched_at: "2026-11-23T14:04:20.448Z"
+sha256: "c24bbbadf8795a1cc7dd84141ad136f7ff43db9630f748b6907cc6182e1b44ad"
 ---
 
 > ## Documentation Index
@@ -98,7 +98,7 @@ For usage of a plugin listed in Anthropic's directory, see [Track published plug
 
 ### Not used recently in `/plugin`
 
-On the **Installed** tab of `/plugin`, a plugin the user installed from a marketplace moves under a **Not used recently** header once it has gone unused for at least 14 days and 10 sessions. The plugin's details also show a `Last used:` line. For what users do with that header and line, see [Find plugins you no longer use](https://code.claude.com/docs/en/plugins/install.md#find-plugins-you-no-longer-use).
+On the **Installed** tab of `/plugin`, an enabled marketplace plugin the user installed moves under a **Not used recently** header after at least 14 days and 10 sessions unused. The plugin's details also show a last-used time.
 
 The **Not used recently** header never appears for:
 
@@ -108,7 +108,7 @@ The **Not used recently** header never appears for:
 
 A plugin's [language server](https://code.claude.com/docs/en/plugins/components.md#lsp-servers) counts as used when it delivers diagnostics or answers a code navigation request, so an LSP plugin whose server is active in your sessions isn't listed as unused.
 
-When the user's organization sets [`strictKnownMarketplaces`](https://code.claude.com/docs/en/plugins/org#restrict-what-users-can-install), neither the header nor the `Last used:` line appears.
+When the user's organization sets [`strictKnownMarketplaces`](https://code.claude.com/docs/en/plugins/org#restrict-what-users-can-install), neither the header nor the last-used time appears.
 
 ### Find skills that never run
 

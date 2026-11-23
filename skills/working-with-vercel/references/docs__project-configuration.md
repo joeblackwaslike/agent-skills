@@ -17,8 +17,8 @@ summary: Learn how to configure your Vercel projects using vercel.json, vercel.t
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/project-configuration.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "d78282f376434c6a841faebc3dc56ac178c2e77df2760685cfc126928528d254"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "601d962ebebb115082ed3b9030d4becbe07da4848b47fdcc0289793d6e9346c5"
 ---
 
 # Project Configuration
@@ -36,11 +36,11 @@ Vercel automatically detects your framework and sets sensible defaults for build
 - [Transform rules are now available in vercel.json](https://vercel.com/changelog/transform-rules-are-now-available-in-vercel-json)
 - [Introducing vercel.ts: Programmatic project configuration](https://vercel.com/changelog/vercel-ts)
 - [Web Application Firewall control now available with vercel.json](https://vercel.com/changelog/web-application-firewall-control-now-available-with-vercel-json)
-- [Can I route based on letter casing on Vercel?](https://vercel.com/kb/guide/can-i-route-based-on-letter-casing-on-vercel) — Information on whether or not it is possible to route based on letting casing with Vercel.
 - [Does Vercel support Ruby on Rails applications?](https://vercel.com/kb/guide/does-vercel-support-ruby-on-rails-applications) — Learn how to deploy a Ruby on Rails application on Vercel — either as a container image on Vercel Functions or as a head
 - [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
 - [How to enable CORS on Vercel](https://vercel.com/kb/guide/how-to-enable-cors) — Learn how to enable CORS on Vercel with vercel.json, Routing Middleware, framework config, and route handlers, plus how
 - [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
+- [Migrate to Vercel from Cloudflare](https://vercel.com/kb/guide/migrate-to-vercel-from-cloudflare) — Migrate your website's configuration from Cloudflare Pages or Workers to Vercel
 - [Projects overview](https://vercel.com/docs/projects) — A project is where you deploy and operate frontend apps, APIs, backends, containers, and agent workloads on Vercel.
 - [Managing Global Configs with the Dashboard](https://vercel.com/docs/global-config/global-config-dashboard) — Learn how to create, view and update your Global Configs and the data inside them in your Vercel Dashboard at the Hobby
 

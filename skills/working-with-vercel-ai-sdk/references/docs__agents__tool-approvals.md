@@ -4,8 +4,8 @@ description: Add manual and automatic approval flows to ToolLoopAgent tools.
 url: "https://ai-sdk.dev/docs/agents/tool-approvals"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/agents/tool-approvals.md"
-fetched_at: "2026-11-16T12:32:31.917Z"
-sha256: "b171dac5e892bdbc1e306d866f043131b27bba99a8b73864d071dbc70468860a"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "39ffdf98218271ac2786221ec7656dcaa7e703ebd43c6070b99ac08cb3e33df3"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -300,7 +300,7 @@ If your tools perform sensitive operations (modifying data, spending money, call
 
 ### Signing approvals with `experimental_toolApprovalSecret`
 
-When you provide a secret, the server HMAC-signs each approval request at issuance and verifies the signature when the approval is replayed. A forged or tampered approval is rejected before the tool executes. Configure the secret on `ToolLoopAgent` (or pass it directly to `generateText` or `streamText`).
+When you provide a secret, the server HMAC-signs approval requests at issuance, except for automatic denials, and verifies the signature when the approval is replayed. A forged or tampered approval is rejected before the tool executes. Configure the secret on `ToolLoopAgent` (or pass it directly to `generateText` or `streamText`).
 
 ```ts {6}
 const agent = new ToolLoopAgent({
@@ -334,6 +334,7 @@ Every serverless instance that might handle a request needs the same secret, sin
 **Behavior when configured:**
 
 - Approval requests without a valid signature are rejected (fail-closed)
+- Approval requests for tool calls that the approval policy denied automatically are not signed, so a client cannot send a denied tool call back as approved
 - No secret configured: approvals work as before (backward compatible)
 - The secret is never sent to the client or included in the stream
 

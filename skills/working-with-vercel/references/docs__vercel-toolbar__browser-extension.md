@@ -13,8 +13,8 @@ summary: The browser extensions enable you to use the toolbar in production envi
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-toolbar/browser-extension.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "12e789a003e611692f0eb0676136d8d6ef2062639922f39c6137c660d50c8a2e"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "2a8acb57a1931ff9ae779e93836aa8f9d3d48388a35f7e7be8ec31f42e650d3b"
 ---
 
 # Toolbar Browser Extensions
@@ -32,10 +32,11 @@ The browser extension is supported in Chrome, Firefox, Opera, Microsoft Edge, in
 - [Updates to Vercel Toolbar shortcuts](https://vercel.com/changelog/updates-to-vercel-toolbar-shortcuts)
 - [Firefox extension for Vercel Toolbar](https://vercel.com/changelog/firefox-extension-for-vercel-toolbar)
 - [Use the Vercel Toolbar in Production with the Chrome Extension or the toolbar menu](https://vercel.com/changelog/use-the-vercel-toolbar-in-production)
-- [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production)
 - [The Vercel Toolbar is now more compact and dynamic](https://vercel.com/changelog/the-vercel-toolbar-is-now-more-compact-and-dynamic)
+- [@vercel/toolbar available to use collaboration features in production](https://vercel.com/changelog/vercel-toolbar-now-available-to-use-collaboration-features-in-production)
 - [Introducing new developer tools in the Vercel Toolbar](https://vercel.com/blog/introducing-new-developer-tools-in-the-vercel-toolbar)
 - [Toolbar](https://vercel.com/docs/agent-resources/vercel-mcp/tools/toolbar) — Vercel MCP tools for toolbar.
+- [Enabling and Disabling Comments](https://vercel.com/docs/comments/how-comments-work) — Learn when and where Comments are available, and how to enable and disable Comments at the account, project, and session
 
 Full cross-link map for this page: [/docs/vercel-toolbar/browser-extension.graph.md](/docs/vercel-toolbar/browser-extension.graph.md)
 <!-- /docsgraph:related -->

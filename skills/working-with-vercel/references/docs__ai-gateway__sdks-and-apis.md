@@ -17,8 +17,8 @@ summary: Connect to AI Gateway with the AI SDK, Python, Go, REST, or compatible 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "a15be17823ebe0a97b573d3d02480f96a289d9cb3eba0f6e9f88e11d24cafbfc"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "b913b0a2a2530166ed66b5c8a3fa6ed1e221d552a2407ee65481db3368b629ab"
 ---
 
 # AI Gateway SDKs and APIs
@@ -31,12 +31,12 @@ Use AI Gateway with the AI SDK, the AI SDK for Python beta, or compatible OpenAI
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [AI Gateway now supports Private Inference](https://vercel.com/changelog/ai-gateway-now-supports-private-inference)
 - [Claude Haiku 5.5 now available on AI Gateway](https://vercel.com/changelog/claude-haiku-5-5-now-available-on-ai-gateway)
 - [Zero Data Retention on AI Gateway](https://vercel.com/blog/zdr-on-ai-gateway)
 - [AI SDK 4.2](https://vercel.com/blog/ai-sdk-4-2)
-- [OpenAI](https://ai-sdk.dev/providers/ai-sdk-providers/openai) — Learn how to use OpenAI with AI Gateway and the direct provider.
 - [Vercel AI SDK vs TanStack AI](https://vercel.com/kb/guide/vercel-ai-sdk-vs-tanstack-ai) — Compare the Vercel AI SDK and TanStack AI for building AI-powered TypeScript applications and agents. Learn how AI SDK a
-- [AI SDK 4.0](https://vercel.com/blog/ai-sdk-4-0)
+- [AI Gateway Video Input](https://vercel.com/docs/ai-gateway/inputs-and-tools/video-input) — Analyze video clips with AI Gateway using AI SDK 7, Python, Chat Completions, and Responses / OpenResponses.
 - [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
 - [AI Gateway Custom Reporting API](https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting) — Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
 

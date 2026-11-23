@@ -7,8 +7,8 @@ keywords:
   - speech to text
   - audio transcription
 source: "https://ai-sdk.dev/docs/ai-sdk-core/transcription.md"
-fetched_at: "2026-11-16T12:32:31.917Z"
-sha256: "8b48ab15349b05ee7c7633054e34313f916dc393216129a17e3c18744007a74a"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "02b2f2e94f0e5528d630d106cd12a1b79f72984fba0466c3e8a55b42c6079cb9"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -420,8 +420,8 @@ try {
 | [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)               | `nova-2` (+ variants)          |
 | [Deepgram](/providers/ai-sdk-providers/deepgram#transcription-models)               | `nova-3` (+ variants)          |
 | [Gladia](/providers/ai-sdk-providers/gladia#transcription-models)                   | `default`                      |
-| [AssemblyAI](/providers/ai-sdk-providers/assemblyai#transcription-models)           | `universal-3-5-pro`            |
-| [AssemblyAI](/providers/ai-sdk-providers/assemblyai#transcription-models)           | `universal-3-pro`              |
+| [AssemblyAI](/providers/ai-sdk-providers/assemblyai#transcription-models)           | `assemblyai-stt-3-7`           |
+| [AssemblyAI](/providers/ai-sdk-providers/assemblyai#transcription-models)           | `universal-2`                  |
 | [Fal](/providers/ai-sdk-providers/fal#transcription-models)                         | `whisper`                      |
 | [Fal](/providers/ai-sdk-providers/fal#transcription-models)                         | `wizper`                       |
 | [Google Vertex](/providers/ai-sdk-providers/google-vertex#transcription-models)     | `chirp_2`                      |

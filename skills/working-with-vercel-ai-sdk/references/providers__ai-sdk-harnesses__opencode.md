@@ -4,8 +4,8 @@ description: Learn how to use the OpenCode harness adapter.
 url: "https://ai-sdk.dev/providers/ai-sdk-harnesses/opencode"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/providers/ai-sdk-harnesses/opencode.md"
-fetched_at: "2026-11-16T12:32:31.917Z"
-sha256: "ca190482848824c99c0788b7cba26c467eadac7bedf32a10a28e522b30084919"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "82485c0aa1096cc77886c6633013bfd9109e39a54d880784a7f7e88f0e18f80c"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -125,6 +125,10 @@ Settings:
   not aborted. When unset, a turn keeps running in the sandbox after its host
   disconnects, including when the host process is gone for good, until the
   turn finishes or the sandbox stops.
+- `keepAliveMs`: WebSocket ping interval in milliseconds (default `20_000`).
+  Keeps silent bridge connections alive. After two unanswered pings, the socket
+  is terminated and the configured reconnect policy takes over. Set to `0` to
+  disable. Sockets without ping support are left unchanged.
 - `reconnect`: reconnect timing after an established bridge WebSocket
   connection drops. `maxElapsedMs` controls the total retry window, including
   connection establishment and backoff delays, and defaults to 30 seconds.

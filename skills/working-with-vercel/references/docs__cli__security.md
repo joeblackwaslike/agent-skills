@@ -17,8 +17,8 @@ summary: "Inspect the security posture of your Vercel team from the terminal: ru
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/security.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "9d961c89188599ac2dac1d1f5a528790698e7bf7bb270c930773a5428ef6d5e5"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "7b44c1860c05cf2867b8b73fd66c5b796d6adaefab13e9538d95e21afef90412"
 ---
 
 # vercel security
@@ -124,7 +124,7 @@ Lists the team's vulnerabilities, Production and most severe first. It shows ope
 | `--repository <REPOSITORY>` | String | Only list vulnerabilities in this Git repository (`<owner>/<repo>`), including those in projects deployed from it. Any other format fails the command |
 | `-e, --environment <ENVIRONMENT>` | String | Only list vulnerabilities in this environment |
 | `--git-branch <BRANCH>` | String | Only list vulnerabilities on this Git branch |
-| `--status <STATUS>` | String | Comma-separated statuses to list: `open`, `closed`, or `dismissed`, or `all`. The default is `open` |
+| `--status <STATUS>` | String | Comma-separated statuses to list: `open` or `closed`, or `all`. The default is `open`. `dismissed` also lists closed vulnerabilities |
 | `--severity <SEVERITY>` | String | Comma-separated severities to list: `critical`, `high`, `medium`, or `low` |
 | `-q, --query <TEXT>` | String | Search vulnerability titles, summaries, and descriptions |
 | `-n, --limit <NUMBER>` | Number | Number of vulnerabilities to return. The default is 20, and the maximum is 100 |
@@ -137,19 +137,19 @@ Shows one vulnerability in full: its severity, status, class, environment, branc
 
 #### `dismiss`
 
-Dismisses a vulnerability as a false positive or an accepted risk. Without `--reason`, the command asks for the reason and an optional message in a terminal, and fails in non-interactive runs or with `--json`.
+Closes a vulnerability as a false positive or an accepted risk, the same as **Close Vulnerability** in the dashboard. To close a vulnerability you fixed as **Resolved**, use the dashboard. Without `--reason`, the command asks for the reason and an optional message in a terminal, and fails in non-interactive runs or with `--json`.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `--reason <REASON>` | String | Why it's dismissed: `false-positive` or `accepted-risk` |
-| `--message <TEXT>` | String | A note recorded with the dismissal, up to 500 characters |
+| `--reason <REASON>` | String | Why it's closed: `false-positive` or `accepted-risk` |
+| `--message <TEXT>` | String | A comment recorded when it's closed, up to 500 characters |
 | `--json` | Boolean | Output the vulnerability and the outcome as JSON |
 
-Dismissing a vulnerability that's already dismissed changes nothing and exits `0`. With `--json`, the outcome is `unchanged`. If you pass a reason or message that differs from the recorded one, the command fails. To change a dismissed vulnerability's reason or message, reopen it and dismiss it again. Closed vulnerabilities can't be dismissed or reopened.
+Dismissing a vulnerability that's already closed changes nothing and keeps its recorded reason and comment. To change them, reopen the vulnerability and dismiss it again.
 
 #### `reopen`
 
-Reopens a dismissed vulnerability, so it's open again. Reopening an open vulnerability changes nothing and exits `0`. Pass `--json` to output the vulnerability and the outcome as JSON.
+Reopens a closed vulnerability, including one that Security Review closed, so it's open again. Reopening an open vulnerability changes nothing and exits `0`. Pass `--json` to output the vulnerability and the outcome as JSON.
 
 ## Available checks
 
@@ -256,7 +256,7 @@ vercel security vulnerabilities --repository acme/app
 *List vulnerabilities in the \`acme/app\` repository and in projects deployed
 from it.*
 
-### Dismiss an accepted risk with a note
+### Close an accepted risk with a note
 
 ```bash filename="terminal"
 vercel security vulnerabilities dismiss my-app/12 --reason accepted-risk --message "Internal tool behind SSO"

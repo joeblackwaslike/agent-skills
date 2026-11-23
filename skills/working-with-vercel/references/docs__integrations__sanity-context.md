@@ -17,8 +17,8 @@ summary: Connect an eve agent or an AI SDK application to Sanity Context, a read
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/sanity-context.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "428436bfe31b5bb65392c1e5fe0037e074fb7781bf1d86e227d072dca5b084f9"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "6b25f7675910d68b43dc391444ea18d17d47ab46c7a86836ff852361a848f9df"
 ---
 
 # Build Agents with Sanity Context
@@ -32,10 +32,10 @@ sha256: "428436bfe31b5bb65392c1e5fe0037e074fb7781bf1d86e227d072dca5b084f9"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Draft documentation fixes from reader feedback with Sanity and eve](https://vercel.com/kb/guide/sanity-eve-agent) — Build an autonomous agent that drafts fixes in Sanity, stages them for human review, and calls the model through AI Gate
-- [Run Python code securely with AI SDK and Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox) — Add an \\`executeCode\\` tool to your AI SDK agent with the \\`ai-sdk-tool-code-execution\\` package to run Python 3.13 insi
+- [Add Python code execution to a TypeScript AI agent with Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox) — Add an \\`executeCode\\` tool to your TypeScript AI SDK agent with the \\`ai-sdk-tool-code-execution\\` package to run Pytho
+- [Pass state to AI SDK tools and agents with context](https://vercel.com/kb/guide/ai-sdk-runtime-and-tool-context) — Use runtimeContext, toolsContext, and contextSchema in the AI SDK to pass tenant data, credentials, and other server-sid
 - [Safely running AI generated code in your Next.js application](https://vercel.com/kb/guide/running-ai-generated-code-sandbox) — How to execute untrusted, AI‑generated code from a Next.js app using Vercel Sandbox, an isolated, ephemeral environment.
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
-- [Pass state to AI SDK tools and agents with context](https://vercel.com/kb/guide/ai-sdk-runtime-and-tool-context) — Use runtimeContext, toolsContext, and contextSchema in the AI SDK to pass tenant data, credentials, and other server-sid
 - [eve with MCP](https://vercel.com/docs/mcp/integrations/eve) — Give eve agents access to MCP tools through filesystem connections and authorize requests with Vercel Connect.
 - [Agent Resources](https://vercel.com/docs/agent-resources) — Set up AI coding tools with Vercel documentation, reusable skills, and secure access to projects, deployments, and logs.
 

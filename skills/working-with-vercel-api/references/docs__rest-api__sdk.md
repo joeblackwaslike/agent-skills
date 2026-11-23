@@ -3,7 +3,7 @@ title: Vercel SDK Reference
 product: vercel
 url: /docs/rest-api/sdk
 canonical_url: "https://vercel.com/docs/rest-api/sdk"
-last_updated: 2026-11-16
+last_updated: 2026-11-23
 type: reference
 prerequisites:
   []
@@ -17,8 +17,8 @@ summary: Interact programmatically with your Vercel account using the SDK.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/rest-api/sdk.md"
-fetched_at: "2026-11-16T12:35:06.708Z"
-sha256: "b2b3335528ba59ab8bce817907191c6d6f45fc2bde80aee57c9e5db2464f4ea2"
+fetched_at: "2026-11-23T14:17:54.731Z"
+sha256: "ccb1f9de00aadb81b452062ecafa850c0a3b02711d405a8d8c80d36f000efe4c"
 ---
 
 # Vercel SDK Reference
@@ -254,8 +254,8 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 |---|---|---|
 | **GET** | [`/v1/drives`](/docs/rest-api/sdk/drives/list-drives.md) | List drives |
 | **GET** | [`/v1/drives/{nameOrId}`](/docs/rest-api/sdk/drives/get-a-drive.md) | Get a drive |
+| **DELETE** | [`/v1/drives/{nameOrId}`](/docs/rest-api/sdk/drives/delete-a-drive.md) | Delete a drive |
 | **POST** | [`/v1/drives/{name}`](/docs/rest-api/sdk/drives/get-or-create-a-drive.md) | Get or create a drive |
-| **DELETE** | [`/v1/drives/{name}`](/docs/rest-api/sdk/drives/delete-a-drive.md) | Delete a drive |
 | **POST** | [`/v1/drives/{name}/fork`](/docs/rest-api/sdk/drives/fork-a-drive.md) | Fork a drive |
 
 ## CDN Cache
@@ -452,6 +452,11 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **GET** | [`/v1/organizations/{organizationId}/teams`](/docs/rest-api/sdk/organizations/list-organization-teams.md) | List Organization Teams |
 | **POST** | [`/v1/organizations/{organizationId}/teams`](/docs/rest-api/sdk/organizations/create-or-add-team-to-organization.md) | Create or Add Team to Organization |
 | **DELETE** | [`/v1/organizations/{organizationId}/teams/{targetTeamId}`](/docs/rest-api/sdk/organizations/delete-team-from-organization.md) | Delete Team from Organization |
+| **PUT** | [`/v1/organizations/{organizationId}/teams/{targetTeamId}/dsync`](/docs/rest-api/sdk/organizations/update-organization-team-directory-sync-mode.md) | Update Organization Team Directory Sync Mode |
+| **GET** | [`/v1/organizations/{organizationId}/dsync/groups`](/docs/rest-api/sdk/organizations/list-organization-directory-sync-groups.md) | List Organization Directory Sync Groups |
+| **GET** | [`/v1/organizations/{organizationId}/dsync/groups/{groupId}`](/docs/rest-api/sdk/organizations/get-organization-directory-sync-group.md) | Get Organization Directory Sync Group |
+| **PUT** | [`/v1/organizations/{organizationId}/dsync/groups/{groupId}`](/docs/rest-api/sdk/organizations/create-or-replace-organization-directory-sync-group-configuration.md) | Create or Replace Organization Directory Sync Group Configuration |
+| **DELETE** | [`/v1/organizations/{organizationId}/dsync/groups/{groupId}`](/docs/rest-api/sdk/organizations/delete-organization-directory-sync-group-configuration.md) | Delete Organization Directory Sync Group Configuration |
 
 ## Projectmembers
 
@@ -666,7 +671,7 @@ The [`@vercel/sdk`](https://www.npmjs.com/package/@vercel/sdk) is a type-safe Ty
 | **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task-runs`](/docs/rest-api/sdk/vercel-ci/list-task-runs-for-a-job-run.md) | List task runs for a job run |
 | **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/logs`](/docs/rest-api/sdk/vercel-ci/get-log-lines-for-an-invocation-attempt.md) | Get log lines for an invocation attempt |
 | **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/task-logs`](/docs/rest-api/sdk/vercel-ci/get-log-lines-for-the-tasks-of-an-invocation-attempt.md) | Get log lines for the tasks of an invocation attempt |
-| **GET** | [`/v1/vercel-ci/log-search`](/docs/rest-api/sdk/vercel-ci/search-the-task-logs-of-several-invocation-attempts.md) | Search the task logs of several invocation attempts |
+| **GET** | [`/v1/vercel-ci/log-search`](/docs/rest-api/sdk/vercel-ci/search-the-setup-and-task-logs-of-several-invocation-attempts.md) | Search the setup and task logs of several invocation attempts |
 | **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/logs`](/docs/rest-api/sdk/vercel-ci/get-log-lines-for-a-specific-job-run-attempt.md) | Get log lines for a specific job run attempt |
 | **GET** | [`/v1/vercel-ci/invocations/{invocationId}/attempts/{attempt}/job-definitions/{jobDefinitionId}/runs/{runAttempt}/task-definitions/{taskDefinitionId}/runs/{taskRunAttempt}/logs`](/docs/rest-api/sdk/vercel-ci/get-log-lines-for-a-specific-task-run-attempt.md) | Get log lines for a specific task run attempt |
 

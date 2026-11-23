@@ -17,8 +17,8 @@ summary: Use runtime logs to debug and monitor your Vercel Functions.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/logs.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "47611dd3e68bb0b239ddc35389ae05a8783c74e8e07d6fc3ba1ab3e0ecae6421"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "90da216b26d206bb87042776b417f5dc5ff635873ea570094152ec03523fa2b1"
 ---
 
 # Vercel Function Logs
@@ -34,9 +34,9 @@ Vercel Functions allow you to debug and monitor your functions using runtime log
 - [Troubleshooting Inconsistent Logs in Vercel Functions](https://vercel.com/kb/guide/troubleshooting-inconsistent-logs-in-vercel-functions) — Learn how to troubleshoot and resolve logs that appear mixed in Vercel Functions. This guide explains why logs from diff
 - [Add structured application logs to Vercel Functions](https://vercel.com/kb/guide/add-structured-application-logs-to-vercel-functions) — Learn how to add structured application logs to Vercel Functions to help troubleshoot function issues in real time.
 - [Logs](https://vercel.com/docs/logs) — Use logs to find information on deployment builds, function executions, and more.
+- [Troubleshooting Vercel Functions](https://vercel.com/docs/functions/troubleshooting) — Diagnose errors in Vercel Functions, including ECONNRESET errors when a function calls an external API or database.
 - [get_runtime_logs](https://vercel.com/docs/agent-resources/vercel-mcp/tools/observability/get_runtime_logs) — Use get_runtime_logs with Vercel MCP.
 - [vercel logs](https://vercel.com/docs/cli/logs) — View and filter runtime logs or CDN request records for your Vercel project.
-- [Debugging slow Vercel Functions](https://vercel.com/docs/functions/debug-slow-functions) — Diagnose and fix slow Vercel Functions using CLI tools, logs, and timing analysis.
 - [Observability](https://vercel.com/docs/observability) — Find production errors, capture request traces, and discover queryable metrics with Vercel Observability and Vercel CLI.
 
 Full cross-link map for this page: [/docs/functions/logs.graph.md](/docs/functions/logs.graph.md)

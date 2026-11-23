@@ -18,8 +18,8 @@ summary: Learn how to add and manage custom rules to configure the Vercel Web Ap
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/vercel-firewall/vercel-waf/custom-rules.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "86b2477894e0a642ad6ee7950e5c1e66278b555818b53cbfb6393463eb171d87"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "5bb1d27fb7f803129891a997cd637781887760206811962e95345bd2597e30a1"
 ---
 
 # WAF Custom Rules
@@ -32,16 +32,16 @@ You can [configure](#custom-rule-configuration) specific rules to log, deny, cha
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Protect Sensitive Routes with Vercel WAF: Challenge and Deny Rule Recipes](https://vercel.com/kb/guide/suspicious-traffic-in-specific-countries) — Use Vercel WAF custom rules to block or challenge unwanted traffic by country, ASN, IP address, user agent, path, or coo
 - [Create custom WAF rules directly from the Vercel Firewall tab](https://vercel.com/changelog/create-custom-waf-rules-directly-from-the-vercel-firewall-tab)
 - [Create Vercel Firewall rules with natural language](https://vercel.com/changelog/create-vercel-waf-custom-rules-using-natural-language)
 - [Manage Vercel Firewall in the CLI](https://vercel.com/changelog/manage-vercel-firewall-in-the-cli)
 - [Microfrontends Routing is now free for Firewall-mitigated traffic](https://vercel.com/changelog/microfrontends-routing-is-now-free-for-firewall-mitigated-traffic)
 - [New firewall challenge metrics now available](https://vercel.com/changelog/new-firewall-challenge-metrics-now-available)
 - [Making your catalog discoverable to AI agents](https://vercel.com/kb/guide/agentic-commerce-readiness) — Agentic commerce readiness starts with the initial HTML response. Server-render your product catalog, ship JSON-LD, and
-- [How to build a honeypot with Vercel Web Application Firewall](https://vercel.com/kb/guide/how-to-build-a-honeypot-with-vercel-web-application-firewall) — Learn how to build a honeypot with Vercel Web Application Firewall \\(WAF\\) that catches bots ignoring your robots.txt. C
+- [How to keep your storefront running through Black Friday](https://vercel.com/kb/guide/black-friday-reliability) — Learn how to tune alerts, bot rules, and spend limits. Rehearse rollback so your team can recover quickly from checkout
 - [How to conduct PCI scans on Vercel: A complete guide to IP safelisting](https://vercel.com/kb/guide/how-to-conduct-pci-scans-on-vercel-guide) — Scan and verify your Vercel deployments for secure, PCI-compliant payment processing.
 - [How to migrate from Fastly to Vercel with zero downtime](https://vercel.com/kb/guide/how-to-migrate-from-fastly-to-vercel-with-zero-downtime) — Consolidate your CDN infrastructure on Vercel to reduce latency, simplify your configuration, and improve your developer
-- [How to resolve IP blocking issues ](https://vercel.com/kb/guide/how-to-resolve-ip-blocking-issues) — Learn to troubleshoot IP blocking issues for both shared and personal networks.
 - [How Vercel Agent accesses production safely](https://vercel.com/blog/how-vercel-agent-accesses-production-safely)
 - [Rate Limiting SDK](https://vercel.com/docs/vercel-firewall/vercel-waf/rate-limiting-sdk) — Learn how to configure a custom rule with rate limit in your code.
 
@@ -161,6 +161,41 @@ Learn how to create, test, and apply a Custom Rule.
 14. Apply the changes with the **Review Changes** button
 
 Review [Common Examples](/docs/vercel-firewall/vercel-waf/examples) for the application of specific rules in common situations.
+
+## Bot conditions with Priority projects
+
+[Priority projects](/docs/vercel-firewall/priority-projects) unlock additional match conditions for classifying and acting on bot traffic:
+
+- `bot_name`: Match requests by a specific bot name, such as blocking `Bytespider` or allowing `Googlebot`.
+- `bot_category`: Match requests by [bot category](/docs/bot-management#bot-categories), such as rate-limiting all `automated_browser` traffic or denying all `scanner` requests.
+- `bot_status`: Match by verification status, one of `identified`, `verified`, `impersonation`, or `unknown`.
+- `bot_protection`: Match on whether bot protection was triggered.
+
+Rules that use bot conditions become inactive if you downgrade the project off Priority. Their configuration is preserved, and upgrading the project again reactivates them.
+
+## Traffic source conditions with Priority projects
+
+[Priority projects](/docs/vercel-firewall/priority-projects) can match requests by the type of network they come from with the `traffic_source` condition, labeled **Traffic Source** in the rule builder. Vercel classifies the public IP address of the client that sent each request, and the `traffic_source` condition matches these values:
+
+| Value       | Rule builder label | Description                                                    |
+| ----------- | ------------------ | -------------------------------------------------------------- |
+| `tor`       | Tor                | A known Tor exit node.                                         |
+| `vpn`       | VPN                | The egress IP address of a commercial VPN.                     |
+| `proxy`     | Proxy              | A known open or anonymizing proxy.                             |
+| `res-proxy` | Residential Proxy  | An IP address offered through a residential proxy network.     |
+| `abuse`     | Abuse              | An IP address with a high-confidence history of abuse.         |
+
+A traffic source describes the network a request came through, and how much risk it carries depends on the source. VPNs carry substantial legitimate traffic, so a traffic source works best as one signal in a rule rather than the only reason to block a request. Residential proxy and abuse sources more often indicate attacks or scraping.
+
+The `traffic_source` condition supports the **Equals** (`eq`), **Does not equal** (`neq`), **Is any of** (`inc`), and **Is not any of** (`ninc`) operators. A request can have more than one traffic source, and the condition matches when any one of them matches the operator.
+
+**Does not equal** and **Is not any of** only match requests that have a traffic source. For example, a rule with Traffic Source **Does not equal** `tor` matches a request from a VPN, but not a request from an IP address with no traffic source.
+
+To act on requests from anonymizing networks, use **Is any of** with `tor`, `vpn`, `proxy`, and `res-proxy`. Start with the **Log** action to see how much of your traffic matches before you switch to **Challenge** or **Deny**.
+
+Your application can read the same classification from the [`x-vercel-waf-source`](/docs/headers/request-headers#x-vercel-waf-source) request header.
+
+Rules that use the `traffic_source` condition become inactive if you downgrade the project off Priority. Their configuration is preserved, and upgrading the project again reactivates them.
 
 ## Create a rule with natural language
 

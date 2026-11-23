@@ -14,8 +14,8 @@ summary: Vercel MCP tools for routing.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/routing.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "2c4e2e33d8c7a3dea52f39c2a4ef2ae526fc2c93e3efb3c5197cc0829efd38b1"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "e52146dcadac78017be316f84f3d665a52014cfd360b652e02e688848d36ebaf"
 ---
 
 # Routing
@@ -30,9 +30,9 @@ Control where requests go with project routing rules, redirects, and deployment 
 
 - [vercel routes](https://vercel.com/docs/cli/routes) — Learn how to manage project-level routing rules using the vercel routes CLI command.
 - [Promote, restore, or discard a routing rule version](https://vercel.com/docs/rest-api/project-routes/promote-restore-or-discard-a-routing-rule-version) — POST /v1/projects/{projectId}/routes/versions — Promote staged routing rules to production, restore a previous productio
+- [Routing](https://vercel.com/docs/routing) — Learn how Vercel's CDN routes requests through firewall, project routes, and deployment routes before reaching your appl
 - [Get routing rule version history](https://vercel.com/docs/rest-api/project-routes/get-routing-rule-version-history) — GET /v1/projects/{projectId}/routes/versions — Get the version history for a project's routing rules. Returns the stagin
 - [Edit a routing rule](https://vercel.com/docs/rest-api/project-routes/edit-a-routing-rule) — PATCH /v1/projects/{projectId}/routes/{routeId} — Replace a routing rule identified by its ID, or restore it from the cu
-- [Stage routing rules](https://vercel.com/docs/rest-api/project-routes/stage-routing-rules) — PUT /v1/projects/{projectId}/routes — Stage routing rules for a project. Set \\`overwrite\\` to true to replace all existi
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/routing.graph.md](/docs/agent-resources/vercel-mcp/tools/routing.graph.md)
 <!-- /docsgraph:related -->

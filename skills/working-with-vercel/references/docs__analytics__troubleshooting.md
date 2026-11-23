@@ -14,8 +14,8 @@ summary: Learn how to troubleshoot common issues with Vercel Web Analytics.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/analytics/troubleshooting.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "4230682493cf920a97dbfd1aca413537a6e77b827f704fab770d4df777a40052"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "d0d33aabea9fa1049e8486ce8fd92f65882077e8dc14420d3c691e88ff2ddc03"
 ---
 
 # Vercel Web Analytics Troubleshooting
@@ -31,7 +31,6 @@ sha256: "4230682493cf920a97dbfd1aca413537a6e77b827f704fab770d4df777a40052"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Web Analytics is now generally available](https://vercel.com/blog/vercel-web-analytics-is-now-generally-available)
-- [Query Web Analytics from the Vercel CLI](https://vercel.com/changelog/query-web-analytics-from-the-vercel-cli)
 - [Using Web Analytics](https://vercel.com/docs/analytics/using-web-analytics) — Learn how to use Vercel's Web Analytics to understand how visitors are using your website.
 - [Privacy and Compliance](https://vercel.com/docs/analytics/privacy-policy) — Learn how Vercel supports privacy and data compliance standards with Vercel Web Analytics.
 - [Troubleshooting Vercel Speed Insights](https://vercel.com/docs/speed-insights/troubleshooting) — Learn about common issues and how to troubleshoot Vercel Speed Insights.

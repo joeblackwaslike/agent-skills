@@ -18,8 +18,8 @@ summary: Use Anthropic tool use with AI Gateway to execute model-generated code 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/ecosystem/anthropic-sdk.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "cc74b764f844e4d6b0f41317a2d69bfb401737131f63a76c4058b470ff63b825"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "5fa915544eca0dd9d3c5ff3d52238b86cf88b3e9b65e6d1baaba4de38e87de6f"
 ---
 
 # Anthropic SDK
@@ -38,13 +38,12 @@ credentials covers both the model and the sandbox.
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Using Vercel Sandbox to run Claude’s Agent SDK](https://vercel.com/kb/guide/using-vercel-sandbox-claude-agent-sdk) — Learn how to deploy Claude's Agent SDK in Vercel Sandbox for secure and isolated execution of AI-powered code generation
-- [Run Python code securely with AI SDK and Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox) — Add an \\`executeCode\\` tool to your AI SDK agent with the \\`ai-sdk-tool-code-execution\\` package to run Python 3.13 insi
+- [Add Python code execution to a TypeScript AI agent with Vercel Sandbox](https://vercel.com/kb/guide/python-ai-sdk-vercel-sandbox) — Add an \\`executeCode\\` tool to your TypeScript AI SDK agent with the \\`ai-sdk-tool-code-execution\\` package to run Pytho
 - [Safely running AI generated code in your Next.js application](https://vercel.com/kb/guide/running-ai-generated-code-sandbox) — How to execute untrusted, AI‑generated code from a Next.js app using Vercel Sandbox, an isolated, ephemeral environment.
 - [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
 - [OpenAI SDK](https://vercel.com/docs/sandbox/ecosystem/openai-sdk) — Use OpenAI function calling with AI Gateway to execute model-generated code in an isolated Vercel Sandbox.
 - [LangChain](https://vercel.com/docs/sandbox/ecosystem/langchain) — Give a LangChain agent a tool that executes model-generated code in an isolated Vercel Sandbox, with models served by AI
-- [AI Gateway Tool Use and Function Calling](https://vercel.com/docs/ai-gateway/inputs-and-tools/tool-use) — Connect AI Gateway models to application tools with AI SDK 7, Python, Chat Completions, Messages, and Responses examples
-- [Chat SDK with Vercel Sandbox](https://vercel.com/docs/chat-sdk/integrations/sandbox) — Build a Chat SDK agent that analyzes CSV attachments with the AI SDK Bash tool in Vercel Sandbox.
+- [Understanding Sandboxes](https://vercel.com/docs/sandbox/concepts) — Learn how Vercel Sandboxes provide on-demand, isolated compute environments for running untrusted code, testing applicat
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/anthropic-sdk.graph.md](/docs/sandbox/ecosystem/anthropic-sdk.graph.md)
 <!-- /docsgraph:related -->
@@ -58,13 +57,13 @@ Full cross-link map for this page: [/docs/sandbox/ecosystem/anthropic-sdk.graph.
   Create a new directory for your project and initialize it:
 
   **terminal**
-  ```bash filename="terminal" framework=node
+  ```bash filename="terminal" language=ts
   mkdir anthropic-sandbox
   cd anthropic-sandbox
   npm init -y
   ```
   **terminal**
-  ```bash filename="terminal" framework=py
+  ```bash filename="terminal" language=py
   mkdir anthropic-sandbox
   cd anthropic-sandbox
   uv init
@@ -74,23 +73,23 @@ Full cross-link map for this page: [/docs/sandbox/ecosystem/anthropic-sdk.graph.
   Install the Anthropic SDK and the Sandbox SDK:
 
   **terminal**
-  ```bash filename="terminal" framework=node package-manager="npm"
+  ```bash filename="terminal" language=ts package-manager="npm"
   npm install @anthropic-ai/sdk @vercel/sandbox
   ```
   **terminal**
-  ```bash filename="terminal" framework=node package-manager="yarn"
+  ```bash filename="terminal" language=ts package-manager="yarn"
   yarn add @anthropic-ai/sdk @vercel/sandbox
   ```
   **terminal**
-  ```bash filename="terminal" framework=node package-manager="pnpm"
+  ```bash filename="terminal" language=ts package-manager="pnpm"
   pnpm add @anthropic-ai/sdk @vercel/sandbox
   ```
   **terminal**
-  ```bash filename="terminal" framework=node package-manager="bun"
+  ```bash filename="terminal" language=ts package-manager="bun"
   bun add @anthropic-ai/sdk @vercel/sandbox
   ```
   **terminal**
-  ```bash filename="terminal" framework=py
+  ```bash filename="terminal" language=py
   uv add anthropic vercel-sandbox
   ```
 
@@ -304,11 +303,11 @@ Full cross-link map for this page: [/docs/sandbox/ecosystem/anthropic-sdk.graph.
   Run your application with the environment variables from `.env.local`:
 
   **terminal**
-  ```bash filename="terminal" framework=node
+  ```bash filename="terminal" language=ts
   npx tsx --env-file=.env.local index.ts
   ```
   **terminal**
-  ```bash filename="terminal" framework=py
+  ```bash filename="terminal" language=py
   uv run --env-file .env.local main.py
   ```
   Claude writes the code, the sandbox executes it, and the final response

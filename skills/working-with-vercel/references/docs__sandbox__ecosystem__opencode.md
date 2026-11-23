@@ -16,8 +16,8 @@ summary: Run OpenCode in Vercel Sandbox from your terminal, or use the plugin fo
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/sandbox/ecosystem/opencode.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "ce95b2ad8c6bd4c2bfd6adfaef83ee358e81b3f3920cdcfbb74fc2241472db46"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "01abe28a97c7c83922519b9be4cc4068433bfddf5a2ae91b852c8f4af8bdbff3"
 ---
 
 # OpenCode
@@ -33,12 +33,11 @@ Use [OpenCode](https://opencode.ai) with Vercel Sandbox through the
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Running OpenCode securely with the Vercel Sandbox](https://vercel.com/kb/guide/running-opencode-securely-with-the-vercel-sandbox) — Run OpenCode in an isolated Vercel Sandbox MicroVM with controlled egress, using the SDK to restrict network access so t
-- [Vercel Sandbox vs CodeSandbox](https://vercel.com/kb/guide/vercel-sandbox-vs-codesandbox) — A detailed guide to Vercel Sandbox vs CodeSandbox: compute isolation, credential brokering, Active CPU billing, Docker s
-- [Safely running AI generated code in your Next.js application](https://vercel.com/kb/guide/running-ai-generated-code-sandbox) — How to execute untrusted, AI‑generated code from a Next.js app using Vercel Sandbox, an isolated, ephemeral environment.
+- [Start a coding agent from the CLI](https://vercel.com/docs/sandbox/examples/start-a-coding-agent) — Start OpenCode in a new Vercel Sandbox from an interactive terminal with the Sandbox CLI.
 - [OpenAI SDK](https://vercel.com/docs/sandbox/ecosystem/openai-sdk) — Use OpenAI function calling with AI Gateway to execute model-generated code in an isolated Vercel Sandbox.
+- [Sandbox Examples](https://vercel.com/docs/sandbox/examples) — Task-oriented examples for common Vercel Sandbox operations in TypeScript, Python, and the Sandbox CLI.
 - [Quickstart](https://vercel.com/docs/sandbox/quickstart) — Learn how to run your first code in a Vercel Sandbox.
 - [OpenCode with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/opencode) — Connect OpenCode to AI Gateway with one CLI command, or configure it in-app.
-- [vercel sandbox](https://vercel.com/docs/cli/sandbox) — Interact with Vercel Sandbox from the Vercel CLI: list, create, connect, exec, copy, stop, and snapshot sandboxes from y
 
 Full cross-link map for this page: [/docs/sandbox/ecosystem/opencode.graph.md](/docs/sandbox/ecosystem/opencode.graph.md)
 <!-- /docsgraph:related -->

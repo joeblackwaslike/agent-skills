@@ -1,10 +1,10 @@
 ---
 source: "https://opencode.ai/docs/console/"
-fetched_at: "2026-11-09T12:39:24.590Z"
-sha256: "5b8d74775c5091440fcd6beb510ab2f9ebbdbb3d9c654a1aef293d18239c8fba"
+fetched_at: "2026-11-23T14:15:43.627Z"
+sha256: "2e7b751db1ddad8d77083819cac29561da4f4d2cc290a2f754b9c474a5775323"
 ---
 
-# Intro
+# Console intro
 
 The [OpenCode Console](https://opencode.ai/console) is an optional service that provides additional benefits to
 using OpenCode, on your own or as a team.

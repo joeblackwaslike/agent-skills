@@ -16,8 +16,8 @@ summary: Configure your Vercel project with a TOML file using the same propertie
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/project-configuration/vercel-toml.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "e1125d341a06be697d77bfff77541745ac88b9a3fb0f3a5199f9afcc6fab93e3"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "ff2e10f6955b00dd3ab997efd01340ce9b3c451438ac06c55de40a19a13203a6"
 ---
 
 # Static Configuration with vercel.toml
@@ -34,9 +34,9 @@ The `vercel.toml` file lets you configure your Vercel project with [TOML](https:
 - [Introducing vercel.ts: Programmatic project configuration](https://vercel.com/changelog/vercel-ts)
 - [Advanced Configuration](https://vercel.com/docs/functions/configuring-functions/advanced-configuration) — Learn how to add utility files to the /api directory, and bundle Vercel Functions.
 - [Global Vercel CLI Configuration](https://vercel.com/docs/project-configuration/global-configuration) — Learn how to configure Vercel CLI under your system user.
+- [Configures Static IPs for a project](https://vercel.com/docs/rest-api/networking/configures-static-ips-for-a-project) — PATCH /v1/projects/{idOrName}/shared-connect-links — Allows configuring Static IPs for a project
 - [Vercel CI Configuration Reference](https://vercel.com/docs/ci/configuration) — Reference for the turbo.json tags and vercel.json keys that configure Vercel CI.
 - [Git Configuration](https://vercel.com/docs/project-configuration/git-configuration) — Learn how to configure Git for your project through vercel.json or vercel.ts.
-- [Service configuration reference](https://vercel.com/docs/services/config-reference) — Options available for service configuration.
 
 Full cross-link map for this page: [/docs/project-configuration/vercel-toml.graph.md](/docs/project-configuration/vercel-toml.graph.md)
 <!-- /docsgraph:related -->

@@ -14,8 +14,8 @@ summary: "Manage Deploy Hooks for Git-triggered builds from the Vercel CLI: list
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/deploy-hooks.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "3bc9af763908871e2161588e1f46f4b1dbd41d7c8f76bcbab3a2946832e9afd7"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "1ebd0d15d83f9218e27c75bd1bfe3a34aebb7d95315299dcfe99f03427641a51"
 ---
 
 # vercel deploy-hooks
@@ -28,7 +28,6 @@ The `vercel deploy-hooks` command manages [Deploy Hooks](/docs/deploy-hooks). A 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Introducing Deploy Hooks](https://vercel.com/blog/introducing-deploy-hooks)
 - [How to use Deploy Hooks with Vercel and a Headless CMS](https://vercel.com/kb/guide/set-up-and-use-deploy-hooks-with-vercel-and-headless-cms) — Create your own Deploy Hooks to trigger automatic deployments on Vercel when using a Headless CMS.
 - [vercel webhooks](https://vercel.com/docs/cli/webhooks) — Learn how to manage webhooks for your Vercel account using the vercel webhooks CLI command.
 - [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.

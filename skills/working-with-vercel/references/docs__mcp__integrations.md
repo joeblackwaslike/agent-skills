@@ -17,8 +17,8 @@ summary: Connect AI SDK, TanStack AI, and eve applications to MCP servers to dis
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/mcp/integrations.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "c24780b3e70bc5c9092cba22a1bb19ed7e1273ad7e02323664c7fd9363ab4183"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "2c65bb004a6dff2b0ce0c8adbacc46f83def6c90d3ea11d5decf487df37e82db"
 ---
 
 # MCP Integrations
@@ -32,11 +32,10 @@ Connect your application or agent to a [Model Context Protocol (MCP)](/docs/mcp)
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [How to perform large-scale data analysis with Vercel Sandbox and MCP](https://vercel.com/kb/guide/large-scale-data-analysis-vercel-sandbox-mcp) — Use Vercel Sandbox and an MCP server built with \\`mcp-handler\\` to let AI agents run DuckDB SQL and Python on large data
+- [MCP Integrations](https://v0.app/docs/MCP) — Connect and use MCP servers directly in v0
 - [MCP server support on Vercel](https://vercel.com/changelog/mcp-server-support-on-vercel)
 - [Introducing Vercel MCP: Connect Vercel to your AI tools](https://vercel.com/blog/introducing-vercel-mcp-connect-vercel-to-your-ai-tools)
-- [MCP Integrations](https://v0.app/docs/MCP) — Connect and use MCP servers directly in v0
-- [Devin, Raycast, Windsurf, and Goose now supported on Vercel MCP](https://vercel.com/changelog/devin-raycast-windsurf-and-goose-now-supported-on-vercel-mcp)
-- [Vercel MCP now in Public Beta](https://vercel.com/changelog/vercels-mcp)
+- [Build a ChatGPT Connector \\(MCP server\\)](https://vercel.com/kb/guide/mcp-server-chatgpt-connector) — Build a ChatGPT MCP server with mcp-handler and Fluid compute. Add search, fetch, and OAuth, deploy to Vercel, then vali
 - [Vercel Integrations](https://vercel.com/docs/integrations) — Learn how to extend Vercel's capabilities by integrating with your preferred providers for AI, databases, headless conte
 
 Full cross-link map for this page: [/docs/mcp/integrations.graph.md](/docs/mcp/integrations.graph.md)

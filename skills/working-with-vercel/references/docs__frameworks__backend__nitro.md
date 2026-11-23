@@ -18,8 +18,8 @@ summary: Deploy Nitro applications to Vercel with zero configuration. Learn abou
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/backend/nitro.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "c9cab6896a255c32b179bc3fc1e47b4810a45e47225ae4a436523901eb929149"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "83c975f568c76be831828c04d49cee91cab366f3c2ac13a5132992508c2948b6"
 ---
 
 # Nitro on Vercel
@@ -34,14 +34,14 @@ Nitro is a full-stack framework with TypeScript-first support. It includes files
 
 - [What is the Nitro Vite plugin?](https://vercel.com/kb/guide/nitro-vite-plugin) — The Nitro Vite plugin \\(nitro/vite\\) adds SSR, API routes, and deploy-anywhere server builds to any Vite app. Learn what
 - [Migrate a TanStack Start app from Cloudflare to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-cloudflare-to-vercel) — Move your TanStack Start app off Cloudflare Workers and onto Vercel Functions, where Fluid compute scales it automatical
-- [Zero-configuration support for Nitro](https://vercel.com/changelog/zero-configuration-support-for-nitro)
 - [Migrate a TanStack Start app from Netlify to Vercel](https://vercel.com/kb/guide/migrate-a-tanstack-start-app-from-netlify-to-vercel) — Move your TanStack Start app off Netlify and onto Vercel Functions, where Fluid compute scales it automatically. Swap to
 - [How to Deploy a TanStack Start app to Vercel](https://vercel.com/kb/guide/deploy-a-tanstack-start-app-to-vercel) — Deploy a TanStack Start app to Vercel with the Nitro Vite plugin. Covers Git and CLI deployment, Fluid compute defaults,
 - [Build a Weather API on Vercel: Express, FastAPI, and Nitro](https://vercel.com/kb/guide/weather-api-with-fastapi) — Build a weather API on Vercel with FastAPI, Express, or Nitro. Compare the three runtimes, add caching and Observability
-- [Improved support for Nuxt on Vercel](https://vercel.com/blog/nuxt-on-vercel)
+- [Zero-configuration support for Nitro](https://vercel.com/changelog/zero-configuration-support-for-nitro)
 - [Chat SDK with Nitro](https://vercel.com/docs/chat-sdk/frameworks/nitro) — Add a Chat SDK bot to Nitro, receive Slack events through Vercel Connect, and deploy on Vercel.
 - [NestJS on Vercel](https://vercel.com/docs/frameworks/backend/nestjs) — Deploy NestJS applications to Vercel with zero configuration.
 - [Supported Frameworks on Vercel](https://vercel.com/docs/frameworks/more-frameworks) — Learn about the frameworks that can be deployed to Vercel.
+- [React Router on Vercel](https://vercel.com/docs/frameworks/frontend/react-router) — Deploy React Router applications with SSR or SPA mode, then configure the Vercel preset, streaming, caching, and analyti
 
 Full cross-link map for this page: [/docs/frameworks/backend/nitro.graph.md](/docs/frameworks/backend/nitro.graph.md)
 <!-- /docsgraph:related -->

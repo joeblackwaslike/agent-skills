@@ -9,8 +9,8 @@ tags:
   - tools
   - redis
 source: "https://ai-sdk.dev/cookbook/guides/redis-agent-memory.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "f3d5528449e89b69058d5141a9587e435f036fecb03c123409036e3ddd5e613d"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "b987aa9b2c11898cec34fce100c31a8d0809c45ad1ac8bee350088d531a4ed60"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -68,11 +68,12 @@ Create a `.env` file:
 
 ```dotenv title=".env"
 AI_GATEWAY_API_KEY=your_ai_gateway_api_key
+AGENT_MEMORY_URL=your_agent_memory_endpoint
 AGENT_MEMORY_API_KEY=your_agent_memory_api_key
 AGENT_MEMORY_STORE_ID=your_agent_memory_store_id
 ```
 
-If your store uses a different endpoint from the package's default, also set `AGENT_MEMORY_URL` to the endpoint provided by Redis Cloud.
+Set `AGENT_MEMORY_URL` to the endpoint provided by Redis Cloud for your store. It is required.
 
 Add `.env` and `node_modules/` to `.gitignore`:
 

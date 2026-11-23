@@ -17,8 +17,8 @@ summary: Learn how to set up Code Owners for your codebase.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/code-owners/getting-started.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "eb5d7d1423e4847ea4c3e90efe316a67bc8c37d797815336dc3f7c104edc645a"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "66010b85daf87946f780beb5a8c4d24b46dc3c4ad2bb8f7bd2aac17c8b6fe2b6"
 ---
 
 # Getting Started with Code Owners
@@ -44,6 +44,8 @@ Help me set up Code Owners for this Vercel project. First, make sure the Vercel 
 ### Get access to Code Owners
 
 To enable Code Owners for your Enterprise team, you'll need to request access through your Vercel account administrator.
+
+If your team isn't on the Enterprise plan, [contact our sales team](/contact/sales) to get access to Code Owners.
 
 ### Setting up Vercel's private npm registry
 

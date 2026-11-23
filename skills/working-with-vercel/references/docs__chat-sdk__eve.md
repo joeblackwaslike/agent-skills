@@ -17,8 +17,8 @@ summary: Send Chat SDK messages to an eve agent with a channel, persistent state
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/chat-sdk/eve.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "75fc9890a803b8d28fe94dee8a9a2446c12dc29f1cd05bbb4f85bd0274183743"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "23a2853b4bd737c3b0f891709f55f06e7d81c7c684ab37413af2e0169c41bdf6"
 ---
 
 # Using eve with Chat SDK
@@ -33,10 +33,10 @@ Use [eve's Chat SDK channel](https://eve.dev/docs/channels/chat-sdk) to send pla
 
 - [Using Chat SDK and eve together](https://vercel.com/kb/guide/chat-sdk-and-eve) — Understand how eve and Chat SDK divide responsibilities, when to use eve's first-class channels versus the Chat SDK chan
 - [Give your eve agent an email inbox with Resend](https://vercel.com/kb/guide/eve-agent-with-resend) — Connect an eve agent to email using the Chat SDK channel and the Resend adapter. Handle inbound email, threaded replies,
-- [Use any Chat SDK adapter with eve](https://vercel.com/changelog/eve-chat-sdk-channel)
-- [eve adds new Slack event hooks and session controls](https://vercel.com/changelog/eve-adds-new-slack-event-hooks-and-session-controls)
 - [Next.js](https://eve.dev/docs/guides/frontend/nextjs) — Add an eve chat to a Next.js app, from setup and authentication to saved conversations and deployment.
 - [Chat SDK Reference](https://eve.dev/docs/channels/chat-sdk/reference) — Chat SDK channel options, webhook routes, send and respond, steering, delivery, human-in-the-loop, sign-ins, proactive s
+- [How to build a GitHub agent with eve and GitHub Tools](https://vercel.com/kb/guide/github-agent-eve) — Build a GitHub agent with eve, GitHub Tools, and Vercel Connect. Register AI-callable GitHub tools, gate writes behind d
+- [Use any Chat SDK adapter with eve](https://vercel.com/changelog/eve-chat-sdk-channel)
 - [Build your first Slack agent with eve](https://vercel.com/kb/guide/eve-slack-agent-starter) — Deploy the eve Slack agent template: a starter Slack bot built on the eve framework with an example tool and skill.
 - [AI SDK](https://vercel.com/docs/ai-sdk) — Build TypeScript agents and AI applications with a unified API for models, tools, structured output, and streaming.
 - [Chat SDK Integrations](https://vercel.com/docs/chat-sdk/integrations) — Extend a Chat SDK bot with AI Gateway, Vercel Connect, Vercel Passport, Vercel Sandbox, Vercel Workflows, and Vercel Dae

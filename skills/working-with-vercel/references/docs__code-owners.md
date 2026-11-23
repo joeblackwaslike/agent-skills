@@ -14,8 +14,8 @@ summary: Use Code Owners to define users or teams that are responsible for direc
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/code-owners.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "c8a129eb2f416f7e207e004cb91c7b631819a29ef208e6c0394f1d2badf74a42"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "1de676c35410814141b5e9f556bb9bbacb676821153d862148897ff7ad15a3e9"
 ---
 
 # Code Owners
@@ -34,6 +34,8 @@ Code Owners is only available for use with GitHub.
 
 To get started with Code Owners, follow the instructions on the
 [Getting Started](/docs/code-owners/getting-started) page.
+
+If your team isn't on the Enterprise plan, [contact our sales team](/contact/sales) to get access to Code Owners.
 
 ## Code Approvers
 

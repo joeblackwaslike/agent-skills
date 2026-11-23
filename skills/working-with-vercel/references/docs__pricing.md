@@ -17,8 +17,8 @@ summary: "Learn about Vercel's pricing model, including the resources and servic
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/pricing.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "778a15cfc305b25567afffc6ff004f6c44d9a776ea925225aaaf12ed1d05c3c9"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "6f87d50ccea8edd9411e8954272bbbad99f5b5b4cc0168d01c68319197402d15"
 ---
 
 # Pricing on Vercel
@@ -33,6 +33,7 @@ Vercel's pricing model includes billable metrics and pricing models across Manag
 
 - [Basic build machines are now available on Pro and Enterprise](https://vercel.com/changelog/basic-build-machines)
 - [Preview URLs optimized for multi-tenant platforms](https://vercel.com/changelog/preview-urls-optimized-for-multi-tenant-platforms)
+- [How to reduce build costs on Vercel](https://vercel.com/kb/guide/how-to-reduce-build-costs) — Find which projects drive your Build CPU Minutes, then lower them by skipping unneeded builds, shortening each build, an
 - [Billing FAQ for Pro Plan](https://vercel.com/docs/plans/pro-plan/billing) — This page covers frequently asked questions around payments, invoices, and billing on the Pro plan.
 - [Vercel Hobby Plan](https://vercel.com/docs/plans/hobby) — Learn about the Hobby plan and how it compares to the Pro plan.
 - [Build Queues](https://vercel.com/docs/builds/build-queues) — Understand how concurrency and same branch build queues manage multiple simultaneous deployments.
@@ -251,6 +252,8 @@ The below table lists the billable DX Platform resources for the Pro plan. Most 
 | [Web Analytics Plus](/docs/analytics/limits-and-pricing#pro-with-web-analytics-plus) | $10 / month | N/A |
 | [Speed Insights Plus](/docs/speed-insights/limits-and-pricing) | $10 / month per project | N/A |
 
+
+For pricing on the [Enterprise plan](/docs/plans/enterprise), [contact our sales team](/contact/sales).
 
 ## More resources
 

@@ -18,8 +18,8 @@ summary: Retry failed Bring Your Own Cloud (BYOC) deployments, clean up AWS reso
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/networking/bring-your-own-cloud/operations.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "a5ee45c5cc6d24d5806fa0d5dbb3a93c24288d779087729d7f73778c80abc178"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "f66620cbecb5dc9b89fb0ac216540971cb161484ddc44ee04d12bc610037b6df"
 ---
 
 # Operating BYOC Deployments
@@ -37,9 +37,9 @@ With [Bring Your Own Cloud (BYOC)](/docs/networking/bring-your-own-cloud), your 
 - [The Complete Guide to Bring Your Own Cloud](https://vercel.com/kb/guide/byoc) — Use Bring Your Own Cloud \\(BYOC\\) to run Vercel Functions as AWS Lambda functions in your own AWS account, from setup to
 - [Managing Deployments](https://vercel.com/docs/deployments/managing-deployments) — Learn how to manage your current and previously deployed projects to Vercel through the dashboard. You can redeploy at a
 - [Deploying to Vercel](https://vercel.com/docs/deployments) — Create, verify, and manage preview and production deployments on Vercel from Git, Vercel CLI, or the REST API.
+- [Deploying Projects from Vercel CLI](https://vercel.com/docs/cli/deploying-from-cli) — Learn how to deploy your Vercel Projects from Vercel CLI using the vercel or vercel deploy commands.
 - [Deploying a project from the CLI](https://vercel.com/docs/projects/deploy-from-cli) — Set up and deploy a Vercel project using the CLI, from linking to production.
 - [Getting started with Vercel](https://vercel.com/docs/getting-started-with-vercel) — Install the Vercel CLI, add the Vercel Plugin or agent skills, connect Vercel MCP, and deploy your first project.
-- [Troubleshooting Build Errors](https://vercel.com/docs/deployments/troubleshoot-a-build) — Learn how to resolve common scenarios you may encounter during the Build step, including build errors that cancel a depl
 
 Full cross-link map for this page: [/docs/networking/bring-your-own-cloud/operations.graph.md](/docs/networking/bring-your-own-cloud/operations.graph.md)
 <!-- /docsgraph:related -->

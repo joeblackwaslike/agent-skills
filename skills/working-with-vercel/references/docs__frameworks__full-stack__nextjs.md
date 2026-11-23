@@ -18,8 +18,8 @@ summary: Vercel is the native Next.js platform, designed to enhance the Next.js 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/frameworks/full-stack/nextjs.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "b206d9bec6ca7a8eea70503230e4ea0c2b7384f54de981a19c138cccf94242ed"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "24c0d080c6fc73d25eded1f5b6a848124063e5acdcd3197392b506b4c4860dc3"
 ---
 
 # Next.js on Vercel
@@ -34,16 +34,16 @@ sha256: "b206d9bec6ca7a8eea70503230e4ea0c2b7384f54de981a19c138cccf94242ed"
 
 - [Deploying](https://nextjs.org/docs/app/getting-started/deploying) — Learn how to deploy your Next.js application.
 - [How to deploy your Next.js application](https://nextjs.org/docs/pages/getting-started/deploying) — Learn how to deploy your Next.js application.
-- [How to set up local HTTPS for Next.js and other dev servers](https://vercel.com/kb/guide/access-nextjs-localhost-https-certificate-self-signed) — Learn when you need local HTTPS, how to enable it with next dev --experimental-https, and how to clear certificate warni
-- [Adding keyboard shortcuts to React apps with TanStack Hotkeys](https://vercel.com/kb/guide/adding-keyboard-shortcuts-to-react-apps-with-tanstack-hotkeys) — Add cross-platform keyboard shortcuts to your React app with TanStack Hotkeys. Install, register, scope, and display sho
-- [Making your catalog discoverable to AI agents](https://vercel.com/kb/guide/agentic-commerce-readiness) — Agentic commerce readiness starts with the initial HTML response. Server-render your product catalog, ship JSON-LD, and
-- [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
-- [What are the best practices for hosting videos on Vercel?](https://vercel.com/kb/guide/best-practices-for-hosting-videos-on-vercel-nextjs-mp4-gif) — Learn the ideal solutions for using video files like .mp4 and .gif on Vercel to prevent excess bandwidth consumption.
-- [Fetching Data](https://nextjs.org/docs/app/getting-started/fetching-data) — Learn how to fetch data and stream content that depends on data.
-- [opengraph-image and twitter-image](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image) — API Reference for the Open Graph Image and Twitter Image file conventions.
-- [Introducing OG Image Generation: Fast, dynamic social card images at the Edge](https://vercel.com/blog/introducing-vercel-og-image-generation-fast-dynamic-social-card-images)
+- [Building Ecommerce Sites with Next.js and Shopify](https://vercel.com/kb/guide/building-ecommerce-sites-with-next-js-and-shopify) — Learn how to integrate Next.js and Shopify together for the fastest storefronts using the Storefront GraphQL API.
+- [How to deploy Medusa on Vercel](https://vercel.com/kb/guide/deploy-medusa-on-vercel) — Deploy a Medusa storefront on Vercel, including where the backend runs, which environment variables the current starter
+- [How do I reduce my build time with Next.js on Vercel?](https://vercel.com/kb/guide/how-do-i-reduce-my-build-time-with-next-js-on-vercel) — Reduce Next.js build times on Vercel by pre-rendering fewer pages at build time, deferring generation with ISR and image
+- [Migrate a Next.js app from Webflow Cloud to Vercel](https://vercel.com/kb/guide/migrate-a-next-js-app-from-webflow-cloud-to-vercel) — Move your Next.js app from Webflow Cloud to Vercel: remove the OpenNext Cloudflare adapter, drop the base path, map stor
+- [Next.js on Vercel vs Cloudflare](https://vercel.com/kb/guide/next-js-on-vercel-vs-cloudflare) — Compare running Next.js on Vercel Functions with Fluid compute against Cloudflare Workers with the OpenNext Cloudflare a
+- [Vercel Data Cache: A progressive cache, integrated with Next.js](https://vercel.com/blog/vercel-cache-api-nextjs-cache)
 - [SvelteKit on Vercel](https://vercel.com/docs/frameworks/full-stack/sveltekit) — Deploy SvelteKit applications to Vercel and configure the adapter, rendering, streaming, ISR, analytics, and Routing Mid
-- [Advanced Web Analytics Config with @vercel/analytics](https://vercel.com/docs/analytics/package) — With the @vercel/analytics npm package, you are able to configure your application to send analytics data to Vercel.
+- [Chat SDK with Next.js](https://vercel.com/docs/chat-sdk/frameworks/nextjs) — Add a Chat SDK bot to Next.js, receive Slack events through Vercel Connect, and deploy on Vercel.
+- [vercel dev](https://vercel.com/docs/cli/dev) — Learn how to replicate the Vercel deployment environment locally and test your Vercel Project before deploying using the
+- [Getting Started with Vercel Flags](https://vercel.com/docs/flags/vercel-flags/quickstart) — Create your first feature flag and evaluate it in your application using the Flags SDK, OpenFeature, or the core library
 
 Full cross-link map for this page: [/docs/frameworks/full-stack/nextjs.graph.md](/docs/frameworks/full-stack/nextjs.graph.md)
 <!-- /docsgraph:related -->
@@ -177,7 +177,7 @@ Vercel supports streaming in Next.js projects with any of the following:
 
 Streaming data allows you to fetch information in chunks rather than all at once, speeding up Function responses. You can use streams to improve your app's user experience and prevent your functions from failing when fetching large files.
 
-#### Streaming with `loading` and `Suspense`
+### Streaming with `loading` and `Suspense`
 
 In the Next.js App Router, you can use the `loading` file convention or a `Suspense` component to show an instant loading state from the server while the content of a route segment loads.
 
@@ -245,6 +245,22 @@ export default function Posts() {
 - Display initial loading UI with incremental updates from the server as new data becomes available
 
 Learn more about [Streaming](/docs/functions/streaming-functions) with Vercel Functions.
+
+### Streaming and SEO
+
+Streaming doesn't stop search engines from indexing a page. Next.js renders streamed content on the server, so the content is part of the HTML response, and Google indexes it. In a [study of more than 100,000 Googlebot fetches](/blog/how-google-handles-javascript-throughout-the-indexing-process) on `nextjs.org`, Googlebot fully rendered content that was streamed with React Server Components.
+
+Streaming changes two things that crawlers read: the page metadata and the HTTP status code.
+
+**Metadata**: Next.js can send the tags from [`generateMetadata`](https://nextjs.org/docs/app/api-reference/functions/generate-metadata#streaming-metadata) after the initial UI and append them to the `<body>`. Googlebot reads streamed metadata correctly. For crawlers that Next.js identifies as HTML-limited because they don't run JavaScript, such as `facebookexternalhit`, Next.js waits for the metadata and places it in the `<head>` before it starts the response. To change which user agents count as HTML-limited, set [`htmlLimitedBots`](https://nextjs.org/docs/app/api-reference/config/next-config-js/htmlLimitedBots).
+
+**Status code**: A streamed response starts with a `200` status code, and the status can't change after the response starts. If [`notFound()`](https://nextjs.org/docs/app/api-reference/functions/not-found) runs after streaming begins, Next.js adds `<meta name="robots" content="noindex">` to the streamed HTML. Search engines don't index the URL, even though the status is `200`, and some crawlers report these responses as soft 404s.
+
+To return a `404` status code for a missing page, check whether the content exists before streaming starts. Rendering a fallback from a `loading` file or a `Suspense` boundary starts the stream, so run the check before that point, for example in [Proxy](https://nextjs.org/docs/app/api-reference/file-conventions/proxy). See [Status codes](https://nextjs.org/docs/app/api-reference/file-conventions/loading#status-codes) in the Next.js documentation.
+
+On Vercel, known crawlers such as Googlebot and Bingbot also receive the fully rendered page instead of a [prerender fallback](/docs/caching/cache-status#crawler) when they request a page that hasn't been generated yet.
+
+To check what Google receives for a page, use the [URL Inspection tool](https://support.google.com/webmasters/answer/9012289) in Google Search Console or the [Rich Results Test](https://search.google.com/test/rich-results). Both show the rendered HTML.
 
 ## Partial Prerendering
 
@@ -748,7 +764,7 @@ Users outside your Vercel team cannot toggle Draft Mode.
 
 Vercel's Web Analytics features enable you to visualize and monitor your application's performance over time. The Analytics section in your project's dashboard offers detailed insights into your website's visitors, with metrics like top pages, top referrers, and user demographics.
 
-To use Web Analytics, navigate to the Analytics section in your project dashboard sidebar on Vercel and select **Enable** in the modal that appears.
+To use Web Analytics, open **Analytics** in your project sidebar on Vercel, then select the **Enable** button in the header.
 
 To track visitors and page views, we recommend first installing our `@vercel/analytics` package by running the terminal command below in the root directory of your Next.js project:
 

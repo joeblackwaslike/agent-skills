@@ -15,8 +15,8 @@ summary: "Discounts on AI Gateway token spend: models already priced below list 
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/pricing/discounts.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "a3b1cbb95d742a9c4e115c7bfb6031bd4de843ad475762cdae1fb0a3d7b275da"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "6fac064f3997b95e7a6bbfc78cd9825ec66735532e2d5de3642e16920d7ac7af"
 ---
 
 # AI Gateway Discounts
@@ -32,8 +32,8 @@ Discounts on [AI Gateway](/docs/ai-gateway) token spend come in two forms: model
 - [AI Gateway FAQ](https://vercel.com/docs/ai-gateway/faq) — Answers to common questions about AI Gateway, including request errors, pricing and markup, caching, SDK and API compati
 - [AI Gateway Rate Limits](https://vercel.com/docs/ai-gateway/rate-limits) — Learn how AI Gateway rate limits work on the free and paid tiers, what the 429 response looks like, and how to retry a r
 - [AI Gateway Models and Providers](https://vercel.com/docs/ai-gateway/models-and-providers) — Choose AI Gateway models and providers. Configure routing, fallbacks, timeouts, prompt caching, reasoning, and web searc
-- [AI Gateway Model Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist) — Restrict which AI models your team can use through AI Gateway. Available on Pro and Enterprise.
 - [Go with AI Gateway: OpenAI and Anthropic SDKs](https://vercel.com/docs/ai-gateway/sdks-and-apis/go) — Use AI Gateway from any Go application with the OpenAI or Anthropic Go SDKs, including model fallbacks, cost tracking, a
+- [AI Gateway Model Allowlist](https://vercel.com/docs/ai-gateway/security-and-compliance/model-allowlist) — Restrict which AI models your team can use through AI Gateway. Available on Pro and Enterprise.
 
 Full cross-link map for this page: [/docs/ai-gateway/pricing/discounts.graph.md](/docs/ai-gateway/pricing/discounts.graph.md)
 <!-- /docsgraph:related -->

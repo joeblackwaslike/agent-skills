@@ -14,8 +14,8 @@ summary: Vercel MCP tools for storage.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/storage.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "b421adc38ce0683d34fac0c8ae85a6dcceea502638488f92612dc557b2f9a8e8"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "9b3297436c75c66963b19206da97efd1845440a5933bc59f2d0bdbbe8d1d1d55"
 ---
 
 # Storage
@@ -28,7 +28,6 @@ Create a Vercel Blob store for your team and retrieve details about an existing 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Private storage for Vercel Blob, now available in public beta](https://vercel.com/changelog/private-storage-for-vercel-blob-now-available-in-public-beta)
 - [The Complete Guide to Vercel Blob](https://vercel.com/kb/guide/vercel-blob) — Vercel Blob stores and serves files of any size through Vercel's global network. Learn how Blob works, what it costs, an
 - [Create private blob stores with a single click in v0](https://vercel.com/changelog/create-private-blob-stores-with-a-single-click-in-v0)
 - [Delete a Blob store](https://vercel.com/docs/rest-api/storage/delete-a-blob-store) — DELETE /storage/stores/blob/{id} — Delete a Blob store

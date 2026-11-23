@@ -17,8 +17,8 @@ summary: Runtimes transform your source code into Functions, which are served by
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/runtimes.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "5cb732444f9701b862525af79587d5af5f8868710bcf17f5739bc7e3b157807e"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "691cb2e9cf91a00066e2bfb8e4f7326cc868ac3763f8d75fce686eaeedebd534"
 ---
 
 # Runtimes
@@ -69,7 +69,7 @@ Vercel Functions support the following official runtimes:
 
 - **Location**: Runs in a single region by default (`iad1`), which you can [change](/docs/functions/configuring-functions/region#setting-your-default-region). Pro and Enterprise teams can set [multiple regions](/docs/functions/configuring-functions/region#limits)
 - [**Failover**](/docs/functions/runtimes#failover-mode): Automatic failover to [defined regions](/docs/functions/configuring-functions/region#node.js-runtime-failover)
-- [**Automatic concurrency scaling**](/docs/functions/concurrency-scaling#automatic-concurrency-scaling): Auto-scales up to 30,000 (Hobby and Pro) or 100,000+ (Enterprise) concurrency
+- **Automatic concurrency scaling**: Functions scale automatically based on demand
 - [**Isolation boundary**](/docs/functions/runtimes#isolation-boundary): microVM
 - [**File system support**](/docs/functions/runtimes#file-system-support): Read-only filesystem with writable `/tmp` scratch space up to 500 MB
 - [**Archiving**](/docs/functions/runtimes#archiving): Functions are archived when not invoked
@@ -94,6 +94,34 @@ With traditional serverless infrastructure, each function uses a microVM for iso
 ### File system support
 
 Filesystem support refers to a function's ability to read and write to the filesystem. Vercel functions have a read-only filesystem with writable `/tmp` scratch space up to 500 MB.
+
+Files in `/tmp` belong to a single function instance. Other instances can't read them, and they don't persist after the instance stops. For this reason, a file-based database such as SQLite can't persist your application's data in a function. Each instance would write to its own copy of the database file and lose it when the instance stops. To persist data, connect your functions to a hosted database from the [Vercel Marketplace](/docs/marketplace-storage), or use another [Vercel storage product](/docs/storage).
+
+#### Reading files in a function
+
+A function can read a file from your project at runtime when the file is part of the function's bundle. During the build, Vercel traces the files that each function uses and adds them to its bundle. Build file paths from `process.cwd()`, which is the root of your project in a deployed function.
+
+For example, this Next.js Server Component reads a JSON file that is stored next to it in the `app` directory:
+
+```tsx filename="app/page.tsx"
+import { promises as fs } from 'node:fs';
+import path from 'node:path';
+
+export default async function Page() {
+  const file = await fs.readFile(
+    path.join(process.cwd(), 'app', 'data.json'),
+    'utf8',
+  );
+  const data = JSON.parse(file);
+
+  return <h1>{data.title}</h1>;
+}
+```
+
+Tracing can miss a file when your code computes its path at runtime, for example from a request parameter. The function then fails with an `ENOENT: no such file or directory` error after you deploy, even though it works locally. To add the files to the bundle, list them explicitly:
+
+- **Next.js**: Use [`outputFileTracingIncludes`](https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats) in your `next.config.js` file
+- **Other frameworks and the `api` directory**: Use [`includeFiles`](/docs/project-configuration/vercel-json#functions) in your `vercel.json` file
 
 ### Archiving
 

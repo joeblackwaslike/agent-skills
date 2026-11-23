@@ -1,10 +1,10 @@
 ---
 source: "https://opencode.ai/docs/cli/"
-fetched_at: "2026-11-09T12:39:24.590Z"
-sha256: "21eb6f9805f5f3c4e9f6b1a21e848c6dc134cc1de1b5826275a11248903aa58b"
+fetched_at: "2026-11-23T14:15:43.627Z"
+sha256: "7316377f3d5e50bf512bfa04b0788c5884dfdc73955de50eaef8ad34ab5aea48"
 ---
 
-# Intro
+# CLI intro
 
 Run the CLI in a project to open the full-screen terminal interface:
 

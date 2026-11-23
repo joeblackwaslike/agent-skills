@@ -14,8 +14,8 @@ summary: Use get_webhooks with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations/get_webhooks.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "48fb5836b97575e8b591550b2378a102c7be485c23303b4cef0ada8736db346c"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "c77060aa2d52df135b04eb61f1075e125ee99b5d7c38df87da21fc3e1d460e71"
 ---
 
 # get_webhooks
@@ -29,6 +29,7 @@ Get a list of webhooks
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Webhooks are now generally available](https://vercel.com/changelog/webhooks-are-now-generally-available)
+- [Configurable webhooks ](https://vercel.com/changelog/configurable-webhooks)
 - [Get a list of webhooks](https://vercel.com/docs/rest-api/webhooks/get-a-list-of-webhooks) — GET /v1/webhooks — Get a list of webhooks
 - [Get a webhook](https://vercel.com/docs/rest-api/webhooks/get-a-webhook) — GET /v1/webhooks/{id} — Get a webhook
 - [Setting Up Webhooks](https://vercel.com/docs/webhooks) — Learn how to set up webhooks and use them with Vercel Integrations.

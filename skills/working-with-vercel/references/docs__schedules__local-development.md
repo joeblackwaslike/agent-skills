@@ -17,8 +17,8 @@ summary: Run static and dynamic schedules on your machine with vercel dev, trigg
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/schedules/local-development.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "fba4bfda8e90ac9b818d87d1350d6d1ab220f17bb5d5e7b72896b0d3fb91cd72"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "e015bbcda5c3c9b63b834ec338ec7b2525d27ea874ee3a1aafe2945d51f494f8"
 ---
 
 # Testing Schedules Locally
@@ -32,7 +32,6 @@ sha256: "fba4bfda8e90ac9b818d87d1350d6d1ab220f17bb5d5e7b72896b0d3fb91cd72"
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Vercel Schedules is now in public beta](https://vercel.com/changelog/vercel-schedules-is-now-in-public-beta)
-- [Introducing Vercel Schedules](https://vercel.com/blog/introducing-vercel-schedules)
 - [Managing Schedules](https://vercel.com/docs/schedules/manage) — View, enable, disable, and run schedules across environments, and check their execution history from the dashboard, CLI,
 - [Schedules Configuration Reference](https://vercel.com/docs/schedules/configuration) — Reference for static schedules in vercel.json and the Build Output API, including targets, function identifiers, cron sy
 - [Getting Started with Schedules](https://vercel.com/docs/schedules/quickstart) — Run a private Vercel Function every hour with a static schedule in vercel.json, test it locally, and deploy it.

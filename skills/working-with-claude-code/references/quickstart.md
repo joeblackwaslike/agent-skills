@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/quickstart.md"
-fetched_at: "2026-11-16T12:28:44.823Z"
-sha256: "23c55fbb18ebf8690ee7c02ba405cc7bfde226beca2350c427909f77e6a6afbf"
+fetched_at: "2026-11-23T14:04:20.448Z"
+sha256: "a03b7b51866f1832cc982c804c08b31eb4351e28312d25b9a50a950659ea7c71"
 ---
 
 > ## Documentation Index
@@ -115,11 +115,11 @@ Claude Code prompts you to log in on first use. For Claude subscription or Conso
 You can log in using any of these account types:
 
 * [Claude Pro, Max, Ultra, Team, or Enterprise](https://claude.com/pricing?utm_source=claude_code\&utm_medium=docs\&utm_content=quickstart_login) (recommended)
-* [Claude Console](https://platform.claude.com/) (API access with pre-paid credits). On first login, a "Claude Code" workspace is automatically created in the Console for centralized cost tracking.
+* [Claude Console](https://platform.claude.com/) (API access with pre-paid credits)
 * [Amazon Bedrock, Google Cloud's Agent Platform, or Microsoft Foundry](https://code.claude.com/docs/en/third-party-integrations.md) (enterprise cloud providers)
 * A self-hosted [Claude apps gateway](https://code.claude.com/docs/en/claude-apps-gateway), if your organization runs one: your admin pre-configures the gateway URL, and `/login` opens directly on the **Cloud gateway** screen for you to sign in with corporate SSO
 
-Once logged in, your credentials are stored and you won't need to log in again. Learn more in [Credential Management](https://code.claude.com/docs/en/authentication.md#credential-management).
+Claude Code stores your login. Learn more in [Credential Management](https://code.claude.com/docs/en/authentication.md#credential-management).
 
 The Claude Code prompt appears with the version, current model, and working directory shown above it. Type `/help` for available commands or `/resume` to continue a previous conversation. To switch accounts later or re-authenticate, type `/login` inside the running session.
 

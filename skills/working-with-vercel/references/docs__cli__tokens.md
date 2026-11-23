@@ -12,12 +12,13 @@ related:
   - /docs/deployments/deploy-without-logging-in
   - /docs/accounts/access-tokens
   - /docs/cli/global-options
+  - /docs/cli/deploying-from-cli
 summary: "Manage your personal Vercel authentication tokens from the CLI: list, create, and revoke access tokens for use with the Vercel API and Vercel CLI."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/tokens.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "2a26a4b99413b9c6c00930f9dd4fe1864fa3c92cc2ec9024b4cecf7e852006ea"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "ed2375009b51b064140f4c05e4d9e6218f70355043da73c70867ccaddf9e4ccc"
 ---
 
 # vercel tokens
@@ -30,7 +31,6 @@ The `vercel tokens` command manages your personal authentication tokens. Tokens 
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Why is Vercel CLI asking me to log in? ](https://vercel.com/kb/guide/why-is-vercel-cli-asking-me-to-log-in) — Information on why you may be getting prompted to log in to Vercel CLI.
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [List Auth Tokens](https://vercel.com/docs/rest-api/authentication/list-auth-tokens) — GET /v6/user/tokens — Retrieve a list of the current User's authentication tokens.
 - [vercel kms](https://vercel.com/docs/cli/kms) — Manage Vercel KMS issuers, rotate signing keys, and control which projects can sign tokens from the command line.
@@ -181,7 +181,7 @@ vercel tokens revoke tok_abc123
 
 - [Account tokens](/account/tokens) (Vercel Dashboard)
 - [`--token` global option](/docs/cli/global-options#token)
-- [Using Vercel CLI for custom workflows](/kb/guide/using-vercel-cli-for-custom-workflows)
+- [Deploying from a CI/CD pipeline](/docs/cli/deploying-from-cli#deploying-from-a-ci/cd-pipeline)
 
 ## Global Options
 

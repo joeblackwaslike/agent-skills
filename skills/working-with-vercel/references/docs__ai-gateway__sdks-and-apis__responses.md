@@ -18,8 +18,8 @@ summary: Use the OpenAI Responses API with AI Gateway to generate text, call too
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/sdks-and-apis/responses.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "bb8d9ab9a229f34361bba409c2c31d8ac5b65c1e5804a7734fb1da115f8ae1a6"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "8a4f128226d67817fd1f3fc784d65fea82c69d77f5bb28824232471355f1fee6"
 ---
 
 # OpenAI Responses API with AI Gateway
@@ -140,6 +140,7 @@ The API returns standard HTTP status codes and error responses.
 
 - `400 Bad Request` - Invalid request parameters
 - `401 Unauthorized` - Invalid or missing authentication
+- `402 Payment Required` - No positive credit balance, or a budget reached its limit
 - `403 Forbidden` - Insufficient permissions
 - `404 Not Found` - Model or endpoint not found
 - `429 Too Many Requests` - Rate limit exceeded

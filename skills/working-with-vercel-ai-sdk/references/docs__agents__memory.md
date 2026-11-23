@@ -4,8 +4,8 @@ description: Add persistent memory to your agent using provider-defined tools, m
 url: "https://ai-sdk.dev/docs/agents/memory"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/agents/memory.md"
-fetched_at: "2026-11-09T12:39:36.677Z"
-sha256: "f78d59317a453ae9bbdbb98a2ea2ad820ce4df7f165700dbb6b8ac793029580f"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "d6d7be4a131426d5919fd407a3df4a0611f3bb4a756f907dd72881beeaea8081"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -263,7 +263,7 @@ MongoDB memory works with any AI SDK model and embedding provider, with no vendo
 
 ### Redis Agent Memory
 
-[Redis Agent Memory](https://redis.io/agent-memory/) is a managed memory layer that combines session history with long-term memories. The [`ai-sdk-redis-agent-memory`](https://www.npmjs.com/package/ai-sdk-redis-agent-memory) package wraps a model you have already configured, restores the user's session and recalls relevant long-term memories before each call, and records the conversation afterwards. The model does not need memory tools. It also exposes memory tools for agents that should manage their own memory.
+[Redis Agent Memory](https://redis.io/agent-memory/) is a managed memory layer that combines session history with long-term memories. The [`@redis/vercel-ai-sdk`](https://www.npmjs.com/package/@redis/vercel-ai-sdk) package wraps a model you have already configured, restores the user's session and recalls relevant long-term memories before each call, and records the conversation afterwards. The model does not need memory tools. It also exposes memory tools for agents that should manage their own memory.
 
 ```bash
 pnpm add @redis/vercel-ai-sdk
@@ -302,6 +302,32 @@ To let the model manage memory itself, pass `memory.tools({ scope })` as `tools`
 The package requires AI SDK 7. It accepts configured model objects, not model-name strings. Writes are best effort, so use collision-resistant session IDs tied to your authenticated user and serialize requests for the same session.
 
 See the [Redis Agent Memory provider documentation](/providers/community-providers/redis-agent-memory) for full setup and configuration.
+
+### Upstash AgentKit
+
+[Upstash AgentKit](https://upstash.com/docs/redis/sdks/agentkit/ai-sdk) stores long-term memory in Upstash Redis. The [`@upstash/agentkit-ai-sdk`](https://www.npmjs.com/package/@upstash/agentkit-ai-sdk) package provides `recall_memory` and `save_memory` tools, so the model decides what to save and when to look it up. Recall runs on Upstash Redis Search, so you do not need a separate vector database.
+
+```bash
+pnpm add @upstash/agentkit-ai-sdk
+```
+
+```ts
+import { createMemoryTools } from '@upstash/agentkit-ai-sdk';
+import { ToolLoopAgent } from 'ai';
+
+const agent = new ToolLoopAgent({
+  model: "anthropic/claude-sonnet-5.5",
+  tools: createMemoryTools({ userId: 'user-123' }),
+});
+
+const result = await agent.generate({
+  prompt: 'Remember that my favorite editor is Neovim',
+});
+```
+
+The tools read `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` from the environment by default. `userId` is the only tenant boundary, so take it from your authenticated session. In multi-user apps, call `createMemoryTools` inside your request handler so each request uses the right user. The package requires AI SDK 7 and works with any AI SDK provider.
+
+See the [Upstash AgentKit provider documentation](/providers/community-providers/upstash-agentkit) for full setup and configuration. It also covers chat history, search tools for RAG, rate limiting, and tool caching.
 
 ## Custom Tool
 

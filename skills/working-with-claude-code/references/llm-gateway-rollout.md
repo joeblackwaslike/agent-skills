@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/llm-gateway-rollout.md"
-fetched_at: "2026-11-16T12:28:44.823Z"
-sha256: "24f06491d6c4875824bad860f8786a6d01f99370190ebae76d423283d08a9dea"
+fetched_at: "2026-11-23T14:04:20.448Z"
+sha256: "c1a11971392682cb7a94ac4160b450100ad2b483ff354cee8ba28c6c84444d36"
 ---
 
 > ## Documentation Index
@@ -188,11 +188,9 @@ Deliver the variables through the `env` block of a [managed settings file](https
 }
 ```
 
-Add the conditional variables from the table to the same `env` block. A managed `ANTHROPIC_BASE_URL` is enforced and cannot be overridden by a developer's shell export, since Claude Code applies it over the process environment and lower-precedence settings.
+Add the conditional variables from the table to the same `env` block.
 
 Don't include `forceLoginMethod`, `forceLoginOrgUUID`, or `forceLoginGatewayUrl` in managed settings alongside a gateway credential. `forceLoginMethod` or `forceLoginOrgUUID`, with any value, blocks `ANTHROPIC_API_KEY`, `ANTHROPIC_AUTH_TOKEN`, and `apiKeyHelper` at startup, and developers can't proceed. They see `This machine's managed settings require a first-party login`, or [`Administrator policy requires a Cloud gateway sign-in`](https://code.claude.com/docs/en/errors#administrator-policy-requires-a-cloud-gateway-sign-in) when the file sets `forceLoginMethod` to `"gateway"` or sets `forceLoginGatewayUrl`.
-
-[Server-managed settings](https://code.claude.com/docs/en/server-managed-settings.md#platform-availability) delivery requires a direct connection to `api.anthropic.com`, so it does not reach gateway-routed sessions. Gateway deployments use this file-based managed settings path, which enforces the same keys.
 
 For the credential, distribute one [`apiKeyHelper`](https://code.claude.com/docs/en/llm-gateway-connect#rotate-credentials-with-apikeyhelper) command in the managed settings file as shown above; the command authenticates to your secrets store as the local developer, so each machine receives its own key. Alternatively, deliver each developer their key through your existing secrets process and have them set `ANTHROPIC_AUTH_TOKEN` themselves.
 

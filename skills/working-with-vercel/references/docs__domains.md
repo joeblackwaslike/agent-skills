@@ -17,8 +17,8 @@ summary: Learn the fundamentals of how domains, DNS, and nameservers work on Ver
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "4049d1b7ea6002b36253c69aa2e06d8834ae0808fa12f930cbafab5e83279edc"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "44657bdb8e0b76004471e9d2bd63a7b39feeacf0ae2fc9a9ca8787584452c5c2"
 ---
 
 # Domains Overview
@@ -33,15 +33,10 @@ A **domain** is a user-friendly way of referring to the address access a website
 
 - [Custom domain](https://v0.app/docs/custom-domains) — Add custom domains to your v0 deployments to give your applications a professional, branded URL.
 - [Improved experience for managing project domains](https://vercel.com/changelog/improved-experience-for-managing-project-domains)
-- [How to Deploy a Jekyll Site with Vercel](https://vercel.com/kb/guide/deploying-jekyll-with-vercel) — Create a Jekyll website and deploy it live with Vercel.
-- [How to Deploy a Solid App with Vercel](https://vercel.com/kb/guide/deploying-solid-with-vercel) — Deploy Solid to Vercel with zero configuration. Covers SolidStart 1 and 2, static Solid apps, build settings, and custom
-- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain) — Learn how to serve multiple Vercel projects from a single domain.
-- [Integrating Terraform with Vercel](https://vercel.com/kb/guide/integrating-terraform-with-vercel) — Understand the benefits of Terraform and how to set up the Integration with Vercel.
-- [Migrate to Vercel from Netlify](https://vercel.com/kb/guide/migrate-to-vercel-from-netlify) — Migrate your website's configuration from Netlify to Vercel
 - [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 - [Get a Domain's configuration](https://vercel.com/docs/rest-api/domains/get-a-domain-s-configuration) — GET /v6/domains/{domain}/config — Get a Domain's configuration.
 - [List all the domains](https://vercel.com/docs/rest-api/domains/list-all-the-domains) — GET /v5/domains — Retrieves a list of domains registered for the authenticated user or team. By default it returns the l
-- [Get Information for a Single Domain](https://vercel.com/docs/rest-api/domains/get-information-for-a-single-domain) — GET /v5/domains/{domain} — Get information for a single domain in an account or team.
+- [Multi-tenant Reference](https://vercel.com/docs/platforms/multi-tenant-platforms/reference) — Reference for the Vercel domain API, error codes, troubleshooting, and FAQ for multi-tenant platforms.
 - [Domains and DNS](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains) — Vercel MCP tools for domains and dns.
 
 Full cross-link map for this page: [/docs/domains.graph.md](/docs/domains.graph.md)
@@ -98,8 +93,8 @@ This is where, as a developer, you may have to configure the DNS settings to tel
 
 - [How to fix a domain suspended by serverHold or clientHold](https://vercel.com/kb/guide/how-to-fix-a-domain-suspended-by-serverhold-or-clienthold): What serverHold and clientHold mean, why they happen, and how to resolve them.
 - [Lifecycle of a domain](https://vercel.com/kb/guide/lifecycle-of-a-domain): Understand the states a .com domain passes through from registration to deletion, and how to renew or recover it at each stage.
-- [Accessing Vercel-hosted sites from mainland China](https://vercel.com/kb/guide/accessing-vercel-hosted-sites-from-mainland-china): Understand why Vercel-hosted sites may be slow or inaccessible in mainland China, and explore steps to improve performance for users in the region
 - [Troubleshooting Cross-Origin Errors (net::ERR\_BLOCKED\_BY\_ORB) with Deployment Protection](https://vercel.com/kb/guide/troubleshooting-cross-origin-errors-neterr-blocked-by-orb-with-deployment-protection): Learn to resolve \`net::ERR\_BLOCKED\_BY\_ORB\` errors on protected Vercel deployments. This guide explains how cross-origin asset requests conflict with Vercel Authentication and shows the fix for Sitecore JSS apps using the \`PUBLIC\_URL\` environment variable.
+- [How can I serve multiple projects under a single domain?](https://vercel.com/kb/guide/how-can-i-serve-multiple-projects-under-a-single-domain): Learn how to serve multiple Vercel projects from a single domain.
 
 ## Search the docs from your terminal
 

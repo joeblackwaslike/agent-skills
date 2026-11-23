@@ -17,8 +17,8 @@ summary: Connect your Vercel projects to backend services with static IPs and se
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/networking.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "b204efe56f166b1597e9d62b3cc55d2f5f6bd525c5816cc8f4fc9c08d7ec0cae"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "dff1315ff0f857fcd56cd77c3e0e3952726c4189080fa3de48ee76e49569df71"
 ---
 
 # Networking
@@ -35,7 +35,6 @@ Connect your projects to backend services that require IP allowlisting, AWS Priv
 - [The Complete Guide to Bring Your Own Cloud](https://vercel.com/kb/guide/byoc) — Use Bring Your Own Cloud \\(BYOC\\) to run Vercel Functions as AWS Lambda functions in your own AWS account, from setup to
 - [Private enterprise agents on Vercel](https://vercel.com/kb/guide/private-enterprise-agents-vercel) — Design private enterprise agents that call internal APIs and databases with Vercel Functions, Secure Compute, AI Gateway
 - [AWS PrivateLink is now available on Pro and Enterprise](https://vercel.com/changelog/aws-privatelink-is-now-available-on-pro-and-enterprise)
-- [Static IPs are now available for more secure connectivity](https://vercel.com/changelog/static-ips-are-now-available-for-more-secure-connectivity)
 - [Create a Secure Compute network](https://vercel.com/docs/rest-api/networking/create-a-secure-compute-network) — POST /v1/connect/networks — Allows to create a Secure Compute network.
 - [Pricing on Vercel](https://vercel.com/docs/pricing) — Learn about Vercel's pricing model, including the resources and services that are billed, and how they are priced.
 - [Portland, USA \\(pdx1\\) pricing](https://vercel.com/docs/pricing/regional-pricing/pdx1) — Vercel pricing for the Portland, USA \\(pdx1\\) region.

@@ -1,7 +1,7 @@
 ---
 source: "https://docs.github.com/en/rest/issues/issues"
-fetched_at: "2026-11-16T12:31:54.241Z"
-sha256: "264618e6413d3b0966f80724198f5cec11ab656b34b8d6e31eee0c399f598a52"
+fetched_at: "2026-11-23T14:15:21.366Z"
+sha256: "5938f2580defde00ac386d69b8bfdb0f4439b263ac46527c70075e537b8d47fb"
 ---
 
 # REST API endpoints for issues
@@ -117,6 +117,10 @@ Array of `Issue`:
   * `html_url`: required, string, format: uri
   * `number`: required, integer
   * `state`: required, string
+  * `status`: object or null:
+    * `id`: required, integer, format: int64
+    * `name`: required, string
+    * `category`: required, string
   * `state_reason`: string or null, enum: `completed`, `reopened`, `not_planned`, `duplicate`, `null`
   * `title`: required, string
   * `body`: string or null
@@ -666,6 +670,9 @@ application/vnd.github.full+json: Returns raw, text, and HTML representations. R
 - **`body`** (string)
   The contents of the issue.
 
+- **`status`** (string)
+  The initial status of the issue. Can be Backlog, Todo, In progress, or In review. If omitted, the issue starts in Backlog. If you do not have permission to set the status, the supplied value is ignored and the issue starts in Backlog. Cannot be null or an empty string. Ignored when issue statuses aren't available in the repository. Issue statuses are in preview and only available to accounts enrolled in the preview.
+
 - **`milestone`** (null or string or integer)
   The number of the milestone to associate this issue with. NOTE: Only users with push access can set the milestone for new issues. The milestone is silently dropped otherwise.
 
@@ -739,6 +746,10 @@ curl -L \
 * `html_url`: required, string, format: uri
 * `number`: required, integer
 * `state`: required, string
+* `status`: object or null:
+  * `id`: required, integer, format: int64
+  * `name`: required, string
+  * `category`: required, string
 * `state_reason`: string or null, enum: `completed`, `reopened`, `not_planned`, `duplicate`, `null`
 * `title`: required, string
 * `body`: string or null
@@ -1174,6 +1185,9 @@ application/vnd.github.full+json: Returns raw, text, and HTML representations. R
   The open or closed state of the issue.
   Can be one of: `open`, `closed`
 
+- **`status`** (string)
+  The status to give the issue. Can be Backlog, Todo, In progress, In review, Done, Not planned, or Duplicate. If omitted, the current status is preserved unless state or state_reason changes. Setting a status also updates state and state_reason as needed. If provided, state and state_reason must be consistent with the requested status. Changing the status to Duplicate requires duplicate_issue_id. Cannot be null or an empty string. The status and other applied field changes are saved together. If the status cannot be saved, those field changes are rolled back. Ignored when issue statuses aren't available in the repository. Issue statuses are in preview and only available to accounts enrolled in the preview.
+
 - **`state_reason`** (string or null)
   The reason for the state change. Ignored unless state is changed.
   Can be one of: `completed`, `not_planned`, `duplicate`, `reopened`, `null`
@@ -1261,6 +1275,10 @@ curl -L \
     * `html_url`: required, string, format: uri
     * `number`: required, integer
     * `state`: required, string
+    * `status`: object or null:
+      * `id`: required, integer, format: int64
+      * `name`: required, string
+      * `category`: required, string
     * `state_reason`: string or null, enum: `completed`, `reopened`, `not_planned`, `duplicate`, `null`
     * `title`: required, string
     * `body`: string or null

@@ -4,8 +4,8 @@ description: Learn how to fix AI_InvalidToolApprovalSignatureError
 url: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error"
 docs_index: /llms.txt
 source: "https://ai-sdk.dev/docs/reference/ai-sdk-errors/ai-invalid-tool-approval-signature-error.md"
-fetched_at: "2026-10-05T11:19:46.520Z"
-sha256: "c2814a2f49f56841afe03ecc00776d04e92847ec5766e433e927449c773aa918"
+fetched_at: "2026-11-23T14:15:54.730Z"
+sha256: "ee80c16d1355cb08b35b732885455a8f9c604c6a1cc3577a3a8810c302f997c6"
 ---
 
 > For an index of all documentation, see [/llms.txt](/llms.txt).
@@ -15,6 +15,7 @@ This error occurs when `experimental_toolApprovalSecret` is configured and a too
 Common causes:
 
 - The approval was fabricated by the client (no signature present)
+- The client approved a tool call that the server denied automatically (automatic denials are not signed)
 - The tool arguments were modified after the approval was signed
 - The server secret changed between issuance and verification (e.g. after key rotation without overlap)
 

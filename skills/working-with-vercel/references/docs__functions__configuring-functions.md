@@ -17,8 +17,8 @@ summary: Learn how to configure the runtime, region, maximum duration, and memor
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/configuring-functions.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "bf2c9a92d11cde30fa93d08b44bdd29696bd1447c00e26b4270205c28650a323"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "fa669257d9c7447e427ed5e627f6ae191faadeba966630ff1198965c23b3e61a"
 ---
 
 # Configuring Functions
@@ -32,10 +32,10 @@ You can configure Vercel functions in many ways, including the runtime, region, 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [vercel.functions API Reference \\(Python\\)](https://vercel.com/docs/functions/functions-api-reference/vercel-sdk-python) — Learn about available APIs when working with Vercel Functions in Python.
+- [Troubleshooting Vercel Functions](https://vercel.com/docs/functions/troubleshooting) — Diagnose errors in Vercel Functions, including ECONNRESET errors when a function calls an external API or database.
 - [Debugging slow Vercel Functions](https://vercel.com/docs/functions/debug-slow-functions) — Diagnose and fix slow Vercel Functions using CLI tools, logs, and timing analysis.
 - [Getting started with Vercel Functions](https://vercel.com/docs/functions/quickstart) — Build your first Vercel Function in a few steps.
 - [Using the Ruby Runtime with Vercel Functions](https://vercel.com/docs/functions/runtimes/ruby) — Learn how to use the Ruby runtime to compile Ruby Vercel Functions on Vercel.
-- [Using the Rust Runtime with Vercel functions](https://vercel.com/docs/functions/runtimes/rust) — Build fast, memory-safe serverless functions with Rust on Vercel.
 
 Full cross-link map for this page: [/docs/functions/configuring-functions.graph.md](/docs/functions/configuring-functions.graph.md)
 <!-- /docsgraph:related -->

@@ -1,7 +1,7 @@
 ---
 source: "https://code.claude.com/docs/en/code-review-troubleshooting.md"
-fetched_at: "2026-10-26T09:47:04.845Z"
-sha256: "ea27dac8da01ac609861527065704f126cd002631ef60e7c2c4f883d73c09963"
+fetched_at: "2026-11-23T14:04:20.448Z"
+sha256: "53448e75c4d5f59655f191af3ad014cf375f572396872bb4bbfa097f2926decd"
 ---
 
 > ## Documentation Index
@@ -69,7 +69,8 @@ If the check run title says issues were found but you don't see inline review co
 
 * **Check run Details**: click **Details** next to the **Claude Code Review** check in the **Checks** tab. The severity table lists findings with their file, line, and summary regardless of whether the inline comment was accepted.
 * **Files changed annotations**: open the **Files changed** tab on the PR. A finding that has a line but wasn't posted as an inline comment appears there as an annotation on the lines concerned.
-* **Review body**: findings that have no inline location, or that fall outside the current diff, appear under an **Additional findings** heading in the review body.
+* **Whole-file comments**: open the **Conversation** tab on the PR and look for a comment from Claude on a whole file instead of on a line
+* **Review body**: in the **Conversation** tab, look for an **Additional findings** heading in Claude's review
 
 ## The check run mentions REVIEW\.md
 

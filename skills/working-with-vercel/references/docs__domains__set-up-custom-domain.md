@@ -17,8 +17,8 @@ summary: Add and configure a custom domain for your Vercel project using the CLI
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/domains/set-up-custom-domain.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "ce36aec284e70a1a4e8cc39bac588d8536c8a001f7923f3cd0af946a67b4024e"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "20b00f839c89cca5a575c51dd53a608d434d58210c97395a7613e6b37485be3e"
 ---
 
 # Setting up a custom domain
@@ -31,7 +31,6 @@ Use this guide to add a custom domain to your Vercel project from the CLI, confi
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
-- [Vercel CLI now supports verifying DNS configuration](https://vercel.com/changelog/vercel-cli-now-supports-verifying-dns-configuration)
 - [Working with domains](https://vercel.com/docs/domains/working-with-domains) — Learn how domains work and the options Vercel provides for managing them.
 - [Configuring Custom Domains](https://vercel.com/docs/platforms/multi-tenant-platforms/configuring-domains) — Add, verify, redirect, and remove wildcard and custom domains for a multi-tenant application using the Vercel SDK.
 - [Working with DNS](https://vercel.com/docs/domains/working-with-dns) — Learn how DNS works to properly configure your domain.

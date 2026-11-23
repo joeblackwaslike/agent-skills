@@ -14,8 +14,8 @@ summary: Generate and edit images using AI models through Vercel AI Gateway with
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/modalities/image-generation/ai-sdk.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "4a1843ac5974429344719af6ab1dbca5b31ef371eed6b79e598355e503a985eb"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "45a61a22c35ec49aa16dbe2e75a5610d037549fe844ca2b06827b1597d0d6e41"
 ---
 
 # AI Gateway Image Generation with AI SDK
@@ -31,9 +31,10 @@ page](/ai-gateway/models?type=image), including multimodal LLMs and image-only m
 
 - [FLUX 3 Image now available on AI Gateway](https://vercel.com/changelog/flux-3-image-now-available-on-ai-gateway)
 - [MAI-Image-2.6 and MAI-Image-2.6-Flash now available on AI Gateway](https://vercel.com/changelog/mai-image-2-6-and-mai-image-2-6-flash-now-available-on-ai-gateway)
+- [MAI-Image-2.7 and MAI-Image-2.7-Flash now available on AI Gateway](https://vercel.com/changelog/mai-image-2-7-and-mai-image-2-7-flash-now-available-on-ai-gateway)
 - [Nano Banana 2.1 now available on AI Gateway](https://vercel.com/changelog/nano-banana-2-1-now-available-on-ai-gateway)
-- [Image-only models available in Vercel AI Gateway](https://vercel.com/changelog/image-only-models-available-in-vercel-ai-gateway)
 - [Generate videos with AI SDK](https://vercel.com/kb/guide/ai-sdk-video-generation) — Use experimental_generateVideo in the AI SDK to generate videos from a text prompt or an image, set aspect ratio, resolu
+- [Image-only models available in Vercel AI Gateway](https://vercel.com/changelog/image-only-models-available-in-vercel-ai-gateway)
 - [AI Gateway Image Generation via Chat Completions](https://vercel.com/docs/ai-gateway/modalities/image-generation/openai) — Generate and edit images using AI models through Vercel AI Gateway with the Chat Completions API.
 - [AI SDK for Python with AI Gateway](https://vercel.com/docs/ai-gateway/sdks-and-apis/ai-sdk-python) — Build AI-powered Python applications using the AI SDK for Python with AI Gateway for unified access to 400+ models.
 
@@ -211,7 +212,7 @@ if (imageFiles.length > 0) {
 
 You can generate images through OpenAI in two ways:
 
-- **Through a multimodal LLM**: [GPT-5 variants](/ai-gateway/models/gpt-5.5) and a few other OpenAI models accept a provider-defined `image_generation` tool alongside regular text prompts. The tool uses an OpenAI image model (for example, `openai/gpt-image-1` or `openai/gpt-image-2`) behind the scenes, and images are returned as tool results in `result.staticToolResults` (for `generateText`) or as `tool-result` events (for `streamText`).
+- **Through a multimodal LLM**: [GPT-5 variants](/ai-gateway/models/openai/gpt-5.5) and a few other OpenAI models accept a provider-defined `image_generation` tool alongside regular text prompts. The tool uses an OpenAI image model (for example, `openai/gpt-image-1` or `openai/gpt-image-2`) behind the scenes, and images are returned as tool results in `result.staticToolResults` (for `generateText`) or as `tool-result` events (for `streamText`).
 - **Through the image-only model**: Call `openai/gpt-image-2` directly with `generateImage`. See [OpenAI GPT Image 2](#openai-gpt-image-2) under image-only models.
 
 Learn more about the [OpenAI Image Generation Tool](https://ai-sdk.dev/providers/ai-sdk-providers/openai#image-generation-tool) in the AI SDK documentation.

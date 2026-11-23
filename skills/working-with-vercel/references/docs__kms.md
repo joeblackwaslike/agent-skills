@@ -17,8 +17,8 @@ summary: Sign JWTs and messages with Vercel-managed signing keys. Learn about is
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/kms.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "1a9b1875f2fb837c9912a11b3f169545c80889efd152eb2e49bfccd6fc515043"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "e80f0b387b532a9b31f50b1af2bb353c40d739d8e180dac19675a88edf334e49"
 ---
 
 # Key Management Service (KMS)
@@ -37,8 +37,8 @@ Vercel Key Management Service (KMS) gives you managed signing keys that live on 
 - [Create a signing key](https://vercel.com/docs/rest-api/kms/create-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys — Create a new signing key for a KMS issuer. Depending on the activation mode, the
 - [Key Management](https://vercel.com/docs/agent-resources/vercel-mcp/tools/key-management) — Vercel MCP tools for key management.
 - [Activate a signing key](https://vercel.com/docs/rest-api/kms/activate-a-signing-key) — POST /v1/kms/issuers/{issuerId}/keys/{keyId}/activate — Activate a pending signing key so the issuer starts signing with
-- [Sign a message](https://vercel.com/docs/rest-api/kms/sign-a-message) — POST /v1/kms/issuers/{issuerId}/sign/message — Sign a raw message with a KMS issuer's active signing key. Authenticate t
 - [Sign a token](https://vercel.com/docs/rest-api/kms/sign-a-token) — POST /v1/kms/issuers/{issuerId}/sign/token — Sign a JWT with a KMS issuer's active signing key. Authenticate the request
+- [Sign a message](https://vercel.com/docs/rest-api/kms/sign-a-message) — POST /v1/kms/issuers/{issuerId}/sign/message — Sign a raw message with a KMS issuer's active signing key. Authenticate t
 
 Full cross-link map for this page: [/docs/kms.graph.md](/docs/kms.graph.md)
 <!-- /docsgraph:related -->

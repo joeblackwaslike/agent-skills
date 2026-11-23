@@ -1,7 +1,7 @@
 ---
 source: "https://opencode.ai/docs/llms.txt"
-fetched_at: "2026-11-09T12:39:24.590Z"
-sha256: "128a77f0bb76e823a369891f51a45c51411e8f9fc0ce0744a3f168f76f42cd20"
+fetched_at: "2026-11-23T14:15:43.627Z"
+sha256: "96b3df2d4bdf756cfb2be26703f60e5830f562fb3efa5f2f3206e0027f402e9a"
 ---
 
 # OpenCode V2 Documentation
@@ -13,6 +13,7 @@ sha256: "128a77f0bb76e823a369891f51a45c51411e8f9fc0ce0744a3f168f76f42cd20"
 - [Intro](https://opencode.ai/docs/)
 - [Config](https://opencode.ai/docs/config/)
 - [Migrate from V1](https://opencode.ai/docs/migrate-v1/)
+- [Enterprise](https://opencode.ai/docs/enterprise/)
 - [Troubleshooting](https://opencode.ai/docs/troubleshooting/)
 
 ### Configure
@@ -104,6 +105,7 @@ sha256: "128a77f0bb76e823a369891f51a45c51411e8f9fc0ce0744a3f168f76f42cd20"
 ### API
 
 - [Overview](https://opencode.ai/docs/console/api/)
+- [Models](https://opencode.ai/docs/console/api/models/)
 - [Inference](https://opencode.ai/docs/console/api/inference/)
 - [Providers](https://opencode.ai/docs/console/api/providers/)
 

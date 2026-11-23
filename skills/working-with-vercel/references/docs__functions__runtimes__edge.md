@@ -12,13 +12,13 @@ related:
   - /docs/functions/usage-and-pricing
   - /docs/regions
   - /docs/functions/streaming-functions
-  - /docs/functions/concurrency-scaling
+  - /docs/environment-variables
 summary: Learn about the Edge runtime, an environment in which Vercel Functions can run.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/functions/runtimes/edge.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "f122356facb163f67cec4584d1d33dcf40f7dcfc7ee28b62503a303be6137d10"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "f824838e7130cb1b6a780ee1e49ec9cf6677bae4f5f25ba3f8cebc4b972aa3b3"
 ---
 
 # Edge Runtime
@@ -112,7 +112,7 @@ Vercel Functions using the Edge runtime must begin sending a response within 25 
 
 ## Concurrency
 
-Vercel automatically scales your functions to handle traffic surges, ensuring optimal performance during increased loads. For more information, see [Concurrency scaling](/docs/functions/concurrency-scaling).
+Vercel automatically scales your functions to handle traffic surges, ensuring optimal performance during increased loads.
 
 ## Edge Runtime supported APIs
 

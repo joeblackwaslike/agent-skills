@@ -13,13 +13,13 @@ related:
   - /docs/ai-gateway/authentication-and-byok
   - /docs/ai-gateway/authentication-and-byok/oidc
   - /docs/cli
-  - /docs/rest-api
+  - /docs/cli/ai-gateway
 summary: "Create, view, and delete AI Gateway API keys, and set each key's budget and spend attribution, from the dashboard, CLI, or API."
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/ai-gateway/authentication-and-byok/api-keys.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "a486d9c1e8fd516fc8f922ffb6732b5d2b561cc3d21523724d6f8536645bb615"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "560f03f3203f1b6b61e4de0b55b38367a348481d4817a545b7486b708ea99fa5"
 ---
 
 # AI Gateway API Keys
@@ -40,10 +40,10 @@ Use API keys to authenticate AI Gateway requests. You can:
 - [Claude Fable 5.2 now available on AI Gateway](https://vercel.com/changelog/claude-fable-5-2-now-available-on-ai-gateway)
 - [How to architect an AI evaluation dashboard on Vercel](https://vercel.com/kb/guide/ai-evaluation-dashboard-architecture-on-vercel) — Map eval orchestration, traces, and run storage to AI Gateway, Observability, and Marketplace Postgres, and learn when s
 - [AI Gateway Observability and Spend](https://vercel.com/docs/ai-gateway/observability-and-spend) — Monitor AI Gateway requests and control costs with logs, generation lookup, custom reporting, budgets, and OpenTelemetry
+- [POST /api-keys](https://vercel.com/docs/rest-api/untagged/createapikeys) — POST /api-keys — POST /api-keys
 - [Self-Hosting Durable Agent Harnesses](https://vercel.com/docs/agent-harnesses/self-hosting) — Keep durable agent harness sessions in another World, such as Postgres, and run Pi, Claude Code, Codex, OpenCode, and fx
 - [Amp with AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/amp) — Connect Amp to AI Gateway through Amp's Model Routing settings. Add an AI Gateway API key, choose models for Amp's modes
 - [AI Gateway Custom Reporting API](https://vercel.com/docs/ai-gateway/observability-and-spend/custom-reporting) — Query AI Gateway usage data grouped by model, user, tag, provider, or credential type using the Custom Reporting API.
-- [AI Gateway SDKs and APIs](https://vercel.com/docs/ai-gateway/sdks-and-apis) — Connect to AI Gateway with the AI SDK, Python, Go, REST, or compatible OpenAI, Anthropic Messages, OpenResponses, and Co
 
 Full cross-link map for this page: [/docs/ai-gateway/authentication-and-byok/api-keys.graph.md](/docs/ai-gateway/authentication-and-byok/api-keys.graph.md)
 <!-- /docsgraph:related -->
@@ -79,6 +79,8 @@ vercel ai-gateway api-keys create --name my-api-key
 ```
 
 Copy the key value immediately. You cannot retrieve it again.
+
+For every option, including budgets, expiration, Token Pass keys, and keys exempt from team restrictions, see [`api-keys create`](/docs/cli/ai-gateway#create) in the CLI reference.
 
 #### API
 
@@ -150,11 +152,13 @@ The [AI Gateway API Keys page](https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai-
 
 #### CLI
 
-List all AI Gateway keys (the CLI injects your current team scope if you omit `teamId`):
+List your team's AI Gateway keys with their budget, spend, and refresh period:
 
 ```bash filename="terminal"
-vercel api "/v1/api-keys?purpose=ai-gateway"
+vercel ai-gateway api-keys list
 ```
+
+Narrow the list with `--query`, `--creator me`, or `--state`, and show one key's details with `vercel ai-gateway api-keys inspect <key-id>`. See [`api-keys list`](/docs/cli/ai-gateway#list) for every option.
 
 #### API
 
@@ -177,19 +181,14 @@ On the API Keys page, open a key's **···** menu to delete it, or use the **·
 
 #### CLI
 
-List your keys to find the `id` of the one to revoke:
+List your keys to find the ID of the one to revoke, then revoke it:
 
 ```bash filename="terminal"
-vercel api "/v1/api-keys?purpose=ai-gateway"
+vercel ai-gateway api-keys list
+vercel ai-gateway api-keys revoke key_123
 ```
 
-Each key in the response has an `id`. Pass it to the delete endpoint:
-
-```bash filename="terminal"
-vercel api "/v1/api-keys/$API_KEY_ID" -X DELETE
-```
-
-The CLI asks for confirmation before deleting. To revoke several keys, repeat the delete for each `id`.
+The CLI asks for confirmation before revoking. Pass `--yes` to skip the prompt. See [`api-keys revoke`](/docs/cli/ai-gateway#revoke).
 
 #### API
 

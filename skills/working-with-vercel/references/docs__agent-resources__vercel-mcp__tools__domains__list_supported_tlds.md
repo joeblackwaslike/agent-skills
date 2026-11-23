@@ -14,8 +14,8 @@ summary: Use list_supported_tlds with Vercel MCP.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/list_supported_tlds.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "d64325ab9928d5b926df9e055715448659b6fd2227f2723e0b051a4b61e265cf"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "a032ff435fe9a17054675dc8ee01704208b98053b1a8847e32e90e1d20170988"
 ---
 
 # list_supported_tlds
@@ -28,11 +28,11 @@ Get supported TLDs.
 
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
+- [Get supported TLDs](https://vercel.com/docs/rest-api/domains-registrar/get-supported-tlds) — GET /v1/registrar/tlds/supported — Get a list of TLDs supported by Vercel
 - [get_tld](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/get_tld) — Use get_tld with Vercel MCP.
 - [Get TLD](https://vercel.com/docs/rest-api/domains-registrar/get-tld) — GET /v1/registrar/tlds/{tld} — Get the metadata for a specific TLD.
 - [list_domains](https://vercel.com/docs/agent-resources/vercel-mcp/tools/domains/list_domains) — Use list_domains with Vercel MCP.
 - [list_teams](https://vercel.com/docs/agent-resources/vercel-mcp/tools/teams/list_teams) — Use list_teams with Vercel MCP.
-- [Get TLD price data](https://vercel.com/docs/rest-api/domains-registrar/get-tld-price-data) — GET /v1/registrar/tlds/{tld}/price — Get price data for a specific TLD. This only reflects base prices for the given TLD
 
 Full cross-link map for this page: [/docs/agent-resources/vercel-mcp/tools/domains/list_supported_tlds.graph.md](/docs/agent-resources/vercel-mcp/tools/domains/list_supported_tlds.graph.md)
 <!-- /docsgraph:related -->

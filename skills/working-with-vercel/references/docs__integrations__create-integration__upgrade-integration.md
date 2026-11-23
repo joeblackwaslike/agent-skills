@@ -18,8 +18,8 @@ summary: Lean more about when you may need to upgrade your Integration.
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/integrations/create-integration/upgrade-integration.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "58f9611c21f31e90b3961c9d3536d312aa37df0cbecd9a2050cfef72507382c0"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "9c0f6c7cd7bf0690f90cb8ec4bb4536f4ec9ac6a06f6d8b30860b448abdb54e5"
 ---
 
 # Upgrade an Integration
@@ -33,7 +33,6 @@ You should upgrade your integration if you are using any of the following scenar
 > **For AI agents:** Follow these links to understand how this page connects to the rest of the Vercel ecosystem. For the full cross-link map (inbound, outbound, prerequisites, and semantic neighbors), see the .graph.md link below.
 
 - [Integration Webhooks are now easier to configure](https://vercel.com/changelog/integration-webhooks-are-now-easier-to-configure)
-- [UI Hooks for Integrations will be deprecated](https://vercel.com/changelog/ui-hooks-for-integrations-will-be-deprecated)
 - [Integrations can now be managed more efficiently](https://vercel.com/changelog/integrations-can-now-be-managed-more-efficiently)
 - [Integration Approval Checklist](https://vercel.com/docs/integrations/create-integration/approval-checklist) — Review this checklist before submitting your native or connectable account integration for approval on the Vercel Market
 - [Integrations](https://vercel.com/docs/agent-resources/vercel-mcp/tools/integrations) — Vercel MCP tools for integrations.

@@ -15,8 +15,8 @@ summary: View and filter runtime logs or CDN request records for your Vercel pro
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/cli/logs.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "e783841a0b94f3b1bfe2efae88d873f80321663a9afbb64c8b8c11781924ff4e"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "a8b302c9bf9c5c469fa65963730b31e221f08ec93694c741802829cc05cb2c5b"
 ---
 
 # vercel logs
@@ -31,6 +31,7 @@ The `vercel logs` command shows runtime logs for your project. Use `vercel logs 
 
 - [Improvements to command line logs](https://vercel.com/changelog/improvements-to-command-line-logs)
 - [vercel logs CLI command now optimized for agents with historical log querying](https://vercel.com/changelog/vercel-logs-cli-command-now-optimized-for-agents-with-historical-log)
+- [How to stop traffic to an old deployment on Vercel](https://vercel.com/kb/guide/how-to-stop-traffic-to-an-old-deployment-on-vercel) — Move production traffic to the new deployment, restrict access to the old deployment, and check remaining function activ
 - [vercel api](https://vercel.com/docs/cli/api) — Learn how to make authenticated HTTP requests to the Vercel API using the vercel api CLI command.
 - [vercel list](https://vercel.com/docs/cli/list) — Learn how to list out all recent deployments for the current Vercel Project using the vercel list CLI command.
 - [vercel docs](https://vercel.com/docs/cli/docs) — Search and read the Vercel docs from your terminal using the Vercel CLI.

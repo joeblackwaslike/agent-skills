@@ -17,8 +17,8 @@ summary: Vercel Integrations allow you to subscribe to certain trigger-based eve
 install_vercel_plugin: npx plugins add vercel/vercel-plugin
 search_with_vercel_cli: npx vercel@latest docs search "<query>"
 source: "https://vercel.com/docs/webhooks/webhooks-api.md"
-fetched_at: "2026-11-16T12:35:12.533Z"
-sha256: "f93beb32bd1c34b5c4d8286d0f93e83664ce5d7baae3c3582e2ce89341e4ab67"
+fetched_at: "2026-11-23T14:17:58.741Z"
+sha256: "f6299c7625ae32678926ec7ecc8a44d9729b6deeca7bfe7c3f99138fb07e2847"
 ---
 
 # Webhooks API Reference
@@ -34,7 +34,7 @@ Vercel Integrations allow you to subscribe to certain trigger-based events throu
 - [New webhook events for domain management](https://vercel.com/changelog/new-webhook-events-for-domain-management)
 - [Subscribe to webhook events for Vercel Flags](https://vercel.com/changelog/subscribe-to-webhook-events-for-vercel-flags)
 - [The Complete Guide to Bring Your Own Cloud](https://vercel.com/kb/guide/byoc) — Use Bring Your Own Cloud \\(BYOC\\) to run Vercel Functions as AWS Lambda functions in your own AWS account, from setup to
-- [Why aren't commits triggering deployments on Vercel?](https://vercel.com/kb/guide/why-aren-t-commits-triggering-deployments-on-vercel) — Commits not triggering deployments on Vercel? Walk the diagnostic checklist covering authentication, commit author acces
+- [How to stop traffic to an old deployment on Vercel](https://vercel.com/kb/guide/how-to-stop-traffic-to-an-old-deployment-on-vercel) — Move production traffic to the new deployment, restrict access to the old deployment, and check remaining function activ
 - [Audit Logs](https://vercel.com/docs/audit-log) — Learn how to track and analyze your team members' activities.
 - [Deployment integration actions](https://vercel.com/docs/integrations/create-integration/deployment-integration-action) — These actions allow integration providers to set up automated tasks with Vercel deployments.
 - [Performing an Instant Rollback on a Deployment](https://vercel.com/docs/instant-rollback) — Learn how to perform an Instant Rollback on your production deployments and quickly roll back to a previously deployed p
