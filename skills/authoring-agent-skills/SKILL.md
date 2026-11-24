@@ -64,6 +64,8 @@ Track these with TodoWrite when building a real skill.
 
 ## Canonical examples (real paths to copy from)
 
+Some examples live under `parked/` or `archive/`. They no longer ship or auto-update, but their scripts are still valid patterns to copy.
+
 - **Sitemap fetch + slug-collision handling** — [`archive/working-with-vercel-ai-sdk/`](../../archive/working-with-vercel-ai-sdk/) ([`scripts/update_docs.js`](../../archive/working-with-vercel-ai-sdk/scripts/update_docs.js))
 - **llms.txt fetch** — [`skills/working-with-claude-code/`](../working-with-claude-code/) ([`scripts/update_docs.js`](../working-with-claude-code/scripts/update_docs.js))
 - **Curated list + HTML→Markdown + manifest (ESM)** — [`parked/devcontainers/`](../../parked/devcontainers/) ([`scripts/update.js`](../../parked/devcontainers/scripts/update.js))

@@ -115,5 +115,5 @@ Skills, grouped by what you're doing. Invoke by name — `skill("working-with-gi
 
 These directories sit outside `skills/`, so no plugin manifest ships them and the weekly doc update skips them.
 
-- `parked/` holds skills that work but have no clear place yet: `devcontainers`, `working-with-serena`, `working-with-zsh`, `working-with-bash`, `working-with-pieces`, `working-with-dolt`, `working-with-opencode`, `working-with-cursor`, `developing-opencode-plugins`, `developing-cursor-plugins`. To bring one back, `git mv parked/<name> skills/<name>` and re-add its registry rows.
+- `parked/` holds skills that work but have no clear place yet: `devcontainers`, `working-with-serena`, `working-with-zsh`, `working-with-bash`, `working-with-pieces`, `working-with-dolt`, `working-with-opencode`, `working-with-cursor`, `developing-opencode-plugins`, `developing-cursor-plugins`. To bring one back, `git mv parked/<name> skills/<name>`, point its `update-<name>` Makefile target back at `skills/<name>`, and re-add its rows in `README.md` and `SKILLS.md`.
 - `archive/` holds skills due to be replaced by official ones: `working-with-vercel`, `working-with-vercel-api`, `working-with-vercel-ai-sdk`.
