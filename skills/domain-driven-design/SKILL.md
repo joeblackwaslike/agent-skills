@@ -3,7 +3,8 @@ name: domain-driven-design
 description: >-
   Use when modeling a business domain with real invariants: aggregates, entities, value objects,
   domain events, repositories, bounded contexts, ubiquitous language. Not for layering, CQRS, event
-  sourcing or services (code-architectures), or Repository and Outbox mechanics (design-patterns).
+  sourcing or services (code-architectures), Repository and Outbox mechanics (design-patterns), or
+  table design (data-modeling).
 metadata:
   last_updated: "2026-11-11"
 ---

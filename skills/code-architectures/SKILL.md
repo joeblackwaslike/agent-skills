@@ -4,7 +4,7 @@ description: >-
   Use when choosing or structuring how a system is built: hexagonal layering, CQRS, event sourcing,
   event-driven design, sagas, monolith vs microservices, strangler-fig migration, service contracts,
   eventual consistency. Not for aggregates (domain-driven-design), a single retry, breaker or outbox
-  (design-patterns), or whether to abstract (engineering-principles).
+  (design-patterns), whether to abstract (engineering-principles), or table design (data-modeling).
 metadata:
   last_updated: "2026-11-11"
 ---
