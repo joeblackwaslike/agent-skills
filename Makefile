@@ -21,7 +21,7 @@ update-working-with-claude-code: ## Update working-with-claude-code references
 	node skills/working-with-claude-code/scripts/update_docs.js
 
 update-devcontainers: ## Update devcontainers generated reference docs
-	node skills/devcontainers/scripts/update.js
+	node parked/devcontainers/scripts/update.js
 
 update-data-modeling: ## Update data-modeling DBML reference docs
 	node skills/data-modeling/scripts/update_dbml_docs.js
@@ -33,19 +33,19 @@ update-working-with-gemini: ## Update working-with-gemini references
 	node skills/working-with-gemini/scripts/update_docs.js
 
 update-working-with-opencode: ## Update working-with-opencode references
-	node skills/working-with-opencode/scripts/update_docs.js
+	node parked/working-with-opencode/scripts/update_docs.js
 
 update-working-with-cursor: ## Update working-with-cursor references
-	node skills/working-with-cursor/scripts/update_docs.js
+	node parked/working-with-cursor/scripts/update_docs.js
 
 update-working-with-pieces: ## Update working-with-pieces references (resources, MCP tools, LTM prompts, versions)
-	node skills/working-with-pieces/scripts/update.js
+	node parked/working-with-pieces/scripts/update.js
 
 update-working-with-github-actions: ## Update working-with-github-actions references (GitHub docs + action versions)
 	node skills/working-with-github-actions/scripts/update_docs.js
 
 update-working-with-vercel-ai-sdk: ## Update working-with-vercel-ai-sdk references (ai-sdk.dev docs/providers/cookbook)
-	node skills/working-with-vercel-ai-sdk/scripts/update_docs.js
+	node archive/working-with-vercel-ai-sdk/scripts/update_docs.js
 
 update-working-with-beads: ## Update working-with-beads references (CLI ref from pinned bd + repo docs @ tag)
 	node skills/working-with-beads/scripts/update_docs.js
@@ -60,25 +60,25 @@ update-developing-for-github: ## Update developing-for-github references (Apps/O
 	node skills/developing-for-github/scripts/update_docs.js
 
 update-working-with-dolt: ## Update working-with-dolt references (CLI ref from pinned dolt + dolthub.com docs)
-	node skills/working-with-dolt/scripts/update_docs.js
+	node parked/working-with-dolt/scripts/update_docs.js
 
 update-working-with-vercel: ## Update working-with-vercel references (vercel.com/docs .md sweep, REST API excluded)
-	node skills/working-with-vercel/scripts/update_docs.js
+	node archive/working-with-vercel/scripts/update_docs.js
 
 update-working-with-vercel-api: ## Update working-with-vercel-api references (OpenAPI spec → YAML + conceptual REST docs)
-	node skills/working-with-vercel-api/scripts/update_docs.js
+	node archive/working-with-vercel-api/scripts/update_docs.js
 
 update-working-with-zsh: ## Update working-with-zsh references (manual from pinned zsh man pages + ecosystem docs)
-	node skills/working-with-zsh/scripts/update_docs.js
+	node parked/working-with-zsh/scripts/update_docs.js
 
 update-working-with-bash: ## Update working-with-bash references (man bash from pinned bash + GNU manuals + ecosystem/learn docs)
-	node skills/working-with-bash/scripts/update_docs.js
+	node parked/working-with-bash/scripts/update_docs.js
 
 update-working-with-release-please: ## Update working-with-release-please references (release-please README/docs/schemas + action README @ pinned tags)
 	node skills/working-with-release-please/scripts/update_docs.js
 
 update-working-with-serena: ## Update working-with-serena references (serena/serena-hooks CLI @ pinned uvx + oraios.github.io docs)
-	node skills/working-with-serena/scripts/update_docs.js
+	node parked/working-with-serena/scripts/update_docs.js
 
 update-beadboard-operations: ## Update beadboard-operations references (beadboard-ops website/docs from local checkout; skips if absent)
 	node skills/beadboard-operations/scripts/update_docs.js

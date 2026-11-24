@@ -88,4 +88,3 @@ The full skill catalog — one row per skill with when-to-invoke triggers — li
 
 **Resuming or auditing prior work:** `recovering-session-context` reconstructs what happened in earlier sessions from their transcripts and surfaces what was never resolved. Two modes — resume (the last session, then continue) and audit (a lookback window, then report). Backs the `/pickup` and `/outstanding` commands, and is worth invoking directly before declaring a thread finished.
 
-**Dolt / the data engine under beads:** `working-with-dolt` for the `dolt` CLI reference + dolthub.com docs and the shared `dolt sql-server` runbook (port 3308).

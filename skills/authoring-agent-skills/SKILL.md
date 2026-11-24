@@ -56,7 +56,7 @@ Three archetypes — pick the one that matches the skill's job. Full detail, dir
 Track these with TodoWrite when building a real skill.
 
 1. **Decide archetype & name.** Match one of the three archetypes above. Name = kebab-case, directory name == `name:` in frontmatter. See [naming-and-structure](references/naming-and-structure.md).
-2. **Scaffold `SKILL.md`.** Frontmatter (`name`, trigger-rich `description`, `metadata.last_updated`) + body (overview, when-to-use, quick-reference table pointing at `references/`, behavioral guidance). Mirror the shape of [`skills/developing-claude-code-plugins/SKILL.md`](../developing-claude-code-plugins/SKILL.md) (workflow-style) or [`skills/working-with-vercel-ai-sdk/SKILL.md`](../working-with-vercel-ai-sdk/SKILL.md) (doc-wrapper style).
+2. **Scaffold `SKILL.md`.** Frontmatter (`name`, trigger-rich `description`, `metadata.last_updated`) + body (overview, when-to-use, quick-reference table pointing at `references/`, behavioral guidance). Mirror the shape of [`skills/developing-claude-code-plugins/SKILL.md`](../developing-claude-code-plugins/SKILL.md) (workflow-style) or [`skills/working-with-vercel-ai-sdk/SKILL.md`](../../archive/working-with-vercel-ai-sdk/SKILL.md) (doc-wrapper style).
 3. **(Doc-wrappers only) Write the fetch script.** `skills/<name>/scripts/update_docs.js` (or `update.js`/`update.sh`). Choose a discovery pattern — llms.txt, sitemap, or curated list — from the [cookbook](references/doc-fetching-cookbook.md). Output to `skills/<name>/references/`.
 4. **(Doc-wrappers only) Wire freshness.** Import `withFrontmatter` + `setSkillLastUpdated` from `scripts/lib/doc-frontmatter.cjs`, wrap each written doc, track `wrapped.changed`, restamp `SKILL.md` only when something changed. See [freshness-metadata](references/freshness-metadata.md).
 5. **Register the skill.** Update `AGENTS.md` (Available Skills table + Common Workflows), `README.md`, add a named `update-<name>` Makefile target (doc-wrappers only), and bump the plugin version. Full list in [registration-checklist](references/registration-checklist.md).
@@ -64,11 +64,11 @@ Track these with TodoWrite when building a real skill.
 
 ## Canonical examples (real paths to copy from)
 
-- **Sitemap fetch + slug-collision handling** — [`skills/working-with-vercel-ai-sdk/`](../working-with-vercel-ai-sdk/) ([`scripts/update_docs.js`](../working-with-vercel-ai-sdk/scripts/update_docs.js))
+- **Sitemap fetch + slug-collision handling** — [`archive/working-with-vercel-ai-sdk/`](../../archive/working-with-vercel-ai-sdk/) ([`scripts/update_docs.js`](../../archive/working-with-vercel-ai-sdk/scripts/update_docs.js))
 - **llms.txt fetch** — [`skills/working-with-claude-code/`](../working-with-claude-code/) ([`scripts/update_docs.js`](../working-with-claude-code/scripts/update_docs.js))
-- **Curated list + HTML→Markdown + manifest (ESM)** — [`skills/devcontainers/`](../devcontainers/) ([`scripts/update.js`](../devcontainers/scripts/update.js))
+- **Curated list + HTML→Markdown + manifest (ESM)** — [`parked/devcontainers/`](../../parked/devcontainers/) ([`scripts/update.js`](../../parked/devcontainers/scripts/update.js))
 - **`developing-X` shape (workflow skill)** — [`skills/developing-claude-code-plugins/`](../developing-claude-code-plugins/)
-- **Freshness exception (merged upstreams, hand-curated)** — [`skills/working-with-pieces/`](../working-with-pieces/)
+- **Freshness exception (merged upstreams, hand-curated)** — [`parked/working-with-pieces/`](../../parked/working-with-pieces/)
 - **Shared freshness helper** — [`scripts/lib/doc-frontmatter.cjs`](../../scripts/lib/doc-frontmatter.cjs)
 
 ## Cross-references

@@ -25,7 +25,7 @@ A doc-wrapper (`working-with-X`, `developing-X`) puts a tool's official document
 
 ## Example from this repo
 
-`skills/working-with-dolt/SKILL.md` has a "Pinning model" section that says two different things about two kinds of file:
+`parked/working-with-dolt/SKILL.md` has a "Pinning model" section that says two different things about two kinds of file:
 
 > CLI pages are version-EXACT. ... Website docs are a SNAPSHOT, not a version pin.
 

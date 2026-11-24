@@ -7,8 +7,8 @@ How to write the auto-update script for a `working-with-X` skill. Three discover
 | Pattern | Use when upstream publishes… | Model |
 | --- | --- | --- |
 | **A — llms.txt / docs-map** | an `llms.txt` (or docs-map `.md`) listing every doc URL, and pages are served as Markdown | [`working-with-claude-code/scripts/update_docs.js`](../../working-with-claude-code/scripts/update_docs.js) |
-| **B — sitemap regex + slug** | a `sitemap.md` of relative links, pages served as Markdown by appending `.md`, basenames collide | [`working-with-vercel-ai-sdk/scripts/update_docs.js`](../../working-with-vercel-ai-sdk/scripts/update_docs.js) |
-| **C — curated list + HTML→MD** | no machine index; only HTML pages you must hand-pick and convert | [`devcontainers/scripts/update.js`](../../devcontainers/scripts/update.js) |
+| **B — sitemap regex + slug** | a `sitemap.md` of relative links, pages served as Markdown by appending `.md`, basenames collide | [`working-with-vercel-ai-sdk/scripts/update_docs.js`](../../../archive/working-with-vercel-ai-sdk/scripts/update_docs.js) |
+| **C — curated list + HTML→MD** | no machine index; only HTML pages you must hand-pick and convert | [`devcontainers/scripts/update.js`](../../../parked/devcontainers/scripts/update.js) |
 
 Prefer A or B (they auto-discover the doc set). Reach for C only when there's no `llms.txt`/sitemap and you must convert HTML.
 
@@ -166,7 +166,7 @@ for (const doc of DOCS) {
 if (docsChanged) setSkillLastUpdated(SKILL_MD, now.slice(0, 10));
 ```
 
-The `extractBody`/`htmlToMarkdown`/`stripTags` helpers are site-specific (the dev-containers script special-cases VS Code's `docs-main-content` `<main>` and `containers.dev`'s `col-lg-10` column). Copy and adapt them from [`devcontainers/scripts/update.js`](../../devcontainers/scripts/update.js).
+The `extractBody`/`htmlToMarkdown`/`stripTags` helpers are site-specific (the dev-containers script special-cases VS Code's `docs-main-content` `<main>` and `containers.dev`'s `col-lg-10` column). Copy and adapt them from [`devcontainers/scripts/update.js`](../../../parked/devcontainers/scripts/update.js).
 
 ## Exit-behavior contract
 

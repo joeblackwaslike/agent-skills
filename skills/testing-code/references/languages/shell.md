@@ -313,7 +313,7 @@ The [quarantine runbook](../flakes/quarantine.md) decides whether to quarantine 
 ## Further reading
 
 - There is no ECC shell testing skill. The nearest is [ECC tdd-workflow](https://github.com/affaan-m/ECC/blob/main/skills/tdd-workflow/SKILL.md), a general test-first workflow (MIT, Copyright Affaan Mustafa). Nothing on this page is copied from it.
-- The sibling skill working-with-bash in this repository covers bash itself (quoting, `set -euo pipefail`, portability); it is named in plain text because it is not a testing page.
+- For bash itself (quoting, `set -euo pipefail`, portability), see the parked `working-with-bash` skill under `parked/` in this repository, or `man bash`.
 - [bats-core documentation](https://bats-core.readthedocs.io/en/stable/) and the [writing tests page](https://bats-core.readthedocs.io/en/stable/writing-tests.html)
 - [bats-assert](https://github.com/bats-core/bats-assert), [bats-support](https://github.com/bats-core/bats-support) and [bats-file](https://github.com/bats-core/bats-file)
 - [ShellCheck](https://www.shellcheck.net/) and its [wiki of checks](https://www.shellcheck.net/wiki/)

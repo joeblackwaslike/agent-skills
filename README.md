@@ -59,10 +59,6 @@ Skills, grouped by what you're doing. Invoke by name — `skill("working-with-gi
 | `working-with-claude-code` | Claude Code CLI, plugins, hooks, MCP, skills, configuration |
 | `working-with-codex` | Codex CLI, plugins, skills, hooks, configuration |
 | `working-with-gemini` | Gemini CLI and Antigravity — extensions, skills, hooks, GEMINI.md |
-| `working-with-cursor` | Cursor IDE rules, skills, plugins, MCP servers, agents, hooks |
-| `working-with-opencode` | OpenCode CLI, plugins, skills, hooks, configuration |
-| `working-with-serena` | Symbol-level code retrieval and editing via Language Servers — **mandatory before reading or editing code** |
-| `working-with-pieces` | Pieces OS, Desktop, CLI, editor plugins, MCP server, long-term memory, TS/Python SDKs |
 
 ### Building plugins
 
@@ -70,9 +66,7 @@ Skills, grouped by what you're doing. Invoke by name — `skill("working-with-gi
 | --- | --- |
 | `developing-claude-code-plugins` | Create, modify, test, and release Claude Code plugins |
 | `developing-codex-plugins` | Create, modify, test, and release Codex plugins |
-| `developing-cursor-plugins` | Create, modify, test, and release Cursor plugins |
 | `developing-gemini-plugins` | Create, modify, test, and release Gemini CLI extensions and Antigravity plugins |
-| `developing-opencode-plugins` | Create, modify, test, and release OpenCode skills and npm/Bun plugins |
 | `vscode-extension-builder-lawvable` | Build, test, package, and publish VS Code extensions — commands, webviews, custom editors |
 
 ### Git, GitHub & releases
@@ -93,7 +87,6 @@ Skills, grouped by what you're doing. Invoke by name — `skill("working-with-gi
 | `working-with-beads` | The beads CLI (`bd`) — issues, dependencies, epics, gates, swarm, federation |
 | `beads-operations` | Running beads day to day: `bd` vs TodoWrite, shared-server conventions, troubleshooting |
 | `beadboard-operations` | Operating the BeadBoard dashboard and its launchd services |
-| `working-with-dolt` | The version-controlled SQL database that branches, diffs, and merges like Git |
 
 ### Engineering practice
 
@@ -110,22 +103,6 @@ Skills, grouped by what you're doing. Invoke by name — `skill("working-with-gi
 | `testing-code` | The process skill for writing tests (pick the kind, write the body, build fixtures and doubles) plus flake and slow-suite diagnosis, with language pages for Python, TypeScript, Rust, shell and SQL |
 | `testing-principles` | The written standard for tests (what to test, kinds, doubles, isolation, flakes, coverage, mutation) with the test-driven development reference inside it |
 
-### Vercel
-
-| Skill | What it does |
-| --- | --- |
-| `working-with-vercel` | The hosting platform and `vercel` CLI — deploy, dev, env, dns, domains, blob, edge-config |
-| `working-with-vercel-api` | The REST API and `@vercel/sdk` |
-| `working-with-vercel-ai-sdk` | The `ai` package — generateText, streamText, structured objects, embeddings, tool calling |
-
-### Shell & environment
-
-| Skill | What it does |
-| --- | --- |
-| `working-with-bash` | Commands, builtins, `shopt`/`set -o`, parameter expansion, test operators |
-| `working-with-zsh` | Commands, builtins, `setopt`, glob qualifiers, expansions, Bash→Zsh migration |
-| `devcontainers` | Build, modify, and distribute Dev Containers — `devcontainer.json`, features, publishing |
-
 ### Docs & research
 
 | Skill | What it does |
@@ -133,3 +110,10 @@ Skills, grouped by what you're doing. Invoke by name — `skill("working-with-gi
 | `web` | Router — picks the best search and fetch tool for any research task |
 | `docusaurus-docs-builder` | Create or overhaul a Docusaurus docs site |
 | `github-readme-overhaul` | Rewrite and visually overhaul a README for installs, stars, and marketplace conversion |
+
+## Parked and archived skills
+
+These directories sit outside `skills/`, so no plugin manifest ships them and the weekly doc update skips them.
+
+- `parked/` holds skills that work but have no clear place yet: `devcontainers`, `working-with-serena`, `working-with-zsh`, `working-with-bash`, `working-with-pieces`, `working-with-dolt`, `working-with-opencode`, `working-with-cursor`, `developing-opencode-plugins`, `developing-cursor-plugins`. To bring one back, `git mv parked/<name> skills/<name>` and re-add its registry rows.
+- `archive/` holds skills due to be replaced by official ones: `working-with-vercel`, `working-with-vercel-api`, `working-with-vercel-ai-sdk`.

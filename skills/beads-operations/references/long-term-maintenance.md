@@ -29,7 +29,7 @@ bd --version   # confirm it matches the new bd= line
 dolt version   # note the new dolt version
 
 # 3. If dolt was upgraded, update its PINNED_VERSION too.
-$EDITOR skills/working-with-dolt/PINNED_VERSION   # dolt=
+$EDITOR parked/working-with-dolt/PINNED_VERSION   # dolt=
 
 # 4. Run the database migration (required on first run of the new binary).
 bd migrate --dry-run        # preview: "Would update Dolt version: X → Y"
@@ -46,7 +46,7 @@ git status skills/working-with-beads/references/cli/ | grep "^?"   # new command
 
 # 7. Update beads-operations references for any new/changed commands.
 # 8. Commit with signoff.
-git add skills/working-with-beads skills/working-with-dolt skills/beads-operations
+git add skills/working-with-beads parked/working-with-dolt skills/beads-operations
 git commit -s -m "chore(beads): bump pinned bd to <new-version>"
 ```
 
