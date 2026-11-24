@@ -1,6 +1,11 @@
 ---
 name: working-with-github-actions
-description: "Use when building, configuring, debugging, or optimizing GitHub Actions CI/CD workflows. Covers workflow YAML syntax, event triggers, job orchestration, matrix builds, reusable workflows, composite actions, secrets and variables, artifact and cache management, OIDC-based cloud deployments, self-hosted runners, and security hardening. Also covers adjacent tooling: release-please, dependabot, CodeQL, labeler, and stale management. Invoke whenever the user mentions GitHub Actions, .github/workflows, CI/CD, workflow files, action versions, self-hosted runners, OIDC cloud deployments, or wants to automate anything that runs on GitHub push/PR/schedule events."
+description: >-
+  Use when writing, debugging or optimizing GitHub Actions workflows: .github/workflows YAML,
+  triggers, matrices, reusable or composite actions, secrets, caching, OIDC deploys, runners,
+  hardening, or Dependabot, CodeQL, labeler and stale workflows. Not for release-please
+  (working-with-release-please), Dependabot or CodeQL config files (working-with-github) or GitHub
+  Apps (developing-for-github).
 metadata:
   last_updated: "2026-06-06"
 ---

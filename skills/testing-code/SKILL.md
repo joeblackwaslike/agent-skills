@@ -1,7 +1,9 @@
 ---
 name: testing-code
 description: >-
-  Use when writing tests ("write tests for X", "add a test for this", "write a failing test first", "red green refactor this"), or when a test is flaky or the suite is slow. Not for reviewing a diff (use reviewing-code). Not for deciding what a good test is (use testing-principles; read it first for the standard).
+  Use when writing tests ("write tests for X", "add a failing test first", "red green refactor
+  this") or when a test is flaky or the suite is slow. Not for deciding what a good test is
+  (testing-principles) or reviewing a diff (reviewing-code).
 metadata:
   last_updated: "2026-11-13"
 ---

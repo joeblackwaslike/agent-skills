@@ -1,6 +1,9 @@
 ---
 name: autonomous-agent-operations
-description: Use when operating solo on a task handed off without the user available for interactive check-ins — ask every clarifying question up front, decide and file a labeled bd ticket on a genuine mid-run fork rather than blocking or guessing silently, and summarize plus record a worked example at the end. Covers the ticket-review promotion loop and the project/global decision-log hierarchy.
+description: >-
+  Use when working solo on a handed-off task with the user unavailable for check-ins, when a genuine
+  fork comes up mid-run and you would otherwise block or guess, or when recording or reviewing a
+  judgment call in the decision log.
 license: MIT
 metadata:
   last_updated: "2026-08-10"

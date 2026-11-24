@@ -1,6 +1,10 @@
 ---
 name: recovering-session-context
-description: Reconstruct what happened in prior agent sessions from their transcripts and surface everything raised but never resolved — unanswered questions, work promised and not done, topics dropped, partial completions, and incomplete todos. Use when resuming after an interruption or compaction ("pick up where we left off", "what was I doing"), when auditing recent days for loose ends ("what's outstanding", "what did we drop"), or before declaring a thread finished. Covers locating transcripts per tool, reconstructing turns, the taxonomy of what counts as unresolved, and how to present findings.
+description: >-
+  Use when resuming after an interruption or compaction ("pick up where we left off", "what was I
+  doing"), auditing recent sessions for loose ends ("what's outstanding", "what did we drop"), or
+  checking a thread is really finished before calling it done. Not for searching past decisions
+  (claude-mem) or finding a past session by topic (cc-recall).
 license: MIT
 metadata:
   last_updated: "2026-07-31"

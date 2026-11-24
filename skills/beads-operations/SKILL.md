@@ -1,6 +1,10 @@
 ---
 name: beads-operations
-description: Use when running, maintaining, or troubleshooting beads (`bd`) day-to-day — deciding bd vs TodoWrite, Joe's shared-server conventions (`bd init --shared-server --skip-agents`, the shared Dolt server on port 3308), the ready→claim→note→close workflow, compaction recovery, recovering from broken/nasty beads states (stale ports, orphan/duplicate Dolt servers, db-name mismatch, "database is locked"), and taming the `bd prime` session-start injection (the workflow preamble, `PRIME.md` customization, neutralizing the conservative git policy). Invoke on "beads is broken", "bd won't start", "set up beads in this project", "how do I track this", "bd prime is noisy", "change the session-start beads text", or any beads failure. For the raw CLI reference, use `working-with-beads`.
+description: >-
+  Use when running, setting up or fixing beads (`bd`) day to day: choosing bd over TodoWrite, the
+  shared Dolt server on port 3308, claiming and closing work, recovering after compaction, a broken
+  beads state (stale port, locked database, duplicate server), or a noisy `bd prime` injection. Not
+  for a raw CLI flag lookup (working-with-beads).
 metadata:
   last_updated: "2026-06-22"
 ---

@@ -30,7 +30,7 @@ Every architecture and style with a one-line summary and where it is covered. "L
 | Microservices | Independently deployable services that own their data | [microservices.md](distributed/microservices.md) |
 | Service communication | Synchronous calls versus messaging, contracts, versioning | [service-communication.md](distributed/service-communication.md) |
 | Distributed data and consistency | Eventual consistency, no distributed transactions | [distributed-data.md](distributed/distributed-data.md) |
-| Serverless | Functions and managed services instead of long-running servers | catalog-only: you probably want the platform's own docs, such as `working-with-vercel` |
+| Serverless | Functions and managed services instead of long-running servers | catalog-only: you probably want the platform's own docs |
 | Space-based | In-memory data grids to scale stateful workloads | catalog-only: you probably want a cache plus read replicas |
 | Two-phase commit | Atomic commit across several databases | catalog-only: sagas and the outbox are not atomic across databases either; a saga gives eventual consistency with compensation, the outbox makes one database's write and event atomic. Keep data that must change together in one database |
 | CRDTs | Data structures that merge without coordination | catalog-only: you probably want last-writer-wins or a collaboration library |

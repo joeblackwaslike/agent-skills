@@ -1,6 +1,9 @@
 ---
 name: vscode-extension-builder-lawvable
-description: Use when building, converting, testing, debugging, packaging, publishing, or reviewing VS Code extensions, including commands, webviews, custom editors, tree views, language features, AI/Language Model API integrations, Language Model Tools, extension host behavior, and .vsix distribution.
+description: >-
+  Use when building, testing, debugging, packaging or publishing a VS Code extension: commands,
+  webviews, custom editors, tree views, language features, the Language Model API and tools,
+  extension host behavior, or .vsix distribution.
 metadata:
   last_updated: "2026-06-01"
   author: Antoine Louis (Lawvable), expanded for Joe Black

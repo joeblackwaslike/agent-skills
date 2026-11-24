@@ -41,5 +41,5 @@ generic "fetch the official docs" script cannot produce. Before writing any refe
 locally-installed tool, run inspection commands first, then write content from what you actually
 observe — don't rely solely on public docs.
 
-Validated building [`working-with-pieces`](../../working-with-pieces/SKILL.md)'s
+Validated building [`working-with-pieces`](../../../parked/working-with-pieces/SKILL.md)'s
 `references/pieces-os-internals.md` and `references/long-term-memory.md`.

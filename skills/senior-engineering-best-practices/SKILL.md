@@ -1,10 +1,10 @@
 ---
 name: senior-engineering-best-practices
 description: >-
-  Use before proposing a workaround for third-party code, answering from memory about what a
-  library supports, patching the same area a second time, adding a dependency, or taking an action
-  whose blast radius is unconsidered. Routes to the matching runbook. For TDD, SOLID, DDD,
-  debugging, or code review, use those skills instead.
+  Use before proposing a workaround for third-party code, answering from memory about what a library
+  supports, patching the same area a second time, adding a dependency, or taking an action whose
+  blast radius you haven't weighed. Not for TDD, SOLID, DDD, debugging or code review (use those
+  skills).
 metadata:
   last_updated: "2026-08-23"
 ---

@@ -1,7 +1,10 @@
 ---
 name: data-modeling
 description: >-
-  Use when a feature, spec or architecture needs new persistent data in a relational database: new tables or columns, relationships between entities, or a schema sketch for review. Not for aggregates and bounded contexts (domain-driven-design), event sourcing or CQRS (code-architectures), or reviewing a finished diff (reviewing-code).
+  Use when a feature, spec or architecture needs new persistent data in a relational database: new
+  tables or columns, relationships between entities, or a schema sketch for review. Not for
+  aggregates (domain-driven-design), event sourcing or CQRS (code-architectures), or reviewing a
+  finished diff (reviewing-code).
 metadata:
   last_updated: "2026-11-14"
 ---

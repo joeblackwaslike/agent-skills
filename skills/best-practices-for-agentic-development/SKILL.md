@@ -1,9 +1,10 @@
 ---
 name: best-practices-for-agentic-development
 description: >-
-  Use when designing or reviewing an agent system: agent loops, tool interfaces, MCP server
-  design, subagent architecture, or skill-writing methodology (RED/GREEN pressure tests). Not for
-  plugin packaging (developing-*-plugins) or CLAUDE.md/AGENTS.md files (agent-instructions).
+  Use when designing or reviewing an agent system: agent loops, tool interfaces, MCP server design,
+  subagent architecture, or the methodology for pressure-testing a skill. Not for running that check
+  on a finished skill (reviewing-skills), plugin packaging (developing-*-plugins) or CLAUDE.md and
+  AGENTS.md files (agent-instructions).
 metadata:
   last_updated: "2026-08-18"
 ---

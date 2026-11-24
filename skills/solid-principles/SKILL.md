@@ -1,11 +1,10 @@
 ---
 name: solid-principles
 description: >-
-  Use when designing or refactoring classes, modules, or interfaces and the user mentions SOLID,
-  SRP, OCP, LSP, ISP, DIP or dependency injection, or code shows a god class, a growing type-tag
-  switch, a subclass that throws "not supported", or a fat interface. TypeScript and Python
-  examples. Skip throwaway scripts and simple CRUD glue. Not for specific
-  patterns (use design-patterns).
+  Use when designing or refactoring classes, modules or interfaces and SOLID, SRP, OCP, LSP, ISP,
+  DIP or dependency injection comes up, or the code shows a god class, a growing type switch, a
+  subclass that throws "not supported", or a fat interface. Skip throwaway scripts and CRUD glue.
+  Not for named patterns (design-patterns).
 metadata:
   last_updated: "2026-11-11"
 ---

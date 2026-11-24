@@ -1,6 +1,9 @@
 ---
 name: web
-description: Use before WebSearch or WebFetch, and for any web search, URL read, library-docs lookup, or multi-source research. Also when a fetch is blocked (403, 429, captcha, login wall, empty SPA). Routes to SearXNG, Exa, Context7, Ref, Firecrawl, Parallel, or stealth-browser. Not for multi-step browser automation (use agent-browser).
+description: >-
+  Use before WebSearch or WebFetch, and for any web search, URL read, library-docs lookup or
+  multi-source research, including when a fetch is blocked (403, 429, captcha, login wall, empty
+  page). Not for multi-step browser automation (agent-browser).
 license: MIT
 compatibility: Needs the MCP servers and env vars listed in each reference file. Falls back to built-in WebSearch and WebFetch when a service is unavailable.
 metadata:
