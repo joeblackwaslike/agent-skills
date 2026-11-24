@@ -2,9 +2,10 @@
 name: reviewing-skills
 description: >-
   Use when a skill was just written or changed and must be checked before it ships, including its
-  references, scripts and registry rows. Triggers on "/review-skill", "review this skill", "is my
-  skill ready", "pressure-test this skill", or a diff under skills/. Not for writing a skill
-  (skill-principles) or reviewing code (reviewing-code).
+  references, scripts and registry rows. Triggers on "/review-skill", "is my skill ready",
+  "pressure-test this skill", or a diff under skills/. Not for writing a skill (skill-principles),
+  pressure-testing methodology (best-practices-for-agentic-development) or code review
+  (reviewing-code).
 metadata:
   last_updated: "2026-11-11"
   kind: workflow
