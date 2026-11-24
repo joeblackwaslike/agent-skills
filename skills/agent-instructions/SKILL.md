@@ -2,9 +2,8 @@
 name: agent-instructions
 description: >-
   Use when creating or editing CLAUDE.md, AGENTS.md, GEMINI.md, a SKILL.md, a runbook, or any file
-  that instructs an AI coding agent: "set up Claude for this project", "what goes in my
-  AGENTS.md", "add a rule", "edit this skill". Covers scope, content taxonomy, multi-tool
-  compatibility, RED-GREEN editing. Not for skill-repo structure, naming, or registration
+  that instructs an AI coding agent: "set up Claude for this project", "what goes in my AGENTS.md",
+  "add a rule", "edit this skill". Not for skill-repo layout, naming or registration
   (authoring-agent-skills).
 metadata:
   last_updated: "2026-08-23"

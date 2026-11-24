@@ -1,13 +1,9 @@
 ---
 name: interactive-system-docs
 description: >-
-  Build a self-contained interactive HTML visualization that explains how a
-  complex system works — architecture, data flows, state machines, processing
-  pipelines, and search patterns — with D3.js graphs where every node is
-  clickable, all rendered from a single file with no build step. Use when the
-  user wants a "how it works" page, an architecture explainer, an interactive
-  spec, or a visual reference doc for a technical system. Based on the memtree
-  how-it-works.html approach.
+  Use when the user wants a "how it works" page, an architecture explainer, an interactive spec or a
+  visual reference for a technical system, built as one self-contained HTML file with clickable D3
+  diagrams and no build step.
 metadata:
   last_updated: "2026-05-26"
 ---

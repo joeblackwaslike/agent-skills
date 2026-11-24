@@ -1,6 +1,10 @@
 ---
 name: developing-for-github
-description: "Use when building software that integrates with GitHub — GitHub Apps, OAuth apps, webhook consumers, bots, CI checks, and automation built on the GitHub API. Covers the GitHub App auth model (private key → JWT → installation access token), choosing GitHub App vs OAuth app vs PAT, app permissions and rate limits, webhook delivery and HMAC signature verification, and the Octokit JS/TS SDK family (octokit, @octokit/rest, @octokit/graphql, @octokit/webhooks, @octokit/auth-app, paginate/throttling/retry plugins). Invoke when designing or coding a GitHub integration, debugging app authentication or webhook signatures, or picking an auth strategy. For raw REST/GraphQL usage and tokens from the consumer side, use working-with-github; for CI workflows, use working-with-github-actions."
+description: >-
+  Use when building software that integrates with GitHub: GitHub Apps, OAuth apps, webhook
+  consumers, bots, CI checks or Octokit code, or when debugging app authentication or webhook
+  signatures, or choosing between an App, an OAuth app and a PAT. Not for using gh or the API as a
+  consumer (working-with-github) or workflow YAML (working-with-github-actions).
 metadata:
   last_updated: "2026-06-15"
 ---

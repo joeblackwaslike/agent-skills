@@ -1,7 +1,10 @@
 ---
 name: code-architectures
 description: >-
-  Use when choosing or structuring how a system is built: hexagonal layering, CQRS, event sourcing, event-driven design, sagas, microservices vs monolith, strangler-fig migration, service timeouts and contracts, CAP and eventual consistency. Not for aggregates or bounded contexts (domain-driven-design), one retry, breaker or outbox (design-patterns), or whether to abstract (engineering-principles).
+  Use when choosing or structuring how a system is built: hexagonal layering, CQRS, event sourcing,
+  event-driven design, sagas, monolith vs microservices, strangler-fig migration, service contracts,
+  eventual consistency. Not for aggregates (domain-driven-design), a single retry, breaker or outbox
+  (design-patterns), or whether to abstract (engineering-principles).
 metadata:
   last_updated: "2026-11-11"
 ---

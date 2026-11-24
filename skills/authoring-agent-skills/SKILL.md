@@ -2,9 +2,9 @@
 name: authoring-agent-skills
 description: >-
   Use when creating or maintaining a skill in the agent-skills repo, especially a working-with-X
-  doc-wrapper: naming, SKILL.md frontmatter and descriptions, doc-fetching scripts, freshness
-  metadata, registration. Triggers: "create a skill", "add a working-with-X skill", "add a skill
-  to this repo". Not for editing CLAUDE.md or AGENTS.md (agent-instructions).
+  doc-wrapper: naming, frontmatter, doc-fetching scripts, freshness metadata, registration. Triggers
+  on "create a skill", "add a working-with-X skill". Not for wording a skill's instructions
+  (skill-principles) or editing CLAUDE.md or AGENTS.md (agent-instructions).
 metadata:
   last_updated: "2026-08-12"
 ---

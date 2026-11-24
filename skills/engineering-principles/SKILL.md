@@ -1,15 +1,11 @@
 ---
 name: engineering-principles
 description: >-
-  Use when writing, designing, refactoring or extending code: where logic
-  belongs, how much abstraction is enough, module and interface structure,
-  error handling, validation at boundaries, naming, what a test should prove.
-  Triggers on "how should I structure this", "is this too complex", "should I
-  abstract this". Not for checking a finished diff before a PR (use
-  reviewing-code). Not for deep SOLID, TDD or DDD (use solid-principles,
-  testing-principles, domain-driven-design). Not for choosing or
-  implementing a named pattern (use design-patterns). Not for system-level
-  layering, CQRS, sagas, event-driven design or service splits (use code-architectures).
+  Use when writing, designing or refactoring code and deciding where logic belongs, how much
+  abstraction to add, how to handle errors and validate input, or what to name things. Triggers on
+  "how should I structure this", "is this too complex", "should I abstract this". Not for a finished
+  diff (reviewing-code), a named pattern (design-patterns), or system-level architecture
+  (code-architectures).
 metadata:
   last_updated: "2026-11-17"
 ---

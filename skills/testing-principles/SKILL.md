@@ -1,7 +1,9 @@
 ---
 name: testing-principles
 description: >-
-  Use when deciding what a good test or test suite looks like: which kind of test to write, mock vs stub vs fake, isolation, determinism, flaky or slow tests, coverage, TDD. Also what "test first" and "red green refactor" mean. Not for writing tests, doing red green refactor or diagnosing flakes step by step (use testing-code). Not for reviewing a diff (use reviewing-code).
+  Use when deciding what a good test or suite looks like: which kind of test, mock vs stub vs fake,
+  isolation, determinism, coverage, or what TDD and red-green-refactor mean. Not for writing a test
+  step by step (testing-code) or reviewing a diff (reviewing-code).
 metadata:
   last_updated: "2026-11-13"
 ---

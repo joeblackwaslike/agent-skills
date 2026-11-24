@@ -1,6 +1,9 @@
 ---
 name: github-readme-overhaul
-description: Use when writing, rewriting, branding, visually overhauling, or optimizing a GitHub README.md for installs, downloads, stars, marketplace conversion, OSS adoption, or immediate product value, including badges, hero graphics, tagline, pain-point messaging, quickstart, terminal demos, screenshots, GIFs/videos, and README-native visual assets.
+description: >-
+  Use when writing, rewriting or visually overhauling a GitHub README.md to win installs, stars or
+  adoption: tagline, badges, hero graphic, quickstart, terminal demos, screenshots or GIFs. Not for
+  a full docs site (docusaurus-docs-builder).
 metadata:
   last_updated: "2026-05-26"
 ---
