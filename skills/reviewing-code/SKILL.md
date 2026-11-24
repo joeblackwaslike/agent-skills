@@ -3,8 +3,9 @@ name: reviewing-code
 description: >-
   Use before opening a PR or sharing finished work, to review your own diff as a reviewer who didn't
   write it. Triggers on "/self-review", "about to open a PR", "is my diff ready", or before `gh pr
-  create`. Not for someone else's PR, writing code (engineering-principles), designing tables
-  (data-modeling), or driving a PR to merge (git-github-workflows).
+  create`. Not for someone else's PR, a skill (reviewing-skills), writing code
+  (engineering-principles), designing tables (data-modeling), or driving a PR to merge
+  (git-github-workflows).
 ---
 
 # Reviewing Code
